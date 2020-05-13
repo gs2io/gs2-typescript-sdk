@@ -18,16 +18,16 @@ import {
   MissionGroupModel,
   ScriptSetting,
   Counter,
+  CounterScopeModel,
   GitHubCheckoutSetting,
   Complete,
-  CounterScopeModel,
   ResponseCache,
   AcquireAction,
   CurrentMissionMaster,
   Config,
+  Namespace,
   MissionTaskModel,
   MissionTaskModelMaster,
-  Namespace,
   MissionGroupModelMaster,
   LogSetting,
   CounterModelMaster,
@@ -36,7 +36,7 @@ import {
   CounterModel,
 } from './model';
 
-import IResult from '@/gs2/core/interface/IResult';
+import IResult from '../core/interface/IResult';
 
 export class DescribeMissionGroupModelsResult implements IResult {
   /** ミッショングループのリスト */
@@ -653,6 +653,169 @@ export class UpdateCurrentMissionMasterFromGitHubResult implements IResult {
 
 }
 
+export class DescribeNamespacesResult implements IResult {
+  /** ネームスペースのリスト */
+  public items?: Namespace[];
+  /** リストの続きを取得するためのページトークン */
+  public nextPageToken?: string;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data) {
+      this.items = data.items.map((item: { [key: string]: any }) => {
+        return new Namespace(item);
+      });
+      this.nextPageToken = data.nextPageToken;
+    }
+  }
+
+  public withItems(items?: Namespace[]): this {
+    this.items = items;
+    return this;
+  }
+
+  public withNextPageToken(nextPageToken?: string): this {
+    this.nextPageToken = nextPageToken;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    if (this.items) {
+      data.items = this.items.map((item) => item.toDict());
+    }
+    data.nextPageToken = this.nextPageToken;
+    return data;
+  }
+
+}
+
+export class CreateNamespaceResult implements IResult {
+  /** 作成したネームスペース */
+  public item?: Namespace;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data) {
+      this.item = new Namespace(data.item);
+    }
+  }
+
+  public withItem(item?: Namespace): this {
+    this.item = item;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.item = this.item;
+    return data;
+  }
+
+}
+
+export class GetNamespaceStatusResult implements IResult {
+  /** None */
+  public status?: string;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data) {
+      this.status = data.status;
+    }
+  }
+
+  public withStatus(status?: string): this {
+    this.status = status;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.status = this.status;
+    return data;
+  }
+
+}
+
+export class GetNamespaceResult implements IResult {
+  /** ネームスペース */
+  public item?: Namespace;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data) {
+      this.item = new Namespace(data.item);
+    }
+  }
+
+  public withItem(item?: Namespace): this {
+    this.item = item;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.item = this.item;
+    return data;
+  }
+
+}
+
+export class UpdateNamespaceResult implements IResult {
+  /** 更新したネームスペース */
+  public item?: Namespace;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data) {
+      this.item = new Namespace(data.item);
+    }
+  }
+
+  public withItem(item?: Namespace): this {
+    this.item = item;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.item = this.item;
+    return data;
+  }
+
+}
+
+export class DeleteNamespaceResult implements IResult {
+  /** 削除したネームスペース */
+  public item?: Namespace;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data) {
+      this.item = new Namespace(data.item);
+    }
+  }
+
+  public withItem(item?: Namespace): this {
+    this.item = item;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.item = this.item;
+    return data;
+  }
+
+}
+
 export class DescribeMissionTaskModelsResult implements IResult {
   /** ミッションタスクのリスト */
   public items?: MissionTaskModel[];
@@ -833,169 +996,6 @@ export class DeleteMissionTaskModelMasterResult implements IResult {
   }
 
   public withItem(item?: MissionTaskModelMaster): this {
-    this.item = item;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.item = this.item;
-    return data;
-  }
-
-}
-
-export class DescribeNamespacesResult implements IResult {
-  /** ネームスペースのリスト */
-  public items?: Namespace[];
-  /** リストの続きを取得するためのページトークン */
-  public nextPageToken?: string;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data) {
-      this.items = data.items.map((item: { [key: string]: any }) => {
-        return new Namespace(item);
-      });
-      this.nextPageToken = data.nextPageToken;
-    }
-  }
-
-  public withItems(items?: Namespace[]): this {
-    this.items = items;
-    return this;
-  }
-
-  public withNextPageToken(nextPageToken?: string): this {
-    this.nextPageToken = nextPageToken;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    if (this.items) {
-      data.items = this.items.map((item) => item.toDict());
-    }
-    data.nextPageToken = this.nextPageToken;
-    return data;
-  }
-
-}
-
-export class CreateNamespaceResult implements IResult {
-  /** 作成したネームスペース */
-  public item?: Namespace;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data) {
-      this.item = new Namespace(data.item);
-    }
-  }
-
-  public withItem(item?: Namespace): this {
-    this.item = item;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.item = this.item;
-    return data;
-  }
-
-}
-
-export class GetNamespaceStatusResult implements IResult {
-  /** None */
-  public status?: string;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data) {
-      this.status = data.status;
-    }
-  }
-
-  public withStatus(status?: string): this {
-    this.status = status;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.status = this.status;
-    return data;
-  }
-
-}
-
-export class GetNamespaceResult implements IResult {
-  /** ネームスペース */
-  public item?: Namespace;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data) {
-      this.item = new Namespace(data.item);
-    }
-  }
-
-  public withItem(item?: Namespace): this {
-    this.item = item;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.item = this.item;
-    return data;
-  }
-
-}
-
-export class UpdateNamespaceResult implements IResult {
-  /** 更新したネームスペース */
-  public item?: Namespace;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data) {
-      this.item = new Namespace(data.item);
-    }
-  }
-
-  public withItem(item?: Namespace): this {
-    this.item = item;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.item = this.item;
-    return data;
-  }
-
-}
-
-export class DeleteNamespaceResult implements IResult {
-  /** 削除したネームスペース */
-  public item?: Namespace;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data) {
-      this.item = new Namespace(data.item);
-    }
-  }
-
-  public withItem(item?: Namespace): this {
     this.item = item;
     return this;
   }

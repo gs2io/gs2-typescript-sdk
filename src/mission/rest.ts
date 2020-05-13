@@ -14,8 +14,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 
-import AbstractGs2RestClient from '@/gs2/core/AbstractGs2RestClient';
-import { Gs2Constant, Gs2RestSession } from '@/gs2/core/model';
+import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
+import { Gs2Constant, Gs2RestSession } from '../core/model';
 import {
   DescribeMissionGroupModelsRequest,
   GetMissionGroupModelRequest,
@@ -39,6 +39,12 @@ import {
   GetCurrentMissionMasterRequest,
   UpdateCurrentMissionMasterRequest,
   UpdateCurrentMissionMasterFromGitHubRequest,
+  DescribeNamespacesRequest,
+  CreateNamespaceRequest,
+  GetNamespaceStatusRequest,
+  GetNamespaceRequest,
+  UpdateNamespaceRequest,
+  DeleteNamespaceRequest,
   DescribeMissionTaskModelsRequest,
   GetMissionTaskModelRequest,
   DescribeMissionTaskModelMastersRequest,
@@ -46,12 +52,6 @@ import {
   GetMissionTaskModelMasterRequest,
   UpdateMissionTaskModelMasterRequest,
   DeleteMissionTaskModelMasterRequest,
-  DescribeNamespacesRequest,
-  CreateNamespaceRequest,
-  GetNamespaceStatusRequest,
-  GetNamespaceRequest,
-  UpdateNamespaceRequest,
-  DeleteNamespaceRequest,
   DescribeMissionGroupModelMastersRequest,
   CreateMissionGroupModelMasterRequest,
   GetMissionGroupModelMasterRequest,
@@ -89,6 +89,12 @@ import {
   GetCurrentMissionMasterResult,
   UpdateCurrentMissionMasterResult,
   UpdateCurrentMissionMasterFromGitHubResult,
+  DescribeNamespacesResult,
+  CreateNamespaceResult,
+  GetNamespaceStatusResult,
+  GetNamespaceResult,
+  UpdateNamespaceResult,
+  DeleteNamespaceResult,
   DescribeMissionTaskModelsResult,
   GetMissionTaskModelResult,
   DescribeMissionTaskModelMastersResult,
@@ -96,12 +102,6 @@ import {
   GetMissionTaskModelMasterResult,
   UpdateMissionTaskModelMasterResult,
   DeleteMissionTaskModelMasterResult,
-  DescribeNamespacesResult,
-  CreateNamespaceResult,
-  GetNamespaceStatusResult,
-  GetNamespaceResult,
-  UpdateNamespaceResult,
-  DeleteNamespaceResult,
   DescribeMissionGroupModelMastersResult,
   CreateMissionGroupModelMasterResult,
   GetMissionGroupModelMasterResult,
@@ -120,16 +120,16 @@ import {
   MissionGroupModel,
   ScriptSetting,
   Counter,
+  CounterScopeModel,
   GitHubCheckoutSetting,
   Complete,
-  CounterScopeModel,
   ResponseCache,
   AcquireAction,
   CurrentMissionMaster,
   Config,
+  Namespace,
   MissionTaskModel,
   MissionTaskModelMaster,
-  Namespace,
   MissionGroupModelMaster,
   LogSetting,
   CounterModelMaster,
@@ -1167,6 +1167,291 @@ export class Gs2MissionRestClient extends AbstractGs2RestClient {
   }
 
   /**
+   * ネームスペースの一覧を取得<br>
+   *
+   * @param request リクエストパラメータ
+   * @return 結果
+   */
+  public describeNamespaces(request: DescribeNamespacesRequest): Promise<DescribeNamespacesResult> {
+    const url = (Gs2Constant.ENDPOINT_HOST + '/')
+      .replace('{service}', 'mission')
+      .replace('{region}', this.session.region);
+
+    const headers = this.createAuthorizedHeaders();
+    const params: {[key: string]: any} = {};
+    params['contextStack'] = request.contextStack;
+    if (request.pageToken !== undefined ) {
+      params['pageToken'] = String(request.pageToken);
+    }
+    if (request.limit !== undefined ) {
+      params['limit'] = Number(request.limit);
+    }
+
+    if (request.requestId) {
+      headers['X-GS2-REQUEST-ID'] = request.requestId;
+    }
+
+    const config = {
+      params,
+      headers,
+    };
+    return axios.get(
+      url,
+      config,
+    )
+      .then((response: any) => {
+        return new DescribeNamespacesResult(response.data);
+      }).catch((error: any) => {
+        throw JSON.parse(error.response.data.message);
+      });
+  }
+
+  /**
+   * ネームスペースを新規作成<br>
+   *
+   * @param request リクエストパラメータ
+   * @return 結果
+   */
+  public createNamespace(request: CreateNamespaceRequest): Promise<CreateNamespaceResult> {
+    const url = (Gs2Constant.ENDPOINT_HOST + '/')
+      .replace('{service}', 'mission')
+      .replace('{region}', this.session.region);
+
+    const headers = this.createAuthorizedHeaders();
+    const body: {[key: string]: any} = {};
+    if (request.name !== undefined && request.name !== '') {
+      body['name'] = request.name;
+    }
+    if (request.description !== undefined && request.description !== '') {
+      body['description'] = request.description;
+    }
+    if (request.missionCompleteScript !== undefined) {
+      body['missionCompleteScript'] = request.missionCompleteScript ? request.missionCompleteScript.toDict() : null;
+    }
+    if (request.counterIncrementScript !== undefined) {
+      body['counterIncrementScript'] = request.counterIncrementScript ? request.counterIncrementScript.toDict() : null;
+    }
+    if (request.receiveRewardsScript !== undefined) {
+      body['receiveRewardsScript'] = request.receiveRewardsScript ? request.receiveRewardsScript.toDict() : null;
+    }
+    if (request.queueNamespaceId !== undefined && request.queueNamespaceId !== '') {
+      body['queueNamespaceId'] = request.queueNamespaceId;
+    }
+    if (request.keyId !== undefined && request.keyId !== '') {
+      body['keyId'] = request.keyId;
+    }
+    if (request.completeNotification !== undefined) {
+      body['completeNotification'] = request.completeNotification ? request.completeNotification.toDict() : null;
+    }
+    if (request.logSetting !== undefined) {
+      body['logSetting'] = request.logSetting ? request.logSetting.toDict() : null;
+    }
+    body['contextStack'] = request.contextStack;
+
+    if (request.requestId) {
+      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+    }
+
+    const config = {
+      headers,
+    };
+    return axios.post(
+      url,
+      body,
+      config,
+    )
+      .then((response: any) => {
+        return new CreateNamespaceResult(response.data);
+      }).catch((error: any) => {
+        if (error.response) {
+          throw JSON.parse(error.response.data.message);
+        } else {
+          throw [];
+        }
+      });
+  }
+
+  /**
+   * ネームスペースの状態を取得<br>
+   *
+   * @param request リクエストパラメータ
+   * @return 結果
+   */
+  public getNamespaceStatus(request: GetNamespaceStatusRequest): Promise<GetNamespaceStatusResult> {
+    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+      .replace('{service}', 'mission')
+      .replace('{region}', this.session.region)
+      .replace(
+        '{namespaceName}',
+        request.namespaceName ? String(request.namespaceName) : 'null',
+      );
+
+    const headers = this.createAuthorizedHeaders();
+    const params: {[key: string]: any} = {};
+    params['contextStack'] = request.contextStack;
+
+    if (request.requestId) {
+      headers['X-GS2-REQUEST-ID'] = request.requestId;
+    }
+
+    const config = {
+      params,
+      headers,
+    };
+    return axios.get(
+      url,
+      config,
+    )
+      .then((response: any) => {
+        return new GetNamespaceStatusResult(response.data);
+      }).catch((error: any) => {
+        throw JSON.parse(error.response.data.message);
+      });
+  }
+
+  /**
+   * ネームスペースを取得<br>
+   *
+   * @param request リクエストパラメータ
+   * @return 結果
+   */
+  public getNamespace(request: GetNamespaceRequest): Promise<GetNamespaceResult> {
+    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+      .replace('{service}', 'mission')
+      .replace('{region}', this.session.region)
+      .replace(
+        '{namespaceName}',
+        request.namespaceName ? String(request.namespaceName) : 'null',
+      );
+
+    const headers = this.createAuthorizedHeaders();
+    const params: {[key: string]: any} = {};
+    params['contextStack'] = request.contextStack;
+
+    if (request.requestId) {
+      headers['X-GS2-REQUEST-ID'] = request.requestId;
+    }
+
+    const config = {
+      params,
+      headers,
+    };
+    return axios.get(
+      url,
+      config,
+    )
+      .then((response: any) => {
+        return new GetNamespaceResult(response.data);
+      }).catch((error: any) => {
+        throw JSON.parse(error.response.data.message);
+      });
+  }
+
+  /**
+   * ネームスペースを更新<br>
+   *
+   * @param request リクエストパラメータ
+   * @return 結果
+   */
+  public updateNamespace(request: UpdateNamespaceRequest): Promise<UpdateNamespaceResult> {
+    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+      .replace('{service}', 'mission')
+      .replace('{region}', this.session.region)
+      .replace(
+        '{namespaceName}',
+        request.namespaceName ? String(request.namespaceName) : 'null',
+      );
+
+    const headers = this.createAuthorizedHeaders();
+    const body: {[key: string]: any} = {};
+    if (request.description !== undefined && request.description !== '') {
+      body['description'] = request.description;
+    }
+    if (request.missionCompleteScript !== undefined) {
+      body['missionCompleteScript'] = request.missionCompleteScript ? request.missionCompleteScript.toDict() : null;
+    }
+    if (request.counterIncrementScript !== undefined) {
+      body['counterIncrementScript'] = request.counterIncrementScript ? request.counterIncrementScript.toDict() : null;
+    }
+    if (request.receiveRewardsScript !== undefined) {
+      body['receiveRewardsScript'] = request.receiveRewardsScript ? request.receiveRewardsScript.toDict() : null;
+    }
+    if (request.queueNamespaceId !== undefined && request.queueNamespaceId !== '') {
+      body['queueNamespaceId'] = request.queueNamespaceId;
+    }
+    if (request.keyId !== undefined && request.keyId !== '') {
+      body['keyId'] = request.keyId;
+    }
+    if (request.completeNotification !== undefined) {
+      body['completeNotification'] = request.completeNotification ? request.completeNotification.toDict() : null;
+    }
+    if (request.logSetting !== undefined) {
+      body['logSetting'] = request.logSetting ? request.logSetting.toDict() : null;
+    }
+    body['contextStack'] = request.contextStack;
+
+    if (request.requestId) {
+      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+    }
+
+    const config = {
+      headers,
+    };
+    return axios.put(
+      url,
+      body,
+      config,
+    )
+      .then((response: any) => {
+        return new UpdateNamespaceResult(response.data);
+      }).catch((error: any) => {
+        if (error.response) {
+          throw JSON.parse(error.response.data.message);
+        } else {
+          throw [];
+        }
+      });
+  }
+
+  /**
+   * ネームスペースを削除<br>
+   *
+   * @param request リクエストパラメータ
+   * @return 結果
+   */
+  public deleteNamespace(request: DeleteNamespaceRequest): Promise<DeleteNamespaceResult> {
+    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+      .replace('{service}', 'mission')
+      .replace('{region}', this.session.region)
+      .replace(
+        '{namespaceName}',
+        request.namespaceName ? String(request.namespaceName) : 'null',
+      );
+
+    const headers = this.createAuthorizedHeaders();
+    const params: {[key: string]: any} = {};
+    params['contextStack'] = request.contextStack;
+
+    if (request.requestId) {
+      headers['X-GS2-REQUEST-ID'] = request.requestId;
+    }
+
+    const config = {
+      params,
+      headers,
+    };
+    return axios.delete(
+      url,
+      config,
+    )
+      .then((response: any) => {
+        return new DeleteNamespaceResult(response.data);
+      }).catch((error: any) => {
+        throw JSON.parse(error.response.data.message);
+      });
+  }
+
+  /**
    * ミッションタスクの一覧を取得<br>
    *
    * @param request リクエストパラメータ
@@ -1530,291 +1815,6 @@ export class Gs2MissionRestClient extends AbstractGs2RestClient {
     )
       .then((response: any) => {
         return new DeleteMissionTaskModelMasterResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ネームスペースの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeNamespaces(request: DescribeNamespacesRequest): Promise<DescribeNamespacesResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/')
-      .replace('{service}', 'mission')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeNamespacesResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ネームスペースを新規作成<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public createNamespace(request: CreateNamespaceRequest): Promise<CreateNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/')
-      .replace('{service}', 'mission')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.name !== undefined && request.name !== '') {
-      body['name'] = request.name;
-    }
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.missionCompleteScript !== undefined) {
-      body['missionCompleteScript'] = request.missionCompleteScript ? request.missionCompleteScript.toDict() : null;
-    }
-    if (request.counterIncrementScript !== undefined) {
-      body['counterIncrementScript'] = request.counterIncrementScript ? request.counterIncrementScript.toDict() : null;
-    }
-    if (request.receiveRewardsScript !== undefined) {
-      body['receiveRewardsScript'] = request.receiveRewardsScript ? request.receiveRewardsScript.toDict() : null;
-    }
-    if (request.queueNamespaceId !== undefined && request.queueNamespaceId !== '') {
-      body['queueNamespaceId'] = request.queueNamespaceId;
-    }
-    if (request.keyId !== undefined && request.keyId !== '') {
-      body['keyId'] = request.keyId;
-    }
-    if (request.completeNotification !== undefined) {
-      body['completeNotification'] = request.completeNotification ? request.completeNotification.toDict() : null;
-    }
-    if (request.logSetting !== undefined) {
-      body['logSetting'] = request.logSetting ? request.logSetting.toDict() : null;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new CreateNamespaceResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
-        }
-      });
-  }
-
-  /**
-   * ネームスペースの状態を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getNamespaceStatus(request: GetNamespaceStatusRequest): Promise<GetNamespaceStatusResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
-      .replace('{service}', 'mission')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetNamespaceStatusResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ネームスペースを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getNamespace(request: GetNamespaceRequest): Promise<GetNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-      .replace('{service}', 'mission')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetNamespaceResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ネームスペースを更新<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateNamespace(request: UpdateNamespaceRequest): Promise<UpdateNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-      .replace('{service}', 'mission')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.missionCompleteScript !== undefined) {
-      body['missionCompleteScript'] = request.missionCompleteScript ? request.missionCompleteScript.toDict() : null;
-    }
-    if (request.counterIncrementScript !== undefined) {
-      body['counterIncrementScript'] = request.counterIncrementScript ? request.counterIncrementScript.toDict() : null;
-    }
-    if (request.receiveRewardsScript !== undefined) {
-      body['receiveRewardsScript'] = request.receiveRewardsScript ? request.receiveRewardsScript.toDict() : null;
-    }
-    if (request.queueNamespaceId !== undefined && request.queueNamespaceId !== '') {
-      body['queueNamespaceId'] = request.queueNamespaceId;
-    }
-    if (request.keyId !== undefined && request.keyId !== '') {
-      body['keyId'] = request.keyId;
-    }
-    if (request.completeNotification !== undefined) {
-      body['completeNotification'] = request.completeNotification ? request.completeNotification.toDict() : null;
-    }
-    if (request.logSetting !== undefined) {
-      body['logSetting'] = request.logSetting ? request.logSetting.toDict() : null;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateNamespaceResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
-        }
-      });
-  }
-
-  /**
-   * ネームスペースを削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteNamespace(request: DeleteNamespaceRequest): Promise<DeleteNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-      .replace('{service}', 'mission')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteNamespaceResult(response.data);
       }).catch((error: any) => {
         throw JSON.parse(error.response.data.message);
       });

@@ -22,7 +22,7 @@ import {
   ProjectToken,
 } from './model';
 
-import IResult from '@/gs2/core/interface/IResult';
+import IResult from '../core/interface/IResult';
 
 export class DescribeUsersResult implements IResult {
   /** ユーザのリスト */

@@ -20,7 +20,7 @@ import {
   BillingActivity,
 } from './model';
 
-import IResult from '@/gs2/core/interface/IResult';
+import IResult from '../core/interface/IResult';
 
 export class GetChartResult implements IResult {
   /** チャート */

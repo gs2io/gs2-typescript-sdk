@@ -18,16 +18,16 @@ import {
   MissionGroupModel,
   ScriptSetting,
   Counter,
+  CounterScopeModel,
   GitHubCheckoutSetting,
   Complete,
-  CounterScopeModel,
   ResponseCache,
   AcquireAction,
   CurrentMissionMaster,
   Config,
+  Namespace,
   MissionTaskModel,
   MissionTaskModelMaster,
-  Namespace,
   MissionGroupModelMaster,
   LogSetting,
   CounterModelMaster,
@@ -36,7 +36,7 @@ import {
   CounterModel,
 } from './model';
 
-import { Gs2Request } from '@/gs2/core/model';
+import { Gs2Request } from '../core/model';
 
 export class DescribeMissionGroupModelsRequest extends Gs2Request {
   /** ネームスペース名 */
@@ -1408,6 +1408,415 @@ export class UpdateCurrentMissionMasterFromGitHubRequest extends Gs2Request {
 
 }
 
+export class DescribeNamespacesRequest extends Gs2Request {
+  /** データの取得を開始する位置を指定するトークン */
+  public pageToken?: string;
+  /** データの取得件数 */
+  public limit?: number;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    super(data);
+    if (data && data.pageToken !== undefined) {
+      this.pageToken = data.pageToken as string;
+    } else {
+      this.pageToken = undefined;
+    }
+    if (data && data.limit !== undefined) {
+      this.limit = data.limit as number;
+    } else {
+      this.limit = undefined;
+    }
+  }
+
+  public withPageToken(pageToken?: string): this {
+    this.pageToken = pageToken as string;
+    return this;
+  }
+
+  public withLimit(limit?: number): this {
+    this.limit = limit as number;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.pageToken = this.pageToken;
+    data.limit = this.limit;
+    return data;
+  }
+
+}
+
+export class CreateNamespaceRequest extends Gs2Request {
+  /** ネームスペース名 */
+  public name?: string;
+  /** ネームスペースの説明 */
+  public description?: string;
+  /** ミッションを達成したときに実行するスクリプト */
+  public missionCompleteScript?: ScriptSetting;
+  /** カウンターを上昇したときに実行するスクリプト */
+  public counterIncrementScript?: ScriptSetting;
+  /** 報酬を受け取ったときに実行するスクリプト */
+  public receiveRewardsScript?: ScriptSetting;
+  /** 報酬付与処理をジョブとして追加するキューネームスペース のGRN */
+  public queueNamespaceId?: string;
+  /** 報酬付与処理のスタンプシートで使用する暗号鍵GRN */
+  public keyId?: string;
+  /** ミッションのタスクを達成したときのプッシュ通知 */
+  public completeNotification?: NotificationSetting;
+  /** ログの出力設定 */
+  public logSetting?: LogSetting;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    super(data);
+    if (data && data.name !== undefined) {
+      this.name = data.name as string;
+    } else {
+      this.name = undefined;
+    }
+    if (data && data.description !== undefined) {
+      this.description = data.description as string;
+    } else {
+      this.description = undefined;
+    }
+    if (data && data.missionCompleteScript !== undefined && Object.keys(data.missionCompleteScript).length > 0) {
+      this.missionCompleteScript = new ScriptSetting(data.missionCompleteScript);
+    } else {
+      this.missionCompleteScript = undefined;
+    }
+    if (data && data.counterIncrementScript !== undefined && Object.keys(data.counterIncrementScript).length > 0) {
+      this.counterIncrementScript = new ScriptSetting(data.counterIncrementScript);
+    } else {
+      this.counterIncrementScript = undefined;
+    }
+    if (data && data.receiveRewardsScript !== undefined && Object.keys(data.receiveRewardsScript).length > 0) {
+      this.receiveRewardsScript = new ScriptSetting(data.receiveRewardsScript);
+    } else {
+      this.receiveRewardsScript = undefined;
+    }
+    if (data && data.queueNamespaceId !== undefined) {
+      this.queueNamespaceId = data.queueNamespaceId as string;
+    } else {
+      this.queueNamespaceId = undefined;
+    }
+    if (data && data.keyId !== undefined) {
+      this.keyId = data.keyId as string;
+    } else {
+      this.keyId = undefined;
+    }
+    if (data && data.completeNotification !== undefined && Object.keys(data.completeNotification).length > 0) {
+      this.completeNotification = new NotificationSetting(data.completeNotification);
+    } else {
+      this.completeNotification = undefined;
+    }
+    if (data && data.logSetting !== undefined && Object.keys(data.logSetting).length > 0) {
+      this.logSetting = new LogSetting(data.logSetting);
+    } else {
+      this.logSetting = undefined;
+    }
+  }
+
+  public withName(name?: string): this {
+    this.name = name as string;
+    return this;
+  }
+
+  public withDescription(description?: string): this {
+    this.description = description as string;
+    return this;
+  }
+
+  public withMissionCompleteScript(missionCompleteScript?: ScriptSetting): this {
+    this.missionCompleteScript = missionCompleteScript as ScriptSetting;
+    return this;
+  }
+
+  public withCounterIncrementScript(counterIncrementScript?: ScriptSetting): this {
+    this.counterIncrementScript = counterIncrementScript as ScriptSetting;
+    return this;
+  }
+
+  public withReceiveRewardsScript(receiveRewardsScript?: ScriptSetting): this {
+    this.receiveRewardsScript = receiveRewardsScript as ScriptSetting;
+    return this;
+  }
+
+  public withQueueNamespaceId(queueNamespaceId?: string): this {
+    this.queueNamespaceId = queueNamespaceId as string;
+    return this;
+  }
+
+  public withKeyId(keyId?: string): this {
+    this.keyId = keyId as string;
+    return this;
+  }
+
+  public withCompleteNotification(completeNotification?: NotificationSetting): this {
+    this.completeNotification = completeNotification as NotificationSetting;
+    return this;
+  }
+
+  public withLogSetting(logSetting?: LogSetting): this {
+    this.logSetting = logSetting as LogSetting;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.name = this.name;
+    data.description = this.description;
+    if (this.missionCompleteScript) {
+      data.missionCompleteScript = this.missionCompleteScript.toDict();
+    }
+    if (this.counterIncrementScript) {
+      data.counterIncrementScript = this.counterIncrementScript.toDict();
+    }
+    if (this.receiveRewardsScript) {
+      data.receiveRewardsScript = this.receiveRewardsScript.toDict();
+    }
+    data.queueNamespaceId = this.queueNamespaceId;
+    data.keyId = this.keyId;
+    if (this.completeNotification) {
+      data.completeNotification = this.completeNotification.toDict();
+    }
+    if (this.logSetting) {
+      data.logSetting = this.logSetting.toDict();
+    }
+    return data;
+  }
+
+}
+
+export class GetNamespaceStatusRequest extends Gs2Request {
+  /** ネームスペース名 */
+  public namespaceName?: string;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    super(data);
+    if (data && data.namespaceName !== undefined) {
+      this.namespaceName = data.namespaceName as string;
+    } else {
+      this.namespaceName = undefined;
+    }
+  }
+
+  public withNamespaceName(namespaceName?: string): this {
+    this.namespaceName = namespaceName as string;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.namespaceName = this.namespaceName;
+    return data;
+  }
+
+}
+
+export class GetNamespaceRequest extends Gs2Request {
+  /** ネームスペース名 */
+  public namespaceName?: string;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    super(data);
+    if (data && data.namespaceName !== undefined) {
+      this.namespaceName = data.namespaceName as string;
+    } else {
+      this.namespaceName = undefined;
+    }
+  }
+
+  public withNamespaceName(namespaceName?: string): this {
+    this.namespaceName = namespaceName as string;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.namespaceName = this.namespaceName;
+    return data;
+  }
+
+}
+
+export class UpdateNamespaceRequest extends Gs2Request {
+  /** ネームスペース名 */
+  public namespaceName?: string;
+  /** ネームスペースの説明 */
+  public description?: string;
+  /** ミッションを達成したときに実行するスクリプト */
+  public missionCompleteScript?: ScriptSetting;
+  /** カウンターを上昇したときに実行するスクリプト */
+  public counterIncrementScript?: ScriptSetting;
+  /** 報酬を受け取ったときに実行するスクリプト */
+  public receiveRewardsScript?: ScriptSetting;
+  /** 報酬付与処理をジョブとして追加するキューネームスペース のGRN */
+  public queueNamespaceId?: string;
+  /** 報酬付与処理のスタンプシートで使用する暗号鍵GRN */
+  public keyId?: string;
+  /** ミッションのタスクを達成したときのプッシュ通知 */
+  public completeNotification?: NotificationSetting;
+  /** ログの出力設定 */
+  public logSetting?: LogSetting;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    super(data);
+    if (data && data.namespaceName !== undefined) {
+      this.namespaceName = data.namespaceName as string;
+    } else {
+      this.namespaceName = undefined;
+    }
+    if (data && data.description !== undefined) {
+      this.description = data.description as string;
+    } else {
+      this.description = undefined;
+    }
+    if (data && data.missionCompleteScript !== undefined && Object.keys(data.missionCompleteScript).length > 0) {
+      this.missionCompleteScript = new ScriptSetting(data.missionCompleteScript);
+    } else {
+      this.missionCompleteScript = undefined;
+    }
+    if (data && data.counterIncrementScript !== undefined && Object.keys(data.counterIncrementScript).length > 0) {
+      this.counterIncrementScript = new ScriptSetting(data.counterIncrementScript);
+    } else {
+      this.counterIncrementScript = undefined;
+    }
+    if (data && data.receiveRewardsScript !== undefined && Object.keys(data.receiveRewardsScript).length > 0) {
+      this.receiveRewardsScript = new ScriptSetting(data.receiveRewardsScript);
+    } else {
+      this.receiveRewardsScript = undefined;
+    }
+    if (data && data.queueNamespaceId !== undefined) {
+      this.queueNamespaceId = data.queueNamespaceId as string;
+    } else {
+      this.queueNamespaceId = undefined;
+    }
+    if (data && data.keyId !== undefined) {
+      this.keyId = data.keyId as string;
+    } else {
+      this.keyId = undefined;
+    }
+    if (data && data.completeNotification !== undefined && Object.keys(data.completeNotification).length > 0) {
+      this.completeNotification = new NotificationSetting(data.completeNotification);
+    } else {
+      this.completeNotification = undefined;
+    }
+    if (data && data.logSetting !== undefined && Object.keys(data.logSetting).length > 0) {
+      this.logSetting = new LogSetting(data.logSetting);
+    } else {
+      this.logSetting = undefined;
+    }
+  }
+
+  public withNamespaceName(namespaceName?: string): this {
+    this.namespaceName = namespaceName as string;
+    return this;
+  }
+
+  public withDescription(description?: string): this {
+    this.description = description as string;
+    return this;
+  }
+
+  public withMissionCompleteScript(missionCompleteScript?: ScriptSetting): this {
+    this.missionCompleteScript = missionCompleteScript as ScriptSetting;
+    return this;
+  }
+
+  public withCounterIncrementScript(counterIncrementScript?: ScriptSetting): this {
+    this.counterIncrementScript = counterIncrementScript as ScriptSetting;
+    return this;
+  }
+
+  public withReceiveRewardsScript(receiveRewardsScript?: ScriptSetting): this {
+    this.receiveRewardsScript = receiveRewardsScript as ScriptSetting;
+    return this;
+  }
+
+  public withQueueNamespaceId(queueNamespaceId?: string): this {
+    this.queueNamespaceId = queueNamespaceId as string;
+    return this;
+  }
+
+  public withKeyId(keyId?: string): this {
+    this.keyId = keyId as string;
+    return this;
+  }
+
+  public withCompleteNotification(completeNotification?: NotificationSetting): this {
+    this.completeNotification = completeNotification as NotificationSetting;
+    return this;
+  }
+
+  public withLogSetting(logSetting?: LogSetting): this {
+    this.logSetting = logSetting as LogSetting;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.namespaceName = this.namespaceName;
+    data.description = this.description;
+    if (this.missionCompleteScript) {
+      data.missionCompleteScript = this.missionCompleteScript.toDict();
+    }
+    if (this.counterIncrementScript) {
+      data.counterIncrementScript = this.counterIncrementScript.toDict();
+    }
+    if (this.receiveRewardsScript) {
+      data.receiveRewardsScript = this.receiveRewardsScript.toDict();
+    }
+    data.queueNamespaceId = this.queueNamespaceId;
+    data.keyId = this.keyId;
+    if (this.completeNotification) {
+      data.completeNotification = this.completeNotification.toDict();
+    }
+    if (this.logSetting) {
+      data.logSetting = this.logSetting.toDict();
+    }
+    return data;
+  }
+
+}
+
+export class DeleteNamespaceRequest extends Gs2Request {
+  /** ネームスペース名 */
+  public namespaceName?: string;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    super(data);
+    if (data && data.namespaceName !== undefined) {
+      this.namespaceName = data.namespaceName as string;
+    } else {
+      this.namespaceName = undefined;
+    }
+  }
+
+  public withNamespaceName(namespaceName?: string): this {
+    this.namespaceName = namespaceName as string;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.namespaceName = this.namespaceName;
+    return data;
+  }
+
+}
+
 export class DescribeMissionTaskModelsRequest extends Gs2Request {
   /** ネームスペース名 */
   public namespaceName?: string;
@@ -1983,415 +2392,6 @@ export class DeleteMissionTaskModelMasterRequest extends Gs2Request {
     data.namespaceName = this.namespaceName;
     data.missionGroupName = this.missionGroupName;
     data.missionTaskName = this.missionTaskName;
-    return data;
-  }
-
-}
-
-export class DescribeNamespacesRequest extends Gs2Request {
-  /** データの取得を開始する位置を指定するトークン */
-  public pageToken?: string;
-  /** データの取得件数 */
-  public limit?: number;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    super(data);
-    if (data && data.pageToken !== undefined) {
-      this.pageToken = data.pageToken as string;
-    } else {
-      this.pageToken = undefined;
-    }
-    if (data && data.limit !== undefined) {
-      this.limit = data.limit as number;
-    } else {
-      this.limit = undefined;
-    }
-  }
-
-  public withPageToken(pageToken?: string): this {
-    this.pageToken = pageToken as string;
-    return this;
-  }
-
-  public withLimit(limit?: number): this {
-    this.limit = limit as number;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.pageToken = this.pageToken;
-    data.limit = this.limit;
-    return data;
-  }
-
-}
-
-export class CreateNamespaceRequest extends Gs2Request {
-  /** ネームスペース名 */
-  public name?: string;
-  /** ネームスペースの説明 */
-  public description?: string;
-  /** ミッションを達成したときに実行するスクリプト */
-  public missionCompleteScript?: ScriptSetting;
-  /** カウンターを上昇したときに実行するスクリプト */
-  public counterIncrementScript?: ScriptSetting;
-  /** 報酬を受け取ったときに実行するスクリプト */
-  public receiveRewardsScript?: ScriptSetting;
-  /** 報酬付与処理をジョブとして追加するキューネームスペース のGRN */
-  public queueNamespaceId?: string;
-  /** 報酬付与処理のスタンプシートで使用する暗号鍵GRN */
-  public keyId?: string;
-  /** ミッションのタスクを達成したときのプッシュ通知 */
-  public completeNotification?: NotificationSetting;
-  /** ログの出力設定 */
-  public logSetting?: LogSetting;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    super(data);
-    if (data && data.name !== undefined) {
-      this.name = data.name as string;
-    } else {
-      this.name = undefined;
-    }
-    if (data && data.description !== undefined) {
-      this.description = data.description as string;
-    } else {
-      this.description = undefined;
-    }
-    if (data && data.missionCompleteScript !== undefined && Object.keys(data.missionCompleteScript).length > 0) {
-      this.missionCompleteScript = new ScriptSetting(data.missionCompleteScript);
-    } else {
-      this.missionCompleteScript = undefined;
-    }
-    if (data && data.counterIncrementScript !== undefined && Object.keys(data.counterIncrementScript).length > 0) {
-      this.counterIncrementScript = new ScriptSetting(data.counterIncrementScript);
-    } else {
-      this.counterIncrementScript = undefined;
-    }
-    if (data && data.receiveRewardsScript !== undefined && Object.keys(data.receiveRewardsScript).length > 0) {
-      this.receiveRewardsScript = new ScriptSetting(data.receiveRewardsScript);
-    } else {
-      this.receiveRewardsScript = undefined;
-    }
-    if (data && data.queueNamespaceId !== undefined) {
-      this.queueNamespaceId = data.queueNamespaceId as string;
-    } else {
-      this.queueNamespaceId = undefined;
-    }
-    if (data && data.keyId !== undefined) {
-      this.keyId = data.keyId as string;
-    } else {
-      this.keyId = undefined;
-    }
-    if (data && data.completeNotification !== undefined && Object.keys(data.completeNotification).length > 0) {
-      this.completeNotification = new NotificationSetting(data.completeNotification);
-    } else {
-      this.completeNotification = undefined;
-    }
-    if (data && data.logSetting !== undefined && Object.keys(data.logSetting).length > 0) {
-      this.logSetting = new LogSetting(data.logSetting);
-    } else {
-      this.logSetting = undefined;
-    }
-  }
-
-  public withName(name?: string): this {
-    this.name = name as string;
-    return this;
-  }
-
-  public withDescription(description?: string): this {
-    this.description = description as string;
-    return this;
-  }
-
-  public withMissionCompleteScript(missionCompleteScript?: ScriptSetting): this {
-    this.missionCompleteScript = missionCompleteScript as ScriptSetting;
-    return this;
-  }
-
-  public withCounterIncrementScript(counterIncrementScript?: ScriptSetting): this {
-    this.counterIncrementScript = counterIncrementScript as ScriptSetting;
-    return this;
-  }
-
-  public withReceiveRewardsScript(receiveRewardsScript?: ScriptSetting): this {
-    this.receiveRewardsScript = receiveRewardsScript as ScriptSetting;
-    return this;
-  }
-
-  public withQueueNamespaceId(queueNamespaceId?: string): this {
-    this.queueNamespaceId = queueNamespaceId as string;
-    return this;
-  }
-
-  public withKeyId(keyId?: string): this {
-    this.keyId = keyId as string;
-    return this;
-  }
-
-  public withCompleteNotification(completeNotification?: NotificationSetting): this {
-    this.completeNotification = completeNotification as NotificationSetting;
-    return this;
-  }
-
-  public withLogSetting(logSetting?: LogSetting): this {
-    this.logSetting = logSetting as LogSetting;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.name = this.name;
-    data.description = this.description;
-    if (this.missionCompleteScript) {
-      data.missionCompleteScript = this.missionCompleteScript.toDict();
-    }
-    if (this.counterIncrementScript) {
-      data.counterIncrementScript = this.counterIncrementScript.toDict();
-    }
-    if (this.receiveRewardsScript) {
-      data.receiveRewardsScript = this.receiveRewardsScript.toDict();
-    }
-    data.queueNamespaceId = this.queueNamespaceId;
-    data.keyId = this.keyId;
-    if (this.completeNotification) {
-      data.completeNotification = this.completeNotification.toDict();
-    }
-    if (this.logSetting) {
-      data.logSetting = this.logSetting.toDict();
-    }
-    return data;
-  }
-
-}
-
-export class GetNamespaceStatusRequest extends Gs2Request {
-  /** ネームスペース名 */
-  public namespaceName?: string;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    super(data);
-    if (data && data.namespaceName !== undefined) {
-      this.namespaceName = data.namespaceName as string;
-    } else {
-      this.namespaceName = undefined;
-    }
-  }
-
-  public withNamespaceName(namespaceName?: string): this {
-    this.namespaceName = namespaceName as string;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.namespaceName = this.namespaceName;
-    return data;
-  }
-
-}
-
-export class GetNamespaceRequest extends Gs2Request {
-  /** ネームスペース名 */
-  public namespaceName?: string;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    super(data);
-    if (data && data.namespaceName !== undefined) {
-      this.namespaceName = data.namespaceName as string;
-    } else {
-      this.namespaceName = undefined;
-    }
-  }
-
-  public withNamespaceName(namespaceName?: string): this {
-    this.namespaceName = namespaceName as string;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.namespaceName = this.namespaceName;
-    return data;
-  }
-
-}
-
-export class UpdateNamespaceRequest extends Gs2Request {
-  /** ネームスペース名 */
-  public namespaceName?: string;
-  /** ネームスペースの説明 */
-  public description?: string;
-  /** ミッションを達成したときに実行するスクリプト */
-  public missionCompleteScript?: ScriptSetting;
-  /** カウンターを上昇したときに実行するスクリプト */
-  public counterIncrementScript?: ScriptSetting;
-  /** 報酬を受け取ったときに実行するスクリプト */
-  public receiveRewardsScript?: ScriptSetting;
-  /** 報酬付与処理をジョブとして追加するキューネームスペース のGRN */
-  public queueNamespaceId?: string;
-  /** 報酬付与処理のスタンプシートで使用する暗号鍵GRN */
-  public keyId?: string;
-  /** ミッションのタスクを達成したときのプッシュ通知 */
-  public completeNotification?: NotificationSetting;
-  /** ログの出力設定 */
-  public logSetting?: LogSetting;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    super(data);
-    if (data && data.namespaceName !== undefined) {
-      this.namespaceName = data.namespaceName as string;
-    } else {
-      this.namespaceName = undefined;
-    }
-    if (data && data.description !== undefined) {
-      this.description = data.description as string;
-    } else {
-      this.description = undefined;
-    }
-    if (data && data.missionCompleteScript !== undefined && Object.keys(data.missionCompleteScript).length > 0) {
-      this.missionCompleteScript = new ScriptSetting(data.missionCompleteScript);
-    } else {
-      this.missionCompleteScript = undefined;
-    }
-    if (data && data.counterIncrementScript !== undefined && Object.keys(data.counterIncrementScript).length > 0) {
-      this.counterIncrementScript = new ScriptSetting(data.counterIncrementScript);
-    } else {
-      this.counterIncrementScript = undefined;
-    }
-    if (data && data.receiveRewardsScript !== undefined && Object.keys(data.receiveRewardsScript).length > 0) {
-      this.receiveRewardsScript = new ScriptSetting(data.receiveRewardsScript);
-    } else {
-      this.receiveRewardsScript = undefined;
-    }
-    if (data && data.queueNamespaceId !== undefined) {
-      this.queueNamespaceId = data.queueNamespaceId as string;
-    } else {
-      this.queueNamespaceId = undefined;
-    }
-    if (data && data.keyId !== undefined) {
-      this.keyId = data.keyId as string;
-    } else {
-      this.keyId = undefined;
-    }
-    if (data && data.completeNotification !== undefined && Object.keys(data.completeNotification).length > 0) {
-      this.completeNotification = new NotificationSetting(data.completeNotification);
-    } else {
-      this.completeNotification = undefined;
-    }
-    if (data && data.logSetting !== undefined && Object.keys(data.logSetting).length > 0) {
-      this.logSetting = new LogSetting(data.logSetting);
-    } else {
-      this.logSetting = undefined;
-    }
-  }
-
-  public withNamespaceName(namespaceName?: string): this {
-    this.namespaceName = namespaceName as string;
-    return this;
-  }
-
-  public withDescription(description?: string): this {
-    this.description = description as string;
-    return this;
-  }
-
-  public withMissionCompleteScript(missionCompleteScript?: ScriptSetting): this {
-    this.missionCompleteScript = missionCompleteScript as ScriptSetting;
-    return this;
-  }
-
-  public withCounterIncrementScript(counterIncrementScript?: ScriptSetting): this {
-    this.counterIncrementScript = counterIncrementScript as ScriptSetting;
-    return this;
-  }
-
-  public withReceiveRewardsScript(receiveRewardsScript?: ScriptSetting): this {
-    this.receiveRewardsScript = receiveRewardsScript as ScriptSetting;
-    return this;
-  }
-
-  public withQueueNamespaceId(queueNamespaceId?: string): this {
-    this.queueNamespaceId = queueNamespaceId as string;
-    return this;
-  }
-
-  public withKeyId(keyId?: string): this {
-    this.keyId = keyId as string;
-    return this;
-  }
-
-  public withCompleteNotification(completeNotification?: NotificationSetting): this {
-    this.completeNotification = completeNotification as NotificationSetting;
-    return this;
-  }
-
-  public withLogSetting(logSetting?: LogSetting): this {
-    this.logSetting = logSetting as LogSetting;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.namespaceName = this.namespaceName;
-    data.description = this.description;
-    if (this.missionCompleteScript) {
-      data.missionCompleteScript = this.missionCompleteScript.toDict();
-    }
-    if (this.counterIncrementScript) {
-      data.counterIncrementScript = this.counterIncrementScript.toDict();
-    }
-    if (this.receiveRewardsScript) {
-      data.receiveRewardsScript = this.receiveRewardsScript.toDict();
-    }
-    data.queueNamespaceId = this.queueNamespaceId;
-    data.keyId = this.keyId;
-    if (this.completeNotification) {
-      data.completeNotification = this.completeNotification.toDict();
-    }
-    if (this.logSetting) {
-      data.logSetting = this.logSetting.toDict();
-    }
-    return data;
-  }
-
-}
-
-export class DeleteNamespaceRequest extends Gs2Request {
-  /** ネームスペース名 */
-  public namespaceName?: string;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    super(data);
-    if (data && data.namespaceName !== undefined) {
-      this.namespaceName = data.namespaceName as string;
-    } else {
-      this.namespaceName = undefined;
-    }
-  }
-
-  public withNamespaceName(namespaceName?: string): this {
-    this.namespaceName = namespaceName as string;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.namespaceName = this.namespaceName;
     return data;
   }
 

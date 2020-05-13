@@ -33,7 +33,7 @@ import {
   DisplayItemMaster,
 } from './model';
 
-import { Gs2Request } from '@/gs2/core/model';
+import { Gs2Request } from '../core/model';
 
 export class DescribeNamespacesRequest extends Gs2Request {
   /** データの取得を開始する位置を指定するトークン */

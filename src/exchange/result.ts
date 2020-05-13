@@ -27,7 +27,7 @@ import {
   ConsumeAction,
 } from './model';
 
-import IResult from '@/gs2/core/interface/IResult';
+import IResult from '../core/interface/IResult';
 
 export class DescribeNamespacesResult implements IResult {
   /** ネームスペースのリスト */

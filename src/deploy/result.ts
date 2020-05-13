@@ -25,7 +25,7 @@ import {
   OutputField,
 } from './model';
 
-import IResult from '@/gs2/core/interface/IResult';
+import IResult from '../core/interface/IResult';
 
 export class DescribeStacksResult implements IResult {
   /** スタックのリスト */

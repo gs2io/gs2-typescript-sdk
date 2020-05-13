@@ -14,8 +14,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 
-import AbstractGs2RestClient from '@/gs2/core/AbstractGs2RestClient';
-import { Gs2Constant, Gs2RestSession } from '@/gs2/core/model';
+import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
+import { Gs2Constant, Gs2RestSession } from '../core/model';
 import {
   DescribeStacksRequest,
   CreateStackRequest,

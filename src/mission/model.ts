@@ -14,7 +14,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 
-import IModel from '@/gs2/core/interface/IModel';
+import IModel from '../core/interface/IModel';
 
 
 /**
@@ -496,6 +496,79 @@ export class Counter implements IModel {
 
 
 /**
+ * カウンターのリセットタイミング
+ *
+ * @author Game Server Services, Inc.
+ *
+ */
+export class CounterScopeModel implements IModel {
+  /** リセットタイミング */
+  public resetType?: string;
+  /** リセットをする日にち */
+  public resetDayOfMonth?: number;
+  /** リセットする曜日 */
+  public resetDayOfWeek?: string;
+  /** リセット時刻 */
+  public resetHour?: number;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data && data.resetType !== undefined) {
+      this.resetType = data.resetType;
+    } else {
+      this.resetType = undefined;
+    }
+    if (data && data.resetDayOfMonth !== undefined) {
+      this.resetDayOfMonth = data.resetDayOfMonth;
+    } else {
+      this.resetDayOfMonth = 0;
+    }
+    if (data && data.resetDayOfWeek !== undefined) {
+      this.resetDayOfWeek = data.resetDayOfWeek;
+    } else {
+      this.resetDayOfWeek = undefined;
+    }
+    if (data && data.resetHour !== undefined) {
+      this.resetHour = data.resetHour;
+    } else {
+      this.resetHour = 0;
+    }
+  }
+
+  public withResetType(resetType?: string): this {
+    this.resetType = resetType;
+    return this;
+  }
+
+  public withResetDayOfMonth(resetDayOfMonth?: number): this {
+    this.resetDayOfMonth = resetDayOfMonth;
+    return this;
+  }
+
+  public withResetDayOfWeek(resetDayOfWeek?: string): this {
+    this.resetDayOfWeek = resetDayOfWeek;
+    return this;
+  }
+
+  public withResetHour(resetHour?: number): this {
+    this.resetHour = resetHour;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.resetType = this.resetType;
+    data.resetDayOfMonth = this.resetDayOfMonth;
+    data.resetDayOfWeek = this.resetDayOfWeek;
+    data.resetHour = this.resetHour;
+    return data;
+  }
+
+}
+
+
+/**
  * GitHubからリソースをチェックアウトしてくる設定
  *
  * @author Game Server Services, Inc.
@@ -820,79 +893,6 @@ export class Complete implements IModel {
 
 
 /**
- * カウンターのリセットタイミング
- *
- * @author Game Server Services, Inc.
- *
- */
-export class CounterScopeModel implements IModel {
-  /** リセットタイミング */
-  public resetType?: string;
-  /** リセットをする日にち */
-  public resetDayOfMonth?: number;
-  /** リセットする曜日 */
-  public resetDayOfWeek?: string;
-  /** リセット時刻 */
-  public resetHour?: number;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data && data.resetType !== undefined) {
-      this.resetType = data.resetType;
-    } else {
-      this.resetType = undefined;
-    }
-    if (data && data.resetDayOfMonth !== undefined) {
-      this.resetDayOfMonth = data.resetDayOfMonth;
-    } else {
-      this.resetDayOfMonth = 0;
-    }
-    if (data && data.resetDayOfWeek !== undefined) {
-      this.resetDayOfWeek = data.resetDayOfWeek;
-    } else {
-      this.resetDayOfWeek = undefined;
-    }
-    if (data && data.resetHour !== undefined) {
-      this.resetHour = data.resetHour;
-    } else {
-      this.resetHour = 0;
-    }
-  }
-
-  public withResetType(resetType?: string): this {
-    this.resetType = resetType;
-    return this;
-  }
-
-  public withResetDayOfMonth(resetDayOfMonth?: number): this {
-    this.resetDayOfMonth = resetDayOfMonth;
-    return this;
-  }
-
-  public withResetDayOfWeek(resetDayOfWeek?: string): this {
-    this.resetDayOfWeek = resetDayOfWeek;
-    return this;
-  }
-
-  public withResetHour(resetHour?: number): this {
-    this.resetHour = resetHour;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.resetType = this.resetType;
-    data.resetDayOfMonth = this.resetDayOfMonth;
-    data.resetDayOfWeek = this.resetDayOfWeek;
-    data.resetHour = this.resetHour;
-    return data;
-  }
-
-}
-
-
-/**
  * レスポンスキャッシュ
  *
  * @author Game Server Services, Inc.
@@ -1205,6 +1205,252 @@ export class Config implements IModel {
     const data: {[key: string]: any} = {};
     data.key = this.key;
     data.value = this.value;
+    return data;
+  }
+
+}
+
+
+/**
+ * ネームスペース
+ *
+ * @author Game Server Services, Inc.
+ *
+ */
+export class Namespace implements IModel {
+
+  public static createGrn(region: string, ownerId: string, namespaceName: string): string {
+    return 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}'
+      .replace('{region}', region)
+      .replace('{ownerId}', ownerId)
+      .replace('{namespaceName}', namespaceName);
+  }
+
+  public static getRegionFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[1];
+    }
+    return undefined;
+  }
+
+  public static getOwnerIdFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[2];
+    }
+    return undefined;
+  }
+
+  public static getNamespaceNameFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[3];
+    }
+    return undefined;
+  }
+  /** ネームスペース */
+  public namespaceId?: string;
+  /** オーナーID */
+  public ownerId?: string;
+  /** ネームスペース名 */
+  public name?: string;
+  /** ネームスペースの説明 */
+  public description?: string;
+  /** ミッションを達成したときに実行するスクリプト */
+  public missionCompleteScript?: ScriptSetting;
+  /** カウンターを上昇したときに実行するスクリプト */
+  public counterIncrementScript?: ScriptSetting;
+  /** 報酬を受け取ったときに実行するスクリプト */
+  public receiveRewardsScript?: ScriptSetting;
+  /** 報酬付与処理をジョブとして追加するキューネームスペース のGRN */
+  public queueNamespaceId?: string;
+  /** 報酬付与処理のスタンプシートで使用する暗号鍵GRN */
+  public keyId?: string;
+  /** ミッションのタスクを達成したときのプッシュ通知 */
+  public completeNotification?: NotificationSetting;
+  /** ログの出力設定 */
+  public logSetting?: LogSetting;
+  /** 作成日時 */
+  public createdAt?: number;
+  /** 最終更新日時 */
+  public updatedAt?: number;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data && data.namespaceId !== undefined) {
+      this.namespaceId = data.namespaceId;
+    } else {
+      this.namespaceId = undefined;
+    }
+    if (data && data.ownerId !== undefined) {
+      this.ownerId = data.ownerId;
+    } else {
+      this.ownerId = undefined;
+    }
+    if (data && data.name !== undefined) {
+      this.name = data.name;
+    } else {
+      this.name = undefined;
+    }
+    if (data && data.description !== undefined) {
+      this.description = data.description;
+    } else {
+      this.description = undefined;
+    }
+    if (data && data.missionCompleteScript !== undefined && Object.keys(data.missionCompleteScript).length > 0) {
+      this.missionCompleteScript = new ScriptSetting(data.missionCompleteScript);
+    } else {
+      this.missionCompleteScript = undefined;
+    }
+    if (data && data.counterIncrementScript !== undefined && Object.keys(data.counterIncrementScript).length > 0) {
+      this.counterIncrementScript = new ScriptSetting(data.counterIncrementScript);
+    } else {
+      this.counterIncrementScript = undefined;
+    }
+    if (data && data.receiveRewardsScript !== undefined && Object.keys(data.receiveRewardsScript).length > 0) {
+      this.receiveRewardsScript = new ScriptSetting(data.receiveRewardsScript);
+    } else {
+      this.receiveRewardsScript = undefined;
+    }
+    if (data && data.queueNamespaceId !== undefined) {
+      this.queueNamespaceId = data.queueNamespaceId;
+    } else {
+      this.queueNamespaceId = undefined;
+    }
+    if (data && data.keyId !== undefined) {
+      this.keyId = data.keyId;
+    } else {
+      this.keyId = undefined;
+    }
+    if (data && data.completeNotification !== undefined && Object.keys(data.completeNotification).length > 0) {
+      this.completeNotification = new NotificationSetting(data.completeNotification);
+    } else {
+      this.completeNotification = undefined;
+    }
+    if (data && data.logSetting !== undefined && Object.keys(data.logSetting).length > 0) {
+      this.logSetting = new LogSetting(data.logSetting);
+    } else {
+      this.logSetting = undefined;
+    }
+    if (data && data.createdAt !== undefined) {
+      this.createdAt = data.createdAt;
+    } else {
+      this.createdAt = 0;
+    }
+    if (data && data.updatedAt !== undefined) {
+      this.updatedAt = data.updatedAt;
+    } else {
+      this.updatedAt = 0;
+    }
+  }
+
+  public withNamespaceId(namespaceId?: string): this {
+    this.namespaceId = namespaceId;
+    return this;
+  }
+
+  public withOwnerId(ownerId?: string): this {
+    this.ownerId = ownerId;
+    return this;
+  }
+
+  public withName(name?: string): this {
+    this.name = name;
+    return this;
+  }
+
+  public withDescription(description?: string): this {
+    this.description = description;
+    return this;
+  }
+
+  public withMissionCompleteScript(missionCompleteScript?: ScriptSetting): this {
+    this.missionCompleteScript = missionCompleteScript;
+    return this;
+  }
+
+  public withCounterIncrementScript(counterIncrementScript?: ScriptSetting): this {
+    this.counterIncrementScript = counterIncrementScript;
+    return this;
+  }
+
+  public withReceiveRewardsScript(receiveRewardsScript?: ScriptSetting): this {
+    this.receiveRewardsScript = receiveRewardsScript;
+    return this;
+  }
+
+  public withQueueNamespaceId(queueNamespaceId?: string): this {
+    this.queueNamespaceId = queueNamespaceId;
+    return this;
+  }
+
+  public withKeyId(keyId?: string): this {
+    this.keyId = keyId;
+    return this;
+  }
+
+  public withCompleteNotification(completeNotification?: NotificationSetting): this {
+    this.completeNotification = completeNotification;
+    return this;
+  }
+
+  public withLogSetting(logSetting?: LogSetting): this {
+    this.logSetting = logSetting;
+    return this;
+  }
+
+  public withCreatedAt(createdAt?: number): this {
+    this.createdAt = createdAt;
+    return this;
+  }
+
+  public withUpdatedAt(updatedAt?: number): this {
+    this.updatedAt = updatedAt;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.namespaceId = this.namespaceId;
+    data.ownerId = this.ownerId;
+    data.name = this.name;
+    data.description = this.description;
+    if (this.missionCompleteScript) {
+      data.missionCompleteScript = this.missionCompleteScript.toDict();
+    }
+    if (this.counterIncrementScript) {
+      data.counterIncrementScript = this.counterIncrementScript.toDict();
+    }
+    if (this.receiveRewardsScript) {
+      data.receiveRewardsScript = this.receiveRewardsScript.toDict();
+    }
+    data.queueNamespaceId = this.queueNamespaceId;
+    data.keyId = this.keyId;
+    if (this.completeNotification) {
+      data.completeNotification = this.completeNotification.toDict();
+    }
+    if (this.logSetting) {
+      data.logSetting = this.logSetting.toDict();
+    }
+    data.createdAt = this.createdAt;
+    data.updatedAt = this.updatedAt;
     return data;
   }
 
@@ -1680,252 +1926,6 @@ export class MissionTaskModelMaster implements IModel {
     }
     data.challengePeriodEventId = this.challengePeriodEventId;
     data.premiseMissionTaskName = this.premiseMissionTaskName;
-    data.createdAt = this.createdAt;
-    data.updatedAt = this.updatedAt;
-    return data;
-  }
-
-}
-
-
-/**
- * ネームスペース
- *
- * @author Game Server Services, Inc.
- *
- */
-export class Namespace implements IModel {
-
-  public static createGrn(region: string, ownerId: string, namespaceName: string): string {
-    return 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}'
-      .replace('{region}', region)
-      .replace('{ownerId}', ownerId)
-      .replace('{namespaceName}', namespaceName);
-  }
-
-  public static getRegionFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[1];
-    }
-    return undefined;
-  }
-
-  public static getOwnerIdFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[2];
-    }
-    return undefined;
-  }
-
-  public static getNamespaceNameFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[3];
-    }
-    return undefined;
-  }
-  /** ネームスペース */
-  public namespaceId?: string;
-  /** オーナーID */
-  public ownerId?: string;
-  /** ネームスペース名 */
-  public name?: string;
-  /** ネームスペースの説明 */
-  public description?: string;
-  /** ミッションを達成したときに実行するスクリプト */
-  public missionCompleteScript?: ScriptSetting;
-  /** カウンターを上昇したときに実行するスクリプト */
-  public counterIncrementScript?: ScriptSetting;
-  /** 報酬を受け取ったときに実行するスクリプト */
-  public receiveRewardsScript?: ScriptSetting;
-  /** 報酬付与処理をジョブとして追加するキューネームスペース のGRN */
-  public queueNamespaceId?: string;
-  /** 報酬付与処理のスタンプシートで使用する暗号鍵GRN */
-  public keyId?: string;
-  /** ミッションのタスクを達成したときのプッシュ通知 */
-  public completeNotification?: NotificationSetting;
-  /** ログの出力設定 */
-  public logSetting?: LogSetting;
-  /** 作成日時 */
-  public createdAt?: number;
-  /** 最終更新日時 */
-  public updatedAt?: number;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data && data.namespaceId !== undefined) {
-      this.namespaceId = data.namespaceId;
-    } else {
-      this.namespaceId = undefined;
-    }
-    if (data && data.ownerId !== undefined) {
-      this.ownerId = data.ownerId;
-    } else {
-      this.ownerId = undefined;
-    }
-    if (data && data.name !== undefined) {
-      this.name = data.name;
-    } else {
-      this.name = undefined;
-    }
-    if (data && data.description !== undefined) {
-      this.description = data.description;
-    } else {
-      this.description = undefined;
-    }
-    if (data && data.missionCompleteScript !== undefined && Object.keys(data.missionCompleteScript).length > 0) {
-      this.missionCompleteScript = new ScriptSetting(data.missionCompleteScript);
-    } else {
-      this.missionCompleteScript = undefined;
-    }
-    if (data && data.counterIncrementScript !== undefined && Object.keys(data.counterIncrementScript).length > 0) {
-      this.counterIncrementScript = new ScriptSetting(data.counterIncrementScript);
-    } else {
-      this.counterIncrementScript = undefined;
-    }
-    if (data && data.receiveRewardsScript !== undefined && Object.keys(data.receiveRewardsScript).length > 0) {
-      this.receiveRewardsScript = new ScriptSetting(data.receiveRewardsScript);
-    } else {
-      this.receiveRewardsScript = undefined;
-    }
-    if (data && data.queueNamespaceId !== undefined) {
-      this.queueNamespaceId = data.queueNamespaceId;
-    } else {
-      this.queueNamespaceId = undefined;
-    }
-    if (data && data.keyId !== undefined) {
-      this.keyId = data.keyId;
-    } else {
-      this.keyId = undefined;
-    }
-    if (data && data.completeNotification !== undefined && Object.keys(data.completeNotification).length > 0) {
-      this.completeNotification = new NotificationSetting(data.completeNotification);
-    } else {
-      this.completeNotification = undefined;
-    }
-    if (data && data.logSetting !== undefined && Object.keys(data.logSetting).length > 0) {
-      this.logSetting = new LogSetting(data.logSetting);
-    } else {
-      this.logSetting = undefined;
-    }
-    if (data && data.createdAt !== undefined) {
-      this.createdAt = data.createdAt;
-    } else {
-      this.createdAt = 0;
-    }
-    if (data && data.updatedAt !== undefined) {
-      this.updatedAt = data.updatedAt;
-    } else {
-      this.updatedAt = 0;
-    }
-  }
-
-  public withNamespaceId(namespaceId?: string): this {
-    this.namespaceId = namespaceId;
-    return this;
-  }
-
-  public withOwnerId(ownerId?: string): this {
-    this.ownerId = ownerId;
-    return this;
-  }
-
-  public withName(name?: string): this {
-    this.name = name;
-    return this;
-  }
-
-  public withDescription(description?: string): this {
-    this.description = description;
-    return this;
-  }
-
-  public withMissionCompleteScript(missionCompleteScript?: ScriptSetting): this {
-    this.missionCompleteScript = missionCompleteScript;
-    return this;
-  }
-
-  public withCounterIncrementScript(counterIncrementScript?: ScriptSetting): this {
-    this.counterIncrementScript = counterIncrementScript;
-    return this;
-  }
-
-  public withReceiveRewardsScript(receiveRewardsScript?: ScriptSetting): this {
-    this.receiveRewardsScript = receiveRewardsScript;
-    return this;
-  }
-
-  public withQueueNamespaceId(queueNamespaceId?: string): this {
-    this.queueNamespaceId = queueNamespaceId;
-    return this;
-  }
-
-  public withKeyId(keyId?: string): this {
-    this.keyId = keyId;
-    return this;
-  }
-
-  public withCompleteNotification(completeNotification?: NotificationSetting): this {
-    this.completeNotification = completeNotification;
-    return this;
-  }
-
-  public withLogSetting(logSetting?: LogSetting): this {
-    this.logSetting = logSetting;
-    return this;
-  }
-
-  public withCreatedAt(createdAt?: number): this {
-    this.createdAt = createdAt;
-    return this;
-  }
-
-  public withUpdatedAt(updatedAt?: number): this {
-    this.updatedAt = updatedAt;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.namespaceId = this.namespaceId;
-    data.ownerId = this.ownerId;
-    data.name = this.name;
-    data.description = this.description;
-    if (this.missionCompleteScript) {
-      data.missionCompleteScript = this.missionCompleteScript.toDict();
-    }
-    if (this.counterIncrementScript) {
-      data.counterIncrementScript = this.counterIncrementScript.toDict();
-    }
-    if (this.receiveRewardsScript) {
-      data.receiveRewardsScript = this.receiveRewardsScript.toDict();
-    }
-    data.queueNamespaceId = this.queueNamespaceId;
-    data.keyId = this.keyId;
-    if (this.completeNotification) {
-      data.completeNotification = this.completeNotification.toDict();
-    }
-    if (this.logSetting) {
-      data.logSetting = this.logSetting.toDict();
-    }
     data.createdAt = this.createdAt;
     data.updatedAt = this.updatedAt;
     return data;
