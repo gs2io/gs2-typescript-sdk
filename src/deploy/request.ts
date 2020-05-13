@@ -25,7 +25,7 @@ import {
   OutputField,
 } from './model';
 
-import { Gs2Request } from '../core/model';
+import { Gs2Request } from '@/gs2/core/model';
 
 export class DescribeStacksRequest extends Gs2Request {
   /** データの取得を開始する位置を指定するトークン */

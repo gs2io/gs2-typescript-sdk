@@ -27,7 +27,7 @@ import {
   LogSetting,
 } from './model';
 
-import { Gs2Request } from '../core/model';
+import { Gs2Request } from '@/gs2/core/model';
 
 export class DescribeNamespacesRequest extends Gs2Request {
   /** データの取得を開始する位置を指定するトークン */
@@ -1161,6 +1161,60 @@ export class ResetByUserIdRequest extends Gs2Request {
     const data: {[key: string]: any} = {};
     data.namespaceName = this.namespaceName;
     data.userId = this.userId;
+    data.xGs2DuplicationAvoider = this.xGs2DuplicationAvoider;
+    return data;
+  }
+
+}
+
+export class AddEntriesByStampSheetRequest extends Gs2Request {
+  /** スタンプシート */
+  public stampSheet?: string;
+  /** スタンプシートの署名検証に使用する 暗号鍵 のGRN */
+  public keyId?: string;
+  /** 重複実行回避機能に使用するID */
+  public xGs2DuplicationAvoider?: string;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    super(data);
+    if (data && data.stampSheet !== undefined) {
+      this.stampSheet = data.stampSheet as string;
+    } else {
+      this.stampSheet = undefined;
+    }
+    if (data && data.keyId !== undefined) {
+      this.keyId = data.keyId as string;
+    } else {
+      this.keyId = undefined;
+    }
+    if (data && data.xGs2DuplicationAvoider !== undefined) {
+      this.xGs2DuplicationAvoider = data.xGs2DuplicationAvoider as string;
+    } else {
+      this.xGs2DuplicationAvoider = undefined;
+    }
+  }
+
+  public withStampSheet(stampSheet?: string): this {
+    this.stampSheet = stampSheet as string;
+    return this;
+  }
+
+  public withKeyId(keyId?: string): this {
+    this.keyId = keyId as string;
+    return this;
+  }
+
+  public withXGs2DuplicationAvoider(xGs2DuplicationAvoider?: string): this {
+    this.xGs2DuplicationAvoider = xGs2DuplicationAvoider as string;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.stampSheet = this.stampSheet;
+    data.keyId = this.keyId;
     data.xGs2DuplicationAvoider = this.xGs2DuplicationAvoider;
     return data;
   }

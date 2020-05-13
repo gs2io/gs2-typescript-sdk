@@ -18,7 +18,7 @@ import {
   AccessToken,
 } from './model';
 
-import { Gs2Request } from '../core/model';
+import { Gs2Request } from '@/gs2/core/model';
 
 export class LoginRequest extends Gs2Request {
   /** ユーザーID */

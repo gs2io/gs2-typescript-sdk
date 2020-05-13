@@ -20,7 +20,7 @@ import {
   BillingActivity,
 } from './model';
 
-import { Gs2Request } from '../core/model';
+import { Gs2Request } from '@/gs2/core/model';
 
 export class GetChartRequest extends Gs2Request {
   /** 指標 */

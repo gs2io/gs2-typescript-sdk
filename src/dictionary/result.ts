@@ -27,7 +27,7 @@ import {
   LogSetting,
 } from './model';
 
-import IResult from '../core/interface/IResult';
+import IResult from '@/gs2/core/interface/IResult';
 
 export class DescribeNamespacesResult implements IResult {
   /** ネームスペースのリスト */
@@ -634,6 +634,35 @@ export class ResetByUserIdResult implements IResult {
 
   public toDict(): {[key: string]: any} {
     const data: {[key: string]: any} = {};
+    return data;
+  }
+
+}
+
+export class AddEntriesByStampSheetResult implements IResult {
+  /** 追加後のエントリーのリスト */
+  public items?: Entry[];
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data) {
+      this.items = data.items.map((item: { [key: string]: any }) => {
+        return new Entry(item);
+      });
+    }
+  }
+
+  public withItems(items?: Entry[]): this {
+    this.items = items;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    if (this.items) {
+      data.items = this.items.map((item) => item.toDict());
+    }
     return data;
   }
 

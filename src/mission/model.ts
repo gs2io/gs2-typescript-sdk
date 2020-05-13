@@ -14,7 +14,219 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 
-import IModel from '../core/interface/IModel';
+import IModel from '@/gs2/core/interface/IModel';
+
+
+/**
+ * ミッショングループ
+ *
+ * @author Game Server Services, Inc.
+ *
+ */
+export class MissionGroupModel implements IModel {
+
+  public static createGrn(region: string, ownerId: string, namespaceName: string, missionGroupName: string): string {
+    return 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:'
+      .replace('{region}', region)
+      .replace('{ownerId}', ownerId)
+      .replace('{namespaceName}', namespaceName)
+      .replace('{missionGroupName}', missionGroupName);
+  }
+
+  public static getRegionFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[1];
+    }
+    return undefined;
+  }
+
+  public static getOwnerIdFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[2];
+    }
+    return undefined;
+  }
+
+  public static getNamespaceNameFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[3];
+    }
+    return undefined;
+  }
+
+  public static getMissionGroupNameFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[4];
+    }
+    return undefined;
+  }
+  /** ミッショングループ */
+  public missionGroupId?: string;
+  /** グループ名 */
+  public name?: string;
+  /** メタデータ */
+  public metadata?: string;
+  /** タスクリスト */
+  public tasks?: MissionTaskModel[];
+  /** リセットタイミング */
+  public resetType?: string;
+  /** リセットをする日にち */
+  public resetDayOfMonth?: number;
+  /** リセットする曜日 */
+  public resetDayOfWeek?: string;
+  /** リセット時刻 */
+  public resetHour?: number;
+  /** ミッションを達成したときの通知先ネームスペース のGRN */
+  public completeNotificationNamespaceId?: string;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data && data.missionGroupId !== undefined) {
+      this.missionGroupId = data.missionGroupId;
+    } else {
+      this.missionGroupId = undefined;
+    }
+    if (data && data.name !== undefined) {
+      this.name = data.name;
+    } else {
+      this.name = undefined;
+    }
+    if (data && data.metadata !== undefined) {
+      this.metadata = data.metadata;
+    } else {
+      this.metadata = undefined;
+    }
+    if (data && data.tasks !== undefined) {
+      this.tasks = data.tasks as MissionTaskModel[];
+      for (let i = 0; i < data.tasks.length; i++) {
+            this.tasks[i] = new MissionTaskModel(data.tasks[i]);
+      }
+    } else {
+      this.tasks = undefined;
+    }
+    if (data && data.resetType !== undefined) {
+      this.resetType = data.resetType;
+    } else {
+      this.resetType = undefined;
+    }
+    if (data && data.resetDayOfMonth !== undefined) {
+      this.resetDayOfMonth = data.resetDayOfMonth;
+    } else {
+      this.resetDayOfMonth = 0;
+    }
+    if (data && data.resetDayOfWeek !== undefined) {
+      this.resetDayOfWeek = data.resetDayOfWeek;
+    } else {
+      this.resetDayOfWeek = undefined;
+    }
+    if (data && data.resetHour !== undefined) {
+      this.resetHour = data.resetHour;
+    } else {
+      this.resetHour = 0;
+    }
+    if (data && data.completeNotificationNamespaceId !== undefined) {
+      this.completeNotificationNamespaceId = data.completeNotificationNamespaceId;
+    } else {
+      this.completeNotificationNamespaceId = undefined;
+    }
+  }
+
+  public withMissionGroupId(missionGroupId?: string): this {
+    this.missionGroupId = missionGroupId;
+    return this;
+  }
+
+  public withName(name?: string): this {
+    this.name = name;
+    return this;
+  }
+
+  public withMetadata(metadata?: string): this {
+    this.metadata = metadata;
+    return this;
+  }
+
+  public withTasks(tasks?: MissionTaskModel[]): this {
+    this.tasks = tasks as MissionTaskModel[];
+    if (tasks) {
+      for (let i = 0; i < tasks!.length; i++) {
+          this.tasks[i] = tasks![i];
+      }
+    }
+    return this;
+  }
+
+  public withResetType(resetType?: string): this {
+    this.resetType = resetType;
+    return this;
+  }
+
+  public withResetDayOfMonth(resetDayOfMonth?: number): this {
+    this.resetDayOfMonth = resetDayOfMonth;
+    return this;
+  }
+
+  public withResetDayOfWeek(resetDayOfWeek?: string): this {
+    this.resetDayOfWeek = resetDayOfWeek;
+    return this;
+  }
+
+  public withResetHour(resetHour?: number): this {
+    this.resetHour = resetHour;
+    return this;
+  }
+
+  public withCompleteNotificationNamespaceId(completeNotificationNamespaceId?: string): this {
+    this.completeNotificationNamespaceId = completeNotificationNamespaceId;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.missionGroupId = this.missionGroupId;
+    data.name = this.name;
+    data.metadata = this.metadata;
+    if (this.tasks) {
+      data.tasks = this.tasks.map((item) => item.toDict());
+    }
+    data.resetType = this.resetType;
+    data.resetDayOfMonth = this.resetDayOfMonth;
+    data.resetDayOfWeek = this.resetDayOfWeek;
+    data.resetHour = this.resetHour;
+    data.completeNotificationNamespaceId = this.completeNotificationNamespaceId;
+    return data;
+  }
+
+}
 
 
 /**
@@ -84,6 +296,199 @@ export class ScriptSetting implements IModel {
     data.doneTriggerTargetType = this.doneTriggerTargetType;
     data.doneTriggerScriptId = this.doneTriggerScriptId;
     data.doneTriggerQueueNamespaceId = this.doneTriggerQueueNamespaceId;
+    return data;
+  }
+
+}
+
+
+/**
+ * カウンター
+ *
+ * @author Game Server Services, Inc.
+ *
+ */
+export class Counter implements IModel {
+
+  public static createGrn(region: string, ownerId: string, namespaceName: string, userId: string, counterName: string): string {
+    return 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:counter:{counterName}'
+      .replace('{region}', region)
+      .replace('{ownerId}', ownerId)
+      .replace('{namespaceName}', namespaceName)
+      .replace('{userId}', userId)
+      .replace('{counterName}', counterName);
+  }
+
+  public static getRegionFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:counter:{counterName}';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{userId}', '(.*)');
+    grnFormat = grnFormat.replace('{counterName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[1];
+    }
+    return undefined;
+  }
+
+  public static getOwnerIdFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:counter:{counterName}';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{userId}', '(.*)');
+    grnFormat = grnFormat.replace('{counterName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[2];
+    }
+    return undefined;
+  }
+
+  public static getNamespaceNameFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:counter:{counterName}';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{userId}', '(.*)');
+    grnFormat = grnFormat.replace('{counterName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[3];
+    }
+    return undefined;
+  }
+
+  public static getUserIdFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:counter:{counterName}';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{userId}', '(.*)');
+    grnFormat = grnFormat.replace('{counterName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[4];
+    }
+    return undefined;
+  }
+
+  public static getCounterNameFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:counter:{counterName}';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{userId}', '(.*)');
+    grnFormat = grnFormat.replace('{counterName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[5];
+    }
+    return undefined;
+  }
+  /** カウンター */
+  public counterId?: string;
+  /** ユーザーID */
+  public userId?: string;
+  /** カウンター名 */
+  public name?: string;
+  /** 値 */
+  public values?: ScopedValue[];
+  /** 作成日時 */
+  public createdAt?: number;
+  /** 最終更新日時 */
+  public updatedAt?: number;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data && data.counterId !== undefined) {
+      this.counterId = data.counterId;
+    } else {
+      this.counterId = undefined;
+    }
+    if (data && data.userId !== undefined) {
+      this.userId = data.userId;
+    } else {
+      this.userId = undefined;
+    }
+    if (data && data.name !== undefined) {
+      this.name = data.name;
+    } else {
+      this.name = undefined;
+    }
+    if (data && data.values !== undefined) {
+      this.values = data.values as ScopedValue[];
+      for (let i = 0; i < data.values.length; i++) {
+            this.values[i] = new ScopedValue(data.values[i]);
+      }
+    } else {
+      this.values = undefined;
+    }
+    if (data && data.createdAt !== undefined) {
+      this.createdAt = data.createdAt;
+    } else {
+      this.createdAt = 0;
+    }
+    if (data && data.updatedAt !== undefined) {
+      this.updatedAt = data.updatedAt;
+    } else {
+      this.updatedAt = 0;
+    }
+  }
+
+  public withCounterId(counterId?: string): this {
+    this.counterId = counterId;
+    return this;
+  }
+
+  public withUserId(userId?: string): this {
+    this.userId = userId;
+    return this;
+  }
+
+  public withName(name?: string): this {
+    this.name = name;
+    return this;
+  }
+
+  public withValues(values?: ScopedValue[]): this {
+    this.values = values as ScopedValue[];
+    if (values) {
+      for (let i = 0; i < values!.length; i++) {
+          this.values[i] = values![i];
+      }
+    }
+    return this;
+  }
+
+  public withCreatedAt(createdAt?: number): this {
+    this.createdAt = createdAt;
+    return this;
+  }
+
+  public withUpdatedAt(updatedAt?: number): this {
+    this.updatedAt = updatedAt;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.counterId = this.counterId;
+    data.userId = this.userId;
+    data.name = this.name;
+    if (this.values) {
+      data.values = this.values.map((item) => item.toDict());
+    }
+    data.createdAt = this.createdAt;
+    data.updatedAt = this.updatedAt;
     return data;
   }
 
@@ -196,6 +601,610 @@ export class GitHubCheckoutSetting implements IModel {
     data.commitHash = this.commitHash;
     data.branchName = this.branchName;
     data.tagName = this.tagName;
+    return data;
+  }
+
+}
+
+
+/**
+ * 達成状況
+ *
+ * @author Game Server Services, Inc.
+ *
+ */
+export class Complete implements IModel {
+
+  public static createGrn(region: string, ownerId: string, namespaceName: string, userId: string, missionGroupName: string): string {
+    return 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:group:{missionGroupName}:complete'
+      .replace('{region}', region)
+      .replace('{ownerId}', ownerId)
+      .replace('{namespaceName}', namespaceName)
+      .replace('{userId}', userId)
+      .replace('{missionGroupName}', missionGroupName);
+  }
+
+  public static getRegionFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:group:{missionGroupName}:complete';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{userId}', '(.*)');
+    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[1];
+    }
+    return undefined;
+  }
+
+  public static getOwnerIdFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:group:{missionGroupName}:complete';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{userId}', '(.*)');
+    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[2];
+    }
+    return undefined;
+  }
+
+  public static getNamespaceNameFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:group:{missionGroupName}:complete';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{userId}', '(.*)');
+    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[3];
+    }
+    return undefined;
+  }
+
+  public static getUserIdFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:group:{missionGroupName}:complete';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{userId}', '(.*)');
+    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[4];
+    }
+    return undefined;
+  }
+
+  public static getMissionGroupNameFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:group:{missionGroupName}:complete';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{userId}', '(.*)');
+    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[5];
+    }
+    return undefined;
+  }
+  /** 達成状況 */
+  public completeId?: string;
+  /** ユーザーID */
+  public userId?: string;
+  /** ミッショングループ名 */
+  public missionGroupName?: string;
+  /** 達成済みのタスク名リスト */
+  public completedMissionTaskNames?: string[];
+  /** 報酬の受け取り済みのタスク名リスト */
+  public receivedMissionTaskNames?: string[];
+  /** 作成日時 */
+  public createdAt?: number;
+  /** 最終更新日時 */
+  public updatedAt?: number;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data && data.completeId !== undefined) {
+      this.completeId = data.completeId;
+    } else {
+      this.completeId = undefined;
+    }
+    if (data && data.userId !== undefined) {
+      this.userId = data.userId;
+    } else {
+      this.userId = undefined;
+    }
+    if (data && data.missionGroupName !== undefined) {
+      this.missionGroupName = data.missionGroupName;
+    } else {
+      this.missionGroupName = undefined;
+    }
+    if (data && data.completedMissionTaskNames !== undefined) {
+      this.completedMissionTaskNames = data.completedMissionTaskNames as string[];
+      for (let i = 0; i < data.completedMissionTaskNames.length; i++) {
+            this.completedMissionTaskNames[i] = data.completedMissionTaskNames[i];
+      }
+    } else {
+      this.completedMissionTaskNames = undefined;
+    }
+    if (data && data.receivedMissionTaskNames !== undefined) {
+      this.receivedMissionTaskNames = data.receivedMissionTaskNames as string[];
+      for (let i = 0; i < data.receivedMissionTaskNames.length; i++) {
+            this.receivedMissionTaskNames[i] = data.receivedMissionTaskNames[i];
+      }
+    } else {
+      this.receivedMissionTaskNames = undefined;
+    }
+    if (data && data.createdAt !== undefined) {
+      this.createdAt = data.createdAt;
+    } else {
+      this.createdAt = 0;
+    }
+    if (data && data.updatedAt !== undefined) {
+      this.updatedAt = data.updatedAt;
+    } else {
+      this.updatedAt = 0;
+    }
+  }
+
+  public withCompleteId(completeId?: string): this {
+    this.completeId = completeId;
+    return this;
+  }
+
+  public withUserId(userId?: string): this {
+    this.userId = userId;
+    return this;
+  }
+
+  public withMissionGroupName(missionGroupName?: string): this {
+    this.missionGroupName = missionGroupName;
+    return this;
+  }
+
+  public withCompletedMissionTaskNames(completedMissionTaskNames?: string[]): this {
+    this.completedMissionTaskNames = completedMissionTaskNames as string[];
+    if (completedMissionTaskNames) {
+      for (let i = 0; i < completedMissionTaskNames!.length; i++) {
+          this.completedMissionTaskNames[i] = String(completedMissionTaskNames![i]);
+      }
+    }
+    return this;
+  }
+
+  public withReceivedMissionTaskNames(receivedMissionTaskNames?: string[]): this {
+    this.receivedMissionTaskNames = receivedMissionTaskNames as string[];
+    if (receivedMissionTaskNames) {
+      for (let i = 0; i < receivedMissionTaskNames!.length; i++) {
+          this.receivedMissionTaskNames[i] = String(receivedMissionTaskNames![i]);
+      }
+    }
+    return this;
+  }
+
+  public withCreatedAt(createdAt?: number): this {
+    this.createdAt = createdAt;
+    return this;
+  }
+
+  public withUpdatedAt(updatedAt?: number): this {
+    this.updatedAt = updatedAt;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.completeId = this.completeId;
+    data.userId = this.userId;
+    data.missionGroupName = this.missionGroupName;
+    data.completedMissionTaskNames = this.completedMissionTaskNames;
+    data.receivedMissionTaskNames = this.receivedMissionTaskNames;
+    data.createdAt = this.createdAt;
+    data.updatedAt = this.updatedAt;
+    return data;
+  }
+
+}
+
+
+/**
+ * カウンターのリセットタイミング
+ *
+ * @author Game Server Services, Inc.
+ *
+ */
+export class CounterScopeModel implements IModel {
+  /** リセットタイミング */
+  public resetType?: string;
+  /** リセットをする日にち */
+  public resetDayOfMonth?: number;
+  /** リセットする曜日 */
+  public resetDayOfWeek?: string;
+  /** リセット時刻 */
+  public resetHour?: number;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data && data.resetType !== undefined) {
+      this.resetType = data.resetType;
+    } else {
+      this.resetType = undefined;
+    }
+    if (data && data.resetDayOfMonth !== undefined) {
+      this.resetDayOfMonth = data.resetDayOfMonth;
+    } else {
+      this.resetDayOfMonth = 0;
+    }
+    if (data && data.resetDayOfWeek !== undefined) {
+      this.resetDayOfWeek = data.resetDayOfWeek;
+    } else {
+      this.resetDayOfWeek = undefined;
+    }
+    if (data && data.resetHour !== undefined) {
+      this.resetHour = data.resetHour;
+    } else {
+      this.resetHour = 0;
+    }
+  }
+
+  public withResetType(resetType?: string): this {
+    this.resetType = resetType;
+    return this;
+  }
+
+  public withResetDayOfMonth(resetDayOfMonth?: number): this {
+    this.resetDayOfMonth = resetDayOfMonth;
+    return this;
+  }
+
+  public withResetDayOfWeek(resetDayOfWeek?: string): this {
+    this.resetDayOfWeek = resetDayOfWeek;
+    return this;
+  }
+
+  public withResetHour(resetHour?: number): this {
+    this.resetHour = resetHour;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.resetType = this.resetType;
+    data.resetDayOfMonth = this.resetDayOfMonth;
+    data.resetDayOfWeek = this.resetDayOfWeek;
+    data.resetHour = this.resetHour;
+    return data;
+  }
+
+}
+
+
+/**
+ * レスポンスキャッシュ
+ *
+ * @author Game Server Services, Inc.
+ *
+ */
+export class ResponseCache implements IModel {
+
+  public static createGrn(requestHash: string, ownerId: string, region: string): string {
+    return 'grn:gs2:{region}:{ownerId}:hash:{requestHash}'
+      .replace('{requestHash}', requestHash)
+      .replace('{ownerId}', ownerId)
+      .replace('{region}', region);
+  }
+
+  public static getRequestHashFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:hash:{requestHash}';
+    grnFormat = grnFormat.replace('{requestHash}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[1];
+    }
+    return undefined;
+  }
+
+  public static getOwnerIdFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:hash:{requestHash}';
+    grnFormat = grnFormat.replace('{requestHash}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[2];
+    }
+    return undefined;
+  }
+
+  public static getRegionFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:hash:{requestHash}';
+    grnFormat = grnFormat.replace('{requestHash}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[3];
+    }
+    return undefined;
+  }
+  /** None */
+  public region?: string;
+  /** オーナーID */
+  public ownerId?: string;
+  /** レスポンスキャッシュ のGRN */
+  public responseCacheId?: string;
+  /** None */
+  public requestHash?: string;
+  /** APIの応答内容 */
+  public result?: string;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data && data.region !== undefined) {
+      this.region = data.region;
+    } else {
+      this.region = undefined;
+    }
+    if (data && data.ownerId !== undefined) {
+      this.ownerId = data.ownerId;
+    } else {
+      this.ownerId = undefined;
+    }
+    if (data && data.responseCacheId !== undefined) {
+      this.responseCacheId = data.responseCacheId;
+    } else {
+      this.responseCacheId = undefined;
+    }
+    if (data && data.requestHash !== undefined) {
+      this.requestHash = data.requestHash;
+    } else {
+      this.requestHash = undefined;
+    }
+    if (data && data.result !== undefined) {
+      this.result = data.result;
+    } else {
+      this.result = undefined;
+    }
+  }
+
+  public withRegion(region?: string): this {
+    this.region = region;
+    return this;
+  }
+
+  public withOwnerId(ownerId?: string): this {
+    this.ownerId = ownerId;
+    return this;
+  }
+
+  public withResponseCacheId(responseCacheId?: string): this {
+    this.responseCacheId = responseCacheId;
+    return this;
+  }
+
+  public withRequestHash(requestHash?: string): this {
+    this.requestHash = requestHash;
+    return this;
+  }
+
+  public withResult(result?: string): this {
+    this.result = result;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.region = this.region;
+    data.ownerId = this.ownerId;
+    data.responseCacheId = this.responseCacheId;
+    data.requestHash = this.requestHash;
+    data.result = this.result;
+    return data;
+  }
+
+}
+
+
+/**
+ * 入手アクション
+ *
+ * @author Game Server Services, Inc.
+ *
+ */
+export class AcquireAction implements IModel {
+  /** スタンプシートで実行するアクションの種類 */
+  public action?: string;
+  /** 入手リクエストのJSON */
+  public request?: string;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data && data.action !== undefined) {
+      this.action = data.action;
+    } else {
+      this.action = undefined;
+    }
+    if (data && data.request !== undefined) {
+      this.request = data.request;
+    } else {
+      this.request = undefined;
+    }
+  }
+
+  public withAction(action?: string): this {
+    this.action = action;
+    return this;
+  }
+
+  public withRequest(request?: string): this {
+    this.request = request;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.action = this.action;
+    data.request = this.request;
+    return data;
+  }
+
+}
+
+
+/**
+ * 現在有効なミッション
+ *
+ * @author Game Server Services, Inc.
+ *
+ */
+export class CurrentMissionMaster implements IModel {
+
+  public static createGrn(region: string, ownerId: string, namespaceName: string): string {
+    return 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}'
+      .replace('{region}', region)
+      .replace('{ownerId}', ownerId)
+      .replace('{namespaceName}', namespaceName);
+  }
+
+  public static getRegionFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[1];
+    }
+    return undefined;
+  }
+
+  public static getOwnerIdFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[2];
+    }
+    return undefined;
+  }
+
+  public static getNamespaceNameFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[3];
+    }
+    return undefined;
+  }
+  /** ネームスペース名 */
+  public namespaceName?: string;
+  /** マスターデータ */
+  public settings?: string;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data && data.namespaceName !== undefined) {
+      this.namespaceName = data.namespaceName;
+    } else {
+      this.namespaceName = undefined;
+    }
+    if (data && data.settings !== undefined) {
+      this.settings = data.settings;
+    } else {
+      this.settings = undefined;
+    }
+  }
+
+  public withNamespaceName(namespaceName?: string): this {
+    this.namespaceName = namespaceName;
+    return this;
+  }
+
+  public withSettings(settings?: string): this {
+    this.settings = settings;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.namespaceName = this.namespaceName;
+    data.settings = this.settings;
+    return data;
+  }
+
+}
+
+
+/**
+ * 設定値
+ *
+ * @author Game Server Services, Inc.
+ *
+ */
+export class Config implements IModel {
+  /** 名前 */
+  public key?: string;
+  /** 値 */
+  public value?: string;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data && data.key !== undefined) {
+      this.key = data.key;
+    } else {
+      this.key = undefined;
+    }
+    if (data && data.value !== undefined) {
+      this.value = data.value;
+    } else {
+      this.value = undefined;
+    }
+  }
+
+  public withKey(key?: string): this {
+    this.key = key;
+    return this;
+  }
+
+  public withValue(value?: string): this {
+    this.value = value;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.key = this.key;
+    data.value = this.value;
     return data;
   }
 
@@ -680,613 +1689,6 @@ export class MissionTaskModelMaster implements IModel {
 
 
 /**
- * ミッショングループマスター
- *
- * @author Game Server Services, Inc.
- *
- */
-export class MissionGroupModelMaster implements IModel {
-
-  public static createGrn(region: string, ownerId: string, namespaceName: string, missionGroupName: string): string {
-    return 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:group:{missionGroupName}'
-      .replace('{region}', region)
-      .replace('{ownerId}', ownerId)
-      .replace('{namespaceName}', namespaceName)
-      .replace('{missionGroupName}', missionGroupName);
-  }
-
-  public static getRegionFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:group:{missionGroupName}';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[1];
-    }
-    return undefined;
-  }
-
-  public static getOwnerIdFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:group:{missionGroupName}';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[2];
-    }
-    return undefined;
-  }
-
-  public static getNamespaceNameFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:group:{missionGroupName}';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[3];
-    }
-    return undefined;
-  }
-
-  public static getMissionGroupNameFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:group:{missionGroupName}';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[4];
-    }
-    return undefined;
-  }
-  /** ミッショングループマスター */
-  public missionGroupId?: string;
-  /** ミッショングループ名 */
-  public name?: string;
-  /** メタデータ */
-  public metadata?: string;
-  /** ミッショングループの説明 */
-  public description?: string;
-  /** リセットタイミング */
-  public resetType?: string;
-  /** リセットをする日にち */
-  public resetDayOfMonth?: number;
-  /** リセットする曜日 */
-  public resetDayOfWeek?: string;
-  /** リセット時刻 */
-  public resetHour?: number;
-  /** ミッションを達成したときの通知先ネームスペース のGRN */
-  public completeNotificationNamespaceId?: string;
-  /** 作成日時 */
-  public createdAt?: number;
-  /** 最終更新日時 */
-  public updatedAt?: number;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data && data.missionGroupId !== undefined) {
-      this.missionGroupId = data.missionGroupId;
-    } else {
-      this.missionGroupId = undefined;
-    }
-    if (data && data.name !== undefined) {
-      this.name = data.name;
-    } else {
-      this.name = undefined;
-    }
-    if (data && data.metadata !== undefined) {
-      this.metadata = data.metadata;
-    } else {
-      this.metadata = undefined;
-    }
-    if (data && data.description !== undefined) {
-      this.description = data.description;
-    } else {
-      this.description = undefined;
-    }
-    if (data && data.resetType !== undefined) {
-      this.resetType = data.resetType;
-    } else {
-      this.resetType = undefined;
-    }
-    if (data && data.resetDayOfMonth !== undefined) {
-      this.resetDayOfMonth = data.resetDayOfMonth;
-    } else {
-      this.resetDayOfMonth = 0;
-    }
-    if (data && data.resetDayOfWeek !== undefined) {
-      this.resetDayOfWeek = data.resetDayOfWeek;
-    } else {
-      this.resetDayOfWeek = undefined;
-    }
-    if (data && data.resetHour !== undefined) {
-      this.resetHour = data.resetHour;
-    } else {
-      this.resetHour = 0;
-    }
-    if (data && data.completeNotificationNamespaceId !== undefined) {
-      this.completeNotificationNamespaceId = data.completeNotificationNamespaceId;
-    } else {
-      this.completeNotificationNamespaceId = undefined;
-    }
-    if (data && data.createdAt !== undefined) {
-      this.createdAt = data.createdAt;
-    } else {
-      this.createdAt = 0;
-    }
-    if (data && data.updatedAt !== undefined) {
-      this.updatedAt = data.updatedAt;
-    } else {
-      this.updatedAt = 0;
-    }
-  }
-
-  public withMissionGroupId(missionGroupId?: string): this {
-    this.missionGroupId = missionGroupId;
-    return this;
-  }
-
-  public withName(name?: string): this {
-    this.name = name;
-    return this;
-  }
-
-  public withMetadata(metadata?: string): this {
-    this.metadata = metadata;
-    return this;
-  }
-
-  public withDescription(description?: string): this {
-    this.description = description;
-    return this;
-  }
-
-  public withResetType(resetType?: string): this {
-    this.resetType = resetType;
-    return this;
-  }
-
-  public withResetDayOfMonth(resetDayOfMonth?: number): this {
-    this.resetDayOfMonth = resetDayOfMonth;
-    return this;
-  }
-
-  public withResetDayOfWeek(resetDayOfWeek?: string): this {
-    this.resetDayOfWeek = resetDayOfWeek;
-    return this;
-  }
-
-  public withResetHour(resetHour?: number): this {
-    this.resetHour = resetHour;
-    return this;
-  }
-
-  public withCompleteNotificationNamespaceId(completeNotificationNamespaceId?: string): this {
-    this.completeNotificationNamespaceId = completeNotificationNamespaceId;
-    return this;
-  }
-
-  public withCreatedAt(createdAt?: number): this {
-    this.createdAt = createdAt;
-    return this;
-  }
-
-  public withUpdatedAt(updatedAt?: number): this {
-    this.updatedAt = updatedAt;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.missionGroupId = this.missionGroupId;
-    data.name = this.name;
-    data.metadata = this.metadata;
-    data.description = this.description;
-    data.resetType = this.resetType;
-    data.resetDayOfMonth = this.resetDayOfMonth;
-    data.resetDayOfWeek = this.resetDayOfWeek;
-    data.resetHour = this.resetHour;
-    data.completeNotificationNamespaceId = this.completeNotificationNamespaceId;
-    data.createdAt = this.createdAt;
-    data.updatedAt = this.updatedAt;
-    return data;
-  }
-
-}
-
-
-/**
- * カウンターの種類マスター
- *
- * @author Game Server Services, Inc.
- *
- */
-export class CounterModelMaster implements IModel {
-
-  public static createGrn(region: string, ownerId: string, namespaceName: string, counterName: string): string {
-    return 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:counter:{counterName}'
-      .replace('{region}', region)
-      .replace('{ownerId}', ownerId)
-      .replace('{namespaceName}', namespaceName)
-      .replace('{counterName}', counterName);
-  }
-
-  public static getRegionFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:counter:{counterName}';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{counterName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[1];
-    }
-    return undefined;
-  }
-
-  public static getOwnerIdFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:counter:{counterName}';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{counterName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[2];
-    }
-    return undefined;
-  }
-
-  public static getNamespaceNameFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:counter:{counterName}';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{counterName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[3];
-    }
-    return undefined;
-  }
-
-  public static getCounterNameFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:counter:{counterName}';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{counterName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[4];
-    }
-    return undefined;
-  }
-  /** カウンターの種類マスター */
-  public counterId?: string;
-  /** カウンター名 */
-  public name?: string;
-  /** メタデータ */
-  public metadata?: string;
-  /** カウンターの種類マスターの説明 */
-  public description?: string;
-  /** カウンターのリセットタイミング */
-  public scopes?: CounterScopeModel[];
-  /** カウントアップ可能な期間を指定するイベントマスター のGRN */
-  public challengePeriodEventId?: string;
-  /** 作成日時 */
-  public createdAt?: number;
-  /** 最終更新日時 */
-  public updatedAt?: number;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data && data.counterId !== undefined) {
-      this.counterId = data.counterId;
-    } else {
-      this.counterId = undefined;
-    }
-    if (data && data.name !== undefined) {
-      this.name = data.name;
-    } else {
-      this.name = undefined;
-    }
-    if (data && data.metadata !== undefined) {
-      this.metadata = data.metadata;
-    } else {
-      this.metadata = undefined;
-    }
-    if (data && data.description !== undefined) {
-      this.description = data.description;
-    } else {
-      this.description = undefined;
-    }
-    if (data && data.scopes !== undefined) {
-      this.scopes = data.scopes as CounterScopeModel[];
-      for (let i = 0; i < data.scopes.length; i++) {
-            this.scopes[i] = new CounterScopeModel(data.scopes[i]);
-      }
-    } else {
-      this.scopes = undefined;
-    }
-    if (data && data.challengePeriodEventId !== undefined) {
-      this.challengePeriodEventId = data.challengePeriodEventId;
-    } else {
-      this.challengePeriodEventId = undefined;
-    }
-    if (data && data.createdAt !== undefined) {
-      this.createdAt = data.createdAt;
-    } else {
-      this.createdAt = 0;
-    }
-    if (data && data.updatedAt !== undefined) {
-      this.updatedAt = data.updatedAt;
-    } else {
-      this.updatedAt = 0;
-    }
-  }
-
-  public withCounterId(counterId?: string): this {
-    this.counterId = counterId;
-    return this;
-  }
-
-  public withName(name?: string): this {
-    this.name = name;
-    return this;
-  }
-
-  public withMetadata(metadata?: string): this {
-    this.metadata = metadata;
-    return this;
-  }
-
-  public withDescription(description?: string): this {
-    this.description = description;
-    return this;
-  }
-
-  public withScopes(scopes?: CounterScopeModel[]): this {
-    this.scopes = scopes as CounterScopeModel[];
-    if (scopes) {
-      for (let i = 0; i < scopes!.length; i++) {
-          this.scopes[i] = scopes![i];
-      }
-    }
-    return this;
-  }
-
-  public withChallengePeriodEventId(challengePeriodEventId?: string): this {
-    this.challengePeriodEventId = challengePeriodEventId;
-    return this;
-  }
-
-  public withCreatedAt(createdAt?: number): this {
-    this.createdAt = createdAt;
-    return this;
-  }
-
-  public withUpdatedAt(updatedAt?: number): this {
-    this.updatedAt = updatedAt;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.counterId = this.counterId;
-    data.name = this.name;
-    data.metadata = this.metadata;
-    data.description = this.description;
-    if (this.scopes) {
-      data.scopes = this.scopes.map((item) => item.toDict());
-    }
-    data.challengePeriodEventId = this.challengePeriodEventId;
-    data.createdAt = this.createdAt;
-    data.updatedAt = this.updatedAt;
-    return data;
-  }
-
-}
-
-
-/**
- * カウンターのリセットタイミング
- *
- * @author Game Server Services, Inc.
- *
- */
-export class CounterScopeModel implements IModel {
-  /** リセットタイミング */
-  public resetType?: string;
-  /** リセットをする日にち */
-  public resetDayOfMonth?: number;
-  /** リセットする曜日 */
-  public resetDayOfWeek?: string;
-  /** リセット時刻 */
-  public resetHour?: number;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data && data.resetType !== undefined) {
-      this.resetType = data.resetType;
-    } else {
-      this.resetType = undefined;
-    }
-    if (data && data.resetDayOfMonth !== undefined) {
-      this.resetDayOfMonth = data.resetDayOfMonth;
-    } else {
-      this.resetDayOfMonth = 0;
-    }
-    if (data && data.resetDayOfWeek !== undefined) {
-      this.resetDayOfWeek = data.resetDayOfWeek;
-    } else {
-      this.resetDayOfWeek = undefined;
-    }
-    if (data && data.resetHour !== undefined) {
-      this.resetHour = data.resetHour;
-    } else {
-      this.resetHour = 0;
-    }
-  }
-
-  public withResetType(resetType?: string): this {
-    this.resetType = resetType;
-    return this;
-  }
-
-  public withResetDayOfMonth(resetDayOfMonth?: number): this {
-    this.resetDayOfMonth = resetDayOfMonth;
-    return this;
-  }
-
-  public withResetDayOfWeek(resetDayOfWeek?: string): this {
-    this.resetDayOfWeek = resetDayOfWeek;
-    return this;
-  }
-
-  public withResetHour(resetHour?: number): this {
-    this.resetHour = resetHour;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.resetType = this.resetType;
-    data.resetDayOfMonth = this.resetDayOfMonth;
-    data.resetDayOfWeek = this.resetDayOfWeek;
-    data.resetHour = this.resetHour;
-    return data;
-  }
-
-}
-
-
-/**
- * 設定値
- *
- * @author Game Server Services, Inc.
- *
- */
-export class Config implements IModel {
-  /** 名前 */
-  public key?: string;
-  /** 値 */
-  public value?: string;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data && data.key !== undefined) {
-      this.key = data.key;
-    } else {
-      this.key = undefined;
-    }
-    if (data && data.value !== undefined) {
-      this.value = data.value;
-    } else {
-      this.value = undefined;
-    }
-  }
-
-  public withKey(key?: string): this {
-    this.key = key;
-    return this;
-  }
-
-  public withValue(value?: string): this {
-    this.value = value;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.key = this.key;
-    data.value = this.value;
-    return data;
-  }
-
-}
-
-
-/**
- * リセットタイミングまでの期間のカウンター値
- *
- * @author Game Server Services, Inc.
- *
- */
-export class ScopedValue implements IModel {
-  /** リセットタイミング */
-  public resetType?: string;
-  /** カウント */
-  public value?: number;
-  /** 最終更新日時 */
-  public updatedAt?: number;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data && data.resetType !== undefined) {
-      this.resetType = data.resetType;
-    } else {
-      this.resetType = undefined;
-    }
-    if (data && data.value !== undefined) {
-      this.value = data.value;
-    } else {
-      this.value = 0;
-    }
-    if (data && data.updatedAt !== undefined) {
-      this.updatedAt = data.updatedAt;
-    } else {
-      this.updatedAt = 0;
-    }
-  }
-
-  public withResetType(resetType?: string): this {
-    this.resetType = resetType;
-    return this;
-  }
-
-  public withValue(value?: number): this {
-    this.value = value;
-    return this;
-  }
-
-  public withUpdatedAt(updatedAt?: number): this {
-    this.updatedAt = updatedAt;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.resetType = this.resetType;
-    data.value = this.value;
-    data.updatedAt = this.updatedAt;
-    return data;
-  }
-
-}
-
-
-/**
  * ネームスペース
  *
  * @author Game Server Services, Inc.
@@ -1533,6 +1935,587 @@ export class Namespace implements IModel {
 
 
 /**
+ * ミッショングループマスター
+ *
+ * @author Game Server Services, Inc.
+ *
+ */
+export class MissionGroupModelMaster implements IModel {
+
+  public static createGrn(region: string, ownerId: string, namespaceName: string, missionGroupName: string): string {
+    return 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:group:{missionGroupName}'
+      .replace('{region}', region)
+      .replace('{ownerId}', ownerId)
+      .replace('{namespaceName}', namespaceName)
+      .replace('{missionGroupName}', missionGroupName);
+  }
+
+  public static getRegionFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:group:{missionGroupName}';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[1];
+    }
+    return undefined;
+  }
+
+  public static getOwnerIdFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:group:{missionGroupName}';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[2];
+    }
+    return undefined;
+  }
+
+  public static getNamespaceNameFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:group:{missionGroupName}';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[3];
+    }
+    return undefined;
+  }
+
+  public static getMissionGroupNameFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:group:{missionGroupName}';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[4];
+    }
+    return undefined;
+  }
+  /** ミッショングループマスター */
+  public missionGroupId?: string;
+  /** ミッショングループ名 */
+  public name?: string;
+  /** メタデータ */
+  public metadata?: string;
+  /** ミッショングループの説明 */
+  public description?: string;
+  /** リセットタイミング */
+  public resetType?: string;
+  /** リセットをする日にち */
+  public resetDayOfMonth?: number;
+  /** リセットする曜日 */
+  public resetDayOfWeek?: string;
+  /** リセット時刻 */
+  public resetHour?: number;
+  /** ミッションを達成したときの通知先ネームスペース のGRN */
+  public completeNotificationNamespaceId?: string;
+  /** 作成日時 */
+  public createdAt?: number;
+  /** 最終更新日時 */
+  public updatedAt?: number;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data && data.missionGroupId !== undefined) {
+      this.missionGroupId = data.missionGroupId;
+    } else {
+      this.missionGroupId = undefined;
+    }
+    if (data && data.name !== undefined) {
+      this.name = data.name;
+    } else {
+      this.name = undefined;
+    }
+    if (data && data.metadata !== undefined) {
+      this.metadata = data.metadata;
+    } else {
+      this.metadata = undefined;
+    }
+    if (data && data.description !== undefined) {
+      this.description = data.description;
+    } else {
+      this.description = undefined;
+    }
+    if (data && data.resetType !== undefined) {
+      this.resetType = data.resetType;
+    } else {
+      this.resetType = undefined;
+    }
+    if (data && data.resetDayOfMonth !== undefined) {
+      this.resetDayOfMonth = data.resetDayOfMonth;
+    } else {
+      this.resetDayOfMonth = 0;
+    }
+    if (data && data.resetDayOfWeek !== undefined) {
+      this.resetDayOfWeek = data.resetDayOfWeek;
+    } else {
+      this.resetDayOfWeek = undefined;
+    }
+    if (data && data.resetHour !== undefined) {
+      this.resetHour = data.resetHour;
+    } else {
+      this.resetHour = 0;
+    }
+    if (data && data.completeNotificationNamespaceId !== undefined) {
+      this.completeNotificationNamespaceId = data.completeNotificationNamespaceId;
+    } else {
+      this.completeNotificationNamespaceId = undefined;
+    }
+    if (data && data.createdAt !== undefined) {
+      this.createdAt = data.createdAt;
+    } else {
+      this.createdAt = 0;
+    }
+    if (data && data.updatedAt !== undefined) {
+      this.updatedAt = data.updatedAt;
+    } else {
+      this.updatedAt = 0;
+    }
+  }
+
+  public withMissionGroupId(missionGroupId?: string): this {
+    this.missionGroupId = missionGroupId;
+    return this;
+  }
+
+  public withName(name?: string): this {
+    this.name = name;
+    return this;
+  }
+
+  public withMetadata(metadata?: string): this {
+    this.metadata = metadata;
+    return this;
+  }
+
+  public withDescription(description?: string): this {
+    this.description = description;
+    return this;
+  }
+
+  public withResetType(resetType?: string): this {
+    this.resetType = resetType;
+    return this;
+  }
+
+  public withResetDayOfMonth(resetDayOfMonth?: number): this {
+    this.resetDayOfMonth = resetDayOfMonth;
+    return this;
+  }
+
+  public withResetDayOfWeek(resetDayOfWeek?: string): this {
+    this.resetDayOfWeek = resetDayOfWeek;
+    return this;
+  }
+
+  public withResetHour(resetHour?: number): this {
+    this.resetHour = resetHour;
+    return this;
+  }
+
+  public withCompleteNotificationNamespaceId(completeNotificationNamespaceId?: string): this {
+    this.completeNotificationNamespaceId = completeNotificationNamespaceId;
+    return this;
+  }
+
+  public withCreatedAt(createdAt?: number): this {
+    this.createdAt = createdAt;
+    return this;
+  }
+
+  public withUpdatedAt(updatedAt?: number): this {
+    this.updatedAt = updatedAt;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.missionGroupId = this.missionGroupId;
+    data.name = this.name;
+    data.metadata = this.metadata;
+    data.description = this.description;
+    data.resetType = this.resetType;
+    data.resetDayOfMonth = this.resetDayOfMonth;
+    data.resetDayOfWeek = this.resetDayOfWeek;
+    data.resetHour = this.resetHour;
+    data.completeNotificationNamespaceId = this.completeNotificationNamespaceId;
+    data.createdAt = this.createdAt;
+    data.updatedAt = this.updatedAt;
+    return data;
+  }
+
+}
+
+
+/**
+ * ロギング通知設定
+ *
+ * @author Game Server Services, Inc.
+ *
+ */
+export class LogSetting implements IModel {
+  /** ログの記録に使用する GS2-Log のネームスペース のGRN */
+  public loggingNamespaceId?: string;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data && data.loggingNamespaceId !== undefined) {
+      this.loggingNamespaceId = data.loggingNamespaceId;
+    } else {
+      this.loggingNamespaceId = undefined;
+    }
+  }
+
+  public withLoggingNamespaceId(loggingNamespaceId?: string): this {
+    this.loggingNamespaceId = loggingNamespaceId;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.loggingNamespaceId = this.loggingNamespaceId;
+    return data;
+  }
+
+}
+
+
+/**
+ * カウンターの種類マスター
+ *
+ * @author Game Server Services, Inc.
+ *
+ */
+export class CounterModelMaster implements IModel {
+
+  public static createGrn(region: string, ownerId: string, namespaceName: string, counterName: string): string {
+    return 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:counter:{counterName}'
+      .replace('{region}', region)
+      .replace('{ownerId}', ownerId)
+      .replace('{namespaceName}', namespaceName)
+      .replace('{counterName}', counterName);
+  }
+
+  public static getRegionFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:counter:{counterName}';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{counterName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[1];
+    }
+    return undefined;
+  }
+
+  public static getOwnerIdFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:counter:{counterName}';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{counterName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[2];
+    }
+    return undefined;
+  }
+
+  public static getNamespaceNameFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:counter:{counterName}';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{counterName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[3];
+    }
+    return undefined;
+  }
+
+  public static getCounterNameFromGrn(grn: string) {
+    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:counter:{counterName}';
+    grnFormat = grnFormat.replace('{region}', '(.*)');
+    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
+    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
+    grnFormat = grnFormat.replace('{counterName}', '(.*)');
+
+    const match = grn.match(grnFormat);
+    if (match) {
+      return match[4];
+    }
+    return undefined;
+  }
+  /** カウンターの種類マスター */
+  public counterId?: string;
+  /** カウンター名 */
+  public name?: string;
+  /** メタデータ */
+  public metadata?: string;
+  /** カウンターの種類マスターの説明 */
+  public description?: string;
+  /** カウンターのリセットタイミング */
+  public scopes?: CounterScopeModel[];
+  /** カウントアップ可能な期間を指定するイベントマスター のGRN */
+  public challengePeriodEventId?: string;
+  /** 作成日時 */
+  public createdAt?: number;
+  /** 最終更新日時 */
+  public updatedAt?: number;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data && data.counterId !== undefined) {
+      this.counterId = data.counterId;
+    } else {
+      this.counterId = undefined;
+    }
+    if (data && data.name !== undefined) {
+      this.name = data.name;
+    } else {
+      this.name = undefined;
+    }
+    if (data && data.metadata !== undefined) {
+      this.metadata = data.metadata;
+    } else {
+      this.metadata = undefined;
+    }
+    if (data && data.description !== undefined) {
+      this.description = data.description;
+    } else {
+      this.description = undefined;
+    }
+    if (data && data.scopes !== undefined) {
+      this.scopes = data.scopes as CounterScopeModel[];
+      for (let i = 0; i < data.scopes.length; i++) {
+            this.scopes[i] = new CounterScopeModel(data.scopes[i]);
+      }
+    } else {
+      this.scopes = undefined;
+    }
+    if (data && data.challengePeriodEventId !== undefined) {
+      this.challengePeriodEventId = data.challengePeriodEventId;
+    } else {
+      this.challengePeriodEventId = undefined;
+    }
+    if (data && data.createdAt !== undefined) {
+      this.createdAt = data.createdAt;
+    } else {
+      this.createdAt = 0;
+    }
+    if (data && data.updatedAt !== undefined) {
+      this.updatedAt = data.updatedAt;
+    } else {
+      this.updatedAt = 0;
+    }
+  }
+
+  public withCounterId(counterId?: string): this {
+    this.counterId = counterId;
+    return this;
+  }
+
+  public withName(name?: string): this {
+    this.name = name;
+    return this;
+  }
+
+  public withMetadata(metadata?: string): this {
+    this.metadata = metadata;
+    return this;
+  }
+
+  public withDescription(description?: string): this {
+    this.description = description;
+    return this;
+  }
+
+  public withScopes(scopes?: CounterScopeModel[]): this {
+    this.scopes = scopes as CounterScopeModel[];
+    if (scopes) {
+      for (let i = 0; i < scopes!.length; i++) {
+          this.scopes[i] = scopes![i];
+      }
+    }
+    return this;
+  }
+
+  public withChallengePeriodEventId(challengePeriodEventId?: string): this {
+    this.challengePeriodEventId = challengePeriodEventId;
+    return this;
+  }
+
+  public withCreatedAt(createdAt?: number): this {
+    this.createdAt = createdAt;
+    return this;
+  }
+
+  public withUpdatedAt(updatedAt?: number): this {
+    this.updatedAt = updatedAt;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.counterId = this.counterId;
+    data.name = this.name;
+    data.metadata = this.metadata;
+    data.description = this.description;
+    if (this.scopes) {
+      data.scopes = this.scopes.map((item) => item.toDict());
+    }
+    data.challengePeriodEventId = this.challengePeriodEventId;
+    data.createdAt = this.createdAt;
+    data.updatedAt = this.updatedAt;
+    return data;
+  }
+
+}
+
+
+/**
+ * プッシュ通知設定
+ *
+ * @author Game Server Services, Inc.
+ *
+ */
+export class NotificationSetting implements IModel {
+  /** プッシュ通知に使用する GS2-Gateway のネームスペース のGRN */
+  public gatewayNamespaceId?: string;
+  /** モバイルプッシュ通知へ転送するか */
+  public enableTransferMobileNotification?: boolean;
+  /** モバイルプッシュ通知で使用するサウンドファイル名 */
+  public sound?: string;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data && data.gatewayNamespaceId !== undefined) {
+      this.gatewayNamespaceId = data.gatewayNamespaceId;
+    } else {
+      this.gatewayNamespaceId = undefined;
+    }
+    if (data && data.enableTransferMobileNotification !== undefined) {
+      this.enableTransferMobileNotification = data.enableTransferMobileNotification;
+    } else {
+      this.enableTransferMobileNotification = false;
+    }
+    if (data && data.sound !== undefined) {
+      this.sound = data.sound;
+    } else {
+      this.sound = undefined;
+    }
+  }
+
+  public withGatewayNamespaceId(gatewayNamespaceId?: string): this {
+    this.gatewayNamespaceId = gatewayNamespaceId;
+    return this;
+  }
+
+  public withEnableTransferMobileNotification(enableTransferMobileNotification?: boolean): this {
+    this.enableTransferMobileNotification = enableTransferMobileNotification;
+    return this;
+  }
+
+  public withSound(sound?: string): this {
+    this.sound = sound;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.gatewayNamespaceId = this.gatewayNamespaceId;
+    data.enableTransferMobileNotification = this.enableTransferMobileNotification;
+    data.sound = this.sound;
+    return data;
+  }
+
+}
+
+
+/**
+ * リセットタイミングまでの期間のカウンター値
+ *
+ * @author Game Server Services, Inc.
+ *
+ */
+export class ScopedValue implements IModel {
+  /** リセットタイミング */
+  public resetType?: string;
+  /** カウント */
+  public value?: number;
+  /** 最終更新日時 */
+  public updatedAt?: number;
+
+  constructor(
+    data?: { [key: string]: any },
+  ) {
+    if (data && data.resetType !== undefined) {
+      this.resetType = data.resetType;
+    } else {
+      this.resetType = undefined;
+    }
+    if (data && data.value !== undefined) {
+      this.value = data.value;
+    } else {
+      this.value = 0;
+    }
+    if (data && data.updatedAt !== undefined) {
+      this.updatedAt = data.updatedAt;
+    } else {
+      this.updatedAt = 0;
+    }
+  }
+
+  public withResetType(resetType?: string): this {
+    this.resetType = resetType;
+    return this;
+  }
+
+  public withValue(value?: number): this {
+    this.value = value;
+    return this;
+  }
+
+  public withUpdatedAt(updatedAt?: number): this {
+    this.updatedAt = updatedAt;
+    return this;
+  }
+
+  public toDict(): {[key: string]: any} {
+    const data: {[key: string]: any} = {};
+    data.resetType = this.resetType;
+    data.value = this.value;
+    data.updatedAt = this.updatedAt;
+    return data;
+  }
+
+}
+
+
+/**
  * カウンターの種類
  *
  * @author Game Server Services, Inc.
@@ -1686,989 +2669,6 @@ export class CounterModel implements IModel {
       data.scopes = this.scopes.map((item) => item.toDict());
     }
     data.challengePeriodEventId = this.challengePeriodEventId;
-    return data;
-  }
-
-}
-
-
-/**
- * ミッショングループ
- *
- * @author Game Server Services, Inc.
- *
- */
-export class MissionGroupModel implements IModel {
-
-  public static createGrn(region: string, ownerId: string, namespaceName: string, missionGroupName: string): string {
-    return 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:'
-      .replace('{region}', region)
-      .replace('{ownerId}', ownerId)
-      .replace('{namespaceName}', namespaceName)
-      .replace('{missionGroupName}', missionGroupName);
-  }
-
-  public static getRegionFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[1];
-    }
-    return undefined;
-  }
-
-  public static getOwnerIdFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[2];
-    }
-    return undefined;
-  }
-
-  public static getNamespaceNameFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[3];
-    }
-    return undefined;
-  }
-
-  public static getMissionGroupNameFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[4];
-    }
-    return undefined;
-  }
-  /** ミッショングループ */
-  public missionGroupId?: string;
-  /** グループ名 */
-  public name?: string;
-  /** メタデータ */
-  public metadata?: string;
-  /** タスクリスト */
-  public tasks?: MissionTaskModel[];
-  /** リセットタイミング */
-  public resetType?: string;
-  /** リセットをする日にち */
-  public resetDayOfMonth?: number;
-  /** リセットする曜日 */
-  public resetDayOfWeek?: string;
-  /** リセット時刻 */
-  public resetHour?: number;
-  /** ミッションを達成したときの通知先ネームスペース のGRN */
-  public completeNotificationNamespaceId?: string;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data && data.missionGroupId !== undefined) {
-      this.missionGroupId = data.missionGroupId;
-    } else {
-      this.missionGroupId = undefined;
-    }
-    if (data && data.name !== undefined) {
-      this.name = data.name;
-    } else {
-      this.name = undefined;
-    }
-    if (data && data.metadata !== undefined) {
-      this.metadata = data.metadata;
-    } else {
-      this.metadata = undefined;
-    }
-    if (data && data.tasks !== undefined) {
-      this.tasks = data.tasks as MissionTaskModel[];
-      for (let i = 0; i < data.tasks.length; i++) {
-            this.tasks[i] = new MissionTaskModel(data.tasks[i]);
-      }
-    } else {
-      this.tasks = undefined;
-    }
-    if (data && data.resetType !== undefined) {
-      this.resetType = data.resetType;
-    } else {
-      this.resetType = undefined;
-    }
-    if (data && data.resetDayOfMonth !== undefined) {
-      this.resetDayOfMonth = data.resetDayOfMonth;
-    } else {
-      this.resetDayOfMonth = 0;
-    }
-    if (data && data.resetDayOfWeek !== undefined) {
-      this.resetDayOfWeek = data.resetDayOfWeek;
-    } else {
-      this.resetDayOfWeek = undefined;
-    }
-    if (data && data.resetHour !== undefined) {
-      this.resetHour = data.resetHour;
-    } else {
-      this.resetHour = 0;
-    }
-    if (data && data.completeNotificationNamespaceId !== undefined) {
-      this.completeNotificationNamespaceId = data.completeNotificationNamespaceId;
-    } else {
-      this.completeNotificationNamespaceId = undefined;
-    }
-  }
-
-  public withMissionGroupId(missionGroupId?: string): this {
-    this.missionGroupId = missionGroupId;
-    return this;
-  }
-
-  public withName(name?: string): this {
-    this.name = name;
-    return this;
-  }
-
-  public withMetadata(metadata?: string): this {
-    this.metadata = metadata;
-    return this;
-  }
-
-  public withTasks(tasks?: MissionTaskModel[]): this {
-    this.tasks = tasks as MissionTaskModel[];
-    if (tasks) {
-      for (let i = 0; i < tasks!.length; i++) {
-          this.tasks[i] = tasks![i];
-      }
-    }
-    return this;
-  }
-
-  public withResetType(resetType?: string): this {
-    this.resetType = resetType;
-    return this;
-  }
-
-  public withResetDayOfMonth(resetDayOfMonth?: number): this {
-    this.resetDayOfMonth = resetDayOfMonth;
-    return this;
-  }
-
-  public withResetDayOfWeek(resetDayOfWeek?: string): this {
-    this.resetDayOfWeek = resetDayOfWeek;
-    return this;
-  }
-
-  public withResetHour(resetHour?: number): this {
-    this.resetHour = resetHour;
-    return this;
-  }
-
-  public withCompleteNotificationNamespaceId(completeNotificationNamespaceId?: string): this {
-    this.completeNotificationNamespaceId = completeNotificationNamespaceId;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.missionGroupId = this.missionGroupId;
-    data.name = this.name;
-    data.metadata = this.metadata;
-    if (this.tasks) {
-      data.tasks = this.tasks.map((item) => item.toDict());
-    }
-    data.resetType = this.resetType;
-    data.resetDayOfMonth = this.resetDayOfMonth;
-    data.resetDayOfWeek = this.resetDayOfWeek;
-    data.resetHour = this.resetHour;
-    data.completeNotificationNamespaceId = this.completeNotificationNamespaceId;
-    return data;
-  }
-
-}
-
-
-/**
- * カウンター
- *
- * @author Game Server Services, Inc.
- *
- */
-export class Counter implements IModel {
-
-  public static createGrn(region: string, ownerId: string, namespaceName: string, userId: string, counterName: string): string {
-    return 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:counter:{counterName}'
-      .replace('{region}', region)
-      .replace('{ownerId}', ownerId)
-      .replace('{namespaceName}', namespaceName)
-      .replace('{userId}', userId)
-      .replace('{counterName}', counterName);
-  }
-
-  public static getRegionFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:counter:{counterName}';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{userId}', '(.*)');
-    grnFormat = grnFormat.replace('{counterName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[1];
-    }
-    return undefined;
-  }
-
-  public static getOwnerIdFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:counter:{counterName}';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{userId}', '(.*)');
-    grnFormat = grnFormat.replace('{counterName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[2];
-    }
-    return undefined;
-  }
-
-  public static getNamespaceNameFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:counter:{counterName}';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{userId}', '(.*)');
-    grnFormat = grnFormat.replace('{counterName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[3];
-    }
-    return undefined;
-  }
-
-  public static getUserIdFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:counter:{counterName}';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{userId}', '(.*)');
-    grnFormat = grnFormat.replace('{counterName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[4];
-    }
-    return undefined;
-  }
-
-  public static getCounterNameFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:counter:{counterName}';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{userId}', '(.*)');
-    grnFormat = grnFormat.replace('{counterName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[5];
-    }
-    return undefined;
-  }
-  /** カウンター */
-  public counterId?: string;
-  /** ユーザーID */
-  public userId?: string;
-  /** カウンター名 */
-  public name?: string;
-  /** 値 */
-  public values?: ScopedValue[];
-  /** 作成日時 */
-  public createdAt?: number;
-  /** 最終更新日時 */
-  public updatedAt?: number;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data && data.counterId !== undefined) {
-      this.counterId = data.counterId;
-    } else {
-      this.counterId = undefined;
-    }
-    if (data && data.userId !== undefined) {
-      this.userId = data.userId;
-    } else {
-      this.userId = undefined;
-    }
-    if (data && data.name !== undefined) {
-      this.name = data.name;
-    } else {
-      this.name = undefined;
-    }
-    if (data && data.values !== undefined) {
-      this.values = data.values as ScopedValue[];
-      for (let i = 0; i < data.values.length; i++) {
-            this.values[i] = new ScopedValue(data.values[i]);
-      }
-    } else {
-      this.values = undefined;
-    }
-    if (data && data.createdAt !== undefined) {
-      this.createdAt = data.createdAt;
-    } else {
-      this.createdAt = 0;
-    }
-    if (data && data.updatedAt !== undefined) {
-      this.updatedAt = data.updatedAt;
-    } else {
-      this.updatedAt = 0;
-    }
-  }
-
-  public withCounterId(counterId?: string): this {
-    this.counterId = counterId;
-    return this;
-  }
-
-  public withUserId(userId?: string): this {
-    this.userId = userId;
-    return this;
-  }
-
-  public withName(name?: string): this {
-    this.name = name;
-    return this;
-  }
-
-  public withValues(values?: ScopedValue[]): this {
-    this.values = values as ScopedValue[];
-    if (values) {
-      for (let i = 0; i < values!.length; i++) {
-          this.values[i] = values![i];
-      }
-    }
-    return this;
-  }
-
-  public withCreatedAt(createdAt?: number): this {
-    this.createdAt = createdAt;
-    return this;
-  }
-
-  public withUpdatedAt(updatedAt?: number): this {
-    this.updatedAt = updatedAt;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.counterId = this.counterId;
-    data.userId = this.userId;
-    data.name = this.name;
-    if (this.values) {
-      data.values = this.values.map((item) => item.toDict());
-    }
-    data.createdAt = this.createdAt;
-    data.updatedAt = this.updatedAt;
-    return data;
-  }
-
-}
-
-
-/**
- * ロギング通知設定
- *
- * @author Game Server Services, Inc.
- *
- */
-export class LogSetting implements IModel {
-  /** ログの記録に使用する GS2-Log のネームスペース のGRN */
-  public loggingNamespaceId?: string;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data && data.loggingNamespaceId !== undefined) {
-      this.loggingNamespaceId = data.loggingNamespaceId;
-    } else {
-      this.loggingNamespaceId = undefined;
-    }
-  }
-
-  public withLoggingNamespaceId(loggingNamespaceId?: string): this {
-    this.loggingNamespaceId = loggingNamespaceId;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.loggingNamespaceId = this.loggingNamespaceId;
-    return data;
-  }
-
-}
-
-
-/**
- * 達成状況
- *
- * @author Game Server Services, Inc.
- *
- */
-export class Complete implements IModel {
-
-  public static createGrn(region: string, ownerId: string, namespaceName: string, userId: string, missionGroupName: string): string {
-    return 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:group:{missionGroupName}:complete'
-      .replace('{region}', region)
-      .replace('{ownerId}', ownerId)
-      .replace('{namespaceName}', namespaceName)
-      .replace('{userId}', userId)
-      .replace('{missionGroupName}', missionGroupName);
-  }
-
-  public static getRegionFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:group:{missionGroupName}:complete';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{userId}', '(.*)');
-    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[1];
-    }
-    return undefined;
-  }
-
-  public static getOwnerIdFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:group:{missionGroupName}:complete';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{userId}', '(.*)');
-    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[2];
-    }
-    return undefined;
-  }
-
-  public static getNamespaceNameFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:group:{missionGroupName}:complete';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{userId}', '(.*)');
-    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[3];
-    }
-    return undefined;
-  }
-
-  public static getUserIdFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:group:{missionGroupName}:complete';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{userId}', '(.*)');
-    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[4];
-    }
-    return undefined;
-  }
-
-  public static getMissionGroupNameFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:group:{missionGroupName}:complete';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-    grnFormat = grnFormat.replace('{userId}', '(.*)');
-    grnFormat = grnFormat.replace('{missionGroupName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[5];
-    }
-    return undefined;
-  }
-  /** 達成状況 */
-  public completeId?: string;
-  /** ユーザーID */
-  public userId?: string;
-  /** ミッショングループ名 */
-  public missionGroupName?: string;
-  /** 達成済みのタスク名リスト */
-  public completedMissionTaskNames?: string[];
-  /** 報酬の受け取り済みのタスク名リスト */
-  public receivedMissionTaskNames?: string[];
-  /** 作成日時 */
-  public createdAt?: number;
-  /** 最終更新日時 */
-  public updatedAt?: number;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data && data.completeId !== undefined) {
-      this.completeId = data.completeId;
-    } else {
-      this.completeId = undefined;
-    }
-    if (data && data.userId !== undefined) {
-      this.userId = data.userId;
-    } else {
-      this.userId = undefined;
-    }
-    if (data && data.missionGroupName !== undefined) {
-      this.missionGroupName = data.missionGroupName;
-    } else {
-      this.missionGroupName = undefined;
-    }
-    if (data && data.completedMissionTaskNames !== undefined) {
-      this.completedMissionTaskNames = data.completedMissionTaskNames as string[];
-      for (let i = 0; i < data.completedMissionTaskNames.length; i++) {
-            this.completedMissionTaskNames[i] = data.completedMissionTaskNames[i];
-      }
-    } else {
-      this.completedMissionTaskNames = undefined;
-    }
-    if (data && data.receivedMissionTaskNames !== undefined) {
-      this.receivedMissionTaskNames = data.receivedMissionTaskNames as string[];
-      for (let i = 0; i < data.receivedMissionTaskNames.length; i++) {
-            this.receivedMissionTaskNames[i] = data.receivedMissionTaskNames[i];
-      }
-    } else {
-      this.receivedMissionTaskNames = undefined;
-    }
-    if (data && data.createdAt !== undefined) {
-      this.createdAt = data.createdAt;
-    } else {
-      this.createdAt = 0;
-    }
-    if (data && data.updatedAt !== undefined) {
-      this.updatedAt = data.updatedAt;
-    } else {
-      this.updatedAt = 0;
-    }
-  }
-
-  public withCompleteId(completeId?: string): this {
-    this.completeId = completeId;
-    return this;
-  }
-
-  public withUserId(userId?: string): this {
-    this.userId = userId;
-    return this;
-  }
-
-  public withMissionGroupName(missionGroupName?: string): this {
-    this.missionGroupName = missionGroupName;
-    return this;
-  }
-
-  public withCompletedMissionTaskNames(completedMissionTaskNames?: string[]): this {
-    this.completedMissionTaskNames = completedMissionTaskNames as string[];
-    if (completedMissionTaskNames) {
-      for (let i = 0; i < completedMissionTaskNames!.length; i++) {
-          this.completedMissionTaskNames[i] = String(completedMissionTaskNames![i]);
-      }
-    }
-    return this;
-  }
-
-  public withReceivedMissionTaskNames(receivedMissionTaskNames?: string[]): this {
-    this.receivedMissionTaskNames = receivedMissionTaskNames as string[];
-    if (receivedMissionTaskNames) {
-      for (let i = 0; i < receivedMissionTaskNames!.length; i++) {
-          this.receivedMissionTaskNames[i] = String(receivedMissionTaskNames![i]);
-      }
-    }
-    return this;
-  }
-
-  public withCreatedAt(createdAt?: number): this {
-    this.createdAt = createdAt;
-    return this;
-  }
-
-  public withUpdatedAt(updatedAt?: number): this {
-    this.updatedAt = updatedAt;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.completeId = this.completeId;
-    data.userId = this.userId;
-    data.missionGroupName = this.missionGroupName;
-    data.completedMissionTaskNames = this.completedMissionTaskNames;
-    data.receivedMissionTaskNames = this.receivedMissionTaskNames;
-    data.createdAt = this.createdAt;
-    data.updatedAt = this.updatedAt;
-    return data;
-  }
-
-}
-
-
-/**
- * レスポンスキャッシュ
- *
- * @author Game Server Services, Inc.
- *
- */
-export class ResponseCache implements IModel {
-
-  public static createGrn(requestHash: string, ownerId: string, region: string): string {
-    return 'grn:gs2:{region}:{ownerId}:hash:{requestHash}'
-      .replace('{requestHash}', requestHash)
-      .replace('{ownerId}', ownerId)
-      .replace('{region}', region);
-  }
-
-  public static getRequestHashFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:hash:{requestHash}';
-    grnFormat = grnFormat.replace('{requestHash}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[1];
-    }
-    return undefined;
-  }
-
-  public static getOwnerIdFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:hash:{requestHash}';
-    grnFormat = grnFormat.replace('{requestHash}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[2];
-    }
-    return undefined;
-  }
-
-  public static getRegionFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:hash:{requestHash}';
-    grnFormat = grnFormat.replace('{requestHash}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[3];
-    }
-    return undefined;
-  }
-  /** None */
-  public region?: string;
-  /** オーナーID */
-  public ownerId?: string;
-  /** レスポンスキャッシュ のGRN */
-  public responseCacheId?: string;
-  /** None */
-  public requestHash?: string;
-  /** APIの応答内容 */
-  public result?: string;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data && data.region !== undefined) {
-      this.region = data.region;
-    } else {
-      this.region = undefined;
-    }
-    if (data && data.ownerId !== undefined) {
-      this.ownerId = data.ownerId;
-    } else {
-      this.ownerId = undefined;
-    }
-    if (data && data.responseCacheId !== undefined) {
-      this.responseCacheId = data.responseCacheId;
-    } else {
-      this.responseCacheId = undefined;
-    }
-    if (data && data.requestHash !== undefined) {
-      this.requestHash = data.requestHash;
-    } else {
-      this.requestHash = undefined;
-    }
-    if (data && data.result !== undefined) {
-      this.result = data.result;
-    } else {
-      this.result = undefined;
-    }
-  }
-
-  public withRegion(region?: string): this {
-    this.region = region;
-    return this;
-  }
-
-  public withOwnerId(ownerId?: string): this {
-    this.ownerId = ownerId;
-    return this;
-  }
-
-  public withResponseCacheId(responseCacheId?: string): this {
-    this.responseCacheId = responseCacheId;
-    return this;
-  }
-
-  public withRequestHash(requestHash?: string): this {
-    this.requestHash = requestHash;
-    return this;
-  }
-
-  public withResult(result?: string): this {
-    this.result = result;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.region = this.region;
-    data.ownerId = this.ownerId;
-    data.responseCacheId = this.responseCacheId;
-    data.requestHash = this.requestHash;
-    data.result = this.result;
-    return data;
-  }
-
-}
-
-
-/**
- * 入手アクション
- *
- * @author Game Server Services, Inc.
- *
- */
-export class AcquireAction implements IModel {
-  /** スタンプシートで実行するアクションの種類 */
-  public action?: string;
-  /** 入手リクエストのJSON */
-  public request?: string;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data && data.action !== undefined) {
-      this.action = data.action;
-    } else {
-      this.action = undefined;
-    }
-    if (data && data.request !== undefined) {
-      this.request = data.request;
-    } else {
-      this.request = undefined;
-    }
-  }
-
-  public withAction(action?: string): this {
-    this.action = action;
-    return this;
-  }
-
-  public withRequest(request?: string): this {
-    this.request = request;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.action = this.action;
-    data.request = this.request;
-    return data;
-  }
-
-}
-
-
-/**
- * 現在有効なミッション
- *
- * @author Game Server Services, Inc.
- *
- */
-export class CurrentMissionMaster implements IModel {
-
-  public static createGrn(region: string, ownerId: string, namespaceName: string): string {
-    return 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}'
-      .replace('{region}', region)
-      .replace('{ownerId}', ownerId)
-      .replace('{namespaceName}', namespaceName);
-  }
-
-  public static getRegionFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[1];
-    }
-    return undefined;
-  }
-
-  public static getOwnerIdFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[2];
-    }
-    return undefined;
-  }
-
-  public static getNamespaceNameFromGrn(grn: string) {
-    let grnFormat = 'grn:gs2:{region}:{ownerId}:mission:{namespaceName}';
-    grnFormat = grnFormat.replace('{region}', '(.*)');
-    grnFormat = grnFormat.replace('{ownerId}', '(.*)');
-    grnFormat = grnFormat.replace('{namespaceName}', '(.*)');
-
-    const match = grn.match(grnFormat);
-    if (match) {
-      return match[3];
-    }
-    return undefined;
-  }
-  /** ネームスペース名 */
-  public namespaceName?: string;
-  /** マスターデータ */
-  public settings?: string;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data && data.namespaceName !== undefined) {
-      this.namespaceName = data.namespaceName;
-    } else {
-      this.namespaceName = undefined;
-    }
-    if (data && data.settings !== undefined) {
-      this.settings = data.settings;
-    } else {
-      this.settings = undefined;
-    }
-  }
-
-  public withNamespaceName(namespaceName?: string): this {
-    this.namespaceName = namespaceName;
-    return this;
-  }
-
-  public withSettings(settings?: string): this {
-    this.settings = settings;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.namespaceName = this.namespaceName;
-    data.settings = this.settings;
-    return data;
-  }
-
-}
-
-
-/**
- * プッシュ通知設定
- *
- * @author Game Server Services, Inc.
- *
- */
-export class NotificationSetting implements IModel {
-  /** プッシュ通知に使用する GS2-Gateway のネームスペース のGRN */
-  public gatewayNamespaceId?: string;
-  /** モバイルプッシュ通知へ転送するか */
-  public enableTransferMobileNotification?: boolean;
-  /** モバイルプッシュ通知で使用するサウンドファイル名 */
-  public sound?: string;
-
-  constructor(
-    data?: { [key: string]: any },
-  ) {
-    if (data && data.gatewayNamespaceId !== undefined) {
-      this.gatewayNamespaceId = data.gatewayNamespaceId;
-    } else {
-      this.gatewayNamespaceId = undefined;
-    }
-    if (data && data.enableTransferMobileNotification !== undefined) {
-      this.enableTransferMobileNotification = data.enableTransferMobileNotification;
-    } else {
-      this.enableTransferMobileNotification = false;
-    }
-    if (data && data.sound !== undefined) {
-      this.sound = data.sound;
-    } else {
-      this.sound = undefined;
-    }
-  }
-
-  public withGatewayNamespaceId(gatewayNamespaceId?: string): this {
-    this.gatewayNamespaceId = gatewayNamespaceId;
-    return this;
-  }
-
-  public withEnableTransferMobileNotification(enableTransferMobileNotification?: boolean): this {
-    this.enableTransferMobileNotification = enableTransferMobileNotification;
-    return this;
-  }
-
-  public withSound(sound?: string): this {
-    this.sound = sound;
-    return this;
-  }
-
-  public toDict(): {[key: string]: any} {
-    const data: {[key: string]: any} = {};
-    data.gatewayNamespaceId = this.gatewayNamespaceId;
-    data.enableTransferMobileNotification = this.enableTransferMobileNotification;
-    data.sound = this.sound;
     return data;
   }
 

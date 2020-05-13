@@ -21,7 +21,7 @@ import {
   LogSetting,
 } from './model';
 
-import IResult from '../core/interface/IResult';
+import IResult from '@/gs2/core/interface/IResult';
 
 export class DescribeNamespacesResult implements IResult {
   /** ネームスペースのリスト */

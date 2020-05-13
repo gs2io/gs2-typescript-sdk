@@ -14,8 +14,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 
-import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
-import { Gs2Constant, Gs2RestSession } from '../core/model';
+import AbstractGs2RestClient from '@/gs2/core/AbstractGs2RestClient';
+import { Gs2Constant, Gs2RestSession } from '@/gs2/core/model';
 import {
   DescribeNamespacesRequest,
   CreateNamespaceRequest,
@@ -38,6 +38,7 @@ import {
   GetEntryWithSignatureRequest,
   GetEntryWithSignatureByUserIdRequest,
   ResetByUserIdRequest,
+  AddEntriesByStampSheetRequest,
   ExportMasterRequest,
   GetCurrentEntryMasterRequest,
   UpdateCurrentEntryMasterRequest,
@@ -66,6 +67,7 @@ import {
   GetEntryWithSignatureResult,
   GetEntryWithSignatureByUserIdResult,
   ResetByUserIdResult,
+  AddEntriesByStampSheetResult,
   ExportMasterResult,
   GetCurrentEntryMasterResult,
   UpdateCurrentEntryMasterResult,
@@ -1026,6 +1028,50 @@ export class Gs2DictionaryRestClient extends AbstractGs2RestClient {
         return new ResetByUserIdResult(response.data);
       }).catch((error: any) => {
         throw JSON.parse(error.response.data.message);
+      });
+  }
+
+  /**
+   * スタンプシートでエントリーを追加<br>
+   *
+   * @param request リクエストパラメータ
+   * @return 結果
+   */
+  public addEntriesByStampSheet(request: AddEntriesByStampSheetRequest): Promise<AddEntriesByStampSheetResult> {
+    const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/entry/add')
+      .replace('{service}', 'dictionary')
+      .replace('{region}', this.session.region);
+
+    const headers = this.createAuthorizedHeaders();
+    const body: {[key: string]: any} = {};
+    if (request.stampSheet !== undefined && request.stampSheet !== '') {
+      body['stampSheet'] = request.stampSheet;
+    }
+    if (request.keyId !== undefined && request.keyId !== '') {
+      body['keyId'] = request.keyId;
+    }
+    body['contextStack'] = request.contextStack;
+
+    if (request.requestId) {
+      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+    }
+
+    const config = {
+      headers,
+    };
+    return axios.post(
+      url,
+      body,
+      config,
+    )
+      .then((response: any) => {
+        return new AddEntriesByStampSheetResult(response.data);
+      }).catch((error: any) => {
+        if (error.response) {
+          throw JSON.parse(error.response.data.message);
+        } else {
+          throw [];
+        }
       });
   }
 
