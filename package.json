@@ -27,31 +27,5 @@
     "not ie <= 8"
   ],
   "test": "jest",
-  "jest": {
-    "moduleNameMapper": {
-      "@/gs2/(.*)$": "<rootDir>/src/$1"
-    },
-    "moduleFileExtensions": [
-      "js",
-      "jsx",
-      "json",
-      "ts",
-      "tsx"
-    ],
-    "transform": {
-      ".+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
-      "^.+\\.(ts|tsx)$": "ts-jest",
-      "^.+\\.(js|jsx)$": "babel-jest"
-    },
-    "transformIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "testMatch": [
-      "**/__tests__/**/*.+(ts|tsx|js)",
-      "**/?(*.)+(spec|test).+(ts|tsx|js)"
-    ],
-    "testURL": "http://localhost/",
-    "verbose": true
-  },
   "type": "module"
 }
