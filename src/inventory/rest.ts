@@ -16,2309 +16,1816 @@ permissions and limitations under the License.
 
 import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
 import { Gs2Constant, Gs2RestSession } from '../core/model';
-import {
-  DescribeNamespacesRequest,
-  CreateNamespaceRequest,
-  GetNamespaceStatusRequest,
-  GetNamespaceRequest,
-  UpdateNamespaceRequest,
-  DeleteNamespaceRequest,
-  DescribeInventoryModelMastersRequest,
-  CreateInventoryModelMasterRequest,
-  GetInventoryModelMasterRequest,
-  UpdateInventoryModelMasterRequest,
-  DeleteInventoryModelMasterRequest,
-  DescribeInventoryModelsRequest,
-  GetInventoryModelRequest,
-  DescribeItemModelMastersRequest,
-  CreateItemModelMasterRequest,
-  GetItemModelMasterRequest,
-  UpdateItemModelMasterRequest,
-  DeleteItemModelMasterRequest,
-  DescribeItemModelsRequest,
-  GetItemModelRequest,
-  ExportMasterRequest,
-  GetCurrentItemModelMasterRequest,
-  UpdateCurrentItemModelMasterRequest,
-  UpdateCurrentItemModelMasterFromGitHubRequest,
-  DescribeInventoriesRequest,
-  DescribeInventoriesByUserIdRequest,
-  GetInventoryRequest,
-  GetInventoryByUserIdRequest,
-  AddCapacityByUserIdRequest,
-  SetCapacityByUserIdRequest,
-  DeleteInventoryByUserIdRequest,
-  AddCapacityByStampSheetRequest,
-  SetCapacityByStampSheetRequest,
-  DescribeItemSetsRequest,
-  DescribeItemSetsByUserIdRequest,
-  GetItemSetRequest,
-  GetItemSetByUserIdRequest,
-  GetItemWithSignatureRequest,
-  GetItemWithSignatureByUserIdRequest,
-  AcquireItemSetByUserIdRequest,
-  ConsumeItemSetRequest,
-  ConsumeItemSetByUserIdRequest,
-  DeleteItemSetByUserIdRequest,
-  AcquireItemSetByStampSheetRequest,
-  ConsumeItemSetByStampTaskRequest,
-} from './request';
-
-import {
-  DescribeNamespacesResult,
-  CreateNamespaceResult,
-  GetNamespaceStatusResult,
-  GetNamespaceResult,
-  UpdateNamespaceResult,
-  DeleteNamespaceResult,
-  DescribeInventoryModelMastersResult,
-  CreateInventoryModelMasterResult,
-  GetInventoryModelMasterResult,
-  UpdateInventoryModelMasterResult,
-  DeleteInventoryModelMasterResult,
-  DescribeInventoryModelsResult,
-  GetInventoryModelResult,
-  DescribeItemModelMastersResult,
-  CreateItemModelMasterResult,
-  GetItemModelMasterResult,
-  UpdateItemModelMasterResult,
-  DeleteItemModelMasterResult,
-  DescribeItemModelsResult,
-  GetItemModelResult,
-  ExportMasterResult,
-  GetCurrentItemModelMasterResult,
-  UpdateCurrentItemModelMasterResult,
-  UpdateCurrentItemModelMasterFromGitHubResult,
-  DescribeInventoriesResult,
-  DescribeInventoriesByUserIdResult,
-  GetInventoryResult,
-  GetInventoryByUserIdResult,
-  AddCapacityByUserIdResult,
-  SetCapacityByUserIdResult,
-  DeleteInventoryByUserIdResult,
-  AddCapacityByStampSheetResult,
-  SetCapacityByStampSheetResult,
-  DescribeItemSetsResult,
-  DescribeItemSetsByUserIdResult,
-  GetItemSetResult,
-  GetItemSetByUserIdResult,
-  GetItemWithSignatureResult,
-  GetItemWithSignatureByUserIdResult,
-  AcquireItemSetByUserIdResult,
-  ConsumeItemSetResult,
-  ConsumeItemSetByUserIdResult,
-  DeleteItemSetByUserIdResult,
-  AcquireItemSetByStampSheetResult,
-  ConsumeItemSetByStampTaskResult,
-} from './result';
-
-import {
-  Namespace,
-  InventoryModelMaster,
-  InventoryModel,
-  ItemModelMaster,
-  ItemModel,
-  CurrentItemModelMaster,
-  Inventory,
-  ItemSet,
-  ItemSetGroup,
-  ResponseCache,
-  GitHubCheckoutSetting,
-  ScriptSetting,
-  LogSetting,
-} from './model';
+import * as Request from './request';
+import * as Result from './result';
 
 import axios from 'axios';
 
 export class Gs2InventoryRestClient extends AbstractGs2RestClient {
 
-  public static ENDPOINT: string = 'inventory';
-
-  constructor(session: Gs2RestSession) {
-    super(session);
-  }
-
-  /**
-   * ネームスペースの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeNamespaces(request: DescribeNamespacesRequest): Promise<DescribeNamespacesResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
+    constructor(session: Gs2RestSession) {
+        super(session);
     }
 
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeNamespacesResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ネームスペースを新規作成<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public createNamespace(request: CreateNamespaceRequest): Promise<CreateNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.name !== undefined && request.name !== '') {
-      body['name'] = request.name;
-    }
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.acquireScript !== undefined) {
-      body['acquireScript'] = request.acquireScript ? request.acquireScript.toDict() : null;
-    }
-    if (request.overflowScript !== undefined) {
-      body['overflowScript'] = request.overflowScript ? request.overflowScript.toDict() : null;
-    }
-    if (request.consumeScript !== undefined) {
-      body['consumeScript'] = request.consumeScript ? request.consumeScript.toDict() : null;
-    }
-    if (request.logSetting !== undefined) {
-      body['logSetting'] = request.logSetting ? request.logSetting.toDict() : null;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new CreateNamespaceResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ネームスペースの状態を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getNamespaceStatus(request: GetNamespaceStatusRequest): Promise<GetNamespaceStatusResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeNamespacesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetNamespaceStatusResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ネームスペースを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getNamespace(request: GetNamespaceRequest): Promise<GetNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetNamespaceResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ネームスペースを更新<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateNamespace(request: UpdateNamespaceRequest): Promise<UpdateNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.acquireScript !== undefined) {
-      body['acquireScript'] = request.acquireScript ? request.acquireScript.toDict() : null;
-    }
-    if (request.overflowScript !== undefined) {
-      body['overflowScript'] = request.overflowScript ? request.overflowScript.toDict() : null;
-    }
-    if (request.consumeScript !== undefined) {
-      body['consumeScript'] = request.consumeScript ? request.consumeScript.toDict() : null;
-    }
-    if (request.logSetting !== undefined) {
-      body['logSetting'] = request.logSetting ? request.logSetting.toDict() : null;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateNamespaceResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ネームスペースを削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteNamespace(request: DeleteNamespaceRequest): Promise<DeleteNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'name': request.getName() ?? null,
+            'description': request.getDescription() ?? null,
+            'acquireScript': request.getAcquireScript()?.toDict() ?? null,
+            'overflowScript': request.getOverflowScript()?.toDict() ?? null,
+            'consumeScript': request.getConsumeScript()?.toDict() ?? null,
+            'logSetting': request.getLogSetting()?.toDict() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteNamespaceResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * インベントリモデルマスターの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeInventoryModelMasters(request: DescribeInventoryModelMastersRequest): Promise<DescribeInventoryModelMastersResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeInventoryModelMastersResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * インベントリモデルマスターを新規作成<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public createInventoryModelMaster(request: CreateInventoryModelMasterRequest): Promise<CreateInventoryModelMasterResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.name !== undefined && request.name !== '') {
-      body['name'] = request.name;
-    }
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.metadata !== undefined && request.metadata !== '') {
-      body['metadata'] = request.metadata;
-    }
-    if (request.initialCapacity !== undefined) {
-      body['initialCapacity'] = request.initialCapacity;
-    }
-    if (request.maxCapacity !== undefined) {
-      body['maxCapacity'] = request.maxCapacity;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new CreateInventoryModelMasterResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * インベントリモデルマスターを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getInventoryModelMaster(request: GetInventoryModelMasterRequest): Promise<GetInventoryModelMasterResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetNamespaceStatusResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetInventoryModelMasterResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * インベントリモデルマスターを更新<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateInventoryModelMaster(request: UpdateInventoryModelMasterRequest): Promise<UpdateInventoryModelMasterResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.metadata !== undefined && request.metadata !== '') {
-      body['metadata'] = request.metadata;
-    }
-    if (request.initialCapacity !== undefined) {
-      body['initialCapacity'] = request.initialCapacity;
-    }
-    if (request.maxCapacity !== undefined) {
-      body['maxCapacity'] = request.maxCapacity;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateInventoryModelMasterResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * インベントリモデルマスターを削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteInventoryModelMaster(request: DeleteInventoryModelMasterRequest): Promise<DeleteInventoryModelMasterResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteInventoryModelMasterResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * インベントリモデルの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeInventoryModels(request: DescribeInventoryModelsRequest): Promise<DescribeInventoryModelsResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeInventoryModelsResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * インベントリモデルを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getInventoryModel(request: GetInventoryModelRequest): Promise<GetInventoryModelResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetInventoryModelResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * アイテムモデルマスターの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeItemModelMasters(request: DescribeItemModelMastersRequest): Promise<DescribeItemModelMastersResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeItemModelMastersResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * アイテムモデルマスターを新規作成<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public createItemModelMaster(request: CreateItemModelMasterRequest): Promise<CreateItemModelMasterResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.name !== undefined && request.name !== '') {
-      body['name'] = request.name;
-    }
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.metadata !== undefined && request.metadata !== '') {
-      body['metadata'] = request.metadata;
-    }
-    if (request.stackingLimit !== undefined) {
-      body['stackingLimit'] = request.stackingLimit;
-    }
-    if (request.allowMultipleStacks !== undefined) {
-      body['allowMultipleStacks'] = request.allowMultipleStacks;
-    }
-    if (request.sortValue !== undefined) {
-      body['sortValue'] = request.sortValue;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new CreateItemModelMasterResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * アイテムモデルマスターを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getItemModelMaster(request: GetItemModelMasterRequest): Promise<GetItemModelMasterResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      )
-      .replace(
-        '{itemName}',
-        request.itemName ? String(request.itemName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'description': request.getDescription() ?? null,
+            'acquireScript': request.getAcquireScript()?.toDict() ?? null,
+            'overflowScript': request.getOverflowScript()?.toDict() ?? null,
+            'consumeScript': request.getConsumeScript()?.toDict() ?? null,
+            'logSetting': request.getLogSetting()?.toDict() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetItemModelMasterResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * アイテムモデルマスターを更新<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateItemModelMaster(request: UpdateItemModelMasterRequest): Promise<UpdateItemModelMasterResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      )
-      .replace(
-        '{itemName}',
-        request.itemName ? String(request.itemName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.metadata !== undefined && request.metadata !== '') {
-      body['metadata'] = request.metadata;
-    }
-    if (request.stackingLimit !== undefined) {
-      body['stackingLimit'] = request.stackingLimit;
-    }
-    if (request.allowMultipleStacks !== undefined) {
-      body['allowMultipleStacks'] = request.allowMultipleStacks;
-    }
-    if (request.sortValue !== undefined) {
-      body['sortValue'] = request.sortValue;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateItemModelMasterResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * アイテムモデルマスターを削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteItemModelMaster(request: DeleteItemModelMasterRequest): Promise<DeleteItemModelMasterResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      )
-      .replace(
-        '{itemName}',
-        request.itemName ? String(request.itemName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteItemModelMasterResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * Noneの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeItemModels(request: DescribeItemModelsRequest): Promise<DescribeItemModelsResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}/item')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeItemModelsResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * Noneを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getItemModel(request: GetItemModelRequest): Promise<GetItemModelResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}/item/{itemName}')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      )
-      .replace(
-        '{itemName}',
-        request.itemName ? String(request.itemName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetItemModelResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 現在有効な所持品マスターのマスターデータをエクスポートします<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public exportMaster(request: ExportMasterRequest): Promise<ExportMasterResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new ExportMasterResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 現在有効な所持品マスターを取得します<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getCurrentItemModelMaster(request: GetCurrentItemModelMasterRequest): Promise<GetCurrentItemModelMasterResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetCurrentItemModelMasterResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 現在有効な所持品マスターを更新します<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateCurrentItemModelMaster(request: UpdateCurrentItemModelMasterRequest): Promise<UpdateCurrentItemModelMasterResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.settings !== undefined && request.settings !== '') {
-      body['settings'] = request.settings;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateCurrentItemModelMasterResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public describeInventoryModelMasters(request: Request.DescribeInventoryModelMastersRequest): Promise<Result.DescribeInventoryModelMastersResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * 現在有効な所持品マスターを更新します<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateCurrentItemModelMasterFromGitHub(request: UpdateCurrentItemModelMasterFromGitHubRequest): Promise<UpdateCurrentItemModelMasterFromGitHubResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.checkoutSetting !== undefined) {
-      body['checkoutSetting'] = request.checkoutSetting ? request.checkoutSetting.toDict() : null;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeInventoryModelMastersResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateCurrentItemModelMasterFromGitHubResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public createInventoryModelMaster(request: Request.CreateInventoryModelMasterRequest): Promise<Result.CreateInventoryModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * インベントリの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeInventories(request: DescribeInventoriesRequest): Promise<DescribeInventoriesResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'name': request.getName() ?? null,
+            'description': request.getDescription() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'initialCapacity': request.getInitialCapacity() ?? null,
+            'maxCapacity': request.getMaxCapacity() ?? null,
+            'protectReferencedItem': request.getProtectReferencedItem() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateInventoryModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = request.accessToken;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeInventoriesResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * インベントリの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeInventoriesByUserId(request: DescribeInventoriesByUserIdRequest): Promise<DescribeInventoriesByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeInventoriesByUserIdResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * インベントリを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getInventory(request: GetInventoryRequest): Promise<GetInventoryResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = request.accessToken;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetInventoryResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * インベントリを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getInventoryByUserId(request: GetInventoryByUserIdRequest): Promise<GetInventoryByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetInventoryByUserIdResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * キャパシティサイズを加算<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public addCapacityByUserId(request: AddCapacityByUserIdRequest): Promise<AddCapacityByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/capacity')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.addCapacityValue !== undefined) {
-      body['addCapacityValue'] = request.addCapacityValue;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new AddCapacityByUserIdResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public getInventoryModelMaster(request: Request.GetInventoryModelMasterRequest): Promise<Result.GetInventoryModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * キャパシティサイズを設定<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public setCapacityByUserId(request: SetCapacityByUserIdRequest): Promise<SetCapacityByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/capacity')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.newCapacityValue !== undefined) {
-      body['newCapacityValue'] = request.newCapacityValue;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetInventoryModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new SetCapacityByUserIdResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public updateInventoryModelMaster(request: Request.UpdateInventoryModelMasterRequest): Promise<Result.UpdateInventoryModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * インベントリを削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteInventoryByUserId(request: DeleteInventoryByUserIdRequest): Promise<DeleteInventoryByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'description': request.getDescription() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'initialCapacity': request.getInitialCapacity() ?? null,
+            'maxCapacity': request.getMaxCapacity() ?? null,
+            'protectReferencedItem': request.getProtectReferencedItem() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateInventoryModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteInventoryByUserIdResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * スタンプシートでキャパシティサイズを加算<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public addCapacityByStampSheet(request: AddCapacityByStampSheetRequest): Promise<AddCapacityByStampSheetResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/inventory/capacity/add')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.stampSheet !== undefined && request.stampSheet !== '') {
-      body['stampSheet'] = request.stampSheet;
-    }
-    if (request.keyId !== undefined && request.keyId !== '') {
-      body['keyId'] = request.keyId;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new AddCapacityByStampSheetResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public deleteInventoryModelMaster(request: Request.DeleteInventoryModelMasterRequest): Promise<Result.DeleteInventoryModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * スタンプシートでキャパシティサイズを設定<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public setCapacityByStampSheet(request: SetCapacityByStampSheetRequest): Promise<SetCapacityByStampSheetResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/inventory/capacity/set')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.stampSheet !== undefined && request.stampSheet !== '') {
-      body['stampSheet'] = request.stampSheet;
-    }
-    if (request.keyId !== undefined && request.keyId !== '') {
-      body['keyId'] = request.keyId;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteInventoryModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new SetCapacityByStampSheetResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public describeInventoryModels(request: Request.DescribeInventoryModelsRequest): Promise<Result.DescribeInventoryModelsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * 有効期限ごとのアイテム所持数量の一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeItemSets(request: DescribeItemSetsRequest): Promise<DescribeItemSetsResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeInventoryModelsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = request.accessToken;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeItemSetsResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 有効期限ごとのアイテム所持数量の一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeItemSetsByUserId(request: DescribeItemSetsByUserIdRequest): Promise<DescribeItemSetsByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeItemSetsByUserIdResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 有効期限ごとのアイテム所持数量を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getItemSet(request: GetItemSetRequest): Promise<GetItemSetResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      )
-      .replace(
-        '{itemName}',
-        request.itemName ? String(request.itemName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.itemSetName !== undefined ) {
-      params['itemSetName'] = String(request.itemSetName);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = request.accessToken;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetItemSetResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 有効期限ごとのアイテム所持数量を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getItemSetByUserId(request: GetItemSetByUserIdRequest): Promise<GetItemSetByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      )
-      .replace(
-        '{itemName}',
-        request.itemName ? String(request.itemName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.itemSetName !== undefined ) {
-      params['itemSetName'] = String(request.itemSetName);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetItemSetByUserIdResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 有効期限ごとのアイテム所持数量を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getItemWithSignature(request: GetItemWithSignatureRequest): Promise<GetItemWithSignatureResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/signature')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      )
-      .replace(
-        '{itemName}',
-        request.itemName ? String(request.itemName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.itemSetName !== undefined ) {
-      params['itemSetName'] = String(request.itemSetName);
-    }
-    if (request.keyId !== undefined ) {
-      params['keyId'] = String(request.keyId);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = request.accessToken;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetItemWithSignatureResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 有効期限ごとのアイテム所持数量を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getItemWithSignatureByUserId(request: GetItemWithSignatureByUserIdRequest): Promise<GetItemWithSignatureByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/signature')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      )
-      .replace(
-        '{itemName}',
-        request.itemName ? String(request.itemName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.itemSetName !== undefined ) {
-      params['itemSetName'] = String(request.itemSetName);
-    }
-    if (request.keyId !== undefined ) {
-      params['keyId'] = String(request.keyId);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetItemWithSignatureByUserIdResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * アイテムをインベントリに追加<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public acquireItemSetByUserId(request: AcquireItemSetByUserIdRequest): Promise<AcquireItemSetByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/acquire')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      )
-      .replace(
-        '{itemName}',
-        request.itemName ? String(request.itemName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.acquireCount !== undefined) {
-      body['acquireCount'] = request.acquireCount;
-    }
-    if (request.expiresAt !== undefined) {
-      body['expiresAt'] = request.expiresAt;
-    }
-    if (request.createNewItemSet !== undefined) {
-      body['createNewItemSet'] = request.createNewItemSet;
-    }
-    if (request.itemSetName !== undefined && request.itemSetName !== '') {
-      body['itemSetName'] = request.itemSetName;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new AcquireItemSetByUserIdResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public getInventoryModel(request: Request.GetInventoryModelRequest): Promise<Result.GetInventoryModelResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * インベントリのアイテムを消費<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public consumeItemSet(request: ConsumeItemSetRequest): Promise<ConsumeItemSetResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/consume')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      )
-      .replace(
-        '{itemName}',
-        request.itemName ? String(request.itemName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.consumeCount !== undefined) {
-      body['consumeCount'] = request.consumeCount;
-    }
-    if (request.itemSetName !== undefined && request.itemSetName !== '') {
-      body['itemSetName'] = request.itemSetName;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = String(request.accessToken);
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetInventoryModelResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new ConsumeItemSetResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public describeItemModelMasters(request: Request.DescribeItemModelMastersRequest): Promise<Result.DescribeItemModelMastersResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * インベントリのアイテムを消費<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public consumeItemSetByUserId(request: ConsumeItemSetByUserIdRequest): Promise<ConsumeItemSetByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/consume')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      )
-      .replace(
-        '{itemName}',
-        request.itemName ? String(request.itemName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.consumeCount !== undefined) {
-      body['consumeCount'] = request.consumeCount;
-    }
-    if (request.itemSetName !== undefined && request.itemSetName !== '') {
-      body['itemSetName'] = request.itemSetName;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeItemModelMastersResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new ConsumeItemSetByUserIdResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public createItemModelMaster(request: Request.CreateItemModelMasterRequest): Promise<Result.CreateItemModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * 有効期限ごとのアイテム所持数量を削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteItemSetByUserId(request: DeleteItemSetByUserIdRequest): Promise<DeleteItemSetByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{inventoryName}',
-        request.inventoryName ? String(request.inventoryName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      )
-      .replace(
-        '{itemName}',
-        request.itemName ? String(request.itemName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.itemSetName !== undefined ) {
-      params['itemSetName'] = String(request.itemSetName);
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'name': request.getName() ?? null,
+            'description': request.getDescription() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'stackingLimit': request.getStackingLimit() ?? null,
+            'allowMultipleStacks': request.getAllowMultipleStacks() ?? null,
+            'sortValue': request.getSortValue() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateItemModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteItemSetByUserIdResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * スタンプシートでアイテムをインベントリに追加<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public acquireItemSetByStampSheet(request: AcquireItemSetByStampSheetRequest): Promise<AcquireItemSetByStampSheetResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/item/acquire')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.stampSheet !== undefined && request.stampSheet !== '') {
-      body['stampSheet'] = request.stampSheet;
-    }
-    if (request.keyId !== undefined && request.keyId !== '') {
-      body['keyId'] = request.keyId;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new AcquireItemSetByStampSheetResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public getItemModelMaster(request: Request.GetItemModelMasterRequest): Promise<Result.GetItemModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * スタンプシートでインベントリのアイテムを消費<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public consumeItemSetByStampTask(request: ConsumeItemSetByStampTaskRequest): Promise<ConsumeItemSetByStampTaskResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/item/consume')
-      .replace('{service}', 'inventory')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.stampTask !== undefined && request.stampTask !== '') {
-      body['stampTask'] = request.stampTask;
-    }
-    if (request.keyId !== undefined && request.keyId !== '') {
-      body['keyId'] = request.keyId;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetItemModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new ConsumeItemSetByStampTaskResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public updateItemModelMaster(request: Request.UpdateItemModelMasterRequest): Promise<Result.UpdateItemModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'description': request.getDescription() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'stackingLimit': request.getStackingLimit() ?? null,
+            'allowMultipleStacks': request.getAllowMultipleStacks() ?? null,
+            'sortValue': request.getSortValue() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateItemModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public deleteItemModelMaster(request: Request.DeleteItemModelMasterRequest): Promise<Result.DeleteItemModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteItemModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeItemModels(request: Request.DescribeItemModelsRequest): Promise<Result.DescribeItemModelsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}/item')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeItemModelsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getItemModel(request: Request.GetItemModelRequest): Promise<Result.GetItemModelResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}/item/{itemName}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetItemModelResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ExportMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getCurrentItemModelMaster(request: Request.GetCurrentItemModelMasterRequest): Promise<Result.GetCurrentItemModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetCurrentItemModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public updateCurrentItemModelMaster(request: Request.UpdateCurrentItemModelMasterRequest): Promise<Result.UpdateCurrentItemModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'settings': request.getSettings() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateCurrentItemModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public updateCurrentItemModelMasterFromGitHub(request: Request.UpdateCurrentItemModelMasterFromGitHubRequest): Promise<Result.UpdateCurrentItemModelMasterFromGitHubResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'checkoutSetting': request.getCheckoutSetting()?.toDict() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateCurrentItemModelMasterFromGitHubResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public describeInventories(request: Request.DescribeInventoriesRequest): Promise<Result.DescribeInventoriesResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeInventoriesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeInventoriesByUserId(request: Request.DescribeInventoriesByUserIdRequest): Promise<Result.DescribeInventoriesByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeInventoriesByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getInventory(request: Request.GetInventoryRequest): Promise<Result.GetInventoryResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetInventoryResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getInventoryByUserId(request: Request.GetInventoryByUserIdRequest): Promise<Result.GetInventoryByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetInventoryByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public addCapacityByUserId(request: Request.AddCapacityByUserIdRequest): Promise<Result.AddCapacityByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/capacity')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'addCapacityValue': request.getAddCapacityValue() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.AddCapacityByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public setCapacityByUserId(request: Request.SetCapacityByUserIdRequest): Promise<Result.SetCapacityByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/capacity')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'newCapacityValue': request.getNewCapacityValue() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SetCapacityByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public deleteInventoryByUserId(request: Request.DeleteInventoryByUserIdRequest): Promise<Result.DeleteInventoryByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteInventoryByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public addCapacityByStampSheet(request: Request.AddCapacityByStampSheetRequest): Promise<Result.AddCapacityByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/inventory/capacity/add')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.AddCapacityByStampSheetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public setCapacityByStampSheet(request: Request.SetCapacityByStampSheetRequest): Promise<Result.SetCapacityByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/inventory/capacity/set')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SetCapacityByStampSheetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public describeItemSets(request: Request.DescribeItemSetsRequest): Promise<Result.DescribeItemSetsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeItemSetsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeItemSetsByUserId(request: Request.DescribeItemSetsByUserIdRequest): Promise<Result.DescribeItemSetsByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeItemSetsByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getItemSet(request: Request.GetItemSetRequest): Promise<Result.GetItemSetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'itemSetName': String(request.getItemSetName() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetItemSetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getItemSetByUserId(request: Request.GetItemSetByUserIdRequest): Promise<Result.GetItemSetByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'itemSetName': String(request.getItemSetName() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetItemSetByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getItemWithSignature(request: Request.GetItemWithSignatureRequest): Promise<Result.GetItemWithSignatureResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/signature')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'itemSetName': String(request.getItemSetName() ?? null),
+            'keyId': String(request.getKeyId() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetItemWithSignatureResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getItemWithSignatureByUserId(request: Request.GetItemWithSignatureByUserIdRequest): Promise<Result.GetItemWithSignatureByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/signature')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'itemSetName': String(request.getItemSetName() ?? null),
+            'keyId': String(request.getKeyId() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetItemWithSignatureByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public acquireItemSetByUserId(request: Request.AcquireItemSetByUserIdRequest): Promise<Result.AcquireItemSetByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/acquire')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'acquireCount': request.getAcquireCount() ?? null,
+            'expiresAt': request.getExpiresAt() ?? null,
+            'createNewItemSet': request.getCreateNewItemSet() ?? null,
+            'itemSetName': request.getItemSetName() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.AcquireItemSetByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public consumeItemSet(request: Request.ConsumeItemSetRequest): Promise<Result.ConsumeItemSetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/consume')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'consumeCount': request.getConsumeCount() ?? null,
+            'itemSetName': request.getItemSetName() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ConsumeItemSetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public consumeItemSetByUserId(request: Request.ConsumeItemSetByUserIdRequest): Promise<Result.ConsumeItemSetByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/consume')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'consumeCount': request.getConsumeCount() ?? null,
+            'itemSetName': request.getItemSetName() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ConsumeItemSetByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public describeReferenceOf(request: Request.DescribeReferenceOfRequest): Promise<Result.DescribeReferenceOfResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'))
+            .replace('{itemSetName}', String(request.getItemSetName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeReferenceOfResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeReferenceOfByUserId(request: Request.DescribeReferenceOfByUserIdRequest): Promise<Result.DescribeReferenceOfByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'))
+            .replace('{itemSetName}', String(request.getItemSetName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeReferenceOfByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getReferenceOf(request: Request.GetReferenceOfRequest): Promise<Result.GetReferenceOfResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'))
+            .replace('{itemSetName}', String(request.getItemSetName() ?? 'null'))
+            .replace('{referenceOf}', String(request.getReferenceOf() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetReferenceOfResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getReferenceOfByUserId(request: Request.GetReferenceOfByUserIdRequest): Promise<Result.GetReferenceOfByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'))
+            .replace('{itemSetName}', String(request.getItemSetName() ?? 'null'))
+            .replace('{referenceOf}', String(request.getReferenceOf() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetReferenceOfByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public verifyReferenceOf(request: Request.VerifyReferenceOfRequest): Promise<Result.VerifyReferenceOfResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}/verify/{verifyType}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'))
+            .replace('{itemSetName}', String(request.getItemSetName() ?? 'null'))
+            .replace('{referenceOf}', String(request.getReferenceOf() ?? 'null'))
+            .replace('{verifyType}', String(request.getVerifyType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyReferenceOfResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public verifyReferenceOfByUserId(request: Request.VerifyReferenceOfByUserIdRequest): Promise<Result.VerifyReferenceOfByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}/verify/{verifyType}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'))
+            .replace('{itemSetName}', String(request.getItemSetName() ?? 'null'))
+            .replace('{referenceOf}', String(request.getReferenceOf() ?? 'null'))
+            .replace('{verifyType}', String(request.getVerifyType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyReferenceOfByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public addReferenceOf(request: Request.AddReferenceOfRequest): Promise<Result.AddReferenceOfResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'))
+            .replace('{itemSetName}', String(request.getItemSetName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'referenceOf': request.getReferenceOf() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.AddReferenceOfResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public addReferenceOfByUserId(request: Request.AddReferenceOfByUserIdRequest): Promise<Result.AddReferenceOfByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'))
+            .replace('{itemSetName}', String(request.getItemSetName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'referenceOf': request.getReferenceOf() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.AddReferenceOfByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public deleteReferenceOf(request: Request.DeleteReferenceOfRequest): Promise<Result.DeleteReferenceOfResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'))
+            .replace('{itemSetName}', String(request.getItemSetName() ?? 'null'))
+            .replace('{referenceOf}', String(request.getReferenceOf() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteReferenceOfResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public deleteReferenceOfByUserId(request: Request.DeleteReferenceOfByUserIdRequest): Promise<Result.DeleteReferenceOfByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'))
+            .replace('{itemSetName}', String(request.getItemSetName() ?? 'null'))
+            .replace('{referenceOf}', String(request.getReferenceOf() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteReferenceOfByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public deleteItemSetByUserId(request: Request.DeleteItemSetByUserIdRequest): Promise<Result.DeleteItemSetByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{inventoryName}', String(request.getInventoryName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'))
+            .replace('{itemName}', String(request.getItemName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'itemSetName': String(request.getItemSetName() ?? null),
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteItemSetByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public acquireItemSetByStampSheet(request: Request.AcquireItemSetByStampSheetRequest): Promise<Result.AcquireItemSetByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/item/acquire')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.AcquireItemSetByStampSheetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public addReferenceOfItemSetByStampSheet(request: Request.AddReferenceOfItemSetByStampSheetRequest): Promise<Result.AddReferenceOfItemSetByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/item/reference/add')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.AddReferenceOfItemSetByStampSheetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public deleteReferenceOfItemSetByStampSheet(request: Request.DeleteReferenceOfItemSetByStampSheetRequest): Promise<Result.DeleteReferenceOfItemSetByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/item/reference/delete')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteReferenceOfItemSetByStampSheetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public consumeItemSetByStampTask(request: Request.ConsumeItemSetByStampTaskRequest): Promise<Result.ConsumeItemSetByStampTaskResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/item/consume')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampTask': request.getStampTask() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ConsumeItemSetByStampTaskResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public verifyReferenceOfByStampTask(request: Request.VerifyReferenceOfByStampTaskRequest): Promise<Result.VerifyReferenceOfByStampTaskResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/item/verify')
+            .replace('{service}', 'inventory')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampTask': request.getStampTask() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyReferenceOfByStampTaskResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
 }

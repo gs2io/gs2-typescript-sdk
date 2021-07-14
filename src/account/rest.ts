@@ -16,1176 +16,720 @@ permissions and limitations under the License.
 
 import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
 import { Gs2Constant, Gs2RestSession } from '../core/model';
-import {
-  DescribeNamespacesRequest,
-  CreateNamespaceRequest,
-  GetNamespaceStatusRequest,
-  GetNamespaceRequest,
-  UpdateNamespaceRequest,
-  DeleteNamespaceRequest,
-  DescribeAccountsRequest,
-  CreateAccountRequest,
-  UpdateTimeOffsetRequest,
-  GetAccountRequest,
-  DeleteAccountRequest,
-  AuthenticationRequest,
-  DescribeTakeOversRequest,
-  DescribeTakeOversByUserIdRequest,
-  CreateTakeOverRequest,
-  CreateTakeOverByUserIdRequest,
-  GetTakeOverRequest,
-  GetTakeOverByUserIdRequest,
-  UpdateTakeOverRequest,
-  UpdateTakeOverByUserIdRequest,
-  DeleteTakeOverRequest,
-  DeleteTakeOverByUserIdentifierRequest,
-  DoTakeOverRequest,
-} from './request';
-
-import {
-  DescribeNamespacesResult,
-  CreateNamespaceResult,
-  GetNamespaceStatusResult,
-  GetNamespaceResult,
-  UpdateNamespaceResult,
-  DeleteNamespaceResult,
-  DescribeAccountsResult,
-  CreateAccountResult,
-  UpdateTimeOffsetResult,
-  GetAccountResult,
-  DeleteAccountResult,
-  AuthenticationResult,
-  DescribeTakeOversResult,
-  DescribeTakeOversByUserIdResult,
-  CreateTakeOverResult,
-  CreateTakeOverByUserIdResult,
-  GetTakeOverResult,
-  GetTakeOverByUserIdResult,
-  UpdateTakeOverResult,
-  UpdateTakeOverByUserIdResult,
-  DeleteTakeOverResult,
-  DeleteTakeOverByUserIdentifierResult,
-  DoTakeOverResult,
-} from './result';
-
-import {
-  Namespace,
-  Account,
-  TakeOver,
-  ResponseCache,
-  ScriptSetting,
-  LogSetting,
-} from './model';
+import * as Request from './request';
+import * as Result from './result';
 
 import axios from 'axios';
 
 export class Gs2AccountRestClient extends AbstractGs2RestClient {
 
-  public static ENDPOINT: string = 'account';
-
-  constructor(session: Gs2RestSession) {
-    super(session);
-  }
-
-  /**
-   * ネームスペースの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeNamespaces(request: DescribeNamespacesRequest): Promise<DescribeNamespacesResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
+    constructor(session: Gs2RestSession) {
+        super(session);
     }
 
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeNamespacesResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ネームスペースを新規作成<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public createNamespace(request: CreateNamespaceRequest): Promise<CreateNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.name !== undefined && request.name !== '') {
-      body['name'] = request.name;
-    }
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.changePasswordIfTakeOver !== undefined) {
-      body['changePasswordIfTakeOver'] = request.changePasswordIfTakeOver;
-    }
-    if (request.createAccountScript !== undefined) {
-      body['createAccountScript'] = request.createAccountScript ? request.createAccountScript.toDict() : null;
-    }
-    if (request.authenticationScript !== undefined) {
-      body['authenticationScript'] = request.authenticationScript ? request.authenticationScript.toDict() : null;
-    }
-    if (request.createTakeOverScript !== undefined) {
-      body['createTakeOverScript'] = request.createTakeOverScript ? request.createTakeOverScript.toDict() : null;
-    }
-    if (request.doTakeOverScript !== undefined) {
-      body['doTakeOverScript'] = request.doTakeOverScript ? request.doTakeOverScript.toDict() : null;
-    }
-    if (request.logSetting !== undefined) {
-      body['logSetting'] = request.logSetting ? request.logSetting.toDict() : null;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new CreateNamespaceResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ネームスペースを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getNamespaceStatus(request: GetNamespaceStatusRequest): Promise<GetNamespaceStatusResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeNamespacesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetNamespaceStatusResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ネームスペースを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getNamespace(request: GetNamespaceRequest): Promise<GetNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetNamespaceResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ネームスペースを更新<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateNamespace(request: UpdateNamespaceRequest): Promise<UpdateNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.changePasswordIfTakeOver !== undefined) {
-      body['changePasswordIfTakeOver'] = request.changePasswordIfTakeOver;
-    }
-    if (request.createAccountScript !== undefined) {
-      body['createAccountScript'] = request.createAccountScript ? request.createAccountScript.toDict() : null;
-    }
-    if (request.authenticationScript !== undefined) {
-      body['authenticationScript'] = request.authenticationScript ? request.authenticationScript.toDict() : null;
-    }
-    if (request.createTakeOverScript !== undefined) {
-      body['createTakeOverScript'] = request.createTakeOverScript ? request.createTakeOverScript.toDict() : null;
-    }
-    if (request.doTakeOverScript !== undefined) {
-      body['doTakeOverScript'] = request.doTakeOverScript ? request.doTakeOverScript.toDict() : null;
-    }
-    if (request.logSetting !== undefined) {
-      body['logSetting'] = request.logSetting ? request.logSetting.toDict() : null;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateNamespaceResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ネームスペースを削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteNamespace(request: DeleteNamespaceRequest): Promise<DeleteNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'name': request.getName() ?? null,
+            'description': request.getDescription() ?? null,
+            'changePasswordIfTakeOver': request.getChangePasswordIfTakeOver() ?? null,
+            'createAccountScript': request.getCreateAccountScript()?.toDict() ?? null,
+            'authenticationScript': request.getAuthenticationScript()?.toDict() ?? null,
+            'createTakeOverScript': request.getCreateTakeOverScript()?.toDict() ?? null,
+            'doTakeOverScript': request.getDoTakeOverScript()?.toDict() ?? null,
+            'logSetting': request.getLogSetting()?.toDict() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteNamespaceResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ゲームプレイヤーアカウントの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeAccounts(request: DescribeAccountsRequest): Promise<DescribeAccountsResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeAccountsResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ゲームプレイヤーアカウントを新規作成<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public createAccount(request: CreateAccountRequest): Promise<CreateAccountResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new CreateAccountResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ゲームプレイヤーアカウントの現在時刻に対する補正値を更新<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateTimeOffset(request: UpdateTimeOffsetRequest): Promise<UpdateTimeOffsetResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}/time_offset')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.timeOffset !== undefined) {
-      body['timeOffset'] = request.timeOffset;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetNamespaceStatusResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateTimeOffsetResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ゲームプレイヤーアカウントを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getAccount(request: GetAccountRequest): Promise<GetAccountResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetAccountResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ゲームプレイヤーアカウントを削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteAccount(request: DeleteAccountRequest): Promise<DeleteAccountResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteAccountResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ゲームプレイヤーアカウントを認証<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public authentication(request: AuthenticationRequest): Promise<AuthenticationResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.keyId !== undefined && request.keyId !== '') {
-      body['keyId'] = request.keyId;
-    }
-    if (request.password !== undefined && request.password !== '') {
-      body['password'] = request.password;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new AuthenticationResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * 引き継ぎ設定の一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeTakeOvers(request: DescribeTakeOversRequest): Promise<DescribeTakeOversResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/takeover')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = request.accessToken;
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'description': request.getDescription() ?? null,
+            'changePasswordIfTakeOver': request.getChangePasswordIfTakeOver() ?? null,
+            'createAccountScript': request.getCreateAccountScript()?.toDict() ?? null,
+            'authenticationScript': request.getAuthenticationScript()?.toDict() ?? null,
+            'createTakeOverScript': request.getCreateTakeOverScript()?.toDict() ?? null,
+            'doTakeOverScript': request.getDoTakeOverScript()?.toDict() ?? null,
+            'logSetting': request.getLogSetting()?.toDict() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeTakeOversResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ユーザーIDを指定して引き継ぎ設定の一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeTakeOversByUserId(request: DescribeTakeOversByUserIdRequest): Promise<DescribeTakeOversByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}/takeover')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeTakeOversByUserIdResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 引き継ぎ設定を新規作成<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public createTakeOver(request: CreateTakeOverRequest): Promise<CreateTakeOverResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/takeover')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.type !== undefined) {
-      body['type'] = request.type;
-    }
-    if (request.userIdentifier !== undefined && request.userIdentifier !== '') {
-      body['userIdentifier'] = request.userIdentifier;
-    }
-    if (request.password !== undefined && request.password !== '') {
-      body['password'] = request.password;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = String(request.accessToken);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new CreateTakeOverResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ユーザーIDを指定して引き継ぎ設定を新規作成<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public createTakeOverByUserId(request: CreateTakeOverByUserIdRequest): Promise<CreateTakeOverByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}/takeover')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.type !== undefined) {
-      body['type'] = request.type;
-    }
-    if (request.userIdentifier !== undefined && request.userIdentifier !== '') {
-      body['userIdentifier'] = request.userIdentifier;
-    }
-    if (request.password !== undefined && request.password !== '') {
-      body['password'] = request.password;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new CreateTakeOverByUserIdResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public describeAccounts(request: Request.DescribeAccountsRequest): Promise<Result.DescribeAccountsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * 引き継ぎ設定を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getTakeOver(request: GetTakeOverRequest): Promise<GetTakeOverResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/takeover/type/{type}')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{type}',
-        request.type !== undefined ? String(request.type) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = request.accessToken;
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeAccountsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetTakeOverResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ユーザーIDを指定して引き継ぎ設定を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getTakeOverByUserId(request: GetTakeOverByUserIdRequest): Promise<GetTakeOverByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}/takeover/type/{type}')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      )
-      .replace(
-        '{type}',
-        request.type !== undefined ? String(request.type) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetTakeOverByUserIdResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 引き継ぎ設定を更新<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateTakeOver(request: UpdateTakeOverRequest): Promise<UpdateTakeOverResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/takeover/type/{type}')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{type}',
-        request.type !== undefined ? String(request.type) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.oldPassword !== undefined && request.oldPassword !== '') {
-      body['oldPassword'] = request.oldPassword;
-    }
-    if (request.password !== undefined && request.password !== '') {
-      body['password'] = request.password;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = String(request.accessToken);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateTakeOverResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public createAccount(request: Request.CreateAccountRequest): Promise<Result.CreateAccountResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * 引き継ぎ設定を更新<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateTakeOverByUserId(request: UpdateTakeOverByUserIdRequest): Promise<UpdateTakeOverByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}/takeover/type/{type}')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      )
-      .replace(
-        '{type}',
-        request.type !== undefined ? String(request.type) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.oldPassword !== undefined && request.oldPassword !== '') {
-      body['oldPassword'] = request.oldPassword;
-    }
-    if (request.password !== undefined && request.password !== '') {
-      body['password'] = request.password;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateAccountResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateTakeOverByUserIdResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public updateTimeOffset(request: Request.UpdateTimeOffsetRequest): Promise<Result.UpdateTimeOffsetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}/time_offset')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * 引き継ぎ設定を削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteTakeOver(request: DeleteTakeOverRequest): Promise<DeleteTakeOverResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/takeover/type/{type}')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{type}',
-        request.type !== undefined ? String(request.type) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.userIdentifier !== undefined ) {
-      params['userIdentifier'] = String(request.userIdentifier);
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'timeOffset': request.getTimeOffset() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateTimeOffsetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = request.accessToken;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteTakeOverResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 引き継ぎ設定を削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteTakeOverByUserIdentifier(request: DeleteTakeOverByUserIdentifierRequest): Promise<DeleteTakeOverByUserIdentifierResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/takeover/type/{type}/userIdentifier/{userIdentifier}')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{type}',
-        request.type !== undefined ? String(request.type) : 'null',
-      )
-      .replace(
-        '{userIdentifier}',
-        request.userIdentifier ? String(request.userIdentifier) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteTakeOverByUserIdentifierResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 引き継ぎ設定を更新<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public doTakeOver(request: DoTakeOverRequest): Promise<DoTakeOverResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/takeover/type/{type}')
-      .replace('{service}', 'account')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{type}',
-        request.type !== undefined ? String(request.type) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.userIdentifier !== undefined && request.userIdentifier !== '') {
-      body['userIdentifier'] = request.userIdentifier;
-    }
-    if (request.password !== undefined && request.password !== '') {
-      body['password'] = request.password;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new DoTakeOverResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public getAccount(request: Request.GetAccountRequest): Promise<Result.GetAccountResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetAccountResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public deleteAccount(request: Request.DeleteAccountRequest): Promise<Result.DeleteAccountResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteAccountResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public authentication(request: Request.AuthenticationRequest): Promise<Result.AuthenticationResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'keyId': request.getKeyId() ?? null,
+            'password': request.getPassword() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.AuthenticationResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public describeTakeOvers(request: Request.DescribeTakeOversRequest): Promise<Result.DescribeTakeOversResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/takeover')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeTakeOversResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeTakeOversByUserId(request: Request.DescribeTakeOversByUserIdRequest): Promise<Result.DescribeTakeOversByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}/takeover')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeTakeOversByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public createTakeOver(request: Request.CreateTakeOverRequest): Promise<Result.CreateTakeOverResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/takeover')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'type': request.getType() ?? null,
+            'userIdentifier': request.getUserIdentifier() ?? null,
+            'password': request.getPassword() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateTakeOverResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public createTakeOverByUserId(request: Request.CreateTakeOverByUserIdRequest): Promise<Result.CreateTakeOverByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}/takeover')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'type': request.getType() ?? null,
+            'userIdentifier': request.getUserIdentifier() ?? null,
+            'password': request.getPassword() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateTakeOverByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public getTakeOver(request: Request.GetTakeOverRequest): Promise<Result.GetTakeOverResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/takeover/type/{type}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{type}', String(request.getType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetTakeOverResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getTakeOverByUserId(request: Request.GetTakeOverByUserIdRequest): Promise<Result.GetTakeOverByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}/takeover/type/{type}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'))
+            .replace('{type}', String(request.getType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetTakeOverByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public updateTakeOver(request: Request.UpdateTakeOverRequest): Promise<Result.UpdateTakeOverResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/takeover/type/{type}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{type}', String(request.getType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'oldPassword': request.getOldPassword() ?? null,
+            'password': request.getPassword() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateTakeOverResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public updateTakeOverByUserId(request: Request.UpdateTakeOverByUserIdRequest): Promise<Result.UpdateTakeOverByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}/takeover/type/{type}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'))
+            .replace('{type}', String(request.getType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'oldPassword': request.getOldPassword() ?? null,
+            'password': request.getPassword() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateTakeOverByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public deleteTakeOver(request: Request.DeleteTakeOverRequest): Promise<Result.DeleteTakeOverResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/takeover/type/{type}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{type}', String(request.getType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'userIdentifier': String(request.getUserIdentifier() ?? null),
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteTakeOverResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public deleteTakeOverByUserIdentifier(request: Request.DeleteTakeOverByUserIdentifierRequest): Promise<Result.DeleteTakeOverByUserIdentifierResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/takeover/type/{type}/userIdentifier/{userIdentifier}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{type}', String(request.getType() ?? 'null'))
+            .replace('{userIdentifier}', String(request.getUserIdentifier() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteTakeOverByUserIdentifierResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public doTakeOver(request: Request.DoTakeOverRequest): Promise<Result.DoTakeOverResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/takeover/type/{type}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{type}', String(request.getType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'userIdentifier': request.getUserIdentifier() ?? null,
+            'password': request.getPassword() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DoTakeOverResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
 }

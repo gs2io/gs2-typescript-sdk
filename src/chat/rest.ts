@@ -16,1520 +16,915 @@ permissions and limitations under the License.
 
 import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
 import { Gs2Constant, Gs2RestSession } from '../core/model';
-import {
-  DescribeNamespacesRequest,
-  CreateNamespaceRequest,
-  GetNamespaceStatusRequest,
-  GetNamespaceRequest,
-  UpdateNamespaceRequest,
-  DeleteNamespaceRequest,
-  DescribeRoomsRequest,
-  CreateRoomRequest,
-  CreateRoomFromBackendRequest,
-  GetRoomRequest,
-  UpdateRoomRequest,
-  DeleteRoomRequest,
-  DeleteRoomFromBackendRequest,
-  DescribeMessagesRequest,
-  PostRequest,
-  PostByUserIdRequest,
-  GetMessageRequest,
-  DeleteMessageRequest,
-  DescribeSubscribesRequest,
-  DescribeSubscribesByUserIdRequest,
-  DescribeSubscribesByRoomNameRequest,
-  SubscribeRequest,
-  SubscribeByUserIdRequest,
-  GetSubscribeRequest,
-  GetSubscribeByUserIdRequest,
-  UpdateNotificationTypeRequest,
-  UpdateNotificationTypeByUserIdRequest,
-  UnsubscribeRequest,
-  UnsubscribeByUserIdRequest,
-} from './request';
-
-import {
-  DescribeNamespacesResult,
-  CreateNamespaceResult,
-  GetNamespaceStatusResult,
-  GetNamespaceResult,
-  UpdateNamespaceResult,
-  DeleteNamespaceResult,
-  DescribeRoomsResult,
-  CreateRoomResult,
-  CreateRoomFromBackendResult,
-  GetRoomResult,
-  UpdateRoomResult,
-  DeleteRoomResult,
-  DeleteRoomFromBackendResult,
-  DescribeMessagesResult,
-  PostResult,
-  PostByUserIdResult,
-  GetMessageResult,
-  DeleteMessageResult,
-  DescribeSubscribesResult,
-  DescribeSubscribesByUserIdResult,
-  DescribeSubscribesByRoomNameResult,
-  SubscribeResult,
-  SubscribeByUserIdResult,
-  GetSubscribeResult,
-  GetSubscribeByUserIdResult,
-  UpdateNotificationTypeResult,
-  UpdateNotificationTypeByUserIdResult,
-  UnsubscribeResult,
-  UnsubscribeByUserIdResult,
-} from './result';
-
-import {
-  Namespace,
-  Room,
-  Message,
-  Subscribe,
-  ResponseCache,
-  NotificationType,
-  ScriptSetting,
-  NotificationSetting,
-  LogSetting,
-} from './model';
+import * as Request from './request';
+import * as Result from './result';
 
 import axios from 'axios';
 
 export class Gs2ChatRestClient extends AbstractGs2RestClient {
 
-  public static ENDPOINT: string = 'chat';
-
-  constructor(session: Gs2RestSession) {
-    super(session);
-  }
-
-  /**
-   * ネームスペースの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeNamespaces(request: DescribeNamespacesRequest): Promise<DescribeNamespacesResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
+    constructor(session: Gs2RestSession) {
+        super(session);
     }
 
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeNamespacesResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ネームスペースを新規作成<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public createNamespace(request: CreateNamespaceRequest): Promise<CreateNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.name !== undefined && request.name !== '') {
-      body['name'] = request.name;
-    }
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.allowCreateRoom !== undefined) {
-      body['allowCreateRoom'] = request.allowCreateRoom;
-    }
-    if (request.postMessageScript !== undefined) {
-      body['postMessageScript'] = request.postMessageScript ? request.postMessageScript.toDict() : null;
-    }
-    if (request.createRoomScript !== undefined) {
-      body['createRoomScript'] = request.createRoomScript ? request.createRoomScript.toDict() : null;
-    }
-    if (request.deleteRoomScript !== undefined) {
-      body['deleteRoomScript'] = request.deleteRoomScript ? request.deleteRoomScript.toDict() : null;
-    }
-    if (request.subscribeRoomScript !== undefined) {
-      body['subscribeRoomScript'] = request.subscribeRoomScript ? request.subscribeRoomScript.toDict() : null;
-    }
-    if (request.unsubscribeRoomScript !== undefined) {
-      body['unsubscribeRoomScript'] = request.unsubscribeRoomScript ? request.unsubscribeRoomScript.toDict() : null;
-    }
-    if (request.postNotification !== undefined) {
-      body['postNotification'] = request.postNotification ? request.postNotification.toDict() : null;
-    }
-    if (request.logSetting !== undefined) {
-      body['logSetting'] = request.logSetting ? request.logSetting.toDict() : null;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new CreateNamespaceResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ネームスペースを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getNamespaceStatus(request: GetNamespaceStatusRequest): Promise<GetNamespaceStatusResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeNamespacesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetNamespaceStatusResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ネームスペースを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getNamespace(request: GetNamespaceRequest): Promise<GetNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetNamespaceResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ネームスペースを更新<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateNamespace(request: UpdateNamespaceRequest): Promise<UpdateNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.allowCreateRoom !== undefined) {
-      body['allowCreateRoom'] = request.allowCreateRoom;
-    }
-    if (request.postMessageScript !== undefined) {
-      body['postMessageScript'] = request.postMessageScript ? request.postMessageScript.toDict() : null;
-    }
-    if (request.createRoomScript !== undefined) {
-      body['createRoomScript'] = request.createRoomScript ? request.createRoomScript.toDict() : null;
-    }
-    if (request.deleteRoomScript !== undefined) {
-      body['deleteRoomScript'] = request.deleteRoomScript ? request.deleteRoomScript.toDict() : null;
-    }
-    if (request.subscribeRoomScript !== undefined) {
-      body['subscribeRoomScript'] = request.subscribeRoomScript ? request.subscribeRoomScript.toDict() : null;
-    }
-    if (request.unsubscribeRoomScript !== undefined) {
-      body['unsubscribeRoomScript'] = request.unsubscribeRoomScript ? request.unsubscribeRoomScript.toDict() : null;
-    }
-    if (request.postNotification !== undefined) {
-      body['postNotification'] = request.postNotification ? request.postNotification.toDict() : null;
-    }
-    if (request.logSetting !== undefined) {
-      body['logSetting'] = request.logSetting ? request.logSetting.toDict() : null;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateNamespaceResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ネームスペースを削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteNamespace(request: DeleteNamespaceRequest): Promise<DeleteNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'name': request.getName() ?? null,
+            'description': request.getDescription() ?? null,
+            'allowCreateRoom': request.getAllowCreateRoom() ?? null,
+            'postMessageScript': request.getPostMessageScript()?.toDict() ?? null,
+            'createRoomScript': request.getCreateRoomScript()?.toDict() ?? null,
+            'deleteRoomScript': request.getDeleteRoomScript()?.toDict() ?? null,
+            'subscribeRoomScript': request.getSubscribeRoomScript()?.toDict() ?? null,
+            'unsubscribeRoomScript': request.getUnsubscribeRoomScript()?.toDict() ?? null,
+            'postNotification': request.getPostNotification()?.toDict() ?? null,
+            'logSetting': request.getLogSetting()?.toDict() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteNamespaceResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ルームの一覧取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeRooms(request: DescribeRoomsRequest): Promise<DescribeRoomsResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeRoomsResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ルームを作成<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public createRoom(request: CreateRoomRequest): Promise<CreateRoomResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/user')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.name !== undefined && request.name !== '') {
-      body['name'] = request.name;
-    }
-    if (request.metadata !== undefined && request.metadata !== '') {
-      body['metadata'] = request.metadata;
-    }
-    if (request.password !== undefined && request.password !== '') {
-      body['password'] = request.password;
-    }
-    if (request.whiteListUserIds !== undefined) {
-      body['whiteListUserIds'] = request.whiteListUserIds;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = String(request.accessToken);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new CreateRoomResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ルームを作成<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public createRoomFromBackend(request: CreateRoomFromBackendRequest): Promise<CreateRoomFromBackendResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.name !== undefined && request.name !== '') {
-      body['name'] = request.name;
-    }
-    if (request.userId !== undefined && request.userId !== '') {
-      body['userId'] = request.userId;
-    }
-    if (request.metadata !== undefined && request.metadata !== '') {
-      body['metadata'] = request.metadata;
-    }
-    if (request.password !== undefined && request.password !== '') {
-      body['password'] = request.password;
-    }
-    if (request.whiteListUserIds !== undefined) {
-      body['whiteListUserIds'] = request.whiteListUserIds;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetNamespaceStatusResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new CreateRoomFromBackendResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ルームを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getRoom(request: GetRoomRequest): Promise<GetRoomResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{roomName}',
-        request.roomName ? String(request.roomName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetRoomResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ルームを更新<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateRoom(request: UpdateRoomRequest): Promise<UpdateRoomResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{roomName}',
-        request.roomName ? String(request.roomName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.metadata !== undefined && request.metadata !== '') {
-      body['metadata'] = request.metadata;
-    }
-    if (request.password !== undefined && request.password !== '') {
-      body['password'] = request.password;
-    }
-    if (request.whiteListUserIds !== undefined) {
-      body['whiteListUserIds'] = request.whiteListUserIds;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateRoomResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ルームを削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteRoom(request: DeleteRoomRequest): Promise<DeleteRoomResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/user')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{roomName}',
-        request.roomName ? String(request.roomName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = request.accessToken;
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'description': request.getDescription() ?? null,
+            'allowCreateRoom': request.getAllowCreateRoom() ?? null,
+            'postMessageScript': request.getPostMessageScript()?.toDict() ?? null,
+            'createRoomScript': request.getCreateRoomScript()?.toDict() ?? null,
+            'deleteRoomScript': request.getDeleteRoomScript()?.toDict() ?? null,
+            'subscribeRoomScript': request.getSubscribeRoomScript()?.toDict() ?? null,
+            'unsubscribeRoomScript': request.getUnsubscribeRoomScript()?.toDict() ?? null,
+            'postNotification': request.getPostNotification()?.toDict() ?? null,
+            'logSetting': request.getLogSetting()?.toDict() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteRoomResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ルームを削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteRoomFromBackend(request: DeleteRoomFromBackendRequest): Promise<DeleteRoomFromBackendResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{roomName}',
-        request.roomName ? String(request.roomName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.userId !== undefined ) {
-      params['userId'] = String(request.userId);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteRoomFromBackendResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * メッセージの一覧取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeMessages(request: DescribeMessagesRequest): Promise<DescribeMessagesResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{roomName}',
-        request.roomName ? String(request.roomName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.password !== undefined ) {
-      params['password'] = String(request.password);
-    }
-    if (request.startAt !== undefined ) {
-      params['startAt'] = Number(request.startAt);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeMessagesResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * メッセージを投稿<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public post(request: PostRequest): Promise<PostResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{roomName}',
-        request.roomName ? String(request.roomName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.category !== undefined) {
-      body['category'] = request.category;
-    }
-    if (request.metadata !== undefined && request.metadata !== '') {
-      body['metadata'] = request.metadata;
-    }
-    if (request.password !== undefined && request.password !== '') {
-      body['password'] = request.password;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = String(request.accessToken);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new PostResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ユーザIDを指定してメッセージを投稿<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public postByUserId(request: PostByUserIdRequest): Promise<PostByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/user/{userId}')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{roomName}',
-        request.roomName ? String(request.roomName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.category !== undefined) {
-      body['category'] = request.category;
-    }
-    if (request.metadata !== undefined && request.metadata !== '') {
-      body['metadata'] = request.metadata;
-    }
-    if (request.password !== undefined && request.password !== '') {
-      body['password'] = request.password;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new PostByUserIdResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public describeRooms(request: Request.DescribeRoomsRequest): Promise<Result.DescribeRoomsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * メッセージを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getMessage(request: GetMessageRequest): Promise<GetMessageResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/{messageName}')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{roomName}',
-        request.roomName ? String(request.roomName) : 'null',
-      )
-      .replace(
-        '{messageName}',
-        request.messageName ? String(request.messageName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeRoomsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetMessageResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * メッセージを削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteMessage(request: DeleteMessageRequest): Promise<DeleteMessageResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/{messageName}')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{roomName}',
-        request.roomName ? String(request.roomName) : 'null',
-      )
-      .replace(
-        '{messageName}',
-        request.messageName ? String(request.messageName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteMessageResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 購読しているルームの一覧取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeSubscribes(request: DescribeSubscribesRequest): Promise<DescribeSubscribesResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/subscribe')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = request.accessToken;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeSubscribesResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ユーザIDを指定して購読しているルームの一覧取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeSubscribesByUserId(request: DescribeSubscribesByUserIdRequest): Promise<DescribeSubscribesByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/subscribe')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeSubscribesByUserIdResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ルーム名を指定して購読しているユーザの一覧取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeSubscribesByRoomName(request: DescribeSubscribesByRoomNameRequest): Promise<DescribeSubscribesByRoomNameResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/subscribe')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{roomName}',
-        request.roomName ? String(request.roomName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeSubscribesByRoomNameResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ルームを購読<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public subscribe(request: SubscribeRequest): Promise<SubscribeResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{roomName}',
-        request.roomName ? String(request.roomName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.notificationTypes !== undefined) {
-      body['notificationTypes'] = request.notificationTypes.map((item) => item.toDict());
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = String(request.accessToken);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new SubscribeResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public createRoom(request: Request.CreateRoomRequest): Promise<Result.CreateRoomResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/user')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ユーザIDを指定してルームを購読<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public subscribeByUserId(request: SubscribeByUserIdRequest): Promise<SubscribeByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{roomName}',
-        request.roomName ? String(request.roomName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.notificationTypes !== undefined) {
-      body['notificationTypes'] = request.notificationTypes.map((item) => item.toDict());
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new SubscribeByUserIdResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
         }
-      });
-  }
-
-  /**
-   * 購読を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getSubscribe(request: GetSubscribeRequest): Promise<GetSubscribeResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{roomName}',
-        request.roomName ? String(request.roomName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = request.accessToken;
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'name': request.getName() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'password': request.getPassword() ?? null,
+            'whiteListUserIds': request.getWhiteListUserIds() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateRoomResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetSubscribeResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ユーザIDを指定して購読を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getSubscribeByUserId(request: GetSubscribeByUserIdRequest): Promise<GetSubscribeByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{roomName}',
-        request.roomName ? String(request.roomName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetSubscribeByUserIdResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 通知方法を更新<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateNotificationType(request: UpdateNotificationTypeRequest): Promise<UpdateNotificationTypeResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe/notification')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{roomName}',
-        request.roomName ? String(request.roomName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.notificationTypes !== undefined) {
-      body['notificationTypes'] = request.notificationTypes.map((item) => item.toDict());
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = String(request.accessToken);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateNotificationTypeResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public createRoomFromBackend(request: Request.CreateRoomFromBackendRequest): Promise<Result.CreateRoomFromBackendResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ユーザIDを指定して通知方法を更新<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateNotificationTypeByUserId(request: UpdateNotificationTypeByUserIdRequest): Promise<UpdateNotificationTypeByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe/notification')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{roomName}',
-        request.roomName ? String(request.roomName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.notificationTypes !== undefined) {
-      body['notificationTypes'] = request.notificationTypes.map((item) => item.toDict());
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'name': request.getName() ?? null,
+            'userId': request.getUserId() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'password': request.getPassword() ?? null,
+            'whiteListUserIds': request.getWhiteListUserIds() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateRoomFromBackendResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateNotificationTypeByUserIdResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public getRoom(request: Request.GetRoomRequest): Promise<Result.GetRoomResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * 購読の購読を解除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public unsubscribe(request: UnsubscribeRequest): Promise<UnsubscribeResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{roomName}',
-        request.roomName ? String(request.roomName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = request.accessToken;
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetRoomResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new UnsubscribeResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ユーザIDを指定して購読の購読を解除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public unsubscribeByUserId(request: UnsubscribeByUserIdRequest): Promise<UnsubscribeByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe')
-      .replace('{service}', 'chat')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{roomName}',
-        request.roomName ? String(request.roomName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+    public updateRoom(request: Request.UpdateRoomRequest): Promise<Result.UpdateRoomResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'password': request.getPassword() ?? null,
+            'whiteListUserIds': request.getWhiteListUserIds() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateRoomResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new UnsubscribeByUserIdResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
+    public deleteRoom(request: Request.DeleteRoomRequest): Promise<Result.DeleteRoomResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/user')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteRoomResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public deleteRoomFromBackend(request: Request.DeleteRoomFromBackendRequest): Promise<Result.DeleteRoomFromBackendResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'userId': String(request.getUserId() ?? null),
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteRoomFromBackendResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeMessages(request: Request.DescribeMessagesRequest): Promise<Result.DescribeMessagesResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'password': String(request.getPassword() ?? null),
+            'startAt': String(request.getStartAt() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeMessagesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public post(request: Request.PostRequest): Promise<Result.PostResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'category': request.getCategory() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'password': request.getPassword() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.PostResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public postByUserId(request: Request.PostByUserIdRequest): Promise<Result.PostByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/user/{userId}')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'category': request.getCategory() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'password': request.getPassword() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.PostByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public getMessage(request: Request.GetMessageRequest): Promise<Result.GetMessageResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/{messageName}')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'))
+            .replace('{messageName}', String(request.getMessageName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetMessageResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public deleteMessage(request: Request.DeleteMessageRequest): Promise<Result.DeleteMessageResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/{messageName}')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'))
+            .replace('{messageName}', String(request.getMessageName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteMessageResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeSubscribes(request: Request.DescribeSubscribesRequest): Promise<Result.DescribeSubscribesResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/subscribe')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeSubscribesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeSubscribesByUserId(request: Request.DescribeSubscribesByUserIdRequest): Promise<Result.DescribeSubscribesByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/subscribe')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeSubscribesByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeSubscribesByRoomName(request: Request.DescribeSubscribesByRoomNameRequest): Promise<Result.DescribeSubscribesByRoomNameResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/subscribe')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeSubscribesByRoomNameResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public subscribe(request: Request.SubscribeRequest): Promise<Result.SubscribeResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'notificationTypes': request.getNotificationTypes()?.map((item) => item.toDict()) ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SubscribeResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public subscribeByUserId(request: Request.SubscribeByUserIdRequest): Promise<Result.SubscribeByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'notificationTypes': request.getNotificationTypes()?.map((item) => item.toDict()) ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SubscribeByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public getSubscribe(request: Request.GetSubscribeRequest): Promise<Result.GetSubscribeResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetSubscribeResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getSubscribeByUserId(request: Request.GetSubscribeByUserIdRequest): Promise<Result.GetSubscribeByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetSubscribeByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public updateNotificationType(request: Request.UpdateNotificationTypeRequest): Promise<Result.UpdateNotificationTypeResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe/notification')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'notificationTypes': request.getNotificationTypes()?.map((item) => item.toDict()) ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateNotificationTypeResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public updateNotificationTypeByUserId(request: Request.UpdateNotificationTypeByUserIdRequest): Promise<Result.UpdateNotificationTypeByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe/notification')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'notificationTypes': request.getNotificationTypes()?.map((item) => item.toDict()) ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateNotificationTypeByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public unsubscribe(request: Request.UnsubscribeRequest): Promise<Result.UnsubscribeResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UnsubscribeResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public unsubscribeByUserId(request: Request.UnsubscribeByUserIdRequest): Promise<Result.UnsubscribeByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UnsubscribeByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
 }

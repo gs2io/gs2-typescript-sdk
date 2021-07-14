@@ -16,966 +16,558 @@ permissions and limitations under the License.
 
 import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
 import { Gs2Constant, Gs2RestSession } from '../core/model';
-import {
-  DescribeNamespacesRequest,
-  CreateNamespaceRequest,
-  GetNamespaceStatusRequest,
-  GetNamespaceRequest,
-  UpdateNamespaceRequest,
-  DeleteNamespaceRequest,
-  DescribeWebSocketSessionsRequest,
-  DescribeWebSocketSessionsByUserIdRequest,
-  SetUserIdRequest,
-  SetUserIdByUserIdRequest,
-  GetWebSocketSessionRequest,
-  GetWebSocketSessionByConnectionIdRequest,
-  SendNotificationRequest,
-  SetFirebaseTokenRequest,
-  SetFirebaseTokenByUserIdRequest,
-  GetFirebaseTokenRequest,
-  GetFirebaseTokenByUserIdRequest,
-  DeleteFirebaseTokenRequest,
-  DeleteFirebaseTokenByUserIdRequest,
-  SendMobileNotificationByUserIdRequest,
-} from './request';
-
-import {
-  DescribeNamespacesResult,
-  CreateNamespaceResult,
-  GetNamespaceStatusResult,
-  GetNamespaceResult,
-  UpdateNamespaceResult,
-  DeleteNamespaceResult,
-  DescribeWebSocketSessionsResult,
-  DescribeWebSocketSessionsByUserIdResult,
-  SetUserIdResult,
-  SetUserIdByUserIdResult,
-  GetWebSocketSessionResult,
-  GetWebSocketSessionByConnectionIdResult,
-  SendNotificationResult,
-  SetFirebaseTokenResult,
-  SetFirebaseTokenByUserIdResult,
-  GetFirebaseTokenResult,
-  GetFirebaseTokenByUserIdResult,
-  DeleteFirebaseTokenResult,
-  DeleteFirebaseTokenByUserIdResult,
-  SendMobileNotificationByUserIdResult,
-} from './result';
-
-import {
-  Namespace,
-  WebSocketSession,
-  FirebaseToken,
-  ResponseCache,
-  LogSetting,
-} from './model';
+import * as Request from './request';
+import * as Result from './result';
 
 import axios from 'axios';
 
 export class Gs2GatewayRestClient extends AbstractGs2RestClient {
 
-  public static ENDPOINT: string = 'gateway';
-
-  constructor(session: Gs2RestSession) {
-    super(session);
-  }
-
-  /**
-   * ネームスペースの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeNamespaces(request: DescribeNamespacesRequest): Promise<DescribeNamespacesResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
+    constructor(session: Gs2RestSession) {
+        super(session);
     }
 
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeNamespacesResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ネームスペースを新規作成<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public createNamespace(request: CreateNamespaceRequest): Promise<CreateNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.name !== undefined && request.name !== '') {
-      body['name'] = request.name;
-    }
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.firebaseSecret !== undefined && request.firebaseSecret !== '') {
-      body['firebaseSecret'] = request.firebaseSecret;
-    }
-    if (request.logSetting !== undefined) {
-      body['logSetting'] = request.logSetting ? request.logSetting.toDict() : null;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new CreateNamespaceResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ネームスペースを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getNamespaceStatus(request: GetNamespaceStatusRequest): Promise<GetNamespaceStatusResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeNamespacesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetNamespaceStatusResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ネームスペースを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getNamespace(request: GetNamespaceRequest): Promise<GetNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetNamespaceResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ネームスペースを更新<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateNamespace(request: UpdateNamespaceRequest): Promise<UpdateNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.firebaseSecret !== undefined && request.firebaseSecret !== '') {
-      body['firebaseSecret'] = request.firebaseSecret;
-    }
-    if (request.logSetting !== undefined) {
-      body['logSetting'] = request.logSetting ? request.logSetting.toDict() : null;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateNamespaceResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ネームスペースを削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteNamespace(request: DeleteNamespaceRequest): Promise<DeleteNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'name': request.getName() ?? null,
+            'description': request.getDescription() ?? null,
+            'firebaseSecret': request.getFirebaseSecret() ?? null,
+            'logSetting': request.getLogSetting()?.toDict() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteNamespaceResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * Websocketセッションの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeWebSocketSessions(request: DescribeWebSocketSessionsRequest): Promise<DescribeWebSocketSessionsResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/me')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = String(request.accessToken);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeWebSocketSessionsResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ユーザIDを指定してWebsocketセッションの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeWebSocketSessionsByUserId(request: DescribeWebSocketSessionsByUserIdRequest): Promise<DescribeWebSocketSessionsByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/{userId}')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetNamespaceStatusResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeWebSocketSessionsByUserIdResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * WebsocketセッションにユーザIDを設定<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public setUserId(request: SetUserIdRequest): Promise<SetUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/me/user')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.allowConcurrentAccess !== undefined) {
-      body['allowConcurrentAccess'] = request.allowConcurrentAccess;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = String(request.accessToken);
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new SetUserIdResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * WebsocketセッションにユーザIDを設定<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public setUserIdByUserId(request: SetUserIdByUserIdRequest): Promise<SetUserIdByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/{userId}/user')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.allowConcurrentAccess !== undefined) {
-      body['allowConcurrentAccess'] = request.allowConcurrentAccess;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'description': request.getDescription() ?? null,
+            'firebaseSecret': request.getFirebaseSecret() ?? null,
+            'logSetting': request.getLogSetting()?.toDict() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new SetUserIdByUserIdResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * Websocketセッションを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getWebSocketSession(request: GetWebSocketSessionRequest): Promise<GetWebSocketSessionResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetWebSocketSessionResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ユーザIDを指定してWebsocketセッションを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getWebSocketSessionByConnectionId(request: GetWebSocketSessionByConnectionIdRequest): Promise<GetWebSocketSessionByConnectionIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/{connectionId}')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{connectionId}',
-        request.connectionId ? String(request.connectionId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetWebSocketSessionByConnectionIdResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 通知を送信<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public sendNotification(request: SendNotificationRequest): Promise<SendNotificationResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/{userId}/notification')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.subject !== undefined && request.subject !== '') {
-      body['subject'] = request.subject;
-    }
-    if (request.payload !== undefined && request.payload !== '') {
-      body['payload'] = request.payload;
-    }
-    if (request.enableTransferMobileNotification !== undefined) {
-      body['enableTransferMobileNotification'] = request.enableTransferMobileNotification;
-    }
-    if (request.sound !== undefined && request.sound !== '') {
-      body['sound'] = request.sound;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new SendNotificationResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public describeWebSocketSessions(request: Request.DescribeWebSocketSessionsRequest): Promise<Result.DescribeWebSocketSessionsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/me')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * デバイストークンを設定<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public setFirebaseToken(request: SetFirebaseTokenRequest): Promise<SetFirebaseTokenResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/firebase/token')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.token !== undefined && request.token !== '') {
-      body['token'] = request.token;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = String(request.accessToken);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new SetFirebaseTokenResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
         }
-      });
-  }
-
-  /**
-   * ユーザIDを指定してデバイストークンを設定<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public setFirebaseTokenByUserId(request: SetFirebaseTokenByUserIdRequest): Promise<SetFirebaseTokenByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/firebase/token')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.token !== undefined && request.token !== '') {
-      body['token'] = request.token;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeWebSocketSessionsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new SetFirebaseTokenByUserIdResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public describeWebSocketSessionsByUserId(request: Request.DescribeWebSocketSessionsByUserIdRequest): Promise<Result.DescribeWebSocketSessionsByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/{userId}')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * Firebaseデバイストークンを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getFirebaseToken(request: GetFirebaseTokenRequest): Promise<GetFirebaseTokenResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/firebase/token')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = request.accessToken;
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeWebSocketSessionsByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetFirebaseTokenResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ユーザIDを指定してFirebaseデバイストークンを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getFirebaseTokenByUserId(request: GetFirebaseTokenByUserIdRequest): Promise<GetFirebaseTokenByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/firebase/token')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetFirebaseTokenByUserIdResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * Firebaseデバイストークンを削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteFirebaseToken(request: DeleteFirebaseTokenRequest): Promise<DeleteFirebaseTokenResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/firebase/token')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = request.accessToken;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteFirebaseTokenResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ユーザIDを指定してFirebaseデバイストークンを削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteFirebaseTokenByUserId(request: DeleteFirebaseTokenByUserIdRequest): Promise<DeleteFirebaseTokenByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/firebase/token')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteFirebaseTokenByUserIdResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * モバイルプッシュ通知を送信<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public sendMobileNotificationByUserId(request: SendMobileNotificationByUserIdRequest): Promise<SendMobileNotificationByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/firebase/token/notification')
-      .replace('{service}', 'gateway')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.subject !== undefined && request.subject !== '') {
-      body['subject'] = request.subject;
-    }
-    if (request.payload !== undefined && request.payload !== '') {
-      body['payload'] = request.payload;
-    }
-    if (request.sound !== undefined && request.sound !== '') {
-      body['sound'] = request.sound;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new SendMobileNotificationByUserIdResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public setUserId(request: Request.SetUserIdRequest): Promise<Result.SetUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/me/user')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'allowConcurrentAccess': request.getAllowConcurrentAccess() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SetUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public setUserIdByUserId(request: Request.SetUserIdByUserIdRequest): Promise<Result.SetUserIdByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/{userId}/user')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'allowConcurrentAccess': request.getAllowConcurrentAccess() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SetUserIdByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public sendNotification(request: Request.SendNotificationRequest): Promise<Result.SendNotificationResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/{userId}/notification')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'subject': request.getSubject() ?? null,
+            'payload': request.getPayload() ?? null,
+            'enableTransferMobileNotification': request.getEnableTransferMobileNotification() ?? null,
+            'sound': request.getSound() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SendNotificationResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public setFirebaseToken(request: Request.SetFirebaseTokenRequest): Promise<Result.SetFirebaseTokenResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/firebase/token')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'token': request.getToken() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SetFirebaseTokenResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public setFirebaseTokenByUserId(request: Request.SetFirebaseTokenByUserIdRequest): Promise<Result.SetFirebaseTokenByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/firebase/token')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'token': request.getToken() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SetFirebaseTokenByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public getFirebaseToken(request: Request.GetFirebaseTokenRequest): Promise<Result.GetFirebaseTokenResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/firebase/token')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetFirebaseTokenResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getFirebaseTokenByUserId(request: Request.GetFirebaseTokenByUserIdRequest): Promise<Result.GetFirebaseTokenByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/firebase/token')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetFirebaseTokenByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public deleteFirebaseToken(request: Request.DeleteFirebaseTokenRequest): Promise<Result.DeleteFirebaseTokenResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/firebase/token')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteFirebaseTokenResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public deleteFirebaseTokenByUserId(request: Request.DeleteFirebaseTokenByUserIdRequest): Promise<Result.DeleteFirebaseTokenByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/firebase/token')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteFirebaseTokenByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public sendMobileNotificationByUserId(request: Request.SendMobileNotificationByUserIdRequest): Promise<Result.SendMobileNotificationByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/firebase/token/notification')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'subject': request.getSubject() ?? null,
+            'payload': request.getPayload() ?? null,
+            'sound': request.getSound() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SendMobileNotificationByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
 }

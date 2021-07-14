@@ -32,23 +32,6 @@ export class BasicGs2Credential implements IGs2Credential {
   }
 }
 
-import IRequest from './interface/IRequest';
-
-export class Gs2Request implements IRequest {
-
-  public requestId: string | null = null;
-  public contextStack: string | null = null;
-
-  constructor(
-      data: { [key: string]: any | null } | null = null,
-  ) {
-    if (data) {
-      this.requestId = data.requestId;
-      this.contextStack = data.contextStack;
-    }
-  }
-}
-
 
 export class Gs2RestSession {
 

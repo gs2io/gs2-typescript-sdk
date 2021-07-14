@@ -14,62 +14,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 
-import {
-  Namespace,
-  Room,
-  NotificationSetting,
-  LogSetting,
-} from './model';
-import {
-  DescribeNamespacesRequest,
-  CreateNamespaceRequest,
-  GetNamespaceStatusRequest,
-  GetNamespaceRequest,
-  UpdateNamespaceRequest,
-  DeleteNamespaceRequest,
-  DescribeRoomsRequest,
-  WantRoomRequest,
-  GetRoomRequest,
-  DeleteRoomRequest,
-} from './request';
-import {
-  DescribeNamespacesResult,
-  CreateNamespaceResult,
-  GetNamespaceStatusResult,
-  GetNamespaceResult,
-  UpdateNamespaceResult,
-  DeleteNamespaceResult,
-  DescribeRoomsResult,
-  WantRoomResult,
-  GetRoomResult,
-  DeleteRoomResult,
-} from './result';
-import { Gs2RealtimeRestClient } from './rest';
-
-export default {
-  Namespace,
-  Room,
-  NotificationSetting,
-  LogSetting,
-  DescribeNamespacesRequest,
-  DescribeNamespacesResult,
-  CreateNamespaceRequest,
-  CreateNamespaceResult,
-  GetNamespaceStatusRequest,
-  GetNamespaceStatusResult,
-  GetNamespaceRequest,
-  GetNamespaceResult,
-  UpdateNamespaceRequest,
-  UpdateNamespaceResult,
-  DeleteNamespaceRequest,
-  DeleteNamespaceResult,
-  DescribeRoomsRequest,
-  DescribeRoomsResult,
-  WantRoomRequest,
-  WantRoomResult,
-  GetRoomRequest,
-  GetRoomResult,
-  DeleteRoomRequest,
-  DeleteRoomResult,
-  Gs2RealtimeRestClient,
-};
+export * as Model from './model';
+export * as Request from './request';
+export * as Result from './result';
+export { Gs2RealtimeRestClient } from './rest';

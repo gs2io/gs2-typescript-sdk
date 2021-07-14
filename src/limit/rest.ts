@@ -16,1289 +16,791 @@ permissions and limitations under the License.
 
 import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
 import { Gs2Constant, Gs2RestSession } from '../core/model';
-import {
-  DescribeNamespacesRequest,
-  CreateNamespaceRequest,
-  GetNamespaceStatusRequest,
-  GetNamespaceRequest,
-  UpdateNamespaceRequest,
-  DeleteNamespaceRequest,
-  DescribeCountersRequest,
-  DescribeCountersByUserIdRequest,
-  GetCounterRequest,
-  GetCounterByUserIdRequest,
-  CountUpRequest,
-  CountUpByUserIdRequest,
-  DeleteCounterByUserIdRequest,
-  CountUpByStampTaskRequest,
-  DeleteByStampSheetRequest,
-  DescribeLimitModelMastersRequest,
-  CreateLimitModelMasterRequest,
-  GetLimitModelMasterRequest,
-  UpdateLimitModelMasterRequest,
-  DeleteLimitModelMasterRequest,
-  ExportMasterRequest,
-  GetCurrentLimitMasterRequest,
-  UpdateCurrentLimitMasterRequest,
-  UpdateCurrentLimitMasterFromGitHubRequest,
-  DescribeLimitModelsRequest,
-  GetLimitModelRequest,
-} from './request';
-
-import {
-  DescribeNamespacesResult,
-  CreateNamespaceResult,
-  GetNamespaceStatusResult,
-  GetNamespaceResult,
-  UpdateNamespaceResult,
-  DeleteNamespaceResult,
-  DescribeCountersResult,
-  DescribeCountersByUserIdResult,
-  GetCounterResult,
-  GetCounterByUserIdResult,
-  CountUpResult,
-  CountUpByUserIdResult,
-  DeleteCounterByUserIdResult,
-  CountUpByStampTaskResult,
-  DeleteByStampSheetResult,
-  DescribeLimitModelMastersResult,
-  CreateLimitModelMasterResult,
-  GetLimitModelMasterResult,
-  UpdateLimitModelMasterResult,
-  DeleteLimitModelMasterResult,
-  ExportMasterResult,
-  GetCurrentLimitMasterResult,
-  UpdateCurrentLimitMasterResult,
-  UpdateCurrentLimitMasterFromGitHubResult,
-  DescribeLimitModelsResult,
-  GetLimitModelResult,
-} from './result';
-
-import {
-  Namespace,
-  Counter,
-  LimitModelMaster,
-  CurrentLimitMaster,
-  ResponseCache,
-  GitHubCheckoutSetting,
-  LogSetting,
-  LimitModel,
-} from './model';
+import * as Request from './request';
+import * as Result from './result';
 
 import axios from 'axios';
 
 export class Gs2LimitRestClient extends AbstractGs2RestClient {
 
-  public static ENDPOINT: string = 'limit';
-
-  constructor(session: Gs2RestSession) {
-    super(session);
-  }
-
-  /**
-   * ネームスペースの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeNamespaces(request: DescribeNamespacesRequest): Promise<DescribeNamespacesResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
+    constructor(session: Gs2RestSession) {
+        super(session);
     }
 
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeNamespacesResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ネームスペースを新規作成<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public createNamespace(request: CreateNamespaceRequest): Promise<CreateNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.name !== undefined && request.name !== '') {
-      body['name'] = request.name;
-    }
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.logSetting !== undefined) {
-      body['logSetting'] = request.logSetting ? request.logSetting.toDict() : null;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new CreateNamespaceResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ネームスペースの状態を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getNamespaceStatus(request: GetNamespaceStatusRequest): Promise<GetNamespaceStatusResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeNamespacesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetNamespaceStatusResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ネームスペースを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getNamespace(request: GetNamespaceRequest): Promise<GetNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetNamespaceResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ネームスペースを更新<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateNamespace(request: UpdateNamespaceRequest): Promise<UpdateNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.logSetting !== undefined) {
-      body['logSetting'] = request.logSetting ? request.logSetting.toDict() : null;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateNamespaceResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ネームスペースを削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteNamespace(request: DeleteNamespaceRequest): Promise<DeleteNamespaceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'name': request.getName() ?? null,
+            'description': request.getDescription() ?? null,
+            'logSetting': request.getLogSetting()?.toDict() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteNamespaceResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * カウンターの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeCounters(request: DescribeCountersRequest): Promise<DescribeCountersResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.limitName !== undefined ) {
-      params['limitName'] = String(request.limitName);
-    }
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = request.accessToken;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeCountersResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * カウンターの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeCountersByUserId(request: DescribeCountersByUserIdRequest): Promise<DescribeCountersByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.limitName !== undefined ) {
-      params['limitName'] = String(request.limitName);
-    }
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
-    }
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeCountersByUserIdResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * カウンターを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getCounter(request: GetCounterRequest): Promise<GetCounterResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{limitName}/{counterName}')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{limitName}',
-        request.limitName ? String(request.limitName) : 'null',
-      )
-      .replace(
-        '{counterName}',
-        request.counterName ? String(request.counterName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = request.accessToken;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetCounterResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * ユーザIDを指定してカウンターを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getCounterByUserId(request: GetCounterByUserIdRequest): Promise<GetCounterByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{limitName}',
-        request.limitName ? String(request.limitName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      )
-      .replace(
-        '{counterName}',
-        request.counterName ? String(request.counterName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetCounterByUserIdResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * カウントアップ<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public countUp(request: CountUpRequest): Promise<CountUpResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{limitName}/{counterName}')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{limitName}',
-        request.limitName ? String(request.limitName) : 'null',
-      )
-      .replace(
-        '{counterName}',
-        request.counterName ? String(request.counterName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.countUpValue !== undefined) {
-      body['countUpValue'] = request.countUpValue;
-    }
-    if (request.maxValue !== undefined) {
-      body['maxValue'] = request.maxValue;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-    if (request.accessToken) {
-      headers['X-GS2-ACCESS-TOKEN'] = String(request.accessToken);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new CountUpResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ユーザIDを指定してカウントアップ<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public countUpByUserId(request: CountUpByUserIdRequest): Promise<CountUpByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{limitName}',
-        request.limitName ? String(request.limitName) : 'null',
-      )
-      .replace(
-        '{counterName}',
-        request.counterName ? String(request.counterName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.countUpValue !== undefined) {
-      body['countUpValue'] = request.countUpValue;
-    }
-    if (request.maxValue !== undefined) {
-      body['maxValue'] = request.maxValue;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetNamespaceStatusResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new CountUpByUserIdResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * ユーザIDを指定してカウンターを削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteCounterByUserId(request: DeleteCounterByUserIdRequest): Promise<DeleteCounterByUserIdResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{limitName}',
-        request.limitName ? String(request.limitName) : 'null',
-      )
-      .replace(
-        '{userId}',
-        request.userId ? String(request.userId) : 'null',
-      )
-      .replace(
-        '{counterName}',
-        request.counterName ? String(request.counterName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteCounterByUserIdResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * スタンプシートでカウントアップ<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public countUpByStampTask(request: CountUpByStampTaskRequest): Promise<CountUpByStampTaskResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/counter/increase')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.stampTask !== undefined && request.stampTask !== '') {
-      body['stampTask'] = request.stampTask;
-    }
-    if (request.keyId !== undefined && request.keyId !== '') {
-      body['keyId'] = request.keyId;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new CountUpByStampTaskResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * スタンプシートでカウンターを削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteByStampSheet(request: DeleteByStampSheetRequest): Promise<DeleteByStampSheetResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/counter/delete')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.stampSheet !== undefined && request.stampSheet !== '') {
-      body['stampSheet'] = request.stampSheet;
-    }
-    if (request.keyId !== undefined && request.keyId !== '') {
-      body['keyId'] = request.keyId;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'description': request.getDescription() ?? null,
+            'logSetting': request.getLogSetting()?.toDict() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteByStampSheetResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * 回数制限の種類マスターの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeLimitModelMasters(request: DescribeLimitModelMastersRequest): Promise<DescribeLimitModelMastersResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteNamespaceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeLimitModelMastersResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 回数制限の種類マスターを新規作成<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public createLimitModelMaster(request: CreateLimitModelMasterRequest): Promise<CreateLimitModelMasterResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.name !== undefined && request.name !== '') {
-      body['name'] = request.name;
-    }
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.metadata !== undefined && request.metadata !== '') {
-      body['metadata'] = request.metadata;
-    }
-    if (request.resetType !== undefined && request.resetType !== '') {
-      body['resetType'] = request.resetType;
-    }
-    if (request.resetDayOfMonth !== undefined) {
-      body['resetDayOfMonth'] = request.resetDayOfMonth;
-    }
-    if (request.resetDayOfWeek !== undefined && request.resetDayOfWeek !== '') {
-      body['resetDayOfWeek'] = request.resetDayOfWeek;
-    }
-    if (request.resetHour !== undefined) {
-      body['resetHour'] = request.resetHour;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new CreateLimitModelMasterResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public describeCounters(request: Request.DescribeCountersRequest): Promise<Result.DescribeCountersResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * 回数制限の種類マスターを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getLimitModelMaster(request: GetLimitModelMasterRequest): Promise<GetLimitModelMasterResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit/{limitName}')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{limitName}',
-        request.limitName ? String(request.limitName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetLimitModelMasterResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 回数制限の種類マスターを更新<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateLimitModelMaster(request: UpdateLimitModelMasterRequest): Promise<UpdateLimitModelMasterResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit/{limitName}')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{limitName}',
-        request.limitName ? String(request.limitName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.metadata !== undefined && request.metadata !== '') {
-      body['metadata'] = request.metadata;
-    }
-    if (request.resetType !== undefined && request.resetType !== '') {
-      body['resetType'] = request.resetType;
-    }
-    if (request.resetDayOfMonth !== undefined) {
-      body['resetDayOfMonth'] = request.resetDayOfMonth;
-    }
-    if (request.resetDayOfWeek !== undefined && request.resetDayOfWeek !== '') {
-      body['resetDayOfWeek'] = request.resetDayOfWeek;
-    }
-    if (request.resetHour !== undefined) {
-      body['resetHour'] = request.resetHour;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateLimitModelMasterResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
         }
-      });
-  }
-
-  /**
-   * 回数制限の種類マスターを削除<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteLimitModelMaster(request: DeleteLimitModelMasterRequest): Promise<DeleteLimitModelMasterResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit/{limitName}')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{limitName}',
-        request.limitName ? String(request.limitName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'limitName': String(request.getLimitName() ?? null),
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeCountersResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteLimitModelMasterResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 現在有効な回数制限設定のマスターデータをエクスポートします<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public exportMaster(request: ExportMasterRequest): Promise<ExportMasterResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new ExportMasterResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 現在有効な回数制限設定を取得します<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getCurrentLimitMaster(request: GetCurrentLimitMasterRequest): Promise<GetCurrentLimitMasterResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetCurrentLimitMasterResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 現在有効な回数制限設定を更新します<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateCurrentLimitMaster(request: UpdateCurrentLimitMasterRequest): Promise<UpdateCurrentLimitMasterResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.settings !== undefined && request.settings !== '') {
-      body['settings'] = request.settings;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateCurrentLimitMasterResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public describeCountersByUserId(request: Request.DescribeCountersByUserIdRequest): Promise<Result.DescribeCountersByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * 現在有効な回数制限設定を更新します<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateCurrentLimitMasterFromGitHub(request: UpdateCurrentLimitMasterFromGitHubRequest): Promise<UpdateCurrentLimitMasterFromGitHubResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.checkoutSetting !== undefined) {
-      body['checkoutSetting'] = request.checkoutSetting ? request.checkoutSetting.toDict() : null;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'limitName': String(request.getLimitName() ?? null),
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeCountersByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateCurrentLimitMasterFromGitHubResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public getCounter(request: Request.GetCounterRequest): Promise<Result.GetCounterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{limitName}/{counterName}')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{limitName}', String(request.getLimitName() ?? 'null'))
+            .replace('{counterName}', String(request.getCounterName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * 回数制限の種類の一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeLimitModels(request: DescribeLimitModelsRequest): Promise<DescribeLimitModelsResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/limit')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetCounterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeLimitModelsResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 回数制限の種類を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getLimitModel(request: GetLimitModelRequest): Promise<GetLimitModelResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/limit/{limitName}')
-      .replace('{service}', 'limit')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{namespaceName}',
-        request.namespaceName ? String(request.namespaceName) : 'null',
-      )
-      .replace(
-        '{limitName}',
-        request.limitName ? String(request.limitName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+    public getCounterByUserId(request: Request.GetCounterByUserIdRequest): Promise<Result.GetCounterByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{limitName}', String(request.getLimitName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'))
+            .replace('{counterName}', String(request.getCounterName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetCounterByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetLimitModelResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
+    public countUp(request: Request.CountUpRequest): Promise<Result.CountUpResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{limitName}/{counterName}')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{limitName}', String(request.getLimitName() ?? 'null'))
+            .replace('{counterName}', String(request.getCounterName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'countUpValue': request.getCountUpValue() ?? null,
+            'maxValue': request.getMaxValue() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CountUpResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public countUpByUserId(request: Request.CountUpByUserIdRequest): Promise<Result.CountUpByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{limitName}', String(request.getLimitName() ?? 'null'))
+            .replace('{counterName}', String(request.getCounterName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'countUpValue': request.getCountUpValue() ?? null,
+            'maxValue': request.getMaxValue() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CountUpByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public deleteCounterByUserId(request: Request.DeleteCounterByUserIdRequest): Promise<Result.DeleteCounterByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{limitName}', String(request.getLimitName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'))
+            .replace('{counterName}', String(request.getCounterName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteCounterByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public countUpByStampTask(request: Request.CountUpByStampTaskRequest): Promise<Result.CountUpByStampTaskResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/counter/increase')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampTask': request.getStampTask() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CountUpByStampTaskResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public deleteByStampSheet(request: Request.DeleteByStampSheetRequest): Promise<Result.DeleteByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/counter/delete')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteByStampSheetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public describeLimitModelMasters(request: Request.DescribeLimitModelMastersRequest): Promise<Result.DescribeLimitModelMastersResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeLimitModelMastersResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public createLimitModelMaster(request: Request.CreateLimitModelMasterRequest): Promise<Result.CreateLimitModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'name': request.getName() ?? null,
+            'description': request.getDescription() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'resetType': request.getResetType() ?? null,
+            'resetDayOfMonth': request.getResetDayOfMonth() ?? null,
+            'resetDayOfWeek': request.getResetDayOfWeek() ?? null,
+            'resetHour': request.getResetHour() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateLimitModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public getLimitModelMaster(request: Request.GetLimitModelMasterRequest): Promise<Result.GetLimitModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit/{limitName}')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{limitName}', String(request.getLimitName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetLimitModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public updateLimitModelMaster(request: Request.UpdateLimitModelMasterRequest): Promise<Result.UpdateLimitModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit/{limitName}')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{limitName}', String(request.getLimitName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'description': request.getDescription() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'resetType': request.getResetType() ?? null,
+            'resetDayOfMonth': request.getResetDayOfMonth() ?? null,
+            'resetDayOfWeek': request.getResetDayOfWeek() ?? null,
+            'resetHour': request.getResetHour() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateLimitModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public deleteLimitModelMaster(request: Request.DeleteLimitModelMasterRequest): Promise<Result.DeleteLimitModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/limit/{limitName}')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{limitName}', String(request.getLimitName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteLimitModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ExportMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getCurrentLimitMaster(request: Request.GetCurrentLimitMasterRequest): Promise<Result.GetCurrentLimitMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetCurrentLimitMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public updateCurrentLimitMaster(request: Request.UpdateCurrentLimitMasterRequest): Promise<Result.UpdateCurrentLimitMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'settings': request.getSettings() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateCurrentLimitMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public updateCurrentLimitMasterFromGitHub(request: Request.UpdateCurrentLimitMasterFromGitHubRequest): Promise<Result.UpdateCurrentLimitMasterFromGitHubResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'checkoutSetting': request.getCheckoutSetting()?.toDict() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateCurrentLimitMasterFromGitHubResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public describeLimitModels(request: Request.DescribeLimitModelsRequest): Promise<Result.DescribeLimitModelsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/limit')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeLimitModelsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getLimitModel(request: Request.GetLimitModelRequest): Promise<Result.GetLimitModelResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/limit/{limitName}')
+            .replace('{service}', 'limit')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{limitName}', String(request.getLimitName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetLimitModelResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
 }

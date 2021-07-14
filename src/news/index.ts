@@ -14,66 +14,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 
-import {
-  Namespace,
-  News,
-  SetCookieRequestEntry,
-  ResponseCache,
-  LogSetting,
-  GitHubCheckoutSetting,
-} from './model';
-import {
-  DescribeNamespacesRequest,
-  CreateNamespaceRequest,
-  GetNamespaceStatusRequest,
-  GetNamespaceRequest,
-  UpdateNamespaceRequest,
-  DeleteNamespaceRequest,
-  DescribeNewsRequest,
-  DescribeNewsByUserIdRequest,
-  WantGrantRequest,
-  WantGrantByUserIdRequest,
-} from './request';
-import {
-  DescribeNamespacesResult,
-  CreateNamespaceResult,
-  GetNamespaceStatusResult,
-  GetNamespaceResult,
-  UpdateNamespaceResult,
-  DeleteNamespaceResult,
-  DescribeNewsResult,
-  DescribeNewsByUserIdResult,
-  WantGrantResult,
-  WantGrantByUserIdResult,
-} from './result';
-import { Gs2NewsRestClient } from './rest';
-
-export default {
-  Namespace,
-  News,
-  SetCookieRequestEntry,
-  ResponseCache,
-  LogSetting,
-  GitHubCheckoutSetting,
-  DescribeNamespacesRequest,
-  DescribeNamespacesResult,
-  CreateNamespaceRequest,
-  CreateNamespaceResult,
-  GetNamespaceStatusRequest,
-  GetNamespaceStatusResult,
-  GetNamespaceRequest,
-  GetNamespaceResult,
-  UpdateNamespaceRequest,
-  UpdateNamespaceResult,
-  DeleteNamespaceRequest,
-  DeleteNamespaceResult,
-  DescribeNewsRequest,
-  DescribeNewsResult,
-  DescribeNewsByUserIdRequest,
-  DescribeNewsByUserIdResult,
-  WantGrantRequest,
-  WantGrantResult,
-  WantGrantByUserIdRequest,
-  WantGrantByUserIdResult,
-  Gs2NewsRestClient,
-};
+export * as Model from './model';
+export * as Request from './request';
+export * as Result from './result';
+export { Gs2NewsRestClient } from './rest';

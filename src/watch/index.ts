@@ -14,36 +14,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 
-import {
-  Chart,
-  Cumulative,
-  BillingActivity,
-} from './model';
-import {
-  GetChartRequest,
-  GetCumulativeRequest,
-  DescribeBillingActivitiesRequest,
-  GetBillingActivityRequest,
-} from './request';
-import {
-  GetChartResult,
-  GetCumulativeResult,
-  DescribeBillingActivitiesResult,
-  GetBillingActivityResult,
-} from './result';
-import { Gs2WatchRestClient } from './rest';
-
-export default {
-  Chart,
-  Cumulative,
-  BillingActivity,
-  GetChartRequest,
-  GetChartResult,
-  GetCumulativeRequest,
-  GetCumulativeResult,
-  DescribeBillingActivitiesRequest,
-  DescribeBillingActivitiesResult,
-  GetBillingActivityRequest,
-  GetBillingActivityResult,
-  Gs2WatchRestClient,
-};
+export * as Model from './model';
+export * as Request from './request';
+export * as Result from './result';
+export { Gs2WatchRestClient } from './rest';

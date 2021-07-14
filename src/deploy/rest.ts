@@ -16,838 +16,520 @@ permissions and limitations under the License.
 
 import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
 import { Gs2Constant, Gs2RestSession } from '../core/model';
-import {
-  DescribeStacksRequest,
-  CreateStackRequest,
-  CreateStackFromGitHubRequest,
-  ValidateRequest,
-  GetStackStatusRequest,
-  GetStackRequest,
-  UpdateStackRequest,
-  UpdateStackFromGitHubRequest,
-  DeleteStackRequest,
-  ForceDeleteStackRequest,
-  DeleteStackResourcesRequest,
-  DeleteStackEntityRequest,
-  DescribeResourcesRequest,
-  GetResourceRequest,
-  DescribeEventsRequest,
-  GetEventRequest,
-  DescribeOutputsRequest,
-  GetOutputRequest,
-} from './request';
-
-import {
-  DescribeStacksResult,
-  CreateStackResult,
-  CreateStackFromGitHubResult,
-  ValidateResult,
-  GetStackStatusResult,
-  GetStackResult,
-  UpdateStackResult,
-  UpdateStackFromGitHubResult,
-  DeleteStackResult,
-  ForceDeleteStackResult,
-  DeleteStackResourcesResult,
-  DeleteStackEntityResult,
-  DescribeResourcesResult,
-  GetResourceResult,
-  DescribeEventsResult,
-  GetEventResult,
-  DescribeOutputsResult,
-  GetOutputResult,
-} from './result';
-
-import {
-  Stack,
-  Resource,
-  WorkingStack,
-  WorkingResource,
-  Event,
-  Output,
-  GitHubCheckoutSetting,
-  OutputField,
-} from './model';
+import * as Request from './request';
+import * as Result from './result';
 
 import axios from 'axios';
 
 export class Gs2DeployRestClient extends AbstractGs2RestClient {
 
-  public static ENDPOINT: string = 'deploy';
-
-  constructor(session: Gs2RestSession) {
-    super(session);
-  }
-
-  /**
-   * スタックの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeStacks(request: DescribeStacksRequest): Promise<DescribeStacksResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stack')
-      .replace('{service}', 'deploy')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
+    constructor(session: Gs2RestSession) {
+        super(session);
     }
 
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeStacksResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * スタックを新規作成<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public createStack(request: CreateStackRequest): Promise<CreateStackResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stack')
-      .replace('{service}', 'deploy')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.name !== undefined && request.name !== '') {
-      body['name'] = request.name;
-    }
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.template !== undefined && request.template !== '') {
-      body['template'] = request.template;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new CreateStackResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public describeStacks(request: Request.DescribeStacksRequest): Promise<Result.DescribeStacksResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * スタックを新規作成<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public createStackFromGitHub(request: CreateStackFromGitHubRequest): Promise<CreateStackFromGitHubResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stack/from_git_hub')
-      .replace('{service}', 'deploy')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.name !== undefined && request.name !== '') {
-      body['name'] = request.name;
-    }
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.checkoutSetting !== undefined) {
-      body['checkoutSetting'] = request.checkoutSetting ? request.checkoutSetting.toDict() : null;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeStacksResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new CreateStackFromGitHubResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public createStack(request: Request.CreateStackRequest): Promise<Result.CreateStackResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * テンプレートを検証<br>
-   *   <br>
-   *   このAPIの検証内容は簡易検証を行うに過ぎず、<br>
-   *   このAPIで検証をパスしたとしても、実行したらエラーが発生する場合もあります<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public validate(request: ValidateRequest): Promise<ValidateResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stack/validate')
-      .replace('{service}', 'deploy')
-      .replace('{region}', this.session.region);
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.template !== undefined && request.template !== '') {
-      body['template'] = request.template;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'name': request.getName() ?? null,
+            'description': request.getDescription() ?? null,
+            'template': request.getTemplate() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateStackResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new ValidateResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public createStackFromGitHub(request: Request.CreateStackFromGitHubRequest): Promise<Result.CreateStackFromGitHubResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/from_git_hub')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * スタックを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getStackStatus(request: GetStackStatusRequest): Promise<GetStackStatusResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/status')
-      .replace('{service}', 'deploy')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{stackName}',
-        request.stackName ? String(request.stackName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'name': request.getName() ?? null,
+            'description': request.getDescription() ?? null,
+            'checkoutSetting': request.getCheckoutSetting()?.toDict() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateStackFromGitHubResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetStackStatusResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * スタックを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getStack(request: GetStackRequest): Promise<GetStackResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
-      .replace('{service}', 'deploy')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{stackName}',
-        request.stackName ? String(request.stackName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetStackResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * スタックを更新<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateStack(request: UpdateStackRequest): Promise<UpdateStackResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
-      .replace('{service}', 'deploy')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{stackName}',
-        request.stackName ? String(request.stackName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.template !== undefined && request.template !== '') {
-      body['template'] = request.template;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateStackResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public validate(request: Request.ValidateRequest): Promise<Result.ValidateResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/validate')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * スタックを更新<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public updateStackFromGitHub(request: UpdateStackFromGitHubRequest): Promise<UpdateStackFromGitHubResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/from_git_hub')
-      .replace('{service}', 'deploy')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{stackName}',
-        request.stackName ? String(request.stackName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.description !== undefined && request.description !== '') {
-      body['description'] = request.description;
-    }
-    if (request.checkoutSetting !== undefined) {
-      body['checkoutSetting'] = request.checkoutSetting ? request.checkoutSetting.toDict() : null;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'template': request.getTemplate() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ValidateResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      headers,
-    };
-    return axios.put(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new UpdateStackFromGitHubResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public getStackStatus(request: Request.GetStackStatusRequest): Promise<Result.GetStackStatusResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/status')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region)
+            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * スタックを削除<br>
-   *   <br>
-   *   スタックによって作成されたリソースの削除を行い、成功すればエンティティを削除します。<br>
-   *   何らかの理由でリソースの削除に失敗した場合はエンティティが残ります。<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteStack(request: DeleteStackRequest): Promise<DeleteStackResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
-      .replace('{service}', 'deploy')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{stackName}',
-        request.stackName ? String(request.stackName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetStackStatusResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteStackResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * スタックを強制的に最終削除<br>
-   *   <br>
-   *   スタックのエンティティを強制的に削除します。<br>
-   *   スタックが作成したリソースが残っていても、それらは削除されません。<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public forceDeleteStack(request: ForceDeleteStackRequest): Promise<ForceDeleteStackResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/force')
-      .replace('{service}', 'deploy')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{stackName}',
-        request.stackName ? String(request.stackName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+    public getStack(request: Request.GetStackRequest): Promise<Result.GetStackResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region)
+            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetStackResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new ForceDeleteStackResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * スタックのリソースを削除<br>
-   *   <br>
-   *   スタックによって作成されたリソースの削除を行います。<br>
-   *   空のテンプレートでスタックを更新するのとほぼ同様の挙動ですが、スタックに適用されていたテンプレートが残るため、誤操作時に、残ったテンプレートからリソースを復元することができます。<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteStackResources(request: DeleteStackResourcesRequest): Promise<DeleteStackResourcesResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resources')
-      .replace('{service}', 'deploy')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{stackName}',
-        request.stackName ? String(request.stackName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+    public updateStack(request: Request.UpdateStackRequest): Promise<Result.UpdateStackResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region)
+            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'description': request.getDescription() ?? null,
+            'template': request.getTemplate() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateStackResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteStackResourcesResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * スタックを最終削除<br>
-   *   <br>
-   *   スタックのエンティティを削除します。<br>
-   *   リソースの残っているスタックを削除しようとするとエラーになります。<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public deleteStackEntity(request: DeleteStackEntityRequest): Promise<DeleteStackEntityResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/entity')
-      .replace('{service}', 'deploy')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{stackName}',
-        request.stackName ? String(request.stackName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+    public updateStackFromGitHub(request: Request.UpdateStackFromGitHubRequest): Promise<Result.UpdateStackFromGitHubResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/from_git_hub')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region)
+            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'description': request.getDescription() ?? null,
+            'checkoutSetting': request.getCheckoutSetting()?.toDict() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateStackFromGitHubResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.delete(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DeleteStackEntityResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 作成されたのリソースの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeResources(request: DescribeResourcesRequest): Promise<DescribeResourcesResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resource')
-      .replace('{service}', 'deploy')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{stackName}',
-        request.stackName ? String(request.stackName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
+    public deleteStack(request: Request.DeleteStackRequest): Promise<Result.DeleteStackResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region)
+            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteStackResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+    public forceDeleteStack(request: Request.ForceDeleteStackRequest): Promise<Result.ForceDeleteStackResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/force')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region)
+            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ForceDeleteStackResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeResourcesResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 作成されたのリソースを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getResource(request: GetResourceRequest): Promise<GetResourceResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resource/{resourceName}')
-      .replace('{service}', 'deploy')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{stackName}',
-        request.stackName ? String(request.stackName) : 'null',
-      )
-      .replace(
-        '{resourceName}',
-        request.resourceName ? String(request.resourceName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+    public deleteStackResources(request: Request.DeleteStackResourcesRequest): Promise<Result.DeleteStackResourcesResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resources')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region)
+            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteStackResourcesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetResourceResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 発生したイベントの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeEvents(request: DescribeEventsRequest): Promise<DescribeEventsResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/event')
-      .replace('{service}', 'deploy')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{stackName}',
-        request.stackName ? String(request.stackName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
+    public deleteStackEntity(request: Request.DeleteStackEntityRequest): Promise<Result.DeleteStackEntityResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/entity')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region)
+            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteStackEntityResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+    public describeResources(request: Request.DescribeResourcesRequest): Promise<Result.DescribeResourcesResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resource')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region)
+            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeResourcesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeEventsResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 発生したイベントを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getEvent(request: GetEventRequest): Promise<GetEventResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/event/{eventName}')
-      .replace('{service}', 'deploy')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{stackName}',
-        request.stackName ? String(request.stackName) : 'null',
-      )
-      .replace(
-        '{eventName}',
-        request.eventName ? String(request.eventName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+    public getResource(request: Request.GetResourceRequest): Promise<Result.GetResourceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resource/{resourceName}')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region)
+            .replace('{stackName}', String(request.getStackName() ?? 'null'))
+            .replace('{resourceName}', String(request.getResourceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetResourceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetEventResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * アウトプットの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeOutputs(request: DescribeOutputsRequest): Promise<DescribeOutputsResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/output')
-      .replace('{service}', 'deploy')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{stackName}',
-        request.stackName ? String(request.stackName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
+    public describeEvents(request: Request.DescribeEventsRequest): Promise<Result.DescribeEventsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/event')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region)
+            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeEventsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+    public getEvent(request: Request.GetEventRequest): Promise<Result.GetEventResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/event/{eventName}')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region)
+            .replace('{stackName}', String(request.getStackName() ?? 'null'))
+            .replace('{eventName}', String(request.getEventName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetEventResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeOutputsResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * アウトプットを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getOutput(request: GetOutputRequest): Promise<GetOutputResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/output/{outputName}')
-      .replace('{service}', 'deploy')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{stackName}',
-        request.stackName ? String(request.stackName) : 'null',
-      )
-      .replace(
-        '{outputName}',
-        request.outputName ? String(request.outputName) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
+    public describeOutputs(request: Request.DescribeOutputsRequest): Promise<Result.DescribeOutputsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/output')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region)
+            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeOutputsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
     }
 
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new GetOutputResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
+    public getOutput(request: Request.GetOutputRequest): Promise<Result.GetOutputResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/output/{outputName}')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region)
+            .replace('{stackName}', String(request.getStackName() ?? 'null'))
+            .replace('{outputName}', String(request.getOutputName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetOutputResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
 }

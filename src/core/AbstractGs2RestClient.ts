@@ -24,7 +24,7 @@ export default class {
     this.session = session;
   }
 
-  protected createAuthorizedHeaders(): {[key: string]: string} {
+  protected createAuthorizedHeaders(): {[key: string]: any} {
     return {
       'X-GS2-CLIENT-ID': this.session.credential.clientId!,
       'Authorization': 'Bearer ' + this.session.projectToken,

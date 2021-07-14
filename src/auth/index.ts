@@ -14,24 +14,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 
-import {
-  AccessToken,
-} from './model';
-import {
-  LoginRequest,
-  LoginBySignatureRequest,
-} from './request';
-import {
-  LoginResult,
-  LoginBySignatureResult,
-} from './result';
-import { Gs2AuthRestClient } from './rest';
-
-export default {
-  AccessToken,
-  LoginRequest,
-  LoginResult,
-  LoginBySignatureRequest,
-  LoginBySignatureResult,
-  Gs2AuthRestClient,
-};
+export * as Model from './model';
+export * as Request from './request';
+export * as Result from './result';
+export { Gs2AuthRestClient } from './rest';

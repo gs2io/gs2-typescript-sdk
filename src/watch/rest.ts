@@ -16,252 +16,147 @@ permissions and limitations under the License.
 
 import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
 import { Gs2Constant, Gs2RestSession } from '../core/model';
-import {
-  GetChartRequest,
-  GetCumulativeRequest,
-  DescribeBillingActivitiesRequest,
-  GetBillingActivityRequest,
-} from './request';
-
-import {
-  GetChartResult,
-  GetCumulativeResult,
-  DescribeBillingActivitiesResult,
-  GetBillingActivityResult,
-} from './result';
-
-import {
-  Chart,
-  Cumulative,
-  BillingActivity,
-} from './model';
+import * as Request from './request';
+import * as Result from './result';
 
 import axios from 'axios';
 
 export class Gs2WatchRestClient extends AbstractGs2RestClient {
 
-  public static ENDPOINT: string = 'watch';
-
-  constructor(session: Gs2RestSession) {
-    super(session);
-  }
-
-  /**
-   * チャートを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getChart(request: GetChartRequest): Promise<GetChartResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/chart/{metrics}')
-      .replace('{service}', 'watch')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{metrics}',
-        request.metrics ? String(request.metrics) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.grn !== undefined && request.grn !== '') {
-      body['grn'] = request.grn;
-    }
-    if (request.queries !== undefined) {
-      body['queries'] = request.queries;
-    }
-    if (request.by !== undefined && request.by !== '') {
-      body['by'] = request.by;
-    }
-    if (request.timeframe !== undefined && request.timeframe !== '') {
-      body['timeframe'] = request.timeframe;
-    }
-    if (request.size !== undefined && request.size !== '') {
-      body['size'] = request.size;
-    }
-    if (request.format !== undefined && request.format !== '') {
-      body['format'] = request.format;
-    }
-    if (request.aggregator !== undefined && request.aggregator !== '') {
-      body['aggregator'] = request.aggregator;
-    }
-    if (request.style !== undefined && request.style !== '') {
-      body['style'] = request.style;
-    }
-    if (request.title !== undefined && request.title !== '') {
-      body['title'] = request.title;
-    }
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
+    constructor(session: Gs2RestSession) {
+        super(session);
     }
 
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new GetChartResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public getChart(request: Request.GetChartRequest): Promise<Result.GetChartResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/chart/{metrics}')
+            .replace('{service}', 'watch')
+            .replace('{region}', this.session.region)
+            .replace('{metrics}', String(request.getMetrics() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * 累積値を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getCumulative(request: GetCumulativeRequest): Promise<GetCumulativeResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/cumulative/{name}')
-      .replace('{service}', 'watch')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{name}',
-        request.name ? String(request.name) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    if (request.resourceGrn !== undefined && request.resourceGrn !== '') {
-      body['resourceGrn'] = request.resourceGrn;
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'grn': request.getGrn() ?? null,
+            'queries': request.getQueries() ?? null,
+            'by': request.getBy() ?? null,
+            'timeframe': request.getTimeframe() ?? null,
+            'size': request.getSize() ?? null,
+            'format': request.getFormat() ?? null,
+            'aggregator': request.getAggregator() ?? null,
+            'style': request.getStyle() ?? null,
+            'title': request.getTitle() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetChartResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
-    body['contextStack'] = request.contextStack;
 
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new GetCumulativeResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public getCumulative(request: Request.GetCumulativeRequest): Promise<Result.GetCumulativeResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/cumulative/{name}')
+            .replace('{service}', 'watch')
+            .replace('{region}', this.session.region)
+            .replace('{name}', String(request.getName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
-
-  /**
-   * 請求にまつわるアクティビティの一覧を取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public describeBillingActivities(request: DescribeBillingActivitiesRequest): Promise<DescribeBillingActivitiesResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/billingActivity/{year}/{month}')
-      .replace('{service}', 'watch')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{year}',
-        request.year !== undefined ? String(request.year) : 'null',
-      )
-      .replace(
-        '{month}',
-        request.month !== undefined ? String(request.month) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const params: {[key: string]: any} = {};
-    params['contextStack'] = request.contextStack;
-    if (request.service !== undefined ) {
-      params['service'] = String(request.service);
-    }
-    if (request.pageToken !== undefined ) {
-      params['pageToken'] = String(request.pageToken);
-    }
-    if (request.limit !== undefined ) {
-      params['limit'] = Number(request.limit);
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'resourceGrn': request.getResourceGrn() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetCumulativeResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
     }
 
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = request.requestId;
-    }
-
-    const config = {
-      params,
-      headers,
-    };
-    return axios.get(
-      url,
-      config,
-    )
-      .then((response: any) => {
-        return new DescribeBillingActivitiesResult(response.data);
-      }).catch((error: any) => {
-        throw JSON.parse(error.response.data.message);
-      });
-  }
-
-  /**
-   * 請求にまつわるアクティビティを取得<br>
-   *
-   * @param request リクエストパラメータ
-   * @return 結果
-   */
-  public getBillingActivity(request: GetBillingActivityRequest): Promise<GetBillingActivityResult> {
-    const url = (Gs2Constant.ENDPOINT_HOST + '/billingActivity/{year}/{month}/{service}/{activityType}')
-      .replace('{service}', 'watch')
-      .replace('{region}', this.session.region)
-      .replace(
-        '{year}',
-        request.year !== undefined ? String(request.year) : 'null',
-      )
-      .replace(
-        '{month}',
-        request.month !== undefined ? String(request.month) : 'null',
-      )
-      .replace(
-        '{service}',
-        request.service ? String(request.service) : 'null',
-      )
-      .replace(
-        '{activityType}',
-        request.activityType ? String(request.activityType) : 'null',
-      );
-
-    const headers = this.createAuthorizedHeaders();
-    const body: {[key: string]: any} = {};
-    body['contextStack'] = request.contextStack;
-
-    if (request.requestId) {
-      headers['X-GS2-REQUEST-ID'] = String(request.requestId);
-    }
-
-    const config = {
-      headers,
-    };
-    return axios.post(
-      url,
-      body,
-      config,
-    )
-      .then((response: any) => {
-        return new GetBillingActivityResult(response.data);
-      }).catch((error: any) => {
-        if (error.response) {
-          throw JSON.parse(error.response.data.message);
-        } else {
-          throw [];
+    public describeBillingActivities(request: Request.DescribeBillingActivitiesRequest): Promise<Result.DescribeBillingActivitiesResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/billingActivity/{year}/{month}')
+            .replace('{service}', 'watch')
+            .replace('{region}', this.session.region)
+            .replace('{year}', String(request.getYear() ?? 'null'))
+            .replace('{month}', String(request.getMonth() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-      });
-  }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'service': String(request.getService() ?? null),
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeBillingActivitiesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getBillingActivity(request: Request.GetBillingActivityRequest): Promise<Result.GetBillingActivityResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/billingActivity/{year}/{month}/{service}/{activityType}')
+            .replace('{service}', 'watch')
+            .replace('{region}', this.session.region)
+            .replace('{year}', String(request.getYear() ?? 'null'))
+            .replace('{month}', String(request.getMonth() ?? 'null'))
+            .replace('{service}', String(request.getService() ?? 'null'))
+            .replace('{activityType}', String(request.getActivityType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetBillingActivityResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
 }
