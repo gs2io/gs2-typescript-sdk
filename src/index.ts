@@ -46,7 +46,7 @@ import core from './core';
 // import ranking from './ranking';
 // import realtime from './realtime';
 // import schedule from './schedule';
-import script from './script';
+import * as script from './script';
 // import showcase from './showcase';
 // import stamina from './stamina';
 // import version from './version';
