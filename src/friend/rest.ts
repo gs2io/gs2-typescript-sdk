@@ -218,34 +218,6 @@ export class Gs2FriendRestClient extends AbstractGs2RestClient {
         });
     }
 
-    public describeProfiles(request: Request.DescribeProfilesRequest): Promise<Result.DescribeProfilesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/profile')
-            .replace('{service}', 'friend')
-            .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
-    
-        const headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        const params: {[key: string]: any} = {
-            'contextStack': request.getContextStack() ?? null,
-            'pageToken': String(request.getPageToken() ?? null),
-            'limit': String(request.getLimit() ?? null),
-        };
-        return axios.get(
-            url,
-             {
-                params,
-                headers,
-            },
-        ).then((response: any) => {
-            return Result.DescribeProfilesResult.fromDict(response.data);
-        }).catch((error: any) => {
-            throw JSON.parse(error.response.data.message);
-        });
-    }
-
     public getProfile(request: Request.GetProfileRequest): Promise<Result.GetProfileResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/profile')
             .replace('{service}', 'friend')

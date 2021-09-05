@@ -619,6 +619,37 @@ export class Gs2InboxRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public sendByStampSheet(request: Request.SendByStampSheetRequest): Promise<Result.SendByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/send')
+            .replace('{service}', 'inbox')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SendByStampSheetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public openByStampTask(request: Request.OpenByStampTaskRequest): Promise<Result.OpenByStampTaskResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/open')
             .replace('{service}', 'inbox')

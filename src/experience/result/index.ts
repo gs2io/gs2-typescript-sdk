@@ -40,6 +40,7 @@ export { DescribeStatusesByUserIdResult } from "./DescribeStatusesByUserIdResult
 export { GetStatusResult } from "./GetStatusResult"
 export { GetStatusByUserIdResult } from "./GetStatusByUserIdResult"
 export { GetStatusWithSignatureResult } from "./GetStatusWithSignatureResult"
+export { GetStatusWithSignatureByUserIdResult } from "./GetStatusWithSignatureByUserIdResult"
 export { AddExperienceByUserIdResult } from "./AddExperienceByUserIdResult"
 export { SetExperienceByUserIdResult } from "./SetExperienceByUserIdResult"
 export { AddRankCapByUserIdResult } from "./AddRankCapByUserIdResult"

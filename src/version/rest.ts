@@ -513,7 +513,8 @@ export class Gs2VersionRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/acceptVersion')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -522,7 +523,6 @@ export class Gs2VersionRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'versionName': request.getVersionName() ?? null,
-            'userId': request.getUserId() ?? null,
         };
         return axios.post(
             url,

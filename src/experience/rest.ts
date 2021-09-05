@@ -833,6 +833,36 @@ export class Gs2ExperienceRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public getStatusWithSignatureByUserId(request: Request.GetStatusWithSignatureByUserIdRequest): Promise<Result.GetStatusWithSignatureByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}/signature')
+            .replace('{service}', 'experience')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null'))
+            .replace('{experienceName}', String(request.getExperienceName() ?? 'null'))
+            .replace('{propertyId}', String(request.getPropertyId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'keyId': String(request.getKeyId() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetStatusWithSignatureByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
     public addExperienceByUserId(request: Request.AddExperienceByUserIdRequest): Promise<Result.AddExperienceByUserIdResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}')
             .replace('{service}', 'experience')

@@ -19,23 +19,8 @@ import IResult from '@/gs2/core/interface/IResult';
 import * as Gs2Quest from '../model'
 
 export class StartResult implements IResult {
-    private item: Gs2Quest.Progress|null = null;
     private stampSheet: string|null = null;
     private stampSheetEncryptionKeyId: string|null = null;
-
-    public getItem(): Gs2Quest.Progress|null {
-        return this.item;
-    }
-
-    public setItem(item: Gs2Quest.Progress|null) {
-        this.item = item;
-        return this;
-    }
-
-    public withItem(item: Gs2Quest.Progress|null): this {
-        this.item = item;
-        return this;
-    }
 
     public getStampSheet(): string|null {
         return this.stampSheet;
@@ -67,14 +52,12 @@ export class StartResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): StartResult {
         return new StartResult()
-            .withItem(Gs2Quest.Progress.fromDict(data["item"]))
             .withStampSheet(data["stampSheet"])
             .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
-            "item": this.getItem()?.toDict(),
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
         };
