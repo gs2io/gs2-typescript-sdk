@@ -25,6 +25,7 @@ export class DescribeMessagesRequest implements IRequest {
     private namespaceName: string|null = null;
     private roomName: string|null = null;
     private password: string|null = null;
+    private accessToken: string|null = null;
     private startAt: number|null = null;
     private limit: number|null = null;
 
@@ -98,6 +99,20 @@ export class DescribeMessagesRequest implements IRequest {
         return this;
     }
 
+    public getAccessToken(): string|null {
+        return this.accessToken;
+    }
+
+    public setAccessToken(accessToken: string|null) {
+        this.accessToken = accessToken;
+        return this;
+    }
+
+    public withAccessToken(accessToken: string|null): this {
+        this.accessToken = accessToken;
+        return this;
+    }
+
     public getStartAt(): number|null {
         return this.startAt;
     }
@@ -131,6 +146,7 @@ export class DescribeMessagesRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withRoomName(data["roomName"])
             .withPassword(data["password"])
+            .withAccessToken(data["accessToken"])
             .withStartAt(data["startAt"])
             .withLimit(data["limit"]);
     }
@@ -140,6 +156,7 @@ export class DescribeMessagesRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "roomName": this.getRoomName(),
             "password": this.getPassword(),
+            "accessToken": this.getAccessToken(),
             "startAt": this.getStartAt(),
             "limit": this.getLimit(),
         };

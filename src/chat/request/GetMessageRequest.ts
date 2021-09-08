@@ -25,6 +25,8 @@ export class GetMessageRequest implements IRequest {
     private namespaceName: string|null = null;
     private roomName: string|null = null;
     private messageName: string|null = null;
+    private password: string|null = null;
+    private accessToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -96,11 +98,41 @@ export class GetMessageRequest implements IRequest {
         return this;
     }
 
+    public getPassword(): string|null {
+        return this.password;
+    }
+
+    public setPassword(password: string|null) {
+        this.password = password;
+        return this;
+    }
+
+    public withPassword(password: string|null): this {
+        this.password = password;
+        return this;
+    }
+
+    public getAccessToken(): string|null {
+        return this.accessToken;
+    }
+
+    public setAccessToken(accessToken: string|null) {
+        this.accessToken = accessToken;
+        return this;
+    }
+
+    public withAccessToken(accessToken: string|null): this {
+        this.accessToken = accessToken;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): GetMessageRequest {
         return new GetMessageRequest()
             .withNamespaceName(data["namespaceName"])
             .withRoomName(data["roomName"])
-            .withMessageName(data["messageName"]);
+            .withMessageName(data["messageName"])
+            .withPassword(data["password"])
+            .withAccessToken(data["accessToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -108,6 +140,8 @@ export class GetMessageRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "roomName": this.getRoomName(),
             "messageName": this.getMessageName(),
+            "password": this.getPassword(),
+            "accessToken": this.getAccessToken(),
         };
     }
 }

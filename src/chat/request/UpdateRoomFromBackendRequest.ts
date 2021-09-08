@@ -18,7 +18,7 @@ import IRequest from '@/gs2/core/interface/IRequest';
 
 import * as Gs2Chat from '../model'
 
-export class UpdateRoomRequest implements IRequest {
+export class UpdateRoomFromBackendRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
@@ -27,7 +27,7 @@ export class UpdateRoomRequest implements IRequest {
     private metadata: string|null = null;
     private password: string|null = null;
     private whiteListUserIds: string[]|null = null;
-    private accessToken: string|null = null;
+    private userId: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -127,22 +127,22 @@ export class UpdateRoomRequest implements IRequest {
         return this;
     }
 
-    public getAccessToken(): string|null {
-        return this.accessToken;
+    public getUserId(): string|null {
+        return this.userId;
     }
 
-    public setAccessToken(accessToken: string|null) {
-        this.accessToken = accessToken;
+    public setUserId(userId: string|null) {
+        this.userId = userId;
         return this;
     }
 
-    public withAccessToken(accessToken: string|null): this {
-        this.accessToken = accessToken;
+    public withUserId(userId: string|null): this {
+        this.userId = userId;
         return this;
     }
 
-    public static fromDict(data: {[key: string]: any}): UpdateRoomRequest {
-        return new UpdateRoomRequest()
+    public static fromDict(data: {[key: string]: any}): UpdateRoomFromBackendRequest {
+        return new UpdateRoomFromBackendRequest()
             .withNamespaceName(data["namespaceName"])
             .withRoomName(data["roomName"])
             .withMetadata(data["metadata"])
@@ -152,7 +152,7 @@ export class UpdateRoomRequest implements IRequest {
                     return item;
                 }
             ) : [])
-            .withAccessToken(data["accessToken"]);
+            .withUserId(data["userId"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -166,7 +166,7 @@ export class UpdateRoomRequest implements IRequest {
                     return item;
                 }
             ) : [],
-            "accessToken": this.getAccessToken(),
+            "userId": this.getUserId(),
         };
     }
 }

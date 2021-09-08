@@ -18,16 +18,15 @@ import IRequest from '@/gs2/core/interface/IRequest';
 
 import * as Gs2Chat from '../model'
 
-export class UpdateRoomRequest implements IRequest {
+export class GetMessageByUserIdRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private roomName: string|null = null;
-    private metadata: string|null = null;
+    private messageName: string|null = null;
     private password: string|null = null;
-    private whiteListUserIds: string[]|null = null;
-    private accessToken: string|null = null;
+    private userId: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -85,17 +84,17 @@ export class UpdateRoomRequest implements IRequest {
         return this;
     }
 
-    public getMetadata(): string|null {
-        return this.metadata;
+    public getMessageName(): string|null {
+        return this.messageName;
     }
 
-    public setMetadata(metadata: string|null) {
-        this.metadata = metadata;
+    public setMessageName(messageName: string|null) {
+        this.messageName = messageName;
         return this;
     }
 
-    public withMetadata(metadata: string|null): this {
-        this.metadata = metadata;
+    public withMessageName(messageName: string|null): this {
+        this.messageName = messageName;
         return this;
     }
 
@@ -113,60 +112,36 @@ export class UpdateRoomRequest implements IRequest {
         return this;
     }
 
-    public getWhiteListUserIds(): string[]|null {
-        return this.whiteListUserIds;
+    public getUserId(): string|null {
+        return this.userId;
     }
 
-    public setWhiteListUserIds(whiteListUserIds: string[]|null) {
-        this.whiteListUserIds = whiteListUserIds;
+    public setUserId(userId: string|null) {
+        this.userId = userId;
         return this;
     }
 
-    public withWhiteListUserIds(whiteListUserIds: string[]|null): this {
-        this.whiteListUserIds = whiteListUserIds;
+    public withUserId(userId: string|null): this {
+        this.userId = userId;
         return this;
     }
 
-    public getAccessToken(): string|null {
-        return this.accessToken;
-    }
-
-    public setAccessToken(accessToken: string|null) {
-        this.accessToken = accessToken;
-        return this;
-    }
-
-    public withAccessToken(accessToken: string|null): this {
-        this.accessToken = accessToken;
-        return this;
-    }
-
-    public static fromDict(data: {[key: string]: any}): UpdateRoomRequest {
-        return new UpdateRoomRequest()
+    public static fromDict(data: {[key: string]: any}): GetMessageByUserIdRequest {
+        return new GetMessageByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withRoomName(data["roomName"])
-            .withMetadata(data["metadata"])
+            .withMessageName(data["messageName"])
             .withPassword(data["password"])
-            .withWhiteListUserIds(data.whiteListUserIds ?
-                data.whiteListUserIds.map((item: {[key: string]: any}) => {
-                    return item;
-                }
-            ) : [])
-            .withAccessToken(data["accessToken"]);
+            .withUserId(data["userId"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
             "roomName": this.getRoomName(),
-            "metadata": this.getMetadata(),
+            "messageName": this.getMessageName(),
             "password": this.getPassword(),
-            "whiteListUserIds": this.getWhiteListUserIds() ?
-                this.getWhiteListUserIds()!.map((item: string) => {
-                    return item;
-                }
-            ) : [],
-            "accessToken": this.getAccessToken(),
+            "userId": this.getUserId(),
         };
     }
 }

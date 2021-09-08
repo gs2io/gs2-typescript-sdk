@@ -338,7 +338,7 @@ export class Gs2ChatRestClient extends AbstractGs2RestClient {
     }
 
     public updateRoom(request: Request.UpdateRoomRequest): Promise<Result.UpdateRoomResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/user')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
@@ -347,6 +347,9 @@ export class Gs2ChatRestClient extends AbstractGs2RestClient {
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
@@ -362,6 +365,41 @@ export class Gs2ChatRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.UpdateRoomResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public updateRoomFromBackend(request: Request.UpdateRoomFromBackendRequest): Promise<Result.UpdateRoomFromBackendResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'password': request.getPassword() ?? null,
+            'whiteListUserIds': request.getWhiteListUserIds() ?? null,
+            'userId': request.getUserId() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateRoomFromBackendResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);
@@ -440,6 +478,9 @@ export class Gs2ChatRestClient extends AbstractGs2RestClient {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'password': String(request.getPassword() ?? null),
@@ -454,6 +495,37 @@ export class Gs2ChatRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.DescribeMessagesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeMessagesByUserId(request: Request.DescribeMessagesByUserIdRequest): Promise<Result.DescribeMessagesByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/get')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'password': String(request.getPassword() ?? null),
+            'userId': String(request.getUserId() ?? null),
+            'startAt': String(request.getStartAt() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeMessagesByUserIdResult.fromDict(response.data);
         }).catch((error: any) => {
             throw JSON.parse(error.response.data.message);
         });
@@ -543,8 +615,12 @@ export class Gs2ChatRestClient extends AbstractGs2RestClient {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'password': String(request.getPassword() ?? null),
         };
         return axios.get(
             url,
@@ -554,6 +630,36 @@ export class Gs2ChatRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.GetMessageResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getMessageByUserId(request: Request.GetMessageByUserIdRequest): Promise<Result.GetMessageByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/{messageName}/get')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null'))
+            .replace('{messageName}', String(request.getMessageName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'password': String(request.getPassword() ?? null),
+            'userId': String(request.getUserId() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetMessageByUserIdResult.fromDict(response.data);
         }).catch((error: any) => {
             throw JSON.parse(error.response.data.message);
         });

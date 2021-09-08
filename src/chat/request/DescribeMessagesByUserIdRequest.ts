@@ -18,16 +18,16 @@ import IRequest from '@/gs2/core/interface/IRequest';
 
 import * as Gs2Chat from '../model'
 
-export class UpdateRoomRequest implements IRequest {
+export class DescribeMessagesByUserIdRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private roomName: string|null = null;
-    private metadata: string|null = null;
     private password: string|null = null;
-    private whiteListUserIds: string[]|null = null;
-    private accessToken: string|null = null;
+    private userId: string|null = null;
+    private startAt: number|null = null;
+    private limit: number|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -85,20 +85,6 @@ export class UpdateRoomRequest implements IRequest {
         return this;
     }
 
-    public getMetadata(): string|null {
-        return this.metadata;
-    }
-
-    public setMetadata(metadata: string|null) {
-        this.metadata = metadata;
-        return this;
-    }
-
-    public withMetadata(metadata: string|null): this {
-        this.metadata = metadata;
-        return this;
-    }
-
     public getPassword(): string|null {
         return this.password;
     }
@@ -113,60 +99,66 @@ export class UpdateRoomRequest implements IRequest {
         return this;
     }
 
-    public getWhiteListUserIds(): string[]|null {
-        return this.whiteListUserIds;
+    public getUserId(): string|null {
+        return this.userId;
     }
 
-    public setWhiteListUserIds(whiteListUserIds: string[]|null) {
-        this.whiteListUserIds = whiteListUserIds;
+    public setUserId(userId: string|null) {
+        this.userId = userId;
         return this;
     }
 
-    public withWhiteListUserIds(whiteListUserIds: string[]|null): this {
-        this.whiteListUserIds = whiteListUserIds;
+    public withUserId(userId: string|null): this {
+        this.userId = userId;
         return this;
     }
 
-    public getAccessToken(): string|null {
-        return this.accessToken;
+    public getStartAt(): number|null {
+        return this.startAt;
     }
 
-    public setAccessToken(accessToken: string|null) {
-        this.accessToken = accessToken;
+    public setStartAt(startAt: number|null) {
+        this.startAt = startAt;
         return this;
     }
 
-    public withAccessToken(accessToken: string|null): this {
-        this.accessToken = accessToken;
+    public withStartAt(startAt: number|null): this {
+        this.startAt = startAt;
         return this;
     }
 
-    public static fromDict(data: {[key: string]: any}): UpdateRoomRequest {
-        return new UpdateRoomRequest()
+    public getLimit(): number|null {
+        return this.limit;
+    }
+
+    public setLimit(limit: number|null) {
+        this.limit = limit;
+        return this;
+    }
+
+    public withLimit(limit: number|null): this {
+        this.limit = limit;
+        return this;
+    }
+
+    public static fromDict(data: {[key: string]: any}): DescribeMessagesByUserIdRequest {
+        return new DescribeMessagesByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withRoomName(data["roomName"])
-            .withMetadata(data["metadata"])
             .withPassword(data["password"])
-            .withWhiteListUserIds(data.whiteListUserIds ?
-                data.whiteListUserIds.map((item: {[key: string]: any}) => {
-                    return item;
-                }
-            ) : [])
-            .withAccessToken(data["accessToken"]);
+            .withUserId(data["userId"])
+            .withStartAt(data["startAt"])
+            .withLimit(data["limit"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
             "roomName": this.getRoomName(),
-            "metadata": this.getMetadata(),
             "password": this.getPassword(),
-            "whiteListUserIds": this.getWhiteListUserIds() ?
-                this.getWhiteListUserIds()!.map((item: string) => {
-                    return item;
-                }
-            ) : [],
-            "accessToken": this.getAccessToken(),
+            "userId": this.getUserId(),
+            "startAt": this.getStartAt(),
+            "limit": this.getLimit(),
         };
     }
 }
