@@ -24,6 +24,8 @@ export class DescribeReceiveRequestsByUserIdRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private userId: string|null = null;
+    private pageToken: string|null = null;
+    private limit: number|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -81,16 +83,48 @@ export class DescribeReceiveRequestsByUserIdRequest implements IRequest {
         return this;
     }
 
+    public getPageToken(): string|null {
+        return this.pageToken;
+    }
+
+    public setPageToken(pageToken: string|null) {
+        this.pageToken = pageToken;
+        return this;
+    }
+
+    public withPageToken(pageToken: string|null): this {
+        this.pageToken = pageToken;
+        return this;
+    }
+
+    public getLimit(): number|null {
+        return this.limit;
+    }
+
+    public setLimit(limit: number|null) {
+        this.limit = limit;
+        return this;
+    }
+
+    public withLimit(limit: number|null): this {
+        this.limit = limit;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): DescribeReceiveRequestsByUserIdRequest {
         return new DescribeReceiveRequestsByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withPageToken(data["pageToken"])
+            .withLimit(data["limit"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "pageToken": this.getPageToken(),
+            "limit": this.getLimit(),
         };
     }
 }

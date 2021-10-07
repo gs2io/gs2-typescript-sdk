@@ -27,3 +27,4 @@ export { QueryExecuteStampSheetLogRequest } from "./QueryExecuteStampSheetLogReq
 export { CountExecuteStampSheetLogRequest } from "./CountExecuteStampSheetLogRequest"
 export { QueryExecuteStampTaskLogRequest } from "./QueryExecuteStampTaskLogRequest"
 export { CountExecuteStampTaskLogRequest } from "./CountExecuteStampTaskLogRequest"
+export { PutLogRequest } from "./PutLogRequest"

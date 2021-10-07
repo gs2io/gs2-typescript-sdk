@@ -20,6 +20,7 @@ import * as Gs2Friend from '../model'
 
 export class DescribeReceiveRequestsByUserIdResult implements IResult {
     private items: Gs2Friend.FriendRequest[]|null = null;
+    private nextPageToken: string|null = null;
 
     public getItems(): Gs2Friend.FriendRequest[]|null {
         return this.items;
@@ -35,13 +36,28 @@ export class DescribeReceiveRequestsByUserIdResult implements IResult {
         return this;
     }
 
+    public getNextPageToken(): string|null {
+        return this.nextPageToken;
+    }
+
+    public setNextPageToken(nextPageToken: string|null) {
+        this.nextPageToken = nextPageToken;
+        return this;
+    }
+
+    public withNextPageToken(nextPageToken: string|null): this {
+        this.nextPageToken = nextPageToken;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): DescribeReceiveRequestsByUserIdResult {
         return new DescribeReceiveRequestsByUserIdResult()
             .withItems(data.items ?
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Friend.FriendRequest.fromDict(item);
                 }
-            ) : []);
+            ) : [])
+            .withNextPageToken(data["nextPageToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -51,6 +67,7 @@ export class DescribeReceiveRequestsByUserIdResult implements IResult {
                     return item.toDict();
                 }
             ) : [],
+            "nextPageToken": this.getNextPageToken(),
         };
     }
 }

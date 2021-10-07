@@ -839,6 +839,8 @@ export class Gs2FriendRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
         };
         return axios.get(
             url,
@@ -866,6 +868,8 @@ export class Gs2FriendRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
         };
         return axios.get(
             url,
@@ -1077,6 +1081,8 @@ export class Gs2FriendRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
         };
         return axios.get(
             url,
@@ -1104,6 +1110,8 @@ export class Gs2FriendRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
         };
         return axios.get(
             url,

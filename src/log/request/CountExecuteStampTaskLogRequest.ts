@@ -23,10 +23,10 @@ export class CountExecuteStampTaskLogRequest implements IRequest {
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
-    private service: string|null = null;
-    private method: string|null = null;
-    private userId: string|null = null;
-    private action: string|null = null;
+    private service: boolean|null = null;
+    private method: boolean|null = null;
+    private userId: boolean|null = null;
+    private action: boolean|null = null;
     private begin: number|null = null;
     private end: number|null = null;
     private longTerm: boolean|null = null;
@@ -75,58 +75,58 @@ export class CountExecuteStampTaskLogRequest implements IRequest {
         return this;
     }
 
-    public getService(): string|null {
+    public getService(): boolean|null {
         return this.service;
     }
 
-    public setService(service: string|null) {
+    public setService(service: boolean|null) {
         this.service = service;
         return this;
     }
 
-    public withService(service: string|null): this {
+    public withService(service: boolean|null): this {
         this.service = service;
         return this;
     }
 
-    public getMethod(): string|null {
+    public getMethod(): boolean|null {
         return this.method;
     }
 
-    public setMethod(method: string|null) {
+    public setMethod(method: boolean|null) {
         this.method = method;
         return this;
     }
 
-    public withMethod(method: string|null): this {
+    public withMethod(method: boolean|null): this {
         this.method = method;
         return this;
     }
 
-    public getUserId(): string|null {
+    public getUserId(): boolean|null {
         return this.userId;
     }
 
-    public setUserId(userId: string|null) {
+    public setUserId(userId: boolean|null) {
         this.userId = userId;
         return this;
     }
 
-    public withUserId(userId: string|null): this {
+    public withUserId(userId: boolean|null): this {
         this.userId = userId;
         return this;
     }
 
-    public getAction(): string|null {
+    public getAction(): boolean|null {
         return this.action;
     }
 
-    public setAction(action: string|null) {
+    public setAction(action: boolean|null) {
         this.action = action;
         return this;
     }
 
-    public withAction(action: string|null): this {
+    public withAction(action: boolean|null): this {
         this.action = action;
         return this;
     }
