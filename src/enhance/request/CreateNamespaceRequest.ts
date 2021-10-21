@@ -27,6 +27,7 @@ export class CreateNamespaceRequest implements IRequest {
     private enableDirectEnhance: boolean|null = null;
     private queueNamespaceId: string|null = null;
     private keyId: string|null = null;
+    private enhanceScript: Gs2Enhance.ScriptSetting|null = null;
     private logSetting: Gs2Enhance.LogSetting|null = null;
 
     public getRequestId(): string|null {
@@ -127,6 +128,20 @@ export class CreateNamespaceRequest implements IRequest {
         return this;
     }
 
+    public getEnhanceScript(): Gs2Enhance.ScriptSetting|null {
+        return this.enhanceScript;
+    }
+
+    public setEnhanceScript(enhanceScript: Gs2Enhance.ScriptSetting|null) {
+        this.enhanceScript = enhanceScript;
+        return this;
+    }
+
+    public withEnhanceScript(enhanceScript: Gs2Enhance.ScriptSetting|null): this {
+        this.enhanceScript = enhanceScript;
+        return this;
+    }
+
     public getLogSetting(): Gs2Enhance.LogSetting|null {
         return this.logSetting;
     }
@@ -148,6 +163,7 @@ export class CreateNamespaceRequest implements IRequest {
             .withEnableDirectEnhance(data["enableDirectEnhance"])
             .withQueueNamespaceId(data["queueNamespaceId"])
             .withKeyId(data["keyId"])
+            .withEnhanceScript(Gs2Enhance.ScriptSetting.fromDict(data["enhanceScript"]))
             .withLogSetting(Gs2Enhance.LogSetting.fromDict(data["logSetting"]));
     }
 
@@ -158,6 +174,7 @@ export class CreateNamespaceRequest implements IRequest {
             "enableDirectEnhance": this.getEnableDirectEnhance(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
+            "enhanceScript": this.getEnhanceScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
         };
     }

@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '@/gs2/core/interface/IModel';
+import { ScriptSetting } from './ScriptSetting';
 import { LogSetting } from './LogSetting';
 
 export class Namespace implements IModel {
@@ -24,6 +25,7 @@ export class Namespace implements IModel {
     private enableDirectEnhance: boolean|null = null;
     private queueNamespaceId: string|null = null;
     private keyId: string|null = null;
+    private enhanceScript: ScriptSetting|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -112,6 +114,20 @@ export class Namespace implements IModel {
         return this;
     }
 
+    public getEnhanceScript(): ScriptSetting|null {
+        return this.enhanceScript;
+    }
+
+    public setEnhanceScript(enhanceScript: ScriptSetting|null) {
+        this.enhanceScript = enhanceScript;
+        return this;
+    }
+
+    public withEnhanceScript(enhanceScript: ScriptSetting|null): this {
+        this.enhanceScript = enhanceScript;
+        return this;
+    }
+
     public getLogSetting(): LogSetting|null {
         return this.logSetting;
     }
@@ -165,6 +181,7 @@ export class Namespace implements IModel {
             .withEnableDirectEnhance(data["enableDirectEnhance"])
             .withQueueNamespaceId(data["queueNamespaceId"])
             .withKeyId(data["keyId"])
+            .withEnhanceScript(ScriptSetting.fromDict(data["enhanceScript"]))
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
@@ -178,6 +195,7 @@ export class Namespace implements IModel {
             "enableDirectEnhance": this.getEnableDirectEnhance(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
+            "enhanceScript": this.getEnhanceScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

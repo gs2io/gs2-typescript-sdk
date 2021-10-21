@@ -1015,6 +1015,37 @@ export class Gs2RankingRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public calcRanking(request: Request.CalcRankingRequest): Promise<Result.CalcRankingResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/category/{categoryName}/calc/ranking')
+            .replace('{service}', 'ranking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
+            .replace('{categoryName}', String(request.getCategoryName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CalcRankingResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'ranking')

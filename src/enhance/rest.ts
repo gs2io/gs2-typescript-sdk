@@ -70,6 +70,7 @@ export class Gs2EnhanceRestClient extends AbstractGs2RestClient {
             'enableDirectEnhance': request.getEnableDirectEnhance() ?? null,
             'queueNamespaceId': request.getQueueNamespaceId() ?? null,
             'keyId': request.getKeyId() ?? null,
+            'enhanceScript': request.getEnhanceScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.post(
@@ -157,6 +158,7 @@ export class Gs2EnhanceRestClient extends AbstractGs2RestClient {
             'enableDirectEnhance': request.getEnableDirectEnhance() ?? null,
             'queueNamespaceId': request.getQueueNamespaceId() ?? null,
             'keyId': request.getKeyId() ?? null,
+            'enhanceScript': request.getEnhanceScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.put(

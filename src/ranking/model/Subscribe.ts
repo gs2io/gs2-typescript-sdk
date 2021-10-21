@@ -21,6 +21,7 @@ export class Subscribe implements IModel {
     private categoryName: string|null = null;
     private userId: string|null = null;
     private targetUserIds: string[]|null = null;
+    private subscribedUserIds: string[]|null = null;
     private createdAt: number|null = null;
 
     public getSubscribeId(): string|null {
@@ -79,6 +80,20 @@ export class Subscribe implements IModel {
         return this;
     }
 
+    public getSubscribedUserIds(): string[]|null {
+        return this.subscribedUserIds;
+    }
+
+    public setSubscribedUserIds(subscribedUserIds: string[]|null) {
+        this.subscribedUserIds = subscribedUserIds;
+        return this;
+    }
+
+    public withSubscribedUserIds(subscribedUserIds: string[]|null): this {
+        this.subscribedUserIds = subscribedUserIds;
+        return this;
+    }
+
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -106,6 +121,11 @@ export class Subscribe implements IModel {
                     return item;
                 }
             ) : [])
+            .withSubscribedUserIds(data.subscribedUserIds ?
+                data.subscribedUserIds.map((item: {[key: string]: any}) => {
+                    return item;
+                }
+            ) : [])
             .withCreatedAt(data["createdAt"]);
     }
 
@@ -116,6 +136,11 @@ export class Subscribe implements IModel {
             "userId": this.getUserId(),
             "targetUserIds": this.getTargetUserIds() ?
                 this.getTargetUserIds()!.map((item: string) => {
+                    return item;
+                }
+            ) : [],
+            "subscribedUserIds": this.getSubscribedUserIds() ?
+                this.getSubscribedUserIds()!.map((item: string) => {
                     return item;
                 }
             ) : [],

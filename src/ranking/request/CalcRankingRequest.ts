@@ -16,13 +16,14 @@ permissions and limitations under the License.
 
 import IRequest from '@/gs2/core/interface/IRequest';
 
-import * as Gs2Project from '../model'
+import * as Gs2Ranking from '../model'
 
-export class DeleteAccountRequest implements IRequest {
+export class CalcRankingRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
-    private accountToken: string|null = null;
+    private namespaceName: string|null = null;
+    private categoryName: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -52,28 +53,44 @@ export class DeleteAccountRequest implements IRequest {
         return this;
     }
 
-    public getAccountToken(): string|null {
-        return this.accountToken;
+    public getNamespaceName(): string|null {
+        return this.namespaceName;
     }
 
-    public setAccountToken(accountToken: string|null) {
-        this.accountToken = accountToken;
+    public setNamespaceName(namespaceName: string|null) {
+        this.namespaceName = namespaceName;
         return this;
     }
 
-    public withAccountToken(accountToken: string|null): this {
-        this.accountToken = accountToken;
+    public withNamespaceName(namespaceName: string|null): this {
+        this.namespaceName = namespaceName;
         return this;
     }
 
-    public static fromDict(data: {[key: string]: any}): DeleteAccountRequest {
-        return new DeleteAccountRequest()
-            .withAccountToken(data["accountToken"]);
+    public getCategoryName(): string|null {
+        return this.categoryName;
+    }
+
+    public setCategoryName(categoryName: string|null) {
+        this.categoryName = categoryName;
+        return this;
+    }
+
+    public withCategoryName(categoryName: string|null): this {
+        this.categoryName = categoryName;
+        return this;
+    }
+
+    public static fromDict(data: {[key: string]: any}): CalcRankingRequest {
+        return new CalcRankingRequest()
+            .withNamespaceName(data["namespaceName"])
+            .withCategoryName(data["categoryName"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
-            "accountToken": this.getAccountToken(),
+            "namespaceName": this.getNamespaceName(),
+            "categoryName": this.getCategoryName(),
         };
     }
 }
