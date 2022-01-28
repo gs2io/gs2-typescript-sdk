@@ -1,0 +1,150 @@
+/*
+ * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+import { Gs2RestSession } from "@/gs2/core/model";
+import { Gs2InventoryRestClient } from "@/gs2/inventory";
+import { DescribeNamespacesIterator } from "@/gs2/inventory/domain/iterator/NamespacesDomainIterator";
+import { NamespaceDomain } from "@/gs2/inventory/domain/Namespace";
+import { NamespaceDomainCache } from "@/gs2/inventory/domain/cache/NamespaceDomainCache";
+import { InventoryModelMasterDomainCache } from "@/gs2/inventory/domain/cache/InventoryModelMasterDomainCache";
+import { InventoryModelDomainCache } from "@/gs2/inventory/domain/cache/InventoryModelDomainCache";
+import { ItemModelMasterDomainCache } from "@/gs2/inventory/domain/cache/ItemModelMasterDomainCache";
+import { ItemModelDomainCache } from "@/gs2/inventory/domain/cache/ItemModelDomainCache";
+import { InventoryDomainCache } from "@/gs2/inventory/domain/cache/InventoryDomainCache";
+import { ItemSetDomainCache } from "@/gs2/inventory/domain/cache/ItemSetDomainCache";
+import { CreateNamespaceRequest } from "@/gs2/inventory/request";
+import { CreateNamespaceResult } from "@/gs2/inventory/result";
+import { AddCapacityByStampSheetRequest } from "@/gs2/inventory/request";
+import { AddCapacityByStampSheetResult } from "@/gs2/inventory/result";
+import { SetCapacityByStampSheetRequest } from "@/gs2/inventory/request";
+import { SetCapacityByStampSheetResult } from "@/gs2/inventory/result";
+import { AcquireItemSetByStampSheetRequest } from "@/gs2/inventory/request";
+import { AcquireItemSetByStampSheetResult } from "@/gs2/inventory/result";
+import { ConsumeItemSetByStampTaskRequest } from "@/gs2/inventory/request";
+import { ConsumeItemSetByStampTaskResult } from "@/gs2/inventory/result";
+import { AddReferenceOfItemSetByStampSheetRequest } from "@/gs2/inventory/request";
+import { AddReferenceOfItemSetByStampSheetResult } from "@/gs2/inventory/result";
+import { DeleteReferenceOfItemSetByStampSheetRequest } from "@/gs2/inventory/request";
+import { DeleteReferenceOfItemSetByStampSheetResult } from "@/gs2/inventory/result";
+import { VerifyReferenceOfByStampTaskRequest } from "@/gs2/inventory/request";
+import { VerifyReferenceOfByStampTaskResult } from "@/gs2/inventory/result";
+
+export class Gs2Inventory {
+    session: Gs2RestSession;
+    client: Gs2InventoryRestClient;
+    namespaceCache: NamespaceDomainCache;
+
+    public constructor(
+        session: Gs2RestSession
+    ) {
+        this.session = session;
+        this.client = new Gs2InventoryRestClient (
+            session
+        );
+        this.namespaceCache = new NamespaceDomainCache();
+    }
+
+    public async createNamespace(
+        request: CreateNamespaceRequest
+    ): Promise<CreateNamespaceResult> {
+        let r: CreateNamespaceResult = await this.client.createNamespace(
+            request
+        );
+        this.namespaceCache.update(r.getItem()!);
+        return r;
+    }
+
+    public async addCapacityByStampSheet(
+        request: AddCapacityByStampSheetRequest
+    ): Promise<AddCapacityByStampSheetResult> {
+        let r: AddCapacityByStampSheetResult = await this.client.addCapacityByStampSheet(
+            request
+        );
+        return r;
+    }
+
+    public async setCapacityByStampSheet(
+        request: SetCapacityByStampSheetRequest
+    ): Promise<SetCapacityByStampSheetResult> {
+        let r: SetCapacityByStampSheetResult = await this.client.setCapacityByStampSheet(
+            request
+        );
+        return r;
+    }
+
+    public async acquireItemSetByStampSheet(
+        request: AcquireItemSetByStampSheetRequest
+    ): Promise<AcquireItemSetByStampSheetResult> {
+        let r: AcquireItemSetByStampSheetResult = await this.client.acquireItemSetByStampSheet(
+            request
+        );
+        return r;
+    }
+
+    public async consumeItemSetByStampTask(
+        request: ConsumeItemSetByStampTaskRequest
+    ): Promise<ConsumeItemSetByStampTaskResult> {
+        let r: ConsumeItemSetByStampTaskResult = await this.client.consumeItemSetByStampTask(
+            request
+        );
+        return r;
+    }
+
+    public async addReferenceOfItemSetByStampSheet(
+        request: AddReferenceOfItemSetByStampSheetRequest
+    ): Promise<AddReferenceOfItemSetByStampSheetResult> {
+        let r: AddReferenceOfItemSetByStampSheetResult = await this.client.addReferenceOfItemSetByStampSheet(
+            request
+        );
+        return r;
+    }
+
+    public async deleteReferenceOfItemSetByStampSheet(
+        request: DeleteReferenceOfItemSetByStampSheetRequest
+    ): Promise<DeleteReferenceOfItemSetByStampSheetResult> {
+        let r: DeleteReferenceOfItemSetByStampSheetResult = await this.client.deleteReferenceOfItemSetByStampSheet(
+            request
+        );
+        return r;
+    }
+
+    public async verifyReferenceOfByStampTask(
+        request: VerifyReferenceOfByStampTaskRequest
+    ): Promise<VerifyReferenceOfByStampTaskResult> {
+        let r: VerifyReferenceOfByStampTaskResult = await this.client.verifyReferenceOfByStampTask(
+            request
+        );
+        return r;
+    }
+
+    public namespaces(
+    ): DescribeNamespacesIterator {
+        return new DescribeNamespacesIterator(
+            this.namespaceCache,
+            this.client
+        );
+    }
+
+    public namespace(
+        namespaceName: string
+    ): NamespaceDomain {
+        return new NamespaceDomain(
+            this.session,
+            this.namespaceCache,
+            namespaceName
+        );
+    }
+}

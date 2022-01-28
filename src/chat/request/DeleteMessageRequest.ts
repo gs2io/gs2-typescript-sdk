@@ -24,6 +24,7 @@ export class DeleteMessageRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private roomName: string|null = null;
+    private userId: string|null = null;
     private messageName: string|null = null;
 
     public getRequestId(): string|null {
@@ -82,6 +83,20 @@ export class DeleteMessageRequest implements IRequest {
         return this;
     }
 
+    public getUserId(): string|null {
+        return this.userId;
+    }
+
+    public setUserId(userId: string|null) {
+        this.userId = userId;
+        return this;
+    }
+
+    public withUserId(userId: string|null): this {
+        this.userId = userId;
+        return this;
+    }
+
     public getMessageName(): string|null {
         return this.messageName;
     }
@@ -100,6 +115,7 @@ export class DeleteMessageRequest implements IRequest {
         return new DeleteMessageRequest()
             .withNamespaceName(data["namespaceName"])
             .withRoomName(data["roomName"])
+            .withUserId(data["userId"])
             .withMessageName(data["messageName"]);
     }
 
@@ -107,6 +123,7 @@ export class DeleteMessageRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "roomName": this.getRoomName(),
+            "userId": this.getUserId(),
             "messageName": this.getMessageName(),
         };
     }

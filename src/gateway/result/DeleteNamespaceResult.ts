@@ -19,13 +19,30 @@ import IResult from '@/gs2/core/interface/IResult';
 import * as Gs2Gateway from '../model'
 
 export class DeleteNamespaceResult implements IResult {
+    private item: Gs2Gateway.Namespace|null = null;
+
+    public getItem(): Gs2Gateway.Namespace|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Gateway.Namespace|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Gateway.Namespace|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DeleteNamespaceResult {
-        return new DeleteNamespaceResult();
+        return new DeleteNamespaceResult()
+            .withItem(Gs2Gateway.Namespace.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

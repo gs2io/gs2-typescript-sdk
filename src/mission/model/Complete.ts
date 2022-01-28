@@ -22,6 +22,7 @@ export class Complete implements IModel {
     private missionGroupName: string|null = null;
     private completedMissionTaskNames: string[]|null = null;
     private receivedMissionTaskNames: string[]|null = null;
+    private nextResetAt: number|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
 
@@ -95,6 +96,20 @@ export class Complete implements IModel {
         return this;
     }
 
+    public getNextResetAt(): number|null {
+        return this.nextResetAt;
+    }
+
+    public setNextResetAt(nextResetAt: number|null) {
+        this.nextResetAt = nextResetAt;
+        return this;
+    }
+
+    public withNextResetAt(nextResetAt: number|null): this {
+        this.nextResetAt = nextResetAt;
+        return this;
+    }
+
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -141,6 +156,7 @@ export class Complete implements IModel {
                     return item;
                 }
             ) : [])
+            .withNextResetAt(data["nextResetAt"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     }
@@ -160,6 +176,7 @@ export class Complete implements IModel {
                     return item;
                 }
             ) : [],
+            "nextResetAt": this.getNextResetAt(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

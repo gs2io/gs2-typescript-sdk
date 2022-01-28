@@ -19,13 +19,30 @@ import IResult from '@/gs2/core/interface/IResult';
 import * as Gs2Key from '../model'
 
 export class DeleteKeyResult implements IResult {
+    private item: Gs2Key.Key|null = null;
+
+    public getItem(): Gs2Key.Key|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Key.Key|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Key.Key|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DeleteKeyResult {
-        return new DeleteKeyResult();
+        return new DeleteKeyResult()
+            .withItem(Gs2Key.Key.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

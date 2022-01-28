@@ -22,6 +22,7 @@ export class Counter implements IModel {
     private name: string|null = null;
     private userId: string|null = null;
     private count: number|null = null;
+    private nextResetAt: number|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
 
@@ -95,6 +96,20 @@ export class Counter implements IModel {
         return this;
     }
 
+    public getNextResetAt(): number|null {
+        return this.nextResetAt;
+    }
+
+    public setNextResetAt(nextResetAt: number|null) {
+        this.nextResetAt = nextResetAt;
+        return this;
+    }
+
+    public withNextResetAt(nextResetAt: number|null): this {
+        this.nextResetAt = nextResetAt;
+        return this;
+    }
+
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -133,6 +148,7 @@ export class Counter implements IModel {
             .withName(data["name"])
             .withUserId(data["userId"])
             .withCount(data["count"])
+            .withNextResetAt(data["nextResetAt"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     }
@@ -144,6 +160,7 @@ export class Counter implements IModel {
             "name": this.getName(),
             "userId": this.getUserId(),
             "count": this.getCount(),
+            "nextResetAt": this.getNextResetAt(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

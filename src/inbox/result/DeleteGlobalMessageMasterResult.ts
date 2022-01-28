@@ -19,13 +19,30 @@ import IResult from '@/gs2/core/interface/IResult';
 import * as Gs2Inbox from '../model'
 
 export class DeleteGlobalMessageMasterResult implements IResult {
+    private item: Gs2Inbox.GlobalMessageMaster|null = null;
+
+    public getItem(): Gs2Inbox.GlobalMessageMaster|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Inbox.GlobalMessageMaster|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Inbox.GlobalMessageMaster|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DeleteGlobalMessageMasterResult {
-        return new DeleteGlobalMessageMasterResult();
+        return new DeleteGlobalMessageMasterResult()
+            .withItem(Gs2Inbox.GlobalMessageMaster.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

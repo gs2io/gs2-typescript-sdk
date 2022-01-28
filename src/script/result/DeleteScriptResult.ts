@@ -19,13 +19,30 @@ import IResult from '@/gs2/core/interface/IResult';
 import * as Gs2Script from '../model'
 
 export class DeleteScriptResult implements IResult {
+    private item: Gs2Script.Script|null = null;
+
+    public getItem(): Gs2Script.Script|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Script.Script|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Script.Script|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DeleteScriptResult {
-        return new DeleteScriptResult();
+        return new DeleteScriptResult()
+            .withItem(Gs2Script.Script.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

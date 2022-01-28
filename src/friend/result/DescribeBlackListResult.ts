@@ -20,6 +20,7 @@ import * as Gs2Friend from '../model'
 
 export class DescribeBlackListResult implements IResult {
     private items: string[]|null = null;
+    private nextPageToken: string|null = null;
 
     public getItems(): string[]|null {
         return this.items;
@@ -35,13 +36,28 @@ export class DescribeBlackListResult implements IResult {
         return this;
     }
 
+    public getNextPageToken(): string|null {
+        return this.nextPageToken;
+    }
+
+    public setNextPageToken(nextPageToken: string|null) {
+        this.nextPageToken = nextPageToken;
+        return this;
+    }
+
+    public withNextPageToken(nextPageToken: string|null): this {
+        this.nextPageToken = nextPageToken;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): DescribeBlackListResult {
         return new DescribeBlackListResult()
             .withItems(data.items ?
                 data.items.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : [])
+            .withNextPageToken(data["nextPageToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -51,6 +67,7 @@ export class DescribeBlackListResult implements IResult {
                     return item;
                 }
             ) : [],
+            "nextPageToken": this.getNextPageToken(),
         };
     }
 }

@@ -19,13 +19,30 @@ import IResult from '@/gs2/core/interface/IResult';
 import * as Gs2Version from '../model'
 
 export class DeleteAcceptVersionResult implements IResult {
+    private item: Gs2Version.AcceptVersion|null = null;
+
+    public getItem(): Gs2Version.AcceptVersion|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Version.AcceptVersion|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Version.AcceptVersion|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DeleteAcceptVersionResult {
-        return new DeleteAcceptVersionResult();
+        return new DeleteAcceptVersionResult()
+            .withItem(Gs2Version.AcceptVersion.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

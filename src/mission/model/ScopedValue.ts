@@ -19,6 +19,7 @@ import IModel from '@/gs2/core/interface/IModel';
 export class ScopedValue implements IModel {
     private resetType: string|null = null;
     private value: number|null = null;
+    private nextResetAt: number|null = null;
     private updatedAt: number|null = null;
 
     public getResetType(): string|null {
@@ -49,6 +50,20 @@ export class ScopedValue implements IModel {
         return this;
     }
 
+    public getNextResetAt(): number|null {
+        return this.nextResetAt;
+    }
+
+    public setNextResetAt(nextResetAt: number|null) {
+        this.nextResetAt = nextResetAt;
+        return this;
+    }
+
+    public withNextResetAt(nextResetAt: number|null): this {
+        this.nextResetAt = nextResetAt;
+        return this;
+    }
+
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
@@ -70,6 +85,7 @@ export class ScopedValue implements IModel {
         return new ScopedValue()
             .withResetType(data["resetType"])
             .withValue(data["value"])
+            .withNextResetAt(data["nextResetAt"])
             .withUpdatedAt(data["updatedAt"]);
     }
 
@@ -77,6 +93,7 @@ export class ScopedValue implements IModel {
         return {
             "resetType": this.getResetType(),
             "value": this.getValue(),
+            "nextResetAt": this.getNextResetAt(),
             "updatedAt": this.getUpdatedAt(),
         };
     }

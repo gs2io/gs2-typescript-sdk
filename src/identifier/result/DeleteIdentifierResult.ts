@@ -19,13 +19,30 @@ import IResult from '@/gs2/core/interface/IResult';
 import * as Gs2Identifier from '../model'
 
 export class DeleteIdentifierResult implements IResult {
+    private item: Gs2Identifier.Identifier|null = null;
+
+    public getItem(): Gs2Identifier.Identifier|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Identifier.Identifier|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Identifier.Identifier|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DeleteIdentifierResult {
-        return new DeleteIdentifierResult();
+        return new DeleteIdentifierResult()
+            .withItem(Gs2Identifier.Identifier.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

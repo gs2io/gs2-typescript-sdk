@@ -19,13 +19,30 @@ import IResult from '@/gs2/core/interface/IResult';
 import * as Gs2Identifier from '../model'
 
 export class DeletePasswordResult implements IResult {
+    private item: Gs2Identifier.Password|null = null;
+
+    public getItem(): Gs2Identifier.Password|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Identifier.Password|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Identifier.Password|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DeletePasswordResult {
-        return new DeletePasswordResult();
+        return new DeletePasswordResult()
+            .withItem(Gs2Identifier.Password.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

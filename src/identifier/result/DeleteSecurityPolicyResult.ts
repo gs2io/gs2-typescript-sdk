@@ -19,13 +19,30 @@ import IResult from '@/gs2/core/interface/IResult';
 import * as Gs2Identifier from '../model'
 
 export class DeleteSecurityPolicyResult implements IResult {
+    private item: Gs2Identifier.SecurityPolicy|null = null;
+
+    public getItem(): Gs2Identifier.SecurityPolicy|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Identifier.SecurityPolicy|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Identifier.SecurityPolicy|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DeleteSecurityPolicyResult {
-        return new DeleteSecurityPolicyResult();
+        return new DeleteSecurityPolicyResult()
+            .withItem(Gs2Identifier.SecurityPolicy.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

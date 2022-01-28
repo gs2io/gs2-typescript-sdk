@@ -15,7 +15,6 @@ permissions and limitations under the License.
  */
 
 import IModel from '@/gs2/core/interface/IModel';
-import { ItemModel } from './ItemModel';
 
 export class InventoryModel implements IModel {
     private inventoryModelId: string|null = null;
@@ -24,7 +23,6 @@ export class InventoryModel implements IModel {
     private initialCapacity: number|null = null;
     private maxCapacity: number|null = null;
     private protectReferencedItem: boolean|null = null;
-    private itemModels: ItemModel[]|null = null;
 
     public getInventoryModelId(): string|null {
         return this.inventoryModelId;
@@ -110,20 +108,6 @@ export class InventoryModel implements IModel {
         return this;
     }
 
-    public getItemModels(): ItemModel[]|null {
-        return this.itemModels;
-    }
-
-    public setItemModels(itemModels: ItemModel[]|null) {
-        this.itemModels = itemModels;
-        return this;
-    }
-
-    public withItemModels(itemModels: ItemModel[]|null): this {
-        this.itemModels = itemModels;
-        return this;
-    }
-
     public static fromDict(data: {[key: string]: any}): InventoryModel|null {
         if (data == undefined || data == null) {
             return null;
@@ -134,12 +118,7 @@ export class InventoryModel implements IModel {
             .withMetadata(data["metadata"])
             .withInitialCapacity(data["initialCapacity"])
             .withMaxCapacity(data["maxCapacity"])
-            .withProtectReferencedItem(data["protectReferencedItem"])
-            .withItemModels(data.itemModels ?
-                data.itemModels.map((item: {[key: string]: any}) => {
-                    return ItemModel.fromDict(item);
-                }
-            ) : []);
+            .withProtectReferencedItem(data["protectReferencedItem"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -150,11 +129,6 @@ export class InventoryModel implements IModel {
             "initialCapacity": this.getInitialCapacity(),
             "maxCapacity": this.getMaxCapacity(),
             "protectReferencedItem": this.getProtectReferencedItem(),
-            "itemModels": this.getItemModels() ?
-                this.getItemModels()!.map((item: ItemModel) => {
-                    return item.toDict();
-                }
-            ) : [],
         };
     }
 }

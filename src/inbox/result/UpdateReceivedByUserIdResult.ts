@@ -19,13 +19,30 @@ import IResult from '@/gs2/core/interface/IResult';
 import * as Gs2Inbox from '../model'
 
 export class UpdateReceivedByUserIdResult implements IResult {
+    private item: Gs2Inbox.Received|null = null;
+
+    public getItem(): Gs2Inbox.Received|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Inbox.Received|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Inbox.Received|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): UpdateReceivedByUserIdResult {
-        return new UpdateReceivedByUserIdResult();
+        return new UpdateReceivedByUserIdResult()
+            .withItem(Gs2Inbox.Received.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

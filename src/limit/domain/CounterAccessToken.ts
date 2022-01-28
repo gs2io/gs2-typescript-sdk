@@ -1,0 +1,91 @@
+/*
+ * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+import { Gs2RestSession } from "@/gs2/core/model";
+import { Gs2LimitRestClient } from "@/gs2/limit";
+import { NamespaceDomainCache } from "@/gs2/limit/domain/cache/NamespaceDomainCache";
+import { CounterDomainCache } from "@/gs2/limit/domain/cache/CounterDomainCache";
+import { LimitModelMasterDomainCache } from "@/gs2/limit/domain/cache/LimitModelMasterDomainCache";
+import { LimitModelDomainCache } from "@/gs2/limit/domain/cache/LimitModelDomainCache";
+import { GetCounterRequest } from "@/gs2/limit/request";
+import { GetCounterResult } from "@/gs2/limit/result";
+import { GetCounterByUserIdRequest } from "@/gs2/limit/request";
+import { GetCounterByUserIdResult } from "@/gs2/limit/result";
+import { CountUpRequest } from "@/gs2/limit/request";
+import { CountUpResult } from "@/gs2/limit/result";
+import { CountUpByUserIdRequest } from "@/gs2/limit/request";
+import { CountUpByUserIdResult } from "@/gs2/limit/result";
+import { DeleteCounterByUserIdRequest } from "@/gs2/limit/request";
+import { DeleteCounterByUserIdResult } from "@/gs2/limit/result";
+import { AccessToken } from "@/gs2/auth/model";
+
+export class CounterAccessTokenDomain {
+    session: Gs2RestSession;
+    client: Gs2LimitRestClient;
+    counterCache: CounterDomainCache;
+    namespaceName: string;
+    accessToken: AccessToken;
+    limitName: string;
+    counterName: string;
+
+    public constructor(
+        session: Gs2RestSession,
+        counterCache: CounterDomainCache,
+        namespaceName: string,
+        accessToken: AccessToken,
+        limitName: string,
+        counterName: string
+    ) {
+        this.session = session;
+        this.client = new Gs2LimitRestClient(
+            session
+        );
+        this.counterCache = counterCache;
+        this.namespaceName = namespaceName;
+        this.accessToken = accessToken;
+        this.limitName = limitName;
+        this.counterName = counterName;
+    }
+
+    public async load(
+        request: GetCounterRequest
+    ): Promise<GetCounterResult> {
+        request.setNamespaceName(this.namespaceName);
+        request.setAccessToken(this.accessToken != null ? this.accessToken.getToken() : null);
+        request.setLimitName(this.limitName);
+        request.setCounterName(this.counterName);
+        let r: GetCounterResult = await this.client.getCounter(
+            request
+        );
+        this.counterCache.update(r.getItem()!);
+        return r;
+    }
+
+    public async countUp(
+        request: CountUpRequest
+    ): Promise<CountUpResult> {
+        request.setNamespaceName(this.namespaceName);
+        request.setAccessToken(this.accessToken != null ? this.accessToken.getToken() : null);
+        request.setLimitName(this.limitName);
+        request.setCounterName(this.counterName);
+        let r: CountUpResult = await this.client.countUp(
+            request
+        );
+        this.counterCache.update(r.getItem()!);
+        return r;
+    }
+
+}

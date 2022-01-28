@@ -19,13 +19,30 @@ import IResult from '@/gs2/core/interface/IResult';
 import * as Gs2Stamina from '../model'
 
 export class DeleteStaminaByUserIdResult implements IResult {
+    private item: Gs2Stamina.Stamina|null = null;
+
+    public getItem(): Gs2Stamina.Stamina|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Stamina.Stamina|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Stamina.Stamina|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DeleteStaminaByUserIdResult {
-        return new DeleteStaminaByUserIdResult();
+        return new DeleteStaminaByUserIdResult()
+            .withItem(Gs2Stamina.Stamina.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

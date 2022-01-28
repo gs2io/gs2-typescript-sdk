@@ -89,7 +89,7 @@ export class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String(request.getUserName() ?? 'null'));
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -120,7 +120,7 @@ export class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String(request.getUserName() ?? 'null'));
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -146,7 +146,7 @@ export class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String(request.getUserName() ?? 'null'));
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -258,7 +258,7 @@ export class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/securityPolicy/{securityPolicyName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{securityPolicyName}', String(request.getSecurityPolicyName() ?? 'null'));
+            .replace('{securityPolicyName}', String(request.getSecurityPolicyName() ?? 'null') === "" ? "null" : String(request.getSecurityPolicyName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -290,7 +290,7 @@ export class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/securityPolicy/{securityPolicyName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{securityPolicyName}', String(request.getSecurityPolicyName() ?? 'null'));
+            .replace('{securityPolicyName}', String(request.getSecurityPolicyName() ?? 'null') === "" ? "null" : String(request.getSecurityPolicyName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -316,7 +316,7 @@ export class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/securityPolicy/{securityPolicyName}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{securityPolicyName}', String(request.getSecurityPolicyName() ?? 'null'));
+            .replace('{securityPolicyName}', String(request.getSecurityPolicyName() ?? 'null') === "" ? "null" : String(request.getSecurityPolicyName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -342,7 +342,7 @@ export class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String(request.getUserName() ?? 'null'));
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -370,7 +370,7 @@ export class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String(request.getUserName() ?? 'null'));
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -400,8 +400,8 @@ export class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String(request.getUserName() ?? 'null'))
-            .replace('{clientId}', String(request.getClientId() ?? 'null'));
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'))
+            .replace('{clientId}', String(request.getClientId() ?? 'null') === "" ? "null" : String(request.getClientId() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -427,8 +427,8 @@ export class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String(request.getUserName() ?? 'null'))
-            .replace('{clientId}', String(request.getClientId() ?? 'null'));
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'))
+            .replace('{clientId}', String(request.getClientId() ?? 'null') === "" ? "null" : String(request.getClientId() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -454,7 +454,7 @@ export class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String(request.getUserName() ?? 'null'));
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -482,7 +482,7 @@ export class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String(request.getUserName() ?? 'null'));
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -513,7 +513,7 @@ export class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password/entity')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String(request.getUserName() ?? 'null'));
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -539,7 +539,7 @@ export class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password/entity')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String(request.getUserName() ?? 'null'));
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -565,7 +565,7 @@ export class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/securityPolicy')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String(request.getUserName() ?? 'null'));
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -591,7 +591,7 @@ export class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/securityPolicy')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String(request.getUserName() ?? 'null'));
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -622,8 +622,8 @@ export class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/securityPolicy/{securityPolicyId}')
             .replace('{service}', 'identifier')
             .replace('{region}', this.session.region)
-            .replace('{userName}', String(request.getUserName() ?? 'null'))
-            .replace('{securityPolicyId}', String(request.getSecurityPolicyId() ?? 'null'));
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'))
+            .replace('{securityPolicyId}', String(request.getSecurityPolicyId() ?? 'null') === "" ? "null" : String(request.getSecurityPolicyId() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {

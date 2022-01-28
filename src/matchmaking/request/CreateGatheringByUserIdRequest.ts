@@ -29,6 +29,7 @@ export class CreateGatheringByUserIdRequest implements IRequest {
     private capacityOfRoles: Gs2Matchmaking.CapacityOfRole[]|null = null;
     private allowUserIds: string[]|null = null;
     private expiresAt: number|null = null;
+    private expiresAtTimeSpan: Gs2Matchmaking.TimeSpan|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -156,6 +157,20 @@ export class CreateGatheringByUserIdRequest implements IRequest {
         return this;
     }
 
+    public getExpiresAtTimeSpan(): Gs2Matchmaking.TimeSpan|null {
+        return this.expiresAtTimeSpan;
+    }
+
+    public setExpiresAtTimeSpan(expiresAtTimeSpan: Gs2Matchmaking.TimeSpan|null) {
+        this.expiresAtTimeSpan = expiresAtTimeSpan;
+        return this;
+    }
+
+    public withExpiresAtTimeSpan(expiresAtTimeSpan: Gs2Matchmaking.TimeSpan|null): this {
+        this.expiresAtTimeSpan = expiresAtTimeSpan;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): CreateGatheringByUserIdRequest {
         return new CreateGatheringByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
@@ -176,7 +191,8 @@ export class CreateGatheringByUserIdRequest implements IRequest {
                     return item;
                 }
             ) : [])
-            .withExpiresAt(data["expiresAt"]);
+            .withExpiresAt(data["expiresAt"])
+            .withExpiresAtTimeSpan(Gs2Matchmaking.TimeSpan.fromDict(data["expiresAtTimeSpan"]));
     }
 
     public toDict(): {[key: string]: any} {
@@ -200,6 +216,7 @@ export class CreateGatheringByUserIdRequest implements IRequest {
                 }
             ) : [],
             "expiresAt": this.getExpiresAt(),
+            "expiresAtTimeSpan": this.getExpiresAtTimeSpan()?.toDict(),
         };
     }
 }

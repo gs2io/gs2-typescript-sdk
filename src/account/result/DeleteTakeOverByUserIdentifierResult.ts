@@ -19,13 +19,30 @@ import IResult from '@/gs2/core/interface/IResult';
 import * as Gs2Account from '../model'
 
 export class DeleteTakeOverByUserIdentifierResult implements IResult {
+    private item: Gs2Account.TakeOver|null = null;
+
+    public getItem(): Gs2Account.TakeOver|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Account.TakeOver|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Account.TakeOver|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DeleteTakeOverByUserIdentifierResult {
-        return new DeleteTakeOverByUserIdentifierResult();
+        return new DeleteTakeOverByUserIdentifierResult()
+            .withItem(Gs2Account.TakeOver.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

@@ -19,13 +19,30 @@ import IResult from '@/gs2/core/interface/IResult';
 import * as Gs2Account from '../model'
 
 export class DeleteAccountResult implements IResult {
+    private item: Gs2Account.Account|null = null;
+
+    public getItem(): Gs2Account.Account|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Account.Account|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Account.Account|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DeleteAccountResult {
-        return new DeleteAccountResult();
+        return new DeleteAccountResult()
+            .withItem(Gs2Account.Account.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

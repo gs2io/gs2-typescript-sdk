@@ -19,13 +19,30 @@ import IResult from '@/gs2/core/interface/IResult';
 import * as Gs2Key from '../model'
 
 export class DeleteGitHubApiKeyResult implements IResult {
+    private item: Gs2Key.GitHubApiKey|null = null;
+
+    public getItem(): Gs2Key.GitHubApiKey|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Key.GitHubApiKey|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Key.GitHubApiKey|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DeleteGitHubApiKeyResult {
-        return new DeleteGitHubApiKeyResult();
+        return new DeleteGitHubApiKeyResult()
+            .withItem(Gs2Key.GitHubApiKey.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }

@@ -19,13 +19,30 @@ import IResult from '@/gs2/core/interface/IResult';
 import * as Gs2Inbox from '../model'
 
 export class DeleteMessageByUserIdResult implements IResult {
+    private item: Gs2Inbox.Message|null = null;
+
+    public getItem(): Gs2Inbox.Message|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Inbox.Message|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Inbox.Message|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DeleteMessageByUserIdResult {
-        return new DeleteMessageByUserIdResult();
+        return new DeleteMessageByUserIdResult()
+            .withItem(Gs2Inbox.Message.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }
