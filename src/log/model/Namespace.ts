@@ -28,6 +28,7 @@ export class Namespace implements IModel {
     private awsAccessKeyId: string|null = null;
     private awsSecretAccessKey: string|null = null;
     private firehoseStreamName: string|null = null;
+    private status: string|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
 
@@ -185,6 +186,20 @@ export class Namespace implements IModel {
         return this;
     }
 
+    public getStatus(): string|null {
+        return this.status;
+    }
+
+    public setStatus(status: string|null) {
+        this.status = status;
+        return this;
+    }
+
+    public withStatus(status: string|null): this {
+        this.status = status;
+        return this;
+    }
+
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -229,6 +244,7 @@ export class Namespace implements IModel {
             .withAwsAccessKeyId(data["awsAccessKeyId"])
             .withAwsSecretAccessKey(data["awsSecretAccessKey"])
             .withFirehoseStreamName(data["firehoseStreamName"])
+            .withStatus(data["status"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     }
@@ -246,6 +262,7 @@ export class Namespace implements IModel {
             "awsAccessKeyId": this.getAwsAccessKeyId(),
             "awsSecretAccessKey": this.getAwsSecretAccessKey(),
             "firehoseStreamName": this.getFirehoseStreamName(),
+            "status": this.getStatus(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

@@ -24,7 +24,7 @@ export class IssueStampSheetLog implements IModel {
     private userId: string|null = null;
     private action: string|null = null;
     private args: string|null = null;
-    private tasks: string|null = null;
+    private tasks: string[]|null = null;
 
     public getTimestamp(): number|null {
         return this.timestamp;
@@ -124,16 +124,16 @@ export class IssueStampSheetLog implements IModel {
         return this;
     }
 
-    public getTasks(): string|null {
+    public getTasks(): string[]|null {
         return this.tasks;
     }
 
-    public setTasks(tasks: string|null) {
+    public setTasks(tasks: string[]|null) {
         this.tasks = tasks;
         return this;
     }
 
-    public withTasks(tasks: string|null): this {
+    public withTasks(tasks: string[]|null): this {
         this.tasks = tasks;
         return this;
     }
@@ -150,7 +150,11 @@ export class IssueStampSheetLog implements IModel {
             .withUserId(data["userId"])
             .withAction(data["action"])
             .withArgs(data["args"])
-            .withTasks(data["tasks"]);
+            .withTasks(data.tasks ?
+                data.tasks.map((item: {[key: string]: any}) => {
+                    return item;
+                }
+            ) : []);
     }
 
     public toDict(): {[key: string]: any} {
@@ -162,7 +166,11 @@ export class IssueStampSheetLog implements IModel {
             "userId": this.getUserId(),
             "action": this.getAction(),
             "args": this.getArgs(),
-            "tasks": this.getTasks(),
+            "tasks": this.getTasks() ?
+                this.getTasks()!.map((item: string) => {
+                    return item;
+                }
+            ) : [],
         };
     }
 }
