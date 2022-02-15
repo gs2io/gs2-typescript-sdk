@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '@/gs2/core/interface/IModel';
+import { ScriptSetting } from './ScriptSetting';
 import { LogSetting } from './LogSetting';
 
 export class Namespace implements IModel {
@@ -25,6 +26,7 @@ export class Namespace implements IModel {
     private enableAwaitExchange: boolean|null = null;
     private queueNamespaceId: string|null = null;
     private keyId: string|null = null;
+    private exchangeScript: ScriptSetting|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -127,6 +129,20 @@ export class Namespace implements IModel {
         return this;
     }
 
+    public getExchangeScript(): ScriptSetting|null {
+        return this.exchangeScript;
+    }
+
+    public setExchangeScript(exchangeScript: ScriptSetting|null) {
+        this.exchangeScript = exchangeScript;
+        return this;
+    }
+
+    public withExchangeScript(exchangeScript: ScriptSetting|null): this {
+        this.exchangeScript = exchangeScript;
+        return this;
+    }
+
     public getLogSetting(): LogSetting|null {
         return this.logSetting;
     }
@@ -181,6 +197,7 @@ export class Namespace implements IModel {
             .withEnableAwaitExchange(data["enableAwaitExchange"])
             .withQueueNamespaceId(data["queueNamespaceId"])
             .withKeyId(data["keyId"])
+            .withExchangeScript(ScriptSetting.fromDict(data["exchangeScript"]))
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
@@ -195,6 +212,7 @@ export class Namespace implements IModel {
             "enableAwaitExchange": this.getEnableAwaitExchange(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
+            "exchangeScript": this.getExchangeScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

@@ -28,6 +28,7 @@ export class UpdateNamespaceRequest implements IRequest {
     private enableDirectExchange: boolean|null = null;
     private queueNamespaceId: string|null = null;
     private keyId: string|null = null;
+    private exchangeScript: Gs2Exchange.ScriptSetting|null = null;
     private logSetting: Gs2Exchange.LogSetting|null = null;
 
     public getRequestId(): string|null {
@@ -142,6 +143,20 @@ export class UpdateNamespaceRequest implements IRequest {
         return this;
     }
 
+    public getExchangeScript(): Gs2Exchange.ScriptSetting|null {
+        return this.exchangeScript;
+    }
+
+    public setExchangeScript(exchangeScript: Gs2Exchange.ScriptSetting|null) {
+        this.exchangeScript = exchangeScript;
+        return this;
+    }
+
+    public withExchangeScript(exchangeScript: Gs2Exchange.ScriptSetting|null): this {
+        this.exchangeScript = exchangeScript;
+        return this;
+    }
+
     public getLogSetting(): Gs2Exchange.LogSetting|null {
         return this.logSetting;
     }
@@ -164,6 +179,7 @@ export class UpdateNamespaceRequest implements IRequest {
             .withEnableDirectExchange(data["enableDirectExchange"])
             .withQueueNamespaceId(data["queueNamespaceId"])
             .withKeyId(data["keyId"])
+            .withExchangeScript(Gs2Exchange.ScriptSetting.fromDict(data["exchangeScript"]))
             .withLogSetting(Gs2Exchange.LogSetting.fromDict(data["logSetting"]));
     }
 
@@ -175,6 +191,7 @@ export class UpdateNamespaceRequest implements IRequest {
             "enableDirectExchange": this.getEnableDirectExchange(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
+            "exchangeScript": this.getExchangeScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
         };
     }

@@ -93,7 +93,7 @@ export class Gs2RealtimeRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -119,7 +119,7 @@ export class Gs2RealtimeRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -145,7 +145,7 @@ export class Gs2RealtimeRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -180,7 +180,7 @@ export class Gs2RealtimeRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -206,7 +206,7 @@ export class Gs2RealtimeRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -234,7 +234,7 @@ export class Gs2RealtimeRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'));
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -266,8 +266,8 @@ export class Gs2RealtimeRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
-            .replace('{roomName}', String(request.getRoomName() ?? 'null'));
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null') === "" ? "null" : String(request.getRoomName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -293,8 +293,8 @@ export class Gs2RealtimeRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null'))
-            .replace('{roomName}', String(request.getRoomName() ?? 'null'));
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null') === "" ? "null" : String(request.getRoomName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {

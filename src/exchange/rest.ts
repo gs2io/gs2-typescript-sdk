@@ -71,6 +71,7 @@ export class Gs2ExchangeRestClient extends AbstractGs2RestClient {
             'enableDirectExchange': request.getEnableDirectExchange() ?? null,
             'queueNamespaceId': request.getQueueNamespaceId() ?? null,
             'keyId': request.getKeyId() ?? null,
+            'exchangeScript': request.getExchangeScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.post(
@@ -159,6 +160,7 @@ export class Gs2ExchangeRestClient extends AbstractGs2RestClient {
             'enableDirectExchange': request.getEnableDirectExchange() ?? null,
             'queueNamespaceId': request.getQueueNamespaceId() ?? null,
             'keyId': request.getKeyId() ?? null,
+            'exchangeScript': request.getExchangeScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.put(
