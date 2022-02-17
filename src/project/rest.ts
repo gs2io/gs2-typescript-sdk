@@ -21,7 +21,7 @@ import * as Result from './result';
 
 import axios from 'axios';
 
-export class Gs2ProjectRestClient extends AbstractGs2RestClient {
+export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
 
     constructor(session: Gs2RestSession) {
         super(session);
@@ -339,7 +339,7 @@ export class Gs2ProjectRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{projectName}', String(request.getProjectName() ?? 'null'));
+            .replace('{projectName}', String(request.getProjectName() ?? 'null') === "" ? "null" : String(request.getProjectName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -366,7 +366,7 @@ export class Gs2ProjectRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/project/{projectName}/projectToken')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{projectName}', String(request.getProjectName() ?? 'null'));
+            .replace('{projectName}', String(request.getProjectName() ?? 'null') === "" ? "null" : String(request.getProjectName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -397,9 +397,9 @@ export class Gs2ProjectRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/account/{accountName}/project/{projectName}/user/{userName}/projectToken')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{accountName}', String(request.getAccountName() ?? 'null'))
-            .replace('{projectName}', String(request.getProjectName() ?? 'null'))
-            .replace('{userName}', String(request.getUserName() ?? 'null'));
+            .replace('{accountName}', String(request.getAccountName() ?? 'null') === "" ? "null" : String(request.getAccountName() ?? 'null'))
+            .replace('{projectName}', String(request.getProjectName() ?? 'null') === "" ? "null" : String(request.getProjectName() ?? 'null'))
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -430,7 +430,7 @@ export class Gs2ProjectRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{projectName}', String(request.getProjectName() ?? 'null'));
+            .replace('{projectName}', String(request.getProjectName() ?? 'null') === "" ? "null" : String(request.getProjectName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -467,7 +467,7 @@ export class Gs2ProjectRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{projectName}', String(request.getProjectName() ?? 'null'));
+            .replace('{projectName}', String(request.getProjectName() ?? 'null') === "" ? "null" : String(request.getProjectName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -556,7 +556,7 @@ export class Gs2ProjectRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod/{billingMethodName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{billingMethodName}', String(request.getBillingMethodName() ?? 'null'));
+            .replace('{billingMethodName}', String(request.getBillingMethodName() ?? 'null') === "" ? "null" : String(request.getBillingMethodName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -583,7 +583,7 @@ export class Gs2ProjectRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod/{billingMethodName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{billingMethodName}', String(request.getBillingMethodName() ?? 'null'));
+            .replace('{billingMethodName}', String(request.getBillingMethodName() ?? 'null') === "" ? "null" : String(request.getBillingMethodName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -615,7 +615,7 @@ export class Gs2ProjectRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod/{billingMethodName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{billingMethodName}', String(request.getBillingMethodName() ?? 'null'));
+            .replace('{billingMethodName}', String(request.getBillingMethodName() ?? 'null') === "" ? "null" : String(request.getBillingMethodName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -670,9 +670,9 @@ export class Gs2ProjectRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/billing/{projectName}/{year}/{month}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{projectName}', String(request.getProjectName() ?? 'null'))
-            .replace('{year}', String(request.getYear() ?? 'null'))
-            .replace('{month}', String(request.getMonth() ?? 'null'));
+            .replace('{projectName}', String(request.getProjectName() ?? 'null') === "" ? "null" : String(request.getProjectName() ?? 'null'))
+            .replace('{year}', String(request.getYear() ?? 'null') === "" ? "null" : String(request.getYear() ?? 'null'))
+            .replace('{month}', String(request.getMonth() ?? 'null') === "" ? "null" : String(request.getMonth() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {

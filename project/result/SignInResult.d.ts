@@ -1,6 +1,6 @@
-import IResult from '@/gs2/core/interface/IResult';
+import IResult from '../../core/interface/IResult';
 import * as Gs2Project from '../model';
-export declare class SignInResult implements IResult {
+export default class SignInResult implements IResult {
     private item;
     private accountToken;
     getItem(): Gs2Project.Account | null;

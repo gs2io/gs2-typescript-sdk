@@ -14,9 +14,9 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 
-import IModel from '@/gs2/core/interface/IModel';
+import IModel from '../../core/interface/IModel';
 
-export class OutputField implements IModel {
+export default class OutputField implements IModel {
     private name: string|null = null;
     private fieldName: string|null = null;
 

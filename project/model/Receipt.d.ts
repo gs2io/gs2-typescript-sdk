@@ -1,5 +1,5 @@
-import IModel from '@/gs2/core/interface/IModel';
-export declare class Receipt implements IModel {
+import IModel from '../../core/interface/IModel';
+export default class Receipt implements IModel {
     private receiptId;
     private accountName;
     private name;

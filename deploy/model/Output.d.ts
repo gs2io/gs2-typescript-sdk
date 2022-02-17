@@ -1,5 +1,5 @@
-import IModel from '@/gs2/core/interface/IModel';
-export declare class Output implements IModel {
+import IModel from '../../core/interface/IModel';
+export default class Output implements IModel {
     private outputId;
     private name;
     private value;

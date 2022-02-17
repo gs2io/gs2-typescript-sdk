@@ -1,5 +1,5 @@
-import IResult from '@/gs2/core/interface/IResult';
-export declare class IssuePasswordResult implements IResult {
+import IResult from '../../core/interface/IResult';
+export default class IssuePasswordResult implements IResult {
     private newPassword;
     getNewPassword(): string | null;
     setNewPassword(newPassword: string | null): this;

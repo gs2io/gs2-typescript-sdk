@@ -1,5 +1,5 @@
-import IModel from '@/gs2/core/interface/IModel';
-export declare class Chart implements IModel {
+import IModel from '../../core/interface/IModel';
+export default class Chart implements IModel {
     private chartId;
     private embedId;
     private html;

@@ -1,5 +1,5 @@
-import IModel from '@/gs2/core/interface/IModel';
-export declare class OutputField implements IModel {
+import IModel from '../../core/interface/IModel';
+export default class OutputField implements IModel {
     private name;
     private fieldName;
     getName(): string | null;

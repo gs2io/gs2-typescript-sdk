@@ -13,8 +13,16 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Account } from "./Account"
-export { Project } from "./Project"
-export { BillingMethod } from "./BillingMethod"
-export { Receipt } from "./Receipt"
-export { Billing } from "./Billing"
+import Account from "./Account"
+import Project from "./Project"
+import BillingMethod from "./BillingMethod"
+import Receipt from "./Receipt"
+import Billing from "./Billing"
+
+export {
+    Account,
+    Project,
+    BillingMethod,
+    Receipt,
+    Billing,
+};

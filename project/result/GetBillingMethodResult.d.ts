@@ -1,6 +1,6 @@
-import IResult from '@/gs2/core/interface/IResult';
+import IResult from '../../core/interface/IResult';
 import * as Gs2Project from '../model';
-export declare class GetBillingMethodResult implements IResult {
+export default class GetBillingMethodResult implements IResult {
     private item;
     getItem(): Gs2Project.BillingMethod | null;
     setItem(item: Gs2Project.BillingMethod | null): this;

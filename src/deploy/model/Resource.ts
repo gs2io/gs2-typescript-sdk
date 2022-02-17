@@ -14,10 +14,10 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 
-import IModel from '@/gs2/core/interface/IModel';
-import { OutputField } from './OutputField';
+import IModel from '../../core/interface/IModel';
+import OutputField from './OutputField';
 
-export class Resource implements IModel {
+export default class Resource implements IModel {
     private resourceId: string|null = null;
     private type: string|null = null;
     private name: string|null = null;

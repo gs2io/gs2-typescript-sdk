@@ -1,5 +1,5 @@
-import IRequest from '@/gs2/core/interface/IRequest';
-export declare class GetBillingActivityRequest implements IRequest {
+import IRequest from '../../core/interface/IRequest';
+export default class GetBillingActivityRequest implements IRequest {
     private requestId;
     private contextStack;
     private year;

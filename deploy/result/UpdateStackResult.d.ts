@@ -1,6 +1,6 @@
-import IResult from '@/gs2/core/interface/IResult';
+import IResult from '../../core/interface/IResult';
 import * as Gs2Deploy from '../model';
-export declare class UpdateStackResult implements IResult {
+export default class UpdateStackResult implements IResult {
     private item;
     getItem(): Gs2Deploy.Stack | null;
     setItem(item: Gs2Deploy.Stack | null): this;

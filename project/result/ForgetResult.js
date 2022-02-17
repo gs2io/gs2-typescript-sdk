@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ForgetResult = void 0;
 var ForgetResult = /** @class */ (function () {
     function ForgetResult() {
         this.issuePasswordToken = null;
@@ -42,5 +41,5 @@ var ForgetResult = /** @class */ (function () {
     };
     return ForgetResult;
 }());
-exports.ForgetResult = ForgetResult;
+exports.default = ForgetResult;
 //# sourceMappingURL=ForgetResult.js.map

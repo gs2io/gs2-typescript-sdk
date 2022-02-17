@@ -1,6 +1,6 @@
-import IResult from '@/gs2/core/interface/IResult';
+import IResult from '../../core/interface/IResult';
 import * as Gs2Watch from '../model';
-export declare class GetCumulativeResult implements IResult {
+export default class GetCumulativeResult implements IResult {
     private item;
     getItem(): Gs2Watch.Cumulative | null;
     setItem(item: Gs2Watch.Cumulative | null): this;

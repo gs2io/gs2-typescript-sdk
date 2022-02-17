@@ -1,5 +1,5 @@
-import IModel from '@/gs2/core/interface/IModel';
-export declare class Billing implements IModel {
+import IModel from '../../core/interface/IModel';
+export default class Billing implements IModel {
     private billingId;
     private projectName;
     private year;

@@ -1,5 +1,5 @@
-import IModel from '@/gs2/core/interface/IModel';
-export declare class GitHubCheckoutSetting implements IModel {
+import IModel from '../../core/interface/IModel';
+export default class GitHubCheckoutSetting implements IModel {
     private apiKeyId;
     private repositoryName;
     private sourcePath;

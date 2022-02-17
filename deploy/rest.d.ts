@@ -2,7 +2,7 @@ import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
 import { Gs2RestSession } from '../core/model';
 import * as Request from './request';
 import * as Result from './result';
-export declare class Gs2DeployRestClient extends AbstractGs2RestClient {
+export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     constructor(session: Gs2RestSession);
     describeStacks(request: Request.DescribeStacksRequest): Promise<Result.DescribeStacksResult>;
     createStack(request: Request.CreateStackRequest): Promise<Result.CreateStackResult>;

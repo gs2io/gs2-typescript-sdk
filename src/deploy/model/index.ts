@@ -13,9 +13,18 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Stack } from "./Stack"
-export { Resource } from "./Resource"
-export { Event } from "./Event"
-export { Output } from "./Output"
-export { GitHubCheckoutSetting } from "./GitHubCheckoutSetting"
-export { OutputField } from "./OutputField"
+import Stack from "./Stack"
+import Resource from "./Resource"
+import Event from "./Event"
+import Output from "./Output"
+import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
+import OutputField from "./OutputField"
+
+export {
+    Stack,
+    Resource,
+    Event,
+    Output,
+    GitHubCheckoutSetting,
+    OutputField,
+};

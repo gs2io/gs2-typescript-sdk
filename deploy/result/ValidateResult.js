@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ValidateResult = void 0;
 var ValidateResult = /** @class */ (function () {
     function ValidateResult() {
     }
@@ -27,5 +26,5 @@ var ValidateResult = /** @class */ (function () {
     };
     return ValidateResult;
 }());
-exports.ValidateResult = ValidateResult;
+exports.default = ValidateResult;
 //# sourceMappingURL=ValidateResult.js.map

@@ -14,9 +14,9 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 
-import IModel from '@/gs2/core/interface/IModel';
+import IModel from '../../core/interface/IModel';
 
-export class Chart implements IModel {
+export default class Chart implements IModel {
     private chartId: string|null = null;
     private embedId: string|null = null;
     private html: string|null = null;

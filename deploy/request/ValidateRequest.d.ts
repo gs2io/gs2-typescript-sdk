@@ -1,5 +1,5 @@
-import IRequest from '@/gs2/core/interface/IRequest';
-export declare class ValidateRequest implements IRequest {
+import IRequest from '../../core/interface/IRequest';
+export default class ValidateRequest implements IRequest {
     private requestId;
     private contextStack;
     private template;

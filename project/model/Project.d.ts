@@ -1,5 +1,5 @@
-import IModel from '@/gs2/core/interface/IModel';
-export declare class Project implements IModel {
+import IModel from '../../core/interface/IModel';
+export default class Project implements IModel {
     private projectId;
     private accountName;
     private name;

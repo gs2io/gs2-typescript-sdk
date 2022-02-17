@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetChartRequest = void 0;
 var GetChartRequest = /** @class */ (function () {
     function GetChartRequest() {
         this.requestId = null;
@@ -198,5 +197,5 @@ var GetChartRequest = /** @class */ (function () {
     };
     return GetChartRequest;
 }());
-exports.GetChartRequest = GetChartRequest;
+exports.default = GetChartRequest;
 //# sourceMappingURL=GetChartRequest.js.map

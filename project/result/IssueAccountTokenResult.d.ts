@@ -1,5 +1,5 @@
-import IResult from '@/gs2/core/interface/IResult';
-export declare class IssueAccountTokenResult implements IResult {
+import IResult from '../../core/interface/IResult';
+export default class IssueAccountTokenResult implements IResult {
     private accountToken;
     getAccountToken(): string | null;
     setAccountToken(accountToken: string | null): this;

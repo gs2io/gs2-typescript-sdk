@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetEventRequest = void 0;
 var GetEventRequest = /** @class */ (function () {
     function GetEventRequest() {
         this.requestId = null;
@@ -80,5 +79,5 @@ var GetEventRequest = /** @class */ (function () {
     };
     return GetEventRequest;
 }());
-exports.GetEventRequest = GetEventRequest;
+exports.default = GetEventRequest;
 //# sourceMappingURL=GetEventRequest.js.map

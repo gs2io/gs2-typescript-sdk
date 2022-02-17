@@ -1,6 +1,6 @@
-import IResult from '@/gs2/core/interface/IResult';
+import IResult from '../../core/interface/IResult';
 import * as Gs2Project from '../model';
-export declare class GetProjectTokenByIdentifierResult implements IResult {
+export default class GetProjectTokenByIdentifierResult implements IResult {
     private item;
     private ownerId;
     private projectToken;

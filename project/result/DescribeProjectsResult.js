@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DescribeProjectsResult = void 0;
 var tslib_1 = require("tslib");
 var Gs2Project = (0, tslib_1.__importStar)(require("../model"));
 var DescribeProjectsResult = /** @class */ (function () {
@@ -64,5 +63,5 @@ var DescribeProjectsResult = /** @class */ (function () {
     };
     return DescribeProjectsResult;
 }());
-exports.DescribeProjectsResult = DescribeProjectsResult;
+exports.default = DescribeProjectsResult;
 //# sourceMappingURL=DescribeProjectsResult.js.map

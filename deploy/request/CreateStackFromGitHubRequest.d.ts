@@ -1,6 +1,6 @@
-import IRequest from '@/gs2/core/interface/IRequest';
+import IRequest from '../../core/interface/IRequest';
 import * as Gs2Deploy from '../model';
-export declare class CreateStackFromGitHubRequest implements IRequest {
+export default class CreateStackFromGitHubRequest implements IRequest {
     private requestId;
     private contextStack;
     private name;

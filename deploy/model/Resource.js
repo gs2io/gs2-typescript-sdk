@@ -15,8 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Resource = void 0;
-var OutputField_1 = require("./OutputField");
+var tslib_1 = require("tslib");
+var OutputField_1 = (0, tslib_1.__importDefault)(require("./OutputField"));
 var Resource = /** @class */ (function () {
     function Resource() {
         this.resourceId = null;
@@ -170,7 +170,7 @@ var Resource = /** @class */ (function () {
             }) : [])
             .withOutputFields(data.outputFields ?
             data.outputFields.map(function (item) {
-                return OutputField_1.OutputField.fromDict(item);
+                return OutputField_1.default.fromDict(item);
             }) : [])
             .withWorkId(data["workId"])
             .withCreatedAt(data["createdAt"]);
@@ -198,5 +198,5 @@ var Resource = /** @class */ (function () {
     };
     return Resource;
 }());
-exports.Resource = Resource;
+exports.default = Resource;
 //# sourceMappingURL=Resource.js.map

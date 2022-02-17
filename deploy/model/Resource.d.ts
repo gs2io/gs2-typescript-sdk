@@ -1,6 +1,6 @@
-import IModel from '@/gs2/core/interface/IModel';
-import { OutputField } from './OutputField';
-export declare class Resource implements IModel {
+import IModel from '../../core/interface/IModel';
+import OutputField from './OutputField';
+export default class Resource implements IModel {
     private resourceId;
     private type;
     private name;

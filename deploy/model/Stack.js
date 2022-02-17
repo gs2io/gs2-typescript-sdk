@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Stack = void 0;
 var Stack = /** @class */ (function () {
     function Stack() {
         this.stackId = null;
@@ -129,5 +128,5 @@ var Stack = /** @class */ (function () {
     };
     return Stack;
 }());
-exports.Stack = Stack;
+exports.default = Stack;
 //# sourceMappingURL=Stack.js.map

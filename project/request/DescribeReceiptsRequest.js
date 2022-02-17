@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DescribeReceiptsRequest = void 0;
 var DescribeReceiptsRequest = /** @class */ (function () {
     function DescribeReceiptsRequest() {
         this.requestId = null;
@@ -94,5 +93,5 @@ var DescribeReceiptsRequest = /** @class */ (function () {
     };
     return DescribeReceiptsRequest;
 }());
-exports.DescribeReceiptsRequest = DescribeReceiptsRequest;
+exports.default = DescribeReceiptsRequest;
 //# sourceMappingURL=DescribeReceiptsRequest.js.map

@@ -21,7 +21,7 @@ import * as Result from './result';
 
 import axios from 'axios';
 
-export class Gs2WatchRestClient extends AbstractGs2RestClient {
+export default class Gs2WatchRestClient extends AbstractGs2RestClient {
 
     constructor(session: Gs2RestSession) {
         super(session);
@@ -31,7 +31,7 @@ export class Gs2WatchRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/chart/{metrics}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{metrics}', String(request.getMetrics() ?? 'null'));
+            .replace('{metrics}', String(request.getMetrics() ?? 'null') === "" ? "null" : String(request.getMetrics() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -70,7 +70,7 @@ export class Gs2WatchRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/cumulative/{name}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{name}', String(request.getName() ?? 'null'));
+            .replace('{name}', String(request.getName() ?? 'null') === "" ? "null" : String(request.getName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -101,8 +101,8 @@ export class Gs2WatchRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/billingActivity/{year}/{month}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{year}', String(request.getYear() ?? 'null'))
-            .replace('{month}', String(request.getMonth() ?? 'null'));
+            .replace('{year}', String(request.getYear() ?? 'null') === "" ? "null" : String(request.getYear() ?? 'null'))
+            .replace('{month}', String(request.getMonth() ?? 'null') === "" ? "null" : String(request.getMonth() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -131,10 +131,10 @@ export class Gs2WatchRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/billingActivity/{year}/{month}/{service}/{activityType}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{year}', String(request.getYear() ?? 'null'))
-            .replace('{month}', String(request.getMonth() ?? 'null'))
-            .replace('{service}', String(request.getService() ?? 'null'))
-            .replace('{activityType}', String(request.getActivityType() ?? 'null'));
+            .replace('{year}', String(request.getYear() ?? 'null') === "" ? "null" : String(request.getYear() ?? 'null'))
+            .replace('{month}', String(request.getMonth() ?? 'null') === "" ? "null" : String(request.getMonth() ?? 'null'))
+            .replace('{service}', String(request.getService() ?? 'null') === "" ? "null" : String(request.getService() ?? 'null'))
+            .replace('{activityType}', String(request.getActivityType() ?? 'null') === "" ? "null" : String(request.getActivityType() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {

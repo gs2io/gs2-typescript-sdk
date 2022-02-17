@@ -1,5 +1,5 @@
-import IResult from '@/gs2/core/interface/IResult';
-export declare class ForgetResult implements IResult {
+import IResult from '../../core/interface/IResult';
+export default class ForgetResult implements IResult {
     private issuePasswordToken;
     getIssuePasswordToken(): string | null;
     setIssuePasswordToken(issuePasswordToken: string | null): this;

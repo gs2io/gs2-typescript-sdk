@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetCumulativeRequest = void 0;
 var GetCumulativeRequest = /** @class */ (function () {
     function GetCumulativeRequest() {
         this.requestId = null;
@@ -80,5 +79,5 @@ var GetCumulativeRequest = /** @class */ (function () {
     };
     return GetCumulativeRequest;
 }());
-exports.GetCumulativeRequest = GetCumulativeRequest;
+exports.default = GetCumulativeRequest;
 //# sourceMappingURL=GetCumulativeRequest.js.map

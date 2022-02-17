@@ -14,7 +14,14 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 
-export * as Model from './model';
-export * as Request from './request';
-export * as Result from './result';
-export { Gs2WatchRestClient } from './rest';
+import * as model from './model';
+import * as request from './request';
+import * as result from './result';
+import Gs2WatchRestClient from './rest';
+
+export {
+    model,
+    request,
+    result,
+    Gs2WatchRestClient,
+}

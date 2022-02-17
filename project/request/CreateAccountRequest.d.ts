@@ -1,5 +1,5 @@
-import IRequest from '@/gs2/core/interface/IRequest';
-export declare class CreateAccountRequest implements IRequest {
+import IRequest from '../../core/interface/IRequest';
+export default class CreateAccountRequest implements IRequest {
     private requestId;
     private contextStack;
     private email;

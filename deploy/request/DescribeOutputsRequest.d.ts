@@ -1,5 +1,5 @@
-import IRequest from '@/gs2/core/interface/IRequest';
-export declare class DescribeOutputsRequest implements IRequest {
+import IRequest from '../../core/interface/IRequest';
+export default class DescribeOutputsRequest implements IRequest {
     private requestId;
     private contextStack;
     private stackName;

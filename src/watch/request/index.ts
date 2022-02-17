@@ -13,7 +13,14 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { GetChartRequest } from "./GetChartRequest"
-export { GetCumulativeRequest } from "./GetCumulativeRequest"
-export { DescribeBillingActivitiesRequest } from "./DescribeBillingActivitiesRequest"
-export { GetBillingActivityRequest } from "./GetBillingActivityRequest"
+import GetChartRequest from "./GetChartRequest"
+import GetCumulativeRequest from "./GetCumulativeRequest"
+import DescribeBillingActivitiesRequest from "./DescribeBillingActivitiesRequest"
+import GetBillingActivityRequest from "./GetBillingActivityRequest"
+
+export {
+    GetChartRequest,
+    GetCumulativeRequest,
+    DescribeBillingActivitiesRequest,
+    GetBillingActivityRequest,
+};

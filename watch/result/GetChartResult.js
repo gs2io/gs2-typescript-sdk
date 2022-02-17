@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetChartResult = void 0;
 var tslib_1 = require("tslib");
 var Gs2Watch = (0, tslib_1.__importStar)(require("../model"));
 var GetChartResult = /** @class */ (function () {
@@ -45,5 +44,5 @@ var GetChartResult = /** @class */ (function () {
     };
     return GetChartResult;
 }());
-exports.GetChartResult = GetChartResult;
+exports.default = GetChartResult;
 //# sourceMappingURL=GetChartResult.js.map

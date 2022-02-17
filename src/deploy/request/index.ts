@@ -13,21 +13,42 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeStacksRequest } from "./DescribeStacksRequest"
-export { CreateStackRequest } from "./CreateStackRequest"
-export { CreateStackFromGitHubRequest } from "./CreateStackFromGitHubRequest"
-export { ValidateRequest } from "./ValidateRequest"
-export { GetStackStatusRequest } from "./GetStackStatusRequest"
-export { GetStackRequest } from "./GetStackRequest"
-export { UpdateStackRequest } from "./UpdateStackRequest"
-export { UpdateStackFromGitHubRequest } from "./UpdateStackFromGitHubRequest"
-export { DeleteStackRequest } from "./DeleteStackRequest"
-export { ForceDeleteStackRequest } from "./ForceDeleteStackRequest"
-export { DeleteStackResourcesRequest } from "./DeleteStackResourcesRequest"
-export { DeleteStackEntityRequest } from "./DeleteStackEntityRequest"
-export { DescribeResourcesRequest } from "./DescribeResourcesRequest"
-export { GetResourceRequest } from "./GetResourceRequest"
-export { DescribeEventsRequest } from "./DescribeEventsRequest"
-export { GetEventRequest } from "./GetEventRequest"
-export { DescribeOutputsRequest } from "./DescribeOutputsRequest"
-export { GetOutputRequest } from "./GetOutputRequest"
+import DescribeStacksRequest from "./DescribeStacksRequest"
+import CreateStackRequest from "./CreateStackRequest"
+import CreateStackFromGitHubRequest from "./CreateStackFromGitHubRequest"
+import ValidateRequest from "./ValidateRequest"
+import GetStackStatusRequest from "./GetStackStatusRequest"
+import GetStackRequest from "./GetStackRequest"
+import UpdateStackRequest from "./UpdateStackRequest"
+import UpdateStackFromGitHubRequest from "./UpdateStackFromGitHubRequest"
+import DeleteStackRequest from "./DeleteStackRequest"
+import ForceDeleteStackRequest from "./ForceDeleteStackRequest"
+import DeleteStackResourcesRequest from "./DeleteStackResourcesRequest"
+import DeleteStackEntityRequest from "./DeleteStackEntityRequest"
+import DescribeResourcesRequest from "./DescribeResourcesRequest"
+import GetResourceRequest from "./GetResourceRequest"
+import DescribeEventsRequest from "./DescribeEventsRequest"
+import GetEventRequest from "./GetEventRequest"
+import DescribeOutputsRequest from "./DescribeOutputsRequest"
+import GetOutputRequest from "./GetOutputRequest"
+
+export {
+    DescribeStacksRequest,
+    CreateStackRequest,
+    CreateStackFromGitHubRequest,
+    ValidateRequest,
+    GetStackStatusRequest,
+    GetStackRequest,
+    UpdateStackRequest,
+    UpdateStackFromGitHubRequest,
+    DeleteStackRequest,
+    ForceDeleteStackRequest,
+    DeleteStackResourcesRequest,
+    DeleteStackEntityRequest,
+    DescribeResourcesRequest,
+    GetResourceRequest,
+    DescribeEventsRequest,
+    GetEventRequest,
+    DescribeOutputsRequest,
+    GetOutputRequest,
+};

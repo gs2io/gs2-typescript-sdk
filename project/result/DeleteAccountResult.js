@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteAccountResult = void 0;
 var DeleteAccountResult = /** @class */ (function () {
     function DeleteAccountResult() {
     }
@@ -27,5 +26,5 @@ var DeleteAccountResult = /** @class */ (function () {
     };
     return DeleteAccountResult;
 }());
-exports.DeleteAccountResult = DeleteAccountResult;
+exports.default = DeleteAccountResult;
 //# sourceMappingURL=DeleteAccountResult.js.map

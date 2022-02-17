@@ -1,6 +1,6 @@
-import IResult from '@/gs2/core/interface/IResult';
+import IResult from '../../core/interface/IResult';
 import * as Gs2Watch from '../model';
-export declare class DescribeBillingActivitiesResult implements IResult {
+export default class DescribeBillingActivitiesResult implements IResult {
     private items;
     private nextPageToken;
     getItems(): Gs2Watch.BillingActivity[] | null;

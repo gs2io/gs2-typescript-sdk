@@ -1,5 +1,5 @@
-import IModel from '@/gs2/core/interface/IModel';
-export declare class Event implements IModel {
+import IModel from '../../core/interface/IModel';
+export default class Event implements IModel {
     private eventId;
     private name;
     private resourceName;

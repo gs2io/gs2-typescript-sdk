@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetProjectRequest = void 0;
 var GetProjectRequest = /** @class */ (function () {
     function GetProjectRequest() {
         this.requestId = null;
@@ -80,5 +79,5 @@ var GetProjectRequest = /** @class */ (function () {
     };
     return GetProjectRequest;
 }());
-exports.GetProjectRequest = GetProjectRequest;
+exports.default = GetProjectRequest;
 //# sourceMappingURL=GetProjectRequest.js.map

@@ -14,11 +14,11 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 
-import IResult from '@/gs2/core/interface/IResult';
+import IResult from '../../core/interface/IResult';
 
 import * as Gs2Project from '../model'
 
-export class UpdateAccountResult implements IResult {
+export default class UpdateAccountResult implements IResult {
     private item: Gs2Project.Account|null = null;
 
     public getItem(): Gs2Project.Account|null {

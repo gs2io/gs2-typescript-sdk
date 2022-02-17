@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Cumulative = void 0;
 var Cumulative = /** @class */ (function () {
     function Cumulative() {
         this.cumulativeId = null;
@@ -101,5 +100,5 @@ var Cumulative = /** @class */ (function () {
     };
     return Cumulative;
 }());
-exports.Cumulative = Cumulative;
+exports.default = Cumulative;
 //# sourceMappingURL=Cumulative.js.map

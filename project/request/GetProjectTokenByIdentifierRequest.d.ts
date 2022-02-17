@@ -1,5 +1,5 @@
-import IRequest from '@/gs2/core/interface/IRequest';
-export declare class GetProjectTokenByIdentifierRequest implements IRequest {
+import IRequest from '../../core/interface/IRequest';
+export default class GetProjectTokenByIdentifierRequest implements IRequest {
     private requestId;
     private contextStack;
     private accountName;

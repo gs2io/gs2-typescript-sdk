@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Chart = void 0;
 var Chart = /** @class */ (function () {
     function Chart() {
         this.chartId = null;
@@ -73,5 +72,5 @@ var Chart = /** @class */ (function () {
     };
     return Chart;
 }());
-exports.Chart = Chart;
+exports.default = Chart;
 //# sourceMappingURL=Chart.js.map

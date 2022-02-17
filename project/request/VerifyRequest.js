@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VerifyRequest = void 0;
 var VerifyRequest = /** @class */ (function () {
     function VerifyRequest() {
         this.requestId = null;
@@ -66,5 +65,5 @@ var VerifyRequest = /** @class */ (function () {
     };
     return VerifyRequest;
 }());
-exports.VerifyRequest = VerifyRequest;
+exports.default = VerifyRequest;
 //# sourceMappingURL=VerifyRequest.js.map

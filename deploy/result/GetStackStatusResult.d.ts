@@ -1,5 +1,5 @@
-import IResult from '@/gs2/core/interface/IResult';
-export declare class GetStackStatusResult implements IResult {
+import IResult from '../../core/interface/IResult';
+export default class GetStackStatusResult implements IResult {
     private status;
     getStatus(): string | null;
     setStatus(status: string | null): this;

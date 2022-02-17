@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Gs2DeployRestClient = void 0;
 var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
@@ -132,17 +131,17 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DeployRestClient.prototype.getStackStatus = function (request) {
-        var _a, _b;
+        var _a, _b, _c;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/status')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
+            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -154,17 +153,17 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DeployRestClient.prototype.getStack = function (request) {
-        var _a, _b;
+        var _a, _b, _c;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
+            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -176,19 +175,19 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DeployRestClient.prototype.updateStack = function (request) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
+            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
-            'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
-            'template': (_d = request.getTemplate()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
+            'template': (_e = request.getTemplate()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -204,19 +203,19 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DeployRestClient.prototype.updateStackFromGitHub = function (request) {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/from_git_hub')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
+            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
-            'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
-            'checkoutSetting': (_e = (_d = request.getCheckoutSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
+            'checkoutSetting': (_f = (_e = request.getCheckoutSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -232,17 +231,17 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DeployRestClient.prototype.deleteStack = function (request) {
-        var _a, _b;
+        var _a, _b, _c;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
+            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -254,17 +253,17 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DeployRestClient.prototype.forceDeleteStack = function (request) {
-        var _a, _b;
+        var _a, _b, _c;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/force')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
+            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -276,17 +275,17 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DeployRestClient.prototype.deleteStackResources = function (request) {
-        var _a, _b;
+        var _a, _b, _c;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resources')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
+            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -298,17 +297,17 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DeployRestClient.prototype.deleteStackEntity = function (request) {
-        var _a, _b;
+        var _a, _b, _c;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/entity')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
+            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -320,19 +319,19 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DeployRestClient.prototype.describeResources = function (request) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resource')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
+            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
-            'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
-            'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
+            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -344,18 +343,18 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DeployRestClient.prototype.getResource = function (request) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resource/{resourceName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'))
-            .replace('{resourceName}', String((_b = request.getResourceName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{resourceName}', String((_c = request.getResourceName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getResourceName()) !== null && _d !== void 0 ? _d : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -367,19 +366,19 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DeployRestClient.prototype.describeEvents = function (request) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/event')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
+            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
-            'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
-            'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
+            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -391,18 +390,18 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DeployRestClient.prototype.getEvent = function (request) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/event/{eventName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'))
-            .replace('{eventName}', String((_b = request.getEventName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{eventName}', String((_c = request.getEventName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getEventName()) !== null && _d !== void 0 ? _d : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -414,19 +413,19 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DeployRestClient.prototype.describeOutputs = function (request) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/output')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
+            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
-            'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
-            'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
+            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -438,18 +437,18 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DeployRestClient.prototype.getOutput = function (request) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/output/{outputName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'))
-            .replace('{outputName}', String((_b = request.getOutputName()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{outputName}', String((_c = request.getOutputName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getOutputName()) !== null && _d !== void 0 ? _d : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -462,5 +461,5 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     return Gs2DeployRestClient;
 }(AbstractGs2RestClient_1.default));
-exports.Gs2DeployRestClient = Gs2DeployRestClient;
+exports.default = Gs2DeployRestClient;
 //# sourceMappingURL=rest.js.map

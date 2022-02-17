@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Gs2ProjectRestClient = void 0;
 var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
@@ -295,18 +294,18 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ProjectRestClient.prototype.getProject = function (request) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{projectName}', String((_a = request.getProjectName()) !== null && _a !== void 0 ? _a : 'null'));
+            .replace('{projectName}', String((_a = request.getProjectName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getProjectName()) !== null && _b !== void 0 ? _b : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
-            'accountToken': String((_c = request.getAccountToken()) !== null && _c !== void 0 ? _c : null),
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'accountToken': String((_d = request.getAccountToken()) !== null && _d !== void 0 ? _d : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -318,18 +317,18 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ProjectRestClient.prototype.getProjectToken = function (request) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/project/{projectName}/projectToken')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{projectName}', String((_a = request.getProjectName()) !== null && _a !== void 0 ? _a : 'null'));
+            .replace('{projectName}', String((_a = request.getProjectName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getProjectName()) !== null && _b !== void 0 ? _b : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
-            'accountToken': (_c = request.getAccountToken()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'accountToken': (_d = request.getAccountToken()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -345,20 +344,20 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ProjectRestClient.prototype.getProjectTokenByIdentifier = function (request) {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/{accountName}/project/{projectName}/user/{userName}/projectToken')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{accountName}', String((_a = request.getAccountName()) !== null && _a !== void 0 ? _a : 'null'))
-            .replace('{projectName}', String((_b = request.getProjectName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userName}', String((_c = request.getUserName()) !== null && _c !== void 0 ? _c : 'null'));
+            .replace('{accountName}', String((_a = request.getAccountName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getAccountName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{projectName}', String((_c = request.getProjectName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getProjectName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{userName}', String((_e = request.getUserName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserName()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'password': (_e = request.getPassword()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'password': (_h = request.getPassword()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -374,24 +373,24 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ProjectRestClient.prototype.updateProject = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{projectName}', String((_a = request.getProjectName()) !== null && _a !== void 0 ? _a : 'null'));
+            .replace('{projectName}', String((_a = request.getProjectName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getProjectName()) !== null && _b !== void 0 ? _b : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
-            'accountToken': (_c = request.getAccountToken()) !== null && _c !== void 0 ? _c : null,
-            'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
-            'plan': (_e = request.getPlan()) !== null && _e !== void 0 ? _e : null,
-            'billingMethodName': (_f = request.getBillingMethodName()) !== null && _f !== void 0 ? _f : null,
-            'enableEventBridge': (_g = request.getEnableEventBridge()) !== null && _g !== void 0 ? _g : null,
-            'eventBridgeAwsAccountId': (_h = request.getEventBridgeAwsAccountId()) !== null && _h !== void 0 ? _h : null,
-            'eventBridgeAwsRegion': (_j = request.getEventBridgeAwsRegion()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'accountToken': (_d = request.getAccountToken()) !== null && _d !== void 0 ? _d : null,
+            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
+            'plan': (_f = request.getPlan()) !== null && _f !== void 0 ? _f : null,
+            'billingMethodName': (_g = request.getBillingMethodName()) !== null && _g !== void 0 ? _g : null,
+            'enableEventBridge': (_h = request.getEnableEventBridge()) !== null && _h !== void 0 ? _h : null,
+            'eventBridgeAwsAccountId': (_j = request.getEventBridgeAwsAccountId()) !== null && _j !== void 0 ? _j : null,
+            'eventBridgeAwsRegion': (_k = request.getEventBridgeAwsRegion()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -407,18 +406,18 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ProjectRestClient.prototype.deleteProject = function (request) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{projectName}', String((_a = request.getProjectName()) !== null && _a !== void 0 ? _a : 'null'));
+            .replace('{projectName}', String((_a = request.getProjectName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getProjectName()) !== null && _b !== void 0 ? _b : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
-            'accountToken': String((_c = request.getAccountToken()) !== null && _c !== void 0 ? _c : null),
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'accountToken': String((_d = request.getAccountToken()) !== null && _d !== void 0 ? _d : null),
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -484,18 +483,18 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ProjectRestClient.prototype.getBillingMethod = function (request) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod/{billingMethodName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{billingMethodName}', String((_a = request.getBillingMethodName()) !== null && _a !== void 0 ? _a : 'null'));
+            .replace('{billingMethodName}', String((_a = request.getBillingMethodName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getBillingMethodName()) !== null && _b !== void 0 ? _b : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
-            'accountToken': String((_c = request.getAccountToken()) !== null && _c !== void 0 ? _c : null),
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'accountToken': String((_d = request.getAccountToken()) !== null && _d !== void 0 ? _d : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -507,19 +506,19 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ProjectRestClient.prototype.updateBillingMethod = function (request) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod/{billingMethodName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{billingMethodName}', String((_a = request.getBillingMethodName()) !== null && _a !== void 0 ? _a : 'null'));
+            .replace('{billingMethodName}', String((_a = request.getBillingMethodName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getBillingMethodName()) !== null && _b !== void 0 ? _b : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var body = {
-            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
-            'accountToken': (_c = request.getAccountToken()) !== null && _c !== void 0 ? _c : null,
-            'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'accountToken': (_d = request.getAccountToken()) !== null && _d !== void 0 ? _d : null,
+            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -535,18 +534,18 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ProjectRestClient.prototype.deleteBillingMethod = function (request) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/billingMethod/{billingMethodName}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{billingMethodName}', String((_a = request.getBillingMethodName()) !== null && _a !== void 0 ? _a : 'null'));
+            .replace('{billingMethodName}', String((_a = request.getBillingMethodName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getBillingMethodName()) !== null && _b !== void 0 ? _b : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
-            'accountToken': String((_c = request.getAccountToken()) !== null && _c !== void 0 ? _c : null),
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'accountToken': String((_d = request.getAccountToken()) !== null && _d !== void 0 ? _d : null),
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -582,22 +581,22 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ProjectRestClient.prototype.describeBillings = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/billing/{projectName}/{year}/{month}')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region)
-            .replace('{projectName}', String((_a = request.getProjectName()) !== null && _a !== void 0 ? _a : 'null'))
-            .replace('{year}', String((_b = request.getYear()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{month}', String((_c = request.getMonth()) !== null && _c !== void 0 ? _c : 'null'));
+            .replace('{projectName}', String((_a = request.getProjectName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getProjectName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{year}', String((_c = request.getYear()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getYear()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{month}', String((_e = request.getMonth()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMonth()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'accountToken': String((_e = request.getAccountToken()) !== null && _e !== void 0 ? _e : null),
-            'region': String((_f = request.getRegion()) !== null && _f !== void 0 ? _f : null),
-            'service': String((_g = request.getService()) !== null && _g !== void 0 ? _g : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'accountToken': String((_h = request.getAccountToken()) !== null && _h !== void 0 ? _h : null),
+            'region': String((_j = request.getRegion()) !== null && _j !== void 0 ? _j : null),
+            'service': String((_k = request.getService()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -610,5 +609,5 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
     };
     return Gs2ProjectRestClient;
 }(AbstractGs2RestClient_1.default));
-exports.Gs2ProjectRestClient = Gs2ProjectRestClient;
+exports.default = Gs2ProjectRestClient;
 //# sourceMappingURL=rest.js.map

@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GetBillingActivityResult = exports.DescribeBillingActivitiesResult = exports.GetCumulativeResult = exports.GetChartResult = void 0;
+var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -16,12 +17,12 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-var GetChartResult_1 = require("./GetChartResult");
-Object.defineProperty(exports, "GetChartResult", { enumerable: true, get: function () { return GetChartResult_1.GetChartResult; } });
-var GetCumulativeResult_1 = require("./GetCumulativeResult");
-Object.defineProperty(exports, "GetCumulativeResult", { enumerable: true, get: function () { return GetCumulativeResult_1.GetCumulativeResult; } });
-var DescribeBillingActivitiesResult_1 = require("./DescribeBillingActivitiesResult");
-Object.defineProperty(exports, "DescribeBillingActivitiesResult", { enumerable: true, get: function () { return DescribeBillingActivitiesResult_1.DescribeBillingActivitiesResult; } });
-var GetBillingActivityResult_1 = require("./GetBillingActivityResult");
-Object.defineProperty(exports, "GetBillingActivityResult", { enumerable: true, get: function () { return GetBillingActivityResult_1.GetBillingActivityResult; } });
+var GetChartResult_1 = (0, tslib_1.__importDefault)(require("./GetChartResult"));
+exports.GetChartResult = GetChartResult_1.default;
+var GetCumulativeResult_1 = (0, tslib_1.__importDefault)(require("./GetCumulativeResult"));
+exports.GetCumulativeResult = GetCumulativeResult_1.default;
+var DescribeBillingActivitiesResult_1 = (0, tslib_1.__importDefault)(require("./DescribeBillingActivitiesResult"));
+exports.DescribeBillingActivitiesResult = DescribeBillingActivitiesResult_1.default;
+var GetBillingActivityResult_1 = (0, tslib_1.__importDefault)(require("./GetBillingActivityResult"));
+exports.GetBillingActivityResult = GetBillingActivityResult_1.default;
 //# sourceMappingURL=index.js.map

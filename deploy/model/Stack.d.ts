@@ -1,5 +1,5 @@
-import IModel from '@/gs2/core/interface/IModel';
-export declare class Stack implements IModel {
+import IModel from '../../core/interface/IModel';
+export default class Stack implements IModel {
     private stackId;
     private name;
     private description;

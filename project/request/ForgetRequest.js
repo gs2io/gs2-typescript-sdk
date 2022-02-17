@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ForgetRequest = void 0;
 var ForgetRequest = /** @class */ (function () {
     function ForgetRequest() {
         this.requestId = null;
@@ -66,5 +65,5 @@ var ForgetRequest = /** @class */ (function () {
     };
     return ForgetRequest;
 }());
-exports.ForgetRequest = ForgetRequest;
+exports.default = ForgetRequest;
 //# sourceMappingURL=ForgetRequest.js.map

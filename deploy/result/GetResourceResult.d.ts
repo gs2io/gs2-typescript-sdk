@@ -1,6 +1,6 @@
-import IResult from '@/gs2/core/interface/IResult';
+import IResult from '../../core/interface/IResult';
 import * as Gs2Deploy from '../model';
-export declare class GetResourceResult implements IResult {
+export default class GetResourceResult implements IResult {
     private item;
     getItem(): Gs2Deploy.Resource | null;
     setItem(item: Gs2Deploy.Resource | null): this;

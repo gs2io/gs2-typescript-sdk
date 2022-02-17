@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IssueAccountTokenResult = void 0;
 var IssueAccountTokenResult = /** @class */ (function () {
     function IssueAccountTokenResult() {
         this.accountToken = null;
@@ -42,5 +41,5 @@ var IssueAccountTokenResult = /** @class */ (function () {
     };
     return IssueAccountTokenResult;
 }());
-exports.IssueAccountTokenResult = IssueAccountTokenResult;
+exports.default = IssueAccountTokenResult;
 //# sourceMappingURL=IssueAccountTokenResult.js.map

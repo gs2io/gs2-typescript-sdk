@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GetOutputRequest = exports.DescribeOutputsRequest = exports.GetEventRequest = exports.DescribeEventsRequest = exports.GetResourceRequest = exports.DescribeResourcesRequest = exports.DeleteStackEntityRequest = exports.DeleteStackResourcesRequest = exports.ForceDeleteStackRequest = exports.DeleteStackRequest = exports.UpdateStackFromGitHubRequest = exports.UpdateStackRequest = exports.GetStackRequest = exports.GetStackStatusRequest = exports.ValidateRequest = exports.CreateStackFromGitHubRequest = exports.CreateStackRequest = exports.DescribeStacksRequest = void 0;
+var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -16,40 +17,40 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-var DescribeStacksRequest_1 = require("./DescribeStacksRequest");
-Object.defineProperty(exports, "DescribeStacksRequest", { enumerable: true, get: function () { return DescribeStacksRequest_1.DescribeStacksRequest; } });
-var CreateStackRequest_1 = require("./CreateStackRequest");
-Object.defineProperty(exports, "CreateStackRequest", { enumerable: true, get: function () { return CreateStackRequest_1.CreateStackRequest; } });
-var CreateStackFromGitHubRequest_1 = require("./CreateStackFromGitHubRequest");
-Object.defineProperty(exports, "CreateStackFromGitHubRequest", { enumerable: true, get: function () { return CreateStackFromGitHubRequest_1.CreateStackFromGitHubRequest; } });
-var ValidateRequest_1 = require("./ValidateRequest");
-Object.defineProperty(exports, "ValidateRequest", { enumerable: true, get: function () { return ValidateRequest_1.ValidateRequest; } });
-var GetStackStatusRequest_1 = require("./GetStackStatusRequest");
-Object.defineProperty(exports, "GetStackStatusRequest", { enumerable: true, get: function () { return GetStackStatusRequest_1.GetStackStatusRequest; } });
-var GetStackRequest_1 = require("./GetStackRequest");
-Object.defineProperty(exports, "GetStackRequest", { enumerable: true, get: function () { return GetStackRequest_1.GetStackRequest; } });
-var UpdateStackRequest_1 = require("./UpdateStackRequest");
-Object.defineProperty(exports, "UpdateStackRequest", { enumerable: true, get: function () { return UpdateStackRequest_1.UpdateStackRequest; } });
-var UpdateStackFromGitHubRequest_1 = require("./UpdateStackFromGitHubRequest");
-Object.defineProperty(exports, "UpdateStackFromGitHubRequest", { enumerable: true, get: function () { return UpdateStackFromGitHubRequest_1.UpdateStackFromGitHubRequest; } });
-var DeleteStackRequest_1 = require("./DeleteStackRequest");
-Object.defineProperty(exports, "DeleteStackRequest", { enumerable: true, get: function () { return DeleteStackRequest_1.DeleteStackRequest; } });
-var ForceDeleteStackRequest_1 = require("./ForceDeleteStackRequest");
-Object.defineProperty(exports, "ForceDeleteStackRequest", { enumerable: true, get: function () { return ForceDeleteStackRequest_1.ForceDeleteStackRequest; } });
-var DeleteStackResourcesRequest_1 = require("./DeleteStackResourcesRequest");
-Object.defineProperty(exports, "DeleteStackResourcesRequest", { enumerable: true, get: function () { return DeleteStackResourcesRequest_1.DeleteStackResourcesRequest; } });
-var DeleteStackEntityRequest_1 = require("./DeleteStackEntityRequest");
-Object.defineProperty(exports, "DeleteStackEntityRequest", { enumerable: true, get: function () { return DeleteStackEntityRequest_1.DeleteStackEntityRequest; } });
-var DescribeResourcesRequest_1 = require("./DescribeResourcesRequest");
-Object.defineProperty(exports, "DescribeResourcesRequest", { enumerable: true, get: function () { return DescribeResourcesRequest_1.DescribeResourcesRequest; } });
-var GetResourceRequest_1 = require("./GetResourceRequest");
-Object.defineProperty(exports, "GetResourceRequest", { enumerable: true, get: function () { return GetResourceRequest_1.GetResourceRequest; } });
-var DescribeEventsRequest_1 = require("./DescribeEventsRequest");
-Object.defineProperty(exports, "DescribeEventsRequest", { enumerable: true, get: function () { return DescribeEventsRequest_1.DescribeEventsRequest; } });
-var GetEventRequest_1 = require("./GetEventRequest");
-Object.defineProperty(exports, "GetEventRequest", { enumerable: true, get: function () { return GetEventRequest_1.GetEventRequest; } });
-var DescribeOutputsRequest_1 = require("./DescribeOutputsRequest");
-Object.defineProperty(exports, "DescribeOutputsRequest", { enumerable: true, get: function () { return DescribeOutputsRequest_1.DescribeOutputsRequest; } });
-var GetOutputRequest_1 = require("./GetOutputRequest");
-Object.defineProperty(exports, "GetOutputRequest", { enumerable: true, get: function () { return GetOutputRequest_1.GetOutputRequest; } });
+var DescribeStacksRequest_1 = (0, tslib_1.__importDefault)(require("./DescribeStacksRequest"));
+exports.DescribeStacksRequest = DescribeStacksRequest_1.default;
+var CreateStackRequest_1 = (0, tslib_1.__importDefault)(require("./CreateStackRequest"));
+exports.CreateStackRequest = CreateStackRequest_1.default;
+var CreateStackFromGitHubRequest_1 = (0, tslib_1.__importDefault)(require("./CreateStackFromGitHubRequest"));
+exports.CreateStackFromGitHubRequest = CreateStackFromGitHubRequest_1.default;
+var ValidateRequest_1 = (0, tslib_1.__importDefault)(require("./ValidateRequest"));
+exports.ValidateRequest = ValidateRequest_1.default;
+var GetStackStatusRequest_1 = (0, tslib_1.__importDefault)(require("./GetStackStatusRequest"));
+exports.GetStackStatusRequest = GetStackStatusRequest_1.default;
+var GetStackRequest_1 = (0, tslib_1.__importDefault)(require("./GetStackRequest"));
+exports.GetStackRequest = GetStackRequest_1.default;
+var UpdateStackRequest_1 = (0, tslib_1.__importDefault)(require("./UpdateStackRequest"));
+exports.UpdateStackRequest = UpdateStackRequest_1.default;
+var UpdateStackFromGitHubRequest_1 = (0, tslib_1.__importDefault)(require("./UpdateStackFromGitHubRequest"));
+exports.UpdateStackFromGitHubRequest = UpdateStackFromGitHubRequest_1.default;
+var DeleteStackRequest_1 = (0, tslib_1.__importDefault)(require("./DeleteStackRequest"));
+exports.DeleteStackRequest = DeleteStackRequest_1.default;
+var ForceDeleteStackRequest_1 = (0, tslib_1.__importDefault)(require("./ForceDeleteStackRequest"));
+exports.ForceDeleteStackRequest = ForceDeleteStackRequest_1.default;
+var DeleteStackResourcesRequest_1 = (0, tslib_1.__importDefault)(require("./DeleteStackResourcesRequest"));
+exports.DeleteStackResourcesRequest = DeleteStackResourcesRequest_1.default;
+var DeleteStackEntityRequest_1 = (0, tslib_1.__importDefault)(require("./DeleteStackEntityRequest"));
+exports.DeleteStackEntityRequest = DeleteStackEntityRequest_1.default;
+var DescribeResourcesRequest_1 = (0, tslib_1.__importDefault)(require("./DescribeResourcesRequest"));
+exports.DescribeResourcesRequest = DescribeResourcesRequest_1.default;
+var GetResourceRequest_1 = (0, tslib_1.__importDefault)(require("./GetResourceRequest"));
+exports.GetResourceRequest = GetResourceRequest_1.default;
+var DescribeEventsRequest_1 = (0, tslib_1.__importDefault)(require("./DescribeEventsRequest"));
+exports.DescribeEventsRequest = DescribeEventsRequest_1.default;
+var GetEventRequest_1 = (0, tslib_1.__importDefault)(require("./GetEventRequest"));
+exports.GetEventRequest = GetEventRequest_1.default;
+var DescribeOutputsRequest_1 = (0, tslib_1.__importDefault)(require("./DescribeOutputsRequest"));
+exports.DescribeOutputsRequest = DescribeOutputsRequest_1.default;
+var GetOutputRequest_1 = (0, tslib_1.__importDefault)(require("./GetOutputRequest"));
+exports.GetOutputRequest = GetOutputRequest_1.default;
 //# sourceMappingURL=index.js.map

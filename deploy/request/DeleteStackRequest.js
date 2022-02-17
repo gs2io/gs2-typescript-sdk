@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteStackRequest = void 0;
 var DeleteStackRequest = /** @class */ (function () {
     function DeleteStackRequest() {
         this.requestId = null;
@@ -66,5 +65,5 @@ var DeleteStackRequest = /** @class */ (function () {
     };
     return DeleteStackRequest;
 }());
-exports.DeleteStackRequest = DeleteStackRequest;
+exports.default = DeleteStackRequest;
 //# sourceMappingURL=DeleteStackRequest.js.map

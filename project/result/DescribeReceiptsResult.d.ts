@@ -1,6 +1,6 @@
-import IResult from '@/gs2/core/interface/IResult';
+import IResult from '../../core/interface/IResult';
 import * as Gs2Project from '../model';
-export declare class DescribeReceiptsResult implements IResult {
+export default class DescribeReceiptsResult implements IResult {
     private items;
     private nextPageToken;
     getItems(): Gs2Project.Receipt[] | null;

@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateStackFromGitHubRequest = void 0;
 var tslib_1 = require("tslib");
 var Gs2Deploy = (0, tslib_1.__importStar)(require("../model"));
 var CreateStackFromGitHubRequest = /** @class */ (function () {
@@ -97,5 +96,5 @@ var CreateStackFromGitHubRequest = /** @class */ (function () {
     };
     return CreateStackFromGitHubRequest;
 }());
-exports.CreateStackFromGitHubRequest = CreateStackFromGitHubRequest;
+exports.default = CreateStackFromGitHubRequest;
 //# sourceMappingURL=CreateStackFromGitHubRequest.js.map

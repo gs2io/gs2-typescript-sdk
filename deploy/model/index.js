@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OutputField = exports.GitHubCheckoutSetting = exports.Output = exports.Event = exports.Resource = exports.Stack = void 0;
+var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -16,16 +17,16 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-var Stack_1 = require("./Stack");
-Object.defineProperty(exports, "Stack", { enumerable: true, get: function () { return Stack_1.Stack; } });
-var Resource_1 = require("./Resource");
-Object.defineProperty(exports, "Resource", { enumerable: true, get: function () { return Resource_1.Resource; } });
-var Event_1 = require("./Event");
-Object.defineProperty(exports, "Event", { enumerable: true, get: function () { return Event_1.Event; } });
-var Output_1 = require("./Output");
-Object.defineProperty(exports, "Output", { enumerable: true, get: function () { return Output_1.Output; } });
-var GitHubCheckoutSetting_1 = require("./GitHubCheckoutSetting");
-Object.defineProperty(exports, "GitHubCheckoutSetting", { enumerable: true, get: function () { return GitHubCheckoutSetting_1.GitHubCheckoutSetting; } });
-var OutputField_1 = require("./OutputField");
-Object.defineProperty(exports, "OutputField", { enumerable: true, get: function () { return OutputField_1.OutputField; } });
+var Stack_1 = (0, tslib_1.__importDefault)(require("./Stack"));
+exports.Stack = Stack_1.default;
+var Resource_1 = (0, tslib_1.__importDefault)(require("./Resource"));
+exports.Resource = Resource_1.default;
+var Event_1 = (0, tslib_1.__importDefault)(require("./Event"));
+exports.Event = Event_1.default;
+var Output_1 = (0, tslib_1.__importDefault)(require("./Output"));
+exports.Output = Output_1.default;
+var GitHubCheckoutSetting_1 = (0, tslib_1.__importDefault)(require("./GitHubCheckoutSetting"));
+exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
+var OutputField_1 = (0, tslib_1.__importDefault)(require("./OutputField"));
+exports.OutputField = OutputField_1.default;
 //# sourceMappingURL=index.js.map

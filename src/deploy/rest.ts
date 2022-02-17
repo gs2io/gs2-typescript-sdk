@@ -21,7 +21,7 @@ import * as Result from './result';
 
 import axios from 'axios';
 
-export class Gs2DeployRestClient extends AbstractGs2RestClient {
+export default class Gs2DeployRestClient extends AbstractGs2RestClient {
 
     constructor(session: Gs2RestSession) {
         super(session);
@@ -152,7 +152,7 @@ export class Gs2DeployRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/status')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+            .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -178,7 +178,7 @@ export class Gs2DeployRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+            .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -204,7 +204,7 @@ export class Gs2DeployRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+            .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -236,7 +236,7 @@ export class Gs2DeployRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/from_git_hub')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+            .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -268,7 +268,7 @@ export class Gs2DeployRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+            .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -294,7 +294,7 @@ export class Gs2DeployRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/force')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+            .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -320,7 +320,7 @@ export class Gs2DeployRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resources')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+            .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -346,7 +346,7 @@ export class Gs2DeployRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/entity')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+            .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -372,7 +372,7 @@ export class Gs2DeployRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resource')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+            .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -400,8 +400,8 @@ export class Gs2DeployRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resource/{resourceName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String(request.getStackName() ?? 'null'))
-            .replace('{resourceName}', String(request.getResourceName() ?? 'null'));
+            .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'))
+            .replace('{resourceName}', String(request.getResourceName() ?? 'null') === "" ? "null" : String(request.getResourceName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -427,7 +427,7 @@ export class Gs2DeployRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/event')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+            .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -455,8 +455,8 @@ export class Gs2DeployRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/event/{eventName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String(request.getStackName() ?? 'null'))
-            .replace('{eventName}', String(request.getEventName() ?? 'null'));
+            .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'))
+            .replace('{eventName}', String(request.getEventName() ?? 'null') === "" ? "null" : String(request.getEventName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -482,7 +482,7 @@ export class Gs2DeployRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/output')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String(request.getStackName() ?? 'null'));
+            .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -510,8 +510,8 @@ export class Gs2DeployRestClient extends AbstractGs2RestClient {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/output/{outputName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
-            .replace('{stackName}', String(request.getStackName() ?? 'null'))
-            .replace('{outputName}', String(request.getOutputName() ?? 'null'));
+            .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'))
+            .replace('{outputName}', String(request.getOutputName() ?? 'null') === "" ? "null" : String(request.getOutputName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {

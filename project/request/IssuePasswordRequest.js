@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IssuePasswordRequest = void 0;
 var IssuePasswordRequest = /** @class */ (function () {
     function IssuePasswordRequest() {
         this.requestId = null;
@@ -66,5 +65,5 @@ var IssuePasswordRequest = /** @class */ (function () {
     };
     return IssuePasswordRequest;
 }());
-exports.IssuePasswordRequest = IssuePasswordRequest;
+exports.default = IssuePasswordRequest;
 //# sourceMappingURL=IssuePasswordRequest.js.map

@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GitHubCheckoutSetting = void 0;
 var GitHubCheckoutSetting = /** @class */ (function () {
     function GitHubCheckoutSetting() {
         this.apiKeyId = null;
@@ -129,5 +128,5 @@ var GitHubCheckoutSetting = /** @class */ (function () {
     };
     return GitHubCheckoutSetting;
 }());
-exports.GitHubCheckoutSetting = GitHubCheckoutSetting;
+exports.default = GitHubCheckoutSetting;
 //# sourceMappingURL=GitHubCheckoutSetting.js.map

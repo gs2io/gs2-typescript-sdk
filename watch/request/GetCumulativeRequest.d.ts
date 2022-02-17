@@ -1,5 +1,5 @@
-import IRequest from '@/gs2/core/interface/IRequest';
-export declare class GetCumulativeRequest implements IRequest {
+import IRequest from '../../core/interface/IRequest';
+export default class GetCumulativeRequest implements IRequest {
     private requestId;
     private contextStack;
     private name;

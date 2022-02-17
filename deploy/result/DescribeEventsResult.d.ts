@@ -1,6 +1,6 @@
-import IResult from '@/gs2/core/interface/IResult';
+import IResult from '../../core/interface/IResult';
 import * as Gs2Deploy from '../model';
-export declare class DescribeEventsResult implements IResult {
+export default class DescribeEventsResult implements IResult {
     private items;
     private nextPageToken;
     getItems(): Gs2Deploy.Event[] | null;

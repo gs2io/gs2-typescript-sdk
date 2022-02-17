@@ -14,9 +14,9 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 
-import IModel from '@/gs2/core/interface/IModel';
+import IModel from '../../core/interface/IModel';
 
-export class Receipt implements IModel {
+export default class Receipt implements IModel {
     private receiptId: string|null = null;
     private accountName: string|null = null;
     private name: string|null = null;

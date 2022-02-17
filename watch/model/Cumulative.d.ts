@@ -1,5 +1,5 @@
-import IModel from '@/gs2/core/interface/IModel';
-export declare class Cumulative implements IModel {
+import IModel from '../../core/interface/IModel';
+export default class Cumulative implements IModel {
     private cumulativeId;
     private resourceGrn;
     private name;

@@ -1,5 +1,5 @@
-import IRequest from '@/gs2/core/interface/IRequest';
-export declare class UpdateStackRequest implements IRequest {
+import IRequest from '../../core/interface/IRequest';
+export default class UpdateStackRequest implements IRequest {
     private requestId;
     private contextStack;
     private stackName;
