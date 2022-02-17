@@ -14,80 +14,80 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 
-// import account from './account';
-// import auth from './auth';
+import * as account from './account';
+import * as auth from './auth';
 import core from './core';
-// import chat from './chat';
-// import datastore from './datastore';;
-// import deploy from './deploy';
-// import dictionary from './dictionary';
-// import distributor from './distributor';
-// import enhance from './enhance';
-// import exchange from './exchange';
-// import experience from './experience';
-// import formation from './formation';
-// import friend from './friend';
-// import gateway from './gateway';
-// import identifier from './identifier';
-// import inbox from './inbox';
-// import inventory from './inventory';
-// import jobQueue from './jobQueue';
-// import key from './key';
-// import limit from './limit';
-// import lock from './lock';
-// import log from './log';
-// import lottery from './lottery';
-// import matchmaking from './matchmaking';
-// import mission from './mission';
-// import money from './money';
-// import news from './news';
-// import project from './project';
-// import quest from './quest';
-// import ranking from './ranking';
-// import realtime from './realtime';
-// import schedule from './schedule';
-import script from './script';
-// import showcase from './showcase';
-// import stamina from './stamina';
-// import version from './version';
-// import watch from './watch';
+import * as chat from './chat';
+import * as datastore from './datastore';;
+import * as deploy from './deploy';
+import * as dictionary from './dictionary';
+import * as distributor from './distributor';
+import * as enhance from './enhance';
+import * as exchange from './exchange';
+import * as experience from './experience';
+import * as formation from './formation';
+import * as friend from './friend';
+import * as gateway from './gateway';
+import * as identifier from './identifier';
+import * as inbox from './inbox';
+import * as inventory from './inventory';
+import * as jobQueue from './jobQueue';
+import * as key from './key';
+import * as limit from './limit';
+import * as lock from './lock';
+import * as log from './log';
+import * as lottery from './lottery';
+import * as matchmaking from './matchmaking';
+import * as mission from './mission';
+import * as money from './money';
+import * as news from './news';
+import * as project from './project';
+import * as quest from './quest';
+import * as ranking from './ranking';
+import * as realtime from './realtime';
+import * as schedule from './schedule';
+import * as script from './script';
+import * as showcase from './showcase';
+import * as stamina from './stamina';
+import * as version from './version';
+import * as watch from './watch';
 
 export default {
-  // account,
-  // auth,
+  account,
+  auth,
   core,
-  // chat,
-  // datastore,
-  // deploy,
-  // dictionary,
-  // distributor,
-  // enhance,
-  // exchange,
-  // experience,
-  // formation,
-  // friend,
-  // gateway,
-  // identifier,
-  // inbox,
-  // inventory,
-  // jobQueue,
-  // key,
-  // limit,
-  // lock,
-  // log,
-  // lottery,
-  // matchmaking,
-  // mission,
-  // money,
-  // news,
-  // project,
-  // quest,
-  // ranking,
-  // realtime,
-  // schedule,
+  chat,
+  datastore,
+  deploy,
+  dictionary,
+  distributor,
+  enhance,
+  exchange,
+  experience,
+  formation,
+  friend,
+  gateway,
+  identifier,
+  inbox,
+  inventory,
+  jobQueue,
+  key,
+  limit,
+  lock,
+  log,
+  lottery,
+  matchmaking,
+  mission,
+  money,
+  news,
+  project,
+  quest,
+  ranking,
+  realtime,
+  schedule,
   script,
-  // showcase,
-  // stamina,
-  // version,
-  // watch,
+  showcase,
+  stamina,
+  version,
+  watch,
 };
