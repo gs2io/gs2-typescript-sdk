@@ -1,0 +1,284 @@
+/*
+Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License").
+You may not use this file except in compliance with the License.
+A copy of the License is located at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+or in the "license" file accompanying this file. This file is distributed
+on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+express or implied. See the License for the specific language governing
+permissions and limitations under the License.
+ */
+var EventMaster = /** @class */ (function () {
+    function EventMaster() {
+        this.eventId = null;
+        this.name = null;
+        this.description = null;
+        this.metadata = null;
+        this.scheduleType = null;
+        this.repeatType = null;
+        this.absoluteBegin = null;
+        this.absoluteEnd = null;
+        this.repeatBeginDayOfMonth = null;
+        this.repeatEndDayOfMonth = null;
+        this.repeatBeginDayOfWeek = null;
+        this.repeatEndDayOfWeek = null;
+        this.repeatBeginHour = null;
+        this.repeatEndHour = null;
+        this.relativeTriggerName = null;
+        this.relativeDuration = null;
+        this.createdAt = null;
+        this.updatedAt = null;
+    }
+    EventMaster.prototype.getEventId = function () {
+        return this.eventId;
+    };
+    EventMaster.prototype.setEventId = function (eventId) {
+        this.eventId = eventId;
+        return this;
+    };
+    EventMaster.prototype.withEventId = function (eventId) {
+        this.eventId = eventId;
+        return this;
+    };
+    EventMaster.prototype.getName = function () {
+        return this.name;
+    };
+    EventMaster.prototype.setName = function (name) {
+        this.name = name;
+        return this;
+    };
+    EventMaster.prototype.withName = function (name) {
+        this.name = name;
+        return this;
+    };
+    EventMaster.prototype.getDescription = function () {
+        return this.description;
+    };
+    EventMaster.prototype.setDescription = function (description) {
+        this.description = description;
+        return this;
+    };
+    EventMaster.prototype.withDescription = function (description) {
+        this.description = description;
+        return this;
+    };
+    EventMaster.prototype.getMetadata = function () {
+        return this.metadata;
+    };
+    EventMaster.prototype.setMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
+    EventMaster.prototype.withMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
+    EventMaster.prototype.getScheduleType = function () {
+        return this.scheduleType;
+    };
+    EventMaster.prototype.setScheduleType = function (scheduleType) {
+        this.scheduleType = scheduleType;
+        return this;
+    };
+    EventMaster.prototype.withScheduleType = function (scheduleType) {
+        this.scheduleType = scheduleType;
+        return this;
+    };
+    EventMaster.prototype.getRepeatType = function () {
+        return this.repeatType;
+    };
+    EventMaster.prototype.setRepeatType = function (repeatType) {
+        this.repeatType = repeatType;
+        return this;
+    };
+    EventMaster.prototype.withRepeatType = function (repeatType) {
+        this.repeatType = repeatType;
+        return this;
+    };
+    EventMaster.prototype.getAbsoluteBegin = function () {
+        return this.absoluteBegin;
+    };
+    EventMaster.prototype.setAbsoluteBegin = function (absoluteBegin) {
+        this.absoluteBegin = absoluteBegin;
+        return this;
+    };
+    EventMaster.prototype.withAbsoluteBegin = function (absoluteBegin) {
+        this.absoluteBegin = absoluteBegin;
+        return this;
+    };
+    EventMaster.prototype.getAbsoluteEnd = function () {
+        return this.absoluteEnd;
+    };
+    EventMaster.prototype.setAbsoluteEnd = function (absoluteEnd) {
+        this.absoluteEnd = absoluteEnd;
+        return this;
+    };
+    EventMaster.prototype.withAbsoluteEnd = function (absoluteEnd) {
+        this.absoluteEnd = absoluteEnd;
+        return this;
+    };
+    EventMaster.prototype.getRepeatBeginDayOfMonth = function () {
+        return this.repeatBeginDayOfMonth;
+    };
+    EventMaster.prototype.setRepeatBeginDayOfMonth = function (repeatBeginDayOfMonth) {
+        this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
+        return this;
+    };
+    EventMaster.prototype.withRepeatBeginDayOfMonth = function (repeatBeginDayOfMonth) {
+        this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
+        return this;
+    };
+    EventMaster.prototype.getRepeatEndDayOfMonth = function () {
+        return this.repeatEndDayOfMonth;
+    };
+    EventMaster.prototype.setRepeatEndDayOfMonth = function (repeatEndDayOfMonth) {
+        this.repeatEndDayOfMonth = repeatEndDayOfMonth;
+        return this;
+    };
+    EventMaster.prototype.withRepeatEndDayOfMonth = function (repeatEndDayOfMonth) {
+        this.repeatEndDayOfMonth = repeatEndDayOfMonth;
+        return this;
+    };
+    EventMaster.prototype.getRepeatBeginDayOfWeek = function () {
+        return this.repeatBeginDayOfWeek;
+    };
+    EventMaster.prototype.setRepeatBeginDayOfWeek = function (repeatBeginDayOfWeek) {
+        this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
+        return this;
+    };
+    EventMaster.prototype.withRepeatBeginDayOfWeek = function (repeatBeginDayOfWeek) {
+        this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
+        return this;
+    };
+    EventMaster.prototype.getRepeatEndDayOfWeek = function () {
+        return this.repeatEndDayOfWeek;
+    };
+    EventMaster.prototype.setRepeatEndDayOfWeek = function (repeatEndDayOfWeek) {
+        this.repeatEndDayOfWeek = repeatEndDayOfWeek;
+        return this;
+    };
+    EventMaster.prototype.withRepeatEndDayOfWeek = function (repeatEndDayOfWeek) {
+        this.repeatEndDayOfWeek = repeatEndDayOfWeek;
+        return this;
+    };
+    EventMaster.prototype.getRepeatBeginHour = function () {
+        return this.repeatBeginHour;
+    };
+    EventMaster.prototype.setRepeatBeginHour = function (repeatBeginHour) {
+        this.repeatBeginHour = repeatBeginHour;
+        return this;
+    };
+    EventMaster.prototype.withRepeatBeginHour = function (repeatBeginHour) {
+        this.repeatBeginHour = repeatBeginHour;
+        return this;
+    };
+    EventMaster.prototype.getRepeatEndHour = function () {
+        return this.repeatEndHour;
+    };
+    EventMaster.prototype.setRepeatEndHour = function (repeatEndHour) {
+        this.repeatEndHour = repeatEndHour;
+        return this;
+    };
+    EventMaster.prototype.withRepeatEndHour = function (repeatEndHour) {
+        this.repeatEndHour = repeatEndHour;
+        return this;
+    };
+    EventMaster.prototype.getRelativeTriggerName = function () {
+        return this.relativeTriggerName;
+    };
+    EventMaster.prototype.setRelativeTriggerName = function (relativeTriggerName) {
+        this.relativeTriggerName = relativeTriggerName;
+        return this;
+    };
+    EventMaster.prototype.withRelativeTriggerName = function (relativeTriggerName) {
+        this.relativeTriggerName = relativeTriggerName;
+        return this;
+    };
+    EventMaster.prototype.getRelativeDuration = function () {
+        return this.relativeDuration;
+    };
+    EventMaster.prototype.setRelativeDuration = function (relativeDuration) {
+        this.relativeDuration = relativeDuration;
+        return this;
+    };
+    EventMaster.prototype.withRelativeDuration = function (relativeDuration) {
+        this.relativeDuration = relativeDuration;
+        return this;
+    };
+    EventMaster.prototype.getCreatedAt = function () {
+        return this.createdAt;
+    };
+    EventMaster.prototype.setCreatedAt = function (createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    };
+    EventMaster.prototype.withCreatedAt = function (createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    };
+    EventMaster.prototype.getUpdatedAt = function () {
+        return this.updatedAt;
+    };
+    EventMaster.prototype.setUpdatedAt = function (updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    };
+    EventMaster.prototype.withUpdatedAt = function (updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    };
+    EventMaster.fromDict = function (data) {
+        if (data == undefined || data == null) {
+            return null;
+        }
+        return new EventMaster()
+            .withEventId(data["eventId"])
+            .withName(data["name"])
+            .withDescription(data["description"])
+            .withMetadata(data["metadata"])
+            .withScheduleType(data["scheduleType"])
+            .withRepeatType(data["repeatType"])
+            .withAbsoluteBegin(data["absoluteBegin"])
+            .withAbsoluteEnd(data["absoluteEnd"])
+            .withRepeatBeginDayOfMonth(data["repeatBeginDayOfMonth"])
+            .withRepeatEndDayOfMonth(data["repeatEndDayOfMonth"])
+            .withRepeatBeginDayOfWeek(data["repeatBeginDayOfWeek"])
+            .withRepeatEndDayOfWeek(data["repeatEndDayOfWeek"])
+            .withRepeatBeginHour(data["repeatBeginHour"])
+            .withRepeatEndHour(data["repeatEndHour"])
+            .withRelativeTriggerName(data["relativeTriggerName"])
+            .withRelativeDuration(data["relativeDuration"])
+            .withCreatedAt(data["createdAt"])
+            .withUpdatedAt(data["updatedAt"]);
+    };
+    EventMaster.prototype.toDict = function () {
+        return {
+            "eventId": this.getEventId(),
+            "name": this.getName(),
+            "description": this.getDescription(),
+            "metadata": this.getMetadata(),
+            "scheduleType": this.getScheduleType(),
+            "repeatType": this.getRepeatType(),
+            "absoluteBegin": this.getAbsoluteBegin(),
+            "absoluteEnd": this.getAbsoluteEnd(),
+            "repeatBeginDayOfMonth": this.getRepeatBeginDayOfMonth(),
+            "repeatEndDayOfMonth": this.getRepeatEndDayOfMonth(),
+            "repeatBeginDayOfWeek": this.getRepeatBeginDayOfWeek(),
+            "repeatEndDayOfWeek": this.getRepeatEndDayOfWeek(),
+            "repeatBeginHour": this.getRepeatBeginHour(),
+            "repeatEndHour": this.getRepeatEndHour(),
+            "relativeTriggerName": this.getRelativeTriggerName(),
+            "relativeDuration": this.getRelativeDuration(),
+            "createdAt": this.getCreatedAt(),
+            "updatedAt": this.getUpdatedAt(),
+        };
+    };
+    return EventMaster;
+}());
+export default EventMaster;
+//# sourceMappingURL=EventMaster.js.map

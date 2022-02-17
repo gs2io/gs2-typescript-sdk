@@ -13,34 +13,68 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { DescribeDataObjectsResult } from "./DescribeDataObjectsResult"
-export { DescribeDataObjectsByUserIdResult } from "./DescribeDataObjectsByUserIdResult"
-export { PrepareUploadResult } from "./PrepareUploadResult"
-export { PrepareUploadByUserIdResult } from "./PrepareUploadByUserIdResult"
-export { UpdateDataObjectResult } from "./UpdateDataObjectResult"
-export { UpdateDataObjectByUserIdResult } from "./UpdateDataObjectByUserIdResult"
-export { PrepareReUploadResult } from "./PrepareReUploadResult"
-export { PrepareReUploadByUserIdResult } from "./PrepareReUploadByUserIdResult"
-export { DoneUploadResult } from "./DoneUploadResult"
-export { DoneUploadByUserIdResult } from "./DoneUploadByUserIdResult"
-export { DeleteDataObjectResult } from "./DeleteDataObjectResult"
-export { DeleteDataObjectByUserIdResult } from "./DeleteDataObjectByUserIdResult"
-export { PrepareDownloadResult } from "./PrepareDownloadResult"
-export { PrepareDownloadByUserIdResult } from "./PrepareDownloadByUserIdResult"
-export { PrepareDownloadByGenerationResult } from "./PrepareDownloadByGenerationResult"
-export { PrepareDownloadByGenerationAndUserIdResult } from "./PrepareDownloadByGenerationAndUserIdResult"
-export { PrepareDownloadOwnDataResult } from "./PrepareDownloadOwnDataResult"
-export { PrepareDownloadByUserIdAndDataObjectNameResult } from "./PrepareDownloadByUserIdAndDataObjectNameResult"
-export { PrepareDownloadOwnDataByGenerationResult } from "./PrepareDownloadOwnDataByGenerationResult"
-export { PrepareDownloadByUserIdAndDataObjectNameAndGenerationResult } from "./PrepareDownloadByUserIdAndDataObjectNameAndGenerationResult"
-export { RestoreDataObjectResult } from "./RestoreDataObjectResult"
-export { DescribeDataObjectHistoriesResult } from "./DescribeDataObjectHistoriesResult"
-export { DescribeDataObjectHistoriesByUserIdResult } from "./DescribeDataObjectHistoriesByUserIdResult"
-export { GetDataObjectHistoryResult } from "./GetDataObjectHistoryResult"
-export { GetDataObjectHistoryByUserIdResult } from "./GetDataObjectHistoryByUserIdResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeDataObjectsResult from "./DescribeDataObjectsResult"
+import DescribeDataObjectsByUserIdResult from "./DescribeDataObjectsByUserIdResult"
+import PrepareUploadResult from "./PrepareUploadResult"
+import PrepareUploadByUserIdResult from "./PrepareUploadByUserIdResult"
+import UpdateDataObjectResult from "./UpdateDataObjectResult"
+import UpdateDataObjectByUserIdResult from "./UpdateDataObjectByUserIdResult"
+import PrepareReUploadResult from "./PrepareReUploadResult"
+import PrepareReUploadByUserIdResult from "./PrepareReUploadByUserIdResult"
+import DoneUploadResult from "./DoneUploadResult"
+import DoneUploadByUserIdResult from "./DoneUploadByUserIdResult"
+import DeleteDataObjectResult from "./DeleteDataObjectResult"
+import DeleteDataObjectByUserIdResult from "./DeleteDataObjectByUserIdResult"
+import PrepareDownloadResult from "./PrepareDownloadResult"
+import PrepareDownloadByUserIdResult from "./PrepareDownloadByUserIdResult"
+import PrepareDownloadByGenerationResult from "./PrepareDownloadByGenerationResult"
+import PrepareDownloadByGenerationAndUserIdResult from "./PrepareDownloadByGenerationAndUserIdResult"
+import PrepareDownloadOwnDataResult from "./PrepareDownloadOwnDataResult"
+import PrepareDownloadByUserIdAndDataObjectNameResult from "./PrepareDownloadByUserIdAndDataObjectNameResult"
+import PrepareDownloadOwnDataByGenerationResult from "./PrepareDownloadOwnDataByGenerationResult"
+import PrepareDownloadByUserIdAndDataObjectNameAndGenerationResult from "./PrepareDownloadByUserIdAndDataObjectNameAndGenerationResult"
+import RestoreDataObjectResult from "./RestoreDataObjectResult"
+import DescribeDataObjectHistoriesResult from "./DescribeDataObjectHistoriesResult"
+import DescribeDataObjectHistoriesByUserIdResult from "./DescribeDataObjectHistoriesByUserIdResult"
+import GetDataObjectHistoryResult from "./GetDataObjectHistoryResult"
+import GetDataObjectHistoryByUserIdResult from "./GetDataObjectHistoryByUserIdResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    DescribeDataObjectsResult,
+    DescribeDataObjectsByUserIdResult,
+    PrepareUploadResult,
+    PrepareUploadByUserIdResult,
+    UpdateDataObjectResult,
+    UpdateDataObjectByUserIdResult,
+    PrepareReUploadResult,
+    PrepareReUploadByUserIdResult,
+    DoneUploadResult,
+    DoneUploadByUserIdResult,
+    DeleteDataObjectResult,
+    DeleteDataObjectByUserIdResult,
+    PrepareDownloadResult,
+    PrepareDownloadByUserIdResult,
+    PrepareDownloadByGenerationResult,
+    PrepareDownloadByGenerationAndUserIdResult,
+    PrepareDownloadOwnDataResult,
+    PrepareDownloadByUserIdAndDataObjectNameResult,
+    PrepareDownloadOwnDataByGenerationResult,
+    PrepareDownloadByUserIdAndDataObjectNameAndGenerationResult,
+    RestoreDataObjectResult,
+    DescribeDataObjectHistoriesResult,
+    DescribeDataObjectHistoriesByUserIdResult,
+    GetDataObjectHistoryResult,
+    GetDataObjectHistoryByUserIdResult,
+};

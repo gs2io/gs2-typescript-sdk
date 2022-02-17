@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Chat from '../model'
 
-export class PostByUserIdResult implements IResult {
+export default class PostByUserIdResult implements IResult {
     private item: Gs2Chat.Message|null = null;
 
     public getItem(): Gs2Chat.Message|null {

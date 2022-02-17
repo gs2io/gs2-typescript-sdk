@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Lock from '../model'
 
-export class DescribeMutexesResult implements IResult {
+export default class DescribeMutexesResult implements IResult {
     private items: Gs2Lock.Mutex[]|null = null;
     private nextPageToken: string|null = null;
 

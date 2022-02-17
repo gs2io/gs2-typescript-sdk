@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Chat from '../model'
 
-export class DescribeMessagesRequest implements IRequest {
+export default class DescribeMessagesRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

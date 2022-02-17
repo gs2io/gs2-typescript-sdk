@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Message implements IModel {
+export default class Message implements IModel {
     private messageId: string|null = null;
     private roomName: string|null = null;
     private name: string|null = null;

@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Distributor from '../model'
 
-export class DistributeRequest implements IRequest {
+export default class DistributeRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

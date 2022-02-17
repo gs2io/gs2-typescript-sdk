@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Mission from '../model'
 
-export class DescribeMissionTaskModelMastersResult implements IResult {
+export default class DescribeMissionTaskModelMastersResult implements IResult {
     private items: Gs2Mission.MissionTaskModelMaster[]|null = null;
     private nextPageToken: string|null = null;
 

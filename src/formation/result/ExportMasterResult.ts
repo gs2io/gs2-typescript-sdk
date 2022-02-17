@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Formation from '../model'
 
-export class ExportMasterResult implements IResult {
+export default class ExportMasterResult implements IResult {
     private item: Gs2Formation.CurrentFormMaster|null = null;
 
     public getItem(): Gs2Formation.CurrentFormMaster|null {

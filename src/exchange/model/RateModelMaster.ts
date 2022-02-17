@@ -15,10 +15,10 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { ConsumeAction } from './ConsumeAction';
-import { AcquireAction } from './AcquireAction';
+import ConsumeAction from './ConsumeAction';
+import AcquireAction from './AcquireAction';
 
-export class RateModelMaster implements IModel {
+export default class RateModelMaster implements IModel {
     private rateModelId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;

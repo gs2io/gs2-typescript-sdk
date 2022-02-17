@@ -15,9 +15,9 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { Reward } from './Reward';
+import Reward from './Reward';
 
-export class Progress implements IModel {
+export default class Progress implements IModel {
     private progressId: string|null = null;
     private userId: string|null = null;
     private transactionId: string|null = null;

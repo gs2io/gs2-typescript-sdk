@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Material implements IModel {
+export default class Material implements IModel {
     private materialItemSetId: string|null = null;
     private count: number|null = null;
 

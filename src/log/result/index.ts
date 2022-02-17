@@ -13,18 +13,36 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { QueryAccessLogResult } from "./QueryAccessLogResult"
-export { CountAccessLogResult } from "./CountAccessLogResult"
-export { QueryIssueStampSheetLogResult } from "./QueryIssueStampSheetLogResult"
-export { CountIssueStampSheetLogResult } from "./CountIssueStampSheetLogResult"
-export { QueryExecuteStampSheetLogResult } from "./QueryExecuteStampSheetLogResult"
-export { CountExecuteStampSheetLogResult } from "./CountExecuteStampSheetLogResult"
-export { QueryExecuteStampTaskLogResult } from "./QueryExecuteStampTaskLogResult"
-export { CountExecuteStampTaskLogResult } from "./CountExecuteStampTaskLogResult"
-export { PutLogResult } from "./PutLogResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import QueryAccessLogResult from "./QueryAccessLogResult"
+import CountAccessLogResult from "./CountAccessLogResult"
+import QueryIssueStampSheetLogResult from "./QueryIssueStampSheetLogResult"
+import CountIssueStampSheetLogResult from "./CountIssueStampSheetLogResult"
+import QueryExecuteStampSheetLogResult from "./QueryExecuteStampSheetLogResult"
+import CountExecuteStampSheetLogResult from "./CountExecuteStampSheetLogResult"
+import QueryExecuteStampTaskLogResult from "./QueryExecuteStampTaskLogResult"
+import CountExecuteStampTaskLogResult from "./CountExecuteStampTaskLogResult"
+import PutLogResult from "./PutLogResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    QueryAccessLogResult,
+    CountAccessLogResult,
+    QueryIssueStampSheetLogResult,
+    CountIssueStampSheetLogResult,
+    QueryExecuteStampSheetLogResult,
+    CountExecuteStampSheetLogResult,
+    QueryExecuteStampTaskLogResult,
+    CountExecuteStampTaskLogResult,
+    PutLogResult,
+};

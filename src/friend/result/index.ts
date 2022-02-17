@@ -13,51 +13,102 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { GetProfileResult } from "./GetProfileResult"
-export { GetProfileByUserIdResult } from "./GetProfileByUserIdResult"
-export { UpdateProfileResult } from "./UpdateProfileResult"
-export { UpdateProfileByUserIdResult } from "./UpdateProfileByUserIdResult"
-export { DeleteProfileByUserIdResult } from "./DeleteProfileByUserIdResult"
-export { DescribeFriendsResult } from "./DescribeFriendsResult"
-export { DescribeFriendsByUserIdResult } from "./DescribeFriendsByUserIdResult"
-export { DescribeBlackListResult } from "./DescribeBlackListResult"
-export { DescribeBlackListByUserIdResult } from "./DescribeBlackListByUserIdResult"
-export { RegisterBlackListResult } from "./RegisterBlackListResult"
-export { RegisterBlackListByUserIdResult } from "./RegisterBlackListByUserIdResult"
-export { UnregisterBlackListResult } from "./UnregisterBlackListResult"
-export { UnregisterBlackListByUserIdResult } from "./UnregisterBlackListByUserIdResult"
-export { DescribeFollowsResult } from "./DescribeFollowsResult"
-export { DescribeFollowsByUserIdResult } from "./DescribeFollowsByUserIdResult"
-export { GetFollowResult } from "./GetFollowResult"
-export { GetFollowByUserIdResult } from "./GetFollowByUserIdResult"
-export { FollowResult } from "./FollowResult"
-export { FollowByUserIdResult } from "./FollowByUserIdResult"
-export { UnfollowResult } from "./UnfollowResult"
-export { UnfollowByUserIdResult } from "./UnfollowByUserIdResult"
-export { GetFriendResult } from "./GetFriendResult"
-export { GetFriendByUserIdResult } from "./GetFriendByUserIdResult"
-export { DeleteFriendResult } from "./DeleteFriendResult"
-export { DeleteFriendByUserIdResult } from "./DeleteFriendByUserIdResult"
-export { DescribeSendRequestsResult } from "./DescribeSendRequestsResult"
-export { DescribeSendRequestsByUserIdResult } from "./DescribeSendRequestsByUserIdResult"
-export { GetSendRequestResult } from "./GetSendRequestResult"
-export { GetSendRequestByUserIdResult } from "./GetSendRequestByUserIdResult"
-export { SendRequestResult } from "./SendRequestResult"
-export { SendRequestByUserIdResult } from "./SendRequestByUserIdResult"
-export { DeleteRequestResult } from "./DeleteRequestResult"
-export { DeleteRequestByUserIdResult } from "./DeleteRequestByUserIdResult"
-export { DescribeReceiveRequestsResult } from "./DescribeReceiveRequestsResult"
-export { DescribeReceiveRequestsByUserIdResult } from "./DescribeReceiveRequestsByUserIdResult"
-export { GetReceiveRequestResult } from "./GetReceiveRequestResult"
-export { GetReceiveRequestByUserIdResult } from "./GetReceiveRequestByUserIdResult"
-export { AcceptRequestResult } from "./AcceptRequestResult"
-export { AcceptRequestByUserIdResult } from "./AcceptRequestByUserIdResult"
-export { RejectRequestResult } from "./RejectRequestResult"
-export { RejectRequestByUserIdResult } from "./RejectRequestByUserIdResult"
-export { GetPublicProfileResult } from "./GetPublicProfileResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import GetProfileResult from "./GetProfileResult"
+import GetProfileByUserIdResult from "./GetProfileByUserIdResult"
+import UpdateProfileResult from "./UpdateProfileResult"
+import UpdateProfileByUserIdResult from "./UpdateProfileByUserIdResult"
+import DeleteProfileByUserIdResult from "./DeleteProfileByUserIdResult"
+import DescribeFriendsResult from "./DescribeFriendsResult"
+import DescribeFriendsByUserIdResult from "./DescribeFriendsByUserIdResult"
+import DescribeBlackListResult from "./DescribeBlackListResult"
+import DescribeBlackListByUserIdResult from "./DescribeBlackListByUserIdResult"
+import RegisterBlackListResult from "./RegisterBlackListResult"
+import RegisterBlackListByUserIdResult from "./RegisterBlackListByUserIdResult"
+import UnregisterBlackListResult from "./UnregisterBlackListResult"
+import UnregisterBlackListByUserIdResult from "./UnregisterBlackListByUserIdResult"
+import DescribeFollowsResult from "./DescribeFollowsResult"
+import DescribeFollowsByUserIdResult from "./DescribeFollowsByUserIdResult"
+import GetFollowResult from "./GetFollowResult"
+import GetFollowByUserIdResult from "./GetFollowByUserIdResult"
+import FollowResult from "./FollowResult"
+import FollowByUserIdResult from "./FollowByUserIdResult"
+import UnfollowResult from "./UnfollowResult"
+import UnfollowByUserIdResult from "./UnfollowByUserIdResult"
+import GetFriendResult from "./GetFriendResult"
+import GetFriendByUserIdResult from "./GetFriendByUserIdResult"
+import DeleteFriendResult from "./DeleteFriendResult"
+import DeleteFriendByUserIdResult from "./DeleteFriendByUserIdResult"
+import DescribeSendRequestsResult from "./DescribeSendRequestsResult"
+import DescribeSendRequestsByUserIdResult from "./DescribeSendRequestsByUserIdResult"
+import GetSendRequestResult from "./GetSendRequestResult"
+import GetSendRequestByUserIdResult from "./GetSendRequestByUserIdResult"
+import SendRequestResult from "./SendRequestResult"
+import SendRequestByUserIdResult from "./SendRequestByUserIdResult"
+import DeleteRequestResult from "./DeleteRequestResult"
+import DeleteRequestByUserIdResult from "./DeleteRequestByUserIdResult"
+import DescribeReceiveRequestsResult from "./DescribeReceiveRequestsResult"
+import DescribeReceiveRequestsByUserIdResult from "./DescribeReceiveRequestsByUserIdResult"
+import GetReceiveRequestResult from "./GetReceiveRequestResult"
+import GetReceiveRequestByUserIdResult from "./GetReceiveRequestByUserIdResult"
+import AcceptRequestResult from "./AcceptRequestResult"
+import AcceptRequestByUserIdResult from "./AcceptRequestByUserIdResult"
+import RejectRequestResult from "./RejectRequestResult"
+import RejectRequestByUserIdResult from "./RejectRequestByUserIdResult"
+import GetPublicProfileResult from "./GetPublicProfileResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    GetProfileResult,
+    GetProfileByUserIdResult,
+    UpdateProfileResult,
+    UpdateProfileByUserIdResult,
+    DeleteProfileByUserIdResult,
+    DescribeFriendsResult,
+    DescribeFriendsByUserIdResult,
+    DescribeBlackListResult,
+    DescribeBlackListByUserIdResult,
+    RegisterBlackListResult,
+    RegisterBlackListByUserIdResult,
+    UnregisterBlackListResult,
+    UnregisterBlackListByUserIdResult,
+    DescribeFollowsResult,
+    DescribeFollowsByUserIdResult,
+    GetFollowResult,
+    GetFollowByUserIdResult,
+    FollowResult,
+    FollowByUserIdResult,
+    UnfollowResult,
+    UnfollowByUserIdResult,
+    GetFriendResult,
+    GetFriendByUserIdResult,
+    DeleteFriendResult,
+    DeleteFriendByUserIdResult,
+    DescribeSendRequestsResult,
+    DescribeSendRequestsByUserIdResult,
+    GetSendRequestResult,
+    GetSendRequestByUserIdResult,
+    SendRequestResult,
+    SendRequestByUserIdResult,
+    DeleteRequestResult,
+    DeleteRequestByUserIdResult,
+    DescribeReceiveRequestsResult,
+    DescribeReceiveRequestsByUserIdResult,
+    GetReceiveRequestResult,
+    GetReceiveRequestByUserIdResult,
+    AcceptRequestResult,
+    AcceptRequestByUserIdResult,
+    RejectRequestResult,
+    RejectRequestByUserIdResult,
+    GetPublicProfileResult,
+};

@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Stamina from '../model'
 
-export class DeleteStaminaModelMasterRequest implements IRequest {
+export default class DeleteStaminaModelMasterRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

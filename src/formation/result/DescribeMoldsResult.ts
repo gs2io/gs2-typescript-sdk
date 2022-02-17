@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Formation from '../model'
 
-export class DescribeMoldsResult implements IResult {
+export default class DescribeMoldsResult implements IResult {
     private items: Gs2Formation.Mold[]|null = null;
     private nextPageToken: string|null = null;
 

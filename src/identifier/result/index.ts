@@ -13,27 +13,54 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeUsersResult } from "./DescribeUsersResult"
-export { CreateUserResult } from "./CreateUserResult"
-export { UpdateUserResult } from "./UpdateUserResult"
-export { GetUserResult } from "./GetUserResult"
-export { DeleteUserResult } from "./DeleteUserResult"
-export { DescribeSecurityPoliciesResult } from "./DescribeSecurityPoliciesResult"
-export { DescribeCommonSecurityPoliciesResult } from "./DescribeCommonSecurityPoliciesResult"
-export { CreateSecurityPolicyResult } from "./CreateSecurityPolicyResult"
-export { UpdateSecurityPolicyResult } from "./UpdateSecurityPolicyResult"
-export { GetSecurityPolicyResult } from "./GetSecurityPolicyResult"
-export { DeleteSecurityPolicyResult } from "./DeleteSecurityPolicyResult"
-export { DescribeIdentifiersResult } from "./DescribeIdentifiersResult"
-export { CreateIdentifierResult } from "./CreateIdentifierResult"
-export { GetIdentifierResult } from "./GetIdentifierResult"
-export { DeleteIdentifierResult } from "./DeleteIdentifierResult"
-export { DescribePasswordsResult } from "./DescribePasswordsResult"
-export { CreatePasswordResult } from "./CreatePasswordResult"
-export { GetPasswordResult } from "./GetPasswordResult"
-export { DeletePasswordResult } from "./DeletePasswordResult"
-export { GetHasSecurityPolicyResult } from "./GetHasSecurityPolicyResult"
-export { AttachSecurityPolicyResult } from "./AttachSecurityPolicyResult"
-export { DetachSecurityPolicyResult } from "./DetachSecurityPolicyResult"
-export { LoginResult } from "./LoginResult"
-export { LoginByUserResult } from "./LoginByUserResult"
+import DescribeUsersResult from "./DescribeUsersResult"
+import CreateUserResult from "./CreateUserResult"
+import UpdateUserResult from "./UpdateUserResult"
+import GetUserResult from "./GetUserResult"
+import DeleteUserResult from "./DeleteUserResult"
+import DescribeSecurityPoliciesResult from "./DescribeSecurityPoliciesResult"
+import DescribeCommonSecurityPoliciesResult from "./DescribeCommonSecurityPoliciesResult"
+import CreateSecurityPolicyResult from "./CreateSecurityPolicyResult"
+import UpdateSecurityPolicyResult from "./UpdateSecurityPolicyResult"
+import GetSecurityPolicyResult from "./GetSecurityPolicyResult"
+import DeleteSecurityPolicyResult from "./DeleteSecurityPolicyResult"
+import DescribeIdentifiersResult from "./DescribeIdentifiersResult"
+import CreateIdentifierResult from "./CreateIdentifierResult"
+import GetIdentifierResult from "./GetIdentifierResult"
+import DeleteIdentifierResult from "./DeleteIdentifierResult"
+import DescribePasswordsResult from "./DescribePasswordsResult"
+import CreatePasswordResult from "./CreatePasswordResult"
+import GetPasswordResult from "./GetPasswordResult"
+import DeletePasswordResult from "./DeletePasswordResult"
+import GetHasSecurityPolicyResult from "./GetHasSecurityPolicyResult"
+import AttachSecurityPolicyResult from "./AttachSecurityPolicyResult"
+import DetachSecurityPolicyResult from "./DetachSecurityPolicyResult"
+import LoginResult from "./LoginResult"
+import LoginByUserResult from "./LoginByUserResult"
+
+export {
+    DescribeUsersResult,
+    CreateUserResult,
+    UpdateUserResult,
+    GetUserResult,
+    DeleteUserResult,
+    DescribeSecurityPoliciesResult,
+    DescribeCommonSecurityPoliciesResult,
+    CreateSecurityPolicyResult,
+    UpdateSecurityPolicyResult,
+    GetSecurityPolicyResult,
+    DeleteSecurityPolicyResult,
+    DescribeIdentifiersResult,
+    CreateIdentifierResult,
+    GetIdentifierResult,
+    DeleteIdentifierResult,
+    DescribePasswordsResult,
+    CreatePasswordResult,
+    GetPasswordResult,
+    DeletePasswordResult,
+    GetHasSecurityPolicyResult,
+    AttachSecurityPolicyResult,
+    DetachSecurityPolicyResult,
+    LoginResult,
+    LoginByUserResult,
+};

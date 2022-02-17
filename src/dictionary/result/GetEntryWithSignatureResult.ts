@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Dictionary from '../model'
 
-export class GetEntryWithSignatureResult implements IResult {
+export default class GetEntryWithSignatureResult implements IResult {
     private item: Gs2Dictionary.Entry|null = null;
     private body: string|null = null;
     private signature: string|null = null;

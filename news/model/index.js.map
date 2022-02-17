@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../src/news/model/index.ts"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;GAcG;AACH,OAAO,SAAS,MAAM,aAAa,CAAA;AACnC,OAAO,IAAI,MAAM,QAAQ,CAAA;AACzB,OAAO,qBAAqB,MAAM,yBAAyB,CAAA;AAC3D,OAAO,UAAU,MAAM,cAAc,CAAA;AACrC,OAAO,qBAAqB,MAAM,yBAAyB,CAAA;AAE3D,OAAO,EACH,SAAS,EACT,IAAI,EACJ,qBAAqB,EACrB,UAAU,EACV,qBAAqB,GACxB,CAAC"}

@@ -13,13 +13,26 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { DescribeRoomsResult } from "./DescribeRoomsResult"
-export { WantRoomResult } from "./WantRoomResult"
-export { GetRoomResult } from "./GetRoomResult"
-export { DeleteRoomResult } from "./DeleteRoomResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeRoomsResult from "./DescribeRoomsResult"
+import WantRoomResult from "./WantRoomResult"
+import GetRoomResult from "./GetRoomResult"
+import DeleteRoomResult from "./DeleteRoomResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    DescribeRoomsResult,
+    WantRoomResult,
+    GetRoomResult,
+    DeleteRoomResult,
+};

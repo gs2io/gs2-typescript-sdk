@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Quest from '../model'
 
-export class GetProgressByUserIdResult implements IResult {
+export default class GetProgressByUserIdResult implements IResult {
     private item: Gs2Quest.Progress|null = null;
     private questGroup: Gs2Quest.QuestGroupModel|null = null;
     private quest: Gs2Quest.QuestModel|null = null;

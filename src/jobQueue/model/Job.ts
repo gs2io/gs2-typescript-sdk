@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Job implements IModel {
+export default class Job implements IModel {
     private jobId: string|null = null;
     private name: string|null = null;
     private userId: string|null = null;

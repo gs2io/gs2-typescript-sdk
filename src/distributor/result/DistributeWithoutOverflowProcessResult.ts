@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Distributor from '../model'
 
-export class DistributeWithoutOverflowProcessResult implements IResult {
+export default class DistributeWithoutOverflowProcessResult implements IResult {
     private distributeResource: Gs2Distributor.DistributeResource|null = null;
     private result: string|null = null;
 

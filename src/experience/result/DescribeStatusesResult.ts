@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Experience from '../model'
 
-export class DescribeStatusesResult implements IResult {
+export default class DescribeStatusesResult implements IResult {
     private items: Gs2Experience.Status[]|null = null;
     private nextPageToken: string|null = null;
 

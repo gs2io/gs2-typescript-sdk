@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Schedule from '../model'
 
-export class UpdateCurrentEventMasterFromGitHubResult implements IResult {
+export default class UpdateCurrentEventMasterFromGitHubResult implements IResult {
     private item: Gs2Schedule.CurrentEventMaster|null = null;
 
     public getItem(): Gs2Schedule.CurrentEventMaster|null {

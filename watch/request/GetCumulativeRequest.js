@@ -1,0 +1,81 @@
+/*
+Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License").
+You may not use this file except in compliance with the License.
+A copy of the License is located at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+or in the "license" file accompanying this file. This file is distributed
+on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+express or implied. See the License for the specific language governing
+permissions and limitations under the License.
+ */
+var GetCumulativeRequest = /** @class */ (function () {
+    function GetCumulativeRequest() {
+        this.requestId = null;
+        this.contextStack = null;
+        this.name = null;
+        this.resourceGrn = null;
+    }
+    GetCumulativeRequest.prototype.getRequestId = function () {
+        return this.requestId;
+    };
+    GetCumulativeRequest.prototype.setRequestId = function (requestId) {
+        this.requestId = requestId;
+        return this;
+    };
+    GetCumulativeRequest.prototype.withRequestId = function (requestId) {
+        this.requestId = requestId;
+        return this;
+    };
+    GetCumulativeRequest.prototype.getContextStack = function () {
+        return this.contextStack;
+    };
+    GetCumulativeRequest.prototype.setContextStack = function (contextStack) {
+        this.contextStack = contextStack;
+        return this;
+    };
+    GetCumulativeRequest.prototype.withContextStack = function (contextStack) {
+        this.contextStack = contextStack;
+        return this;
+    };
+    GetCumulativeRequest.prototype.getName = function () {
+        return this.name;
+    };
+    GetCumulativeRequest.prototype.setName = function (name) {
+        this.name = name;
+        return this;
+    };
+    GetCumulativeRequest.prototype.withName = function (name) {
+        this.name = name;
+        return this;
+    };
+    GetCumulativeRequest.prototype.getResourceGrn = function () {
+        return this.resourceGrn;
+    };
+    GetCumulativeRequest.prototype.setResourceGrn = function (resourceGrn) {
+        this.resourceGrn = resourceGrn;
+        return this;
+    };
+    GetCumulativeRequest.prototype.withResourceGrn = function (resourceGrn) {
+        this.resourceGrn = resourceGrn;
+        return this;
+    };
+    GetCumulativeRequest.fromDict = function (data) {
+        return new GetCumulativeRequest()
+            .withName(data["name"])
+            .withResourceGrn(data["resourceGrn"]);
+    };
+    GetCumulativeRequest.prototype.toDict = function () {
+        return {
+            "name": this.getName(),
+            "resourceGrn": this.getResourceGrn(),
+        };
+    };
+    return GetCumulativeRequest;
+}());
+export { GetCumulativeRequest };
+//# sourceMappingURL=GetCumulativeRequest.js.map

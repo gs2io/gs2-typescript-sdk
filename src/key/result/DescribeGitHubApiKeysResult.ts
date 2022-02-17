@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Key from '../model'
 
-export class DescribeGitHubApiKeysResult implements IResult {
+export default class DescribeGitHubApiKeysResult implements IResult {
     private items: Gs2Key.GitHubApiKey[]|null = null;
     private nextPageToken: string|null = null;
 

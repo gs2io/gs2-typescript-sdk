@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class ScopedValue implements IModel {
+export default class ScopedValue implements IModel {
     private resetType: string|null = null;
     private value: number|null = null;
     private nextResetAt: number|null = null;

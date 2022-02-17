@@ -15,9 +15,9 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { JobResultBody } from './JobResultBody';
+import JobResultBody from './JobResultBody';
 
-export class DeadLetterJob implements IModel {
+export default class DeadLetterJob implements IModel {
     private deadLetterJobId: string|null = null;
     private name: string|null = null;
     private userId: string|null = null;

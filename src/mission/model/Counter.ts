@@ -15,9 +15,9 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { ScopedValue } from './ScopedValue';
+import ScopedValue from './ScopedValue';
 
-export class Counter implements IModel {
+export default class Counter implements IModel {
     private counterId: string|null = null;
     private userId: string|null = null;
     private name: string|null = null;

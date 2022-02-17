@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Enhance from '../model'
 
-export class StartByUserIdResult implements IResult {
+export default class StartByUserIdResult implements IResult {
     private stampSheet: string|null = null;
     private stampSheetEncryptionKeyId: string|null = null;
 

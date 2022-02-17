@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Limit from '../model'
 
-export class DescribeLimitModelMastersResult implements IResult {
+export default class DescribeLimitModelMastersResult implements IResult {
     private items: Gs2Limit.LimitModelMaster[]|null = null;
     private nextPageToken: string|null = null;
 

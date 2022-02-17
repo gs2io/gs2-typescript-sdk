@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Script implements IModel {
+export default class Script implements IModel {
     private scriptId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;

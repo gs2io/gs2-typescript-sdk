@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Dictionary from '../model'
 
-export class UpdateCurrentEntryMasterRequest implements IRequest {
+export default class UpdateCurrentEntryMasterRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Inbox from '../model'
 
-export class DescribeNamespacesResult implements IResult {
+export default class DescribeNamespacesResult implements IResult {
     private items: Gs2Inbox.Namespace[]|null = null;
     private nextPageToken: string|null = null;
 

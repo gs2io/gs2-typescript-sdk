@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Dictionary from '../model'
 
-export class GetEntryWithSignatureRequest implements IRequest {
+export default class GetEntryWithSignatureRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

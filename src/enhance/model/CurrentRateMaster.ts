@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class CurrentRateMaster implements IModel {
+export default class CurrentRateMaster implements IModel {
     private namespaceId: string|null = null;
     private settings: string|null = null;
 

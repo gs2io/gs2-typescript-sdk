@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Enhance from '../model'
 
-export class CreateProgressByStampSheetResult implements IResult {
+export default class CreateProgressByStampSheetResult implements IResult {
     private item: Gs2Enhance.Progress|null = null;
 
     public getItem(): Gs2Enhance.Progress|null {

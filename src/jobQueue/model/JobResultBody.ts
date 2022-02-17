@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class JobResultBody implements IModel {
+export default class JobResultBody implements IModel {
     private tryNumber: number|null = null;
     private statusCode: number|null = null;
     private result: string|null = null;

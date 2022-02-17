@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Ranking from '../model'
 
-export class DescribeNearRankingsResult implements IResult {
+export default class DescribeNearRankingsResult implements IResult {
     private items: Gs2Ranking.Ranking[]|null = null;
 
     public getItems(): Gs2Ranking.Ranking[]|null {

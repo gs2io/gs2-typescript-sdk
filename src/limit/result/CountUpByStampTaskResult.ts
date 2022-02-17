@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Limit from '../model'
 
-export class CountUpByStampTaskResult implements IResult {
+export default class CountUpByStampTaskResult implements IResult {
     private item: Gs2Limit.Counter|null = null;
     private newContextStack: string|null = null;
 

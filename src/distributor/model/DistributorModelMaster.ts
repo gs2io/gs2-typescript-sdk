@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class DistributorModelMaster implements IModel {
+export default class DistributorModelMaster implements IModel {
     private distributorModelId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Enhance from '../model'
 
-export class DirectEnhanceByStampSheetResult implements IResult {
+export default class DirectEnhanceByStampSheetResult implements IResult {
     private item: Gs2Enhance.RateModel|null = null;
     private stampSheet: string|null = null;
     private stampSheetEncryptionKeyId: string|null = null;

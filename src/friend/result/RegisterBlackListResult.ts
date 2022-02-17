@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Friend from '../model'
 
-export class RegisterBlackListResult implements IResult {
+export default class RegisterBlackListResult implements IResult {
     private item: Gs2Friend.BlackList|null = null;
 
     public getItem(): Gs2Friend.BlackList|null {

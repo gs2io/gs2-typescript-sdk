@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class LimitModelMaster implements IModel {
+export default class LimitModelMaster implements IModel {
     private limitModelId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;

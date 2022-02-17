@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Identifier from '../model'
 
-export class LoginResult implements IResult {
+export default class LoginResult implements IResult {
     private accessToken: string|null = null;
     private tokenType: string|null = null;
     private expiresIn: number|null = null;

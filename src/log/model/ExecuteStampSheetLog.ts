@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class ExecuteStampSheetLog implements IModel {
+export default class ExecuteStampSheetLog implements IModel {
     private timestamp: number|null = null;
     private transactionId: string|null = null;
     private service: string|null = null;

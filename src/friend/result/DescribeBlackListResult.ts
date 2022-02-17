@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Friend from '../model'
 
-export class DescribeBlackListResult implements IResult {
+export default class DescribeBlackListResult implements IResult {
     private items: string[]|null = null;
     private nextPageToken: string|null = null;
 

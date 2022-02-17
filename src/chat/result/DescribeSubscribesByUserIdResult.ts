@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Chat from '../model'
 
-export class DescribeSubscribesByUserIdResult implements IResult {
+export default class DescribeSubscribesByUserIdResult implements IResult {
     private items: Gs2Chat.Subscribe[]|null = null;
     private nextPageToken: string|null = null;
 

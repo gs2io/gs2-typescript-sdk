@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Version from '../model'
 
-export class DeleteAcceptVersionResult implements IResult {
+export default class DeleteAcceptVersionResult implements IResult {
     private item: Gs2Version.AcceptVersion|null = null;
 
     public getItem(): Gs2Version.AcceptVersion|null {

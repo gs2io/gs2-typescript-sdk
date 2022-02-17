@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Account from '../model'
 
-export class DescribeTakeOversResult implements IResult {
+export default class DescribeTakeOversResult implements IResult {
     private items: Gs2Account.TakeOver[]|null = null;
     private nextPageToken: string|null = null;
 

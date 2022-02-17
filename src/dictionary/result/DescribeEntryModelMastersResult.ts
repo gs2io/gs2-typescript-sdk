@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Dictionary from '../model'
 
-export class DescribeEntryModelMastersResult implements IResult {
+export default class DescribeEntryModelMastersResult implements IResult {
     private items: Gs2Dictionary.EntryModelMaster[]|null = null;
     private nextPageToken: string|null = null;
 

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Friend from '../model'
 
-export class DeleteFriendByUserIdResult implements IResult {
+export default class DeleteFriendByUserIdResult implements IResult {
     private item: Gs2Friend.FriendUser|null = null;
 
     public getItem(): Gs2Friend.FriendUser|null {

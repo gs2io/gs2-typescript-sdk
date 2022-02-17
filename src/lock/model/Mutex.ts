@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Mutex implements IModel {
+export default class Mutex implements IModel {
     private mutexId: string|null = null;
     private userId: string|null = null;
     private propertyId: string|null = null;

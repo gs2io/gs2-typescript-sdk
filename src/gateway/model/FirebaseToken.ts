@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class FirebaseToken implements IModel {
+export default class FirebaseToken implements IModel {
     private firebaseTokenId: string|null = null;
     private userId: string|null = null;
     private token: string|null = null;

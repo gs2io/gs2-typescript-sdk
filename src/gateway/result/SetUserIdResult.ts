@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Gateway from '../model'
 
-export class SetUserIdResult implements IResult {
+export default class SetUserIdResult implements IResult {
     private item: Gs2Gateway.WebSocketSession|null = null;
 
     public getItem(): Gs2Gateway.WebSocketSession|null {

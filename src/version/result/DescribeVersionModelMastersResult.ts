@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Version from '../model'
 
-export class DescribeVersionModelMastersResult implements IResult {
+export default class DescribeVersionModelMastersResult implements IResult {
     private items: Gs2Version.VersionModelMaster[]|null = null;
     private nextPageToken: string|null = null;
 

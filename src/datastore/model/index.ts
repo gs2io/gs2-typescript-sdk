@@ -13,8 +13,16 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { ScriptSetting } from "./ScriptSetting"
-export { DataObject } from "./DataObject"
-export { DataObjectHistory } from "./DataObjectHistory"
-export { LogSetting } from "./LogSetting"
+import Namespace from "./Namespace"
+import ScriptSetting from "./ScriptSetting"
+import DataObject from "./DataObject"
+import DataObjectHistory from "./DataObjectHistory"
+import LogSetting from "./LogSetting"
+
+export {
+    Namespace,
+    ScriptSetting,
+    DataObject,
+    DataObjectHistory,
+    LogSetting,
+};

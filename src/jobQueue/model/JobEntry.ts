@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class JobEntry implements IModel {
+export default class JobEntry implements IModel {
     private scriptId: string|null = null;
     private args: string|null = null;
     private maxTryCount: number|null = null;

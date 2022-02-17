@@ -13,9 +13,18 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { Wallet } from "./Wallet"
-export { Receipt } from "./Receipt"
-export { WalletDetail } from "./WalletDetail"
-export { ScriptSetting } from "./ScriptSetting"
-export { LogSetting } from "./LogSetting"
+import Namespace from "./Namespace"
+import Wallet from "./Wallet"
+import Receipt from "./Receipt"
+import WalletDetail from "./WalletDetail"
+import ScriptSetting from "./ScriptSetting"
+import LogSetting from "./LogSetting"
+
+export {
+    Namespace,
+    Wallet,
+    Receipt,
+    WalletDetail,
+    ScriptSetting,
+    LogSetting,
+};

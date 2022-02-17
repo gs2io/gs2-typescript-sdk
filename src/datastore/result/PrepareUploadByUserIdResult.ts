@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Datastore from '../model'
 
-export class PrepareUploadByUserIdResult implements IResult {
+export default class PrepareUploadByUserIdResult implements IResult {
     private item: Gs2Datastore.DataObject|null = null;
     private uploadUrl: string|null = null;
 

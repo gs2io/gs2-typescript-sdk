@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Distributor from '../model'
 
-export class DescribeDistributorModelMastersResult implements IResult {
+export default class DescribeDistributorModelMastersResult implements IResult {
     private items: Gs2Distributor.DistributorModelMaster[]|null = null;
     private nextPageToken: string|null = null;
 

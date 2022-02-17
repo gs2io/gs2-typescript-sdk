@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Money from '../model'
 
-export class GetByUserIdAndTransactionIdResult implements IResult {
+export default class GetByUserIdAndTransactionIdResult implements IResult {
     private item: Gs2Money.Receipt|null = null;
 
     public getItem(): Gs2Money.Receipt|null {

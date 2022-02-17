@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2News from '../model'
 
-export class PrepareUpdateCurrentNewsMasterFromGitHubRequest implements IRequest {
+export default class PrepareUpdateCurrentNewsMasterFromGitHubRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

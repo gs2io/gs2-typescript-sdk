@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class IssueStampSheetLogCount implements IModel {
+export default class IssueStampSheetLogCount implements IModel {
     private service: string|null = null;
     private method: string|null = null;
     private userId: string|null = null;

@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Identifier from '../model'
 
-export class DescribeUsersRequest implements IRequest {
+export default class DescribeUsersRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

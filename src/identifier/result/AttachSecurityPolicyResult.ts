@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Identifier from '../model'
 
-export class AttachSecurityPolicyResult implements IResult {
+export default class AttachSecurityPolicyResult implements IResult {
     private items: Gs2Identifier.SecurityPolicy[]|null = null;
 
     public getItems(): Gs2Identifier.SecurityPolicy[]|null {

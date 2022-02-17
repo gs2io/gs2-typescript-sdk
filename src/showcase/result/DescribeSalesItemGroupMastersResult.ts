@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Showcase from '../model'
 
-export class DescribeSalesItemGroupMastersResult implements IResult {
+export default class DescribeSalesItemGroupMastersResult implements IResult {
     private items: Gs2Showcase.SalesItemGroupMaster[]|null = null;
     private nextPageToken: string|null = null;
 

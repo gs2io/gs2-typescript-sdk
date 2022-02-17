@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Limit from '../model'
 
-export class DescribeCountersByUserIdResult implements IResult {
+export default class DescribeCountersByUserIdResult implements IResult {
     private items: Gs2Limit.Counter[]|null = null;
     private nextPageToken: string|null = null;
 

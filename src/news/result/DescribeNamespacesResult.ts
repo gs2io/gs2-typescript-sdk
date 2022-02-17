@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2News from '../model'
 
-export class DescribeNamespacesResult implements IResult {
+export default class DescribeNamespacesResult implements IResult {
     private items: Gs2News.Namespace[]|null = null;
     private nextPageToken: string|null = null;
 

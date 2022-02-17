@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class ReferenceOf implements IModel {
+export default class ReferenceOf implements IModel {
     private referenceOfId: string|null = null;
     private name: string|null = null;
 

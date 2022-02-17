@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class CounterScopeModel implements IModel {
+export default class CounterScopeModel implements IModel {
     private resetType: string|null = null;
     private resetDayOfMonth: number|null = null;
     private resetDayOfWeek: string|null = null;

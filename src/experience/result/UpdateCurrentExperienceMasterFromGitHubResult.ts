@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Experience from '../model'
 
-export class UpdateCurrentExperienceMasterFromGitHubResult implements IResult {
+export default class UpdateCurrentExperienceMasterFromGitHubResult implements IResult {
     private item: Gs2Experience.CurrentExperienceMaster|null = null;
 
     public getItem(): Gs2Experience.CurrentExperienceMaster|null {

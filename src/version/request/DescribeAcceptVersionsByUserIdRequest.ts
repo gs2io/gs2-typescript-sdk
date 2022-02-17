@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Version from '../model'
 
-export class DescribeAcceptVersionsByUserIdRequest implements IRequest {
+export default class DescribeAcceptVersionsByUserIdRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

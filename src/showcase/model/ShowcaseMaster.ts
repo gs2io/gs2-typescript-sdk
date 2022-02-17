@@ -15,9 +15,9 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { DisplayItemMaster } from './DisplayItemMaster';
+import DisplayItemMaster from './DisplayItemMaster';
 
-export class ShowcaseMaster implements IModel {
+export default class ShowcaseMaster implements IModel {
     private showcaseId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;

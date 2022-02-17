@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Key from '../model'
 
-export class DescribeKeysResult implements IResult {
+export default class DescribeKeysResult implements IResult {
     private items: Gs2Key.Key[]|null = null;
     private nextPageToken: string|null = null;
 

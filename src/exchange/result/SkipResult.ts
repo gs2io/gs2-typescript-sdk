@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Exchange from '../model'
 
-export class SkipResult implements IResult {
+export default class SkipResult implements IResult {
     private item: Gs2Exchange.Await|null = null;
     private stampSheet: string|null = null;
     private stampSheetEncryptionKeyId: string|null = null;

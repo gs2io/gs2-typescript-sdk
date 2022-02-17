@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Limit from '../model'
 
-export class DeleteCounterByUserIdResult implements IResult {
+export default class DeleteCounterByUserIdResult implements IResult {
     private item: Gs2Limit.Counter|null = null;
 
     public getItem(): Gs2Limit.Counter|null {

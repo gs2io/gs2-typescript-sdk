@@ -13,17 +13,34 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { StaminaModelMaster } from "./StaminaModelMaster"
-export { MaxStaminaTableMaster } from "./MaxStaminaTableMaster"
-export { RecoverIntervalTableMaster } from "./RecoverIntervalTableMaster"
-export { RecoverValueTableMaster } from "./RecoverValueTableMaster"
-export { CurrentStaminaMaster } from "./CurrentStaminaMaster"
-export { StaminaModel } from "./StaminaModel"
-export { MaxStaminaTable } from "./MaxStaminaTable"
-export { RecoverIntervalTable } from "./RecoverIntervalTable"
-export { RecoverValueTable } from "./RecoverValueTable"
-export { Stamina } from "./Stamina"
-export { GitHubCheckoutSetting } from "./GitHubCheckoutSetting"
-export { LogSetting } from "./LogSetting"
-export { ScriptSetting } from "./ScriptSetting"
+import Namespace from "./Namespace"
+import StaminaModelMaster from "./StaminaModelMaster"
+import MaxStaminaTableMaster from "./MaxStaminaTableMaster"
+import RecoverIntervalTableMaster from "./RecoverIntervalTableMaster"
+import RecoverValueTableMaster from "./RecoverValueTableMaster"
+import CurrentStaminaMaster from "./CurrentStaminaMaster"
+import StaminaModel from "./StaminaModel"
+import MaxStaminaTable from "./MaxStaminaTable"
+import RecoverIntervalTable from "./RecoverIntervalTable"
+import RecoverValueTable from "./RecoverValueTable"
+import Stamina from "./Stamina"
+import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
+import LogSetting from "./LogSetting"
+import ScriptSetting from "./ScriptSetting"
+
+export {
+    Namespace,
+    StaminaModelMaster,
+    MaxStaminaTableMaster,
+    RecoverIntervalTableMaster,
+    RecoverValueTableMaster,
+    CurrentStaminaMaster,
+    StaminaModel,
+    MaxStaminaTable,
+    RecoverIntervalTable,
+    RecoverValueTable,
+    Stamina,
+    GitHubCheckoutSetting,
+    LogSetting,
+    ScriptSetting,
+};

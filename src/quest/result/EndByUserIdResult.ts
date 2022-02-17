@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Quest from '../model'
 
-export class EndByUserIdResult implements IResult {
+export default class EndByUserIdResult implements IResult {
     private item: Gs2Quest.Progress|null = null;
     private stampSheet: string|null = null;
     private stampSheetEncryptionKeyId: string|null = null;

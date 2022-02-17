@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Money from '../model'
 
-export class GetWalletRequest implements IRequest {
+export default class GetWalletRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

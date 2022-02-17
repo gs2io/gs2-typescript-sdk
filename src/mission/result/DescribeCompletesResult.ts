@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Mission from '../model'
 
-export class DescribeCompletesResult implements IResult {
+export default class DescribeCompletesResult implements IResult {
     private items: Gs2Mission.Complete[]|null = null;
     private nextPageToken: string|null = null;
 

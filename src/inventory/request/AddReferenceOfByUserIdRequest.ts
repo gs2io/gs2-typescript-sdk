@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Inventory from '../model'
 
-export class AddReferenceOfByUserIdRequest implements IRequest {
+export default class AddReferenceOfByUserIdRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

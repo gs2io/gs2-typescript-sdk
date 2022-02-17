@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Datastore from '../model'
 
-export class UpdateDataObjectRequest implements IRequest {
+export default class UpdateDataObjectRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

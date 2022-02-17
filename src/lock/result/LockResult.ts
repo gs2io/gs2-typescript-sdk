@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Lock from '../model'
 
-export class LockResult implements IResult {
+export default class LockResult implements IResult {
     private item: Gs2Lock.Mutex|null = null;
 
     public getItem(): Gs2Lock.Mutex|null {

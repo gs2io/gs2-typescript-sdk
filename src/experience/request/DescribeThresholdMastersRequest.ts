@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Experience from '../model'
 
-export class DescribeThresholdMastersRequest implements IRequest {
+export default class DescribeThresholdMastersRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

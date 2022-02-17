@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Attribute implements IModel {
+export default class Attribute implements IModel {
     private name: string|null = null;
     private value: number|null = null;
 

@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Friend from '../model'
 
-export class DescribeBlackListByUserIdRequest implements IRequest {
+export default class DescribeBlackListByUserIdRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

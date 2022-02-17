@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Limit from '../model'
 
-export class GetLimitModelResult implements IResult {
+export default class GetLimitModelResult implements IResult {
     private item: Gs2Limit.LimitModel|null = null;
 
     public getItem(): Gs2Limit.LimitModel|null {

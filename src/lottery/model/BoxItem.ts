@@ -15,9 +15,9 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { AcquireAction } from './AcquireAction';
+import AcquireAction from './AcquireAction';
 
-export class BoxItem implements IModel {
+export default class BoxItem implements IModel {
     private acquireActions: AcquireAction[]|null = null;
     private remaining: number|null = null;
     private initial: number|null = null;

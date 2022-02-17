@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Quest from '../model'
 
-export class DescribeProgressesByUserIdResult implements IResult {
+export default class DescribeProgressesByUserIdResult implements IResult {
     private items: Gs2Quest.Progress[]|null = null;
     private nextPageToken: string|null = null;
 

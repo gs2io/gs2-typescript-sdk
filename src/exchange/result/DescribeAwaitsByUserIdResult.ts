@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Exchange from '../model'
 
-export class DescribeAwaitsByUserIdResult implements IResult {
+export default class DescribeAwaitsByUserIdResult implements IResult {
     private items: Gs2Exchange.Await[]|null = null;
     private nextPageToken: string|null = null;
 

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Formation from '../model'
 
-export class UpdateNamespaceResult implements IResult {
+export default class UpdateNamespaceResult implements IResult {
     private item: Gs2Formation.Namespace|null = null;
 
     public getItem(): Gs2Formation.Namespace|null {

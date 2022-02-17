@@ -13,28 +13,56 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { DescribeDistributorModelMastersResult } from "./DescribeDistributorModelMastersResult"
-export { CreateDistributorModelMasterResult } from "./CreateDistributorModelMasterResult"
-export { GetDistributorModelMasterResult } from "./GetDistributorModelMasterResult"
-export { UpdateDistributorModelMasterResult } from "./UpdateDistributorModelMasterResult"
-export { DeleteDistributorModelMasterResult } from "./DeleteDistributorModelMasterResult"
-export { DescribeDistributorModelsResult } from "./DescribeDistributorModelsResult"
-export { GetDistributorModelResult } from "./GetDistributorModelResult"
-export { ExportMasterResult } from "./ExportMasterResult"
-export { GetCurrentDistributorMasterResult } from "./GetCurrentDistributorMasterResult"
-export { UpdateCurrentDistributorMasterResult } from "./UpdateCurrentDistributorMasterResult"
-export { UpdateCurrentDistributorMasterFromGitHubResult } from "./UpdateCurrentDistributorMasterFromGitHubResult"
-export { DistributeResult } from "./DistributeResult"
-export { DistributeWithoutOverflowProcessResult } from "./DistributeWithoutOverflowProcessResult"
-export { RunStampTaskResult } from "./RunStampTaskResult"
-export { RunStampSheetResult } from "./RunStampSheetResult"
-export { RunStampSheetExpressResult } from "./RunStampSheetExpressResult"
-export { RunStampTaskWithoutNamespaceResult } from "./RunStampTaskWithoutNamespaceResult"
-export { RunStampSheetWithoutNamespaceResult } from "./RunStampSheetWithoutNamespaceResult"
-export { RunStampSheetExpressWithoutNamespaceResult } from "./RunStampSheetExpressWithoutNamespaceResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeDistributorModelMastersResult from "./DescribeDistributorModelMastersResult"
+import CreateDistributorModelMasterResult from "./CreateDistributorModelMasterResult"
+import GetDistributorModelMasterResult from "./GetDistributorModelMasterResult"
+import UpdateDistributorModelMasterResult from "./UpdateDistributorModelMasterResult"
+import DeleteDistributorModelMasterResult from "./DeleteDistributorModelMasterResult"
+import DescribeDistributorModelsResult from "./DescribeDistributorModelsResult"
+import GetDistributorModelResult from "./GetDistributorModelResult"
+import ExportMasterResult from "./ExportMasterResult"
+import GetCurrentDistributorMasterResult from "./GetCurrentDistributorMasterResult"
+import UpdateCurrentDistributorMasterResult from "./UpdateCurrentDistributorMasterResult"
+import UpdateCurrentDistributorMasterFromGitHubResult from "./UpdateCurrentDistributorMasterFromGitHubResult"
+import DistributeResult from "./DistributeResult"
+import DistributeWithoutOverflowProcessResult from "./DistributeWithoutOverflowProcessResult"
+import RunStampTaskResult from "./RunStampTaskResult"
+import RunStampSheetResult from "./RunStampSheetResult"
+import RunStampSheetExpressResult from "./RunStampSheetExpressResult"
+import RunStampTaskWithoutNamespaceResult from "./RunStampTaskWithoutNamespaceResult"
+import RunStampSheetWithoutNamespaceResult from "./RunStampSheetWithoutNamespaceResult"
+import RunStampSheetExpressWithoutNamespaceResult from "./RunStampSheetExpressWithoutNamespaceResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    DescribeDistributorModelMastersResult,
+    CreateDistributorModelMasterResult,
+    GetDistributorModelMasterResult,
+    UpdateDistributorModelMasterResult,
+    DeleteDistributorModelMasterResult,
+    DescribeDistributorModelsResult,
+    GetDistributorModelResult,
+    ExportMasterResult,
+    GetCurrentDistributorMasterResult,
+    UpdateCurrentDistributorMasterResult,
+    UpdateCurrentDistributorMasterFromGitHubResult,
+    DistributeResult,
+    DistributeWithoutOverflowProcessResult,
+    RunStampTaskResult,
+    RunStampSheetResult,
+    RunStampSheetExpressResult,
+    RunStampTaskWithoutNamespaceResult,
+    RunStampSheetWithoutNamespaceResult,
+    RunStampSheetExpressWithoutNamespaceResult,
+};

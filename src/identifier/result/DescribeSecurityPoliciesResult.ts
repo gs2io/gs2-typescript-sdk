@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Identifier from '../model'
 
-export class DescribeSecurityPoliciesResult implements IResult {
+export default class DescribeSecurityPoliciesResult implements IResult {
     private items: Gs2Identifier.SecurityPolicy[]|null = null;
     private nextPageToken: string|null = null;
 

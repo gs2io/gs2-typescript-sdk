@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Version from '../model'
 
-export class CalculateSignatureResult implements IResult {
+export default class CalculateSignatureResult implements IResult {
     private body: string|null = null;
     private signature: string|null = null;
 

@@ -13,13 +13,26 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesRequest } from "./DescribeNamespacesRequest"
-export { CreateNamespaceRequest } from "./CreateNamespaceRequest"
-export { GetNamespaceStatusRequest } from "./GetNamespaceStatusRequest"
-export { GetNamespaceRequest } from "./GetNamespaceRequest"
-export { UpdateNamespaceRequest } from "./UpdateNamespaceRequest"
-export { DeleteNamespaceRequest } from "./DeleteNamespaceRequest"
-export { DescribeRoomsRequest } from "./DescribeRoomsRequest"
-export { WantRoomRequest } from "./WantRoomRequest"
-export { GetRoomRequest } from "./GetRoomRequest"
-export { DeleteRoomRequest } from "./DeleteRoomRequest"
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest"
+import CreateNamespaceRequest from "./CreateNamespaceRequest"
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
+import GetNamespaceRequest from "./GetNamespaceRequest"
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DescribeRoomsRequest from "./DescribeRoomsRequest"
+import WantRoomRequest from "./WantRoomRequest"
+import GetRoomRequest from "./GetRoomRequest"
+import DeleteRoomRequest from "./DeleteRoomRequest"
+
+export {
+    DescribeNamespacesRequest,
+    CreateNamespaceRequest,
+    GetNamespaceStatusRequest,
+    GetNamespaceRequest,
+    UpdateNamespaceRequest,
+    DeleteNamespaceRequest,
+    DescribeRoomsRequest,
+    WantRoomRequest,
+    GetRoomRequest,
+    DeleteRoomRequest,
+};

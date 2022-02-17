@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Slot implements IModel {
+export default class Slot implements IModel {
     private name: string|null = null;
     private propertyId: string|null = null;
     private metadata: string|null = null;

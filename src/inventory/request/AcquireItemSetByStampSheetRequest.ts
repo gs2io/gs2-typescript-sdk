@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Inventory from '../model'
 
-export class AcquireItemSetByStampSheetRequest implements IRequest {
+export default class AcquireItemSetByStampSheetRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

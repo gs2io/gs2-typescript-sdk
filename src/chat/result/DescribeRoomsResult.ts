@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Chat from '../model'
 
-export class DescribeRoomsResult implements IResult {
+export default class DescribeRoomsResult implements IResult {
     private items: Gs2Chat.Room[]|null = null;
     private nextPageToken: string|null = null;
 

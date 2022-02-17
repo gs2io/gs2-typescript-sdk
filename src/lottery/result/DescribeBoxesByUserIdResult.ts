@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Lottery from '../model'
 
-export class DescribeBoxesByUserIdResult implements IResult {
+export default class DescribeBoxesByUserIdResult implements IResult {
     private items: Gs2Lottery.Box[]|null = null;
     private nextPageToken: string|null = null;
 

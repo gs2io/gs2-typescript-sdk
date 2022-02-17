@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../src/datastore/model/index.ts"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;GAcG;AACH,OAAO,SAAS,MAAM,aAAa,CAAA;AACnC,OAAO,aAAa,MAAM,iBAAiB,CAAA;AAC3C,OAAO,UAAU,MAAM,cAAc,CAAA;AACrC,OAAO,iBAAiB,MAAM,qBAAqB,CAAA;AACnD,OAAO,UAAU,MAAM,cAAc,CAAA;AAErC,OAAO,EACH,SAAS,EACT,aAAa,EACb,UAAU,EACV,iBAAiB,EACjB,UAAU,GACb,CAAC"}

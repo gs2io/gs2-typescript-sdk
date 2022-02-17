@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Mission from '../model'
 
-export class DeleteCounterByUserIdRequest implements IRequest {
+export default class DeleteCounterByUserIdRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

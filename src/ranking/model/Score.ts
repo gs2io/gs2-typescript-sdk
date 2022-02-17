@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Score implements IModel {
+export default class Score implements IModel {
     private scoreId: string|null = null;
     private categoryName: string|null = null;
     private userId: string|null = null;

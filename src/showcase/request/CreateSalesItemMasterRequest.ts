@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Showcase from '../model'
 
-export class CreateSalesItemMasterRequest implements IRequest {
+export default class CreateSalesItemMasterRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

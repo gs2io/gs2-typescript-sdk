@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Exchange from '../model'
 
-export class DeleteNamespaceResult implements IResult {
+export default class DeleteNamespaceResult implements IResult {
     private item: Gs2Exchange.Namespace|null = null;
 
     public getItem(): Gs2Exchange.Namespace|null {

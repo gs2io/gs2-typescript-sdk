@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Money from '../model'
 
-export class RecordReceiptByStampTaskRequest implements IRequest {
+export default class RecordReceiptByStampTaskRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

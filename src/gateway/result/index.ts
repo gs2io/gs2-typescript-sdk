@@ -13,21 +13,42 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { DescribeWebSocketSessionsResult } from "./DescribeWebSocketSessionsResult"
-export { DescribeWebSocketSessionsByUserIdResult } from "./DescribeWebSocketSessionsByUserIdResult"
-export { SetUserIdResult } from "./SetUserIdResult"
-export { SetUserIdByUserIdResult } from "./SetUserIdByUserIdResult"
-export { SendNotificationResult } from "./SendNotificationResult"
-export { SetFirebaseTokenResult } from "./SetFirebaseTokenResult"
-export { SetFirebaseTokenByUserIdResult } from "./SetFirebaseTokenByUserIdResult"
-export { GetFirebaseTokenResult } from "./GetFirebaseTokenResult"
-export { GetFirebaseTokenByUserIdResult } from "./GetFirebaseTokenByUserIdResult"
-export { DeleteFirebaseTokenResult } from "./DeleteFirebaseTokenResult"
-export { DeleteFirebaseTokenByUserIdResult } from "./DeleteFirebaseTokenByUserIdResult"
-export { SendMobileNotificationByUserIdResult } from "./SendMobileNotificationByUserIdResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeWebSocketSessionsResult from "./DescribeWebSocketSessionsResult"
+import DescribeWebSocketSessionsByUserIdResult from "./DescribeWebSocketSessionsByUserIdResult"
+import SetUserIdResult from "./SetUserIdResult"
+import SetUserIdByUserIdResult from "./SetUserIdByUserIdResult"
+import SendNotificationResult from "./SendNotificationResult"
+import SetFirebaseTokenResult from "./SetFirebaseTokenResult"
+import SetFirebaseTokenByUserIdResult from "./SetFirebaseTokenByUserIdResult"
+import GetFirebaseTokenResult from "./GetFirebaseTokenResult"
+import GetFirebaseTokenByUserIdResult from "./GetFirebaseTokenByUserIdResult"
+import DeleteFirebaseTokenResult from "./DeleteFirebaseTokenResult"
+import DeleteFirebaseTokenByUserIdResult from "./DeleteFirebaseTokenByUserIdResult"
+import SendMobileNotificationByUserIdResult from "./SendMobileNotificationByUserIdResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    DescribeWebSocketSessionsResult,
+    DescribeWebSocketSessionsByUserIdResult,
+    SetUserIdResult,
+    SetUserIdByUserIdResult,
+    SendNotificationResult,
+    SetFirebaseTokenResult,
+    SetFirebaseTokenByUserIdResult,
+    GetFirebaseTokenResult,
+    GetFirebaseTokenByUserIdResult,
+    DeleteFirebaseTokenResult,
+    DeleteFirebaseTokenByUserIdResult,
+    SendMobileNotificationByUserIdResult,
+};

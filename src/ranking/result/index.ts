@@ -13,40 +13,80 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { DescribeCategoryModelsResult } from "./DescribeCategoryModelsResult"
-export { GetCategoryModelResult } from "./GetCategoryModelResult"
-export { DescribeCategoryModelMastersResult } from "./DescribeCategoryModelMastersResult"
-export { CreateCategoryModelMasterResult } from "./CreateCategoryModelMasterResult"
-export { GetCategoryModelMasterResult } from "./GetCategoryModelMasterResult"
-export { UpdateCategoryModelMasterResult } from "./UpdateCategoryModelMasterResult"
-export { DeleteCategoryModelMasterResult } from "./DeleteCategoryModelMasterResult"
-export { SubscribeResult } from "./SubscribeResult"
-export { SubscribeByUserIdResult } from "./SubscribeByUserIdResult"
-export { DescribeScoresResult } from "./DescribeScoresResult"
-export { DescribeScoresByUserIdResult } from "./DescribeScoresByUserIdResult"
-export { GetScoreResult } from "./GetScoreResult"
-export { GetScoreByUserIdResult } from "./GetScoreByUserIdResult"
-export { DescribeRankingsResult } from "./DescribeRankingsResult"
-export { DescribeRankingssByUserIdResult } from "./DescribeRankingssByUserIdResult"
-export { DescribeNearRankingsResult } from "./DescribeNearRankingsResult"
-export { GetRankingResult } from "./GetRankingResult"
-export { GetRankingByUserIdResult } from "./GetRankingByUserIdResult"
-export { PutScoreResult } from "./PutScoreResult"
-export { PutScoreByUserIdResult } from "./PutScoreByUserIdResult"
-export { CalcRankingResult } from "./CalcRankingResult"
-export { ExportMasterResult } from "./ExportMasterResult"
-export { GetCurrentRankingMasterResult } from "./GetCurrentRankingMasterResult"
-export { UpdateCurrentRankingMasterResult } from "./UpdateCurrentRankingMasterResult"
-export { UpdateCurrentRankingMasterFromGitHubResult } from "./UpdateCurrentRankingMasterFromGitHubResult"
-export { GetSubscribeResult } from "./GetSubscribeResult"
-export { GetSubscribeByUserIdResult } from "./GetSubscribeByUserIdResult"
-export { UnsubscribeResult } from "./UnsubscribeResult"
-export { UnsubscribeByUserIdResult } from "./UnsubscribeByUserIdResult"
-export { DescribeSubscribesByCategoryNameResult } from "./DescribeSubscribesByCategoryNameResult"
-export { DescribeSubscribesByCategoryNameAndUserIdResult } from "./DescribeSubscribesByCategoryNameAndUserIdResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeCategoryModelsResult from "./DescribeCategoryModelsResult"
+import GetCategoryModelResult from "./GetCategoryModelResult"
+import DescribeCategoryModelMastersResult from "./DescribeCategoryModelMastersResult"
+import CreateCategoryModelMasterResult from "./CreateCategoryModelMasterResult"
+import GetCategoryModelMasterResult from "./GetCategoryModelMasterResult"
+import UpdateCategoryModelMasterResult from "./UpdateCategoryModelMasterResult"
+import DeleteCategoryModelMasterResult from "./DeleteCategoryModelMasterResult"
+import SubscribeResult from "./SubscribeResult"
+import SubscribeByUserIdResult from "./SubscribeByUserIdResult"
+import DescribeScoresResult from "./DescribeScoresResult"
+import DescribeScoresByUserIdResult from "./DescribeScoresByUserIdResult"
+import GetScoreResult from "./GetScoreResult"
+import GetScoreByUserIdResult from "./GetScoreByUserIdResult"
+import DescribeRankingsResult from "./DescribeRankingsResult"
+import DescribeRankingssByUserIdResult from "./DescribeRankingssByUserIdResult"
+import DescribeNearRankingsResult from "./DescribeNearRankingsResult"
+import GetRankingResult from "./GetRankingResult"
+import GetRankingByUserIdResult from "./GetRankingByUserIdResult"
+import PutScoreResult from "./PutScoreResult"
+import PutScoreByUserIdResult from "./PutScoreByUserIdResult"
+import CalcRankingResult from "./CalcRankingResult"
+import ExportMasterResult from "./ExportMasterResult"
+import GetCurrentRankingMasterResult from "./GetCurrentRankingMasterResult"
+import UpdateCurrentRankingMasterResult from "./UpdateCurrentRankingMasterResult"
+import UpdateCurrentRankingMasterFromGitHubResult from "./UpdateCurrentRankingMasterFromGitHubResult"
+import GetSubscribeResult from "./GetSubscribeResult"
+import GetSubscribeByUserIdResult from "./GetSubscribeByUserIdResult"
+import UnsubscribeResult from "./UnsubscribeResult"
+import UnsubscribeByUserIdResult from "./UnsubscribeByUserIdResult"
+import DescribeSubscribesByCategoryNameResult from "./DescribeSubscribesByCategoryNameResult"
+import DescribeSubscribesByCategoryNameAndUserIdResult from "./DescribeSubscribesByCategoryNameAndUserIdResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    DescribeCategoryModelsResult,
+    GetCategoryModelResult,
+    DescribeCategoryModelMastersResult,
+    CreateCategoryModelMasterResult,
+    GetCategoryModelMasterResult,
+    UpdateCategoryModelMasterResult,
+    DeleteCategoryModelMasterResult,
+    SubscribeResult,
+    SubscribeByUserIdResult,
+    DescribeScoresResult,
+    DescribeScoresByUserIdResult,
+    GetScoreResult,
+    GetScoreByUserIdResult,
+    DescribeRankingsResult,
+    DescribeRankingssByUserIdResult,
+    DescribeNearRankingsResult,
+    GetRankingResult,
+    GetRankingByUserIdResult,
+    PutScoreResult,
+    PutScoreByUserIdResult,
+    CalcRankingResult,
+    ExportMasterResult,
+    GetCurrentRankingMasterResult,
+    UpdateCurrentRankingMasterResult,
+    UpdateCurrentRankingMasterFromGitHubResult,
+    GetSubscribeResult,
+    GetSubscribeByUserIdResult,
+    UnsubscribeResult,
+    UnsubscribeByUserIdResult,
+    DescribeSubscribesByCategoryNameResult,
+    DescribeSubscribesByCategoryNameAndUserIdResult,
+};

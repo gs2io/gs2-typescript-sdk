@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Limit from '../model'
 
-export class CreateNamespaceResult implements IResult {
+export default class CreateNamespaceResult implements IResult {
     private item: Gs2Limit.Namespace|null = null;
 
     public getItem(): Gs2Limit.Namespace|null {

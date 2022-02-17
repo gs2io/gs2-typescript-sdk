@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Ranking from '../model'
 
-export class CalcRankingResult implements IResult {
+export default class CalcRankingResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): CalcRankingResult {
         return new CalcRankingResult();

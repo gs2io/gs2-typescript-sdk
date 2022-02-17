@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Version from '../model'
 
-export class UpdateCurrentVersionMasterFromGitHubResult implements IResult {
+export default class UpdateCurrentVersionMasterFromGitHubResult implements IResult {
     private item: Gs2Version.CurrentVersionMaster|null = null;
 
     public getItem(): Gs2Version.CurrentVersionMaster|null {

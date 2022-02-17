@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Room implements IModel {
+export default class Room implements IModel {
     private roomId: string|null = null;
     private name: string|null = null;
     private userId: string|null = null;

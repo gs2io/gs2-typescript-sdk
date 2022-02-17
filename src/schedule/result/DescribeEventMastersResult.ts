@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Schedule from '../model'
 
-export class DescribeEventMastersResult implements IResult {
+export default class DescribeEventMastersResult implements IResult {
     private items: Gs2Schedule.EventMaster[]|null = null;
     private nextPageToken: string|null = null;
 

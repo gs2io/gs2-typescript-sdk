@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Gateway from '../model'
 
-export class GetFirebaseTokenRequest implements IRequest {
+export default class GetFirebaseTokenRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

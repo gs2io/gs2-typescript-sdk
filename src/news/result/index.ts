@@ -13,16 +13,32 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { PrepareUpdateCurrentNewsMasterResult } from "./PrepareUpdateCurrentNewsMasterResult"
-export { UpdateCurrentNewsMasterResult } from "./UpdateCurrentNewsMasterResult"
-export { PrepareUpdateCurrentNewsMasterFromGitHubResult } from "./PrepareUpdateCurrentNewsMasterFromGitHubResult"
-export { DescribeNewsResult } from "./DescribeNewsResult"
-export { DescribeNewsByUserIdResult } from "./DescribeNewsByUserIdResult"
-export { WantGrantResult } from "./WantGrantResult"
-export { WantGrantByUserIdResult } from "./WantGrantByUserIdResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import PrepareUpdateCurrentNewsMasterResult from "./PrepareUpdateCurrentNewsMasterResult"
+import UpdateCurrentNewsMasterResult from "./UpdateCurrentNewsMasterResult"
+import PrepareUpdateCurrentNewsMasterFromGitHubResult from "./PrepareUpdateCurrentNewsMasterFromGitHubResult"
+import DescribeNewsResult from "./DescribeNewsResult"
+import DescribeNewsByUserIdResult from "./DescribeNewsByUserIdResult"
+import WantGrantResult from "./WantGrantResult"
+import WantGrantByUserIdResult from "./WantGrantByUserIdResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    PrepareUpdateCurrentNewsMasterResult,
+    UpdateCurrentNewsMasterResult,
+    PrepareUpdateCurrentNewsMasterFromGitHubResult,
+    DescribeNewsResult,
+    DescribeNewsByUserIdResult,
+    WantGrantResult,
+    WantGrantByUserIdResult,
+};

@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class SlotWithSignature implements IModel {
+export default class SlotWithSignature implements IModel {
     private name: string|null = null;
     private propertyType: string|null = null;
     private body: string|null = null;

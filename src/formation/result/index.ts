@@ -13,47 +13,94 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { DescribeFormModelMastersResult } from "./DescribeFormModelMastersResult"
-export { CreateFormModelMasterResult } from "./CreateFormModelMasterResult"
-export { GetFormModelMasterResult } from "./GetFormModelMasterResult"
-export { UpdateFormModelMasterResult } from "./UpdateFormModelMasterResult"
-export { DeleteFormModelMasterResult } from "./DeleteFormModelMasterResult"
-export { DescribeMoldModelsResult } from "./DescribeMoldModelsResult"
-export { GetMoldModelResult } from "./GetMoldModelResult"
-export { DescribeMoldModelMastersResult } from "./DescribeMoldModelMastersResult"
-export { CreateMoldModelMasterResult } from "./CreateMoldModelMasterResult"
-export { GetMoldModelMasterResult } from "./GetMoldModelMasterResult"
-export { UpdateMoldModelMasterResult } from "./UpdateMoldModelMasterResult"
-export { DeleteMoldModelMasterResult } from "./DeleteMoldModelMasterResult"
-export { ExportMasterResult } from "./ExportMasterResult"
-export { GetCurrentFormMasterResult } from "./GetCurrentFormMasterResult"
-export { UpdateCurrentFormMasterResult } from "./UpdateCurrentFormMasterResult"
-export { UpdateCurrentFormMasterFromGitHubResult } from "./UpdateCurrentFormMasterFromGitHubResult"
-export { DescribeMoldsResult } from "./DescribeMoldsResult"
-export { DescribeMoldsByUserIdResult } from "./DescribeMoldsByUserIdResult"
-export { GetMoldResult } from "./GetMoldResult"
-export { GetMoldByUserIdResult } from "./GetMoldByUserIdResult"
-export { SetMoldCapacityByUserIdResult } from "./SetMoldCapacityByUserIdResult"
-export { AddMoldCapacityByUserIdResult } from "./AddMoldCapacityByUserIdResult"
-export { DeleteMoldResult } from "./DeleteMoldResult"
-export { DeleteMoldByUserIdResult } from "./DeleteMoldByUserIdResult"
-export { AddCapacityByStampSheetResult } from "./AddCapacityByStampSheetResult"
-export { SetCapacityByStampSheetResult } from "./SetCapacityByStampSheetResult"
-export { DescribeFormsResult } from "./DescribeFormsResult"
-export { DescribeFormsByUserIdResult } from "./DescribeFormsByUserIdResult"
-export { GetFormResult } from "./GetFormResult"
-export { GetFormByUserIdResult } from "./GetFormByUserIdResult"
-export { GetFormWithSignatureResult } from "./GetFormWithSignatureResult"
-export { GetFormWithSignatureByUserIdResult } from "./GetFormWithSignatureByUserIdResult"
-export { SetFormByUserIdResult } from "./SetFormByUserIdResult"
-export { SetFormWithSignatureResult } from "./SetFormWithSignatureResult"
-export { AcquireActionsToFormPropertiesResult } from "./AcquireActionsToFormPropertiesResult"
-export { DeleteFormResult } from "./DeleteFormResult"
-export { DeleteFormByUserIdResult } from "./DeleteFormByUserIdResult"
-export { AcquireActionToFormPropertiesByStampSheetResult } from "./AcquireActionToFormPropertiesByStampSheetResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeFormModelMastersResult from "./DescribeFormModelMastersResult"
+import CreateFormModelMasterResult from "./CreateFormModelMasterResult"
+import GetFormModelMasterResult from "./GetFormModelMasterResult"
+import UpdateFormModelMasterResult from "./UpdateFormModelMasterResult"
+import DeleteFormModelMasterResult from "./DeleteFormModelMasterResult"
+import DescribeMoldModelsResult from "./DescribeMoldModelsResult"
+import GetMoldModelResult from "./GetMoldModelResult"
+import DescribeMoldModelMastersResult from "./DescribeMoldModelMastersResult"
+import CreateMoldModelMasterResult from "./CreateMoldModelMasterResult"
+import GetMoldModelMasterResult from "./GetMoldModelMasterResult"
+import UpdateMoldModelMasterResult from "./UpdateMoldModelMasterResult"
+import DeleteMoldModelMasterResult from "./DeleteMoldModelMasterResult"
+import ExportMasterResult from "./ExportMasterResult"
+import GetCurrentFormMasterResult from "./GetCurrentFormMasterResult"
+import UpdateCurrentFormMasterResult from "./UpdateCurrentFormMasterResult"
+import UpdateCurrentFormMasterFromGitHubResult from "./UpdateCurrentFormMasterFromGitHubResult"
+import DescribeMoldsResult from "./DescribeMoldsResult"
+import DescribeMoldsByUserIdResult from "./DescribeMoldsByUserIdResult"
+import GetMoldResult from "./GetMoldResult"
+import GetMoldByUserIdResult from "./GetMoldByUserIdResult"
+import SetMoldCapacityByUserIdResult from "./SetMoldCapacityByUserIdResult"
+import AddMoldCapacityByUserIdResult from "./AddMoldCapacityByUserIdResult"
+import DeleteMoldResult from "./DeleteMoldResult"
+import DeleteMoldByUserIdResult from "./DeleteMoldByUserIdResult"
+import AddCapacityByStampSheetResult from "./AddCapacityByStampSheetResult"
+import SetCapacityByStampSheetResult from "./SetCapacityByStampSheetResult"
+import DescribeFormsResult from "./DescribeFormsResult"
+import DescribeFormsByUserIdResult from "./DescribeFormsByUserIdResult"
+import GetFormResult from "./GetFormResult"
+import GetFormByUserIdResult from "./GetFormByUserIdResult"
+import GetFormWithSignatureResult from "./GetFormWithSignatureResult"
+import GetFormWithSignatureByUserIdResult from "./GetFormWithSignatureByUserIdResult"
+import SetFormByUserIdResult from "./SetFormByUserIdResult"
+import SetFormWithSignatureResult from "./SetFormWithSignatureResult"
+import AcquireActionsToFormPropertiesResult from "./AcquireActionsToFormPropertiesResult"
+import DeleteFormResult from "./DeleteFormResult"
+import DeleteFormByUserIdResult from "./DeleteFormByUserIdResult"
+import AcquireActionToFormPropertiesByStampSheetResult from "./AcquireActionToFormPropertiesByStampSheetResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    DescribeFormModelMastersResult,
+    CreateFormModelMasterResult,
+    GetFormModelMasterResult,
+    UpdateFormModelMasterResult,
+    DeleteFormModelMasterResult,
+    DescribeMoldModelsResult,
+    GetMoldModelResult,
+    DescribeMoldModelMastersResult,
+    CreateMoldModelMasterResult,
+    GetMoldModelMasterResult,
+    UpdateMoldModelMasterResult,
+    DeleteMoldModelMasterResult,
+    ExportMasterResult,
+    GetCurrentFormMasterResult,
+    UpdateCurrentFormMasterResult,
+    UpdateCurrentFormMasterFromGitHubResult,
+    DescribeMoldsResult,
+    DescribeMoldsByUserIdResult,
+    GetMoldResult,
+    GetMoldByUserIdResult,
+    SetMoldCapacityByUserIdResult,
+    AddMoldCapacityByUserIdResult,
+    DeleteMoldResult,
+    DeleteMoldByUserIdResult,
+    AddCapacityByStampSheetResult,
+    SetCapacityByStampSheetResult,
+    DescribeFormsResult,
+    DescribeFormsByUserIdResult,
+    GetFormResult,
+    GetFormByUserIdResult,
+    GetFormWithSignatureResult,
+    GetFormWithSignatureByUserIdResult,
+    SetFormByUserIdResult,
+    SetFormWithSignatureResult,
+    AcquireActionsToFormPropertiesResult,
+    DeleteFormResult,
+    DeleteFormByUserIdResult,
+    AcquireActionToFormPropertiesByStampSheetResult,
+};

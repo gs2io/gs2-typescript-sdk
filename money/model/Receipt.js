@@ -1,0 +1,186 @@
+/*
+Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License").
+You may not use this file except in compliance with the License.
+A copy of the License is located at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+or in the "license" file accompanying this file. This file is distributed
+on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+express or implied. See the License for the specific language governing
+permissions and limitations under the License.
+ */
+var Receipt = /** @class */ (function () {
+    function Receipt() {
+        this.receiptId = null;
+        this.transactionId = null;
+        this.userId = null;
+        this.type = null;
+        this.slot = null;
+        this.price = null;
+        this.paid = null;
+        this.free = null;
+        this.total = null;
+        this.contentsId = null;
+        this.createdAt = null;
+    }
+    Receipt.prototype.getReceiptId = function () {
+        return this.receiptId;
+    };
+    Receipt.prototype.setReceiptId = function (receiptId) {
+        this.receiptId = receiptId;
+        return this;
+    };
+    Receipt.prototype.withReceiptId = function (receiptId) {
+        this.receiptId = receiptId;
+        return this;
+    };
+    Receipt.prototype.getTransactionId = function () {
+        return this.transactionId;
+    };
+    Receipt.prototype.setTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    };
+    Receipt.prototype.withTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    };
+    Receipt.prototype.getUserId = function () {
+        return this.userId;
+    };
+    Receipt.prototype.setUserId = function (userId) {
+        this.userId = userId;
+        return this;
+    };
+    Receipt.prototype.withUserId = function (userId) {
+        this.userId = userId;
+        return this;
+    };
+    Receipt.prototype.getType = function () {
+        return this.type;
+    };
+    Receipt.prototype.setType = function (type) {
+        this.type = type;
+        return this;
+    };
+    Receipt.prototype.withType = function (type) {
+        this.type = type;
+        return this;
+    };
+    Receipt.prototype.getSlot = function () {
+        return this.slot;
+    };
+    Receipt.prototype.setSlot = function (slot) {
+        this.slot = slot;
+        return this;
+    };
+    Receipt.prototype.withSlot = function (slot) {
+        this.slot = slot;
+        return this;
+    };
+    Receipt.prototype.getPrice = function () {
+        return this.price;
+    };
+    Receipt.prototype.setPrice = function (price) {
+        this.price = price;
+        return this;
+    };
+    Receipt.prototype.withPrice = function (price) {
+        this.price = price;
+        return this;
+    };
+    Receipt.prototype.getPaid = function () {
+        return this.paid;
+    };
+    Receipt.prototype.setPaid = function (paid) {
+        this.paid = paid;
+        return this;
+    };
+    Receipt.prototype.withPaid = function (paid) {
+        this.paid = paid;
+        return this;
+    };
+    Receipt.prototype.getFree = function () {
+        return this.free;
+    };
+    Receipt.prototype.setFree = function (free) {
+        this.free = free;
+        return this;
+    };
+    Receipt.prototype.withFree = function (free) {
+        this.free = free;
+        return this;
+    };
+    Receipt.prototype.getTotal = function () {
+        return this.total;
+    };
+    Receipt.prototype.setTotal = function (total) {
+        this.total = total;
+        return this;
+    };
+    Receipt.prototype.withTotal = function (total) {
+        this.total = total;
+        return this;
+    };
+    Receipt.prototype.getContentsId = function () {
+        return this.contentsId;
+    };
+    Receipt.prototype.setContentsId = function (contentsId) {
+        this.contentsId = contentsId;
+        return this;
+    };
+    Receipt.prototype.withContentsId = function (contentsId) {
+        this.contentsId = contentsId;
+        return this;
+    };
+    Receipt.prototype.getCreatedAt = function () {
+        return this.createdAt;
+    };
+    Receipt.prototype.setCreatedAt = function (createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    };
+    Receipt.prototype.withCreatedAt = function (createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    };
+    Receipt.fromDict = function (data) {
+        if (data == undefined || data == null) {
+            return null;
+        }
+        return new Receipt()
+            .withReceiptId(data["receiptId"])
+            .withTransactionId(data["transactionId"])
+            .withUserId(data["userId"])
+            .withType(data["type"])
+            .withSlot(data["slot"])
+            .withPrice(data["price"])
+            .withPaid(data["paid"])
+            .withFree(data["free"])
+            .withTotal(data["total"])
+            .withContentsId(data["contentsId"])
+            .withCreatedAt(data["createdAt"]);
+    };
+    Receipt.prototype.toDict = function () {
+        return {
+            "receiptId": this.getReceiptId(),
+            "transactionId": this.getTransactionId(),
+            "userId": this.getUserId(),
+            "type": this.getType(),
+            "slot": this.getSlot(),
+            "price": this.getPrice(),
+            "paid": this.getPaid(),
+            "free": this.getFree(),
+            "total": this.getTotal(),
+            "contentsId": this.getContentsId(),
+            "createdAt": this.getCreatedAt(),
+        };
+    };
+    return Receipt;
+}());
+export default Receipt;
+//# sourceMappingURL=Receipt.js.map

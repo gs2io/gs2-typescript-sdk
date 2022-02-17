@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Gateway from '../model'
 
-export class SetFirebaseTokenResult implements IResult {
+export default class SetFirebaseTokenResult implements IResult {
     private item: Gs2Gateway.FirebaseToken|null = null;
 
     public getItem(): Gs2Gateway.FirebaseToken|null {

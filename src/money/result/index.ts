@@ -13,22 +13,44 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { DescribeWalletsResult } from "./DescribeWalletsResult"
-export { DescribeWalletsByUserIdResult } from "./DescribeWalletsByUserIdResult"
-export { GetWalletResult } from "./GetWalletResult"
-export { GetWalletByUserIdResult } from "./GetWalletByUserIdResult"
-export { DepositByUserIdResult } from "./DepositByUserIdResult"
-export { WithdrawResult } from "./WithdrawResult"
-export { WithdrawByUserIdResult } from "./WithdrawByUserIdResult"
-export { DepositByStampSheetResult } from "./DepositByStampSheetResult"
-export { WithdrawByStampTaskResult } from "./WithdrawByStampTaskResult"
-export { DescribeReceiptsResult } from "./DescribeReceiptsResult"
-export { GetByUserIdAndTransactionIdResult } from "./GetByUserIdAndTransactionIdResult"
-export { RecordReceiptResult } from "./RecordReceiptResult"
-export { RecordReceiptByStampTaskResult } from "./RecordReceiptByStampTaskResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeWalletsResult from "./DescribeWalletsResult"
+import DescribeWalletsByUserIdResult from "./DescribeWalletsByUserIdResult"
+import GetWalletResult from "./GetWalletResult"
+import GetWalletByUserIdResult from "./GetWalletByUserIdResult"
+import DepositByUserIdResult from "./DepositByUserIdResult"
+import WithdrawResult from "./WithdrawResult"
+import WithdrawByUserIdResult from "./WithdrawByUserIdResult"
+import DepositByStampSheetResult from "./DepositByStampSheetResult"
+import WithdrawByStampTaskResult from "./WithdrawByStampTaskResult"
+import DescribeReceiptsResult from "./DescribeReceiptsResult"
+import GetByUserIdAndTransactionIdResult from "./GetByUserIdAndTransactionIdResult"
+import RecordReceiptResult from "./RecordReceiptResult"
+import RecordReceiptByStampTaskResult from "./RecordReceiptByStampTaskResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    DescribeWalletsResult,
+    DescribeWalletsByUserIdResult,
+    GetWalletResult,
+    GetWalletByUserIdResult,
+    DepositByUserIdResult,
+    WithdrawResult,
+    WithdrawByUserIdResult,
+    DepositByStampSheetResult,
+    WithdrawByStampTaskResult,
+    DescribeReceiptsResult,
+    GetByUserIdAndTransactionIdResult,
+    RecordReceiptResult,
+    RecordReceiptByStampTaskResult,
+};

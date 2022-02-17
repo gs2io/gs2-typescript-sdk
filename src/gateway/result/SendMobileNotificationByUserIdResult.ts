@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Gateway from '../model'
 
-export class SendMobileNotificationByUserIdResult implements IResult {
+export default class SendMobileNotificationByUserIdResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): SendMobileNotificationByUserIdResult {
         return new SendMobileNotificationByUserIdResult();

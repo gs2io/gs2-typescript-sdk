@@ -13,44 +13,88 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesRequest } from "./DescribeNamespacesRequest"
-export { CreateNamespaceRequest } from "./CreateNamespaceRequest"
-export { GetNamespaceStatusRequest } from "./GetNamespaceStatusRequest"
-export { GetNamespaceRequest } from "./GetNamespaceRequest"
-export { UpdateNamespaceRequest } from "./UpdateNamespaceRequest"
-export { DeleteNamespaceRequest } from "./DeleteNamespaceRequest"
-export { DescribeQuestGroupModelMastersRequest } from "./DescribeQuestGroupModelMastersRequest"
-export { CreateQuestGroupModelMasterRequest } from "./CreateQuestGroupModelMasterRequest"
-export { GetQuestGroupModelMasterRequest } from "./GetQuestGroupModelMasterRequest"
-export { UpdateQuestGroupModelMasterRequest } from "./UpdateQuestGroupModelMasterRequest"
-export { DeleteQuestGroupModelMasterRequest } from "./DeleteQuestGroupModelMasterRequest"
-export { DescribeQuestModelMastersRequest } from "./DescribeQuestModelMastersRequest"
-export { CreateQuestModelMasterRequest } from "./CreateQuestModelMasterRequest"
-export { GetQuestModelMasterRequest } from "./GetQuestModelMasterRequest"
-export { UpdateQuestModelMasterRequest } from "./UpdateQuestModelMasterRequest"
-export { DeleteQuestModelMasterRequest } from "./DeleteQuestModelMasterRequest"
-export { ExportMasterRequest } from "./ExportMasterRequest"
-export { GetCurrentQuestMasterRequest } from "./GetCurrentQuestMasterRequest"
-export { UpdateCurrentQuestMasterRequest } from "./UpdateCurrentQuestMasterRequest"
-export { UpdateCurrentQuestMasterFromGitHubRequest } from "./UpdateCurrentQuestMasterFromGitHubRequest"
-export { DescribeProgressesByUserIdRequest } from "./DescribeProgressesByUserIdRequest"
-export { CreateProgressByUserIdRequest } from "./CreateProgressByUserIdRequest"
-export { GetProgressRequest } from "./GetProgressRequest"
-export { GetProgressByUserIdRequest } from "./GetProgressByUserIdRequest"
-export { StartRequest } from "./StartRequest"
-export { StartByUserIdRequest } from "./StartByUserIdRequest"
-export { EndRequest } from "./EndRequest"
-export { EndByUserIdRequest } from "./EndByUserIdRequest"
-export { DeleteProgressRequest } from "./DeleteProgressRequest"
-export { DeleteProgressByUserIdRequest } from "./DeleteProgressByUserIdRequest"
-export { CreateProgressByStampSheetRequest } from "./CreateProgressByStampSheetRequest"
-export { DeleteProgressByStampTaskRequest } from "./DeleteProgressByStampTaskRequest"
-export { DescribeCompletedQuestListsRequest } from "./DescribeCompletedQuestListsRequest"
-export { DescribeCompletedQuestListsByUserIdRequest } from "./DescribeCompletedQuestListsByUserIdRequest"
-export { GetCompletedQuestListRequest } from "./GetCompletedQuestListRequest"
-export { GetCompletedQuestListByUserIdRequest } from "./GetCompletedQuestListByUserIdRequest"
-export { DeleteCompletedQuestListByUserIdRequest } from "./DeleteCompletedQuestListByUserIdRequest"
-export { DescribeQuestGroupModelsRequest } from "./DescribeQuestGroupModelsRequest"
-export { GetQuestGroupModelRequest } from "./GetQuestGroupModelRequest"
-export { DescribeQuestModelsRequest } from "./DescribeQuestModelsRequest"
-export { GetQuestModelRequest } from "./GetQuestModelRequest"
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest"
+import CreateNamespaceRequest from "./CreateNamespaceRequest"
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
+import GetNamespaceRequest from "./GetNamespaceRequest"
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DescribeQuestGroupModelMastersRequest from "./DescribeQuestGroupModelMastersRequest"
+import CreateQuestGroupModelMasterRequest from "./CreateQuestGroupModelMasterRequest"
+import GetQuestGroupModelMasterRequest from "./GetQuestGroupModelMasterRequest"
+import UpdateQuestGroupModelMasterRequest from "./UpdateQuestGroupModelMasterRequest"
+import DeleteQuestGroupModelMasterRequest from "./DeleteQuestGroupModelMasterRequest"
+import DescribeQuestModelMastersRequest from "./DescribeQuestModelMastersRequest"
+import CreateQuestModelMasterRequest from "./CreateQuestModelMasterRequest"
+import GetQuestModelMasterRequest from "./GetQuestModelMasterRequest"
+import UpdateQuestModelMasterRequest from "./UpdateQuestModelMasterRequest"
+import DeleteQuestModelMasterRequest from "./DeleteQuestModelMasterRequest"
+import ExportMasterRequest from "./ExportMasterRequest"
+import GetCurrentQuestMasterRequest from "./GetCurrentQuestMasterRequest"
+import UpdateCurrentQuestMasterRequest from "./UpdateCurrentQuestMasterRequest"
+import UpdateCurrentQuestMasterFromGitHubRequest from "./UpdateCurrentQuestMasterFromGitHubRequest"
+import DescribeProgressesByUserIdRequest from "./DescribeProgressesByUserIdRequest"
+import CreateProgressByUserIdRequest from "./CreateProgressByUserIdRequest"
+import GetProgressRequest from "./GetProgressRequest"
+import GetProgressByUserIdRequest from "./GetProgressByUserIdRequest"
+import StartRequest from "./StartRequest"
+import StartByUserIdRequest from "./StartByUserIdRequest"
+import EndRequest from "./EndRequest"
+import EndByUserIdRequest from "./EndByUserIdRequest"
+import DeleteProgressRequest from "./DeleteProgressRequest"
+import DeleteProgressByUserIdRequest from "./DeleteProgressByUserIdRequest"
+import CreateProgressByStampSheetRequest from "./CreateProgressByStampSheetRequest"
+import DeleteProgressByStampTaskRequest from "./DeleteProgressByStampTaskRequest"
+import DescribeCompletedQuestListsRequest from "./DescribeCompletedQuestListsRequest"
+import DescribeCompletedQuestListsByUserIdRequest from "./DescribeCompletedQuestListsByUserIdRequest"
+import GetCompletedQuestListRequest from "./GetCompletedQuestListRequest"
+import GetCompletedQuestListByUserIdRequest from "./GetCompletedQuestListByUserIdRequest"
+import DeleteCompletedQuestListByUserIdRequest from "./DeleteCompletedQuestListByUserIdRequest"
+import DescribeQuestGroupModelsRequest from "./DescribeQuestGroupModelsRequest"
+import GetQuestGroupModelRequest from "./GetQuestGroupModelRequest"
+import DescribeQuestModelsRequest from "./DescribeQuestModelsRequest"
+import GetQuestModelRequest from "./GetQuestModelRequest"
+
+export {
+    DescribeNamespacesRequest,
+    CreateNamespaceRequest,
+    GetNamespaceStatusRequest,
+    GetNamespaceRequest,
+    UpdateNamespaceRequest,
+    DeleteNamespaceRequest,
+    DescribeQuestGroupModelMastersRequest,
+    CreateQuestGroupModelMasterRequest,
+    GetQuestGroupModelMasterRequest,
+    UpdateQuestGroupModelMasterRequest,
+    DeleteQuestGroupModelMasterRequest,
+    DescribeQuestModelMastersRequest,
+    CreateQuestModelMasterRequest,
+    GetQuestModelMasterRequest,
+    UpdateQuestModelMasterRequest,
+    DeleteQuestModelMasterRequest,
+    ExportMasterRequest,
+    GetCurrentQuestMasterRequest,
+    UpdateCurrentQuestMasterRequest,
+    UpdateCurrentQuestMasterFromGitHubRequest,
+    DescribeProgressesByUserIdRequest,
+    CreateProgressByUserIdRequest,
+    GetProgressRequest,
+    GetProgressByUserIdRequest,
+    StartRequest,
+    StartByUserIdRequest,
+    EndRequest,
+    EndByUserIdRequest,
+    DeleteProgressRequest,
+    DeleteProgressByUserIdRequest,
+    CreateProgressByStampSheetRequest,
+    DeleteProgressByStampTaskRequest,
+    DescribeCompletedQuestListsRequest,
+    DescribeCompletedQuestListsByUserIdRequest,
+    GetCompletedQuestListRequest,
+    GetCompletedQuestListByUserIdRequest,
+    DeleteCompletedQuestListByUserIdRequest,
+    DescribeQuestGroupModelsRequest,
+    GetQuestGroupModelRequest,
+    DescribeQuestModelsRequest,
+    GetQuestModelRequest,
+};

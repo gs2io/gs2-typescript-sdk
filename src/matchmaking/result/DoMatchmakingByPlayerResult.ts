@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Matchmaking from '../model'
 
-export class DoMatchmakingByPlayerResult implements IResult {
+export default class DoMatchmakingByPlayerResult implements IResult {
     private item: Gs2Matchmaking.Gathering|null = null;
     private matchmakingContextToken: string|null = null;
 

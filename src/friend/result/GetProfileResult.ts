@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Friend from '../model'
 
-export class GetProfileResult implements IResult {
+export default class GetProfileResult implements IResult {
     private item: Gs2Friend.Profile|null = null;
 
     public getItem(): Gs2Friend.Profile|null {

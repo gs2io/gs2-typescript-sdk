@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Friend from '../model'
 
-export class UpdateProfileByUserIdRequest implements IRequest {
+export default class UpdateProfileByUserIdRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

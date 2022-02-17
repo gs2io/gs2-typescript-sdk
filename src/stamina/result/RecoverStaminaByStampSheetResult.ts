@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Stamina from '../model'
 
-export class RecoverStaminaByStampSheetResult implements IResult {
+export default class RecoverStaminaByStampSheetResult implements IResult {
     private item: Gs2Stamina.Stamina|null = null;
     private staminaModel: Gs2Stamina.StaminaModel|null = null;
     private overflowValue: number|null = null;

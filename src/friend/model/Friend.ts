@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Friend implements IModel {
+export default class Friend implements IModel {
     private friendId: string|null = null;
     private userId: string|null = null;
     private targetUserIds: string[]|null = null;

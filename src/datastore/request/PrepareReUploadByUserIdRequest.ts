@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Datastore from '../model'
 
-export class PrepareReUploadByUserIdRequest implements IRequest {
+export default class PrepareReUploadByUserIdRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

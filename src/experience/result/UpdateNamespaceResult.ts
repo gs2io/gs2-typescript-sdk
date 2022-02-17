@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Experience from '../model'
 
-export class UpdateNamespaceResult implements IResult {
+export default class UpdateNamespaceResult implements IResult {
     private item: Gs2Experience.Namespace|null = null;
 
     public getItem(): Gs2Experience.Namespace|null {

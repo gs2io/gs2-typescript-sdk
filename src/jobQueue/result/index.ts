@@ -13,19 +13,38 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { DescribeJobsByUserIdResult } from "./DescribeJobsByUserIdResult"
-export { GetJobByUserIdResult } from "./GetJobByUserIdResult"
-export { PushByUserIdResult } from "./PushByUserIdResult"
-export { RunResult } from "./RunResult"
-export { RunByUserIdResult } from "./RunByUserIdResult"
-export { DeleteJobByUserIdResult } from "./DeleteJobByUserIdResult"
-export { PushByStampSheetResult } from "./PushByStampSheetResult"
-export { DescribeDeadLetterJobsByUserIdResult } from "./DescribeDeadLetterJobsByUserIdResult"
-export { GetDeadLetterJobByUserIdResult } from "./GetDeadLetterJobByUserIdResult"
-export { DeleteDeadLetterJobByUserIdResult } from "./DeleteDeadLetterJobByUserIdResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeJobsByUserIdResult from "./DescribeJobsByUserIdResult"
+import GetJobByUserIdResult from "./GetJobByUserIdResult"
+import PushByUserIdResult from "./PushByUserIdResult"
+import RunResult from "./RunResult"
+import RunByUserIdResult from "./RunByUserIdResult"
+import DeleteJobByUserIdResult from "./DeleteJobByUserIdResult"
+import PushByStampSheetResult from "./PushByStampSheetResult"
+import DescribeDeadLetterJobsByUserIdResult from "./DescribeDeadLetterJobsByUserIdResult"
+import GetDeadLetterJobByUserIdResult from "./GetDeadLetterJobByUserIdResult"
+import DeleteDeadLetterJobByUserIdResult from "./DeleteDeadLetterJobByUserIdResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    DescribeJobsByUserIdResult,
+    GetJobByUserIdResult,
+    PushByUserIdResult,
+    RunResult,
+    RunByUserIdResult,
+    DeleteJobByUserIdResult,
+    PushByStampSheetResult,
+    DescribeDeadLetterJobsByUserIdResult,
+    GetDeadLetterJobByUserIdResult,
+    DeleteDeadLetterJobByUserIdResult,
+};

@@ -15,10 +15,10 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { Attribute } from './Attribute';
-import { Player } from './Player';
+import Attribute from './Attribute';
+import Player from './Player';
 
-export class CapacityOfRole implements IModel {
+export default class CapacityOfRole implements IModel {
     private roleName: string|null = null;
     private roleAliases: string[]|null = null;
     private capacity: number|null = null;

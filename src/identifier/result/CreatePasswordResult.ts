@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Identifier from '../model'
 
-export class CreatePasswordResult implements IResult {
+export default class CreatePasswordResult implements IResult {
     private item: Gs2Identifier.Password|null = null;
 
     public getItem(): Gs2Identifier.Password|null {

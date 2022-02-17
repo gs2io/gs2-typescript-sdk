@@ -15,10 +15,10 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { AcquireAction } from './AcquireAction';
-import { Prize } from './Prize';
+import AcquireAction from './AcquireAction';
+import Prize from './Prize';
 
-export class PrizeTableMaster implements IModel {
+export default class PrizeTableMaster implements IModel {
     private prizeTableId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;

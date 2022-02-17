@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Friend from '../model'
 
-export class UnfollowRequest implements IRequest {
+export default class UnfollowRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Lottery from '../model'
 
-export class DrawByStampSheetResult implements IResult {
+export default class DrawByStampSheetResult implements IResult {
     private items: Gs2Lottery.DrawnPrize[]|null = null;
     private stampSheet: string|null = null;
     private stampSheetEncryptionKeyId: string|null = null;

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Experience from '../model'
 
-export class UpdateThresholdMasterResult implements IResult {
+export default class UpdateThresholdMasterResult implements IResult {
     private item: Gs2Experience.ThresholdMaster|null = null;
 
     public getItem(): Gs2Experience.ThresholdMaster|null {

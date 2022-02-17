@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Gateway from '../model'
 
-export class DeleteFirebaseTokenByUserIdRequest implements IRequest {
+export default class DeleteFirebaseTokenByUserIdRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Distributor from '../model'
 
-export class UpdateNamespaceResult implements IResult {
+export default class UpdateNamespaceResult implements IResult {
     private item: Gs2Distributor.Namespace|null = null;
 
     public getItem(): Gs2Distributor.Namespace|null {

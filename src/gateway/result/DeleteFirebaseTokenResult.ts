@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Gateway from '../model'
 
-export class DeleteFirebaseTokenResult implements IResult {
+export default class DeleteFirebaseTokenResult implements IResult {
     private item: Gs2Gateway.FirebaseToken|null = null;
 
     public getItem(): Gs2Gateway.FirebaseToken|null {

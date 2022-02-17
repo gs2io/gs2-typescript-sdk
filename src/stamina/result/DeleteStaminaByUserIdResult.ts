@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Stamina from '../model'
 
-export class DeleteStaminaByUserIdResult implements IResult {
+export default class DeleteStaminaByUserIdResult implements IResult {
     private item: Gs2Stamina.Stamina|null = null;
 
     public getItem(): Gs2Stamina.Stamina|null {

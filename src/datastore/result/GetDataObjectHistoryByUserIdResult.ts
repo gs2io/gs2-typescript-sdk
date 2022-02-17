@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Datastore from '../model'
 
-export class GetDataObjectHistoryByUserIdResult implements IResult {
+export default class GetDataObjectHistoryByUserIdResult implements IResult {
     private item: Gs2Datastore.DataObjectHistory|null = null;
 
     public getItem(): Gs2Datastore.DataObjectHistory|null {

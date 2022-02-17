@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Exchange from '../model'
 
-export class ExchangeByStampSheetRequest implements IRequest {
+export default class ExchangeByStampSheetRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

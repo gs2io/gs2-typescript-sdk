@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Inbox from '../model'
 
-export class CreateNamespaceResult implements IResult {
+export default class CreateNamespaceResult implements IResult {
     private item: Gs2Inbox.Namespace|null = null;
 
     public getItem(): Gs2Inbox.Namespace|null {

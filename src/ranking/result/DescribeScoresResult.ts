@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Ranking from '../model'
 
-export class DescribeScoresResult implements IResult {
+export default class DescribeScoresResult implements IResult {
     private items: Gs2Ranking.Score[]|null = null;
     private nextPageToken: string|null = null;
 

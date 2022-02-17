@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Mission from '../model'
 
-export class ReceiveByStampTaskResult implements IResult {
+export default class ReceiveByStampTaskResult implements IResult {
     private item: Gs2Mission.Complete|null = null;
     private newContextStack: string|null = null;
 

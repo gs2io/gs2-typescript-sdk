@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class GitHubApiKey implements IModel {
+export default class GitHubApiKey implements IModel {
     private apiKeyId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;

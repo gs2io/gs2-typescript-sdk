@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class PublicProfile implements IModel {
+export default class PublicProfile implements IModel {
     private userId: string|null = null;
     private publicProfile: string|null = null;
 

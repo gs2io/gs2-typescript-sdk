@@ -13,61 +13,122 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { DescribeInventoryModelMastersResult } from "./DescribeInventoryModelMastersResult"
-export { CreateInventoryModelMasterResult } from "./CreateInventoryModelMasterResult"
-export { GetInventoryModelMasterResult } from "./GetInventoryModelMasterResult"
-export { UpdateInventoryModelMasterResult } from "./UpdateInventoryModelMasterResult"
-export { DeleteInventoryModelMasterResult } from "./DeleteInventoryModelMasterResult"
-export { DescribeInventoryModelsResult } from "./DescribeInventoryModelsResult"
-export { GetInventoryModelResult } from "./GetInventoryModelResult"
-export { DescribeItemModelMastersResult } from "./DescribeItemModelMastersResult"
-export { CreateItemModelMasterResult } from "./CreateItemModelMasterResult"
-export { GetItemModelMasterResult } from "./GetItemModelMasterResult"
-export { UpdateItemModelMasterResult } from "./UpdateItemModelMasterResult"
-export { DeleteItemModelMasterResult } from "./DeleteItemModelMasterResult"
-export { DescribeItemModelsResult } from "./DescribeItemModelsResult"
-export { GetItemModelResult } from "./GetItemModelResult"
-export { ExportMasterResult } from "./ExportMasterResult"
-export { GetCurrentItemModelMasterResult } from "./GetCurrentItemModelMasterResult"
-export { UpdateCurrentItemModelMasterResult } from "./UpdateCurrentItemModelMasterResult"
-export { UpdateCurrentItemModelMasterFromGitHubResult } from "./UpdateCurrentItemModelMasterFromGitHubResult"
-export { DescribeInventoriesResult } from "./DescribeInventoriesResult"
-export { DescribeInventoriesByUserIdResult } from "./DescribeInventoriesByUserIdResult"
-export { GetInventoryResult } from "./GetInventoryResult"
-export { GetInventoryByUserIdResult } from "./GetInventoryByUserIdResult"
-export { AddCapacityByUserIdResult } from "./AddCapacityByUserIdResult"
-export { SetCapacityByUserIdResult } from "./SetCapacityByUserIdResult"
-export { DeleteInventoryByUserIdResult } from "./DeleteInventoryByUserIdResult"
-export { AddCapacityByStampSheetResult } from "./AddCapacityByStampSheetResult"
-export { SetCapacityByStampSheetResult } from "./SetCapacityByStampSheetResult"
-export { DescribeItemSetsResult } from "./DescribeItemSetsResult"
-export { DescribeItemSetsByUserIdResult } from "./DescribeItemSetsByUserIdResult"
-export { GetItemSetResult } from "./GetItemSetResult"
-export { GetItemSetByUserIdResult } from "./GetItemSetByUserIdResult"
-export { GetItemWithSignatureResult } from "./GetItemWithSignatureResult"
-export { GetItemWithSignatureByUserIdResult } from "./GetItemWithSignatureByUserIdResult"
-export { AcquireItemSetByUserIdResult } from "./AcquireItemSetByUserIdResult"
-export { ConsumeItemSetResult } from "./ConsumeItemSetResult"
-export { ConsumeItemSetByUserIdResult } from "./ConsumeItemSetByUserIdResult"
-export { DeleteItemSetByUserIdResult } from "./DeleteItemSetByUserIdResult"
-export { AcquireItemSetByStampSheetResult } from "./AcquireItemSetByStampSheetResult"
-export { ConsumeItemSetByStampTaskResult } from "./ConsumeItemSetByStampTaskResult"
-export { DescribeReferenceOfResult } from "./DescribeReferenceOfResult"
-export { DescribeReferenceOfByUserIdResult } from "./DescribeReferenceOfByUserIdResult"
-export { GetReferenceOfResult } from "./GetReferenceOfResult"
-export { GetReferenceOfByUserIdResult } from "./GetReferenceOfByUserIdResult"
-export { VerifyReferenceOfResult } from "./VerifyReferenceOfResult"
-export { VerifyReferenceOfByUserIdResult } from "./VerifyReferenceOfByUserIdResult"
-export { AddReferenceOfResult } from "./AddReferenceOfResult"
-export { AddReferenceOfByUserIdResult } from "./AddReferenceOfByUserIdResult"
-export { DeleteReferenceOfResult } from "./DeleteReferenceOfResult"
-export { DeleteReferenceOfByUserIdResult } from "./DeleteReferenceOfByUserIdResult"
-export { AddReferenceOfItemSetByStampSheetResult } from "./AddReferenceOfItemSetByStampSheetResult"
-export { DeleteReferenceOfItemSetByStampSheetResult } from "./DeleteReferenceOfItemSetByStampSheetResult"
-export { VerifyReferenceOfByStampTaskResult } from "./VerifyReferenceOfByStampTaskResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeInventoryModelMastersResult from "./DescribeInventoryModelMastersResult"
+import CreateInventoryModelMasterResult from "./CreateInventoryModelMasterResult"
+import GetInventoryModelMasterResult from "./GetInventoryModelMasterResult"
+import UpdateInventoryModelMasterResult from "./UpdateInventoryModelMasterResult"
+import DeleteInventoryModelMasterResult from "./DeleteInventoryModelMasterResult"
+import DescribeInventoryModelsResult from "./DescribeInventoryModelsResult"
+import GetInventoryModelResult from "./GetInventoryModelResult"
+import DescribeItemModelMastersResult from "./DescribeItemModelMastersResult"
+import CreateItemModelMasterResult from "./CreateItemModelMasterResult"
+import GetItemModelMasterResult from "./GetItemModelMasterResult"
+import UpdateItemModelMasterResult from "./UpdateItemModelMasterResult"
+import DeleteItemModelMasterResult from "./DeleteItemModelMasterResult"
+import DescribeItemModelsResult from "./DescribeItemModelsResult"
+import GetItemModelResult from "./GetItemModelResult"
+import ExportMasterResult from "./ExportMasterResult"
+import GetCurrentItemModelMasterResult from "./GetCurrentItemModelMasterResult"
+import UpdateCurrentItemModelMasterResult from "./UpdateCurrentItemModelMasterResult"
+import UpdateCurrentItemModelMasterFromGitHubResult from "./UpdateCurrentItemModelMasterFromGitHubResult"
+import DescribeInventoriesResult from "./DescribeInventoriesResult"
+import DescribeInventoriesByUserIdResult from "./DescribeInventoriesByUserIdResult"
+import GetInventoryResult from "./GetInventoryResult"
+import GetInventoryByUserIdResult from "./GetInventoryByUserIdResult"
+import AddCapacityByUserIdResult from "./AddCapacityByUserIdResult"
+import SetCapacityByUserIdResult from "./SetCapacityByUserIdResult"
+import DeleteInventoryByUserIdResult from "./DeleteInventoryByUserIdResult"
+import AddCapacityByStampSheetResult from "./AddCapacityByStampSheetResult"
+import SetCapacityByStampSheetResult from "./SetCapacityByStampSheetResult"
+import DescribeItemSetsResult from "./DescribeItemSetsResult"
+import DescribeItemSetsByUserIdResult from "./DescribeItemSetsByUserIdResult"
+import GetItemSetResult from "./GetItemSetResult"
+import GetItemSetByUserIdResult from "./GetItemSetByUserIdResult"
+import GetItemWithSignatureResult from "./GetItemWithSignatureResult"
+import GetItemWithSignatureByUserIdResult from "./GetItemWithSignatureByUserIdResult"
+import AcquireItemSetByUserIdResult from "./AcquireItemSetByUserIdResult"
+import ConsumeItemSetResult from "./ConsumeItemSetResult"
+import ConsumeItemSetByUserIdResult from "./ConsumeItemSetByUserIdResult"
+import DeleteItemSetByUserIdResult from "./DeleteItemSetByUserIdResult"
+import AcquireItemSetByStampSheetResult from "./AcquireItemSetByStampSheetResult"
+import ConsumeItemSetByStampTaskResult from "./ConsumeItemSetByStampTaskResult"
+import DescribeReferenceOfResult from "./DescribeReferenceOfResult"
+import DescribeReferenceOfByUserIdResult from "./DescribeReferenceOfByUserIdResult"
+import GetReferenceOfResult from "./GetReferenceOfResult"
+import GetReferenceOfByUserIdResult from "./GetReferenceOfByUserIdResult"
+import VerifyReferenceOfResult from "./VerifyReferenceOfResult"
+import VerifyReferenceOfByUserIdResult from "./VerifyReferenceOfByUserIdResult"
+import AddReferenceOfResult from "./AddReferenceOfResult"
+import AddReferenceOfByUserIdResult from "./AddReferenceOfByUserIdResult"
+import DeleteReferenceOfResult from "./DeleteReferenceOfResult"
+import DeleteReferenceOfByUserIdResult from "./DeleteReferenceOfByUserIdResult"
+import AddReferenceOfItemSetByStampSheetResult from "./AddReferenceOfItemSetByStampSheetResult"
+import DeleteReferenceOfItemSetByStampSheetResult from "./DeleteReferenceOfItemSetByStampSheetResult"
+import VerifyReferenceOfByStampTaskResult from "./VerifyReferenceOfByStampTaskResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    DescribeInventoryModelMastersResult,
+    CreateInventoryModelMasterResult,
+    GetInventoryModelMasterResult,
+    UpdateInventoryModelMasterResult,
+    DeleteInventoryModelMasterResult,
+    DescribeInventoryModelsResult,
+    GetInventoryModelResult,
+    DescribeItemModelMastersResult,
+    CreateItemModelMasterResult,
+    GetItemModelMasterResult,
+    UpdateItemModelMasterResult,
+    DeleteItemModelMasterResult,
+    DescribeItemModelsResult,
+    GetItemModelResult,
+    ExportMasterResult,
+    GetCurrentItemModelMasterResult,
+    UpdateCurrentItemModelMasterResult,
+    UpdateCurrentItemModelMasterFromGitHubResult,
+    DescribeInventoriesResult,
+    DescribeInventoriesByUserIdResult,
+    GetInventoryResult,
+    GetInventoryByUserIdResult,
+    AddCapacityByUserIdResult,
+    SetCapacityByUserIdResult,
+    DeleteInventoryByUserIdResult,
+    AddCapacityByStampSheetResult,
+    SetCapacityByStampSheetResult,
+    DescribeItemSetsResult,
+    DescribeItemSetsByUserIdResult,
+    GetItemSetResult,
+    GetItemSetByUserIdResult,
+    GetItemWithSignatureResult,
+    GetItemWithSignatureByUserIdResult,
+    AcquireItemSetByUserIdResult,
+    ConsumeItemSetResult,
+    ConsumeItemSetByUserIdResult,
+    DeleteItemSetByUserIdResult,
+    AcquireItemSetByStampSheetResult,
+    ConsumeItemSetByStampTaskResult,
+    DescribeReferenceOfResult,
+    DescribeReferenceOfByUserIdResult,
+    GetReferenceOfResult,
+    GetReferenceOfByUserIdResult,
+    VerifyReferenceOfResult,
+    VerifyReferenceOfByUserIdResult,
+    AddReferenceOfResult,
+    AddReferenceOfByUserIdResult,
+    DeleteReferenceOfResult,
+    DeleteReferenceOfByUserIdResult,
+    AddReferenceOfItemSetByStampSheetResult,
+    DeleteReferenceOfItemSetByStampSheetResult,
+    VerifyReferenceOfByStampTaskResult,
+};

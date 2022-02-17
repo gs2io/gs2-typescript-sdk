@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Gateway from '../model'
 
-export class SendNotificationRequest implements IRequest {
+export default class SendNotificationRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

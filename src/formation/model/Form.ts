@@ -15,9 +15,9 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { Slot } from './Slot';
+import Slot from './Slot';
 
-export class Form implements IModel {
+export default class Form implements IModel {
     private formId: string|null = null;
     private name: string|null = null;
     private index: number|null = null;

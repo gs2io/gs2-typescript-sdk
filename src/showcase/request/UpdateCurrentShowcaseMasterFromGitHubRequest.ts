@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Showcase from '../model'
 
-export class UpdateCurrentShowcaseMasterFromGitHubRequest implements IRequest {
+export default class UpdateCurrentShowcaseMasterFromGitHubRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Distributor from '../model'
 
-export class DescribeDistributorModelsResult implements IResult {
+export default class DescribeDistributorModelsResult implements IResult {
     private items: Gs2Distributor.DistributorModel[]|null = null;
 
     public getItems(): Gs2Distributor.DistributorModel[]|null {

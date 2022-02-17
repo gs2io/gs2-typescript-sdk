@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2News from '../model'
 
-export class WantGrantByUserIdResult implements IResult {
+export default class WantGrantByUserIdResult implements IResult {
     private items: Gs2News.SetCookieRequestEntry[]|null = null;
     private browserUrl: string|null = null;
     private zipUrl: string|null = null;

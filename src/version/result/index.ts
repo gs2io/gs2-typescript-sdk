@@ -13,31 +13,62 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { DescribeVersionModelMastersResult } from "./DescribeVersionModelMastersResult"
-export { CreateVersionModelMasterResult } from "./CreateVersionModelMasterResult"
-export { GetVersionModelMasterResult } from "./GetVersionModelMasterResult"
-export { UpdateVersionModelMasterResult } from "./UpdateVersionModelMasterResult"
-export { DeleteVersionModelMasterResult } from "./DeleteVersionModelMasterResult"
-export { DescribeVersionModelsResult } from "./DescribeVersionModelsResult"
-export { GetVersionModelResult } from "./GetVersionModelResult"
-export { DescribeAcceptVersionsResult } from "./DescribeAcceptVersionsResult"
-export { DescribeAcceptVersionsByUserIdResult } from "./DescribeAcceptVersionsByUserIdResult"
-export { AcceptResult } from "./AcceptResult"
-export { AcceptByUserIdResult } from "./AcceptByUserIdResult"
-export { GetAcceptVersionResult } from "./GetAcceptVersionResult"
-export { GetAcceptVersionByUserIdResult } from "./GetAcceptVersionByUserIdResult"
-export { DeleteAcceptVersionResult } from "./DeleteAcceptVersionResult"
-export { DeleteAcceptVersionByUserIdResult } from "./DeleteAcceptVersionByUserIdResult"
-export { CheckVersionResult } from "./CheckVersionResult"
-export { CheckVersionByUserIdResult } from "./CheckVersionByUserIdResult"
-export { CalculateSignatureResult } from "./CalculateSignatureResult"
-export { ExportMasterResult } from "./ExportMasterResult"
-export { GetCurrentVersionMasterResult } from "./GetCurrentVersionMasterResult"
-export { UpdateCurrentVersionMasterResult } from "./UpdateCurrentVersionMasterResult"
-export { UpdateCurrentVersionMasterFromGitHubResult } from "./UpdateCurrentVersionMasterFromGitHubResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeVersionModelMastersResult from "./DescribeVersionModelMastersResult"
+import CreateVersionModelMasterResult from "./CreateVersionModelMasterResult"
+import GetVersionModelMasterResult from "./GetVersionModelMasterResult"
+import UpdateVersionModelMasterResult from "./UpdateVersionModelMasterResult"
+import DeleteVersionModelMasterResult from "./DeleteVersionModelMasterResult"
+import DescribeVersionModelsResult from "./DescribeVersionModelsResult"
+import GetVersionModelResult from "./GetVersionModelResult"
+import DescribeAcceptVersionsResult from "./DescribeAcceptVersionsResult"
+import DescribeAcceptVersionsByUserIdResult from "./DescribeAcceptVersionsByUserIdResult"
+import AcceptResult from "./AcceptResult"
+import AcceptByUserIdResult from "./AcceptByUserIdResult"
+import GetAcceptVersionResult from "./GetAcceptVersionResult"
+import GetAcceptVersionByUserIdResult from "./GetAcceptVersionByUserIdResult"
+import DeleteAcceptVersionResult from "./DeleteAcceptVersionResult"
+import DeleteAcceptVersionByUserIdResult from "./DeleteAcceptVersionByUserIdResult"
+import CheckVersionResult from "./CheckVersionResult"
+import CheckVersionByUserIdResult from "./CheckVersionByUserIdResult"
+import CalculateSignatureResult from "./CalculateSignatureResult"
+import ExportMasterResult from "./ExportMasterResult"
+import GetCurrentVersionMasterResult from "./GetCurrentVersionMasterResult"
+import UpdateCurrentVersionMasterResult from "./UpdateCurrentVersionMasterResult"
+import UpdateCurrentVersionMasterFromGitHubResult from "./UpdateCurrentVersionMasterFromGitHubResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    DescribeVersionModelMastersResult,
+    CreateVersionModelMasterResult,
+    GetVersionModelMasterResult,
+    UpdateVersionModelMasterResult,
+    DeleteVersionModelMasterResult,
+    DescribeVersionModelsResult,
+    GetVersionModelResult,
+    DescribeAcceptVersionsResult,
+    DescribeAcceptVersionsByUserIdResult,
+    AcceptResult,
+    AcceptByUserIdResult,
+    GetAcceptVersionResult,
+    GetAcceptVersionByUserIdResult,
+    DeleteAcceptVersionResult,
+    DeleteAcceptVersionByUserIdResult,
+    CheckVersionResult,
+    CheckVersionByUserIdResult,
+    CalculateSignatureResult,
+    ExportMasterResult,
+    GetCurrentVersionMasterResult,
+    UpdateCurrentVersionMasterResult,
+    UpdateCurrentVersionMasterFromGitHubResult,
+};

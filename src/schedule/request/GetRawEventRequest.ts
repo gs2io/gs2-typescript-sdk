@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Schedule from '../model'
 
-export class GetRawEventRequest implements IRequest {
+export default class GetRawEventRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class WebSocketSession implements IModel {
+export default class WebSocketSession implements IModel {
     private webSocketSessionId: string|null = null;
     private connectionId: string|null = null;
     private namespaceName: string|null = null;

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Matchmaking from '../model'
 
-export class VoteResult implements IResult {
+export default class VoteResult implements IResult {
     private item: Gs2Matchmaking.Ballot|null = null;
 
     public getItem(): Gs2Matchmaking.Ballot|null {

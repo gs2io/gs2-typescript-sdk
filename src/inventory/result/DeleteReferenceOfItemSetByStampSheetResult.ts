@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Inventory from '../model'
 
-export class DeleteReferenceOfItemSetByStampSheetResult implements IResult {
+export default class DeleteReferenceOfItemSetByStampSheetResult implements IResult {
     private item: string[]|null = null;
     private itemSet: Gs2Inventory.ItemSet|null = null;
     private itemModel: Gs2Inventory.ItemModel|null = null;

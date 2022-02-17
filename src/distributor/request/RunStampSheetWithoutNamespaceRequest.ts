@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Distributor from '../model'
 
-export class RunStampSheetWithoutNamespaceRequest implements IRequest {
+export default class RunStampSheetWithoutNamespaceRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

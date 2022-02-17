@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2News from '../model'
 
-export class DescribeNewsResult implements IResult {
+export default class DescribeNewsResult implements IResult {
     private items: Gs2News.News[]|null = null;
     private contentHash: string|null = null;
     private templateHash: string|null = null;

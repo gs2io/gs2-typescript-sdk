@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class AttributeRange implements IModel {
+export default class AttributeRange implements IModel {
     private name: string|null = null;
     private min: number|null = null;
     private max: number|null = null;

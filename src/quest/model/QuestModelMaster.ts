@@ -15,11 +15,11 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { AcquireAction } from './AcquireAction';
-import { Contents } from './Contents';
-import { ConsumeAction } from './ConsumeAction';
+import AcquireAction from './AcquireAction';
+import Contents from './Contents';
+import ConsumeAction from './ConsumeAction';
 
-export class QuestModelMaster implements IModel {
+export default class QuestModelMaster implements IModel {
     private questModelId: string|null = null;
     private questGroupName: string|null = null;
     private name: string|null = null;

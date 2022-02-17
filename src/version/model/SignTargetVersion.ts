@@ -15,9 +15,9 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { Version } from './Version';
+import Version from './Version';
 
-export class SignTargetVersion implements IModel {
+export default class SignTargetVersion implements IModel {
     private region: string|null = null;
     private namespaceName: string|null = null;
     private versionName: string|null = null;

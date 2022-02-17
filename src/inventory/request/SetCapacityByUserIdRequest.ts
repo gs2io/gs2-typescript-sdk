@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Inventory from '../model'
 
-export class SetCapacityByUserIdRequest implements IRequest {
+export default class SetCapacityByUserIdRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

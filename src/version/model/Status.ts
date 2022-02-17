@@ -15,10 +15,10 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { Version } from './Version';
-import { VersionModel } from './VersionModel';
+import Version from './Version';
+import VersionModel from './VersionModel';
 
-export class Status implements IModel {
+export default class Status implements IModel {
     private versionModel: VersionModel|null = null;
     private currentVersion: Version|null = null;
 

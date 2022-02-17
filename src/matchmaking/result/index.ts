@@ -13,43 +13,86 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { DescribeGatheringsResult } from "./DescribeGatheringsResult"
-export { CreateGatheringResult } from "./CreateGatheringResult"
-export { CreateGatheringByUserIdResult } from "./CreateGatheringByUserIdResult"
-export { UpdateGatheringResult } from "./UpdateGatheringResult"
-export { UpdateGatheringByUserIdResult } from "./UpdateGatheringByUserIdResult"
-export { DoMatchmakingByPlayerResult } from "./DoMatchmakingByPlayerResult"
-export { DoMatchmakingResult } from "./DoMatchmakingResult"
-export { DoMatchmakingByUserIdResult } from "./DoMatchmakingByUserIdResult"
-export { GetGatheringResult } from "./GetGatheringResult"
-export { CancelMatchmakingResult } from "./CancelMatchmakingResult"
-export { CancelMatchmakingByUserIdResult } from "./CancelMatchmakingByUserIdResult"
-export { DeleteGatheringResult } from "./DeleteGatheringResult"
-export { DescribeRatingModelMastersResult } from "./DescribeRatingModelMastersResult"
-export { CreateRatingModelMasterResult } from "./CreateRatingModelMasterResult"
-export { GetRatingModelMasterResult } from "./GetRatingModelMasterResult"
-export { UpdateRatingModelMasterResult } from "./UpdateRatingModelMasterResult"
-export { DeleteRatingModelMasterResult } from "./DeleteRatingModelMasterResult"
-export { DescribeRatingModelsResult } from "./DescribeRatingModelsResult"
-export { GetRatingModelResult } from "./GetRatingModelResult"
-export { ExportMasterResult } from "./ExportMasterResult"
-export { GetCurrentRatingModelMasterResult } from "./GetCurrentRatingModelMasterResult"
-export { UpdateCurrentRatingModelMasterResult } from "./UpdateCurrentRatingModelMasterResult"
-export { UpdateCurrentRatingModelMasterFromGitHubResult } from "./UpdateCurrentRatingModelMasterFromGitHubResult"
-export { DescribeRatingsResult } from "./DescribeRatingsResult"
-export { DescribeRatingsByUserIdResult } from "./DescribeRatingsByUserIdResult"
-export { GetRatingResult } from "./GetRatingResult"
-export { GetRatingByUserIdResult } from "./GetRatingByUserIdResult"
-export { PutResultResult } from "./PutResultResult"
-export { DeleteRatingResult } from "./DeleteRatingResult"
-export { GetBallotResult } from "./GetBallotResult"
-export { GetBallotByUserIdResult } from "./GetBallotByUserIdResult"
-export { VoteResult } from "./VoteResult"
-export { VoteMultipleResult } from "./VoteMultipleResult"
-export { CommitVoteResult } from "./CommitVoteResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeGatheringsResult from "./DescribeGatheringsResult"
+import CreateGatheringResult from "./CreateGatheringResult"
+import CreateGatheringByUserIdResult from "./CreateGatheringByUserIdResult"
+import UpdateGatheringResult from "./UpdateGatheringResult"
+import UpdateGatheringByUserIdResult from "./UpdateGatheringByUserIdResult"
+import DoMatchmakingByPlayerResult from "./DoMatchmakingByPlayerResult"
+import DoMatchmakingResult from "./DoMatchmakingResult"
+import DoMatchmakingByUserIdResult from "./DoMatchmakingByUserIdResult"
+import GetGatheringResult from "./GetGatheringResult"
+import CancelMatchmakingResult from "./CancelMatchmakingResult"
+import CancelMatchmakingByUserIdResult from "./CancelMatchmakingByUserIdResult"
+import DeleteGatheringResult from "./DeleteGatheringResult"
+import DescribeRatingModelMastersResult from "./DescribeRatingModelMastersResult"
+import CreateRatingModelMasterResult from "./CreateRatingModelMasterResult"
+import GetRatingModelMasterResult from "./GetRatingModelMasterResult"
+import UpdateRatingModelMasterResult from "./UpdateRatingModelMasterResult"
+import DeleteRatingModelMasterResult from "./DeleteRatingModelMasterResult"
+import DescribeRatingModelsResult from "./DescribeRatingModelsResult"
+import GetRatingModelResult from "./GetRatingModelResult"
+import ExportMasterResult from "./ExportMasterResult"
+import GetCurrentRatingModelMasterResult from "./GetCurrentRatingModelMasterResult"
+import UpdateCurrentRatingModelMasterResult from "./UpdateCurrentRatingModelMasterResult"
+import UpdateCurrentRatingModelMasterFromGitHubResult from "./UpdateCurrentRatingModelMasterFromGitHubResult"
+import DescribeRatingsResult from "./DescribeRatingsResult"
+import DescribeRatingsByUserIdResult from "./DescribeRatingsByUserIdResult"
+import GetRatingResult from "./GetRatingResult"
+import GetRatingByUserIdResult from "./GetRatingByUserIdResult"
+import PutResultResult from "./PutResultResult"
+import DeleteRatingResult from "./DeleteRatingResult"
+import GetBallotResult from "./GetBallotResult"
+import GetBallotByUserIdResult from "./GetBallotByUserIdResult"
+import VoteResult from "./VoteResult"
+import VoteMultipleResult from "./VoteMultipleResult"
+import CommitVoteResult from "./CommitVoteResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    DescribeGatheringsResult,
+    CreateGatheringResult,
+    CreateGatheringByUserIdResult,
+    UpdateGatheringResult,
+    UpdateGatheringByUserIdResult,
+    DoMatchmakingByPlayerResult,
+    DoMatchmakingResult,
+    DoMatchmakingByUserIdResult,
+    GetGatheringResult,
+    CancelMatchmakingResult,
+    CancelMatchmakingByUserIdResult,
+    DeleteGatheringResult,
+    DescribeRatingModelMastersResult,
+    CreateRatingModelMasterResult,
+    GetRatingModelMasterResult,
+    UpdateRatingModelMasterResult,
+    DeleteRatingModelMasterResult,
+    DescribeRatingModelsResult,
+    GetRatingModelResult,
+    ExportMasterResult,
+    GetCurrentRatingModelMasterResult,
+    UpdateCurrentRatingModelMasterResult,
+    UpdateCurrentRatingModelMasterFromGitHubResult,
+    DescribeRatingsResult,
+    DescribeRatingsByUserIdResult,
+    GetRatingResult,
+    GetRatingByUserIdResult,
+    PutResultResult,
+    DeleteRatingResult,
+    GetBallotResult,
+    GetBallotByUserIdResult,
+    VoteResult,
+    VoteMultipleResult,
+    CommitVoteResult,
+};

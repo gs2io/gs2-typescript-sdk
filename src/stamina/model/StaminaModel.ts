@@ -15,11 +15,11 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { MaxStaminaTable } from './MaxStaminaTable';
-import { RecoverIntervalTable } from './RecoverIntervalTable';
-import { RecoverValueTable } from './RecoverValueTable';
+import MaxStaminaTable from './MaxStaminaTable';
+import RecoverIntervalTable from './RecoverIntervalTable';
+import RecoverValueTable from './RecoverValueTable';
 
-export class StaminaModel implements IModel {
+export default class StaminaModel implements IModel {
     private staminaModelId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;

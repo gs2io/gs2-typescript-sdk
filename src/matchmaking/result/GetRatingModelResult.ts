@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Matchmaking from '../model'
 
-export class GetRatingModelResult implements IResult {
+export default class GetRatingModelResult implements IResult {
     private item: Gs2Matchmaking.RatingModel|null = null;
 
     public getItem(): Gs2Matchmaking.RatingModel|null {

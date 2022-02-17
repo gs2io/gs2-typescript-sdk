@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Script from '../model'
 
-export class DeleteScriptResult implements IResult {
+export default class DeleteScriptResult implements IResult {
     private item: Gs2Script.Script|null = null;
 
     public getItem(): Gs2Script.Script|null {

@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2News from '../model'
 
-export class UpdateCurrentNewsMasterRequest implements IRequest {
+export default class UpdateCurrentNewsMasterRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

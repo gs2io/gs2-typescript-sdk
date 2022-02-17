@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Datastore from '../model'
 
-export class UpdateNamespaceRequest implements IRequest {
+export default class UpdateNamespaceRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

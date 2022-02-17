@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Inbox from '../model'
 
-export class DeleteGlobalMessageMasterRequest implements IRequest {
+export default class DeleteGlobalMessageMasterRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

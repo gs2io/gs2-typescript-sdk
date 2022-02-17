@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Enhance from '../model'
 
-export class DeleteProgressByStampTaskRequest implements IRequest {
+export default class DeleteProgressByStampTaskRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

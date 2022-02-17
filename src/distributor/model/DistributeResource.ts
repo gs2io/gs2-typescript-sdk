@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class DistributeResource implements IModel {
+export default class DistributeResource implements IModel {
     private action: string|null = null;
     private request: string|null = null;
 

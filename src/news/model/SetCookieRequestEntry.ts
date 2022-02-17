@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class SetCookieRequestEntry implements IModel {
+export default class SetCookieRequestEntry implements IModel {
     private key: string|null = null;
     private value: string|null = null;
 

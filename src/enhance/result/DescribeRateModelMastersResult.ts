@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Enhance from '../model'
 
-export class DescribeRateModelMastersResult implements IResult {
+export default class DescribeRateModelMastersResult implements IResult {
     private items: Gs2Enhance.RateModelMaster[]|null = null;
     private nextPageToken: string|null = null;
 

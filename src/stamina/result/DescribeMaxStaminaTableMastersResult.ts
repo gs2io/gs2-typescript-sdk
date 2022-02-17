@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Stamina from '../model'
 
-export class DescribeMaxStaminaTableMastersResult implements IResult {
+export default class DescribeMaxStaminaTableMastersResult implements IResult {
     private items: Gs2Stamina.MaxStaminaTableMaster[]|null = null;
     private nextPageToken: string|null = null;
 

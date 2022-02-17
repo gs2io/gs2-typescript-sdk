@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Account from '../model'
 
-export class GetTakeOverRequest implements IRequest {
+export default class GetTakeOverRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

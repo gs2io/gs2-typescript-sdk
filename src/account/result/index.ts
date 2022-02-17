@@ -13,26 +13,52 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { DescribeAccountsResult } from "./DescribeAccountsResult"
-export { CreateAccountResult } from "./CreateAccountResult"
-export { UpdateTimeOffsetResult } from "./UpdateTimeOffsetResult"
-export { GetAccountResult } from "./GetAccountResult"
-export { DeleteAccountResult } from "./DeleteAccountResult"
-export { AuthenticationResult } from "./AuthenticationResult"
-export { DescribeTakeOversResult } from "./DescribeTakeOversResult"
-export { DescribeTakeOversByUserIdResult } from "./DescribeTakeOversByUserIdResult"
-export { CreateTakeOverResult } from "./CreateTakeOverResult"
-export { CreateTakeOverByUserIdResult } from "./CreateTakeOverByUserIdResult"
-export { GetTakeOverResult } from "./GetTakeOverResult"
-export { GetTakeOverByUserIdResult } from "./GetTakeOverByUserIdResult"
-export { UpdateTakeOverResult } from "./UpdateTakeOverResult"
-export { UpdateTakeOverByUserIdResult } from "./UpdateTakeOverByUserIdResult"
-export { DeleteTakeOverResult } from "./DeleteTakeOverResult"
-export { DeleteTakeOverByUserIdentifierResult } from "./DeleteTakeOverByUserIdentifierResult"
-export { DoTakeOverResult } from "./DoTakeOverResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeAccountsResult from "./DescribeAccountsResult"
+import CreateAccountResult from "./CreateAccountResult"
+import UpdateTimeOffsetResult from "./UpdateTimeOffsetResult"
+import GetAccountResult from "./GetAccountResult"
+import DeleteAccountResult from "./DeleteAccountResult"
+import AuthenticationResult from "./AuthenticationResult"
+import DescribeTakeOversResult from "./DescribeTakeOversResult"
+import DescribeTakeOversByUserIdResult from "./DescribeTakeOversByUserIdResult"
+import CreateTakeOverResult from "./CreateTakeOverResult"
+import CreateTakeOverByUserIdResult from "./CreateTakeOverByUserIdResult"
+import GetTakeOverResult from "./GetTakeOverResult"
+import GetTakeOverByUserIdResult from "./GetTakeOverByUserIdResult"
+import UpdateTakeOverResult from "./UpdateTakeOverResult"
+import UpdateTakeOverByUserIdResult from "./UpdateTakeOverByUserIdResult"
+import DeleteTakeOverResult from "./DeleteTakeOverResult"
+import DeleteTakeOverByUserIdentifierResult from "./DeleteTakeOverByUserIdentifierResult"
+import DoTakeOverResult from "./DoTakeOverResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    DescribeAccountsResult,
+    CreateAccountResult,
+    UpdateTimeOffsetResult,
+    GetAccountResult,
+    DeleteAccountResult,
+    AuthenticationResult,
+    DescribeTakeOversResult,
+    DescribeTakeOversByUserIdResult,
+    CreateTakeOverResult,
+    CreateTakeOverByUserIdResult,
+    GetTakeOverResult,
+    GetTakeOverByUserIdResult,
+    UpdateTakeOverResult,
+    UpdateTakeOverByUserIdResult,
+    DeleteTakeOverResult,
+    DeleteTakeOverByUserIdentifierResult,
+    DoTakeOverResult,
+};

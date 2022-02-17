@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Threshold implements IModel {
+export default class Threshold implements IModel {
     private metadata: string|null = null;
     private values: number[]|null = null;
 

@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class RecoverIntervalTableMaster implements IModel {
+export default class RecoverIntervalTableMaster implements IModel {
     private recoverIntervalTableId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;

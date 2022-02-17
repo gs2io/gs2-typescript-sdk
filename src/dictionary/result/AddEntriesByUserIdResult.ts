@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Dictionary from '../model'
 
-export class AddEntriesByUserIdResult implements IResult {
+export default class AddEntriesByUserIdResult implements IResult {
     private items: Gs2Dictionary.Entry[]|null = null;
 
     public getItems(): Gs2Dictionary.Entry[]|null {

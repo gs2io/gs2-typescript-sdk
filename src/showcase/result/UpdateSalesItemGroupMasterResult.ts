@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Showcase from '../model'
 
-export class UpdateSalesItemGroupMasterResult implements IResult {
+export default class UpdateSalesItemGroupMasterResult implements IResult {
     private item: Gs2Showcase.SalesItemGroupMaster|null = null;
 
     public getItem(): Gs2Showcase.SalesItemGroupMaster|null {

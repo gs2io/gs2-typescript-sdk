@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Lottery from '../model'
 
-export class DescribeProbabilitiesResult implements IResult {
+export default class DescribeProbabilitiesResult implements IResult {
     private items: Gs2Lottery.Probability[]|null = null;
 
     public getItems(): Gs2Lottery.Probability[]|null {

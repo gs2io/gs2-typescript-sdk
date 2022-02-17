@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Schedule from '../model'
 
-export class UpdateCurrentEventMasterRequest implements IRequest {
+export default class UpdateCurrentEventMasterRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

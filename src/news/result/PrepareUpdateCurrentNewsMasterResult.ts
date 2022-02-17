@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2News from '../model'
 
-export class PrepareUpdateCurrentNewsMasterResult implements IResult {
+export default class PrepareUpdateCurrentNewsMasterResult implements IResult {
     private uploadToken: string|null = null;
     private templateUploadUrl: string|null = null;
 

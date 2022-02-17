@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Await implements IModel {
+export default class Await implements IModel {
     private awaitId: string|null = null;
     private userId: string|null = null;
     private rateName: string|null = null;

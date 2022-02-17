@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Identifier from '../model'
 
-export class LoginByUserResult implements IResult {
+export default class LoginByUserResult implements IResult {
     private item: Gs2Identifier.ProjectToken|null = null;
 
     public getItem(): Gs2Identifier.ProjectToken|null {

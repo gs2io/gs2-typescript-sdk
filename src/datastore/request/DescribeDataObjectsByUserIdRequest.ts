@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Datastore from '../model'
 
-export class DescribeDataObjectsByUserIdRequest implements IRequest {
+export default class DescribeDataObjectsByUserIdRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

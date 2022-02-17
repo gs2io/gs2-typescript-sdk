@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Money from '../model'
 
-export class RecordReceiptByStampTaskResult implements IResult {
+export default class RecordReceiptByStampTaskResult implements IResult {
     private item: Gs2Money.Receipt|null = null;
     private newContextStack: string|null = null;
 

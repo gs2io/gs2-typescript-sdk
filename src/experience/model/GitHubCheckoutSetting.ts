@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class GitHubCheckoutSetting implements IModel {
+export default class GitHubCheckoutSetting implements IModel {
     private apiKeyId: string|null = null;
     private repositoryName: string|null = null;
     private sourcePath: string|null = null;

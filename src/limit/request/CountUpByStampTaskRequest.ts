@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Limit from '../model'
 
-export class CountUpByStampTaskRequest implements IRequest {
+export default class CountUpByStampTaskRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

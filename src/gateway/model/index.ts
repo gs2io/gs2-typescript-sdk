@@ -13,7 +13,14 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { WebSocketSession } from "./WebSocketSession"
-export { FirebaseToken } from "./FirebaseToken"
-export { LogSetting } from "./LogSetting"
+import Namespace from "./Namespace"
+import WebSocketSession from "./WebSocketSession"
+import FirebaseToken from "./FirebaseToken"
+import LogSetting from "./LogSetting"
+
+export {
+    Namespace,
+    WebSocketSession,
+    FirebaseToken,
+    LogSetting,
+};

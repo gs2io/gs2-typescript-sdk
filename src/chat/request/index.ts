@@ -13,35 +13,70 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesRequest } from "./DescribeNamespacesRequest"
-export { CreateNamespaceRequest } from "./CreateNamespaceRequest"
-export { GetNamespaceStatusRequest } from "./GetNamespaceStatusRequest"
-export { GetNamespaceRequest } from "./GetNamespaceRequest"
-export { UpdateNamespaceRequest } from "./UpdateNamespaceRequest"
-export { DeleteNamespaceRequest } from "./DeleteNamespaceRequest"
-export { DescribeRoomsRequest } from "./DescribeRoomsRequest"
-export { CreateRoomRequest } from "./CreateRoomRequest"
-export { CreateRoomFromBackendRequest } from "./CreateRoomFromBackendRequest"
-export { GetRoomRequest } from "./GetRoomRequest"
-export { UpdateRoomRequest } from "./UpdateRoomRequest"
-export { UpdateRoomFromBackendRequest } from "./UpdateRoomFromBackendRequest"
-export { DeleteRoomRequest } from "./DeleteRoomRequest"
-export { DeleteRoomFromBackendRequest } from "./DeleteRoomFromBackendRequest"
-export { DescribeMessagesRequest } from "./DescribeMessagesRequest"
-export { DescribeMessagesByUserIdRequest } from "./DescribeMessagesByUserIdRequest"
-export { PostRequest } from "./PostRequest"
-export { PostByUserIdRequest } from "./PostByUserIdRequest"
-export { GetMessageRequest } from "./GetMessageRequest"
-export { GetMessageByUserIdRequest } from "./GetMessageByUserIdRequest"
-export { DeleteMessageRequest } from "./DeleteMessageRequest"
-export { DescribeSubscribesRequest } from "./DescribeSubscribesRequest"
-export { DescribeSubscribesByUserIdRequest } from "./DescribeSubscribesByUserIdRequest"
-export { DescribeSubscribesByRoomNameRequest } from "./DescribeSubscribesByRoomNameRequest"
-export { SubscribeRequest } from "./SubscribeRequest"
-export { SubscribeByUserIdRequest } from "./SubscribeByUserIdRequest"
-export { GetSubscribeRequest } from "./GetSubscribeRequest"
-export { GetSubscribeByUserIdRequest } from "./GetSubscribeByUserIdRequest"
-export { UpdateNotificationTypeRequest } from "./UpdateNotificationTypeRequest"
-export { UpdateNotificationTypeByUserIdRequest } from "./UpdateNotificationTypeByUserIdRequest"
-export { UnsubscribeRequest } from "./UnsubscribeRequest"
-export { UnsubscribeByUserIdRequest } from "./UnsubscribeByUserIdRequest"
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest"
+import CreateNamespaceRequest from "./CreateNamespaceRequest"
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
+import GetNamespaceRequest from "./GetNamespaceRequest"
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DescribeRoomsRequest from "./DescribeRoomsRequest"
+import CreateRoomRequest from "./CreateRoomRequest"
+import CreateRoomFromBackendRequest from "./CreateRoomFromBackendRequest"
+import GetRoomRequest from "./GetRoomRequest"
+import UpdateRoomRequest from "./UpdateRoomRequest"
+import UpdateRoomFromBackendRequest from "./UpdateRoomFromBackendRequest"
+import DeleteRoomRequest from "./DeleteRoomRequest"
+import DeleteRoomFromBackendRequest from "./DeleteRoomFromBackendRequest"
+import DescribeMessagesRequest from "./DescribeMessagesRequest"
+import DescribeMessagesByUserIdRequest from "./DescribeMessagesByUserIdRequest"
+import PostRequest from "./PostRequest"
+import PostByUserIdRequest from "./PostByUserIdRequest"
+import GetMessageRequest from "./GetMessageRequest"
+import GetMessageByUserIdRequest from "./GetMessageByUserIdRequest"
+import DeleteMessageRequest from "./DeleteMessageRequest"
+import DescribeSubscribesRequest from "./DescribeSubscribesRequest"
+import DescribeSubscribesByUserIdRequest from "./DescribeSubscribesByUserIdRequest"
+import DescribeSubscribesByRoomNameRequest from "./DescribeSubscribesByRoomNameRequest"
+import SubscribeRequest from "./SubscribeRequest"
+import SubscribeByUserIdRequest from "./SubscribeByUserIdRequest"
+import GetSubscribeRequest from "./GetSubscribeRequest"
+import GetSubscribeByUserIdRequest from "./GetSubscribeByUserIdRequest"
+import UpdateNotificationTypeRequest from "./UpdateNotificationTypeRequest"
+import UpdateNotificationTypeByUserIdRequest from "./UpdateNotificationTypeByUserIdRequest"
+import UnsubscribeRequest from "./UnsubscribeRequest"
+import UnsubscribeByUserIdRequest from "./UnsubscribeByUserIdRequest"
+
+export {
+    DescribeNamespacesRequest,
+    CreateNamespaceRequest,
+    GetNamespaceStatusRequest,
+    GetNamespaceRequest,
+    UpdateNamespaceRequest,
+    DeleteNamespaceRequest,
+    DescribeRoomsRequest,
+    CreateRoomRequest,
+    CreateRoomFromBackendRequest,
+    GetRoomRequest,
+    UpdateRoomRequest,
+    UpdateRoomFromBackendRequest,
+    DeleteRoomRequest,
+    DeleteRoomFromBackendRequest,
+    DescribeMessagesRequest,
+    DescribeMessagesByUserIdRequest,
+    PostRequest,
+    PostByUserIdRequest,
+    GetMessageRequest,
+    GetMessageByUserIdRequest,
+    DeleteMessageRequest,
+    DescribeSubscribesRequest,
+    DescribeSubscribesByUserIdRequest,
+    DescribeSubscribesByRoomNameRequest,
+    SubscribeRequest,
+    SubscribeByUserIdRequest,
+    GetSubscribeRequest,
+    GetSubscribeByUserIdRequest,
+    UpdateNotificationTypeRequest,
+    UpdateNotificationTypeByUserIdRequest,
+    UnsubscribeRequest,
+    UnsubscribeByUserIdRequest,
+};

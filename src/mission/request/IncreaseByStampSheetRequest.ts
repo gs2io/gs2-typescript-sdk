@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Mission from '../model'
 
-export class IncreaseByStampSheetRequest implements IRequest {
+export default class IncreaseByStampSheetRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

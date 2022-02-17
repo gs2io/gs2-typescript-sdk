@@ -15,9 +15,9 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { WalletDetail } from './WalletDetail';
+import WalletDetail from './WalletDetail';
 
-export class Wallet implements IModel {
+export default class Wallet implements IModel {
     private walletId: string|null = null;
     private userId: string|null = null;
     private slot: number|null = null;

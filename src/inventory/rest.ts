@@ -21,7 +21,7 @@ import * as Result from './result';
 
 import axios from 'axios';
 
-export class Gs2InventoryRestClient extends AbstractGs2RestClient {
+export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
 
     constructor(session: Gs2RestSession) {
         super(session);

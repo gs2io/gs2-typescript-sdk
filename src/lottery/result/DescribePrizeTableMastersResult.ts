@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Lottery from '../model'
 
-export class DescribePrizeTableMastersResult implements IResult {
+export default class DescribePrizeTableMastersResult implements IResult {
     private items: Gs2Lottery.PrizeTableMaster[]|null = null;
     private nextPageToken: string|null = null;
 

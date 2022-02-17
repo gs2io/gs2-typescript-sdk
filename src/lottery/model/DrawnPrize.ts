@@ -15,9 +15,9 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { AcquireAction } from './AcquireAction';
+import AcquireAction from './AcquireAction';
 
-export class DrawnPrize implements IModel {
+export default class DrawnPrize implements IModel {
     private acquireActions: AcquireAction[]|null = null;
 
     public getAcquireActions(): AcquireAction[]|null {

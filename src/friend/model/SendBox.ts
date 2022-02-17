@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class SendBox implements IModel {
+export default class SendBox implements IModel {
     private sendBoxId: string|null = null;
     private userId: string|null = null;
     private targetUserIds: string[]|null = null;

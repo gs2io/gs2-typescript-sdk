@@ -13,57 +13,114 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { DescribeStaminaModelMastersResult } from "./DescribeStaminaModelMastersResult"
-export { CreateStaminaModelMasterResult } from "./CreateStaminaModelMasterResult"
-export { GetStaminaModelMasterResult } from "./GetStaminaModelMasterResult"
-export { UpdateStaminaModelMasterResult } from "./UpdateStaminaModelMasterResult"
-export { DeleteStaminaModelMasterResult } from "./DeleteStaminaModelMasterResult"
-export { DescribeMaxStaminaTableMastersResult } from "./DescribeMaxStaminaTableMastersResult"
-export { CreateMaxStaminaTableMasterResult } from "./CreateMaxStaminaTableMasterResult"
-export { GetMaxStaminaTableMasterResult } from "./GetMaxStaminaTableMasterResult"
-export { UpdateMaxStaminaTableMasterResult } from "./UpdateMaxStaminaTableMasterResult"
-export { DeleteMaxStaminaTableMasterResult } from "./DeleteMaxStaminaTableMasterResult"
-export { DescribeRecoverIntervalTableMastersResult } from "./DescribeRecoverIntervalTableMastersResult"
-export { CreateRecoverIntervalTableMasterResult } from "./CreateRecoverIntervalTableMasterResult"
-export { GetRecoverIntervalTableMasterResult } from "./GetRecoverIntervalTableMasterResult"
-export { UpdateRecoverIntervalTableMasterResult } from "./UpdateRecoverIntervalTableMasterResult"
-export { DeleteRecoverIntervalTableMasterResult } from "./DeleteRecoverIntervalTableMasterResult"
-export { DescribeRecoverValueTableMastersResult } from "./DescribeRecoverValueTableMastersResult"
-export { CreateRecoverValueTableMasterResult } from "./CreateRecoverValueTableMasterResult"
-export { GetRecoverValueTableMasterResult } from "./GetRecoverValueTableMasterResult"
-export { UpdateRecoverValueTableMasterResult } from "./UpdateRecoverValueTableMasterResult"
-export { DeleteRecoverValueTableMasterResult } from "./DeleteRecoverValueTableMasterResult"
-export { ExportMasterResult } from "./ExportMasterResult"
-export { GetCurrentStaminaMasterResult } from "./GetCurrentStaminaMasterResult"
-export { UpdateCurrentStaminaMasterResult } from "./UpdateCurrentStaminaMasterResult"
-export { UpdateCurrentStaminaMasterFromGitHubResult } from "./UpdateCurrentStaminaMasterFromGitHubResult"
-export { DescribeStaminaModelsResult } from "./DescribeStaminaModelsResult"
-export { GetStaminaModelResult } from "./GetStaminaModelResult"
-export { DescribeStaminasResult } from "./DescribeStaminasResult"
-export { DescribeStaminasByUserIdResult } from "./DescribeStaminasByUserIdResult"
-export { GetStaminaResult } from "./GetStaminaResult"
-export { GetStaminaByUserIdResult } from "./GetStaminaByUserIdResult"
-export { UpdateStaminaByUserIdResult } from "./UpdateStaminaByUserIdResult"
-export { ConsumeStaminaResult } from "./ConsumeStaminaResult"
-export { ConsumeStaminaByUserIdResult } from "./ConsumeStaminaByUserIdResult"
-export { RecoverStaminaByUserIdResult } from "./RecoverStaminaByUserIdResult"
-export { RaiseMaxValueByUserIdResult } from "./RaiseMaxValueByUserIdResult"
-export { SetMaxValueByUserIdResult } from "./SetMaxValueByUserIdResult"
-export { SetRecoverIntervalByUserIdResult } from "./SetRecoverIntervalByUserIdResult"
-export { SetRecoverValueByUserIdResult } from "./SetRecoverValueByUserIdResult"
-export { SetMaxValueByStatusResult } from "./SetMaxValueByStatusResult"
-export { SetRecoverIntervalByStatusResult } from "./SetRecoverIntervalByStatusResult"
-export { SetRecoverValueByStatusResult } from "./SetRecoverValueByStatusResult"
-export { DeleteStaminaByUserIdResult } from "./DeleteStaminaByUserIdResult"
-export { RecoverStaminaByStampSheetResult } from "./RecoverStaminaByStampSheetResult"
-export { RaiseMaxValueByStampSheetResult } from "./RaiseMaxValueByStampSheetResult"
-export { SetMaxValueByStampSheetResult } from "./SetMaxValueByStampSheetResult"
-export { SetRecoverIntervalByStampSheetResult } from "./SetRecoverIntervalByStampSheetResult"
-export { SetRecoverValueByStampSheetResult } from "./SetRecoverValueByStampSheetResult"
-export { ConsumeStaminaByStampTaskResult } from "./ConsumeStaminaByStampTaskResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeStaminaModelMastersResult from "./DescribeStaminaModelMastersResult"
+import CreateStaminaModelMasterResult from "./CreateStaminaModelMasterResult"
+import GetStaminaModelMasterResult from "./GetStaminaModelMasterResult"
+import UpdateStaminaModelMasterResult from "./UpdateStaminaModelMasterResult"
+import DeleteStaminaModelMasterResult from "./DeleteStaminaModelMasterResult"
+import DescribeMaxStaminaTableMastersResult from "./DescribeMaxStaminaTableMastersResult"
+import CreateMaxStaminaTableMasterResult from "./CreateMaxStaminaTableMasterResult"
+import GetMaxStaminaTableMasterResult from "./GetMaxStaminaTableMasterResult"
+import UpdateMaxStaminaTableMasterResult from "./UpdateMaxStaminaTableMasterResult"
+import DeleteMaxStaminaTableMasterResult from "./DeleteMaxStaminaTableMasterResult"
+import DescribeRecoverIntervalTableMastersResult from "./DescribeRecoverIntervalTableMastersResult"
+import CreateRecoverIntervalTableMasterResult from "./CreateRecoverIntervalTableMasterResult"
+import GetRecoverIntervalTableMasterResult from "./GetRecoverIntervalTableMasterResult"
+import UpdateRecoverIntervalTableMasterResult from "./UpdateRecoverIntervalTableMasterResult"
+import DeleteRecoverIntervalTableMasterResult from "./DeleteRecoverIntervalTableMasterResult"
+import DescribeRecoverValueTableMastersResult from "./DescribeRecoverValueTableMastersResult"
+import CreateRecoverValueTableMasterResult from "./CreateRecoverValueTableMasterResult"
+import GetRecoverValueTableMasterResult from "./GetRecoverValueTableMasterResult"
+import UpdateRecoverValueTableMasterResult from "./UpdateRecoverValueTableMasterResult"
+import DeleteRecoverValueTableMasterResult from "./DeleteRecoverValueTableMasterResult"
+import ExportMasterResult from "./ExportMasterResult"
+import GetCurrentStaminaMasterResult from "./GetCurrentStaminaMasterResult"
+import UpdateCurrentStaminaMasterResult from "./UpdateCurrentStaminaMasterResult"
+import UpdateCurrentStaminaMasterFromGitHubResult from "./UpdateCurrentStaminaMasterFromGitHubResult"
+import DescribeStaminaModelsResult from "./DescribeStaminaModelsResult"
+import GetStaminaModelResult from "./GetStaminaModelResult"
+import DescribeStaminasResult from "./DescribeStaminasResult"
+import DescribeStaminasByUserIdResult from "./DescribeStaminasByUserIdResult"
+import GetStaminaResult from "./GetStaminaResult"
+import GetStaminaByUserIdResult from "./GetStaminaByUserIdResult"
+import UpdateStaminaByUserIdResult from "./UpdateStaminaByUserIdResult"
+import ConsumeStaminaResult from "./ConsumeStaminaResult"
+import ConsumeStaminaByUserIdResult from "./ConsumeStaminaByUserIdResult"
+import RecoverStaminaByUserIdResult from "./RecoverStaminaByUserIdResult"
+import RaiseMaxValueByUserIdResult from "./RaiseMaxValueByUserIdResult"
+import SetMaxValueByUserIdResult from "./SetMaxValueByUserIdResult"
+import SetRecoverIntervalByUserIdResult from "./SetRecoverIntervalByUserIdResult"
+import SetRecoverValueByUserIdResult from "./SetRecoverValueByUserIdResult"
+import SetMaxValueByStatusResult from "./SetMaxValueByStatusResult"
+import SetRecoverIntervalByStatusResult from "./SetRecoverIntervalByStatusResult"
+import SetRecoverValueByStatusResult from "./SetRecoverValueByStatusResult"
+import DeleteStaminaByUserIdResult from "./DeleteStaminaByUserIdResult"
+import RecoverStaminaByStampSheetResult from "./RecoverStaminaByStampSheetResult"
+import RaiseMaxValueByStampSheetResult from "./RaiseMaxValueByStampSheetResult"
+import SetMaxValueByStampSheetResult from "./SetMaxValueByStampSheetResult"
+import SetRecoverIntervalByStampSheetResult from "./SetRecoverIntervalByStampSheetResult"
+import SetRecoverValueByStampSheetResult from "./SetRecoverValueByStampSheetResult"
+import ConsumeStaminaByStampTaskResult from "./ConsumeStaminaByStampTaskResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    DescribeStaminaModelMastersResult,
+    CreateStaminaModelMasterResult,
+    GetStaminaModelMasterResult,
+    UpdateStaminaModelMasterResult,
+    DeleteStaminaModelMasterResult,
+    DescribeMaxStaminaTableMastersResult,
+    CreateMaxStaminaTableMasterResult,
+    GetMaxStaminaTableMasterResult,
+    UpdateMaxStaminaTableMasterResult,
+    DeleteMaxStaminaTableMasterResult,
+    DescribeRecoverIntervalTableMastersResult,
+    CreateRecoverIntervalTableMasterResult,
+    GetRecoverIntervalTableMasterResult,
+    UpdateRecoverIntervalTableMasterResult,
+    DeleteRecoverIntervalTableMasterResult,
+    DescribeRecoverValueTableMastersResult,
+    CreateRecoverValueTableMasterResult,
+    GetRecoverValueTableMasterResult,
+    UpdateRecoverValueTableMasterResult,
+    DeleteRecoverValueTableMasterResult,
+    ExportMasterResult,
+    GetCurrentStaminaMasterResult,
+    UpdateCurrentStaminaMasterResult,
+    UpdateCurrentStaminaMasterFromGitHubResult,
+    DescribeStaminaModelsResult,
+    GetStaminaModelResult,
+    DescribeStaminasResult,
+    DescribeStaminasByUserIdResult,
+    GetStaminaResult,
+    GetStaminaByUserIdResult,
+    UpdateStaminaByUserIdResult,
+    ConsumeStaminaResult,
+    ConsumeStaminaByUserIdResult,
+    RecoverStaminaByUserIdResult,
+    RaiseMaxValueByUserIdResult,
+    SetMaxValueByUserIdResult,
+    SetRecoverIntervalByUserIdResult,
+    SetRecoverValueByUserIdResult,
+    SetMaxValueByStatusResult,
+    SetRecoverIntervalByStatusResult,
+    SetRecoverValueByStatusResult,
+    DeleteStaminaByUserIdResult,
+    RecoverStaminaByStampSheetResult,
+    RaiseMaxValueByStampSheetResult,
+    SetMaxValueByStampSheetResult,
+    SetRecoverIntervalByStampSheetResult,
+    SetRecoverValueByStampSheetResult,
+    ConsumeStaminaByStampTaskResult,
+};

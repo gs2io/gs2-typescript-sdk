@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Money from '../model'
 
-export class WithdrawResult implements IResult {
+export default class WithdrawResult implements IResult {
     private item: Gs2Money.Wallet|null = null;
     private price: number|null = null;
 

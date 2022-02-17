@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Inventory from '../model'
 
-export class CreateNamespaceResult implements IResult {
+export default class CreateNamespaceResult implements IResult {
     private item: Gs2Inventory.Namespace|null = null;
 
     public getItem(): Gs2Inventory.Namespace|null {

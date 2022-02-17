@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Money from '../model'
 
-export class CreateNamespaceResult implements IResult {
+export default class CreateNamespaceResult implements IResult {
     private item: Gs2Money.Namespace|null = null;
 
     public getItem(): Gs2Money.Namespace|null {

@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Matchmaking from '../model'
 
-export class GetCurrentRatingModelMasterRequest implements IRequest {
+export default class GetCurrentRatingModelMasterRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

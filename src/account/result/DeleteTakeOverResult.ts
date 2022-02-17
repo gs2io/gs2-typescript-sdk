@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Account from '../model'
 
-export class DeleteTakeOverResult implements IResult {
+export default class DeleteTakeOverResult implements IResult {
     private item: Gs2Account.TakeOver|null = null;
 
     public getItem(): Gs2Account.TakeOver|null {

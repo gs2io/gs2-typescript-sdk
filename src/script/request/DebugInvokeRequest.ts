@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Script from '../model'
 
-export class DebugInvokeRequest implements IRequest {
+export default class DebugInvokeRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

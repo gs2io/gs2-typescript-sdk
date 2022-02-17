@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Stamina from '../model'
 
-export class DeleteMaxStaminaTableMasterRequest implements IRequest {
+export default class DeleteMaxStaminaTableMasterRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

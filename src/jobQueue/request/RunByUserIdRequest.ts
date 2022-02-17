@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2JobQueue from '../model'
 
-export class RunByUserIdRequest implements IRequest {
+export default class RunByUserIdRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

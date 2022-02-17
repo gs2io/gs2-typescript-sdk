@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class SignedBallot implements IModel {
+export default class SignedBallot implements IModel {
     private body: string|null = null;
     private signature: string|null = null;
 

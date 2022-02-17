@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Version implements IModel {
+export default class Version implements IModel {
     private major: number|null = null;
     private minor: number|null = null;
     private micro: number|null = null;

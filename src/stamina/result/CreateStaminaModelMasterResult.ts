@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Stamina from '../model'
 
-export class CreateStaminaModelMasterResult implements IResult {
+export default class CreateStaminaModelMasterResult implements IResult {
     private item: Gs2Stamina.StaminaModelMaster|null = null;
 
     public getItem(): Gs2Stamina.StaminaModelMaster|null {

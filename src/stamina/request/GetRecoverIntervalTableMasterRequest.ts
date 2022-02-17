@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Stamina from '../model'
 
-export class GetRecoverIntervalTableMasterRequest implements IRequest {
+export default class GetRecoverIntervalTableMasterRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

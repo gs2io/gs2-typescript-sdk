@@ -13,18 +13,36 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesRequest } from "./DescribeNamespacesRequest"
-export { CreateNamespaceRequest } from "./CreateNamespaceRequest"
-export { GetNamespaceStatusRequest } from "./GetNamespaceStatusRequest"
-export { GetNamespaceRequest } from "./GetNamespaceRequest"
-export { UpdateNamespaceRequest } from "./UpdateNamespaceRequest"
-export { DeleteNamespaceRequest } from "./DeleteNamespaceRequest"
-export { QueryAccessLogRequest } from "./QueryAccessLogRequest"
-export { CountAccessLogRequest } from "./CountAccessLogRequest"
-export { QueryIssueStampSheetLogRequest } from "./QueryIssueStampSheetLogRequest"
-export { CountIssueStampSheetLogRequest } from "./CountIssueStampSheetLogRequest"
-export { QueryExecuteStampSheetLogRequest } from "./QueryExecuteStampSheetLogRequest"
-export { CountExecuteStampSheetLogRequest } from "./CountExecuteStampSheetLogRequest"
-export { QueryExecuteStampTaskLogRequest } from "./QueryExecuteStampTaskLogRequest"
-export { CountExecuteStampTaskLogRequest } from "./CountExecuteStampTaskLogRequest"
-export { PutLogRequest } from "./PutLogRequest"
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest"
+import CreateNamespaceRequest from "./CreateNamespaceRequest"
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
+import GetNamespaceRequest from "./GetNamespaceRequest"
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import QueryAccessLogRequest from "./QueryAccessLogRequest"
+import CountAccessLogRequest from "./CountAccessLogRequest"
+import QueryIssueStampSheetLogRequest from "./QueryIssueStampSheetLogRequest"
+import CountIssueStampSheetLogRequest from "./CountIssueStampSheetLogRequest"
+import QueryExecuteStampSheetLogRequest from "./QueryExecuteStampSheetLogRequest"
+import CountExecuteStampSheetLogRequest from "./CountExecuteStampSheetLogRequest"
+import QueryExecuteStampTaskLogRequest from "./QueryExecuteStampTaskLogRequest"
+import CountExecuteStampTaskLogRequest from "./CountExecuteStampTaskLogRequest"
+import PutLogRequest from "./PutLogRequest"
+
+export {
+    DescribeNamespacesRequest,
+    CreateNamespaceRequest,
+    GetNamespaceStatusRequest,
+    GetNamespaceRequest,
+    UpdateNamespaceRequest,
+    DeleteNamespaceRequest,
+    QueryAccessLogRequest,
+    CountAccessLogRequest,
+    QueryIssueStampSheetLogRequest,
+    CountIssueStampSheetLogRequest,
+    QueryExecuteStampSheetLogRequest,
+    CountExecuteStampSheetLogRequest,
+    QueryExecuteStampTaskLogRequest,
+    CountExecuteStampTaskLogRequest,
+    PutLogRequest,
+};

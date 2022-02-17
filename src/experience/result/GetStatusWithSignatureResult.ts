@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Experience from '../model'
 
-export class GetStatusWithSignatureResult implements IResult {
+export default class GetStatusWithSignatureResult implements IResult {
     private item: Gs2Experience.Status|null = null;
     private body: string|null = null;
     private signature: string|null = null;

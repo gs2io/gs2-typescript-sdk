@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Chat from '../model'
 
-export class SubscribeResult implements IResult {
+export default class SubscribeResult implements IResult {
     private item: Gs2Chat.Subscribe|null = null;
 
     public getItem(): Gs2Chat.Subscribe|null {

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Schedule from '../model'
 
-export class GetTriggerByUserIdResult implements IResult {
+export default class GetTriggerByUserIdResult implements IResult {
     private item: Gs2Schedule.Trigger|null = null;
 
     public getItem(): Gs2Schedule.Trigger|null {

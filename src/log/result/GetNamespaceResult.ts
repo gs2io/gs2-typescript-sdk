@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Log from '../model'
 
-export class GetNamespaceResult implements IResult {
+export default class GetNamespaceResult implements IResult {
     private item: Gs2Log.Namespace|null = null;
 
     public getItem(): Gs2Log.Namespace|null {

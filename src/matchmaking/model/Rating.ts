@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Rating implements IModel {
+export default class Rating implements IModel {
     private ratingId: string|null = null;
     private name: string|null = null;
     private userId: string|null = null;

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Friend from '../model'
 
-export class DeleteProfileByUserIdResult implements IResult {
+export default class DeleteProfileByUserIdResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): DeleteProfileByUserIdResult {
         return new DeleteProfileByUserIdResult();

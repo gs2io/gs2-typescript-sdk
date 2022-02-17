@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class AttachSecurityPolicy implements IModel {
+export default class AttachSecurityPolicy implements IModel {
     private userId: string|null = null;
     private securityPolicyIds: string[]|null = null;
     private attachedAt: number|null = null;

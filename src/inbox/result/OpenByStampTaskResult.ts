@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Inbox from '../model'
 
-export class OpenByStampTaskResult implements IResult {
+export default class OpenByStampTaskResult implements IResult {
     private item: Gs2Inbox.Message|null = null;
     private newContextStack: string|null = null;
 

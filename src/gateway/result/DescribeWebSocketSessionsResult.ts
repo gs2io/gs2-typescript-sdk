@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Gateway from '../model'
 
-export class DescribeWebSocketSessionsResult implements IResult {
+export default class DescribeWebSocketSessionsResult implements IResult {
     private items: Gs2Gateway.WebSocketSession[]|null = null;
     private nextPageToken: string|null = null;
 

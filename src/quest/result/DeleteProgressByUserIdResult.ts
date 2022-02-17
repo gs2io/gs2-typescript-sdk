@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Quest from '../model'
 
-export class DeleteProgressByUserIdResult implements IResult {
+export default class DeleteProgressByUserIdResult implements IResult {
     private item: Gs2Quest.Progress|null = null;
 
     public getItem(): Gs2Quest.Progress|null {

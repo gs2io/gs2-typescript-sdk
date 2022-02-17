@@ -13,18 +13,36 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesRequest } from "./DescribeNamespacesRequest"
-export { CreateNamespaceRequest } from "./CreateNamespaceRequest"
-export { GetNamespaceStatusRequest } from "./GetNamespaceStatusRequest"
-export { GetNamespaceRequest } from "./GetNamespaceRequest"
-export { UpdateNamespaceRequest } from "./UpdateNamespaceRequest"
-export { DeleteNamespaceRequest } from "./DeleteNamespaceRequest"
-export { DescribeScriptsRequest } from "./DescribeScriptsRequest"
-export { CreateScriptRequest } from "./CreateScriptRequest"
-export { CreateScriptFromGitHubRequest } from "./CreateScriptFromGitHubRequest"
-export { GetScriptRequest } from "./GetScriptRequest"
-export { UpdateScriptRequest } from "./UpdateScriptRequest"
-export { UpdateScriptFromGitHubRequest } from "./UpdateScriptFromGitHubRequest"
-export { DeleteScriptRequest } from "./DeleteScriptRequest"
-export { InvokeScriptRequest } from "./InvokeScriptRequest"
-export { DebugInvokeRequest } from "./DebugInvokeRequest"
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest"
+import CreateNamespaceRequest from "./CreateNamespaceRequest"
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
+import GetNamespaceRequest from "./GetNamespaceRequest"
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DescribeScriptsRequest from "./DescribeScriptsRequest"
+import CreateScriptRequest from "./CreateScriptRequest"
+import CreateScriptFromGitHubRequest from "./CreateScriptFromGitHubRequest"
+import GetScriptRequest from "./GetScriptRequest"
+import UpdateScriptRequest from "./UpdateScriptRequest"
+import UpdateScriptFromGitHubRequest from "./UpdateScriptFromGitHubRequest"
+import DeleteScriptRequest from "./DeleteScriptRequest"
+import InvokeScriptRequest from "./InvokeScriptRequest"
+import DebugInvokeRequest from "./DebugInvokeRequest"
+
+export {
+    DescribeNamespacesRequest,
+    CreateNamespaceRequest,
+    GetNamespaceStatusRequest,
+    GetNamespaceRequest,
+    UpdateNamespaceRequest,
+    DeleteNamespaceRequest,
+    DescribeScriptsRequest,
+    CreateScriptRequest,
+    CreateScriptFromGitHubRequest,
+    GetScriptRequest,
+    UpdateScriptRequest,
+    UpdateScriptFromGitHubRequest,
+    DeleteScriptRequest,
+    InvokeScriptRequest,
+    DebugInvokeRequest,
+};

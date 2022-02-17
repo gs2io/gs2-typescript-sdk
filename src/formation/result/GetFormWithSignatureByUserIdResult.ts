@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Formation from '../model'
 
-export class GetFormWithSignatureByUserIdResult implements IResult {
+export default class GetFormWithSignatureByUserIdResult implements IResult {
     private item: Gs2Formation.Form|null = null;
     private body: string|null = null;
     private signature: string|null = null;

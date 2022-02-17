@@ -15,9 +15,9 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { AcquireAction } from './AcquireAction';
+import AcquireAction from './AcquireAction';
 
-export class MissionTaskModelMaster implements IModel {
+export default class MissionTaskModelMaster implements IModel {
     private missionTaskId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;

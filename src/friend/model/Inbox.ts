@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Inbox implements IModel {
+export default class Inbox implements IModel {
     private inboxId: string|null = null;
     private userId: string|null = null;
     private fromUserIds: string[]|null = null;

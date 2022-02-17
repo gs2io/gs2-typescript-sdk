@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class ExecuteStampTaskLogCount implements IModel {
+export default class ExecuteStampTaskLogCount implements IModel {
     private service: string|null = null;
     private method: string|null = null;
     private userId: string|null = null;

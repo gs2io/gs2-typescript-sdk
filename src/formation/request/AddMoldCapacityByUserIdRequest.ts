@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Formation from '../model'
 
-export class AddMoldCapacityByUserIdRequest implements IRequest {
+export default class AddMoldCapacityByUserIdRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

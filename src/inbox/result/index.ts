@@ -13,38 +13,76 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { DescribeMessagesResult } from "./DescribeMessagesResult"
-export { DescribeMessagesByUserIdResult } from "./DescribeMessagesByUserIdResult"
-export { SendMessageByUserIdResult } from "./SendMessageByUserIdResult"
-export { GetMessageResult } from "./GetMessageResult"
-export { GetMessageByUserIdResult } from "./GetMessageByUserIdResult"
-export { ReceiveGlobalMessageResult } from "./ReceiveGlobalMessageResult"
-export { ReceiveGlobalMessageByUserIdResult } from "./ReceiveGlobalMessageByUserIdResult"
-export { OpenMessageResult } from "./OpenMessageResult"
-export { OpenMessageByUserIdResult } from "./OpenMessageByUserIdResult"
-export { ReadMessageResult } from "./ReadMessageResult"
-export { ReadMessageByUserIdResult } from "./ReadMessageByUserIdResult"
-export { DeleteMessageResult } from "./DeleteMessageResult"
-export { DeleteMessageByUserIdResult } from "./DeleteMessageByUserIdResult"
-export { SendByStampSheetResult } from "./SendByStampSheetResult"
-export { OpenByStampTaskResult } from "./OpenByStampTaskResult"
-export { ExportMasterResult } from "./ExportMasterResult"
-export { GetCurrentMessageMasterResult } from "./GetCurrentMessageMasterResult"
-export { UpdateCurrentMessageMasterResult } from "./UpdateCurrentMessageMasterResult"
-export { UpdateCurrentMessageMasterFromGitHubResult } from "./UpdateCurrentMessageMasterFromGitHubResult"
-export { DescribeGlobalMessageMastersResult } from "./DescribeGlobalMessageMastersResult"
-export { CreateGlobalMessageMasterResult } from "./CreateGlobalMessageMasterResult"
-export { GetGlobalMessageMasterResult } from "./GetGlobalMessageMasterResult"
-export { UpdateGlobalMessageMasterResult } from "./UpdateGlobalMessageMasterResult"
-export { DeleteGlobalMessageMasterResult } from "./DeleteGlobalMessageMasterResult"
-export { DescribeGlobalMessagesResult } from "./DescribeGlobalMessagesResult"
-export { GetGlobalMessageResult } from "./GetGlobalMessageResult"
-export { GetReceivedByUserIdResult } from "./GetReceivedByUserIdResult"
-export { UpdateReceivedByUserIdResult } from "./UpdateReceivedByUserIdResult"
-export { DeleteReceivedByUserIdResult } from "./DeleteReceivedByUserIdResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeMessagesResult from "./DescribeMessagesResult"
+import DescribeMessagesByUserIdResult from "./DescribeMessagesByUserIdResult"
+import SendMessageByUserIdResult from "./SendMessageByUserIdResult"
+import GetMessageResult from "./GetMessageResult"
+import GetMessageByUserIdResult from "./GetMessageByUserIdResult"
+import ReceiveGlobalMessageResult from "./ReceiveGlobalMessageResult"
+import ReceiveGlobalMessageByUserIdResult from "./ReceiveGlobalMessageByUserIdResult"
+import OpenMessageResult from "./OpenMessageResult"
+import OpenMessageByUserIdResult from "./OpenMessageByUserIdResult"
+import ReadMessageResult from "./ReadMessageResult"
+import ReadMessageByUserIdResult from "./ReadMessageByUserIdResult"
+import DeleteMessageResult from "./DeleteMessageResult"
+import DeleteMessageByUserIdResult from "./DeleteMessageByUserIdResult"
+import SendByStampSheetResult from "./SendByStampSheetResult"
+import OpenByStampTaskResult from "./OpenByStampTaskResult"
+import ExportMasterResult from "./ExportMasterResult"
+import GetCurrentMessageMasterResult from "./GetCurrentMessageMasterResult"
+import UpdateCurrentMessageMasterResult from "./UpdateCurrentMessageMasterResult"
+import UpdateCurrentMessageMasterFromGitHubResult from "./UpdateCurrentMessageMasterFromGitHubResult"
+import DescribeGlobalMessageMastersResult from "./DescribeGlobalMessageMastersResult"
+import CreateGlobalMessageMasterResult from "./CreateGlobalMessageMasterResult"
+import GetGlobalMessageMasterResult from "./GetGlobalMessageMasterResult"
+import UpdateGlobalMessageMasterResult from "./UpdateGlobalMessageMasterResult"
+import DeleteGlobalMessageMasterResult from "./DeleteGlobalMessageMasterResult"
+import DescribeGlobalMessagesResult from "./DescribeGlobalMessagesResult"
+import GetGlobalMessageResult from "./GetGlobalMessageResult"
+import GetReceivedByUserIdResult from "./GetReceivedByUserIdResult"
+import UpdateReceivedByUserIdResult from "./UpdateReceivedByUserIdResult"
+import DeleteReceivedByUserIdResult from "./DeleteReceivedByUserIdResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    DescribeMessagesResult,
+    DescribeMessagesByUserIdResult,
+    SendMessageByUserIdResult,
+    GetMessageResult,
+    GetMessageByUserIdResult,
+    ReceiveGlobalMessageResult,
+    ReceiveGlobalMessageByUserIdResult,
+    OpenMessageResult,
+    OpenMessageByUserIdResult,
+    ReadMessageResult,
+    ReadMessageByUserIdResult,
+    DeleteMessageResult,
+    DeleteMessageByUserIdResult,
+    SendByStampSheetResult,
+    OpenByStampTaskResult,
+    ExportMasterResult,
+    GetCurrentMessageMasterResult,
+    UpdateCurrentMessageMasterResult,
+    UpdateCurrentMessageMasterFromGitHubResult,
+    DescribeGlobalMessageMastersResult,
+    CreateGlobalMessageMasterResult,
+    GetGlobalMessageMasterResult,
+    UpdateGlobalMessageMasterResult,
+    DeleteGlobalMessageMasterResult,
+    DescribeGlobalMessagesResult,
+    GetGlobalMessageResult,
+    GetReceivedByUserIdResult,
+    UpdateReceivedByUserIdResult,
+    DeleteReceivedByUserIdResult,
+};

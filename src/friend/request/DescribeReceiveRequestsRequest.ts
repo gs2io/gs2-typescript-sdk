@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Friend from '../model'
 
-export class DescribeReceiveRequestsRequest implements IRequest {
+export default class DescribeReceiveRequestsRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Log from '../model'
 
-export class CountAccessLogRequest implements IRequest {
+export default class CountAccessLogRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

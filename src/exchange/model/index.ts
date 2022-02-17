@@ -13,14 +13,28 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { RateModel } from "./RateModel"
-export { RateModelMaster } from "./RateModelMaster"
-export { CurrentRateMaster } from "./CurrentRateMaster"
-export { Await } from "./Await"
-export { Config } from "./Config"
-export { GitHubCheckoutSetting } from "./GitHubCheckoutSetting"
-export { ScriptSetting } from "./ScriptSetting"
-export { LogSetting } from "./LogSetting"
-export { AcquireAction } from "./AcquireAction"
-export { ConsumeAction } from "./ConsumeAction"
+import Namespace from "./Namespace"
+import RateModel from "./RateModel"
+import RateModelMaster from "./RateModelMaster"
+import CurrentRateMaster from "./CurrentRateMaster"
+import Await from "./Await"
+import Config from "./Config"
+import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
+import ScriptSetting from "./ScriptSetting"
+import LogSetting from "./LogSetting"
+import AcquireAction from "./AcquireAction"
+import ConsumeAction from "./ConsumeAction"
+
+export {
+    Namespace,
+    RateModel,
+    RateModelMaster,
+    CurrentRateMaster,
+    Await,
+    Config,
+    GitHubCheckoutSetting,
+    ScriptSetting,
+    LogSetting,
+    AcquireAction,
+    ConsumeAction,
+};

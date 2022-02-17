@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Showcase from '../model'
 
-export class BuyResult implements IResult {
+export default class BuyResult implements IResult {
     private item: Gs2Showcase.SalesItem|null = null;
     private stampSheet: string|null = null;
     private stampSheetEncryptionKeyId: string|null = null;

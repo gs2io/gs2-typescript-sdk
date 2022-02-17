@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Inbox from '../model'
 
-export class ExportMasterRequest implements IRequest {
+export default class ExportMasterRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

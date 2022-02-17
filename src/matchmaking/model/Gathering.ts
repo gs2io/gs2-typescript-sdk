@@ -15,12 +15,12 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { AttributeRange } from './AttributeRange';
-import { Attribute } from './Attribute';
-import { Player } from './Player';
-import { CapacityOfRole } from './CapacityOfRole';
+import AttributeRange from './AttributeRange';
+import Attribute from './Attribute';
+import Player from './Player';
+import CapacityOfRole from './CapacityOfRole';
 
-export class Gathering implements IModel {
+export default class Gathering implements IModel {
     private gatheringId: string|null = null;
     private name: string|null = null;
     private attributeRanges: AttributeRange[]|null = null;

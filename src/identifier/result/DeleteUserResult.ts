@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Identifier from '../model'
 
-export class DeleteUserResult implements IResult {
+export default class DeleteUserResult implements IResult {
     private item: Gs2Identifier.User|null = null;
 
     public getItem(): Gs2Identifier.User|null {

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Matchmaking from '../model'
 
-export class UpdateCurrentRatingModelMasterFromGitHubResult implements IResult {
+export default class UpdateCurrentRatingModelMasterFromGitHubResult implements IResult {
     private item: Gs2Matchmaking.CurrentRatingModelMaster|null = null;
 
     public getItem(): Gs2Matchmaking.CurrentRatingModelMaster|null {

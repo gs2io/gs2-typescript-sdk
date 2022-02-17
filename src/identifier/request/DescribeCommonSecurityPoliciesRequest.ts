@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Identifier from '../model'
 
-export class DescribeCommonSecurityPoliciesRequest implements IRequest {
+export default class DescribeCommonSecurityPoliciesRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

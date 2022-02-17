@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Realtime from '../model'
 
-export class GetRoomResult implements IResult {
+export default class GetRoomResult implements IResult {
     private item: Gs2Realtime.Room|null = null;
 
     public getItem(): Gs2Realtime.Room|null {

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2News from '../model'
 
-export class UpdateCurrentNewsMasterResult implements IResult {
+export default class UpdateCurrentNewsMasterResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): UpdateCurrentNewsMasterResult {
         return new UpdateCurrentNewsMasterResult();

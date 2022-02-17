@@ -13,7 +13,14 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { Script } from "./Script"
-export { GitHubCheckoutSetting } from "./GitHubCheckoutSetting"
-export { LogSetting } from "./LogSetting"
+import Namespace from "./Namespace"
+import Script from "./Script"
+import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
+import LogSetting from "./LogSetting"
+
+export {
+    Namespace,
+    Script,
+    GitHubCheckoutSetting,
+    LogSetting,
+};

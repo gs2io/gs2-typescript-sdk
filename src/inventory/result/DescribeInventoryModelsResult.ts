@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Inventory from '../model'
 
-export class DescribeInventoryModelsResult implements IResult {
+export default class DescribeInventoryModelsResult implements IResult {
     private items: Gs2Inventory.InventoryModel[]|null = null;
 
     public getItems(): Gs2Inventory.InventoryModel[]|null {

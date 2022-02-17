@@ -15,13 +15,13 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { ConsumeAction } from './ConsumeAction';
-import { AcquireAction } from './AcquireAction';
-import { SalesItem } from './SalesItem';
-import { SalesItemGroup } from './SalesItemGroup';
-import { DisplayItem } from './DisplayItem';
+import ConsumeAction from './ConsumeAction';
+import AcquireAction from './AcquireAction';
+import SalesItem from './SalesItem';
+import SalesItemGroup from './SalesItemGroup';
+import DisplayItem from './DisplayItem';
 
-export class Showcase implements IModel {
+export default class Showcase implements IModel {
     private showcaseId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;

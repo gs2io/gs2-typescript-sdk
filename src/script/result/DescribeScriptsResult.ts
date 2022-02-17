@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Script from '../model'
 
-export class DescribeScriptsResult implements IResult {
+export default class DescribeScriptsResult implements IResult {
     private items: Gs2Script.Script[]|null = null;
     private nextPageToken: string|null = null;
 

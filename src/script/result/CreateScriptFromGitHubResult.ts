@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Script from '../model'
 
-export class CreateScriptFromGitHubResult implements IResult {
+export default class CreateScriptFromGitHubResult implements IResult {
     private item: Gs2Script.Script|null = null;
 
     public getItem(): Gs2Script.Script|null {

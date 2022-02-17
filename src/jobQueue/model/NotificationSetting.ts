@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class NotificationSetting implements IModel {
+export default class NotificationSetting implements IModel {
     private gatewayNamespaceId: string|null = null;
     private enableTransferMobileNotification: boolean|null = null;
     private sound: string|null = null;

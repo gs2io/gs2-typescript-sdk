@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Matchmaking from '../model'
 
-export class DeleteGatheringResult implements IResult {
+export default class DeleteGatheringResult implements IResult {
     private item: Gs2Matchmaking.Gathering|null = null;
 
     public getItem(): Gs2Matchmaking.Gathering|null {

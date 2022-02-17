@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class SecurityPolicy implements IModel {
+export default class SecurityPolicy implements IModel {
     private securityPolicyId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;

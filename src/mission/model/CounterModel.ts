@@ -15,9 +15,9 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { CounterScopeModel } from './CounterScopeModel';
+import CounterScopeModel from './CounterScopeModel';
 
-export class CounterModel implements IModel {
+export default class CounterModel implements IModel {
     private counterId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;

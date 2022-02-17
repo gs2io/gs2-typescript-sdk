@@ -13,18 +13,36 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { DescribeMutexesResult } from "./DescribeMutexesResult"
-export { DescribeMutexesByUserIdResult } from "./DescribeMutexesByUserIdResult"
-export { LockResult } from "./LockResult"
-export { LockByUserIdResult } from "./LockByUserIdResult"
-export { UnlockResult } from "./UnlockResult"
-export { UnlockByUserIdResult } from "./UnlockByUserIdResult"
-export { GetMutexResult } from "./GetMutexResult"
-export { GetMutexByUserIdResult } from "./GetMutexByUserIdResult"
-export { DeleteMutexByUserIdResult } from "./DeleteMutexByUserIdResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeMutexesResult from "./DescribeMutexesResult"
+import DescribeMutexesByUserIdResult from "./DescribeMutexesByUserIdResult"
+import LockResult from "./LockResult"
+import LockByUserIdResult from "./LockByUserIdResult"
+import UnlockResult from "./UnlockResult"
+import UnlockByUserIdResult from "./UnlockByUserIdResult"
+import GetMutexResult from "./GetMutexResult"
+import GetMutexByUserIdResult from "./GetMutexByUserIdResult"
+import DeleteMutexByUserIdResult from "./DeleteMutexByUserIdResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    DescribeMutexesResult,
+    DescribeMutexesByUserIdResult,
+    LockResult,
+    LockByUserIdResult,
+    UnlockResult,
+    UnlockByUserIdResult,
+    GetMutexResult,
+    GetMutexByUserIdResult,
+    DeleteMutexByUserIdResult,
+};

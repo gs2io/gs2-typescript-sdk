@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Key from '../model'
 
-export class DescribeKeysRequest implements IRequest {
+export default class DescribeKeysRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

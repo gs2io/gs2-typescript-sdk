@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Version from '../model'
 
-export class CheckVersionResult implements IResult {
+export default class CheckVersionResult implements IResult {
     private projectToken: string|null = null;
     private warnings: Gs2Version.Status[]|null = null;
     private errors: Gs2Version.Status[]|null = null;

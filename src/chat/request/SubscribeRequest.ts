@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Chat from '../model'
 
-export class SubscribeRequest implements IRequest {
+export default class SubscribeRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

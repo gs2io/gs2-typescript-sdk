@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Experience from '../model'
 
-export class GetExperienceModelRequest implements IRequest {
+export default class GetExperienceModelRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

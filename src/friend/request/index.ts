@@ -13,51 +13,102 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesRequest } from "./DescribeNamespacesRequest"
-export { CreateNamespaceRequest } from "./CreateNamespaceRequest"
-export { GetNamespaceStatusRequest } from "./GetNamespaceStatusRequest"
-export { GetNamespaceRequest } from "./GetNamespaceRequest"
-export { UpdateNamespaceRequest } from "./UpdateNamespaceRequest"
-export { DeleteNamespaceRequest } from "./DeleteNamespaceRequest"
-export { GetProfileRequest } from "./GetProfileRequest"
-export { GetProfileByUserIdRequest } from "./GetProfileByUserIdRequest"
-export { UpdateProfileRequest } from "./UpdateProfileRequest"
-export { UpdateProfileByUserIdRequest } from "./UpdateProfileByUserIdRequest"
-export { DeleteProfileByUserIdRequest } from "./DeleteProfileByUserIdRequest"
-export { DescribeFriendsRequest } from "./DescribeFriendsRequest"
-export { DescribeFriendsByUserIdRequest } from "./DescribeFriendsByUserIdRequest"
-export { DescribeBlackListRequest } from "./DescribeBlackListRequest"
-export { DescribeBlackListByUserIdRequest } from "./DescribeBlackListByUserIdRequest"
-export { RegisterBlackListRequest } from "./RegisterBlackListRequest"
-export { RegisterBlackListByUserIdRequest } from "./RegisterBlackListByUserIdRequest"
-export { UnregisterBlackListRequest } from "./UnregisterBlackListRequest"
-export { UnregisterBlackListByUserIdRequest } from "./UnregisterBlackListByUserIdRequest"
-export { DescribeFollowsRequest } from "./DescribeFollowsRequest"
-export { DescribeFollowsByUserIdRequest } from "./DescribeFollowsByUserIdRequest"
-export { GetFollowRequest } from "./GetFollowRequest"
-export { GetFollowByUserIdRequest } from "./GetFollowByUserIdRequest"
-export { FollowRequest } from "./FollowRequest"
-export { FollowByUserIdRequest } from "./FollowByUserIdRequest"
-export { UnfollowRequest } from "./UnfollowRequest"
-export { UnfollowByUserIdRequest } from "./UnfollowByUserIdRequest"
-export { GetFriendRequest } from "./GetFriendRequest"
-export { GetFriendByUserIdRequest } from "./GetFriendByUserIdRequest"
-export { DeleteFriendRequest } from "./DeleteFriendRequest"
-export { DeleteFriendByUserIdRequest } from "./DeleteFriendByUserIdRequest"
-export { DescribeSendRequestsRequest } from "./DescribeSendRequestsRequest"
-export { DescribeSendRequestsByUserIdRequest } from "./DescribeSendRequestsByUserIdRequest"
-export { GetSendRequestRequest } from "./GetSendRequestRequest"
-export { GetSendRequestByUserIdRequest } from "./GetSendRequestByUserIdRequest"
-export { SendRequestRequest } from "./SendRequestRequest"
-export { SendRequestByUserIdRequest } from "./SendRequestByUserIdRequest"
-export { DeleteRequestRequest } from "./DeleteRequestRequest"
-export { DeleteRequestByUserIdRequest } from "./DeleteRequestByUserIdRequest"
-export { DescribeReceiveRequestsRequest } from "./DescribeReceiveRequestsRequest"
-export { DescribeReceiveRequestsByUserIdRequest } from "./DescribeReceiveRequestsByUserIdRequest"
-export { GetReceiveRequestRequest } from "./GetReceiveRequestRequest"
-export { GetReceiveRequestByUserIdRequest } from "./GetReceiveRequestByUserIdRequest"
-export { AcceptRequestRequest } from "./AcceptRequestRequest"
-export { AcceptRequestByUserIdRequest } from "./AcceptRequestByUserIdRequest"
-export { RejectRequestRequest } from "./RejectRequestRequest"
-export { RejectRequestByUserIdRequest } from "./RejectRequestByUserIdRequest"
-export { GetPublicProfileRequest } from "./GetPublicProfileRequest"
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest"
+import CreateNamespaceRequest from "./CreateNamespaceRequest"
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
+import GetNamespaceRequest from "./GetNamespaceRequest"
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import GetProfileRequest from "./GetProfileRequest"
+import GetProfileByUserIdRequest from "./GetProfileByUserIdRequest"
+import UpdateProfileRequest from "./UpdateProfileRequest"
+import UpdateProfileByUserIdRequest from "./UpdateProfileByUserIdRequest"
+import DeleteProfileByUserIdRequest from "./DeleteProfileByUserIdRequest"
+import DescribeFriendsRequest from "./DescribeFriendsRequest"
+import DescribeFriendsByUserIdRequest from "./DescribeFriendsByUserIdRequest"
+import DescribeBlackListRequest from "./DescribeBlackListRequest"
+import DescribeBlackListByUserIdRequest from "./DescribeBlackListByUserIdRequest"
+import RegisterBlackListRequest from "./RegisterBlackListRequest"
+import RegisterBlackListByUserIdRequest from "./RegisterBlackListByUserIdRequest"
+import UnregisterBlackListRequest from "./UnregisterBlackListRequest"
+import UnregisterBlackListByUserIdRequest from "./UnregisterBlackListByUserIdRequest"
+import DescribeFollowsRequest from "./DescribeFollowsRequest"
+import DescribeFollowsByUserIdRequest from "./DescribeFollowsByUserIdRequest"
+import GetFollowRequest from "./GetFollowRequest"
+import GetFollowByUserIdRequest from "./GetFollowByUserIdRequest"
+import FollowRequest from "./FollowRequest"
+import FollowByUserIdRequest from "./FollowByUserIdRequest"
+import UnfollowRequest from "./UnfollowRequest"
+import UnfollowByUserIdRequest from "./UnfollowByUserIdRequest"
+import GetFriendRequest from "./GetFriendRequest"
+import GetFriendByUserIdRequest from "./GetFriendByUserIdRequest"
+import DeleteFriendRequest from "./DeleteFriendRequest"
+import DeleteFriendByUserIdRequest from "./DeleteFriendByUserIdRequest"
+import DescribeSendRequestsRequest from "./DescribeSendRequestsRequest"
+import DescribeSendRequestsByUserIdRequest from "./DescribeSendRequestsByUserIdRequest"
+import GetSendRequestRequest from "./GetSendRequestRequest"
+import GetSendRequestByUserIdRequest from "./GetSendRequestByUserIdRequest"
+import SendRequestRequest from "./SendRequestRequest"
+import SendRequestByUserIdRequest from "./SendRequestByUserIdRequest"
+import DeleteRequestRequest from "./DeleteRequestRequest"
+import DeleteRequestByUserIdRequest from "./DeleteRequestByUserIdRequest"
+import DescribeReceiveRequestsRequest from "./DescribeReceiveRequestsRequest"
+import DescribeReceiveRequestsByUserIdRequest from "./DescribeReceiveRequestsByUserIdRequest"
+import GetReceiveRequestRequest from "./GetReceiveRequestRequest"
+import GetReceiveRequestByUserIdRequest from "./GetReceiveRequestByUserIdRequest"
+import AcceptRequestRequest from "./AcceptRequestRequest"
+import AcceptRequestByUserIdRequest from "./AcceptRequestByUserIdRequest"
+import RejectRequestRequest from "./RejectRequestRequest"
+import RejectRequestByUserIdRequest from "./RejectRequestByUserIdRequest"
+import GetPublicProfileRequest from "./GetPublicProfileRequest"
+
+export {
+    DescribeNamespacesRequest,
+    CreateNamespaceRequest,
+    GetNamespaceStatusRequest,
+    GetNamespaceRequest,
+    UpdateNamespaceRequest,
+    DeleteNamespaceRequest,
+    GetProfileRequest,
+    GetProfileByUserIdRequest,
+    UpdateProfileRequest,
+    UpdateProfileByUserIdRequest,
+    DeleteProfileByUserIdRequest,
+    DescribeFriendsRequest,
+    DescribeFriendsByUserIdRequest,
+    DescribeBlackListRequest,
+    DescribeBlackListByUserIdRequest,
+    RegisterBlackListRequest,
+    RegisterBlackListByUserIdRequest,
+    UnregisterBlackListRequest,
+    UnregisterBlackListByUserIdRequest,
+    DescribeFollowsRequest,
+    DescribeFollowsByUserIdRequest,
+    GetFollowRequest,
+    GetFollowByUserIdRequest,
+    FollowRequest,
+    FollowByUserIdRequest,
+    UnfollowRequest,
+    UnfollowByUserIdRequest,
+    GetFriendRequest,
+    GetFriendByUserIdRequest,
+    DeleteFriendRequest,
+    DeleteFriendByUserIdRequest,
+    DescribeSendRequestsRequest,
+    DescribeSendRequestsByUserIdRequest,
+    GetSendRequestRequest,
+    GetSendRequestByUserIdRequest,
+    SendRequestRequest,
+    SendRequestByUserIdRequest,
+    DeleteRequestRequest,
+    DeleteRequestByUserIdRequest,
+    DescribeReceiveRequestsRequest,
+    DescribeReceiveRequestsByUserIdRequest,
+    GetReceiveRequestRequest,
+    GetReceiveRequestByUserIdRequest,
+    AcceptRequestRequest,
+    AcceptRequestByUserIdRequest,
+    RejectRequestRequest,
+    RejectRequestByUserIdRequest,
+    GetPublicProfileRequest,
+};

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Lottery from '../model'
 
-export class DeleteNamespaceResult implements IResult {
+export default class DeleteNamespaceResult implements IResult {
     private item: Gs2Lottery.Namespace|null = null;
 
     public getItem(): Gs2Lottery.Namespace|null {

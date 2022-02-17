@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class RecoverValueTableMaster implements IModel {
+export default class RecoverValueTableMaster implements IModel {
     private recoverValueTableId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;

@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class News implements IModel {
+export default class News implements IModel {
     private section: string|null = null;
     private content: string|null = null;
     private title: string|null = null;

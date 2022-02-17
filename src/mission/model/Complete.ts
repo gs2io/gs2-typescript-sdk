@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Complete implements IModel {
+export default class Complete implements IModel {
     private completeId: string|null = null;
     private userId: string|null = null;
     private missionGroupName: string|null = null;

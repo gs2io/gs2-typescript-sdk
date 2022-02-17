@@ -13,7 +13,14 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { Room } from "./Room"
-export { NotificationSetting } from "./NotificationSetting"
-export { LogSetting } from "./LogSetting"
+import Namespace from "./Namespace"
+import Room from "./Room"
+import NotificationSetting from "./NotificationSetting"
+import LogSetting from "./LogSetting"
+
+export {
+    Namespace,
+    Room,
+    NotificationSetting,
+    LogSetting,
+};

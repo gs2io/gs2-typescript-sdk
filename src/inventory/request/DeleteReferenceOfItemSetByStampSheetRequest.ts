@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Inventory from '../model'
 
-export class DeleteReferenceOfItemSetByStampSheetRequest implements IRequest {
+export default class DeleteReferenceOfItemSetByStampSheetRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

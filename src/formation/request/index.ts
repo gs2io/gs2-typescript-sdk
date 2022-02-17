@@ -13,47 +13,94 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesRequest } from "./DescribeNamespacesRequest"
-export { CreateNamespaceRequest } from "./CreateNamespaceRequest"
-export { GetNamespaceStatusRequest } from "./GetNamespaceStatusRequest"
-export { GetNamespaceRequest } from "./GetNamespaceRequest"
-export { UpdateNamespaceRequest } from "./UpdateNamespaceRequest"
-export { DeleteNamespaceRequest } from "./DeleteNamespaceRequest"
-export { DescribeFormModelMastersRequest } from "./DescribeFormModelMastersRequest"
-export { CreateFormModelMasterRequest } from "./CreateFormModelMasterRequest"
-export { GetFormModelMasterRequest } from "./GetFormModelMasterRequest"
-export { UpdateFormModelMasterRequest } from "./UpdateFormModelMasterRequest"
-export { DeleteFormModelMasterRequest } from "./DeleteFormModelMasterRequest"
-export { DescribeMoldModelsRequest } from "./DescribeMoldModelsRequest"
-export { GetMoldModelRequest } from "./GetMoldModelRequest"
-export { DescribeMoldModelMastersRequest } from "./DescribeMoldModelMastersRequest"
-export { CreateMoldModelMasterRequest } from "./CreateMoldModelMasterRequest"
-export { GetMoldModelMasterRequest } from "./GetMoldModelMasterRequest"
-export { UpdateMoldModelMasterRequest } from "./UpdateMoldModelMasterRequest"
-export { DeleteMoldModelMasterRequest } from "./DeleteMoldModelMasterRequest"
-export { ExportMasterRequest } from "./ExportMasterRequest"
-export { GetCurrentFormMasterRequest } from "./GetCurrentFormMasterRequest"
-export { UpdateCurrentFormMasterRequest } from "./UpdateCurrentFormMasterRequest"
-export { UpdateCurrentFormMasterFromGitHubRequest } from "./UpdateCurrentFormMasterFromGitHubRequest"
-export { DescribeMoldsRequest } from "./DescribeMoldsRequest"
-export { DescribeMoldsByUserIdRequest } from "./DescribeMoldsByUserIdRequest"
-export { GetMoldRequest } from "./GetMoldRequest"
-export { GetMoldByUserIdRequest } from "./GetMoldByUserIdRequest"
-export { SetMoldCapacityByUserIdRequest } from "./SetMoldCapacityByUserIdRequest"
-export { AddMoldCapacityByUserIdRequest } from "./AddMoldCapacityByUserIdRequest"
-export { DeleteMoldRequest } from "./DeleteMoldRequest"
-export { DeleteMoldByUserIdRequest } from "./DeleteMoldByUserIdRequest"
-export { AddCapacityByStampSheetRequest } from "./AddCapacityByStampSheetRequest"
-export { SetCapacityByStampSheetRequest } from "./SetCapacityByStampSheetRequest"
-export { DescribeFormsRequest } from "./DescribeFormsRequest"
-export { DescribeFormsByUserIdRequest } from "./DescribeFormsByUserIdRequest"
-export { GetFormRequest } from "./GetFormRequest"
-export { GetFormByUserIdRequest } from "./GetFormByUserIdRequest"
-export { GetFormWithSignatureRequest } from "./GetFormWithSignatureRequest"
-export { GetFormWithSignatureByUserIdRequest } from "./GetFormWithSignatureByUserIdRequest"
-export { SetFormByUserIdRequest } from "./SetFormByUserIdRequest"
-export { SetFormWithSignatureRequest } from "./SetFormWithSignatureRequest"
-export { AcquireActionsToFormPropertiesRequest } from "./AcquireActionsToFormPropertiesRequest"
-export { DeleteFormRequest } from "./DeleteFormRequest"
-export { DeleteFormByUserIdRequest } from "./DeleteFormByUserIdRequest"
-export { AcquireActionToFormPropertiesByStampSheetRequest } from "./AcquireActionToFormPropertiesByStampSheetRequest"
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest"
+import CreateNamespaceRequest from "./CreateNamespaceRequest"
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
+import GetNamespaceRequest from "./GetNamespaceRequest"
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DescribeFormModelMastersRequest from "./DescribeFormModelMastersRequest"
+import CreateFormModelMasterRequest from "./CreateFormModelMasterRequest"
+import GetFormModelMasterRequest from "./GetFormModelMasterRequest"
+import UpdateFormModelMasterRequest from "./UpdateFormModelMasterRequest"
+import DeleteFormModelMasterRequest from "./DeleteFormModelMasterRequest"
+import DescribeMoldModelsRequest from "./DescribeMoldModelsRequest"
+import GetMoldModelRequest from "./GetMoldModelRequest"
+import DescribeMoldModelMastersRequest from "./DescribeMoldModelMastersRequest"
+import CreateMoldModelMasterRequest from "./CreateMoldModelMasterRequest"
+import GetMoldModelMasterRequest from "./GetMoldModelMasterRequest"
+import UpdateMoldModelMasterRequest from "./UpdateMoldModelMasterRequest"
+import DeleteMoldModelMasterRequest from "./DeleteMoldModelMasterRequest"
+import ExportMasterRequest from "./ExportMasterRequest"
+import GetCurrentFormMasterRequest from "./GetCurrentFormMasterRequest"
+import UpdateCurrentFormMasterRequest from "./UpdateCurrentFormMasterRequest"
+import UpdateCurrentFormMasterFromGitHubRequest from "./UpdateCurrentFormMasterFromGitHubRequest"
+import DescribeMoldsRequest from "./DescribeMoldsRequest"
+import DescribeMoldsByUserIdRequest from "./DescribeMoldsByUserIdRequest"
+import GetMoldRequest from "./GetMoldRequest"
+import GetMoldByUserIdRequest from "./GetMoldByUserIdRequest"
+import SetMoldCapacityByUserIdRequest from "./SetMoldCapacityByUserIdRequest"
+import AddMoldCapacityByUserIdRequest from "./AddMoldCapacityByUserIdRequest"
+import DeleteMoldRequest from "./DeleteMoldRequest"
+import DeleteMoldByUserIdRequest from "./DeleteMoldByUserIdRequest"
+import AddCapacityByStampSheetRequest from "./AddCapacityByStampSheetRequest"
+import SetCapacityByStampSheetRequest from "./SetCapacityByStampSheetRequest"
+import DescribeFormsRequest from "./DescribeFormsRequest"
+import DescribeFormsByUserIdRequest from "./DescribeFormsByUserIdRequest"
+import GetFormRequest from "./GetFormRequest"
+import GetFormByUserIdRequest from "./GetFormByUserIdRequest"
+import GetFormWithSignatureRequest from "./GetFormWithSignatureRequest"
+import GetFormWithSignatureByUserIdRequest from "./GetFormWithSignatureByUserIdRequest"
+import SetFormByUserIdRequest from "./SetFormByUserIdRequest"
+import SetFormWithSignatureRequest from "./SetFormWithSignatureRequest"
+import AcquireActionsToFormPropertiesRequest from "./AcquireActionsToFormPropertiesRequest"
+import DeleteFormRequest from "./DeleteFormRequest"
+import DeleteFormByUserIdRequest from "./DeleteFormByUserIdRequest"
+import AcquireActionToFormPropertiesByStampSheetRequest from "./AcquireActionToFormPropertiesByStampSheetRequest"
+
+export {
+    DescribeNamespacesRequest,
+    CreateNamespaceRequest,
+    GetNamespaceStatusRequest,
+    GetNamespaceRequest,
+    UpdateNamespaceRequest,
+    DeleteNamespaceRequest,
+    DescribeFormModelMastersRequest,
+    CreateFormModelMasterRequest,
+    GetFormModelMasterRequest,
+    UpdateFormModelMasterRequest,
+    DeleteFormModelMasterRequest,
+    DescribeMoldModelsRequest,
+    GetMoldModelRequest,
+    DescribeMoldModelMastersRequest,
+    CreateMoldModelMasterRequest,
+    GetMoldModelMasterRequest,
+    UpdateMoldModelMasterRequest,
+    DeleteMoldModelMasterRequest,
+    ExportMasterRequest,
+    GetCurrentFormMasterRequest,
+    UpdateCurrentFormMasterRequest,
+    UpdateCurrentFormMasterFromGitHubRequest,
+    DescribeMoldsRequest,
+    DescribeMoldsByUserIdRequest,
+    GetMoldRequest,
+    GetMoldByUserIdRequest,
+    SetMoldCapacityByUserIdRequest,
+    AddMoldCapacityByUserIdRequest,
+    DeleteMoldRequest,
+    DeleteMoldByUserIdRequest,
+    AddCapacityByStampSheetRequest,
+    SetCapacityByStampSheetRequest,
+    DescribeFormsRequest,
+    DescribeFormsByUserIdRequest,
+    GetFormRequest,
+    GetFormByUserIdRequest,
+    GetFormWithSignatureRequest,
+    GetFormWithSignatureByUserIdRequest,
+    SetFormByUserIdRequest,
+    SetFormWithSignatureRequest,
+    AcquireActionsToFormPropertiesRequest,
+    DeleteFormRequest,
+    DeleteFormByUserIdRequest,
+    AcquireActionToFormPropertiesByStampSheetRequest,
+};

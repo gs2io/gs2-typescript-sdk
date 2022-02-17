@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Identifier from '../model'
 
-export class LoginRequest implements IRequest {
+export default class LoginRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

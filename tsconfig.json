@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "outDir": "./",
     "module": "esnext",
     "strict": true,
     "jsx": "preserve",

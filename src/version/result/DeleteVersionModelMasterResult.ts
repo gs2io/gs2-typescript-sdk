@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Version from '../model'
 
-export class DeleteVersionModelMasterResult implements IResult {
+export default class DeleteVersionModelMasterResult implements IResult {
     private item: Gs2Version.VersionModelMaster|null = null;
 
     public getItem(): Gs2Version.VersionModelMaster|null {

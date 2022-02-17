@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Schedule from '../model'
 
-export class GetEventResult implements IResult {
+export default class GetEventResult implements IResult {
     private item: Gs2Schedule.Event|null = null;
 
     public getItem(): Gs2Schedule.Event|null {

@@ -13,16 +13,32 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesRequest } from "./DescribeNamespacesRequest"
-export { CreateNamespaceRequest } from "./CreateNamespaceRequest"
-export { GetNamespaceStatusRequest } from "./GetNamespaceStatusRequest"
-export { GetNamespaceRequest } from "./GetNamespaceRequest"
-export { UpdateNamespaceRequest } from "./UpdateNamespaceRequest"
-export { DeleteNamespaceRequest } from "./DeleteNamespaceRequest"
-export { PrepareUpdateCurrentNewsMasterRequest } from "./PrepareUpdateCurrentNewsMasterRequest"
-export { UpdateCurrentNewsMasterRequest } from "./UpdateCurrentNewsMasterRequest"
-export { PrepareUpdateCurrentNewsMasterFromGitHubRequest } from "./PrepareUpdateCurrentNewsMasterFromGitHubRequest"
-export { DescribeNewsRequest } from "./DescribeNewsRequest"
-export { DescribeNewsByUserIdRequest } from "./DescribeNewsByUserIdRequest"
-export { WantGrantRequest } from "./WantGrantRequest"
-export { WantGrantByUserIdRequest } from "./WantGrantByUserIdRequest"
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest"
+import CreateNamespaceRequest from "./CreateNamespaceRequest"
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
+import GetNamespaceRequest from "./GetNamespaceRequest"
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import PrepareUpdateCurrentNewsMasterRequest from "./PrepareUpdateCurrentNewsMasterRequest"
+import UpdateCurrentNewsMasterRequest from "./UpdateCurrentNewsMasterRequest"
+import PrepareUpdateCurrentNewsMasterFromGitHubRequest from "./PrepareUpdateCurrentNewsMasterFromGitHubRequest"
+import DescribeNewsRequest from "./DescribeNewsRequest"
+import DescribeNewsByUserIdRequest from "./DescribeNewsByUserIdRequest"
+import WantGrantRequest from "./WantGrantRequest"
+import WantGrantByUserIdRequest from "./WantGrantByUserIdRequest"
+
+export {
+    DescribeNamespacesRequest,
+    CreateNamespaceRequest,
+    GetNamespaceStatusRequest,
+    GetNamespaceRequest,
+    UpdateNamespaceRequest,
+    DeleteNamespaceRequest,
+    PrepareUpdateCurrentNewsMasterRequest,
+    UpdateCurrentNewsMasterRequest,
+    PrepareUpdateCurrentNewsMasterFromGitHubRequest,
+    DescribeNewsRequest,
+    DescribeNewsByUserIdRequest,
+    WantGrantRequest,
+    WantGrantByUserIdRequest,
+};

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Mission from '../model'
 
-export class GetCompleteResult implements IResult {
+export default class GetCompleteResult implements IResult {
     private item: Gs2Mission.Complete|null = null;
 
     public getItem(): Gs2Mission.Complete|null {

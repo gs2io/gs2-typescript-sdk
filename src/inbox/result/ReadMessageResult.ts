@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Inbox from '../model'
 
-export class ReadMessageResult implements IResult {
+export default class ReadMessageResult implements IResult {
     private item: Gs2Inbox.Message|null = null;
     private stampSheet: string|null = null;
     private stampSheetEncryptionKeyId: string|null = null;

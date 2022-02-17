@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Datastore from '../model'
 
-export class DeleteNamespaceResult implements IResult {
+export default class DeleteNamespaceResult implements IResult {
     private item: Gs2Datastore.Namespace|null = null;
 
     public getItem(): Gs2Datastore.Namespace|null {

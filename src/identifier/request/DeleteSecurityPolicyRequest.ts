@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Identifier from '../model'
 
-export class DeleteSecurityPolicyRequest implements IRequest {
+export default class DeleteSecurityPolicyRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

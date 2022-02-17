@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Lottery from '../model'
 
-export class UpdatePrizeTableMasterRequest implements IRequest {
+export default class UpdatePrizeTableMasterRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

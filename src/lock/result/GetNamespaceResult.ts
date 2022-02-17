@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Lock from '../model'
 
-export class GetNamespaceResult implements IResult {
+export default class GetNamespaceResult implements IResult {
     private item: Gs2Lock.Namespace|null = null;
 
     public getItem(): Gs2Lock.Namespace|null {

@@ -15,10 +15,10 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { AcquireAction } from './AcquireAction';
-import { TimeSpan } from './TimeSpan';
+import AcquireAction from './AcquireAction';
+import TimeSpan from './TimeSpan';
 
-export class GlobalMessage implements IModel {
+export default class GlobalMessage implements IModel {
     private globalMessageId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;

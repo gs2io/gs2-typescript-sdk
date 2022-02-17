@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Version from '../model'
 
-export class GetVersionModelRequest implements IRequest {
+export default class GetVersionModelRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

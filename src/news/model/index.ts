@@ -13,8 +13,16 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { News } from "./News"
-export { SetCookieRequestEntry } from "./SetCookieRequestEntry"
-export { LogSetting } from "./LogSetting"
-export { GitHubCheckoutSetting } from "./GitHubCheckoutSetting"
+import Namespace from "./Namespace"
+import News from "./News"
+import SetCookieRequestEntry from "./SetCookieRequestEntry"
+import LogSetting from "./LogSetting"
+import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
+
+export {
+    Namespace,
+    News,
+    SetCookieRequestEntry,
+    LogSetting,
+    GitHubCheckoutSetting,
+};

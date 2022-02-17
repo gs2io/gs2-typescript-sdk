@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Dictionary from '../model'
 
-export class DeleteEntryModelMasterResult implements IResult {
+export default class DeleteEntryModelMasterResult implements IResult {
     private item: Gs2Dictionary.EntryModelMaster|null = null;
 
     public getItem(): Gs2Dictionary.EntryModelMaster|null {

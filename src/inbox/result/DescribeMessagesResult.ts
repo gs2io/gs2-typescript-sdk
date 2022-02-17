@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Inbox from '../model'
 
-export class DescribeMessagesResult implements IResult {
+export default class DescribeMessagesResult implements IResult {
     private items: Gs2Inbox.Message[]|null = null;
     private nextPageToken: string|null = null;
 

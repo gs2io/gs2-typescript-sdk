@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Ranking from '../model'
 
-export class DeleteCategoryModelMasterResult implements IResult {
+export default class DeleteCategoryModelMasterResult implements IResult {
     private item: Gs2Ranking.CategoryModelMaster|null = null;
 
     public getItem(): Gs2Ranking.CategoryModelMaster|null {

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Key from '../model'
 
-export class UpdateGitHubApiKeyResult implements IResult {
+export default class UpdateGitHubApiKeyResult implements IResult {
     private item: Gs2Key.GitHubApiKey|null = null;
 
     public getItem(): Gs2Key.GitHubApiKey|null {

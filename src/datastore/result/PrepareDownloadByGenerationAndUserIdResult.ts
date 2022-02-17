@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Datastore from '../model'
 
-export class PrepareDownloadByGenerationAndUserIdResult implements IResult {
+export default class PrepareDownloadByGenerationAndUserIdResult implements IResult {
     private item: Gs2Datastore.DataObject|null = null;
     private fileUrl: string|null = null;
     private contentLength: number|null = null;

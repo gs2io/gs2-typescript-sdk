@@ -15,10 +15,10 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { ConsumeAction } from './ConsumeAction';
-import { AcquireAction } from './AcquireAction';
+import ConsumeAction from './ConsumeAction';
+import AcquireAction from './AcquireAction';
 
-export class SalesItemMaster implements IModel {
+export default class SalesItemMaster implements IModel {
     private salesItemId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;

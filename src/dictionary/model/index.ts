@@ -13,12 +13,24 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { EntryModel } from "./EntryModel"
-export { EntryModelMaster } from "./EntryModelMaster"
-export { Entry } from "./Entry"
-export { CurrentEntryMaster } from "./CurrentEntryMaster"
-export { Config } from "./Config"
-export { GitHubCheckoutSetting } from "./GitHubCheckoutSetting"
-export { ScriptSetting } from "./ScriptSetting"
-export { LogSetting } from "./LogSetting"
+import Namespace from "./Namespace"
+import EntryModel from "./EntryModel"
+import EntryModelMaster from "./EntryModelMaster"
+import Entry from "./Entry"
+import CurrentEntryMaster from "./CurrentEntryMaster"
+import Config from "./Config"
+import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
+import ScriptSetting from "./ScriptSetting"
+import LogSetting from "./LogSetting"
+
+export {
+    Namespace,
+    EntryModel,
+    EntryModelMaster,
+    Entry,
+    CurrentEntryMaster,
+    Config,
+    GitHubCheckoutSetting,
+    ScriptSetting,
+    LogSetting,
+};

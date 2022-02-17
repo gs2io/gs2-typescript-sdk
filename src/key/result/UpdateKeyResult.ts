@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Key from '../model'
 
-export class UpdateKeyResult implements IResult {
+export default class UpdateKeyResult implements IResult {
     private item: Gs2Key.Key|null = null;
 
     public getItem(): Gs2Key.Key|null {

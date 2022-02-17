@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Stamina from '../model'
 
-export class GetNamespaceResult implements IResult {
+export default class GetNamespaceResult implements IResult {
     private item: Gs2Stamina.Namespace|null = null;
 
     public getItem(): Gs2Stamina.Namespace|null {

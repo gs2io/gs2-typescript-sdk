@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2JobQueue from '../model'
 
-export class PushByUserIdResult implements IResult {
+export default class PushByUserIdResult implements IResult {
     private items: Gs2JobQueue.Job[]|null = null;
 
     public getItems(): Gs2JobQueue.Job[]|null {

@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Formation from '../model'
 
-export class DeleteFormRequest implements IRequest {
+export default class DeleteFormRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

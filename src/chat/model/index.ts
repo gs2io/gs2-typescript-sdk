@@ -13,11 +13,22 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { Room } from "./Room"
-export { Message } from "./Message"
-export { Subscribe } from "./Subscribe"
-export { NotificationType } from "./NotificationType"
-export { ScriptSetting } from "./ScriptSetting"
-export { NotificationSetting } from "./NotificationSetting"
-export { LogSetting } from "./LogSetting"
+import Namespace from "./Namespace"
+import Room from "./Room"
+import Message from "./Message"
+import Subscribe from "./Subscribe"
+import NotificationType from "./NotificationType"
+import ScriptSetting from "./ScriptSetting"
+import NotificationSetting from "./NotificationSetting"
+import LogSetting from "./LogSetting"
+
+export {
+    Namespace,
+    Room,
+    Message,
+    Subscribe,
+    NotificationType,
+    ScriptSetting,
+    NotificationSetting,
+    LogSetting,
+};

@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Mission from '../model'
 
-export class GetMissionGroupModelRequest implements IRequest {
+export default class GetMissionGroupModelRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

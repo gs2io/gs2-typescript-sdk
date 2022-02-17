@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class TakeOver implements IModel {
+export default class TakeOver implements IModel {
     private takeOverId: string|null = null;
     private userId: string|null = null;
     private type: number|null = null;

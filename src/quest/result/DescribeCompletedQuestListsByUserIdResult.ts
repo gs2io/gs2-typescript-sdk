@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Quest from '../model'
 
-export class DescribeCompletedQuestListsByUserIdResult implements IResult {
+export default class DescribeCompletedQuestListsByUserIdResult implements IResult {
     private items: Gs2Quest.CompletedQuestList[]|null = null;
     private nextPageToken: string|null = null;
 

@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Trigger implements IModel {
+export default class Trigger implements IModel {
     private triggerId: string|null = null;
     private name: string|null = null;
     private userId: string|null = null;

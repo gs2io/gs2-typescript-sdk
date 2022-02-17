@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Friend from '../model'
 
-export class DescribeFollowsResult implements IResult {
+export default class DescribeFollowsResult implements IResult {
     private items: Gs2Friend.FollowUser[]|null = null;
     private nextPageToken: string|null = null;
 

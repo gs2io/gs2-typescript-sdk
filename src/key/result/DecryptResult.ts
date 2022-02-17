@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Key from '../model'
 
-export class DecryptResult implements IResult {
+export default class DecryptResult implements IResult {
     private data: string|null = null;
 
     public getData(): string|null {

@@ -13,12 +13,24 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { AccessLog } from "./AccessLog"
-export { AccessLogCount } from "./AccessLogCount"
-export { IssueStampSheetLog } from "./IssueStampSheetLog"
-export { IssueStampSheetLogCount } from "./IssueStampSheetLogCount"
-export { ExecuteStampSheetLog } from "./ExecuteStampSheetLog"
-export { ExecuteStampSheetLogCount } from "./ExecuteStampSheetLogCount"
-export { ExecuteStampTaskLog } from "./ExecuteStampTaskLog"
-export { ExecuteStampTaskLogCount } from "./ExecuteStampTaskLogCount"
+import Namespace from "./Namespace"
+import AccessLog from "./AccessLog"
+import AccessLogCount from "./AccessLogCount"
+import IssueStampSheetLog from "./IssueStampSheetLog"
+import IssueStampSheetLogCount from "./IssueStampSheetLogCount"
+import ExecuteStampSheetLog from "./ExecuteStampSheetLog"
+import ExecuteStampSheetLogCount from "./ExecuteStampSheetLogCount"
+import ExecuteStampTaskLog from "./ExecuteStampTaskLog"
+import ExecuteStampTaskLogCount from "./ExecuteStampTaskLogCount"
+
+export {
+    Namespace,
+    AccessLog,
+    AccessLogCount,
+    IssueStampSheetLog,
+    IssueStampSheetLogCount,
+    ExecuteStampSheetLog,
+    ExecuteStampSheetLogCount,
+    ExecuteStampTaskLog,
+    ExecuteStampTaskLogCount,
+};

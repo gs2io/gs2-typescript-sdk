@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Quest from '../model'
 
-export class CreateQuestModelMasterResult implements IResult {
+export default class CreateQuestModelMasterResult implements IResult {
     private item: Gs2Quest.QuestModelMaster|null = null;
 
     public getItem(): Gs2Quest.QuestModelMaster|null {

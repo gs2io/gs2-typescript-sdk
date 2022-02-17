@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Script from '../model'
 
-export class UpdateScriptFromGitHubRequest implements IRequest {
+export default class UpdateScriptFromGitHubRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

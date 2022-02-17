@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Ranking from '../model'
 
-export class GetRankingByUserIdResult implements IResult {
+export default class GetRankingByUserIdResult implements IResult {
     private item: Gs2Ranking.Ranking|null = null;
 
     public getItem(): Gs2Ranking.Ranking|null {

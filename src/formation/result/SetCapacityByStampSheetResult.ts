@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Formation from '../model'
 
-export class SetCapacityByStampSheetResult implements IResult {
+export default class SetCapacityByStampSheetResult implements IResult {
     private item: Gs2Formation.Mold|null = null;
     private moldModel: Gs2Formation.MoldModel|null = null;
 

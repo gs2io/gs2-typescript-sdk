@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Experience from '../model'
 
-export class CreateExperienceModelMasterResult implements IResult {
+export default class CreateExperienceModelMasterResult implements IResult {
     private item: Gs2Experience.ExperienceModelMaster|null = null;
 
     public getItem(): Gs2Experience.ExperienceModelMaster|null {

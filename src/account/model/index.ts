@@ -13,8 +13,16 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { Account } from "./Account"
-export { TakeOver } from "./TakeOver"
-export { ScriptSetting } from "./ScriptSetting"
-export { LogSetting } from "./LogSetting"
+import Namespace from "./Namespace"
+import Account from "./Account"
+import TakeOver from "./TakeOver"
+import ScriptSetting from "./ScriptSetting"
+import LogSetting from "./LogSetting"
+
+export {
+    Namespace,
+    Account,
+    TakeOver,
+    ScriptSetting,
+    LogSetting,
+};

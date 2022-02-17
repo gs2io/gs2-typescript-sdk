@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Distributor from '../model'
 
-export class UpdateCurrentDistributorMasterFromGitHubRequest implements IRequest {
+export default class UpdateCurrentDistributorMasterFromGitHubRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

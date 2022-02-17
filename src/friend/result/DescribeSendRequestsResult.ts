@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Friend from '../model'
 
-export class DescribeSendRequestsResult implements IResult {
+export default class DescribeSendRequestsResult implements IResult {
     private items: Gs2Friend.FriendRequest[]|null = null;
     private nextPageToken: string|null = null;
 

@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class MaxStaminaTable implements IModel {
+export default class MaxStaminaTable implements IModel {
     private maxStaminaTableId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;

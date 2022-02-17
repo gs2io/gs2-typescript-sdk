@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Matchmaking from '../model'
 
-export class CommitVoteResult implements IResult {
+export default class CommitVoteResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): CommitVoteResult {
         return new CommitVoteResult();

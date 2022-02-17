@@ -15,9 +15,9 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { Version } from './Version';
+import Version from './Version';
 
-export class AcceptVersion implements IModel {
+export default class AcceptVersion implements IModel {
     private acceptVersionId: string|null = null;
     private versionName: string|null = null;
     private userId: string|null = null;

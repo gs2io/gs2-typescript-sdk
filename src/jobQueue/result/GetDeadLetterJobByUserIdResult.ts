@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2JobQueue from '../model'
 
-export class GetDeadLetterJobByUserIdResult implements IResult {
+export default class GetDeadLetterJobByUserIdResult implements IResult {
     private item: Gs2JobQueue.DeadLetterJob|null = null;
 
     public getItem(): Gs2JobQueue.DeadLetterJob|null {

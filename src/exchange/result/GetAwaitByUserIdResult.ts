@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Exchange from '../model'
 
-export class GetAwaitByUserIdResult implements IResult {
+export default class GetAwaitByUserIdResult implements IResult {
     private item: Gs2Exchange.Await|null = null;
 
     public getItem(): Gs2Exchange.Await|null {

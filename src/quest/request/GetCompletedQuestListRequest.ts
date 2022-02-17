@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Quest from '../model'
 
-export class GetCompletedQuestListRequest implements IRequest {
+export default class GetCompletedQuestListRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

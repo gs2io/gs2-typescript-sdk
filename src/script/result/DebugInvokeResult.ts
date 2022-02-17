@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Script from '../model'
 
-export class DebugInvokeResult implements IResult {
+export default class DebugInvokeResult implements IResult {
     private code: number|null = null;
     private result: string|null = null;
     private executeTime: number|null = null;

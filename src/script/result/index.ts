@@ -13,18 +13,36 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { DescribeScriptsResult } from "./DescribeScriptsResult"
-export { CreateScriptResult } from "./CreateScriptResult"
-export { CreateScriptFromGitHubResult } from "./CreateScriptFromGitHubResult"
-export { GetScriptResult } from "./GetScriptResult"
-export { UpdateScriptResult } from "./UpdateScriptResult"
-export { UpdateScriptFromGitHubResult } from "./UpdateScriptFromGitHubResult"
-export { DeleteScriptResult } from "./DeleteScriptResult"
-export { InvokeScriptResult } from "./InvokeScriptResult"
-export { DebugInvokeResult } from "./DebugInvokeResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeScriptsResult from "./DescribeScriptsResult"
+import CreateScriptResult from "./CreateScriptResult"
+import CreateScriptFromGitHubResult from "./CreateScriptFromGitHubResult"
+import GetScriptResult from "./GetScriptResult"
+import UpdateScriptResult from "./UpdateScriptResult"
+import UpdateScriptFromGitHubResult from "./UpdateScriptFromGitHubResult"
+import DeleteScriptResult from "./DeleteScriptResult"
+import InvokeScriptResult from "./InvokeScriptResult"
+import DebugInvokeResult from "./DebugInvokeResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    DescribeScriptsResult,
+    CreateScriptResult,
+    CreateScriptFromGitHubResult,
+    GetScriptResult,
+    UpdateScriptResult,
+    UpdateScriptFromGitHubResult,
+    DeleteScriptResult,
+    InvokeScriptResult,
+    DebugInvokeResult,
+};

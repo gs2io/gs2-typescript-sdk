@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class LogSetting implements IModel {
+export default class LogSetting implements IModel {
     private loggingNamespaceId: string|null = null;
 
     public getLoggingNamespaceId(): string|null {

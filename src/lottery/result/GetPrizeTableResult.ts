@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Lottery from '../model'
 
-export class GetPrizeTableResult implements IResult {
+export default class GetPrizeTableResult implements IResult {
     private item: Gs2Lottery.PrizeTable|null = null;
 
     public getItem(): Gs2Lottery.PrizeTable|null {

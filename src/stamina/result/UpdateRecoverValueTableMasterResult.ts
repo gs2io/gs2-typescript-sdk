@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Stamina from '../model'
 
-export class UpdateRecoverValueTableMasterResult implements IResult {
+export default class UpdateRecoverValueTableMasterResult implements IResult {
     private item: Gs2Stamina.RecoverValueTableMaster|null = null;
 
     public getItem(): Gs2Stamina.RecoverValueTableMaster|null {

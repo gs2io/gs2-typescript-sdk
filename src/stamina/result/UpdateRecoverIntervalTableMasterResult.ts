@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Stamina from '../model'
 
-export class UpdateRecoverIntervalTableMasterResult implements IResult {
+export default class UpdateRecoverIntervalTableMasterResult implements IResult {
     private item: Gs2Stamina.RecoverIntervalTableMaster|null = null;
 
     public getItem(): Gs2Stamina.RecoverIntervalTableMaster|null {

@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Progress implements IModel {
+export default class Progress implements IModel {
     private progressId: string|null = null;
     private userId: string|null = null;
     private rateName: string|null = null;

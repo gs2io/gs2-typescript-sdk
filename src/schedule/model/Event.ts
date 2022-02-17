@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Event implements IModel {
+export default class Event implements IModel {
     private eventId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;

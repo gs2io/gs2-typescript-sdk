@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Distributor from '../model'
 
-export class RunStampTaskResult implements IResult {
+export default class RunStampTaskResult implements IResult {
     private contextStack: string|null = null;
     private result: string|null = null;
 

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Distributor from '../model'
 
-export class DistributeResult implements IResult {
+export default class DistributeResult implements IResult {
     private distributeResource: Gs2Distributor.DistributeResource|null = null;
     private inboxNamespaceId: string|null = null;
     private result: string|null = null;

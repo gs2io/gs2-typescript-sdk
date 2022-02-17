@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class StaminaModelMaster implements IModel {
+export default class StaminaModelMaster implements IModel {
     private staminaModelId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;

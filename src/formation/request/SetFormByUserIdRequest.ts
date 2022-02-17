@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Formation from '../model'
 
-export class SetFormByUserIdRequest implements IRequest {
+export default class SetFormByUserIdRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

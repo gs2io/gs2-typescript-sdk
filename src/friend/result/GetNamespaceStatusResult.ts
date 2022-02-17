@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Friend from '../model'
 
-export class GetNamespaceStatusResult implements IResult {
+export default class GetNamespaceStatusResult implements IResult {
     private status: string|null = null;
 
     public getStatus(): string|null {

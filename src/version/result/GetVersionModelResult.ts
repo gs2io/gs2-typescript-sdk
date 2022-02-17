@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Version from '../model'
 
-export class GetVersionModelResult implements IResult {
+export default class GetVersionModelResult implements IResult {
     private item: Gs2Version.VersionModel|null = null;
 
     public getItem(): Gs2Version.VersionModel|null {

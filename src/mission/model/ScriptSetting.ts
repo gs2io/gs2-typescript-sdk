@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class ScriptSetting implements IModel {
+export default class ScriptSetting implements IModel {
     private triggerScriptId: string|null = null;
     private doneTriggerTargetType: string|null = null;
     private doneTriggerScriptId: string|null = null;

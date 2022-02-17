@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Enhance from '../model'
 
-export class DirectEnhanceByStampSheetRequest implements IRequest {
+export default class DirectEnhanceByStampSheetRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

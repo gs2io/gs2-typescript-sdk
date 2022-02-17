@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Ranking from '../model'
 
-export class DescribeCategoryModelMastersResult implements IResult {
+export default class DescribeCategoryModelMastersResult implements IResult {
     private items: Gs2Ranking.CategoryModelMaster[]|null = null;
     private nextPageToken: string|null = null;
 

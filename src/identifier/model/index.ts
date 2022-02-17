@@ -13,9 +13,18 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { User } from "./User"
-export { SecurityPolicy } from "./SecurityPolicy"
-export { Identifier } from "./Identifier"
-export { Password } from "./Password"
-export { AttachSecurityPolicy } from "./AttachSecurityPolicy"
-export { ProjectToken } from "./ProjectToken"
+import User from "./User"
+import SecurityPolicy from "./SecurityPolicy"
+import Identifier from "./Identifier"
+import Password from "./Password"
+import AttachSecurityPolicy from "./AttachSecurityPolicy"
+import ProjectToken from "./ProjectToken"
+
+export {
+    User,
+    SecurityPolicy,
+    Identifier,
+    Password,
+    AttachSecurityPolicy,
+    ProjectToken,
+};

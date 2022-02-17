@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Quest from '../model'
 
-export class GetCompletedQuestListByUserIdResult implements IResult {
+export default class GetCompletedQuestListByUserIdResult implements IResult {
     private item: Gs2Quest.CompletedQuestList|null = null;
 
     public getItem(): Gs2Quest.CompletedQuestList|null {

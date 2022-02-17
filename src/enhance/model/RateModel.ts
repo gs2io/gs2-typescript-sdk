@@ -15,9 +15,9 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { BonusRate } from './BonusRate';
+import BonusRate from './BonusRate';
 
-export class RateModel implements IModel {
+export default class RateModel implements IModel {
     private rateModelId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Quest from '../model'
 
-export class DeleteProgressByStampTaskResult implements IResult {
+export default class DeleteProgressByStampTaskResult implements IResult {
     private item: Gs2Quest.Progress|null = null;
     private newContextStack: string|null = null;
 

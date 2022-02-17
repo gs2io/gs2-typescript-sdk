@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class CompletedQuestList implements IModel {
+export default class CompletedQuestList implements IModel {
     private completedQuestListId: string|null = null;
     private userId: string|null = null;
     private questGroupName: string|null = null;

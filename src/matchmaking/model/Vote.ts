@@ -15,11 +15,11 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { Ballot } from './Ballot';
-import { GameResult } from './GameResult';
-import { WrittenBallot } from './WrittenBallot';
+import Ballot from './Ballot';
+import GameResult from './GameResult';
+import WrittenBallot from './WrittenBallot';
 
-export class Vote implements IModel {
+export default class Vote implements IModel {
     private voteId: string|null = null;
     private ratingName: string|null = null;
     private gatheringName: string|null = null;

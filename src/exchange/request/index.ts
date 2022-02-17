@@ -13,37 +13,74 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesRequest } from "./DescribeNamespacesRequest"
-export { CreateNamespaceRequest } from "./CreateNamespaceRequest"
-export { GetNamespaceStatusRequest } from "./GetNamespaceStatusRequest"
-export { GetNamespaceRequest } from "./GetNamespaceRequest"
-export { UpdateNamespaceRequest } from "./UpdateNamespaceRequest"
-export { DeleteNamespaceRequest } from "./DeleteNamespaceRequest"
-export { DescribeRateModelsRequest } from "./DescribeRateModelsRequest"
-export { GetRateModelRequest } from "./GetRateModelRequest"
-export { DescribeRateModelMastersRequest } from "./DescribeRateModelMastersRequest"
-export { CreateRateModelMasterRequest } from "./CreateRateModelMasterRequest"
-export { GetRateModelMasterRequest } from "./GetRateModelMasterRequest"
-export { UpdateRateModelMasterRequest } from "./UpdateRateModelMasterRequest"
-export { DeleteRateModelMasterRequest } from "./DeleteRateModelMasterRequest"
-export { ExchangeRequest } from "./ExchangeRequest"
-export { ExchangeByUserIdRequest } from "./ExchangeByUserIdRequest"
-export { ExchangeByStampSheetRequest } from "./ExchangeByStampSheetRequest"
-export { ExportMasterRequest } from "./ExportMasterRequest"
-export { GetCurrentRateMasterRequest } from "./GetCurrentRateMasterRequest"
-export { UpdateCurrentRateMasterRequest } from "./UpdateCurrentRateMasterRequest"
-export { UpdateCurrentRateMasterFromGitHubRequest } from "./UpdateCurrentRateMasterFromGitHubRequest"
-export { CreateAwaitByUserIdRequest } from "./CreateAwaitByUserIdRequest"
-export { DescribeAwaitsRequest } from "./DescribeAwaitsRequest"
-export { DescribeAwaitsByUserIdRequest } from "./DescribeAwaitsByUserIdRequest"
-export { GetAwaitRequest } from "./GetAwaitRequest"
-export { GetAwaitByUserIdRequest } from "./GetAwaitByUserIdRequest"
-export { AcquireRequest } from "./AcquireRequest"
-export { AcquireByUserIdRequest } from "./AcquireByUserIdRequest"
-export { AcquireForceByUserIdRequest } from "./AcquireForceByUserIdRequest"
-export { SkipRequest } from "./SkipRequest"
-export { SkipByUserIdRequest } from "./SkipByUserIdRequest"
-export { DeleteAwaitRequest } from "./DeleteAwaitRequest"
-export { DeleteAwaitByUserIdRequest } from "./DeleteAwaitByUserIdRequest"
-export { CreateAwaitByStampSheetRequest } from "./CreateAwaitByStampSheetRequest"
-export { DeleteAwaitByStampTaskRequest } from "./DeleteAwaitByStampTaskRequest"
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest"
+import CreateNamespaceRequest from "./CreateNamespaceRequest"
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
+import GetNamespaceRequest from "./GetNamespaceRequest"
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DescribeRateModelsRequest from "./DescribeRateModelsRequest"
+import GetRateModelRequest from "./GetRateModelRequest"
+import DescribeRateModelMastersRequest from "./DescribeRateModelMastersRequest"
+import CreateRateModelMasterRequest from "./CreateRateModelMasterRequest"
+import GetRateModelMasterRequest from "./GetRateModelMasterRequest"
+import UpdateRateModelMasterRequest from "./UpdateRateModelMasterRequest"
+import DeleteRateModelMasterRequest from "./DeleteRateModelMasterRequest"
+import ExchangeRequest from "./ExchangeRequest"
+import ExchangeByUserIdRequest from "./ExchangeByUserIdRequest"
+import ExchangeByStampSheetRequest from "./ExchangeByStampSheetRequest"
+import ExportMasterRequest from "./ExportMasterRequest"
+import GetCurrentRateMasterRequest from "./GetCurrentRateMasterRequest"
+import UpdateCurrentRateMasterRequest from "./UpdateCurrentRateMasterRequest"
+import UpdateCurrentRateMasterFromGitHubRequest from "./UpdateCurrentRateMasterFromGitHubRequest"
+import CreateAwaitByUserIdRequest from "./CreateAwaitByUserIdRequest"
+import DescribeAwaitsRequest from "./DescribeAwaitsRequest"
+import DescribeAwaitsByUserIdRequest from "./DescribeAwaitsByUserIdRequest"
+import GetAwaitRequest from "./GetAwaitRequest"
+import GetAwaitByUserIdRequest from "./GetAwaitByUserIdRequest"
+import AcquireRequest from "./AcquireRequest"
+import AcquireByUserIdRequest from "./AcquireByUserIdRequest"
+import AcquireForceByUserIdRequest from "./AcquireForceByUserIdRequest"
+import SkipRequest from "./SkipRequest"
+import SkipByUserIdRequest from "./SkipByUserIdRequest"
+import DeleteAwaitRequest from "./DeleteAwaitRequest"
+import DeleteAwaitByUserIdRequest from "./DeleteAwaitByUserIdRequest"
+import CreateAwaitByStampSheetRequest from "./CreateAwaitByStampSheetRequest"
+import DeleteAwaitByStampTaskRequest from "./DeleteAwaitByStampTaskRequest"
+
+export {
+    DescribeNamespacesRequest,
+    CreateNamespaceRequest,
+    GetNamespaceStatusRequest,
+    GetNamespaceRequest,
+    UpdateNamespaceRequest,
+    DeleteNamespaceRequest,
+    DescribeRateModelsRequest,
+    GetRateModelRequest,
+    DescribeRateModelMastersRequest,
+    CreateRateModelMasterRequest,
+    GetRateModelMasterRequest,
+    UpdateRateModelMasterRequest,
+    DeleteRateModelMasterRequest,
+    ExchangeRequest,
+    ExchangeByUserIdRequest,
+    ExchangeByStampSheetRequest,
+    ExportMasterRequest,
+    GetCurrentRateMasterRequest,
+    UpdateCurrentRateMasterRequest,
+    UpdateCurrentRateMasterFromGitHubRequest,
+    CreateAwaitByUserIdRequest,
+    DescribeAwaitsRequest,
+    DescribeAwaitsByUserIdRequest,
+    GetAwaitRequest,
+    GetAwaitByUserIdRequest,
+    AcquireRequest,
+    AcquireByUserIdRequest,
+    AcquireForceByUserIdRequest,
+    SkipRequest,
+    SkipByUserIdRequest,
+    DeleteAwaitRequest,
+    DeleteAwaitByUserIdRequest,
+    CreateAwaitByStampSheetRequest,
+    DeleteAwaitByStampTaskRequest,
+};

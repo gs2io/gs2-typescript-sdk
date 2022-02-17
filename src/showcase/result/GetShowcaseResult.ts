@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Showcase from '../model'
 
-export class GetShowcaseResult implements IResult {
+export default class GetShowcaseResult implements IResult {
     private item: Gs2Showcase.Showcase|null = null;
 
     public getItem(): Gs2Showcase.Showcase|null {

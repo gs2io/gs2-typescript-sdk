@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class LotteryModel implements IModel {
+export default class LotteryModel implements IModel {
     private lotteryModelId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;

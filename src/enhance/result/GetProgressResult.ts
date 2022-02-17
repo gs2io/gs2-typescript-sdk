@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Enhance from '../model'
 
-export class GetProgressResult implements IResult {
+export default class GetProgressResult implements IResult {
     private item: Gs2Enhance.Progress|null = null;
     private rateModel: Gs2Enhance.RateModel|null = null;
 

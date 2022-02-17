@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Inbox from '../model'
 
-export class UpdateReceivedByUserIdResult implements IResult {
+export default class UpdateReceivedByUserIdResult implements IResult {
     private item: Gs2Inbox.Received|null = null;
 
     public getItem(): Gs2Inbox.Received|null {

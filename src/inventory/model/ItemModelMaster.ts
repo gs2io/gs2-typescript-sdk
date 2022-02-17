@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class ItemModelMaster implements IModel {
+export default class ItemModelMaster implements IModel {
     private itemModelId: string|null = null;
     private inventoryName: string|null = null;
     private name: string|null = null;

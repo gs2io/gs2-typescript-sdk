@@ -13,34 +13,68 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesRequest } from "./DescribeNamespacesRequest"
-export { CreateNamespaceRequest } from "./CreateNamespaceRequest"
-export { GetNamespaceStatusRequest } from "./GetNamespaceStatusRequest"
-export { GetNamespaceRequest } from "./GetNamespaceRequest"
-export { UpdateNamespaceRequest } from "./UpdateNamespaceRequest"
-export { DeleteNamespaceRequest } from "./DeleteNamespaceRequest"
-export { DescribeDataObjectsRequest } from "./DescribeDataObjectsRequest"
-export { DescribeDataObjectsByUserIdRequest } from "./DescribeDataObjectsByUserIdRequest"
-export { PrepareUploadRequest } from "./PrepareUploadRequest"
-export { PrepareUploadByUserIdRequest } from "./PrepareUploadByUserIdRequest"
-export { UpdateDataObjectRequest } from "./UpdateDataObjectRequest"
-export { UpdateDataObjectByUserIdRequest } from "./UpdateDataObjectByUserIdRequest"
-export { PrepareReUploadRequest } from "./PrepareReUploadRequest"
-export { PrepareReUploadByUserIdRequest } from "./PrepareReUploadByUserIdRequest"
-export { DoneUploadRequest } from "./DoneUploadRequest"
-export { DoneUploadByUserIdRequest } from "./DoneUploadByUserIdRequest"
-export { DeleteDataObjectRequest } from "./DeleteDataObjectRequest"
-export { DeleteDataObjectByUserIdRequest } from "./DeleteDataObjectByUserIdRequest"
-export { PrepareDownloadRequest } from "./PrepareDownloadRequest"
-export { PrepareDownloadByUserIdRequest } from "./PrepareDownloadByUserIdRequest"
-export { PrepareDownloadByGenerationRequest } from "./PrepareDownloadByGenerationRequest"
-export { PrepareDownloadByGenerationAndUserIdRequest } from "./PrepareDownloadByGenerationAndUserIdRequest"
-export { PrepareDownloadOwnDataRequest } from "./PrepareDownloadOwnDataRequest"
-export { PrepareDownloadByUserIdAndDataObjectNameRequest } from "./PrepareDownloadByUserIdAndDataObjectNameRequest"
-export { PrepareDownloadOwnDataByGenerationRequest } from "./PrepareDownloadOwnDataByGenerationRequest"
-export { PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest } from "./PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest"
-export { RestoreDataObjectRequest } from "./RestoreDataObjectRequest"
-export { DescribeDataObjectHistoriesRequest } from "./DescribeDataObjectHistoriesRequest"
-export { DescribeDataObjectHistoriesByUserIdRequest } from "./DescribeDataObjectHistoriesByUserIdRequest"
-export { GetDataObjectHistoryRequest } from "./GetDataObjectHistoryRequest"
-export { GetDataObjectHistoryByUserIdRequest } from "./GetDataObjectHistoryByUserIdRequest"
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest"
+import CreateNamespaceRequest from "./CreateNamespaceRequest"
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
+import GetNamespaceRequest from "./GetNamespaceRequest"
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DescribeDataObjectsRequest from "./DescribeDataObjectsRequest"
+import DescribeDataObjectsByUserIdRequest from "./DescribeDataObjectsByUserIdRequest"
+import PrepareUploadRequest from "./PrepareUploadRequest"
+import PrepareUploadByUserIdRequest from "./PrepareUploadByUserIdRequest"
+import UpdateDataObjectRequest from "./UpdateDataObjectRequest"
+import UpdateDataObjectByUserIdRequest from "./UpdateDataObjectByUserIdRequest"
+import PrepareReUploadRequest from "./PrepareReUploadRequest"
+import PrepareReUploadByUserIdRequest from "./PrepareReUploadByUserIdRequest"
+import DoneUploadRequest from "./DoneUploadRequest"
+import DoneUploadByUserIdRequest from "./DoneUploadByUserIdRequest"
+import DeleteDataObjectRequest from "./DeleteDataObjectRequest"
+import DeleteDataObjectByUserIdRequest from "./DeleteDataObjectByUserIdRequest"
+import PrepareDownloadRequest from "./PrepareDownloadRequest"
+import PrepareDownloadByUserIdRequest from "./PrepareDownloadByUserIdRequest"
+import PrepareDownloadByGenerationRequest from "./PrepareDownloadByGenerationRequest"
+import PrepareDownloadByGenerationAndUserIdRequest from "./PrepareDownloadByGenerationAndUserIdRequest"
+import PrepareDownloadOwnDataRequest from "./PrepareDownloadOwnDataRequest"
+import PrepareDownloadByUserIdAndDataObjectNameRequest from "./PrepareDownloadByUserIdAndDataObjectNameRequest"
+import PrepareDownloadOwnDataByGenerationRequest from "./PrepareDownloadOwnDataByGenerationRequest"
+import PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest from "./PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest"
+import RestoreDataObjectRequest from "./RestoreDataObjectRequest"
+import DescribeDataObjectHistoriesRequest from "./DescribeDataObjectHistoriesRequest"
+import DescribeDataObjectHistoriesByUserIdRequest from "./DescribeDataObjectHistoriesByUserIdRequest"
+import GetDataObjectHistoryRequest from "./GetDataObjectHistoryRequest"
+import GetDataObjectHistoryByUserIdRequest from "./GetDataObjectHistoryByUserIdRequest"
+
+export {
+    DescribeNamespacesRequest,
+    CreateNamespaceRequest,
+    GetNamespaceStatusRequest,
+    GetNamespaceRequest,
+    UpdateNamespaceRequest,
+    DeleteNamespaceRequest,
+    DescribeDataObjectsRequest,
+    DescribeDataObjectsByUserIdRequest,
+    PrepareUploadRequest,
+    PrepareUploadByUserIdRequest,
+    UpdateDataObjectRequest,
+    UpdateDataObjectByUserIdRequest,
+    PrepareReUploadRequest,
+    PrepareReUploadByUserIdRequest,
+    DoneUploadRequest,
+    DoneUploadByUserIdRequest,
+    DeleteDataObjectRequest,
+    DeleteDataObjectByUserIdRequest,
+    PrepareDownloadRequest,
+    PrepareDownloadByUserIdRequest,
+    PrepareDownloadByGenerationRequest,
+    PrepareDownloadByGenerationAndUserIdRequest,
+    PrepareDownloadOwnDataRequest,
+    PrepareDownloadByUserIdAndDataObjectNameRequest,
+    PrepareDownloadOwnDataByGenerationRequest,
+    PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest,
+    RestoreDataObjectRequest,
+    DescribeDataObjectHistoriesRequest,
+    DescribeDataObjectHistoriesByUserIdRequest,
+    GetDataObjectHistoryRequest,
+    GetDataObjectHistoryByUserIdRequest,
+};

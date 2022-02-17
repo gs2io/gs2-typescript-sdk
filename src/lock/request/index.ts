@@ -13,18 +13,36 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesRequest } from "./DescribeNamespacesRequest"
-export { CreateNamespaceRequest } from "./CreateNamespaceRequest"
-export { GetNamespaceStatusRequest } from "./GetNamespaceStatusRequest"
-export { GetNamespaceRequest } from "./GetNamespaceRequest"
-export { UpdateNamespaceRequest } from "./UpdateNamespaceRequest"
-export { DeleteNamespaceRequest } from "./DeleteNamespaceRequest"
-export { DescribeMutexesRequest } from "./DescribeMutexesRequest"
-export { DescribeMutexesByUserIdRequest } from "./DescribeMutexesByUserIdRequest"
-export { LockRequest } from "./LockRequest"
-export { LockByUserIdRequest } from "./LockByUserIdRequest"
-export { UnlockRequest } from "./UnlockRequest"
-export { UnlockByUserIdRequest } from "./UnlockByUserIdRequest"
-export { GetMutexRequest } from "./GetMutexRequest"
-export { GetMutexByUserIdRequest } from "./GetMutexByUserIdRequest"
-export { DeleteMutexByUserIdRequest } from "./DeleteMutexByUserIdRequest"
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest"
+import CreateNamespaceRequest from "./CreateNamespaceRequest"
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
+import GetNamespaceRequest from "./GetNamespaceRequest"
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DescribeMutexesRequest from "./DescribeMutexesRequest"
+import DescribeMutexesByUserIdRequest from "./DescribeMutexesByUserIdRequest"
+import LockRequest from "./LockRequest"
+import LockByUserIdRequest from "./LockByUserIdRequest"
+import UnlockRequest from "./UnlockRequest"
+import UnlockByUserIdRequest from "./UnlockByUserIdRequest"
+import GetMutexRequest from "./GetMutexRequest"
+import GetMutexByUserIdRequest from "./GetMutexByUserIdRequest"
+import DeleteMutexByUserIdRequest from "./DeleteMutexByUserIdRequest"
+
+export {
+    DescribeNamespacesRequest,
+    CreateNamespaceRequest,
+    GetNamespaceStatusRequest,
+    GetNamespaceRequest,
+    UpdateNamespaceRequest,
+    DeleteNamespaceRequest,
+    DescribeMutexesRequest,
+    DescribeMutexesByUserIdRequest,
+    LockRequest,
+    LockByUserIdRequest,
+    UnlockRequest,
+    UnlockByUserIdRequest,
+    GetMutexRequest,
+    GetMutexByUserIdRequest,
+    DeleteMutexByUserIdRequest,
+};

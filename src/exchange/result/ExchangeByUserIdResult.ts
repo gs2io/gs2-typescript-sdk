@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Exchange from '../model'
 
-export class ExchangeByUserIdResult implements IResult {
+export default class ExchangeByUserIdResult implements IResult {
     private item: Gs2Exchange.RateModel|null = null;
     private stampSheet: string|null = null;
     private stampSheetEncryptionKeyId: string|null = null;

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Datastore from '../model'
 
-export class DeleteDataObjectResult implements IResult {
+export default class DeleteDataObjectResult implements IResult {
     private item: Gs2Datastore.DataObject|null = null;
 
     public getItem(): Gs2Datastore.DataObject|null {

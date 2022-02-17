@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Ranking implements IModel {
+export default class Ranking implements IModel {
     private rank: number|null = null;
     private index: number|null = null;
     private userId: string|null = null;

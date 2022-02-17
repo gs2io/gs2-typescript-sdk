@@ -15,9 +15,9 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { AcquireAction } from './AcquireAction';
+import AcquireAction from './AcquireAction';
 
-export class Contents implements IModel {
+export default class Contents implements IModel {
     private metadata: string|null = null;
     private completeAcquireActions: AcquireAction[]|null = null;
     private weight: number|null = null;

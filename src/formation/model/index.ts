@@ -13,20 +13,40 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { FormModel } from "./FormModel"
-export { FormModelMaster } from "./FormModelMaster"
-export { MoldModel } from "./MoldModel"
-export { MoldModelMaster } from "./MoldModelMaster"
-export { CurrentFormMaster } from "./CurrentFormMaster"
-export { Mold } from "./Mold"
-export { Form } from "./Form"
-export { Slot } from "./Slot"
-export { SlotModel } from "./SlotModel"
-export { SlotWithSignature } from "./SlotWithSignature"
-export { AcquireActionConfig } from "./AcquireActionConfig"
-export { Config } from "./Config"
-export { GitHubCheckoutSetting } from "./GitHubCheckoutSetting"
-export { ScriptSetting } from "./ScriptSetting"
-export { LogSetting } from "./LogSetting"
-export { AcquireAction } from "./AcquireAction"
+import Namespace from "./Namespace"
+import FormModel from "./FormModel"
+import FormModelMaster from "./FormModelMaster"
+import MoldModel from "./MoldModel"
+import MoldModelMaster from "./MoldModelMaster"
+import CurrentFormMaster from "./CurrentFormMaster"
+import Mold from "./Mold"
+import Form from "./Form"
+import Slot from "./Slot"
+import SlotModel from "./SlotModel"
+import SlotWithSignature from "./SlotWithSignature"
+import AcquireActionConfig from "./AcquireActionConfig"
+import Config from "./Config"
+import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
+import ScriptSetting from "./ScriptSetting"
+import LogSetting from "./LogSetting"
+import AcquireAction from "./AcquireAction"
+
+export {
+    Namespace,
+    FormModel,
+    FormModelMaster,
+    MoldModel,
+    MoldModelMaster,
+    CurrentFormMaster,
+    Mold,
+    Form,
+    Slot,
+    SlotModel,
+    SlotWithSignature,
+    AcquireActionConfig,
+    Config,
+    GitHubCheckoutSetting,
+    ScriptSetting,
+    LogSetting,
+    AcquireAction,
+};

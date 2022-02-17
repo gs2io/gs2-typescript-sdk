@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Gateway from '../model'
 
-export class SendNotificationResult implements IResult {
+export default class SendNotificationResult implements IResult {
     private protocol: string|null = null;
 
     public getProtocol(): string|null {

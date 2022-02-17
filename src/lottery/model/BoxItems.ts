@@ -15,10 +15,10 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { AcquireAction } from './AcquireAction';
-import { BoxItem } from './BoxItem';
+import AcquireAction from './AcquireAction';
+import BoxItem from './BoxItem';
 
-export class BoxItems implements IModel {
+export default class BoxItems implements IModel {
     private boxId: string|null = null;
     private prizeTableName: string|null = null;
     private userId: string|null = null;

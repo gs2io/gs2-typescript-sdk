@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Lottery from '../model'
 
-export class ResetBoxResult implements IResult {
+export default class ResetBoxResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): ResetBoxResult {
         return new ResetBoxResult();

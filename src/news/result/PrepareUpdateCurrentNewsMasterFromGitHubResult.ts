@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2News from '../model'
 
-export class PrepareUpdateCurrentNewsMasterFromGitHubResult implements IResult {
+export default class PrepareUpdateCurrentNewsMasterFromGitHubResult implements IResult {
     private uploadToken: string|null = null;
 
     public getUploadToken(): string|null {

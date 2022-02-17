@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class TimeSpan implements IModel {
+export default class TimeSpan implements IModel {
     private days: number|null = null;
     private hours: number|null = null;
     private minutes: number|null = null;

@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class ProjectToken implements IModel {
+export default class ProjectToken implements IModel {
     private token: string|null = null;
 
     public getToken(): string|null {

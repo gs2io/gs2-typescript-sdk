@@ -13,38 +13,76 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesRequest } from "./DescribeNamespacesRequest"
-export { CreateNamespaceRequest } from "./CreateNamespaceRequest"
-export { GetNamespaceStatusRequest } from "./GetNamespaceStatusRequest"
-export { GetNamespaceRequest } from "./GetNamespaceRequest"
-export { UpdateNamespaceRequest } from "./UpdateNamespaceRequest"
-export { DeleteNamespaceRequest } from "./DeleteNamespaceRequest"
-export { DescribeLotteryModelMastersRequest } from "./DescribeLotteryModelMastersRequest"
-export { CreateLotteryModelMasterRequest } from "./CreateLotteryModelMasterRequest"
-export { GetLotteryModelMasterRequest } from "./GetLotteryModelMasterRequest"
-export { UpdateLotteryModelMasterRequest } from "./UpdateLotteryModelMasterRequest"
-export { DeleteLotteryModelMasterRequest } from "./DeleteLotteryModelMasterRequest"
-export { DescribePrizeTableMastersRequest } from "./DescribePrizeTableMastersRequest"
-export { CreatePrizeTableMasterRequest } from "./CreatePrizeTableMasterRequest"
-export { GetPrizeTableMasterRequest } from "./GetPrizeTableMasterRequest"
-export { UpdatePrizeTableMasterRequest } from "./UpdatePrizeTableMasterRequest"
-export { DeletePrizeTableMasterRequest } from "./DeletePrizeTableMasterRequest"
-export { DescribeBoxesRequest } from "./DescribeBoxesRequest"
-export { DescribeBoxesByUserIdRequest } from "./DescribeBoxesByUserIdRequest"
-export { GetBoxRequest } from "./GetBoxRequest"
-export { GetBoxByUserIdRequest } from "./GetBoxByUserIdRequest"
-export { GetRawBoxByUserIdRequest } from "./GetRawBoxByUserIdRequest"
-export { ResetBoxRequest } from "./ResetBoxRequest"
-export { ResetBoxByUserIdRequest } from "./ResetBoxByUserIdRequest"
-export { DescribeLotteryModelsRequest } from "./DescribeLotteryModelsRequest"
-export { GetLotteryModelRequest } from "./GetLotteryModelRequest"
-export { DescribePrizeTablesRequest } from "./DescribePrizeTablesRequest"
-export { GetPrizeTableRequest } from "./GetPrizeTableRequest"
-export { DrawByUserIdRequest } from "./DrawByUserIdRequest"
-export { DrawByStampSheetRequest } from "./DrawByStampSheetRequest"
-export { DescribeProbabilitiesRequest } from "./DescribeProbabilitiesRequest"
-export { DescribeProbabilitiesByUserIdRequest } from "./DescribeProbabilitiesByUserIdRequest"
-export { ExportMasterRequest } from "./ExportMasterRequest"
-export { GetCurrentLotteryMasterRequest } from "./GetCurrentLotteryMasterRequest"
-export { UpdateCurrentLotteryMasterRequest } from "./UpdateCurrentLotteryMasterRequest"
-export { UpdateCurrentLotteryMasterFromGitHubRequest } from "./UpdateCurrentLotteryMasterFromGitHubRequest"
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest"
+import CreateNamespaceRequest from "./CreateNamespaceRequest"
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
+import GetNamespaceRequest from "./GetNamespaceRequest"
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DescribeLotteryModelMastersRequest from "./DescribeLotteryModelMastersRequest"
+import CreateLotteryModelMasterRequest from "./CreateLotteryModelMasterRequest"
+import GetLotteryModelMasterRequest from "./GetLotteryModelMasterRequest"
+import UpdateLotteryModelMasterRequest from "./UpdateLotteryModelMasterRequest"
+import DeleteLotteryModelMasterRequest from "./DeleteLotteryModelMasterRequest"
+import DescribePrizeTableMastersRequest from "./DescribePrizeTableMastersRequest"
+import CreatePrizeTableMasterRequest from "./CreatePrizeTableMasterRequest"
+import GetPrizeTableMasterRequest from "./GetPrizeTableMasterRequest"
+import UpdatePrizeTableMasterRequest from "./UpdatePrizeTableMasterRequest"
+import DeletePrizeTableMasterRequest from "./DeletePrizeTableMasterRequest"
+import DescribeBoxesRequest from "./DescribeBoxesRequest"
+import DescribeBoxesByUserIdRequest from "./DescribeBoxesByUserIdRequest"
+import GetBoxRequest from "./GetBoxRequest"
+import GetBoxByUserIdRequest from "./GetBoxByUserIdRequest"
+import GetRawBoxByUserIdRequest from "./GetRawBoxByUserIdRequest"
+import ResetBoxRequest from "./ResetBoxRequest"
+import ResetBoxByUserIdRequest from "./ResetBoxByUserIdRequest"
+import DescribeLotteryModelsRequest from "./DescribeLotteryModelsRequest"
+import GetLotteryModelRequest from "./GetLotteryModelRequest"
+import DescribePrizeTablesRequest from "./DescribePrizeTablesRequest"
+import GetPrizeTableRequest from "./GetPrizeTableRequest"
+import DrawByUserIdRequest from "./DrawByUserIdRequest"
+import DrawByStampSheetRequest from "./DrawByStampSheetRequest"
+import DescribeProbabilitiesRequest from "./DescribeProbabilitiesRequest"
+import DescribeProbabilitiesByUserIdRequest from "./DescribeProbabilitiesByUserIdRequest"
+import ExportMasterRequest from "./ExportMasterRequest"
+import GetCurrentLotteryMasterRequest from "./GetCurrentLotteryMasterRequest"
+import UpdateCurrentLotteryMasterRequest from "./UpdateCurrentLotteryMasterRequest"
+import UpdateCurrentLotteryMasterFromGitHubRequest from "./UpdateCurrentLotteryMasterFromGitHubRequest"
+
+export {
+    DescribeNamespacesRequest,
+    CreateNamespaceRequest,
+    GetNamespaceStatusRequest,
+    GetNamespaceRequest,
+    UpdateNamespaceRequest,
+    DeleteNamespaceRequest,
+    DescribeLotteryModelMastersRequest,
+    CreateLotteryModelMasterRequest,
+    GetLotteryModelMasterRequest,
+    UpdateLotteryModelMasterRequest,
+    DeleteLotteryModelMasterRequest,
+    DescribePrizeTableMastersRequest,
+    CreatePrizeTableMasterRequest,
+    GetPrizeTableMasterRequest,
+    UpdatePrizeTableMasterRequest,
+    DeletePrizeTableMasterRequest,
+    DescribeBoxesRequest,
+    DescribeBoxesByUserIdRequest,
+    GetBoxRequest,
+    GetBoxByUserIdRequest,
+    GetRawBoxByUserIdRequest,
+    ResetBoxRequest,
+    ResetBoxByUserIdRequest,
+    DescribeLotteryModelsRequest,
+    GetLotteryModelRequest,
+    DescribePrizeTablesRequest,
+    GetPrizeTableRequest,
+    DrawByUserIdRequest,
+    DrawByStampSheetRequest,
+    DescribeProbabilitiesRequest,
+    DescribeProbabilitiesByUserIdRequest,
+    ExportMasterRequest,
+    GetCurrentLotteryMasterRequest,
+    UpdateCurrentLotteryMasterRequest,
+    UpdateCurrentLotteryMasterFromGitHubRequest,
+};

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Mission from '../model'
 
-export class UpdateCurrentMissionMasterFromGitHubResult implements IResult {
+export default class UpdateCurrentMissionMasterFromGitHubResult implements IResult {
     private item: Gs2Mission.CurrentMissionMaster|null = null;
 
     public getItem(): Gs2Mission.CurrentMissionMaster|null {

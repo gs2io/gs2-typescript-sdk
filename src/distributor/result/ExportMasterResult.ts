@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Distributor from '../model'
 
-export class ExportMasterResult implements IResult {
+export default class ExportMasterResult implements IResult {
     private item: Gs2Distributor.CurrentDistributorMaster|null = null;
 
     public getItem(): Gs2Distributor.CurrentDistributorMaster|null {

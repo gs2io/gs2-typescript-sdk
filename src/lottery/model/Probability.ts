@@ -15,10 +15,10 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { AcquireAction } from './AcquireAction';
-import { DrawnPrize } from './DrawnPrize';
+import AcquireAction from './AcquireAction';
+import DrawnPrize from './DrawnPrize';
 
-export class Probability implements IModel {
+export default class Probability implements IModel {
     private prize: DrawnPrize|null = null;
     private rate: number|null = null;
 

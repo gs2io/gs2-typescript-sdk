@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Account from '../model'
 
-export class CreateAccountResult implements IResult {
+export default class CreateAccountResult implements IResult {
     private item: Gs2Account.Account|null = null;
 
     public getItem(): Gs2Account.Account|null {

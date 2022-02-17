@@ -1,0 +1,158 @@
+/*
+Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License").
+You may not use this file except in compliance with the License.
+A copy of the License is located at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+or in the "license" file accompanying this file. This file is distributed
+on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+express or implied. See the License for the specific language governing
+permissions and limitations under the License.
+ */
+import ConsumeAction from './ConsumeAction';
+import AcquireAction from './AcquireAction';
+var SalesItemMaster = /** @class */ (function () {
+    function SalesItemMaster() {
+        this.salesItemId = null;
+        this.name = null;
+        this.description = null;
+        this.metadata = null;
+        this.consumeActions = null;
+        this.acquireActions = null;
+        this.createdAt = null;
+        this.updatedAt = null;
+    }
+    SalesItemMaster.prototype.getSalesItemId = function () {
+        return this.salesItemId;
+    };
+    SalesItemMaster.prototype.setSalesItemId = function (salesItemId) {
+        this.salesItemId = salesItemId;
+        return this;
+    };
+    SalesItemMaster.prototype.withSalesItemId = function (salesItemId) {
+        this.salesItemId = salesItemId;
+        return this;
+    };
+    SalesItemMaster.prototype.getName = function () {
+        return this.name;
+    };
+    SalesItemMaster.prototype.setName = function (name) {
+        this.name = name;
+        return this;
+    };
+    SalesItemMaster.prototype.withName = function (name) {
+        this.name = name;
+        return this;
+    };
+    SalesItemMaster.prototype.getDescription = function () {
+        return this.description;
+    };
+    SalesItemMaster.prototype.setDescription = function (description) {
+        this.description = description;
+        return this;
+    };
+    SalesItemMaster.prototype.withDescription = function (description) {
+        this.description = description;
+        return this;
+    };
+    SalesItemMaster.prototype.getMetadata = function () {
+        return this.metadata;
+    };
+    SalesItemMaster.prototype.setMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
+    SalesItemMaster.prototype.withMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
+    SalesItemMaster.prototype.getConsumeActions = function () {
+        return this.consumeActions;
+    };
+    SalesItemMaster.prototype.setConsumeActions = function (consumeActions) {
+        this.consumeActions = consumeActions;
+        return this;
+    };
+    SalesItemMaster.prototype.withConsumeActions = function (consumeActions) {
+        this.consumeActions = consumeActions;
+        return this;
+    };
+    SalesItemMaster.prototype.getAcquireActions = function () {
+        return this.acquireActions;
+    };
+    SalesItemMaster.prototype.setAcquireActions = function (acquireActions) {
+        this.acquireActions = acquireActions;
+        return this;
+    };
+    SalesItemMaster.prototype.withAcquireActions = function (acquireActions) {
+        this.acquireActions = acquireActions;
+        return this;
+    };
+    SalesItemMaster.prototype.getCreatedAt = function () {
+        return this.createdAt;
+    };
+    SalesItemMaster.prototype.setCreatedAt = function (createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    };
+    SalesItemMaster.prototype.withCreatedAt = function (createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    };
+    SalesItemMaster.prototype.getUpdatedAt = function () {
+        return this.updatedAt;
+    };
+    SalesItemMaster.prototype.setUpdatedAt = function (updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    };
+    SalesItemMaster.prototype.withUpdatedAt = function (updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    };
+    SalesItemMaster.fromDict = function (data) {
+        if (data == undefined || data == null) {
+            return null;
+        }
+        return new SalesItemMaster()
+            .withSalesItemId(data["salesItemId"])
+            .withName(data["name"])
+            .withDescription(data["description"])
+            .withMetadata(data["metadata"])
+            .withConsumeActions(data.consumeActions ?
+            data.consumeActions.map(function (item) {
+                return ConsumeAction.fromDict(item);
+            }) : [])
+            .withAcquireActions(data.acquireActions ?
+            data.acquireActions.map(function (item) {
+                return AcquireAction.fromDict(item);
+            }) : [])
+            .withCreatedAt(data["createdAt"])
+            .withUpdatedAt(data["updatedAt"]);
+    };
+    SalesItemMaster.prototype.toDict = function () {
+        return {
+            "salesItemId": this.getSalesItemId(),
+            "name": this.getName(),
+            "description": this.getDescription(),
+            "metadata": this.getMetadata(),
+            "consumeActions": this.getConsumeActions() ?
+                this.getConsumeActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
+            "acquireActions": this.getAcquireActions() ?
+                this.getAcquireActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
+            "createdAt": this.getCreatedAt(),
+            "updatedAt": this.getUpdatedAt(),
+        };
+    };
+    return SalesItemMaster;
+}());
+export default SalesItemMaster;
+//# sourceMappingURL=SalesItemMaster.js.map

@@ -13,10 +13,20 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { EventMaster } from "./EventMaster"
-export { Trigger } from "./Trigger"
-export { Event } from "./Event"
-export { CurrentEventMaster } from "./CurrentEventMaster"
-export { GitHubCheckoutSetting } from "./GitHubCheckoutSetting"
-export { LogSetting } from "./LogSetting"
+import Namespace from "./Namespace"
+import EventMaster from "./EventMaster"
+import Trigger from "./Trigger"
+import Event from "./Event"
+import CurrentEventMaster from "./CurrentEventMaster"
+import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
+import LogSetting from "./LogSetting"
+
+export {
+    Namespace,
+    EventMaster,
+    Trigger,
+    Event,
+    CurrentEventMaster,
+    GitHubCheckoutSetting,
+    LogSetting,
+};

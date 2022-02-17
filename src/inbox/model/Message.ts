@@ -15,9 +15,9 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { AcquireAction } from './AcquireAction';
+import AcquireAction from './AcquireAction';
 
-export class Message implements IModel {
+export default class Message implements IModel {
     private messageId: string|null = null;
     private name: string|null = null;
     private userId: string|null = null;

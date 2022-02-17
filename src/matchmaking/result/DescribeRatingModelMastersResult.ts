@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Matchmaking from '../model'
 
-export class DescribeRatingModelMastersResult implements IResult {
+export default class DescribeRatingModelMastersResult implements IResult {
     private items: Gs2Matchmaking.RatingModelMaster[]|null = null;
     private nextPageToken: string|null = null;
 

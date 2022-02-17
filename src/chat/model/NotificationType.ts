@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class NotificationType implements IModel {
+export default class NotificationType implements IModel {
     private category: number|null = null;
     private enableTransferMobilePushNotification: boolean|null = null;
 

@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Ballot implements IModel {
+export default class Ballot implements IModel {
     private userId: string|null = null;
     private ratingName: string|null = null;
     private gatheringName: string|null = null;

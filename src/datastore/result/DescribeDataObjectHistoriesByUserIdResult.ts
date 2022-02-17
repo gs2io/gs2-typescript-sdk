@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Datastore from '../model'
 
-export class DescribeDataObjectHistoriesByUserIdResult implements IResult {
+export default class DescribeDataObjectHistoriesByUserIdResult implements IResult {
     private items: Gs2Datastore.DataObjectHistory[]|null = null;
     private nextPageToken: string|null = null;
 

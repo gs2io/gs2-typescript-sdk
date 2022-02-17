@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Counter implements IModel {
+export default class Counter implements IModel {
     private counterId: string|null = null;
     private limitName: string|null = null;
     private name: string|null = null;

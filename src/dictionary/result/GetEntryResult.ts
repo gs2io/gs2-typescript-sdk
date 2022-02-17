@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Dictionary from '../model'
 
-export class GetEntryResult implements IResult {
+export default class GetEntryResult implements IResult {
     private item: Gs2Dictionary.Entry|null = null;
 
     public getItem(): Gs2Dictionary.Entry|null {

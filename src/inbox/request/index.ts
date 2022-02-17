@@ -13,38 +13,76 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesRequest } from "./DescribeNamespacesRequest"
-export { CreateNamespaceRequest } from "./CreateNamespaceRequest"
-export { GetNamespaceStatusRequest } from "./GetNamespaceStatusRequest"
-export { GetNamespaceRequest } from "./GetNamespaceRequest"
-export { UpdateNamespaceRequest } from "./UpdateNamespaceRequest"
-export { DeleteNamespaceRequest } from "./DeleteNamespaceRequest"
-export { DescribeMessagesRequest } from "./DescribeMessagesRequest"
-export { DescribeMessagesByUserIdRequest } from "./DescribeMessagesByUserIdRequest"
-export { SendMessageByUserIdRequest } from "./SendMessageByUserIdRequest"
-export { GetMessageRequest } from "./GetMessageRequest"
-export { GetMessageByUserIdRequest } from "./GetMessageByUserIdRequest"
-export { ReceiveGlobalMessageRequest } from "./ReceiveGlobalMessageRequest"
-export { ReceiveGlobalMessageByUserIdRequest } from "./ReceiveGlobalMessageByUserIdRequest"
-export { OpenMessageRequest } from "./OpenMessageRequest"
-export { OpenMessageByUserIdRequest } from "./OpenMessageByUserIdRequest"
-export { ReadMessageRequest } from "./ReadMessageRequest"
-export { ReadMessageByUserIdRequest } from "./ReadMessageByUserIdRequest"
-export { DeleteMessageRequest } from "./DeleteMessageRequest"
-export { DeleteMessageByUserIdRequest } from "./DeleteMessageByUserIdRequest"
-export { SendByStampSheetRequest } from "./SendByStampSheetRequest"
-export { OpenByStampTaskRequest } from "./OpenByStampTaskRequest"
-export { ExportMasterRequest } from "./ExportMasterRequest"
-export { GetCurrentMessageMasterRequest } from "./GetCurrentMessageMasterRequest"
-export { UpdateCurrentMessageMasterRequest } from "./UpdateCurrentMessageMasterRequest"
-export { UpdateCurrentMessageMasterFromGitHubRequest } from "./UpdateCurrentMessageMasterFromGitHubRequest"
-export { DescribeGlobalMessageMastersRequest } from "./DescribeGlobalMessageMastersRequest"
-export { CreateGlobalMessageMasterRequest } from "./CreateGlobalMessageMasterRequest"
-export { GetGlobalMessageMasterRequest } from "./GetGlobalMessageMasterRequest"
-export { UpdateGlobalMessageMasterRequest } from "./UpdateGlobalMessageMasterRequest"
-export { DeleteGlobalMessageMasterRequest } from "./DeleteGlobalMessageMasterRequest"
-export { DescribeGlobalMessagesRequest } from "./DescribeGlobalMessagesRequest"
-export { GetGlobalMessageRequest } from "./GetGlobalMessageRequest"
-export { GetReceivedByUserIdRequest } from "./GetReceivedByUserIdRequest"
-export { UpdateReceivedByUserIdRequest } from "./UpdateReceivedByUserIdRequest"
-export { DeleteReceivedByUserIdRequest } from "./DeleteReceivedByUserIdRequest"
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest"
+import CreateNamespaceRequest from "./CreateNamespaceRequest"
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
+import GetNamespaceRequest from "./GetNamespaceRequest"
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DescribeMessagesRequest from "./DescribeMessagesRequest"
+import DescribeMessagesByUserIdRequest from "./DescribeMessagesByUserIdRequest"
+import SendMessageByUserIdRequest from "./SendMessageByUserIdRequest"
+import GetMessageRequest from "./GetMessageRequest"
+import GetMessageByUserIdRequest from "./GetMessageByUserIdRequest"
+import ReceiveGlobalMessageRequest from "./ReceiveGlobalMessageRequest"
+import ReceiveGlobalMessageByUserIdRequest from "./ReceiveGlobalMessageByUserIdRequest"
+import OpenMessageRequest from "./OpenMessageRequest"
+import OpenMessageByUserIdRequest from "./OpenMessageByUserIdRequest"
+import ReadMessageRequest from "./ReadMessageRequest"
+import ReadMessageByUserIdRequest from "./ReadMessageByUserIdRequest"
+import DeleteMessageRequest from "./DeleteMessageRequest"
+import DeleteMessageByUserIdRequest from "./DeleteMessageByUserIdRequest"
+import SendByStampSheetRequest from "./SendByStampSheetRequest"
+import OpenByStampTaskRequest from "./OpenByStampTaskRequest"
+import ExportMasterRequest from "./ExportMasterRequest"
+import GetCurrentMessageMasterRequest from "./GetCurrentMessageMasterRequest"
+import UpdateCurrentMessageMasterRequest from "./UpdateCurrentMessageMasterRequest"
+import UpdateCurrentMessageMasterFromGitHubRequest from "./UpdateCurrentMessageMasterFromGitHubRequest"
+import DescribeGlobalMessageMastersRequest from "./DescribeGlobalMessageMastersRequest"
+import CreateGlobalMessageMasterRequest from "./CreateGlobalMessageMasterRequest"
+import GetGlobalMessageMasterRequest from "./GetGlobalMessageMasterRequest"
+import UpdateGlobalMessageMasterRequest from "./UpdateGlobalMessageMasterRequest"
+import DeleteGlobalMessageMasterRequest from "./DeleteGlobalMessageMasterRequest"
+import DescribeGlobalMessagesRequest from "./DescribeGlobalMessagesRequest"
+import GetGlobalMessageRequest from "./GetGlobalMessageRequest"
+import GetReceivedByUserIdRequest from "./GetReceivedByUserIdRequest"
+import UpdateReceivedByUserIdRequest from "./UpdateReceivedByUserIdRequest"
+import DeleteReceivedByUserIdRequest from "./DeleteReceivedByUserIdRequest"
+
+export {
+    DescribeNamespacesRequest,
+    CreateNamespaceRequest,
+    GetNamespaceStatusRequest,
+    GetNamespaceRequest,
+    UpdateNamespaceRequest,
+    DeleteNamespaceRequest,
+    DescribeMessagesRequest,
+    DescribeMessagesByUserIdRequest,
+    SendMessageByUserIdRequest,
+    GetMessageRequest,
+    GetMessageByUserIdRequest,
+    ReceiveGlobalMessageRequest,
+    ReceiveGlobalMessageByUserIdRequest,
+    OpenMessageRequest,
+    OpenMessageByUserIdRequest,
+    ReadMessageRequest,
+    ReadMessageByUserIdRequest,
+    DeleteMessageRequest,
+    DeleteMessageByUserIdRequest,
+    SendByStampSheetRequest,
+    OpenByStampTaskRequest,
+    ExportMasterRequest,
+    GetCurrentMessageMasterRequest,
+    UpdateCurrentMessageMasterRequest,
+    UpdateCurrentMessageMasterFromGitHubRequest,
+    DescribeGlobalMessageMastersRequest,
+    CreateGlobalMessageMasterRequest,
+    GetGlobalMessageMasterRequest,
+    UpdateGlobalMessageMasterRequest,
+    DeleteGlobalMessageMasterRequest,
+    DescribeGlobalMessagesRequest,
+    GetGlobalMessageRequest,
+    GetReceivedByUserIdRequest,
+    UpdateReceivedByUserIdRequest,
+    DeleteReceivedByUserIdRequest,
+};

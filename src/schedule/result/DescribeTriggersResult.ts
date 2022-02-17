@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Schedule from '../model'
 
-export class DescribeTriggersResult implements IResult {
+export default class DescribeTriggersResult implements IResult {
     private items: Gs2Schedule.Trigger[]|null = null;
     private nextPageToken: string|null = null;
 

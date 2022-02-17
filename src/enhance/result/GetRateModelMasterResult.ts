@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Enhance from '../model'
 
-export class GetRateModelMasterResult implements IResult {
+export default class GetRateModelMasterResult implements IResult {
     private item: Gs2Enhance.RateModelMaster|null = null;
 
     public getItem(): Gs2Enhance.RateModelMaster|null {

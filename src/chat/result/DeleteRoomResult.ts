@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Chat from '../model'
 
-export class DeleteRoomResult implements IResult {
+export default class DeleteRoomResult implements IResult {
     private item: Gs2Chat.Room|null = null;
 
     public getItem(): Gs2Chat.Room|null {

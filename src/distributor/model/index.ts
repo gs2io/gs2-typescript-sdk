@@ -13,10 +13,20 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { DistributorModelMaster } from "./DistributorModelMaster"
-export { DistributorModel } from "./DistributorModel"
-export { CurrentDistributorMaster } from "./CurrentDistributorMaster"
-export { GitHubCheckoutSetting } from "./GitHubCheckoutSetting"
-export { DistributeResource } from "./DistributeResource"
-export { LogSetting } from "./LogSetting"
+import Namespace from "./Namespace"
+import DistributorModelMaster from "./DistributorModelMaster"
+import DistributorModel from "./DistributorModel"
+import CurrentDistributorMaster from "./CurrentDistributorMaster"
+import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
+import DistributeResource from "./DistributeResource"
+import LogSetting from "./LogSetting"
+
+export {
+    Namespace,
+    DistributorModelMaster,
+    DistributorModel,
+    CurrentDistributorMaster,
+    GitHubCheckoutSetting,
+    DistributeResource,
+    LogSetting,
+};

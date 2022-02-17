@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Friend from '../model'
 
-export class GetSendRequestResult implements IResult {
+export default class GetSendRequestResult implements IResult {
     private item: Gs2Friend.FriendRequest|null = null;
 
     public getItem(): Gs2Friend.FriendRequest|null {

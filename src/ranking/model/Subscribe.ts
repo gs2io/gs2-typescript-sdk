@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Subscribe implements IModel {
+export default class Subscribe implements IModel {
     private subscribeId: string|null = null;
     private categoryName: string|null = null;
     private userId: string|null = null;

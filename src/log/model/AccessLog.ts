@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class AccessLog implements IModel {
+export default class AccessLog implements IModel {
     private timestamp: number|null = null;
     private requestId: string|null = null;
     private service: string|null = null;

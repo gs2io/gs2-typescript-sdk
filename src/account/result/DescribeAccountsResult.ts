@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Account from '../model'
 
-export class DescribeAccountsResult implements IResult {
+export default class DescribeAccountsResult implements IResult {
     private items: Gs2Account.Account[]|null = null;
     private nextPageToken: string|null = null;
 

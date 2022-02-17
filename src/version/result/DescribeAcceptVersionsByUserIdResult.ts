@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Version from '../model'
 
-export class DescribeAcceptVersionsByUserIdResult implements IResult {
+export default class DescribeAcceptVersionsByUserIdResult implements IResult {
     private items: Gs2Version.AcceptVersion[]|null = null;
     private nextPageToken: string|null = null;
 

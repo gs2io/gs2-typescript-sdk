@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Received implements IModel {
+export default class Received implements IModel {
     private receivedId: string|null = null;
     private userId: string|null = null;
     private receivedGlobalMessageNames: string[]|null = null;

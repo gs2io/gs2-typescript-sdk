@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Datastore from '../model'
 
-export class DescribeDataObjectsResult implements IResult {
+export default class DescribeDataObjectsResult implements IResult {
     private items: Gs2Datastore.DataObject[]|null = null;
     private nextPageToken: string|null = null;
 

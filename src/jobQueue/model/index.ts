@@ -13,11 +13,22 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { Job } from "./Job"
-export { JobResult } from "./JobResult"
-export { DeadLetterJob } from "./DeadLetterJob"
-export { NotificationSetting } from "./NotificationSetting"
-export { LogSetting } from "./LogSetting"
-export { JobEntry } from "./JobEntry"
-export { JobResultBody } from "./JobResultBody"
+import Namespace from "./Namespace"
+import Job from "./Job"
+import JobResult from "./JobResult"
+import DeadLetterJob from "./DeadLetterJob"
+import NotificationSetting from "./NotificationSetting"
+import LogSetting from "./LogSetting"
+import JobEntry from "./JobEntry"
+import JobResultBody from "./JobResultBody"
+
+export {
+    Namespace,
+    Job,
+    JobResult,
+    DeadLetterJob,
+    NotificationSetting,
+    LogSetting,
+    JobEntry,
+    JobResultBody,
+};

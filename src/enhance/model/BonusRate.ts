@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class BonusRate implements IModel {
+export default class BonusRate implements IModel {
     private rate: number|null = null;
     private weight: number|null = null;
 

@@ -15,9 +15,9 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { NotificationType } from './NotificationType';
+import NotificationType from './NotificationType';
 
-export class Subscribe implements IModel {
+export default class Subscribe implements IModel {
     private subscribeId: string|null = null;
     private userId: string|null = null;
     private roomName: string|null = null;

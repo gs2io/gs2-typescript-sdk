@@ -13,13 +13,26 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { ExperienceModelMaster } from "./ExperienceModelMaster"
-export { ExperienceModel } from "./ExperienceModel"
-export { ThresholdMaster } from "./ThresholdMaster"
-export { Threshold } from "./Threshold"
-export { CurrentExperienceMaster } from "./CurrentExperienceMaster"
-export { Status } from "./Status"
-export { GitHubCheckoutSetting } from "./GitHubCheckoutSetting"
-export { ScriptSetting } from "./ScriptSetting"
-export { LogSetting } from "./LogSetting"
+import Namespace from "./Namespace"
+import ExperienceModelMaster from "./ExperienceModelMaster"
+import ExperienceModel from "./ExperienceModel"
+import ThresholdMaster from "./ThresholdMaster"
+import Threshold from "./Threshold"
+import CurrentExperienceMaster from "./CurrentExperienceMaster"
+import Status from "./Status"
+import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
+import ScriptSetting from "./ScriptSetting"
+import LogSetting from "./LogSetting"
+
+export {
+    Namespace,
+    ExperienceModelMaster,
+    ExperienceModel,
+    ThresholdMaster,
+    Threshold,
+    CurrentExperienceMaster,
+    Status,
+    GitHubCheckoutSetting,
+    ScriptSetting,
+    LogSetting,
+};

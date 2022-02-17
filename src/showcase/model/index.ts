@@ -13,18 +13,36 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { SalesItemMaster } from "./SalesItemMaster"
-export { SalesItemGroupMaster } from "./SalesItemGroupMaster"
-export { ShowcaseMaster } from "./ShowcaseMaster"
-export { CurrentShowcaseMaster } from "./CurrentShowcaseMaster"
-export { GitHubCheckoutSetting } from "./GitHubCheckoutSetting"
-export { LogSetting } from "./LogSetting"
-export { SalesItem } from "./SalesItem"
-export { SalesItemGroup } from "./SalesItemGroup"
-export { Showcase } from "./Showcase"
-export { DisplayItem } from "./DisplayItem"
-export { Config } from "./Config"
-export { ConsumeAction } from "./ConsumeAction"
-export { AcquireAction } from "./AcquireAction"
-export { DisplayItemMaster } from "./DisplayItemMaster"
+import Namespace from "./Namespace"
+import SalesItemMaster from "./SalesItemMaster"
+import SalesItemGroupMaster from "./SalesItemGroupMaster"
+import ShowcaseMaster from "./ShowcaseMaster"
+import CurrentShowcaseMaster from "./CurrentShowcaseMaster"
+import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
+import LogSetting from "./LogSetting"
+import SalesItem from "./SalesItem"
+import SalesItemGroup from "./SalesItemGroup"
+import Showcase from "./Showcase"
+import DisplayItem from "./DisplayItem"
+import Config from "./Config"
+import ConsumeAction from "./ConsumeAction"
+import AcquireAction from "./AcquireAction"
+import DisplayItemMaster from "./DisplayItemMaster"
+
+export {
+    Namespace,
+    SalesItemMaster,
+    SalesItemGroupMaster,
+    ShowcaseMaster,
+    CurrentShowcaseMaster,
+    GitHubCheckoutSetting,
+    LogSetting,
+    SalesItem,
+    SalesItemGroup,
+    Showcase,
+    DisplayItem,
+    Config,
+    ConsumeAction,
+    AcquireAction,
+    DisplayItemMaster,
+};

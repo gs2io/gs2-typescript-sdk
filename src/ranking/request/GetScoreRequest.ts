@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Ranking from '../model'
 
-export class GetScoreRequest implements IRequest {
+export default class GetScoreRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Distributor from '../model'
 
-export class RunStampSheetResult implements IResult {
+export default class RunStampSheetResult implements IResult {
     private result: string|null = null;
 
     public getResult(): string|null {

@@ -13,31 +13,62 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesRequest } from "./DescribeNamespacesRequest"
-export { CreateNamespaceRequest } from "./CreateNamespaceRequest"
-export { GetNamespaceStatusRequest } from "./GetNamespaceStatusRequest"
-export { GetNamespaceRequest } from "./GetNamespaceRequest"
-export { UpdateNamespaceRequest } from "./UpdateNamespaceRequest"
-export { DeleteNamespaceRequest } from "./DeleteNamespaceRequest"
-export { DescribeEventMastersRequest } from "./DescribeEventMastersRequest"
-export { CreateEventMasterRequest } from "./CreateEventMasterRequest"
-export { GetEventMasterRequest } from "./GetEventMasterRequest"
-export { UpdateEventMasterRequest } from "./UpdateEventMasterRequest"
-export { DeleteEventMasterRequest } from "./DeleteEventMasterRequest"
-export { DescribeTriggersRequest } from "./DescribeTriggersRequest"
-export { DescribeTriggersByUserIdRequest } from "./DescribeTriggersByUserIdRequest"
-export { GetTriggerRequest } from "./GetTriggerRequest"
-export { GetTriggerByUserIdRequest } from "./GetTriggerByUserIdRequest"
-export { TriggerByUserIdRequest } from "./TriggerByUserIdRequest"
-export { DeleteTriggerRequest } from "./DeleteTriggerRequest"
-export { DeleteTriggerByUserIdRequest } from "./DeleteTriggerByUserIdRequest"
-export { DescribeEventsRequest } from "./DescribeEventsRequest"
-export { DescribeEventsByUserIdRequest } from "./DescribeEventsByUserIdRequest"
-export { DescribeRawEventsRequest } from "./DescribeRawEventsRequest"
-export { GetEventRequest } from "./GetEventRequest"
-export { GetEventByUserIdRequest } from "./GetEventByUserIdRequest"
-export { GetRawEventRequest } from "./GetRawEventRequest"
-export { ExportMasterRequest } from "./ExportMasterRequest"
-export { GetCurrentEventMasterRequest } from "./GetCurrentEventMasterRequest"
-export { UpdateCurrentEventMasterRequest } from "./UpdateCurrentEventMasterRequest"
-export { UpdateCurrentEventMasterFromGitHubRequest } from "./UpdateCurrentEventMasterFromGitHubRequest"
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest"
+import CreateNamespaceRequest from "./CreateNamespaceRequest"
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
+import GetNamespaceRequest from "./GetNamespaceRequest"
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DescribeEventMastersRequest from "./DescribeEventMastersRequest"
+import CreateEventMasterRequest from "./CreateEventMasterRequest"
+import GetEventMasterRequest from "./GetEventMasterRequest"
+import UpdateEventMasterRequest from "./UpdateEventMasterRequest"
+import DeleteEventMasterRequest from "./DeleteEventMasterRequest"
+import DescribeTriggersRequest from "./DescribeTriggersRequest"
+import DescribeTriggersByUserIdRequest from "./DescribeTriggersByUserIdRequest"
+import GetTriggerRequest from "./GetTriggerRequest"
+import GetTriggerByUserIdRequest from "./GetTriggerByUserIdRequest"
+import TriggerByUserIdRequest from "./TriggerByUserIdRequest"
+import DeleteTriggerRequest from "./DeleteTriggerRequest"
+import DeleteTriggerByUserIdRequest from "./DeleteTriggerByUserIdRequest"
+import DescribeEventsRequest from "./DescribeEventsRequest"
+import DescribeEventsByUserIdRequest from "./DescribeEventsByUserIdRequest"
+import DescribeRawEventsRequest from "./DescribeRawEventsRequest"
+import GetEventRequest from "./GetEventRequest"
+import GetEventByUserIdRequest from "./GetEventByUserIdRequest"
+import GetRawEventRequest from "./GetRawEventRequest"
+import ExportMasterRequest from "./ExportMasterRequest"
+import GetCurrentEventMasterRequest from "./GetCurrentEventMasterRequest"
+import UpdateCurrentEventMasterRequest from "./UpdateCurrentEventMasterRequest"
+import UpdateCurrentEventMasterFromGitHubRequest from "./UpdateCurrentEventMasterFromGitHubRequest"
+
+export {
+    DescribeNamespacesRequest,
+    CreateNamespaceRequest,
+    GetNamespaceStatusRequest,
+    GetNamespaceRequest,
+    UpdateNamespaceRequest,
+    DeleteNamespaceRequest,
+    DescribeEventMastersRequest,
+    CreateEventMasterRequest,
+    GetEventMasterRequest,
+    UpdateEventMasterRequest,
+    DeleteEventMasterRequest,
+    DescribeTriggersRequest,
+    DescribeTriggersByUserIdRequest,
+    GetTriggerRequest,
+    GetTriggerByUserIdRequest,
+    TriggerByUserIdRequest,
+    DeleteTriggerRequest,
+    DeleteTriggerByUserIdRequest,
+    DescribeEventsRequest,
+    DescribeEventsByUserIdRequest,
+    DescribeRawEventsRequest,
+    GetEventRequest,
+    GetEventByUserIdRequest,
+    GetRawEventRequest,
+    ExportMasterRequest,
+    GetCurrentEventMasterRequest,
+    UpdateCurrentEventMasterRequest,
+    UpdateCurrentEventMasterFromGitHubRequest,
+};

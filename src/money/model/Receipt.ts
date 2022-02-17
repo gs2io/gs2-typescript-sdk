@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Receipt implements IModel {
+export default class Receipt implements IModel {
     private receiptId: string|null = null;
     private transactionId: string|null = null;
     private userId: string|null = null;

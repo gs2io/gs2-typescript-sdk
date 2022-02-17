@@ -13,34 +13,68 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { DescribeSalesItemMastersResult } from "./DescribeSalesItemMastersResult"
-export { CreateSalesItemMasterResult } from "./CreateSalesItemMasterResult"
-export { GetSalesItemMasterResult } from "./GetSalesItemMasterResult"
-export { UpdateSalesItemMasterResult } from "./UpdateSalesItemMasterResult"
-export { DeleteSalesItemMasterResult } from "./DeleteSalesItemMasterResult"
-export { DescribeSalesItemGroupMastersResult } from "./DescribeSalesItemGroupMastersResult"
-export { CreateSalesItemGroupMasterResult } from "./CreateSalesItemGroupMasterResult"
-export { GetSalesItemGroupMasterResult } from "./GetSalesItemGroupMasterResult"
-export { UpdateSalesItemGroupMasterResult } from "./UpdateSalesItemGroupMasterResult"
-export { DeleteSalesItemGroupMasterResult } from "./DeleteSalesItemGroupMasterResult"
-export { DescribeShowcaseMastersResult } from "./DescribeShowcaseMastersResult"
-export { CreateShowcaseMasterResult } from "./CreateShowcaseMasterResult"
-export { GetShowcaseMasterResult } from "./GetShowcaseMasterResult"
-export { UpdateShowcaseMasterResult } from "./UpdateShowcaseMasterResult"
-export { DeleteShowcaseMasterResult } from "./DeleteShowcaseMasterResult"
-export { ExportMasterResult } from "./ExportMasterResult"
-export { GetCurrentShowcaseMasterResult } from "./GetCurrentShowcaseMasterResult"
-export { UpdateCurrentShowcaseMasterResult } from "./UpdateCurrentShowcaseMasterResult"
-export { UpdateCurrentShowcaseMasterFromGitHubResult } from "./UpdateCurrentShowcaseMasterFromGitHubResult"
-export { DescribeShowcasesResult } from "./DescribeShowcasesResult"
-export { DescribeShowcasesByUserIdResult } from "./DescribeShowcasesByUserIdResult"
-export { GetShowcaseResult } from "./GetShowcaseResult"
-export { GetShowcaseByUserIdResult } from "./GetShowcaseByUserIdResult"
-export { BuyResult } from "./BuyResult"
-export { BuyByUserIdResult } from "./BuyByUserIdResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeSalesItemMastersResult from "./DescribeSalesItemMastersResult"
+import CreateSalesItemMasterResult from "./CreateSalesItemMasterResult"
+import GetSalesItemMasterResult from "./GetSalesItemMasterResult"
+import UpdateSalesItemMasterResult from "./UpdateSalesItemMasterResult"
+import DeleteSalesItemMasterResult from "./DeleteSalesItemMasterResult"
+import DescribeSalesItemGroupMastersResult from "./DescribeSalesItemGroupMastersResult"
+import CreateSalesItemGroupMasterResult from "./CreateSalesItemGroupMasterResult"
+import GetSalesItemGroupMasterResult from "./GetSalesItemGroupMasterResult"
+import UpdateSalesItemGroupMasterResult from "./UpdateSalesItemGroupMasterResult"
+import DeleteSalesItemGroupMasterResult from "./DeleteSalesItemGroupMasterResult"
+import DescribeShowcaseMastersResult from "./DescribeShowcaseMastersResult"
+import CreateShowcaseMasterResult from "./CreateShowcaseMasterResult"
+import GetShowcaseMasterResult from "./GetShowcaseMasterResult"
+import UpdateShowcaseMasterResult from "./UpdateShowcaseMasterResult"
+import DeleteShowcaseMasterResult from "./DeleteShowcaseMasterResult"
+import ExportMasterResult from "./ExportMasterResult"
+import GetCurrentShowcaseMasterResult from "./GetCurrentShowcaseMasterResult"
+import UpdateCurrentShowcaseMasterResult from "./UpdateCurrentShowcaseMasterResult"
+import UpdateCurrentShowcaseMasterFromGitHubResult from "./UpdateCurrentShowcaseMasterFromGitHubResult"
+import DescribeShowcasesResult from "./DescribeShowcasesResult"
+import DescribeShowcasesByUserIdResult from "./DescribeShowcasesByUserIdResult"
+import GetShowcaseResult from "./GetShowcaseResult"
+import GetShowcaseByUserIdResult from "./GetShowcaseByUserIdResult"
+import BuyResult from "./BuyResult"
+import BuyByUserIdResult from "./BuyByUserIdResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    DescribeSalesItemMastersResult,
+    CreateSalesItemMasterResult,
+    GetSalesItemMasterResult,
+    UpdateSalesItemMasterResult,
+    DeleteSalesItemMasterResult,
+    DescribeSalesItemGroupMastersResult,
+    CreateSalesItemGroupMasterResult,
+    GetSalesItemGroupMasterResult,
+    UpdateSalesItemGroupMasterResult,
+    DeleteSalesItemGroupMasterResult,
+    DescribeShowcaseMastersResult,
+    CreateShowcaseMasterResult,
+    GetShowcaseMasterResult,
+    UpdateShowcaseMasterResult,
+    DeleteShowcaseMasterResult,
+    ExportMasterResult,
+    GetCurrentShowcaseMasterResult,
+    UpdateCurrentShowcaseMasterResult,
+    UpdateCurrentShowcaseMasterFromGitHubResult,
+    DescribeShowcasesResult,
+    DescribeShowcasesByUserIdResult,
+    GetShowcaseResult,
+    GetShowcaseByUserIdResult,
+    BuyResult,
+    BuyByUserIdResult,
+};

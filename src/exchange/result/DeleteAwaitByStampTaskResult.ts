@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Exchange from '../model'
 
-export class DeleteAwaitByStampTaskResult implements IResult {
+export default class DeleteAwaitByStampTaskResult implements IResult {
     private item: Gs2Exchange.Await|null = null;
     private newContextStack: string|null = null;
 

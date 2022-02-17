@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Inventory from '../model'
 
-export class DescribeInventoryModelsRequest implements IRequest {
+export default class DescribeInventoryModelsRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

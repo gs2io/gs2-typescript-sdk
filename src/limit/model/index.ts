@@ -13,10 +13,20 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { Counter } from "./Counter"
-export { LimitModelMaster } from "./LimitModelMaster"
-export { CurrentLimitMaster } from "./CurrentLimitMaster"
-export { GitHubCheckoutSetting } from "./GitHubCheckoutSetting"
-export { LogSetting } from "./LogSetting"
-export { LimitModel } from "./LimitModel"
+import Namespace from "./Namespace"
+import Counter from "./Counter"
+import LimitModelMaster from "./LimitModelMaster"
+import CurrentLimitMaster from "./CurrentLimitMaster"
+import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
+import LogSetting from "./LogSetting"
+import LimitModel from "./LimitModel"
+
+export {
+    Namespace,
+    Counter,
+    LimitModelMaster,
+    CurrentLimitMaster,
+    GitHubCheckoutSetting,
+    LogSetting,
+    LimitModel,
+};

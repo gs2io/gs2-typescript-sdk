@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Stamina from '../model'
 
-export class SetRecoverIntervalByStatusResult implements IResult {
+export default class SetRecoverIntervalByStatusResult implements IResult {
     private item: Gs2Stamina.Stamina|null = null;
     private staminaModel: Gs2Stamina.StaminaModel|null = null;
 

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Exchange from '../model'
 
-export class CreateAwaitByStampSheetResult implements IResult {
+export default class CreateAwaitByStampSheetResult implements IResult {
     private item: Gs2Exchange.Await|null = null;
     private unlockAt: number|null = null;
 

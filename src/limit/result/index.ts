@@ -13,29 +13,58 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesResult } from "./DescribeNamespacesResult"
-export { CreateNamespaceResult } from "./CreateNamespaceResult"
-export { GetNamespaceStatusResult } from "./GetNamespaceStatusResult"
-export { GetNamespaceResult } from "./GetNamespaceResult"
-export { UpdateNamespaceResult } from "./UpdateNamespaceResult"
-export { DeleteNamespaceResult } from "./DeleteNamespaceResult"
-export { DescribeCountersResult } from "./DescribeCountersResult"
-export { DescribeCountersByUserIdResult } from "./DescribeCountersByUserIdResult"
-export { GetCounterResult } from "./GetCounterResult"
-export { GetCounterByUserIdResult } from "./GetCounterByUserIdResult"
-export { CountUpResult } from "./CountUpResult"
-export { CountUpByUserIdResult } from "./CountUpByUserIdResult"
-export { DeleteCounterByUserIdResult } from "./DeleteCounterByUserIdResult"
-export { CountUpByStampTaskResult } from "./CountUpByStampTaskResult"
-export { DeleteByStampSheetResult } from "./DeleteByStampSheetResult"
-export { DescribeLimitModelMastersResult } from "./DescribeLimitModelMastersResult"
-export { CreateLimitModelMasterResult } from "./CreateLimitModelMasterResult"
-export { GetLimitModelMasterResult } from "./GetLimitModelMasterResult"
-export { UpdateLimitModelMasterResult } from "./UpdateLimitModelMasterResult"
-export { DeleteLimitModelMasterResult } from "./DeleteLimitModelMasterResult"
-export { ExportMasterResult } from "./ExportMasterResult"
-export { GetCurrentLimitMasterResult } from "./GetCurrentLimitMasterResult"
-export { UpdateCurrentLimitMasterResult } from "./UpdateCurrentLimitMasterResult"
-export { UpdateCurrentLimitMasterFromGitHubResult } from "./UpdateCurrentLimitMasterFromGitHubResult"
-export { DescribeLimitModelsResult } from "./DescribeLimitModelsResult"
-export { GetLimitModelResult } from "./GetLimitModelResult"
+import DescribeNamespacesResult from "./DescribeNamespacesResult"
+import CreateNamespaceResult from "./CreateNamespaceResult"
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
+import GetNamespaceResult from "./GetNamespaceResult"
+import UpdateNamespaceResult from "./UpdateNamespaceResult"
+import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeCountersResult from "./DescribeCountersResult"
+import DescribeCountersByUserIdResult from "./DescribeCountersByUserIdResult"
+import GetCounterResult from "./GetCounterResult"
+import GetCounterByUserIdResult from "./GetCounterByUserIdResult"
+import CountUpResult from "./CountUpResult"
+import CountUpByUserIdResult from "./CountUpByUserIdResult"
+import DeleteCounterByUserIdResult from "./DeleteCounterByUserIdResult"
+import CountUpByStampTaskResult from "./CountUpByStampTaskResult"
+import DeleteByStampSheetResult from "./DeleteByStampSheetResult"
+import DescribeLimitModelMastersResult from "./DescribeLimitModelMastersResult"
+import CreateLimitModelMasterResult from "./CreateLimitModelMasterResult"
+import GetLimitModelMasterResult from "./GetLimitModelMasterResult"
+import UpdateLimitModelMasterResult from "./UpdateLimitModelMasterResult"
+import DeleteLimitModelMasterResult from "./DeleteLimitModelMasterResult"
+import ExportMasterResult from "./ExportMasterResult"
+import GetCurrentLimitMasterResult from "./GetCurrentLimitMasterResult"
+import UpdateCurrentLimitMasterResult from "./UpdateCurrentLimitMasterResult"
+import UpdateCurrentLimitMasterFromGitHubResult from "./UpdateCurrentLimitMasterFromGitHubResult"
+import DescribeLimitModelsResult from "./DescribeLimitModelsResult"
+import GetLimitModelResult from "./GetLimitModelResult"
+
+export {
+    DescribeNamespacesResult,
+    CreateNamespaceResult,
+    GetNamespaceStatusResult,
+    GetNamespaceResult,
+    UpdateNamespaceResult,
+    DeleteNamespaceResult,
+    DescribeCountersResult,
+    DescribeCountersByUserIdResult,
+    GetCounterResult,
+    GetCounterByUserIdResult,
+    CountUpResult,
+    CountUpByUserIdResult,
+    DeleteCounterByUserIdResult,
+    CountUpByStampTaskResult,
+    DeleteByStampSheetResult,
+    DescribeLimitModelMastersResult,
+    CreateLimitModelMasterResult,
+    GetLimitModelMasterResult,
+    UpdateLimitModelMasterResult,
+    DeleteLimitModelMasterResult,
+    ExportMasterResult,
+    GetCurrentLimitMasterResult,
+    UpdateCurrentLimitMasterResult,
+    UpdateCurrentLimitMasterFromGitHubResult,
+    DescribeLimitModelsResult,
+    GetLimitModelResult,
+};

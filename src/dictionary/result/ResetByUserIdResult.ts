@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Dictionary from '../model'
 
-export class ResetByUserIdResult implements IResult {
+export default class ResetByUserIdResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): ResetByUserIdResult {
         return new ResetByUserIdResult();

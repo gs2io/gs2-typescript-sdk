@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Exchange from '../model'
 
-export class CreateRateModelMasterRequest implements IRequest {
+export default class CreateRateModelMasterRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

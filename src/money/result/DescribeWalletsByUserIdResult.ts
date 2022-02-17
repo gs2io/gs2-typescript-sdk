@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Money from '../model'
 
-export class DescribeWalletsByUserIdResult implements IResult {
+export default class DescribeWalletsByUserIdResult implements IResult {
     private items: Gs2Money.Wallet[]|null = null;
     private nextPageToken: string|null = null;
 

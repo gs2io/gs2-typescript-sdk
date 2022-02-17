@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2JobQueue from '../model'
 
-export class RunByUserIdResult implements IResult {
+export default class RunByUserIdResult implements IResult {
     private item: Gs2JobQueue.Job|null = null;
     private result: Gs2JobQueue.JobResultBody|null = null;
     private isLastJob: boolean|null = null;

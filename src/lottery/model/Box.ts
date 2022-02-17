@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Box implements IModel {
+export default class Box implements IModel {
     private boxId: string|null = null;
     private prizeTableName: string|null = null;
     private userId: string|null = null;

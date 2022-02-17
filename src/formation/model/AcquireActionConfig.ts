@@ -15,9 +15,9 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { Config } from './Config';
+import Config from './Config';
 
-export class AcquireActionConfig implements IModel {
+export default class AcquireActionConfig implements IModel {
     private name: string|null = null;
     private config: Config[]|null = null;
 

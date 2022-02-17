@@ -52,7 +52,7 @@ import * as stamina from './stamina';
 import * as version from './version';
 import * as watch from './watch';
 
-export default {
+export {
   account,
   auth,
   core,

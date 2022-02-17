@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Mission from '../model'
 
-export class GetCounterModelMasterResult implements IResult {
+export default class GetCounterModelMasterResult implements IResult {
     private item: Gs2Mission.CounterModelMaster|null = null;
 
     public getItem(): Gs2Mission.CounterModelMaster|null {

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Enhance from '../model'
 
-export class DeleteProgressByStampTaskResult implements IResult {
+export default class DeleteProgressByStampTaskResult implements IResult {
     private item: Gs2Enhance.Progress|null = null;
     private newContextStack: string|null = null;
 

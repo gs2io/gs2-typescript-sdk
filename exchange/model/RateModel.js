@@ -1,0 +1,178 @@
+/*
+Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License").
+You may not use this file except in compliance with the License.
+A copy of the License is located at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+or in the "license" file accompanying this file. This file is distributed
+on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+express or implied. See the License for the specific language governing
+permissions and limitations under the License.
+ */
+import ConsumeAction from './ConsumeAction';
+import AcquireAction from './AcquireAction';
+var RateModel = /** @class */ (function () {
+    function RateModel() {
+        this.rateModelId = null;
+        this.name = null;
+        this.metadata = null;
+        this.consumeActions = null;
+        this.timingType = null;
+        this.lockTime = null;
+        this.enableSkip = null;
+        this.skipConsumeActions = null;
+        this.acquireActions = null;
+    }
+    RateModel.prototype.getRateModelId = function () {
+        return this.rateModelId;
+    };
+    RateModel.prototype.setRateModelId = function (rateModelId) {
+        this.rateModelId = rateModelId;
+        return this;
+    };
+    RateModel.prototype.withRateModelId = function (rateModelId) {
+        this.rateModelId = rateModelId;
+        return this;
+    };
+    RateModel.prototype.getName = function () {
+        return this.name;
+    };
+    RateModel.prototype.setName = function (name) {
+        this.name = name;
+        return this;
+    };
+    RateModel.prototype.withName = function (name) {
+        this.name = name;
+        return this;
+    };
+    RateModel.prototype.getMetadata = function () {
+        return this.metadata;
+    };
+    RateModel.prototype.setMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
+    RateModel.prototype.withMetadata = function (metadata) {
+        this.metadata = metadata;
+        return this;
+    };
+    RateModel.prototype.getConsumeActions = function () {
+        return this.consumeActions;
+    };
+    RateModel.prototype.setConsumeActions = function (consumeActions) {
+        this.consumeActions = consumeActions;
+        return this;
+    };
+    RateModel.prototype.withConsumeActions = function (consumeActions) {
+        this.consumeActions = consumeActions;
+        return this;
+    };
+    RateModel.prototype.getTimingType = function () {
+        return this.timingType;
+    };
+    RateModel.prototype.setTimingType = function (timingType) {
+        this.timingType = timingType;
+        return this;
+    };
+    RateModel.prototype.withTimingType = function (timingType) {
+        this.timingType = timingType;
+        return this;
+    };
+    RateModel.prototype.getLockTime = function () {
+        return this.lockTime;
+    };
+    RateModel.prototype.setLockTime = function (lockTime) {
+        this.lockTime = lockTime;
+        return this;
+    };
+    RateModel.prototype.withLockTime = function (lockTime) {
+        this.lockTime = lockTime;
+        return this;
+    };
+    RateModel.prototype.getEnableSkip = function () {
+        return this.enableSkip;
+    };
+    RateModel.prototype.setEnableSkip = function (enableSkip) {
+        this.enableSkip = enableSkip;
+        return this;
+    };
+    RateModel.prototype.withEnableSkip = function (enableSkip) {
+        this.enableSkip = enableSkip;
+        return this;
+    };
+    RateModel.prototype.getSkipConsumeActions = function () {
+        return this.skipConsumeActions;
+    };
+    RateModel.prototype.setSkipConsumeActions = function (skipConsumeActions) {
+        this.skipConsumeActions = skipConsumeActions;
+        return this;
+    };
+    RateModel.prototype.withSkipConsumeActions = function (skipConsumeActions) {
+        this.skipConsumeActions = skipConsumeActions;
+        return this;
+    };
+    RateModel.prototype.getAcquireActions = function () {
+        return this.acquireActions;
+    };
+    RateModel.prototype.setAcquireActions = function (acquireActions) {
+        this.acquireActions = acquireActions;
+        return this;
+    };
+    RateModel.prototype.withAcquireActions = function (acquireActions) {
+        this.acquireActions = acquireActions;
+        return this;
+    };
+    RateModel.fromDict = function (data) {
+        if (data == undefined || data == null) {
+            return null;
+        }
+        return new RateModel()
+            .withRateModelId(data["rateModelId"])
+            .withName(data["name"])
+            .withMetadata(data["metadata"])
+            .withConsumeActions(data.consumeActions ?
+            data.consumeActions.map(function (item) {
+                return ConsumeAction.fromDict(item);
+            }) : [])
+            .withTimingType(data["timingType"])
+            .withLockTime(data["lockTime"])
+            .withEnableSkip(data["enableSkip"])
+            .withSkipConsumeActions(data.skipConsumeActions ?
+            data.skipConsumeActions.map(function (item) {
+                return ConsumeAction.fromDict(item);
+            }) : [])
+            .withAcquireActions(data.acquireActions ?
+            data.acquireActions.map(function (item) {
+                return AcquireAction.fromDict(item);
+            }) : []);
+    };
+    RateModel.prototype.toDict = function () {
+        return {
+            "rateModelId": this.getRateModelId(),
+            "name": this.getName(),
+            "metadata": this.getMetadata(),
+            "consumeActions": this.getConsumeActions() ?
+                this.getConsumeActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
+            "timingType": this.getTimingType(),
+            "lockTime": this.getLockTime(),
+            "enableSkip": this.getEnableSkip(),
+            "skipConsumeActions": this.getSkipConsumeActions() ?
+                this.getSkipConsumeActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
+            "acquireActions": this.getAcquireActions() ?
+                this.getAcquireActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
+        };
+    };
+    return RateModel;
+}());
+export default RateModel;
+//# sourceMappingURL=RateModel.js.map

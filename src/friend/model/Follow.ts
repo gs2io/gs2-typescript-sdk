@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Follow implements IModel {
+export default class Follow implements IModel {
     private followId: string|null = null;
     private userId: string|null = null;
     private targetUserIds: string[]|null = null;

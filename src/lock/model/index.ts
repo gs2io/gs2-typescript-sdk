@@ -13,6 +13,12 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Namespace } from "./Namespace"
-export { Mutex } from "./Mutex"
-export { LogSetting } from "./LogSetting"
+import Namespace from "./Namespace"
+import Mutex from "./Mutex"
+import LogSetting from "./LogSetting"
+
+export {
+    Namespace,
+    Mutex,
+    LogSetting,
+};

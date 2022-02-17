@@ -13,19 +13,38 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { DescribeNamespacesRequest } from "./DescribeNamespacesRequest"
-export { CreateNamespaceRequest } from "./CreateNamespaceRequest"
-export { GetNamespaceStatusRequest } from "./GetNamespaceStatusRequest"
-export { GetNamespaceRequest } from "./GetNamespaceRequest"
-export { UpdateNamespaceRequest } from "./UpdateNamespaceRequest"
-export { DeleteNamespaceRequest } from "./DeleteNamespaceRequest"
-export { DescribeJobsByUserIdRequest } from "./DescribeJobsByUserIdRequest"
-export { GetJobByUserIdRequest } from "./GetJobByUserIdRequest"
-export { PushByUserIdRequest } from "./PushByUserIdRequest"
-export { RunRequest } from "./RunRequest"
-export { RunByUserIdRequest } from "./RunByUserIdRequest"
-export { DeleteJobByUserIdRequest } from "./DeleteJobByUserIdRequest"
-export { PushByStampSheetRequest } from "./PushByStampSheetRequest"
-export { DescribeDeadLetterJobsByUserIdRequest } from "./DescribeDeadLetterJobsByUserIdRequest"
-export { GetDeadLetterJobByUserIdRequest } from "./GetDeadLetterJobByUserIdRequest"
-export { DeleteDeadLetterJobByUserIdRequest } from "./DeleteDeadLetterJobByUserIdRequest"
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest"
+import CreateNamespaceRequest from "./CreateNamespaceRequest"
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
+import GetNamespaceRequest from "./GetNamespaceRequest"
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DescribeJobsByUserIdRequest from "./DescribeJobsByUserIdRequest"
+import GetJobByUserIdRequest from "./GetJobByUserIdRequest"
+import PushByUserIdRequest from "./PushByUserIdRequest"
+import RunRequest from "./RunRequest"
+import RunByUserIdRequest from "./RunByUserIdRequest"
+import DeleteJobByUserIdRequest from "./DeleteJobByUserIdRequest"
+import PushByStampSheetRequest from "./PushByStampSheetRequest"
+import DescribeDeadLetterJobsByUserIdRequest from "./DescribeDeadLetterJobsByUserIdRequest"
+import GetDeadLetterJobByUserIdRequest from "./GetDeadLetterJobByUserIdRequest"
+import DeleteDeadLetterJobByUserIdRequest from "./DeleteDeadLetterJobByUserIdRequest"
+
+export {
+    DescribeNamespacesRequest,
+    CreateNamespaceRequest,
+    GetNamespaceStatusRequest,
+    GetNamespaceRequest,
+    UpdateNamespaceRequest,
+    DeleteNamespaceRequest,
+    DescribeJobsByUserIdRequest,
+    GetJobByUserIdRequest,
+    PushByUserIdRequest,
+    RunRequest,
+    RunByUserIdRequest,
+    DeleteJobByUserIdRequest,
+    PushByStampSheetRequest,
+    DescribeDeadLetterJobsByUserIdRequest,
+    GetDeadLetterJobByUserIdRequest,
+    DeleteDeadLetterJobByUserIdRequest,
+};

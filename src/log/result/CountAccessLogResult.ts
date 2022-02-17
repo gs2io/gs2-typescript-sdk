@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Log from '../model'
 
-export class CountAccessLogResult implements IResult {
+export default class CountAccessLogResult implements IResult {
     private items: Gs2Log.AccessLogCount[]|null = null;
     private nextPageToken: string|null = null;
     private totalCount: number|null = null;

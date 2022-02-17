@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Formation from '../model'
 
-export class GetMoldModelResult implements IResult {
+export default class GetMoldModelResult implements IResult {
     private item: Gs2Formation.MoldModel|null = null;
 
     public getItem(): Gs2Formation.MoldModel|null {

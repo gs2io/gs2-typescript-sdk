@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Inventory from '../model'
 
-export class DescribeInventoriesByUserIdResult implements IResult {
+export default class DescribeInventoriesByUserIdResult implements IResult {
     private items: Gs2Inventory.Inventory[]|null = null;
     private nextPageToken: string|null = null;
 

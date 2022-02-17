@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Identifier from '../model'
 
-export class DeleteSecurityPolicyResult implements IResult {
+export default class DeleteSecurityPolicyResult implements IResult {
     private item: Gs2Identifier.SecurityPolicy|null = null;
 
     public getItem(): Gs2Identifier.SecurityPolicy|null {

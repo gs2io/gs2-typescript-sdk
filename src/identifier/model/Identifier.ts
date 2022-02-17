@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Identifier implements IModel {
+export default class Identifier implements IModel {
     private clientId: string|null = null;
     private userName: string|null = null;
     private clientSecret: string|null = null;

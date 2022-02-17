@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Mission from '../model'
 
-export class CompleteByUserIdResult implements IResult {
+export default class CompleteByUserIdResult implements IResult {
     private stampSheet: string|null = null;
     private stampSheetEncryptionKeyId: string|null = null;
 

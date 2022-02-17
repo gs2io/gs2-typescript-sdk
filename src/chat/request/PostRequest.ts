@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Chat from '../model'
 
-export class PostRequest implements IRequest {
+export default class PostRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

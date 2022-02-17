@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Key from '../model'
 
-export class CreateGitHubApiKeyRequest implements IRequest {
+export default class CreateGitHubApiKeyRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

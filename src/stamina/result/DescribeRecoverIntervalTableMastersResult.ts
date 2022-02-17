@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Stamina from '../model'
 
-export class DescribeRecoverIntervalTableMastersResult implements IResult {
+export default class DescribeRecoverIntervalTableMastersResult implements IResult {
     private items: Gs2Stamina.RecoverIntervalTableMaster[]|null = null;
     private nextPageToken: string|null = null;
 

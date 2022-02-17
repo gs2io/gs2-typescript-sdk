@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Limit from '../model'
 
-export class DescribeLimitModelMastersRequest implements IRequest {
+export default class DescribeLimitModelMastersRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

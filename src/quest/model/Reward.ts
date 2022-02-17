@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Reward implements IModel {
+export default class Reward implements IModel {
     private action: string|null = null;
     private request: string|null = null;
     private itemId: string|null = null;

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Formation from '../model'
 
-export class DeleteMoldByUserIdResult implements IResult {
+export default class DeleteMoldByUserIdResult implements IResult {
     private item: Gs2Formation.Mold|null = null;
 
     public getItem(): Gs2Formation.Mold|null {

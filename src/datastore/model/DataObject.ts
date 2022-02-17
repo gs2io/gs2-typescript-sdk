@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class DataObject implements IModel {
+export default class DataObject implements IModel {
     private dataObjectId: string|null = null;
     private name: string|null = null;
     private userId: string|null = null;

@@ -15,11 +15,11 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { ScriptSetting } from './ScriptSetting';
-import { NotificationSetting } from './NotificationSetting';
-import { LogSetting } from './LogSetting';
+import ScriptSetting from './ScriptSetting';
+import NotificationSetting from './NotificationSetting';
+import LogSetting from './LogSetting';
 
-export class Namespace implements IModel {
+export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;

@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Lock from '../model'
 
-export class GetMutexByUserIdRequest implements IRequest {
+export default class GetMutexByUserIdRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;

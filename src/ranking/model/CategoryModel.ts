@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class CategoryModel implements IModel {
+export default class CategoryModel implements IModel {
     private categoryModelId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;

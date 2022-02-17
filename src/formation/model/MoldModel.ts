@@ -15,10 +15,10 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import { SlotModel } from './SlotModel';
-import { FormModel } from './FormModel';
+import SlotModel from './SlotModel';
+import FormModel from './FormModel';
 
-export class MoldModel implements IModel {
+export default class MoldModel implements IModel {
     private moldModelId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;

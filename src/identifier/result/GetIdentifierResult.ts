@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Identifier from '../model'
 
-export class GetIdentifierResult implements IResult {
+export default class GetIdentifierResult implements IResult {
     private item: Gs2Identifier.Identifier|null = null;
 
     public getItem(): Gs2Identifier.Identifier|null {

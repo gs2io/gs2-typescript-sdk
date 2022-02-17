@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Money from '../model'
 
-export class DepositByStampSheetResult implements IResult {
+export default class DepositByStampSheetResult implements IResult {
     private item: Gs2Money.Wallet|null = null;
 
     public getItem(): Gs2Money.Wallet|null {

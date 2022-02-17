@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class Status implements IModel {
+export default class Status implements IModel {
     private statusId: string|null = null;
     private experienceName: string|null = null;
     private userId: string|null = null;

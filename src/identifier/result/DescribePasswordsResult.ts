@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Identifier from '../model'
 
-export class DescribePasswordsResult implements IResult {
+export default class DescribePasswordsResult implements IResult {
     private items: Gs2Identifier.Password[]|null = null;
     private nextPageToken: string|null = null;
 

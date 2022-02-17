@@ -1,0 +1,45 @@
+/*
+Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License").
+You may not use this file except in compliance with the License.
+A copy of the License is located at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+or in the "license" file accompanying this file. This file is distributed
+on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+express or implied. See the License for the specific language governing
+permissions and limitations under the License.
+ */
+import * as Gs2Stamina from '../model';
+var DeleteMaxStaminaTableMasterResult = /** @class */ (function () {
+    function DeleteMaxStaminaTableMasterResult() {
+        this.item = null;
+    }
+    DeleteMaxStaminaTableMasterResult.prototype.getItem = function () {
+        return this.item;
+    };
+    DeleteMaxStaminaTableMasterResult.prototype.setItem = function (item) {
+        this.item = item;
+        return this;
+    };
+    DeleteMaxStaminaTableMasterResult.prototype.withItem = function (item) {
+        this.item = item;
+        return this;
+    };
+    DeleteMaxStaminaTableMasterResult.fromDict = function (data) {
+        return new DeleteMaxStaminaTableMasterResult()
+            .withItem(Gs2Stamina.MaxStaminaTableMaster.fromDict(data["item"]));
+    };
+    DeleteMaxStaminaTableMasterResult.prototype.toDict = function () {
+        var _a;
+        return {
+            "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+        };
+    };
+    return DeleteMaxStaminaTableMasterResult;
+}());
+export default DeleteMaxStaminaTableMasterResult;
+//# sourceMappingURL=DeleteMaxStaminaTableMasterResult.js.map

@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Formation from '../model'
 
-export class AcquireActionsToFormPropertiesResult implements IResult {
+export default class AcquireActionsToFormPropertiesResult implements IResult {
     private item: Gs2Formation.Form|null = null;
     private mold: Gs2Formation.Mold|null = null;
     private stampSheet: string|null = null;

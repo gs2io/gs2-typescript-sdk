@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class CurrentMissionMaster implements IModel {
+export default class CurrentMissionMaster implements IModel {
     private namespaceId: string|null = null;
     private settings: string|null = null;
 

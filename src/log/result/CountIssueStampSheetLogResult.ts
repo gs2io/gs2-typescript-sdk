@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Log from '../model'
 
-export class CountIssueStampSheetLogResult implements IResult {
+export default class CountIssueStampSheetLogResult implements IResult {
     private items: Gs2Log.IssueStampSheetLogCount[]|null = null;
     private nextPageToken: string|null = null;
     private totalCount: number|null = null;

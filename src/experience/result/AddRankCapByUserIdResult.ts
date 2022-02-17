@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Experience from '../model'
 
-export class AddRankCapByUserIdResult implements IResult {
+export default class AddRankCapByUserIdResult implements IResult {
     private item: Gs2Experience.Status|null = null;
 
     public getItem(): Gs2Experience.Status|null {

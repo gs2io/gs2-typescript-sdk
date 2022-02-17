@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
-export class CalculatedAt implements IModel {
+export default class CalculatedAt implements IModel {
     private categoryName: string|null = null;
     private calculatedAt: number|null = null;
 

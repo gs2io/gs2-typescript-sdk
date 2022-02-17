@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2Money from '../model'
 
-export class DescribeReceiptsResult implements IResult {
+export default class DescribeReceiptsResult implements IResult {
     private items: Gs2Money.Receipt[]|null = null;
     private nextPageToken: string|null = null;
 
