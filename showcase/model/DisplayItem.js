@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,8 +14,10 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import SalesItem from './SalesItem';
-import SalesItemGroup from './SalesItemGroup';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var SalesItem_1 = (0, tslib_1.__importDefault)(require("./SalesItem"));
+var SalesItemGroup_1 = (0, tslib_1.__importDefault)(require("./SalesItemGroup"));
 var DisplayItem = /** @class */ (function () {
     function DisplayItem() {
         this.displayItemId = null;
@@ -85,8 +88,8 @@ var DisplayItem = /** @class */ (function () {
         return new DisplayItem()
             .withDisplayItemId(data["displayItemId"])
             .withType(data["type"])
-            .withSalesItem(SalesItem.fromDict(data["salesItem"]))
-            .withSalesItemGroup(SalesItemGroup.fromDict(data["salesItemGroup"]))
+            .withSalesItem(SalesItem_1.default.fromDict(data["salesItem"]))
+            .withSalesItemGroup(SalesItemGroup_1.default.fromDict(data["salesItemGroup"]))
             .withSalesPeriodEventId(data["salesPeriodEventId"]);
     };
     DisplayItem.prototype.toDict = function () {
@@ -101,5 +104,5 @@ var DisplayItem = /** @class */ (function () {
     };
     return DisplayItem;
 }());
-export default DisplayItem;
+exports.default = DisplayItem;
 //# sourceMappingURL=DisplayItem.js.map

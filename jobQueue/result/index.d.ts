@@ -1,0 +1,17 @@
+import DescribeNamespacesResult from "./DescribeNamespacesResult";
+import CreateNamespaceResult from "./CreateNamespaceResult";
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult";
+import GetNamespaceResult from "./GetNamespaceResult";
+import UpdateNamespaceResult from "./UpdateNamespaceResult";
+import DeleteNamespaceResult from "./DeleteNamespaceResult";
+import DescribeJobsByUserIdResult from "./DescribeJobsByUserIdResult";
+import GetJobByUserIdResult from "./GetJobByUserIdResult";
+import PushByUserIdResult from "./PushByUserIdResult";
+import RunResult from "./RunResult";
+import RunByUserIdResult from "./RunByUserIdResult";
+import DeleteJobByUserIdResult from "./DeleteJobByUserIdResult";
+import PushByStampSheetResult from "./PushByStampSheetResult";
+import DescribeDeadLetterJobsByUserIdResult from "./DescribeDeadLetterJobsByUserIdResult";
+import GetDeadLetterJobByUserIdResult from "./GetDeadLetterJobByUserIdResult";
+import DeleteDeadLetterJobByUserIdResult from "./DeleteDeadLetterJobByUserIdResult";
+export { DescribeNamespacesResult, CreateNamespaceResult, GetNamespaceStatusResult, GetNamespaceResult, UpdateNamespaceResult, DeleteNamespaceResult, DescribeJobsByUserIdResult, GetJobByUserIdResult, PushByUserIdResult, RunResult, RunByUserIdResult, DeleteJobByUserIdResult, PushByStampSheetResult, DescribeDeadLetterJobsByUserIdResult, GetDeadLetterJobByUserIdResult, DeleteDeadLetterJobByUserIdResult, };

@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,19 +14,21 @@ on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import { __extends } from "tslib";
-import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
-import { Gs2Constant } from '../core/model';
-import * as Result from './result';
-import axios from 'axios';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Gs2DeployRestClient = void 0;
+var tslib_1 = require("tslib");
+var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var model_1 = require("../core/model");
+var Result = (0, tslib_1.__importStar)(require("./result"));
+var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var Gs2DeployRestClient = /** @class */ (function (_super) {
-    __extends(Gs2DeployRestClient, _super);
+    (0, tslib_1.__extends)(Gs2DeployRestClient, _super);
     function Gs2DeployRestClient(session) {
         return _super.call(this, session) || this;
     }
     Gs2DeployRestClient.prototype.describeStacks = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stack')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -37,7 +40,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
             'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
             'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -48,7 +51,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.createStack = function (request) {
         var _a, _b, _c, _d;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stack')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -61,7 +64,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
             'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
             'template': (_d = request.getTemplate()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateStackResult.fromDict(response.data);
@@ -76,7 +79,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.createStackFromGitHub = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stack/from_git_hub')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/from_git_hub')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -89,7 +92,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
             'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
             'checkoutSetting': (_e = (_d = request.getCheckoutSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateStackFromGitHubResult.fromDict(response.data);
@@ -104,7 +107,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.validate = function (request) {
         var _a, _b;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stack/validate')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/validate')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -115,7 +118,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
             'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
             'template': (_b = request.getTemplate()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.ValidateResult.fromDict(response.data);
@@ -130,7 +133,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.getStackStatus = function (request) {
         var _a, _b;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/status')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/status')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
@@ -141,7 +144,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -152,7 +155,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.getStack = function (request) {
         var _a, _b;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
@@ -163,7 +166,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -174,7 +177,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.updateStack = function (request) {
         var _a, _b, _c, _d;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
@@ -187,7 +190,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
             'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
             'template': (_d = request.getTemplate()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateStackResult.fromDict(response.data);
@@ -202,7 +205,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.updateStackFromGitHub = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/from_git_hub')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/from_git_hub')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
@@ -215,7 +218,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
             'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
             'checkoutSetting': (_e = (_d = request.getCheckoutSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateStackFromGitHubResult.fromDict(response.data);
@@ -230,7 +233,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.deleteStack = function (request) {
         var _a, _b;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
@@ -241,7 +244,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -252,7 +255,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.forceDeleteStack = function (request) {
         var _a, _b;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/force')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/force')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
@@ -263,7 +266,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -274,7 +277,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.deleteStackResources = function (request) {
         var _a, _b;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resources')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resources')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
@@ -285,7 +288,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -296,7 +299,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.deleteStackEntity = function (request) {
         var _a, _b;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/entity')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/entity')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
@@ -307,7 +310,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -318,7 +321,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.describeResources = function (request) {
         var _a, _b, _c, _d;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resource')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resource')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
@@ -331,7 +334,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
             'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
             'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -342,7 +345,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.getResource = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resource/{resourceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/resource/{resourceName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'))
@@ -354,7 +357,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -365,7 +368,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.describeEvents = function (request) {
         var _a, _b, _c, _d;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/event')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/event')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
@@ -378,7 +381,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
             'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
             'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -389,7 +392,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.getEvent = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/event/{eventName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/event/{eventName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'))
@@ -401,7 +404,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -412,7 +415,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.describeOutputs = function (request) {
         var _a, _b, _c, _d;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/output')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/output')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'));
@@ -425,7 +428,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
             'pageToken': String((_c = request.getPageToken()) !== null && _c !== void 0 ? _c : null),
             'limit': String((_d = request.getLimit()) !== null && _d !== void 0 ? _d : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -436,7 +439,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
     };
     Gs2DeployRestClient.prototype.getOutput = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/output/{outputName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/output/{outputName}')
             .replace('{service}', 'deploy')
             .replace('{region}', this.session.region)
             .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null'))
@@ -448,7 +451,7 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -458,6 +461,6 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
         });
     };
     return Gs2DeployRestClient;
-}(AbstractGs2RestClient));
-export { Gs2DeployRestClient };
+}(AbstractGs2RestClient_1.default));
+exports.Gs2DeployRestClient = Gs2DeployRestClient;
 //# sourceMappingURL=rest.js.map

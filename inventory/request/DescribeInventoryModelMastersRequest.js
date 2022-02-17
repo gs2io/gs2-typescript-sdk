@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,6 +14,7 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
 var DescribeInventoryModelMastersRequest = /** @class */ (function () {
     function DescribeInventoryModelMastersRequest() {
         this.requestId = null;
@@ -91,5 +93,5 @@ var DescribeInventoryModelMastersRequest = /** @class */ (function () {
     };
     return DescribeInventoryModelMastersRequest;
 }());
-export default DescribeInventoryModelMastersRequest;
+exports.default = DescribeInventoryModelMastersRequest;
 //# sourceMappingURL=DescribeInventoryModelMastersRequest.js.map

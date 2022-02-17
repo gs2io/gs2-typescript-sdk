@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,19 +14,20 @@ on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import { __extends } from "tslib";
-import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
-import { Gs2Constant } from '../core/model';
-import * as Result from './result';
-import axios from 'axios';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var model_1 = require("../core/model");
+var Result = (0, tslib_1.__importStar)(require("./result"));
+var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var Gs2FormationRestClient = /** @class */ (function (_super) {
-    __extends(Gs2FormationRestClient, _super);
+    (0, tslib_1.__extends)(Gs2FormationRestClient, _super);
     function Gs2FormationRestClient(session) {
         return _super.call(this, session) || this;
     }
     Gs2FormationRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -37,7 +39,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
             'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -48,7 +50,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -63,7 +65,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'updateFormScript': (_g = (_f = request.getUpdateFormScript()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
             'logSetting': (_j = (_h = request.getLogSetting()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateNamespaceResult.fromDict(response.data);
@@ -78,7 +80,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -89,7 +91,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -100,7 +102,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -111,7 +113,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -122,7 +124,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -137,7 +139,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'updateFormScript': (_h = (_g = request.getUpdateFormScript()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
             'logSetting': (_k = (_j = request.getLogSetting()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateNamespaceResult.fromDict(response.data);
@@ -152,7 +154,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -163,7 +165,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -174,7 +176,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.describeFormModelMasters = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/form')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/form')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -187,7 +189,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -198,7 +200,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.createFormModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/form')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/form')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -213,7 +215,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
             'slots': (_h = (_g = request.getSlots()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateFormModelMasterResult.fromDict(response.data);
@@ -228,7 +230,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getFormModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/form/{formModelName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/form/{formModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -240,7 +242,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -251,7 +253,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.updateFormModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/form/{formModelName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/form/{formModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -266,7 +268,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
             'slots': (_j = (_h = request.getSlots()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateFormModelMasterResult.fromDict(response.data);
@@ -281,7 +283,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.deleteFormModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/form/{formModelName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/form/{formModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -293,7 +295,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -304,7 +306,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.describeMoldModels = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/mold')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/mold')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -315,7 +317,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -326,7 +328,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getMoldModel = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/mold/{moldName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -338,7 +340,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -349,7 +351,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.describeMoldModelMasters = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -362,7 +364,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -373,7 +375,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.createMoldModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -390,7 +392,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'initialMaxCapacity': (_h = request.getInitialMaxCapacity()) !== null && _h !== void 0 ? _h : null,
             'maxCapacity': (_j = request.getMaxCapacity()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateMoldModelMasterResult.fromDict(response.data);
@@ -405,7 +407,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getMoldModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold/{moldName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -417,7 +419,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -428,7 +430,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.updateMoldModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold/{moldName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -445,7 +447,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'initialMaxCapacity': (_j = request.getInitialMaxCapacity()) !== null && _j !== void 0 ? _j : null,
             'maxCapacity': (_k = request.getMaxCapacity()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateMoldModelMasterResult.fromDict(response.data);
@@ -460,7 +462,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.deleteMoldModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold/{moldName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -472,7 +474,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -483,7 +485,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.exportMaster = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -494,7 +496,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -505,7 +507,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getCurrentFormMaster = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -516,7 +518,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -527,7 +529,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.updateCurrentFormMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -539,7 +541,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'settings': (_d = request.getSettings()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCurrentFormMasterResult.fromDict(response.data);
@@ -554,7 +556,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.updateCurrentFormMasterFromGitHub = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -566,7 +568,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'checkoutSetting': (_e = (_d = request.getCheckoutSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCurrentFormMasterFromGitHubResult.fromDict(response.data);
@@ -581,7 +583,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.describeMolds = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -597,7 +599,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
             'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -608,7 +610,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.describeMoldsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -622,7 +624,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -633,7 +635,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getMold = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -648,7 +650,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -659,7 +661,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getMoldByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -672,7 +674,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -683,7 +685,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.setMoldCapacityByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -697,7 +699,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
             'capacity': (_h = request.getCapacity()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.SetMoldCapacityByUserIdResult.fromDict(response.data);
@@ -712,7 +714,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.addMoldCapacityByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -726,7 +728,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
             'capacity': (_h = request.getCapacity()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.AddMoldCapacityByUserIdResult.fromDict(response.data);
@@ -741,7 +743,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.deleteMold = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -756,7 +758,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -767,7 +769,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.deleteMoldByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -780,7 +782,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -791,7 +793,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.addCapacityByStampSheet = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/mold/capacity/add')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/mold/capacity/add')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -803,7 +805,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.AddCapacityByStampSheetResult.fromDict(response.data);
@@ -818,7 +820,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.setCapacityByStampSheet = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/mold/capacity/set')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/mold/capacity/set')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -830,7 +832,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.SetCapacityByStampSheetResult.fromDict(response.data);
@@ -845,7 +847,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.describeForms = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}/form')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}/form')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -862,7 +864,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
             'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -873,7 +875,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.describeFormsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -888,7 +890,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -899,7 +901,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getForm = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}/form/{index}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -915,7 +917,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -926,7 +928,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getFormByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form/{index}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -940,7 +942,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -951,7 +953,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getFormWithSignature = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}/form/{index}/signature')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}/form/{index}/signature')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -968,7 +970,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'keyId': String((_j = request.getKeyId()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -979,7 +981,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getFormWithSignatureByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form/{index}/signature')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form/{index}/signature')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -994,7 +996,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'keyId': String((_k = request.getKeyId()) !== null && _k !== void 0 ? _k : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1005,7 +1007,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.setFormByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form/{index}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1020,7 +1022,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'slots': (_l = (_k = request.getSlots()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.SetFormByUserIdResult.fromDict(response.data);
@@ -1035,7 +1037,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.setFormWithSignature = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}/form/{index}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1053,7 +1055,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'slots': (_k = (_j = request.getSlots()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
             'keyId': (_l = request.getKeyId()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.SetFormWithSignatureResult.fromDict(response.data);
@@ -1068,7 +1070,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.acquireActionsToFormProperties = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form/{index}/stamp/delegate')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form/{index}/stamp/delegate')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1086,7 +1088,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'keyId': (_o = request.getKeyId()) !== null && _o !== void 0 ? _o : null,
             'config': (_q = (_p = request.getConfig()) === null || _p === void 0 ? void 0 : _p.map(function (item) { return item.toDict(); })) !== null && _q !== void 0 ? _q : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.AcquireActionsToFormPropertiesResult.fromDict(response.data);
@@ -1101,7 +1103,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.deleteForm = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}/form/{index}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1117,7 +1119,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1128,7 +1130,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.deleteFormByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form/{index}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1142,7 +1144,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1153,7 +1155,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.acquireActionToFormPropertiesByStampSheet = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/form/acquire')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/form/acquire')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1165,7 +1167,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.AcquireActionToFormPropertiesByStampSheetResult.fromDict(response.data);
@@ -1179,6 +1181,6 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         });
     };
     return Gs2FormationRestClient;
-}(AbstractGs2RestClient));
-export default Gs2FormationRestClient;
+}(AbstractGs2RestClient_1.default));
+exports.default = Gs2FormationRestClient;
 //# sourceMappingURL=rest.js.map

@@ -1,0 +1,54 @@
+import IModel from '../../core/interface/IModel';
+import AcquireAction from './AcquireAction';
+export default class MissionTaskModelMaster implements IModel {
+    private missionTaskId;
+    private name;
+    private metadata;
+    private description;
+    private counterName;
+    private targetValue;
+    private completeAcquireActions;
+    private challengePeriodEventId;
+    private premiseMissionTaskName;
+    private createdAt;
+    private updatedAt;
+    getMissionTaskId(): string | null;
+    setMissionTaskId(missionTaskId: string | null): this;
+    withMissionTaskId(missionTaskId: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getCounterName(): string | null;
+    setCounterName(counterName: string | null): this;
+    withCounterName(counterName: string | null): this;
+    getTargetValue(): number | null;
+    setTargetValue(targetValue: number | null): this;
+    withTargetValue(targetValue: number | null): this;
+    getCompleteAcquireActions(): AcquireAction[] | null;
+    setCompleteAcquireActions(completeAcquireActions: AcquireAction[] | null): this;
+    withCompleteAcquireActions(completeAcquireActions: AcquireAction[] | null): this;
+    getChallengePeriodEventId(): string | null;
+    setChallengePeriodEventId(challengePeriodEventId: string | null): this;
+    withChallengePeriodEventId(challengePeriodEventId: string | null): this;
+    getPremiseMissionTaskName(): string | null;
+    setPremiseMissionTaskName(premiseMissionTaskName: string | null): this;
+    withPremiseMissionTaskName(premiseMissionTaskName: string | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    getUpdatedAt(): number | null;
+    setUpdatedAt(updatedAt: number | null): this;
+    withUpdatedAt(updatedAt: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): MissionTaskModelMaster | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

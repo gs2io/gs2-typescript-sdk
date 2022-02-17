@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,7 +14,9 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import Player from './Player';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Player_1 = (0, tslib_1.__importDefault)(require("./Player"));
 var CapacityOfRole = /** @class */ (function () {
     function CapacityOfRole() {
         this.roleName = null;
@@ -78,7 +81,7 @@ var CapacityOfRole = /** @class */ (function () {
             .withCapacity(data["capacity"])
             .withParticipants(data.participants ?
             data.participants.map(function (item) {
-                return Player.fromDict(item);
+                return Player_1.default.fromDict(item);
             }) : []);
     };
     CapacityOfRole.prototype.toDict = function () {
@@ -97,5 +100,5 @@ var CapacityOfRole = /** @class */ (function () {
     };
     return CapacityOfRole;
 }());
-export default CapacityOfRole;
+exports.default = CapacityOfRole;
 //# sourceMappingURL=CapacityOfRole.js.map

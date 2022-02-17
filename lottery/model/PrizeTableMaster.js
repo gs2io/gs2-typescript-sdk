@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,7 +14,9 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import Prize from './Prize';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Prize_1 = (0, tslib_1.__importDefault)(require("./Prize"));
 var PrizeTableMaster = /** @class */ (function () {
     function PrizeTableMaster() {
         this.prizeTableId = null;
@@ -112,7 +115,7 @@ var PrizeTableMaster = /** @class */ (function () {
             .withDescription(data["description"])
             .withPrizes(data.prizes ?
             data.prizes.map(function (item) {
-                return Prize.fromDict(item);
+                return Prize_1.default.fromDict(item);
             }) : [])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
@@ -133,5 +136,5 @@ var PrizeTableMaster = /** @class */ (function () {
     };
     return PrizeTableMaster;
 }());
-export default PrizeTableMaster;
+exports.default = PrizeTableMaster;
 //# sourceMappingURL=PrizeTableMaster.js.map

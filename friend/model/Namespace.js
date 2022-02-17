@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,9 +14,11 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import ScriptSetting from './ScriptSetting';
-import NotificationSetting from './NotificationSetting';
-import LogSetting from './LogSetting';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var ScriptSetting_1 = (0, tslib_1.__importDefault)(require("./ScriptSetting"));
+var NotificationSetting_1 = (0, tslib_1.__importDefault)(require("./NotificationSetting"));
+var LogSetting_1 = (0, tslib_1.__importDefault)(require("./LogSetting"));
 var Namespace = /** @class */ (function () {
     function Namespace() {
         this.namespaceId = null;
@@ -231,18 +234,18 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withFollowScript(ScriptSetting.fromDict(data["followScript"]))
-            .withUnfollowScript(ScriptSetting.fromDict(data["unfollowScript"]))
-            .withSendRequestScript(ScriptSetting.fromDict(data["sendRequestScript"]))
-            .withCancelRequestScript(ScriptSetting.fromDict(data["cancelRequestScript"]))
-            .withAcceptRequestScript(ScriptSetting.fromDict(data["acceptRequestScript"]))
-            .withRejectRequestScript(ScriptSetting.fromDict(data["rejectRequestScript"]))
-            .withDeleteFriendScript(ScriptSetting.fromDict(data["deleteFriendScript"]))
-            .withUpdateProfileScript(ScriptSetting.fromDict(data["updateProfileScript"]))
-            .withFollowNotification(NotificationSetting.fromDict(data["followNotification"]))
-            .withReceiveRequestNotification(NotificationSetting.fromDict(data["receiveRequestNotification"]))
-            .withAcceptRequestNotification(NotificationSetting.fromDict(data["acceptRequestNotification"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withFollowScript(ScriptSetting_1.default.fromDict(data["followScript"]))
+            .withUnfollowScript(ScriptSetting_1.default.fromDict(data["unfollowScript"]))
+            .withSendRequestScript(ScriptSetting_1.default.fromDict(data["sendRequestScript"]))
+            .withCancelRequestScript(ScriptSetting_1.default.fromDict(data["cancelRequestScript"]))
+            .withAcceptRequestScript(ScriptSetting_1.default.fromDict(data["acceptRequestScript"]))
+            .withRejectRequestScript(ScriptSetting_1.default.fromDict(data["rejectRequestScript"]))
+            .withDeleteFriendScript(ScriptSetting_1.default.fromDict(data["deleteFriendScript"]))
+            .withUpdateProfileScript(ScriptSetting_1.default.fromDict(data["updateProfileScript"]))
+            .withFollowNotification(NotificationSetting_1.default.fromDict(data["followNotification"]))
+            .withReceiveRequestNotification(NotificationSetting_1.default.fromDict(data["receiveRequestNotification"]))
+            .withAcceptRequestNotification(NotificationSetting_1.default.fromDict(data["acceptRequestNotification"]))
+            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     };
@@ -270,5 +273,5 @@ var Namespace = /** @class */ (function () {
     };
     return Namespace;
 }());
-export default Namespace;
+exports.default = Namespace;
 //# sourceMappingURL=Namespace.js.map

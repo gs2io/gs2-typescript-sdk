@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,19 +14,21 @@ on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import { __extends } from "tslib";
-import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
-import { Gs2Constant } from '../core/model';
-import * as Result from './result';
-import axios from 'axios';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Gs2WatchRestClient = void 0;
+var tslib_1 = require("tslib");
+var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var model_1 = require("../core/model");
+var Result = (0, tslib_1.__importStar)(require("./result"));
+var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var Gs2WatchRestClient = /** @class */ (function (_super) {
-    __extends(Gs2WatchRestClient, _super);
+    (0, tslib_1.__extends)(Gs2WatchRestClient, _super);
     function Gs2WatchRestClient(session) {
         return _super.call(this, session) || this;
     }
     Gs2WatchRestClient.prototype.getChart = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/chart/{metrics}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/chart/{metrics}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{metrics}', String((_a = request.getMetrics()) !== null && _a !== void 0 ? _a : 'null'));
@@ -45,7 +48,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             'style': (_k = request.getStyle()) !== null && _k !== void 0 ? _k : null,
             'title': (_l = request.getTitle()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.GetChartResult.fromDict(response.data);
@@ -60,7 +63,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
     };
     Gs2WatchRestClient.prototype.getCumulative = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/cumulative/{name}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/cumulative/{name}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{name}', String((_a = request.getName()) !== null && _a !== void 0 ? _a : 'null'));
@@ -72,7 +75,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
             'resourceGrn': (_c = request.getResourceGrn()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.GetCumulativeResult.fromDict(response.data);
@@ -87,7 +90,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
     };
     Gs2WatchRestClient.prototype.describeBillingActivities = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/billingActivity/{year}/{month}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/billingActivity/{year}/{month}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{year}', String((_a = request.getYear()) !== null && _a !== void 0 ? _a : 'null'))
@@ -102,7 +105,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
             'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
             'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -113,7 +116,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
     };
     Gs2WatchRestClient.prototype.getBillingActivity = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/billingActivity/{year}/{month}/{service}/{activityType}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/billingActivity/{year}/{month}/{service}/{activityType}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{year}', String((_a = request.getYear()) !== null && _a !== void 0 ? _a : 'null'))
@@ -127,7 +130,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.GetBillingActivityResult.fromDict(response.data);
@@ -141,6 +144,6 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
         });
     };
     return Gs2WatchRestClient;
-}(AbstractGs2RestClient));
-export { Gs2WatchRestClient };
+}(AbstractGs2RestClient_1.default));
+exports.Gs2WatchRestClient = Gs2WatchRestClient;
 //# sourceMappingURL=rest.js.map

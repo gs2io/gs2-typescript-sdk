@@ -1,0 +1,53 @@
+import IRequest from '../../core/interface/IRequest';
+export default class CountAccessLogRequest implements IRequest {
+    private requestId;
+    private contextStack;
+    private namespaceName;
+    private service;
+    private method;
+    private userId;
+    private begin;
+    private end;
+    private longTerm;
+    private pageToken;
+    private limit;
+    getRequestId(): string | null;
+    setRequestId(requestId: string | null): this;
+    withRequestId(requestId: string | null): this;
+    getContextStack(): string | null;
+    setContextStack(contextStack: string | null): this;
+    withContextStack(contextStack: string | null): this;
+    getNamespaceName(): string | null;
+    setNamespaceName(namespaceName: string | null): this;
+    withNamespaceName(namespaceName: string | null): this;
+    getService(): boolean | null;
+    setService(service: boolean | null): this;
+    withService(service: boolean | null): this;
+    getMethod(): boolean | null;
+    setMethod(method: boolean | null): this;
+    withMethod(method: boolean | null): this;
+    getUserId(): boolean | null;
+    setUserId(userId: boolean | null): this;
+    withUserId(userId: boolean | null): this;
+    getBegin(): number | null;
+    setBegin(begin: number | null): this;
+    withBegin(begin: number | null): this;
+    getEnd(): number | null;
+    setEnd(end: number | null): this;
+    withEnd(end: number | null): this;
+    getLongTerm(): boolean | null;
+    setLongTerm(longTerm: boolean | null): this;
+    withLongTerm(longTerm: boolean | null): this;
+    getPageToken(): string | null;
+    setPageToken(pageToken: string | null): this;
+    withPageToken(pageToken: string | null): this;
+    getLimit(): number | null;
+    setLimit(limit: number | null): this;
+    withLimit(limit: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): CountAccessLogRequest;
+    toDict(): {
+        [key: string]: any;
+    };
+}

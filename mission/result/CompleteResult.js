@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,6 +14,7 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
 var CompleteResult = /** @class */ (function () {
     function CompleteResult() {
         this.stampSheet = null;
@@ -53,5 +55,5 @@ var CompleteResult = /** @class */ (function () {
     };
     return CompleteResult;
 }());
-export default CompleteResult;
+exports.default = CompleteResult;
 //# sourceMappingURL=CompleteResult.js.map

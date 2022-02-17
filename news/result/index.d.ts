@@ -1,0 +1,14 @@
+import DescribeNamespacesResult from "./DescribeNamespacesResult";
+import CreateNamespaceResult from "./CreateNamespaceResult";
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult";
+import GetNamespaceResult from "./GetNamespaceResult";
+import UpdateNamespaceResult from "./UpdateNamespaceResult";
+import DeleteNamespaceResult from "./DeleteNamespaceResult";
+import PrepareUpdateCurrentNewsMasterResult from "./PrepareUpdateCurrentNewsMasterResult";
+import UpdateCurrentNewsMasterResult from "./UpdateCurrentNewsMasterResult";
+import PrepareUpdateCurrentNewsMasterFromGitHubResult from "./PrepareUpdateCurrentNewsMasterFromGitHubResult";
+import DescribeNewsResult from "./DescribeNewsResult";
+import DescribeNewsByUserIdResult from "./DescribeNewsByUserIdResult";
+import WantGrantResult from "./WantGrantResult";
+import WantGrantByUserIdResult from "./WantGrantByUserIdResult";
+export { DescribeNamespacesResult, CreateNamespaceResult, GetNamespaceStatusResult, GetNamespaceResult, UpdateNamespaceResult, DeleteNamespaceResult, PrepareUpdateCurrentNewsMasterResult, UpdateCurrentNewsMasterResult, PrepareUpdateCurrentNewsMasterFromGitHubResult, DescribeNewsResult, DescribeNewsByUserIdResult, WantGrantResult, WantGrantByUserIdResult, };

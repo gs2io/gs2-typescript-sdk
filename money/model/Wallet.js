@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,7 +14,9 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import WalletDetail from './WalletDetail';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var WalletDetail_1 = (0, tslib_1.__importDefault)(require("./WalletDetail"));
 var Wallet = /** @class */ (function () {
     function Wallet() {
         this.walletId = null;
@@ -125,7 +128,7 @@ var Wallet = /** @class */ (function () {
             .withFree(data["free"])
             .withDetail(data.detail ?
             data.detail.map(function (item) {
-                return WalletDetail.fromDict(item);
+                return WalletDetail_1.default.fromDict(item);
             }) : [])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
@@ -147,5 +150,5 @@ var Wallet = /** @class */ (function () {
     };
     return Wallet;
 }());
-export default Wallet;
+exports.default = Wallet;
 //# sourceMappingURL=Wallet.js.map

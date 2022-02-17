@@ -1,3 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Status = exports.CurrentExperienceMaster = exports.Threshold = exports.ThresholdMaster = exports.ExperienceModel = exports.ExperienceModelMaster = exports.Namespace = void 0;
+var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,15 +17,24 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import Namespace from "./Namespace";
-import ExperienceModelMaster from "./ExperienceModelMaster";
-import ExperienceModel from "./ExperienceModel";
-import ThresholdMaster from "./ThresholdMaster";
-import Threshold from "./Threshold";
-import CurrentExperienceMaster from "./CurrentExperienceMaster";
-import Status from "./Status";
-import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
-import ScriptSetting from "./ScriptSetting";
-import LogSetting from "./LogSetting";
-export { Namespace, ExperienceModelMaster, ExperienceModel, ThresholdMaster, Threshold, CurrentExperienceMaster, Status, GitHubCheckoutSetting, ScriptSetting, LogSetting, };
+var Namespace_1 = (0, tslib_1.__importDefault)(require("./Namespace"));
+exports.Namespace = Namespace_1.default;
+var ExperienceModelMaster_1 = (0, tslib_1.__importDefault)(require("./ExperienceModelMaster"));
+exports.ExperienceModelMaster = ExperienceModelMaster_1.default;
+var ExperienceModel_1 = (0, tslib_1.__importDefault)(require("./ExperienceModel"));
+exports.ExperienceModel = ExperienceModel_1.default;
+var ThresholdMaster_1 = (0, tslib_1.__importDefault)(require("./ThresholdMaster"));
+exports.ThresholdMaster = ThresholdMaster_1.default;
+var Threshold_1 = (0, tslib_1.__importDefault)(require("./Threshold"));
+exports.Threshold = Threshold_1.default;
+var CurrentExperienceMaster_1 = (0, tslib_1.__importDefault)(require("./CurrentExperienceMaster"));
+exports.CurrentExperienceMaster = CurrentExperienceMaster_1.default;
+var Status_1 = (0, tslib_1.__importDefault)(require("./Status"));
+exports.Status = Status_1.default;
+var GitHubCheckoutSetting_1 = (0, tslib_1.__importDefault)(require("./GitHubCheckoutSetting"));
+exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
+var ScriptSetting_1 = (0, tslib_1.__importDefault)(require("./ScriptSetting"));
+exports.ScriptSetting = ScriptSetting_1.default;
+var LogSetting_1 = (0, tslib_1.__importDefault)(require("./LogSetting"));
+exports.LogSetting = LogSetting_1.default;
 //# sourceMappingURL=index.js.map

@@ -1,0 +1,55 @@
+import IModel from '../../core/interface/IModel';
+import ScriptSetting from './ScriptSetting';
+import LogSetting from './LogSetting';
+export default class Namespace implements IModel {
+    private namespaceId;
+    private name;
+    private description;
+    private experienceCapScriptId;
+    private changeExperienceScript;
+    private changeRankScript;
+    private changeRankCapScript;
+    private overflowExperienceScript;
+    private logSetting;
+    private createdAt;
+    private updatedAt;
+    getNamespaceId(): string | null;
+    setNamespaceId(namespaceId: string | null): this;
+    withNamespaceId(namespaceId: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getExperienceCapScriptId(): string | null;
+    setExperienceCapScriptId(experienceCapScriptId: string | null): this;
+    withExperienceCapScriptId(experienceCapScriptId: string | null): this;
+    getChangeExperienceScript(): ScriptSetting | null;
+    setChangeExperienceScript(changeExperienceScript: ScriptSetting | null): this;
+    withChangeExperienceScript(changeExperienceScript: ScriptSetting | null): this;
+    getChangeRankScript(): ScriptSetting | null;
+    setChangeRankScript(changeRankScript: ScriptSetting | null): this;
+    withChangeRankScript(changeRankScript: ScriptSetting | null): this;
+    getChangeRankCapScript(): ScriptSetting | null;
+    setChangeRankCapScript(changeRankCapScript: ScriptSetting | null): this;
+    withChangeRankCapScript(changeRankCapScript: ScriptSetting | null): this;
+    getOverflowExperienceScript(): ScriptSetting | null;
+    setOverflowExperienceScript(overflowExperienceScript: ScriptSetting | null): this;
+    withOverflowExperienceScript(overflowExperienceScript: ScriptSetting | null): this;
+    getLogSetting(): LogSetting | null;
+    setLogSetting(logSetting: LogSetting | null): this;
+    withLogSetting(logSetting: LogSetting | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    getUpdatedAt(): number | null;
+    setUpdatedAt(updatedAt: number | null): this;
+    withUpdatedAt(updatedAt: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): Namespace | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

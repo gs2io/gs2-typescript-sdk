@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,7 +14,10 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import * as Gs2Watch from '../model';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GetBillingActivityResult = void 0;
+var tslib_1 = require("tslib");
+var Gs2Watch = (0, tslib_1.__importStar)(require("../model"));
 var GetBillingActivityResult = /** @class */ (function () {
     function GetBillingActivityResult() {
         this.item = null;
@@ -41,5 +45,5 @@ var GetBillingActivityResult = /** @class */ (function () {
     };
     return GetBillingActivityResult;
 }());
-export { GetBillingActivityResult };
+exports.GetBillingActivityResult = GetBillingActivityResult;
 //# sourceMappingURL=GetBillingActivityResult.js.map

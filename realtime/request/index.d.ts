@@ -1,0 +1,11 @@
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest";
+import CreateNamespaceRequest from "./CreateNamespaceRequest";
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest";
+import GetNamespaceRequest from "./GetNamespaceRequest";
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest";
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest";
+import DescribeRoomsRequest from "./DescribeRoomsRequest";
+import WantRoomRequest from "./WantRoomRequest";
+import GetRoomRequest from "./GetRoomRequest";
+import DeleteRoomRequest from "./DeleteRoomRequest";
+export { DescribeNamespacesRequest, CreateNamespaceRequest, GetNamespaceStatusRequest, GetNamespaceRequest, UpdateNamespaceRequest, DeleteNamespaceRequest, DescribeRoomsRequest, WantRoomRequest, GetRoomRequest, DeleteRoomRequest, };

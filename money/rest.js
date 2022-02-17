@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,19 +14,20 @@ on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import { __extends } from "tslib";
-import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
-import { Gs2Constant } from '../core/model';
-import * as Result from './result';
-import axios from 'axios';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var model_1 = require("../core/model");
+var Result = (0, tslib_1.__importStar)(require("./result"));
+var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var Gs2MoneyRestClient = /** @class */ (function (_super) {
-    __extends(Gs2MoneyRestClient, _super);
+    (0, tslib_1.__extends)(Gs2MoneyRestClient, _super);
     function Gs2MoneyRestClient(session) {
         return _super.call(this, session) || this;
     }
     Gs2MoneyRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -37,7 +39,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
             'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
             'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -48,7 +50,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
     };
     Gs2MoneyRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -70,7 +72,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
             'withdrawScript': (_q = (_p = request.getWithdrawScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
             'logSetting': (_s = (_r = request.getLogSetting()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateNamespaceResult.fromDict(response.data);
@@ -85,7 +87,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
     };
     Gs2MoneyRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -96,7 +98,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -107,7 +109,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
     };
     Gs2MoneyRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -118,7 +120,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -129,7 +131,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
     };
     Gs2MoneyRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -149,7 +151,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
             'withdrawScript': (_p = (_o = request.getWithdrawScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
             'logSetting': (_r = (_q = request.getLogSetting()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateNamespaceResult.fromDict(response.data);
@@ -164,7 +166,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
     };
     Gs2MoneyRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -175,7 +177,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -186,7 +188,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
     };
     Gs2MoneyRestClient.prototype.describeWallets = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/wallet')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/wallet')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -202,7 +204,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
             'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
             'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -213,7 +215,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
     };
     Gs2MoneyRestClient.prototype.describeWalletsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -227,7 +229,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -238,7 +240,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
     };
     Gs2MoneyRestClient.prototype.getWallet = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/wallet/{slot}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/wallet/{slot}')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -253,7 +255,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -264,7 +266,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
     };
     Gs2MoneyRestClient.prototype.getWalletByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet/{slot}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet/{slot}')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -277,7 +279,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -288,7 +290,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
     };
     Gs2MoneyRestClient.prototype.depositByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet/{slot}/deposit')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet/{slot}/deposit')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -303,7 +305,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
             'price': (_h = request.getPrice()) !== null && _h !== void 0 ? _h : null,
             'count': (_j = request.getCount()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.DepositByUserIdResult.fromDict(response.data);
@@ -318,7 +320,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
     };
     Gs2MoneyRestClient.prototype.withdraw = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/wallet/{slot}/withdraw')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/wallet/{slot}/withdraw')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -335,7 +337,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
             'count': (_g = request.getCount()) !== null && _g !== void 0 ? _g : null,
             'paidOnly': (_h = request.getPaidOnly()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.WithdrawResult.fromDict(response.data);
@@ -350,7 +352,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
     };
     Gs2MoneyRestClient.prototype.withdrawByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet/{slot}/withdraw')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet/{slot}/withdraw')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -365,7 +367,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
             'count': (_h = request.getCount()) !== null && _h !== void 0 ? _h : null,
             'paidOnly': (_j = request.getPaidOnly()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.WithdrawByUserIdResult.fromDict(response.data);
@@ -380,7 +382,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
     };
     Gs2MoneyRestClient.prototype.depositByStampSheet = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/deposit')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/deposit')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -392,7 +394,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
             'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.DepositByStampSheetResult.fromDict(response.data);
@@ -407,7 +409,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
     };
     Gs2MoneyRestClient.prototype.withdrawByStampTask = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/withdraw')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/withdraw')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -419,7 +421,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
             'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.WithdrawByStampTaskResult.fromDict(response.data);
@@ -434,7 +436,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
     };
     Gs2MoneyRestClient.prototype.describeReceipts = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/receipt')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/receipt')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -451,7 +453,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -462,7 +464,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
     };
     Gs2MoneyRestClient.prototype.getByUserIdAndTransactionId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/receipt/{transactionId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/receipt/{transactionId}')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -475,7 +477,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -486,7 +488,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
     };
     Gs2MoneyRestClient.prototype.recordReceipt = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/receipt')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/receipt')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -500,7 +502,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
             'contentsId': (_f = request.getContentsId()) !== null && _f !== void 0 ? _f : null,
             'receipt': (_g = request.getReceipt()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.RecordReceiptResult.fromDict(response.data);
@@ -515,7 +517,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
     };
     Gs2MoneyRestClient.prototype.recordReceiptByStampTask = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/receipt/record')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/receipt/record')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -527,7 +529,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
             'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.RecordReceiptByStampTaskResult.fromDict(response.data);
@@ -541,6 +543,6 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
         });
     };
     return Gs2MoneyRestClient;
-}(AbstractGs2RestClient));
-export default Gs2MoneyRestClient;
+}(AbstractGs2RestClient_1.default));
+exports.default = Gs2MoneyRestClient;
 //# sourceMappingURL=rest.js.map

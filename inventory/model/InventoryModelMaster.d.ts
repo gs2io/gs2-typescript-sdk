@@ -1,0 +1,45 @@
+import IModel from '../../core/interface/IModel';
+export default class InventoryModelMaster implements IModel {
+    private inventoryModelId;
+    private name;
+    private metadata;
+    private description;
+    private initialCapacity;
+    private maxCapacity;
+    private protectReferencedItem;
+    private createdAt;
+    private updatedAt;
+    getInventoryModelId(): string | null;
+    setInventoryModelId(inventoryModelId: string | null): this;
+    withInventoryModelId(inventoryModelId: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getInitialCapacity(): number | null;
+    setInitialCapacity(initialCapacity: number | null): this;
+    withInitialCapacity(initialCapacity: number | null): this;
+    getMaxCapacity(): number | null;
+    setMaxCapacity(maxCapacity: number | null): this;
+    withMaxCapacity(maxCapacity: number | null): this;
+    getProtectReferencedItem(): boolean | null;
+    setProtectReferencedItem(protectReferencedItem: boolean | null): this;
+    withProtectReferencedItem(protectReferencedItem: boolean | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    getUpdatedAt(): number | null;
+    setUpdatedAt(updatedAt: number | null): this;
+    withUpdatedAt(updatedAt: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): InventoryModelMaster | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,7 +14,9 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import Threshold from './Threshold';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Threshold_1 = (0, tslib_1.__importDefault)(require("./Threshold"));
 var ExperienceModel = /** @class */ (function () {
     function ExperienceModel() {
         this.experienceModelId = null;
@@ -112,7 +115,7 @@ var ExperienceModel = /** @class */ (function () {
             .withDefaultExperience(data["defaultExperience"])
             .withDefaultRankCap(data["defaultRankCap"])
             .withMaxRankCap(data["maxRankCap"])
-            .withRankThreshold(Threshold.fromDict(data["rankThreshold"]));
+            .withRankThreshold(Threshold_1.default.fromDict(data["rankThreshold"]));
     };
     ExperienceModel.prototype.toDict = function () {
         var _a;
@@ -128,5 +131,5 @@ var ExperienceModel = /** @class */ (function () {
     };
     return ExperienceModel;
 }());
-export default ExperienceModel;
+exports.default = ExperienceModel;
 //# sourceMappingURL=ExperienceModel.js.map

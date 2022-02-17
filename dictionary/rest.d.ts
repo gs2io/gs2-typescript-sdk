@@ -1,0 +1,33 @@
+import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
+import { Gs2RestSession } from '../core/model';
+import * as Request from './request';
+import * as Result from './result';
+export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
+    constructor(session: Gs2RestSession);
+    describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult>;
+    createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult>;
+    getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult>;
+    getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
+    updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
+    deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    describeEntryModels(request: Request.DescribeEntryModelsRequest): Promise<Result.DescribeEntryModelsResult>;
+    getEntryModel(request: Request.GetEntryModelRequest): Promise<Result.GetEntryModelResult>;
+    describeEntryModelMasters(request: Request.DescribeEntryModelMastersRequest): Promise<Result.DescribeEntryModelMastersResult>;
+    createEntryModelMaster(request: Request.CreateEntryModelMasterRequest): Promise<Result.CreateEntryModelMasterResult>;
+    getEntryModelMaster(request: Request.GetEntryModelMasterRequest): Promise<Result.GetEntryModelMasterResult>;
+    updateEntryModelMaster(request: Request.UpdateEntryModelMasterRequest): Promise<Result.UpdateEntryModelMasterResult>;
+    deleteEntryModelMaster(request: Request.DeleteEntryModelMasterRequest): Promise<Result.DeleteEntryModelMasterResult>;
+    describeEntries(request: Request.DescribeEntriesRequest): Promise<Result.DescribeEntriesResult>;
+    describeEntriesByUserId(request: Request.DescribeEntriesByUserIdRequest): Promise<Result.DescribeEntriesByUserIdResult>;
+    addEntriesByUserId(request: Request.AddEntriesByUserIdRequest): Promise<Result.AddEntriesByUserIdResult>;
+    getEntry(request: Request.GetEntryRequest): Promise<Result.GetEntryResult>;
+    getEntryByUserId(request: Request.GetEntryByUserIdRequest): Promise<Result.GetEntryByUserIdResult>;
+    getEntryWithSignature(request: Request.GetEntryWithSignatureRequest): Promise<Result.GetEntryWithSignatureResult>;
+    getEntryWithSignatureByUserId(request: Request.GetEntryWithSignatureByUserIdRequest): Promise<Result.GetEntryWithSignatureByUserIdResult>;
+    resetByUserId(request: Request.ResetByUserIdRequest): Promise<Result.ResetByUserIdResult>;
+    addEntriesByStampSheet(request: Request.AddEntriesByStampSheetRequest): Promise<Result.AddEntriesByStampSheetResult>;
+    exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
+    getCurrentEntryMaster(request: Request.GetCurrentEntryMasterRequest): Promise<Result.GetCurrentEntryMasterResult>;
+    updateCurrentEntryMaster(request: Request.UpdateCurrentEntryMasterRequest): Promise<Result.UpdateCurrentEntryMasterResult>;
+    updateCurrentEntryMasterFromGitHub(request: Request.UpdateCurrentEntryMasterFromGitHubRequest): Promise<Result.UpdateCurrentEntryMasterFromGitHubResult>;
+}

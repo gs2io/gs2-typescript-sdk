@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,19 +14,21 @@ on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import { __extends } from "tslib";
-import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
-import { Gs2Constant } from '../core/model';
-import * as Result from './result';
-import axios from 'axios';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Gs2AuthRestClient = void 0;
+var tslib_1 = require("tslib");
+var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var model_1 = require("../core/model");
+var Result = (0, tslib_1.__importStar)(require("./result"));
+var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var Gs2AuthRestClient = /** @class */ (function (_super) {
-    __extends(Gs2AuthRestClient, _super);
+    (0, tslib_1.__extends)(Gs2AuthRestClient, _super);
     function Gs2AuthRestClient(session) {
         return _super.call(this, session) || this;
     }
     Gs2AuthRestClient.prototype.login = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/login')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/login')
             .replace('{service}', 'auth')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -37,7 +40,7 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
             'userId': (_b = request.getUserId()) !== null && _b !== void 0 ? _b : null,
             'timeOffset': (_c = request.getTimeOffset()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.LoginResult.fromDict(response.data);
@@ -52,7 +55,7 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
     };
     Gs2AuthRestClient.prototype.loginBySignature = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/login/signed')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/login/signed')
             .replace('{service}', 'auth')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -66,7 +69,7 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
             'body': (_d = request.getBody()) !== null && _d !== void 0 ? _d : null,
             'signature': (_e = request.getSignature()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.LoginBySignatureResult.fromDict(response.data);
@@ -80,6 +83,6 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
         });
     };
     return Gs2AuthRestClient;
-}(AbstractGs2RestClient));
-export { Gs2AuthRestClient };
+}(AbstractGs2RestClient_1.default));
+exports.Gs2AuthRestClient = Gs2AuthRestClient;
 //# sourceMappingURL=rest.js.map

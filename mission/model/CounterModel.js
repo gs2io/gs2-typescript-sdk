@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,7 +14,9 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import CounterScopeModel from './CounterScopeModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var CounterScopeModel_1 = (0, tslib_1.__importDefault)(require("./CounterScopeModel"));
 var CounterModel = /** @class */ (function () {
     function CounterModel() {
         this.counterId = null;
@@ -87,7 +90,7 @@ var CounterModel = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withScopes(data.scopes ?
             data.scopes.map(function (item) {
-                return CounterScopeModel.fromDict(item);
+                return CounterScopeModel_1.default.fromDict(item);
             }) : [])
             .withChallengePeriodEventId(data["challengePeriodEventId"]);
     };
@@ -105,5 +108,5 @@ var CounterModel = /** @class */ (function () {
     };
     return CounterModel;
 }());
-export default CounterModel;
+exports.default = CounterModel;
 //# sourceMappingURL=CounterModel.js.map

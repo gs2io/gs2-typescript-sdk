@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,19 +14,20 @@ on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import { __extends } from "tslib";
-import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
-import { Gs2Constant } from '../core/model';
-import * as Result from './result';
-import axios from 'axios';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var model_1 = require("../core/model");
+var Result = (0, tslib_1.__importStar)(require("./result"));
+var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var Gs2KeyRestClient = /** @class */ (function (_super) {
-    __extends(Gs2KeyRestClient, _super);
+    (0, tslib_1.__extends)(Gs2KeyRestClient, _super);
     function Gs2KeyRestClient(session) {
         return _super.call(this, session) || this;
     }
     Gs2KeyRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -37,7 +39,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
             'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
             'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -48,7 +50,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
     };
     Gs2KeyRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -61,7 +63,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
             'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
             'logSetting': (_e = (_d = request.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateNamespaceResult.fromDict(response.data);
@@ -76,7 +78,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
     };
     Gs2KeyRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -87,7 +89,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -98,7 +100,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
     };
     Gs2KeyRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -109,7 +111,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -120,7 +122,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
     };
     Gs2KeyRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -133,7 +135,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
             'logSetting': (_f = (_e = request.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateNamespaceResult.fromDict(response.data);
@@ -148,7 +150,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
     };
     Gs2KeyRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -159,7 +161,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -170,7 +172,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
     };
     Gs2KeyRestClient.prototype.describeKeys = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -183,7 +185,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -194,7 +196,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
     };
     Gs2KeyRestClient.prototype.createKey = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -207,7 +209,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
             'name': (_d = request.getName()) !== null && _d !== void 0 ? _d : null,
             'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateKeyResult.fromDict(response.data);
@@ -222,7 +224,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
     };
     Gs2KeyRestClient.prototype.updateKey = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -235,7 +237,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateKeyResult.fromDict(response.data);
@@ -250,7 +252,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
     };
     Gs2KeyRestClient.prototype.getKey = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -262,7 +264,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -273,7 +275,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
     };
     Gs2KeyRestClient.prototype.deleteKey = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -285,7 +287,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -296,7 +298,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
     };
     Gs2KeyRestClient.prototype.encrypt = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}/encrypt')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}/encrypt')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -309,7 +311,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'data': (_f = request.getData()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.EncryptResult.fromDict(response.data);
@@ -324,7 +326,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
     };
     Gs2KeyRestClient.prototype.decrypt = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}/decrypt')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/key/{keyName}/decrypt')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -337,7 +339,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'data': (_f = request.getData()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.DecryptResult.fromDict(response.data);
@@ -352,7 +354,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
     };
     Gs2KeyRestClient.prototype.describeGitHubApiKeys = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -365,7 +367,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -376,7 +378,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
     };
     Gs2KeyRestClient.prototype.createGitHubApiKey = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -391,7 +393,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
             'apiKey': (_f = request.getApiKey()) !== null && _f !== void 0 ? _f : null,
             'encryptionKeyName': (_g = request.getEncryptionKeyName()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateGitHubApiKeyResult.fromDict(response.data);
@@ -406,7 +408,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
     };
     Gs2KeyRestClient.prototype.updateGitHubApiKey = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github/{apiKeyName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github/{apiKeyName}')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -421,7 +423,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
             'apiKey': (_g = request.getApiKey()) !== null && _g !== void 0 ? _g : null,
             'encryptionKeyName': (_h = request.getEncryptionKeyName()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateGitHubApiKeyResult.fromDict(response.data);
@@ -436,7 +438,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
     };
     Gs2KeyRestClient.prototype.getGitHubApiKey = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github/{apiKeyName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github/{apiKeyName}')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -448,7 +450,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -459,7 +461,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
     };
     Gs2KeyRestClient.prototype.deleteGitHubApiKey = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github/{apiKeyName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/github/{apiKeyName}')
             .replace('{service}', 'key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -471,7 +473,7 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -481,6 +483,6 @@ var Gs2KeyRestClient = /** @class */ (function (_super) {
         });
     };
     return Gs2KeyRestClient;
-}(AbstractGs2RestClient));
-export default Gs2KeyRestClient;
+}(AbstractGs2RestClient_1.default));
+exports.default = Gs2KeyRestClient;
 //# sourceMappingURL=rest.js.map

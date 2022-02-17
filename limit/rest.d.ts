@@ -1,0 +1,33 @@
+import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
+import { Gs2RestSession } from '../core/model';
+import * as Request from './request';
+import * as Result from './result';
+export default class Gs2LimitRestClient extends AbstractGs2RestClient {
+    constructor(session: Gs2RestSession);
+    describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult>;
+    createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult>;
+    getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult>;
+    getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
+    updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
+    deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    describeCounters(request: Request.DescribeCountersRequest): Promise<Result.DescribeCountersResult>;
+    describeCountersByUserId(request: Request.DescribeCountersByUserIdRequest): Promise<Result.DescribeCountersByUserIdResult>;
+    getCounter(request: Request.GetCounterRequest): Promise<Result.GetCounterResult>;
+    getCounterByUserId(request: Request.GetCounterByUserIdRequest): Promise<Result.GetCounterByUserIdResult>;
+    countUp(request: Request.CountUpRequest): Promise<Result.CountUpResult>;
+    countUpByUserId(request: Request.CountUpByUserIdRequest): Promise<Result.CountUpByUserIdResult>;
+    deleteCounterByUserId(request: Request.DeleteCounterByUserIdRequest): Promise<Result.DeleteCounterByUserIdResult>;
+    countUpByStampTask(request: Request.CountUpByStampTaskRequest): Promise<Result.CountUpByStampTaskResult>;
+    deleteByStampSheet(request: Request.DeleteByStampSheetRequest): Promise<Result.DeleteByStampSheetResult>;
+    describeLimitModelMasters(request: Request.DescribeLimitModelMastersRequest): Promise<Result.DescribeLimitModelMastersResult>;
+    createLimitModelMaster(request: Request.CreateLimitModelMasterRequest): Promise<Result.CreateLimitModelMasterResult>;
+    getLimitModelMaster(request: Request.GetLimitModelMasterRequest): Promise<Result.GetLimitModelMasterResult>;
+    updateLimitModelMaster(request: Request.UpdateLimitModelMasterRequest): Promise<Result.UpdateLimitModelMasterResult>;
+    deleteLimitModelMaster(request: Request.DeleteLimitModelMasterRequest): Promise<Result.DeleteLimitModelMasterResult>;
+    exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
+    getCurrentLimitMaster(request: Request.GetCurrentLimitMasterRequest): Promise<Result.GetCurrentLimitMasterResult>;
+    updateCurrentLimitMaster(request: Request.UpdateCurrentLimitMasterRequest): Promise<Result.UpdateCurrentLimitMasterResult>;
+    updateCurrentLimitMasterFromGitHub(request: Request.UpdateCurrentLimitMasterFromGitHubRequest): Promise<Result.UpdateCurrentLimitMasterFromGitHubResult>;
+    describeLimitModels(request: Request.DescribeLimitModelsRequest): Promise<Result.DescribeLimitModelsResult>;
+    getLimitModel(request: Request.GetLimitModelRequest): Promise<Result.GetLimitModelResult>;
+}

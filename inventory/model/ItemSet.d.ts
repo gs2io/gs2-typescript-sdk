@@ -1,0 +1,53 @@
+import IModel from '../../core/interface/IModel';
+export default class ItemSet implements IModel {
+    private itemSetId;
+    private name;
+    private inventoryName;
+    private userId;
+    private itemName;
+    private count;
+    private referenceOf;
+    private sortValue;
+    private expiresAt;
+    private createdAt;
+    private updatedAt;
+    getItemSetId(): string | null;
+    setItemSetId(itemSetId: string | null): this;
+    withItemSetId(itemSetId: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getInventoryName(): string | null;
+    setInventoryName(inventoryName: string | null): this;
+    withInventoryName(inventoryName: string | null): this;
+    getUserId(): string | null;
+    setUserId(userId: string | null): this;
+    withUserId(userId: string | null): this;
+    getItemName(): string | null;
+    setItemName(itemName: string | null): this;
+    withItemName(itemName: string | null): this;
+    getCount(): number | null;
+    setCount(count: number | null): this;
+    withCount(count: number | null): this;
+    getReferenceOf(): string[] | null;
+    setReferenceOf(referenceOf: string[] | null): this;
+    withReferenceOf(referenceOf: string[] | null): this;
+    getSortValue(): number | null;
+    setSortValue(sortValue: number | null): this;
+    withSortValue(sortValue: number | null): this;
+    getExpiresAt(): number | null;
+    setExpiresAt(expiresAt: number | null): this;
+    withExpiresAt(expiresAt: number | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    getUpdatedAt(): number | null;
+    setUpdatedAt(updatedAt: number | null): this;
+    withUpdatedAt(updatedAt: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): ItemSet | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

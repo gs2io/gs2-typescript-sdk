@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,19 +14,20 @@ on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import { __extends } from "tslib";
-import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
-import { Gs2Constant } from '../core/model';
-import * as Result from './result';
-import axios from 'axios';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var model_1 = require("../core/model");
+var Result = (0, tslib_1.__importStar)(require("./result"));
+var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var Gs2RealtimeRestClient = /** @class */ (function (_super) {
-    __extends(Gs2RealtimeRestClient, _super);
+    (0, tslib_1.__extends)(Gs2RealtimeRestClient, _super);
     function Gs2RealtimeRestClient(session) {
         return _super.call(this, session) || this;
     }
     Gs2RealtimeRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -37,7 +39,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
             'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
             'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -48,7 +50,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -64,7 +66,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
             'createNotification': (_g = (_f = request.getCreateNotification()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
             'logSetting': (_j = (_h = request.getLogSetting()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateNamespaceResult.fromDict(response.data);
@@ -79,7 +81,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -90,7 +92,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -101,7 +103,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -112,7 +114,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -123,7 +125,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -139,7 +141,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
             'createNotification': (_h = (_g = request.getCreateNotification()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
             'logSetting': (_k = (_j = request.getLogSetting()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateNamespaceResult.fromDict(response.data);
@@ -154,7 +156,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -165,7 +167,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -176,7 +178,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.describeRooms = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -189,7 +191,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -200,7 +202,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.wantRoom = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -213,7 +215,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
             'name': (_d = request.getName()) !== null && _d !== void 0 ? _d : null,
             'notificationUserIds': (_e = request.getNotificationUserIds()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.WantRoomResult.fromDict(response.data);
@@ -228,7 +230,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.getRoom = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -240,7 +242,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -251,7 +253,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
     };
     Gs2RealtimeRestClient.prototype.deleteRoom = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -263,7 +265,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -273,6 +275,6 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
         });
     };
     return Gs2RealtimeRestClient;
-}(AbstractGs2RestClient));
-export default Gs2RealtimeRestClient;
+}(AbstractGs2RestClient_1.default));
+exports.default = Gs2RealtimeRestClient;
 //# sourceMappingURL=rest.js.map

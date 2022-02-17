@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,6 +14,8 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DeleteBillingMethodRequest = void 0;
 var DeleteBillingMethodRequest = /** @class */ (function () {
     function DeleteBillingMethodRequest() {
         this.requestId = null;
@@ -77,5 +80,5 @@ var DeleteBillingMethodRequest = /** @class */ (function () {
     };
     return DeleteBillingMethodRequest;
 }());
-export { DeleteBillingMethodRequest };
+exports.DeleteBillingMethodRequest = DeleteBillingMethodRequest;
 //# sourceMappingURL=DeleteBillingMethodRequest.js.map

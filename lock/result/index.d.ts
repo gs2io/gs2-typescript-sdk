@@ -1,0 +1,16 @@
+import DescribeNamespacesResult from "./DescribeNamespacesResult";
+import CreateNamespaceResult from "./CreateNamespaceResult";
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult";
+import GetNamespaceResult from "./GetNamespaceResult";
+import UpdateNamespaceResult from "./UpdateNamespaceResult";
+import DeleteNamespaceResult from "./DeleteNamespaceResult";
+import DescribeMutexesResult from "./DescribeMutexesResult";
+import DescribeMutexesByUserIdResult from "./DescribeMutexesByUserIdResult";
+import LockResult from "./LockResult";
+import LockByUserIdResult from "./LockByUserIdResult";
+import UnlockResult from "./UnlockResult";
+import UnlockByUserIdResult from "./UnlockByUserIdResult";
+import GetMutexResult from "./GetMutexResult";
+import GetMutexByUserIdResult from "./GetMutexByUserIdResult";
+import DeleteMutexByUserIdResult from "./DeleteMutexByUserIdResult";
+export { DescribeNamespacesResult, CreateNamespaceResult, GetNamespaceStatusResult, GetNamespaceResult, UpdateNamespaceResult, DeleteNamespaceResult, DescribeMutexesResult, DescribeMutexesByUserIdResult, LockResult, LockByUserIdResult, UnlockResult, UnlockByUserIdResult, GetMutexResult, GetMutexByUserIdResult, DeleteMutexByUserIdResult, };

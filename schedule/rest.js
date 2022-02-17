@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,19 +14,20 @@ on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import { __extends } from "tslib";
-import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
-import { Gs2Constant } from '../core/model';
-import * as Result from './result';
-import axios from 'axios';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var model_1 = require("../core/model");
+var Result = (0, tslib_1.__importStar)(require("./result"));
+var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var Gs2ScheduleRestClient = /** @class */ (function (_super) {
-    __extends(Gs2ScheduleRestClient, _super);
+    (0, tslib_1.__extends)(Gs2ScheduleRestClient, _super);
     function Gs2ScheduleRestClient(session) {
         return _super.call(this, session) || this;
     }
     Gs2ScheduleRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -37,7 +39,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
             'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
             'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -48,7 +50,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -61,7 +63,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
             'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
             'logSetting': (_e = (_d = request.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateNamespaceResult.fromDict(response.data);
@@ -76,7 +78,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -87,7 +89,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -98,7 +100,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -109,7 +111,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -120,7 +122,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -133,7 +135,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
             'logSetting': (_f = (_e = request.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateNamespaceResult.fromDict(response.data);
@@ -148,7 +150,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -159,7 +161,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -170,7 +172,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.describeEventMasters = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/event')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/event')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -183,7 +185,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -194,7 +196,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.createEventMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/event')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/event')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -220,7 +222,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
             'relativeTriggerName': (_s = request.getRelativeTriggerName()) !== null && _s !== void 0 ? _s : null,
             'relativeDuration': (_t = request.getRelativeDuration()) !== null && _t !== void 0 ? _t : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateEventMasterResult.fromDict(response.data);
@@ -235,7 +237,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.getEventMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/event/{eventName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/event/{eventName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -247,7 +249,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -258,7 +260,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.updateEventMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/event/{eventName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/event/{eventName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -284,7 +286,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
             'relativeTriggerName': (_t = request.getRelativeTriggerName()) !== null && _t !== void 0 ? _t : null,
             'relativeDuration': (_u = request.getRelativeDuration()) !== null && _u !== void 0 ? _u : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateEventMasterResult.fromDict(response.data);
@@ -299,7 +301,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.deleteEventMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/event/{eventName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/event/{eventName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -311,7 +313,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -322,7 +324,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.describeTriggers = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/trigger')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/trigger')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -338,7 +340,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
             'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
             'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -349,7 +351,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.describeTriggersByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/trigger')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/trigger')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -363,7 +365,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -374,7 +376,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.getTrigger = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/trigger/{triggerName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/trigger/{triggerName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -389,7 +391,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -400,7 +402,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.getTriggerByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/trigger/{triggerName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/trigger/{triggerName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -413,7 +415,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -424,7 +426,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.triggerByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/trigger/{triggerName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/trigger/{triggerName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -439,7 +441,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
             'triggerStrategy': (_h = request.getTriggerStrategy()) !== null && _h !== void 0 ? _h : null,
             'ttl': (_j = request.getTtl()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.TriggerByUserIdResult.fromDict(response.data);
@@ -454,7 +456,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.deleteTrigger = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/trigger/{triggerName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/trigger/{triggerName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -469,7 +471,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -480,7 +482,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.deleteTriggerByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/trigger/{triggerName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/trigger/{triggerName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -493,7 +495,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -504,7 +506,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.describeEvents = function (request) {
         var _a, _b, _c, _d;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/event')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/event')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -518,7 +520,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -529,7 +531,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.describeEventsByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/event')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/event')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -541,7 +543,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -552,7 +554,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.describeRawEvents = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/event')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/event')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -563,7 +565,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -574,7 +576,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.getEvent = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/event/{eventName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/event/{eventName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -589,7 +591,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -600,7 +602,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.getEventByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/event/{eventName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/event/{eventName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -613,7 +615,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -624,7 +626,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.getRawEvent = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/event/{eventName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/event/{eventName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -636,7 +638,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -647,7 +649,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.exportMaster = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -658,7 +660,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -669,7 +671,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.getCurrentEventMaster = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -680,7 +682,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -691,7 +693,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.updateCurrentEventMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -703,7 +705,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'settings': (_d = request.getSettings()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCurrentEventMasterResult.fromDict(response.data);
@@ -718,7 +720,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
     };
     Gs2ScheduleRestClient.prototype.updateCurrentEventMasterFromGitHub = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -730,7 +732,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'checkoutSetting': (_e = (_d = request.getCheckoutSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCurrentEventMasterFromGitHubResult.fromDict(response.data);
@@ -744,6 +746,6 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         });
     };
     return Gs2ScheduleRestClient;
-}(AbstractGs2RestClient));
-export default Gs2ScheduleRestClient;
+}(AbstractGs2RestClient_1.default));
+exports.default = Gs2ScheduleRestClient;
 //# sourceMappingURL=rest.js.map

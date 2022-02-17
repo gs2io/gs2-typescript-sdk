@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,13 +14,15 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import AbstractGs2Client from './AbstractGs2RestClient';
-import { Gs2RestSession, BasicGs2Credential, ProjectTokenGs2Credential, Region } from './model';
-export default {
-    AbstractGs2Client: AbstractGs2Client,
-    Gs2RestSession: Gs2RestSession,
-    BasicGs2Credential: BasicGs2Credential,
-    ProjectTokenGs2Credential: ProjectTokenGs2Credential,
-    Region: Region,
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("./AbstractGs2RestClient"));
+var model_1 = require("./model");
+exports.default = {
+    AbstractGs2Client: AbstractGs2RestClient_1.default,
+    Gs2RestSession: model_1.Gs2RestSession,
+    BasicGs2Credential: model_1.BasicGs2Credential,
+    ProjectTokenGs2Credential: model_1.ProjectTokenGs2Credential,
+    Region: model_1.Region,
 };
 //# sourceMappingURL=index.js.map

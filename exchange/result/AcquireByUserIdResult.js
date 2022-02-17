@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,7 +14,9 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import * as Gs2Exchange from '../model';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Exchange = (0, tslib_1.__importStar)(require("../model"));
 var AcquireByUserIdResult = /** @class */ (function () {
     function AcquireByUserIdResult() {
         this.item = null;
@@ -69,5 +72,5 @@ var AcquireByUserIdResult = /** @class */ (function () {
     };
     return AcquireByUserIdResult;
 }());
-export default AcquireByUserIdResult;
+exports.default = AcquireByUserIdResult;
 //# sourceMappingURL=AcquireByUserIdResult.js.map

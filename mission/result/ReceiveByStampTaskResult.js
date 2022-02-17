@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,7 +14,9 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import * as Gs2Mission from '../model';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Mission = (0, tslib_1.__importStar)(require("../model"));
 var ReceiveByStampTaskResult = /** @class */ (function () {
     function ReceiveByStampTaskResult() {
         this.item = null;
@@ -55,5 +58,5 @@ var ReceiveByStampTaskResult = /** @class */ (function () {
     };
     return ReceiveByStampTaskResult;
 }());
-export default ReceiveByStampTaskResult;
+exports.default = ReceiveByStampTaskResult;
 //# sourceMappingURL=ReceiveByStampTaskResult.js.map

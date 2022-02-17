@@ -1,0 +1,16 @@
+import DescribeNamespacesResult from "./DescribeNamespacesResult";
+import CreateNamespaceResult from "./CreateNamespaceResult";
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult";
+import GetNamespaceResult from "./GetNamespaceResult";
+import UpdateNamespaceResult from "./UpdateNamespaceResult";
+import DeleteNamespaceResult from "./DeleteNamespaceResult";
+import DescribeScriptsResult from "./DescribeScriptsResult";
+import CreateScriptResult from "./CreateScriptResult";
+import CreateScriptFromGitHubResult from "./CreateScriptFromGitHubResult";
+import GetScriptResult from "./GetScriptResult";
+import UpdateScriptResult from "./UpdateScriptResult";
+import UpdateScriptFromGitHubResult from "./UpdateScriptFromGitHubResult";
+import DeleteScriptResult from "./DeleteScriptResult";
+import InvokeScriptResult from "./InvokeScriptResult";
+import DebugInvokeResult from "./DebugInvokeResult";
+export { DescribeNamespacesResult, CreateNamespaceResult, GetNamespaceStatusResult, GetNamespaceResult, UpdateNamespaceResult, DeleteNamespaceResult, DescribeScriptsResult, CreateScriptResult, CreateScriptFromGitHubResult, GetScriptResult, UpdateScriptResult, UpdateScriptFromGitHubResult, DeleteScriptResult, InvokeScriptResult, DebugInvokeResult, };

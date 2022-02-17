@@ -1,0 +1,50 @@
+import IRequest from '../../core/interface/IRequest';
+import * as Gs2Quest from '../model';
+export default class UpdateNamespaceRequest implements IRequest {
+    private requestId;
+    private contextStack;
+    private namespaceName;
+    private description;
+    private startQuestScript;
+    private completeQuestScript;
+    private failedQuestScript;
+    private queueNamespaceId;
+    private keyId;
+    private logSetting;
+    getRequestId(): string | null;
+    setRequestId(requestId: string | null): this;
+    withRequestId(requestId: string | null): this;
+    getContextStack(): string | null;
+    setContextStack(contextStack: string | null): this;
+    withContextStack(contextStack: string | null): this;
+    getNamespaceName(): string | null;
+    setNamespaceName(namespaceName: string | null): this;
+    withNamespaceName(namespaceName: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getStartQuestScript(): Gs2Quest.ScriptSetting | null;
+    setStartQuestScript(startQuestScript: Gs2Quest.ScriptSetting | null): this;
+    withStartQuestScript(startQuestScript: Gs2Quest.ScriptSetting | null): this;
+    getCompleteQuestScript(): Gs2Quest.ScriptSetting | null;
+    setCompleteQuestScript(completeQuestScript: Gs2Quest.ScriptSetting | null): this;
+    withCompleteQuestScript(completeQuestScript: Gs2Quest.ScriptSetting | null): this;
+    getFailedQuestScript(): Gs2Quest.ScriptSetting | null;
+    setFailedQuestScript(failedQuestScript: Gs2Quest.ScriptSetting | null): this;
+    withFailedQuestScript(failedQuestScript: Gs2Quest.ScriptSetting | null): this;
+    getQueueNamespaceId(): string | null;
+    setQueueNamespaceId(queueNamespaceId: string | null): this;
+    withQueueNamespaceId(queueNamespaceId: string | null): this;
+    getKeyId(): string | null;
+    setKeyId(keyId: string | null): this;
+    withKeyId(keyId: string | null): this;
+    getLogSetting(): Gs2Quest.LogSetting | null;
+    setLogSetting(logSetting: Gs2Quest.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2Quest.LogSetting | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): UpdateNamespaceRequest;
+    toDict(): {
+        [key: string]: any;
+    };
+}

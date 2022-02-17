@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,9 +14,11 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import MaxStaminaTable from './MaxStaminaTable';
-import RecoverIntervalTable from './RecoverIntervalTable';
-import RecoverValueTable from './RecoverValueTable';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var MaxStaminaTable_1 = (0, tslib_1.__importDefault)(require("./MaxStaminaTable"));
+var RecoverIntervalTable_1 = (0, tslib_1.__importDefault)(require("./RecoverIntervalTable"));
+var RecoverValueTable_1 = (0, tslib_1.__importDefault)(require("./RecoverValueTable"));
 var StaminaModel = /** @class */ (function () {
     function StaminaModel() {
         this.staminaModelId = null;
@@ -164,9 +167,9 @@ var StaminaModel = /** @class */ (function () {
             .withInitialCapacity(data["initialCapacity"])
             .withIsOverflow(data["isOverflow"])
             .withMaxCapacity(data["maxCapacity"])
-            .withMaxStaminaTable(MaxStaminaTable.fromDict(data["maxStaminaTable"]))
-            .withRecoverIntervalTable(RecoverIntervalTable.fromDict(data["recoverIntervalTable"]))
-            .withRecoverValueTable(RecoverValueTable.fromDict(data["recoverValueTable"]));
+            .withMaxStaminaTable(MaxStaminaTable_1.default.fromDict(data["maxStaminaTable"]))
+            .withRecoverIntervalTable(RecoverIntervalTable_1.default.fromDict(data["recoverIntervalTable"]))
+            .withRecoverValueTable(RecoverValueTable_1.default.fromDict(data["recoverValueTable"]));
     };
     StaminaModel.prototype.toDict = function () {
         var _a, _b, _c;
@@ -186,5 +189,5 @@ var StaminaModel = /** @class */ (function () {
     };
     return StaminaModel;
 }());
-export default StaminaModel;
+exports.default = StaminaModel;
 //# sourceMappingURL=StaminaModel.js.map

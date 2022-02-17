@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,19 +14,20 @@ on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import { __extends } from "tslib";
-import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
-import { Gs2Constant } from '../core/model';
-import * as Result from './result';
-import axios from 'axios';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var model_1 = require("../core/model");
+var Result = (0, tslib_1.__importStar)(require("./result"));
+var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var Gs2LotteryRestClient = /** @class */ (function (_super) {
-    __extends(Gs2LotteryRestClient, _super);
+    (0, tslib_1.__extends)(Gs2LotteryRestClient, _super);
     function Gs2LotteryRestClient(session) {
         return _super.call(this, session) || this;
     }
     Gs2LotteryRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -37,7 +39,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
             'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -48,7 +50,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -65,7 +67,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
             'choicePrizeTableScriptId': (_g = request.getChoicePrizeTableScriptId()) !== null && _g !== void 0 ? _g : null,
             'logSetting': (_j = (_h = request.getLogSetting()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateNamespaceResult.fromDict(response.data);
@@ -80,7 +82,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -91,7 +93,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -102,7 +104,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -113,7 +115,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -124,7 +126,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -141,7 +143,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
             'choicePrizeTableScriptId': (_h = request.getChoicePrizeTableScriptId()) !== null && _h !== void 0 ? _h : null,
             'logSetting': (_k = (_j = request.getLogSetting()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateNamespaceResult.fromDict(response.data);
@@ -156,7 +158,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -167,7 +169,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -178,7 +180,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.describeLotteryModelMasters = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -191,7 +193,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -202,7 +204,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.createLotteryModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -220,7 +222,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
             'prizeTableName': (_j = request.getPrizeTableName()) !== null && _j !== void 0 ? _j : null,
             'choicePrizeTableScriptId': (_k = request.getChoicePrizeTableScriptId()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateLotteryModelMasterResult.fromDict(response.data);
@@ -235,7 +237,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.getLotteryModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery/{lotteryName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery/{lotteryName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -247,7 +249,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -258,7 +260,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.updateLotteryModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery/{lotteryName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery/{lotteryName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -276,7 +278,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
             'prizeTableName': (_k = request.getPrizeTableName()) !== null && _k !== void 0 ? _k : null,
             'choicePrizeTableScriptId': (_l = request.getChoicePrizeTableScriptId()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateLotteryModelMasterResult.fromDict(response.data);
@@ -291,7 +293,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.deleteLotteryModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery/{lotteryName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/lottery/{lotteryName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -303,7 +305,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -314,7 +316,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.describePrizeTableMasters = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -327,7 +329,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -338,7 +340,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.createPrizeTableMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -353,7 +355,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
             'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
             'prizes': (_h = (_g = request.getPrizes()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreatePrizeTableMasterResult.fromDict(response.data);
@@ -368,7 +370,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.getPrizeTableMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table/{prizeTableName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table/{prizeTableName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -380,7 +382,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -391,7 +393,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.updatePrizeTableMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table/{prizeTableName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table/{prizeTableName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -406,7 +408,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
             'prizes': (_j = (_h = request.getPrizes()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdatePrizeTableMasterResult.fromDict(response.data);
@@ -421,7 +423,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.deletePrizeTableMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table/{prizeTableName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/table/{prizeTableName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -433,7 +435,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -444,7 +446,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.describeBoxes = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/box')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/box')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -460,7 +462,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
             'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -471,7 +473,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.describeBoxesByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -485,7 +487,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -496,7 +498,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.getBox = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/box/{prizeTableName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/box/{prizeTableName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -511,7 +513,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -522,7 +524,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.getBoxByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box/{prizeTableName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box/{prizeTableName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -535,7 +537,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -546,7 +548,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.getRawBoxByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box/{prizeTableName}/raw')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box/{prizeTableName}/raw')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -559,7 +561,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -570,7 +572,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.resetBox = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/box/{prizeTableName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/box/{prizeTableName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -585,7 +587,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -596,7 +598,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.resetBoxByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box/{prizeTableName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box/{prizeTableName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -609,7 +611,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -620,7 +622,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.describeLotteryModels = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/lottery')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/lottery')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -631,7 +633,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -642,7 +644,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.getLotteryModel = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/lottery/{lotteryName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/lottery/{lotteryName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -654,7 +656,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -665,7 +667,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.describePrizeTables = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/table')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/table')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -676,7 +678,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -687,7 +689,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.getPrizeTable = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/table/{prizeTableName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/table/{prizeTableName}')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -699,7 +701,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -710,7 +712,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.drawByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/lottery/{lotteryName}/draw')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/lottery/{lotteryName}/draw')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -725,7 +727,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
             'count': (_h = request.getCount()) !== null && _h !== void 0 ? _h : null,
             'config': (_k = (_j = request.getConfig()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.DrawByUserIdResult.fromDict(response.data);
@@ -740,7 +742,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.drawByStampSheet = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/draw')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/draw')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -752,7 +754,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
             'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.DrawByStampSheetResult.fromDict(response.data);
@@ -767,7 +769,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.describeProbabilities = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/lottery/{lotteryName}/probability')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/lottery/{lotteryName}/probability')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -782,7 +784,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -793,7 +795,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.describeProbabilitiesByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/lottery/{lotteryName}/probability')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/lottery/{lotteryName}/probability')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -806,7 +808,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -817,7 +819,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.exportMaster = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -828,7 +830,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -839,7 +841,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.getCurrentLotteryMaster = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -850,7 +852,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -861,7 +863,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.updateCurrentLotteryMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -873,7 +875,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'settings': (_d = request.getSettings()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCurrentLotteryMasterResult.fromDict(response.data);
@@ -888,7 +890,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
     };
     Gs2LotteryRestClient.prototype.updateCurrentLotteryMasterFromGitHub = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -900,7 +902,7 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'checkoutSetting': (_e = (_d = request.getCheckoutSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCurrentLotteryMasterFromGitHubResult.fromDict(response.data);
@@ -914,6 +916,6 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
         });
     };
     return Gs2LotteryRestClient;
-}(AbstractGs2RestClient));
-export default Gs2LotteryRestClient;
+}(AbstractGs2RestClient_1.default));
+exports.default = Gs2LotteryRestClient;
 //# sourceMappingURL=rest.js.map

@@ -1,3 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LoginBySignatureResult = exports.LoginResult = void 0;
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,6 +16,8 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { LoginResult } from "./LoginResult";
-export { LoginBySignatureResult } from "./LoginBySignatureResult";
+var LoginResult_1 = require("./LoginResult");
+Object.defineProperty(exports, "LoginResult", { enumerable: true, get: function () { return LoginResult_1.LoginResult; } });
+var LoginBySignatureResult_1 = require("./LoginBySignatureResult");
+Object.defineProperty(exports, "LoginBySignatureResult", { enumerable: true, get: function () { return LoginBySignatureResult_1.LoginBySignatureResult; } });
 //# sourceMappingURL=index.js.map

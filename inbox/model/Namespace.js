@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,9 +14,11 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import ScriptSetting from './ScriptSetting';
-import NotificationSetting from './NotificationSetting';
-import LogSetting from './LogSetting';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var ScriptSetting_1 = (0, tslib_1.__importDefault)(require("./ScriptSetting"));
+var NotificationSetting_1 = (0, tslib_1.__importDefault)(require("./NotificationSetting"));
+var LogSetting_1 = (0, tslib_1.__importDefault)(require("./LogSetting"));
 var Namespace = /** @class */ (function () {
     function Namespace() {
         this.namespaceId = null;
@@ -184,13 +187,13 @@ var Namespace = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withIsAutomaticDeletingEnabled(data["isAutomaticDeletingEnabled"])
-            .withReceiveMessageScript(ScriptSetting.fromDict(data["receiveMessageScript"]))
-            .withReadMessageScript(ScriptSetting.fromDict(data["readMessageScript"]))
-            .withDeleteMessageScript(ScriptSetting.fromDict(data["deleteMessageScript"]))
+            .withReceiveMessageScript(ScriptSetting_1.default.fromDict(data["receiveMessageScript"]))
+            .withReadMessageScript(ScriptSetting_1.default.fromDict(data["readMessageScript"]))
+            .withDeleteMessageScript(ScriptSetting_1.default.fromDict(data["deleteMessageScript"]))
             .withQueueNamespaceId(data["queueNamespaceId"])
             .withKeyId(data["keyId"])
-            .withReceiveNotification(NotificationSetting.fromDict(data["receiveNotification"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withReceiveNotification(NotificationSetting_1.default.fromDict(data["receiveNotification"]))
+            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     };
@@ -214,5 +217,5 @@ var Namespace = /** @class */ (function () {
     };
     return Namespace;
 }());
-export default Namespace;
+exports.default = Namespace;
 //# sourceMappingURL=Namespace.js.map

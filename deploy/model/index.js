@@ -1,3 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.OutputField = exports.GitHubCheckoutSetting = exports.Output = exports.Event = exports.Resource = exports.Stack = void 0;
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,10 +16,16 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { Stack } from "./Stack";
-export { Resource } from "./Resource";
-export { Event } from "./Event";
-export { Output } from "./Output";
-export { GitHubCheckoutSetting } from "./GitHubCheckoutSetting";
-export { OutputField } from "./OutputField";
+var Stack_1 = require("./Stack");
+Object.defineProperty(exports, "Stack", { enumerable: true, get: function () { return Stack_1.Stack; } });
+var Resource_1 = require("./Resource");
+Object.defineProperty(exports, "Resource", { enumerable: true, get: function () { return Resource_1.Resource; } });
+var Event_1 = require("./Event");
+Object.defineProperty(exports, "Event", { enumerable: true, get: function () { return Event_1.Event; } });
+var Output_1 = require("./Output");
+Object.defineProperty(exports, "Output", { enumerable: true, get: function () { return Output_1.Output; } });
+var GitHubCheckoutSetting_1 = require("./GitHubCheckoutSetting");
+Object.defineProperty(exports, "GitHubCheckoutSetting", { enumerable: true, get: function () { return GitHubCheckoutSetting_1.GitHubCheckoutSetting; } });
+var OutputField_1 = require("./OutputField");
+Object.defineProperty(exports, "OutputField", { enumerable: true, get: function () { return OutputField_1.OutputField; } });
 //# sourceMappingURL=index.js.map

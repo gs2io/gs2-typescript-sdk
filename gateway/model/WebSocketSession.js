@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,6 +14,7 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
 var WebSocketSession = /** @class */ (function () {
     function WebSocketSession() {
         this.webSocketSessionId = null;
@@ -112,5 +114,5 @@ var WebSocketSession = /** @class */ (function () {
     };
     return WebSocketSession;
 }());
-export default WebSocketSession;
+exports.default = WebSocketSession;
 //# sourceMappingURL=WebSocketSession.js.map

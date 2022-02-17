@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,7 +14,9 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import Version from './Version';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Version_1 = (0, tslib_1.__importDefault)(require("./Version"));
 var VersionModelMaster = /** @class */ (function () {
     function VersionModelMaster() {
         this.versionModelId = null;
@@ -170,10 +173,10 @@ var VersionModelMaster = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
-            .withWarningVersion(Version.fromDict(data["warningVersion"]))
-            .withErrorVersion(Version.fromDict(data["errorVersion"]))
+            .withWarningVersion(Version_1.default.fromDict(data["warningVersion"]))
+            .withErrorVersion(Version_1.default.fromDict(data["errorVersion"]))
             .withScope(data["scope"])
-            .withCurrentVersion(Version.fromDict(data["currentVersion"]))
+            .withCurrentVersion(Version_1.default.fromDict(data["currentVersion"]))
             .withNeedSignature(data["needSignature"])
             .withSignatureKeyId(data["signatureKeyId"])
             .withCreatedAt(data["createdAt"])
@@ -198,5 +201,5 @@ var VersionModelMaster = /** @class */ (function () {
     };
     return VersionModelMaster;
 }());
-export default VersionModelMaster;
+exports.default = VersionModelMaster;
 //# sourceMappingURL=VersionModelMaster.js.map

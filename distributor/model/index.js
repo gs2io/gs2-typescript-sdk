@@ -1,3 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LogSetting = exports.DistributeResource = exports.GitHubCheckoutSetting = exports.CurrentDistributorMaster = exports.DistributorModel = exports.DistributorModelMaster = exports.Namespace = void 0;
+var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,12 +17,18 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import Namespace from "./Namespace";
-import DistributorModelMaster from "./DistributorModelMaster";
-import DistributorModel from "./DistributorModel";
-import CurrentDistributorMaster from "./CurrentDistributorMaster";
-import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
-import DistributeResource from "./DistributeResource";
-import LogSetting from "./LogSetting";
-export { Namespace, DistributorModelMaster, DistributorModel, CurrentDistributorMaster, GitHubCheckoutSetting, DistributeResource, LogSetting, };
+var Namespace_1 = (0, tslib_1.__importDefault)(require("./Namespace"));
+exports.Namespace = Namespace_1.default;
+var DistributorModelMaster_1 = (0, tslib_1.__importDefault)(require("./DistributorModelMaster"));
+exports.DistributorModelMaster = DistributorModelMaster_1.default;
+var DistributorModel_1 = (0, tslib_1.__importDefault)(require("./DistributorModel"));
+exports.DistributorModel = DistributorModel_1.default;
+var CurrentDistributorMaster_1 = (0, tslib_1.__importDefault)(require("./CurrentDistributorMaster"));
+exports.CurrentDistributorMaster = CurrentDistributorMaster_1.default;
+var GitHubCheckoutSetting_1 = (0, tslib_1.__importDefault)(require("./GitHubCheckoutSetting"));
+exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
+var DistributeResource_1 = (0, tslib_1.__importDefault)(require("./DistributeResource"));
+exports.DistributeResource = DistributeResource_1.default;
+var LogSetting_1 = (0, tslib_1.__importDefault)(require("./LogSetting"));
+exports.LogSetting = LogSetting_1.default;
 //# sourceMappingURL=index.js.map

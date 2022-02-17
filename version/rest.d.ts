@@ -1,0 +1,35 @@
+import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
+import { Gs2RestSession } from '../core/model';
+import * as Request from './request';
+import * as Result from './result';
+export default class Gs2VersionRestClient extends AbstractGs2RestClient {
+    constructor(session: Gs2RestSession);
+    describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult>;
+    createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult>;
+    getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult>;
+    getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
+    updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
+    deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    describeVersionModelMasters(request: Request.DescribeVersionModelMastersRequest): Promise<Result.DescribeVersionModelMastersResult>;
+    createVersionModelMaster(request: Request.CreateVersionModelMasterRequest): Promise<Result.CreateVersionModelMasterResult>;
+    getVersionModelMaster(request: Request.GetVersionModelMasterRequest): Promise<Result.GetVersionModelMasterResult>;
+    updateVersionModelMaster(request: Request.UpdateVersionModelMasterRequest): Promise<Result.UpdateVersionModelMasterResult>;
+    deleteVersionModelMaster(request: Request.DeleteVersionModelMasterRequest): Promise<Result.DeleteVersionModelMasterResult>;
+    describeVersionModels(request: Request.DescribeVersionModelsRequest): Promise<Result.DescribeVersionModelsResult>;
+    getVersionModel(request: Request.GetVersionModelRequest): Promise<Result.GetVersionModelResult>;
+    describeAcceptVersions(request: Request.DescribeAcceptVersionsRequest): Promise<Result.DescribeAcceptVersionsResult>;
+    describeAcceptVersionsByUserId(request: Request.DescribeAcceptVersionsByUserIdRequest): Promise<Result.DescribeAcceptVersionsByUserIdResult>;
+    accept(request: Request.AcceptRequest): Promise<Result.AcceptResult>;
+    acceptByUserId(request: Request.AcceptByUserIdRequest): Promise<Result.AcceptByUserIdResult>;
+    getAcceptVersion(request: Request.GetAcceptVersionRequest): Promise<Result.GetAcceptVersionResult>;
+    getAcceptVersionByUserId(request: Request.GetAcceptVersionByUserIdRequest): Promise<Result.GetAcceptVersionByUserIdResult>;
+    deleteAcceptVersion(request: Request.DeleteAcceptVersionRequest): Promise<Result.DeleteAcceptVersionResult>;
+    deleteAcceptVersionByUserId(request: Request.DeleteAcceptVersionByUserIdRequest): Promise<Result.DeleteAcceptVersionByUserIdResult>;
+    checkVersion(request: Request.CheckVersionRequest): Promise<Result.CheckVersionResult>;
+    checkVersionByUserId(request: Request.CheckVersionByUserIdRequest): Promise<Result.CheckVersionByUserIdResult>;
+    calculateSignature(request: Request.CalculateSignatureRequest): Promise<Result.CalculateSignatureResult>;
+    exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
+    getCurrentVersionMaster(request: Request.GetCurrentVersionMasterRequest): Promise<Result.GetCurrentVersionMasterResult>;
+    updateCurrentVersionMaster(request: Request.UpdateCurrentVersionMasterRequest): Promise<Result.UpdateCurrentVersionMasterResult>;
+    updateCurrentVersionMasterFromGitHub(request: Request.UpdateCurrentVersionMasterFromGitHubRequest): Promise<Result.UpdateCurrentVersionMasterFromGitHubResult>;
+}

@@ -1,3 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LoginByUserResult = exports.LoginResult = exports.DetachSecurityPolicyResult = exports.AttachSecurityPolicyResult = exports.GetHasSecurityPolicyResult = exports.DeletePasswordResult = exports.GetPasswordResult = exports.CreatePasswordResult = exports.DescribePasswordsResult = exports.DeleteIdentifierResult = exports.GetIdentifierResult = exports.CreateIdentifierResult = exports.DescribeIdentifiersResult = exports.DeleteSecurityPolicyResult = exports.GetSecurityPolicyResult = exports.UpdateSecurityPolicyResult = exports.CreateSecurityPolicyResult = exports.DescribeCommonSecurityPoliciesResult = exports.DescribeSecurityPoliciesResult = exports.DeleteUserResult = exports.GetUserResult = exports.UpdateUserResult = exports.CreateUserResult = exports.DescribeUsersResult = void 0;
+var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,29 +17,52 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import DescribeUsersResult from "./DescribeUsersResult";
-import CreateUserResult from "./CreateUserResult";
-import UpdateUserResult from "./UpdateUserResult";
-import GetUserResult from "./GetUserResult";
-import DeleteUserResult from "./DeleteUserResult";
-import DescribeSecurityPoliciesResult from "./DescribeSecurityPoliciesResult";
-import DescribeCommonSecurityPoliciesResult from "./DescribeCommonSecurityPoliciesResult";
-import CreateSecurityPolicyResult from "./CreateSecurityPolicyResult";
-import UpdateSecurityPolicyResult from "./UpdateSecurityPolicyResult";
-import GetSecurityPolicyResult from "./GetSecurityPolicyResult";
-import DeleteSecurityPolicyResult from "./DeleteSecurityPolicyResult";
-import DescribeIdentifiersResult from "./DescribeIdentifiersResult";
-import CreateIdentifierResult from "./CreateIdentifierResult";
-import GetIdentifierResult from "./GetIdentifierResult";
-import DeleteIdentifierResult from "./DeleteIdentifierResult";
-import DescribePasswordsResult from "./DescribePasswordsResult";
-import CreatePasswordResult from "./CreatePasswordResult";
-import GetPasswordResult from "./GetPasswordResult";
-import DeletePasswordResult from "./DeletePasswordResult";
-import GetHasSecurityPolicyResult from "./GetHasSecurityPolicyResult";
-import AttachSecurityPolicyResult from "./AttachSecurityPolicyResult";
-import DetachSecurityPolicyResult from "./DetachSecurityPolicyResult";
-import LoginResult from "./LoginResult";
-import LoginByUserResult from "./LoginByUserResult";
-export { DescribeUsersResult, CreateUserResult, UpdateUserResult, GetUserResult, DeleteUserResult, DescribeSecurityPoliciesResult, DescribeCommonSecurityPoliciesResult, CreateSecurityPolicyResult, UpdateSecurityPolicyResult, GetSecurityPolicyResult, DeleteSecurityPolicyResult, DescribeIdentifiersResult, CreateIdentifierResult, GetIdentifierResult, DeleteIdentifierResult, DescribePasswordsResult, CreatePasswordResult, GetPasswordResult, DeletePasswordResult, GetHasSecurityPolicyResult, AttachSecurityPolicyResult, DetachSecurityPolicyResult, LoginResult, LoginByUserResult, };
+var DescribeUsersResult_1 = (0, tslib_1.__importDefault)(require("./DescribeUsersResult"));
+exports.DescribeUsersResult = DescribeUsersResult_1.default;
+var CreateUserResult_1 = (0, tslib_1.__importDefault)(require("./CreateUserResult"));
+exports.CreateUserResult = CreateUserResult_1.default;
+var UpdateUserResult_1 = (0, tslib_1.__importDefault)(require("./UpdateUserResult"));
+exports.UpdateUserResult = UpdateUserResult_1.default;
+var GetUserResult_1 = (0, tslib_1.__importDefault)(require("./GetUserResult"));
+exports.GetUserResult = GetUserResult_1.default;
+var DeleteUserResult_1 = (0, tslib_1.__importDefault)(require("./DeleteUserResult"));
+exports.DeleteUserResult = DeleteUserResult_1.default;
+var DescribeSecurityPoliciesResult_1 = (0, tslib_1.__importDefault)(require("./DescribeSecurityPoliciesResult"));
+exports.DescribeSecurityPoliciesResult = DescribeSecurityPoliciesResult_1.default;
+var DescribeCommonSecurityPoliciesResult_1 = (0, tslib_1.__importDefault)(require("./DescribeCommonSecurityPoliciesResult"));
+exports.DescribeCommonSecurityPoliciesResult = DescribeCommonSecurityPoliciesResult_1.default;
+var CreateSecurityPolicyResult_1 = (0, tslib_1.__importDefault)(require("./CreateSecurityPolicyResult"));
+exports.CreateSecurityPolicyResult = CreateSecurityPolicyResult_1.default;
+var UpdateSecurityPolicyResult_1 = (0, tslib_1.__importDefault)(require("./UpdateSecurityPolicyResult"));
+exports.UpdateSecurityPolicyResult = UpdateSecurityPolicyResult_1.default;
+var GetSecurityPolicyResult_1 = (0, tslib_1.__importDefault)(require("./GetSecurityPolicyResult"));
+exports.GetSecurityPolicyResult = GetSecurityPolicyResult_1.default;
+var DeleteSecurityPolicyResult_1 = (0, tslib_1.__importDefault)(require("./DeleteSecurityPolicyResult"));
+exports.DeleteSecurityPolicyResult = DeleteSecurityPolicyResult_1.default;
+var DescribeIdentifiersResult_1 = (0, tslib_1.__importDefault)(require("./DescribeIdentifiersResult"));
+exports.DescribeIdentifiersResult = DescribeIdentifiersResult_1.default;
+var CreateIdentifierResult_1 = (0, tslib_1.__importDefault)(require("./CreateIdentifierResult"));
+exports.CreateIdentifierResult = CreateIdentifierResult_1.default;
+var GetIdentifierResult_1 = (0, tslib_1.__importDefault)(require("./GetIdentifierResult"));
+exports.GetIdentifierResult = GetIdentifierResult_1.default;
+var DeleteIdentifierResult_1 = (0, tslib_1.__importDefault)(require("./DeleteIdentifierResult"));
+exports.DeleteIdentifierResult = DeleteIdentifierResult_1.default;
+var DescribePasswordsResult_1 = (0, tslib_1.__importDefault)(require("./DescribePasswordsResult"));
+exports.DescribePasswordsResult = DescribePasswordsResult_1.default;
+var CreatePasswordResult_1 = (0, tslib_1.__importDefault)(require("./CreatePasswordResult"));
+exports.CreatePasswordResult = CreatePasswordResult_1.default;
+var GetPasswordResult_1 = (0, tslib_1.__importDefault)(require("./GetPasswordResult"));
+exports.GetPasswordResult = GetPasswordResult_1.default;
+var DeletePasswordResult_1 = (0, tslib_1.__importDefault)(require("./DeletePasswordResult"));
+exports.DeletePasswordResult = DeletePasswordResult_1.default;
+var GetHasSecurityPolicyResult_1 = (0, tslib_1.__importDefault)(require("./GetHasSecurityPolicyResult"));
+exports.GetHasSecurityPolicyResult = GetHasSecurityPolicyResult_1.default;
+var AttachSecurityPolicyResult_1 = (0, tslib_1.__importDefault)(require("./AttachSecurityPolicyResult"));
+exports.AttachSecurityPolicyResult = AttachSecurityPolicyResult_1.default;
+var DetachSecurityPolicyResult_1 = (0, tslib_1.__importDefault)(require("./DetachSecurityPolicyResult"));
+exports.DetachSecurityPolicyResult = DetachSecurityPolicyResult_1.default;
+var LoginResult_1 = (0, tslib_1.__importDefault)(require("./LoginResult"));
+exports.LoginResult = LoginResult_1.default;
+var LoginByUserResult_1 = (0, tslib_1.__importDefault)(require("./LoginByUserResult"));
+exports.LoginByUserResult = LoginByUserResult_1.default;
 //# sourceMappingURL=index.js.map

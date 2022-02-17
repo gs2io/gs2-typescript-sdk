@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,19 +14,20 @@ on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import { __extends } from "tslib";
-import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
-import { Gs2Constant } from '../core/model';
-import * as Result from './result';
-import axios from 'axios';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var model_1 = require("../core/model");
+var Result = (0, tslib_1.__importStar)(require("./result"));
+var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var Gs2DatastoreRestClient = /** @class */ (function (_super) {
-    __extends(Gs2DatastoreRestClient, _super);
+    (0, tslib_1.__extends)(Gs2DatastoreRestClient, _super);
     function Gs2DatastoreRestClient(session) {
         return _super.call(this, session) || this;
     }
     Gs2DatastoreRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -37,7 +39,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
             'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
             'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -48,7 +50,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -62,7 +64,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
             'logSetting': (_e = (_d = request.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
             'doneUploadScript': (_g = (_f = request.getDoneUploadScript()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateNamespaceResult.fromDict(response.data);
@@ -77,7 +79,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -88,7 +90,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -99,7 +101,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -110,7 +112,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -121,7 +123,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -135,7 +137,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
             'logSetting': (_f = (_e = request.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
             'doneUploadScript': (_h = (_g = request.getDoneUploadScript()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateNamespaceResult.fromDict(response.data);
@@ -150,7 +152,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -161,7 +163,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -172,7 +174,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.describeDataObjects = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -189,7 +191,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -200,7 +202,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.describeDataObjectsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -215,7 +217,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
             'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
             'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -226,7 +228,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.prepareUpload = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/file')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/file')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -245,7 +247,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
             'allowUserIds': (_h = request.getAllowUserIds()) !== null && _h !== void 0 ? _h : null,
             'updateIfExists': (_j = request.getUpdateIfExists()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.PrepareUploadResult.fromDict(response.data);
@@ -260,7 +262,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.prepareUploadByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/file')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/file')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -277,7 +279,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
             'allowUserIds': (_j = request.getAllowUserIds()) !== null && _j !== void 0 ? _j : null,
             'updateIfExists': (_k = request.getUpdateIfExists()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.PrepareUploadByUserIdResult.fromDict(response.data);
@@ -292,7 +294,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.updateDataObject = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -309,7 +311,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
             'scope': (_g = request.getScope()) !== null && _g !== void 0 ? _g : null,
             'allowUserIds': (_h = request.getAllowUserIds()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateDataObjectResult.fromDict(response.data);
@@ -324,7 +326,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.updateDataObjectByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -339,7 +341,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
             'scope': (_h = request.getScope()) !== null && _h !== void 0 ? _h : null,
             'allowUserIds': (_j = request.getAllowUserIds()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateDataObjectByUserIdResult.fromDict(response.data);
@@ -354,7 +356,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.prepareReUpload = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}/file/reUpload')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}/file/reUpload')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -370,7 +372,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'contentType': (_g = request.getContentType()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.PrepareReUploadResult.fromDict(response.data);
@@ -385,7 +387,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.prepareReUploadByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/file/reUpload')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/file/reUpload')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -399,7 +401,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
             'contentType': (_h = request.getContentType()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.PrepareReUploadByUserIdResult.fromDict(response.data);
@@ -414,7 +416,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.doneUpload = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}/done')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}/done')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -429,7 +431,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.DoneUploadResult.fromDict(response.data);
@@ -444,7 +446,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.doneUploadByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/done')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/done')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -457,7 +459,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.DoneUploadByUserIdResult.fromDict(response.data);
@@ -472,7 +474,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.deleteDataObject = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -487,7 +489,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -498,7 +500,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.deleteDataObjectByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -511,7 +513,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -522,7 +524,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.prepareDownload = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/file')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/file')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -537,7 +539,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
             'dataObjectId': (_e = request.getDataObjectId()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.PrepareDownloadResult.fromDict(response.data);
@@ -552,7 +554,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.prepareDownloadByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/file')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/file')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -565,7 +567,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'dataObjectId': (_f = request.getDataObjectId()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.PrepareDownloadByUserIdResult.fromDict(response.data);
@@ -580,7 +582,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.prepareDownloadByGeneration = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/file/generation/{generation}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/file/generation/{generation}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -596,7 +598,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'dataObjectId': (_g = request.getDataObjectId()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.PrepareDownloadByGenerationResult.fromDict(response.data);
@@ -611,7 +613,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.prepareDownloadByGenerationAndUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/file/generation/{generation}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/file/generation/{generation}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -625,7 +627,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
             'dataObjectId': (_h = request.getDataObjectId()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.PrepareDownloadByGenerationAndUserIdResult.fromDict(response.data);
@@ -640,7 +642,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.prepareDownloadOwnData = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}/file')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}/file')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -655,7 +657,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.PrepareDownloadOwnDataResult.fromDict(response.data);
@@ -670,7 +672,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.prepareDownloadByUserIdAndDataObjectName = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/file')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/file')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -683,7 +685,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -694,7 +696,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.prepareDownloadOwnDataByGeneration = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}/generation/{generation}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}/generation/{generation}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -710,7 +712,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.PrepareDownloadOwnDataByGenerationResult.fromDict(response.data);
@@ -725,7 +727,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.prepareDownloadByUserIdAndDataObjectNameAndGeneration = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/generation/{generation}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/generation/{generation}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -739,7 +741,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.PrepareDownloadByUserIdAndDataObjectNameAndGenerationResult.fromDict(response.data);
@@ -754,7 +756,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.restoreDataObject = function (request) {
         var _a, _b, _c, _d;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/file/restore')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/file/restore')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -766,7 +768,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'dataObjectId': (_d = request.getDataObjectId()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.RestoreDataObjectResult.fromDict(response.data);
@@ -781,7 +783,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.describeDataObjectHistories = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}/history')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}/history')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -798,7 +800,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
             'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
             'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -809,7 +811,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.describeDataObjectHistoriesByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/history')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/history')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -824,7 +826,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -835,7 +837,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.getDataObjectHistory = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}/history/{generation}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/data/{dataObjectName}/history/{generation}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -851,7 +853,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.GetDataObjectHistoryResult.fromDict(response.data);
@@ -866,7 +868,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
     };
     Gs2DatastoreRestClient.prototype.getDataObjectHistoryByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/history/{generation}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/history/{generation}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -880,7 +882,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.GetDataObjectHistoryByUserIdResult.fromDict(response.data);
@@ -894,6 +896,6 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         });
     };
     return Gs2DatastoreRestClient;
-}(AbstractGs2RestClient));
-export default Gs2DatastoreRestClient;
+}(AbstractGs2RestClient_1.default));
+exports.default = Gs2DatastoreRestClient;
 //# sourceMappingURL=rest.js.map

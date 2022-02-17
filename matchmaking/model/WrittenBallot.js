@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,8 +14,10 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import Ballot from './Ballot';
-import GameResult from './GameResult';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Ballot_1 = (0, tslib_1.__importDefault)(require("./Ballot"));
+var GameResult_1 = (0, tslib_1.__importDefault)(require("./GameResult"));
 var WrittenBallot = /** @class */ (function () {
     function WrittenBallot() {
         this.ballot = null;
@@ -47,10 +50,10 @@ var WrittenBallot = /** @class */ (function () {
             return null;
         }
         return new WrittenBallot()
-            .withBallot(Ballot.fromDict(data["ballot"]))
+            .withBallot(Ballot_1.default.fromDict(data["ballot"]))
             .withGameResults(data.gameResults ?
             data.gameResults.map(function (item) {
-                return GameResult.fromDict(item);
+                return GameResult_1.default.fromDict(item);
             }) : []);
     };
     WrittenBallot.prototype.toDict = function () {
@@ -65,5 +68,5 @@ var WrittenBallot = /** @class */ (function () {
     };
     return WrittenBallot;
 }());
-export default WrittenBallot;
+exports.default = WrittenBallot;
 //# sourceMappingURL=WrittenBallot.js.map

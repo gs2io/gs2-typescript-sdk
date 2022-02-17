@@ -1,0 +1,58 @@
+import IRequest from '../../core/interface/IRequest';
+import * as Gs2Mission from '../model';
+export default class CreateMissionTaskModelMasterRequest implements IRequest {
+    private requestId;
+    private contextStack;
+    private namespaceName;
+    private missionGroupName;
+    private name;
+    private metadata;
+    private description;
+    private counterName;
+    private targetValue;
+    private completeAcquireActions;
+    private challengePeriodEventId;
+    private premiseMissionTaskName;
+    getRequestId(): string | null;
+    setRequestId(requestId: string | null): this;
+    withRequestId(requestId: string | null): this;
+    getContextStack(): string | null;
+    setContextStack(contextStack: string | null): this;
+    withContextStack(contextStack: string | null): this;
+    getNamespaceName(): string | null;
+    setNamespaceName(namespaceName: string | null): this;
+    withNamespaceName(namespaceName: string | null): this;
+    getMissionGroupName(): string | null;
+    setMissionGroupName(missionGroupName: string | null): this;
+    withMissionGroupName(missionGroupName: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getCounterName(): string | null;
+    setCounterName(counterName: string | null): this;
+    withCounterName(counterName: string | null): this;
+    getTargetValue(): number | null;
+    setTargetValue(targetValue: number | null): this;
+    withTargetValue(targetValue: number | null): this;
+    getCompleteAcquireActions(): Gs2Mission.AcquireAction[] | null;
+    setCompleteAcquireActions(completeAcquireActions: Gs2Mission.AcquireAction[] | null): this;
+    withCompleteAcquireActions(completeAcquireActions: Gs2Mission.AcquireAction[] | null): this;
+    getChallengePeriodEventId(): string | null;
+    setChallengePeriodEventId(challengePeriodEventId: string | null): this;
+    withChallengePeriodEventId(challengePeriodEventId: string | null): this;
+    getPremiseMissionTaskName(): string | null;
+    setPremiseMissionTaskName(premiseMissionTaskName: string | null): this;
+    withPremiseMissionTaskName(premiseMissionTaskName: string | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): CreateMissionTaskModelMasterRequest;
+    toDict(): {
+        [key: string]: any;
+    };
+}

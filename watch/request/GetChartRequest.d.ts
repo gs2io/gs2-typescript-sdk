@@ -1,0 +1,57 @@
+import IRequest from '@/gs2/core/interface/IRequest';
+export declare class GetChartRequest implements IRequest {
+    private requestId;
+    private contextStack;
+    private metrics;
+    private grn;
+    private queries;
+    private by;
+    private timeframe;
+    private size;
+    private format;
+    private aggregator;
+    private style;
+    private title;
+    getRequestId(): string | null;
+    setRequestId(requestId: string | null): this;
+    withRequestId(requestId: string | null): this;
+    getContextStack(): string | null;
+    setContextStack(contextStack: string | null): this;
+    withContextStack(contextStack: string | null): this;
+    getMetrics(): string | null;
+    setMetrics(metrics: string | null): this;
+    withMetrics(metrics: string | null): this;
+    getGrn(): string | null;
+    setGrn(grn: string | null): this;
+    withGrn(grn: string | null): this;
+    getQueries(): string[] | null;
+    setQueries(queries: string[] | null): this;
+    withQueries(queries: string[] | null): this;
+    getBy(): string | null;
+    setBy(by: string | null): this;
+    withBy(by: string | null): this;
+    getTimeframe(): string | null;
+    setTimeframe(timeframe: string | null): this;
+    withTimeframe(timeframe: string | null): this;
+    getSize(): string | null;
+    setSize(size: string | null): this;
+    withSize(size: string | null): this;
+    getFormat(): string | null;
+    setFormat(format: string | null): this;
+    withFormat(format: string | null): this;
+    getAggregator(): string | null;
+    setAggregator(aggregator: string | null): this;
+    withAggregator(aggregator: string | null): this;
+    getStyle(): string | null;
+    setStyle(style: string | null): this;
+    withStyle(style: string | null): this;
+    getTitle(): string | null;
+    setTitle(title: string | null): this;
+    withTitle(title: string | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): GetChartRequest;
+    toDict(): {
+        [key: string]: any;
+    };
+}

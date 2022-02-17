@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,8 +14,10 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import AttributeRange from './AttributeRange';
-import CapacityOfRole from './CapacityOfRole';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var AttributeRange_1 = (0, tslib_1.__importDefault)(require("./AttributeRange"));
+var CapacityOfRole_1 = (0, tslib_1.__importDefault)(require("./CapacityOfRole"));
 var Gathering = /** @class */ (function () {
     function Gathering() {
         this.gatheringId = null;
@@ -135,11 +138,11 @@ var Gathering = /** @class */ (function () {
             .withName(data["name"])
             .withAttributeRanges(data.attributeRanges ?
             data.attributeRanges.map(function (item) {
-                return AttributeRange.fromDict(item);
+                return AttributeRange_1.default.fromDict(item);
             }) : [])
             .withCapacityOfRoles(data.capacityOfRoles ?
             data.capacityOfRoles.map(function (item) {
-                return CapacityOfRole.fromDict(item);
+                return CapacityOfRole_1.default.fromDict(item);
             }) : [])
             .withAllowUserIds(data.allowUserIds ?
             data.allowUserIds.map(function (item) {
@@ -174,5 +177,5 @@ var Gathering = /** @class */ (function () {
     };
     return Gathering;
 }());
-export default Gathering;
+exports.default = Gathering;
 //# sourceMappingURL=Gathering.js.map

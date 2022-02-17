@@ -1,0 +1,58 @@
+import IRequest from '../../core/interface/IRequest';
+import * as Gs2Version from '../model';
+export default class CreateVersionModelMasterRequest implements IRequest {
+    private requestId;
+    private contextStack;
+    private namespaceName;
+    private name;
+    private description;
+    private metadata;
+    private warningVersion;
+    private errorVersion;
+    private scope;
+    private currentVersion;
+    private needSignature;
+    private signatureKeyId;
+    getRequestId(): string | null;
+    setRequestId(requestId: string | null): this;
+    withRequestId(requestId: string | null): this;
+    getContextStack(): string | null;
+    setContextStack(contextStack: string | null): this;
+    withContextStack(contextStack: string | null): this;
+    getNamespaceName(): string | null;
+    setNamespaceName(namespaceName: string | null): this;
+    withNamespaceName(namespaceName: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getWarningVersion(): Gs2Version.Version | null;
+    setWarningVersion(warningVersion: Gs2Version.Version | null): this;
+    withWarningVersion(warningVersion: Gs2Version.Version | null): this;
+    getErrorVersion(): Gs2Version.Version | null;
+    setErrorVersion(errorVersion: Gs2Version.Version | null): this;
+    withErrorVersion(errorVersion: Gs2Version.Version | null): this;
+    getScope(): string | null;
+    setScope(scope: string | null): this;
+    withScope(scope: string | null): this;
+    getCurrentVersion(): Gs2Version.Version | null;
+    setCurrentVersion(currentVersion: Gs2Version.Version | null): this;
+    withCurrentVersion(currentVersion: Gs2Version.Version | null): this;
+    getNeedSignature(): boolean | null;
+    setNeedSignature(needSignature: boolean | null): this;
+    withNeedSignature(needSignature: boolean | null): this;
+    getSignatureKeyId(): string | null;
+    setSignatureKeyId(signatureKeyId: string | null): this;
+    withSignatureKeyId(signatureKeyId: string | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): CreateVersionModelMasterRequest;
+    toDict(): {
+        [key: string]: any;
+    };
+}

@@ -2,8 +2,9 @@
   "compilerOptions": {
     "target": "es5",
     "outDir": "./",
-    "module": "esnext",
+    "module": "commonjs",
     "strict": true,
+    "declaration": true,
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",

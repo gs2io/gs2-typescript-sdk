@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,7 +14,9 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import Reward from './Reward';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Reward_1 = (0, tslib_1.__importDefault)(require("./Reward"));
 var Progress = /** @class */ (function () {
     function Progress() {
         this.progressId = null;
@@ -137,7 +140,7 @@ var Progress = /** @class */ (function () {
             .withRandomSeed(data["randomSeed"])
             .withRewards(data.rewards ?
             data.rewards.map(function (item) {
-                return Reward.fromDict(item);
+                return Reward_1.default.fromDict(item);
             }) : [])
             .withMetadata(data["metadata"])
             .withCreatedAt(data["createdAt"])
@@ -161,5 +164,5 @@ var Progress = /** @class */ (function () {
     };
     return Progress;
 }());
-export default Progress;
+exports.default = Progress;
 //# sourceMappingURL=Progress.js.map

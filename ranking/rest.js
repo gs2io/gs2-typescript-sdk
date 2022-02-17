@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,19 +14,20 @@ on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import { __extends } from "tslib";
-import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
-import { Gs2Constant } from '../core/model';
-import * as Result from './result';
-import axios from 'axios';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var model_1 = require("../core/model");
+var Result = (0, tslib_1.__importStar)(require("./result"));
+var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var Gs2RankingRestClient = /** @class */ (function (_super) {
-    __extends(Gs2RankingRestClient, _super);
+    (0, tslib_1.__extends)(Gs2RankingRestClient, _super);
     function Gs2RankingRestClient(session) {
         return _super.call(this, session) || this;
     }
     Gs2RankingRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -37,7 +39,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
             'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -48,7 +50,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -61,7 +63,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
             'logSetting': (_e = (_d = request.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateNamespaceResult.fromDict(response.data);
@@ -76,7 +78,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -87,7 +89,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -98,7 +100,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -109,7 +111,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -120,7 +122,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -133,7 +135,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
             'logSetting': (_f = (_e = request.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateNamespaceResult.fromDict(response.data);
@@ -148,7 +150,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -159,7 +161,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -170,7 +172,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.describeCategoryModels = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/category')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/category')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -181,7 +183,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -192,7 +194,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.getCategoryModel = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/category/{categoryName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/category/{categoryName}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -204,7 +206,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -215,7 +217,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.describeCategoryModelMasters = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/category')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/category')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -228,7 +230,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -239,7 +241,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.createCategoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/category')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/category')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -264,7 +266,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'accessPeriodEventId': (_r = request.getAccessPeriodEventId()) !== null && _r !== void 0 ? _r : null,
             'generation': (_s = request.getGeneration()) !== null && _s !== void 0 ? _s : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateCategoryModelMasterResult.fromDict(response.data);
@@ -279,7 +281,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.getCategoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/category/{categoryName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/category/{categoryName}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -291,7 +293,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -302,7 +304,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.updateCategoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/category/{categoryName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/category/{categoryName}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -327,7 +329,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'accessPeriodEventId': (_s = request.getAccessPeriodEventId()) !== null && _s !== void 0 ? _s : null,
             'generation': (_t = request.getGeneration()) !== null && _t !== void 0 ? _t : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCategoryModelMasterResult.fromDict(response.data);
@@ -342,7 +344,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.deleteCategoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/category/{categoryName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/category/{categoryName}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -354,7 +356,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -365,7 +367,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.subscribe = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/category/{categoryName}/target/{targetUserId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/category/{categoryName}/target/{targetUserId}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -381,7 +383,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.SubscribeResult.fromDict(response.data);
@@ -396,7 +398,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.subscribeByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/category/{categoryName}/target/{targetUserId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/category/{categoryName}/target/{targetUserId}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -410,7 +412,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.SubscribeByUserIdResult.fromDict(response.data);
@@ -425,7 +427,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.describeScores = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/category/{categoryName}/scorer/{scorerUserId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/category/{categoryName}/scorer/{scorerUserId}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -443,7 +445,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
             'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -454,7 +456,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.describeScoresByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/category/{categoryName}/scorer/{scorerUserId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/category/{categoryName}/scorer/{scorerUserId}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -470,7 +472,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
             'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -481,7 +483,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.getScore = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/category/{categoryName}/scorer/{scorerUserId}/score/{uniqueId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/category/{categoryName}/scorer/{scorerUserId}/score/{uniqueId}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -498,7 +500,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -509,7 +511,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.getScoreByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/category/{categoryName}/scorer/{scorerUserId}/score/{uniqueId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/category/{categoryName}/scorer/{scorerUserId}/score/{uniqueId}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -524,7 +526,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -535,7 +537,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.describeRankings = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/category/{categoryName}/ranking')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/category/{categoryName}/ranking')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -553,7 +555,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -564,7 +566,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.describeRankingssByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/category/{categoryName}/ranking')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/category/{categoryName}/ranking')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -580,7 +582,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
             'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -591,7 +593,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.describeNearRankings = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/category/{categoryName}/ranking/near')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/category/{categoryName}/ranking/near')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -604,7 +606,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'score': String((_f = request.getScore()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -615,7 +617,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.getRanking = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/category/{categoryName}/ranking/scorer/{scorerUserId}/score/{uniqueId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/category/{categoryName}/ranking/scorer/{scorerUserId}/score/{uniqueId}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -632,7 +634,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -643,7 +645,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.getRankingByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/category/{categoryName}/ranking/scorer/{scorerUserId}/score/{uniqueId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/category/{categoryName}/ranking/scorer/{scorerUserId}/score/{uniqueId}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -658,7 +660,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -669,7 +671,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.putScore = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/category/{categoryName}/ranking')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/category/{categoryName}/ranking')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -686,7 +688,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'score': (_g = request.getScore()) !== null && _g !== void 0 ? _g : null,
             'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.PutScoreResult.fromDict(response.data);
@@ -701,7 +703,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.putScoreByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/category/{categoryName}/ranking')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/category/{categoryName}/ranking')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -716,7 +718,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'score': (_h = request.getScore()) !== null && _h !== void 0 ? _h : null,
             'metadata': (_j = request.getMetadata()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.PutScoreByUserIdResult.fromDict(response.data);
@@ -731,7 +733,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.calcRanking = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/category/{categoryName}/calc/ranking')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/category/{categoryName}/calc/ranking')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -743,7 +745,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CalcRankingResult.fromDict(response.data);
@@ -758,7 +760,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.exportMaster = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -769,7 +771,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -780,7 +782,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.getCurrentRankingMaster = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -791,7 +793,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -802,7 +804,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.updateCurrentRankingMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -814,7 +816,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'settings': (_d = request.getSettings()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCurrentRankingMasterResult.fromDict(response.data);
@@ -829,7 +831,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.updateCurrentRankingMasterFromGitHub = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -841,7 +843,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'checkoutSetting': (_e = (_d = request.getCheckoutSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCurrentRankingMasterFromGitHubResult.fromDict(response.data);
@@ -856,7 +858,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.getSubscribe = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/category/{categoryName}/target/{targetUserId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/category/{categoryName}/target/{targetUserId}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -872,7 +874,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -883,7 +885,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.getSubscribeByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/category/{categoryName}/target/{targetUserId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/category/{categoryName}/target/{targetUserId}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -897,7 +899,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -908,7 +910,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.unsubscribe = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/category/{categoryName}/target/{targetUserId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/category/{categoryName}/target/{targetUserId}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -924,7 +926,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -935,7 +937,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.unsubscribeByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/category/{categoryName}/target/{targetUserId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/category/{categoryName}/target/{targetUserId}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -949,7 +951,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -960,7 +962,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.describeSubscribesByCategoryName = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/category/{categoryName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/subscribe/category/{categoryName}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -975,7 +977,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -986,7 +988,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
     };
     Gs2RankingRestClient.prototype.describeSubscribesByCategoryNameAndUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/category/{categoryName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/category/{categoryName}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -999,7 +1001,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1009,6 +1011,6 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         });
     };
     return Gs2RankingRestClient;
-}(AbstractGs2RestClient));
-export default Gs2RankingRestClient;
+}(AbstractGs2RestClient_1.default));
+exports.default = Gs2RankingRestClient;
 //# sourceMappingURL=rest.js.map

@@ -1,0 +1,37 @@
+import IModel from '../../core/interface/IModel';
+export default class RatingModelMaster implements IModel {
+    private ratingModelId;
+    private name;
+    private metadata;
+    private description;
+    private volatility;
+    private createdAt;
+    private updatedAt;
+    getRatingModelId(): string | null;
+    setRatingModelId(ratingModelId: string | null): this;
+    withRatingModelId(ratingModelId: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getVolatility(): number | null;
+    setVolatility(volatility: number | null): this;
+    withVolatility(volatility: number | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    getUpdatedAt(): number | null;
+    setUpdatedAt(updatedAt: number | null): this;
+    withUpdatedAt(updatedAt: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): RatingModelMaster | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

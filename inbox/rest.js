@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,19 +14,20 @@ on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import { __extends } from "tslib";
-import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
-import { Gs2Constant } from '../core/model';
-import * as Result from './result';
-import axios from 'axios';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var model_1 = require("../core/model");
+var Result = (0, tslib_1.__importStar)(require("./result"));
+var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var Gs2InboxRestClient = /** @class */ (function (_super) {
-    __extends(Gs2InboxRestClient, _super);
+    (0, tslib_1.__extends)(Gs2InboxRestClient, _super);
     function Gs2InboxRestClient(session) {
         return _super.call(this, session) || this;
     }
     Gs2InboxRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -37,7 +39,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
             'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -48,7 +50,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -68,7 +70,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'receiveNotification': (_p = (_o = request.getReceiveNotification()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
             'logSetting': (_r = (_q = request.getLogSetting()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateNamespaceResult.fromDict(response.data);
@@ -83,7 +85,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -94,7 +96,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -105,7 +107,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -116,7 +118,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -127,7 +129,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -147,7 +149,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'receiveNotification': (_q = (_p = request.getReceiveNotification()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
             'logSetting': (_s = (_r = request.getLogSetting()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateNamespaceResult.fromDict(response.data);
@@ -162,7 +164,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -173,7 +175,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -184,7 +186,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.describeMessages = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/message')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/message')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -200,7 +202,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
             'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -211,7 +213,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.describeMessagesByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/message')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/message')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -225,7 +227,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
             'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -236,7 +238,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.sendMessageByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/message')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/message')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -252,7 +254,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'expiresAt': (_j = request.getExpiresAt()) !== null && _j !== void 0 ? _j : null,
             'expiresTimeSpan': (_l = (_k = request.getExpiresTimeSpan()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.SendMessageByUserIdResult.fromDict(response.data);
@@ -267,7 +269,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.getMessage = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/{messageName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/{messageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -282,7 +284,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -293,7 +295,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.getMessageByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/{messageName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/{messageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -306,7 +308,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -317,7 +319,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.receiveGlobalMessage = function (request) {
         var _a, _b, _c, _d;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/message/globalMessage/receive')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/message/globalMessage/receive')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -331,7 +333,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.ReceiveGlobalMessageResult.fromDict(response.data);
@@ -346,7 +348,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.receiveGlobalMessageByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/message/globalMessage/receive')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/message/globalMessage/receive')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -358,7 +360,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.ReceiveGlobalMessageByUserIdResult.fromDict(response.data);
@@ -373,7 +375,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.openMessage = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/{messageName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/{messageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -388,7 +390,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.OpenMessageResult.fromDict(response.data);
@@ -403,7 +405,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.openMessageByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/{messageName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/{messageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -416,7 +418,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.OpenMessageByUserIdResult.fromDict(response.data);
@@ -431,7 +433,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.readMessage = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/{messageName}/read')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/{messageName}/read')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -447,7 +449,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'config': (_h = (_g = request.getConfig()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.ReadMessageResult.fromDict(response.data);
@@ -462,7 +464,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.readMessageByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/{messageName}/read')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/{messageName}/read')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -476,7 +478,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
             'config': (_j = (_h = request.getConfig()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.ReadMessageByUserIdResult.fromDict(response.data);
@@ -491,7 +493,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.deleteMessage = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/{messageName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/{messageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -506,7 +508,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -517,7 +519,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.deleteMessageByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/{messageName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/{messageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -530,7 +532,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -541,7 +543,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.sendByStampSheet = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/send')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/send')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -553,7 +555,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.SendByStampSheetResult.fromDict(response.data);
@@ -568,7 +570,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.openByStampTask = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/open')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/open')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -580,7 +582,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.OpenByStampTaskResult.fromDict(response.data);
@@ -595,7 +597,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.exportMaster = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -606,7 +608,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -617,7 +619,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.getCurrentMessageMaster = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -628,7 +630,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -639,7 +641,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.updateCurrentMessageMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -651,7 +653,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'settings': (_d = request.getSettings()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCurrentMessageMasterResult.fromDict(response.data);
@@ -666,7 +668,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.updateCurrentMessageMasterFromGitHub = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -678,7 +680,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'checkoutSetting': (_e = (_d = request.getCheckoutSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCurrentMessageMasterFromGitHubResult.fromDict(response.data);
@@ -693,7 +695,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.describeGlobalMessageMasters = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/globalMessage')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/globalMessage')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -706,7 +708,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -717,7 +719,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.createGlobalMessageMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/globalMessage')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/globalMessage')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -733,7 +735,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'expiresTimeSpan': (_j = (_h = request.getExpiresTimeSpan()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
             'expiresAt': (_k = request.getExpiresAt()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateGlobalMessageMasterResult.fromDict(response.data);
@@ -748,7 +750,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.getGlobalMessageMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/globalMessage/{globalMessageName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/globalMessage/{globalMessageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -760,7 +762,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -771,7 +773,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.updateGlobalMessageMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/globalMessage/{globalMessageName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/globalMessage/{globalMessageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -787,7 +789,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'expiresTimeSpan': (_k = (_j = request.getExpiresTimeSpan()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
             'expiresAt': (_l = request.getExpiresAt()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateGlobalMessageMasterResult.fromDict(response.data);
@@ -802,7 +804,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.deleteGlobalMessageMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/globalMessage/{globalMessageName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/globalMessage/{globalMessageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -814,7 +816,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -825,7 +827,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.describeGlobalMessages = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/globalMessage')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/globalMessage')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -836,7 +838,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -847,7 +849,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.getGlobalMessage = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/globalMessage/{globalMessageName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/globalMessage/{globalMessageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -859,7 +861,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -870,7 +872,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.getReceivedByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/received')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/received')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -882,7 +884,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -893,7 +895,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.updateReceivedByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/received')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/received')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -906,7 +908,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'receivedGlobalMessageNames': (_f = request.getReceivedGlobalMessageNames()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateReceivedByUserIdResult.fromDict(response.data);
@@ -921,7 +923,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.deleteReceivedByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/received')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/received')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -933,7 +935,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -943,6 +945,6 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         });
     };
     return Gs2InboxRestClient;
-}(AbstractGs2RestClient));
-export default Gs2InboxRestClient;
+}(AbstractGs2RestClient_1.default));
+exports.default = Gs2InboxRestClient;
 //# sourceMappingURL=rest.js.map

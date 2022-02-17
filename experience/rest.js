@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,19 +14,20 @@ on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import { __extends } from "tslib";
-import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
-import { Gs2Constant } from '../core/model';
-import * as Result from './result';
-import axios from 'axios';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var model_1 = require("../core/model");
+var Result = (0, tslib_1.__importStar)(require("./result"));
+var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var Gs2ExperienceRestClient = /** @class */ (function (_super) {
-    __extends(Gs2ExperienceRestClient, _super);
+    (0, tslib_1.__extends)(Gs2ExperienceRestClient, _super);
     function Gs2ExperienceRestClient(session) {
         return _super.call(this, session) || this;
     }
     Gs2ExperienceRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -37,7 +39,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
             'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -48,7 +50,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -66,7 +68,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'overflowExperienceScript': (_m = (_l = request.getOverflowExperienceScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
             'logSetting': (_p = (_o = request.getLogSetting()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateNamespaceResult.fromDict(response.data);
@@ -81,7 +83,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -92,7 +94,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -103,7 +105,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -114,7 +116,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -125,7 +127,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -143,7 +145,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'overflowExperienceScript': (_o = (_m = request.getOverflowExperienceScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
             'logSetting': (_q = (_p = request.getLogSetting()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateNamespaceResult.fromDict(response.data);
@@ -158,7 +160,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -169,7 +171,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -180,7 +182,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.describeExperienceModelMasters = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -193,7 +195,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -204,7 +206,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.createExperienceModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -222,7 +224,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'maxRankCap': (_j = request.getMaxRankCap()) !== null && _j !== void 0 ? _j : null,
             'rankThresholdName': (_k = request.getRankThresholdName()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateExperienceModelMasterResult.fromDict(response.data);
@@ -237,7 +239,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.getExperienceModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{experienceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{experienceName}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -249,7 +251,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -260,7 +262,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.updateExperienceModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{experienceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{experienceName}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -278,7 +280,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'maxRankCap': (_k = request.getMaxRankCap()) !== null && _k !== void 0 ? _k : null,
             'rankThresholdName': (_l = request.getRankThresholdName()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateExperienceModelMasterResult.fromDict(response.data);
@@ -293,7 +295,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.deleteExperienceModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{experienceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{experienceName}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -305,7 +307,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -316,7 +318,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.describeExperienceModels = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -327,7 +329,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -338,7 +340,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.getExperienceModel = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{experienceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{experienceName}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -350,7 +352,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -361,7 +363,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.describeThresholdMasters = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/threshold')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/threshold')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -374,7 +376,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -385,7 +387,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.createThresholdMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/threshold')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/threshold')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -400,7 +402,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
             'values': (_g = request.getValues()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateThresholdMasterResult.fromDict(response.data);
@@ -415,7 +417,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.getThresholdMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/threshold/{thresholdName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/threshold/{thresholdName}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -427,7 +429,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -438,7 +440,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.updateThresholdMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/threshold/{thresholdName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/threshold/{thresholdName}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -453,7 +455,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
             'values': (_h = request.getValues()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateThresholdMasterResult.fromDict(response.data);
@@ -468,7 +470,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.deleteThresholdMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/threshold/{thresholdName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/threshold/{thresholdName}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -480,7 +482,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -491,7 +493,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.exportMaster = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -502,7 +504,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -513,7 +515,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.getCurrentExperienceMaster = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -524,7 +526,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -535,7 +537,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.updateCurrentExperienceMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -547,7 +549,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'settings': (_d = request.getSettings()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCurrentExperienceMasterResult.fromDict(response.data);
@@ -562,7 +564,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.updateCurrentExperienceMasterFromGitHub = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -574,7 +576,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'checkoutSetting': (_e = (_d = request.getCheckoutSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCurrentExperienceMasterFromGitHubResult.fromDict(response.data);
@@ -589,7 +591,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.describeStatuses = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -606,7 +608,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -617,7 +619,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.describeStatusesByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -632,7 +634,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
             'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -643,7 +645,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.getStatus = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/model/{experienceName}/property/{propertyId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/model/{experienceName}/property/{propertyId}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -659,7 +661,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -670,7 +672,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.getStatusByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -684,7 +686,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -695,7 +697,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.getStatusWithSignature = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/model/{experienceName}/property/{propertyId}/signature')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/model/{experienceName}/property/{propertyId}/signature')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -712,7 +714,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'keyId': String((_j = request.getKeyId()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -723,7 +725,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.getStatusWithSignatureByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}/signature')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}/signature')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -738,7 +740,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'keyId': String((_k = request.getKeyId()) !== null && _k !== void 0 ? _k : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -749,7 +751,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.addExperienceByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -764,7 +766,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'experienceValue': (_k = request.getExperienceValue()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.AddExperienceByUserIdResult.fromDict(response.data);
@@ -779,7 +781,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.setExperienceByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -794,7 +796,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'experienceValue': (_k = request.getExperienceValue()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.SetExperienceByUserIdResult.fromDict(response.data);
@@ -809,7 +811,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.addRankCapByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}/cap')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}/cap')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -824,7 +826,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'rankCapValue': (_k = request.getRankCapValue()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.AddRankCapByUserIdResult.fromDict(response.data);
@@ -839,7 +841,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.setRankCapByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}/cap')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}/cap')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -854,7 +856,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'rankCapValue': (_k = request.getRankCapValue()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.SetRankCapByUserIdResult.fromDict(response.data);
@@ -869,7 +871,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.deleteStatusByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -883,7 +885,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -894,7 +896,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.addExperienceByStampSheet = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/experience/add')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/experience/add')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -906,7 +908,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.AddExperienceByStampSheetResult.fromDict(response.data);
@@ -921,7 +923,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.addRankCapByStampSheet = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/rankCap/add')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/rankCap/add')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -933,7 +935,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.AddRankCapByStampSheetResult.fromDict(response.data);
@@ -948,7 +950,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
     };
     Gs2ExperienceRestClient.prototype.setRankCapByStampSheet = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/rankCap/set')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/rankCap/set')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -960,7 +962,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.SetRankCapByStampSheetResult.fromDict(response.data);
@@ -974,6 +976,6 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     return Gs2ExperienceRestClient;
-}(AbstractGs2RestClient));
-export default Gs2ExperienceRestClient;
+}(AbstractGs2RestClient_1.default));
+exports.default = Gs2ExperienceRestClient;
 //# sourceMappingURL=rest.js.map

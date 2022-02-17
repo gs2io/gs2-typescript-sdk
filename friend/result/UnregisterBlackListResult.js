@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,7 +14,9 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import * as Gs2Friend from '../model';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Friend = (0, tslib_1.__importStar)(require("../model"));
 var UnregisterBlackListResult = /** @class */ (function () {
     function UnregisterBlackListResult() {
         this.item = null;
@@ -41,5 +44,5 @@ var UnregisterBlackListResult = /** @class */ (function () {
     };
     return UnregisterBlackListResult;
 }());
-export default UnregisterBlackListResult;
+exports.default = UnregisterBlackListResult;
 //# sourceMappingURL=UnregisterBlackListResult.js.map

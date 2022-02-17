@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,7 +14,9 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import { OutputField } from './OutputField';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Resource = void 0;
+var OutputField_1 = require("./OutputField");
 var Resource = /** @class */ (function () {
     function Resource() {
         this.resourceId = null;
@@ -167,7 +170,7 @@ var Resource = /** @class */ (function () {
             }) : [])
             .withOutputFields(data.outputFields ?
             data.outputFields.map(function (item) {
-                return OutputField.fromDict(item);
+                return OutputField_1.OutputField.fromDict(item);
             }) : [])
             .withWorkId(data["workId"])
             .withCreatedAt(data["createdAt"]);
@@ -195,5 +198,5 @@ var Resource = /** @class */ (function () {
     };
     return Resource;
 }());
-export { Resource };
+exports.Resource = Resource;
 //# sourceMappingURL=Resource.js.map

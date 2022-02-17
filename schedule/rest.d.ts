@@ -1,0 +1,35 @@
+import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
+import { Gs2RestSession } from '../core/model';
+import * as Request from './request';
+import * as Result from './result';
+export default class Gs2ScheduleRestClient extends AbstractGs2RestClient {
+    constructor(session: Gs2RestSession);
+    describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult>;
+    createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult>;
+    getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult>;
+    getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
+    updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
+    deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    describeEventMasters(request: Request.DescribeEventMastersRequest): Promise<Result.DescribeEventMastersResult>;
+    createEventMaster(request: Request.CreateEventMasterRequest): Promise<Result.CreateEventMasterResult>;
+    getEventMaster(request: Request.GetEventMasterRequest): Promise<Result.GetEventMasterResult>;
+    updateEventMaster(request: Request.UpdateEventMasterRequest): Promise<Result.UpdateEventMasterResult>;
+    deleteEventMaster(request: Request.DeleteEventMasterRequest): Promise<Result.DeleteEventMasterResult>;
+    describeTriggers(request: Request.DescribeTriggersRequest): Promise<Result.DescribeTriggersResult>;
+    describeTriggersByUserId(request: Request.DescribeTriggersByUserIdRequest): Promise<Result.DescribeTriggersByUserIdResult>;
+    getTrigger(request: Request.GetTriggerRequest): Promise<Result.GetTriggerResult>;
+    getTriggerByUserId(request: Request.GetTriggerByUserIdRequest): Promise<Result.GetTriggerByUserIdResult>;
+    triggerByUserId(request: Request.TriggerByUserIdRequest): Promise<Result.TriggerByUserIdResult>;
+    deleteTrigger(request: Request.DeleteTriggerRequest): Promise<Result.DeleteTriggerResult>;
+    deleteTriggerByUserId(request: Request.DeleteTriggerByUserIdRequest): Promise<Result.DeleteTriggerByUserIdResult>;
+    describeEvents(request: Request.DescribeEventsRequest): Promise<Result.DescribeEventsResult>;
+    describeEventsByUserId(request: Request.DescribeEventsByUserIdRequest): Promise<Result.DescribeEventsByUserIdResult>;
+    describeRawEvents(request: Request.DescribeRawEventsRequest): Promise<Result.DescribeRawEventsResult>;
+    getEvent(request: Request.GetEventRequest): Promise<Result.GetEventResult>;
+    getEventByUserId(request: Request.GetEventByUserIdRequest): Promise<Result.GetEventByUserIdResult>;
+    getRawEvent(request: Request.GetRawEventRequest): Promise<Result.GetRawEventResult>;
+    exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
+    getCurrentEventMaster(request: Request.GetCurrentEventMasterRequest): Promise<Result.GetCurrentEventMasterResult>;
+    updateCurrentEventMaster(request: Request.UpdateCurrentEventMasterRequest): Promise<Result.UpdateCurrentEventMasterResult>;
+    updateCurrentEventMasterFromGitHub(request: Request.UpdateCurrentEventMasterFromGitHubRequest): Promise<Result.UpdateCurrentEventMasterFromGitHubResult>;
+}

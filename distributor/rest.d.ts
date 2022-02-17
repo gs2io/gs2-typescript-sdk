@@ -1,0 +1,32 @@
+import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
+import { Gs2RestSession } from '../core/model';
+import * as Request from './request';
+import * as Result from './result';
+export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
+    constructor(session: Gs2RestSession);
+    describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult>;
+    createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult>;
+    getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult>;
+    getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
+    updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
+    deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    describeDistributorModelMasters(request: Request.DescribeDistributorModelMastersRequest): Promise<Result.DescribeDistributorModelMastersResult>;
+    createDistributorModelMaster(request: Request.CreateDistributorModelMasterRequest): Promise<Result.CreateDistributorModelMasterResult>;
+    getDistributorModelMaster(request: Request.GetDistributorModelMasterRequest): Promise<Result.GetDistributorModelMasterResult>;
+    updateDistributorModelMaster(request: Request.UpdateDistributorModelMasterRequest): Promise<Result.UpdateDistributorModelMasterResult>;
+    deleteDistributorModelMaster(request: Request.DeleteDistributorModelMasterRequest): Promise<Result.DeleteDistributorModelMasterResult>;
+    describeDistributorModels(request: Request.DescribeDistributorModelsRequest): Promise<Result.DescribeDistributorModelsResult>;
+    getDistributorModel(request: Request.GetDistributorModelRequest): Promise<Result.GetDistributorModelResult>;
+    exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
+    getCurrentDistributorMaster(request: Request.GetCurrentDistributorMasterRequest): Promise<Result.GetCurrentDistributorMasterResult>;
+    updateCurrentDistributorMaster(request: Request.UpdateCurrentDistributorMasterRequest): Promise<Result.UpdateCurrentDistributorMasterResult>;
+    updateCurrentDistributorMasterFromGitHub(request: Request.UpdateCurrentDistributorMasterFromGitHubRequest): Promise<Result.UpdateCurrentDistributorMasterFromGitHubResult>;
+    distribute(request: Request.DistributeRequest): Promise<Result.DistributeResult>;
+    distributeWithoutOverflowProcess(request: Request.DistributeWithoutOverflowProcessRequest): Promise<Result.DistributeWithoutOverflowProcessResult>;
+    runStampTask(request: Request.RunStampTaskRequest): Promise<Result.RunStampTaskResult>;
+    runStampSheet(request: Request.RunStampSheetRequest): Promise<Result.RunStampSheetResult>;
+    runStampSheetExpress(request: Request.RunStampSheetExpressRequest): Promise<Result.RunStampSheetExpressResult>;
+    runStampTaskWithoutNamespace(request: Request.RunStampTaskWithoutNamespaceRequest): Promise<Result.RunStampTaskWithoutNamespaceResult>;
+    runStampSheetWithoutNamespace(request: Request.RunStampSheetWithoutNamespaceRequest): Promise<Result.RunStampSheetWithoutNamespaceResult>;
+    runStampSheetExpressWithoutNamespace(request: Request.RunStampSheetExpressWithoutNamespaceRequest): Promise<Result.RunStampSheetExpressWithoutNamespaceResult>;
+}

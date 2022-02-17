@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,6 +14,7 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
 var GetCounterRequest = /** @class */ (function () {
     function GetCounterRequest() {
         this.requestId = null;
@@ -91,5 +93,5 @@ var GetCounterRequest = /** @class */ (function () {
     };
     return GetCounterRequest;
 }());
-export default GetCounterRequest;
+exports.default = GetCounterRequest;
 //# sourceMappingURL=GetCounterRequest.js.map

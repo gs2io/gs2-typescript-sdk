@@ -1,3 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LogSetting = exports.GitHubApiKey = exports.Key = exports.Namespace = void 0;
+var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,9 +17,12 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import Namespace from "./Namespace";
-import Key from "./Key";
-import GitHubApiKey from "./GitHubApiKey";
-import LogSetting from "./LogSetting";
-export { Namespace, Key, GitHubApiKey, LogSetting, };
+var Namespace_1 = (0, tslib_1.__importDefault)(require("./Namespace"));
+exports.Namespace = Namespace_1.default;
+var Key_1 = (0, tslib_1.__importDefault)(require("./Key"));
+exports.Key = Key_1.default;
+var GitHubApiKey_1 = (0, tslib_1.__importDefault)(require("./GitHubApiKey"));
+exports.GitHubApiKey = GitHubApiKey_1.default;
+var LogSetting_1 = (0, tslib_1.__importDefault)(require("./LogSetting"));
+exports.LogSetting = LogSetting_1.default;
 //# sourceMappingURL=index.js.map

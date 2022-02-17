@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,8 +14,10 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import Version from './Version';
-import VersionModel from './VersionModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Version_1 = (0, tslib_1.__importDefault)(require("./Version"));
+var VersionModel_1 = (0, tslib_1.__importDefault)(require("./VersionModel"));
 var Status = /** @class */ (function () {
     function Status() {
         this.versionModel = null;
@@ -47,8 +50,8 @@ var Status = /** @class */ (function () {
             return null;
         }
         return new Status()
-            .withVersionModel(VersionModel.fromDict(data["versionModel"]))
-            .withCurrentVersion(Version.fromDict(data["currentVersion"]));
+            .withVersionModel(VersionModel_1.default.fromDict(data["versionModel"]))
+            .withCurrentVersion(Version_1.default.fromDict(data["currentVersion"]));
     };
     Status.prototype.toDict = function () {
         var _a, _b;
@@ -59,5 +62,5 @@ var Status = /** @class */ (function () {
     };
     return Status;
 }());
-export default Status;
+exports.default = Status;
 //# sourceMappingURL=Status.js.map

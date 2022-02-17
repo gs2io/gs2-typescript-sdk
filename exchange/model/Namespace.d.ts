@@ -1,0 +1,55 @@
+import IModel from '../../core/interface/IModel';
+import ScriptSetting from './ScriptSetting';
+import LogSetting from './LogSetting';
+export default class Namespace implements IModel {
+    private namespaceId;
+    private name;
+    private description;
+    private enableDirectExchange;
+    private enableAwaitExchange;
+    private queueNamespaceId;
+    private keyId;
+    private exchangeScript;
+    private logSetting;
+    private createdAt;
+    private updatedAt;
+    getNamespaceId(): string | null;
+    setNamespaceId(namespaceId: string | null): this;
+    withNamespaceId(namespaceId: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getEnableDirectExchange(): boolean | null;
+    setEnableDirectExchange(enableDirectExchange: boolean | null): this;
+    withEnableDirectExchange(enableDirectExchange: boolean | null): this;
+    getEnableAwaitExchange(): boolean | null;
+    setEnableAwaitExchange(enableAwaitExchange: boolean | null): this;
+    withEnableAwaitExchange(enableAwaitExchange: boolean | null): this;
+    getQueueNamespaceId(): string | null;
+    setQueueNamespaceId(queueNamespaceId: string | null): this;
+    withQueueNamespaceId(queueNamespaceId: string | null): this;
+    getKeyId(): string | null;
+    setKeyId(keyId: string | null): this;
+    withKeyId(keyId: string | null): this;
+    getExchangeScript(): ScriptSetting | null;
+    setExchangeScript(exchangeScript: ScriptSetting | null): this;
+    withExchangeScript(exchangeScript: ScriptSetting | null): this;
+    getLogSetting(): LogSetting | null;
+    setLogSetting(logSetting: LogSetting | null): this;
+    withLogSetting(logSetting: LogSetting | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    getUpdatedAt(): number | null;
+    setUpdatedAt(updatedAt: number | null): this;
+    withUpdatedAt(updatedAt: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): Namespace | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

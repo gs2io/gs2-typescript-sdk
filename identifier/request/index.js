@@ -1,3 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LoginByUserRequest = exports.LoginRequest = exports.DetachSecurityPolicyRequest = exports.AttachSecurityPolicyRequest = exports.GetHasSecurityPolicyRequest = exports.DeletePasswordRequest = exports.GetPasswordRequest = exports.CreatePasswordRequest = exports.DescribePasswordsRequest = exports.DeleteIdentifierRequest = exports.GetIdentifierRequest = exports.CreateIdentifierRequest = exports.DescribeIdentifiersRequest = exports.DeleteSecurityPolicyRequest = exports.GetSecurityPolicyRequest = exports.UpdateSecurityPolicyRequest = exports.CreateSecurityPolicyRequest = exports.DescribeCommonSecurityPoliciesRequest = exports.DescribeSecurityPoliciesRequest = exports.DeleteUserRequest = exports.GetUserRequest = exports.UpdateUserRequest = exports.CreateUserRequest = exports.DescribeUsersRequest = void 0;
+var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,29 +17,52 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import DescribeUsersRequest from "./DescribeUsersRequest";
-import CreateUserRequest from "./CreateUserRequest";
-import UpdateUserRequest from "./UpdateUserRequest";
-import GetUserRequest from "./GetUserRequest";
-import DeleteUserRequest from "./DeleteUserRequest";
-import DescribeSecurityPoliciesRequest from "./DescribeSecurityPoliciesRequest";
-import DescribeCommonSecurityPoliciesRequest from "./DescribeCommonSecurityPoliciesRequest";
-import CreateSecurityPolicyRequest from "./CreateSecurityPolicyRequest";
-import UpdateSecurityPolicyRequest from "./UpdateSecurityPolicyRequest";
-import GetSecurityPolicyRequest from "./GetSecurityPolicyRequest";
-import DeleteSecurityPolicyRequest from "./DeleteSecurityPolicyRequest";
-import DescribeIdentifiersRequest from "./DescribeIdentifiersRequest";
-import CreateIdentifierRequest from "./CreateIdentifierRequest";
-import GetIdentifierRequest from "./GetIdentifierRequest";
-import DeleteIdentifierRequest from "./DeleteIdentifierRequest";
-import DescribePasswordsRequest from "./DescribePasswordsRequest";
-import CreatePasswordRequest from "./CreatePasswordRequest";
-import GetPasswordRequest from "./GetPasswordRequest";
-import DeletePasswordRequest from "./DeletePasswordRequest";
-import GetHasSecurityPolicyRequest from "./GetHasSecurityPolicyRequest";
-import AttachSecurityPolicyRequest from "./AttachSecurityPolicyRequest";
-import DetachSecurityPolicyRequest from "./DetachSecurityPolicyRequest";
-import LoginRequest from "./LoginRequest";
-import LoginByUserRequest from "./LoginByUserRequest";
-export { DescribeUsersRequest, CreateUserRequest, UpdateUserRequest, GetUserRequest, DeleteUserRequest, DescribeSecurityPoliciesRequest, DescribeCommonSecurityPoliciesRequest, CreateSecurityPolicyRequest, UpdateSecurityPolicyRequest, GetSecurityPolicyRequest, DeleteSecurityPolicyRequest, DescribeIdentifiersRequest, CreateIdentifierRequest, GetIdentifierRequest, DeleteIdentifierRequest, DescribePasswordsRequest, CreatePasswordRequest, GetPasswordRequest, DeletePasswordRequest, GetHasSecurityPolicyRequest, AttachSecurityPolicyRequest, DetachSecurityPolicyRequest, LoginRequest, LoginByUserRequest, };
+var DescribeUsersRequest_1 = (0, tslib_1.__importDefault)(require("./DescribeUsersRequest"));
+exports.DescribeUsersRequest = DescribeUsersRequest_1.default;
+var CreateUserRequest_1 = (0, tslib_1.__importDefault)(require("./CreateUserRequest"));
+exports.CreateUserRequest = CreateUserRequest_1.default;
+var UpdateUserRequest_1 = (0, tslib_1.__importDefault)(require("./UpdateUserRequest"));
+exports.UpdateUserRequest = UpdateUserRequest_1.default;
+var GetUserRequest_1 = (0, tslib_1.__importDefault)(require("./GetUserRequest"));
+exports.GetUserRequest = GetUserRequest_1.default;
+var DeleteUserRequest_1 = (0, tslib_1.__importDefault)(require("./DeleteUserRequest"));
+exports.DeleteUserRequest = DeleteUserRequest_1.default;
+var DescribeSecurityPoliciesRequest_1 = (0, tslib_1.__importDefault)(require("./DescribeSecurityPoliciesRequest"));
+exports.DescribeSecurityPoliciesRequest = DescribeSecurityPoliciesRequest_1.default;
+var DescribeCommonSecurityPoliciesRequest_1 = (0, tslib_1.__importDefault)(require("./DescribeCommonSecurityPoliciesRequest"));
+exports.DescribeCommonSecurityPoliciesRequest = DescribeCommonSecurityPoliciesRequest_1.default;
+var CreateSecurityPolicyRequest_1 = (0, tslib_1.__importDefault)(require("./CreateSecurityPolicyRequest"));
+exports.CreateSecurityPolicyRequest = CreateSecurityPolicyRequest_1.default;
+var UpdateSecurityPolicyRequest_1 = (0, tslib_1.__importDefault)(require("./UpdateSecurityPolicyRequest"));
+exports.UpdateSecurityPolicyRequest = UpdateSecurityPolicyRequest_1.default;
+var GetSecurityPolicyRequest_1 = (0, tslib_1.__importDefault)(require("./GetSecurityPolicyRequest"));
+exports.GetSecurityPolicyRequest = GetSecurityPolicyRequest_1.default;
+var DeleteSecurityPolicyRequest_1 = (0, tslib_1.__importDefault)(require("./DeleteSecurityPolicyRequest"));
+exports.DeleteSecurityPolicyRequest = DeleteSecurityPolicyRequest_1.default;
+var DescribeIdentifiersRequest_1 = (0, tslib_1.__importDefault)(require("./DescribeIdentifiersRequest"));
+exports.DescribeIdentifiersRequest = DescribeIdentifiersRequest_1.default;
+var CreateIdentifierRequest_1 = (0, tslib_1.__importDefault)(require("./CreateIdentifierRequest"));
+exports.CreateIdentifierRequest = CreateIdentifierRequest_1.default;
+var GetIdentifierRequest_1 = (0, tslib_1.__importDefault)(require("./GetIdentifierRequest"));
+exports.GetIdentifierRequest = GetIdentifierRequest_1.default;
+var DeleteIdentifierRequest_1 = (0, tslib_1.__importDefault)(require("./DeleteIdentifierRequest"));
+exports.DeleteIdentifierRequest = DeleteIdentifierRequest_1.default;
+var DescribePasswordsRequest_1 = (0, tslib_1.__importDefault)(require("./DescribePasswordsRequest"));
+exports.DescribePasswordsRequest = DescribePasswordsRequest_1.default;
+var CreatePasswordRequest_1 = (0, tslib_1.__importDefault)(require("./CreatePasswordRequest"));
+exports.CreatePasswordRequest = CreatePasswordRequest_1.default;
+var GetPasswordRequest_1 = (0, tslib_1.__importDefault)(require("./GetPasswordRequest"));
+exports.GetPasswordRequest = GetPasswordRequest_1.default;
+var DeletePasswordRequest_1 = (0, tslib_1.__importDefault)(require("./DeletePasswordRequest"));
+exports.DeletePasswordRequest = DeletePasswordRequest_1.default;
+var GetHasSecurityPolicyRequest_1 = (0, tslib_1.__importDefault)(require("./GetHasSecurityPolicyRequest"));
+exports.GetHasSecurityPolicyRequest = GetHasSecurityPolicyRequest_1.default;
+var AttachSecurityPolicyRequest_1 = (0, tslib_1.__importDefault)(require("./AttachSecurityPolicyRequest"));
+exports.AttachSecurityPolicyRequest = AttachSecurityPolicyRequest_1.default;
+var DetachSecurityPolicyRequest_1 = (0, tslib_1.__importDefault)(require("./DetachSecurityPolicyRequest"));
+exports.DetachSecurityPolicyRequest = DetachSecurityPolicyRequest_1.default;
+var LoginRequest_1 = (0, tslib_1.__importDefault)(require("./LoginRequest"));
+exports.LoginRequest = LoginRequest_1.default;
+var LoginByUserRequest_1 = (0, tslib_1.__importDefault)(require("./LoginByUserRequest"));
+exports.LoginByUserRequest = LoginByUserRequest_1.default;
 //# sourceMappingURL=index.js.map

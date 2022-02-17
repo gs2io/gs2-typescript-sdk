@@ -1,0 +1,58 @@
+import IModel from '../../core/interface/IModel';
+import BonusRate from './BonusRate';
+export default class RateModelMaster implements IModel {
+    private rateModelId;
+    private name;
+    private description;
+    private metadata;
+    private targetInventoryModelId;
+    private acquireExperienceSuffix;
+    private materialInventoryModelId;
+    private acquireExperienceHierarchy;
+    private experienceModelId;
+    private bonusRates;
+    private createdAt;
+    private updatedAt;
+    getRateModelId(): string | null;
+    setRateModelId(rateModelId: string | null): this;
+    withRateModelId(rateModelId: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getTargetInventoryModelId(): string | null;
+    setTargetInventoryModelId(targetInventoryModelId: string | null): this;
+    withTargetInventoryModelId(targetInventoryModelId: string | null): this;
+    getAcquireExperienceSuffix(): string | null;
+    setAcquireExperienceSuffix(acquireExperienceSuffix: string | null): this;
+    withAcquireExperienceSuffix(acquireExperienceSuffix: string | null): this;
+    getMaterialInventoryModelId(): string | null;
+    setMaterialInventoryModelId(materialInventoryModelId: string | null): this;
+    withMaterialInventoryModelId(materialInventoryModelId: string | null): this;
+    getAcquireExperienceHierarchy(): string[] | null;
+    setAcquireExperienceHierarchy(acquireExperienceHierarchy: string[] | null): this;
+    withAcquireExperienceHierarchy(acquireExperienceHierarchy: string[] | null): this;
+    getExperienceModelId(): string | null;
+    setExperienceModelId(experienceModelId: string | null): this;
+    withExperienceModelId(experienceModelId: string | null): this;
+    getBonusRates(): BonusRate[] | null;
+    setBonusRates(bonusRates: BonusRate[] | null): this;
+    withBonusRates(bonusRates: BonusRate[] | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    getUpdatedAt(): number | null;
+    setUpdatedAt(updatedAt: number | null): this;
+    withUpdatedAt(updatedAt: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): RateModelMaster | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

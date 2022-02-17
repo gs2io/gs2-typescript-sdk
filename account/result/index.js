@@ -1,3 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DoTakeOverResult = exports.DeleteTakeOverByUserIdentifierResult = exports.DeleteTakeOverResult = exports.UpdateTakeOverByUserIdResult = exports.UpdateTakeOverResult = exports.GetTakeOverByUserIdResult = exports.GetTakeOverResult = exports.CreateTakeOverByUserIdResult = exports.CreateTakeOverResult = exports.DescribeTakeOversByUserIdResult = exports.DescribeTakeOversResult = exports.AuthenticationResult = exports.DeleteAccountResult = exports.GetAccountResult = exports.UpdateTimeOffsetResult = exports.CreateAccountResult = exports.DescribeAccountsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,28 +17,50 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import DescribeNamespacesResult from "./DescribeNamespacesResult";
-import CreateNamespaceResult from "./CreateNamespaceResult";
-import GetNamespaceStatusResult from "./GetNamespaceStatusResult";
-import GetNamespaceResult from "./GetNamespaceResult";
-import UpdateNamespaceResult from "./UpdateNamespaceResult";
-import DeleteNamespaceResult from "./DeleteNamespaceResult";
-import DescribeAccountsResult from "./DescribeAccountsResult";
-import CreateAccountResult from "./CreateAccountResult";
-import UpdateTimeOffsetResult from "./UpdateTimeOffsetResult";
-import GetAccountResult from "./GetAccountResult";
-import DeleteAccountResult from "./DeleteAccountResult";
-import AuthenticationResult from "./AuthenticationResult";
-import DescribeTakeOversResult from "./DescribeTakeOversResult";
-import DescribeTakeOversByUserIdResult from "./DescribeTakeOversByUserIdResult";
-import CreateTakeOverResult from "./CreateTakeOverResult";
-import CreateTakeOverByUserIdResult from "./CreateTakeOverByUserIdResult";
-import GetTakeOverResult from "./GetTakeOverResult";
-import GetTakeOverByUserIdResult from "./GetTakeOverByUserIdResult";
-import UpdateTakeOverResult from "./UpdateTakeOverResult";
-import UpdateTakeOverByUserIdResult from "./UpdateTakeOverByUserIdResult";
-import DeleteTakeOverResult from "./DeleteTakeOverResult";
-import DeleteTakeOverByUserIdentifierResult from "./DeleteTakeOverByUserIdentifierResult";
-import DoTakeOverResult from "./DoTakeOverResult";
-export { DescribeNamespacesResult, CreateNamespaceResult, GetNamespaceStatusResult, GetNamespaceResult, UpdateNamespaceResult, DeleteNamespaceResult, DescribeAccountsResult, CreateAccountResult, UpdateTimeOffsetResult, GetAccountResult, DeleteAccountResult, AuthenticationResult, DescribeTakeOversResult, DescribeTakeOversByUserIdResult, CreateTakeOverResult, CreateTakeOverByUserIdResult, GetTakeOverResult, GetTakeOverByUserIdResult, UpdateTakeOverResult, UpdateTakeOverByUserIdResult, DeleteTakeOverResult, DeleteTakeOverByUserIdentifierResult, DoTakeOverResult, };
+var DescribeNamespacesResult_1 = (0, tslib_1.__importDefault)(require("./DescribeNamespacesResult"));
+exports.DescribeNamespacesResult = DescribeNamespacesResult_1.default;
+var CreateNamespaceResult_1 = (0, tslib_1.__importDefault)(require("./CreateNamespaceResult"));
+exports.CreateNamespaceResult = CreateNamespaceResult_1.default;
+var GetNamespaceStatusResult_1 = (0, tslib_1.__importDefault)(require("./GetNamespaceStatusResult"));
+exports.GetNamespaceStatusResult = GetNamespaceStatusResult_1.default;
+var GetNamespaceResult_1 = (0, tslib_1.__importDefault)(require("./GetNamespaceResult"));
+exports.GetNamespaceResult = GetNamespaceResult_1.default;
+var UpdateNamespaceResult_1 = (0, tslib_1.__importDefault)(require("./UpdateNamespaceResult"));
+exports.UpdateNamespaceResult = UpdateNamespaceResult_1.default;
+var DeleteNamespaceResult_1 = (0, tslib_1.__importDefault)(require("./DeleteNamespaceResult"));
+exports.DeleteNamespaceResult = DeleteNamespaceResult_1.default;
+var DescribeAccountsResult_1 = (0, tslib_1.__importDefault)(require("./DescribeAccountsResult"));
+exports.DescribeAccountsResult = DescribeAccountsResult_1.default;
+var CreateAccountResult_1 = (0, tslib_1.__importDefault)(require("./CreateAccountResult"));
+exports.CreateAccountResult = CreateAccountResult_1.default;
+var UpdateTimeOffsetResult_1 = (0, tslib_1.__importDefault)(require("./UpdateTimeOffsetResult"));
+exports.UpdateTimeOffsetResult = UpdateTimeOffsetResult_1.default;
+var GetAccountResult_1 = (0, tslib_1.__importDefault)(require("./GetAccountResult"));
+exports.GetAccountResult = GetAccountResult_1.default;
+var DeleteAccountResult_1 = (0, tslib_1.__importDefault)(require("./DeleteAccountResult"));
+exports.DeleteAccountResult = DeleteAccountResult_1.default;
+var AuthenticationResult_1 = (0, tslib_1.__importDefault)(require("./AuthenticationResult"));
+exports.AuthenticationResult = AuthenticationResult_1.default;
+var DescribeTakeOversResult_1 = (0, tslib_1.__importDefault)(require("./DescribeTakeOversResult"));
+exports.DescribeTakeOversResult = DescribeTakeOversResult_1.default;
+var DescribeTakeOversByUserIdResult_1 = (0, tslib_1.__importDefault)(require("./DescribeTakeOversByUserIdResult"));
+exports.DescribeTakeOversByUserIdResult = DescribeTakeOversByUserIdResult_1.default;
+var CreateTakeOverResult_1 = (0, tslib_1.__importDefault)(require("./CreateTakeOverResult"));
+exports.CreateTakeOverResult = CreateTakeOverResult_1.default;
+var CreateTakeOverByUserIdResult_1 = (0, tslib_1.__importDefault)(require("./CreateTakeOverByUserIdResult"));
+exports.CreateTakeOverByUserIdResult = CreateTakeOverByUserIdResult_1.default;
+var GetTakeOverResult_1 = (0, tslib_1.__importDefault)(require("./GetTakeOverResult"));
+exports.GetTakeOverResult = GetTakeOverResult_1.default;
+var GetTakeOverByUserIdResult_1 = (0, tslib_1.__importDefault)(require("./GetTakeOverByUserIdResult"));
+exports.GetTakeOverByUserIdResult = GetTakeOverByUserIdResult_1.default;
+var UpdateTakeOverResult_1 = (0, tslib_1.__importDefault)(require("./UpdateTakeOverResult"));
+exports.UpdateTakeOverResult = UpdateTakeOverResult_1.default;
+var UpdateTakeOverByUserIdResult_1 = (0, tslib_1.__importDefault)(require("./UpdateTakeOverByUserIdResult"));
+exports.UpdateTakeOverByUserIdResult = UpdateTakeOverByUserIdResult_1.default;
+var DeleteTakeOverResult_1 = (0, tslib_1.__importDefault)(require("./DeleteTakeOverResult"));
+exports.DeleteTakeOverResult = DeleteTakeOverResult_1.default;
+var DeleteTakeOverByUserIdentifierResult_1 = (0, tslib_1.__importDefault)(require("./DeleteTakeOverByUserIdentifierResult"));
+exports.DeleteTakeOverByUserIdentifierResult = DeleteTakeOverByUserIdentifierResult_1.default;
+var DoTakeOverResult_1 = (0, tslib_1.__importDefault)(require("./DoTakeOverResult"));
+exports.DoTakeOverResult = DoTakeOverResult_1.default;
 //# sourceMappingURL=index.js.map

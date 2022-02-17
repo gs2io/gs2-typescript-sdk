@@ -1,3 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PutLogRequest = exports.CountExecuteStampTaskLogRequest = exports.QueryExecuteStampTaskLogRequest = exports.CountExecuteStampSheetLogRequest = exports.QueryExecuteStampSheetLogRequest = exports.CountIssueStampSheetLogRequest = exports.QueryIssueStampSheetLogRequest = exports.CountAccessLogRequest = exports.QueryAccessLogRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,20 +17,34 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import DescribeNamespacesRequest from "./DescribeNamespacesRequest";
-import CreateNamespaceRequest from "./CreateNamespaceRequest";
-import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest";
-import GetNamespaceRequest from "./GetNamespaceRequest";
-import UpdateNamespaceRequest from "./UpdateNamespaceRequest";
-import DeleteNamespaceRequest from "./DeleteNamespaceRequest";
-import QueryAccessLogRequest from "./QueryAccessLogRequest";
-import CountAccessLogRequest from "./CountAccessLogRequest";
-import QueryIssueStampSheetLogRequest from "./QueryIssueStampSheetLogRequest";
-import CountIssueStampSheetLogRequest from "./CountIssueStampSheetLogRequest";
-import QueryExecuteStampSheetLogRequest from "./QueryExecuteStampSheetLogRequest";
-import CountExecuteStampSheetLogRequest from "./CountExecuteStampSheetLogRequest";
-import QueryExecuteStampTaskLogRequest from "./QueryExecuteStampTaskLogRequest";
-import CountExecuteStampTaskLogRequest from "./CountExecuteStampTaskLogRequest";
-import PutLogRequest from "./PutLogRequest";
-export { DescribeNamespacesRequest, CreateNamespaceRequest, GetNamespaceStatusRequest, GetNamespaceRequest, UpdateNamespaceRequest, DeleteNamespaceRequest, QueryAccessLogRequest, CountAccessLogRequest, QueryIssueStampSheetLogRequest, CountIssueStampSheetLogRequest, QueryExecuteStampSheetLogRequest, CountExecuteStampSheetLogRequest, QueryExecuteStampTaskLogRequest, CountExecuteStampTaskLogRequest, PutLogRequest, };
+var DescribeNamespacesRequest_1 = (0, tslib_1.__importDefault)(require("./DescribeNamespacesRequest"));
+exports.DescribeNamespacesRequest = DescribeNamespacesRequest_1.default;
+var CreateNamespaceRequest_1 = (0, tslib_1.__importDefault)(require("./CreateNamespaceRequest"));
+exports.CreateNamespaceRequest = CreateNamespaceRequest_1.default;
+var GetNamespaceStatusRequest_1 = (0, tslib_1.__importDefault)(require("./GetNamespaceStatusRequest"));
+exports.GetNamespaceStatusRequest = GetNamespaceStatusRequest_1.default;
+var GetNamespaceRequest_1 = (0, tslib_1.__importDefault)(require("./GetNamespaceRequest"));
+exports.GetNamespaceRequest = GetNamespaceRequest_1.default;
+var UpdateNamespaceRequest_1 = (0, tslib_1.__importDefault)(require("./UpdateNamespaceRequest"));
+exports.UpdateNamespaceRequest = UpdateNamespaceRequest_1.default;
+var DeleteNamespaceRequest_1 = (0, tslib_1.__importDefault)(require("./DeleteNamespaceRequest"));
+exports.DeleteNamespaceRequest = DeleteNamespaceRequest_1.default;
+var QueryAccessLogRequest_1 = (0, tslib_1.__importDefault)(require("./QueryAccessLogRequest"));
+exports.QueryAccessLogRequest = QueryAccessLogRequest_1.default;
+var CountAccessLogRequest_1 = (0, tslib_1.__importDefault)(require("./CountAccessLogRequest"));
+exports.CountAccessLogRequest = CountAccessLogRequest_1.default;
+var QueryIssueStampSheetLogRequest_1 = (0, tslib_1.__importDefault)(require("./QueryIssueStampSheetLogRequest"));
+exports.QueryIssueStampSheetLogRequest = QueryIssueStampSheetLogRequest_1.default;
+var CountIssueStampSheetLogRequest_1 = (0, tslib_1.__importDefault)(require("./CountIssueStampSheetLogRequest"));
+exports.CountIssueStampSheetLogRequest = CountIssueStampSheetLogRequest_1.default;
+var QueryExecuteStampSheetLogRequest_1 = (0, tslib_1.__importDefault)(require("./QueryExecuteStampSheetLogRequest"));
+exports.QueryExecuteStampSheetLogRequest = QueryExecuteStampSheetLogRequest_1.default;
+var CountExecuteStampSheetLogRequest_1 = (0, tslib_1.__importDefault)(require("./CountExecuteStampSheetLogRequest"));
+exports.CountExecuteStampSheetLogRequest = CountExecuteStampSheetLogRequest_1.default;
+var QueryExecuteStampTaskLogRequest_1 = (0, tslib_1.__importDefault)(require("./QueryExecuteStampTaskLogRequest"));
+exports.QueryExecuteStampTaskLogRequest = QueryExecuteStampTaskLogRequest_1.default;
+var CountExecuteStampTaskLogRequest_1 = (0, tslib_1.__importDefault)(require("./CountExecuteStampTaskLogRequest"));
+exports.CountExecuteStampTaskLogRequest = CountExecuteStampTaskLogRequest_1.default;
+var PutLogRequest_1 = (0, tslib_1.__importDefault)(require("./PutLogRequest"));
+exports.PutLogRequest = PutLogRequest_1.default;
 //# sourceMappingURL=index.js.map

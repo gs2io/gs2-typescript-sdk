@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,6 +14,7 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
 var RecoverValueTableMaster = /** @class */ (function () {
     function RecoverValueTableMaster() {
         this.recoverValueTableId = null;
@@ -146,5 +148,5 @@ var RecoverValueTableMaster = /** @class */ (function () {
     };
     return RecoverValueTableMaster;
 }());
-export default RecoverValueTableMaster;
+exports.default = RecoverValueTableMaster;
 //# sourceMappingURL=RecoverValueTableMaster.js.map

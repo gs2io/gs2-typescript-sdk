@@ -1,0 +1,53 @@
+import IModel from '@/gs2/core/interface/IModel';
+export declare class Project implements IModel {
+    private projectId;
+    private accountName;
+    private name;
+    private description;
+    private plan;
+    private billingMethodName;
+    private enableEventBridge;
+    private eventBridgeAwsAccountId;
+    private eventBridgeAwsRegion;
+    private createdAt;
+    private updatedAt;
+    getProjectId(): string | null;
+    setProjectId(projectId: string | null): this;
+    withProjectId(projectId: string | null): this;
+    getAccountName(): string | null;
+    setAccountName(accountName: string | null): this;
+    withAccountName(accountName: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getPlan(): string | null;
+    setPlan(plan: string | null): this;
+    withPlan(plan: string | null): this;
+    getBillingMethodName(): string | null;
+    setBillingMethodName(billingMethodName: string | null): this;
+    withBillingMethodName(billingMethodName: string | null): this;
+    getEnableEventBridge(): string | null;
+    setEnableEventBridge(enableEventBridge: string | null): this;
+    withEnableEventBridge(enableEventBridge: string | null): this;
+    getEventBridgeAwsAccountId(): string | null;
+    setEventBridgeAwsAccountId(eventBridgeAwsAccountId: string | null): this;
+    withEventBridgeAwsAccountId(eventBridgeAwsAccountId: string | null): this;
+    getEventBridgeAwsRegion(): string | null;
+    setEventBridgeAwsRegion(eventBridgeAwsRegion: string | null): this;
+    withEventBridgeAwsRegion(eventBridgeAwsRegion: string | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    getUpdatedAt(): number | null;
+    setUpdatedAt(updatedAt: number | null): this;
+    withUpdatedAt(updatedAt: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): Project | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

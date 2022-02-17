@@ -1,3 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LogSetting = exports.GitHubCheckoutSetting = exports.Script = exports.Namespace = void 0;
+var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,9 +17,12 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import Namespace from "./Namespace";
-import Script from "./Script";
-import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
-import LogSetting from "./LogSetting";
-export { Namespace, Script, GitHubCheckoutSetting, LogSetting, };
+var Namespace_1 = (0, tslib_1.__importDefault)(require("./Namespace"));
+exports.Namespace = Namespace_1.default;
+var Script_1 = (0, tslib_1.__importDefault)(require("./Script"));
+exports.Script = Script_1.default;
+var GitHubCheckoutSetting_1 = (0, tslib_1.__importDefault)(require("./GitHubCheckoutSetting"));
+exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
+var LogSetting_1 = (0, tslib_1.__importDefault)(require("./LogSetting"));
+exports.LogSetting = LogSetting_1.default;
 //# sourceMappingURL=index.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,19 +14,20 @@ on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import { __extends } from "tslib";
-import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
-import { Gs2Constant } from '../core/model';
-import * as Result from './result';
-import axios from 'axios';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var model_1 = require("../core/model");
+var Result = (0, tslib_1.__importStar)(require("./result"));
+var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var Gs2LogRestClient = /** @class */ (function (_super) {
-    __extends(Gs2LogRestClient, _super);
+    (0, tslib_1.__extends)(Gs2LogRestClient, _super);
     function Gs2LogRestClient(session) {
         return _super.call(this, session) || this;
     }
     Gs2LogRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -37,7 +39,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
             'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -48,7 +50,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
     };
     Gs2LogRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -68,7 +70,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'awsSecretAccessKey': (_k = request.getAwsSecretAccessKey()) !== null && _k !== void 0 ? _k : null,
             'firehoseStreamName': (_l = request.getFirehoseStreamName()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateNamespaceResult.fromDict(response.data);
@@ -83,7 +85,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
     };
     Gs2LogRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -94,7 +96,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -105,7 +107,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
     };
     Gs2LogRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -116,7 +118,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -127,7 +129,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
     };
     Gs2LogRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -147,7 +149,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'awsSecretAccessKey': (_l = request.getAwsSecretAccessKey()) !== null && _l !== void 0 ? _l : null,
             'firehoseStreamName': (_m = request.getFirehoseStreamName()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateNamespaceResult.fromDict(response.data);
@@ -162,7 +164,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
     };
     Gs2LogRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -173,7 +175,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -184,7 +186,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
     };
     Gs2LogRestClient.prototype.queryAccessLog = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/access')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/access')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -203,7 +205,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
             'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -214,7 +216,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
     };
     Gs2LogRestClient.prototype.countAccessLog = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/access/count')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/access/count')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -233,7 +235,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
             'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -244,7 +246,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
     };
     Gs2LogRestClient.prototype.queryIssueStampSheetLog = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/issue/stamp/sheet')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/issue/stamp/sheet')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -264,7 +266,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_l = request.getPageToken()) !== null && _l !== void 0 ? _l : null),
             'limit': String((_m = request.getLimit()) !== null && _m !== void 0 ? _m : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -275,7 +277,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
     };
     Gs2LogRestClient.prototype.countIssueStampSheetLog = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/issue/stamp/sheet/count')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/issue/stamp/sheet/count')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -295,7 +297,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_l = request.getPageToken()) !== null && _l !== void 0 ? _l : null),
             'limit': String((_m = request.getLimit()) !== null && _m !== void 0 ? _m : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -306,7 +308,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
     };
     Gs2LogRestClient.prototype.queryExecuteStampSheetLog = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/execute/stamp/sheet')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/execute/stamp/sheet')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -326,7 +328,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_l = request.getPageToken()) !== null && _l !== void 0 ? _l : null),
             'limit': String((_m = request.getLimit()) !== null && _m !== void 0 ? _m : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -337,7 +339,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
     };
     Gs2LogRestClient.prototype.countExecuteStampSheetLog = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/execute/stamp/sheet/count')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/execute/stamp/sheet/count')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -357,7 +359,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_l = request.getPageToken()) !== null && _l !== void 0 ? _l : null),
             'limit': String((_m = request.getLimit()) !== null && _m !== void 0 ? _m : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -368,7 +370,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
     };
     Gs2LogRestClient.prototype.queryExecuteStampTaskLog = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/execute/stamp/task')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/execute/stamp/task')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -388,7 +390,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_l = request.getPageToken()) !== null && _l !== void 0 ? _l : null),
             'limit': String((_m = request.getLimit()) !== null && _m !== void 0 ? _m : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -399,7 +401,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
     };
     Gs2LogRestClient.prototype.countExecuteStampTaskLog = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/execute/stamp/task/count')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/execute/stamp/task/count')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -419,7 +421,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'pageToken': String((_l = request.getPageToken()) !== null && _l !== void 0 ? _l : null),
             'limit': String((_m = request.getLimit()) !== null && _m !== void 0 ? _m : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -430,7 +432,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
     };
     Gs2LogRestClient.prototype.putLog = function (request) {
         var _a, _b, _c, _d;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/log/put')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/log/put')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -443,7 +445,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             'logCategory': (_c = request.getLogCategory()) !== null && _c !== void 0 ? _c : null,
             'payload': (_d = request.getPayload()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.PutLogResult.fromDict(response.data);
@@ -457,6 +459,6 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         });
     };
     return Gs2LogRestClient;
-}(AbstractGs2RestClient));
-export default Gs2LogRestClient;
+}(AbstractGs2RestClient_1.default));
+exports.default = Gs2LogRestClient;
 //# sourceMappingURL=rest.js.map

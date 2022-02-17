@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,7 +14,9 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import QuestModel from './QuestModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var QuestModel_1 = (0, tslib_1.__importDefault)(require("./QuestModel"));
 var QuestGroupModel = /** @class */ (function () {
     function QuestGroupModel() {
         this.questGroupModelId = null;
@@ -87,7 +90,7 @@ var QuestGroupModel = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withQuests(data.quests ?
             data.quests.map(function (item) {
-                return QuestModel.fromDict(item);
+                return QuestModel_1.default.fromDict(item);
             }) : [])
             .withChallengePeriodEventId(data["challengePeriodEventId"]);
     };
@@ -105,5 +108,5 @@ var QuestGroupModel = /** @class */ (function () {
     };
     return QuestGroupModel;
 }());
-export default QuestGroupModel;
+exports.default = QuestGroupModel;
 //# sourceMappingURL=QuestGroupModel.js.map

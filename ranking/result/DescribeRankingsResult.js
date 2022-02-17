@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,7 +14,9 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import * as Gs2Ranking from '../model';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Ranking = (0, tslib_1.__importStar)(require("../model"));
 var DescribeRankingsResult = /** @class */ (function () {
     function DescribeRankingsResult() {
         this.items = null;
@@ -60,5 +63,5 @@ var DescribeRankingsResult = /** @class */ (function () {
     };
     return DescribeRankingsResult;
 }());
-export default DescribeRankingsResult;
+exports.default = DescribeRankingsResult;
 //# sourceMappingURL=DescribeRankingsResult.js.map

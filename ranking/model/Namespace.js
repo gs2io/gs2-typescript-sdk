@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,8 +14,10 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import CalculatedAt from './CalculatedAt';
-import LogSetting from './LogSetting';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var CalculatedAt_1 = (0, tslib_1.__importDefault)(require("./CalculatedAt"));
+var LogSetting_1 = (0, tslib_1.__importDefault)(require("./LogSetting"));
 var Namespace = /** @class */ (function () {
     function Namespace() {
         this.namespaceId = null;
@@ -112,9 +115,9 @@ var Namespace = /** @class */ (function () {
             .withDescription(data["description"])
             .withLastCalculatedAts(data.lastCalculatedAts ?
             data.lastCalculatedAts.map(function (item) {
-                return CalculatedAt.fromDict(item);
+                return CalculatedAt_1.default.fromDict(item);
             }) : [])
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     };
@@ -135,5 +138,5 @@ var Namespace = /** @class */ (function () {
     };
     return Namespace;
 }());
-export default Namespace;
+exports.default = Namespace;
 //# sourceMappingURL=Namespace.js.map

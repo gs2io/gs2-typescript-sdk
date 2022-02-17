@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,19 +14,20 @@ on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import { __extends } from "tslib";
-import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
-import { Gs2Constant } from '../core/model';
-import * as Result from './result';
-import axios from 'axios';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var model_1 = require("../core/model");
+var Result = (0, tslib_1.__importStar)(require("./result"));
+var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var Gs2DistributorRestClient = /** @class */ (function (_super) {
-    __extends(Gs2DistributorRestClient, _super);
+    (0, tslib_1.__extends)(Gs2DistributorRestClient, _super);
     function Gs2DistributorRestClient(session) {
         return _super.call(this, session) || this;
     }
     Gs2DistributorRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -37,7 +39,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
             'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -48,7 +50,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -62,7 +64,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             'assumeUserId': (_d = request.getAssumeUserId()) !== null && _d !== void 0 ? _d : null,
             'logSetting': (_f = (_e = request.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateNamespaceResult.fromDict(response.data);
@@ -77,7 +79,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -88,7 +90,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -99,7 +101,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -110,7 +112,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -121,7 +123,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -135,7 +137,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             'assumeUserId': (_e = request.getAssumeUserId()) !== null && _e !== void 0 ? _e : null,
             'logSetting': (_g = (_f = request.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateNamespaceResult.fromDict(response.data);
@@ -150,7 +152,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -161,7 +163,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -172,7 +174,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.describeDistributorModelMasters = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -185,7 +187,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -196,7 +198,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.createDistributorModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -212,7 +214,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             'inboxNamespaceId': (_g = request.getInboxNamespaceId()) !== null && _g !== void 0 ? _g : null,
             'whiteListTargetIds': (_h = request.getWhiteListTargetIds()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateDistributorModelMasterResult.fromDict(response.data);
@@ -227,7 +229,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.getDistributorModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor/{distributorName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor/{distributorName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -239,7 +241,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -250,7 +252,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.updateDistributorModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor/{distributorName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor/{distributorName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -266,7 +268,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             'inboxNamespaceId': (_h = request.getInboxNamespaceId()) !== null && _h !== void 0 ? _h : null,
             'whiteListTargetIds': (_j = request.getWhiteListTargetIds()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateDistributorModelMasterResult.fromDict(response.data);
@@ -281,7 +283,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.deleteDistributorModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor/{distributorName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/distributor/{distributorName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -293,7 +295,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -304,7 +306,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.describeDistributorModels = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distributor')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distributor')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -315,7 +317,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -326,7 +328,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.getDistributorModel = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distributor/{distributorName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distributor/{distributorName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -338,7 +340,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -349,7 +351,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.exportMaster = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -360,7 +362,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -371,7 +373,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.getCurrentDistributorMaster = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -382,7 +384,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -393,7 +395,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.updateCurrentDistributorMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -405,7 +407,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'settings': (_d = request.getSettings()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCurrentDistributorMasterResult.fromDict(response.data);
@@ -420,7 +422,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.updateCurrentDistributorMasterFromGitHub = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -432,7 +434,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'checkoutSetting': (_e = (_d = request.getCheckoutSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCurrentDistributorMasterFromGitHubResult.fromDict(response.data);
@@ -447,7 +449,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.distribute = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/{distributorName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/{distributorName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -461,7 +463,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             'userId': (_f = request.getUserId()) !== null && _f !== void 0 ? _f : null,
             'distributeResource': (_h = (_g = request.getDistributeResource()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.DistributeResult.fromDict(response.data);
@@ -476,7 +478,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.distributeWithoutOverflowProcess = function (request) {
         var _a, _b, _c, _d;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/distribute')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/distribute')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -488,7 +490,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             'userId': (_b = request.getUserId()) !== null && _b !== void 0 ? _b : null,
             'distributeResource': (_d = (_c = request.getDistributeResource()) === null || _c === void 0 ? void 0 : _c.toDict()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.DistributeWithoutOverflowProcessResult.fromDict(response.data);
@@ -503,7 +505,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.runStampTask = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/stamp/task/run')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/stamp/task/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -516,7 +518,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             'stampTask': (_d = request.getStampTask()) !== null && _d !== void 0 ? _d : null,
             'keyId': (_e = request.getKeyId()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.RunStampTaskResult.fromDict(response.data);
@@ -531,7 +533,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.runStampSheet = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/stamp/sheet/run')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/stamp/sheet/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -544,7 +546,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             'stampSheet': (_d = request.getStampSheet()) !== null && _d !== void 0 ? _d : null,
             'keyId': (_e = request.getKeyId()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.RunStampSheetResult.fromDict(response.data);
@@ -559,7 +561,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.runStampSheetExpress = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/stamp/run')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/stamp/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -572,7 +574,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             'stampSheet': (_d = request.getStampSheet()) !== null && _d !== void 0 ? _d : null,
             'keyId': (_e = request.getKeyId()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.RunStampSheetExpressResult.fromDict(response.data);
@@ -587,7 +589,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.runStampTaskWithoutNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/task/run')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/task/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -599,7 +601,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.RunStampTaskWithoutNamespaceResult.fromDict(response.data);
@@ -614,7 +616,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.runStampSheetWithoutNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/sheet/run')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/sheet/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -626,7 +628,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.RunStampSheetWithoutNamespaceResult.fromDict(response.data);
@@ -641,7 +643,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
     };
     Gs2DistributorRestClient.prototype.runStampSheetExpressWithoutNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/run')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/run')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -653,7 +655,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.RunStampSheetExpressWithoutNamespaceResult.fromDict(response.data);
@@ -667,6 +669,6 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         });
     };
     return Gs2DistributorRestClient;
-}(AbstractGs2RestClient));
-export default Gs2DistributorRestClient;
+}(AbstractGs2RestClient_1.default));
+exports.default = Gs2DistributorRestClient;
 //# sourceMappingURL=rest.js.map

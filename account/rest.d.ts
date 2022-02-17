@@ -1,0 +1,30 @@
+import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
+import { Gs2RestSession } from '../core/model';
+import * as Request from './request';
+import * as Result from './result';
+export default class Gs2AccountRestClient extends AbstractGs2RestClient {
+    constructor(session: Gs2RestSession);
+    describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult>;
+    createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult>;
+    getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult>;
+    getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
+    updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
+    deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    describeAccounts(request: Request.DescribeAccountsRequest): Promise<Result.DescribeAccountsResult>;
+    createAccount(request: Request.CreateAccountRequest): Promise<Result.CreateAccountResult>;
+    updateTimeOffset(request: Request.UpdateTimeOffsetRequest): Promise<Result.UpdateTimeOffsetResult>;
+    getAccount(request: Request.GetAccountRequest): Promise<Result.GetAccountResult>;
+    deleteAccount(request: Request.DeleteAccountRequest): Promise<Result.DeleteAccountResult>;
+    authentication(request: Request.AuthenticationRequest): Promise<Result.AuthenticationResult>;
+    describeTakeOvers(request: Request.DescribeTakeOversRequest): Promise<Result.DescribeTakeOversResult>;
+    describeTakeOversByUserId(request: Request.DescribeTakeOversByUserIdRequest): Promise<Result.DescribeTakeOversByUserIdResult>;
+    createTakeOver(request: Request.CreateTakeOverRequest): Promise<Result.CreateTakeOverResult>;
+    createTakeOverByUserId(request: Request.CreateTakeOverByUserIdRequest): Promise<Result.CreateTakeOverByUserIdResult>;
+    getTakeOver(request: Request.GetTakeOverRequest): Promise<Result.GetTakeOverResult>;
+    getTakeOverByUserId(request: Request.GetTakeOverByUserIdRequest): Promise<Result.GetTakeOverByUserIdResult>;
+    updateTakeOver(request: Request.UpdateTakeOverRequest): Promise<Result.UpdateTakeOverResult>;
+    updateTakeOverByUserId(request: Request.UpdateTakeOverByUserIdRequest): Promise<Result.UpdateTakeOverByUserIdResult>;
+    deleteTakeOver(request: Request.DeleteTakeOverRequest): Promise<Result.DeleteTakeOverResult>;
+    deleteTakeOverByUserIdentifier(request: Request.DeleteTakeOverByUserIdentifierRequest): Promise<Result.DeleteTakeOverByUserIdentifierResult>;
+    doTakeOver(request: Request.DoTakeOverRequest): Promise<Result.DoTakeOverResult>;
+}

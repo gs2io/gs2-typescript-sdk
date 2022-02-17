@@ -1,0 +1,41 @@
+import IModel from '../../core/interface/IModel';
+export default class Score implements IModel {
+    private scoreId;
+    private categoryName;
+    private userId;
+    private uniqueId;
+    private scorerUserId;
+    private score;
+    private metadata;
+    private createdAt;
+    getScoreId(): string | null;
+    setScoreId(scoreId: string | null): this;
+    withScoreId(scoreId: string | null): this;
+    getCategoryName(): string | null;
+    setCategoryName(categoryName: string | null): this;
+    withCategoryName(categoryName: string | null): this;
+    getUserId(): string | null;
+    setUserId(userId: string | null): this;
+    withUserId(userId: string | null): this;
+    getUniqueId(): string | null;
+    setUniqueId(uniqueId: string | null): this;
+    withUniqueId(uniqueId: string | null): this;
+    getScorerUserId(): string | null;
+    setScorerUserId(scorerUserId: string | null): this;
+    withScorerUserId(scorerUserId: string | null): this;
+    getScore(): number | null;
+    setScore(score: number | null): this;
+    withScore(score: number | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): Score | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,7 +14,9 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import Version from './Version';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Version_1 = (0, tslib_1.__importDefault)(require("./Version"));
 var SignTargetVersion = /** @class */ (function () {
     function SignTargetVersion() {
         this.region = null;
@@ -73,7 +76,7 @@ var SignTargetVersion = /** @class */ (function () {
             .withRegion(data["region"])
             .withNamespaceName(data["namespaceName"])
             .withVersionName(data["versionName"])
-            .withVersion(Version.fromDict(data["version"]));
+            .withVersion(Version_1.default.fromDict(data["version"]));
     };
     SignTargetVersion.prototype.toDict = function () {
         var _a;
@@ -86,5 +89,5 @@ var SignTargetVersion = /** @class */ (function () {
     };
     return SignTargetVersion;
 }());
-export default SignTargetVersion;
+exports.default = SignTargetVersion;
 //# sourceMappingURL=SignTargetVersion.js.map

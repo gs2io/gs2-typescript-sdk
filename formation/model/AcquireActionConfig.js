@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,7 +14,9 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import Config from './Config';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Config_1 = (0, tslib_1.__importDefault)(require("./Config"));
 var AcquireActionConfig = /** @class */ (function () {
     function AcquireActionConfig() {
         this.name = null;
@@ -49,7 +52,7 @@ var AcquireActionConfig = /** @class */ (function () {
             .withName(data["name"])
             .withConfig(data.config ?
             data.config.map(function (item) {
-                return Config.fromDict(item);
+                return Config_1.default.fromDict(item);
             }) : []);
     };
     AcquireActionConfig.prototype.toDict = function () {
@@ -63,5 +66,5 @@ var AcquireActionConfig = /** @class */ (function () {
     };
     return AcquireActionConfig;
 }());
-export default AcquireActionConfig;
+exports.default = AcquireActionConfig;
 //# sourceMappingURL=AcquireActionConfig.js.map

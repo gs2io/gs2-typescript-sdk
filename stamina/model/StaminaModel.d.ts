@@ -1,0 +1,56 @@
+import IModel from '../../core/interface/IModel';
+import MaxStaminaTable from './MaxStaminaTable';
+import RecoverIntervalTable from './RecoverIntervalTable';
+import RecoverValueTable from './RecoverValueTable';
+export default class StaminaModel implements IModel {
+    private staminaModelId;
+    private name;
+    private metadata;
+    private recoverIntervalMinutes;
+    private recoverValue;
+    private initialCapacity;
+    private isOverflow;
+    private maxCapacity;
+    private maxStaminaTable;
+    private recoverIntervalTable;
+    private recoverValueTable;
+    getStaminaModelId(): string | null;
+    setStaminaModelId(staminaModelId: string | null): this;
+    withStaminaModelId(staminaModelId: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getRecoverIntervalMinutes(): number | null;
+    setRecoverIntervalMinutes(recoverIntervalMinutes: number | null): this;
+    withRecoverIntervalMinutes(recoverIntervalMinutes: number | null): this;
+    getRecoverValue(): number | null;
+    setRecoverValue(recoverValue: number | null): this;
+    withRecoverValue(recoverValue: number | null): this;
+    getInitialCapacity(): number | null;
+    setInitialCapacity(initialCapacity: number | null): this;
+    withInitialCapacity(initialCapacity: number | null): this;
+    getIsOverflow(): boolean | null;
+    setIsOverflow(isOverflow: boolean | null): this;
+    withIsOverflow(isOverflow: boolean | null): this;
+    getMaxCapacity(): number | null;
+    setMaxCapacity(maxCapacity: number | null): this;
+    withMaxCapacity(maxCapacity: number | null): this;
+    getMaxStaminaTable(): MaxStaminaTable | null;
+    setMaxStaminaTable(maxStaminaTable: MaxStaminaTable | null): this;
+    withMaxStaminaTable(maxStaminaTable: MaxStaminaTable | null): this;
+    getRecoverIntervalTable(): RecoverIntervalTable | null;
+    setRecoverIntervalTable(recoverIntervalTable: RecoverIntervalTable | null): this;
+    withRecoverIntervalTable(recoverIntervalTable: RecoverIntervalTable | null): this;
+    getRecoverValueTable(): RecoverValueTable | null;
+    setRecoverValueTable(recoverValueTable: RecoverValueTable | null): this;
+    withRecoverValueTable(recoverValueTable: RecoverValueTable | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): StaminaModel | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

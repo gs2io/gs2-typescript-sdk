@@ -1,0 +1,46 @@
+import IModel from '../../core/interface/IModel';
+import Reward from './Reward';
+export default class Progress implements IModel {
+    private progressId;
+    private userId;
+    private transactionId;
+    private questModelId;
+    private randomSeed;
+    private rewards;
+    private metadata;
+    private createdAt;
+    private updatedAt;
+    getProgressId(): string | null;
+    setProgressId(progressId: string | null): this;
+    withProgressId(progressId: string | null): this;
+    getUserId(): string | null;
+    setUserId(userId: string | null): this;
+    withUserId(userId: string | null): this;
+    getTransactionId(): string | null;
+    setTransactionId(transactionId: string | null): this;
+    withTransactionId(transactionId: string | null): this;
+    getQuestModelId(): string | null;
+    setQuestModelId(questModelId: string | null): this;
+    withQuestModelId(questModelId: string | null): this;
+    getRandomSeed(): number | null;
+    setRandomSeed(randomSeed: number | null): this;
+    withRandomSeed(randomSeed: number | null): this;
+    getRewards(): Reward[] | null;
+    setRewards(rewards: Reward[] | null): this;
+    withRewards(rewards: Reward[] | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    getUpdatedAt(): number | null;
+    setUpdatedAt(updatedAt: number | null): this;
+    withUpdatedAt(updatedAt: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): Progress | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

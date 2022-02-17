@@ -1,0 +1,11 @@
+import DescribeNamespacesResult from "./DescribeNamespacesResult";
+import CreateNamespaceResult from "./CreateNamespaceResult";
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult";
+import GetNamespaceResult from "./GetNamespaceResult";
+import UpdateNamespaceResult from "./UpdateNamespaceResult";
+import DeleteNamespaceResult from "./DeleteNamespaceResult";
+import DescribeRoomsResult from "./DescribeRoomsResult";
+import WantRoomResult from "./WantRoomResult";
+import GetRoomResult from "./GetRoomResult";
+import DeleteRoomResult from "./DeleteRoomResult";
+export { DescribeNamespacesResult, CreateNamespaceResult, GetNamespaceStatusResult, GetNamespaceResult, UpdateNamespaceResult, DeleteNamespaceResult, DescribeRoomsResult, WantRoomResult, GetRoomResult, DeleteRoomResult, };

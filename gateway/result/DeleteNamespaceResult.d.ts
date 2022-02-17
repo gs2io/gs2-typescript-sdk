@@ -1,0 +1,14 @@
+import IResult from '../../core/interface/IResult';
+import * as Gs2Gateway from '../model';
+export default class DeleteNamespaceResult implements IResult {
+    private item;
+    getItem(): Gs2Gateway.Namespace | null;
+    setItem(item: Gs2Gateway.Namespace | null): this;
+    withItem(item: Gs2Gateway.Namespace | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): DeleteNamespaceResult;
+    toDict(): {
+        [key: string]: any;
+    };
+}

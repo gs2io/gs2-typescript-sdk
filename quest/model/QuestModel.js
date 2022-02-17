@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,9 +14,11 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import AcquireAction from './AcquireAction';
-import Contents from './Contents';
-import ConsumeAction from './ConsumeAction';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var AcquireAction_1 = (0, tslib_1.__importDefault)(require("./AcquireAction"));
+var Contents_1 = (0, tslib_1.__importDefault)(require("./Contents"));
+var ConsumeAction_1 = (0, tslib_1.__importDefault)(require("./ConsumeAction"));
 var QuestModel = /** @class */ (function () {
     function QuestModel() {
         this.questModelId = null;
@@ -125,16 +128,16 @@ var QuestModel = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withContents(data.contents ?
             data.contents.map(function (item) {
-                return Contents.fromDict(item);
+                return Contents_1.default.fromDict(item);
             }) : [])
             .withChallengePeriodEventId(data["challengePeriodEventId"])
             .withConsumeActions(data.consumeActions ?
             data.consumeActions.map(function (item) {
-                return ConsumeAction.fromDict(item);
+                return ConsumeAction_1.default.fromDict(item);
             }) : [])
             .withFailedAcquireActions(data.failedAcquireActions ?
             data.failedAcquireActions.map(function (item) {
-                return AcquireAction.fromDict(item);
+                return AcquireAction_1.default.fromDict(item);
             }) : [])
             .withPremiseQuestNames(data.premiseQuestNames ?
             data.premiseQuestNames.map(function (item) {
@@ -167,5 +170,5 @@ var QuestModel = /** @class */ (function () {
     };
     return QuestModel;
 }());
-export default QuestModel;
+exports.default = QuestModel;
 //# sourceMappingURL=QuestModel.js.map

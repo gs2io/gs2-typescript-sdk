@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,7 +14,10 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import axios from 'axios';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Region = exports.Gs2Constant = exports.ProjectTokenGs2Credential = exports.ProjectToken = exports.Gs2RestSession = exports.BasicGs2Credential = void 0;
+var tslib_1 = require("tslib");
+var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var BasicGs2Credential = /** @class */ (function () {
     function BasicGs2Credential(clientId, clientSecret) {
         this.clientId = clientId;
@@ -21,7 +25,7 @@ var BasicGs2Credential = /** @class */ (function () {
     }
     return BasicGs2Credential;
 }());
-export { BasicGs2Credential };
+exports.BasicGs2Credential = BasicGs2Credential;
 var Gs2RestSession = /** @class */ (function () {
     function Gs2RestSession(credential, region) {
         this.credential = credential;
@@ -32,7 +36,7 @@ var Gs2RestSession = /** @class */ (function () {
     Gs2RestSession.prototype.connect = function () {
         var _this = this;
         var service = 'identifier';
-        var url = Gs2Constant.ENDPOINT_HOST
+        var url = exports.Gs2Constant.ENDPOINT_HOST
             .replace('{service}', service)
             .replace('{region}', this.region)
             + '/projectToken/login';
@@ -41,7 +45,7 @@ var Gs2RestSession = /** @class */ (function () {
                 client_id: this.credential.clientId,
                 client_secret: this.credential.clientSecret,
             };
-            return axios.post(url, data)
+            return axios_1.default.post(url, data)
                 .then(function (response) {
                 var result = new LoginResult(response.data);
                 _this.projectToken = result.accessToken;
@@ -60,7 +64,7 @@ var Gs2RestSession = /** @class */ (function () {
     };
     return Gs2RestSession;
 }());
-export { Gs2RestSession };
+exports.Gs2RestSession = Gs2RestSession;
 var LoginResult = /** @class */ (function () {
     function LoginResult(data) {
         if (data) {
@@ -80,7 +84,7 @@ var ProjectToken = /** @class */ (function () {
     }
     return ProjectToken;
 }());
-export { ProjectToken };
+exports.ProjectToken = ProjectToken;
 var ProjectTokenGs2Credential = /** @class */ (function () {
     function ProjectTokenGs2Credential(clientId, projectToken) {
         this.clientId = clientId;
@@ -88,11 +92,11 @@ var ProjectTokenGs2Credential = /** @class */ (function () {
     }
     return ProjectTokenGs2Credential;
 }());
-export { ProjectTokenGs2Credential };
-export var Gs2Constant = {
+exports.ProjectTokenGs2Credential = ProjectTokenGs2Credential;
+exports.Gs2Constant = {
     ENDPOINT_HOST: 'https://{service}.{region}.gen2.gs2io.com',
 };
-export var Region = {
+exports.Region = {
     AP_NORTHEAST_1: 'ap-northeast-1',
     US_EAST_1: 'us-east-1',
     EU_WEST_1: 'eu-west-1',

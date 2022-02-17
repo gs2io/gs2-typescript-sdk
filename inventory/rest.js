@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,19 +14,20 @@ on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import { __extends } from "tslib";
-import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
-import { Gs2Constant } from '../core/model';
-import * as Result from './result';
-import axios from 'axios';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var model_1 = require("../core/model");
+var Result = (0, tslib_1.__importStar)(require("./result"));
+var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var Gs2InventoryRestClient = /** @class */ (function (_super) {
-    __extends(Gs2InventoryRestClient, _super);
+    (0, tslib_1.__extends)(Gs2InventoryRestClient, _super);
     function Gs2InventoryRestClient(session) {
         return _super.call(this, session) || this;
     }
     Gs2InventoryRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -37,7 +39,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
             'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -48,7 +50,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -64,7 +66,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'consumeScript': (_j = (_h = request.getConsumeScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
             'logSetting': (_l = (_k = request.getLogSetting()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateNamespaceResult.fromDict(response.data);
@@ -79,7 +81,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -90,7 +92,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -101,7 +103,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -112,7 +114,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -123,7 +125,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -139,7 +141,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'consumeScript': (_k = (_j = request.getConsumeScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
             'logSetting': (_m = (_l = request.getLogSetting()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateNamespaceResult.fromDict(response.data);
@@ -154,7 +156,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -165,7 +167,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -176,7 +178,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeInventoryModelMasters = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -189,7 +191,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -200,7 +202,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.createInventoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -217,7 +219,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'maxCapacity': (_h = request.getMaxCapacity()) !== null && _h !== void 0 ? _h : null,
             'protectReferencedItem': (_j = request.getProtectReferencedItem()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateInventoryModelMasterResult.fromDict(response.data);
@@ -232,7 +234,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getInventoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -244,7 +246,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -255,7 +257,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.updateInventoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -272,7 +274,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'maxCapacity': (_j = request.getMaxCapacity()) !== null && _j !== void 0 ? _j : null,
             'protectReferencedItem': (_k = request.getProtectReferencedItem()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateInventoryModelMasterResult.fromDict(response.data);
@@ -287,7 +289,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteInventoryModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -299,7 +301,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -310,7 +312,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeInventoryModels = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -321,7 +323,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -332,7 +334,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getInventoryModel = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -344,7 +346,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -355,7 +357,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeItemModelMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -369,7 +371,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -380,7 +382,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.createItemModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -398,7 +400,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'allowMultipleStacks': (_k = request.getAllowMultipleStacks()) !== null && _k !== void 0 ? _k : null,
             'sortValue': (_l = request.getSortValue()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateItemModelMasterResult.fromDict(response.data);
@@ -413,7 +415,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getItemModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -426,7 +428,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -437,7 +439,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.updateItemModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -455,7 +457,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'allowMultipleStacks': (_l = request.getAllowMultipleStacks()) !== null && _l !== void 0 ? _l : null,
             'sortValue': (_m = request.getSortValue()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateItemModelMasterResult.fromDict(response.data);
@@ -470,7 +472,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteItemModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -483,7 +485,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -494,7 +496,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeItemModels = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}/item')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -506,7 +508,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -517,7 +519,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getItemModel = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}/item/{itemName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -530,7 +532,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -541,7 +543,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.exportMaster = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -552,7 +554,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -563,7 +565,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getCurrentItemModelMaster = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -574,7 +576,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -585,7 +587,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.updateCurrentItemModelMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -597,7 +599,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'settings': (_d = request.getSettings()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCurrentItemModelMasterResult.fromDict(response.data);
@@ -612,7 +614,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.updateCurrentItemModelMasterFromGitHub = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -624,7 +626,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'checkoutSetting': (_e = (_d = request.getCheckoutSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCurrentItemModelMasterFromGitHubResult.fromDict(response.data);
@@ -639,7 +641,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeInventories = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -655,7 +657,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
             'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -666,7 +668,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeInventoriesByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -680,7 +682,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -691,7 +693,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getInventory = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -706,7 +708,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -717,7 +719,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getInventoryByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -730,7 +732,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -741,7 +743,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.addCapacityByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/capacity')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/capacity')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -755,7 +757,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
             'addCapacityValue': (_h = request.getAddCapacityValue()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.AddCapacityByUserIdResult.fromDict(response.data);
@@ -770,7 +772,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.setCapacityByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/capacity')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/capacity')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -784,7 +786,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
             'newCapacityValue': (_h = request.getNewCapacityValue()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.SetCapacityByUserIdResult.fromDict(response.data);
@@ -799,7 +801,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteInventoryByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -812,7 +814,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -823,7 +825,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.addCapacityByStampSheet = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/inventory/capacity/add')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/inventory/capacity/add')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -835,7 +837,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.AddCapacityByStampSheetResult.fromDict(response.data);
@@ -850,7 +852,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.setCapacityByStampSheet = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/inventory/capacity/set')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/inventory/capacity/set')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -862,7 +864,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.SetCapacityByStampSheetResult.fromDict(response.data);
@@ -877,7 +879,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeItemSets = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -894,7 +896,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
             'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -905,7 +907,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeItemSetsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -920,7 +922,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -931,7 +933,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getItemSet = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -948,7 +950,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'itemSetName': String((_j = request.getItemSetName()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -959,7 +961,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getItemSetByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -974,7 +976,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'itemSetName': String((_k = request.getItemSetName()) !== null && _k !== void 0 ? _k : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -985,7 +987,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getItemWithSignature = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/signature')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/signature')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1003,7 +1005,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'itemSetName': String((_j = request.getItemSetName()) !== null && _j !== void 0 ? _j : null),
             'keyId': String((_k = request.getKeyId()) !== null && _k !== void 0 ? _k : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1014,7 +1016,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getItemWithSignatureByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/signature')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/signature')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1030,7 +1032,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'itemSetName': String((_k = request.getItemSetName()) !== null && _k !== void 0 ? _k : null),
             'keyId': String((_l = request.getKeyId()) !== null && _l !== void 0 ? _l : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1041,7 +1043,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.acquireItemSetByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/acquire')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/acquire')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1059,7 +1061,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'createNewItemSet': (_m = request.getCreateNewItemSet()) !== null && _m !== void 0 ? _m : null,
             'itemSetName': (_o = request.getItemSetName()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.AcquireItemSetByUserIdResult.fromDict(response.data);
@@ -1074,7 +1076,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.consumeItemSet = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/consume')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1092,7 +1094,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'consumeCount': (_j = request.getConsumeCount()) !== null && _j !== void 0 ? _j : null,
             'itemSetName': (_k = request.getItemSetName()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.ConsumeItemSetResult.fromDict(response.data);
@@ -1107,7 +1109,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.consumeItemSetByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/consume')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1123,7 +1125,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'consumeCount': (_k = request.getConsumeCount()) !== null && _k !== void 0 ? _k : null,
             'itemSetName': (_l = request.getItemSetName()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.ConsumeItemSetByUserIdResult.fromDict(response.data);
@@ -1138,7 +1140,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteItemSetByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1153,7 +1155,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'itemSetName': String((_k = request.getItemSetName()) !== null && _k !== void 0 ? _k : null),
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1164,7 +1166,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.acquireItemSetByStampSheet = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/item/acquire')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/acquire')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1176,7 +1178,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.AcquireItemSetByStampSheetResult.fromDict(response.data);
@@ -1191,7 +1193,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.consumeItemSetByStampTask = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/item/consume')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1203,7 +1205,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.ConsumeItemSetByStampTaskResult.fromDict(response.data);
@@ -1218,7 +1220,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeReferenceOf = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1235,7 +1237,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1246,7 +1248,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.describeReferenceOfByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1261,7 +1263,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1272,7 +1274,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getReferenceOf = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1290,7 +1292,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1301,7 +1303,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.getReferenceOfByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1317,7 +1319,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_o = request.getContextStack()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1328,7 +1330,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.verifyReferenceOf = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}/verify/{verifyType}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1347,7 +1349,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_p = request.getContextStack()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.VerifyReferenceOfResult.fromDict(response.data);
@@ -1362,7 +1364,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.verifyReferenceOfByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}/verify/{verifyType}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1379,7 +1381,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_q = request.getContextStack()) !== null && _q !== void 0 ? _q : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.VerifyReferenceOfByUserIdResult.fromDict(response.data);
@@ -1394,7 +1396,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.addReferenceOf = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1412,7 +1414,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'referenceOf': (_l = request.getReferenceOf()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.AddReferenceOfResult.fromDict(response.data);
@@ -1427,7 +1429,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.addReferenceOfByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1443,7 +1445,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
             'referenceOf': (_m = request.getReferenceOf()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.AddReferenceOfByUserIdResult.fromDict(response.data);
@@ -1458,7 +1460,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteReferenceOf = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1476,7 +1478,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1487,7 +1489,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteReferenceOfByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/{itemSetName}/reference/{referenceOf}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1503,7 +1505,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_o = request.getContextStack()) !== null && _o !== void 0 ? _o : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1514,7 +1516,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.addReferenceOfItemSetByStampSheet = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/item/reference/add')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/reference/add')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1526,7 +1528,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.AddReferenceOfItemSetByStampSheetResult.fromDict(response.data);
@@ -1541,7 +1543,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.deleteReferenceOfItemSetByStampSheet = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/item/reference/delete')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/reference/delete')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1553,7 +1555,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.DeleteReferenceOfItemSetByStampSheetResult.fromDict(response.data);
@@ -1568,7 +1570,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
     };
     Gs2InventoryRestClient.prototype.verifyReferenceOfByStampTask = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/item/verify')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/item/verify')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -1580,7 +1582,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.VerifyReferenceOfByStampTaskResult.fromDict(response.data);
@@ -1594,6 +1596,6 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     return Gs2InventoryRestClient;
-}(AbstractGs2RestClient));
-export default Gs2InventoryRestClient;
+}(AbstractGs2RestClient_1.default));
+exports.default = Gs2InventoryRestClient;
 //# sourceMappingURL=rest.js.map

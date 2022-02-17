@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,8 +14,10 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import AcquireAction from './AcquireAction';
-import TimeSpan from './TimeSpan';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var AcquireAction_1 = (0, tslib_1.__importDefault)(require("./AcquireAction"));
+var TimeSpan_1 = (0, tslib_1.__importDefault)(require("./TimeSpan"));
 var GlobalMessageMaster = /** @class */ (function () {
     function GlobalMessageMaster() {
         this.globalMessageId = null;
@@ -112,9 +115,9 @@ var GlobalMessageMaster = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withReadAcquireActions(data.readAcquireActions ?
             data.readAcquireActions.map(function (item) {
-                return AcquireAction.fromDict(item);
+                return AcquireAction_1.default.fromDict(item);
             }) : [])
-            .withExpiresTimeSpan(TimeSpan.fromDict(data["expiresTimeSpan"]))
+            .withExpiresTimeSpan(TimeSpan_1.default.fromDict(data["expiresTimeSpan"]))
             .withCreatedAt(data["createdAt"])
             .withExpiresAt(data["expiresAt"]);
     };
@@ -135,5 +138,5 @@ var GlobalMessageMaster = /** @class */ (function () {
     };
     return GlobalMessageMaster;
 }());
-export default GlobalMessageMaster;
+exports.default = GlobalMessageMaster;
 //# sourceMappingURL=GlobalMessageMaster.js.map

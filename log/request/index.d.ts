@@ -1,0 +1,16 @@
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest";
+import CreateNamespaceRequest from "./CreateNamespaceRequest";
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest";
+import GetNamespaceRequest from "./GetNamespaceRequest";
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest";
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest";
+import QueryAccessLogRequest from "./QueryAccessLogRequest";
+import CountAccessLogRequest from "./CountAccessLogRequest";
+import QueryIssueStampSheetLogRequest from "./QueryIssueStampSheetLogRequest";
+import CountIssueStampSheetLogRequest from "./CountIssueStampSheetLogRequest";
+import QueryExecuteStampSheetLogRequest from "./QueryExecuteStampSheetLogRequest";
+import CountExecuteStampSheetLogRequest from "./CountExecuteStampSheetLogRequest";
+import QueryExecuteStampTaskLogRequest from "./QueryExecuteStampTaskLogRequest";
+import CountExecuteStampTaskLogRequest from "./CountExecuteStampTaskLogRequest";
+import PutLogRequest from "./PutLogRequest";
+export { DescribeNamespacesRequest, CreateNamespaceRequest, GetNamespaceStatusRequest, GetNamespaceRequest, UpdateNamespaceRequest, DeleteNamespaceRequest, QueryAccessLogRequest, CountAccessLogRequest, QueryIssueStampSheetLogRequest, CountIssueStampSheetLogRequest, QueryExecuteStampSheetLogRequest, CountExecuteStampSheetLogRequest, QueryExecuteStampTaskLogRequest, CountExecuteStampTaskLogRequest, PutLogRequest, };

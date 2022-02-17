@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,7 +14,9 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import Slot from './Slot';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Slot_1 = (0, tslib_1.__importDefault)(require("./Slot"));
 var Form = /** @class */ (function () {
     function Form() {
         this.formId = null;
@@ -99,7 +102,7 @@ var Form = /** @class */ (function () {
             .withIndex(data["index"])
             .withSlots(data.slots ?
             data.slots.map(function (item) {
-                return Slot.fromDict(item);
+                return Slot_1.default.fromDict(item);
             }) : [])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
@@ -119,5 +122,5 @@ var Form = /** @class */ (function () {
     };
     return Form;
 }());
-export default Form;
+exports.default = Form;
 //# sourceMappingURL=Form.js.map

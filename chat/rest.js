@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,19 +14,20 @@ on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import { __extends } from "tslib";
-import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
-import { Gs2Constant } from '../core/model';
-import * as Result from './result';
-import axios from 'axios';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var model_1 = require("../core/model");
+var Result = (0, tslib_1.__importStar)(require("./result"));
+var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var Gs2ChatRestClient = /** @class */ (function (_super) {
-    __extends(Gs2ChatRestClient, _super);
+    (0, tslib_1.__extends)(Gs2ChatRestClient, _super);
     function Gs2ChatRestClient(session) {
         return _super.call(this, session) || this;
     }
     Gs2ChatRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -37,7 +39,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
             'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -48,7 +50,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -68,7 +70,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'postNotification': (_r = (_q = request.getPostNotification()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
             'logSetting': (_t = (_s = request.getLogSetting()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateNamespaceResult.fromDict(response.data);
@@ -83,7 +85,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -94,7 +96,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -105,7 +107,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -116,7 +118,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -127,7 +129,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -147,7 +149,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'postNotification': (_s = (_r = request.getPostNotification()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
             'logSetting': (_u = (_t = request.getLogSetting()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateNamespaceResult.fromDict(response.data);
@@ -162,7 +164,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -173,7 +175,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -184,7 +186,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.describeRooms = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -197,7 +199,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -208,7 +210,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.createRoom = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/user')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/user')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -226,7 +228,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'password': (_g = request.getPassword()) !== null && _g !== void 0 ? _g : null,
             'whiteListUserIds': (_h = request.getWhiteListUserIds()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateRoomResult.fromDict(response.data);
@@ -241,7 +243,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.createRoomFromBackend = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -257,7 +259,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'password': (_g = request.getPassword()) !== null && _g !== void 0 ? _g : null,
             'whiteListUserIds': (_h = request.getWhiteListUserIds()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateRoomFromBackendResult.fromDict(response.data);
@@ -272,7 +274,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.getRoom = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -284,7 +286,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -295,7 +297,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.updateRoom = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/user')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/user')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -313,7 +315,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'password': (_h = request.getPassword()) !== null && _h !== void 0 ? _h : null,
             'whiteListUserIds': (_j = request.getWhiteListUserIds()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateRoomResult.fromDict(response.data);
@@ -328,7 +330,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.updateRoomFromBackend = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -344,7 +346,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'whiteListUserIds': (_h = request.getWhiteListUserIds()) !== null && _h !== void 0 ? _h : null,
             'userId': (_j = request.getUserId()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateRoomFromBackendResult.fromDict(response.data);
@@ -359,7 +361,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.deleteRoom = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/user')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/user')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -374,7 +376,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -385,7 +387,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.deleteRoomFromBackend = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -398,7 +400,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'userId': String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -409,7 +411,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.describeMessages = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -427,7 +429,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'startAt': String((_h = request.getStartAt()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -438,7 +440,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.describeMessagesByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/get')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/get')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -454,7 +456,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'startAt': String((_h = request.getStartAt()) !== null && _h !== void 0 ? _h : null),
             'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -465,7 +467,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.post = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -483,7 +485,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
             'password': (_j = request.getPassword()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.PostResult.fromDict(response.data);
@@ -498,7 +500,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.postByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/user/{userId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/user/{userId}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -514,7 +516,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'metadata': (_j = request.getMetadata()) !== null && _j !== void 0 ? _j : null,
             'password': (_k = request.getPassword()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.PostByUserIdResult.fromDict(response.data);
@@ -529,7 +531,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.getMessage = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/{messageName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/{messageName}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -546,7 +548,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'password': String((_j = request.getPassword()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -557,7 +559,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.getMessageByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/{messageName}/get')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/{messageName}/get')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -572,7 +574,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'password': String((_h = request.getPassword()) !== null && _h !== void 0 ? _h : null),
             'userId': String((_j = request.getUserId()) !== null && _j !== void 0 ? _j : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -583,7 +585,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.deleteMessage = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/{messageName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/{messageName}')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -597,7 +599,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
             'userId': String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : null),
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -608,7 +610,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.describeSubscribes = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/subscribe')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/subscribe')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -624,7 +626,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
             'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -635,7 +637,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.describeSubscribesByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/subscribe')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/subscribe')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -649,7 +651,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -660,7 +662,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.describeSubscribesByRoomName = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/subscribe')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/subscribe')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -674,7 +676,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -685,7 +687,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.subscribe = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -701,7 +703,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'notificationTypes': (_h = (_g = request.getNotificationTypes()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.SubscribeResult.fromDict(response.data);
@@ -716,7 +718,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.subscribeByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -730,7 +732,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
             'notificationTypes': (_j = (_h = request.getNotificationTypes()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.SubscribeByUserIdResult.fromDict(response.data);
@@ -745,7 +747,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.getSubscribe = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -760,7 +762,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -771,7 +773,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.getSubscribeByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -784,7 +786,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -795,7 +797,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.updateNotificationType = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe/notification')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe/notification')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -811,7 +813,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'notificationTypes': (_h = (_g = request.getNotificationTypes()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateNotificationTypeResult.fromDict(response.data);
@@ -826,7 +828,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.updateNotificationTypeByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe/notification')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe/notification')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -840,7 +842,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
             'notificationTypes': (_j = (_h = request.getNotificationTypes()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateNotificationTypeByUserIdResult.fromDict(response.data);
@@ -855,7 +857,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.unsubscribe = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/room/{roomName}/subscribe')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -870,7 +872,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -881,7 +883,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
     };
     Gs2ChatRestClient.prototype.unsubscribeByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/room/{roomName}/subscribe')
             .replace('{service}', 'chat')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -894,7 +896,7 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -904,6 +906,6 @@ var Gs2ChatRestClient = /** @class */ (function (_super) {
         });
     };
     return Gs2ChatRestClient;
-}(AbstractGs2RestClient));
-export default Gs2ChatRestClient;
+}(AbstractGs2RestClient_1.default));
+exports.default = Gs2ChatRestClient;
 //# sourceMappingURL=rest.js.map

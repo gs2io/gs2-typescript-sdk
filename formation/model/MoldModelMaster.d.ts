@@ -1,0 +1,45 @@
+import IModel from '../../core/interface/IModel';
+export default class MoldModelMaster implements IModel {
+    private moldModelId;
+    private name;
+    private description;
+    private metadata;
+    private initialMaxCapacity;
+    private maxCapacity;
+    private formModelName;
+    private createdAt;
+    private updatedAt;
+    getMoldModelId(): string | null;
+    setMoldModelId(moldModelId: string | null): this;
+    withMoldModelId(moldModelId: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getInitialMaxCapacity(): number | null;
+    setInitialMaxCapacity(initialMaxCapacity: number | null): this;
+    withInitialMaxCapacity(initialMaxCapacity: number | null): this;
+    getMaxCapacity(): number | null;
+    setMaxCapacity(maxCapacity: number | null): this;
+    withMaxCapacity(maxCapacity: number | null): this;
+    getFormModelName(): string | null;
+    setFormModelName(formModelName: string | null): this;
+    withFormModelName(formModelName: string | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    getUpdatedAt(): number | null;
+    setUpdatedAt(updatedAt: number | null): this;
+    withUpdatedAt(updatedAt: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): MoldModelMaster | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

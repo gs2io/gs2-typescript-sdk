@@ -1,0 +1,14 @@
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest";
+import CreateNamespaceRequest from "./CreateNamespaceRequest";
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest";
+import GetNamespaceRequest from "./GetNamespaceRequest";
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest";
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest";
+import PrepareUpdateCurrentNewsMasterRequest from "./PrepareUpdateCurrentNewsMasterRequest";
+import UpdateCurrentNewsMasterRequest from "./UpdateCurrentNewsMasterRequest";
+import PrepareUpdateCurrentNewsMasterFromGitHubRequest from "./PrepareUpdateCurrentNewsMasterFromGitHubRequest";
+import DescribeNewsRequest from "./DescribeNewsRequest";
+import DescribeNewsByUserIdRequest from "./DescribeNewsByUserIdRequest";
+import WantGrantRequest from "./WantGrantRequest";
+import WantGrantByUserIdRequest from "./WantGrantByUserIdRequest";
+export { DescribeNamespacesRequest, CreateNamespaceRequest, GetNamespaceStatusRequest, GetNamespaceRequest, UpdateNamespaceRequest, DeleteNamespaceRequest, PrepareUpdateCurrentNewsMasterRequest, UpdateCurrentNewsMasterRequest, PrepareUpdateCurrentNewsMasterFromGitHubRequest, DescribeNewsRequest, DescribeNewsByUserIdRequest, WantGrantRequest, WantGrantByUserIdRequest, };

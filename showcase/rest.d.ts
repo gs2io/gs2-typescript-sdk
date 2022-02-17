@@ -1,0 +1,38 @@
+import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
+import { Gs2RestSession } from '../core/model';
+import * as Request from './request';
+import * as Result from './result';
+export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
+    constructor(session: Gs2RestSession);
+    describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult>;
+    createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult>;
+    getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult>;
+    getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
+    updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
+    deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    describeSalesItemMasters(request: Request.DescribeSalesItemMastersRequest): Promise<Result.DescribeSalesItemMastersResult>;
+    createSalesItemMaster(request: Request.CreateSalesItemMasterRequest): Promise<Result.CreateSalesItemMasterResult>;
+    getSalesItemMaster(request: Request.GetSalesItemMasterRequest): Promise<Result.GetSalesItemMasterResult>;
+    updateSalesItemMaster(request: Request.UpdateSalesItemMasterRequest): Promise<Result.UpdateSalesItemMasterResult>;
+    deleteSalesItemMaster(request: Request.DeleteSalesItemMasterRequest): Promise<Result.DeleteSalesItemMasterResult>;
+    describeSalesItemGroupMasters(request: Request.DescribeSalesItemGroupMastersRequest): Promise<Result.DescribeSalesItemGroupMastersResult>;
+    createSalesItemGroupMaster(request: Request.CreateSalesItemGroupMasterRequest): Promise<Result.CreateSalesItemGroupMasterResult>;
+    getSalesItemGroupMaster(request: Request.GetSalesItemGroupMasterRequest): Promise<Result.GetSalesItemGroupMasterResult>;
+    updateSalesItemGroupMaster(request: Request.UpdateSalesItemGroupMasterRequest): Promise<Result.UpdateSalesItemGroupMasterResult>;
+    deleteSalesItemGroupMaster(request: Request.DeleteSalesItemGroupMasterRequest): Promise<Result.DeleteSalesItemGroupMasterResult>;
+    describeShowcaseMasters(request: Request.DescribeShowcaseMastersRequest): Promise<Result.DescribeShowcaseMastersResult>;
+    createShowcaseMaster(request: Request.CreateShowcaseMasterRequest): Promise<Result.CreateShowcaseMasterResult>;
+    getShowcaseMaster(request: Request.GetShowcaseMasterRequest): Promise<Result.GetShowcaseMasterResult>;
+    updateShowcaseMaster(request: Request.UpdateShowcaseMasterRequest): Promise<Result.UpdateShowcaseMasterResult>;
+    deleteShowcaseMaster(request: Request.DeleteShowcaseMasterRequest): Promise<Result.DeleteShowcaseMasterResult>;
+    exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
+    getCurrentShowcaseMaster(request: Request.GetCurrentShowcaseMasterRequest): Promise<Result.GetCurrentShowcaseMasterResult>;
+    updateCurrentShowcaseMaster(request: Request.UpdateCurrentShowcaseMasterRequest): Promise<Result.UpdateCurrentShowcaseMasterResult>;
+    updateCurrentShowcaseMasterFromGitHub(request: Request.UpdateCurrentShowcaseMasterFromGitHubRequest): Promise<Result.UpdateCurrentShowcaseMasterFromGitHubResult>;
+    describeShowcases(request: Request.DescribeShowcasesRequest): Promise<Result.DescribeShowcasesResult>;
+    describeShowcasesByUserId(request: Request.DescribeShowcasesByUserIdRequest): Promise<Result.DescribeShowcasesByUserIdResult>;
+    getShowcase(request: Request.GetShowcaseRequest): Promise<Result.GetShowcaseResult>;
+    getShowcaseByUserId(request: Request.GetShowcaseByUserIdRequest): Promise<Result.GetShowcaseByUserIdResult>;
+    buy(request: Request.BuyRequest): Promise<Result.BuyResult>;
+    buyByUserId(request: Request.BuyByUserIdRequest): Promise<Result.BuyByUserIdResult>;
+}

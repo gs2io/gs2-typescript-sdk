@@ -1,0 +1,50 @@
+import IRequest from '../../core/interface/IRequest';
+import * as Gs2Account from '../model';
+export default class UpdateNamespaceRequest implements IRequest {
+    private requestId;
+    private contextStack;
+    private namespaceName;
+    private description;
+    private changePasswordIfTakeOver;
+    private createAccountScript;
+    private authenticationScript;
+    private createTakeOverScript;
+    private doTakeOverScript;
+    private logSetting;
+    getRequestId(): string | null;
+    setRequestId(requestId: string | null): this;
+    withRequestId(requestId: string | null): this;
+    getContextStack(): string | null;
+    setContextStack(contextStack: string | null): this;
+    withContextStack(contextStack: string | null): this;
+    getNamespaceName(): string | null;
+    setNamespaceName(namespaceName: string | null): this;
+    withNamespaceName(namespaceName: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getChangePasswordIfTakeOver(): boolean | null;
+    setChangePasswordIfTakeOver(changePasswordIfTakeOver: boolean | null): this;
+    withChangePasswordIfTakeOver(changePasswordIfTakeOver: boolean | null): this;
+    getCreateAccountScript(): Gs2Account.ScriptSetting | null;
+    setCreateAccountScript(createAccountScript: Gs2Account.ScriptSetting | null): this;
+    withCreateAccountScript(createAccountScript: Gs2Account.ScriptSetting | null): this;
+    getAuthenticationScript(): Gs2Account.ScriptSetting | null;
+    setAuthenticationScript(authenticationScript: Gs2Account.ScriptSetting | null): this;
+    withAuthenticationScript(authenticationScript: Gs2Account.ScriptSetting | null): this;
+    getCreateTakeOverScript(): Gs2Account.ScriptSetting | null;
+    setCreateTakeOverScript(createTakeOverScript: Gs2Account.ScriptSetting | null): this;
+    withCreateTakeOverScript(createTakeOverScript: Gs2Account.ScriptSetting | null): this;
+    getDoTakeOverScript(): Gs2Account.ScriptSetting | null;
+    setDoTakeOverScript(doTakeOverScript: Gs2Account.ScriptSetting | null): this;
+    withDoTakeOverScript(doTakeOverScript: Gs2Account.ScriptSetting | null): this;
+    getLogSetting(): Gs2Account.LogSetting | null;
+    setLogSetting(logSetting: Gs2Account.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2Account.LogSetting | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): UpdateNamespaceRequest;
+    toDict(): {
+        [key: string]: any;
+    };
+}

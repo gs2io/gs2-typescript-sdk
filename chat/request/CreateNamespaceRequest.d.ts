@@ -1,0 +1,58 @@
+import IRequest from '../../core/interface/IRequest';
+import * as Gs2Chat from '../model';
+export default class CreateNamespaceRequest implements IRequest {
+    private requestId;
+    private contextStack;
+    private name;
+    private description;
+    private allowCreateRoom;
+    private postMessageScript;
+    private createRoomScript;
+    private deleteRoomScript;
+    private subscribeRoomScript;
+    private unsubscribeRoomScript;
+    private postNotification;
+    private logSetting;
+    getRequestId(): string | null;
+    setRequestId(requestId: string | null): this;
+    withRequestId(requestId: string | null): this;
+    getContextStack(): string | null;
+    setContextStack(contextStack: string | null): this;
+    withContextStack(contextStack: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getAllowCreateRoom(): boolean | null;
+    setAllowCreateRoom(allowCreateRoom: boolean | null): this;
+    withAllowCreateRoom(allowCreateRoom: boolean | null): this;
+    getPostMessageScript(): Gs2Chat.ScriptSetting | null;
+    setPostMessageScript(postMessageScript: Gs2Chat.ScriptSetting | null): this;
+    withPostMessageScript(postMessageScript: Gs2Chat.ScriptSetting | null): this;
+    getCreateRoomScript(): Gs2Chat.ScriptSetting | null;
+    setCreateRoomScript(createRoomScript: Gs2Chat.ScriptSetting | null): this;
+    withCreateRoomScript(createRoomScript: Gs2Chat.ScriptSetting | null): this;
+    getDeleteRoomScript(): Gs2Chat.ScriptSetting | null;
+    setDeleteRoomScript(deleteRoomScript: Gs2Chat.ScriptSetting | null): this;
+    withDeleteRoomScript(deleteRoomScript: Gs2Chat.ScriptSetting | null): this;
+    getSubscribeRoomScript(): Gs2Chat.ScriptSetting | null;
+    setSubscribeRoomScript(subscribeRoomScript: Gs2Chat.ScriptSetting | null): this;
+    withSubscribeRoomScript(subscribeRoomScript: Gs2Chat.ScriptSetting | null): this;
+    getUnsubscribeRoomScript(): Gs2Chat.ScriptSetting | null;
+    setUnsubscribeRoomScript(unsubscribeRoomScript: Gs2Chat.ScriptSetting | null): this;
+    withUnsubscribeRoomScript(unsubscribeRoomScript: Gs2Chat.ScriptSetting | null): this;
+    getPostNotification(): Gs2Chat.NotificationSetting | null;
+    setPostNotification(postNotification: Gs2Chat.NotificationSetting | null): this;
+    withPostNotification(postNotification: Gs2Chat.NotificationSetting | null): this;
+    getLogSetting(): Gs2Chat.LogSetting | null;
+    setLogSetting(logSetting: Gs2Chat.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2Chat.LogSetting | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): CreateNamespaceRequest;
+    toDict(): {
+        [key: string]: any;
+    };
+}

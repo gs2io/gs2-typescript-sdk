@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,6 +14,8 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SignInRequest = void 0;
 var SignInRequest = /** @class */ (function () {
     function SignInRequest() {
         this.requestId = null;
@@ -77,5 +80,5 @@ var SignInRequest = /** @class */ (function () {
     };
     return SignInRequest;
 }());
-export { SignInRequest };
+exports.SignInRequest = SignInRequest;
 //# sourceMappingURL=SignInRequest.js.map

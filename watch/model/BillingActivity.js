@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,6 +14,8 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BillingActivity = void 0;
 var BillingActivity = /** @class */ (function () {
     function BillingActivity() {
         this.billingActivityId = null;
@@ -112,5 +115,5 @@ var BillingActivity = /** @class */ (function () {
     };
     return BillingActivity;
 }());
-export { BillingActivity };
+exports.BillingActivity = BillingActivity;
 //# sourceMappingURL=BillingActivity.js.map

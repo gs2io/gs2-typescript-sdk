@@ -1,3 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.WantGrantByUserIdRequest = exports.WantGrantRequest = exports.DescribeNewsByUserIdRequest = exports.DescribeNewsRequest = exports.PrepareUpdateCurrentNewsMasterFromGitHubRequest = exports.UpdateCurrentNewsMasterRequest = exports.PrepareUpdateCurrentNewsMasterRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,18 +17,30 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import DescribeNamespacesRequest from "./DescribeNamespacesRequest";
-import CreateNamespaceRequest from "./CreateNamespaceRequest";
-import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest";
-import GetNamespaceRequest from "./GetNamespaceRequest";
-import UpdateNamespaceRequest from "./UpdateNamespaceRequest";
-import DeleteNamespaceRequest from "./DeleteNamespaceRequest";
-import PrepareUpdateCurrentNewsMasterRequest from "./PrepareUpdateCurrentNewsMasterRequest";
-import UpdateCurrentNewsMasterRequest from "./UpdateCurrentNewsMasterRequest";
-import PrepareUpdateCurrentNewsMasterFromGitHubRequest from "./PrepareUpdateCurrentNewsMasterFromGitHubRequest";
-import DescribeNewsRequest from "./DescribeNewsRequest";
-import DescribeNewsByUserIdRequest from "./DescribeNewsByUserIdRequest";
-import WantGrantRequest from "./WantGrantRequest";
-import WantGrantByUserIdRequest from "./WantGrantByUserIdRequest";
-export { DescribeNamespacesRequest, CreateNamespaceRequest, GetNamespaceStatusRequest, GetNamespaceRequest, UpdateNamespaceRequest, DeleteNamespaceRequest, PrepareUpdateCurrentNewsMasterRequest, UpdateCurrentNewsMasterRequest, PrepareUpdateCurrentNewsMasterFromGitHubRequest, DescribeNewsRequest, DescribeNewsByUserIdRequest, WantGrantRequest, WantGrantByUserIdRequest, };
+var DescribeNamespacesRequest_1 = (0, tslib_1.__importDefault)(require("./DescribeNamespacesRequest"));
+exports.DescribeNamespacesRequest = DescribeNamespacesRequest_1.default;
+var CreateNamespaceRequest_1 = (0, tslib_1.__importDefault)(require("./CreateNamespaceRequest"));
+exports.CreateNamespaceRequest = CreateNamespaceRequest_1.default;
+var GetNamespaceStatusRequest_1 = (0, tslib_1.__importDefault)(require("./GetNamespaceStatusRequest"));
+exports.GetNamespaceStatusRequest = GetNamespaceStatusRequest_1.default;
+var GetNamespaceRequest_1 = (0, tslib_1.__importDefault)(require("./GetNamespaceRequest"));
+exports.GetNamespaceRequest = GetNamespaceRequest_1.default;
+var UpdateNamespaceRequest_1 = (0, tslib_1.__importDefault)(require("./UpdateNamespaceRequest"));
+exports.UpdateNamespaceRequest = UpdateNamespaceRequest_1.default;
+var DeleteNamespaceRequest_1 = (0, tslib_1.__importDefault)(require("./DeleteNamespaceRequest"));
+exports.DeleteNamespaceRequest = DeleteNamespaceRequest_1.default;
+var PrepareUpdateCurrentNewsMasterRequest_1 = (0, tslib_1.__importDefault)(require("./PrepareUpdateCurrentNewsMasterRequest"));
+exports.PrepareUpdateCurrentNewsMasterRequest = PrepareUpdateCurrentNewsMasterRequest_1.default;
+var UpdateCurrentNewsMasterRequest_1 = (0, tslib_1.__importDefault)(require("./UpdateCurrentNewsMasterRequest"));
+exports.UpdateCurrentNewsMasterRequest = UpdateCurrentNewsMasterRequest_1.default;
+var PrepareUpdateCurrentNewsMasterFromGitHubRequest_1 = (0, tslib_1.__importDefault)(require("./PrepareUpdateCurrentNewsMasterFromGitHubRequest"));
+exports.PrepareUpdateCurrentNewsMasterFromGitHubRequest = PrepareUpdateCurrentNewsMasterFromGitHubRequest_1.default;
+var DescribeNewsRequest_1 = (0, tslib_1.__importDefault)(require("./DescribeNewsRequest"));
+exports.DescribeNewsRequest = DescribeNewsRequest_1.default;
+var DescribeNewsByUserIdRequest_1 = (0, tslib_1.__importDefault)(require("./DescribeNewsByUserIdRequest"));
+exports.DescribeNewsByUserIdRequest = DescribeNewsByUserIdRequest_1.default;
+var WantGrantRequest_1 = (0, tslib_1.__importDefault)(require("./WantGrantRequest"));
+exports.WantGrantRequest = WantGrantRequest_1.default;
+var WantGrantByUserIdRequest_1 = (0, tslib_1.__importDefault)(require("./WantGrantByUserIdRequest"));
+exports.WantGrantByUserIdRequest = WantGrantByUserIdRequest_1.default;
 //# sourceMappingURL=index.js.map

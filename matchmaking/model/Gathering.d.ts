@@ -1,0 +1,47 @@
+import IModel from '../../core/interface/IModel';
+import AttributeRange from './AttributeRange';
+import CapacityOfRole from './CapacityOfRole';
+export default class Gathering implements IModel {
+    private gatheringId;
+    private name;
+    private attributeRanges;
+    private capacityOfRoles;
+    private allowUserIds;
+    private metadata;
+    private expiresAt;
+    private createdAt;
+    private updatedAt;
+    getGatheringId(): string | null;
+    setGatheringId(gatheringId: string | null): this;
+    withGatheringId(gatheringId: string | null): this;
+    getName(): string | null;
+    setName(name: string | null): this;
+    withName(name: string | null): this;
+    getAttributeRanges(): AttributeRange[] | null;
+    setAttributeRanges(attributeRanges: AttributeRange[] | null): this;
+    withAttributeRanges(attributeRanges: AttributeRange[] | null): this;
+    getCapacityOfRoles(): CapacityOfRole[] | null;
+    setCapacityOfRoles(capacityOfRoles: CapacityOfRole[] | null): this;
+    withCapacityOfRoles(capacityOfRoles: CapacityOfRole[] | null): this;
+    getAllowUserIds(): string[] | null;
+    setAllowUserIds(allowUserIds: string[] | null): this;
+    withAllowUserIds(allowUserIds: string[] | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getExpiresAt(): number | null;
+    setExpiresAt(expiresAt: number | null): this;
+    withExpiresAt(expiresAt: number | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    getUpdatedAt(): number | null;
+    setUpdatedAt(updatedAt: number | null): this;
+    withUpdatedAt(updatedAt: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): Gathering | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

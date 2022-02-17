@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,8 +14,10 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import ConsumeAction from './ConsumeAction';
-import AcquireAction from './AcquireAction';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var ConsumeAction_1 = (0, tslib_1.__importDefault)(require("./ConsumeAction"));
+var AcquireAction_1 = (0, tslib_1.__importDefault)(require("./AcquireAction"));
 var RateModel = /** @class */ (function () {
     function RateModel() {
         this.rateModelId = null;
@@ -136,18 +139,18 @@ var RateModel = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withConsumeActions(data.consumeActions ?
             data.consumeActions.map(function (item) {
-                return ConsumeAction.fromDict(item);
+                return ConsumeAction_1.default.fromDict(item);
             }) : [])
             .withTimingType(data["timingType"])
             .withLockTime(data["lockTime"])
             .withEnableSkip(data["enableSkip"])
             .withSkipConsumeActions(data.skipConsumeActions ?
             data.skipConsumeActions.map(function (item) {
-                return ConsumeAction.fromDict(item);
+                return ConsumeAction_1.default.fromDict(item);
             }) : [])
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
-                return AcquireAction.fromDict(item);
+                return AcquireAction_1.default.fromDict(item);
             }) : []);
     };
     RateModel.prototype.toDict = function () {
@@ -174,5 +177,5 @@ var RateModel = /** @class */ (function () {
     };
     return RateModel;
 }());
-export default RateModel;
+exports.default = RateModel;
 //# sourceMappingURL=RateModel.js.map

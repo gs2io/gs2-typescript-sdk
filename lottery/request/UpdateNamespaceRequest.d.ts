@@ -1,0 +1,46 @@
+import IRequest from '../../core/interface/IRequest';
+import * as Gs2Lottery from '../model';
+export default class UpdateNamespaceRequest implements IRequest {
+    private requestId;
+    private contextStack;
+    private namespaceName;
+    private description;
+    private queueNamespaceId;
+    private keyId;
+    private lotteryTriggerScriptId;
+    private choicePrizeTableScriptId;
+    private logSetting;
+    getRequestId(): string | null;
+    setRequestId(requestId: string | null): this;
+    withRequestId(requestId: string | null): this;
+    getContextStack(): string | null;
+    setContextStack(contextStack: string | null): this;
+    withContextStack(contextStack: string | null): this;
+    getNamespaceName(): string | null;
+    setNamespaceName(namespaceName: string | null): this;
+    withNamespaceName(namespaceName: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getQueueNamespaceId(): string | null;
+    setQueueNamespaceId(queueNamespaceId: string | null): this;
+    withQueueNamespaceId(queueNamespaceId: string | null): this;
+    getKeyId(): string | null;
+    setKeyId(keyId: string | null): this;
+    withKeyId(keyId: string | null): this;
+    getLotteryTriggerScriptId(): string | null;
+    setLotteryTriggerScriptId(lotteryTriggerScriptId: string | null): this;
+    withLotteryTriggerScriptId(lotteryTriggerScriptId: string | null): this;
+    getChoicePrizeTableScriptId(): string | null;
+    setChoicePrizeTableScriptId(choicePrizeTableScriptId: string | null): this;
+    withChoicePrizeTableScriptId(choicePrizeTableScriptId: string | null): this;
+    getLogSetting(): Gs2Lottery.LogSetting | null;
+    setLogSetting(logSetting: Gs2Lottery.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2Lottery.LogSetting | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): UpdateNamespaceRequest;
+    toDict(): {
+        [key: string]: any;
+    };
+}

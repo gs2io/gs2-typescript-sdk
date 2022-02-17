@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,19 +14,20 @@ on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-import { __extends } from "tslib";
-import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
-import { Gs2Constant } from '../core/model';
-import * as Result from './result';
-import axios from 'axios';
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var model_1 = require("../core/model");
+var Result = (0, tslib_1.__importStar)(require("./result"));
+var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var Gs2MissionRestClient = /** @class */ (function (_super) {
-    __extends(Gs2MissionRestClient, _super);
+    (0, tslib_1.__extends)(Gs2MissionRestClient, _super);
     function Gs2MissionRestClient(session) {
         return _super.call(this, session) || this;
     }
     Gs2MissionRestClient.prototype.describeCompletes = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -41,7 +43,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
             'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -52,7 +54,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.describeCompletesByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -66,7 +68,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -77,7 +79,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.complete = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete/group/{missionGroupName}/task/{missionTaskName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete/group/{missionGroupName}/task/{missionTaskName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -94,7 +96,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
             'config': (_k = (_j = request.getConfig()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CompleteResult.fromDict(response.data);
@@ -109,7 +111,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.completeByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/task/{missionTaskName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/task/{missionTaskName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -124,7 +126,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'config': (_l = (_k = request.getConfig()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CompleteByUserIdResult.fromDict(response.data);
@@ -139,7 +141,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.receiveByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/task/{missionTaskName}/receive')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/task/{missionTaskName}/receive')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -153,7 +155,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.ReceiveByUserIdResult.fromDict(response.data);
@@ -168,7 +170,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.getComplete = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete/group/{missionGroupName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete/group/{missionGroupName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -183,7 +185,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -194,7 +196,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.getCompleteByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -207,7 +209,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -218,7 +220,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.deleteCompleteByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -231,7 +233,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -242,7 +244,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.receiveByStampTask = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/receive')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/receive')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -254,7 +256,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.ReceiveByStampTaskResult.fromDict(response.data);
@@ -269,7 +271,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.describeCounterModelMasters = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -282,7 +284,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -293,7 +295,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.createCounterModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -309,7 +311,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'scopes': (_h = (_g = request.getScopes()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
             'challengePeriodEventId': (_j = request.getChallengePeriodEventId()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateCounterModelMasterResult.fromDict(response.data);
@@ -324,7 +326,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.getCounterModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter/{counterName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter/{counterName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -336,7 +338,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -347,7 +349,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.updateCounterModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter/{counterName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter/{counterName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -363,7 +365,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'scopes': (_j = (_h = request.getScopes()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
             'challengePeriodEventId': (_k = request.getChallengePeriodEventId()) !== null && _k !== void 0 ? _k : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCounterModelMasterResult.fromDict(response.data);
@@ -378,7 +380,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.deleteCounterModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter/{counterName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/counter/{counterName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -390,7 +392,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -401,7 +403,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.describeMissionGroupModelMasters = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -414,7 +416,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
             'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -425,7 +427,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.createMissionGroupModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -444,7 +446,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'resetHour': (_k = request.getResetHour()) !== null && _k !== void 0 ? _k : null,
             'completeNotificationNamespaceId': (_l = request.getCompleteNotificationNamespaceId()) !== null && _l !== void 0 ? _l : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateMissionGroupModelMasterResult.fromDict(response.data);
@@ -459,7 +461,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.getMissionGroupModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -471,7 +473,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -482,7 +484,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.updateMissionGroupModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -501,7 +503,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'resetHour': (_l = request.getResetHour()) !== null && _l !== void 0 ? _l : null,
             'completeNotificationNamespaceId': (_m = request.getCompleteNotificationNamespaceId()) !== null && _m !== void 0 ? _m : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateMissionGroupModelMasterResult.fromDict(response.data);
@@ -516,7 +518,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.deleteMissionGroupModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -528,7 +530,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -539,7 +541,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.describeNamespaces = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -551,7 +553,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
             'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -562,7 +564,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.createNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -581,7 +583,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'completeNotification': (_o = (_m = request.getCompleteNotification()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
             'logSetting': (_q = (_p = request.getLogSetting()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateNamespaceResult.fromDict(response.data);
@@ -596,7 +598,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.getNamespaceStatus = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/status')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -607,7 +609,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -618,7 +620,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.getNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -629,7 +631,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -640,7 +642,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.updateNamespace = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -659,7 +661,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'completeNotification': (_p = (_o = request.getCompleteNotification()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
             'logSetting': (_r = (_q = request.getLogSetting()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateNamespaceResult.fromDict(response.data);
@@ -674,7 +676,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.deleteNamespace = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -685,7 +687,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -696,7 +698,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.describeCounters = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -712,7 +714,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
             'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -723,7 +725,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.describeCountersByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -737,7 +739,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -748,7 +750,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.increaseCounterByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -762,7 +764,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
             'value': (_h = request.getValue()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.IncreaseCounterByUserIdResult.fromDict(response.data);
@@ -777,7 +779,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.getCounter = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{counterName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{counterName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -792,7 +794,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -803,7 +805,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.getCounterByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -816,7 +818,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -827,7 +829,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.deleteCounterByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -840,7 +842,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -851,7 +853,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.increaseByStampSheet = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/stamp/increase')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/increase')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
@@ -863,7 +865,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
             'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.IncreaseByStampSheetResult.fromDict(response.data);
@@ -878,7 +880,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.exportMaster = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -889,7 +891,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -900,7 +902,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.getCurrentMissionMaster = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -911,7 +913,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -922,7 +924,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.updateCurrentMissionMaster = function (request) {
         var _a, _b, _c, _d;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -934,7 +936,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'settings': (_d = request.getSettings()) !== null && _d !== void 0 ? _d : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCurrentMissionMasterResult.fromDict(response.data);
@@ -949,7 +951,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.updateCurrentMissionMasterFromGitHub = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -961,7 +963,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'checkoutSetting': (_e = (_d = request.getCheckoutSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateCurrentMissionMasterFromGitHubResult.fromDict(response.data);
@@ -976,7 +978,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.describeCounterModels = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/counter')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/counter')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -987,7 +989,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -998,7 +1000,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.getCounterModel = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/counter/{counterName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/counter/{counterName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1010,7 +1012,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1021,7 +1023,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.describeMissionGroupModels = function (request) {
         var _a, _b, _c;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -1032,7 +1034,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1043,7 +1045,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.getMissionGroupModel = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group/{missionGroupName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group/{missionGroupName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1055,7 +1057,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1066,7 +1068,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.describeMissionTaskModels = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group/{missionGroupName}/task')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group/{missionGroupName}/task')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1078,7 +1080,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1089,7 +1091,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.getMissionTaskModel = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group/{missionGroupName}/task/{missionTaskName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/group/{missionGroupName}/task/{missionTaskName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1102,7 +1104,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1113,7 +1115,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.describeMissionTaskModelMasters = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1127,7 +1129,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
             'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1138,7 +1140,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.createMissionTaskModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1158,7 +1160,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'challengePeriodEventId': (_o = request.getChallengePeriodEventId()) !== null && _o !== void 0 ? _o : null,
             'premiseMissionTaskName': (_p = request.getPremiseMissionTaskName()) !== null && _p !== void 0 ? _p : null,
         };
-        return axios.post(url, body, {
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.CreateMissionTaskModelMasterResult.fromDict(response.data);
@@ -1173,7 +1175,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.getMissionTaskModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task/{missionTaskName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task/{missionTaskName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1186,7 +1188,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.get(url, {
+        return axios_1.default.get(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1197,7 +1199,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.updateMissionTaskModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task/{missionTaskName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task/{missionTaskName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1217,7 +1219,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'challengePeriodEventId': (_p = request.getChallengePeriodEventId()) !== null && _p !== void 0 ? _p : null,
             'premiseMissionTaskName': (_q = request.getPremiseMissionTaskName()) !== null && _q !== void 0 ? _q : null,
         };
-        return axios.put(url, body, {
+        return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateMissionTaskModelMasterResult.fromDict(response.data);
@@ -1232,7 +1234,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.deleteMissionTaskModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task/{missionTaskName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task/{missionTaskName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1245,7 +1247,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
-        return axios.delete(url, {
+        return axios_1.default.delete(url, {
             params: params,
             headers: headers,
         }).then(function (response) {
@@ -1255,6 +1257,6 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         });
     };
     return Gs2MissionRestClient;
-}(AbstractGs2RestClient));
-export default Gs2MissionRestClient;
+}(AbstractGs2RestClient_1.default));
+exports.default = Gs2MissionRestClient;
 //# sourceMappingURL=rest.js.map
