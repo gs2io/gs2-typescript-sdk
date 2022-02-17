@@ -15,14 +15,14 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Gs2MatchmakingRestClient = exports.Result = exports.Request = exports.Model = void 0;
+exports.Gs2MatchmakingRestClient = exports.result = exports.request = exports.model = void 0;
 var tslib_1 = require("tslib");
-var Model = (0, tslib_1.__importStar)(require("./model"));
-exports.Model = Model;
-var Request = (0, tslib_1.__importStar)(require("./request"));
-exports.Request = Request;
-var Result = (0, tslib_1.__importStar)(require("./result"));
-exports.Result = Result;
+var model = (0, tslib_1.__importStar)(require("./model"));
+exports.model = model;
+var request = (0, tslib_1.__importStar)(require("./request"));
+exports.request = request;
+var result = (0, tslib_1.__importStar)(require("./result"));
+exports.result = result;
 var rest_1 = (0, tslib_1.__importDefault)(require("./rest"));
 exports.Gs2MatchmakingRestClient = rest_1.default;
 //# sourceMappingURL=index.js.map

@@ -1,5 +1,5 @@
-import * as Model from './model';
-import * as Request from './request';
-import * as Result from './result';
+import * as model from './model';
+import * as request from './request';
+import * as result from './result';
 import Gs2KeyRestClient from './rest';
-export { Model, Request, Result, Gs2KeyRestClient, };
+export { model, request, result, Gs2KeyRestClient, };
