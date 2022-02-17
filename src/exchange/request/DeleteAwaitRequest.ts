@@ -14,7 +14,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 
-import IRequest from '@/gs2/core/interface/IRequest';
+import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Exchange from '../model'
 
