@@ -69,19 +69,10 @@ var Stack = /** @class */ (function () {
         return true;
     };
     Stack.createGrn = function (region, ownerId, stackName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (stackName == null || stackName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{stackName}', stackName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{stackName}', stackName !== null && stackName !== void 0 ? stackName : '');
     };
     Stack.prototype.getStackId = function () {
         return this.stackId;

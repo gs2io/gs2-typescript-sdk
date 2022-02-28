@@ -53,15 +53,9 @@ var SecurityPolicy = /** @class */ (function () {
         return true;
     };
     SecurityPolicy.createGrn = function (ownerId, securityPolicyName) {
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (securityPolicyName == null || securityPolicyName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{ownerId}', ownerId)
-            .replace('{securityPolicyName}', securityPolicyName);
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{securityPolicyName}', securityPolicyName !== null && securityPolicyName !== void 0 ? securityPolicyName : '');
     };
     SecurityPolicy.prototype.getSecurityPolicyId = function () {
         return this.securityPolicyId;

@@ -106,23 +106,11 @@ export default class VersionModelMaster implements IModel {
         namespaceName: string|null,
         versionName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (versionName == null || versionName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{versionName}', versionName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{versionName}', versionName ?? '');
     }
 
     public getVersionModelId(): string|null {

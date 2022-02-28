@@ -43,11 +43,8 @@ var Account = /** @class */ (function () {
         return true;
     };
     Account.createGrn = function (accountName) {
-        if (accountName == null || accountName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{accountName}', accountName);
+            .replace('{accountName}', accountName !== null && accountName !== void 0 ? accountName : '');
     };
     Account.prototype.getAccountId = function () {
         return this.accountId;

@@ -127,27 +127,12 @@ export default class Stamina implements IModel {
         userId: string|null,
         staminaName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (userId == null || userId === '') {
-            return null;
-        }
-        if (staminaName == null || staminaName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{userId}', userId!)
-            .replace('{staminaName}', staminaName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{userId}', userId ?? '')
+            .replace('{staminaName}', staminaName ?? '');
     }
 
     public getStaminaId(): string|null {

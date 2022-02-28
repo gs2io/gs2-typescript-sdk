@@ -153,35 +153,14 @@ var ItemSet = /** @class */ (function () {
         return true;
     };
     ItemSet.createGrn = function (region, ownerId, namespaceName, userId, inventoryName, itemName, itemSetName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (userId == null || userId === '') {
-            return null;
-        }
-        if (inventoryName == null || inventoryName === '') {
-            return null;
-        }
-        if (itemName == null || itemName === '') {
-            return null;
-        }
-        if (itemSetName == null || itemSetName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{userId}', userId)
-            .replace('{inventoryName}', inventoryName)
-            .replace('{itemName}', itemName)
-            .replace('{itemSetName}', itemSetName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{userId}', userId !== null && userId !== void 0 ? userId : '')
+            .replace('{inventoryName}', inventoryName !== null && inventoryName !== void 0 ? inventoryName : '')
+            .replace('{itemName}', itemName !== null && itemName !== void 0 ? itemName : '')
+            .replace('{itemSetName}', itemSetName !== null && itemSetName !== void 0 ? itemSetName : '');
     };
     ItemSet.prototype.getItemSetId = function () {
         return this.itemSetId;

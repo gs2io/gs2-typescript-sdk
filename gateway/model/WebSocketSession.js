@@ -104,27 +104,12 @@ var WebSocketSession = /** @class */ (function () {
         return true;
     };
     WebSocketSession.createGrn = function (region, ownerId, namespaceName, userId, connectionId) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (userId == null || userId === '') {
-            return null;
-        }
-        if (connectionId == null || connectionId === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{userId}', userId)
-            .replace('{connectionId}', connectionId);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{userId}', userId !== null && userId !== void 0 ? userId : '')
+            .replace('{connectionId}', connectionId !== null && connectionId !== void 0 ? connectionId : '');
     };
     WebSocketSession.prototype.getWebSocketSessionId = function () {
         return this.webSocketSessionId;

@@ -123,27 +123,12 @@ export default class Complete implements IModel {
         userId: string|null,
         missionGroupName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (userId == null || userId === '') {
-            return null;
-        }
-        if (missionGroupName == null || missionGroupName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{userId}', userId!)
-            .replace('{missionGroupName}', missionGroupName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{userId}', userId ?? '')
+            .replace('{missionGroupName}', missionGroupName ?? '');
     }
 
     public getCompleteId(): string|null {

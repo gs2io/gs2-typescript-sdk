@@ -86,23 +86,11 @@ var ThresholdMaster = /** @class */ (function () {
         return true;
     };
     ThresholdMaster.createGrn = function (region, ownerId, namespaceName, thresholdName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (thresholdName == null || thresholdName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{thresholdName}', thresholdName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{thresholdName}', thresholdName !== null && thresholdName !== void 0 ? thresholdName : '');
     };
     ThresholdMaster.prototype.getThresholdId = function () {
         return this.thresholdId;

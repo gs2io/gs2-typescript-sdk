@@ -85,23 +85,11 @@ var FormModel = /** @class */ (function () {
         return true;
     };
     FormModel.createGrn = function (region, ownerId, namespaceName, formModelName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (formModelName == null || formModelName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{formModelName}', formModelName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{formModelName}', formModelName !== null && formModelName !== void 0 ? formModelName : '');
     };
     FormModel.prototype.getFormModelId = function () {
         return this.formModelId;

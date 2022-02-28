@@ -98,23 +98,11 @@ export default class FormModel implements IModel {
         namespaceName: string|null,
         formModelName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (formModelName == null || formModelName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{formModelName}', formModelName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{formModelName}', formModelName ?? '');
     }
 
     public getFormModelId(): string|null {

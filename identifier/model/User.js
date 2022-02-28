@@ -52,15 +52,9 @@ var User = /** @class */ (function () {
         return true;
     };
     User.createGrn = function (ownerId, userName) {
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (userName == null || userName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{ownerId}', ownerId)
-            .replace('{userName}', userName);
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{userName}', userName !== null && userName !== void 0 ? userName : '');
     };
     User.prototype.getUserId = function () {
         return this.userId;

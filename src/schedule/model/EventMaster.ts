@@ -111,23 +111,11 @@ export default class EventMaster implements IModel {
         namespaceName: string|null,
         eventName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (eventName == null || eventName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{eventName}', eventName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{eventName}', eventName ?? '');
     }
 
     public getEventId(): string|null {

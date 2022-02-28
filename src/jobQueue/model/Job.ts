@@ -124,27 +124,12 @@ export default class Job implements IModel {
         userId: string|null,
         jobName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (userId == null || userId === '') {
-            return null;
-        }
-        if (jobName == null || jobName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{userId}', userId!)
-            .replace('{jobName}', jobName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{userId}', userId ?? '')
+            .replace('{jobName}', jobName ?? '');
     }
 
     public getJobId(): string|null {

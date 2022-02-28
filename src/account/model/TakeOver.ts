@@ -121,27 +121,12 @@ export default class TakeOver implements IModel {
         type: string|null,
         userIdentifier: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (type == null || type === '') {
-            return null;
-        }
-        if (userIdentifier == null || userIdentifier === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{type}', type!)
-            .replace('{userIdentifier}', userIdentifier!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{type}', type ?? '')
+            .replace('{userIdentifier}', userIdentifier ?? '');
     }
 
     public getTakeOverId(): string|null {

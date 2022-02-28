@@ -58,15 +58,9 @@ var BillingMethod = /** @class */ (function () {
         return true;
     };
     BillingMethod.createGrn = function (accountName, billingMethodName) {
-        if (accountName == null || accountName === '') {
-            return null;
-        }
-        if (billingMethodName == null || billingMethodName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{accountName}', accountName)
-            .replace('{billingMethodName}', billingMethodName);
+            .replace('{accountName}', accountName !== null && accountName !== void 0 ? accountName : '')
+            .replace('{billingMethodName}', billingMethodName !== null && billingMethodName !== void 0 ? billingMethodName : '');
     };
     BillingMethod.prototype.getBillingMethodId = function () {
         return this.billingMethodId;

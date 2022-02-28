@@ -122,27 +122,12 @@ export default class Message implements IModel {
         roomName: string|null,
         messageName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (roomName == null || roomName === '') {
-            return null;
-        }
-        if (messageName == null || messageName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{roomName}', roomName!)
-            .replace('{messageName}', messageName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{roomName}', roomName ?? '')
+            .replace('{messageName}', messageName ?? '');
     }
 
     public getMessageId(): string|null {

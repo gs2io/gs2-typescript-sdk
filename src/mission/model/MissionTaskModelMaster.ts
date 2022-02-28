@@ -127,27 +127,12 @@ export default class MissionTaskModelMaster implements IModel {
         missionGroupName: string|null,
         missionTaskName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (missionGroupName == null || missionGroupName === '') {
-            return null;
-        }
-        if (missionTaskName == null || missionTaskName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{missionGroupName}', missionGroupName!)
-            .replace('{missionTaskName}', missionTaskName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{missionGroupName}', missionGroupName ?? '')
+            .replace('{missionTaskName}', missionTaskName ?? '');
     }
 
     public getMissionTaskId(): string|null {

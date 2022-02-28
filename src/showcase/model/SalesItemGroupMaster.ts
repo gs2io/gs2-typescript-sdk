@@ -100,23 +100,11 @@ export default class SalesItemGroupMaster implements IModel {
         namespaceName: string|null,
         salesItemGroupName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (salesItemGroupName == null || salesItemGroupName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{salesItemGroupName}', salesItemGroupName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{salesItemGroupName}', salesItemGroupName ?? '');
     }
 
     public getSalesItemGroupId(): string|null {

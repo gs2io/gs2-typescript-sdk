@@ -110,27 +110,12 @@ var Stamina = /** @class */ (function () {
         return true;
     };
     Stamina.createGrn = function (region, ownerId, namespaceName, userId, staminaName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (userId == null || userId === '') {
-            return null;
-        }
-        if (staminaName == null || staminaName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{userId}', userId)
-            .replace('{staminaName}', staminaName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{userId}', userId !== null && userId !== void 0 ? userId : '')
+            .replace('{staminaName}', staminaName !== null && staminaName !== void 0 ? staminaName : '');
     };
     Stamina.prototype.getStaminaId = function () {
         return this.staminaId;

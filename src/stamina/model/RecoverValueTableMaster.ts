@@ -101,23 +101,11 @@ export default class RecoverValueTableMaster implements IModel {
         namespaceName: string|null,
         recoverValueTableName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (recoverValueTableName == null || recoverValueTableName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{recoverValueTableName}', recoverValueTableName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{recoverValueTableName}', recoverValueTableName ?? '');
     }
 
     public getRecoverValueTableId(): string|null {

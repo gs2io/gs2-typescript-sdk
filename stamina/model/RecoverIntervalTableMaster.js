@@ -87,23 +87,11 @@ var RecoverIntervalTableMaster = /** @class */ (function () {
         return true;
     };
     RecoverIntervalTableMaster.createGrn = function (region, ownerId, namespaceName, recoverIntervalTableName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (recoverIntervalTableName == null || recoverIntervalTableName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{recoverIntervalTableName}', recoverIntervalTableName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{recoverIntervalTableName}', recoverIntervalTableName !== null && recoverIntervalTableName !== void 0 ? recoverIntervalTableName : '');
     };
     RecoverIntervalTableMaster.prototype.getRecoverIntervalTableId = function () {
         return this.recoverIntervalTableId;

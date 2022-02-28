@@ -87,23 +87,11 @@ var Room = /** @class */ (function () {
         return true;
     };
     Room.createGrn = function (region, ownerId, namespaceName, roomName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (roomName == null || roomName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{roomName}', roomName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{roomName}', roomName !== null && roomName !== void 0 ? roomName : '');
     };
     Room.prototype.getRoomId = function () {
         return this.roomId;

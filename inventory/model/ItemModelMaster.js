@@ -108,27 +108,12 @@ var ItemModelMaster = /** @class */ (function () {
         return true;
     };
     ItemModelMaster.createGrn = function (region, ownerId, namespaceName, inventoryName, itemName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (inventoryName == null || inventoryName === '') {
-            return null;
-        }
-        if (itemName == null || itemName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{inventoryName}', inventoryName)
-            .replace('{itemName}', itemName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{inventoryName}', inventoryName !== null && inventoryName !== void 0 ? inventoryName : '')
+            .replace('{itemName}', itemName !== null && itemName !== void 0 ? itemName : '');
     };
     ItemModelMaster.prototype.getItemModelId = function () {
         return this.itemModelId;

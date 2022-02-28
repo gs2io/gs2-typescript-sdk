@@ -144,31 +144,13 @@ export default class DataObjectHistory implements IModel {
         dataObjectName: string|null,
         generation: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (userId == null || userId === '') {
-            return null;
-        }
-        if (dataObjectName == null || dataObjectName === '') {
-            return null;
-        }
-        if (generation == null || generation === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{userId}', userId!)
-            .replace('{dataObjectName}', dataObjectName!)
-            .replace('{generation}', generation!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{userId}', userId ?? '')
+            .replace('{dataObjectName}', dataObjectName ?? '')
+            .replace('{generation}', generation ?? '');
     }
 
     public getDataObjectHistoryId(): string|null {

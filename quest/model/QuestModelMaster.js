@@ -114,27 +114,12 @@ var QuestModelMaster = /** @class */ (function () {
         return true;
     };
     QuestModelMaster.createGrn = function (region, ownerId, namespaceName, questGroupName, questName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (questGroupName == null || questGroupName === '') {
-            return null;
-        }
-        if (questName == null || questName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{questGroupName}', questGroupName)
-            .replace('{questName}', questName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{questGroupName}', questGroupName !== null && questGroupName !== void 0 ? questGroupName : '')
+            .replace('{questName}', questName !== null && questName !== void 0 ? questName : '');
     };
     QuestModelMaster.prototype.getQuestModelId = function () {
         return this.questModelId;

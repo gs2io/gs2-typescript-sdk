@@ -173,35 +173,14 @@ export default class Score implements IModel {
         scorerUserId: string|null,
         uniqueId: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (userId == null || userId === '') {
-            return null;
-        }
-        if (categoryName == null || categoryName === '') {
-            return null;
-        }
-        if (scorerUserId == null || scorerUserId === '') {
-            return null;
-        }
-        if (uniqueId == null || uniqueId === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{userId}', userId!)
-            .replace('{categoryName}', categoryName!)
-            .replace('{scorerUserId}', scorerUserId!)
-            .replace('{uniqueId}', uniqueId!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{userId}', userId ?? '')
+            .replace('{categoryName}', categoryName ?? '')
+            .replace('{scorerUserId}', scorerUserId ?? '')
+            .replace('{uniqueId}', uniqueId ?? '');
     }
 
     public getScoreId(): string|null {

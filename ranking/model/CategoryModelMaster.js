@@ -96,23 +96,11 @@ var CategoryModelMaster = /** @class */ (function () {
         return true;
     };
     CategoryModelMaster.createGrn = function (region, ownerId, namespaceName, categoryName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (categoryName == null || categoryName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{categoryName}', categoryName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{categoryName}', categoryName !== null && categoryName !== void 0 ? categoryName : '');
     };
     CategoryModelMaster.prototype.getCategoryModelId = function () {
         return this.categoryModelId;

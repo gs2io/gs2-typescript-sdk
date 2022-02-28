@@ -105,23 +105,11 @@ export default class Resource implements IModel {
         stackName: string|null,
         resourceName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (stackName == null || stackName === '') {
-            return null;
-        }
-        if (resourceName == null || resourceName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{stackName}', stackName!)
-            .replace('{resourceName}', resourceName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{stackName}', stackName ?? '')
+            .replace('{resourceName}', resourceName ?? '');
     }
 
     public getResourceId(): string|null {

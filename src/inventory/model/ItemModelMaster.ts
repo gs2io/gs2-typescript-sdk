@@ -125,27 +125,12 @@ export default class ItemModelMaster implements IModel {
         inventoryName: string|null,
         itemName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (inventoryName == null || inventoryName === '') {
-            return null;
-        }
-        if (itemName == null || itemName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{inventoryName}', inventoryName!)
-            .replace('{itemName}', itemName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{inventoryName}', inventoryName ?? '')
+            .replace('{itemName}', itemName ?? '');
     }
 
     public getItemModelId(): string|null {

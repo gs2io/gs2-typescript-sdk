@@ -87,23 +87,11 @@ var RecoverValueTableMaster = /** @class */ (function () {
         return true;
     };
     RecoverValueTableMaster.createGrn = function (region, ownerId, namespaceName, recoverValueTableName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (recoverValueTableName == null || recoverValueTableName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{recoverValueTableName}', recoverValueTableName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{recoverValueTableName}', recoverValueTableName !== null && recoverValueTableName !== void 0 ? recoverValueTableName : '');
     };
     RecoverValueTableMaster.prototype.getRecoverValueTableId = function () {
         return this.recoverValueTableId;

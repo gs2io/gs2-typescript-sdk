@@ -102,23 +102,11 @@ export default class ShowcaseMaster implements IModel {
         namespaceName: string|null,
         showcaseName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (showcaseName == null || showcaseName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{showcaseName}', showcaseName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{showcaseName}', showcaseName ?? '');
     }
 
     public getShowcaseId(): string|null {

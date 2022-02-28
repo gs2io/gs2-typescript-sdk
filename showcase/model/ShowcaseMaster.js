@@ -89,23 +89,11 @@ var ShowcaseMaster = /** @class */ (function () {
         return true;
     };
     ShowcaseMaster.createGrn = function (region, ownerId, namespaceName, showcaseName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (showcaseName == null || showcaseName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{showcaseName}', showcaseName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{showcaseName}', showcaseName !== null && showcaseName !== void 0 ? showcaseName : '');
     };
     ShowcaseMaster.prototype.getShowcaseId = function () {
         return this.showcaseId;

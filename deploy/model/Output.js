@@ -83,23 +83,11 @@ var Output = /** @class */ (function () {
         return true;
     };
     Output.createGrn = function (region, ownerId, stackName, outputName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (stackName == null || stackName === '') {
-            return null;
-        }
-        if (outputName == null || outputName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{stackName}', stackName)
-            .replace('{outputName}', outputName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{stackName}', stackName !== null && stackName !== void 0 ? stackName : '')
+            .replace('{outputName}', outputName !== null && outputName !== void 0 ? outputName : '');
     };
     Output.prototype.getOutputId = function () {
         return this.outputId;

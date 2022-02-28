@@ -61,15 +61,9 @@ export default class SecurityPolicy implements IModel {
         ownerId: string|null,
         securityPolicyName: string|null,
     ): string|null {
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (securityPolicyName == null || securityPolicyName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{ownerId}', ownerId!)
-            .replace('{securityPolicyName}', securityPolicyName!);
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{securityPolicyName}', securityPolicyName ?? '');
     }
 
     public getSecurityPolicyId(): string|null {

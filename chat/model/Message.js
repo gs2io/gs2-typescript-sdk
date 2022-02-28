@@ -105,27 +105,12 @@ var Message = /** @class */ (function () {
         return true;
     };
     Message.createGrn = function (region, ownerId, namespaceName, roomName, messageName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (roomName == null || roomName === '') {
-            return null;
-        }
-        if (messageName == null || messageName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{roomName}', roomName)
-            .replace('{messageName}', messageName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{roomName}', roomName !== null && roomName !== void 0 ? roomName : '')
+            .replace('{messageName}', messageName !== null && messageName !== void 0 ? messageName : '');
     };
     Message.prototype.getMessageId = function () {
         return this.messageId;

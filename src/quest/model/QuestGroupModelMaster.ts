@@ -100,23 +100,11 @@ export default class QuestGroupModelMaster implements IModel {
         namespaceName: string|null,
         questGroupName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (questGroupName == null || questGroupName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{questGroupName}', questGroupName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{questGroupName}', questGroupName ?? '');
     }
 
     public getQuestGroupModelId(): string|null {

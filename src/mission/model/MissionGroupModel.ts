@@ -104,23 +104,11 @@ export default class MissionGroupModel implements IModel {
         namespaceName: string|null,
         missionGroupName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (missionGroupName == null || missionGroupName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{missionGroupName}', missionGroupName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{missionGroupName}', missionGroupName ?? '');
     }
 
     public getMissionGroupId(): string|null {

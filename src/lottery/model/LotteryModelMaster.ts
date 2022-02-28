@@ -103,23 +103,11 @@ export default class LotteryModelMaster implements IModel {
         namespaceName: string|null,
         lotteryName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (lotteryName == null || lotteryName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{lotteryName}', lotteryName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{lotteryName}', lotteryName ?? '');
     }
 
     public getLotteryModelId(): string|null {

@@ -90,23 +90,11 @@ var MissionGroupModel = /** @class */ (function () {
         return true;
     };
     MissionGroupModel.createGrn = function (region, ownerId, namespaceName, missionGroupName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (missionGroupName == null || missionGroupName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{missionGroupName}', missionGroupName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{missionGroupName}', missionGroupName !== null && missionGroupName !== void 0 ? missionGroupName : '');
     };
     MissionGroupModel.prototype.getMissionGroupId = function () {
         return this.missionGroupId;

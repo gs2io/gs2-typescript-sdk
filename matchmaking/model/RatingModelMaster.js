@@ -86,23 +86,11 @@ var RatingModelMaster = /** @class */ (function () {
         return true;
     };
     RatingModelMaster.createGrn = function (region, ownerId, namespaceName, ratingName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (ratingName == null || ratingName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{ratingName}', ratingName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{ratingName}', ratingName !== null && ratingName !== void 0 ? ratingName : '');
     };
     RatingModelMaster.prototype.getRatingModelId = function () {
         return this.ratingModelId;

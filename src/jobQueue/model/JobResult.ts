@@ -145,31 +145,13 @@ export default class JobResult implements IModel {
         jobName: string|null,
         tryNumber: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (userId == null || userId === '') {
-            return null;
-        }
-        if (jobName == null || jobName === '') {
-            return null;
-        }
-        if (tryNumber == null || tryNumber === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{userId}', userId!)
-            .replace('{jobName}', jobName!)
-            .replace('{tryNumber}', tryNumber!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{userId}', userId ?? '')
+            .replace('{jobName}', jobName ?? '')
+            .replace('{tryNumber}', tryNumber ?? '');
     }
 
     public getJobResultId(): string|null {

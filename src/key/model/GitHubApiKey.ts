@@ -99,23 +99,11 @@ export default class GitHubApiKey implements IModel {
         namespaceName: string|null,
         apiKeyName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (apiKeyName == null || apiKeyName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{apiKeyName}', apiKeyName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{apiKeyName}', apiKeyName ?? '');
     }
 
     public getApiKeyId(): string|null {

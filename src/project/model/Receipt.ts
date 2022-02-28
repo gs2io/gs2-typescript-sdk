@@ -63,15 +63,9 @@ export default class Receipt implements IModel {
         accountName: string|null,
         receiptName: string|null,
     ): string|null {
-        if (accountName == null || accountName === '') {
-            return null;
-        }
-        if (receiptName == null || receiptName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{accountName}', accountName!)
-            .replace('{receiptName}', receiptName!);
+            .replace('{accountName}', accountName ?? '')
+            .replace('{receiptName}', receiptName ?? '');
     }
 
     public getReceiptId(): string|null {

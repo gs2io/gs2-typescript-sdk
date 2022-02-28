@@ -98,23 +98,11 @@ export default class MaxStaminaTable implements IModel {
         namespaceName: string|null,
         maxStaminaTableName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (maxStaminaTableName == null || maxStaminaTableName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{maxStaminaTableName}', maxStaminaTableName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{maxStaminaTableName}', maxStaminaTableName ?? '');
     }
 
     public getMaxStaminaTableId(): string|null {

@@ -104,27 +104,12 @@ var TakeOver = /** @class */ (function () {
         return true;
     };
     TakeOver.createGrn = function (region, ownerId, namespaceName, type, userIdentifier) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (type == null || type === '') {
-            return null;
-        }
-        if (userIdentifier == null || userIdentifier === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{type}', type)
-            .replace('{userIdentifier}', userIdentifier);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{type}', type !== null && type !== void 0 ? type : '')
+            .replace('{userIdentifier}', userIdentifier !== null && userIdentifier !== void 0 ? userIdentifier : '');
     };
     TakeOver.prototype.getTakeOverId = function () {
         return this.takeOverId;

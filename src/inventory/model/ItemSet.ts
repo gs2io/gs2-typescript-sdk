@@ -176,35 +176,14 @@ export default class ItemSet implements IModel {
         itemName: string|null,
         itemSetName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (userId == null || userId === '') {
-            return null;
-        }
-        if (inventoryName == null || inventoryName === '') {
-            return null;
-        }
-        if (itemName == null || itemName === '') {
-            return null;
-        }
-        if (itemSetName == null || itemSetName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{userId}', userId!)
-            .replace('{inventoryName}', inventoryName!)
-            .replace('{itemName}', itemName!)
-            .replace('{itemSetName}', itemSetName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{userId}', userId ?? '')
+            .replace('{inventoryName}', inventoryName ?? '')
+            .replace('{itemName}', itemName ?? '')
+            .replace('{itemSetName}', itemSetName ?? '');
     }
 
     public getItemSetId(): string|null {

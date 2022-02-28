@@ -99,23 +99,11 @@ export default class PrizeTable implements IModel {
         namespaceName: string|null,
         prizeTableName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (prizeTableName == null || prizeTableName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{prizeTableName}', prizeTableName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{prizeTableName}', prizeTableName ?? '');
     }
 
     public getPrizeTableId(): string|null {

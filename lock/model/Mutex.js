@@ -103,27 +103,12 @@ var Mutex = /** @class */ (function () {
         return true;
     };
     Mutex.createGrn = function (region, ownerId, namespaceName, userId, propertyId) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (userId == null || userId === '') {
-            return null;
-        }
-        if (propertyId == null || propertyId === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{userId}', userId)
-            .replace('{propertyId}', propertyId);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{userId}', userId !== null && userId !== void 0 ? userId : '')
+            .replace('{propertyId}', propertyId !== null && propertyId !== void 0 ? propertyId : '');
     };
     Mutex.prototype.getMutexId = function () {
         return this.mutexId;

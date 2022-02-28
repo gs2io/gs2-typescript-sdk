@@ -97,23 +97,11 @@ var EventMaster = /** @class */ (function () {
         return true;
     };
     EventMaster.createGrn = function (region, ownerId, namespaceName, eventName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (eventName == null || eventName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{eventName}', eventName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{eventName}', eventName !== null && eventName !== void 0 ? eventName : '');
     };
     EventMaster.prototype.getEventId = function () {
         return this.eventId;

@@ -89,23 +89,11 @@ var LimitModelMaster = /** @class */ (function () {
         return true;
     };
     LimitModelMaster.createGrn = function (region, ownerId, namespaceName, limitName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (limitName == null || limitName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{limitName}', limitName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{limitName}', limitName !== null && limitName !== void 0 ? limitName : '');
     };
     LimitModelMaster.prototype.getLimitModelId = function () {
         return this.limitModelId;

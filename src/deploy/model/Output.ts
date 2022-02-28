@@ -97,23 +97,11 @@ export default class Output implements IModel {
         stackName: string|null,
         outputName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (stackName == null || stackName === '') {
-            return null;
-        }
-        if (outputName == null || outputName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{stackName}', stackName!)
-            .replace('{outputName}', outputName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{stackName}', stackName ?? '')
+            .replace('{outputName}', outputName ?? '');
     }
 
     public getOutputId(): string|null {

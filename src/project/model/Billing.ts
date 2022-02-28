@@ -106,23 +106,11 @@ export default class Billing implements IModel {
         year: string|null,
         month: string|null,
     ): string|null {
-        if (accountName == null || accountName === '') {
-            return null;
-        }
-        if (projectName == null || projectName === '') {
-            return null;
-        }
-        if (year == null || year === '') {
-            return null;
-        }
-        if (month == null || month === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{accountName}', accountName!)
-            .replace('{projectName}', projectName!)
-            .replace('{year}', year!)
-            .replace('{month}', month!);
+            .replace('{accountName}', accountName ?? '')
+            .replace('{projectName}', projectName ?? '')
+            .replace('{year}', year ?? '')
+            .replace('{month}', month ?? '');
     }
 
     public getBillingId(): string|null {

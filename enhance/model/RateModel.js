@@ -91,23 +91,11 @@ var RateModel = /** @class */ (function () {
         return true;
     };
     RateModel.createGrn = function (region, ownerId, namespaceName, rateName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (rateName == null || rateName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{rateName}', rateName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{rateName}', rateName !== null && rateName !== void 0 ? rateName : '');
     };
     RateModel.prototype.getRateModelId = function () {
         return this.rateModelId;

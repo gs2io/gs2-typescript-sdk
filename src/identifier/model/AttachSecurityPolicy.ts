@@ -58,15 +58,9 @@ export default class AttachSecurityPolicy implements IModel {
         ownerId: string|null,
         userName: string|null,
     ): string|null {
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (userName == null || userName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{ownerId}', ownerId!)
-            .replace('{userName}', userName!);
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{userName}', userName ?? '');
     }
 
     public getUserId(): string|null {

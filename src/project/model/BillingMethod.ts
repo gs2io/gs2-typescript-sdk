@@ -66,15 +66,9 @@ export default class BillingMethod implements IModel {
         accountName: string|null,
         billingMethodName: string|null,
     ): string|null {
-        if (accountName == null || accountName === '') {
-            return null;
-        }
-        if (billingMethodName == null || billingMethodName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{accountName}', accountName!)
-            .replace('{billingMethodName}', billingMethodName!);
+            .replace('{accountName}', accountName ?? '')
+            .replace('{billingMethodName}', billingMethodName ?? '');
     }
 
     public getBillingMethodId(): string|null {

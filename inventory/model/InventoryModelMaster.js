@@ -88,23 +88,11 @@ var InventoryModelMaster = /** @class */ (function () {
         return true;
     };
     InventoryModelMaster.createGrn = function (region, ownerId, namespaceName, inventoryName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (inventoryName == null || inventoryName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{inventoryName}', inventoryName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{inventoryName}', inventoryName !== null && inventoryName !== void 0 ? inventoryName : '');
     };
     InventoryModelMaster.prototype.getInventoryModelId = function () {
         return this.inventoryModelId;

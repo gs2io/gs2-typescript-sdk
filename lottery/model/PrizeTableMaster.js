@@ -88,23 +88,11 @@ var PrizeTableMaster = /** @class */ (function () {
         return true;
     };
     PrizeTableMaster.createGrn = function (region, ownerId, namespaceName, prizeTableName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (prizeTableName == null || prizeTableName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{prizeTableName}', prizeTableName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{prizeTableName}', prizeTableName !== null && prizeTableName !== void 0 ? prizeTableName : '');
     };
     PrizeTableMaster.prototype.getPrizeTableId = function () {
         return this.prizeTableId;

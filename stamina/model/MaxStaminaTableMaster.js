@@ -87,23 +87,11 @@ var MaxStaminaTableMaster = /** @class */ (function () {
         return true;
     };
     MaxStaminaTableMaster.createGrn = function (region, ownerId, namespaceName, maxStaminaTableName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (maxStaminaTableName == null || maxStaminaTableName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{maxStaminaTableName}', maxStaminaTableName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{maxStaminaTableName}', maxStaminaTableName !== null && maxStaminaTableName !== void 0 ? maxStaminaTableName : '');
     };
     MaxStaminaTableMaster.prototype.getMaxStaminaTableId = function () {
         return this.maxStaminaTableId;

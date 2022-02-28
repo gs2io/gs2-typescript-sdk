@@ -66,15 +66,9 @@ export default class Project implements IModel {
         accountName: string|null,
         projectName: string|null,
     ): string|null {
-        if (accountName == null || accountName === '') {
-            return null;
-        }
-        if (projectName == null || projectName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{accountName}', accountName!)
-            .replace('{projectName}', projectName!);
+            .replace('{accountName}', accountName ?? '')
+            .replace('{projectName}', projectName ?? '');
     }
 
     public getProjectId(): string|null {

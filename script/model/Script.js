@@ -85,23 +85,11 @@ var Script = /** @class */ (function () {
         return true;
     };
     Script.createGrn = function (region, ownerId, namespaceName, scriptName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (scriptName == null || scriptName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{scriptName}', scriptName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{scriptName}', scriptName !== null && scriptName !== void 0 ? scriptName : '');
     };
     Script.prototype.getScriptId = function () {
         return this.scriptId;

@@ -84,23 +84,11 @@ var Key = /** @class */ (function () {
         return true;
     };
     Key.createGrn = function (region, ownerId, namespaceName, keyName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (keyName == null || keyName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{keyName}', keyName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{keyName}', keyName !== null && keyName !== void 0 ? keyName : '');
     };
     Key.prototype.getKeyId = function () {
         return this.keyId;

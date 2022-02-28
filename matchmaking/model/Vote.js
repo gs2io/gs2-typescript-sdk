@@ -106,27 +106,12 @@ var Vote = /** @class */ (function () {
         return true;
     };
     Vote.createGrn = function (region, ownerId, namespaceName, ratingName, gatheringName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (ratingName == null || ratingName === '') {
-            return null;
-        }
-        if (gatheringName == null || gatheringName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{ratingName}', ratingName)
-            .replace('{gatheringName}', gatheringName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{ratingName}', ratingName !== null && ratingName !== void 0 ? ratingName : '')
+            .replace('{gatheringName}', gatheringName !== null && gatheringName !== void 0 ? gatheringName : '');
     };
     Vote.prototype.getVoteId = function () {
         return this.voteId;

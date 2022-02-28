@@ -93,23 +93,11 @@ var StaminaModelMaster = /** @class */ (function () {
         return true;
     };
     StaminaModelMaster.createGrn = function (region, ownerId, namespaceName, staminaName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (staminaName == null || staminaName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{staminaName}', staminaName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{staminaName}', staminaName !== null && staminaName !== void 0 ? staminaName : '');
     };
     StaminaModelMaster.prototype.getStaminaModelId = function () {
         return this.staminaModelId;

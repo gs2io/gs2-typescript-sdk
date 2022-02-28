@@ -104,27 +104,12 @@ var Rating = /** @class */ (function () {
         return true;
     };
     Rating.createGrn = function (region, ownerId, namespaceName, userId, ratingName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (userId == null || userId === '') {
-            return null;
-        }
-        if (ratingName == null || ratingName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{userId}', userId)
-            .replace('{ratingName}', ratingName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{userId}', userId !== null && userId !== void 0 ? userId : '')
+            .replace('{ratingName}', ratingName !== null && ratingName !== void 0 ? ratingName : '');
     };
     Rating.prototype.getRatingId = function () {
         return this.ratingId;

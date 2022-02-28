@@ -124,27 +124,12 @@ export default class Vote implements IModel {
         ratingName: string|null,
         gatheringName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (ratingName == null || ratingName === '') {
-            return null;
-        }
-        if (gatheringName == null || gatheringName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{ratingName}', ratingName!)
-            .replace('{gatheringName}', gatheringName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{ratingName}', ratingName ?? '')
+            .replace('{gatheringName}', gatheringName ?? '');
     }
 
     public getVoteId(): string|null {

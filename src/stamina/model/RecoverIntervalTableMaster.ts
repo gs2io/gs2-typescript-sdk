@@ -101,23 +101,11 @@ export default class RecoverIntervalTableMaster implements IModel {
         namespaceName: string|null,
         recoverIntervalTableName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (recoverIntervalTableName == null || recoverIntervalTableName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{recoverIntervalTableName}', recoverIntervalTableName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{recoverIntervalTableName}', recoverIntervalTableName ?? '');
     }
 
     public getRecoverIntervalTableId(): string|null {

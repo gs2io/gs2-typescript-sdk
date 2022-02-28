@@ -101,23 +101,11 @@ export default class GlobalMessage implements IModel {
         namespaceName: string|null,
         globalMessageName: string|null,
     ): string|null {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (globalMessageName == null || globalMessageName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region!)
-            .replace('{ownerId}', ownerId!)
-            .replace('{namespaceName}', namespaceName!)
-            .replace('{globalMessageName}', globalMessageName!);
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{globalMessageName}', globalMessageName ?? '');
     }
 
     public getGlobalMessageId(): string|null {

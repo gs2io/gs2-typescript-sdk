@@ -48,11 +48,8 @@ export default class Account implements IModel {
     public static createGrn(
         accountName: string|null,
     ): string|null {
-        if (accountName == null || accountName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{accountName}', accountName!);
+            .replace('{accountName}', accountName ?? '');
     }
 
     public getAccountId(): string|null {

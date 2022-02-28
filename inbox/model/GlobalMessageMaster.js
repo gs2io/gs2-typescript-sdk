@@ -89,23 +89,11 @@ var GlobalMessageMaster = /** @class */ (function () {
         return true;
     };
     GlobalMessageMaster.createGrn = function (region, ownerId, namespaceName, globalMessageName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (globalMessageName == null || globalMessageName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{globalMessageName}', globalMessageName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{globalMessageName}', globalMessageName !== null && globalMessageName !== void 0 ? globalMessageName : '');
     };
     GlobalMessageMaster.prototype.getGlobalMessageId = function () {
         return this.globalMessageId;

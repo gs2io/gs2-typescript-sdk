@@ -90,23 +90,11 @@ var SalesItemMaster = /** @class */ (function () {
         return true;
     };
     SalesItemMaster.createGrn = function (region, ownerId, namespaceName, salesItemName) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (salesItemName == null || salesItemName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{salesItemName}', salesItemName);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{salesItemName}', salesItemName !== null && salesItemName !== void 0 ? salesItemName : '');
     };
     SalesItemMaster.prototype.getSalesItemId = function () {
         return this.salesItemId;

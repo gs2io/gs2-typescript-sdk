@@ -55,15 +55,9 @@ var Receipt = /** @class */ (function () {
         return true;
     };
     Receipt.createGrn = function (accountName, receiptName) {
-        if (accountName == null || accountName === '') {
-            return null;
-        }
-        if (receiptName == null || receiptName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{accountName}', accountName)
-            .replace('{receiptName}', receiptName);
+            .replace('{accountName}', accountName !== null && accountName !== void 0 ? accountName : '')
+            .replace('{receiptName}', receiptName !== null && receiptName !== void 0 ? receiptName : '');
     };
     Receipt.prototype.getReceiptId = function () {
         return this.receiptId;

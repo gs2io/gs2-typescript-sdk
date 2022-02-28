@@ -127,31 +127,13 @@ var Form = /** @class */ (function () {
         return true;
     };
     Form.createGrn = function (region, ownerId, namespaceName, userId, moldName, index) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (userId == null || userId === '') {
-            return null;
-        }
-        if (moldName == null || moldName === '') {
-            return null;
-        }
-        if (index == null || index === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{userId}', userId)
-            .replace('{moldName}', moldName)
-            .replace('{index}', index);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{userId}', userId !== null && userId !== void 0 ? userId : '')
+            .replace('{moldName}', moldName !== null && moldName !== void 0 ? moldName : '')
+            .replace('{index}', index !== null && index !== void 0 ? index : '');
     };
     Form.prototype.getFormId = function () {
         return this.formId;

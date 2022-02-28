@@ -150,35 +150,14 @@ var Score = /** @class */ (function () {
         return true;
     };
     Score.createGrn = function (region, ownerId, namespaceName, userId, categoryName, scorerUserId, uniqueId) {
-        if (region == null || region === '') {
-            return null;
-        }
-        if (ownerId == null || ownerId === '') {
-            return null;
-        }
-        if (namespaceName == null || namespaceName === '') {
-            return null;
-        }
-        if (userId == null || userId === '') {
-            return null;
-        }
-        if (categoryName == null || categoryName === '') {
-            return null;
-        }
-        if (scorerUserId == null || scorerUserId === '') {
-            return null;
-        }
-        if (uniqueId == null || uniqueId === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{region}', region)
-            .replace('{ownerId}', ownerId)
-            .replace('{namespaceName}', namespaceName)
-            .replace('{userId}', userId)
-            .replace('{categoryName}', categoryName)
-            .replace('{scorerUserId}', scorerUserId)
-            .replace('{uniqueId}', uniqueId);
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{userId}', userId !== null && userId !== void 0 ? userId : '')
+            .replace('{categoryName}', categoryName !== null && categoryName !== void 0 ? categoryName : '')
+            .replace('{scorerUserId}', scorerUserId !== null && scorerUserId !== void 0 ? scorerUserId : '')
+            .replace('{uniqueId}', uniqueId !== null && uniqueId !== void 0 ? uniqueId : '');
     };
     Score.prototype.getScoreId = function () {
         return this.scoreId;

@@ -58,15 +58,9 @@ var Project = /** @class */ (function () {
         return true;
     };
     Project.createGrn = function (accountName, projectName) {
-        if (accountName == null || accountName === '') {
-            return null;
-        }
-        if (projectName == null || projectName === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{accountName}', accountName)
-            .replace('{projectName}', projectName);
+            .replace('{accountName}', accountName !== null && accountName !== void 0 ? accountName : '')
+            .replace('{projectName}', projectName !== null && projectName !== void 0 ? projectName : '');
     };
     Project.prototype.getProjectId = function () {
         return this.projectId;

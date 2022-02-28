@@ -92,23 +92,11 @@ var Billing = /** @class */ (function () {
         return true;
     };
     Billing.createGrn = function (accountName, projectName, year, month) {
-        if (accountName == null || accountName === '') {
-            return null;
-        }
-        if (projectName == null || projectName === '') {
-            return null;
-        }
-        if (year == null || year === '') {
-            return null;
-        }
-        if (month == null || month === '') {
-            return null;
-        }
         return grnFormat
-            .replace('{accountName}', accountName)
-            .replace('{projectName}', projectName)
-            .replace('{year}', year)
-            .replace('{month}', month);
+            .replace('{accountName}', accountName !== null && accountName !== void 0 ? accountName : '')
+            .replace('{projectName}', projectName !== null && projectName !== void 0 ? projectName : '')
+            .replace('{year}', year !== null && year !== void 0 ? year : '')
+            .replace('{month}', month !== null && month !== void 0 ? month : '');
     };
     Billing.prototype.getBillingId = function () {
         return this.billingId;
