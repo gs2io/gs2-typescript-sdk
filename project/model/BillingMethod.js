@@ -49,10 +49,10 @@ var BillingMethod = /** @class */ (function () {
         return null;
     };
     BillingMethod.isValid = function (grn) {
-        if (this.getAccountName(grn) == null) {
+        if (this.getAccountName(grn) == null || this.getAccountName(grn) === '') {
             return false;
         }
-        if (this.getBillingMethodName(grn) == null) {
+        if (this.getBillingMethodName(grn) == null || this.getBillingMethodName(grn) === '') {
             return false;
         }
         return true;

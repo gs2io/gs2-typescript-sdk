@@ -77,16 +77,16 @@ var Resource = /** @class */ (function () {
         return null;
     };
     Resource.isValid = function (grn) {
-        if (this.getRegion(grn) == null) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
             return false;
         }
-        if (this.getOwnerId(grn) == null) {
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
             return false;
         }
-        if (this.getStackName(grn) == null) {
+        if (this.getStackName(grn) == null || this.getStackName(grn) === '') {
             return false;
         }
-        if (this.getResourceName(grn) == null) {
+        if (this.getResourceName(grn) == null || this.getResourceName(grn) === '') {
             return false;
         }
         return true;

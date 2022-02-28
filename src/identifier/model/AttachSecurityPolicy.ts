@@ -45,10 +45,10 @@ export default class AttachSecurityPolicy implements IModel {
     }
 
     public static isValid(grn: string): boolean {
-        if (this.getOwnerId(grn) == null) {
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
             return false;
         }
-        if (this.getUserName(grn) == null) {
+        if (this.getUserName(grn) == null || this.getUserName(grn) === '') {
             return false;
         }
         return true;

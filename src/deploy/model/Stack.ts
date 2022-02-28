@@ -63,13 +63,13 @@ export default class Stack implements IModel {
     }
 
     public static isValid(grn: string): boolean {
-        if (this.getRegion(grn) == null) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
             return false;
         }
-        if (this.getOwnerId(grn) == null) {
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
             return false;
         }
-        if (this.getStackName(grn) == null) {
+        if (this.getStackName(grn) == null || this.getStackName(grn) === '') {
             return false;
         }
         return true;

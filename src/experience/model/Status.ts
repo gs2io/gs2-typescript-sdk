@@ -119,22 +119,22 @@ export default class Status implements IModel {
     }
 
     public static isValid(grn: string): boolean {
-        if (this.getRegion(grn) == null) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
             return false;
         }
-        if (this.getOwnerId(grn) == null) {
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
             return false;
         }
-        if (this.getNamespaceName(grn) == null) {
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getUserId(grn) == null) {
+        if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
             return false;
         }
-        if (this.getExperienceName(grn) == null) {
+        if (this.getExperienceName(grn) == null || this.getExperienceName(grn) === '') {
             return false;
         }
-        if (this.getPropertyId(grn) == null) {
+        if (this.getPropertyId(grn) == null || this.getPropertyId(grn) === '') {
             return false;
         }
         return true;

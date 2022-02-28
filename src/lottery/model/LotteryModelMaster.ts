@@ -82,16 +82,16 @@ export default class LotteryModelMaster implements IModel {
     }
 
     public static isValid(grn: string): boolean {
-        if (this.getRegion(grn) == null) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
             return false;
         }
-        if (this.getOwnerId(grn) == null) {
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
             return false;
         }
-        if (this.getNamespaceName(grn) == null) {
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getLotteryName(grn) == null) {
+        if (this.getLotteryName(grn) == null || this.getLotteryName(grn) === '') {
             return false;
         }
         return true;

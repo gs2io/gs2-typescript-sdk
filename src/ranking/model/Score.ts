@@ -140,25 +140,25 @@ export default class Score implements IModel {
     }
 
     public static isValid(grn: string): boolean {
-        if (this.getRegion(grn) == null) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
             return false;
         }
-        if (this.getOwnerId(grn) == null) {
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
             return false;
         }
-        if (this.getNamespaceName(grn) == null) {
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getUserId(grn) == null) {
+        if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
             return false;
         }
-        if (this.getCategoryName(grn) == null) {
+        if (this.getCategoryName(grn) == null || this.getCategoryName(grn) === '') {
             return false;
         }
-        if (this.getScorerUserId(grn) == null) {
+        if (this.getScorerUserId(grn) == null || this.getScorerUserId(grn) === '') {
             return false;
         }
-        if (this.getUniqueId(grn) == null) {
+        if (this.getUniqueId(grn) == null || this.getUniqueId(grn) === '') {
             return false;
         }
         return true;

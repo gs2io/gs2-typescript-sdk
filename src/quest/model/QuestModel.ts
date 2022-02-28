@@ -101,19 +101,19 @@ export default class QuestModel implements IModel {
     }
 
     public static isValid(grn: string): boolean {
-        if (this.getRegion(grn) == null) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
             return false;
         }
-        if (this.getOwnerId(grn) == null) {
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
             return false;
         }
-        if (this.getNamespaceName(grn) == null) {
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getQuestGroupName(grn) == null) {
+        if (this.getQuestGroupName(grn) == null || this.getQuestGroupName(grn) === '') {
             return false;
         }
-        if (this.getQuestName(grn) == null) {
+        if (this.getQuestName(grn) == null || this.getQuestName(grn) === '') {
             return false;
         }
         return true;

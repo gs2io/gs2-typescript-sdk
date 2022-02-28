@@ -104,22 +104,22 @@ var JobResult = /** @class */ (function () {
         return null;
     };
     JobResult.isValid = function (grn) {
-        if (this.getRegion(grn) == null) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
             return false;
         }
-        if (this.getOwnerId(grn) == null) {
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
             return false;
         }
-        if (this.getNamespaceName(grn) == null) {
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getUserId(grn) == null) {
+        if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
             return false;
         }
-        if (this.getJobName(grn) == null) {
+        if (this.getJobName(grn) == null || this.getJobName(grn) === '') {
             return false;
         }
-        if (this.getTryNumber(grn) == null) {
+        if (this.getTryNumber(grn) == null || this.getTryNumber(grn) === '') {
             return false;
         }
         return true;

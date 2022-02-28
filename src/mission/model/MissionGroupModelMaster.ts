@@ -83,16 +83,16 @@ export default class MissionGroupModelMaster implements IModel {
     }
 
     public static isValid(grn: string): boolean {
-        if (this.getRegion(grn) == null) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
             return false;
         }
-        if (this.getOwnerId(grn) == null) {
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
             return false;
         }
-        if (this.getNamespaceName(grn) == null) {
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getMissionGroupName(grn) == null) {
+        if (this.getMissionGroupName(grn) == null || this.getMissionGroupName(grn) === '') {
             return false;
         }
         return true;

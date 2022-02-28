@@ -44,10 +44,10 @@ var SecurityPolicy = /** @class */ (function () {
         return null;
     };
     SecurityPolicy.isValid = function (grn) {
-        if (this.getOwnerId(grn) == null) {
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
             return false;
         }
-        if (this.getSecurityPolicyName(grn) == null) {
+        if (this.getSecurityPolicyName(grn) == null || this.getSecurityPolicyName(grn) === '') {
             return false;
         }
         return true;

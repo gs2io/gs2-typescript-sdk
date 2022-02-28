@@ -85,16 +85,16 @@ export default class Billing implements IModel {
     }
 
     public static isValid(grn: string): boolean {
-        if (this.getAccountName(grn) == null) {
+        if (this.getAccountName(grn) == null || this.getAccountName(grn) === '') {
             return false;
         }
-        if (this.getProjectName(grn) == null) {
+        if (this.getProjectName(grn) == null || this.getProjectName(grn) === '') {
             return false;
         }
-        if (this.getYear(grn) == null) {
+        if (this.getYear(grn) == null || this.getYear(grn) === '') {
             return false;
         }
-        if (this.getMonth(grn) == null) {
+        if (this.getMonth(grn) == null || this.getMonth(grn) === '') {
             return false;
         }
         return true;

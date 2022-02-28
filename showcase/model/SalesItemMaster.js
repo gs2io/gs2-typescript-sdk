@@ -75,16 +75,16 @@ var SalesItemMaster = /** @class */ (function () {
         return null;
     };
     SalesItemMaster.isValid = function (grn) {
-        if (this.getRegion(grn) == null) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
             return false;
         }
-        if (this.getOwnerId(grn) == null) {
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
             return false;
         }
-        if (this.getNamespaceName(grn) == null) {
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getSalesItemName(grn) == null) {
+        if (this.getSalesItemName(grn) == null || this.getSalesItemName(grn) === '') {
             return false;
         }
         return true;

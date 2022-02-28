@@ -53,10 +53,10 @@ export default class Project implements IModel {
     }
 
     public static isValid(grn: string): boolean {
-        if (this.getAccountName(grn) == null) {
+        if (this.getAccountName(grn) == null || this.getAccountName(grn) === '') {
             return false;
         }
-        if (this.getProjectName(grn) == null) {
+        if (this.getProjectName(grn) == null || this.getProjectName(grn) === '') {
             return false;
         }
         return true;

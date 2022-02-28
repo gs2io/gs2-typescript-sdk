@@ -39,7 +39,7 @@ export default class Account implements IModel {
     }
 
     public static isValid(grn: string): boolean {
-        if (this.getAccountName(grn) == null) {
+        if (this.getAccountName(grn) == null || this.getAccountName(grn) === '') {
             return false;
         }
         return true;

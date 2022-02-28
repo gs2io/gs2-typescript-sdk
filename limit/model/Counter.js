@@ -106,22 +106,22 @@ var Counter = /** @class */ (function () {
         return null;
     };
     Counter.isValid = function (grn) {
-        if (this.getRegion(grn) == null) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
             return false;
         }
-        if (this.getOwnerId(grn) == null) {
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
             return false;
         }
-        if (this.getNamespaceName(grn) == null) {
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getUserId(grn) == null) {
+        if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
             return false;
         }
-        if (this.getLimitName(grn) == null) {
+        if (this.getLimitName(grn) == null || this.getLimitName(grn) === '') {
             return false;
         }
-        if (this.getCounterName(grn) == null) {
+        if (this.getCounterName(grn) == null || this.getCounterName(grn) === '') {
             return false;
         }
         return true;

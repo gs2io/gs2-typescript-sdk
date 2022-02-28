@@ -41,10 +41,10 @@ var Password = /** @class */ (function () {
         return null;
     };
     Password.isValid = function (grn) {
-        if (this.getOwnerId(grn) == null) {
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
             return false;
         }
-        if (this.getUserName(grn) == null) {
+        if (this.getUserName(grn) == null || this.getUserName(grn) === '') {
             return false;
         }
         return true;

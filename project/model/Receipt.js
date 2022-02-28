@@ -46,10 +46,10 @@ var Receipt = /** @class */ (function () {
         return null;
     };
     Receipt.isValid = function (grn) {
-        if (this.getAccountName(grn) == null) {
+        if (this.getAccountName(grn) == null || this.getAccountName(grn) === '') {
             return false;
         }
-        if (this.getReceiptName(grn) == null) {
+        if (this.getReceiptName(grn) == null || this.getReceiptName(grn) === '') {
             return false;
         }
         return true;

@@ -48,10 +48,10 @@ export default class SecurityPolicy implements IModel {
     }
 
     public static isValid(grn: string): boolean {
-        if (this.getOwnerId(grn) == null) {
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
             return false;
         }
-        if (this.getSecurityPolicyName(grn) == null) {
+        if (this.getSecurityPolicyName(grn) == null || this.getSecurityPolicyName(grn) === '') {
             return false;
         }
         return true;

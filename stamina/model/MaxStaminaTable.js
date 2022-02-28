@@ -69,16 +69,16 @@ var MaxStaminaTable = /** @class */ (function () {
         return null;
     };
     MaxStaminaTable.isValid = function (grn) {
-        if (this.getRegion(grn) == null) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
             return false;
         }
-        if (this.getOwnerId(grn) == null) {
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
             return false;
         }
-        if (this.getNamespaceName(grn) == null) {
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getMaxStaminaTableName(grn) == null) {
+        if (this.getMaxStaminaTableName(grn) == null || this.getMaxStaminaTableName(grn) === '') {
             return false;
         }
         return true;

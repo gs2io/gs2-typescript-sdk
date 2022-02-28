@@ -37,7 +37,7 @@ var Account = /** @class */ (function () {
         return null;
     };
     Account.isValid = function (grn) {
-        if (this.getAccountName(grn) == null) {
+        if (this.getAccountName(grn) == null || this.getAccountName(grn) === '') {
             return false;
         }
         return true;

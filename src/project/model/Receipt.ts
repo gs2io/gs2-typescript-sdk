@@ -50,10 +50,10 @@ export default class Receipt implements IModel {
     }
 
     public static isValid(grn: string): boolean {
-        if (this.getAccountName(grn) == null) {
+        if (this.getAccountName(grn) == null || this.getAccountName(grn) === '') {
             return false;
         }
-        if (this.getReceiptName(grn) == null) {
+        if (this.getReceiptName(grn) == null || this.getReceiptName(grn) === '') {
             return false;
         }
         return true;

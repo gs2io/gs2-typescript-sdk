@@ -117,22 +117,22 @@ export default class Form implements IModel {
     }
 
     public static isValid(grn: string): boolean {
-        if (this.getRegion(grn) == null) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
             return false;
         }
-        if (this.getOwnerId(grn) == null) {
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
             return false;
         }
-        if (this.getNamespaceName(grn) == null) {
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getUserId(grn) == null) {
+        if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
             return false;
         }
-        if (this.getMoldName(grn) == null) {
+        if (this.getMoldName(grn) == null || this.getMoldName(grn) === '') {
             return false;
         }
-        if (this.getIndex(grn) == null) {
+        if (this.getIndex(grn) == null || this.getIndex(grn) === '') {
             return false;
         }
         return true;

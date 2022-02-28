@@ -82,16 +82,16 @@ var EventMaster = /** @class */ (function () {
         return null;
     };
     EventMaster.isValid = function (grn) {
-        if (this.getRegion(grn) == null) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
             return false;
         }
-        if (this.getOwnerId(grn) == null) {
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
             return false;
         }
-        if (this.getNamespaceName(grn) == null) {
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getEventName(grn) == null) {
+        if (this.getEventName(grn) == null || this.getEventName(grn) === '') {
             return false;
         }
         return true;

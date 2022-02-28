@@ -70,16 +70,16 @@ var InventoryModel = /** @class */ (function () {
         return null;
     };
     InventoryModel.isValid = function (grn) {
-        if (this.getRegion(grn) == null) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
             return false;
         }
-        if (this.getOwnerId(grn) == null) {
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
             return false;
         }
-        if (this.getNamespaceName(grn) == null) {
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getInventoryName(grn) == null) {
+        if (this.getInventoryName(grn) == null || this.getInventoryName(grn) === '') {
             return false;
         }
         return true;

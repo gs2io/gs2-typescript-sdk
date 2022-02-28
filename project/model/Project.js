@@ -49,10 +49,10 @@ var Project = /** @class */ (function () {
         return null;
     };
     Project.isValid = function (grn) {
-        if (this.getAccountName(grn) == null) {
+        if (this.getAccountName(grn) == null || this.getAccountName(grn) === '') {
             return false;
         }
-        if (this.getProjectName(grn) == null) {
+        if (this.getProjectName(grn) == null || this.getProjectName(grn) === '') {
             return false;
         }
         return true;
