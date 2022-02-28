@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var ConsumeAction_1 = (0, tslib_1.__importDefault)(require("./ConsumeAction"));
 var AcquireAction_1 = (0, tslib_1.__importDefault)(require("./AcquireAction"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:showcase:{namespaceName}:salesItem:{salesItemName}";
 var SalesItemMaster = /** @class */ (function () {
     function SalesItemMaster() {
         this.salesItemId = null;
@@ -29,6 +30,84 @@ var SalesItemMaster = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    SalesItemMaster.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{salesItemName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    SalesItemMaster.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{salesItemName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    SalesItemMaster.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{salesItemName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    SalesItemMaster.getSalesItemName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{salesItemName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    SalesItemMaster.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getSalesItemName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    SalesItemMaster.createGrn = function (region, ownerId, namespaceName, salesItemName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (salesItemName == null || salesItemName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{salesItemName}', salesItemName);
+    };
     SalesItemMaster.prototype.getSalesItemId = function () {
         return this.salesItemId;
     };

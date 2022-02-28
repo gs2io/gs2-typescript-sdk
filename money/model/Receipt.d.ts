@@ -11,6 +11,13 @@ export default class Receipt implements IModel {
     private total;
     private contentsId;
     private createdAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getTransactionId(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, transactionId: string | null): string | null;
     getReceiptId(): string | null;
     setReceiptId(receiptId: string | null): this;
     withReceiptId(receiptId: string | null): this;

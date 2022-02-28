@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:stamina:{namespaceName}:maxStaminaTable:{maxStaminaTableName}";
 var MaxStaminaTable = /** @class */ (function () {
     function MaxStaminaTable() {
         this.maxStaminaTableId = null;
@@ -23,6 +24,84 @@ var MaxStaminaTable = /** @class */ (function () {
         this.experienceModelId = null;
         this.values = null;
     }
+    MaxStaminaTable.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{maxStaminaTableName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MaxStaminaTable.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{maxStaminaTableName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MaxStaminaTable.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{maxStaminaTableName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MaxStaminaTable.getMaxStaminaTableName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{maxStaminaTableName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MaxStaminaTable.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getMaxStaminaTableName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    MaxStaminaTable.createGrn = function (region, ownerId, namespaceName, maxStaminaTableName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (maxStaminaTableName == null || maxStaminaTableName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{maxStaminaTableName}', maxStaminaTableName);
+    };
     MaxStaminaTable.prototype.getMaxStaminaTableId = function () {
         return this.maxStaminaTableId;
     };

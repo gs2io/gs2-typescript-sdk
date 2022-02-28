@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:limit:{namespaceName}:limit:{limitName}";
 
 export default class LimitModel implements IModel {
     private limitModelId: string|null = null;
@@ -24,6 +25,99 @@ export default class LimitModel implements IModel {
     private resetDayOfMonth: number|null = null;
     private resetDayOfWeek: string|null = null;
     private resetHour: number|null = null;
+
+    public static getRegion(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{limitName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getOwnerId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{limitName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getNamespaceName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{limitName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getLimitName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{limitName}', '(.*)')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static isValid(grn: string): boolean {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getLimitName(grn) == null) {
+            return false;
+        }
+        return true;
+    }
+
+    public static createGrn(
+        region: string|null,
+        ownerId: string|null,
+        namespaceName: string|null,
+        limitName: string|null,
+    ): string|null {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (limitName == null || limitName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region!)
+            .replace('{ownerId}', ownerId!)
+            .replace('{namespaceName}', namespaceName!)
+            .replace('{limitName}', limitName!);
+    }
 
     public getLimitModelId(): string|null {
         return this.limitModelId;

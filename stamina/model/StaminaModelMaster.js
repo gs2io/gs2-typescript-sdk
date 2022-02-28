@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:stamina:{namespaceName}:model:{staminaName}";
 var StaminaModelMaster = /** @class */ (function () {
     function StaminaModelMaster() {
         this.staminaModelId = null;
@@ -32,6 +33,84 @@ var StaminaModelMaster = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    StaminaModelMaster.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{staminaName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    StaminaModelMaster.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{staminaName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    StaminaModelMaster.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{staminaName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    StaminaModelMaster.getStaminaName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{staminaName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    StaminaModelMaster.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getStaminaName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    StaminaModelMaster.createGrn = function (region, ownerId, namespaceName, staminaName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (staminaName == null || staminaName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{staminaName}', staminaName);
+    };
     StaminaModelMaster.prototype.getStaminaModelId = function () {
         return this.staminaModelId;
     };

@@ -8,6 +8,12 @@ export default class DistributorModelMaster implements IModel {
     private whiteListTargetIds;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getDistributorName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, distributorName: string | null): string | null;
     getDistributorModelId(): string | null;
     setDistributorModelId(distributorModelId: string | null): this;
     withDistributorModelId(distributorModelId: string | null): this;

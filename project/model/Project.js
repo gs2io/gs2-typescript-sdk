@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:::gs2:account:{accountName}:project:{projectName}";
 var Project = /** @class */ (function () {
     function Project() {
         this.projectId = null;
@@ -29,6 +30,44 @@ var Project = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    Project.getAccountName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{accountName}', '(.*)')
+            .replace('{projectName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Project.getProjectName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{accountName}', '.*')
+            .replace('{projectName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Project.isValid = function (grn) {
+        if (this.getAccountName(grn) == null) {
+            return false;
+        }
+        if (this.getProjectName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Project.createGrn = function (accountName, projectName) {
+        if (accountName == null || accountName === '') {
+            return null;
+        }
+        if (projectName == null || projectName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{accountName}', accountName)
+            .replace('{projectName}', projectName);
+    };
     Project.prototype.getProjectId = function () {
         return this.projectId;
     };

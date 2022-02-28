@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 import AcquireAction from './AcquireAction';
 import Prize from './Prize';
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:lottery:{namespaceName}:table:{prizeTableName}";
 
 export default class PrizeTableMaster implements IModel {
     private prizeTableId: string|null = null;
@@ -26,6 +27,99 @@ export default class PrizeTableMaster implements IModel {
     private prizes: Prize[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
+
+    public static getRegion(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{prizeTableName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getOwnerId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{prizeTableName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getNamespaceName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{prizeTableName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getPrizeTableName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{prizeTableName}', '(.*)')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static isValid(grn: string): boolean {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getPrizeTableName(grn) == null) {
+            return false;
+        }
+        return true;
+    }
+
+    public static createGrn(
+        region: string|null,
+        ownerId: string|null,
+        namespaceName: string|null,
+        prizeTableName: string|null,
+    ): string|null {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (prizeTableName == null || prizeTableName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region!)
+            .replace('{ownerId}', ownerId!)
+            .replace('{namespaceName}', namespaceName!)
+            .replace('{prizeTableName}', prizeTableName!);
+    }
 
     public getPrizeTableId(): string|null {
         return this.prizeTableId;

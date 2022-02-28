@@ -19,6 +19,7 @@ var tslib_1 = require("tslib");
 var AcquireAction_1 = (0, tslib_1.__importDefault)(require("./AcquireAction"));
 var Contents_1 = (0, tslib_1.__importDefault)(require("./Contents"));
 var ConsumeAction_1 = (0, tslib_1.__importDefault)(require("./ConsumeAction"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:quest:{namespaceName}:group:{questGroupName}:quest:{questName}";
 var QuestModel = /** @class */ (function () {
     function QuestModel() {
         this.questModelId = null;
@@ -30,6 +31,107 @@ var QuestModel = /** @class */ (function () {
         this.failedAcquireActions = null;
         this.premiseQuestNames = null;
     }
+    QuestModel.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{questGroupName}', '.*')
+            .replace('{questName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    QuestModel.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{questGroupName}', '.*')
+            .replace('{questName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    QuestModel.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{questGroupName}', '.*')
+            .replace('{questName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    QuestModel.getQuestGroupName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{questGroupName}', '(.*)')
+            .replace('{questName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    QuestModel.getQuestName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{questGroupName}', '.*')
+            .replace('{questName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    QuestModel.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getQuestGroupName(grn) == null) {
+            return false;
+        }
+        if (this.getQuestName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    QuestModel.createGrn = function (region, ownerId, namespaceName, questGroupName, questName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (questGroupName == null || questGroupName === '') {
+            return null;
+        }
+        if (questName == null || questName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{questGroupName}', questGroupName)
+            .replace('{questName}', questName);
+    };
     QuestModel.prototype.getQuestModelId = function () {
         return this.questModelId;
     };

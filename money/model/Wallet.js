@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var WalletDetail_1 = (0, tslib_1.__importDefault)(require("./WalletDetail"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:money:{namespaceName}:user:{userId}:wallet:{slot}";
 var Wallet = /** @class */ (function () {
     function Wallet() {
         this.walletId = null;
@@ -28,6 +29,107 @@ var Wallet = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    Wallet.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{slot}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Wallet.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{slot}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Wallet.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{slot}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Wallet.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{slot}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Wallet.getSlot = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{slot}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Wallet.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getSlot(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Wallet.createGrn = function (region, ownerId, namespaceName, userId, slot) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (slot == null || slot === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId)
+            .replace('{slot}', slot);
+    };
     Wallet.prototype.getWalletId = function () {
         return this.walletId;
     };

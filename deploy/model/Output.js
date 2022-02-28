@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:deploy:{stackName}:output:{outputName}";
 var Output = /** @class */ (function () {
     function Output() {
         this.outputId = null;
@@ -22,6 +23,84 @@ var Output = /** @class */ (function () {
         this.value = null;
         this.createdAt = null;
     }
+    Output.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{stackName}', '.*')
+            .replace('{outputName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Output.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{stackName}', '.*')
+            .replace('{outputName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Output.getStackName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{stackName}', '(.*)')
+            .replace('{outputName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Output.getOutputName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{stackName}', '.*')
+            .replace('{outputName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Output.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getStackName(grn) == null) {
+            return false;
+        }
+        if (this.getOutputName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Output.createGrn = function (region, ownerId, stackName, outputName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (stackName == null || stackName === '') {
+            return null;
+        }
+        if (outputName == null || outputName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{stackName}', stackName)
+            .replace('{outputName}', outputName);
+    };
     Output.prototype.getOutputId = function () {
         return this.outputId;
     };

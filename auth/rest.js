@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Gs2AuthRestClient = void 0;
 var tslib_1 = require("tslib");
 var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
@@ -84,5 +83,5 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
     };
     return Gs2AuthRestClient;
 }(AbstractGs2RestClient_1.default));
-exports.Gs2AuthRestClient = Gs2AuthRestClient;
+exports.default = Gs2AuthRestClient;
 //# sourceMappingURL=rest.js.map

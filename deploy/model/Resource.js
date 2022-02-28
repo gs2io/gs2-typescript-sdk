@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var OutputField_1 = (0, tslib_1.__importDefault)(require("./OutputField"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:deploy:{stackName}:resource:{resourceName}";
 var Resource = /** @class */ (function () {
     function Resource() {
         this.resourceId = null;
@@ -31,6 +32,84 @@ var Resource = /** @class */ (function () {
         this.workId = null;
         this.createdAt = null;
     }
+    Resource.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{stackName}', '.*')
+            .replace('{resourceName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Resource.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{stackName}', '.*')
+            .replace('{resourceName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Resource.getStackName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{stackName}', '(.*)')
+            .replace('{resourceName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Resource.getResourceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{stackName}', '.*')
+            .replace('{resourceName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Resource.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getStackName(grn) == null) {
+            return false;
+        }
+        if (this.getResourceName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Resource.createGrn = function (region, ownerId, stackName, resourceName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (stackName == null || stackName === '') {
+            return null;
+        }
+        if (resourceName == null || resourceName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{stackName}', stackName)
+            .replace('{resourceName}', resourceName);
+    };
     Resource.prototype.getResourceId = function () {
         return this.resourceId;
     };

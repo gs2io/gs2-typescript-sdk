@@ -10,6 +10,12 @@ export default class MissionGroupModel implements IModel {
     private resetDayOfWeek;
     private resetHour;
     private completeNotificationNamespaceId;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getMissionGroupName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, missionGroupName: string | null): string | null;
     getMissionGroupId(): string | null;
     setMissionGroupId(missionGroupId: string | null): this;
     withMissionGroupId(missionGroupId: string | null): this;

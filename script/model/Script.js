@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:script:{namespaceName}:script:{scriptName}";
 var Script = /** @class */ (function () {
     function Script() {
         this.scriptId = null;
@@ -24,6 +25,84 @@ var Script = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    Script.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{scriptName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Script.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{scriptName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Script.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{scriptName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Script.getScriptName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{scriptName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Script.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getScriptName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Script.createGrn = function (region, ownerId, namespaceName, scriptName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (scriptName == null || scriptName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{scriptName}', scriptName);
+    };
     Script.prototype.getScriptId = function () {
         return this.scriptId;
     };

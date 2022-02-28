@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "";
 var Identifier = /** @class */ (function () {
     function Identifier() {
         this.clientId = null;
@@ -22,6 +23,12 @@ var Identifier = /** @class */ (function () {
         this.clientSecret = null;
         this.createdAt = null;
     }
+    Identifier.isValid = function (grn) {
+        return true;
+    };
+    Identifier.createGrn = function () {
+        return grnFormat;
+    };
     Identifier.prototype.getClientId = function () {
         return this.clientId;
     };

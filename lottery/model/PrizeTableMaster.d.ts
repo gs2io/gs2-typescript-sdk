@@ -8,6 +8,12 @@ export default class PrizeTableMaster implements IModel {
     private prizes;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getPrizeTableName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, prizeTableName: string | null): string | null;
     getPrizeTableId(): string | null;
     setPrizeTableId(prizeTableId: string | null): this;
     withPrizeTableId(prizeTableId: string | null): this;

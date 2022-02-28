@@ -11,6 +11,13 @@ export default class QuestModel implements IModel {
     private consumeActions;
     private failedAcquireActions;
     private premiseQuestNames;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getQuestGroupName(grn: string): string | null;
+    static getQuestName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, questGroupName: string | null, questName: string | null): string | null;
     getQuestModelId(): string | null;
     setQuestModelId(questModelId: string | null): this;
     withQuestModelId(questModelId: string | null): this;

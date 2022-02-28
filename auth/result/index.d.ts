@@ -1,2 +1,3 @@
-export { LoginResult } from "./LoginResult";
-export { LoginBySignatureResult } from "./LoginBySignatureResult";
+import LoginResult from "./LoginResult";
+import LoginBySignatureResult from "./LoginBySignatureResult";
+export { LoginResult, LoginBySignatureResult, };

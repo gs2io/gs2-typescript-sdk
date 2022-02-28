@@ -5,6 +5,12 @@ export default class Received implements IModel {
     private receivedGlobalMessageNames;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null): string | null;
     getReceivedId(): string | null;
     setReceivedId(receivedId: string | null): this;
     withReceivedId(receivedId: string | null): this;

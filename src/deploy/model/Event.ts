@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:deploy:{stackName}:event:{eventName}";
 
 export default class Event implements IModel {
     private eventId: string|null = null;
@@ -23,6 +24,99 @@ export default class Event implements IModel {
     private type: string|null = null;
     private message: string|null = null;
     private eventAt: number|null = null;
+
+    public static getRegion(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{stackName}', '.*')
+            .replace('{eventName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getOwnerId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{stackName}', '.*')
+            .replace('{eventName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getStackName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{stackName}', '(.*)')
+            .replace('{eventName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getEventName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{stackName}', '.*')
+            .replace('{eventName}', '(.*)')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static isValid(grn: string): boolean {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getStackName(grn) == null) {
+            return false;
+        }
+        if (this.getEventName(grn) == null) {
+            return false;
+        }
+        return true;
+    }
+
+    public static createGrn(
+        region: string|null,
+        ownerId: string|null,
+        stackName: string|null,
+        eventName: string|null,
+    ): string|null {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (stackName == null || stackName === '') {
+            return null;
+        }
+        if (eventName == null || eventName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region!)
+            .replace('{ownerId}', ownerId!)
+            .replace('{stackName}', stackName!)
+            .replace('{eventName}', eventName!);
+    }
 
     public getEventId(): string|null {
         return this.eventId;

@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:quest:{namespaceName}:user:{userId}:completed:group:{questGroupName}";
 var CompletedQuestList = /** @class */ (function () {
     function CompletedQuestList() {
         this.completedQuestListId = null;
@@ -24,6 +25,107 @@ var CompletedQuestList = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    CompletedQuestList.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{questGroupName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    CompletedQuestList.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{questGroupName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    CompletedQuestList.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{questGroupName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    CompletedQuestList.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{questGroupName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    CompletedQuestList.getQuestGroupName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{questGroupName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    CompletedQuestList.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getQuestGroupName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    CompletedQuestList.createGrn = function (region, ownerId, namespaceName, userId, questGroupName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (questGroupName == null || questGroupName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId)
+            .replace('{questGroupName}', questGroupName);
+    };
     CompletedQuestList.prototype.getCompletedQuestListId = function () {
         return this.completedQuestListId;
     };

@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var AcquireAction_1 = (0, tslib_1.__importDefault)(require("./AcquireAction"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:inbox:{namespaceName}:user:{userId}:message:{messageName}";
 var Message = /** @class */ (function () {
     function Message() {
         this.messageId = null;
@@ -29,6 +30,107 @@ var Message = /** @class */ (function () {
         this.readAt = null;
         this.expiresAt = null;
     }
+    Message.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{messageName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Message.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{messageName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Message.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{messageName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Message.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{messageName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Message.getMessageName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{messageName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Message.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getMessageName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Message.createGrn = function (region, ownerId, namespaceName, userId, messageName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (messageName == null || messageName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId)
+            .replace('{messageName}', messageName);
+    };
     Message.prototype.getMessageId = function () {
         return this.messageId;
     };

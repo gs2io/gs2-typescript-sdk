@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:gateway:{namespaceName}:user:{userId}:session:{connectionId}";
 var WebSocketSession = /** @class */ (function () {
     function WebSocketSession() {
         this.webSocketSessionId = null;
@@ -24,6 +25,107 @@ var WebSocketSession = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    WebSocketSession.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{connectionId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    WebSocketSession.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{connectionId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    WebSocketSession.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{connectionId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    WebSocketSession.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{connectionId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    WebSocketSession.getConnectionId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{connectionId}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    WebSocketSession.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getConnectionId(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    WebSocketSession.createGrn = function (region, ownerId, namespaceName, userId, connectionId) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (connectionId == null || connectionId === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId)
+            .replace('{connectionId}', connectionId);
+    };
     WebSocketSession.prototype.getWebSocketSessionId = function () {
         return this.webSocketSessionId;
     };

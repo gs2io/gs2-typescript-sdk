@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Threshold_1 = (0, tslib_1.__importDefault)(require("./Threshold"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:experience:{namespaceName}:model:{experienceName}";
 var ExperienceModel = /** @class */ (function () {
     function ExperienceModel() {
         this.experienceModelId = null;
@@ -27,6 +28,84 @@ var ExperienceModel = /** @class */ (function () {
         this.maxRankCap = null;
         this.rankThreshold = null;
     }
+    ExperienceModel.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{experienceName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    ExperienceModel.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{experienceName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    ExperienceModel.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{experienceName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    ExperienceModel.getExperienceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{experienceName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    ExperienceModel.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getExperienceName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    ExperienceModel.createGrn = function (region, ownerId, namespaceName, experienceName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (experienceName == null || experienceName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{experienceName}', experienceName);
+    };
     ExperienceModel.prototype.getExperienceModelId = function () {
         return this.experienceModelId;
     };

@@ -7,6 +7,12 @@ export default class LimitModel implements IModel {
     private resetDayOfMonth;
     private resetDayOfWeek;
     private resetHour;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getLimitName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, limitName: string | null): string | null;
     getLimitModelId(): string | null;
     setLimitModelId(limitModelId: string | null): this;
     withLimitModelId(limitModelId: string | null): this;

@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var AcquireAction_1 = (0, tslib_1.__importDefault)(require("./AcquireAction"));
 var TimeSpan_1 = (0, tslib_1.__importDefault)(require("./TimeSpan"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:inbox:{namespaceName}:master:globalMessage:{globalMessageName}";
 var GlobalMessageMaster = /** @class */ (function () {
     function GlobalMessageMaster() {
         this.globalMessageId = null;
@@ -28,6 +29,84 @@ var GlobalMessageMaster = /** @class */ (function () {
         this.createdAt = null;
         this.expiresAt = null;
     }
+    GlobalMessageMaster.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{globalMessageName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    GlobalMessageMaster.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{globalMessageName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    GlobalMessageMaster.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{globalMessageName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    GlobalMessageMaster.getGlobalMessageName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{globalMessageName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    GlobalMessageMaster.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getGlobalMessageName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    GlobalMessageMaster.createGrn = function (region, ownerId, namespaceName, globalMessageName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (globalMessageName == null || globalMessageName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{globalMessageName}', globalMessageName);
+    };
     GlobalMessageMaster.prototype.getGlobalMessageId = function () {
         return this.globalMessageId;
     };

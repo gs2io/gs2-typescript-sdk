@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:ranking:{namespaceName}:categoryModel:{categoryName}";
 var CategoryModel = /** @class */ (function () {
     function CategoryModel() {
         this.categoryModelId = null;
@@ -32,6 +33,84 @@ var CategoryModel = /** @class */ (function () {
         this.accessPeriodEventId = null;
         this.generation = null;
     }
+    CategoryModel.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{categoryName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    CategoryModel.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{categoryName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    CategoryModel.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{categoryName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    CategoryModel.getCategoryName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{categoryName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    CategoryModel.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getCategoryName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    CategoryModel.createGrn = function (region, ownerId, namespaceName, categoryName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (categoryName == null || categoryName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{categoryName}', categoryName);
+    };
     CategoryModel.prototype.getCategoryModelId = function () {
         return this.categoryModelId;
     };

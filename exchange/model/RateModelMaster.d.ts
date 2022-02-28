@@ -14,6 +14,12 @@ export default class RateModelMaster implements IModel {
     private acquireActions;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getRateName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, rateName: string | null): string | null;
     getRateModelId(): string | null;
     setRateModelId(rateModelId: string | null): this;
     withRateModelId(rateModelId: string | null): this;

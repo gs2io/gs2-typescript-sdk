@@ -5,6 +5,12 @@ export default class RecoverIntervalTable implements IModel {
     private metadata;
     private experienceModelId;
     private values;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getRecoverIntervalTableName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, recoverIntervalTableName: string | null): string | null;
     getRecoverIntervalTableId(): string | null;
     setRecoverIntervalTableId(recoverIntervalTableId: string | null): this;
     withRecoverIntervalTableId(recoverIntervalTableId: string | null): this;

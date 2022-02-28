@@ -9,6 +9,14 @@ export default class Status implements IModel {
     private rankCapValue;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getExperienceName(grn: string): string | null;
+    static getPropertyId(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, experienceName: string | null, propertyId: string | null): string | null;
     getStatusId(): string | null;
     setStatusId(statusId: string | null): this;
     withStatusId(statusId: string | null): this;

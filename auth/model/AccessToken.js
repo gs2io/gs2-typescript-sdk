@@ -15,13 +15,19 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AccessToken = void 0;
+var grnFormat = "";
 var AccessToken = /** @class */ (function () {
     function AccessToken() {
         this.token = null;
         this.userId = null;
         this.expire = null;
     }
+    AccessToken.isValid = function (grn) {
+        return true;
+    };
+    AccessToken.createGrn = function () {
+        return grnFormat;
+    };
     AccessToken.prototype.getToken = function () {
         return this.token;
     };
@@ -73,5 +79,5 @@ var AccessToken = /** @class */ (function () {
     };
     return AccessToken;
 }());
-exports.AccessToken = AccessToken;
+exports.default = AccessToken;
 //# sourceMappingURL=AccessToken.js.map

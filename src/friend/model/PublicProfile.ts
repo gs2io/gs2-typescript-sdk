@@ -15,10 +15,20 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+const grnFormat: string = "";
 
 export default class PublicProfile implements IModel {
     private userId: string|null = null;
     private publicProfile: string|null = null;
+
+    public static isValid(grn: string): boolean {
+        return true;
+    }
+
+    public static createGrn(
+    ): string|null {
+        return grnFormat;
+    }
 
     public getUserId(): string|null {
         return this.userId;

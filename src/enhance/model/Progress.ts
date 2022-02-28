@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+const grnFormat: string = "";
 
 export default class Progress implements IModel {
     private progressId: string|null = null;
@@ -25,6 +26,15 @@ export default class Progress implements IModel {
     private rate: number|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
+
+    public static isValid(grn: string): boolean {
+        return true;
+    }
+
+    public static createGrn(
+    ): string|null {
+        return grnFormat;
+    }
 
     public getProgressId(): string|null {
         return this.progressId;

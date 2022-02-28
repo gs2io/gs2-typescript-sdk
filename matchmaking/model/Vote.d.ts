@@ -7,6 +7,13 @@ export default class Vote implements IModel {
     private writtenBallots;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getRatingName(grn: string): string | null;
+    static getGatheringName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, ratingName: string | null, gatheringName: string | null): string | null;
     getVoteId(): string | null;
     setVoteId(voteId: string | null): this;
     withVoteId(voteId: string | null): this;

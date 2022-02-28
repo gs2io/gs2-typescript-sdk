@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 import AcquireAction from './AcquireAction';
 import TimeSpan from './TimeSpan';
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:inbox:{namespaceName}:globalMessage:{globalMessageName}";
 
 export default class GlobalMessage implements IModel {
     private globalMessageId: string|null = null;
@@ -25,6 +26,99 @@ export default class GlobalMessage implements IModel {
     private readAcquireActions: AcquireAction[]|null = null;
     private expiresTimeSpan: TimeSpan|null = null;
     private expiresAt: number|null = null;
+
+    public static getRegion(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{globalMessageName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getOwnerId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{globalMessageName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getNamespaceName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{globalMessageName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getGlobalMessageName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{globalMessageName}', '(.*)')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static isValid(grn: string): boolean {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getGlobalMessageName(grn) == null) {
+            return false;
+        }
+        return true;
+    }
+
+    public static createGrn(
+        region: string|null,
+        ownerId: string|null,
+        namespaceName: string|null,
+        globalMessageName: string|null,
+    ): string|null {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (globalMessageName == null || globalMessageName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region!)
+            .replace('{ownerId}', ownerId!)
+            .replace('{namespaceName}', namespaceName!)
+            .replace('{globalMessageName}', globalMessageName!);
+    }
 
     public getGlobalMessageId(): string|null {
         return this.globalMessageId;

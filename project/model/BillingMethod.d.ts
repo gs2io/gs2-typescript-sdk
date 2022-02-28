@@ -11,6 +11,10 @@ export default class BillingMethod implements IModel {
     private partnerId;
     private createdAt;
     private updatedAt;
+    static getAccountName(grn: string): string | null;
+    static getBillingMethodName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(accountName: string | null, billingMethodName: string | null): string | null;
     getBillingMethodId(): string | null;
     setBillingMethodId(billingMethodId: string | null): this;
     withBillingMethodId(billingMethodId: string | null): this;

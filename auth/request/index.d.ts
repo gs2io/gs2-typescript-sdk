@@ -1,2 +1,3 @@
-export { LoginRequest } from "./LoginRequest";
-export { LoginBySignatureRequest } from "./LoginBySignatureRequest";
+import LoginRequest from "./LoginRequest";
+import LoginBySignatureRequest from "./LoginBySignatureRequest";
+export { LoginRequest, LoginBySignatureRequest, };

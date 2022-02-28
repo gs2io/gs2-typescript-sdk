@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:model:{inventoryName}:item:{itemName}";
 var ItemModelMaster = /** @class */ (function () {
     function ItemModelMaster() {
         this.itemModelId = null;
@@ -28,6 +29,107 @@ var ItemModelMaster = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    ItemModelMaster.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{inventoryName}', '.*')
+            .replace('{itemName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    ItemModelMaster.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{inventoryName}', '.*')
+            .replace('{itemName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    ItemModelMaster.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{inventoryName}', '.*')
+            .replace('{itemName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    ItemModelMaster.getInventoryName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{inventoryName}', '(.*)')
+            .replace('{itemName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    ItemModelMaster.getItemName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{inventoryName}', '.*')
+            .replace('{itemName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    ItemModelMaster.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getInventoryName(grn) == null) {
+            return false;
+        }
+        if (this.getItemName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    ItemModelMaster.createGrn = function (region, ownerId, namespaceName, inventoryName, itemName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (inventoryName == null || inventoryName === '') {
+            return null;
+        }
+        if (itemName == null || itemName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{inventoryName}', inventoryName)
+            .replace('{itemName}', itemName);
+    };
     ItemModelMaster.prototype.getItemModelId = function () {
         return this.itemModelId;
     };

@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Reward_1 = (0, tslib_1.__importDefault)(require("./Reward"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:quest:{namespaceName}:user:{userId}:progress";
 var Progress = /** @class */ (function () {
     function Progress() {
         this.progressId = null;
@@ -29,6 +30,84 @@ var Progress = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    Progress.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Progress.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Progress.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Progress.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Progress.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Progress.createGrn = function (region, ownerId, namespaceName, userId) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId);
+    };
     Progress.prototype.getProgressId = function () {
         return this.progressId;
     };

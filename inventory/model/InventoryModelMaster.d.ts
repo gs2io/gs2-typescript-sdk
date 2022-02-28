@@ -9,6 +9,12 @@ export default class InventoryModelMaster implements IModel {
     private protectReferencedItem;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getInventoryName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, inventoryName: string | null): string | null;
     getInventoryModelId(): string | null;
     setInventoryModelId(inventoryModelId: string | null): this;
     withInventoryModelId(inventoryModelId: string | null): this;

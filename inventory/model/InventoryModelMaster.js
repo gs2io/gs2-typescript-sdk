@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:model:{inventoryName}";
 var InventoryModelMaster = /** @class */ (function () {
     function InventoryModelMaster() {
         this.inventoryModelId = null;
@@ -27,6 +28,84 @@ var InventoryModelMaster = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    InventoryModelMaster.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{inventoryName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    InventoryModelMaster.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{inventoryName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    InventoryModelMaster.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{inventoryName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    InventoryModelMaster.getInventoryName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{inventoryName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    InventoryModelMaster.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getInventoryName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    InventoryModelMaster.createGrn = function (region, ownerId, namespaceName, inventoryName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (inventoryName == null || inventoryName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{inventoryName}', inventoryName);
+    };
     InventoryModelMaster.prototype.getInventoryModelId = function () {
         return this.inventoryModelId;
     };

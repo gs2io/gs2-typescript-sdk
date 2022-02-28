@@ -15,7 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LoginBySignatureResult = void 0;
 var LoginBySignatureResult = /** @class */ (function () {
     function LoginBySignatureResult() {
         this.token = null;
@@ -70,5 +69,5 @@ var LoginBySignatureResult = /** @class */ (function () {
     };
     return LoginBySignatureResult;
 }());
-exports.LoginBySignatureResult = LoginBySignatureResult;
+exports.default = LoginBySignatureResult;
 //# sourceMappingURL=LoginBySignatureResult.js.map

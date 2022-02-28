@@ -6,6 +6,13 @@ export default class TakeOver implements IModel {
     private userIdentifier;
     private password;
     private createdAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getType(grn: string): string | null;
+    static getUserIdentifier(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, type: string | null, userIdentifier: string | null): string | null;
     getTakeOverId(): string | null;
     setTakeOverId(takeOverId: string | null): this;
     withTakeOverId(takeOverId: string | null): this;

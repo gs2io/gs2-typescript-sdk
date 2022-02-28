@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:::gs2:account:{accountName}:billingMethod:{billingMethodName}";
 var BillingMethod = /** @class */ (function () {
     function BillingMethod() {
         this.billingMethodId = null;
@@ -29,6 +30,44 @@ var BillingMethod = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    BillingMethod.getAccountName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{accountName}', '(.*)')
+            .replace('{billingMethodName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    BillingMethod.getBillingMethodName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{accountName}', '.*')
+            .replace('{billingMethodName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    BillingMethod.isValid = function (grn) {
+        if (this.getAccountName(grn) == null) {
+            return false;
+        }
+        if (this.getBillingMethodName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    BillingMethod.createGrn = function (accountName, billingMethodName) {
+        if (accountName == null || accountName === '') {
+            return null;
+        }
+        if (billingMethodName == null || billingMethodName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{accountName}', accountName)
+            .replace('{billingMethodName}', billingMethodName);
+    };
     BillingMethod.prototype.getBillingMethodId = function () {
         return this.billingMethodId;
     };

@@ -5,6 +5,12 @@ export default class Key implements IModel {
     private description;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getKeyName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, keyName: string | null): string | null;
     getKeyId(): string | null;
     setKeyId(keyId: string | null): this;
     withKeyId(keyId: string | null): this;

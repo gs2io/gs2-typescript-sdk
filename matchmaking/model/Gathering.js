@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var AttributeRange_1 = (0, tslib_1.__importDefault)(require("./AttributeRange"));
 var CapacityOfRole_1 = (0, tslib_1.__importDefault)(require("./CapacityOfRole"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:matchmaking:{namespaceName}:gathering:{gatheringName}";
 var Gathering = /** @class */ (function () {
     function Gathering() {
         this.gatheringId = null;
@@ -30,6 +31,84 @@ var Gathering = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    Gathering.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{gatheringName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Gathering.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{gatheringName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Gathering.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{gatheringName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Gathering.getGatheringName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{gatheringName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Gathering.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getGatheringName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Gathering.createGrn = function (region, ownerId, namespaceName, gatheringName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (gatheringName == null || gatheringName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{gatheringName}', gatheringName);
+    };
     Gathering.prototype.getGatheringId = function () {
         return this.gatheringId;
     };

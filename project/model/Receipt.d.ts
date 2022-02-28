@@ -8,6 +8,10 @@ export default class Receipt implements IModel {
     private pdfUrl;
     private createdAt;
     private updatedAt;
+    static getAccountName(grn: string): string | null;
+    static getReceiptName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(accountName: string | null, receiptName: string | null): string | null;
     getReceiptId(): string | null;
     setReceiptId(receiptId: string | null): this;
     withReceiptId(receiptId: string | null): this;

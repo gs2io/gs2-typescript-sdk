@@ -1,8 +1,10 @@
-import IModel from '@/gs2/core/interface/IModel';
-export declare class AccessToken implements IModel {
+import IModel from '../../core/interface/IModel';
+export default class AccessToken implements IModel {
     private token;
     private userId;
     private expire;
+    static isValid(grn: string): boolean;
+    static createGrn(): string | null;
     getToken(): string | null;
     setToken(token: string | null): this;
     withToken(token: string | null): this;

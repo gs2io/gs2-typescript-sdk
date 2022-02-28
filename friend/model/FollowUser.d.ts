@@ -3,6 +3,8 @@ export default class FollowUser implements IModel {
     private userId;
     private publicProfile;
     private followerProfile;
+    static isValid(grn: string): boolean;
+    static createGrn(): string | null;
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;

@@ -10,6 +10,12 @@ export default class LotteryModelMaster implements IModel {
     private choicePrizeTableScriptId;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getLotteryName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, lotteryName: string | null): string | null;
     getLotteryModelId(): string | null;
     setLotteryModelId(lotteryModelId: string | null): this;
     withLotteryModelId(lotteryModelId: string | null): this;

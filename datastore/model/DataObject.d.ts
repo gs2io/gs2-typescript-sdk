@@ -10,6 +10,13 @@ export default class DataObject implements IModel {
     private previousGeneration;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getDataObjectName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, dataObjectName: string | null): string | null;
     getDataObjectId(): string | null;
     setDataObjectId(dataObjectId: string | null): this;
     withDataObjectId(dataObjectId: string | null): this;

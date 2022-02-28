@@ -7,6 +7,13 @@ export default class Counter implements IModel {
     private values;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getCounterName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, counterName: string | null): string | null;
     getCounterId(): string | null;
     setCounterId(counterId: string | null): this;
     withCounterId(counterId: string | null): this;

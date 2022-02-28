@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var WrittenBallot_1 = (0, tslib_1.__importDefault)(require("./WrittenBallot"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:matchmaking:{namespaceName}:vote:{ratingName}:{gatheringName}";
 var Vote = /** @class */ (function () {
     function Vote() {
         this.voteId = null;
@@ -26,6 +27,107 @@ var Vote = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    Vote.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{ratingName}', '.*')
+            .replace('{gatheringName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Vote.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{ratingName}', '.*')
+            .replace('{gatheringName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Vote.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{ratingName}', '.*')
+            .replace('{gatheringName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Vote.getRatingName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{ratingName}', '(.*)')
+            .replace('{gatheringName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Vote.getGatheringName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{ratingName}', '.*')
+            .replace('{gatheringName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Vote.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getRatingName(grn) == null) {
+            return false;
+        }
+        if (this.getGatheringName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Vote.createGrn = function (region, ownerId, namespaceName, ratingName, gatheringName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (ratingName == null || ratingName === '') {
+            return null;
+        }
+        if (gatheringName == null || gatheringName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{ratingName}', ratingName)
+            .replace('{gatheringName}', gatheringName);
+    };
     Vote.prototype.getVoteId = function () {
         return this.voteId;
     };

@@ -9,6 +9,13 @@ export default class Wallet implements IModel {
     private detail;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getSlot(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, slot: string | null): string | null;
     getWalletId(): string | null;
     setWalletId(walletId: string | null): this;
     withWalletId(walletId: string | null): this;

@@ -5,6 +5,12 @@ export default class DistributorModel implements IModel {
     private metadata;
     private inboxNamespaceId;
     private whiteListTargetIds;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getDistributorName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, distributorName: string | null): string | null;
     getDistributorModelId(): string | null;
     setDistributorModelId(distributorModelId: string | null): this;
     withDistributorModelId(distributorModelId: string | null): this;

@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var FormModel_1 = (0, tslib_1.__importDefault)(require("./FormModel"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:model:mold:{moldName}";
 var MoldModel = /** @class */ (function () {
     function MoldModel() {
         this.moldModelId = null;
@@ -26,6 +27,84 @@ var MoldModel = /** @class */ (function () {
         this.maxCapacity = null;
         this.formModel = null;
     }
+    MoldModel.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{moldName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MoldModel.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{moldName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MoldModel.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{moldName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MoldModel.getMoldName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{moldName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MoldModel.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getMoldName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    MoldModel.createGrn = function (region, ownerId, namespaceName, moldName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (moldName == null || moldName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{moldName}', moldName);
+    };
     MoldModel.prototype.getMoldModelId = function () {
         return this.moldModelId;
     };

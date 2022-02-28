@@ -18,6 +18,7 @@ import IModel from '../../core/interface/IModel';
 import AcquireAction from './AcquireAction';
 import Contents from './Contents';
 import ConsumeAction from './ConsumeAction';
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:quest:{namespaceName}:group:{questGroupName}:quest:{questName}";
 
 export default class QuestModel implements IModel {
     private questModelId: string|null = null;
@@ -28,6 +29,125 @@ export default class QuestModel implements IModel {
     private consumeActions: ConsumeAction[]|null = null;
     private failedAcquireActions: AcquireAction[]|null = null;
     private premiseQuestNames: string[]|null = null;
+
+    public static getRegion(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{questGroupName}', '.*')
+            .replace('{questName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getOwnerId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{questGroupName}', '.*')
+            .replace('{questName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getNamespaceName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{questGroupName}', '.*')
+            .replace('{questName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getQuestGroupName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{questGroupName}', '(.*)')
+            .replace('{questName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getQuestName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{questGroupName}', '.*')
+            .replace('{questName}', '(.*)')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static isValid(grn: string): boolean {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getQuestGroupName(grn) == null) {
+            return false;
+        }
+        if (this.getQuestName(grn) == null) {
+            return false;
+        }
+        return true;
+    }
+
+    public static createGrn(
+        region: string|null,
+        ownerId: string|null,
+        namespaceName: string|null,
+        questGroupName: string|null,
+        questName: string|null,
+    ): string|null {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (questGroupName == null || questGroupName === '') {
+            return null;
+        }
+        if (questName == null || questName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region!)
+            .replace('{ownerId}', ownerId!)
+            .replace('{namespaceName}', namespaceName!)
+            .replace('{questGroupName}', questGroupName!)
+            .replace('{questName}', questName!);
+    }
 
     public getQuestModelId(): string|null {
         return this.questModelId;

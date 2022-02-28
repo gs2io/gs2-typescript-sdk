@@ -10,6 +10,12 @@ export default class SalesItemMaster implements IModel {
     private acquireActions;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getSalesItemName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, salesItemName: string | null): string | null;
     getSalesItemId(): string | null;
     setSalesItemId(salesItemId: string | null): this;
     withSalesItemId(salesItemId: string | null): this;

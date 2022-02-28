@@ -6,6 +6,12 @@ export default class QuestGroupModel implements IModel {
     private metadata;
     private quests;
     private challengePeriodEventId;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getQuestGroupName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, questGroupName: string | null): string | null;
     getQuestGroupModelId(): string | null;
     setQuestGroupModelId(questGroupModelId: string | null): this;
     withQuestGroupModelId(questGroupModelId: string | null): this;

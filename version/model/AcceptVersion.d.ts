@@ -7,6 +7,13 @@ export default class AcceptVersion implements IModel {
     private version;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getVersionName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, versionName: string | null): string | null;
     getAcceptVersionId(): string | null;
     setAcceptVersionId(acceptVersionId: string | null): this;
     withAcceptVersionId(acceptVersionId: string | null): this;

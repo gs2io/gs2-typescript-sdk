@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:account:{namespaceName}:takeOver:{type}:{userIdentifier}";
 var TakeOver = /** @class */ (function () {
     function TakeOver() {
         this.takeOverId = null;
@@ -24,6 +25,107 @@ var TakeOver = /** @class */ (function () {
         this.password = null;
         this.createdAt = null;
     }
+    TakeOver.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{type}', '.*')
+            .replace('{userIdentifier}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    TakeOver.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{type}', '.*')
+            .replace('{userIdentifier}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    TakeOver.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{type}', '.*')
+            .replace('{userIdentifier}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    TakeOver.getType = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{type}', '(.*)')
+            .replace('{userIdentifier}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    TakeOver.getUserIdentifier = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{type}', '.*')
+            .replace('{userIdentifier}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    TakeOver.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getType(grn) == null) {
+            return false;
+        }
+        if (this.getUserIdentifier(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    TakeOver.createGrn = function (region, ownerId, namespaceName, type, userIdentifier) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (type == null || type === '') {
+            return null;
+        }
+        if (userIdentifier == null || userIdentifier === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{type}', type)
+            .replace('{userIdentifier}', userIdentifier);
+    };
     TakeOver.prototype.getTakeOverId = function () {
         return this.takeOverId;
     };

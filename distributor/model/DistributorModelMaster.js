@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:distributor:{namespaceName}:model:{distributorName}";
 var DistributorModelMaster = /** @class */ (function () {
     function DistributorModelMaster() {
         this.distributorModelId = null;
@@ -26,6 +27,84 @@ var DistributorModelMaster = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    DistributorModelMaster.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{distributorName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    DistributorModelMaster.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{distributorName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    DistributorModelMaster.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{distributorName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    DistributorModelMaster.getDistributorName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{distributorName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    DistributorModelMaster.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getDistributorName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    DistributorModelMaster.createGrn = function (region, ownerId, namespaceName, distributorName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (distributorName == null || distributorName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{distributorName}', distributorName);
+    };
     DistributorModelMaster.prototype.getDistributorModelId = function () {
         return this.distributorModelId;
     };

@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Prize_1 = (0, tslib_1.__importDefault)(require("./Prize"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:lottery:{namespaceName}:table:{prizeTableName}";
 var PrizeTable = /** @class */ (function () {
     function PrizeTable() {
         this.prizeTableId = null;
@@ -24,6 +25,84 @@ var PrizeTable = /** @class */ (function () {
         this.metadata = null;
         this.prizes = null;
     }
+    PrizeTable.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{prizeTableName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    PrizeTable.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{prizeTableName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    PrizeTable.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{prizeTableName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    PrizeTable.getPrizeTableName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{prizeTableName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    PrizeTable.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getPrizeTableName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    PrizeTable.createGrn = function (region, ownerId, namespaceName, prizeTableName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (prizeTableName == null || prizeTableName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{prizeTableName}', prizeTableName);
+    };
     PrizeTable.prototype.getPrizeTableId = function () {
         return this.prizeTableId;
     };

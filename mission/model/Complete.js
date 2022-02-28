@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:group:{missionGroupName}:complete";
 var Complete = /** @class */ (function () {
     function Complete() {
         this.completeId = null;
@@ -26,6 +27,107 @@ var Complete = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    Complete.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{missionGroupName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Complete.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{missionGroupName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Complete.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{missionGroupName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Complete.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{missionGroupName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Complete.getMissionGroupName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{missionGroupName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Complete.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getMissionGroupName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Complete.createGrn = function (region, ownerId, namespaceName, userId, missionGroupName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (missionGroupName == null || missionGroupName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId)
+            .replace('{missionGroupName}', missionGroupName);
+    };
     Complete.prototype.getCompleteId = function () {
         return this.completeId;
     };

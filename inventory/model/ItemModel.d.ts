@@ -6,6 +6,13 @@ export default class ItemModel implements IModel {
     private stackingLimit;
     private allowMultipleStacks;
     private sortValue;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getInventoryName(grn: string): string | null;
+    static getItemName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, inventoryName: string | null, itemName: string | null): string | null;
     getItemModelId(): string | null;
     setItemModelId(itemModelId: string | null): this;
     withItemModelId(itemModelId: string | null): this;

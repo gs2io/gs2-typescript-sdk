@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:ranking:{namespaceName}:user:{userId}:score:{categoryName}:{scorerUserId}:{uniqueId}";
 
 export default class Score implements IModel {
     private scoreId: string|null = null;
@@ -25,6 +26,183 @@ export default class Score implements IModel {
     private score: number|null = null;
     private metadata: string|null = null;
     private createdAt: number|null = null;
+
+    public static getRegion(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '.*')
+            .replace('{scorerUserId}', '.*')
+            .replace('{uniqueId}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getOwnerId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '.*')
+            .replace('{scorerUserId}', '.*')
+            .replace('{uniqueId}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getNamespaceName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '.*')
+            .replace('{scorerUserId}', '.*')
+            .replace('{uniqueId}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getUserId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{categoryName}', '.*')
+            .replace('{scorerUserId}', '.*')
+            .replace('{uniqueId}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getCategoryName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '(.*)')
+            .replace('{scorerUserId}', '.*')
+            .replace('{uniqueId}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getScorerUserId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '.*')
+            .replace('{scorerUserId}', '(.*)')
+            .replace('{uniqueId}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getUniqueId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '.*')
+            .replace('{scorerUserId}', '.*')
+            .replace('{uniqueId}', '(.*)')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static isValid(grn: string): boolean {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getCategoryName(grn) == null) {
+            return false;
+        }
+        if (this.getScorerUserId(grn) == null) {
+            return false;
+        }
+        if (this.getUniqueId(grn) == null) {
+            return false;
+        }
+        return true;
+    }
+
+    public static createGrn(
+        region: string|null,
+        ownerId: string|null,
+        namespaceName: string|null,
+        userId: string|null,
+        categoryName: string|null,
+        scorerUserId: string|null,
+        uniqueId: string|null,
+    ): string|null {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (categoryName == null || categoryName === '') {
+            return null;
+        }
+        if (scorerUserId == null || scorerUserId === '') {
+            return null;
+        }
+        if (uniqueId == null || uniqueId === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region!)
+            .replace('{ownerId}', ownerId!)
+            .replace('{namespaceName}', namespaceName!)
+            .replace('{userId}', userId!)
+            .replace('{categoryName}', categoryName!)
+            .replace('{scorerUserId}', scorerUserId!)
+            .replace('{uniqueId}', uniqueId!);
+    }
 
     public getScoreId(): string|null {
         return this.scoreId;

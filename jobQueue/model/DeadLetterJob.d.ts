@@ -9,6 +9,13 @@ export default class DeadLetterJob implements IModel {
     private result;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getDeadLetterJobName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, deadLetterJobName: string | null): string | null;
     getDeadLetterJobId(): string | null;
     setDeadLetterJobId(deadLetterJobId: string | null): this;
     withDeadLetterJobId(deadLetterJobId: string | null): this;

@@ -7,6 +7,11 @@ export default class Stack implements IModel {
     private status;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getStackName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, stackName: string | null): string | null;
     getStackId(): string | null;
     setStackId(stackId: string | null): this;
     withStackId(stackId: string | null): this;

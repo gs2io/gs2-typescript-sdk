@@ -6,6 +6,13 @@ export default class Mold implements IModel {
     private capacity;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getMoldName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, moldName: string | null): string | null;
     getMoldId(): string | null;
     setMoldId(moldId: string | null): this;
     withMoldId(moldId: string | null): this;

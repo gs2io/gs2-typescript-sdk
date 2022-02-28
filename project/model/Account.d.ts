@@ -9,6 +9,9 @@ export default class Account implements IModel {
     private status;
     private createdAt;
     private updatedAt;
+    static getAccountName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(accountName: string | null): string | null;
     getAccountId(): string | null;
     setAccountId(accountId: string | null): this;
     withAccountId(accountId: string | null): this;

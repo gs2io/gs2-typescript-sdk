@@ -8,6 +8,15 @@ export default class Score implements IModel {
     private score;
     private metadata;
     private createdAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getCategoryName(grn: string): string | null;
+    static getScorerUserId(grn: string): string | null;
+    static getUniqueId(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, categoryName: string | null, scorerUserId: string | null, uniqueId: string | null): string | null;
     getScoreId(): string | null;
     setScoreId(scoreId: string | null): this;
     withScoreId(scoreId: string | null): this;

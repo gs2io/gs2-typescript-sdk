@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:queue:{namespaceName}:user:{userId}:job:{jobName}:jobResult:{tryNumber}";
 var JobResult = /** @class */ (function () {
     function JobResult() {
         this.jobResultId = null;
@@ -24,6 +25,132 @@ var JobResult = /** @class */ (function () {
         this.result = null;
         this.tryAt = null;
     }
+    JobResult.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{jobName}', '.*')
+            .replace('{tryNumber}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    JobResult.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{jobName}', '.*')
+            .replace('{tryNumber}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    JobResult.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{jobName}', '.*')
+            .replace('{tryNumber}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    JobResult.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{jobName}', '.*')
+            .replace('{tryNumber}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    JobResult.getJobName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{jobName}', '(.*)')
+            .replace('{tryNumber}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    JobResult.getTryNumber = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{jobName}', '.*')
+            .replace('{tryNumber}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    JobResult.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getJobName(grn) == null) {
+            return false;
+        }
+        if (this.getTryNumber(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    JobResult.createGrn = function (region, ownerId, namespaceName, userId, jobName, tryNumber) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (jobName == null || jobName === '') {
+            return null;
+        }
+        if (tryNumber == null || tryNumber === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId)
+            .replace('{jobName}', jobName)
+            .replace('{tryNumber}', tryNumber);
+    };
     JobResult.prototype.getJobResultId = function () {
         return this.jobResultId;
     };

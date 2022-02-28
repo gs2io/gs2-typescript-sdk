@@ -12,6 +12,13 @@ export default class Stamina implements IModel {
     private lastRecoveredAt;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getStaminaName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, staminaName: string | null): string | null;
     getStaminaId(): string | null;
     setStaminaId(staminaId: string | null): this;
     withStaminaId(staminaId: string | null): this;

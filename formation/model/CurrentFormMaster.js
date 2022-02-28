@@ -15,11 +15,69 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}";
 var CurrentFormMaster = /** @class */ (function () {
     function CurrentFormMaster() {
         this.namespaceId = null;
         this.settings = null;
     }
+    CurrentFormMaster.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    CurrentFormMaster.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    CurrentFormMaster.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    CurrentFormMaster.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    CurrentFormMaster.createGrn = function (region, ownerId, namespaceName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName);
+    };
     CurrentFormMaster.prototype.getNamespaceId = function () {
         return this.namespaceId;
     };

@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:key:{namespaceName}:github:{apiKeyName}";
 var GitHubApiKey = /** @class */ (function () {
     function GitHubApiKey() {
         this.apiKeyId = null;
@@ -24,6 +25,84 @@ var GitHubApiKey = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    GitHubApiKey.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{apiKeyName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    GitHubApiKey.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{apiKeyName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    GitHubApiKey.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{apiKeyName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    GitHubApiKey.getApiKeyName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{apiKeyName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    GitHubApiKey.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getApiKeyName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    GitHubApiKey.createGrn = function (region, ownerId, namespaceName, apiKeyName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (apiKeyName == null || apiKeyName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{apiKeyName}', apiKeyName);
+    };
     GitHubApiKey.prototype.getApiKeyId = function () {
         return this.apiKeyId;
     };

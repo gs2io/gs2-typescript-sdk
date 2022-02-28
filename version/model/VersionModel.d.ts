@@ -10,6 +10,12 @@ export default class VersionModel implements IModel {
     private currentVersion;
     private needSignature;
     private signatureKeyId;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getVersionName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, versionName: string | null): string | null;
     getVersionModelId(): string | null;
     setVersionModelId(versionModelId: string | null): this;
     withVersionModelId(versionModelId: string | null): this;

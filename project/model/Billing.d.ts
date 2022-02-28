@@ -13,6 +13,12 @@ export default class Billing implements IModel {
     private currency;
     private createdAt;
     private updatedAt;
+    static getAccountName(grn: string): string | null;
+    static getProjectName(grn: string): string | null;
+    static getYear(grn: string): string | null;
+    static getMonth(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(accountName: string | null, projectName: string | null, year: string | null, month: string | null): string | null;
     getBillingId(): string | null;
     setBillingId(billingId: string | null): this;
     withBillingId(billingId: string | null): this;

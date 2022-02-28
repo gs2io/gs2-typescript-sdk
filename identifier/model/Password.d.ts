@@ -3,6 +3,10 @@ export default class Password implements IModel {
     private userId;
     private userName;
     private createdAt;
+    static getOwnerId(grn: string): string | null;
+    static getUserName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(ownerId: string | null, userName: string | null): string | null;
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;

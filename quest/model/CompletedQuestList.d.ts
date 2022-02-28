@@ -6,6 +6,13 @@ export default class CompletedQuestList implements IModel {
     private completeQuestNames;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getQuestGroupName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, questGroupName: string | null): string | null;
     getCompletedQuestListId(): string | null;
     setCompletedQuestListId(completedQuestListId: string | null): this;
     withCompletedQuestListId(completedQuestListId: string | null): this;

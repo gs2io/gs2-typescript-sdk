@@ -5,6 +5,13 @@ export default class Trigger implements IModel {
     private userId;
     private createdAt;
     private expiresAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getTriggerName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, triggerName: string | null): string | null;
     getTriggerId(): string | null;
     setTriggerId(triggerId: string | null): this;
     withTriggerId(triggerId: string | null): this;

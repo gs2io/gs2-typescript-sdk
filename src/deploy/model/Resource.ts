@@ -16,6 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 import OutputField from './OutputField';
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:deploy:{stackName}:resource:{resourceName}";
 
 export default class Resource implements IModel {
     private resourceId: string|null = null;
@@ -29,6 +30,99 @@ export default class Resource implements IModel {
     private outputFields: OutputField[]|null = null;
     private workId: string|null = null;
     private createdAt: number|null = null;
+
+    public static getRegion(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{stackName}', '.*')
+            .replace('{resourceName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getOwnerId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{stackName}', '.*')
+            .replace('{resourceName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getStackName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{stackName}', '(.*)')
+            .replace('{resourceName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getResourceName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{stackName}', '.*')
+            .replace('{resourceName}', '(.*)')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static isValid(grn: string): boolean {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getStackName(grn) == null) {
+            return false;
+        }
+        if (this.getResourceName(grn) == null) {
+            return false;
+        }
+        return true;
+    }
+
+    public static createGrn(
+        region: string|null,
+        ownerId: string|null,
+        stackName: string|null,
+        resourceName: string|null,
+    ): string|null {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (stackName == null || stackName === '') {
+            return null;
+        }
+        if (resourceName == null || resourceName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region!)
+            .replace('{ownerId}', ownerId!)
+            .replace('{stackName}', stackName!)
+            .replace('{resourceName}', resourceName!);
+    }
 
     public getResourceId(): string|null {
         return this.resourceId;

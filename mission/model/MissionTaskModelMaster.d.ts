@@ -12,6 +12,13 @@ export default class MissionTaskModelMaster implements IModel {
     private premiseMissionTaskName;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getMissionGroupName(grn: string): string | null;
+    static getMissionTaskName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, missionGroupName: string | null, missionTaskName: string | null): string | null;
     getMissionTaskId(): string | null;
     setMissionTaskId(missionTaskId: string | null): this;
     withMissionTaskId(missionTaskId: string | null): this;

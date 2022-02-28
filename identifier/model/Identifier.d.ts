@@ -4,6 +4,8 @@ export default class Identifier implements IModel {
     private userName;
     private clientSecret;
     private createdAt;
+    static isValid(grn: string): boolean;
+    static createGrn(): string | null;
     getClientId(): string | null;
     setClientId(clientId: string | null): this;
     withClientId(clientId: string | null): this;

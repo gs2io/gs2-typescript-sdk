@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:limit:{namespaceName}:user:{userId}:limit:{limitName}:counter:{counterName}";
 var Counter = /** @class */ (function () {
     function Counter() {
         this.counterId = null;
@@ -26,6 +27,132 @@ var Counter = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    Counter.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{limitName}', '.*')
+            .replace('{counterName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Counter.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{limitName}', '.*')
+            .replace('{counterName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Counter.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{limitName}', '.*')
+            .replace('{counterName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Counter.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{limitName}', '.*')
+            .replace('{counterName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Counter.getLimitName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{limitName}', '(.*)')
+            .replace('{counterName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Counter.getCounterName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{limitName}', '.*')
+            .replace('{counterName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Counter.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getLimitName(grn) == null) {
+            return false;
+        }
+        if (this.getCounterName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Counter.createGrn = function (region, ownerId, namespaceName, userId, limitName, counterName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (limitName == null || limitName === '') {
+            return null;
+        }
+        if (counterName == null || counterName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId)
+            .replace('{limitName}', limitName)
+            .replace('{counterName}', counterName);
+    };
     Counter.prototype.getCounterId = function () {
         return this.counterId;
     };

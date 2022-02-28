@@ -6,6 +6,13 @@ export default class Rating implements IModel {
     private rateValue;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getRatingName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, ratingName: string | null): string | null;
     getRatingId(): string | null;
     setRatingId(ratingId: string | null): this;
     withRatingId(ratingId: string | null): this;

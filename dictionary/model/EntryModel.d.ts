@@ -3,6 +3,12 @@ export default class EntryModel implements IModel {
     private entryModelId;
     private name;
     private metadata;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getEntryName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, entryName: string | null): string | null;
     getEntryModelId(): string | null;
     setEntryModelId(entryModelId: string | null): this;
     withEntryModelId(entryModelId: string | null): this;

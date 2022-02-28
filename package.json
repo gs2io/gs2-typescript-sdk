@@ -1,6 +1,6 @@
 {
   "name": "gs2",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build"
@@ -30,8 +30,6 @@
   "test": "jest",
   "jest": {
     "moduleNameMapper": {
-      "@/gs2": "<rootDir>/src",
-      "@/gs2/(.*)$": "<rootDir>/src/$1"
     },
     "moduleFileExtensions": [
       "js",

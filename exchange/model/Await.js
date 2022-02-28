@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:exchange:{namespaceName}:user:{userId}:await:{awaitName}";
 var Await = /** @class */ (function () {
     function Await() {
         this.awaitId = null;
@@ -24,6 +25,107 @@ var Await = /** @class */ (function () {
         this.count = null;
         this.exchangedAt = null;
     }
+    Await.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{awaitName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Await.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{awaitName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Await.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{awaitName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Await.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{awaitName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Await.getAwaitName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{awaitName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Await.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getAwaitName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Await.createGrn = function (region, ownerId, namespaceName, userId, awaitName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (awaitName == null || awaitName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId)
+            .replace('{awaitName}', awaitName);
+    };
     Await.prototype.getAwaitId = function () {
         return this.awaitId;
     };

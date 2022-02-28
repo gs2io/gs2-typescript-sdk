@@ -6,6 +6,13 @@ export default class Subscribe implements IModel {
     private roomName;
     private notificationTypes;
     private createdAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getRoomName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, roomName: string | null): string | null;
     getSubscribeId(): string | null;
     setSubscribeId(subscribeId: string | null): this;
     withSubscribeId(subscribeId: string | null): this;

@@ -11,6 +11,12 @@ export default class Gathering implements IModel {
     private expiresAt;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getGatheringName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, gatheringName: string | null): string | null;
     getGatheringId(): string | null;
     setGatheringId(gatheringId: string | null): this;
     withGatheringId(gatheringId: string | null): this;

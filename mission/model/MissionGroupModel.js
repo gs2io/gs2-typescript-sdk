@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var MissionTaskModel_1 = (0, tslib_1.__importDefault)(require("./MissionTaskModel"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}:group:{missionGroupName}";
 var MissionGroupModel = /** @class */ (function () {
     function MissionGroupModel() {
         this.missionGroupId = null;
@@ -29,6 +30,84 @@ var MissionGroupModel = /** @class */ (function () {
         this.resetHour = null;
         this.completeNotificationNamespaceId = null;
     }
+    MissionGroupModel.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{missionGroupName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MissionGroupModel.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{missionGroupName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MissionGroupModel.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{missionGroupName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MissionGroupModel.getMissionGroupName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{missionGroupName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MissionGroupModel.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getMissionGroupName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    MissionGroupModel.createGrn = function (region, ownerId, namespaceName, missionGroupName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (missionGroupName == null || missionGroupName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{missionGroupName}', missionGroupName);
+    };
     MissionGroupModel.prototype.getMissionGroupId = function () {
         return this.missionGroupId;
     };

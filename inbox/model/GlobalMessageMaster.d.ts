@@ -9,6 +9,12 @@ export default class GlobalMessageMaster implements IModel {
     private expiresTimeSpan;
     private createdAt;
     private expiresAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getGlobalMessageName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, globalMessageName: string | null): string | null;
     getGlobalMessageId(): string | null;
     setGlobalMessageId(globalMessageId: string | null): this;
     withGlobalMessageId(globalMessageId: string | null): this;

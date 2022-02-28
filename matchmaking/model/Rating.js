@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:matchmaking:{namespaceName}:user:{userId}:rating:{ratingName}";
 var Rating = /** @class */ (function () {
     function Rating() {
         this.ratingId = null;
@@ -24,6 +25,107 @@ var Rating = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    Rating.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{ratingName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Rating.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{ratingName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Rating.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{ratingName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Rating.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{ratingName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Rating.getRatingName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{ratingName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Rating.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getRatingName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Rating.createGrn = function (region, ownerId, namespaceName, userId, ratingName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (ratingName == null || ratingName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId)
+            .replace('{ratingName}', ratingName);
+    };
     Rating.prototype.getRatingId = function () {
         return this.ratingId;
     };

@@ -3,6 +3,8 @@ export default class FriendUser implements IModel {
     private userId;
     private publicProfile;
     private friendProfile;
+    static isValid(grn: string): boolean;
+    static createGrn(): string | null;
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;

@@ -15,11 +15,59 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+const grnFormat: string = "grn:gs2::{ownerId}:identifier:user:{userName}";
 
 export default class Password implements IModel {
     private userId: string|null = null;
     private userName: string|null = null;
     private createdAt: number|null = null;
+
+    public static getOwnerId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{ownerId}', '(.*)')
+            .replace('{userName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getUserName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{ownerId}', '.*')
+            .replace('{userName}', '(.*)')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static isValid(grn: string): boolean {
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getUserName(grn) == null) {
+            return false;
+        }
+        return true;
+    }
+
+    public static createGrn(
+        ownerId: string|null,
+        userName: string|null,
+    ): string|null {
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (userName == null || userName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{ownerId}', ownerId!)
+            .replace('{userName}', userName!);
+    }
 
     public getUserId(): string|null {
         return this.userId;

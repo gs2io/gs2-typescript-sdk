@@ -7,6 +7,12 @@ export default class ThresholdMaster implements IModel {
     private values;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getThresholdName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, thresholdName: string | null): string | null;
     getThresholdId(): string | null;
     setThresholdId(thresholdId: string | null): this;
     withThresholdId(thresholdId: string | null): this;

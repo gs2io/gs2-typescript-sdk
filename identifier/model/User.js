@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2::{ownerId}:identifier:user:{userName}";
 var User = /** @class */ (function () {
     function User() {
         this.userId = null;
@@ -23,6 +24,44 @@ var User = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    User.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{ownerId}', '(.*)')
+            .replace('{userName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    User.getUserName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{ownerId}', '.*')
+            .replace('{userName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    User.isValid = function (grn) {
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getUserName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    User.createGrn = function (ownerId, userName) {
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (userName == null || userName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{ownerId}', ownerId)
+            .replace('{userName}', userName);
+    };
     User.prototype.getUserId = function () {
         return this.userId;
     };

@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:stamina:{namespaceName}:user:{userId}:stamina:{staminaName}";
 var Stamina = /** @class */ (function () {
     function Stamina() {
         this.staminaId = null;
@@ -30,6 +31,107 @@ var Stamina = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    Stamina.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{staminaName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Stamina.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{staminaName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Stamina.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{staminaName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Stamina.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{staminaName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Stamina.getStaminaName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{staminaName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Stamina.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getStaminaName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Stamina.createGrn = function (region, ownerId, namespaceName, userId, staminaName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (staminaName == null || staminaName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId)
+            .replace('{staminaName}', staminaName);
+    };
     Stamina.prototype.getStaminaId = function () {
         return this.staminaId;
     };

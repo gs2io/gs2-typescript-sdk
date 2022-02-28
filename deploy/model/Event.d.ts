@@ -6,6 +6,12 @@ export default class Event implements IModel {
     private type;
     private message;
     private eventAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getStackName(grn: string): string | null;
+    static getEventName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, stackName: string | null, eventName: string | null): string | null;
     getEventId(): string | null;
     setEventId(eventId: string | null): this;
     withEventId(eventId: string | null): this;

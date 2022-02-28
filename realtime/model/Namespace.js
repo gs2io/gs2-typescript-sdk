@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var NotificationSetting_1 = (0, tslib_1.__importDefault)(require("./NotificationSetting"));
 var LogSetting_1 = (0, tslib_1.__importDefault)(require("./LogSetting"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:realtime:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
         this.namespaceId = null;
@@ -30,6 +31,63 @@ var Namespace = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    Namespace.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Namespace.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Namespace.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Namespace.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Namespace.createGrn = function (region, ownerId, namespaceName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName);
+    };
     Namespace.prototype.getNamespaceId = function () {
         return this.namespaceId;
     };

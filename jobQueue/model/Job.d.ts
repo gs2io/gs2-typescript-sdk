@@ -9,6 +9,13 @@ export default class Job implements IModel {
     private maxTryCount;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getJobName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, jobName: string | null): string | null;
     getJobId(): string | null;
     setJobId(jobId: string | null): this;
     withJobId(jobId: string | null): this;

@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:quest:{namespaceName}:group:{questGroupName}";
 var QuestGroupModelMaster = /** @class */ (function () {
     function QuestGroupModelMaster() {
         this.questGroupModelId = null;
@@ -25,6 +26,84 @@ var QuestGroupModelMaster = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    QuestGroupModelMaster.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{questGroupName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    QuestGroupModelMaster.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{questGroupName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    QuestGroupModelMaster.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{questGroupName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    QuestGroupModelMaster.getQuestGroupName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{questGroupName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    QuestGroupModelMaster.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getQuestGroupName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    QuestGroupModelMaster.createGrn = function (region, ownerId, namespaceName, questGroupName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (questGroupName == null || questGroupName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{questGroupName}', questGroupName);
+    };
     QuestGroupModelMaster.prototype.getQuestGroupModelId = function () {
         return this.questGroupModelId;
     };

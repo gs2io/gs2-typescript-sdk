@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:datastore:{namespaceName}:user:{userId}:data:{dataObjectName}:history:{generation}";
 var DataObjectHistory = /** @class */ (function () {
     function DataObjectHistory() {
         this.dataObjectHistoryId = null;
@@ -23,6 +24,132 @@ var DataObjectHistory = /** @class */ (function () {
         this.contentLength = null;
         this.createdAt = null;
     }
+    DataObjectHistory.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{dataObjectName}', '.*')
+            .replace('{generation}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    DataObjectHistory.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{dataObjectName}', '.*')
+            .replace('{generation}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    DataObjectHistory.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{dataObjectName}', '.*')
+            .replace('{generation}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    DataObjectHistory.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{dataObjectName}', '.*')
+            .replace('{generation}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    DataObjectHistory.getDataObjectName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{dataObjectName}', '(.*)')
+            .replace('{generation}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    DataObjectHistory.getGeneration = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{dataObjectName}', '.*')
+            .replace('{generation}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    DataObjectHistory.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getDataObjectName(grn) == null) {
+            return false;
+        }
+        if (this.getGeneration(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    DataObjectHistory.createGrn = function (region, ownerId, namespaceName, userId, dataObjectName, generation) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (dataObjectName == null || dataObjectName === '') {
+            return null;
+        }
+        if (generation == null || generation === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId)
+            .replace('{dataObjectName}', dataObjectName)
+            .replace('{generation}', generation);
+    };
     DataObjectHistory.prototype.getDataObjectHistoryId = function () {
         return this.dataObjectHistoryId;
     };

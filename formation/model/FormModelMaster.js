@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var SlotModel_1 = (0, tslib_1.__importDefault)(require("./SlotModel"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:model:form:{formModelName}";
 var FormModelMaster = /** @class */ (function () {
     function FormModelMaster() {
         this.formModelId = null;
@@ -27,6 +28,84 @@ var FormModelMaster = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    FormModelMaster.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{formModelName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    FormModelMaster.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{formModelName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    FormModelMaster.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{formModelName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    FormModelMaster.getFormModelName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{formModelName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    FormModelMaster.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getFormModelName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    FormModelMaster.createGrn = function (region, ownerId, namespaceName, formModelName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (formModelName == null || formModelName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{formModelName}', formModelName);
+    };
     FormModelMaster.prototype.getFormModelId = function () {
         return this.formModelId;
     };

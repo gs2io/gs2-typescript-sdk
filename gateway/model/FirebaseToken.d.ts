@@ -5,6 +5,12 @@ export default class FirebaseToken implements IModel {
     private token;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null): string | null;
     getFirebaseTokenId(): string | null;
     setFirebaseTokenId(firebaseTokenId: string | null): this;
     withFirebaseTokenId(firebaseTokenId: string | null): this;

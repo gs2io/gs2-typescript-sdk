@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+const grnFormat: string = "grn:gs2:::gs2:account:{accountName}:billingMethod:{billingMethodName}";
 
 export default class BillingMethod implements IModel {
     private billingMethodId: string|null = null;
@@ -28,6 +29,53 @@ export default class BillingMethod implements IModel {
     private partnerId: string|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
+
+    public static getAccountName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{accountName}', '(.*)')
+            .replace('{billingMethodName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getBillingMethodName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{accountName}', '.*')
+            .replace('{billingMethodName}', '(.*)')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static isValid(grn: string): boolean {
+        if (this.getAccountName(grn) == null) {
+            return false;
+        }
+        if (this.getBillingMethodName(grn) == null) {
+            return false;
+        }
+        return true;
+    }
+
+    public static createGrn(
+        accountName: string|null,
+        billingMethodName: string|null,
+    ): string|null {
+        if (accountName == null || accountName === '') {
+            return null;
+        }
+        if (billingMethodName == null || billingMethodName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{accountName}', accountName!)
+            .replace('{billingMethodName}', billingMethodName!);
+    }
 
     public getBillingMethodId(): string|null {
         return this.billingMethodId;

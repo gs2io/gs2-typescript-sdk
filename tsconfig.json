@@ -19,12 +19,6 @@
       "jest"
     ],
     "paths": {
-      "@/gs2/*": [
-        "src/*"
-      ],
-      "@/gs2": [
-        "src"
-      ]
     },
     "lib": [
       "esnext",

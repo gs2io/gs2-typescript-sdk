@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "";
 var Progress = /** @class */ (function () {
     function Progress() {
         this.progressId = null;
@@ -26,6 +27,12 @@ var Progress = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    Progress.isValid = function (grn) {
+        return true;
+    };
+    Progress.createGrn = function () {
+        return grnFormat;
+    };
     Progress.prototype.getProgressId = function () {
         return this.progressId;
     };

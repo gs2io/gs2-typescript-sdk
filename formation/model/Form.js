@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Slot_1 = (0, tslib_1.__importDefault)(require("./Slot"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:user:{userId}:mold:{moldName}:form:{index}";
 var Form = /** @class */ (function () {
     function Form() {
         this.formId = null;
@@ -26,6 +27,132 @@ var Form = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    Form.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{moldName}', '.*')
+            .replace('{index}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Form.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{moldName}', '.*')
+            .replace('{index}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Form.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{moldName}', '.*')
+            .replace('{index}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Form.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{moldName}', '.*')
+            .replace('{index}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Form.getMoldName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{moldName}', '(.*)')
+            .replace('{index}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Form.getIndex = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{moldName}', '.*')
+            .replace('{index}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Form.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getMoldName(grn) == null) {
+            return false;
+        }
+        if (this.getIndex(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Form.createGrn = function (region, ownerId, namespaceName, userId, moldName, index) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (moldName == null || moldName === '') {
+            return null;
+        }
+        if (index == null || index === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId)
+            .replace('{moldName}', moldName)
+            .replace('{index}', index);
+    };
     Form.prototype.getFormId = function () {
         return this.formId;
     };

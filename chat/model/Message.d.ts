@@ -7,6 +7,13 @@ export default class Message implements IModel {
     private category;
     private metadata;
     private createdAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getRoomName(grn: string): string | null;
+    static getMessageName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, roomName: string | null, messageName: string | null): string | null;
     getMessageId(): string | null;
     setMessageId(messageId: string | null): this;
     withMessageId(messageId: string | null): this;

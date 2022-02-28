@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var NotificationType_1 = (0, tslib_1.__importDefault)(require("./NotificationType"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:chat:{namespaceName}:user:{userId}:subscribe:{roomName}";
 var Subscribe = /** @class */ (function () {
     function Subscribe() {
         this.subscribeId = null;
@@ -25,6 +26,107 @@ var Subscribe = /** @class */ (function () {
         this.notificationTypes = null;
         this.createdAt = null;
     }
+    Subscribe.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{roomName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Subscribe.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{roomName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Subscribe.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{roomName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Subscribe.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{roomName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Subscribe.getRoomName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{roomName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Subscribe.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getRoomName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Subscribe.createGrn = function (region, ownerId, namespaceName, userId, roomName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (roomName == null || roomName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId)
+            .replace('{roomName}', roomName);
+    };
     Subscribe.prototype.getSubscribeId = function () {
         return this.subscribeId;
     };

@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var DisplayItemMaster_1 = (0, tslib_1.__importDefault)(require("./DisplayItemMaster"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:showcase:{namespaceName}:showcase:{showcaseName}";
 var ShowcaseMaster = /** @class */ (function () {
     function ShowcaseMaster() {
         this.showcaseId = null;
@@ -28,6 +29,84 @@ var ShowcaseMaster = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    ShowcaseMaster.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{showcaseName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    ShowcaseMaster.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{showcaseName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    ShowcaseMaster.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{showcaseName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    ShowcaseMaster.getShowcaseName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{showcaseName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    ShowcaseMaster.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getShowcaseName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    ShowcaseMaster.createGrn = function (region, ownerId, namespaceName, showcaseName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (showcaseName == null || showcaseName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{showcaseName}', showcaseName);
+    };
     ShowcaseMaster.prototype.getShowcaseId = function () {
         return this.showcaseId;
     };

@@ -6,6 +6,10 @@ export default class SecurityPolicy implements IModel {
     private policy;
     private createdAt;
     private updatedAt;
+    static getOwnerId(grn: string): string | null;
+    static getSecurityPolicyName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(ownerId: string | null, securityPolicyName: string | null): string | null;
     getSecurityPolicyId(): string | null;
     setSecurityPolicyId(securityPolicyId: string | null): this;
     withSecurityPolicyId(securityPolicyId: string | null): this;

@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+const grnFormat: string = "grn:gs2:::gs2:account:{accountName}:project:{projectName}";
 
 export default class Project implements IModel {
     private projectId: string|null = null;
@@ -28,6 +29,53 @@ export default class Project implements IModel {
     private eventBridgeAwsRegion: string|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
+
+    public static getAccountName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{accountName}', '(.*)')
+            .replace('{projectName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getProjectName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{accountName}', '.*')
+            .replace('{projectName}', '(.*)')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static isValid(grn: string): boolean {
+        if (this.getAccountName(grn) == null) {
+            return false;
+        }
+        if (this.getProjectName(grn) == null) {
+            return false;
+        }
+        return true;
+    }
+
+    public static createGrn(
+        accountName: string|null,
+        projectName: string|null,
+    ): string|null {
+        if (accountName == null || accountName === '') {
+            return null;
+        }
+        if (projectName == null || projectName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{accountName}', accountName!)
+            .replace('{projectName}', projectName!);
+    }
 
     public getProjectId(): string|null {
         return this.projectId;

@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Version_1 = (0, tslib_1.__importDefault)(require("./Version"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:version:{namespaceName}:user:{userId}:version:{versionName}:accept";
 var AcceptVersion = /** @class */ (function () {
     function AcceptVersion() {
         this.acceptVersionId = null;
@@ -26,6 +27,107 @@ var AcceptVersion = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    AcceptVersion.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{versionName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    AcceptVersion.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{versionName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    AcceptVersion.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{versionName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    AcceptVersion.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{versionName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    AcceptVersion.getVersionName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{versionName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    AcceptVersion.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getVersionName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    AcceptVersion.createGrn = function (region, ownerId, namespaceName, userId, versionName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (versionName == null || versionName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId)
+            .replace('{versionName}', versionName);
+    };
     AcceptVersion.prototype.getAcceptVersionId = function () {
         return this.acceptVersionId;
     };

@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Version_1 = (0, tslib_1.__importDefault)(require("./Version"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:version:{namespaceName}:model:version:{versionName}";
 var VersionModel = /** @class */ (function () {
     function VersionModel() {
         this.versionModelId = null;
@@ -29,6 +30,84 @@ var VersionModel = /** @class */ (function () {
         this.needSignature = null;
         this.signatureKeyId = null;
     }
+    VersionModel.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{versionName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    VersionModel.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{versionName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    VersionModel.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{versionName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    VersionModel.getVersionName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{versionName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    VersionModel.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getVersionName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    VersionModel.createGrn = function (region, ownerId, namespaceName, versionName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (versionName == null || versionName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{versionName}', versionName);
+    };
     VersionModel.prototype.getVersionModelId = function () {
         return this.versionModelId;
     };

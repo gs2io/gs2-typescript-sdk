@@ -15,12 +15,51 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2::{ownerId}:identifier:user:{userName}";
 var AttachSecurityPolicy = /** @class */ (function () {
     function AttachSecurityPolicy() {
         this.userId = null;
         this.securityPolicyIds = null;
         this.attachedAt = null;
     }
+    AttachSecurityPolicy.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{ownerId}', '(.*)')
+            .replace('{userName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    AttachSecurityPolicy.getUserName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{ownerId}', '.*')
+            .replace('{userName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    AttachSecurityPolicy.isValid = function (grn) {
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getUserName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    AttachSecurityPolicy.createGrn = function (ownerId, userName) {
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (userName == null || userName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{ownerId}', ownerId)
+            .replace('{userName}', userName);
+    };
     AttachSecurityPolicy.prototype.getUserId = function () {
         return this.userId;
     };

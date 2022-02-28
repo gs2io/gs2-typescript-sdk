@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:ranking:{namespaceName}:user:{userId}:subscribe:{categoryName}";
 var Subscribe = /** @class */ (function () {
     function Subscribe() {
         this.subscribeId = null;
@@ -24,6 +25,107 @@ var Subscribe = /** @class */ (function () {
         this.subscribedUserIds = null;
         this.createdAt = null;
     }
+    Subscribe.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Subscribe.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Subscribe.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Subscribe.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{categoryName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Subscribe.getCategoryName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Subscribe.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getCategoryName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Subscribe.createGrn = function (region, ownerId, namespaceName, userId, categoryName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (categoryName == null || categoryName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId)
+            .replace('{categoryName}', categoryName);
+    };
     Subscribe.prototype.getSubscribeId = function () {
         return this.subscribeId;
     };

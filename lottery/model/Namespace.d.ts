@@ -11,6 +11,11 @@ export default class Namespace implements IModel {
     private logSetting;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null): string | null;
     getNamespaceId(): string | null;
     setNamespaceId(namespaceId: string | null): this;
     withNamespaceId(namespaceId: string | null): this;

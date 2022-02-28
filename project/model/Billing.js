@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:::gs2:account:{accountName}:project:{projectName}:billing:{year}:{month}";
 var Billing = /** @class */ (function () {
     function Billing() {
         this.billingId = null;
@@ -31,6 +32,84 @@ var Billing = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    Billing.getAccountName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{accountName}', '(.*)')
+            .replace('{projectName}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Billing.getProjectName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{accountName}', '.*')
+            .replace('{projectName}', '(.*)')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Billing.getYear = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{accountName}', '.*')
+            .replace('{projectName}', '.*')
+            .replace('{year}', '(.*)')
+            .replace('{month}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Billing.getMonth = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{accountName}', '.*')
+            .replace('{projectName}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Billing.isValid = function (grn) {
+        if (this.getAccountName(grn) == null) {
+            return false;
+        }
+        if (this.getProjectName(grn) == null) {
+            return false;
+        }
+        if (this.getYear(grn) == null) {
+            return false;
+        }
+        if (this.getMonth(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Billing.createGrn = function (accountName, projectName, year, month) {
+        if (accountName == null || accountName === '') {
+            return null;
+        }
+        if (projectName == null || projectName === '') {
+            return null;
+        }
+        if (year == null || year === '') {
+            return null;
+        }
+        if (month == null || month === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{accountName}', accountName)
+            .replace('{projectName}', projectName)
+            .replace('{year}', year)
+            .replace('{month}', month);
+    };
     Billing.prototype.getBillingId = function () {
         return this.billingId;
     };

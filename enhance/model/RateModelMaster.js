@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var BonusRate_1 = (0, tslib_1.__importDefault)(require("./BonusRate"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:enhance:{namespaceName}:rateModelMaster:{rateName}";
 var RateModelMaster = /** @class */ (function () {
     function RateModelMaster() {
         this.rateModelId = null;
@@ -32,6 +33,84 @@ var RateModelMaster = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    RateModelMaster.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{rateName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    RateModelMaster.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{rateName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    RateModelMaster.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{rateName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    RateModelMaster.getRateName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{rateName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    RateModelMaster.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getRateName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    RateModelMaster.createGrn = function (region, ownerId, namespaceName, rateName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (rateName == null || rateName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{rateName}', rateName);
+    };
     RateModelMaster.prototype.getRateModelId = function () {
         return this.rateModelId;
     };

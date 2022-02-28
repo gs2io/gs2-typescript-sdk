@@ -1,5 +1,5 @@
-import IResult from '@/gs2/core/interface/IResult';
-export declare class LoginBySignatureResult implements IResult {
+import IResult from '../../core/interface/IResult';
+export default class LoginBySignatureResult implements IResult {
     private token;
     private userId;
     private expire;

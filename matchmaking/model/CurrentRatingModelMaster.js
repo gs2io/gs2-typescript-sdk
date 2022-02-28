@@ -15,11 +15,69 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:matchmaking:{namespaceName}";
 var CurrentRatingModelMaster = /** @class */ (function () {
     function CurrentRatingModelMaster() {
         this.namespaceId = null;
         this.settings = null;
     }
+    CurrentRatingModelMaster.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    CurrentRatingModelMaster.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    CurrentRatingModelMaster.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    CurrentRatingModelMaster.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    CurrentRatingModelMaster.createGrn = function (region, ownerId, namespaceName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName);
+    };
     CurrentRatingModelMaster.prototype.getNamespaceId = function () {
         return this.namespaceId;
     };

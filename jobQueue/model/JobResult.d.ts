@@ -6,6 +6,14 @@ export default class JobResult implements IModel {
     private statusCode;
     private result;
     private tryAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getJobName(grn: string): string | null;
+    static getTryNumber(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, jobName: string | null, tryNumber: string | null): string | null;
     getJobResultId(): string | null;
     setJobResultId(jobResultId: string | null): this;
     withJobResultId(jobResultId: string | null): this;

@@ -19,6 +19,7 @@ var tslib_1 = require("tslib");
 var MaxStaminaTable_1 = (0, tslib_1.__importDefault)(require("./MaxStaminaTable"));
 var RecoverIntervalTable_1 = (0, tslib_1.__importDefault)(require("./RecoverIntervalTable"));
 var RecoverValueTable_1 = (0, tslib_1.__importDefault)(require("./RecoverValueTable"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:stamina:{namespaceName}:model:{staminaName}";
 var StaminaModel = /** @class */ (function () {
     function StaminaModel() {
         this.staminaModelId = null;
@@ -33,6 +34,84 @@ var StaminaModel = /** @class */ (function () {
         this.recoverIntervalTable = null;
         this.recoverValueTable = null;
     }
+    StaminaModel.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{staminaName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    StaminaModel.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{staminaName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    StaminaModel.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{staminaName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    StaminaModel.getStaminaName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{staminaName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    StaminaModel.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getStaminaName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    StaminaModel.createGrn = function (region, ownerId, namespaceName, staminaName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (staminaName == null || staminaName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{staminaName}', staminaName);
+    };
     StaminaModel.prototype.getStaminaModelId = function () {
         return this.staminaModelId;
     };

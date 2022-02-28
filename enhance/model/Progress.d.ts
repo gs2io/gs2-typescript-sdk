@@ -8,6 +8,8 @@ export default class Progress implements IModel {
     private rate;
     private createdAt;
     private updatedAt;
+    static isValid(grn: string): boolean;
+    static createGrn(): string | null;
     getProgressId(): string | null;
     setProgressId(progressId: string | null): this;
     withProgressId(progressId: string | null): this;

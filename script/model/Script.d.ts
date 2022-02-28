@@ -6,6 +6,12 @@ export default class Script implements IModel {
     private script;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getScriptName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, scriptName: string | null): string | null;
     getScriptId(): string | null;
     setScriptId(scriptId: string | null): this;
     withScriptId(scriptId: string | null): this;

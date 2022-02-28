@@ -8,6 +8,12 @@ export default class Room implements IModel {
     private whiteListUserIds;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getRoomName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, roomName: string | null): string | null;
     getRoomId(): string | null;
     setRoomId(roomId: string | null): this;
     withRoomId(roomId: string | null): this;

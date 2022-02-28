@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var AcquireAction_1 = (0, tslib_1.__importDefault)(require("./AcquireAction"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}:group:{missionGroupName}:missionTaskModelMaster:{missionTaskName}";
 var MissionTaskModelMaster = /** @class */ (function () {
     function MissionTaskModelMaster() {
         this.missionTaskId = null;
@@ -31,6 +32,107 @@ var MissionTaskModelMaster = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    MissionTaskModelMaster.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{missionGroupName}', '.*')
+            .replace('{missionTaskName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MissionTaskModelMaster.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{missionGroupName}', '.*')
+            .replace('{missionTaskName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MissionTaskModelMaster.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{missionGroupName}', '.*')
+            .replace('{missionTaskName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MissionTaskModelMaster.getMissionGroupName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{missionGroupName}', '(.*)')
+            .replace('{missionTaskName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MissionTaskModelMaster.getMissionTaskName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{missionGroupName}', '.*')
+            .replace('{missionTaskName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MissionTaskModelMaster.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getMissionGroupName(grn) == null) {
+            return false;
+        }
+        if (this.getMissionTaskName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    MissionTaskModelMaster.createGrn = function (region, ownerId, namespaceName, missionGroupName, missionTaskName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (missionGroupName == null || missionGroupName === '') {
+            return null;
+        }
+        if (missionTaskName == null || missionTaskName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{missionGroupName}', missionGroupName)
+            .replace('{missionTaskName}', missionTaskName);
+    };
     MissionTaskModelMaster.prototype.getMissionTaskId = function () {
         return this.missionTaskId;
     };

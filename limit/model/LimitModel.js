@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:limit:{namespaceName}:limit:{limitName}";
 var LimitModel = /** @class */ (function () {
     function LimitModel() {
         this.limitModelId = null;
@@ -25,6 +26,84 @@ var LimitModel = /** @class */ (function () {
         this.resetDayOfWeek = null;
         this.resetHour = null;
     }
+    LimitModel.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{limitName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    LimitModel.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{limitName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    LimitModel.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{limitName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    LimitModel.getLimitName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{limitName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    LimitModel.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getLimitName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    LimitModel.createGrn = function (region, ownerId, namespaceName, limitName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (limitName == null || limitName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{limitName}', limitName);
+    };
     LimitModel.prototype.getLimitModelId = function () {
         return this.limitModelId;
     };

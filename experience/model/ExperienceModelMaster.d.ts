@@ -10,6 +10,12 @@ export default class ExperienceModelMaster implements IModel {
     private rankThresholdName;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getExperienceName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, experienceName: string | null): string | null;
     getExperienceModelId(): string | null;
     setExperienceModelId(experienceModelId: string | null): this;
     withExperienceModelId(experienceModelId: string | null): this;

@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:experience:{namespaceName}:threshold:{thresholdName}";
 var ThresholdMaster = /** @class */ (function () {
     function ThresholdMaster() {
         this.thresholdId = null;
@@ -25,6 +26,84 @@ var ThresholdMaster = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    ThresholdMaster.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{thresholdName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    ThresholdMaster.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{thresholdName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    ThresholdMaster.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{thresholdName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    ThresholdMaster.getThresholdName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{thresholdName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    ThresholdMaster.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getThresholdName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    ThresholdMaster.createGrn = function (region, ownerId, namespaceName, thresholdName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (thresholdName == null || thresholdName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{thresholdName}', thresholdName);
+    };
     ThresholdMaster.prototype.getThresholdId = function () {
         return this.thresholdId;
     };

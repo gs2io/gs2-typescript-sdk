@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:lottery:{namespaceName}:lotteryModel:{lotteryName}";
 var LotteryModel = /** @class */ (function () {
     function LotteryModel() {
         this.lotteryModelId = null;
@@ -25,6 +26,84 @@ var LotteryModel = /** @class */ (function () {
         this.prizeTableName = null;
         this.choicePrizeTableScriptId = null;
     }
+    LotteryModel.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{lotteryName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    LotteryModel.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{lotteryName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    LotteryModel.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{lotteryName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    LotteryModel.getLotteryName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{lotteryName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    LotteryModel.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getLotteryName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    LotteryModel.createGrn = function (region, ownerId, namespaceName, lotteryName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (lotteryName == null || lotteryName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{lotteryName}', lotteryName);
+    };
     LotteryModel.prototype.getLotteryModelId = function () {
         return this.lotteryModelId;
     };

@@ -8,6 +8,13 @@ export default class Complete implements IModel {
     private nextResetAt;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getMissionGroupName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, missionGroupName: string | null): string | null;
     getCompleteId(): string | null;
     setCompleteId(completeId: string | null): this;
     withCompleteId(completeId: string | null): this;

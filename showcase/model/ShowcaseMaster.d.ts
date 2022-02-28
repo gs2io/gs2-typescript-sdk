@@ -9,6 +9,12 @@ export default class ShowcaseMaster implements IModel {
     private displayItems;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getShowcaseName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, showcaseName: string | null): string | null;
     getShowcaseId(): string | null;
     setShowcaseId(showcaseId: string | null): this;
     withShowcaseId(showcaseId: string | null): this;

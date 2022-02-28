@@ -1,4 +1,5 @@
-export * as Model from './model';
-export * as Request from './request';
-export * as Result from './result';
-export { Gs2AuthRestClient } from './rest';
+import * as model from './model';
+import * as request from './request';
+import * as result from './result';
+import Gs2AuthRestClient from './rest';
+export { model, request, result, Gs2AuthRestClient, };

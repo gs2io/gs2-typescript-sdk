@@ -14,12 +14,22 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 
-import IModel from '@/gs2/core/interface/IModel';
+import IModel from '../../core/interface/IModel';
+const grnFormat: string = "";
 
-export class AccessToken implements IModel {
+export default class AccessToken implements IModel {
     private token: string|null = null;
     private userId: string|null = null;
     private expire: number|null = null;
+
+    public static isValid(grn: string): boolean {
+        return true;
+    }
+
+    public static createGrn(
+    ): string|null {
+        return grnFormat;
+    }
 
     public getToken(): string|null {
         return this.token;

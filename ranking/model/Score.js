@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:ranking:{namespaceName}:user:{userId}:score:{categoryName}:{scorerUserId}:{uniqueId}";
 var Score = /** @class */ (function () {
     function Score() {
         this.scoreId = null;
@@ -26,6 +27,159 @@ var Score = /** @class */ (function () {
         this.metadata = null;
         this.createdAt = null;
     }
+    Score.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '.*')
+            .replace('{scorerUserId}', '.*')
+            .replace('{uniqueId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Score.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '.*')
+            .replace('{scorerUserId}', '.*')
+            .replace('{uniqueId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Score.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '.*')
+            .replace('{scorerUserId}', '.*')
+            .replace('{uniqueId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Score.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{categoryName}', '.*')
+            .replace('{scorerUserId}', '.*')
+            .replace('{uniqueId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Score.getCategoryName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '(.*)')
+            .replace('{scorerUserId}', '.*')
+            .replace('{uniqueId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Score.getScorerUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '.*')
+            .replace('{scorerUserId}', '(.*)')
+            .replace('{uniqueId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Score.getUniqueId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '.*')
+            .replace('{scorerUserId}', '.*')
+            .replace('{uniqueId}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Score.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getCategoryName(grn) == null) {
+            return false;
+        }
+        if (this.getScorerUserId(grn) == null) {
+            return false;
+        }
+        if (this.getUniqueId(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Score.createGrn = function (region, ownerId, namespaceName, userId, categoryName, scorerUserId, uniqueId) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (categoryName == null || categoryName === '') {
+            return null;
+        }
+        if (scorerUserId == null || scorerUserId === '') {
+            return null;
+        }
+        if (uniqueId == null || uniqueId === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId)
+            .replace('{categoryName}', categoryName)
+            .replace('{scorerUserId}', scorerUserId)
+            .replace('{uniqueId}', uniqueId);
+    };
     Score.prototype.getScoreId = function () {
         return this.scoreId;
     };

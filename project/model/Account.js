@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:::gs2:account:{accountName}";
 var Account = /** @class */ (function () {
     function Account() {
         this.accountId = null;
@@ -27,6 +28,27 @@ var Account = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    Account.getAccountName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{accountName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Account.isValid = function (grn) {
+        if (this.getAccountName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Account.createGrn = function (accountName) {
+        if (accountName == null || accountName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{accountName}', accountName);
+    };
     Account.prototype.getAccountId = function () {
         return this.accountId;
     };

@@ -6,6 +6,13 @@ export default class WebSocketSession implements IModel {
     private userId;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getConnectionId(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, connectionId: string | null): string | null;
     getWebSocketSessionId(): string | null;
     setWebSocketSessionId(webSocketSessionId: string | null): this;
     withWebSocketSessionId(webSocketSessionId: string | null): this;

@@ -13,5 +13,10 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-export { LoginResult } from "./LoginResult"
-export { LoginBySignatureResult } from "./LoginBySignatureResult"
+import LoginResult from "./LoginResult"
+import LoginBySignatureResult from "./LoginBySignatureResult"
+
+export {
+    LoginResult,
+    LoginBySignatureResult,
+};

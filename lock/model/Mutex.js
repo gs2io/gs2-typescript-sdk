@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:lock:{namespaceName}:user:{userId}:property:{propertyId}";
 var Mutex = /** @class */ (function () {
     function Mutex() {
         this.mutexId = null;
@@ -23,6 +24,107 @@ var Mutex = /** @class */ (function () {
         this.transactionId = null;
         this.createdAt = null;
     }
+    Mutex.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{propertyId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Mutex.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{propertyId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Mutex.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{propertyId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Mutex.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{propertyId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Mutex.getPropertyId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{propertyId}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Mutex.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getPropertyId(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Mutex.createGrn = function (region, ownerId, namespaceName, userId, propertyId) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (propertyId == null || propertyId === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId)
+            .replace('{propertyId}', propertyId);
+    };
     Mutex.prototype.getMutexId = function () {
         return this.mutexId;
     };

@@ -5,6 +5,10 @@ export default class User implements IModel {
     private description;
     private createdAt;
     private updatedAt;
+    static getOwnerId(grn: string): string | null;
+    static getUserName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(ownerId: string | null, userName: string | null): string | null;
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;

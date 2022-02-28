@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:experience:{namespaceName}:user:{userId}:experienceModel:{experienceName}:property:{propertyId}";
 var Status = /** @class */ (function () {
     function Status() {
         this.statusId = null;
@@ -27,6 +28,132 @@ var Status = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    Status.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{experienceName}', '.*')
+            .replace('{propertyId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Status.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{experienceName}', '.*')
+            .replace('{propertyId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Status.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{experienceName}', '.*')
+            .replace('{propertyId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Status.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{experienceName}', '.*')
+            .replace('{propertyId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Status.getExperienceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{experienceName}', '(.*)')
+            .replace('{propertyId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Status.getPropertyId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{experienceName}', '.*')
+            .replace('{propertyId}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Status.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getExperienceName(grn) == null) {
+            return false;
+        }
+        if (this.getPropertyId(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Status.createGrn = function (region, ownerId, namespaceName, userId, experienceName, propertyId) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (experienceName == null || experienceName === '') {
+            return null;
+        }
+        if (propertyId == null || propertyId === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId)
+            .replace('{experienceName}', experienceName)
+            .replace('{propertyId}', propertyId);
+    };
     Status.prototype.getStatusId = function () {
         return this.statusId;
     };

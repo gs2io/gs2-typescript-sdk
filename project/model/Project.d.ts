@@ -11,6 +11,10 @@ export default class Project implements IModel {
     private eventBridgeAwsRegion;
     private createdAt;
     private updatedAt;
+    static getAccountName(grn: string): string | null;
+    static getProjectName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(accountName: string | null, projectName: string | null): string | null;
     getProjectId(): string | null;
     setProjectId(projectId: string | null): this;
     withProjectId(projectId: string | null): this;

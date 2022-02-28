@@ -7,6 +7,12 @@ export default class RatingModelMaster implements IModel {
     private volatility;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getRatingName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, ratingName: string | null): string | null;
     getRatingModelId(): string | null;
     setRatingModelId(ratingModelId: string | null): this;
     withRatingModelId(ratingModelId: string | null): this;

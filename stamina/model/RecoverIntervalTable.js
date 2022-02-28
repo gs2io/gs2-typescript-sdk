@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:stamina:{namespaceName}:recoverIntervalTable:{recoverIntervalTableName}";
 var RecoverIntervalTable = /** @class */ (function () {
     function RecoverIntervalTable() {
         this.recoverIntervalTableId = null;
@@ -23,6 +24,84 @@ var RecoverIntervalTable = /** @class */ (function () {
         this.experienceModelId = null;
         this.values = null;
     }
+    RecoverIntervalTable.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{recoverIntervalTableName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    RecoverIntervalTable.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{recoverIntervalTableName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    RecoverIntervalTable.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{recoverIntervalTableName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    RecoverIntervalTable.getRecoverIntervalTableName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{recoverIntervalTableName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    RecoverIntervalTable.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getRecoverIntervalTableName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    RecoverIntervalTable.createGrn = function (region, ownerId, namespaceName, recoverIntervalTableName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (recoverIntervalTableName == null || recoverIntervalTableName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{recoverIntervalTableName}', recoverIntervalTableName);
+    };
     RecoverIntervalTable.prototype.getRecoverIntervalTableId = function () {
         return this.recoverIntervalTableId;
     };

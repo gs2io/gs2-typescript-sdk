@@ -14,6 +14,12 @@ export default class CategoryModel implements IModel {
     private entryPeriodEventId;
     private accessPeriodEventId;
     private generation;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getCategoryName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, categoryName: string | null): string | null;
     getCategoryModelId(): string | null;
     setCategoryModelId(categoryModelId: string | null): this;
     withCategoryModelId(categoryModelId: string | null): this;

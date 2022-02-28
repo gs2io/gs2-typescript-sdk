@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+const grnFormat: string = "grn:gs2:::gs2:account:{accountName}:project:{projectName}:billing:{year}:{month}";
 
 export default class Billing implements IModel {
     private billingId: string|null = null;
@@ -30,6 +31,99 @@ export default class Billing implements IModel {
     private currency: string|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
+
+    public static getAccountName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{accountName}', '(.*)')
+            .replace('{projectName}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getProjectName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{accountName}', '.*')
+            .replace('{projectName}', '(.*)')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getYear(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{accountName}', '.*')
+            .replace('{projectName}', '.*')
+            .replace('{year}', '(.*)')
+            .replace('{month}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getMonth(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{accountName}', '.*')
+            .replace('{projectName}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '(.*)')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static isValid(grn: string): boolean {
+        if (this.getAccountName(grn) == null) {
+            return false;
+        }
+        if (this.getProjectName(grn) == null) {
+            return false;
+        }
+        if (this.getYear(grn) == null) {
+            return false;
+        }
+        if (this.getMonth(grn) == null) {
+            return false;
+        }
+        return true;
+    }
+
+    public static createGrn(
+        accountName: string|null,
+        projectName: string|null,
+        year: string|null,
+        month: string|null,
+    ): string|null {
+        if (accountName == null || accountName === '') {
+            return null;
+        }
+        if (projectName == null || projectName === '') {
+            return null;
+        }
+        if (year == null || year === '') {
+            return null;
+        }
+        if (month == null || month === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{accountName}', accountName!)
+            .replace('{projectName}', projectName!)
+            .replace('{year}', year!)
+            .replace('{month}', month!);
+    }
 
     public getBillingId(): string|null {
         return this.billingId;

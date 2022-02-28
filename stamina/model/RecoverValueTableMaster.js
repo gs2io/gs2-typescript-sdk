@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:stamina:{namespaceName}:recoverValueTable:{recoverValueTableName}";
 var RecoverValueTableMaster = /** @class */ (function () {
     function RecoverValueTableMaster() {
         this.recoverValueTableId = null;
@@ -26,6 +27,84 @@ var RecoverValueTableMaster = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    RecoverValueTableMaster.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{recoverValueTableName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    RecoverValueTableMaster.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{recoverValueTableName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    RecoverValueTableMaster.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{recoverValueTableName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    RecoverValueTableMaster.getRecoverValueTableName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{recoverValueTableName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    RecoverValueTableMaster.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getRecoverValueTableName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    RecoverValueTableMaster.createGrn = function (region, ownerId, namespaceName, recoverValueTableName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (recoverValueTableName == null || recoverValueTableName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{recoverValueTableName}', recoverValueTableName);
+    };
     RecoverValueTableMaster.prototype.getRecoverValueTableId = function () {
         return this.recoverValueTableId;
     };

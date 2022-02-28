@@ -5,6 +5,14 @@ export default class DataObjectHistory implements IModel {
     private generation;
     private contentLength;
     private createdAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getDataObjectName(grn: string): string | null;
+    static getGeneration(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, dataObjectName: string | null, generation: string | null): string | null;
     getDataObjectHistoryId(): string | null;
     setDataObjectHistoryId(dataObjectHistoryId: string | null): this;
     withDataObjectHistoryId(dataObjectHistoryId: string | null): this;

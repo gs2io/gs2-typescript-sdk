@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var CounterScopeModel_1 = (0, tslib_1.__importDefault)(require("./CounterScopeModel"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}:counter:{counterName}";
 var CounterModel = /** @class */ (function () {
     function CounterModel() {
         this.counterId = null;
@@ -25,6 +26,84 @@ var CounterModel = /** @class */ (function () {
         this.scopes = null;
         this.challengePeriodEventId = null;
     }
+    CounterModel.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{counterName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    CounterModel.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{counterName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    CounterModel.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{counterName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    CounterModel.getCounterName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{counterName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    CounterModel.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getCounterName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    CounterModel.createGrn = function (region, ownerId, namespaceName, counterName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (counterName == null || counterName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{counterName}', counterName);
+    };
     CounterModel.prototype.getCounterId = function () {
         return this.counterId;
     };

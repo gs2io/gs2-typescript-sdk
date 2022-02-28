@@ -10,6 +10,13 @@ export default class Message implements IModel {
     private receivedAt;
     private readAt;
     private expiresAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getMessageName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, messageName: string | null): string | null;
     getMessageId(): string | null;
     setMessageId(messageId: string | null): this;
     withMessageId(messageId: string | null): this;

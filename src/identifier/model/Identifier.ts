@@ -15,12 +15,22 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+const grnFormat: string = "";
 
 export default class Identifier implements IModel {
     private clientId: string|null = null;
     private userName: string|null = null;
     private clientSecret: string|null = null;
     private createdAt: number|null = null;
+
+    public static isValid(grn: string): boolean {
+        return true;
+    }
+
+    public static createGrn(
+    ): string|null {
+        return grnFormat;
+    }
 
     public getClientId(): string|null {
         return this.clientId;

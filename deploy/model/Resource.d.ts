@@ -12,6 +12,12 @@ export default class Resource implements IModel {
     private outputFields;
     private workId;
     private createdAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getStackName(grn: string): string | null;
+    static getResourceName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, stackName: string | null, resourceName: string | null): string | null;
     getResourceId(): string | null;
     setResourceId(resourceId: string | null): this;
     withResourceId(resourceId: string | null): this;

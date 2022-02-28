@@ -1,1 +1,2 @@
-export { AccessToken } from "./AccessToken";
+import AccessToken from "./AccessToken";
+export { AccessToken, };

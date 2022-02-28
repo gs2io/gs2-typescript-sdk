@@ -15,11 +15,18 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "";
 var SendFriendRequest = /** @class */ (function () {
     function SendFriendRequest() {
         this.userId = null;
         this.targetUserId = null;
     }
+    SendFriendRequest.isValid = function (grn) {
+        return true;
+    };
+    SendFriendRequest.createGrn = function () {
+        return grnFormat;
+    };
     SendFriendRequest.prototype.getUserId = function () {
         return this.userId;
     };

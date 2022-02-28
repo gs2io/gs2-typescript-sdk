@@ -7,6 +7,13 @@ export default class Inventory implements IModel {
     private currentInventoryMaxCapacity;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getInventoryName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, inventoryName: string | null): string | null;
     getInventoryId(): string | null;
     setInventoryId(inventoryId: string | null): this;
     withInventoryId(inventoryId: string | null): this;

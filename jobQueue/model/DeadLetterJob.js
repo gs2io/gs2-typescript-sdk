@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var JobResultBody_1 = (0, tslib_1.__importDefault)(require("./JobResultBody"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:queue:{namespaceName}:user:{userId}:dead:{deadLetterJobName}";
 var DeadLetterJob = /** @class */ (function () {
     function DeadLetterJob() {
         this.deadLetterJobId = null;
@@ -28,6 +29,107 @@ var DeadLetterJob = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    DeadLetterJob.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{deadLetterJobName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    DeadLetterJob.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{deadLetterJobName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    DeadLetterJob.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{deadLetterJobName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    DeadLetterJob.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{deadLetterJobName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    DeadLetterJob.getDeadLetterJobName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{deadLetterJobName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    DeadLetterJob.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getUserId(grn) == null) {
+            return false;
+        }
+        if (this.getDeadLetterJobName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    DeadLetterJob.createGrn = function (region, ownerId, namespaceName, userId, deadLetterJobName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (userId == null || userId === '') {
+            return null;
+        }
+        if (deadLetterJobName == null || deadLetterJobName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{userId}', userId)
+            .replace('{deadLetterJobName}', deadLetterJobName);
+    };
     DeadLetterJob.prototype.getDeadLetterJobId = function () {
         return this.deadLetterJobId;
     };

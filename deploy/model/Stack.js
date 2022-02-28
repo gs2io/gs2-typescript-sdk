@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:deploy:{stackName}";
 var Stack = /** @class */ (function () {
     function Stack() {
         this.stackId = null;
@@ -25,6 +26,63 @@ var Stack = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    Stack.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{stackName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Stack.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{stackName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Stack.getStackName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{stackName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Stack.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getStackName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Stack.createGrn = function (region, ownerId, stackName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (stackName == null || stackName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{stackName}', stackName);
+    };
     Stack.prototype.getStackId = function () {
         return this.stackId;
     };

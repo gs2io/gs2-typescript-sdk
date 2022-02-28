@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:schedule:{namespaceName}:event:{eventName}";
 var Event = /** @class */ (function () {
     function Event() {
         this.eventId = null;
@@ -33,6 +34,84 @@ var Event = /** @class */ (function () {
         this.relativeTriggerName = null;
         this.relativeDuration = null;
     }
+    Event.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{eventName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Event.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{eventName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Event.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{eventName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Event.getEventName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{eventName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Event.isValid = function (grn) {
+        if (this.getRegion(grn) == null) {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null) {
+            return false;
+        }
+        if (this.getEventName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    Event.createGrn = function (region, ownerId, namespaceName, eventName) {
+        if (region == null || region === '') {
+            return null;
+        }
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (namespaceName == null || namespaceName === '') {
+            return null;
+        }
+        if (eventName == null || eventName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{region}', region)
+            .replace('{ownerId}', ownerId)
+            .replace('{namespaceName}', namespaceName)
+            .replace('{eventName}', eventName);
+    };
     Event.prototype.getEventId = function () {
         return this.eventId;
     };

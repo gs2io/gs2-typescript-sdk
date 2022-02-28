@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2::{ownerId}:identifier:securityPolicy:{securityPolicyName}";
 var SecurityPolicy = /** @class */ (function () {
     function SecurityPolicy() {
         this.securityPolicyId = null;
@@ -24,6 +25,44 @@ var SecurityPolicy = /** @class */ (function () {
         this.createdAt = null;
         this.updatedAt = null;
     }
+    SecurityPolicy.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{ownerId}', '(.*)')
+            .replace('{securityPolicyName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    SecurityPolicy.getSecurityPolicyName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{ownerId}', '.*')
+            .replace('{securityPolicyName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    SecurityPolicy.isValid = function (grn) {
+        if (this.getOwnerId(grn) == null) {
+            return false;
+        }
+        if (this.getSecurityPolicyName(grn) == null) {
+            return false;
+        }
+        return true;
+    };
+    SecurityPolicy.createGrn = function (ownerId, securityPolicyName) {
+        if (ownerId == null || ownerId === '') {
+            return null;
+        }
+        if (securityPolicyName == null || securityPolicyName === '') {
+            return null;
+        }
+        return grnFormat
+            .replace('{ownerId}', ownerId)
+            .replace('{securityPolicyName}', securityPolicyName);
+    };
     SecurityPolicy.prototype.getSecurityPolicyId = function () {
         return this.securityPolicyId;
     };

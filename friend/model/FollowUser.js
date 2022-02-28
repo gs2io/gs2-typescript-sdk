@@ -15,12 +15,19 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "";
 var FollowUser = /** @class */ (function () {
     function FollowUser() {
         this.userId = null;
         this.publicProfile = null;
         this.followerProfile = null;
     }
+    FollowUser.isValid = function (grn) {
+        return true;
+    };
+    FollowUser.createGrn = function () {
+        return grnFormat;
+    };
     FollowUser.prototype.getUserId = function () {
         return this.userId;
     };

@@ -6,6 +6,13 @@ export default class Await implements IModel {
     private name;
     private count;
     private exchangedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getAwaitName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, awaitName: string | null): string | null;
     getAwaitId(): string | null;
     setAwaitId(awaitId: string | null): this;
     withAwaitId(awaitId: string | null): this;

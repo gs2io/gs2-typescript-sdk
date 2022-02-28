@@ -8,6 +8,12 @@ export default class MaxStaminaTableMaster implements IModel {
     private values;
     private createdAt;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getMaxStaminaTableName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, maxStaminaTableName: string | null): string | null;
     getMaxStaminaTableId(): string | null;
     setMaxStaminaTableId(maxStaminaTableId: string | null): this;
     withMaxStaminaTableId(maxStaminaTableId: string | null): this;
