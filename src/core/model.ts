@@ -18,7 +18,7 @@ import IGs2Credential from './interface/IGs2Credential';
 import IModel from './interface/IModel';
 import axios from 'axios';
 import waitUntil from "async-wait-until";
-import {randomUUID} from "crypto";
+import { v4 as uuid } from 'uuid';
 const WebSocket = require('ws');
 
 export class BasicGs2Credential implements IGs2Credential {
@@ -171,7 +171,7 @@ export class Gs2WebSocketSession {
       payload: any,
   ): Promise<any> {
 
-    const requestId = randomUUID();
+    const requestId = uuid();
 
     this.inflightRequest[requestId] = null;
     this.client?.send(JSON.stringify(Object.assign({}, payload, {

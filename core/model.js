@@ -19,7 +19,7 @@ exports.Region = exports.Gs2Constant = exports.ProjectTokenGs2Credential = expor
 var tslib_1 = require("tslib");
 var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var async_wait_until_1 = (0, tslib_1.__importDefault)(require("async-wait-until"));
-var crypto_1 = require("crypto");
+var uuid_1 = require("uuid");
 var WebSocket = require('ws');
 var BasicGs2Credential = /** @class */ (function () {
     function BasicGs2Credential(clientId, clientSecret) {
@@ -154,7 +154,7 @@ var Gs2WebSocketSession = /** @class */ (function () {
             return (0, tslib_1.__generator)(this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        requestId = (0, crypto_1.randomUUID)();
+                        requestId = (0, uuid_1.v4)();
                         this.inflightRequest[requestId] = null;
                         (_a = this.client) === null || _a === void 0 ? void 0 : _a.send(JSON.stringify(Object.assign({}, payload, {
                             xGs2ClientId: this.credential.clientId,
