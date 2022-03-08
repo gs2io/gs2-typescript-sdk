@@ -21,6 +21,7 @@ var model_1 = require("./model");
 exports.default = {
     AbstractGs2Client: AbstractGs2RestClient_1.default,
     Gs2RestSession: model_1.Gs2RestSession,
+    Gs2WebSocketSession: model_1.Gs2WebSocketSession,
     BasicGs2Credential: model_1.BasicGs2Credential,
     ProjectTokenGs2Credential: model_1.ProjectTokenGs2Credential,
     Region: model_1.Region,

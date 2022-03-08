@@ -15,11 +15,12 @@ permissions and limitations under the License.
  */
 
 import AbstractGs2Client from './AbstractGs2RestClient';
-import { Gs2RestSession, BasicGs2Credential, ProjectTokenGs2Credential, Region } from './model';
+import { Gs2RestSession, Gs2WebSocketSession, BasicGs2Credential, ProjectTokenGs2Credential, Region } from './model';
 
 export default {
   AbstractGs2Client,
   Gs2RestSession,
+  Gs2WebSocketSession,
   BasicGs2Credential,
   ProjectTokenGs2Credential,
   Region,

@@ -1,8 +1,9 @@
 import AbstractGs2Client from './AbstractGs2RestClient';
-import { Gs2RestSession, BasicGs2Credential, ProjectTokenGs2Credential } from './model';
+import { Gs2RestSession, Gs2WebSocketSession, BasicGs2Credential, ProjectTokenGs2Credential } from './model';
 declare const _default: {
     AbstractGs2Client: typeof AbstractGs2Client;
     Gs2RestSession: typeof Gs2RestSession;
+    Gs2WebSocketSession: typeof Gs2WebSocketSession;
     BasicGs2Credential: typeof BasicGs2Credential;
     ProjectTokenGs2Credential: typeof ProjectTokenGs2Credential;
     Region: {

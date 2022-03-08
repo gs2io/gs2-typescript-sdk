@@ -14,6 +14,30 @@ export declare class Gs2RestSession {
     connect(): Promise<LoginResult> | undefined;
     disconnect(): void;
 }
+export declare class Gs2WebSocketSession {
+    credential: IGs2Credential;
+    private client;
+    region: string;
+    projectToken: string | null;
+    expiresAt: number | null;
+    private inflightRequest;
+    private onOpenHandlers;
+    private onErrorHandlers;
+    private onCloseHandlers;
+    private onNotificationHandlers;
+    constructor(credential: IGs2Credential, region: string);
+    connect(): Promise<any>;
+    send(service: string, component: string, func: string, payload: any): Promise<any>;
+    onOpen(func: (ev: Event) => any): void;
+    onError(func: (ev: Event) => any): void;
+    onClose(func: (ev: CloseEvent) => any): void;
+    onNotification(func: (message: {
+        subject: string;
+        issuer: string;
+        payload: any;
+    }) => any): void;
+    disconnect(): Promise<any>;
+}
 declare class LoginResult {
     accessToken: string;
     tokenType: string;
@@ -36,6 +60,7 @@ export declare class ProjectTokenGs2Credential implements IGs2Credential {
 }
 export declare const Gs2Constant: {
     ENDPOINT_HOST: string;
+    WS_ENDPOINT_HOST: string;
 };
 export declare const Region: {
     AP_NORTHEAST_1: string;

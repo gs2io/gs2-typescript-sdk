@@ -15,9 +15,12 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Region = exports.Gs2Constant = exports.ProjectTokenGs2Credential = exports.ProjectToken = exports.Gs2RestSession = exports.BasicGs2Credential = void 0;
+exports.Region = exports.Gs2Constant = exports.ProjectTokenGs2Credential = exports.ProjectToken = exports.Gs2WebSocketSession = exports.Gs2RestSession = exports.BasicGs2Credential = void 0;
 var tslib_1 = require("tslib");
 var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
+var async_wait_until_1 = (0, tslib_1.__importDefault)(require("async-wait-until"));
+var crypto_1 = require("crypto");
+var WebSocket = require('ws');
 var BasicGs2Credential = /** @class */ (function () {
     function BasicGs2Credential(clientId, clientSecret) {
         this.clientId = clientId;
@@ -65,6 +68,153 @@ var Gs2RestSession = /** @class */ (function () {
     return Gs2RestSession;
 }());
 exports.Gs2RestSession = Gs2RestSession;
+var Gs2WebSocketSession = /** @class */ (function () {
+    function Gs2WebSocketSession(credential, region) {
+        this.client = null;
+        this.inflightRequest = {};
+        this.onOpenHandlers = [];
+        this.onErrorHandlers = [];
+        this.onCloseHandlers = [];
+        this.onNotificationHandlers = [];
+        this.credential = credential;
+        this.region = region;
+        this.projectToken = null;
+        this.expiresAt = null;
+    }
+    Gs2WebSocketSession.prototype.connect = function () {
+        return (0, tslib_1.__awaiter)(this, void 0, void 0, function () {
+            var service, url, data, response, result;
+            var _this = this;
+            return (0, tslib_1.__generator)(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        service = 'identifier';
+                        url = exports.Gs2Constant.ENDPOINT_HOST
+                            .replace('{service}', service)
+                            .replace('{region}', this.region)
+                            + '/projectToken/login';
+                        if (!(this.credential instanceof BasicGs2Credential)) return [3 /*break*/, 2];
+                        data = {
+                            client_id: this.credential.clientId,
+                            client_secret: this.credential.clientSecret,
+                        };
+                        return [4 /*yield*/, axios_1.default.post(url, data)];
+                    case 1:
+                        response = _a.sent();
+                        result = new LoginResult(response.data);
+                        this.projectToken = result.accessToken;
+                        this.expiresAt = new Date().getTime() + result.expiresIn * 1000;
+                        return [3 /*break*/, 3];
+                    case 2:
+                        if (this.credential instanceof ProjectTokenGs2Credential) {
+                            this.projectToken = this.credential.projectToken;
+                        }
+                        _a.label = 3;
+                    case 3:
+                        this.client = new WebSocket(exports.Gs2Constant.WS_ENDPOINT_HOST.replace('{region}', this.region));
+                        this.client.onopen = function (event) {
+                            for (var i = 0; i < _this.onOpenHandlers.length; i++) {
+                                _this.onOpenHandlers[i]();
+                            }
+                        };
+                        this.client.onmessage = function (message) {
+                            var payload = JSON.parse(message.data);
+                            if (payload.type == 'notification') {
+                                for (var i = 0; i < _this.onNotificationHandlers.length; i++) {
+                                    _this.onNotificationHandlers[i](payload.body);
+                                }
+                            }
+                            else {
+                                _this.inflightRequest[payload.requestId] = payload;
+                            }
+                        };
+                        this.client.onerror = function (error) {
+                            for (var i = 0; i < _this.onErrorHandlers.length; i++) {
+                                _this.onErrorHandlers[i](error);
+                            }
+                        };
+                        this.client.onclose = function () {
+                            for (var i = 0; i < _this.onCloseHandlers.length; i++) {
+                                _this.onCloseHandlers[i]();
+                            }
+                        };
+                        return [4 /*yield*/, (0, async_wait_until_1.default)(function () { return _this.client == null || _this.client.readyState == WebSocket.CLOSED || _this.client.readyState == WebSocket.OPEN; })];
+                    case 4:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Gs2WebSocketSession.prototype.send = function (service, component, func, payload) {
+        var _a;
+        return (0, tslib_1.__awaiter)(this, void 0, void 0, function () {
+            var requestId, result;
+            var _this = this;
+            return (0, tslib_1.__generator)(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        requestId = (0, crypto_1.randomUUID)();
+                        this.inflightRequest[requestId] = null;
+                        (_a = this.client) === null || _a === void 0 ? void 0 : _a.send(JSON.stringify(Object.assign({}, payload, {
+                            xGs2ClientId: this.credential.clientId,
+                            xGs2ProjectToken: this.projectToken,
+                            x_gs2: {
+                                service: service,
+                                component: component,
+                                function: func,
+                                contentType: "application/json",
+                                requestId: requestId,
+                            },
+                        })));
+                        return [4 /*yield*/, (0, async_wait_until_1.default)(function () { return _this.inflightRequest[requestId] != null; })];
+                    case 1:
+                        _b.sent();
+                        result = this.inflightRequest[requestId];
+                        delete this.inflightRequest[requestId];
+                        if (result.status != 200) {
+                            throw result.body;
+                        }
+                        return [2 /*return*/, result.body];
+                }
+            });
+        });
+    };
+    Gs2WebSocketSession.prototype.onOpen = function (func) {
+        this.onOpenHandlers.push(func);
+    };
+    Gs2WebSocketSession.prototype.onError = function (func) {
+        this.onErrorHandlers.push(func);
+    };
+    Gs2WebSocketSession.prototype.onClose = function (func) {
+        this.onCloseHandlers.push(func);
+    };
+    Gs2WebSocketSession.prototype.onNotification = function (func) {
+        this.onNotificationHandlers.push(func);
+    };
+    Gs2WebSocketSession.prototype.disconnect = function () {
+        return (0, tslib_1.__awaiter)(this, void 0, void 0, function () {
+            var _this = this;
+            return (0, tslib_1.__generator)(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!(this.client != null)) return [3 /*break*/, 2];
+                        this.client.close();
+                        return [4 /*yield*/, (0, async_wait_until_1.default)(function () { return _this.client == null || _this.client.readyState == WebSocket.CLOSED; })];
+                    case 1:
+                        _a.sent();
+                        this.client = null;
+                        _a.label = 2;
+                    case 2:
+                        this.projectToken = null;
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    return Gs2WebSocketSession;
+}());
+exports.Gs2WebSocketSession = Gs2WebSocketSession;
 var LoginResult = /** @class */ (function () {
     function LoginResult(data) {
         if (data) {
@@ -95,6 +245,7 @@ var ProjectTokenGs2Credential = /** @class */ (function () {
 exports.ProjectTokenGs2Credential = ProjectTokenGs2Credential;
 exports.Gs2Constant = {
     ENDPOINT_HOST: 'https://{service}.{region}.gen2.gs2io.com',
+    WS_ENDPOINT_HOST: 'wss://gateway-ws.{region}.gen2.gs2io.com',
 };
 exports.Region = {
     AP_NORTHEAST_1: 'ap-northeast-1',
