@@ -19,7 +19,7 @@ import IModel from './interface/IModel';
 import axios from 'axios';
 import waitUntil from "async-wait-until";
 import { v4 as uuid } from 'uuid';
-const WebSocket = require('ws');
+const NodeWebSocket = require('ws');
 
 export class BasicGs2Credential implements IGs2Credential {
 
@@ -135,7 +135,11 @@ export class Gs2WebSocketSession {
       this.projectToken = (this.credential as ProjectTokenGs2Credential).projectToken;
     }
 
-    this.client = new WebSocket(Gs2Constant.WS_ENDPOINT_HOST.replace('{region}', this.region));
+    if (typeof window === 'undefined'){
+      this.client = new NodeWebSocket(Gs2Constant.WS_ENDPOINT_HOST.replace('{region}', this.region));
+    } else {
+      this.client = new WebSocket(Gs2Constant.WS_ENDPOINT_HOST.replace('{region}', this.region));
+    }
     this.client!.onopen = (event: Event): any => {
       for (let i=0; i<this.onOpenHandlers.length; i++) {
         this.onOpenHandlers[i]();
@@ -161,7 +165,11 @@ export class Gs2WebSocketSession {
         this.onCloseHandlers[i]();
       }
     };
-    await waitUntil(() => this.client == null || this.client.readyState == WebSocket.CLOSED || this.client.readyState == WebSocket.OPEN);
+    if (typeof window === 'undefined'){
+      await waitUntil(() => this.client == null || this.client.readyState == NodeWebSocket.CLOSED || this.client.readyState == NodeWebSocket.OPEN);
+    } else {
+      await waitUntil(() => this.client == null || this.client.readyState == WebSocket.CLOSED || this.client.readyState == WebSocket.OPEN);
+    }
   }
 
   public async send(
@@ -219,7 +227,11 @@ export class Gs2WebSocketSession {
   public async disconnect(): Promise<any> {
     if (this.client != null) {
       this.client.close();
-      await waitUntil(() => this.client == null || this.client.readyState == WebSocket.CLOSED);
+      if (typeof window === 'undefined') {
+        await waitUntil(() => this.client == null || this.client.readyState == NodeWebSocket.CLOSED);
+      } else {
+        await waitUntil(() => this.client == null || this.client.readyState == WebSocket.CLOSED);
+      }
       this.client = null;
     }
     this.projectToken = null;

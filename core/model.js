@@ -20,7 +20,7 @@ var tslib_1 = require("tslib");
 var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
 var async_wait_until_1 = (0, tslib_1.__importDefault)(require("async-wait-until"));
 var uuid_1 = require("uuid");
-var WebSocket = require('ws');
+var NodeWebSocket = require('ws');
 var BasicGs2Credential = /** @class */ (function () {
     function BasicGs2Credential(clientId, clientSecret) {
         this.clientId = clientId;
@@ -111,7 +111,12 @@ var Gs2WebSocketSession = /** @class */ (function () {
                         }
                         _a.label = 3;
                     case 3:
-                        this.client = new WebSocket(exports.Gs2Constant.WS_ENDPOINT_HOST.replace('{region}', this.region));
+                        if (typeof window === 'undefined') {
+                            this.client = new NodeWebSocket(exports.Gs2Constant.WS_ENDPOINT_HOST.replace('{region}', this.region));
+                        }
+                        else {
+                            this.client = new WebSocket(exports.Gs2Constant.WS_ENDPOINT_HOST.replace('{region}', this.region));
+                        }
                         this.client.onopen = function (event) {
                             for (var i = 0; i < _this.onOpenHandlers.length; i++) {
                                 _this.onOpenHandlers[i]();
@@ -138,10 +143,16 @@ var Gs2WebSocketSession = /** @class */ (function () {
                                 _this.onCloseHandlers[i]();
                             }
                         };
-                        return [4 /*yield*/, (0, async_wait_until_1.default)(function () { return _this.client == null || _this.client.readyState == WebSocket.CLOSED || _this.client.readyState == WebSocket.OPEN; })];
+                        if (!(typeof window === 'undefined')) return [3 /*break*/, 5];
+                        return [4 /*yield*/, (0, async_wait_until_1.default)(function () { return _this.client == null || _this.client.readyState == NodeWebSocket.CLOSED || _this.client.readyState == NodeWebSocket.OPEN; })];
                     case 4:
                         _a.sent();
-                        return [2 /*return*/];
+                        return [3 /*break*/, 7];
+                    case 5: return [4 /*yield*/, (0, async_wait_until_1.default)(function () { return _this.client == null || _this.client.readyState == WebSocket.CLOSED || _this.client.readyState == WebSocket.OPEN; })];
+                    case 6:
+                        _a.sent();
+                        _a.label = 7;
+                    case 7: return [2 /*return*/];
                 }
             });
         });
@@ -198,14 +209,21 @@ var Gs2WebSocketSession = /** @class */ (function () {
             return (0, tslib_1.__generator)(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (!(this.client != null)) return [3 /*break*/, 2];
+                        if (!(this.client != null)) return [3 /*break*/, 5];
                         this.client.close();
-                        return [4 /*yield*/, (0, async_wait_until_1.default)(function () { return _this.client == null || _this.client.readyState == WebSocket.CLOSED; })];
+                        if (!(typeof window === 'undefined')) return [3 /*break*/, 2];
+                        return [4 /*yield*/, (0, async_wait_until_1.default)(function () { return _this.client == null || _this.client.readyState == NodeWebSocket.CLOSED; })];
                     case 1:
                         _a.sent();
+                        return [3 /*break*/, 4];
+                    case 2: return [4 /*yield*/, (0, async_wait_until_1.default)(function () { return _this.client == null || _this.client.readyState == WebSocket.CLOSED; })];
+                    case 3:
+                        _a.sent();
+                        _a.label = 4;
+                    case 4:
                         this.client = null;
-                        _a.label = 2;
-                    case 2:
+                        _a.label = 5;
+                    case 5:
                         this.projectToken = null;
                         return [2 /*return*/];
                 }
