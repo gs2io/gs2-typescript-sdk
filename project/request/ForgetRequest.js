@@ -20,6 +20,7 @@ var ForgetRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.email = null;
+        this.lang = null;
     }
     ForgetRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -54,13 +55,26 @@ var ForgetRequest = /** @class */ (function () {
         this.email = email;
         return this;
     };
+    ForgetRequest.prototype.getLang = function () {
+        return this.lang;
+    };
+    ForgetRequest.prototype.setLang = function (lang) {
+        this.lang = lang;
+        return this;
+    };
+    ForgetRequest.prototype.withLang = function (lang) {
+        this.lang = lang;
+        return this;
+    };
     ForgetRequest.fromDict = function (data) {
         return new ForgetRequest()
-            .withEmail(data["email"]);
+            .withEmail(data["email"])
+            .withLang(data["lang"]);
     };
     ForgetRequest.prototype.toDict = function () {
         return {
             "email": this.getEmail(),
+            "lang": this.getLang(),
         };
     };
     return ForgetRequest;

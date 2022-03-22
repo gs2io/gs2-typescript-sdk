@@ -26,7 +26,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         return _super.call(this, session) || this;
     }
     Gs2ProjectRestClient.prototype.createAccount = function (request) {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
@@ -40,6 +40,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'fullName': (_c = request.getFullName()) !== null && _c !== void 0 ? _c : null,
             'companyName': (_d = request.getCompanyName()) !== null && _d !== void 0 ? _d : null,
             'password': (_e = request.getPassword()) !== null && _e !== void 0 ? _e : null,
+            'lang': (_f = request.getLang()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -134,7 +135,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ProjectRestClient.prototype.forget = function (request) {
-        var _a, _b;
+        var _a, _b, _c;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/forget')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
@@ -145,6 +146,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
             'email': (_b = request.getEmail()) !== null && _b !== void 0 ? _b : null,
+            'lang': (_c = request.getLang()) !== null && _c !== void 0 ? _c : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

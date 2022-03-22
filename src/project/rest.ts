@@ -42,6 +42,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
             'fullName': request.getFullName() ?? null,
             'companyName': request.getCompanyName() ?? null,
             'password': request.getPassword() ?? null,
+            'lang': request.getLang() ?? null,
         };
         return axios.post(
             url,
@@ -163,6 +164,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'email': request.getEmail() ?? null,
+            'lang': request.getLang() ?? null,
         };
         return axios.post(
             url,

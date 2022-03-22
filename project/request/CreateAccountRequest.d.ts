@@ -6,6 +6,7 @@ export default class CreateAccountRequest implements IRequest {
     private fullName;
     private companyName;
     private password;
+    private lang;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class CreateAccountRequest implements IRequest {
     getPassword(): string | null;
     setPassword(password: string | null): this;
     withPassword(password: string | null): this;
+    getLang(): string | null;
+    setLang(lang: string | null): this;
+    withLang(lang: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CreateAccountRequest;

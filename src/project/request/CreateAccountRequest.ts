@@ -26,6 +26,7 @@ export default class CreateAccountRequest implements IRequest {
     private fullName: string|null = null;
     private companyName: string|null = null;
     private password: string|null = null;
+    private lang: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -111,12 +112,27 @@ export default class CreateAccountRequest implements IRequest {
         return this;
     }
 
+    public getLang(): string|null {
+        return this.lang;
+    }
+
+    public setLang(lang: string|null) {
+        this.lang = lang;
+        return this;
+    }
+
+    public withLang(lang: string|null): this {
+        this.lang = lang;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): CreateAccountRequest {
         return new CreateAccountRequest()
             .withEmail(data["email"])
             .withFullName(data["fullName"])
             .withCompanyName(data["companyName"])
-            .withPassword(data["password"]);
+            .withPassword(data["password"])
+            .withLang(data["lang"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -125,6 +141,7 @@ export default class CreateAccountRequest implements IRequest {
             "fullName": this.getFullName(),
             "companyName": this.getCompanyName(),
             "password": this.getPassword(),
+            "lang": this.getLang(),
         };
     }
 }

@@ -19,6 +19,7 @@ import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
 import SalesItem from './SalesItem';
 import SalesItemGroup from './SalesItemGroup';
+const grnFormat: string = "";
 
 export default class DisplayItem implements IModel {
     private displayItemId: string|null = null;
@@ -26,6 +27,15 @@ export default class DisplayItem implements IModel {
     private salesItem: SalesItem|null = null;
     private salesItemGroup: SalesItemGroup|null = null;
     private salesPeriodEventId: string|null = null;
+
+    public static isValid(grn: string): boolean {
+        return true;
+    }
+
+    public static createGrn(
+    ): string|null {
+        return grnFormat;
+    }
 
     public getDisplayItemId(): string|null {
         return this.displayItemId;

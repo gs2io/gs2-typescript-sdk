@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var SalesItem_1 = (0, tslib_1.__importDefault)(require("./SalesItem"));
 var SalesItemGroup_1 = (0, tslib_1.__importDefault)(require("./SalesItemGroup"));
+var grnFormat = "";
 var DisplayItem = /** @class */ (function () {
     function DisplayItem() {
         this.displayItemId = null;
@@ -26,6 +27,12 @@ var DisplayItem = /** @class */ (function () {
         this.salesItemGroup = null;
         this.salesPeriodEventId = null;
     }
+    DisplayItem.isValid = function (grn) {
+        return true;
+    };
+    DisplayItem.createGrn = function () {
+        return grnFormat;
+    };
     DisplayItem.prototype.getDisplayItemId = function () {
         return this.displayItemId;
     };

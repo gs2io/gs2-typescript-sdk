@@ -7,6 +7,8 @@ export default class DisplayItem implements IModel {
     private salesItem;
     private salesItemGroup;
     private salesPeriodEventId;
+    static isValid(grn: string): boolean;
+    static createGrn(): string | null;
     getDisplayItemId(): string | null;
     setDisplayItemId(displayItemId: string | null): this;
     withDisplayItemId(displayItemId: string | null): this;

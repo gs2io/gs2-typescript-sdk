@@ -3,6 +3,7 @@ export default class ForgetRequest implements IRequest {
     private requestId;
     private contextStack;
     private email;
+    private lang;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -12,6 +13,9 @@ export default class ForgetRequest implements IRequest {
     getEmail(): string | null;
     setEmail(email: string | null): this;
     withEmail(email: string | null): this;
+    getLang(): string | null;
+    setLang(lang: string | null): this;
+    withLang(lang: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ForgetRequest;

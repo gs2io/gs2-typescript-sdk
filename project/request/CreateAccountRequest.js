@@ -23,6 +23,7 @@ var CreateAccountRequest = /** @class */ (function () {
         this.fullName = null;
         this.companyName = null;
         this.password = null;
+        this.lang = null;
     }
     CreateAccountRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,12 +91,24 @@ var CreateAccountRequest = /** @class */ (function () {
         this.password = password;
         return this;
     };
+    CreateAccountRequest.prototype.getLang = function () {
+        return this.lang;
+    };
+    CreateAccountRequest.prototype.setLang = function (lang) {
+        this.lang = lang;
+        return this;
+    };
+    CreateAccountRequest.prototype.withLang = function (lang) {
+        this.lang = lang;
+        return this;
+    };
     CreateAccountRequest.fromDict = function (data) {
         return new CreateAccountRequest()
             .withEmail(data["email"])
             .withFullName(data["fullName"])
             .withCompanyName(data["companyName"])
-            .withPassword(data["password"]);
+            .withPassword(data["password"])
+            .withLang(data["lang"]);
     };
     CreateAccountRequest.prototype.toDict = function () {
         return {
@@ -103,6 +116,7 @@ var CreateAccountRequest = /** @class */ (function () {
             "fullName": this.getFullName(),
             "companyName": this.getCompanyName(),
             "password": this.getPassword(),
+            "lang": this.getLang(),
         };
     };
     return CreateAccountRequest;

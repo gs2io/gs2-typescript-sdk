@@ -23,6 +23,7 @@ export default class ForgetRequest implements IRequest {
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private email: string|null = null;
+    private lang: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -66,14 +67,30 @@ export default class ForgetRequest implements IRequest {
         return this;
     }
 
+    public getLang(): string|null {
+        return this.lang;
+    }
+
+    public setLang(lang: string|null) {
+        this.lang = lang;
+        return this;
+    }
+
+    public withLang(lang: string|null): this {
+        this.lang = lang;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): ForgetRequest {
         return new ForgetRequest()
-            .withEmail(data["email"]);
+            .withEmail(data["email"])
+            .withLang(data["lang"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "email": this.getEmail(),
+            "lang": this.getLang(),
         };
     }
 }
