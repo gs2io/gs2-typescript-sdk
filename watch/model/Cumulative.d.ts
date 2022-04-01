@@ -5,6 +5,12 @@ export default class Cumulative implements IModel {
     private name;
     private value;
     private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getResourceGrn(grn: string): string | null;
+    static getName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, resourceGrn: string | null, name: string | null): string | null;
     getCumulativeId(): string | null;
     setCumulativeId(cumulativeId: string | null): this;
     withCumulativeId(cumulativeId: string | null): this;

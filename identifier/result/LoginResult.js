@@ -13,6 +13,8 @@ or in the "license" file accompanying this file. This file is distributed
 on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
+
+deny overwrite
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var LoginResult = /** @class */ (function () {
@@ -56,15 +58,15 @@ var LoginResult = /** @class */ (function () {
     };
     LoginResult.fromDict = function (data) {
         return new LoginResult()
-            .withAccessToken(data["accessToken"])
-            .withTokenType(data["tokenType"])
-            .withExpiresIn(data["expiresIn"]);
+            .withAccessToken(data["access_token"])
+            .withTokenType(data["token_type"])
+            .withExpiresIn(data["expires_in"]);
     };
     LoginResult.prototype.toDict = function () {
         return {
-            "accessToken": this.getAccessToken(),
-            "tokenType": this.getTokenType(),
-            "expiresIn": this.getExpiresIn(),
+            "access_token": this.getAccessToken(),
+            "token_type": this.getTokenType(),
+            "expires_in": this.getExpiresIn(),
         };
     };
     return LoginResult;

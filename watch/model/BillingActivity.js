@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:watch:{year}:{month}:{service}:{activityType}";
 var BillingActivity = /** @class */ (function () {
     function BillingActivity() {
         this.billingActivityId = null;
@@ -24,6 +25,114 @@ var BillingActivity = /** @class */ (function () {
         this.activityType = null;
         this.value = null;
     }
+    BillingActivity.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{service}', '.*')
+            .replace('{activityType}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    BillingActivity.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{service}', '.*')
+            .replace('{activityType}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    BillingActivity.getYear = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '(.*)')
+            .replace('{month}', '.*')
+            .replace('{service}', '.*')
+            .replace('{activityType}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    BillingActivity.getMonth = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '(.*)')
+            .replace('{service}', '.*')
+            .replace('{activityType}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    BillingActivity.getService = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{service}', '(.*)')
+            .replace('{activityType}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    BillingActivity.getActivityType = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{service}', '.*')
+            .replace('{activityType}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    BillingActivity.isValid = function (grn) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
+            return false;
+        }
+        if (this.getYear(grn) == null || this.getYear(grn) === '') {
+            return false;
+        }
+        if (this.getMonth(grn) == null || this.getMonth(grn) === '') {
+            return false;
+        }
+        if (this.getService(grn) == null || this.getService(grn) === '') {
+            return false;
+        }
+        if (this.getActivityType(grn) == null || this.getActivityType(grn) === '') {
+            return false;
+        }
+        return true;
+    };
+    BillingActivity.createGrn = function (region, ownerId, year, month, service, activityType) {
+        return grnFormat
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{year}', year !== null && year !== void 0 ? year : '')
+            .replace('{month}', month !== null && month !== void 0 ? month : '')
+            .replace('{service}', service !== null && service !== void 0 ? service : '')
+            .replace('{activityType}', activityType !== null && activityType !== void 0 ? activityType : '');
+    };
     BillingActivity.prototype.getBillingActivityId = function () {
         return this.billingActivityId;
     };

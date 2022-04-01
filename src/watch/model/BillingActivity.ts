@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:{year}:{month}:{service}:{activityType}";
 
 export default class BillingActivity implements IModel {
     private billingActivityId: string|null = null;
@@ -23,6 +24,135 @@ export default class BillingActivity implements IModel {
     private service: string|null = null;
     private activityType: string|null = null;
     private value: number|null = null;
+
+    public static getRegion(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{service}', '.*')
+            .replace('{activityType}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getOwnerId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{service}', '.*')
+            .replace('{activityType}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getYear(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '(.*)')
+            .replace('{month}', '.*')
+            .replace('{service}', '.*')
+            .replace('{activityType}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getMonth(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '(.*)')
+            .replace('{service}', '.*')
+            .replace('{activityType}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getService(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{service}', '(.*)')
+            .replace('{activityType}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getActivityType(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{service}', '.*')
+            .replace('{activityType}', '(.*)')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static isValid(grn: string): boolean {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
+            return false;
+        }
+        if (this.getYear(grn) == null || this.getYear(grn) === '') {
+            return false;
+        }
+        if (this.getMonth(grn) == null || this.getMonth(grn) === '') {
+            return false;
+        }
+        if (this.getService(grn) == null || this.getService(grn) === '') {
+            return false;
+        }
+        if (this.getActivityType(grn) == null || this.getActivityType(grn) === '') {
+            return false;
+        }
+        return true;
+    }
+
+    public static createGrn(
+        region: string|null,
+        ownerId: string|null,
+        year: string|null,
+        month: string|null,
+        service: string|null,
+        activityType: string|null,
+    ): string|null {
+        return grnFormat
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{year}', year ?? '')
+            .replace('{month}', month ?? '')
+            .replace('{service}', service ?? '')
+            .replace('{activityType}', activityType ?? '');
+    }
 
     public getBillingActivityId(): string|null {
         return this.billingActivityId;

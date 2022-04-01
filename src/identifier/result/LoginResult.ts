@@ -12,6 +12,8 @@ or in the "license" file accompanying this file. This file is distributed
 on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
+
+deny overwrite
  */
 
 import IResult from '../../core/interface/IResult';
@@ -67,16 +69,16 @@ export default class LoginResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): LoginResult {
         return new LoginResult()
-            .withAccessToken(data["accessToken"])
-            .withTokenType(data["tokenType"])
-            .withExpiresIn(data["expiresIn"]);
+            .withAccessToken(data["access_token"])
+            .withTokenType(data["token_type"])
+            .withExpiresIn(data["expires_in"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
-            "accessToken": this.getAccessToken(),
-            "tokenType": this.getTokenType(),
-            "expiresIn": this.getExpiresIn(),
+            "access_token": this.getAccessToken(),
+            "token_type": this.getTokenType(),
+            "expires_in": this.getExpiresIn(),
         };
     }
 }

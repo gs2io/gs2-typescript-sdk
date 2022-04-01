@@ -7,6 +7,7 @@ export default class Status implements IModel {
     private experienceValue;
     private rankValue;
     private rankCapValue;
+    private nextRankUpExperienceValue;
     private createdAt;
     private updatedAt;
     static getRegion(grn: string): string | null;
@@ -38,6 +39,9 @@ export default class Status implements IModel {
     getRankCapValue(): number | null;
     setRankCapValue(rankCapValue: number | null): this;
     withRankCapValue(rankCapValue: number | null): this;
+    getNextRankUpExperienceValue(): number | null;
+    setNextRankUpExperienceValue(nextRankUpExperienceValue: number | null): this;
+    withNextRankUpExperienceValue(nextRankUpExperienceValue: number | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

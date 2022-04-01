@@ -15,7 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:ranking:{namespaceName}:user:{userId}:score:{categoryName}:{scorerUserId}:{uniqueId}";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:ranking:{namespaceName}:user:{userId}:category:{categoryName}:score:{scorerUserId}:{uniqueId}";
 
 export default class Score implements IModel {
     private scoreId: string|null = null;

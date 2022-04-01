@@ -15,11 +15,21 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+const grnFormat: string = "";
 
 export default class Chart implements IModel {
     private chartId: string|null = null;
     private embedId: string|null = null;
     private html: string|null = null;
+
+    public static isValid(grn: string): boolean {
+        return true;
+    }
+
+    public static createGrn(
+    ): string|null {
+        return grnFormat;
+    }
 
     public getChartId(): string|null {
         return this.chartId;

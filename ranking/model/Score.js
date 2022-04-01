@@ -15,7 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var grnFormat = "grn:gs2:{region}:{ownerId}:ranking:{namespaceName}:user:{userId}:score:{categoryName}:{scorerUserId}:{uniqueId}";
+var grnFormat = "grn:gs2:{region}:{ownerId}:ranking:{namespaceName}:user:{userId}:category:{categoryName}:score:{scorerUserId}:{uniqueId}";
 var Score = /** @class */ (function () {
     function Score() {
         this.scoreId = null;

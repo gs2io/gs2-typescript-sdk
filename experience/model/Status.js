@@ -25,6 +25,7 @@ var Status = /** @class */ (function () {
         this.experienceValue = null;
         this.rankValue = null;
         this.rankCapValue = null;
+        this.nextRankUpExperienceValue = null;
         this.createdAt = null;
         this.updatedAt = null;
     }
@@ -213,6 +214,17 @@ var Status = /** @class */ (function () {
         this.rankCapValue = rankCapValue;
         return this;
     };
+    Status.prototype.getNextRankUpExperienceValue = function () {
+        return this.nextRankUpExperienceValue;
+    };
+    Status.prototype.setNextRankUpExperienceValue = function (nextRankUpExperienceValue) {
+        this.nextRankUpExperienceValue = nextRankUpExperienceValue;
+        return this;
+    };
+    Status.prototype.withNextRankUpExperienceValue = function (nextRankUpExperienceValue) {
+        this.nextRankUpExperienceValue = nextRankUpExperienceValue;
+        return this;
+    };
     Status.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -247,6 +259,7 @@ var Status = /** @class */ (function () {
             .withExperienceValue(data["experienceValue"])
             .withRankValue(data["rankValue"])
             .withRankCapValue(data["rankCapValue"])
+            .withNextRankUpExperienceValue(data["nextRankUpExperienceValue"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     };
@@ -259,6 +272,7 @@ var Status = /** @class */ (function () {
             "experienceValue": this.getExperienceValue(),
             "rankValue": this.getRankValue(),
             "rankCapValue": this.getRankCapValue(),
+            "nextRankUpExperienceValue": this.getNextRankUpExperienceValue(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

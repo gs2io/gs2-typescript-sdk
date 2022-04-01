@@ -15,12 +15,19 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "";
 var Chart = /** @class */ (function () {
     function Chart() {
         this.chartId = null;
         this.embedId = null;
         this.html = null;
     }
+    Chart.isValid = function (grn) {
+        return true;
+    };
+    Chart.createGrn = function () {
+        return grnFormat;
+    };
     Chart.prototype.getChartId = function () {
         return this.chartId;
     };

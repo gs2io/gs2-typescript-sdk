@@ -25,6 +25,7 @@ export default class Status implements IModel {
     private experienceValue: number|null = null;
     private rankValue: number|null = null;
     private rankCapValue: number|null = null;
+    private nextRankUpExperienceValue: number|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
 
@@ -255,6 +256,20 @@ export default class Status implements IModel {
         return this;
     }
 
+    public getNextRankUpExperienceValue(): number|null {
+        return this.nextRankUpExperienceValue;
+    }
+
+    public setNextRankUpExperienceValue(nextRankUpExperienceValue: number|null) {
+        this.nextRankUpExperienceValue = nextRankUpExperienceValue;
+        return this;
+    }
+
+    public withNextRankUpExperienceValue(nextRankUpExperienceValue: number|null): this {
+        this.nextRankUpExperienceValue = nextRankUpExperienceValue;
+        return this;
+    }
+
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -295,6 +310,7 @@ export default class Status implements IModel {
             .withExperienceValue(data["experienceValue"])
             .withRankValue(data["rankValue"])
             .withRankCapValue(data["rankCapValue"])
+            .withNextRankUpExperienceValue(data["nextRankUpExperienceValue"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     }
@@ -308,6 +324,7 @@ export default class Status implements IModel {
             "experienceValue": this.getExperienceValue(),
             "rankValue": this.getRankValue(),
             "rankCapValue": this.getRankCapValue(),
+            "nextRankUpExperienceValue": this.getNextRankUpExperienceValue(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

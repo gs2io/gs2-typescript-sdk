@@ -15,6 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "grn:gs2:{region}:{ownerId}:watch:{resourceGrn}:{name}";
 var Cumulative = /** @class */ (function () {
     function Cumulative() {
         this.cumulativeId = null;
@@ -23,6 +24,72 @@ var Cumulative = /** @class */ (function () {
         this.value = null;
         this.updatedAt = null;
     }
+    Cumulative.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{resourceGrn}', '.*')
+            .replace('{name}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Cumulative.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{resourceGrn}', '.*')
+            .replace('{name}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Cumulative.getResourceGrn = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{resourceGrn}', '(.*)')
+            .replace('{name}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Cumulative.getName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{resourceGrn}', '.*')
+            .replace('{name}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Cumulative.isValid = function (grn) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
+            return false;
+        }
+        if (this.getResourceGrn(grn) == null || this.getResourceGrn(grn) === '') {
+            return false;
+        }
+        if (this.getName(grn) == null || this.getName(grn) === '') {
+            return false;
+        }
+        return true;
+    };
+    Cumulative.createGrn = function (region, ownerId, resourceGrn, name) {
+        return grnFormat
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{resourceGrn}', resourceGrn !== null && resourceGrn !== void 0 ? resourceGrn : '')
+            .replace('{name}', name !== null && name !== void 0 ? name : '');
+    };
     Cumulative.prototype.getCumulativeId = function () {
         return this.cumulativeId;
     };

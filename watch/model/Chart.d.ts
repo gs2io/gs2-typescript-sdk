@@ -3,6 +3,8 @@ export default class Chart implements IModel {
     private chartId;
     private embedId;
     private html;
+    static isValid(grn: string): boolean;
+    static createGrn(): string | null;
     getChartId(): string | null;
     setChartId(chartId: string | null): this;
     withChartId(chartId: string | null): this;

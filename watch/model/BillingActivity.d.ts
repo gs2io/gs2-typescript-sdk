@@ -6,6 +6,14 @@ export default class BillingActivity implements IModel {
     private service;
     private activityType;
     private value;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getYear(grn: string): string | null;
+    static getMonth(grn: string): string | null;
+    static getService(grn: string): string | null;
+    static getActivityType(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, year: string | null, month: string | null, service: string | null, activityType: string | null): string | null;
     getBillingActivityId(): string | null;
     setBillingActivityId(billingActivityId: string | null): this;
     withBillingActivityId(billingActivityId: string | null): this;
