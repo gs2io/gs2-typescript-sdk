@@ -20,6 +20,7 @@ const grnFormat: string = "grn:gs2:{region}:{ownerId}:money:{namespaceName}:user
 export default class Receipt implements IModel {
     private receiptId: string|null = null;
     private transactionId: string|null = null;
+    private purchaseToken: string|null = null;
     private userId: string|null = null;
     private type: string|null = null;
     private slot: number|null = null;
@@ -162,6 +163,20 @@ export default class Receipt implements IModel {
         return this;
     }
 
+    public getPurchaseToken(): string|null {
+        return this.purchaseToken;
+    }
+
+    public setPurchaseToken(purchaseToken: string|null) {
+        this.purchaseToken = purchaseToken;
+        return this;
+    }
+
+    public withPurchaseToken(purchaseToken: string|null): this {
+        this.purchaseToken = purchaseToken;
+        return this;
+    }
+
     public getUserId(): string|null {
         return this.userId;
     }
@@ -295,6 +310,7 @@ export default class Receipt implements IModel {
         return new Receipt()
             .withReceiptId(data["receiptId"])
             .withTransactionId(data["transactionId"])
+            .withPurchaseToken(data["purchaseToken"])
             .withUserId(data["userId"])
             .withType(data["type"])
             .withSlot(data["slot"])
@@ -310,6 +326,7 @@ export default class Receipt implements IModel {
         return {
             "receiptId": this.getReceiptId(),
             "transactionId": this.getTransactionId(),
+            "purchaseToken": this.getPurchaseToken(),
             "userId": this.getUserId(),
             "type": this.getType(),
             "slot": this.getSlot(),

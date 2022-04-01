@@ -2,6 +2,7 @@ import IModel from '../../core/interface/IModel';
 export default class Receipt implements IModel {
     private receiptId;
     private transactionId;
+    private purchaseToken;
     private userId;
     private type;
     private slot;
@@ -24,6 +25,9 @@ export default class Receipt implements IModel {
     getTransactionId(): string | null;
     setTransactionId(transactionId: string | null): this;
     withTransactionId(transactionId: string | null): this;
+    getPurchaseToken(): string | null;
+    setPurchaseToken(purchaseToken: string | null): this;
+    withPurchaseToken(purchaseToken: string | null): this;
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;

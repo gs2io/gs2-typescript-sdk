@@ -20,6 +20,7 @@ var Receipt = /** @class */ (function () {
     function Receipt() {
         this.receiptId = null;
         this.transactionId = null;
+        this.purchaseToken = null;
         this.userId = null;
         this.type = null;
         this.slot = null;
@@ -138,6 +139,17 @@ var Receipt = /** @class */ (function () {
         this.transactionId = transactionId;
         return this;
     };
+    Receipt.prototype.getPurchaseToken = function () {
+        return this.purchaseToken;
+    };
+    Receipt.prototype.setPurchaseToken = function (purchaseToken) {
+        this.purchaseToken = purchaseToken;
+        return this;
+    };
+    Receipt.prototype.withPurchaseToken = function (purchaseToken) {
+        this.purchaseToken = purchaseToken;
+        return this;
+    };
     Receipt.prototype.getUserId = function () {
         return this.userId;
     };
@@ -244,6 +256,7 @@ var Receipt = /** @class */ (function () {
         return new Receipt()
             .withReceiptId(data["receiptId"])
             .withTransactionId(data["transactionId"])
+            .withPurchaseToken(data["purchaseToken"])
             .withUserId(data["userId"])
             .withType(data["type"])
             .withSlot(data["slot"])
@@ -258,6 +271,7 @@ var Receipt = /** @class */ (function () {
         return {
             "receiptId": this.getReceiptId(),
             "transactionId": this.getTransactionId(),
+            "purchaseToken": this.getPurchaseToken(),
             "userId": this.getUserId(),
             "type": this.getType(),
             "slot": this.getSlot(),
