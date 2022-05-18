@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../src/auth/request/index.ts"],"names":[],"mappings":";;;;AAAA;;;;;;;;;;;;;;GAcG;AACH,6EAAyC;AAIrC,uBAJG,sBAAY,CAIH;AAHhB,mGAA+D;AAI3D,kCAJG,iCAAuB,CAIH"}
+{"version":3,"file":"index.js","sourceRoot":"","sources":["index.ts"],"names":[],"mappings":";;;;AAAA;;;;;;;;;;;;;;GAcG;AACH,wEAAyC;AAIrC,uBAJG,sBAAY,CAIH;AAHhB,8FAA+D;AAI3D,kCAJG,iCAAuB,CAIH"}

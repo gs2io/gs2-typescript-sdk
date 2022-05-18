@@ -16,9 +16,9 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ScriptSetting_1 = (0, tslib_1.__importDefault)(require("./ScriptSetting"));
-var NotificationSetting_1 = (0, tslib_1.__importDefault)(require("./NotificationSetting"));
-var LogSetting_1 = (0, tslib_1.__importDefault)(require("./LogSetting"));
+var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
+var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
+var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {

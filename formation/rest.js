@@ -16,12 +16,12 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
-var Result = (0, tslib_1.__importStar)(require("./result"));
-var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
+var Result = tslib_1.__importStar(require("./result"));
+var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2FormationRestClient = /** @class */ (function (_super) {
-    (0, tslib_1.__extends)(Gs2FormationRestClient, _super);
+    tslib_1.__extends(Gs2FormationRestClient, _super);
     function Gs2FormationRestClient(session) {
         return _super.call(this, session) || this;
     }
@@ -684,7 +684,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FormationRestClient.prototype.setMoldCapacityByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
@@ -695,9 +695,12 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'capacity': (_h = request.getCapacity()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'capacity': (_j = request.getCapacity()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -713,7 +716,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FormationRestClient.prototype.addMoldCapacityByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
@@ -724,9 +727,12 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'capacity': (_h = request.getCapacity()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'capacity': (_j = request.getCapacity()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -768,7 +774,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FormationRestClient.prototype.deleteMoldByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
@@ -779,8 +785,11 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1006,7 +1015,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FormationRestClient.prototype.setFormByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
@@ -1018,9 +1027,12 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+        }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'slots': (_l = (_k = request.getSlots()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'slots': (_m = (_l = request.getSlots()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1069,7 +1081,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FormationRestClient.prototype.acquireActionsToFormProperties = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form/{index}/stamp/delegate')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
@@ -1081,12 +1093,15 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+        }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'acquireAction': (_l = (_k = request.getAcquireAction()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'queueNamespaceId': (_m = request.getQueueNamespaceId()) !== null && _m !== void 0 ? _m : null,
-            'keyId': (_o = request.getKeyId()) !== null && _o !== void 0 ? _o : null,
-            'config': (_q = (_p = request.getConfig()) === null || _p === void 0 ? void 0 : _p.map(function (item) { return item.toDict(); })) !== null && _q !== void 0 ? _q : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'acquireAction': (_m = (_l = request.getAcquireAction()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'queueNamespaceId': (_o = request.getQueueNamespaceId()) !== null && _o !== void 0 ? _o : null,
+            'keyId': (_p = request.getKeyId()) !== null && _p !== void 0 ? _p : null,
+            'config': (_r = (_q = request.getConfig()) === null || _q === void 0 ? void 0 : _q.map(function (item) { return item.toDict(); })) !== null && _r !== void 0 ? _r : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1129,7 +1144,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FormationRestClient.prototype.deleteFormByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
@@ -1141,8 +1156,11 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+        }
         var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.delete(url, {
             params: params,

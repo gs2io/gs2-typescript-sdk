@@ -26,6 +26,7 @@ var VerifyReferenceOfByUserIdRequest = /** @class */ (function () {
         this.itemSetName = null;
         this.referenceOf = null;
         this.verifyType = null;
+        this.duplicationAvoider = null;
     }
     VerifyReferenceOfByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -124,6 +125,17 @@ var VerifyReferenceOfByUserIdRequest = /** @class */ (function () {
     };
     VerifyReferenceOfByUserIdRequest.prototype.withVerifyType = function (verifyType) {
         this.verifyType = verifyType;
+        return this;
+    };
+    VerifyReferenceOfByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    VerifyReferenceOfByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    VerifyReferenceOfByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     VerifyReferenceOfByUserIdRequest.fromDict = function (data) {

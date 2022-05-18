@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ScopedValue_1 = (0, tslib_1.__importDefault)(require("./ScopedValue"));
+var ScopedValue_1 = tslib_1.__importDefault(require("./ScopedValue"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:counter:{counterName}";
 var Counter = /** @class */ (function () {
     function Counter() {

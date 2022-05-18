@@ -24,6 +24,7 @@ var DepositByUserIdRequest = /** @class */ (function () {
         this.slot = null;
         this.price = null;
         this.count = null;
+        this.duplicationAvoider = null;
     }
     DepositByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -100,6 +101,17 @@ var DepositByUserIdRequest = /** @class */ (function () {
     };
     DepositByUserIdRequest.prototype.withCount = function (count) {
         this.count = count;
+        return this;
+    };
+    DepositByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DepositByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DepositByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DepositByUserIdRequest.fromDict = function (data) {

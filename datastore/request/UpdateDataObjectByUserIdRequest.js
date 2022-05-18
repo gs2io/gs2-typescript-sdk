@@ -24,6 +24,7 @@ var UpdateDataObjectByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.scope = null;
         this.allowUserIds = null;
+        this.duplicationAvoider = null;
     }
     UpdateDataObjectByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -100,6 +101,17 @@ var UpdateDataObjectByUserIdRequest = /** @class */ (function () {
     };
     UpdateDataObjectByUserIdRequest.prototype.withAllowUserIds = function (allowUserIds) {
         this.allowUserIds = allowUserIds;
+        return this;
+    };
+    UpdateDataObjectByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    UpdateDataObjectByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    UpdateDataObjectByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     UpdateDataObjectByUserIdRequest.fromDict = function (data) {

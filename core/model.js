@@ -17,8 +17,8 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Region = exports.Gs2Constant = exports.ProjectTokenGs2Credential = exports.ProjectToken = exports.Gs2WebSocketSession = exports.Gs2RestSession = exports.BasicGs2Credential = void 0;
 var tslib_1 = require("tslib");
-var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
-var async_wait_until_1 = (0, tslib_1.__importDefault)(require("async-wait-until"));
+var axios_1 = tslib_1.__importDefault(require("axios"));
+var async_wait_until_1 = tslib_1.__importDefault(require("async-wait-until"));
 var uuid_1 = require("uuid");
 var NodeWebSocket = require('ws');
 var BasicGs2Credential = /** @class */ (function () {
@@ -82,10 +82,10 @@ var Gs2WebSocketSession = /** @class */ (function () {
         this.expiresAt = null;
     }
     Gs2WebSocketSession.prototype.connect = function () {
-        return (0, tslib_1.__awaiter)(this, void 0, void 0, function () {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
             var service, url, data, response, result;
             var _this = this;
-            return (0, tslib_1.__generator)(this, function (_a) {
+            return tslib_1.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         service = 'identifier';
@@ -159,10 +159,10 @@ var Gs2WebSocketSession = /** @class */ (function () {
     };
     Gs2WebSocketSession.prototype.send = function (service, component, func, payload) {
         var _a;
-        return (0, tslib_1.__awaiter)(this, void 0, void 0, function () {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
             var requestId, result;
             var _this = this;
-            return (0, tslib_1.__generator)(this, function (_b) {
+            return tslib_1.__generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
                         requestId = (0, uuid_1.v4)();
@@ -204,9 +204,9 @@ var Gs2WebSocketSession = /** @class */ (function () {
         this.onNotificationHandlers.push(func);
     };
     Gs2WebSocketSession.prototype.disconnect = function () {
-        return (0, tslib_1.__awaiter)(this, void 0, void 0, function () {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
             var _this = this;
-            return (0, tslib_1.__generator)(this, function (_a) {
+            return tslib_1.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (!(this.client != null)) return [3 /*break*/, 5];

@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Gs2Account = (0, tslib_1.__importStar)(require("../model"));
+var Gs2Account = tslib_1.__importStar(require("../model"));
 var CreateNamespaceRequest = /** @class */ (function () {
     function CreateNamespaceRequest() {
         this.requestId = null;
@@ -24,6 +24,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.changePasswordIfTakeOver = null;
+        this.differentUserIdForLoginAndDataRetention = null;
         this.createAccountScript = null;
         this.authenticationScript = null;
         this.createTakeOverScript = null;
@@ -83,6 +84,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
     };
     CreateNamespaceRequest.prototype.withChangePasswordIfTakeOver = function (changePasswordIfTakeOver) {
         this.changePasswordIfTakeOver = changePasswordIfTakeOver;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getDifferentUserIdForLoginAndDataRetention = function () {
+        return this.differentUserIdForLoginAndDataRetention;
+    };
+    CreateNamespaceRequest.prototype.setDifferentUserIdForLoginAndDataRetention = function (differentUserIdForLoginAndDataRetention) {
+        this.differentUserIdForLoginAndDataRetention = differentUserIdForLoginAndDataRetention;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withDifferentUserIdForLoginAndDataRetention = function (differentUserIdForLoginAndDataRetention) {
+        this.differentUserIdForLoginAndDataRetention = differentUserIdForLoginAndDataRetention;
         return this;
     };
     CreateNamespaceRequest.prototype.getCreateAccountScript = function () {
@@ -145,6 +157,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withChangePasswordIfTakeOver(data["changePasswordIfTakeOver"])
+            .withDifferentUserIdForLoginAndDataRetention(data["differentUserIdForLoginAndDataRetention"])
             .withCreateAccountScript(Gs2Account.ScriptSetting.fromDict(data["createAccountScript"]))
             .withAuthenticationScript(Gs2Account.ScriptSetting.fromDict(data["authenticationScript"]))
             .withCreateTakeOverScript(Gs2Account.ScriptSetting.fromDict(data["createTakeOverScript"]))
@@ -157,6 +170,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
             "name": this.getName(),
             "description": this.getDescription(),
             "changePasswordIfTakeOver": this.getChangePasswordIfTakeOver(),
+            "differentUserIdForLoginAndDataRetention": this.getDifferentUserIdForLoginAndDataRetention(),
             "createAccountScript": (_a = this.getCreateAccountScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "authenticationScript": (_b = this.getAuthenticationScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "createTakeOverScript": (_c = this.getCreateTakeOverScript()) === null || _c === void 0 ? void 0 : _c.toDict(),

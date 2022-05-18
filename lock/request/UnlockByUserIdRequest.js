@@ -23,6 +23,7 @@ var UnlockByUserIdRequest = /** @class */ (function () {
         this.propertyId = null;
         this.userId = null;
         this.transactionId = null;
+        this.duplicationAvoider = null;
     }
     UnlockByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var UnlockByUserIdRequest = /** @class */ (function () {
     };
     UnlockByUserIdRequest.prototype.withTransactionId = function (transactionId) {
         this.transactionId = transactionId;
+        return this;
+    };
+    UnlockByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    UnlockByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    UnlockByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     UnlockByUserIdRequest.fromDict = function (data) {

@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Gs2Inbox = (0, tslib_1.__importStar)(require("../model"));
+var Gs2Inbox = tslib_1.__importStar(require("../model"));
 var SendMessageByUserIdRequest = /** @class */ (function () {
     function SendMessageByUserIdRequest() {
         this.requestId = null;
@@ -27,6 +27,7 @@ var SendMessageByUserIdRequest = /** @class */ (function () {
         this.readAcquireActions = null;
         this.expiresAt = null;
         this.expiresTimeSpan = null;
+        this.duplicationAvoider = null;
     }
     SendMessageByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -114,6 +115,17 @@ var SendMessageByUserIdRequest = /** @class */ (function () {
     };
     SendMessageByUserIdRequest.prototype.withExpiresTimeSpan = function (expiresTimeSpan) {
         this.expiresTimeSpan = expiresTimeSpan;
+        return this;
+    };
+    SendMessageByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SendMessageByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SendMessageByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SendMessageByUserIdRequest.fromDict = function (data) {

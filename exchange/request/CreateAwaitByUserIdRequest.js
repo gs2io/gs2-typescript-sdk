@@ -23,6 +23,7 @@ var CreateAwaitByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.rateName = null;
         this.count = null;
+        this.duplicationAvoider = null;
     }
     CreateAwaitByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var CreateAwaitByUserIdRequest = /** @class */ (function () {
     };
     CreateAwaitByUserIdRequest.prototype.withCount = function (count) {
         this.count = count;
+        return this;
+    };
+    CreateAwaitByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    CreateAwaitByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    CreateAwaitByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     CreateAwaitByUserIdRequest.fromDict = function (data) {

@@ -6,6 +6,7 @@ export default class RaiseMaxValueByUserIdRequest implements IRequest {
     private staminaName;
     private userId;
     private raiseValue;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class RaiseMaxValueByUserIdRequest implements IRequest {
     getRaiseValue(): number | null;
     setRaiseValue(raiseValue: number | null): this;
     withRaiseValue(raiseValue: number | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): RaiseMaxValueByUserIdRequest;

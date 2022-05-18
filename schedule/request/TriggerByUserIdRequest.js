@@ -24,6 +24,7 @@ var TriggerByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.triggerStrategy = null;
         this.ttl = null;
+        this.duplicationAvoider = null;
     }
     TriggerByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -100,6 +101,17 @@ var TriggerByUserIdRequest = /** @class */ (function () {
     };
     TriggerByUserIdRequest.prototype.withTtl = function (ttl) {
         this.ttl = ttl;
+        return this;
+    };
+    TriggerByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    TriggerByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    TriggerByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     TriggerByUserIdRequest.fromDict = function (data) {

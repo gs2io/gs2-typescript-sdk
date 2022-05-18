@@ -22,6 +22,7 @@ var DeleteTakeOverByUserIdentifierRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.type = null;
         this.userIdentifier = null;
+        this.duplicationAvoider = null;
     }
     DeleteTakeOverByUserIdentifierRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var DeleteTakeOverByUserIdentifierRequest = /** @class */ (function () {
     };
     DeleteTakeOverByUserIdentifierRequest.prototype.withUserIdentifier = function (userIdentifier) {
         this.userIdentifier = userIdentifier;
+        return this;
+    };
+    DeleteTakeOverByUserIdentifierRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteTakeOverByUserIdentifierRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteTakeOverByUserIdentifierRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteTakeOverByUserIdentifierRequest.fromDict = function (data) {

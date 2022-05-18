@@ -17,20 +17,20 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-var Namespace_1 = (0, tslib_1.__importDefault)(require("./Namespace"));
+var Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
-var Room_1 = (0, tslib_1.__importDefault)(require("./Room"));
+var Room_1 = tslib_1.__importDefault(require("./Room"));
 exports.Room = Room_1.default;
-var Message_1 = (0, tslib_1.__importDefault)(require("./Message"));
+var Message_1 = tslib_1.__importDefault(require("./Message"));
 exports.Message = Message_1.default;
-var Subscribe_1 = (0, tslib_1.__importDefault)(require("./Subscribe"));
+var Subscribe_1 = tslib_1.__importDefault(require("./Subscribe"));
 exports.Subscribe = Subscribe_1.default;
-var NotificationType_1 = (0, tslib_1.__importDefault)(require("./NotificationType"));
+var NotificationType_1 = tslib_1.__importDefault(require("./NotificationType"));
 exports.NotificationType = NotificationType_1.default;
-var ScriptSetting_1 = (0, tslib_1.__importDefault)(require("./ScriptSetting"));
+var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 exports.ScriptSetting = ScriptSetting_1.default;
-var NotificationSetting_1 = (0, tslib_1.__importDefault)(require("./NotificationSetting"));
+var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
 exports.NotificationSetting = NotificationSetting_1.default;
-var LogSetting_1 = (0, tslib_1.__importDefault)(require("./LogSetting"));
+var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
 //# sourceMappingURL=index.js.map

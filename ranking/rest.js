@@ -16,12 +16,12 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
-var Result = (0, tslib_1.__importStar)(require("./result"));
-var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
+var Result = tslib_1.__importStar(require("./result"));
+var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2RankingRestClient = /** @class */ (function (_super) {
-    (0, tslib_1.__extends)(Gs2RankingRestClient, _super);
+    tslib_1.__extends(Gs2RankingRestClient, _super);
     function Gs2RankingRestClient(session) {
         return _super.call(this, session) || this;
     }
@@ -397,7 +397,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2RankingRestClient.prototype.subscribeByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/category/{categoryName}/target/{targetUserId}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
@@ -409,8 +409,11 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+        }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -702,7 +705,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2RankingRestClient.prototype.putScoreByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/category/{categoryName}/ranking')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
@@ -713,10 +716,13 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'score': (_h = request.getScore()) !== null && _h !== void 0 ? _h : null,
-            'metadata': (_j = request.getMetadata()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'score': (_j = request.getScore()) !== null && _j !== void 0 ? _j : null,
+            'metadata': (_k = request.getMetadata()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -936,7 +942,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2RankingRestClient.prototype.unsubscribeByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/subscribe/category/{categoryName}/target/{targetUserId}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
@@ -948,8 +954,11 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+        }
         var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.delete(url, {
             params: params,

@@ -17,12 +17,12 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-var GetChartRequest_1 = (0, tslib_1.__importDefault)(require("./GetChartRequest"));
+var GetChartRequest_1 = tslib_1.__importDefault(require("./GetChartRequest"));
 exports.GetChartRequest = GetChartRequest_1.default;
-var GetCumulativeRequest_1 = (0, tslib_1.__importDefault)(require("./GetCumulativeRequest"));
+var GetCumulativeRequest_1 = tslib_1.__importDefault(require("./GetCumulativeRequest"));
 exports.GetCumulativeRequest = GetCumulativeRequest_1.default;
-var DescribeBillingActivitiesRequest_1 = (0, tslib_1.__importDefault)(require("./DescribeBillingActivitiesRequest"));
+var DescribeBillingActivitiesRequest_1 = tslib_1.__importDefault(require("./DescribeBillingActivitiesRequest"));
 exports.DescribeBillingActivitiesRequest = DescribeBillingActivitiesRequest_1.default;
-var GetBillingActivityRequest_1 = (0, tslib_1.__importDefault)(require("./GetBillingActivityRequest"));
+var GetBillingActivityRequest_1 = tslib_1.__importDefault(require("./GetBillingActivityRequest"));
 exports.GetBillingActivityRequest = GetBillingActivityRequest_1.default;
 //# sourceMappingURL=index.js.map

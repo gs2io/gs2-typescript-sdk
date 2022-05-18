@@ -6,6 +6,7 @@ export default class ConsumeStaminaByUserIdRequest implements IRequest {
     private staminaName;
     private userId;
     private consumeValue;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class ConsumeStaminaByUserIdRequest implements IRequest {
     getConsumeValue(): number | null;
     setConsumeValue(consumeValue: number | null): this;
     withConsumeValue(consumeValue: number | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ConsumeStaminaByUserIdRequest;

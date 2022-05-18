@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Gs2Chat = (0, tslib_1.__importStar)(require("../model"));
+var Gs2Chat = tslib_1.__importStar(require("../model"));
 var UpdateNotificationTypeByUserIdRequest = /** @class */ (function () {
     function UpdateNotificationTypeByUserIdRequest() {
         this.requestId = null;
@@ -25,6 +25,7 @@ var UpdateNotificationTypeByUserIdRequest = /** @class */ (function () {
         this.roomName = null;
         this.userId = null;
         this.notificationTypes = null;
+        this.duplicationAvoider = null;
     }
     UpdateNotificationTypeByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,6 +91,17 @@ var UpdateNotificationTypeByUserIdRequest = /** @class */ (function () {
     };
     UpdateNotificationTypeByUserIdRequest.prototype.withNotificationTypes = function (notificationTypes) {
         this.notificationTypes = notificationTypes;
+        return this;
+    };
+    UpdateNotificationTypeByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    UpdateNotificationTypeByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    UpdateNotificationTypeByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     UpdateNotificationTypeByUserIdRequest.fromDict = function (data) {

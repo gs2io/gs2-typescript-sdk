@@ -6,6 +6,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private namespaceName;
     private description;
     private changePasswordIfTakeOver;
+    private differentUserIdForLoginAndDataRetention;
     private createAccountScript;
     private authenticationScript;
     private createTakeOverScript;
@@ -26,6 +27,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getChangePasswordIfTakeOver(): boolean | null;
     setChangePasswordIfTakeOver(changePasswordIfTakeOver: boolean | null): this;
     withChangePasswordIfTakeOver(changePasswordIfTakeOver: boolean | null): this;
+    getDifferentUserIdForLoginAndDataRetention(): boolean | null;
+    setDifferentUserIdForLoginAndDataRetention(differentUserIdForLoginAndDataRetention: boolean | null): this;
+    withDifferentUserIdForLoginAndDataRetention(differentUserIdForLoginAndDataRetention: boolean | null): this;
     getCreateAccountScript(): Gs2Account.ScriptSetting | null;
     setCreateAccountScript(createAccountScript: Gs2Account.ScriptSetting | null): this;
     withCreateAccountScript(createAccountScript: Gs2Account.ScriptSetting | null): this;

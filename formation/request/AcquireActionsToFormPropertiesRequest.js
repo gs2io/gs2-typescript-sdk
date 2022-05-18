@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Gs2Formation = (0, tslib_1.__importStar)(require("../model"));
+var Gs2Formation = tslib_1.__importStar(require("../model"));
 var AcquireActionsToFormPropertiesRequest = /** @class */ (function () {
     function AcquireActionsToFormPropertiesRequest() {
         this.requestId = null;
@@ -29,6 +29,7 @@ var AcquireActionsToFormPropertiesRequest = /** @class */ (function () {
         this.queueNamespaceId = null;
         this.keyId = null;
         this.config = null;
+        this.duplicationAvoider = null;
     }
     AcquireActionsToFormPropertiesRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -138,6 +139,17 @@ var AcquireActionsToFormPropertiesRequest = /** @class */ (function () {
     };
     AcquireActionsToFormPropertiesRequest.prototype.withConfig = function (config) {
         this.config = config;
+        return this;
+    };
+    AcquireActionsToFormPropertiesRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    AcquireActionsToFormPropertiesRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    AcquireActionsToFormPropertiesRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     AcquireActionsToFormPropertiesRequest.fromDict = function (data) {

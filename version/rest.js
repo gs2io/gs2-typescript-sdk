@@ -16,12 +16,12 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
-var Result = (0, tslib_1.__importStar)(require("./result"));
-var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
+var Result = tslib_1.__importStar(require("./result"));
+var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2VersionRestClient = /** @class */ (function (_super) {
-    (0, tslib_1.__extends)(Gs2VersionRestClient, _super);
+    tslib_1.__extends(Gs2VersionRestClient, _super);
     function Gs2VersionRestClient(session) {
         return _super.call(this, session) || this;
     }
@@ -444,7 +444,7 @@ var Gs2VersionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2VersionRestClient.prototype.acceptByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/acceptVersion')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
@@ -454,9 +454,12 @@ var Gs2VersionRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
+        }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'versionName': (_f = request.getVersionName()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'versionName': (_g = request.getVersionName()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -548,7 +551,7 @@ var Gs2VersionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2VersionRestClient.prototype.deleteAcceptVersionByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/{versionName}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
@@ -559,8 +562,11 @@ var Gs2VersionRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -602,7 +608,7 @@ var Gs2VersionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2VersionRestClient.prototype.checkVersionByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/check')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
@@ -612,9 +618,12 @@ var Gs2VersionRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
+        }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'targetVersions': (_g = (_f = request.getTargetVersions()) === null || _f === void 0 ? void 0 : _f.map(function (item) { return item.toDict(); })) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'targetVersions': (_h = (_g = request.getTargetVersions()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

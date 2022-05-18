@@ -23,6 +23,7 @@ var SetRecoverValueByUserIdRequest = /** @class */ (function () {
         this.staminaName = null;
         this.userId = null;
         this.recoverValue = null;
+        this.duplicationAvoider = null;
     }
     SetRecoverValueByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var SetRecoverValueByUserIdRequest = /** @class */ (function () {
     };
     SetRecoverValueByUserIdRequest.prototype.withRecoverValue = function (recoverValue) {
         this.recoverValue = recoverValue;
+        return this;
+    };
+    SetRecoverValueByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SetRecoverValueByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SetRecoverValueByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SetRecoverValueByUserIdRequest.fromDict = function (data) {

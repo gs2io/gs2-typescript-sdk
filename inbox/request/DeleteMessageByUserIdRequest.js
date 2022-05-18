@@ -22,6 +22,7 @@ var DeleteMessageByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.messageName = null;
+        this.duplicationAvoider = null;
     }
     DeleteMessageByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var DeleteMessageByUserIdRequest = /** @class */ (function () {
     };
     DeleteMessageByUserIdRequest.prototype.withMessageName = function (messageName) {
         this.messageName = messageName;
+        return this;
+    };
+    DeleteMessageByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteMessageByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteMessageByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteMessageByUserIdRequest.fromDict = function (data) {

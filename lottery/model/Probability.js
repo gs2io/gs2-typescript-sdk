@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var DrawnPrize_1 = (0, tslib_1.__importDefault)(require("./DrawnPrize"));
+var DrawnPrize_1 = tslib_1.__importDefault(require("./DrawnPrize"));
 var Probability = /** @class */ (function () {
     function Probability() {
         this.prize = null;

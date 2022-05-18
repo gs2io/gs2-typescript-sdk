@@ -26,6 +26,7 @@ var PrepareUploadByUserIdRequest = /** @class */ (function () {
         this.scope = null;
         this.allowUserIds = null;
         this.updateIfExists = null;
+        this.duplicationAvoider = null;
     }
     PrepareUploadByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -124,6 +125,17 @@ var PrepareUploadByUserIdRequest = /** @class */ (function () {
     };
     PrepareUploadByUserIdRequest.prototype.withUpdateIfExists = function (updateIfExists) {
         this.updateIfExists = updateIfExists;
+        return this;
+    };
+    PrepareUploadByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    PrepareUploadByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    PrepareUploadByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     PrepareUploadByUserIdRequest.fromDict = function (data) {

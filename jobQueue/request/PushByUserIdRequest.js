@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Gs2JobQueue = (0, tslib_1.__importStar)(require("../model"));
+var Gs2JobQueue = tslib_1.__importStar(require("../model"));
 var PushByUserIdRequest = /** @class */ (function () {
     function PushByUserIdRequest() {
         this.requestId = null;
@@ -24,6 +24,7 @@ var PushByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.jobs = null;
+        this.duplicationAvoider = null;
     }
     PushByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,6 +79,17 @@ var PushByUserIdRequest = /** @class */ (function () {
     };
     PushByUserIdRequest.prototype.withJobs = function (jobs) {
         this.jobs = jobs;
+        return this;
+    };
+    PushByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    PushByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    PushByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     PushByUserIdRequest.fromDict = function (data) {

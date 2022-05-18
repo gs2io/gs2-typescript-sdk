@@ -22,6 +22,7 @@ var DeleteMutexByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.propertyId = null;
+        this.duplicationAvoider = null;
     }
     DeleteMutexByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var DeleteMutexByUserIdRequest = /** @class */ (function () {
     };
     DeleteMutexByUserIdRequest.prototype.withPropertyId = function (propertyId) {
         this.propertyId = propertyId;
+        return this;
+    };
+    DeleteMutexByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteMutexByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteMutexByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteMutexByUserIdRequest.fromDict = function (data) {

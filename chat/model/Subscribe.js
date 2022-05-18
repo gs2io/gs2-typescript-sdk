@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var NotificationType_1 = (0, tslib_1.__importDefault)(require("./NotificationType"));
+var NotificationType_1 = tslib_1.__importDefault(require("./NotificationType"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:chat:{namespaceName}:user:{userId}:subscribe:{roomName}";
 var Subscribe = /** @class */ (function () {
     function Subscribe() {

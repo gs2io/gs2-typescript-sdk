@@ -16,12 +16,12 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
-var Result = (0, tslib_1.__importStar)(require("./result"));
-var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
+var Result = tslib_1.__importStar(require("./result"));
+var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2DictionaryRestClient = /** @class */ (function (_super) {
-    (0, tslib_1.__extends)(Gs2DictionaryRestClient, _super);
+    tslib_1.__extends(Gs2DictionaryRestClient, _super);
     function Gs2DictionaryRestClient(session) {
         return _super.call(this, session) || this;
     }
@@ -400,7 +400,7 @@ var Gs2DictionaryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DictionaryRestClient.prototype.addEntriesByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/entry')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
@@ -410,9 +410,12 @@ var Gs2DictionaryRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
+        }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'entryModelNames': (_f = request.getEntryModelNames()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'entryModelNames': (_g = request.getEntryModelNames()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -530,7 +533,7 @@ var Gs2DictionaryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DictionaryRestClient.prototype.resetByUserId = function (request) {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/entry')
             .replace('{service}', 'dictionary')
             .replace('{region}', this.session.region)
@@ -540,8 +543,11 @@ var Gs2DictionaryRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
+        }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.delete(url, {
             params: params,

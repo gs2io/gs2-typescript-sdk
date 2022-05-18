@@ -27,4 +27,6 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
     deleteTakeOver(request: Request.DeleteTakeOverRequest): Promise<Result.DeleteTakeOverResult>;
     deleteTakeOverByUserIdentifier(request: Request.DeleteTakeOverByUserIdentifierRequest): Promise<Result.DeleteTakeOverByUserIdentifierResult>;
     doTakeOver(request: Request.DoTakeOverRequest): Promise<Result.DoTakeOverResult>;
+    getDataOwnerByUserId(request: Request.GetDataOwnerByUserIdRequest): Promise<Result.GetDataOwnerByUserIdResult>;
+    deleteDataOwnerByUserId(request: Request.DeleteDataOwnerByUserIdRequest): Promise<Result.DeleteDataOwnerByUserIdResult>;
 }

@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Gs2Watch = (0, tslib_1.__importStar)(require("../model"));
+var Gs2Watch = tslib_1.__importStar(require("../model"));
 var GetBillingActivityResult = /** @class */ (function () {
     function GetBillingActivityResult() {
         this.item = null;

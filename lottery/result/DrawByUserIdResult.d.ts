@@ -4,7 +4,6 @@ export default class DrawByUserIdResult implements IResult {
     private items;
     private stampSheet;
     private stampSheetEncryptionKeyId;
-    private boxItems;
     getItems(): Gs2Lottery.DrawnPrize[] | null;
     setItems(items: Gs2Lottery.DrawnPrize[] | null): this;
     withItems(items: Gs2Lottery.DrawnPrize[] | null): this;
@@ -14,9 +13,6 @@ export default class DrawByUserIdResult implements IResult {
     getStampSheetEncryptionKeyId(): string | null;
     setStampSheetEncryptionKeyId(stampSheetEncryptionKeyId: string | null): this;
     withStampSheetEncryptionKeyId(stampSheetEncryptionKeyId: string | null): this;
-    getBoxItems(): Gs2Lottery.BoxItems | null;
-    setBoxItems(boxItems: Gs2Lottery.BoxItems | null): this;
-    withBoxItems(boxItems: Gs2Lottery.BoxItems | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): DrawByUserIdResult;

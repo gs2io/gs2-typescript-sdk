@@ -22,6 +22,7 @@ var UpdateReceivedByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.receivedGlobalMessageNames = null;
+        this.duplicationAvoider = null;
     }
     UpdateReceivedByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var UpdateReceivedByUserIdRequest = /** @class */ (function () {
     };
     UpdateReceivedByUserIdRequest.prototype.withReceivedGlobalMessageNames = function (receivedGlobalMessageNames) {
         this.receivedGlobalMessageNames = receivedGlobalMessageNames;
+        return this;
+    };
+    UpdateReceivedByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    UpdateReceivedByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    UpdateReceivedByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     UpdateReceivedByUserIdRequest.fromDict = function (data) {

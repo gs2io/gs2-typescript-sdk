@@ -6,6 +6,7 @@ export default class RecoverStaminaByUserIdRequest implements IRequest {
     private staminaName;
     private userId;
     private recoverValue;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class RecoverStaminaByUserIdRequest implements IRequest {
     getRecoverValue(): number | null;
     setRecoverValue(recoverValue: number | null): this;
     withRecoverValue(recoverValue: number | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): RecoverStaminaByUserIdRequest;

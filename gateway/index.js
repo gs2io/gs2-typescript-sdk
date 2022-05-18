@@ -19,14 +19,14 @@ deny overwrite
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Gs2GatewayWebSocketClient = exports.Gs2GatewayRestClient = exports.result = exports.request = exports.model = void 0;
 var tslib_1 = require("tslib");
-var model = (0, tslib_1.__importStar)(require("./model"));
+var model = tslib_1.__importStar(require("./model"));
 exports.model = model;
-var request = (0, tslib_1.__importStar)(require("./request"));
+var request = tslib_1.__importStar(require("./request"));
 exports.request = request;
-var result = (0, tslib_1.__importStar)(require("./result"));
+var result = tslib_1.__importStar(require("./result"));
 exports.result = result;
-var rest_1 = (0, tslib_1.__importDefault)(require("./rest"));
+var rest_1 = tslib_1.__importDefault(require("./rest"));
 exports.Gs2GatewayRestClient = rest_1.default;
-var websocket_1 = (0, tslib_1.__importDefault)(require("./websocket"));
+var websocket_1 = tslib_1.__importDefault(require("./websocket"));
 exports.Gs2GatewayWebSocketClient = websocket_1.default;
 //# sourceMappingURL=index.js.map

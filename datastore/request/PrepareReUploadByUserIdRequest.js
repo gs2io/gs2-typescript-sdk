@@ -23,6 +23,7 @@ var PrepareReUploadByUserIdRequest = /** @class */ (function () {
         this.dataObjectName = null;
         this.userId = null;
         this.contentType = null;
+        this.duplicationAvoider = null;
     }
     PrepareReUploadByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var PrepareReUploadByUserIdRequest = /** @class */ (function () {
     };
     PrepareReUploadByUserIdRequest.prototype.withContentType = function (contentType) {
         this.contentType = contentType;
+        return this;
+    };
+    PrepareReUploadByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    PrepareReUploadByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    PrepareReUploadByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     PrepareReUploadByUserIdRequest.fromDict = function (data) {

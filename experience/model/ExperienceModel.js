@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Threshold_1 = (0, tslib_1.__importDefault)(require("./Threshold"));
+var Threshold_1 = tslib_1.__importDefault(require("./Threshold"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:experience:{namespaceName}:model:{experienceName}";
 var ExperienceModel = /** @class */ (function () {
     function ExperienceModel() {

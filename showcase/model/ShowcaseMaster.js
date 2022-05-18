@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var DisplayItemMaster_1 = (0, tslib_1.__importDefault)(require("./DisplayItemMaster"));
+var DisplayItemMaster_1 = tslib_1.__importDefault(require("./DisplayItemMaster"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:showcase:{namespaceName}:showcase:{showcaseName}";
 var ShowcaseMaster = /** @class */ (function () {
     function ShowcaseMaster() {

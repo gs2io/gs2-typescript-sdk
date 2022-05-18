@@ -21,6 +21,7 @@ var DeleteProfileByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
+        this.duplicationAvoider = null;
     }
     DeleteProfileByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -64,6 +65,17 @@ var DeleteProfileByUserIdRequest = /** @class */ (function () {
     };
     DeleteProfileByUserIdRequest.prototype.withUserId = function (userId) {
         this.userId = userId;
+        return this;
+    };
+    DeleteProfileByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteProfileByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteProfileByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteProfileByUserIdRequest.fromDict = function (data) {

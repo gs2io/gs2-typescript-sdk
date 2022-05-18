@@ -23,6 +23,7 @@ var RaiseMaxValueByUserIdRequest = /** @class */ (function () {
         this.staminaName = null;
         this.userId = null;
         this.raiseValue = null;
+        this.duplicationAvoider = null;
     }
     RaiseMaxValueByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var RaiseMaxValueByUserIdRequest = /** @class */ (function () {
     };
     RaiseMaxValueByUserIdRequest.prototype.withRaiseValue = function (raiseValue) {
         this.raiseValue = raiseValue;
+        return this;
+    };
+    RaiseMaxValueByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    RaiseMaxValueByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    RaiseMaxValueByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     RaiseMaxValueByUserIdRequest.fromDict = function (data) {

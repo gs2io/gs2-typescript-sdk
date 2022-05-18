@@ -24,7 +24,6 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     describeBoxesByUserId(request: Request.DescribeBoxesByUserIdRequest): Promise<Result.DescribeBoxesByUserIdResult>;
     getBox(request: Request.GetBoxRequest): Promise<Result.GetBoxResult>;
     getBoxByUserId(request: Request.GetBoxByUserIdRequest): Promise<Result.GetBoxByUserIdResult>;
-    getRawBoxByUserId(request: Request.GetRawBoxByUserIdRequest): Promise<Result.GetRawBoxByUserIdResult>;
     resetBox(request: Request.ResetBoxRequest): Promise<Result.ResetBoxResult>;
     resetBoxByUserId(request: Request.ResetBoxByUserIdRequest): Promise<Result.ResetBoxByUserIdResult>;
     describeLotteryModels(request: Request.DescribeLotteryModelsRequest): Promise<Result.DescribeLotteryModelsResult>;

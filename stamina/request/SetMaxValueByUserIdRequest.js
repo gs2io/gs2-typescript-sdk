@@ -23,6 +23,7 @@ var SetMaxValueByUserIdRequest = /** @class */ (function () {
         this.staminaName = null;
         this.userId = null;
         this.maxValue = null;
+        this.duplicationAvoider = null;
     }
     SetMaxValueByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var SetMaxValueByUserIdRequest = /** @class */ (function () {
     };
     SetMaxValueByUserIdRequest.prototype.withMaxValue = function (maxValue) {
         this.maxValue = maxValue;
+        return this;
+    };
+    SetMaxValueByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SetMaxValueByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SetMaxValueByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SetMaxValueByUserIdRequest.fromDict = function (data) {

@@ -22,6 +22,7 @@ var DeleteCounterByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.counterName = null;
+        this.duplicationAvoider = null;
     }
     DeleteCounterByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var DeleteCounterByUserIdRequest = /** @class */ (function () {
     };
     DeleteCounterByUserIdRequest.prototype.withCounterName = function (counterName) {
         this.counterName = counterName;
+        return this;
+    };
+    DeleteCounterByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteCounterByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteCounterByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteCounterByUserIdRequest.fromDict = function (data) {

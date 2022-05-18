@@ -24,6 +24,7 @@ var SetRankCapByUserIdRequest = /** @class */ (function () {
         this.experienceName = null;
         this.propertyId = null;
         this.rankCapValue = null;
+        this.duplicationAvoider = null;
     }
     SetRankCapByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -100,6 +101,17 @@ var SetRankCapByUserIdRequest = /** @class */ (function () {
     };
     SetRankCapByUserIdRequest.prototype.withRankCapValue = function (rankCapValue) {
         this.rankCapValue = rankCapValue;
+        return this;
+    };
+    SetRankCapByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SetRankCapByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SetRankCapByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SetRankCapByUserIdRequest.fromDict = function (data) {

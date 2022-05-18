@@ -5,6 +5,7 @@ export default class AddEntriesByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private entryModelNames;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -20,6 +21,9 @@ export default class AddEntriesByUserIdRequest implements IRequest {
     getEntryModelNames(): string[] | null;
     setEntryModelNames(entryModelNames: string[] | null): this;
     withEntryModelNames(entryModelNames: string[] | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): AddEntriesByUserIdRequest;

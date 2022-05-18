@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Prize_1 = (0, tslib_1.__importDefault)(require("./Prize"));
+var Prize_1 = tslib_1.__importDefault(require("./Prize"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:lottery:{namespaceName}:table:{prizeTableName}";
 var PrizeTable = /** @class */ (function () {
     function PrizeTable() {

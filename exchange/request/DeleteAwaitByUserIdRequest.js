@@ -23,6 +23,7 @@ var DeleteAwaitByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.rateName = null;
         this.awaitName = null;
+        this.duplicationAvoider = null;
     }
     DeleteAwaitByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var DeleteAwaitByUserIdRequest = /** @class */ (function () {
     };
     DeleteAwaitByUserIdRequest.prototype.withAwaitName = function (awaitName) {
         this.awaitName = awaitName;
+        return this;
+    };
+    DeleteAwaitByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteAwaitByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteAwaitByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteAwaitByUserIdRequest.fromDict = function (data) {

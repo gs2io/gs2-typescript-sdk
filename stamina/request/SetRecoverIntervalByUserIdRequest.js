@@ -23,6 +23,7 @@ var SetRecoverIntervalByUserIdRequest = /** @class */ (function () {
         this.staminaName = null;
         this.userId = null;
         this.recoverIntervalMinutes = null;
+        this.duplicationAvoider = null;
     }
     SetRecoverIntervalByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var SetRecoverIntervalByUserIdRequest = /** @class */ (function () {
     };
     SetRecoverIntervalByUserIdRequest.prototype.withRecoverIntervalMinutes = function (recoverIntervalMinutes) {
         this.recoverIntervalMinutes = recoverIntervalMinutes;
+        return this;
+    };
+    SetRecoverIntervalByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SetRecoverIntervalByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SetRecoverIntervalByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SetRecoverIntervalByUserIdRequest.fromDict = function (data) {

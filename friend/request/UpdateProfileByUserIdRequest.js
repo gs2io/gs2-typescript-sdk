@@ -24,6 +24,7 @@ var UpdateProfileByUserIdRequest = /** @class */ (function () {
         this.publicProfile = null;
         this.followerProfile = null;
         this.friendProfile = null;
+        this.duplicationAvoider = null;
     }
     UpdateProfileByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -100,6 +101,17 @@ var UpdateProfileByUserIdRequest = /** @class */ (function () {
     };
     UpdateProfileByUserIdRequest.prototype.withFriendProfile = function (friendProfile) {
         this.friendProfile = friendProfile;
+        return this;
+    };
+    UpdateProfileByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    UpdateProfileByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    UpdateProfileByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     UpdateProfileByUserIdRequest.fromDict = function (data) {

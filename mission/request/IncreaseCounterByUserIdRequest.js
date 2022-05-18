@@ -23,6 +23,7 @@ var IncreaseCounterByUserIdRequest = /** @class */ (function () {
         this.counterName = null;
         this.userId = null;
         this.value = null;
+        this.duplicationAvoider = null;
     }
     IncreaseCounterByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var IncreaseCounterByUserIdRequest = /** @class */ (function () {
     };
     IncreaseCounterByUserIdRequest.prototype.withValue = function (value) {
         this.value = value;
+        return this;
+    };
+    IncreaseCounterByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    IncreaseCounterByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    IncreaseCounterByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     IncreaseCounterByUserIdRequest.fromDict = function (data) {

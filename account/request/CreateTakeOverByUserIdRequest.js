@@ -24,6 +24,7 @@ var CreateTakeOverByUserIdRequest = /** @class */ (function () {
         this.type = null;
         this.userIdentifier = null;
         this.password = null;
+        this.duplicationAvoider = null;
     }
     CreateTakeOverByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -100,6 +101,17 @@ var CreateTakeOverByUserIdRequest = /** @class */ (function () {
     };
     CreateTakeOverByUserIdRequest.prototype.withPassword = function (password) {
         this.password = password;
+        return this;
+    };
+    CreateTakeOverByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    CreateTakeOverByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    CreateTakeOverByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     CreateTakeOverByUserIdRequest.fromDict = function (data) {

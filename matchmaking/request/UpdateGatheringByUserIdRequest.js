@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Gs2Matchmaking = (0, tslib_1.__importStar)(require("../model"));
+var Gs2Matchmaking = tslib_1.__importStar(require("../model"));
 var UpdateGatheringByUserIdRequest = /** @class */ (function () {
     function UpdateGatheringByUserIdRequest() {
         this.requestId = null;
@@ -25,6 +25,7 @@ var UpdateGatheringByUserIdRequest = /** @class */ (function () {
         this.gatheringName = null;
         this.userId = null;
         this.attributeRanges = null;
+        this.duplicationAvoider = null;
     }
     UpdateGatheringByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,6 +91,17 @@ var UpdateGatheringByUserIdRequest = /** @class */ (function () {
     };
     UpdateGatheringByUserIdRequest.prototype.withAttributeRanges = function (attributeRanges) {
         this.attributeRanges = attributeRanges;
+        return this;
+    };
+    UpdateGatheringByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    UpdateGatheringByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    UpdateGatheringByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     UpdateGatheringByUserIdRequest.fromDict = function (data) {

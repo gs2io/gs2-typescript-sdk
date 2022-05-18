@@ -7,6 +7,7 @@ export default class SetRankCapByUserIdRequest implements IRequest {
     private experienceName;
     private propertyId;
     private rankCapValue;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -28,6 +29,9 @@ export default class SetRankCapByUserIdRequest implements IRequest {
     getRankCapValue(): number | null;
     setRankCapValue(rankCapValue: number | null): this;
     withRankCapValue(rankCapValue: number | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): SetRankCapByUserIdRequest;

@@ -22,6 +22,7 @@ var UpdateTimeOffsetRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.timeOffset = null;
+        this.duplicationAvoider = null;
     }
     UpdateTimeOffsetRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var UpdateTimeOffsetRequest = /** @class */ (function () {
     };
     UpdateTimeOffsetRequest.prototype.withTimeOffset = function (timeOffset) {
         this.timeOffset = timeOffset;
+        return this;
+    };
+    UpdateTimeOffsetRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    UpdateTimeOffsetRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    UpdateTimeOffsetRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     UpdateTimeOffsetRequest.fromDict = function (data) {

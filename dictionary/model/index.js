@@ -17,22 +17,22 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-var Namespace_1 = (0, tslib_1.__importDefault)(require("./Namespace"));
+var Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
-var EntryModel_1 = (0, tslib_1.__importDefault)(require("./EntryModel"));
+var EntryModel_1 = tslib_1.__importDefault(require("./EntryModel"));
 exports.EntryModel = EntryModel_1.default;
-var EntryModelMaster_1 = (0, tslib_1.__importDefault)(require("./EntryModelMaster"));
+var EntryModelMaster_1 = tslib_1.__importDefault(require("./EntryModelMaster"));
 exports.EntryModelMaster = EntryModelMaster_1.default;
-var Entry_1 = (0, tslib_1.__importDefault)(require("./Entry"));
+var Entry_1 = tslib_1.__importDefault(require("./Entry"));
 exports.Entry = Entry_1.default;
-var CurrentEntryMaster_1 = (0, tslib_1.__importDefault)(require("./CurrentEntryMaster"));
+var CurrentEntryMaster_1 = tslib_1.__importDefault(require("./CurrentEntryMaster"));
 exports.CurrentEntryMaster = CurrentEntryMaster_1.default;
-var Config_1 = (0, tslib_1.__importDefault)(require("./Config"));
+var Config_1 = tslib_1.__importDefault(require("./Config"));
 exports.Config = Config_1.default;
-var GitHubCheckoutSetting_1 = (0, tslib_1.__importDefault)(require("./GitHubCheckoutSetting"));
+var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
 exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
-var ScriptSetting_1 = (0, tslib_1.__importDefault)(require("./ScriptSetting"));
+var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 exports.ScriptSetting = ScriptSetting_1.default;
-var LogSetting_1 = (0, tslib_1.__importDefault)(require("./LogSetting"));
+var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
 //# sourceMappingURL=index.js.map

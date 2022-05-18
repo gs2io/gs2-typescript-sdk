@@ -22,6 +22,7 @@ var DeleteCompletedQuestListByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.questGroupName = null;
         this.userId = null;
+        this.duplicationAvoider = null;
     }
     DeleteCompletedQuestListByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var DeleteCompletedQuestListByUserIdRequest = /** @class */ (function () {
     };
     DeleteCompletedQuestListByUserIdRequest.prototype.withUserId = function (userId) {
         this.userId = userId;
+        return this;
+    };
+    DeleteCompletedQuestListByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteCompletedQuestListByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteCompletedQuestListByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteCompletedQuestListByUserIdRequest.fromDict = function (data) {

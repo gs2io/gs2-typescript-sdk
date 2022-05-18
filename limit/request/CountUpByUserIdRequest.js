@@ -25,6 +25,7 @@ var CountUpByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.countUpValue = null;
         this.maxValue = null;
+        this.duplicationAvoider = null;
     }
     CountUpByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -112,6 +113,17 @@ var CountUpByUserIdRequest = /** @class */ (function () {
     };
     CountUpByUserIdRequest.prototype.withMaxValue = function (maxValue) {
         this.maxValue = maxValue;
+        return this;
+    };
+    CountUpByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    CountUpByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    CountUpByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     CountUpByUserIdRequest.fromDict = function (data) {

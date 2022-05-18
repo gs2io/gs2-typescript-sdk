@@ -7,6 +7,7 @@ export default class LockByUserIdRequest implements IRequest {
     private userId;
     private transactionId;
     private ttl;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -28,6 +29,9 @@ export default class LockByUserIdRequest implements IRequest {
     getTtl(): number | null;
     setTtl(ttl: number | null): this;
     withTtl(ttl: number | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): LockByUserIdRequest;

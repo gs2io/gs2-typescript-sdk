@@ -15,7 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var grnFormat = "grn:gs2:{region}:{ownerId}:deploy:{stackName}";
+var grnFormat = "grn:gs2:{region}:{ownerId}:stack:{stackName}";
 var Stack = /** @class */ (function () {
     function Stack() {
         this.stackId = null;

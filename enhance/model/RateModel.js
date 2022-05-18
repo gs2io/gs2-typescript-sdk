@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var BonusRate_1 = (0, tslib_1.__importDefault)(require("./BonusRate"));
+var BonusRate_1 = tslib_1.__importDefault(require("./BonusRate"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:enhance:{namespaceName}:rateModel:{rateName}";
 var RateModel = /** @class */ (function () {
     function RateModel() {

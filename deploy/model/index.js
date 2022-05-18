@@ -17,16 +17,16 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-var Stack_1 = (0, tslib_1.__importDefault)(require("./Stack"));
+var Stack_1 = tslib_1.__importDefault(require("./Stack"));
 exports.Stack = Stack_1.default;
-var Resource_1 = (0, tslib_1.__importDefault)(require("./Resource"));
+var Resource_1 = tslib_1.__importDefault(require("./Resource"));
 exports.Resource = Resource_1.default;
-var Event_1 = (0, tslib_1.__importDefault)(require("./Event"));
+var Event_1 = tslib_1.__importDefault(require("./Event"));
 exports.Event = Event_1.default;
-var Output_1 = (0, tslib_1.__importDefault)(require("./Output"));
+var Output_1 = tslib_1.__importDefault(require("./Output"));
 exports.Output = Output_1.default;
-var GitHubCheckoutSetting_1 = (0, tslib_1.__importDefault)(require("./GitHubCheckoutSetting"));
+var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
 exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
-var OutputField_1 = (0, tslib_1.__importDefault)(require("./OutputField"));
+var OutputField_1 = tslib_1.__importDefault(require("./OutputField"));
 exports.OutputField = OutputField_1.default;
 //# sourceMappingURL=index.js.map

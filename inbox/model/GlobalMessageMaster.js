@@ -16,8 +16,8 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AcquireAction_1 = (0, tslib_1.__importDefault)(require("./AcquireAction"));
-var TimeSpan_1 = (0, tslib_1.__importDefault)(require("./TimeSpan"));
+var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
+var TimeSpan_1 = tslib_1.__importDefault(require("./TimeSpan"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:inbox:{namespaceName}:master:globalMessage:{globalMessageName}";
 var GlobalMessageMaster = /** @class */ (function () {
     function GlobalMessageMaster() {

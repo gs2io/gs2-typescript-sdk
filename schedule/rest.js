@@ -16,12 +16,12 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
-var Result = (0, tslib_1.__importStar)(require("./result"));
-var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
+var Result = tslib_1.__importStar(require("./result"));
+var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2ScheduleRestClient = /** @class */ (function (_super) {
-    (0, tslib_1.__extends)(Gs2ScheduleRestClient, _super);
+    tslib_1.__extends(Gs2ScheduleRestClient, _super);
     function Gs2ScheduleRestClient(session) {
         return _super.call(this, session) || this;
     }
@@ -425,7 +425,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ScheduleRestClient.prototype.triggerByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/trigger/{triggerName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
@@ -436,10 +436,13 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'triggerStrategy': (_h = request.getTriggerStrategy()) !== null && _h !== void 0 ? _h : null,
-            'ttl': (_j = request.getTtl()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'triggerStrategy': (_j = request.getTriggerStrategy()) !== null && _j !== void 0 ? _j : null,
+            'ttl': (_k = request.getTtl()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -481,7 +484,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ScheduleRestClient.prototype.deleteTriggerByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/trigger/{triggerName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
@@ -492,8 +495,11 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.delete(url, {
             params: params,

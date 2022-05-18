@@ -19,7 +19,6 @@ var LoginBySignatureRequest = /** @class */ (function () {
     function LoginBySignatureRequest() {
         this.requestId = null;
         this.contextStack = null;
-        this.userId = null;
         this.keyId = null;
         this.body = null;
         this.signature = null;
@@ -44,17 +43,6 @@ var LoginBySignatureRequest = /** @class */ (function () {
     };
     LoginBySignatureRequest.prototype.withContextStack = function (contextStack) {
         this.contextStack = contextStack;
-        return this;
-    };
-    LoginBySignatureRequest.prototype.getUserId = function () {
-        return this.userId;
-    };
-    LoginBySignatureRequest.prototype.setUserId = function (userId) {
-        this.userId = userId;
-        return this;
-    };
-    LoginBySignatureRequest.prototype.withUserId = function (userId) {
-        this.userId = userId;
         return this;
     };
     LoginBySignatureRequest.prototype.getKeyId = function () {
@@ -92,14 +80,12 @@ var LoginBySignatureRequest = /** @class */ (function () {
     };
     LoginBySignatureRequest.fromDict = function (data) {
         return new LoginBySignatureRequest()
-            .withUserId(data["userId"])
             .withKeyId(data["keyId"])
             .withBody(data["body"])
             .withSignature(data["signature"]);
     };
     LoginBySignatureRequest.prototype.toDict = function () {
         return {
-            "userId": this.getUserId(),
             "keyId": this.getKeyId(),
             "body": this.getBody(),
             "signature": this.getSignature(),

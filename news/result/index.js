@@ -17,30 +17,30 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-var DescribeNamespacesResult_1 = (0, tslib_1.__importDefault)(require("./DescribeNamespacesResult"));
+var DescribeNamespacesResult_1 = tslib_1.__importDefault(require("./DescribeNamespacesResult"));
 exports.DescribeNamespacesResult = DescribeNamespacesResult_1.default;
-var CreateNamespaceResult_1 = (0, tslib_1.__importDefault)(require("./CreateNamespaceResult"));
+var CreateNamespaceResult_1 = tslib_1.__importDefault(require("./CreateNamespaceResult"));
 exports.CreateNamespaceResult = CreateNamespaceResult_1.default;
-var GetNamespaceStatusResult_1 = (0, tslib_1.__importDefault)(require("./GetNamespaceStatusResult"));
+var GetNamespaceStatusResult_1 = tslib_1.__importDefault(require("./GetNamespaceStatusResult"));
 exports.GetNamespaceStatusResult = GetNamespaceStatusResult_1.default;
-var GetNamespaceResult_1 = (0, tslib_1.__importDefault)(require("./GetNamespaceResult"));
+var GetNamespaceResult_1 = tslib_1.__importDefault(require("./GetNamespaceResult"));
 exports.GetNamespaceResult = GetNamespaceResult_1.default;
-var UpdateNamespaceResult_1 = (0, tslib_1.__importDefault)(require("./UpdateNamespaceResult"));
+var UpdateNamespaceResult_1 = tslib_1.__importDefault(require("./UpdateNamespaceResult"));
 exports.UpdateNamespaceResult = UpdateNamespaceResult_1.default;
-var DeleteNamespaceResult_1 = (0, tslib_1.__importDefault)(require("./DeleteNamespaceResult"));
+var DeleteNamespaceResult_1 = tslib_1.__importDefault(require("./DeleteNamespaceResult"));
 exports.DeleteNamespaceResult = DeleteNamespaceResult_1.default;
-var PrepareUpdateCurrentNewsMasterResult_1 = (0, tslib_1.__importDefault)(require("./PrepareUpdateCurrentNewsMasterResult"));
+var PrepareUpdateCurrentNewsMasterResult_1 = tslib_1.__importDefault(require("./PrepareUpdateCurrentNewsMasterResult"));
 exports.PrepareUpdateCurrentNewsMasterResult = PrepareUpdateCurrentNewsMasterResult_1.default;
-var UpdateCurrentNewsMasterResult_1 = (0, tslib_1.__importDefault)(require("./UpdateCurrentNewsMasterResult"));
+var UpdateCurrentNewsMasterResult_1 = tslib_1.__importDefault(require("./UpdateCurrentNewsMasterResult"));
 exports.UpdateCurrentNewsMasterResult = UpdateCurrentNewsMasterResult_1.default;
-var PrepareUpdateCurrentNewsMasterFromGitHubResult_1 = (0, tslib_1.__importDefault)(require("./PrepareUpdateCurrentNewsMasterFromGitHubResult"));
+var PrepareUpdateCurrentNewsMasterFromGitHubResult_1 = tslib_1.__importDefault(require("./PrepareUpdateCurrentNewsMasterFromGitHubResult"));
 exports.PrepareUpdateCurrentNewsMasterFromGitHubResult = PrepareUpdateCurrentNewsMasterFromGitHubResult_1.default;
-var DescribeNewsResult_1 = (0, tslib_1.__importDefault)(require("./DescribeNewsResult"));
+var DescribeNewsResult_1 = tslib_1.__importDefault(require("./DescribeNewsResult"));
 exports.DescribeNewsResult = DescribeNewsResult_1.default;
-var DescribeNewsByUserIdResult_1 = (0, tslib_1.__importDefault)(require("./DescribeNewsByUserIdResult"));
+var DescribeNewsByUserIdResult_1 = tslib_1.__importDefault(require("./DescribeNewsByUserIdResult"));
 exports.DescribeNewsByUserIdResult = DescribeNewsByUserIdResult_1.default;
-var WantGrantResult_1 = (0, tslib_1.__importDefault)(require("./WantGrantResult"));
+var WantGrantResult_1 = tslib_1.__importDefault(require("./WantGrantResult"));
 exports.WantGrantResult = WantGrantResult_1.default;
-var WantGrantByUserIdResult_1 = (0, tslib_1.__importDefault)(require("./WantGrantByUserIdResult"));
+var WantGrantByUserIdResult_1 = tslib_1.__importDefault(require("./WantGrantByUserIdResult"));
 exports.WantGrantByUserIdResult = WantGrantByUserIdResult_1.default;
 //# sourceMappingURL=index.js.map

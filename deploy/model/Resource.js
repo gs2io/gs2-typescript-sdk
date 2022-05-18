@@ -16,8 +16,8 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var OutputField_1 = (0, tslib_1.__importDefault)(require("./OutputField"));
-var grnFormat = "grn:gs2:{region}:{ownerId}:deploy:{stackName}:resource:{resourceName}";
+var OutputField_1 = tslib_1.__importDefault(require("./OutputField"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:stack:{stackName}:resource:{resourceName}";
 var Resource = /** @class */ (function () {
     function Resource() {
         this.resourceId = null;

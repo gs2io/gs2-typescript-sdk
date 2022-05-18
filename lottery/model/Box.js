@@ -15,11 +15,12 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var grnFormat = "grn:gs2:{region}:{ownerId}:lottery:{namespaceName}:user:{userId}:box:table:{prizeTableName}";
+var grnFormat = "grn:gs2:{region}:{ownerId}:lottery:{namespaceName}:user:{userId}:box:table:{prizeTableName}:{index}";
 var Box = /** @class */ (function () {
     function Box() {
         this.boxId = null;
         this.prizeTableName = null;
+        this.index = null;
         this.userId = null;
         this.drawnIndexes = null;
         this.createdAt = null;
@@ -31,7 +32,8 @@ var Box = /** @class */ (function () {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{prizeTableName}', '.*'));
+            .replace('{prizeTableName}', '.*')
+            .replace('{index}', '.*'));
         if (match) {
             return match[1];
         }
@@ -43,7 +45,8 @@ var Box = /** @class */ (function () {
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{prizeTableName}', '.*'));
+            .replace('{prizeTableName}', '.*')
+            .replace('{index}', '.*'));
         if (match) {
             return match[1];
         }
@@ -55,7 +58,8 @@ var Box = /** @class */ (function () {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
             .replace('{userId}', '.*')
-            .replace('{prizeTableName}', '.*'));
+            .replace('{prizeTableName}', '.*')
+            .replace('{index}', '.*'));
         if (match) {
             return match[1];
         }
@@ -67,7 +71,8 @@ var Box = /** @class */ (function () {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '(.*)')
-            .replace('{prizeTableName}', '.*'));
+            .replace('{prizeTableName}', '.*')
+            .replace('{index}', '.*'));
         if (match) {
             return match[1];
         }
@@ -79,7 +84,21 @@ var Box = /** @class */ (function () {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{prizeTableName}', '(.*)'));
+            .replace('{prizeTableName}', '(.*)')
+            .replace('{index}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Box.getIndex = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{prizeTableName}', '.*')
+            .replace('{index}', '(.*)'));
         if (match) {
             return match[1];
         }
@@ -101,15 +120,19 @@ var Box = /** @class */ (function () {
         if (this.getPrizeTableName(grn) == null || this.getPrizeTableName(grn) === '') {
             return false;
         }
+        if (this.getIndex(grn) == null || this.getIndex(grn) === '') {
+            return false;
+        }
         return true;
     };
-    Box.createGrn = function (region, ownerId, namespaceName, userId, prizeTableName) {
+    Box.createGrn = function (region, ownerId, namespaceName, userId, prizeTableName, index) {
         return grnFormat
             .replace('{region}', region !== null && region !== void 0 ? region : '')
             .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
             .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
             .replace('{userId}', userId !== null && userId !== void 0 ? userId : '')
-            .replace('{prizeTableName}', prizeTableName !== null && prizeTableName !== void 0 ? prizeTableName : '');
+            .replace('{prizeTableName}', prizeTableName !== null && prizeTableName !== void 0 ? prizeTableName : '')
+            .replace('{index}', index !== null && index !== void 0 ? index : '');
     };
     Box.prototype.getBoxId = function () {
         return this.boxId;
@@ -131,6 +154,17 @@ var Box = /** @class */ (function () {
     };
     Box.prototype.withPrizeTableName = function (prizeTableName) {
         this.prizeTableName = prizeTableName;
+        return this;
+    };
+    Box.prototype.getIndex = function () {
+        return this.index;
+    };
+    Box.prototype.setIndex = function (index) {
+        this.index = index;
+        return this;
+    };
+    Box.prototype.withIndex = function (index) {
+        this.index = index;
         return this;
     };
     Box.prototype.getUserId = function () {
@@ -184,6 +218,7 @@ var Box = /** @class */ (function () {
         return new Box()
             .withBoxId(data["boxId"])
             .withPrizeTableName(data["prizeTableName"])
+            .withIndex(data["index"])
             .withUserId(data["userId"])
             .withDrawnIndexes(data.drawnIndexes ?
             data.drawnIndexes.map(function (item) {
@@ -196,6 +231,7 @@ var Box = /** @class */ (function () {
         return {
             "boxId": this.getBoxId(),
             "prizeTableName": this.getPrizeTableName(),
+            "index": this.getIndex(),
             "userId": this.getUserId(),
             "drawnIndexes": this.getDrawnIndexes() ?
                 this.getDrawnIndexes().map(function (item) {

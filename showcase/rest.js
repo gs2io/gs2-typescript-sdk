@@ -16,12 +16,12 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
-var Result = (0, tslib_1.__importStar)(require("./result"));
-var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
+var Result = tslib_1.__importStar(require("./result"));
+var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
-    (0, tslib_1.__extends)(Gs2ShowcaseRestClient, _super);
+    tslib_1.__extends(Gs2ShowcaseRestClient, _super);
     function Gs2ShowcaseRestClient(session) {
         return _super.call(this, session) || this;
     }

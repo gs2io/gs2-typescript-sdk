@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Gs2Enhance = (0, tslib_1.__importStar)(require("../model"));
+var Gs2Enhance = tslib_1.__importStar(require("../model"));
 var EndByUserIdRequest = /** @class */ (function () {
     function EndByUserIdRequest() {
         this.requestId = null;
@@ -24,6 +24,7 @@ var EndByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.config = null;
+        this.duplicationAvoider = null;
     }
     EndByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,6 +79,17 @@ var EndByUserIdRequest = /** @class */ (function () {
     };
     EndByUserIdRequest.prototype.withConfig = function (config) {
         this.config = config;
+        return this;
+    };
+    EndByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    EndByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    EndByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     EndByUserIdRequest.fromDict = function (data) {

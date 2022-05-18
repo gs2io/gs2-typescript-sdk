@@ -24,6 +24,7 @@ var WithdrawByUserIdRequest = /** @class */ (function () {
         this.slot = null;
         this.count = null;
         this.paidOnly = null;
+        this.duplicationAvoider = null;
     }
     WithdrawByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -100,6 +101,17 @@ var WithdrawByUserIdRequest = /** @class */ (function () {
     };
     WithdrawByUserIdRequest.prototype.withPaidOnly = function (paidOnly) {
         this.paidOnly = paidOnly;
+        return this;
+    };
+    WithdrawByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    WithdrawByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    WithdrawByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     WithdrawByUserIdRequest.fromDict = function (data) {

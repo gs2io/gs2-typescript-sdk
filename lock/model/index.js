@@ -17,10 +17,10 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-var Namespace_1 = (0, tslib_1.__importDefault)(require("./Namespace"));
+var Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
-var Mutex_1 = (0, tslib_1.__importDefault)(require("./Mutex"));
+var Mutex_1 = tslib_1.__importDefault(require("./Mutex"));
 exports.Mutex = Mutex_1.default;
-var LogSetting_1 = (0, tslib_1.__importDefault)(require("./LogSetting"));
+var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
 //# sourceMappingURL=index.js.map

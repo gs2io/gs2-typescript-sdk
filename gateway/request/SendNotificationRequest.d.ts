@@ -8,6 +8,7 @@ export default class SendNotificationRequest implements IRequest {
     private payload;
     private enableTransferMobileNotification;
     private sound;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -32,6 +33,9 @@ export default class SendNotificationRequest implements IRequest {
     getSound(): string | null;
     setSound(sound: string | null): this;
     withSound(sound: string | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): SendNotificationRequest;

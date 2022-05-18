@@ -16,13 +16,12 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Gs2Lottery = (0, tslib_1.__importStar)(require("../model"));
+var Gs2Lottery = tslib_1.__importStar(require("../model"));
 var DrawByStampSheetResult = /** @class */ (function () {
     function DrawByStampSheetResult() {
         this.items = null;
         this.stampSheet = null;
         this.stampSheetEncryptionKeyId = null;
-        this.boxItems = null;
     }
     DrawByStampSheetResult.prototype.getItems = function () {
         return this.items;
@@ -57,17 +56,6 @@ var DrawByStampSheetResult = /** @class */ (function () {
         this.stampSheetEncryptionKeyId = stampSheetEncryptionKeyId;
         return this;
     };
-    DrawByStampSheetResult.prototype.getBoxItems = function () {
-        return this.boxItems;
-    };
-    DrawByStampSheetResult.prototype.setBoxItems = function (boxItems) {
-        this.boxItems = boxItems;
-        return this;
-    };
-    DrawByStampSheetResult.prototype.withBoxItems = function (boxItems) {
-        this.boxItems = boxItems;
-        return this;
-    };
     DrawByStampSheetResult.fromDict = function (data) {
         return new DrawByStampSheetResult()
             .withItems(data.items ?
@@ -75,11 +63,9 @@ var DrawByStampSheetResult = /** @class */ (function () {
                 return Gs2Lottery.DrawnPrize.fromDict(item);
             }) : [])
             .withStampSheet(data["stampSheet"])
-            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
-            .withBoxItems(Gs2Lottery.BoxItems.fromDict(data["boxItems"]));
+            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"]);
     };
     DrawByStampSheetResult.prototype.toDict = function () {
-        var _a;
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
@@ -87,7 +73,6 @@ var DrawByStampSheetResult = /** @class */ (function () {
                 }) : [],
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
-            "boxItems": (_a = this.getBoxItems()) === null || _a === void 0 ? void 0 : _a.toDict(),
         };
     };
     return DrawByStampSheetResult;

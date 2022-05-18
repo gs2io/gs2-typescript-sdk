@@ -16,12 +16,12 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
-var Result = (0, tslib_1.__importStar)(require("./result"));
-var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
+var Result = tslib_1.__importStar(require("./result"));
+var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2StaminaRestClient = /** @class */ (function (_super) {
-    (0, tslib_1.__extends)(Gs2StaminaRestClient, _super);
+    tslib_1.__extends(Gs2StaminaRestClient, _super);
     function Gs2StaminaRestClient(session) {
         return _super.call(this, session) || this;
     }
@@ -958,7 +958,7 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2StaminaRestClient.prototype.updateStaminaByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
@@ -969,12 +969,15 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'value': (_h = request.getValue()) !== null && _h !== void 0 ? _h : null,
-            'maxValue': (_j = request.getMaxValue()) !== null && _j !== void 0 ? _j : null,
-            'recoverIntervalMinutes': (_k = request.getRecoverIntervalMinutes()) !== null && _k !== void 0 ? _k : null,
-            'recoverValue': (_l = request.getRecoverValue()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'value': (_j = request.getValue()) !== null && _j !== void 0 ? _j : null,
+            'maxValue': (_k = request.getMaxValue()) !== null && _k !== void 0 ? _k : null,
+            'recoverIntervalMinutes': (_l = request.getRecoverIntervalMinutes()) !== null && _l !== void 0 ? _l : null,
+            'recoverValue': (_m = request.getRecoverValue()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1021,7 +1024,7 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2StaminaRestClient.prototype.consumeStaminaByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/consume')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
@@ -1032,9 +1035,12 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'consumeValue': (_h = request.getConsumeValue()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'consumeValue': (_j = request.getConsumeValue()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1050,7 +1056,7 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2StaminaRestClient.prototype.recoverStaminaByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/recover')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
@@ -1061,9 +1067,12 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'recoverValue': (_h = request.getRecoverValue()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'recoverValue': (_j = request.getRecoverValue()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1079,7 +1088,7 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2StaminaRestClient.prototype.raiseMaxValueByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/raise')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
@@ -1090,9 +1099,12 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'raiseValue': (_h = request.getRaiseValue()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'raiseValue': (_j = request.getRaiseValue()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1108,7 +1120,7 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2StaminaRestClient.prototype.setMaxValueByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/set')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
@@ -1119,9 +1131,12 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'maxValue': (_h = request.getMaxValue()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'maxValue': (_j = request.getMaxValue()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1137,7 +1152,7 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2StaminaRestClient.prototype.setRecoverIntervalByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/recoverInterval/set')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
@@ -1148,9 +1163,12 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'recoverIntervalMinutes': (_h = request.getRecoverIntervalMinutes()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'recoverIntervalMinutes': (_j = request.getRecoverIntervalMinutes()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1166,7 +1184,7 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2StaminaRestClient.prototype.setRecoverValueByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}/recoverValue/set')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
@@ -1177,9 +1195,12 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'recoverValue': (_h = request.getRecoverValue()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'recoverValue': (_j = request.getRecoverValue()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1294,7 +1315,7 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2StaminaRestClient.prototype.deleteStaminaByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stamina/{staminaName}')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
@@ -1305,8 +1326,11 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.delete(url, {
             params: params,

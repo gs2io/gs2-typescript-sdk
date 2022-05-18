@@ -22,6 +22,7 @@ var DeleteStaminaByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.staminaName = null;
         this.userId = null;
+        this.duplicationAvoider = null;
     }
     DeleteStaminaByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var DeleteStaminaByUserIdRequest = /** @class */ (function () {
     };
     DeleteStaminaByUserIdRequest.prototype.withUserId = function (userId) {
         this.userId = userId;
+        return this;
+    };
+    DeleteStaminaByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteStaminaByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteStaminaByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteStaminaByUserIdRequest.fromDict = function (data) {

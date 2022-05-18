@@ -23,6 +23,7 @@ var UnsubscribeByUserIdRequest = /** @class */ (function () {
         this.categoryName = null;
         this.userId = null;
         this.targetUserId = null;
+        this.duplicationAvoider = null;
     }
     UnsubscribeByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var UnsubscribeByUserIdRequest = /** @class */ (function () {
     };
     UnsubscribeByUserIdRequest.prototype.withTargetUserId = function (targetUserId) {
         this.targetUserId = targetUserId;
+        return this;
+    };
+    UnsubscribeByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    UnsubscribeByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    UnsubscribeByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     UnsubscribeByUserIdRequest.fromDict = function (data) {

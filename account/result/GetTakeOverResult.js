@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Gs2Account = (0, tslib_1.__importStar)(require("../model"));
+var Gs2Account = tslib_1.__importStar(require("../model"));
 var GetTakeOverResult = /** @class */ (function () {
     function GetTakeOverResult() {
         this.item = null;

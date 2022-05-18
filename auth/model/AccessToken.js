@@ -15,19 +15,13 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var grnFormat = "";
 var AccessToken = /** @class */ (function () {
     function AccessToken() {
         this.token = null;
         this.userId = null;
         this.expire = null;
+        this.timeOffset = null;
     }
-    AccessToken.isValid = function (grn) {
-        return true;
-    };
-    AccessToken.createGrn = function () {
-        return grnFormat;
-    };
     AccessToken.prototype.getToken = function () {
         return this.token;
     };
@@ -61,6 +55,17 @@ var AccessToken = /** @class */ (function () {
         this.expire = expire;
         return this;
     };
+    AccessToken.prototype.getTimeOffset = function () {
+        return this.timeOffset;
+    };
+    AccessToken.prototype.setTimeOffset = function (timeOffset) {
+        this.timeOffset = timeOffset;
+        return this;
+    };
+    AccessToken.prototype.withTimeOffset = function (timeOffset) {
+        this.timeOffset = timeOffset;
+        return this;
+    };
     AccessToken.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -68,13 +73,15 @@ var AccessToken = /** @class */ (function () {
         return new AccessToken()
             .withToken(data["token"])
             .withUserId(data["userId"])
-            .withExpire(data["expire"]);
+            .withExpire(data["expire"])
+            .withTimeOffset(data["timeOffset"]);
     };
     AccessToken.prototype.toDict = function () {
         return {
             "token": this.getToken(),
             "userId": this.getUserId(),
             "expire": this.getExpire(),
+            "timeOffset": this.getTimeOffset(),
         };
     };
     return AccessToken;

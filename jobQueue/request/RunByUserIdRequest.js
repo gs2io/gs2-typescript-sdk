@@ -21,6 +21,7 @@ var RunByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
+        this.duplicationAvoider = null;
     }
     RunByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -64,6 +65,17 @@ var RunByUserIdRequest = /** @class */ (function () {
     };
     RunByUserIdRequest.prototype.withUserId = function (userId) {
         this.userId = userId;
+        return this;
+    };
+    RunByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    RunByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    RunByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     RunByUserIdRequest.fromDict = function (data) {

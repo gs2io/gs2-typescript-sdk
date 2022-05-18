@@ -22,6 +22,7 @@ var AddEntriesByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.entryModelNames = null;
+        this.duplicationAvoider = null;
     }
     AddEntriesByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var AddEntriesByUserIdRequest = /** @class */ (function () {
     };
     AddEntriesByUserIdRequest.prototype.withEntryModelNames = function (entryModelNames) {
         this.entryModelNames = entryModelNames;
+        return this;
+    };
+    AddEntriesByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    AddEntriesByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    AddEntriesByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     AddEntriesByUserIdRequest.fromDict = function (data) {

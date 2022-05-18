@@ -6,6 +6,7 @@ export default class DeleteCounterByUserIdRequest implements IRequest {
     private limitName;
     private userId;
     private counterName;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class DeleteCounterByUserIdRequest implements IRequest {
     getCounterName(): string | null;
     setCounterName(counterName: string | null): this;
     withCounterName(counterName: string | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): DeleteCounterByUserIdRequest;

@@ -16,12 +16,12 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
-var Result = (0, tslib_1.__importStar)(require("./result"));
-var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
+var Result = tslib_1.__importStar(require("./result"));
+var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2AuthRestClient = /** @class */ (function (_super) {
-    (0, tslib_1.__extends)(Gs2AuthRestClient, _super);
+    tslib_1.__extends(Gs2AuthRestClient, _super);
     function Gs2AuthRestClient(session) {
         return _super.call(this, session) || this;
     }
@@ -53,7 +53,7 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AuthRestClient.prototype.loginBySignature = function (request) {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/login/signed')
             .replace('{service}', 'auth')
             .replace('{region}', this.session.region);
@@ -63,10 +63,9 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
         }
         var body = {
             'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'userId': (_b = request.getUserId()) !== null && _b !== void 0 ? _b : null,
-            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
-            'body': (_d = request.getBody()) !== null && _d !== void 0 ? _d : null,
-            'signature': (_e = request.getSignature()) !== null && _e !== void 0 ? _e : null,
+            'keyId': (_b = request.getKeyId()) !== null && _b !== void 0 ? _b : null,
+            'body': (_c = request.getBody()) !== null && _c !== void 0 ? _c : null,
+            'signature': (_d = request.getSignature()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

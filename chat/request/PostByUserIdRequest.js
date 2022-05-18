@@ -25,6 +25,7 @@ var PostByUserIdRequest = /** @class */ (function () {
         this.category = null;
         this.metadata = null;
         this.password = null;
+        this.duplicationAvoider = null;
     }
     PostByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -112,6 +113,17 @@ var PostByUserIdRequest = /** @class */ (function () {
     };
     PostByUserIdRequest.prototype.withPassword = function (password) {
         this.password = password;
+        return this;
+    };
+    PostByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    PostByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    PostByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     PostByUserIdRequest.fromDict = function (data) {

@@ -16,12 +16,12 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
-var Result = (0, tslib_1.__importStar)(require("./result"));
-var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
+var Result = tslib_1.__importStar(require("./result"));
+var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2MoneyRestClient = /** @class */ (function (_super) {
-    (0, tslib_1.__extends)(Gs2MoneyRestClient, _super);
+    tslib_1.__extends(Gs2MoneyRestClient, _super);
     function Gs2MoneyRestClient(session) {
         return _super.call(this, session) || this;
     }
@@ -289,7 +289,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MoneyRestClient.prototype.depositByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet/{slot}/deposit')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region)
@@ -300,10 +300,13 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'price': (_h = request.getPrice()) !== null && _h !== void 0 ? _h : null,
-            'count': (_j = request.getCount()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'price': (_j = request.getPrice()) !== null && _j !== void 0 ? _j : null,
+            'count': (_k = request.getCount()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -351,7 +354,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MoneyRestClient.prototype.withdrawByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/wallet/{slot}/withdraw')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region)
@@ -362,10 +365,13 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'count': (_h = request.getCount()) !== null && _h !== void 0 ? _h : null,
-            'paidOnly': (_j = request.getPaidOnly()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'count': (_j = request.getCount()) !== null && _j !== void 0 ? _j : null,
+            'paidOnly': (_k = request.getPaidOnly()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -487,7 +493,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MoneyRestClient.prototype.recordReceipt = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/receipt')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region)
@@ -497,10 +503,13 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
+        }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'contentsId': (_f = request.getContentsId()) !== null && _f !== void 0 ? _f : null,
-            'receipt': (_g = request.getReceipt()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'contentsId': (_g = request.getContentsId()) !== null && _g !== void 0 ? _g : null,
+            'receipt': (_h = request.getReceipt()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

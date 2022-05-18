@@ -9,6 +9,7 @@ export default class SendMessageByUserIdRequest implements IRequest {
     private readAcquireActions;
     private expiresAt;
     private expiresTimeSpan;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -33,6 +34,9 @@ export default class SendMessageByUserIdRequest implements IRequest {
     getExpiresTimeSpan(): Gs2Inbox.TimeSpan | null;
     setExpiresTimeSpan(expiresTimeSpan: Gs2Inbox.TimeSpan | null): this;
     withExpiresTimeSpan(expiresTimeSpan: Gs2Inbox.TimeSpan | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): SendMessageByUserIdRequest;

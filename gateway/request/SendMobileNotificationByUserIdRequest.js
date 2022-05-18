@@ -24,6 +24,7 @@ var SendMobileNotificationByUserIdRequest = /** @class */ (function () {
         this.subject = null;
         this.payload = null;
         this.sound = null;
+        this.duplicationAvoider = null;
     }
     SendMobileNotificationByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -100,6 +101,17 @@ var SendMobileNotificationByUserIdRequest = /** @class */ (function () {
     };
     SendMobileNotificationByUserIdRequest.prototype.withSound = function (sound) {
         this.sound = sound;
+        return this;
+    };
+    SendMobileNotificationByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SendMobileNotificationByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SendMobileNotificationByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SendMobileNotificationByUserIdRequest.fromDict = function (data) {

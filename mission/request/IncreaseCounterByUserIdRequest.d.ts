@@ -6,6 +6,7 @@ export default class IncreaseCounterByUserIdRequest implements IRequest {
     private counterName;
     private userId;
     private value;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class IncreaseCounterByUserIdRequest implements IRequest {
     getValue(): number | null;
     setValue(value: number | null): this;
     withValue(value: number | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): IncreaseCounterByUserIdRequest;

@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Gs2Exchange = (0, tslib_1.__importStar)(require("../model"));
+var Gs2Exchange = tslib_1.__importStar(require("../model"));
 var DeleteAwaitResult = /** @class */ (function () {
     function DeleteAwaitResult() {
         this.item = null;

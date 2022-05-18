@@ -6,6 +6,7 @@ export default class Namespace implements IModel {
     private name;
     private description;
     private changePasswordIfTakeOver;
+    private differentUserIdForLoginAndDataRetention;
     private createAccountScript;
     private authenticationScript;
     private createTakeOverScript;
@@ -30,6 +31,9 @@ export default class Namespace implements IModel {
     getChangePasswordIfTakeOver(): boolean | null;
     setChangePasswordIfTakeOver(changePasswordIfTakeOver: boolean | null): this;
     withChangePasswordIfTakeOver(changePasswordIfTakeOver: boolean | null): this;
+    getDifferentUserIdForLoginAndDataRetention(): boolean | null;
+    setDifferentUserIdForLoginAndDataRetention(differentUserIdForLoginAndDataRetention: boolean | null): this;
+    withDifferentUserIdForLoginAndDataRetention(differentUserIdForLoginAndDataRetention: boolean | null): this;
     getCreateAccountScript(): ScriptSetting | null;
     setCreateAccountScript(createAccountScript: ScriptSetting | null): this;
     withCreateAccountScript(createAccountScript: ScriptSetting | null): this;

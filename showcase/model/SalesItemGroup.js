@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var SalesItem_1 = (0, tslib_1.__importDefault)(require("./SalesItem"));
+var SalesItem_1 = tslib_1.__importDefault(require("./SalesItem"));
 var SalesItemGroup = /** @class */ (function () {
     function SalesItemGroup() {
         this.name = null;

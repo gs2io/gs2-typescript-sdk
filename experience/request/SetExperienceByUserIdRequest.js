@@ -24,6 +24,7 @@ var SetExperienceByUserIdRequest = /** @class */ (function () {
         this.experienceName = null;
         this.propertyId = null;
         this.experienceValue = null;
+        this.duplicationAvoider = null;
     }
     SetExperienceByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -100,6 +101,17 @@ var SetExperienceByUserIdRequest = /** @class */ (function () {
     };
     SetExperienceByUserIdRequest.prototype.withExperienceValue = function (experienceValue) {
         this.experienceValue = experienceValue;
+        return this;
+    };
+    SetExperienceByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SetExperienceByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SetExperienceByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SetExperienceByUserIdRequest.fromDict = function (data) {

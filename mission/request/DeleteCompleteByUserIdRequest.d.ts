@@ -5,6 +5,7 @@ export default class DeleteCompleteByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private missionGroupName;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -20,6 +21,9 @@ export default class DeleteCompleteByUserIdRequest implements IRequest {
     getMissionGroupName(): string | null;
     setMissionGroupName(missionGroupName: string | null): this;
     withMissionGroupName(missionGroupName: string | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): DeleteCompleteByUserIdRequest;

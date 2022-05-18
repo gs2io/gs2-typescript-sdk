@@ -6,6 +6,7 @@ export default class AddMoldCapacityByUserIdRequest implements IRequest {
     private userId;
     private moldName;
     private capacity;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class AddMoldCapacityByUserIdRequest implements IRequest {
     getCapacity(): number | null;
     setCapacity(capacity: number | null): this;
     withCapacity(capacity: number | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): AddMoldCapacityByUserIdRequest;

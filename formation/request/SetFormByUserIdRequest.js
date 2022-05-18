@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Gs2Formation = (0, tslib_1.__importStar)(require("../model"));
+var Gs2Formation = tslib_1.__importStar(require("../model"));
 var SetFormByUserIdRequest = /** @class */ (function () {
     function SetFormByUserIdRequest() {
         this.requestId = null;
@@ -26,6 +26,7 @@ var SetFormByUserIdRequest = /** @class */ (function () {
         this.moldName = null;
         this.index = null;
         this.slots = null;
+        this.duplicationAvoider = null;
     }
     SetFormByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -102,6 +103,17 @@ var SetFormByUserIdRequest = /** @class */ (function () {
     };
     SetFormByUserIdRequest.prototype.withSlots = function (slots) {
         this.slots = slots;
+        return this;
+    };
+    SetFormByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SetFormByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SetFormByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SetFormByUserIdRequest.fromDict = function (data) {

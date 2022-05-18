@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var WalletDetail_1 = (0, tslib_1.__importDefault)(require("./WalletDetail"));
+var WalletDetail_1 = tslib_1.__importDefault(require("./WalletDetail"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:money:{namespaceName}:user:{userId}:wallet:{slot}";
 var Wallet = /** @class */ (function () {
     function Wallet() {

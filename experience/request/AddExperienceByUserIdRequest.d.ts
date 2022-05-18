@@ -7,6 +7,7 @@ export default class AddExperienceByUserIdRequest implements IRequest {
     private experienceName;
     private propertyId;
     private experienceValue;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -28,6 +29,9 @@ export default class AddExperienceByUserIdRequest implements IRequest {
     getExperienceValue(): number | null;
     setExperienceValue(experienceValue: number | null): this;
     withExperienceValue(experienceValue: number | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): AddExperienceByUserIdRequest;

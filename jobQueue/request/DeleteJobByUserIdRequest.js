@@ -22,6 +22,7 @@ var DeleteJobByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.jobName = null;
+        this.duplicationAvoider = null;
     }
     DeleteJobByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var DeleteJobByUserIdRequest = /** @class */ (function () {
     };
     DeleteJobByUserIdRequest.prototype.withJobName = function (jobName) {
         this.jobName = jobName;
+        return this;
+    };
+    DeleteJobByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteJobByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteJobByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteJobByUserIdRequest.fromDict = function (data) {

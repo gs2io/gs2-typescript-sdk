@@ -16,12 +16,12 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
-var Result = (0, tslib_1.__importStar)(require("./result"));
-var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
+var Result = tslib_1.__importStar(require("./result"));
+var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2GatewayRestClient = /** @class */ (function (_super) {
-    (0, tslib_1.__extends)(Gs2GatewayRestClient, _super);
+    tslib_1.__extends(Gs2GatewayRestClient, _super);
     function Gs2GatewayRestClient(session) {
         return _super.call(this, session) || this;
     }
@@ -255,7 +255,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GatewayRestClient.prototype.setUserIdByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/{userId}/user')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
@@ -265,9 +265,12 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
+        }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'allowConcurrentAccess': (_f = request.getAllowConcurrentAccess()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'allowConcurrentAccess': (_g = request.getAllowConcurrentAccess()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -283,7 +286,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GatewayRestClient.prototype.sendNotification = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/{userId}/notification')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
@@ -293,12 +296,15 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
+        }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'subject': (_f = request.getSubject()) !== null && _f !== void 0 ? _f : null,
-            'payload': (_g = request.getPayload()) !== null && _g !== void 0 ? _g : null,
-            'enableTransferMobileNotification': (_h = request.getEnableTransferMobileNotification()) !== null && _h !== void 0 ? _h : null,
-            'sound': (_j = request.getSound()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'subject': (_g = request.getSubject()) !== null && _g !== void 0 ? _g : null,
+            'payload': (_h = request.getPayload()) !== null && _h !== void 0 ? _h : null,
+            'enableTransferMobileNotification': (_j = request.getEnableTransferMobileNotification()) !== null && _j !== void 0 ? _j : null,
+            'sound': (_k = request.getSound()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -344,7 +350,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GatewayRestClient.prototype.setFirebaseTokenByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/firebase/token')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
@@ -354,9 +360,12 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
+        }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'token': (_f = request.getToken()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'token': (_g = request.getToken()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -445,7 +454,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GatewayRestClient.prototype.deleteFirebaseTokenByUserId = function (request) {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/firebase/token')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
@@ -455,8 +464,11 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
+        }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -468,7 +480,7 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GatewayRestClient.prototype.sendMobileNotificationByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/firebase/token/notification')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
@@ -478,11 +490,14 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
+        }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'subject': (_f = request.getSubject()) !== null && _f !== void 0 ? _f : null,
-            'payload': (_g = request.getPayload()) !== null && _g !== void 0 ? _g : null,
-            'sound': (_h = request.getSound()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'subject': (_g = request.getSubject()) !== null && _g !== void 0 ? _g : null,
+            'payload': (_h = request.getPayload()) !== null && _h !== void 0 ? _h : null,
+            'sound': (_j = request.getSound()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

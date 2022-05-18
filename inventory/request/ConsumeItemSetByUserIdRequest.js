@@ -25,6 +25,7 @@ var ConsumeItemSetByUserIdRequest = /** @class */ (function () {
         this.itemName = null;
         this.consumeCount = null;
         this.itemSetName = null;
+        this.duplicationAvoider = null;
     }
     ConsumeItemSetByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -112,6 +113,17 @@ var ConsumeItemSetByUserIdRequest = /** @class */ (function () {
     };
     ConsumeItemSetByUserIdRequest.prototype.withItemSetName = function (itemSetName) {
         this.itemSetName = itemSetName;
+        return this;
+    };
+    ConsumeItemSetByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    ConsumeItemSetByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    ConsumeItemSetByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     ConsumeItemSetByUserIdRequest.fromDict = function (data) {

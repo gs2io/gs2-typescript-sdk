@@ -9,6 +9,7 @@ export default class VerifyReferenceOfByUserIdRequest implements IRequest {
     private itemSetName;
     private referenceOf;
     private verifyType;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -36,6 +37,9 @@ export default class VerifyReferenceOfByUserIdRequest implements IRequest {
     getVerifyType(): string | null;
     setVerifyType(verifyType: string | null): this;
     withVerifyType(verifyType: string | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): VerifyReferenceOfByUserIdRequest;

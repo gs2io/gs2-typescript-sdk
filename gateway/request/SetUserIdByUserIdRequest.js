@@ -22,6 +22,7 @@ var SetUserIdByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.allowConcurrentAccess = null;
+        this.duplicationAvoider = null;
     }
     SetUserIdByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var SetUserIdByUserIdRequest = /** @class */ (function () {
     };
     SetUserIdByUserIdRequest.prototype.withAllowConcurrentAccess = function (allowConcurrentAccess) {
         this.allowConcurrentAccess = allowConcurrentAccess;
+        return this;
+    };
+    SetUserIdByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SetUserIdByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SetUserIdByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SetUserIdByUserIdRequest.fromDict = function (data) {

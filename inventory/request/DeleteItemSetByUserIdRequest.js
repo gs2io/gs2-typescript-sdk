@@ -24,6 +24,7 @@ var DeleteItemSetByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.itemName = null;
         this.itemSetName = null;
+        this.duplicationAvoider = null;
     }
     DeleteItemSetByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -100,6 +101,17 @@ var DeleteItemSetByUserIdRequest = /** @class */ (function () {
     };
     DeleteItemSetByUserIdRequest.prototype.withItemSetName = function (itemSetName) {
         this.itemSetName = itemSetName;
+        return this;
+    };
+    DeleteItemSetByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteItemSetByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteItemSetByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteItemSetByUserIdRequest.fromDict = function (data) {

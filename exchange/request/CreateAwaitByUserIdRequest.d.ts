@@ -6,6 +6,7 @@ export default class CreateAwaitByUserIdRequest implements IRequest {
     private userId;
     private rateName;
     private count;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class CreateAwaitByUserIdRequest implements IRequest {
     getCount(): number | null;
     setCount(count: number | null): this;
     withCount(count: number | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CreateAwaitByUserIdRequest;

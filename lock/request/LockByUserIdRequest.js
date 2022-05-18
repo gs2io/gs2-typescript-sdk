@@ -24,6 +24,7 @@ var LockByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.transactionId = null;
         this.ttl = null;
+        this.duplicationAvoider = null;
     }
     LockByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -100,6 +101,17 @@ var LockByUserIdRequest = /** @class */ (function () {
     };
     LockByUserIdRequest.prototype.withTtl = function (ttl) {
         this.ttl = ttl;
+        return this;
+    };
+    LockByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    LockByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    LockByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     LockByUserIdRequest.fromDict = function (data) {

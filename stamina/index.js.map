@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../src/stamina/index.ts"],"names":[],"mappings":";AAAA;;;;;;;;;;;;;;GAcG;;;;AAEH,0DAAiC;AAM7B,sBAAK;AALT,8DAAqC;AAMjC,0BAAO;AALX,4DAAmC;AAM/B,wBAAM;AALV,6DAA0C;AAMtC,+BANG,cAAoB,CAMH"}
+{"version":3,"file":"index.js","sourceRoot":"","sources":["index.ts"],"names":[],"mappings":";AAAA;;;;;;;;;;;;;;GAcG;;;;AAEH,qDAAiC;AAM7B,sBAAK;AALT,yDAAqC;AAMjC,0BAAO;AALX,uDAAmC;AAM/B,wBAAM;AALV,wDAA0C;AAMtC,+BANG,cAAoB,CAMH"}

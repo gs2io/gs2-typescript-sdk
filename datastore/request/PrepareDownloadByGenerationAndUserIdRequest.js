@@ -23,6 +23,7 @@ var PrepareDownloadByGenerationAndUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.dataObjectId = null;
         this.generation = null;
+        this.duplicationAvoider = null;
     }
     PrepareDownloadByGenerationAndUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var PrepareDownloadByGenerationAndUserIdRequest = /** @class */ (function () {
     };
     PrepareDownloadByGenerationAndUserIdRequest.prototype.withGeneration = function (generation) {
         this.generation = generation;
+        return this;
+    };
+    PrepareDownloadByGenerationAndUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    PrepareDownloadByGenerationAndUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    PrepareDownloadByGenerationAndUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     PrepareDownloadByGenerationAndUserIdRequest.fromDict = function (data) {

@@ -21,6 +21,7 @@ var DeleteReceivedByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
+        this.duplicationAvoider = null;
     }
     DeleteReceivedByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -64,6 +65,17 @@ var DeleteReceivedByUserIdRequest = /** @class */ (function () {
     };
     DeleteReceivedByUserIdRequest.prototype.withUserId = function (userId) {
         this.userId = userId;
+        return this;
+    };
+    DeleteReceivedByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteReceivedByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteReceivedByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteReceivedByUserIdRequest.fromDict = function (data) {

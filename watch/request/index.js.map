@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../src/watch/request/index.ts"],"names":[],"mappings":";;;;AAAA;;;;;;;;;;;;;;GAcG;AACH,mFAA+C;AAM3C,0BANG,yBAAe,CAMH;AALnB,6FAAyD;AAMrD,+BANG,8BAAoB,CAMH;AALxB,qHAAiF;AAM7E,2CANG,0CAAgC,CAMH;AALpC,uGAAmE;AAM/D,oCANG,mCAAyB,CAMH"}
+{"version":3,"file":"index.js","sourceRoot":"","sources":["index.ts"],"names":[],"mappings":";;;;AAAA;;;;;;;;;;;;;;GAcG;AACH,8EAA+C;AAM3C,0BANG,yBAAe,CAMH;AALnB,wFAAyD;AAMrD,+BANG,8BAAoB,CAMH;AALxB,gHAAiF;AAM7E,2CANG,0CAAgC,CAMH;AALpC,kGAAmE;AAM/D,oCANG,mCAAyB,CAMH"}

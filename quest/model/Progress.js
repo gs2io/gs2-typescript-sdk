@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Reward_1 = (0, tslib_1.__importDefault)(require("./Reward"));
+var Reward_1 = tslib_1.__importDefault(require("./Reward"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:quest:{namespaceName}:user:{userId}:progress";
 var Progress = /** @class */ (function () {
     function Progress() {

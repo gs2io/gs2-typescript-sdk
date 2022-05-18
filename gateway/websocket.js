@@ -16,18 +16,18 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AbstractGs2WebSocketClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2WebSocketClient"));
-var Result = (0, tslib_1.__importStar)(require("./result"));
+var AbstractGs2WebSocketClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2WebSocketClient"));
+var Result = tslib_1.__importStar(require("./result"));
 var Gs2GatewayWebSocketClient = /** @class */ (function (_super) {
-    (0, tslib_1.__extends)(Gs2GatewayWebSocketClient, _super);
+    tslib_1.__extends(Gs2GatewayWebSocketClient, _super);
     function Gs2GatewayWebSocketClient(session) {
         return _super.call(this, session) || this;
     }
     Gs2GatewayWebSocketClient.prototype.setUserId = function (request) {
         var _a, _b, _c, _d;
-        return (0, tslib_1.__awaiter)(this, void 0, void 0, function () {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
             var result;
-            return (0, tslib_1.__generator)(this, function (_e) {
+            return tslib_1.__generator(this, function (_e) {
                 switch (_e.label) {
                     case 0: return [4 /*yield*/, this.session.send("gateway", "webSocketSession", "setUserId", {
                             'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,

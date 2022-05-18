@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Gs2Quest = (0, tslib_1.__importStar)(require("../model"));
+var Gs2Quest = tslib_1.__importStar(require("../model"));
 var DescribeQuestModelMastersResult = /** @class */ (function () {
     function DescribeQuestModelMastersResult() {
         this.items = null;

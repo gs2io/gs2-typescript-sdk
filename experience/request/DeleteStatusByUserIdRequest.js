@@ -23,6 +23,7 @@ var DeleteStatusByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.experienceName = null;
         this.propertyId = null;
+        this.duplicationAvoider = null;
     }
     DeleteStatusByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var DeleteStatusByUserIdRequest = /** @class */ (function () {
     };
     DeleteStatusByUserIdRequest.prototype.withPropertyId = function (propertyId) {
         this.propertyId = propertyId;
+        return this;
+    };
+    DeleteStatusByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteStatusByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteStatusByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteStatusByUserIdRequest.fromDict = function (data) {

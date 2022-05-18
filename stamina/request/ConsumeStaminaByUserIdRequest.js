@@ -23,6 +23,7 @@ var ConsumeStaminaByUserIdRequest = /** @class */ (function () {
         this.staminaName = null;
         this.userId = null;
         this.consumeValue = null;
+        this.duplicationAvoider = null;
     }
     ConsumeStaminaByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var ConsumeStaminaByUserIdRequest = /** @class */ (function () {
     };
     ConsumeStaminaByUserIdRequest.prototype.withConsumeValue = function (consumeValue) {
         this.consumeValue = consumeValue;
+        return this;
+    };
+    ConsumeStaminaByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    ConsumeStaminaByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    ConsumeStaminaByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     ConsumeStaminaByUserIdRequest.fromDict = function (data) {

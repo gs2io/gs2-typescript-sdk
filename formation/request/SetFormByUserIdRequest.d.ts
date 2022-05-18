@@ -8,6 +8,7 @@ export default class SetFormByUserIdRequest implements IRequest {
     private moldName;
     private index;
     private slots;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -29,6 +30,9 @@ export default class SetFormByUserIdRequest implements IRequest {
     getSlots(): Gs2Formation.Slot[] | null;
     setSlots(slots: Gs2Formation.Slot[] | null): this;
     withSlots(slots: Gs2Formation.Slot[] | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): SetFormByUserIdRequest;

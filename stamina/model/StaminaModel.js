@@ -16,9 +16,9 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MaxStaminaTable_1 = (0, tslib_1.__importDefault)(require("./MaxStaminaTable"));
-var RecoverIntervalTable_1 = (0, tslib_1.__importDefault)(require("./RecoverIntervalTable"));
-var RecoverValueTable_1 = (0, tslib_1.__importDefault)(require("./RecoverValueTable"));
+var MaxStaminaTable_1 = tslib_1.__importDefault(require("./MaxStaminaTable"));
+var RecoverIntervalTable_1 = tslib_1.__importDefault(require("./RecoverIntervalTable"));
+var RecoverValueTable_1 = tslib_1.__importDefault(require("./RecoverValueTable"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:stamina:{namespaceName}:model:{staminaName}";
 var StaminaModel = /** @class */ (function () {
     function StaminaModel() {

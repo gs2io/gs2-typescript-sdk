@@ -22,6 +22,7 @@ var DeleteRatingRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.ratingName = null;
+        this.duplicationAvoider = null;
     }
     DeleteRatingRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var DeleteRatingRequest = /** @class */ (function () {
     };
     DeleteRatingRequest.prototype.withRatingName = function (ratingName) {
         this.ratingName = ratingName;
+        return this;
+    };
+    DeleteRatingRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteRatingRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteRatingRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteRatingRequest.fromDict = function (data) {

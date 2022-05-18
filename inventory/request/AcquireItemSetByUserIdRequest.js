@@ -27,6 +27,7 @@ var AcquireItemSetByUserIdRequest = /** @class */ (function () {
         this.expiresAt = null;
         this.createNewItemSet = null;
         this.itemSetName = null;
+        this.duplicationAvoider = null;
     }
     AcquireItemSetByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -136,6 +137,17 @@ var AcquireItemSetByUserIdRequest = /** @class */ (function () {
     };
     AcquireItemSetByUserIdRequest.prototype.withItemSetName = function (itemSetName) {
         this.itemSetName = itemSetName;
+        return this;
+    };
+    AcquireItemSetByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    AcquireItemSetByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    AcquireItemSetByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     AcquireItemSetByUserIdRequest.fromDict = function (data) {

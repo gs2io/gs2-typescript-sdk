@@ -16,12 +16,12 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AbstractGs2RestClient_1 = (0, tslib_1.__importDefault)(require("../core/AbstractGs2RestClient"));
+var AbstractGs2RestClient_1 = tslib_1.__importDefault(require("../core/AbstractGs2RestClient"));
 var model_1 = require("../core/model");
-var Result = (0, tslib_1.__importStar)(require("./result"));
-var axios_1 = (0, tslib_1.__importDefault)(require("axios"));
+var Result = tslib_1.__importStar(require("./result"));
+var axios_1 = tslib_1.__importDefault(require("axios"));
 var Gs2DatastoreRestClient = /** @class */ (function (_super) {
-    (0, tslib_1.__extends)(Gs2DatastoreRestClient, _super);
+    tslib_1.__extends(Gs2DatastoreRestClient, _super);
     function Gs2DatastoreRestClient(session) {
         return _super.call(this, session) || this;
     }
@@ -261,7 +261,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DatastoreRestClient.prototype.prepareUploadByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/file')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
@@ -271,13 +271,16 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
+        }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'name': (_f = request.getName()) !== null && _f !== void 0 ? _f : null,
-            'contentType': (_g = request.getContentType()) !== null && _g !== void 0 ? _g : null,
-            'scope': (_h = request.getScope()) !== null && _h !== void 0 ? _h : null,
-            'allowUserIds': (_j = request.getAllowUserIds()) !== null && _j !== void 0 ? _j : null,
-            'updateIfExists': (_k = request.getUpdateIfExists()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'name': (_g = request.getName()) !== null && _g !== void 0 ? _g : null,
+            'contentType': (_h = request.getContentType()) !== null && _h !== void 0 ? _h : null,
+            'scope': (_j = request.getScope()) !== null && _j !== void 0 ? _j : null,
+            'allowUserIds': (_k = request.getAllowUserIds()) !== null && _k !== void 0 ? _k : null,
+            'updateIfExists': (_l = request.getUpdateIfExists()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -325,7 +328,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DatastoreRestClient.prototype.updateDataObjectByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
@@ -336,10 +339,13 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'scope': (_h = request.getScope()) !== null && _h !== void 0 ? _h : null,
-            'allowUserIds': (_j = request.getAllowUserIds()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'scope': (_j = request.getScope()) !== null && _j !== void 0 ? _j : null,
+            'allowUserIds': (_k = request.getAllowUserIds()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -386,7 +392,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DatastoreRestClient.prototype.prepareReUploadByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/file/reUpload')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
@@ -397,9 +403,12 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'contentType': (_h = request.getContentType()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'contentType': (_j = request.getContentType()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -445,7 +454,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DatastoreRestClient.prototype.doneUploadByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/done')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
@@ -456,8 +465,11 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -499,7 +511,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DatastoreRestClient.prototype.deleteDataObjectByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
@@ -510,8 +522,11 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -553,7 +568,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DatastoreRestClient.prototype.prepareDownloadByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/file')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
@@ -563,9 +578,12 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
+        }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'dataObjectId': (_f = request.getDataObjectId()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'dataObjectId': (_g = request.getDataObjectId()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -612,7 +630,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DatastoreRestClient.prototype.prepareDownloadByGenerationAndUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/file/generation/{generation}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
@@ -623,9 +641,12 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var body = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'dataObjectId': (_h = request.getDataObjectId()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'dataObjectId': (_j = request.getDataObjectId()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -671,7 +692,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DatastoreRestClient.prototype.prepareDownloadByUserIdAndDataObjectName = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/file')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
@@ -682,8 +703,11 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -726,7 +750,7 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DatastoreRestClient.prototype.prepareDownloadByUserIdAndDataObjectNameAndGeneration = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/data/{dataObjectName}/generation/{generation}')
             .replace('{service}', 'datastore')
             .replace('{region}', this.session.region)
@@ -738,8 +762,11 @@ var Gs2DatastoreRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+        }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

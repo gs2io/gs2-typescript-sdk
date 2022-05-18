@@ -8,6 +8,7 @@ export default class AcquireByUserIdRequest implements IRequest {
     private rateName;
     private awaitName;
     private config;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -29,6 +30,9 @@ export default class AcquireByUserIdRequest implements IRequest {
     getConfig(): Gs2Exchange.Config[] | null;
     setConfig(config: Gs2Exchange.Config[] | null): this;
     withConfig(config: Gs2Exchange.Config[] | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): AcquireByUserIdRequest;

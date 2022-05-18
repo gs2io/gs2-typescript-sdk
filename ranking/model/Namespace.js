@@ -16,8 +16,8 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var CalculatedAt_1 = (0, tslib_1.__importDefault)(require("./CalculatedAt"));
-var LogSetting_1 = (0, tslib_1.__importDefault)(require("./LogSetting"));
+var CalculatedAt_1 = tslib_1.__importDefault(require("./CalculatedAt"));
+var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:ranking:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {

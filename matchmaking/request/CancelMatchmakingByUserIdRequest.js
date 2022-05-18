@@ -22,6 +22,7 @@ var CancelMatchmakingByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.gatheringName = null;
         this.userId = null;
+        this.duplicationAvoider = null;
     }
     CancelMatchmakingByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var CancelMatchmakingByUserIdRequest = /** @class */ (function () {
     };
     CancelMatchmakingByUserIdRequest.prototype.withUserId = function (userId) {
         this.userId = userId;
+        return this;
+    };
+    CancelMatchmakingByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    CancelMatchmakingByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    CancelMatchmakingByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     CancelMatchmakingByUserIdRequest.fromDict = function (data) {

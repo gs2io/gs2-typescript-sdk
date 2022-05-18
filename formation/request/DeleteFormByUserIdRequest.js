@@ -23,6 +23,7 @@ var DeleteFormByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.moldName = null;
         this.index = null;
+        this.duplicationAvoider = null;
     }
     DeleteFormByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var DeleteFormByUserIdRequest = /** @class */ (function () {
     };
     DeleteFormByUserIdRequest.prototype.withIndex = function (index) {
         this.index = index;
+        return this;
+    };
+    DeleteFormByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteFormByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteFormByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteFormByUserIdRequest.fromDict = function (data) {

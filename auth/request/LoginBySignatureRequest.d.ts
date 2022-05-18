@@ -2,7 +2,6 @@ import IRequest from '../../core/interface/IRequest';
 export default class LoginBySignatureRequest implements IRequest {
     private requestId;
     private contextStack;
-    private userId;
     private keyId;
     private body;
     private signature;
@@ -12,9 +11,6 @@ export default class LoginBySignatureRequest implements IRequest {
     getContextStack(): string | null;
     setContextStack(contextStack: string | null): this;
     withContextStack(contextStack: string | null): this;
-    getUserId(): string | null;
-    setUserId(userId: string | null): this;
-    withUserId(userId: string | null): this;
     getKeyId(): string | null;
     setKeyId(keyId: string | null): this;
     withKeyId(keyId: string | null): this;

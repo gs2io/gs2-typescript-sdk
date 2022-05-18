@@ -23,6 +23,7 @@ var SetCapacityByUserIdRequest = /** @class */ (function () {
         this.inventoryName = null;
         this.userId = null;
         this.newCapacityValue = null;
+        this.duplicationAvoider = null;
     }
     SetCapacityByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var SetCapacityByUserIdRequest = /** @class */ (function () {
     };
     SetCapacityByUserIdRequest.prototype.withNewCapacityValue = function (newCapacityValue) {
         this.newCapacityValue = newCapacityValue;
+        return this;
+    };
+    SetCapacityByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SetCapacityByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SetCapacityByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SetCapacityByUserIdRequest.fromDict = function (data) {

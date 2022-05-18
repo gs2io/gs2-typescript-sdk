@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Gs2Matchmaking = (0, tslib_1.__importStar)(require("../model"));
+var Gs2Matchmaking = tslib_1.__importStar(require("../model"));
 var DoMatchmakingByUserIdRequest = /** @class */ (function () {
     function DoMatchmakingByUserIdRequest() {
         this.requestId = null;
@@ -25,6 +25,7 @@ var DoMatchmakingByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.player = null;
         this.matchmakingContextToken = null;
+        this.duplicationAvoider = null;
     }
     DoMatchmakingByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,6 +91,17 @@ var DoMatchmakingByUserIdRequest = /** @class */ (function () {
     };
     DoMatchmakingByUserIdRequest.prototype.withMatchmakingContextToken = function (matchmakingContextToken) {
         this.matchmakingContextToken = matchmakingContextToken;
+        return this;
+    };
+    DoMatchmakingByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DoMatchmakingByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DoMatchmakingByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DoMatchmakingByUserIdRequest.fromDict = function (data) {

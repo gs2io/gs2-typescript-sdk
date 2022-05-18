@@ -17,8 +17,8 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-var LoginRequest_1 = (0, tslib_1.__importDefault)(require("./LoginRequest"));
+var LoginRequest_1 = tslib_1.__importDefault(require("./LoginRequest"));
 exports.LoginRequest = LoginRequest_1.default;
-var LoginBySignatureRequest_1 = (0, tslib_1.__importDefault)(require("./LoginBySignatureRequest"));
+var LoginBySignatureRequest_1 = tslib_1.__importDefault(require("./LoginBySignatureRequest"));
 exports.LoginBySignatureRequest = LoginBySignatureRequest_1.default;
 //# sourceMappingURL=index.js.map

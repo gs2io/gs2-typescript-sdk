@@ -23,6 +23,7 @@ var PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest = /** @class */
         this.userId = null;
         this.dataObjectName = null;
         this.generation = null;
+        this.duplicationAvoider = null;
     }
     PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest = /** @class */
     };
     PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest.prototype.withGeneration = function (generation) {
         this.generation = generation;
+        return this;
+    };
+    PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest.fromDict = function (data) {

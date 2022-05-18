@@ -16,8 +16,8 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ScriptSetting_1 = (0, tslib_1.__importDefault)(require("./ScriptSetting"));
-var LogSetting_1 = (0, tslib_1.__importDefault)(require("./LogSetting"));
+var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
+var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:account:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -25,6 +25,7 @@ var Namespace = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.changePasswordIfTakeOver = null;
+        this.differentUserIdForLoginAndDataRetention = null;
         this.createAccountScript = null;
         this.authenticationScript = null;
         this.createTakeOverScript = null;
@@ -125,6 +126,17 @@ var Namespace = /** @class */ (function () {
         this.changePasswordIfTakeOver = changePasswordIfTakeOver;
         return this;
     };
+    Namespace.prototype.getDifferentUserIdForLoginAndDataRetention = function () {
+        return this.differentUserIdForLoginAndDataRetention;
+    };
+    Namespace.prototype.setDifferentUserIdForLoginAndDataRetention = function (differentUserIdForLoginAndDataRetention) {
+        this.differentUserIdForLoginAndDataRetention = differentUserIdForLoginAndDataRetention;
+        return this;
+    };
+    Namespace.prototype.withDifferentUserIdForLoginAndDataRetention = function (differentUserIdForLoginAndDataRetention) {
+        this.differentUserIdForLoginAndDataRetention = differentUserIdForLoginAndDataRetention;
+        return this;
+    };
     Namespace.prototype.getCreateAccountScript = function () {
         return this.createAccountScript;
     };
@@ -211,6 +223,7 @@ var Namespace = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withChangePasswordIfTakeOver(data["changePasswordIfTakeOver"])
+            .withDifferentUserIdForLoginAndDataRetention(data["differentUserIdForLoginAndDataRetention"])
             .withCreateAccountScript(ScriptSetting_1.default.fromDict(data["createAccountScript"]))
             .withAuthenticationScript(ScriptSetting_1.default.fromDict(data["authenticationScript"]))
             .withCreateTakeOverScript(ScriptSetting_1.default.fromDict(data["createTakeOverScript"]))
@@ -226,6 +239,7 @@ var Namespace = /** @class */ (function () {
             "name": this.getName(),
             "description": this.getDescription(),
             "changePasswordIfTakeOver": this.getChangePasswordIfTakeOver(),
+            "differentUserIdForLoginAndDataRetention": this.getDifferentUserIdForLoginAndDataRetention(),
             "createAccountScript": (_a = this.getCreateAccountScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "authenticationScript": (_b = this.getAuthenticationScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "createTakeOverScript": (_c = this.getCreateTakeOverScript()) === null || _c === void 0 ? void 0 : _c.toDict(),

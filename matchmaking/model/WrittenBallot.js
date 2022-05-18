@@ -16,8 +16,8 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Ballot_1 = (0, tslib_1.__importDefault)(require("./Ballot"));
-var GameResult_1 = (0, tslib_1.__importDefault)(require("./GameResult"));
+var Ballot_1 = tslib_1.__importDefault(require("./Ballot"));
+var GameResult_1 = tslib_1.__importDefault(require("./GameResult"));
 var WrittenBallot = /** @class */ (function () {
     function WrittenBallot() {
         this.ballot = null;

@@ -17,26 +17,26 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-var Namespace_1 = (0, tslib_1.__importDefault)(require("./Namespace"));
+var Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
-var RateModel_1 = (0, tslib_1.__importDefault)(require("./RateModel"));
+var RateModel_1 = tslib_1.__importDefault(require("./RateModel"));
 exports.RateModel = RateModel_1.default;
-var RateModelMaster_1 = (0, tslib_1.__importDefault)(require("./RateModelMaster"));
+var RateModelMaster_1 = tslib_1.__importDefault(require("./RateModelMaster"));
 exports.RateModelMaster = RateModelMaster_1.default;
-var CurrentRateMaster_1 = (0, tslib_1.__importDefault)(require("./CurrentRateMaster"));
+var CurrentRateMaster_1 = tslib_1.__importDefault(require("./CurrentRateMaster"));
 exports.CurrentRateMaster = CurrentRateMaster_1.default;
-var Await_1 = (0, tslib_1.__importDefault)(require("./Await"));
+var Await_1 = tslib_1.__importDefault(require("./Await"));
 exports.Await = Await_1.default;
-var Config_1 = (0, tslib_1.__importDefault)(require("./Config"));
+var Config_1 = tslib_1.__importDefault(require("./Config"));
 exports.Config = Config_1.default;
-var GitHubCheckoutSetting_1 = (0, tslib_1.__importDefault)(require("./GitHubCheckoutSetting"));
+var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
 exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
-var ScriptSetting_1 = (0, tslib_1.__importDefault)(require("./ScriptSetting"));
+var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 exports.ScriptSetting = ScriptSetting_1.default;
-var LogSetting_1 = (0, tslib_1.__importDefault)(require("./LogSetting"));
+var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
-var AcquireAction_1 = (0, tslib_1.__importDefault)(require("./AcquireAction"));
+var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 exports.AcquireAction = AcquireAction_1.default;
-var ConsumeAction_1 = (0, tslib_1.__importDefault)(require("./ConsumeAction"));
+var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
 exports.ConsumeAction = ConsumeAction_1.default;
 //# sourceMappingURL=index.js.map

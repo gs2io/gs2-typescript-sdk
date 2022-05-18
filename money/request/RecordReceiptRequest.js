@@ -23,6 +23,7 @@ var RecordReceiptRequest = /** @class */ (function () {
         this.userId = null;
         this.contentsId = null;
         this.receipt = null;
+        this.duplicationAvoider = null;
     }
     RecordReceiptRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var RecordReceiptRequest = /** @class */ (function () {
     };
     RecordReceiptRequest.prototype.withReceipt = function (receipt) {
         this.receipt = receipt;
+        return this;
+    };
+    RecordReceiptRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    RecordReceiptRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    RecordReceiptRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     RecordReceiptRequest.fromDict = function (data) {

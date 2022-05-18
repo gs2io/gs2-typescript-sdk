@@ -16,8 +16,8 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Version_1 = (0, tslib_1.__importDefault)(require("./Version"));
-var VersionModel_1 = (0, tslib_1.__importDefault)(require("./VersionModel"));
+var Version_1 = tslib_1.__importDefault(require("./Version"));
+var VersionModel_1 = tslib_1.__importDefault(require("./VersionModel"));
 var Status = /** @class */ (function () {
     function Status() {
         this.versionModel = null;

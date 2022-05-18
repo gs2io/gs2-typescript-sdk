@@ -17,27 +17,12 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var ForgetResult = /** @class */ (function () {
     function ForgetResult() {
-        this.issuePasswordToken = null;
     }
-    ForgetResult.prototype.getIssuePasswordToken = function () {
-        return this.issuePasswordToken;
-    };
-    ForgetResult.prototype.setIssuePasswordToken = function (issuePasswordToken) {
-        this.issuePasswordToken = issuePasswordToken;
-        return this;
-    };
-    ForgetResult.prototype.withIssuePasswordToken = function (issuePasswordToken) {
-        this.issuePasswordToken = issuePasswordToken;
-        return this;
-    };
     ForgetResult.fromDict = function (data) {
-        return new ForgetResult()
-            .withIssuePasswordToken(data["issuePasswordToken"]);
+        return new ForgetResult();
     };
     ForgetResult.prototype.toDict = function () {
-        return {
-            "issuePasswordToken": this.getIssuePasswordToken(),
-        };
+        return {};
     };
     return ForgetResult;
 }());

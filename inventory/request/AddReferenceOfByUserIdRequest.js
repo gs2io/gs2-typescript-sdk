@@ -25,6 +25,7 @@ var AddReferenceOfByUserIdRequest = /** @class */ (function () {
         this.itemName = null;
         this.itemSetName = null;
         this.referenceOf = null;
+        this.duplicationAvoider = null;
     }
     AddReferenceOfByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -112,6 +113,17 @@ var AddReferenceOfByUserIdRequest = /** @class */ (function () {
     };
     AddReferenceOfByUserIdRequest.prototype.withReferenceOf = function (referenceOf) {
         this.referenceOf = referenceOf;
+        return this;
+    };
+    AddReferenceOfByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    AddReferenceOfByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    AddReferenceOfByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     AddReferenceOfByUserIdRequest.fromDict = function (data) {

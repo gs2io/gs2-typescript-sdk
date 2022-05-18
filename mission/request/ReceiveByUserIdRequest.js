@@ -23,6 +23,7 @@ var ReceiveByUserIdRequest = /** @class */ (function () {
         this.missionGroupName = null;
         this.missionTaskName = null;
         this.userId = null;
+        this.duplicationAvoider = null;
     }
     ReceiveByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var ReceiveByUserIdRequest = /** @class */ (function () {
     };
     ReceiveByUserIdRequest.prototype.withUserId = function (userId) {
         this.userId = userId;
+        return this;
+    };
+    ReceiveByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    ReceiveByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    ReceiveByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     ReceiveByUserIdRequest.fromDict = function (data) {

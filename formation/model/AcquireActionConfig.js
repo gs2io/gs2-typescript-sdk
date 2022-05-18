@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Config_1 = (0, tslib_1.__importDefault)(require("./Config"));
+var Config_1 = tslib_1.__importDefault(require("./Config"));
 var AcquireActionConfig = /** @class */ (function () {
     function AcquireActionConfig() {
         this.name = null;

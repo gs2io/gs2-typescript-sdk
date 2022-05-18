@@ -22,6 +22,7 @@ var DeleteCompleteByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.missionGroupName = null;
+        this.duplicationAvoider = null;
     }
     DeleteCompleteByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var DeleteCompleteByUserIdRequest = /** @class */ (function () {
     };
     DeleteCompleteByUserIdRequest.prototype.withMissionGroupName = function (missionGroupName) {
         this.missionGroupName = missionGroupName;
+        return this;
+    };
+    DeleteCompleteByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteCompleteByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteCompleteByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteCompleteByUserIdRequest.fromDict = function (data) {

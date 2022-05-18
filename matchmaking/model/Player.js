@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Attribute_1 = (0, tslib_1.__importDefault)(require("./Attribute"));
+var Attribute_1 = tslib_1.__importDefault(require("./Attribute"));
 var Player = /** @class */ (function () {
     function Player() {
         this.userId = null;

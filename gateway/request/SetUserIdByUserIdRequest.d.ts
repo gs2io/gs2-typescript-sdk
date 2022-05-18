@@ -5,6 +5,7 @@ export default class SetUserIdByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private allowConcurrentAccess;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -20,6 +21,9 @@ export default class SetUserIdByUserIdRequest implements IRequest {
     getAllowConcurrentAccess(): boolean | null;
     setAllowConcurrentAccess(allowConcurrentAccess: boolean | null): this;
     withAllowConcurrentAccess(allowConcurrentAccess: boolean | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): SetUserIdByUserIdRequest;

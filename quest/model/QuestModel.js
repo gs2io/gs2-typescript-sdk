@@ -16,9 +16,9 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AcquireAction_1 = (0, tslib_1.__importDefault)(require("./AcquireAction"));
-var Contents_1 = (0, tslib_1.__importDefault)(require("./Contents"));
-var ConsumeAction_1 = (0, tslib_1.__importDefault)(require("./ConsumeAction"));
+var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
+var Contents_1 = tslib_1.__importDefault(require("./Contents"));
+var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:quest:{namespaceName}:group:{questGroupName}:quest:{questName}";
 var QuestModel = /** @class */ (function () {
     function QuestModel() {

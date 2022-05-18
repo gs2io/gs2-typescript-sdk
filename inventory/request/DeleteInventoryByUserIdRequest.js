@@ -22,6 +22,7 @@ var DeleteInventoryByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.inventoryName = null;
         this.userId = null;
+        this.duplicationAvoider = null;
     }
     DeleteInventoryByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var DeleteInventoryByUserIdRequest = /** @class */ (function () {
     };
     DeleteInventoryByUserIdRequest.prototype.withUserId = function (userId) {
         this.userId = userId;
+        return this;
+    };
+    DeleteInventoryByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteInventoryByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteInventoryByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteInventoryByUserIdRequest.fromDict = function (data) {

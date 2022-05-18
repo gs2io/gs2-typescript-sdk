@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var QuestModel_1 = (0, tslib_1.__importDefault)(require("./QuestModel"));
+var QuestModel_1 = tslib_1.__importDefault(require("./QuestModel"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:quest:{namespaceName}:group:{questGroupName}";
 var QuestGroupModel = /** @class */ (function () {
     function QuestGroupModel() {

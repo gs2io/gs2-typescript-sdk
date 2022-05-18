@@ -23,6 +23,7 @@ var SetMoldCapacityByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.moldName = null;
         this.capacity = null;
+        this.duplicationAvoider = null;
     }
     SetMoldCapacityByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var SetMoldCapacityByUserIdRequest = /** @class */ (function () {
     };
     SetMoldCapacityByUserIdRequest.prototype.withCapacity = function (capacity) {
         this.capacity = capacity;
+        return this;
+    };
+    SetMoldCapacityByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SetMoldCapacityByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SetMoldCapacityByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SetMoldCapacityByUserIdRequest.fromDict = function (data) {

@@ -6,6 +6,7 @@ export default class UnsubscribeByUserIdRequest implements IRequest {
     private categoryName;
     private userId;
     private targetUserId;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class UnsubscribeByUserIdRequest implements IRequest {
     getTargetUserId(): string | null;
     setTargetUserId(targetUserId: string | null): this;
     withTargetUserId(targetUserId: string | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): UnsubscribeByUserIdRequest;

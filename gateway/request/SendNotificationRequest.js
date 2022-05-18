@@ -25,6 +25,7 @@ var SendNotificationRequest = /** @class */ (function () {
         this.payload = null;
         this.enableTransferMobileNotification = null;
         this.sound = null;
+        this.duplicationAvoider = null;
     }
     SendNotificationRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -112,6 +113,17 @@ var SendNotificationRequest = /** @class */ (function () {
     };
     SendNotificationRequest.prototype.withSound = function (sound) {
         this.sound = sound;
+        return this;
+    };
+    SendNotificationRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SendNotificationRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SendNotificationRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SendNotificationRequest.fromDict = function (data) {

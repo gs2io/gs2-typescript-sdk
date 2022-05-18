@@ -22,6 +22,7 @@ var DeleteTriggerByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.triggerName = null;
+        this.duplicationAvoider = null;
     }
     DeleteTriggerByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var DeleteTriggerByUserIdRequest = /** @class */ (function () {
     };
     DeleteTriggerByUserIdRequest.prototype.withTriggerName = function (triggerName) {
         this.triggerName = triggerName;
+        return this;
+    };
+    DeleteTriggerByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteTriggerByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteTriggerByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteTriggerByUserIdRequest.fromDict = function (data) {

@@ -17,12 +17,12 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-var GetChartResult_1 = (0, tslib_1.__importDefault)(require("./GetChartResult"));
+var GetChartResult_1 = tslib_1.__importDefault(require("./GetChartResult"));
 exports.GetChartResult = GetChartResult_1.default;
-var GetCumulativeResult_1 = (0, tslib_1.__importDefault)(require("./GetCumulativeResult"));
+var GetCumulativeResult_1 = tslib_1.__importDefault(require("./GetCumulativeResult"));
 exports.GetCumulativeResult = GetCumulativeResult_1.default;
-var DescribeBillingActivitiesResult_1 = (0, tslib_1.__importDefault)(require("./DescribeBillingActivitiesResult"));
+var DescribeBillingActivitiesResult_1 = tslib_1.__importDefault(require("./DescribeBillingActivitiesResult"));
 exports.DescribeBillingActivitiesResult = DescribeBillingActivitiesResult_1.default;
-var GetBillingActivityResult_1 = (0, tslib_1.__importDefault)(require("./GetBillingActivityResult"));
+var GetBillingActivityResult_1 = tslib_1.__importDefault(require("./GetBillingActivityResult"));
 exports.GetBillingActivityResult = GetBillingActivityResult_1.default;
 //# sourceMappingURL=index.js.map

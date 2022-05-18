@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Gs2Inbox = (0, tslib_1.__importStar)(require("../model"));
+var Gs2Inbox = tslib_1.__importStar(require("../model"));
 var DescribeNamespacesResult = /** @class */ (function () {
     function DescribeNamespacesResult() {
         this.items = null;

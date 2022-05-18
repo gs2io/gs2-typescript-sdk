@@ -8,6 +8,7 @@ export default class CompleteByUserIdRequest implements IRequest {
     private missionTaskName;
     private userId;
     private config;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -29,6 +30,9 @@ export default class CompleteByUserIdRequest implements IRequest {
     getConfig(): Gs2Mission.Config[] | null;
     setConfig(config: Gs2Mission.Config[] | null): this;
     withConfig(config: Gs2Mission.Config[] | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CompleteByUserIdRequest;

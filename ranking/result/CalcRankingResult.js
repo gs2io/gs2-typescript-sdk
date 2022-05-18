@@ -17,12 +17,27 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var CalcRankingResult = /** @class */ (function () {
     function CalcRankingResult() {
+        this.processing = null;
     }
+    CalcRankingResult.prototype.getProcessing = function () {
+        return this.processing;
+    };
+    CalcRankingResult.prototype.setProcessing = function (processing) {
+        this.processing = processing;
+        return this;
+    };
+    CalcRankingResult.prototype.withProcessing = function (processing) {
+        this.processing = processing;
+        return this;
+    };
     CalcRankingResult.fromDict = function (data) {
-        return new CalcRankingResult();
+        return new CalcRankingResult()
+            .withProcessing(data["processing"]);
     };
     CalcRankingResult.prototype.toDict = function () {
-        return {};
+        return {
+            "processing": this.getProcessing(),
+        };
     };
     return CalcRankingResult;
 }());

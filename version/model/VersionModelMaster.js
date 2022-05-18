@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Version_1 = (0, tslib_1.__importDefault)(require("./Version"));
+var Version_1 = tslib_1.__importDefault(require("./Version"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:version:{namespaceName}:model:version:{versionName}";
 var VersionModelMaster = /** @class */ (function () {
     function VersionModelMaster() {

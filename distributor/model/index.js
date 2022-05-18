@@ -17,18 +17,18 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-var Namespace_1 = (0, tslib_1.__importDefault)(require("./Namespace"));
+var Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
-var DistributorModelMaster_1 = (0, tslib_1.__importDefault)(require("./DistributorModelMaster"));
+var DistributorModelMaster_1 = tslib_1.__importDefault(require("./DistributorModelMaster"));
 exports.DistributorModelMaster = DistributorModelMaster_1.default;
-var DistributorModel_1 = (0, tslib_1.__importDefault)(require("./DistributorModel"));
+var DistributorModel_1 = tslib_1.__importDefault(require("./DistributorModel"));
 exports.DistributorModel = DistributorModel_1.default;
-var CurrentDistributorMaster_1 = (0, tslib_1.__importDefault)(require("./CurrentDistributorMaster"));
+var CurrentDistributorMaster_1 = tslib_1.__importDefault(require("./CurrentDistributorMaster"));
 exports.CurrentDistributorMaster = CurrentDistributorMaster_1.default;
-var GitHubCheckoutSetting_1 = (0, tslib_1.__importDefault)(require("./GitHubCheckoutSetting"));
+var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
 exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
-var DistributeResource_1 = (0, tslib_1.__importDefault)(require("./DistributeResource"));
+var DistributeResource_1 = tslib_1.__importDefault(require("./DistributeResource"));
 exports.DistributeResource = DistributeResource_1.default;
-var LogSetting_1 = (0, tslib_1.__importDefault)(require("./LogSetting"));
+var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
 //# sourceMappingURL=index.js.map

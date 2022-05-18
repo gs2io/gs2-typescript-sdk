@@ -22,6 +22,7 @@ var DeleteAcceptVersionByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.versionName = null;
+        this.duplicationAvoider = null;
     }
     DeleteAcceptVersionByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var DeleteAcceptVersionByUserIdRequest = /** @class */ (function () {
     };
     DeleteAcceptVersionByUserIdRequest.prototype.withVersionName = function (versionName) {
         this.versionName = versionName;
+        return this;
+    };
+    DeleteAcceptVersionByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteAcceptVersionByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteAcceptVersionByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteAcceptVersionByUserIdRequest.fromDict = function (data) {

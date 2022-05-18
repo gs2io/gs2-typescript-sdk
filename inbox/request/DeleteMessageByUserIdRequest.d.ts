@@ -5,6 +5,7 @@ export default class DeleteMessageByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private messageName;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -20,6 +21,9 @@ export default class DeleteMessageByUserIdRequest implements IRequest {
     getMessageName(): string | null;
     setMessageName(messageName: string | null): this;
     withMessageName(messageName: string | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): DeleteMessageByUserIdRequest;

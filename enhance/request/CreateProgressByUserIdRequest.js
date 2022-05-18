@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Gs2Enhance = (0, tslib_1.__importStar)(require("../model"));
+var Gs2Enhance = tslib_1.__importStar(require("../model"));
 var CreateProgressByUserIdRequest = /** @class */ (function () {
     function CreateProgressByUserIdRequest() {
         this.requestId = null;
@@ -27,6 +27,7 @@ var CreateProgressByUserIdRequest = /** @class */ (function () {
         this.targetItemSetId = null;
         this.materials = null;
         this.force = null;
+        this.duplicationAvoider = null;
     }
     CreateProgressByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -114,6 +115,17 @@ var CreateProgressByUserIdRequest = /** @class */ (function () {
     };
     CreateProgressByUserIdRequest.prototype.withForce = function (force) {
         this.force = force;
+        return this;
+    };
+    CreateProgressByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    CreateProgressByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    CreateProgressByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     CreateProgressByUserIdRequest.fromDict = function (data) {

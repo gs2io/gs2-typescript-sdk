@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Gs2Version = (0, tslib_1.__importStar)(require("../model"));
+var Gs2Version = tslib_1.__importStar(require("../model"));
 var CheckVersionByUserIdRequest = /** @class */ (function () {
     function CheckVersionByUserIdRequest() {
         this.requestId = null;
@@ -24,6 +24,7 @@ var CheckVersionByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.targetVersions = null;
+        this.duplicationAvoider = null;
     }
     CheckVersionByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,6 +79,17 @@ var CheckVersionByUserIdRequest = /** @class */ (function () {
     };
     CheckVersionByUserIdRequest.prototype.withTargetVersions = function (targetVersions) {
         this.targetVersions = targetVersions;
+        return this;
+    };
+    CheckVersionByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    CheckVersionByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    CheckVersionByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     CheckVersionByUserIdRequest.fromDict = function (data) {

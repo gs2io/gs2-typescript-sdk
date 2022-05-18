@@ -9,6 +9,7 @@ export default class EndByUserIdRequest implements IRequest {
     private rewards;
     private isComplete;
     private config;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -33,6 +34,9 @@ export default class EndByUserIdRequest implements IRequest {
     getConfig(): Gs2Quest.Config[] | null;
     setConfig(config: Gs2Quest.Config[] | null): this;
     withConfig(config: Gs2Quest.Config[] | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): EndByUserIdRequest;

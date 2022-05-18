@@ -16,8 +16,8 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ConsumeAction_1 = (0, tslib_1.__importDefault)(require("./ConsumeAction"));
-var AcquireAction_1 = (0, tslib_1.__importDefault)(require("./AcquireAction"));
+var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
+var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:exchange:{namespaceName}:model:{rateName}";
 var RateModel = /** @class */ (function () {
     function RateModel() {

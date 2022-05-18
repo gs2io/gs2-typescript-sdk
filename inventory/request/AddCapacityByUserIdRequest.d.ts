@@ -6,6 +6,7 @@ export default class AddCapacityByUserIdRequest implements IRequest {
     private inventoryName;
     private userId;
     private addCapacityValue;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class AddCapacityByUserIdRequest implements IRequest {
     getAddCapacityValue(): number | null;
     setAddCapacityValue(addCapacityValue: number | null): this;
     withAddCapacityValue(addCapacityValue: number | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): AddCapacityByUserIdRequest;

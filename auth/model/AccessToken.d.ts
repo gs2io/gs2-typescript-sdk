@@ -3,8 +3,7 @@ export default class AccessToken implements IModel {
     private token;
     private userId;
     private expire;
-    static isValid(grn: string): boolean;
-    static createGrn(): string | null;
+    private timeOffset;
     getToken(): string | null;
     setToken(token: string | null): this;
     withToken(token: string | null): this;
@@ -14,6 +13,9 @@ export default class AccessToken implements IModel {
     getExpire(): number | null;
     setExpire(expire: number | null): this;
     withExpire(expire: number | null): this;
+    getTimeOffset(): number | null;
+    setTimeOffset(timeOffset: number | null): this;
+    withTimeOffset(timeOffset: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): AccessToken | null;
