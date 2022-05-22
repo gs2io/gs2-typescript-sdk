@@ -9,6 +9,8 @@ import DescribeWebSocketSessionsByUserIdResult from "./DescribeWebSocketSessions
 import SetUserIdResult from "./SetUserIdResult";
 import SetUserIdByUserIdResult from "./SetUserIdByUserIdResult";
 import SendNotificationResult from "./SendNotificationResult";
+import DisconnectByUserIdResult from "./DisconnectByUserIdResult";
+import DisconnectAllResult from "./DisconnectAllResult";
 import SetFirebaseTokenResult from "./SetFirebaseTokenResult";
 import SetFirebaseTokenByUserIdResult from "./SetFirebaseTokenByUserIdResult";
 import GetFirebaseTokenResult from "./GetFirebaseTokenResult";
@@ -16,4 +18,4 @@ import GetFirebaseTokenByUserIdResult from "./GetFirebaseTokenByUserIdResult";
 import DeleteFirebaseTokenResult from "./DeleteFirebaseTokenResult";
 import DeleteFirebaseTokenByUserIdResult from "./DeleteFirebaseTokenByUserIdResult";
 import SendMobileNotificationByUserIdResult from "./SendMobileNotificationByUserIdResult";
-export { DescribeNamespacesResult, CreateNamespaceResult, GetNamespaceStatusResult, GetNamespaceResult, UpdateNamespaceResult, DeleteNamespaceResult, DescribeWebSocketSessionsResult, DescribeWebSocketSessionsByUserIdResult, SetUserIdResult, SetUserIdByUserIdResult, SendNotificationResult, SetFirebaseTokenResult, SetFirebaseTokenByUserIdResult, GetFirebaseTokenResult, GetFirebaseTokenByUserIdResult, DeleteFirebaseTokenResult, DeleteFirebaseTokenByUserIdResult, SendMobileNotificationByUserIdResult, };
+export { DescribeNamespacesResult, CreateNamespaceResult, GetNamespaceStatusResult, GetNamespaceResult, UpdateNamespaceResult, DeleteNamespaceResult, DescribeWebSocketSessionsResult, DescribeWebSocketSessionsByUserIdResult, SetUserIdResult, SetUserIdByUserIdResult, SendNotificationResult, DisconnectByUserIdResult, DisconnectAllResult, SetFirebaseTokenResult, SetFirebaseTokenByUserIdResult, GetFirebaseTokenResult, GetFirebaseTokenByUserIdResult, DeleteFirebaseTokenResult, DeleteFirebaseTokenByUserIdResult, SendMobileNotificationByUserIdResult, };

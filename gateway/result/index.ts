@@ -24,6 +24,8 @@ import DescribeWebSocketSessionsByUserIdResult from "./DescribeWebSocketSessions
 import SetUserIdResult from "./SetUserIdResult"
 import SetUserIdByUserIdResult from "./SetUserIdByUserIdResult"
 import SendNotificationResult from "./SendNotificationResult"
+import DisconnectByUserIdResult from "./DisconnectByUserIdResult"
+import DisconnectAllResult from "./DisconnectAllResult"
 import SetFirebaseTokenResult from "./SetFirebaseTokenResult"
 import SetFirebaseTokenByUserIdResult from "./SetFirebaseTokenByUserIdResult"
 import GetFirebaseTokenResult from "./GetFirebaseTokenResult"
@@ -44,6 +46,8 @@ export {
     SetUserIdResult,
     SetUserIdByUserIdResult,
     SendNotificationResult,
+    DisconnectByUserIdResult,
+    DisconnectAllResult,
     SetFirebaseTokenResult,
     SetFirebaseTokenByUserIdResult,
     GetFirebaseTokenResult,

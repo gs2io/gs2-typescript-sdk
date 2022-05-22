@@ -9,6 +9,8 @@ import DescribeWebSocketSessionsByUserIdRequest from "./DescribeWebSocketSession
 import SetUserIdRequest from "./SetUserIdRequest";
 import SetUserIdByUserIdRequest from "./SetUserIdByUserIdRequest";
 import SendNotificationRequest from "./SendNotificationRequest";
+import DisconnectByUserIdRequest from "./DisconnectByUserIdRequest";
+import DisconnectAllRequest from "./DisconnectAllRequest";
 import SetFirebaseTokenRequest from "./SetFirebaseTokenRequest";
 import SetFirebaseTokenByUserIdRequest from "./SetFirebaseTokenByUserIdRequest";
 import GetFirebaseTokenRequest from "./GetFirebaseTokenRequest";
@@ -16,4 +18,4 @@ import GetFirebaseTokenByUserIdRequest from "./GetFirebaseTokenByUserIdRequest";
 import DeleteFirebaseTokenRequest from "./DeleteFirebaseTokenRequest";
 import DeleteFirebaseTokenByUserIdRequest from "./DeleteFirebaseTokenByUserIdRequest";
 import SendMobileNotificationByUserIdRequest from "./SendMobileNotificationByUserIdRequest";
-export { DescribeNamespacesRequest, CreateNamespaceRequest, GetNamespaceStatusRequest, GetNamespaceRequest, UpdateNamespaceRequest, DeleteNamespaceRequest, DescribeWebSocketSessionsRequest, DescribeWebSocketSessionsByUserIdRequest, SetUserIdRequest, SetUserIdByUserIdRequest, SendNotificationRequest, SetFirebaseTokenRequest, SetFirebaseTokenByUserIdRequest, GetFirebaseTokenRequest, GetFirebaseTokenByUserIdRequest, DeleteFirebaseTokenRequest, DeleteFirebaseTokenByUserIdRequest, SendMobileNotificationByUserIdRequest, };
+export { DescribeNamespacesRequest, CreateNamespaceRequest, GetNamespaceStatusRequest, GetNamespaceRequest, UpdateNamespaceRequest, DeleteNamespaceRequest, DescribeWebSocketSessionsRequest, DescribeWebSocketSessionsByUserIdRequest, SetUserIdRequest, SetUserIdByUserIdRequest, SendNotificationRequest, DisconnectByUserIdRequest, DisconnectAllRequest, SetFirebaseTokenRequest, SetFirebaseTokenByUserIdRequest, GetFirebaseTokenRequest, GetFirebaseTokenByUserIdRequest, DeleteFirebaseTokenRequest, DeleteFirebaseTokenByUserIdRequest, SendMobileNotificationByUserIdRequest, };

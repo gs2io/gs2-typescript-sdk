@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendMobileNotificationByUserIdRequest = exports.DeleteFirebaseTokenByUserIdRequest = exports.DeleteFirebaseTokenRequest = exports.GetFirebaseTokenByUserIdRequest = exports.GetFirebaseTokenRequest = exports.SetFirebaseTokenByUserIdRequest = exports.SetFirebaseTokenRequest = exports.SendNotificationRequest = exports.SetUserIdByUserIdRequest = exports.SetUserIdRequest = exports.DescribeWebSocketSessionsByUserIdRequest = exports.DescribeWebSocketSessionsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.SendMobileNotificationByUserIdRequest = exports.DeleteFirebaseTokenByUserIdRequest = exports.DeleteFirebaseTokenRequest = exports.GetFirebaseTokenByUserIdRequest = exports.GetFirebaseTokenRequest = exports.SetFirebaseTokenByUserIdRequest = exports.SetFirebaseTokenRequest = exports.DisconnectAllRequest = exports.DisconnectByUserIdRequest = exports.SendNotificationRequest = exports.SetUserIdByUserIdRequest = exports.SetUserIdRequest = exports.DescribeWebSocketSessionsByUserIdRequest = exports.DescribeWebSocketSessionsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -39,6 +39,10 @@ var SetUserIdByUserIdRequest_1 = tslib_1.__importDefault(require("./SetUserIdByU
 exports.SetUserIdByUserIdRequest = SetUserIdByUserIdRequest_1.default;
 var SendNotificationRequest_1 = tslib_1.__importDefault(require("./SendNotificationRequest"));
 exports.SendNotificationRequest = SendNotificationRequest_1.default;
+var DisconnectByUserIdRequest_1 = tslib_1.__importDefault(require("./DisconnectByUserIdRequest"));
+exports.DisconnectByUserIdRequest = DisconnectByUserIdRequest_1.default;
+var DisconnectAllRequest_1 = tslib_1.__importDefault(require("./DisconnectAllRequest"));
+exports.DisconnectAllRequest = DisconnectAllRequest_1.default;
 var SetFirebaseTokenRequest_1 = tslib_1.__importDefault(require("./SetFirebaseTokenRequest"));
 exports.SetFirebaseTokenRequest = SetFirebaseTokenRequest_1.default;
 var SetFirebaseTokenByUserIdRequest_1 = tslib_1.__importDefault(require("./SetFirebaseTokenByUserIdRequest"));

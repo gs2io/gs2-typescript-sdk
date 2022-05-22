@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendMobileNotificationByUserIdResult = exports.DeleteFirebaseTokenByUserIdResult = exports.DeleteFirebaseTokenResult = exports.GetFirebaseTokenByUserIdResult = exports.GetFirebaseTokenResult = exports.SetFirebaseTokenByUserIdResult = exports.SetFirebaseTokenResult = exports.SendNotificationResult = exports.SetUserIdByUserIdResult = exports.SetUserIdResult = exports.DescribeWebSocketSessionsByUserIdResult = exports.DescribeWebSocketSessionsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.SendMobileNotificationByUserIdResult = exports.DeleteFirebaseTokenByUserIdResult = exports.DeleteFirebaseTokenResult = exports.GetFirebaseTokenByUserIdResult = exports.GetFirebaseTokenResult = exports.SetFirebaseTokenByUserIdResult = exports.SetFirebaseTokenResult = exports.DisconnectAllResult = exports.DisconnectByUserIdResult = exports.SendNotificationResult = exports.SetUserIdByUserIdResult = exports.SetUserIdResult = exports.DescribeWebSocketSessionsByUserIdResult = exports.DescribeWebSocketSessionsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -39,6 +39,10 @@ var SetUserIdByUserIdResult_1 = tslib_1.__importDefault(require("./SetUserIdByUs
 exports.SetUserIdByUserIdResult = SetUserIdByUserIdResult_1.default;
 var SendNotificationResult_1 = tslib_1.__importDefault(require("./SendNotificationResult"));
 exports.SendNotificationResult = SendNotificationResult_1.default;
+var DisconnectByUserIdResult_1 = tslib_1.__importDefault(require("./DisconnectByUserIdResult"));
+exports.DisconnectByUserIdResult = DisconnectByUserIdResult_1.default;
+var DisconnectAllResult_1 = tslib_1.__importDefault(require("./DisconnectAllResult"));
+exports.DisconnectAllResult = DisconnectAllResult_1.default;
 var SetFirebaseTokenResult_1 = tslib_1.__importDefault(require("./SetFirebaseTokenResult"));
 exports.SetFirebaseTokenResult = SetFirebaseTokenResult_1.default;
 var SetFirebaseTokenByUserIdResult_1 = tslib_1.__importDefault(require("./SetFirebaseTokenByUserIdResult"));

@@ -319,6 +319,54 @@ var Gs2GatewayRestClient = /** @class */ (function (_super) {
             }
         });
     };
+    Gs2GatewayRestClient.prototype.disconnectByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/{userId}')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
+        }
+        var params = {
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+        };
+        return axios_1.default.delete(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DisconnectByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2GatewayRestClient.prototype.disconnectAll = function (request) {
+        var _a, _b, _c;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+        };
+        return axios_1.default.delete(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DisconnectAllResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
     Gs2GatewayRestClient.prototype.setFirebaseToken = function (request) {
         var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/firebase/token')

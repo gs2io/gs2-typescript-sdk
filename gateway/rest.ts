@@ -365,6 +365,62 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public disconnectByUserId(request: Request.DisconnectByUserIdRequest): Promise<Result.DisconnectByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session/user/{userId}')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DisconnectByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public disconnectAll(request: Request.DisconnectAllRequest): Promise<Result.DisconnectAllResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/session')
+            .replace('{service}', 'gateway')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DisconnectAllResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
     public setFirebaseToken(request: Request.SetFirebaseTokenRequest): Promise<Result.SetFirebaseTokenResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/firebase/token')
             .replace('{service}', 'gateway')

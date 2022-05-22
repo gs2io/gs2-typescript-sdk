@@ -15,6 +15,8 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     setUserId(request: Request.SetUserIdRequest): Promise<Result.SetUserIdResult>;
     setUserIdByUserId(request: Request.SetUserIdByUserIdRequest): Promise<Result.SetUserIdByUserIdResult>;
     sendNotification(request: Request.SendNotificationRequest): Promise<Result.SendNotificationResult>;
+    disconnectByUserId(request: Request.DisconnectByUserIdRequest): Promise<Result.DisconnectByUserIdResult>;
+    disconnectAll(request: Request.DisconnectAllRequest): Promise<Result.DisconnectAllResult>;
     setFirebaseToken(request: Request.SetFirebaseTokenRequest): Promise<Result.SetFirebaseTokenResult>;
     setFirebaseTokenByUserId(request: Request.SetFirebaseTokenByUserIdRequest): Promise<Result.SetFirebaseTokenByUserIdResult>;
     getFirebaseToken(request: Request.GetFirebaseTokenRequest): Promise<Result.GetFirebaseTokenResult>;
