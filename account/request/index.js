@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteDataOwnerByUserIdRequest = exports.GetDataOwnerByUserIdRequest = exports.DoTakeOverRequest = exports.DeleteTakeOverByUserIdentifierRequest = exports.DeleteTakeOverRequest = exports.UpdateTakeOverByUserIdRequest = exports.UpdateTakeOverRequest = exports.GetTakeOverByUserIdRequest = exports.GetTakeOverRequest = exports.CreateTakeOverByUserIdRequest = exports.CreateTakeOverRequest = exports.DescribeTakeOversByUserIdRequest = exports.DescribeTakeOversRequest = exports.AuthenticationRequest = exports.DeleteAccountRequest = exports.GetAccountRequest = exports.UpdateTimeOffsetRequest = exports.CreateAccountRequest = exports.DescribeAccountsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.DeleteDataOwnerByUserIdRequest = exports.GetDataOwnerByUserIdRequest = exports.DoTakeOverRequest = exports.DeleteTakeOverByUserIdentifierRequest = exports.DeleteTakeOverRequest = exports.UpdateTakeOverByUserIdRequest = exports.UpdateTakeOverRequest = exports.GetTakeOverByUserIdRequest = exports.GetTakeOverRequest = exports.CreateTakeOverByUserIdRequest = exports.CreateTakeOverRequest = exports.DescribeTakeOversByUserIdRequest = exports.DescribeTakeOversRequest = exports.AuthenticationRequest = exports.DeleteAccountRequest = exports.GetAccountRequest = exports.UpdateBannedRequest = exports.UpdateTimeOffsetRequest = exports.CreateAccountRequest = exports.DescribeAccountsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -35,6 +35,8 @@ var CreateAccountRequest_1 = tslib_1.__importDefault(require("./CreateAccountReq
 exports.CreateAccountRequest = CreateAccountRequest_1.default;
 var UpdateTimeOffsetRequest_1 = tslib_1.__importDefault(require("./UpdateTimeOffsetRequest"));
 exports.UpdateTimeOffsetRequest = UpdateTimeOffsetRequest_1.default;
+var UpdateBannedRequest_1 = tslib_1.__importDefault(require("./UpdateBannedRequest"));
+exports.UpdateBannedRequest = UpdateBannedRequest_1.default;
 var GetAccountRequest_1 = tslib_1.__importDefault(require("./GetAccountRequest"));
 exports.GetAccountRequest = GetAccountRequest_1.default;
 var DeleteAccountRequest_1 = tslib_1.__importDefault(require("./DeleteAccountRequest"));

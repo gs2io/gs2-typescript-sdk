@@ -22,6 +22,7 @@ var Account = /** @class */ (function () {
         this.userId = null;
         this.password = null;
         this.timeOffset = null;
+        this.banned = null;
         this.createdAt = null;
     }
     Account.getRegion = function (grn) {
@@ -134,6 +135,17 @@ var Account = /** @class */ (function () {
         this.timeOffset = timeOffset;
         return this;
     };
+    Account.prototype.getBanned = function () {
+        return this.banned;
+    };
+    Account.prototype.setBanned = function (banned) {
+        this.banned = banned;
+        return this;
+    };
+    Account.prototype.withBanned = function (banned) {
+        this.banned = banned;
+        return this;
+    };
     Account.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -154,6 +166,7 @@ var Account = /** @class */ (function () {
             .withUserId(data["userId"])
             .withPassword(data["password"])
             .withTimeOffset(data["timeOffset"])
+            .withBanned(data["banned"])
             .withCreatedAt(data["createdAt"]);
     };
     Account.prototype.toDict = function () {
@@ -162,6 +175,7 @@ var Account = /** @class */ (function () {
             "userId": this.getUserId(),
             "password": this.getPassword(),
             "timeOffset": this.getTimeOffset(),
+            "banned": this.getBanned(),
             "createdAt": this.getCreatedAt(),
         };
     };

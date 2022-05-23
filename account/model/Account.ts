@@ -22,6 +22,7 @@ export default class Account implements IModel {
     private userId: string|null = null;
     private password: string|null = null;
     private timeOffset: number|null = null;
+    private banned: boolean|null = null;
     private createdAt: number|null = null;
 
     public static getRegion(grn: string): string|null {
@@ -161,6 +162,20 @@ export default class Account implements IModel {
         return this;
     }
 
+    public getBanned(): boolean|null {
+        return this.banned;
+    }
+
+    public setBanned(banned: boolean|null) {
+        this.banned = banned;
+        return this;
+    }
+
+    public withBanned(banned: boolean|null): this {
+        this.banned = banned;
+        return this;
+    }
+
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -184,6 +199,7 @@ export default class Account implements IModel {
             .withUserId(data["userId"])
             .withPassword(data["password"])
             .withTimeOffset(data["timeOffset"])
+            .withBanned(data["banned"])
             .withCreatedAt(data["createdAt"]);
     }
 
@@ -193,6 +209,7 @@ export default class Account implements IModel {
             "userId": this.getUserId(),
             "password": this.getPassword(),
             "timeOffset": this.getTimeOffset(),
+            "banned": this.getBanned(),
             "createdAt": this.getCreatedAt(),
         };
     }

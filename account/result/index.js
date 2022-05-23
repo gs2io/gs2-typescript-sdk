@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteDataOwnerByUserIdResult = exports.GetDataOwnerByUserIdResult = exports.DoTakeOverResult = exports.DeleteTakeOverByUserIdentifierResult = exports.DeleteTakeOverResult = exports.UpdateTakeOverByUserIdResult = exports.UpdateTakeOverResult = exports.GetTakeOverByUserIdResult = exports.GetTakeOverResult = exports.CreateTakeOverByUserIdResult = exports.CreateTakeOverResult = exports.DescribeTakeOversByUserIdResult = exports.DescribeTakeOversResult = exports.AuthenticationResult = exports.DeleteAccountResult = exports.GetAccountResult = exports.UpdateTimeOffsetResult = exports.CreateAccountResult = exports.DescribeAccountsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.DeleteDataOwnerByUserIdResult = exports.GetDataOwnerByUserIdResult = exports.DoTakeOverResult = exports.DeleteTakeOverByUserIdentifierResult = exports.DeleteTakeOverResult = exports.UpdateTakeOverByUserIdResult = exports.UpdateTakeOverResult = exports.GetTakeOverByUserIdResult = exports.GetTakeOverResult = exports.CreateTakeOverByUserIdResult = exports.CreateTakeOverResult = exports.DescribeTakeOversByUserIdResult = exports.DescribeTakeOversResult = exports.AuthenticationResult = exports.DeleteAccountResult = exports.GetAccountResult = exports.UpdateBannedResult = exports.UpdateTimeOffsetResult = exports.CreateAccountResult = exports.DescribeAccountsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -35,6 +35,8 @@ var CreateAccountResult_1 = tslib_1.__importDefault(require("./CreateAccountResu
 exports.CreateAccountResult = CreateAccountResult_1.default;
 var UpdateTimeOffsetResult_1 = tslib_1.__importDefault(require("./UpdateTimeOffsetResult"));
 exports.UpdateTimeOffsetResult = UpdateTimeOffsetResult_1.default;
+var UpdateBannedResult_1 = tslib_1.__importDefault(require("./UpdateBannedResult"));
+exports.UpdateBannedResult = UpdateBannedResult_1.default;
 var GetAccountResult_1 = tslib_1.__importDefault(require("./GetAccountResult"));
 exports.GetAccountResult = GetAccountResult_1.default;
 var DeleteAccountResult_1 = tslib_1.__importDefault(require("./DeleteAccountResult"));

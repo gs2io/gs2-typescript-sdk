@@ -301,6 +301,41 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public updateBanned(request: Request.UpdateBannedRequest): Promise<Result.UpdateBannedResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}/banned')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'banned': request.getBanned() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateBannedResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public getAccount(request: Request.GetAccountRequest): Promise<Result.GetAccountResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}')
             .replace('{service}', 'account')

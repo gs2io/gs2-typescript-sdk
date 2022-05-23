@@ -4,6 +4,7 @@ export default class Account implements IModel {
     private userId;
     private password;
     private timeOffset;
+    private banned;
     private createdAt;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
@@ -23,6 +24,9 @@ export default class Account implements IModel {
     getTimeOffset(): number | null;
     setTimeOffset(timeOffset: number | null): this;
     withTimeOffset(timeOffset: number | null): this;
+    getBanned(): boolean | null;
+    setBanned(banned: boolean | null): this;
+    withBanned(banned: boolean | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

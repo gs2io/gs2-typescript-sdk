@@ -22,6 +22,7 @@ import DeleteNamespaceResult from "./DeleteNamespaceResult"
 import DescribeAccountsResult from "./DescribeAccountsResult"
 import CreateAccountResult from "./CreateAccountResult"
 import UpdateTimeOffsetResult from "./UpdateTimeOffsetResult"
+import UpdateBannedResult from "./UpdateBannedResult"
 import GetAccountResult from "./GetAccountResult"
 import DeleteAccountResult from "./DeleteAccountResult"
 import AuthenticationResult from "./AuthenticationResult"
@@ -49,6 +50,7 @@ export {
     DescribeAccountsResult,
     CreateAccountResult,
     UpdateTimeOffsetResult,
+    UpdateBannedResult,
     GetAccountResult,
     DeleteAccountResult,
     AuthenticationResult,
