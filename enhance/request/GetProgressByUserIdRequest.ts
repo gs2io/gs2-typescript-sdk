@@ -24,6 +24,8 @@ export default class GetProgressByUserIdRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private userId: string|null = null;
+    private rateName: string|null = null;
+    private progressName: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -81,16 +83,48 @@ export default class GetProgressByUserIdRequest implements IRequest {
         return this;
     }
 
+    public getRateName(): string|null {
+        return this.rateName;
+    }
+
+    public setRateName(rateName: string|null) {
+        this.rateName = rateName;
+        return this;
+    }
+
+    public withRateName(rateName: string|null): this {
+        this.rateName = rateName;
+        return this;
+    }
+
+    public getProgressName(): string|null {
+        return this.progressName;
+    }
+
+    public setProgressName(progressName: string|null) {
+        this.progressName = progressName;
+        return this;
+    }
+
+    public withProgressName(progressName: string|null): this {
+        this.progressName = progressName;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): GetProgressByUserIdRequest {
         return new GetProgressByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withRateName(data["rateName"])
+            .withProgressName(data["progressName"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "rateName": this.getRateName(),
+            "progressName": this.getProgressName(),
         };
     }
 }

@@ -15,7 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:{year}:{month}:{service}:{activityType}";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:billingActivity:{year}:{month}:{service}:{activityType}";
 
 export default class BillingActivity implements IModel {
     private billingActivityId: string|null = null;

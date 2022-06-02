@@ -29,6 +29,7 @@ export default class DataOwner implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
+            .replace('{dataOwnerName}', '.*')
         );
         if (match) {
             return match[1];
@@ -42,6 +43,7 @@ export default class DataOwner implements IModel {
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
+            .replace('{dataOwnerName}', '.*')
         );
         if (match) {
             return match[1];
@@ -55,6 +57,7 @@ export default class DataOwner implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
             .replace('{userId}', '.*')
+            .replace('{dataOwnerName}', '.*')
         );
         if (match) {
             return match[1];
@@ -68,6 +71,21 @@ export default class DataOwner implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '(.*)')
+            .replace('{dataOwnerName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getDataOwnerName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{dataOwnerName}', '(.*)')
         );
         if (match) {
             return match[1];
@@ -88,6 +106,9 @@ export default class DataOwner implements IModel {
         if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
             return false;
         }
+        if (this.getDataOwnerName(grn) == null || this.getDataOwnerName(grn) === '') {
+            return false;
+        }
         return true;
     }
 
@@ -96,12 +117,14 @@ export default class DataOwner implements IModel {
         ownerId: string|null,
         namespaceName: string|null,
         userId: string|null,
+        dataOwnerName: string|null,
     ): string|null {
         return grnFormat
             .replace('{region}', region ?? '')
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '')
-            .replace('{userId}', userId ?? '');
+            .replace('{userId}', userId ?? '')
+            .replace('{dataOwnerName}', dataOwnerName ?? '');
     }
 
     public getDataOwnerId(): string|null {

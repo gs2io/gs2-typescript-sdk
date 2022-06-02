@@ -591,10 +591,12 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public getProgress(request: Request.GetProgressRequest): Promise<Result.GetProgressResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress/{rateName}/progress/{progressName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{rateName}', String(request.getRateName() ?? 'null') === "" ? "null" : String(request.getRateName() ?? 'null'))
+            .replace('{progressName}', String(request.getProgressName() ?? 'null') === "" ? "null" : String(request.getProgressName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -620,11 +622,13 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public getProgressByUserId(request: Request.GetProgressByUserIdRequest): Promise<Result.GetProgressByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress/{rateName}/progress/{progressName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{rateName}', String(request.getRateName() ?? 'null') === "" ? "null" : String(request.getRateName() ?? 'null'))
+            .replace('{progressName}', String(request.getProgressName() ?? 'null') === "" ? "null" : String(request.getProgressName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -724,10 +728,12 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public end(request: Request.EndRequest): Promise<Result.EndResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress/end')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress/rate/{rateName}/progress/{progressName}/end')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{rateName}', String(request.getRateName() ?? 'null') === "" ? "null" : String(request.getRateName() ?? 'null'))
+            .replace('{progressName}', String(request.getProgressName() ?? 'null') === "" ? "null" : String(request.getProgressName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -758,11 +764,13 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public endByUserId(request: Request.EndByUserIdRequest): Promise<Result.EndByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress/end')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress/rate/{rateName}/progress/{progressName}/end')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{rateName}', String(request.getRateName() ?? 'null') === "" ? "null" : String(request.getRateName() ?? 'null'))
+            .replace('{progressName}', String(request.getProgressName() ?? 'null') === "" ? "null" : String(request.getProgressName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -793,10 +801,12 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public deleteProgress(request: Request.DeleteProgressRequest): Promise<Result.DeleteProgressResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress/rate/{rateName}/progress/{progressName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{rateName}', String(request.getRateName() ?? 'null') === "" ? "null" : String(request.getRateName() ?? 'null'))
+            .replace('{progressName}', String(request.getProgressName() ?? 'null') === "" ? "null" : String(request.getProgressName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -822,11 +832,13 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     }
 
     public deleteProgressByUserId(request: Request.DeleteProgressByUserIdRequest): Promise<Result.DeleteProgressByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress/rate/{rateName}/progress/{progressName}')
             .replace('{service}', 'enhance')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{rateName}', String(request.getRateName() ?? 'null') === "" ? "null" : String(request.getRateName() ?? 'null'))
+            .replace('{progressName}', String(request.getProgressName() ?? 'null') === "" ? "null" : String(request.getProgressName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {

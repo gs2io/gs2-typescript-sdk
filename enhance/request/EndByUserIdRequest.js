@@ -23,6 +23,8 @@ var EndByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
+        this.rateName = null;
+        this.progressName = null;
         this.config = null;
         this.duplicationAvoider = null;
     }
@@ -70,6 +72,28 @@ var EndByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    EndByUserIdRequest.prototype.getRateName = function () {
+        return this.rateName;
+    };
+    EndByUserIdRequest.prototype.setRateName = function (rateName) {
+        this.rateName = rateName;
+        return this;
+    };
+    EndByUserIdRequest.prototype.withRateName = function (rateName) {
+        this.rateName = rateName;
+        return this;
+    };
+    EndByUserIdRequest.prototype.getProgressName = function () {
+        return this.progressName;
+    };
+    EndByUserIdRequest.prototype.setProgressName = function (progressName) {
+        this.progressName = progressName;
+        return this;
+    };
+    EndByUserIdRequest.prototype.withProgressName = function (progressName) {
+        this.progressName = progressName;
+        return this;
+    };
     EndByUserIdRequest.prototype.getConfig = function () {
         return this.config;
     };
@@ -96,6 +120,8 @@ var EndByUserIdRequest = /** @class */ (function () {
         return new EndByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
+            .withRateName(data["rateName"])
+            .withProgressName(data["progressName"])
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Enhance.Config.fromDict(item);
@@ -105,6 +131,8 @@ var EndByUserIdRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "rateName": this.getRateName(),
+            "progressName": this.getProgressName(),
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();

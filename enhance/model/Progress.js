@@ -15,23 +15,126 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var grnFormat = "";
+var grnFormat = "grn:gs2:{region}:{ownerId}:enhance:{namespaceName}:user:{userId}:rate:{rateName}:progress:{progressName}";
 var Progress = /** @class */ (function () {
     function Progress() {
         this.progressId = null;
         this.userId = null;
         this.rateName = null;
+        this.name = null;
         this.propertyId = null;
         this.experienceValue = null;
         this.rate = null;
         this.createdAt = null;
         this.updatedAt = null;
     }
+    Progress.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{rateName}', '.*')
+            .replace('{progressName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Progress.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{rateName}', '.*')
+            .replace('{progressName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Progress.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{rateName}', '.*')
+            .replace('{progressName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Progress.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{rateName}', '.*')
+            .replace('{progressName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Progress.getRateName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{rateName}', '(.*)')
+            .replace('{progressName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Progress.getProgressName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{rateName}', '.*')
+            .replace('{progressName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
     Progress.isValid = function (grn) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
+            return false;
+        }
+        if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
+            return false;
+        }
+        if (this.getRateName(grn) == null || this.getRateName(grn) === '') {
+            return false;
+        }
+        if (this.getProgressName(grn) == null || this.getProgressName(grn) === '') {
+            return false;
+        }
         return true;
     };
-    Progress.createGrn = function () {
-        return grnFormat;
+    Progress.createGrn = function (region, ownerId, namespaceName, userId, rateName, progressName) {
+        return grnFormat
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{userId}', userId !== null && userId !== void 0 ? userId : '')
+            .replace('{rateName}', rateName !== null && rateName !== void 0 ? rateName : '')
+            .replace('{progressName}', progressName !== null && progressName !== void 0 ? progressName : '');
     };
     Progress.prototype.getProgressId = function () {
         return this.progressId;
@@ -64,6 +167,17 @@ var Progress = /** @class */ (function () {
     };
     Progress.prototype.withRateName = function (rateName) {
         this.rateName = rateName;
+        return this;
+    };
+    Progress.prototype.getName = function () {
+        return this.name;
+    };
+    Progress.prototype.setName = function (name) {
+        this.name = name;
+        return this;
+    };
+    Progress.prototype.withName = function (name) {
+        this.name = name;
         return this;
     };
     Progress.prototype.getPropertyId = function () {
@@ -129,6 +243,7 @@ var Progress = /** @class */ (function () {
             .withProgressId(data["progressId"])
             .withUserId(data["userId"])
             .withRateName(data["rateName"])
+            .withName(data["name"])
             .withPropertyId(data["propertyId"])
             .withExperienceValue(data["experienceValue"])
             .withRate(data["rate"])
@@ -140,6 +255,7 @@ var Progress = /** @class */ (function () {
             "progressId": this.getProgressId(),
             "userId": this.getUserId(),
             "rateName": this.getRateName(),
+            "name": this.getName(),
             "propertyId": this.getPropertyId(),
             "experienceValue": this.getExperienceValue(),
             "rate": this.getRate(),

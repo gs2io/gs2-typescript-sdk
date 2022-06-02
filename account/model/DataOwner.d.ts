@@ -8,8 +8,9 @@ export default class DataOwner implements IModel {
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
     static getUserId(grn: string): string | null;
+    static getDataOwnerName(grn: string): string | null;
     static isValid(grn: string): boolean;
-    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null): string | null;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, dataOwnerName: string | null): string | null;
     getDataOwnerId(): string | null;
     setDataOwnerId(dataOwnerId: string | null): this;
     withDataOwnerId(dataOwnerId: string | null): this;

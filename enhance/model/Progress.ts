@@ -15,25 +15,146 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-const grnFormat: string = "";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:enhance:{namespaceName}:user:{userId}:rate:{rateName}:progress:{progressName}";
 
 export default class Progress implements IModel {
     private progressId: string|null = null;
     private userId: string|null = null;
     private rateName: string|null = null;
+    private name: string|null = null;
     private propertyId: string|null = null;
     private experienceValue: number|null = null;
     private rate: number|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
 
+    public static getRegion(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{rateName}', '.*')
+            .replace('{progressName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getOwnerId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{rateName}', '.*')
+            .replace('{progressName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getNamespaceName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{rateName}', '.*')
+            .replace('{progressName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getUserId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{rateName}', '.*')
+            .replace('{progressName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getRateName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{rateName}', '(.*)')
+            .replace('{progressName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getProgressName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{rateName}', '.*')
+            .replace('{progressName}', '(.*)')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
     public static isValid(grn: string): boolean {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
+            return false;
+        }
+        if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
+            return false;
+        }
+        if (this.getRateName(grn) == null || this.getRateName(grn) === '') {
+            return false;
+        }
+        if (this.getProgressName(grn) == null || this.getProgressName(grn) === '') {
+            return false;
+        }
         return true;
     }
 
     public static createGrn(
+        region: string|null,
+        ownerId: string|null,
+        namespaceName: string|null,
+        userId: string|null,
+        rateName: string|null,
+        progressName: string|null,
     ): string|null {
-        return grnFormat;
+        return grnFormat
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{userId}', userId ?? '')
+            .replace('{rateName}', rateName ?? '')
+            .replace('{progressName}', progressName ?? '');
     }
 
     public getProgressId(): string|null {
@@ -75,6 +196,20 @@ export default class Progress implements IModel {
 
     public withRateName(rateName: string|null): this {
         this.rateName = rateName;
+        return this;
+    }
+
+    public getName(): string|null {
+        return this.name;
+    }
+
+    public setName(name: string|null) {
+        this.name = name;
+        return this;
+    }
+
+    public withName(name: string|null): this {
+        this.name = name;
         return this;
     }
 
@@ -156,6 +291,7 @@ export default class Progress implements IModel {
             .withProgressId(data["progressId"])
             .withUserId(data["userId"])
             .withRateName(data["rateName"])
+            .withName(data["name"])
             .withPropertyId(data["propertyId"])
             .withExperienceValue(data["experienceValue"])
             .withRate(data["rate"])
@@ -168,6 +304,7 @@ export default class Progress implements IModel {
             "progressId": this.getProgressId(),
             "userId": this.getUserId(),
             "rateName": this.getRateName(),
+            "name": this.getName(),
             "propertyId": this.getPropertyId(),
             "experienceValue": this.getExperienceValue(),
             "rate": this.getRate(),

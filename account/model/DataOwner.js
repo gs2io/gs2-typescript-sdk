@@ -28,7 +28,8 @@ var DataOwner = /** @class */ (function () {
             .replace('{region}', '(.*)')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{userId}', '.*'));
+            .replace('{userId}', '.*')
+            .replace('{dataOwnerName}', '.*'));
         if (match) {
             return match[1];
         }
@@ -39,7 +40,8 @@ var DataOwner = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
-            .replace('{userId}', '.*'));
+            .replace('{userId}', '.*')
+            .replace('{dataOwnerName}', '.*'));
         if (match) {
             return match[1];
         }
@@ -50,7 +52,8 @@ var DataOwner = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
-            .replace('{userId}', '.*'));
+            .replace('{userId}', '.*')
+            .replace('{dataOwnerName}', '.*'));
         if (match) {
             return match[1];
         }
@@ -61,7 +64,20 @@ var DataOwner = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{userId}', '(.*)'));
+            .replace('{userId}', '(.*)')
+            .replace('{dataOwnerName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    DataOwner.getDataOwnerName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{dataOwnerName}', '(.*)'));
         if (match) {
             return match[1];
         }
@@ -80,14 +96,18 @@ var DataOwner = /** @class */ (function () {
         if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
             return false;
         }
+        if (this.getDataOwnerName(grn) == null || this.getDataOwnerName(grn) === '') {
+            return false;
+        }
         return true;
     };
-    DataOwner.createGrn = function (region, ownerId, namespaceName, userId) {
+    DataOwner.createGrn = function (region, ownerId, namespaceName, userId, dataOwnerName) {
         return grnFormat
             .replace('{region}', region !== null && region !== void 0 ? region : '')
             .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
             .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
-            .replace('{userId}', userId !== null && userId !== void 0 ? userId : '');
+            .replace('{userId}', userId !== null && userId !== void 0 ? userId : '')
+            .replace('{dataOwnerName}', dataOwnerName !== null && dataOwnerName !== void 0 ? dataOwnerName : '');
     };
     DataOwner.prototype.getDataOwnerId = function () {
         return this.dataOwnerId;
