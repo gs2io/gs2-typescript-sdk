@@ -24,6 +24,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Formation.TransactionSetting|null = null;
     private updateMoldScript: Gs2Formation.ScriptSetting|null = null;
     private updateFormScript: Gs2Formation.ScriptSetting|null = null;
     private logSetting: Gs2Formation.LogSetting|null = null;
@@ -84,6 +85,20 @@ export default class CreateNamespaceRequest implements IRequest {
         return this;
     }
 
+    public getTransactionSetting(): Gs2Formation.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+
+    public setTransactionSetting(transactionSetting: Gs2Formation.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+
+    public withTransactionSetting(transactionSetting: Gs2Formation.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+
     public getUpdateMoldScript(): Gs2Formation.ScriptSetting|null {
         return this.updateMoldScript;
     }
@@ -130,6 +145,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Formation.TransactionSetting.fromDict(data["transactionSetting"]))
             .withUpdateMoldScript(Gs2Formation.ScriptSetting.fromDict(data["updateMoldScript"]))
             .withUpdateFormScript(Gs2Formation.ScriptSetting.fromDict(data["updateFormScript"]))
             .withLogSetting(Gs2Formation.LogSetting.fromDict(data["logSetting"]));
@@ -139,6 +155,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "updateMoldScript": this.getUpdateMoldScript()?.toDict(),
             "updateFormScript": this.getUpdateFormScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),

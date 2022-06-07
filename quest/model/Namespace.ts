@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:quest:{namespaceName}";
@@ -23,14 +24,15 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: TransactionSetting|null = null;
     private startQuestScript: ScriptSetting|null = null;
     private completeQuestScript: ScriptSetting|null = null;
     private failedQuestScript: ScriptSetting|null = null;
-    private queueNamespaceId: string|null = null;
-    private keyId: string|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
+    private queueNamespaceId: string|null = null;
+    private keyId: string|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -134,6 +136,20 @@ export default class Namespace implements IModel {
         return this;
     }
 
+    public getTransactionSetting(): TransactionSetting|null {
+        return this.transactionSetting;
+    }
+
+    public setTransactionSetting(transactionSetting: TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+
+    public withTransactionSetting(transactionSetting: TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+
     public getStartQuestScript(): ScriptSetting|null {
         return this.startQuestScript;
     }
@@ -173,34 +189,6 @@ export default class Namespace implements IModel {
 
     public withFailedQuestScript(failedQuestScript: ScriptSetting|null): this {
         this.failedQuestScript = failedQuestScript;
-        return this;
-    }
-
-    public getQueueNamespaceId(): string|null {
-        return this.queueNamespaceId;
-    }
-
-    public setQueueNamespaceId(queueNamespaceId: string|null) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    }
-
-    public withQueueNamespaceId(queueNamespaceId: string|null): this {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    }
-
-    public getKeyId(): string|null {
-        return this.keyId;
-    }
-
-    public setKeyId(keyId: string|null) {
-        this.keyId = keyId;
-        return this;
-    }
-
-    public withKeyId(keyId: string|null): this {
-        this.keyId = keyId;
         return this;
     }
 
@@ -246,6 +234,34 @@ export default class Namespace implements IModel {
         return this;
     }
 
+    public getQueueNamespaceId(): string|null {
+        return this.queueNamespaceId;
+    }
+
+    public setQueueNamespaceId(queueNamespaceId: string|null) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    }
+
+    public withQueueNamespaceId(queueNamespaceId: string|null): this {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    }
+
+    public getKeyId(): string|null {
+        return this.keyId;
+    }
+
+    public setKeyId(keyId: string|null) {
+        this.keyId = keyId;
+        return this;
+    }
+
+    public withKeyId(keyId: string|null): this {
+        this.keyId = keyId;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): Namespace|null {
         if (data == undefined || data == null) {
             return null;
@@ -254,14 +270,15 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
             .withStartQuestScript(ScriptSetting.fromDict(data["startQuestScript"]))
             .withCompleteQuestScript(ScriptSetting.fromDict(data["completeQuestScript"]))
             .withFailedQuestScript(ScriptSetting.fromDict(data["failedQuestScript"]))
-            .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withQueueNamespaceId(data["queueNamespaceId"])
+            .withKeyId(data["keyId"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -269,14 +286,15 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "startQuestScript": this.getStartQuestScript()?.toDict(),
             "completeQuestScript": this.getCompleteQuestScript()?.toDict(),
             "failedQuestScript": this.getFailedQuestScript()?.toDict(),
-            "queueNamespaceId": this.getQueueNamespaceId(),
-            "keyId": this.getKeyId(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "queueNamespaceId": this.getQueueNamespaceId(),
+            "keyId": this.getKeyId(),
         };
     }
 }

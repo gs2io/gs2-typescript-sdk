@@ -18,12 +18,13 @@ import RateModel from "./RateModel"
 import RateModelMaster from "./RateModelMaster"
 import CurrentRateMaster from "./CurrentRateMaster"
 import Await from "./Await"
+import AcquireAction from "./AcquireAction"
+import ConsumeAction from "./ConsumeAction"
 import Config from "./Config"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import ScriptSetting from "./ScriptSetting"
 import LogSetting from "./LogSetting"
-import AcquireAction from "./AcquireAction"
-import ConsumeAction from "./ConsumeAction"
+import TransactionSetting from "./TransactionSetting"
 
 export {
     Namespace,
@@ -31,10 +32,11 @@ export {
     RateModelMaster,
     CurrentRateMaster,
     Await,
+    AcquireAction,
+    ConsumeAction,
     Config,
     GitHubCheckoutSetting,
     ScriptSetting,
     LogSetting,
-    AcquireAction,
-    ConsumeAction,
+    TransactionSetting,
 };

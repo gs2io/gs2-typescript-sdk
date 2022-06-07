@@ -38,6 +38,8 @@ import RunStampSheetExpressRequest from "./RunStampSheetExpressRequest"
 import RunStampTaskWithoutNamespaceRequest from "./RunStampTaskWithoutNamespaceRequest"
 import RunStampSheetWithoutNamespaceRequest from "./RunStampSheetWithoutNamespaceRequest"
 import RunStampSheetExpressWithoutNamespaceRequest from "./RunStampSheetExpressWithoutNamespaceRequest"
+import GetStampSheetResultRequest from "./GetStampSheetResultRequest"
+import GetStampSheetResultByUserIdRequest from "./GetStampSheetResultByUserIdRequest"
 
 export {
     DescribeNamespacesRequest,
@@ -65,4 +67,6 @@ export {
     RunStampTaskWithoutNamespaceRequest,
     RunStampSheetWithoutNamespaceRequest,
     RunStampSheetExpressWithoutNamespaceRequest,
+    GetStampSheetResultRequest,
+    GetStampSheetResultByUserIdRequest,
 };

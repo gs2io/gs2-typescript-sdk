@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConsumeAction = exports.AcquireAction = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.Await = exports.CurrentRateMaster = exports.RateModelMaster = exports.RateModel = exports.Namespace = void 0;
+exports.TransactionSetting = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.ConsumeAction = exports.AcquireAction = exports.Await = exports.CurrentRateMaster = exports.RateModelMaster = exports.RateModel = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -27,6 +27,10 @@ var CurrentRateMaster_1 = tslib_1.__importDefault(require("./CurrentRateMaster")
 exports.CurrentRateMaster = CurrentRateMaster_1.default;
 var Await_1 = tslib_1.__importDefault(require("./Await"));
 exports.Await = Await_1.default;
+var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
+exports.AcquireAction = AcquireAction_1.default;
+var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
+exports.ConsumeAction = ConsumeAction_1.default;
 var Config_1 = tslib_1.__importDefault(require("./Config"));
 exports.Config = Config_1.default;
 var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
@@ -35,8 +39,6 @@ var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 exports.ScriptSetting = ScriptSetting_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
-var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
-exports.AcquireAction = AcquireAction_1.default;
-var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
-exports.ConsumeAction = ConsumeAction_1.default;
+var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
+exports.TransactionSetting = TransactionSetting_1.default;
 //# sourceMappingURL=index.js.map

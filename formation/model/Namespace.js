@@ -16,6 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
+var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
 var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}";
@@ -24,6 +25,7 @@ var Namespace = /** @class */ (function () {
         this.namespaceId = null;
         this.name = null;
         this.description = null;
+        this.transactionSetting = null;
         this.updateMoldScript = null;
         this.updateFormScript = null;
         this.logSetting = null;
@@ -111,6 +113,17 @@ var Namespace = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    Namespace.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    Namespace.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    Namespace.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
     Namespace.prototype.getUpdateMoldScript = function () {
         return this.updateMoldScript;
     };
@@ -174,6 +187,7 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
             .withUpdateMoldScript(ScriptSetting_1.default.fromDict(data["updateMoldScript"]))
             .withUpdateFormScript(ScriptSetting_1.default.fromDict(data["updateFormScript"]))
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
@@ -181,14 +195,15 @@ var Namespace = /** @class */ (function () {
             .withUpdatedAt(data["updatedAt"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
-            "updateMoldScript": (_a = this.getUpdateMoldScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "updateFormScript": (_b = this.getUpdateFormScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "updateMoldScript": (_b = this.getUpdateMoldScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "updateFormScript": (_c = this.getUpdateFormScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

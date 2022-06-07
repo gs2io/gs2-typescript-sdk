@@ -21,8 +21,10 @@ var AcquireActionsToFormPropertiesResult = /** @class */ (function () {
     function AcquireActionsToFormPropertiesResult() {
         this.item = null;
         this.mold = null;
+        this.transactionId = null;
         this.stampSheet = null;
         this.stampSheetEncryptionKeyId = null;
+        this.autoRunStampSheet = null;
     }
     AcquireActionsToFormPropertiesResult.prototype.getItem = function () {
         return this.item;
@@ -44,6 +46,17 @@ var AcquireActionsToFormPropertiesResult = /** @class */ (function () {
     };
     AcquireActionsToFormPropertiesResult.prototype.withMold = function (mold) {
         this.mold = mold;
+        return this;
+    };
+    AcquireActionsToFormPropertiesResult.prototype.getTransactionId = function () {
+        return this.transactionId;
+    };
+    AcquireActionsToFormPropertiesResult.prototype.setTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    };
+    AcquireActionsToFormPropertiesResult.prototype.withTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
         return this;
     };
     AcquireActionsToFormPropertiesResult.prototype.getStampSheet = function () {
@@ -68,20 +81,35 @@ var AcquireActionsToFormPropertiesResult = /** @class */ (function () {
         this.stampSheetEncryptionKeyId = stampSheetEncryptionKeyId;
         return this;
     };
+    AcquireActionsToFormPropertiesResult.prototype.getAutoRunStampSheet = function () {
+        return this.autoRunStampSheet;
+    };
+    AcquireActionsToFormPropertiesResult.prototype.setAutoRunStampSheet = function (autoRunStampSheet) {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    };
+    AcquireActionsToFormPropertiesResult.prototype.withAutoRunStampSheet = function (autoRunStampSheet) {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    };
     AcquireActionsToFormPropertiesResult.fromDict = function (data) {
         return new AcquireActionsToFormPropertiesResult()
             .withItem(Gs2Formation.Form.fromDict(data["item"]))
             .withMold(Gs2Formation.Mold.fromDict(data["mold"]))
+            .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
-            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"]);
+            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
+            .withAutoRunStampSheet(data["autoRunStampSheet"]);
     };
     AcquireActionsToFormPropertiesResult.prototype.toDict = function () {
         var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "mold": (_b = this.getMold()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "transactionId": this.getTransactionId(),
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
+            "autoRunStampSheet": this.getAutoRunStampSheet(),
         };
     };
     return AcquireActionsToFormPropertiesResult;

@@ -16,6 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
+var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
 var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
@@ -26,15 +27,16 @@ var Namespace = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.isAutomaticDeletingEnabled = null;
+        this.transactionSetting = null;
         this.receiveMessageScript = null;
         this.readMessageScript = null;
         this.deleteMessageScript = null;
-        this.queueNamespaceId = null;
-        this.keyId = null;
         this.receiveNotification = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.queueNamespaceId = null;
+        this.keyId = null;
     }
     Namespace.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -128,6 +130,17 @@ var Namespace = /** @class */ (function () {
         this.isAutomaticDeletingEnabled = isAutomaticDeletingEnabled;
         return this;
     };
+    Namespace.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    Namespace.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    Namespace.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
     Namespace.prototype.getReceiveMessageScript = function () {
         return this.receiveMessageScript;
     };
@@ -159,28 +172,6 @@ var Namespace = /** @class */ (function () {
     };
     Namespace.prototype.withDeleteMessageScript = function (deleteMessageScript) {
         this.deleteMessageScript = deleteMessageScript;
-        return this;
-    };
-    Namespace.prototype.getQueueNamespaceId = function () {
-        return this.queueNamespaceId;
-    };
-    Namespace.prototype.setQueueNamespaceId = function (queueNamespaceId) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    };
-    Namespace.prototype.withQueueNamespaceId = function (queueNamespaceId) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    };
-    Namespace.prototype.getKeyId = function () {
-        return this.keyId;
-    };
-    Namespace.prototype.setKeyId = function (keyId) {
-        this.keyId = keyId;
-        return this;
-    };
-    Namespace.prototype.withKeyId = function (keyId) {
-        this.keyId = keyId;
         return this;
     };
     Namespace.prototype.getReceiveNotification = function () {
@@ -227,6 +218,28 @@ var Namespace = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Namespace.prototype.getQueueNamespaceId = function () {
+        return this.queueNamespaceId;
+    };
+    Namespace.prototype.setQueueNamespaceId = function (queueNamespaceId) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    };
+    Namespace.prototype.withQueueNamespaceId = function (queueNamespaceId) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    };
+    Namespace.prototype.getKeyId = function () {
+        return this.keyId;
+    };
+    Namespace.prototype.setKeyId = function (keyId) {
+        this.keyId = keyId;
+        return this;
+    };
+    Namespace.prototype.withKeyId = function (keyId) {
+        this.keyId = keyId;
+        return this;
+    };
     Namespace.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -236,32 +249,34 @@ var Namespace = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withIsAutomaticDeletingEnabled(data["isAutomaticDeletingEnabled"])
+            .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
             .withReceiveMessageScript(ScriptSetting_1.default.fromDict(data["receiveMessageScript"]))
             .withReadMessageScript(ScriptSetting_1.default.fromDict(data["readMessageScript"]))
             .withDeleteMessageScript(ScriptSetting_1.default.fromDict(data["deleteMessageScript"]))
-            .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
             .withReceiveNotification(NotificationSetting_1.default.fromDict(data["receiveNotification"]))
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withQueueNamespaceId(data["queueNamespaceId"])
+            .withKeyId(data["keyId"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
             "isAutomaticDeletingEnabled": this.getIsAutomaticDeletingEnabled(),
-            "receiveMessageScript": (_a = this.getReceiveMessageScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "readMessageScript": (_b = this.getReadMessageScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "deleteMessageScript": (_c = this.getDeleteMessageScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "queueNamespaceId": this.getQueueNamespaceId(),
-            "keyId": this.getKeyId(),
-            "receiveNotification": (_d = this.getReceiveNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "receiveMessageScript": (_b = this.getReceiveMessageScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "readMessageScript": (_c = this.getReadMessageScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "deleteMessageScript": (_d = this.getDeleteMessageScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "receiveNotification": (_e = this.getReceiveNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "queueNamespaceId": this.getQueueNamespaceId(),
+            "keyId": this.getKeyId(),
         };
     };
     return Namespace;

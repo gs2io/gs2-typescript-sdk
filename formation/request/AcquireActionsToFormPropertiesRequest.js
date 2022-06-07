@@ -26,8 +26,6 @@ var AcquireActionsToFormPropertiesRequest = /** @class */ (function () {
         this.moldName = null;
         this.index = null;
         this.acquireAction = null;
-        this.queueNamespaceId = null;
-        this.keyId = null;
         this.config = null;
         this.duplicationAvoider = null;
     }
@@ -108,28 +106,6 @@ var AcquireActionsToFormPropertiesRequest = /** @class */ (function () {
         this.acquireAction = acquireAction;
         return this;
     };
-    AcquireActionsToFormPropertiesRequest.prototype.getQueueNamespaceId = function () {
-        return this.queueNamespaceId;
-    };
-    AcquireActionsToFormPropertiesRequest.prototype.setQueueNamespaceId = function (queueNamespaceId) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    };
-    AcquireActionsToFormPropertiesRequest.prototype.withQueueNamespaceId = function (queueNamespaceId) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    };
-    AcquireActionsToFormPropertiesRequest.prototype.getKeyId = function () {
-        return this.keyId;
-    };
-    AcquireActionsToFormPropertiesRequest.prototype.setKeyId = function (keyId) {
-        this.keyId = keyId;
-        return this;
-    };
-    AcquireActionsToFormPropertiesRequest.prototype.withKeyId = function (keyId) {
-        this.keyId = keyId;
-        return this;
-    };
     AcquireActionsToFormPropertiesRequest.prototype.getConfig = function () {
         return this.config;
     };
@@ -159,8 +135,6 @@ var AcquireActionsToFormPropertiesRequest = /** @class */ (function () {
             .withMoldName(data["moldName"])
             .withIndex(data["index"])
             .withAcquireAction(Gs2Formation.AcquireAction.fromDict(data["acquireAction"]))
-            .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Formation.AcquireActionConfig.fromDict(item);
@@ -174,8 +148,6 @@ var AcquireActionsToFormPropertiesRequest = /** @class */ (function () {
             "moldName": this.getMoldName(),
             "index": this.getIndex(),
             "acquireAction": (_a = this.getAcquireAction()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "queueNamespaceId": this.getQueueNamespaceId(),
-            "keyId": this.getKeyId(),
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();

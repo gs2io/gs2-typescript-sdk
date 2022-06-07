@@ -24,11 +24,12 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private description: string|null = null;
-    private queueNamespaceId: string|null = null;
-    private keyId: string|null = null;
+    private transactionSetting: Gs2Lottery.TransactionSetting|null = null;
     private lotteryTriggerScriptId: string|null = null;
     private choicePrizeTableScriptId: string|null = null;
     private logSetting: Gs2Lottery.LogSetting|null = null;
+    private queueNamespaceId: string|null = null;
+    private keyId: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -86,31 +87,17 @@ export default class UpdateNamespaceRequest implements IRequest {
         return this;
     }
 
-    public getQueueNamespaceId(): string|null {
-        return this.queueNamespaceId;
+    public getTransactionSetting(): Gs2Lottery.TransactionSetting|null {
+        return this.transactionSetting;
     }
 
-    public setQueueNamespaceId(queueNamespaceId: string|null) {
-        this.queueNamespaceId = queueNamespaceId;
+    public setTransactionSetting(transactionSetting: Gs2Lottery.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
         return this;
     }
 
-    public withQueueNamespaceId(queueNamespaceId: string|null): this {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    }
-
-    public getKeyId(): string|null {
-        return this.keyId;
-    }
-
-    public setKeyId(keyId: string|null) {
-        this.keyId = keyId;
-        return this;
-    }
-
-    public withKeyId(keyId: string|null): this {
-        this.keyId = keyId;
+    public withTransactionSetting(transactionSetting: Gs2Lottery.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
         return this;
     }
 
@@ -156,26 +143,56 @@ export default class UpdateNamespaceRequest implements IRequest {
         return this;
     }
 
+    public getQueueNamespaceId(): string|null {
+        return this.queueNamespaceId;
+    }
+
+    public setQueueNamespaceId(queueNamespaceId: string|null) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    }
+
+    public withQueueNamespaceId(queueNamespaceId: string|null): this {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    }
+
+    public getKeyId(): string|null {
+        return this.keyId;
+    }
+
+    public setKeyId(keyId: string|null) {
+        this.keyId = keyId;
+        return this;
+    }
+
+    public withKeyId(keyId: string|null): this {
+        this.keyId = keyId;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): UpdateNamespaceRequest {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
-            .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
+            .withTransactionSetting(Gs2Lottery.TransactionSetting.fromDict(data["transactionSetting"]))
             .withLotteryTriggerScriptId(data["lotteryTriggerScriptId"])
             .withChoicePrizeTableScriptId(data["choicePrizeTableScriptId"])
-            .withLogSetting(Gs2Lottery.LogSetting.fromDict(data["logSetting"]));
+            .withLogSetting(Gs2Lottery.LogSetting.fromDict(data["logSetting"]))
+            .withQueueNamespaceId(data["queueNamespaceId"])
+            .withKeyId(data["keyId"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
-            "queueNamespaceId": this.getQueueNamespaceId(),
-            "keyId": this.getKeyId(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "lotteryTriggerScriptId": this.getLotteryTriggerScriptId(),
             "choicePrizeTableScriptId": this.getChoicePrizeTableScriptId(),
             "logSetting": this.getLogSetting()?.toDict(),
+            "queueNamespaceId": this.getQueueNamespaceId(),
+            "keyId": this.getKeyId(),
         };
     }
 }

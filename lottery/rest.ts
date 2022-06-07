@@ -67,11 +67,12 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
-            'queueNamespaceId': request.getQueueNamespaceId() ?? null,
-            'keyId': request.getKeyId() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'lotteryTriggerScriptId': request.getLotteryTriggerScriptId() ?? null,
             'choicePrizeTableScriptId': request.getChoicePrizeTableScriptId() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
+            'queueNamespaceId': request.getQueueNamespaceId() ?? null,
+            'keyId': request.getKeyId() ?? null,
         };
         return axios.post(
             url,
@@ -155,11 +156,12 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
-            'queueNamespaceId': request.getQueueNamespaceId() ?? null,
-            'keyId': request.getKeyId() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'lotteryTriggerScriptId': request.getLotteryTriggerScriptId() ?? null,
             'choicePrizeTableScriptId': request.getChoicePrizeTableScriptId() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
+            'queueNamespaceId': request.getQueueNamespaceId() ?? null,
+            'keyId': request.getKeyId() ?? null,
         };
         return axios.put(
             url,

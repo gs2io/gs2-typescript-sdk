@@ -5,6 +5,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack;
     private name;
     private description;
+    private transactionSetting;
     private queueNamespaceId;
     private keyId;
     private logSetting;
@@ -20,6 +21,9 @@ export default class CreateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Showcase.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Showcase.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Showcase.TransactionSetting | null): this;
     getQueueNamespaceId(): string | null;
     setQueueNamespaceId(queueNamespaceId: string | null): this;
     withQueueNamespaceId(queueNamespaceId: string | null): this;

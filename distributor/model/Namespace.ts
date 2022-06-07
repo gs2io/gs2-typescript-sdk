@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:distributor:{namespaceName}";
 
@@ -23,6 +24,7 @@ export default class Namespace implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private assumeUserId: string|null = null;
+    private autoRunStampSheetNotification: NotificationSetting|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -143,6 +145,20 @@ export default class Namespace implements IModel {
         return this;
     }
 
+    public getAutoRunStampSheetNotification(): NotificationSetting|null {
+        return this.autoRunStampSheetNotification;
+    }
+
+    public setAutoRunStampSheetNotification(autoRunStampSheetNotification: NotificationSetting|null) {
+        this.autoRunStampSheetNotification = autoRunStampSheetNotification;
+        return this;
+    }
+
+    public withAutoRunStampSheetNotification(autoRunStampSheetNotification: NotificationSetting|null): this {
+        this.autoRunStampSheetNotification = autoRunStampSheetNotification;
+        return this;
+    }
+
     public getLogSetting(): LogSetting|null {
         return this.logSetting;
     }
@@ -194,6 +210,7 @@ export default class Namespace implements IModel {
             .withName(data["name"])
             .withDescription(data["description"])
             .withAssumeUserId(data["assumeUserId"])
+            .withAutoRunStampSheetNotification(NotificationSetting.fromDict(data["autoRunStampSheetNotification"]))
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
@@ -205,6 +222,7 @@ export default class Namespace implements IModel {
             "name": this.getName(),
             "description": this.getDescription(),
             "assumeUserId": this.getAssumeUserId(),
+            "autoRunStampSheetNotification": this.getAutoRunStampSheetNotification()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

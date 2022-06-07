@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DisplayItemMaster = exports.AcquireAction = exports.ConsumeAction = exports.Config = exports.DisplayItem = exports.Showcase = exports.SalesItemGroup = exports.SalesItem = exports.LogSetting = exports.GitHubCheckoutSetting = exports.CurrentShowcaseMaster = exports.ShowcaseMaster = exports.SalesItemGroupMaster = exports.SalesItemMaster = exports.Namespace = void 0;
+exports.TransactionSetting = exports.LogSetting = exports.GitHubCheckoutSetting = exports.Config = exports.AcquireAction = exports.ConsumeAction = exports.DisplayItemMaster = exports.DisplayItem = exports.Showcase = exports.SalesItemGroup = exports.SalesItem = exports.CurrentShowcaseMaster = exports.ShowcaseMaster = exports.SalesItemGroupMaster = exports.SalesItemMaster = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -27,10 +27,6 @@ var ShowcaseMaster_1 = tslib_1.__importDefault(require("./ShowcaseMaster"));
 exports.ShowcaseMaster = ShowcaseMaster_1.default;
 var CurrentShowcaseMaster_1 = tslib_1.__importDefault(require("./CurrentShowcaseMaster"));
 exports.CurrentShowcaseMaster = CurrentShowcaseMaster_1.default;
-var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
-exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
-exports.LogSetting = LogSetting_1.default;
 var SalesItem_1 = tslib_1.__importDefault(require("./SalesItem"));
 exports.SalesItem = SalesItem_1.default;
 var SalesItemGroup_1 = tslib_1.__importDefault(require("./SalesItemGroup"));
@@ -39,12 +35,18 @@ var Showcase_1 = tslib_1.__importDefault(require("./Showcase"));
 exports.Showcase = Showcase_1.default;
 var DisplayItem_1 = tslib_1.__importDefault(require("./DisplayItem"));
 exports.DisplayItem = DisplayItem_1.default;
-var Config_1 = tslib_1.__importDefault(require("./Config"));
-exports.Config = Config_1.default;
+var DisplayItemMaster_1 = tslib_1.__importDefault(require("./DisplayItemMaster"));
+exports.DisplayItemMaster = DisplayItemMaster_1.default;
 var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
 exports.ConsumeAction = ConsumeAction_1.default;
 var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 exports.AcquireAction = AcquireAction_1.default;
-var DisplayItemMaster_1 = tslib_1.__importDefault(require("./DisplayItemMaster"));
-exports.DisplayItemMaster = DisplayItemMaster_1.default;
+var Config_1 = tslib_1.__importDefault(require("./Config"));
+exports.Config = Config_1.default;
+var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
+exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
+var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+exports.LogSetting = LogSetting_1.default;
+var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
+exports.TransactionSetting = TransactionSetting_1.default;
 //# sourceMappingURL=index.js.map

@@ -24,9 +24,10 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Showcase.TransactionSetting|null = null;
+    private logSetting: Gs2Showcase.LogSetting|null = null;
     private queueNamespaceId: string|null = null;
     private keyId: string|null = null;
-    private logSetting: Gs2Showcase.LogSetting|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -84,6 +85,34 @@ export default class UpdateNamespaceRequest implements IRequest {
         return this;
     }
 
+    public getTransactionSetting(): Gs2Showcase.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+
+    public setTransactionSetting(transactionSetting: Gs2Showcase.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+
+    public withTransactionSetting(transactionSetting: Gs2Showcase.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+
+    public getLogSetting(): Gs2Showcase.LogSetting|null {
+        return this.logSetting;
+    }
+
+    public setLogSetting(logSetting: Gs2Showcase.LogSetting|null) {
+        this.logSetting = logSetting;
+        return this;
+    }
+
+    public withLogSetting(logSetting: Gs2Showcase.LogSetting|null): this {
+        this.logSetting = logSetting;
+        return this;
+    }
+
     public getQueueNamespaceId(): string|null {
         return this.queueNamespaceId;
     }
@@ -112,36 +141,24 @@ export default class UpdateNamespaceRequest implements IRequest {
         return this;
     }
 
-    public getLogSetting(): Gs2Showcase.LogSetting|null {
-        return this.logSetting;
-    }
-
-    public setLogSetting(logSetting: Gs2Showcase.LogSetting|null) {
-        this.logSetting = logSetting;
-        return this;
-    }
-
-    public withLogSetting(logSetting: Gs2Showcase.LogSetting|null): this {
-        this.logSetting = logSetting;
-        return this;
-    }
-
     public static fromDict(data: {[key: string]: any}): UpdateNamespaceRequest {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Showcase.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withLogSetting(Gs2Showcase.LogSetting.fromDict(data["logSetting"]))
             .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
-            .withLogSetting(Gs2Showcase.LogSetting.fromDict(data["logSetting"]));
+            .withKeyId(data["keyId"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
+            "logSetting": this.getLogSetting()?.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
-            "logSetting": this.getLogSetting()?.toDict(),
         };
     }
 }

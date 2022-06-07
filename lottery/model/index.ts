@@ -21,14 +21,15 @@ import LotteryModel from "./LotteryModel"
 import PrizeTable from "./PrizeTable"
 import Probability from "./Probability"
 import CurrentLotteryMaster from "./CurrentLotteryMaster"
-import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
-import LogSetting from "./LogSetting"
 import Prize from "./Prize"
-import AcquireAction from "./AcquireAction"
 import DrawnPrize from "./DrawnPrize"
 import BoxItem from "./BoxItem"
 import BoxItems from "./BoxItems"
+import AcquireAction from "./AcquireAction"
 import Config from "./Config"
+import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
+import LogSetting from "./LogSetting"
+import TransactionSetting from "./TransactionSetting"
 
 export {
     Namespace,
@@ -39,12 +40,13 @@ export {
     PrizeTable,
     Probability,
     CurrentLotteryMaster,
-    GitHubCheckoutSetting,
-    LogSetting,
     Prize,
-    AcquireAction,
     DrawnPrize,
     BoxItem,
     BoxItems,
+    AcquireAction,
     Config,
+    GitHubCheckoutSetting,
+    LogSetting,
+    TransactionSetting,
 };

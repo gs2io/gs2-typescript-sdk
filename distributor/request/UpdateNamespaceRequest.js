@@ -24,6 +24,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.description = null;
         this.assumeUserId = null;
+        this.autoRunStampSheetNotification = null;
         this.logSetting = null;
     }
     UpdateNamespaceRequest.prototype.getRequestId = function () {
@@ -81,6 +82,17 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.assumeUserId = assumeUserId;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getAutoRunStampSheetNotification = function () {
+        return this.autoRunStampSheetNotification;
+    };
+    UpdateNamespaceRequest.prototype.setAutoRunStampSheetNotification = function (autoRunStampSheetNotification) {
+        this.autoRunStampSheetNotification = autoRunStampSheetNotification;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withAutoRunStampSheetNotification = function (autoRunStampSheetNotification) {
+        this.autoRunStampSheetNotification = autoRunStampSheetNotification;
+        return this;
+    };
     UpdateNamespaceRequest.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -97,15 +109,17 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
             .withAssumeUserId(data["assumeUserId"])
+            .withAutoRunStampSheetNotification(Gs2Distributor.NotificationSetting.fromDict(data["autoRunStampSheetNotification"]))
             .withLogSetting(Gs2Distributor.LogSetting.fromDict(data["logSetting"]));
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
             "assumeUserId": this.getAssumeUserId(),
-            "logSetting": (_a = this.getLogSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "autoRunStampSheetNotification": (_a = this.getAutoRunStampSheetNotification()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return UpdateNamespaceRequest;

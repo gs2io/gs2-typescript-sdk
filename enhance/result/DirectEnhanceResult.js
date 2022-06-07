@@ -20,8 +20,10 @@ var Gs2Enhance = tslib_1.__importStar(require("../model"));
 var DirectEnhanceResult = /** @class */ (function () {
     function DirectEnhanceResult() {
         this.item = null;
+        this.transactionId = null;
         this.stampSheet = null;
         this.stampSheetEncryptionKeyId = null;
+        this.autoRunStampSheet = null;
         this.acquireExperience = null;
         this.bonusRate = null;
     }
@@ -34,6 +36,17 @@ var DirectEnhanceResult = /** @class */ (function () {
     };
     DirectEnhanceResult.prototype.withItem = function (item) {
         this.item = item;
+        return this;
+    };
+    DirectEnhanceResult.prototype.getTransactionId = function () {
+        return this.transactionId;
+    };
+    DirectEnhanceResult.prototype.setTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    };
+    DirectEnhanceResult.prototype.withTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
         return this;
     };
     DirectEnhanceResult.prototype.getStampSheet = function () {
@@ -56,6 +69,17 @@ var DirectEnhanceResult = /** @class */ (function () {
     };
     DirectEnhanceResult.prototype.withStampSheetEncryptionKeyId = function (stampSheetEncryptionKeyId) {
         this.stampSheetEncryptionKeyId = stampSheetEncryptionKeyId;
+        return this;
+    };
+    DirectEnhanceResult.prototype.getAutoRunStampSheet = function () {
+        return this.autoRunStampSheet;
+    };
+    DirectEnhanceResult.prototype.setAutoRunStampSheet = function (autoRunStampSheet) {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    };
+    DirectEnhanceResult.prototype.withAutoRunStampSheet = function (autoRunStampSheet) {
+        this.autoRunStampSheet = autoRunStampSheet;
         return this;
     };
     DirectEnhanceResult.prototype.getAcquireExperience = function () {
@@ -83,8 +107,10 @@ var DirectEnhanceResult = /** @class */ (function () {
     DirectEnhanceResult.fromDict = function (data) {
         return new DirectEnhanceResult()
             .withItem(Gs2Enhance.RateModel.fromDict(data["item"]))
+            .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
             .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
+            .withAutoRunStampSheet(data["autoRunStampSheet"])
             .withAcquireExperience(data["acquireExperience"])
             .withBonusRate(data["bonusRate"]);
     };
@@ -92,8 +118,10 @@ var DirectEnhanceResult = /** @class */ (function () {
         var _a;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "transactionId": this.getTransactionId(),
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
+            "autoRunStampSheet": this.getAutoRunStampSheet(),
             "acquireExperience": this.getAcquireExperience(),
             "bonusRate": this.getBonusRate(),
         };

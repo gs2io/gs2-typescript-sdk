@@ -572,7 +572,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MissionRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
@@ -584,13 +584,14 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
             'name': (_b = request.getName()) !== null && _b !== void 0 ? _b : null,
             'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
-            'missionCompleteScript': (_e = (_d = request.getMissionCompleteScript()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
-            'counterIncrementScript': (_g = (_f = request.getCounterIncrementScript()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'receiveRewardsScript': (_j = (_h = request.getReceiveRewardsScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
-            'queueNamespaceId': (_k = request.getQueueNamespaceId()) !== null && _k !== void 0 ? _k : null,
-            'keyId': (_l = request.getKeyId()) !== null && _l !== void 0 ? _l : null,
+            'transactionSetting': (_e = (_d = request.getTransactionSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
+            'missionCompleteScript': (_g = (_f = request.getMissionCompleteScript()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
+            'counterIncrementScript': (_j = (_h = request.getCounterIncrementScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'receiveRewardsScript': (_l = (_k = request.getReceiveRewardsScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
             'completeNotification': (_o = (_m = request.getCompleteNotification()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
             'logSetting': (_q = (_p = request.getLogSetting()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'queueNamespaceId': (_r = request.getQueueNamespaceId()) !== null && _r !== void 0 ? _r : null,
+            'keyId': (_s = request.getKeyId()) !== null && _s !== void 0 ? _s : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -650,7 +651,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MissionRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
@@ -662,13 +663,14 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
-            'missionCompleteScript': (_f = (_e = request.getMissionCompleteScript()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
-            'counterIncrementScript': (_h = (_g = request.getCounterIncrementScript()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
-            'receiveRewardsScript': (_k = (_j = request.getReceiveRewardsScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'queueNamespaceId': (_l = request.getQueueNamespaceId()) !== null && _l !== void 0 ? _l : null,
-            'keyId': (_m = request.getKeyId()) !== null && _m !== void 0 ? _m : null,
+            'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
+            'missionCompleteScript': (_h = (_g = request.getMissionCompleteScript()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'counterIncrementScript': (_k = (_j = request.getCounterIncrementScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
+            'receiveRewardsScript': (_m = (_l = request.getReceiveRewardsScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
             'completeNotification': (_p = (_o = request.getCompleteNotification()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
             'logSetting': (_r = (_q = request.getLogSetting()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'queueNamespaceId': (_s = request.getQueueNamespaceId()) !== null && _s !== void 0 ? _s : null,
+            'keyId': (_t = request.getKeyId()) !== null && _t !== void 0 ? _t : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

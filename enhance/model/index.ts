@@ -18,12 +18,13 @@ import RateModel from "./RateModel"
 import RateModelMaster from "./RateModelMaster"
 import Progress from "./Progress"
 import CurrentRateMaster from "./CurrentRateMaster"
+import BonusRate from "./BonusRate"
+import Material from "./Material"
 import Config from "./Config"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import ScriptSetting from "./ScriptSetting"
 import LogSetting from "./LogSetting"
-import BonusRate from "./BonusRate"
-import Material from "./Material"
+import TransactionSetting from "./TransactionSetting"
 
 export {
     Namespace,
@@ -31,10 +32,11 @@ export {
     RateModelMaster,
     Progress,
     CurrentRateMaster,
+    BonusRate,
+    Material,
     Config,
     GitHubCheckoutSetting,
     ScriptSetting,
     LogSetting,
-    BonusRate,
-    Material,
+    TransactionSetting,
 };

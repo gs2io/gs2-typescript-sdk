@@ -25,6 +25,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private name: string|null = null;
     private description: string|null = null;
     private assumeUserId: string|null = null;
+    private autoRunStampSheetNotification: Gs2Distributor.NotificationSetting|null = null;
     private logSetting: Gs2Distributor.LogSetting|null = null;
 
     public getRequestId(): string|null {
@@ -97,6 +98,20 @@ export default class CreateNamespaceRequest implements IRequest {
         return this;
     }
 
+    public getAutoRunStampSheetNotification(): Gs2Distributor.NotificationSetting|null {
+        return this.autoRunStampSheetNotification;
+    }
+
+    public setAutoRunStampSheetNotification(autoRunStampSheetNotification: Gs2Distributor.NotificationSetting|null) {
+        this.autoRunStampSheetNotification = autoRunStampSheetNotification;
+        return this;
+    }
+
+    public withAutoRunStampSheetNotification(autoRunStampSheetNotification: Gs2Distributor.NotificationSetting|null): this {
+        this.autoRunStampSheetNotification = autoRunStampSheetNotification;
+        return this;
+    }
+
     public getLogSetting(): Gs2Distributor.LogSetting|null {
         return this.logSetting;
     }
@@ -116,6 +131,7 @@ export default class CreateNamespaceRequest implements IRequest {
             .withName(data["name"])
             .withDescription(data["description"])
             .withAssumeUserId(data["assumeUserId"])
+            .withAutoRunStampSheetNotification(Gs2Distributor.NotificationSetting.fromDict(data["autoRunStampSheetNotification"]))
             .withLogSetting(Gs2Distributor.LogSetting.fromDict(data["logSetting"]));
     }
 
@@ -124,6 +140,7 @@ export default class CreateNamespaceRequest implements IRequest {
             "name": this.getName(),
             "description": this.getDescription(),
             "assumeUserId": this.getAssumeUserId(),
+            "autoRunStampSheetNotification": this.getAutoRunStampSheetNotification()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
         };
     }

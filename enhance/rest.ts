@@ -68,10 +68,11 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
             'enableDirectEnhance': request.getEnableDirectEnhance() ?? null,
-            'queueNamespaceId': request.getQueueNamespaceId() ?? null,
-            'keyId': request.getKeyId() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'enhanceScript': request.getEnhanceScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
+            'queueNamespaceId': request.getQueueNamespaceId() ?? null,
+            'keyId': request.getKeyId() ?? null,
         };
         return axios.post(
             url,
@@ -156,10 +157,11 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
             'enableDirectEnhance': request.getEnableDirectEnhance() ?? null,
-            'queueNamespaceId': request.getQueueNamespaceId() ?? null,
-            'keyId': request.getKeyId() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'enhanceScript': request.getEnhanceScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
+            'queueNamespaceId': request.getQueueNamespaceId() ?? null,
+            'keyId': request.getKeyId() ?? null,
         };
         return axios.put(
             url,

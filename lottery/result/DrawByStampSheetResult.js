@@ -20,8 +20,10 @@ var Gs2Lottery = tslib_1.__importStar(require("../model"));
 var DrawByStampSheetResult = /** @class */ (function () {
     function DrawByStampSheetResult() {
         this.items = null;
+        this.transactionId = null;
         this.stampSheet = null;
         this.stampSheetEncryptionKeyId = null;
+        this.autoRunStampSheet = null;
     }
     DrawByStampSheetResult.prototype.getItems = function () {
         return this.items;
@@ -32,6 +34,17 @@ var DrawByStampSheetResult = /** @class */ (function () {
     };
     DrawByStampSheetResult.prototype.withItems = function (items) {
         this.items = items;
+        return this;
+    };
+    DrawByStampSheetResult.prototype.getTransactionId = function () {
+        return this.transactionId;
+    };
+    DrawByStampSheetResult.prototype.setTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    };
+    DrawByStampSheetResult.prototype.withTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
         return this;
     };
     DrawByStampSheetResult.prototype.getStampSheet = function () {
@@ -56,14 +69,27 @@ var DrawByStampSheetResult = /** @class */ (function () {
         this.stampSheetEncryptionKeyId = stampSheetEncryptionKeyId;
         return this;
     };
+    DrawByStampSheetResult.prototype.getAutoRunStampSheet = function () {
+        return this.autoRunStampSheet;
+    };
+    DrawByStampSheetResult.prototype.setAutoRunStampSheet = function (autoRunStampSheet) {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    };
+    DrawByStampSheetResult.prototype.withAutoRunStampSheet = function (autoRunStampSheet) {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    };
     DrawByStampSheetResult.fromDict = function (data) {
         return new DrawByStampSheetResult()
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Lottery.DrawnPrize.fromDict(item);
             }) : [])
+            .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
-            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"]);
+            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
+            .withAutoRunStampSheet(data["autoRunStampSheet"]);
     };
     DrawByStampSheetResult.prototype.toDict = function () {
         return {
@@ -71,8 +97,10 @@ var DrawByStampSheetResult = /** @class */ (function () {
                 this.getItems().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "transactionId": this.getTransactionId(),
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
+            "autoRunStampSheet": this.getAutoRunStampSheet(),
         };
     };
     return DrawByStampSheetResult;

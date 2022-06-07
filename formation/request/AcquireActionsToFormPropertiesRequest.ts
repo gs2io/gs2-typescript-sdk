@@ -27,8 +27,6 @@ export default class AcquireActionsToFormPropertiesRequest implements IRequest {
     private moldName: string|null = null;
     private index: number|null = null;
     private acquireAction: Gs2Formation.AcquireAction|null = null;
-    private queueNamespaceId: string|null = null;
-    private keyId: string|null = null;
     private config: Gs2Formation.AcquireActionConfig[]|null = null;
     private duplicationAvoider: string|null = null;
 
@@ -130,34 +128,6 @@ export default class AcquireActionsToFormPropertiesRequest implements IRequest {
         return this;
     }
 
-    public getQueueNamespaceId(): string|null {
-        return this.queueNamespaceId;
-    }
-
-    public setQueueNamespaceId(queueNamespaceId: string|null) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    }
-
-    public withQueueNamespaceId(queueNamespaceId: string|null): this {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    }
-
-    public getKeyId(): string|null {
-        return this.keyId;
-    }
-
-    public setKeyId(keyId: string|null) {
-        this.keyId = keyId;
-        return this;
-    }
-
-    public withKeyId(keyId: string|null): this {
-        this.keyId = keyId;
-        return this;
-    }
-
     public getConfig(): Gs2Formation.AcquireActionConfig[]|null {
         return this.config;
     }
@@ -193,8 +163,6 @@ export default class AcquireActionsToFormPropertiesRequest implements IRequest {
             .withMoldName(data["moldName"])
             .withIndex(data["index"])
             .withAcquireAction(Gs2Formation.AcquireAction.fromDict(data["acquireAction"]))
-            .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
             .withConfig(data.config ?
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Formation.AcquireActionConfig.fromDict(item);
@@ -209,8 +177,6 @@ export default class AcquireActionsToFormPropertiesRequest implements IRequest {
             "moldName": this.getMoldName(),
             "index": this.getIndex(),
             "acquireAction": this.getAcquireAction()?.toDict(),
-            "queueNamespaceId": this.getQueueNamespaceId(),
-            "keyId": this.getKeyId(),
             "config": this.getConfig() ?
                 this.getConfig()!.map((item: Gs2Formation.AcquireActionConfig) => {
                     return item.toDict();

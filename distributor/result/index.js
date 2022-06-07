@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RunStampSheetExpressWithoutNamespaceResult = exports.RunStampSheetWithoutNamespaceResult = exports.RunStampTaskWithoutNamespaceResult = exports.RunStampSheetExpressResult = exports.RunStampSheetResult = exports.RunStampTaskResult = exports.DistributeWithoutOverflowProcessResult = exports.DistributeResult = exports.UpdateCurrentDistributorMasterFromGitHubResult = exports.UpdateCurrentDistributorMasterResult = exports.GetCurrentDistributorMasterResult = exports.ExportMasterResult = exports.GetDistributorModelResult = exports.DescribeDistributorModelsResult = exports.DeleteDistributorModelMasterResult = exports.UpdateDistributorModelMasterResult = exports.GetDistributorModelMasterResult = exports.CreateDistributorModelMasterResult = exports.DescribeDistributorModelMastersResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.GetStampSheetResultByUserIdResult = exports.GetStampSheetResultResult = exports.RunStampSheetExpressWithoutNamespaceResult = exports.RunStampSheetWithoutNamespaceResult = exports.RunStampTaskWithoutNamespaceResult = exports.RunStampSheetExpressResult = exports.RunStampSheetResult = exports.RunStampTaskResult = exports.DistributeWithoutOverflowProcessResult = exports.DistributeResult = exports.UpdateCurrentDistributorMasterFromGitHubResult = exports.UpdateCurrentDistributorMasterResult = exports.GetCurrentDistributorMasterResult = exports.ExportMasterResult = exports.GetDistributorModelResult = exports.DescribeDistributorModelsResult = exports.DeleteDistributorModelMasterResult = exports.UpdateDistributorModelMasterResult = exports.GetDistributorModelMasterResult = exports.CreateDistributorModelMasterResult = exports.DescribeDistributorModelMastersResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -67,4 +67,8 @@ var RunStampSheetWithoutNamespaceResult_1 = tslib_1.__importDefault(require("./R
 exports.RunStampSheetWithoutNamespaceResult = RunStampSheetWithoutNamespaceResult_1.default;
 var RunStampSheetExpressWithoutNamespaceResult_1 = tslib_1.__importDefault(require("./RunStampSheetExpressWithoutNamespaceResult"));
 exports.RunStampSheetExpressWithoutNamespaceResult = RunStampSheetExpressWithoutNamespaceResult_1.default;
+var GetStampSheetResultResult_1 = tslib_1.__importDefault(require("./GetStampSheetResultResult"));
+exports.GetStampSheetResultResult = GetStampSheetResultResult_1.default;
+var GetStampSheetResultByUserIdResult_1 = tslib_1.__importDefault(require("./GetStampSheetResultByUserIdResult"));
+exports.GetStampSheetResultByUserIdResult = GetStampSheetResultByUserIdResult_1.default;
 //# sourceMappingURL=index.js.map

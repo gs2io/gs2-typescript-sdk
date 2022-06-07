@@ -20,8 +20,10 @@ import * as Gs2Inbox from '../model'
 
 export default class ReadMessageResult implements IResult {
     private item: Gs2Inbox.Message|null = null;
+    private transactionId: string|null = null;
     private stampSheet: string|null = null;
     private stampSheetEncryptionKeyId: string|null = null;
+    private autoRunStampSheet: boolean|null = null;
 
     public getItem(): Gs2Inbox.Message|null {
         return this.item;
@@ -34,6 +36,20 @@ export default class ReadMessageResult implements IResult {
 
     public withItem(item: Gs2Inbox.Message|null): this {
         this.item = item;
+        return this;
+    }
+
+    public getTransactionId(): string|null {
+        return this.transactionId;
+    }
+
+    public setTransactionId(transactionId: string|null) {
+        this.transactionId = transactionId;
+        return this;
+    }
+
+    public withTransactionId(transactionId: string|null): this {
+        this.transactionId = transactionId;
         return this;
     }
 
@@ -65,18 +81,36 @@ export default class ReadMessageResult implements IResult {
         return this;
     }
 
+    public getAutoRunStampSheet(): boolean|null {
+        return this.autoRunStampSheet;
+    }
+
+    public setAutoRunStampSheet(autoRunStampSheet: boolean|null) {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    }
+
+    public withAutoRunStampSheet(autoRunStampSheet: boolean|null): this {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): ReadMessageResult {
         return new ReadMessageResult()
             .withItem(Gs2Inbox.Message.fromDict(data["item"]))
+            .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
-            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"]);
+            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
+            .withAutoRunStampSheet(data["autoRunStampSheet"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
+            "transactionId": this.getTransactionId(),
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
+            "autoRunStampSheet": this.getAutoRunStampSheet(),
         };
     }
 }

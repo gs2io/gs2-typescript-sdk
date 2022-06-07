@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LogSetting = exports.DistributeResource = exports.GitHubCheckoutSetting = exports.CurrentDistributorMaster = exports.DistributorModel = exports.DistributorModelMaster = exports.Namespace = void 0;
+exports.NotificationSetting = exports.LogSetting = exports.DistributeResource = exports.GitHubCheckoutSetting = exports.StampSheetResult = exports.CurrentDistributorMaster = exports.DistributorModel = exports.DistributorModelMaster = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -25,10 +25,14 @@ var DistributorModel_1 = tslib_1.__importDefault(require("./DistributorModel"));
 exports.DistributorModel = DistributorModel_1.default;
 var CurrentDistributorMaster_1 = tslib_1.__importDefault(require("./CurrentDistributorMaster"));
 exports.CurrentDistributorMaster = CurrentDistributorMaster_1.default;
+var StampSheetResult_1 = tslib_1.__importDefault(require("./StampSheetResult"));
+exports.StampSheetResult = StampSheetResult_1.default;
 var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
 exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
 var DistributeResource_1 = tslib_1.__importDefault(require("./DistributeResource"));
 exports.DistributeResource = DistributeResource_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
+var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
+exports.NotificationSetting = NotificationSetting_1.default;
 //# sourceMappingURL=index.js.map

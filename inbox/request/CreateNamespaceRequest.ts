@@ -25,13 +25,14 @@ export default class CreateNamespaceRequest implements IRequest {
     private name: string|null = null;
     private description: string|null = null;
     private isAutomaticDeletingEnabled: boolean|null = null;
+    private transactionSetting: Gs2Inbox.TransactionSetting|null = null;
     private receiveMessageScript: Gs2Inbox.ScriptSetting|null = null;
     private readMessageScript: Gs2Inbox.ScriptSetting|null = null;
     private deleteMessageScript: Gs2Inbox.ScriptSetting|null = null;
-    private queueNamespaceId: string|null = null;
-    private keyId: string|null = null;
     private receiveNotification: Gs2Inbox.NotificationSetting|null = null;
     private logSetting: Gs2Inbox.LogSetting|null = null;
+    private queueNamespaceId: string|null = null;
+    private keyId: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -103,6 +104,20 @@ export default class CreateNamespaceRequest implements IRequest {
         return this;
     }
 
+    public getTransactionSetting(): Gs2Inbox.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+
+    public setTransactionSetting(transactionSetting: Gs2Inbox.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+
+    public withTransactionSetting(transactionSetting: Gs2Inbox.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+
     public getReceiveMessageScript(): Gs2Inbox.ScriptSetting|null {
         return this.receiveMessageScript;
     }
@@ -145,34 +160,6 @@ export default class CreateNamespaceRequest implements IRequest {
         return this;
     }
 
-    public getQueueNamespaceId(): string|null {
-        return this.queueNamespaceId;
-    }
-
-    public setQueueNamespaceId(queueNamespaceId: string|null) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    }
-
-    public withQueueNamespaceId(queueNamespaceId: string|null): this {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    }
-
-    public getKeyId(): string|null {
-        return this.keyId;
-    }
-
-    public setKeyId(keyId: string|null) {
-        this.keyId = keyId;
-        return this;
-    }
-
-    public withKeyId(keyId: string|null): this {
-        this.keyId = keyId;
-        return this;
-    }
-
     public getReceiveNotification(): Gs2Inbox.NotificationSetting|null {
         return this.receiveNotification;
     }
@@ -201,18 +188,47 @@ export default class CreateNamespaceRequest implements IRequest {
         return this;
     }
 
+    public getQueueNamespaceId(): string|null {
+        return this.queueNamespaceId;
+    }
+
+    public setQueueNamespaceId(queueNamespaceId: string|null) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    }
+
+    public withQueueNamespaceId(queueNamespaceId: string|null): this {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    }
+
+    public getKeyId(): string|null {
+        return this.keyId;
+    }
+
+    public setKeyId(keyId: string|null) {
+        this.keyId = keyId;
+        return this;
+    }
+
+    public withKeyId(keyId: string|null): this {
+        this.keyId = keyId;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): CreateNamespaceRequest {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
             .withIsAutomaticDeletingEnabled(data["isAutomaticDeletingEnabled"])
+            .withTransactionSetting(Gs2Inbox.TransactionSetting.fromDict(data["transactionSetting"]))
             .withReceiveMessageScript(Gs2Inbox.ScriptSetting.fromDict(data["receiveMessageScript"]))
             .withReadMessageScript(Gs2Inbox.ScriptSetting.fromDict(data["readMessageScript"]))
             .withDeleteMessageScript(Gs2Inbox.ScriptSetting.fromDict(data["deleteMessageScript"]))
-            .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
             .withReceiveNotification(Gs2Inbox.NotificationSetting.fromDict(data["receiveNotification"]))
-            .withLogSetting(Gs2Inbox.LogSetting.fromDict(data["logSetting"]));
+            .withLogSetting(Gs2Inbox.LogSetting.fromDict(data["logSetting"]))
+            .withQueueNamespaceId(data["queueNamespaceId"])
+            .withKeyId(data["keyId"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -220,13 +236,14 @@ export default class CreateNamespaceRequest implements IRequest {
             "name": this.getName(),
             "description": this.getDescription(),
             "isAutomaticDeletingEnabled": this.getIsAutomaticDeletingEnabled(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "receiveMessageScript": this.getReceiveMessageScript()?.toDict(),
             "readMessageScript": this.getReadMessageScript()?.toDict(),
             "deleteMessageScript": this.getDeleteMessageScript()?.toDict(),
-            "queueNamespaceId": this.getQueueNamespaceId(),
-            "keyId": this.getKeyId(),
             "receiveNotification": this.getReceiveNotification()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
+            "queueNamespaceId": this.getQueueNamespaceId(),
+            "keyId": this.getKeyId(),
         };
     }
 }

@@ -24,12 +24,13 @@ import Form from "./Form"
 import Slot from "./Slot"
 import SlotModel from "./SlotModel"
 import SlotWithSignature from "./SlotWithSignature"
+import AcquireAction from "./AcquireAction"
 import AcquireActionConfig from "./AcquireActionConfig"
 import Config from "./Config"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import ScriptSetting from "./ScriptSetting"
 import LogSetting from "./LogSetting"
-import AcquireAction from "./AcquireAction"
+import TransactionSetting from "./TransactionSetting"
 
 export {
     Namespace,
@@ -43,10 +44,11 @@ export {
     Slot,
     SlotModel,
     SlotWithSignature,
+    AcquireAction,
     AcquireActionConfig,
     Config,
     GitHubCheckoutSetting,
     ScriptSetting,
     LogSetting,
-    AcquireAction,
+    TransactionSetting,
 };

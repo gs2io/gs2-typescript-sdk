@@ -15,18 +15,20 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import TransactionSetting from './TransactionSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:showcase:{namespaceName}";
 
 export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
-    private queueNamespaceId: string|null = null;
-    private keyId: string|null = null;
     private description: string|null = null;
+    private transactionSetting: TransactionSetting|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
+    private queueNamespaceId: string|null = null;
+    private keyId: string|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -116,34 +118,6 @@ export default class Namespace implements IModel {
         return this;
     }
 
-    public getQueueNamespaceId(): string|null {
-        return this.queueNamespaceId;
-    }
-
-    public setQueueNamespaceId(queueNamespaceId: string|null) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    }
-
-    public withQueueNamespaceId(queueNamespaceId: string|null): this {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    }
-
-    public getKeyId(): string|null {
-        return this.keyId;
-    }
-
-    public setKeyId(keyId: string|null) {
-        this.keyId = keyId;
-        return this;
-    }
-
-    public withKeyId(keyId: string|null): this {
-        this.keyId = keyId;
-        return this;
-    }
-
     public getDescription(): string|null {
         return this.description;
     }
@@ -155,6 +129,20 @@ export default class Namespace implements IModel {
 
     public withDescription(description: string|null): this {
         this.description = description;
+        return this;
+    }
+
+    public getTransactionSetting(): TransactionSetting|null {
+        return this.transactionSetting;
+    }
+
+    public setTransactionSetting(transactionSetting: TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+
+    public withTransactionSetting(transactionSetting: TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
         return this;
     }
 
@@ -200,6 +188,34 @@ export default class Namespace implements IModel {
         return this;
     }
 
+    public getQueueNamespaceId(): string|null {
+        return this.queueNamespaceId;
+    }
+
+    public setQueueNamespaceId(queueNamespaceId: string|null) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    }
+
+    public withQueueNamespaceId(queueNamespaceId: string|null): this {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    }
+
+    public getKeyId(): string|null {
+        return this.keyId;
+    }
+
+    public setKeyId(keyId: string|null) {
+        this.keyId = keyId;
+        return this;
+    }
+
+    public withKeyId(keyId: string|null): this {
+        this.keyId = keyId;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): Namespace|null {
         if (data == undefined || data == null) {
             return null;
@@ -207,24 +223,26 @@ export default class Namespace implements IModel {
         return new Namespace()
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
-            .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
             .withDescription(data["description"])
+            .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withQueueNamespaceId(data["queueNamespaceId"])
+            .withKeyId(data["keyId"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
-            "queueNamespaceId": this.getQueueNamespaceId(),
-            "keyId": this.getKeyId(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "queueNamespaceId": this.getQueueNamespaceId(),
+            "keyId": this.getKeyId(),
         };
     }
 }

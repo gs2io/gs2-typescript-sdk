@@ -26,10 +26,11 @@ export default class CreateNamespaceRequest implements IRequest {
     private description: string|null = null;
     private enableAwaitExchange: boolean|null = null;
     private enableDirectExchange: boolean|null = null;
-    private queueNamespaceId: string|null = null;
-    private keyId: string|null = null;
+    private transactionSetting: Gs2Exchange.TransactionSetting|null = null;
     private exchangeScript: Gs2Exchange.ScriptSetting|null = null;
     private logSetting: Gs2Exchange.LogSetting|null = null;
+    private queueNamespaceId: string|null = null;
+    private keyId: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -115,31 +116,17 @@ export default class CreateNamespaceRequest implements IRequest {
         return this;
     }
 
-    public getQueueNamespaceId(): string|null {
-        return this.queueNamespaceId;
+    public getTransactionSetting(): Gs2Exchange.TransactionSetting|null {
+        return this.transactionSetting;
     }
 
-    public setQueueNamespaceId(queueNamespaceId: string|null) {
-        this.queueNamespaceId = queueNamespaceId;
+    public setTransactionSetting(transactionSetting: Gs2Exchange.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
         return this;
     }
 
-    public withQueueNamespaceId(queueNamespaceId: string|null): this {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    }
-
-    public getKeyId(): string|null {
-        return this.keyId;
-    }
-
-    public setKeyId(keyId: string|null) {
-        this.keyId = keyId;
-        return this;
-    }
-
-    public withKeyId(keyId: string|null): this {
-        this.keyId = keyId;
+    public withTransactionSetting(transactionSetting: Gs2Exchange.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
         return this;
     }
 
@@ -171,16 +158,45 @@ export default class CreateNamespaceRequest implements IRequest {
         return this;
     }
 
+    public getQueueNamespaceId(): string|null {
+        return this.queueNamespaceId;
+    }
+
+    public setQueueNamespaceId(queueNamespaceId: string|null) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    }
+
+    public withQueueNamespaceId(queueNamespaceId: string|null): this {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    }
+
+    public getKeyId(): string|null {
+        return this.keyId;
+    }
+
+    public setKeyId(keyId: string|null) {
+        this.keyId = keyId;
+        return this;
+    }
+
+    public withKeyId(keyId: string|null): this {
+        this.keyId = keyId;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): CreateNamespaceRequest {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
             .withEnableAwaitExchange(data["enableAwaitExchange"])
             .withEnableDirectExchange(data["enableDirectExchange"])
-            .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
+            .withTransactionSetting(Gs2Exchange.TransactionSetting.fromDict(data["transactionSetting"]))
             .withExchangeScript(Gs2Exchange.ScriptSetting.fromDict(data["exchangeScript"]))
-            .withLogSetting(Gs2Exchange.LogSetting.fromDict(data["logSetting"]));
+            .withLogSetting(Gs2Exchange.LogSetting.fromDict(data["logSetting"]))
+            .withQueueNamespaceId(data["queueNamespaceId"])
+            .withKeyId(data["keyId"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -189,10 +205,11 @@ export default class CreateNamespaceRequest implements IRequest {
             "description": this.getDescription(),
             "enableAwaitExchange": this.getEnableAwaitExchange(),
             "enableDirectExchange": this.getEnableDirectExchange(),
-            "queueNamespaceId": this.getQueueNamespaceId(),
-            "keyId": this.getKeyId(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "exchangeScript": this.getExchangeScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
+            "queueNamespaceId": this.getQueueNamespaceId(),
+            "keyId": this.getKeyId(),
         };
     }
 }

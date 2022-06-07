@@ -24,10 +24,11 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.enableDirectEnhance = null;
-        this.queueNamespaceId = null;
-        this.keyId = null;
+        this.transactionSetting = null;
         this.enhanceScript = null;
         this.logSetting = null;
+        this.queueNamespaceId = null;
+        this.keyId = null;
     }
     CreateNamespaceRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -84,26 +85,15 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.enableDirectEnhance = enableDirectEnhance;
         return this;
     };
-    CreateNamespaceRequest.prototype.getQueueNamespaceId = function () {
-        return this.queueNamespaceId;
+    CreateNamespaceRequest.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
     };
-    CreateNamespaceRequest.prototype.setQueueNamespaceId = function (queueNamespaceId) {
-        this.queueNamespaceId = queueNamespaceId;
+    CreateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
-    CreateNamespaceRequest.prototype.withQueueNamespaceId = function (queueNamespaceId) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    };
-    CreateNamespaceRequest.prototype.getKeyId = function () {
-        return this.keyId;
-    };
-    CreateNamespaceRequest.prototype.setKeyId = function (keyId) {
-        this.keyId = keyId;
-        return this;
-    };
-    CreateNamespaceRequest.prototype.withKeyId = function (keyId) {
-        this.keyId = keyId;
+    CreateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
     CreateNamespaceRequest.prototype.getEnhanceScript = function () {
@@ -128,26 +118,50 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.logSetting = logSetting;
         return this;
     };
+    CreateNamespaceRequest.prototype.getQueueNamespaceId = function () {
+        return this.queueNamespaceId;
+    };
+    CreateNamespaceRequest.prototype.setQueueNamespaceId = function (queueNamespaceId) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withQueueNamespaceId = function (queueNamespaceId) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getKeyId = function () {
+        return this.keyId;
+    };
+    CreateNamespaceRequest.prototype.setKeyId = function (keyId) {
+        this.keyId = keyId;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withKeyId = function (keyId) {
+        this.keyId = keyId;
+        return this;
+    };
     CreateNamespaceRequest.fromDict = function (data) {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
             .withEnableDirectEnhance(data["enableDirectEnhance"])
-            .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
+            .withTransactionSetting(Gs2Enhance.TransactionSetting.fromDict(data["transactionSetting"]))
             .withEnhanceScript(Gs2Enhance.ScriptSetting.fromDict(data["enhanceScript"]))
-            .withLogSetting(Gs2Enhance.LogSetting.fromDict(data["logSetting"]));
+            .withLogSetting(Gs2Enhance.LogSetting.fromDict(data["logSetting"]))
+            .withQueueNamespaceId(data["queueNamespaceId"])
+            .withKeyId(data["keyId"]);
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
             "enableDirectEnhance": this.getEnableDirectEnhance(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "enhanceScript": (_b = this.getEnhanceScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
-            "enhanceScript": (_a = this.getEnhanceScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return CreateNamespaceRequest;

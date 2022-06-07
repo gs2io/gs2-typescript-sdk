@@ -17,9 +17,22 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var StartByUserIdResult = /** @class */ (function () {
     function StartByUserIdResult() {
+        this.transactionId = null;
         this.stampSheet = null;
         this.stampSheetEncryptionKeyId = null;
+        this.autoRunStampSheet = null;
     }
+    StartByUserIdResult.prototype.getTransactionId = function () {
+        return this.transactionId;
+    };
+    StartByUserIdResult.prototype.setTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    };
+    StartByUserIdResult.prototype.withTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    };
     StartByUserIdResult.prototype.getStampSheet = function () {
         return this.stampSheet;
     };
@@ -42,15 +55,30 @@ var StartByUserIdResult = /** @class */ (function () {
         this.stampSheetEncryptionKeyId = stampSheetEncryptionKeyId;
         return this;
     };
+    StartByUserIdResult.prototype.getAutoRunStampSheet = function () {
+        return this.autoRunStampSheet;
+    };
+    StartByUserIdResult.prototype.setAutoRunStampSheet = function (autoRunStampSheet) {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    };
+    StartByUserIdResult.prototype.withAutoRunStampSheet = function (autoRunStampSheet) {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    };
     StartByUserIdResult.fromDict = function (data) {
         return new StartByUserIdResult()
+            .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
-            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"]);
+            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
+            .withAutoRunStampSheet(data["autoRunStampSheet"]);
     };
     StartByUserIdResult.prototype.toDict = function () {
         return {
+            "transactionId": this.getTransactionId(),
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
+            "autoRunStampSheet": this.getAutoRunStampSheet(),
         };
     };
     return StartByUserIdResult;

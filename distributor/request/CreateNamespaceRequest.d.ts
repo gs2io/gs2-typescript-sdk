@@ -6,6 +6,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private name;
     private description;
     private assumeUserId;
+    private autoRunStampSheetNotification;
     private logSetting;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -22,6 +23,9 @@ export default class CreateNamespaceRequest implements IRequest {
     getAssumeUserId(): string | null;
     setAssumeUserId(assumeUserId: string | null): this;
     withAssumeUserId(assumeUserId: string | null): this;
+    getAutoRunStampSheetNotification(): Gs2Distributor.NotificationSetting | null;
+    setAutoRunStampSheetNotification(autoRunStampSheetNotification: Gs2Distributor.NotificationSetting | null): this;
+    withAutoRunStampSheetNotification(autoRunStampSheetNotification: Gs2Distributor.NotificationSetting | null): this;
     getLogSetting(): Gs2Distributor.LogSetting | null;
     setLogSetting(logSetting: Gs2Distributor.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Distributor.LogSetting | null): this;

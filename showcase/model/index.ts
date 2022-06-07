@@ -18,16 +18,17 @@ import SalesItemMaster from "./SalesItemMaster"
 import SalesItemGroupMaster from "./SalesItemGroupMaster"
 import ShowcaseMaster from "./ShowcaseMaster"
 import CurrentShowcaseMaster from "./CurrentShowcaseMaster"
-import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
-import LogSetting from "./LogSetting"
 import SalesItem from "./SalesItem"
 import SalesItemGroup from "./SalesItemGroup"
 import Showcase from "./Showcase"
 import DisplayItem from "./DisplayItem"
-import Config from "./Config"
+import DisplayItemMaster from "./DisplayItemMaster"
 import ConsumeAction from "./ConsumeAction"
 import AcquireAction from "./AcquireAction"
-import DisplayItemMaster from "./DisplayItemMaster"
+import Config from "./Config"
+import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
+import LogSetting from "./LogSetting"
+import TransactionSetting from "./TransactionSetting"
 
 export {
     Namespace,
@@ -35,14 +36,15 @@ export {
     SalesItemGroupMaster,
     ShowcaseMaster,
     CurrentShowcaseMaster,
-    GitHubCheckoutSetting,
-    LogSetting,
     SalesItem,
     SalesItemGroup,
     Showcase,
     DisplayItem,
-    Config,
+    DisplayItemMaster,
     ConsumeAction,
     AcquireAction,
-    DisplayItemMaster,
+    Config,
+    GitHubCheckoutSetting,
+    LogSetting,
+    TransactionSetting,
 };

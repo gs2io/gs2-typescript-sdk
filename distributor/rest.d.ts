@@ -29,4 +29,6 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     runStampTaskWithoutNamespace(request: Request.RunStampTaskWithoutNamespaceRequest): Promise<Result.RunStampTaskWithoutNamespaceResult>;
     runStampSheetWithoutNamespace(request: Request.RunStampSheetWithoutNamespaceRequest): Promise<Result.RunStampSheetWithoutNamespaceResult>;
     runStampSheetExpressWithoutNamespace(request: Request.RunStampSheetExpressWithoutNamespaceRequest): Promise<Result.RunStampSheetExpressWithoutNamespaceResult>;
+    getStampSheetResult(request: Request.GetStampSheetResultRequest): Promise<Result.GetStampSheetResultResult>;
+    getStampSheetResultByUserId(request: Request.GetStampSheetResultByUserIdRequest): Promise<Result.GetStampSheetResultByUserIdResult>;
 }

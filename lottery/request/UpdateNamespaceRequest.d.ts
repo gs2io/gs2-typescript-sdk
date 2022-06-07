@@ -5,11 +5,12 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private description;
-    private queueNamespaceId;
-    private keyId;
+    private transactionSetting;
     private lotteryTriggerScriptId;
     private choicePrizeTableScriptId;
     private logSetting;
+    private queueNamespaceId;
+    private keyId;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -22,12 +23,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
-    getQueueNamespaceId(): string | null;
-    setQueueNamespaceId(queueNamespaceId: string | null): this;
-    withQueueNamespaceId(queueNamespaceId: string | null): this;
-    getKeyId(): string | null;
-    setKeyId(keyId: string | null): this;
-    withKeyId(keyId: string | null): this;
+    getTransactionSetting(): Gs2Lottery.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Lottery.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Lottery.TransactionSetting | null): this;
     getLotteryTriggerScriptId(): string | null;
     setLotteryTriggerScriptId(lotteryTriggerScriptId: string | null): this;
     withLotteryTriggerScriptId(lotteryTriggerScriptId: string | null): this;
@@ -37,6 +35,12 @@ export default class UpdateNamespaceRequest implements IRequest {
     getLogSetting(): Gs2Lottery.LogSetting | null;
     setLogSetting(logSetting: Gs2Lottery.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Lottery.LogSetting | null): this;
+    getQueueNamespaceId(): string | null;
+    setQueueNamespaceId(queueNamespaceId: string | null): this;
+    withQueueNamespaceId(queueNamespaceId: string | null): this;
+    getKeyId(): string | null;
+    setKeyId(keyId: string | null): this;
+    withKeyId(keyId: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): UpdateNamespaceRequest;

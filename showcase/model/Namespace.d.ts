@@ -1,14 +1,16 @@
 import IModel from '../../core/interface/IModel';
+import TransactionSetting from './TransactionSetting';
 import LogSetting from './LogSetting';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
-    private queueNamespaceId;
-    private keyId;
     private description;
+    private transactionSetting;
     private logSetting;
     private createdAt;
     private updatedAt;
+    private queueNamespaceId;
+    private keyId;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -20,15 +22,12 @@ export default class Namespace implements IModel {
     getName(): string | null;
     setName(name: string | null): this;
     withName(name: string | null): this;
-    getQueueNamespaceId(): string | null;
-    setQueueNamespaceId(queueNamespaceId: string | null): this;
-    withQueueNamespaceId(queueNamespaceId: string | null): this;
-    getKeyId(): string | null;
-    setKeyId(keyId: string | null): this;
-    withKeyId(keyId: string | null): this;
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): TransactionSetting | null;
+    setTransactionSetting(transactionSetting: TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: TransactionSetting | null): this;
     getLogSetting(): LogSetting | null;
     setLogSetting(logSetting: LogSetting | null): this;
     withLogSetting(logSetting: LogSetting | null): this;
@@ -38,6 +37,12 @@ export default class Namespace implements IModel {
     getUpdatedAt(): number | null;
     setUpdatedAt(updatedAt: number | null): this;
     withUpdatedAt(updatedAt: number | null): this;
+    getQueueNamespaceId(): string | null;
+    setQueueNamespaceId(queueNamespaceId: string | null): this;
+    withQueueNamespaceId(queueNamespaceId: string | null): this;
+    getKeyId(): string | null;
+    setKeyId(keyId: string | null): this;
+    withKeyId(keyId: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): Namespace | null;

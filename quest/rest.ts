@@ -67,12 +67,13 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'startQuestScript': request.getStartQuestScript()?.toDict() ?? null,
             'completeQuestScript': request.getCompleteQuestScript()?.toDict() ?? null,
             'failedQuestScript': request.getFailedQuestScript()?.toDict() ?? null,
+            'logSetting': request.getLogSetting()?.toDict() ?? null,
             'queueNamespaceId': request.getQueueNamespaceId() ?? null,
             'keyId': request.getKeyId() ?? null,
-            'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.post(
             url,
@@ -156,12 +157,13 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'startQuestScript': request.getStartQuestScript()?.toDict() ?? null,
             'completeQuestScript': request.getCompleteQuestScript()?.toDict() ?? null,
             'failedQuestScript': request.getFailedQuestScript()?.toDict() ?? null,
+            'logSetting': request.getLogSetting()?.toDict() ?? null,
             'queueNamespaceId': request.getQueueNamespaceId() ?? null,
             'keyId': request.getKeyId() ?? null,
-            'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.put(
             url,

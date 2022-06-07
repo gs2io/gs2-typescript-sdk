@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Config = exports.BoxItems = exports.BoxItem = exports.DrawnPrize = exports.AcquireAction = exports.Prize = exports.LogSetting = exports.GitHubCheckoutSetting = exports.CurrentLotteryMaster = exports.Probability = exports.PrizeTable = exports.LotteryModel = exports.Box = exports.PrizeTableMaster = exports.LotteryModelMaster = exports.Namespace = void 0;
+exports.TransactionSetting = exports.LogSetting = exports.GitHubCheckoutSetting = exports.Config = exports.AcquireAction = exports.BoxItems = exports.BoxItem = exports.DrawnPrize = exports.Prize = exports.CurrentLotteryMaster = exports.Probability = exports.PrizeTable = exports.LotteryModel = exports.Box = exports.PrizeTableMaster = exports.LotteryModelMaster = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -33,20 +33,22 @@ var Probability_1 = tslib_1.__importDefault(require("./Probability"));
 exports.Probability = Probability_1.default;
 var CurrentLotteryMaster_1 = tslib_1.__importDefault(require("./CurrentLotteryMaster"));
 exports.CurrentLotteryMaster = CurrentLotteryMaster_1.default;
-var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
-exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
-exports.LogSetting = LogSetting_1.default;
 var Prize_1 = tslib_1.__importDefault(require("./Prize"));
 exports.Prize = Prize_1.default;
-var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
-exports.AcquireAction = AcquireAction_1.default;
 var DrawnPrize_1 = tslib_1.__importDefault(require("./DrawnPrize"));
 exports.DrawnPrize = DrawnPrize_1.default;
 var BoxItem_1 = tslib_1.__importDefault(require("./BoxItem"));
 exports.BoxItem = BoxItem_1.default;
 var BoxItems_1 = tslib_1.__importDefault(require("./BoxItems"));
 exports.BoxItems = BoxItems_1.default;
+var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
+exports.AcquireAction = AcquireAction_1.default;
 var Config_1 = tslib_1.__importDefault(require("./Config"));
 exports.Config = Config_1.default;
+var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
+exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
+var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+exports.LogSetting = LogSetting_1.default;
+var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
+exports.TransactionSetting = TransactionSetting_1.default;
 //# sourceMappingURL=index.js.map

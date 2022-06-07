@@ -16,6 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
+var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
 var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:quest:{namespaceName}";
@@ -24,14 +25,15 @@ var Namespace = /** @class */ (function () {
         this.namespaceId = null;
         this.name = null;
         this.description = null;
+        this.transactionSetting = null;
         this.startQuestScript = null;
         this.completeQuestScript = null;
         this.failedQuestScript = null;
-        this.queueNamespaceId = null;
-        this.keyId = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.queueNamespaceId = null;
+        this.keyId = null;
     }
     Namespace.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -114,6 +116,17 @@ var Namespace = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    Namespace.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    Namespace.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    Namespace.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
     Namespace.prototype.getStartQuestScript = function () {
         return this.startQuestScript;
     };
@@ -145,28 +158,6 @@ var Namespace = /** @class */ (function () {
     };
     Namespace.prototype.withFailedQuestScript = function (failedQuestScript) {
         this.failedQuestScript = failedQuestScript;
-        return this;
-    };
-    Namespace.prototype.getQueueNamespaceId = function () {
-        return this.queueNamespaceId;
-    };
-    Namespace.prototype.setQueueNamespaceId = function (queueNamespaceId) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    };
-    Namespace.prototype.withQueueNamespaceId = function (queueNamespaceId) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    };
-    Namespace.prototype.getKeyId = function () {
-        return this.keyId;
-    };
-    Namespace.prototype.setKeyId = function (keyId) {
-        this.keyId = keyId;
-        return this;
-    };
-    Namespace.prototype.withKeyId = function (keyId) {
-        this.keyId = keyId;
         return this;
     };
     Namespace.prototype.getLogSetting = function () {
@@ -202,6 +193,28 @@ var Namespace = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Namespace.prototype.getQueueNamespaceId = function () {
+        return this.queueNamespaceId;
+    };
+    Namespace.prototype.setQueueNamespaceId = function (queueNamespaceId) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    };
+    Namespace.prototype.withQueueNamespaceId = function (queueNamespaceId) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    };
+    Namespace.prototype.getKeyId = function () {
+        return this.keyId;
+    };
+    Namespace.prototype.setKeyId = function (keyId) {
+        this.keyId = keyId;
+        return this;
+    };
+    Namespace.prototype.withKeyId = function (keyId) {
+        this.keyId = keyId;
+        return this;
+    };
     Namespace.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -210,29 +223,31 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
             .withStartQuestScript(ScriptSetting_1.default.fromDict(data["startQuestScript"]))
             .withCompleteQuestScript(ScriptSetting_1.default.fromDict(data["completeQuestScript"]))
             .withFailedQuestScript(ScriptSetting_1.default.fromDict(data["failedQuestScript"]))
-            .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withQueueNamespaceId(data["queueNamespaceId"])
+            .withKeyId(data["keyId"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
-            "startQuestScript": (_a = this.getStartQuestScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "completeQuestScript": (_b = this.getCompleteQuestScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "failedQuestScript": (_c = this.getFailedQuestScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "queueNamespaceId": this.getQueueNamespaceId(),
-            "keyId": this.getKeyId(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "startQuestScript": (_b = this.getStartQuestScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "completeQuestScript": (_c = this.getCompleteQuestScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "failedQuestScript": (_d = this.getFailedQuestScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "queueNamespaceId": this.getQueueNamespaceId(),
+            "keyId": this.getKeyId(),
         };
     };
     return Namespace;

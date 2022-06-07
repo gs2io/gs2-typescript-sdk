@@ -67,6 +67,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'updateMoldScript': request.getUpdateMoldScript()?.toDict() ?? null,
             'updateFormScript': request.getUpdateFormScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
@@ -153,6 +154,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'updateMoldScript': request.getUpdateMoldScript()?.toDict() ?? null,
             'updateFormScript': request.getUpdateFormScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
@@ -1261,8 +1263,6 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'acquireAction': request.getAcquireAction()?.toDict() ?? null,
-            'queueNamespaceId': request.getQueueNamespaceId() ?? null,
-            'keyId': request.getKeyId() ?? null,
             'config': request.getConfig()?.map((item) => item.toDict()) ?? null,
         };
         return axios.post(

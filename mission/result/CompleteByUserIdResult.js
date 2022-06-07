@@ -17,9 +17,22 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var CompleteByUserIdResult = /** @class */ (function () {
     function CompleteByUserIdResult() {
+        this.transactionId = null;
         this.stampSheet = null;
         this.stampSheetEncryptionKeyId = null;
+        this.autoRunStampSheet = null;
     }
+    CompleteByUserIdResult.prototype.getTransactionId = function () {
+        return this.transactionId;
+    };
+    CompleteByUserIdResult.prototype.setTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    };
+    CompleteByUserIdResult.prototype.withTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    };
     CompleteByUserIdResult.prototype.getStampSheet = function () {
         return this.stampSheet;
     };
@@ -42,15 +55,30 @@ var CompleteByUserIdResult = /** @class */ (function () {
         this.stampSheetEncryptionKeyId = stampSheetEncryptionKeyId;
         return this;
     };
+    CompleteByUserIdResult.prototype.getAutoRunStampSheet = function () {
+        return this.autoRunStampSheet;
+    };
+    CompleteByUserIdResult.prototype.setAutoRunStampSheet = function (autoRunStampSheet) {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    };
+    CompleteByUserIdResult.prototype.withAutoRunStampSheet = function (autoRunStampSheet) {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    };
     CompleteByUserIdResult.fromDict = function (data) {
         return new CompleteByUserIdResult()
+            .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
-            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"]);
+            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
+            .withAutoRunStampSheet(data["autoRunStampSheet"]);
     };
     CompleteByUserIdResult.prototype.toDict = function () {
         return {
+            "transactionId": this.getTransactionId(),
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
+            "autoRunStampSheet": this.getAutoRunStampSheet(),
         };
     };
     return CompleteByUserIdResult;

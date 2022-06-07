@@ -5,6 +5,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private description;
+    private transactionSetting;
     private updateMoldScript;
     private updateFormScript;
     private logSetting;
@@ -20,6 +21,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Formation.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Formation.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Formation.TransactionSetting | null): this;
     getUpdateMoldScript(): Gs2Formation.ScriptSetting | null;
     setUpdateMoldScript(updateMoldScript: Gs2Formation.ScriptSetting | null): this;
     withUpdateMoldScript(updateMoldScript: Gs2Formation.ScriptSetting | null): this;

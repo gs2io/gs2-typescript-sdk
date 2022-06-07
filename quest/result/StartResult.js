@@ -17,9 +17,22 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var StartResult = /** @class */ (function () {
     function StartResult() {
+        this.transactionId = null;
         this.stampSheet = null;
         this.stampSheetEncryptionKeyId = null;
+        this.autoRunStampSheet = null;
     }
+    StartResult.prototype.getTransactionId = function () {
+        return this.transactionId;
+    };
+    StartResult.prototype.setTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    };
+    StartResult.prototype.withTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    };
     StartResult.prototype.getStampSheet = function () {
         return this.stampSheet;
     };
@@ -42,15 +55,30 @@ var StartResult = /** @class */ (function () {
         this.stampSheetEncryptionKeyId = stampSheetEncryptionKeyId;
         return this;
     };
+    StartResult.prototype.getAutoRunStampSheet = function () {
+        return this.autoRunStampSheet;
+    };
+    StartResult.prototype.setAutoRunStampSheet = function (autoRunStampSheet) {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    };
+    StartResult.prototype.withAutoRunStampSheet = function (autoRunStampSheet) {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    };
     StartResult.fromDict = function (data) {
         return new StartResult()
+            .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
-            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"]);
+            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
+            .withAutoRunStampSheet(data["autoRunStampSheet"]);
     };
     StartResult.prototype.toDict = function () {
         return {
+            "transactionId": this.getTransactionId(),
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
+            "autoRunStampSheet": this.getAutoRunStampSheet(),
         };
     };
     return StartResult;

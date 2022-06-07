@@ -24,13 +24,14 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Mission.TransactionSetting|null = null;
     private missionCompleteScript: Gs2Mission.ScriptSetting|null = null;
     private counterIncrementScript: Gs2Mission.ScriptSetting|null = null;
     private receiveRewardsScript: Gs2Mission.ScriptSetting|null = null;
-    private queueNamespaceId: string|null = null;
-    private keyId: string|null = null;
     private completeNotification: Gs2Mission.NotificationSetting|null = null;
     private logSetting: Gs2Mission.LogSetting|null = null;
+    private queueNamespaceId: string|null = null;
+    private keyId: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -88,6 +89,20 @@ export default class CreateNamespaceRequest implements IRequest {
         return this;
     }
 
+    public getTransactionSetting(): Gs2Mission.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+
+    public setTransactionSetting(transactionSetting: Gs2Mission.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+
+    public withTransactionSetting(transactionSetting: Gs2Mission.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+
     public getMissionCompleteScript(): Gs2Mission.ScriptSetting|null {
         return this.missionCompleteScript;
     }
@@ -130,34 +145,6 @@ export default class CreateNamespaceRequest implements IRequest {
         return this;
     }
 
-    public getQueueNamespaceId(): string|null {
-        return this.queueNamespaceId;
-    }
-
-    public setQueueNamespaceId(queueNamespaceId: string|null) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    }
-
-    public withQueueNamespaceId(queueNamespaceId: string|null): this {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    }
-
-    public getKeyId(): string|null {
-        return this.keyId;
-    }
-
-    public setKeyId(keyId: string|null) {
-        this.keyId = keyId;
-        return this;
-    }
-
-    public withKeyId(keyId: string|null): this {
-        this.keyId = keyId;
-        return this;
-    }
-
     public getCompleteNotification(): Gs2Mission.NotificationSetting|null {
         return this.completeNotification;
     }
@@ -186,30 +173,60 @@ export default class CreateNamespaceRequest implements IRequest {
         return this;
     }
 
+    public getQueueNamespaceId(): string|null {
+        return this.queueNamespaceId;
+    }
+
+    public setQueueNamespaceId(queueNamespaceId: string|null) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    }
+
+    public withQueueNamespaceId(queueNamespaceId: string|null): this {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    }
+
+    public getKeyId(): string|null {
+        return this.keyId;
+    }
+
+    public setKeyId(keyId: string|null) {
+        this.keyId = keyId;
+        return this;
+    }
+
+    public withKeyId(keyId: string|null): this {
+        this.keyId = keyId;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): CreateNamespaceRequest {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Mission.TransactionSetting.fromDict(data["transactionSetting"]))
             .withMissionCompleteScript(Gs2Mission.ScriptSetting.fromDict(data["missionCompleteScript"]))
             .withCounterIncrementScript(Gs2Mission.ScriptSetting.fromDict(data["counterIncrementScript"]))
             .withReceiveRewardsScript(Gs2Mission.ScriptSetting.fromDict(data["receiveRewardsScript"]))
-            .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
             .withCompleteNotification(Gs2Mission.NotificationSetting.fromDict(data["completeNotification"]))
-            .withLogSetting(Gs2Mission.LogSetting.fromDict(data["logSetting"]));
+            .withLogSetting(Gs2Mission.LogSetting.fromDict(data["logSetting"]))
+            .withQueueNamespaceId(data["queueNamespaceId"])
+            .withKeyId(data["keyId"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "missionCompleteScript": this.getMissionCompleteScript()?.toDict(),
             "counterIncrementScript": this.getCounterIncrementScript()?.toDict(),
             "receiveRewardsScript": this.getReceiveRewardsScript()?.toDict(),
-            "queueNamespaceId": this.getQueueNamespaceId(),
-            "keyId": this.getKeyId(),
             "completeNotification": this.getCompleteNotification()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
+            "queueNamespaceId": this.getQueueNamespaceId(),
+            "keyId": this.getKeyId(),
         };
     }
 }

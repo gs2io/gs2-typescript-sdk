@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Material = exports.BonusRate = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.CurrentRateMaster = exports.Progress = exports.RateModelMaster = exports.RateModel = exports.Namespace = void 0;
+exports.TransactionSetting = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.Material = exports.BonusRate = exports.CurrentRateMaster = exports.Progress = exports.RateModelMaster = exports.RateModel = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -27,6 +27,10 @@ var Progress_1 = tslib_1.__importDefault(require("./Progress"));
 exports.Progress = Progress_1.default;
 var CurrentRateMaster_1 = tslib_1.__importDefault(require("./CurrentRateMaster"));
 exports.CurrentRateMaster = CurrentRateMaster_1.default;
+var BonusRate_1 = tslib_1.__importDefault(require("./BonusRate"));
+exports.BonusRate = BonusRate_1.default;
+var Material_1 = tslib_1.__importDefault(require("./Material"));
+exports.Material = Material_1.default;
 var Config_1 = tslib_1.__importDefault(require("./Config"));
 exports.Config = Config_1.default;
 var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
@@ -35,8 +39,6 @@ var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 exports.ScriptSetting = ScriptSetting_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
-var BonusRate_1 = tslib_1.__importDefault(require("./BonusRate"));
-exports.BonusRate = BonusRate_1.default;
-var Material_1 = tslib_1.__importDefault(require("./Material"));
-exports.Material = Material_1.default;
+var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
+exports.TransactionSetting = TransactionSetting_1.default;
 //# sourceMappingURL=index.js.map

@@ -25,10 +25,11 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.description = null;
         this.enableAwaitExchange = null;
         this.enableDirectExchange = null;
-        this.queueNamespaceId = null;
-        this.keyId = null;
+        this.transactionSetting = null;
         this.exchangeScript = null;
         this.logSetting = null;
+        this.queueNamespaceId = null;
+        this.keyId = null;
     }
     UpdateNamespaceRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -96,26 +97,15 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.enableDirectExchange = enableDirectExchange;
         return this;
     };
-    UpdateNamespaceRequest.prototype.getQueueNamespaceId = function () {
-        return this.queueNamespaceId;
+    UpdateNamespaceRequest.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
     };
-    UpdateNamespaceRequest.prototype.setQueueNamespaceId = function (queueNamespaceId) {
-        this.queueNamespaceId = queueNamespaceId;
+    UpdateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
-    UpdateNamespaceRequest.prototype.withQueueNamespaceId = function (queueNamespaceId) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    };
-    UpdateNamespaceRequest.prototype.getKeyId = function () {
-        return this.keyId;
-    };
-    UpdateNamespaceRequest.prototype.setKeyId = function (keyId) {
-        this.keyId = keyId;
-        return this;
-    };
-    UpdateNamespaceRequest.prototype.withKeyId = function (keyId) {
-        this.keyId = keyId;
+    UpdateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
     UpdateNamespaceRequest.prototype.getExchangeScript = function () {
@@ -140,28 +130,52 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.logSetting = logSetting;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getQueueNamespaceId = function () {
+        return this.queueNamespaceId;
+    };
+    UpdateNamespaceRequest.prototype.setQueueNamespaceId = function (queueNamespaceId) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withQueueNamespaceId = function (queueNamespaceId) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getKeyId = function () {
+        return this.keyId;
+    };
+    UpdateNamespaceRequest.prototype.setKeyId = function (keyId) {
+        this.keyId = keyId;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withKeyId = function (keyId) {
+        this.keyId = keyId;
+        return this;
+    };
     UpdateNamespaceRequest.fromDict = function (data) {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
             .withEnableAwaitExchange(data["enableAwaitExchange"])
             .withEnableDirectExchange(data["enableDirectExchange"])
-            .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
+            .withTransactionSetting(Gs2Exchange.TransactionSetting.fromDict(data["transactionSetting"]))
             .withExchangeScript(Gs2Exchange.ScriptSetting.fromDict(data["exchangeScript"]))
-            .withLogSetting(Gs2Exchange.LogSetting.fromDict(data["logSetting"]));
+            .withLogSetting(Gs2Exchange.LogSetting.fromDict(data["logSetting"]))
+            .withQueueNamespaceId(data["queueNamespaceId"])
+            .withKeyId(data["keyId"]);
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
             "enableAwaitExchange": this.getEnableAwaitExchange(),
             "enableDirectExchange": this.getEnableDirectExchange(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "exchangeScript": (_b = this.getExchangeScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
-            "exchangeScript": (_a = this.getExchangeScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return UpdateNamespaceRequest;

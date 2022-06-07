@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RunStampSheetExpressWithoutNamespaceRequest = exports.RunStampSheetWithoutNamespaceRequest = exports.RunStampTaskWithoutNamespaceRequest = exports.RunStampSheetExpressRequest = exports.RunStampSheetRequest = exports.RunStampTaskRequest = exports.DistributeWithoutOverflowProcessRequest = exports.DistributeRequest = exports.UpdateCurrentDistributorMasterFromGitHubRequest = exports.UpdateCurrentDistributorMasterRequest = exports.GetCurrentDistributorMasterRequest = exports.ExportMasterRequest = exports.GetDistributorModelRequest = exports.DescribeDistributorModelsRequest = exports.DeleteDistributorModelMasterRequest = exports.UpdateDistributorModelMasterRequest = exports.GetDistributorModelMasterRequest = exports.CreateDistributorModelMasterRequest = exports.DescribeDistributorModelMastersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.GetStampSheetResultByUserIdRequest = exports.GetStampSheetResultRequest = exports.RunStampSheetExpressWithoutNamespaceRequest = exports.RunStampSheetWithoutNamespaceRequest = exports.RunStampTaskWithoutNamespaceRequest = exports.RunStampSheetExpressRequest = exports.RunStampSheetRequest = exports.RunStampTaskRequest = exports.DistributeWithoutOverflowProcessRequest = exports.DistributeRequest = exports.UpdateCurrentDistributorMasterFromGitHubRequest = exports.UpdateCurrentDistributorMasterRequest = exports.GetCurrentDistributorMasterRequest = exports.ExportMasterRequest = exports.GetDistributorModelRequest = exports.DescribeDistributorModelsRequest = exports.DeleteDistributorModelMasterRequest = exports.UpdateDistributorModelMasterRequest = exports.GetDistributorModelMasterRequest = exports.CreateDistributorModelMasterRequest = exports.DescribeDistributorModelMastersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -67,4 +67,8 @@ var RunStampSheetWithoutNamespaceRequest_1 = tslib_1.__importDefault(require("./
 exports.RunStampSheetWithoutNamespaceRequest = RunStampSheetWithoutNamespaceRequest_1.default;
 var RunStampSheetExpressWithoutNamespaceRequest_1 = tslib_1.__importDefault(require("./RunStampSheetExpressWithoutNamespaceRequest"));
 exports.RunStampSheetExpressWithoutNamespaceRequest = RunStampSheetExpressWithoutNamespaceRequest_1.default;
+var GetStampSheetResultRequest_1 = tslib_1.__importDefault(require("./GetStampSheetResultRequest"));
+exports.GetStampSheetResultRequest = GetStampSheetResultRequest_1.default;
+var GetStampSheetResultByUserIdRequest_1 = tslib_1.__importDefault(require("./GetStampSheetResultByUserIdRequest"));
+exports.GetStampSheetResultByUserIdRequest = GetStampSheetResultByUserIdRequest_1.default;
 //# sourceMappingURL=index.js.map

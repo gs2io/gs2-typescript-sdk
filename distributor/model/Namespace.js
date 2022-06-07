@@ -16,6 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
+var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:distributor:{namespaceName}";
 var Namespace = /** @class */ (function () {
@@ -24,6 +25,7 @@ var Namespace = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.assumeUserId = null;
+        this.autoRunStampSheetNotification = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -120,6 +122,17 @@ var Namespace = /** @class */ (function () {
         this.assumeUserId = assumeUserId;
         return this;
     };
+    Namespace.prototype.getAutoRunStampSheetNotification = function () {
+        return this.autoRunStampSheetNotification;
+    };
+    Namespace.prototype.setAutoRunStampSheetNotification = function (autoRunStampSheetNotification) {
+        this.autoRunStampSheetNotification = autoRunStampSheetNotification;
+        return this;
+    };
+    Namespace.prototype.withAutoRunStampSheetNotification = function (autoRunStampSheetNotification) {
+        this.autoRunStampSheetNotification = autoRunStampSheetNotification;
+        return this;
+    };
     Namespace.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -162,18 +175,20 @@ var Namespace = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withAssumeUserId(data["assumeUserId"])
+            .withAutoRunStampSheetNotification(NotificationSetting_1.default.fromDict(data["autoRunStampSheetNotification"]))
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
             "assumeUserId": this.getAssumeUserId(),
-            "logSetting": (_a = this.getLogSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "autoRunStampSheetNotification": (_a = this.getAutoRunStampSheetNotification()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

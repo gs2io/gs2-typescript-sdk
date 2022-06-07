@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}";
@@ -23,6 +24,7 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: TransactionSetting|null = null;
     private updateMoldScript: ScriptSetting|null = null;
     private updateFormScript: ScriptSetting|null = null;
     private logSetting: LogSetting|null = null;
@@ -131,6 +133,20 @@ export default class Namespace implements IModel {
         return this;
     }
 
+    public getTransactionSetting(): TransactionSetting|null {
+        return this.transactionSetting;
+    }
+
+    public setTransactionSetting(transactionSetting: TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+
+    public withTransactionSetting(transactionSetting: TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+
     public getUpdateMoldScript(): ScriptSetting|null {
         return this.updateMoldScript;
     }
@@ -209,6 +225,7 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
             .withUpdateMoldScript(ScriptSetting.fromDict(data["updateMoldScript"]))
             .withUpdateFormScript(ScriptSetting.fromDict(data["updateFormScript"]))
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
@@ -221,6 +238,7 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "updateMoldScript": this.getUpdateMoldScript()?.toDict(),
             "updateFormScript": this.getUpdateFormScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),

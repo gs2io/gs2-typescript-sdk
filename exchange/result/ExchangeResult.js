@@ -20,8 +20,10 @@ var Gs2Exchange = tslib_1.__importStar(require("../model"));
 var ExchangeResult = /** @class */ (function () {
     function ExchangeResult() {
         this.item = null;
+        this.transactionId = null;
         this.stampSheet = null;
         this.stampSheetEncryptionKeyId = null;
+        this.autoRunStampSheet = null;
     }
     ExchangeResult.prototype.getItem = function () {
         return this.item;
@@ -32,6 +34,17 @@ var ExchangeResult = /** @class */ (function () {
     };
     ExchangeResult.prototype.withItem = function (item) {
         this.item = item;
+        return this;
+    };
+    ExchangeResult.prototype.getTransactionId = function () {
+        return this.transactionId;
+    };
+    ExchangeResult.prototype.setTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    };
+    ExchangeResult.prototype.withTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
         return this;
     };
     ExchangeResult.prototype.getStampSheet = function () {
@@ -56,18 +69,33 @@ var ExchangeResult = /** @class */ (function () {
         this.stampSheetEncryptionKeyId = stampSheetEncryptionKeyId;
         return this;
     };
+    ExchangeResult.prototype.getAutoRunStampSheet = function () {
+        return this.autoRunStampSheet;
+    };
+    ExchangeResult.prototype.setAutoRunStampSheet = function (autoRunStampSheet) {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    };
+    ExchangeResult.prototype.withAutoRunStampSheet = function (autoRunStampSheet) {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    };
     ExchangeResult.fromDict = function (data) {
         return new ExchangeResult()
             .withItem(Gs2Exchange.RateModel.fromDict(data["item"]))
+            .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
-            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"]);
+            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
+            .withAutoRunStampSheet(data["autoRunStampSheet"]);
     };
     ExchangeResult.prototype.toDict = function () {
         var _a;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "transactionId": this.getTransactionId(),
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
+            "autoRunStampSheet": this.getAutoRunStampSheet(),
         };
     };
     return ExchangeResult;

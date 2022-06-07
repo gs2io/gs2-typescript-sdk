@@ -1,4 +1,5 @@
 import IModel from '../../core/interface/IModel';
+import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
@@ -6,15 +7,16 @@ export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
+    private transactionSetting;
     private missionCompleteScript;
     private counterIncrementScript;
     private receiveRewardsScript;
-    private queueNamespaceId;
-    private keyId;
     private completeNotification;
     private logSetting;
     private createdAt;
     private updatedAt;
+    private queueNamespaceId;
+    private keyId;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -29,6 +31,9 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): TransactionSetting | null;
+    setTransactionSetting(transactionSetting: TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: TransactionSetting | null): this;
     getMissionCompleteScript(): ScriptSetting | null;
     setMissionCompleteScript(missionCompleteScript: ScriptSetting | null): this;
     withMissionCompleteScript(missionCompleteScript: ScriptSetting | null): this;
@@ -38,12 +43,6 @@ export default class Namespace implements IModel {
     getReceiveRewardsScript(): ScriptSetting | null;
     setReceiveRewardsScript(receiveRewardsScript: ScriptSetting | null): this;
     withReceiveRewardsScript(receiveRewardsScript: ScriptSetting | null): this;
-    getQueueNamespaceId(): string | null;
-    setQueueNamespaceId(queueNamespaceId: string | null): this;
-    withQueueNamespaceId(queueNamespaceId: string | null): this;
-    getKeyId(): string | null;
-    setKeyId(keyId: string | null): this;
-    withKeyId(keyId: string | null): this;
     getCompleteNotification(): NotificationSetting | null;
     setCompleteNotification(completeNotification: NotificationSetting | null): this;
     withCompleteNotification(completeNotification: NotificationSetting | null): this;
@@ -56,6 +55,12 @@ export default class Namespace implements IModel {
     getUpdatedAt(): number | null;
     setUpdatedAt(updatedAt: number | null): this;
     withUpdatedAt(updatedAt: number | null): this;
+    getQueueNamespaceId(): string | null;
+    setQueueNamespaceId(queueNamespaceId: string | null): this;
+    withQueueNamespaceId(queueNamespaceId: string | null): this;
+    getKeyId(): string | null;
+    setKeyId(keyId: string | null): this;
+    withKeyId(keyId: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): Namespace | null;

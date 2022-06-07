@@ -49,7 +49,7 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExchangeRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region);
@@ -63,10 +63,11 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
             'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
             'enableAwaitExchange': (_d = request.getEnableAwaitExchange()) !== null && _d !== void 0 ? _d : null,
             'enableDirectExchange': (_e = request.getEnableDirectExchange()) !== null && _e !== void 0 ? _e : null,
-            'queueNamespaceId': (_f = request.getQueueNamespaceId()) !== null && _f !== void 0 ? _f : null,
-            'keyId': (_g = request.getKeyId()) !== null && _g !== void 0 ? _g : null,
+            'transactionSetting': (_g = (_f = request.getTransactionSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
             'exchangeScript': (_j = (_h = request.getExchangeScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
             'logSetting': (_l = (_k = request.getLogSetting()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'queueNamespaceId': (_m = request.getQueueNamespaceId()) !== null && _m !== void 0 ? _m : null,
+            'keyId': (_o = request.getKeyId()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -126,7 +127,7 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExchangeRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
@@ -140,10 +141,11 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
             'enableAwaitExchange': (_e = request.getEnableAwaitExchange()) !== null && _e !== void 0 ? _e : null,
             'enableDirectExchange': (_f = request.getEnableDirectExchange()) !== null && _f !== void 0 ? _f : null,
-            'queueNamespaceId': (_g = request.getQueueNamespaceId()) !== null && _g !== void 0 ? _g : null,
-            'keyId': (_h = request.getKeyId()) !== null && _h !== void 0 ? _h : null,
+            'transactionSetting': (_h = (_g = request.getTransactionSetting()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
             'exchangeScript': (_k = (_j = request.getExchangeScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
             'logSetting': (_m = (_l = request.getLogSetting()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'queueNamespaceId': (_o = request.getQueueNamespaceId()) !== null && _o !== void 0 ? _o : null,
+            'keyId': (_p = request.getKeyId()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

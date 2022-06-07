@@ -23,13 +23,14 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.contextStack = null;
         this.name = null;
         this.description = null;
+        this.transactionSetting = null;
         this.missionCompleteScript = null;
         this.counterIncrementScript = null;
         this.receiveRewardsScript = null;
-        this.queueNamespaceId = null;
-        this.keyId = null;
         this.completeNotification = null;
         this.logSetting = null;
+        this.queueNamespaceId = null;
+        this.keyId = null;
     }
     CreateNamespaceRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -75,6 +76,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    CreateNamespaceRequest.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    CreateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
     CreateNamespaceRequest.prototype.getMissionCompleteScript = function () {
         return this.missionCompleteScript;
     };
@@ -108,28 +120,6 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.receiveRewardsScript = receiveRewardsScript;
         return this;
     };
-    CreateNamespaceRequest.prototype.getQueueNamespaceId = function () {
-        return this.queueNamespaceId;
-    };
-    CreateNamespaceRequest.prototype.setQueueNamespaceId = function (queueNamespaceId) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    };
-    CreateNamespaceRequest.prototype.withQueueNamespaceId = function (queueNamespaceId) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    };
-    CreateNamespaceRequest.prototype.getKeyId = function () {
-        return this.keyId;
-    };
-    CreateNamespaceRequest.prototype.setKeyId = function (keyId) {
-        this.keyId = keyId;
-        return this;
-    };
-    CreateNamespaceRequest.prototype.withKeyId = function (keyId) {
-        this.keyId = keyId;
-        return this;
-    };
     CreateNamespaceRequest.prototype.getCompleteNotification = function () {
         return this.completeNotification;
     };
@@ -152,30 +142,54 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.logSetting = logSetting;
         return this;
     };
+    CreateNamespaceRequest.prototype.getQueueNamespaceId = function () {
+        return this.queueNamespaceId;
+    };
+    CreateNamespaceRequest.prototype.setQueueNamespaceId = function (queueNamespaceId) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withQueueNamespaceId = function (queueNamespaceId) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getKeyId = function () {
+        return this.keyId;
+    };
+    CreateNamespaceRequest.prototype.setKeyId = function (keyId) {
+        this.keyId = keyId;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withKeyId = function (keyId) {
+        this.keyId = keyId;
+        return this;
+    };
     CreateNamespaceRequest.fromDict = function (data) {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Mission.TransactionSetting.fromDict(data["transactionSetting"]))
             .withMissionCompleteScript(Gs2Mission.ScriptSetting.fromDict(data["missionCompleteScript"]))
             .withCounterIncrementScript(Gs2Mission.ScriptSetting.fromDict(data["counterIncrementScript"]))
             .withReceiveRewardsScript(Gs2Mission.ScriptSetting.fromDict(data["receiveRewardsScript"]))
-            .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
             .withCompleteNotification(Gs2Mission.NotificationSetting.fromDict(data["completeNotification"]))
-            .withLogSetting(Gs2Mission.LogSetting.fromDict(data["logSetting"]));
+            .withLogSetting(Gs2Mission.LogSetting.fromDict(data["logSetting"]))
+            .withQueueNamespaceId(data["queueNamespaceId"])
+            .withKeyId(data["keyId"]);
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
-            "missionCompleteScript": (_a = this.getMissionCompleteScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "counterIncrementScript": (_b = this.getCounterIncrementScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "receiveRewardsScript": (_c = this.getReceiveRewardsScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "missionCompleteScript": (_b = this.getMissionCompleteScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "counterIncrementScript": (_c = this.getCounterIncrementScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "receiveRewardsScript": (_d = this.getReceiveRewardsScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "completeNotification": (_e = this.getCompleteNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
-            "completeNotification": (_d = this.getCompleteNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
         };
     };
     return CreateNamespaceRequest;

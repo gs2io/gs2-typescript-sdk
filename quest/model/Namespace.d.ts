@@ -1,18 +1,20 @@
 import IModel from '../../core/interface/IModel';
+import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
+    private transactionSetting;
     private startQuestScript;
     private completeQuestScript;
     private failedQuestScript;
-    private queueNamespaceId;
-    private keyId;
     private logSetting;
     private createdAt;
     private updatedAt;
+    private queueNamespaceId;
+    private keyId;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -27,6 +29,9 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): TransactionSetting | null;
+    setTransactionSetting(transactionSetting: TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: TransactionSetting | null): this;
     getStartQuestScript(): ScriptSetting | null;
     setStartQuestScript(startQuestScript: ScriptSetting | null): this;
     withStartQuestScript(startQuestScript: ScriptSetting | null): this;
@@ -36,12 +41,6 @@ export default class Namespace implements IModel {
     getFailedQuestScript(): ScriptSetting | null;
     setFailedQuestScript(failedQuestScript: ScriptSetting | null): this;
     withFailedQuestScript(failedQuestScript: ScriptSetting | null): this;
-    getQueueNamespaceId(): string | null;
-    setQueueNamespaceId(queueNamespaceId: string | null): this;
-    withQueueNamespaceId(queueNamespaceId: string | null): this;
-    getKeyId(): string | null;
-    setKeyId(keyId: string | null): this;
-    withKeyId(keyId: string | null): this;
     getLogSetting(): LogSetting | null;
     setLogSetting(logSetting: LogSetting | null): this;
     withLogSetting(logSetting: LogSetting | null): this;
@@ -51,6 +50,12 @@ export default class Namespace implements IModel {
     getUpdatedAt(): number | null;
     setUpdatedAt(updatedAt: number | null): this;
     withUpdatedAt(updatedAt: number | null): this;
+    getQueueNamespaceId(): string | null;
+    setQueueNamespaceId(queueNamespaceId: string | null): this;
+    withQueueNamespaceId(queueNamespaceId: string | null): this;
+    getKeyId(): string | null;
+    setKeyId(keyId: string | null): this;
+    withKeyId(keyId: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): Namespace | null;

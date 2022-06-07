@@ -24,6 +24,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Showcase.TransactionSetting|null = null;
     private queueNamespaceId: string|null = null;
     private keyId: string|null = null;
     private logSetting: Gs2Showcase.LogSetting|null = null;
@@ -84,6 +85,20 @@ export default class CreateNamespaceRequest implements IRequest {
         return this;
     }
 
+    public getTransactionSetting(): Gs2Showcase.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+
+    public setTransactionSetting(transactionSetting: Gs2Showcase.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+
+    public withTransactionSetting(transactionSetting: Gs2Showcase.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+
     public getQueueNamespaceId(): string|null {
         return this.queueNamespaceId;
     }
@@ -130,6 +145,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Showcase.TransactionSetting.fromDict(data["transactionSetting"]))
             .withQueueNamespaceId(data["queueNamespaceId"])
             .withKeyId(data["keyId"])
             .withLogSetting(Gs2Showcase.LogSetting.fromDict(data["logSetting"]));
@@ -139,6 +155,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
             "logSetting": this.getLogSetting()?.toDict(),

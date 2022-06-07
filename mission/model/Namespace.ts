@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
@@ -24,15 +25,16 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: TransactionSetting|null = null;
     private missionCompleteScript: ScriptSetting|null = null;
     private counterIncrementScript: ScriptSetting|null = null;
     private receiveRewardsScript: ScriptSetting|null = null;
-    private queueNamespaceId: string|null = null;
-    private keyId: string|null = null;
     private completeNotification: NotificationSetting|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
+    private queueNamespaceId: string|null = null;
+    private keyId: string|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -136,6 +138,20 @@ export default class Namespace implements IModel {
         return this;
     }
 
+    public getTransactionSetting(): TransactionSetting|null {
+        return this.transactionSetting;
+    }
+
+    public setTransactionSetting(transactionSetting: TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+
+    public withTransactionSetting(transactionSetting: TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+
     public getMissionCompleteScript(): ScriptSetting|null {
         return this.missionCompleteScript;
     }
@@ -175,34 +191,6 @@ export default class Namespace implements IModel {
 
     public withReceiveRewardsScript(receiveRewardsScript: ScriptSetting|null): this {
         this.receiveRewardsScript = receiveRewardsScript;
-        return this;
-    }
-
-    public getQueueNamespaceId(): string|null {
-        return this.queueNamespaceId;
-    }
-
-    public setQueueNamespaceId(queueNamespaceId: string|null) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    }
-
-    public withQueueNamespaceId(queueNamespaceId: string|null): this {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    }
-
-    public getKeyId(): string|null {
-        return this.keyId;
-    }
-
-    public setKeyId(keyId: string|null) {
-        this.keyId = keyId;
-        return this;
-    }
-
-    public withKeyId(keyId: string|null): this {
-        this.keyId = keyId;
         return this;
     }
 
@@ -262,6 +250,34 @@ export default class Namespace implements IModel {
         return this;
     }
 
+    public getQueueNamespaceId(): string|null {
+        return this.queueNamespaceId;
+    }
+
+    public setQueueNamespaceId(queueNamespaceId: string|null) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    }
+
+    public withQueueNamespaceId(queueNamespaceId: string|null): this {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    }
+
+    public getKeyId(): string|null {
+        return this.keyId;
+    }
+
+    public setKeyId(keyId: string|null) {
+        this.keyId = keyId;
+        return this;
+    }
+
+    public withKeyId(keyId: string|null): this {
+        this.keyId = keyId;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): Namespace|null {
         if (data == undefined || data == null) {
             return null;
@@ -270,15 +286,16 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
             .withMissionCompleteScript(ScriptSetting.fromDict(data["missionCompleteScript"]))
             .withCounterIncrementScript(ScriptSetting.fromDict(data["counterIncrementScript"]))
             .withReceiveRewardsScript(ScriptSetting.fromDict(data["receiveRewardsScript"]))
-            .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
             .withCompleteNotification(NotificationSetting.fromDict(data["completeNotification"]))
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withQueueNamespaceId(data["queueNamespaceId"])
+            .withKeyId(data["keyId"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -286,15 +303,16 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "missionCompleteScript": this.getMissionCompleteScript()?.toDict(),
             "counterIncrementScript": this.getCounterIncrementScript()?.toDict(),
             "receiveRewardsScript": this.getReceiveRewardsScript()?.toDict(),
-            "queueNamespaceId": this.getQueueNamespaceId(),
-            "keyId": this.getKeyId(),
             "completeNotification": this.getCompleteNotification()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "queueNamespaceId": this.getQueueNamespaceId(),
+            "keyId": this.getKeyId(),
         };
     }
 }

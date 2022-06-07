@@ -49,7 +49,7 @@ var Gs2QuestRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2QuestRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region);
@@ -61,12 +61,13 @@ var Gs2QuestRestClient = /** @class */ (function (_super) {
             'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
             'name': (_b = request.getName()) !== null && _b !== void 0 ? _b : null,
             'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
-            'startQuestScript': (_e = (_d = request.getStartQuestScript()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
-            'completeQuestScript': (_g = (_f = request.getCompleteQuestScript()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'failedQuestScript': (_j = (_h = request.getFailedQuestScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
-            'queueNamespaceId': (_k = request.getQueueNamespaceId()) !== null && _k !== void 0 ? _k : null,
-            'keyId': (_l = request.getKeyId()) !== null && _l !== void 0 ? _l : null,
+            'transactionSetting': (_e = (_d = request.getTransactionSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
+            'startQuestScript': (_g = (_f = request.getStartQuestScript()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
+            'completeQuestScript': (_j = (_h = request.getCompleteQuestScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'failedQuestScript': (_l = (_k = request.getFailedQuestScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
             'logSetting': (_o = (_m = request.getLogSetting()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'queueNamespaceId': (_p = request.getQueueNamespaceId()) !== null && _p !== void 0 ? _p : null,
+            'keyId': (_q = request.getKeyId()) !== null && _q !== void 0 ? _q : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -126,7 +127,7 @@ var Gs2QuestRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2QuestRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
@@ -138,12 +139,13 @@ var Gs2QuestRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
-            'startQuestScript': (_f = (_e = request.getStartQuestScript()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
-            'completeQuestScript': (_h = (_g = request.getCompleteQuestScript()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
-            'failedQuestScript': (_k = (_j = request.getFailedQuestScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'queueNamespaceId': (_l = request.getQueueNamespaceId()) !== null && _l !== void 0 ? _l : null,
-            'keyId': (_m = request.getKeyId()) !== null && _m !== void 0 ? _m : null,
+            'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
+            'startQuestScript': (_h = (_g = request.getStartQuestScript()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'completeQuestScript': (_k = (_j = request.getCompleteQuestScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
+            'failedQuestScript': (_m = (_l = request.getFailedQuestScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
             'logSetting': (_p = (_o = request.getLogSetting()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'queueNamespaceId': (_q = request.getQueueNamespaceId()) !== null && _q !== void 0 ? _q : null,
+            'keyId': (_r = request.getKeyId()) !== null && _r !== void 0 ? _r : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

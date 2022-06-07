@@ -5,12 +5,13 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private description;
+    private transactionSetting;
     private startQuestScript;
     private completeQuestScript;
     private failedQuestScript;
+    private logSetting;
     private queueNamespaceId;
     private keyId;
-    private logSetting;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -23,6 +24,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Quest.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Quest.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Quest.TransactionSetting | null): this;
     getStartQuestScript(): Gs2Quest.ScriptSetting | null;
     setStartQuestScript(startQuestScript: Gs2Quest.ScriptSetting | null): this;
     withStartQuestScript(startQuestScript: Gs2Quest.ScriptSetting | null): this;
@@ -32,15 +36,15 @@ export default class UpdateNamespaceRequest implements IRequest {
     getFailedQuestScript(): Gs2Quest.ScriptSetting | null;
     setFailedQuestScript(failedQuestScript: Gs2Quest.ScriptSetting | null): this;
     withFailedQuestScript(failedQuestScript: Gs2Quest.ScriptSetting | null): this;
+    getLogSetting(): Gs2Quest.LogSetting | null;
+    setLogSetting(logSetting: Gs2Quest.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2Quest.LogSetting | null): this;
     getQueueNamespaceId(): string | null;
     setQueueNamespaceId(queueNamespaceId: string | null): this;
     withQueueNamespaceId(queueNamespaceId: string | null): this;
     getKeyId(): string | null;
     setKeyId(keyId: string | null): this;
     withKeyId(keyId: string | null): this;
-    getLogSetting(): Gs2Quest.LogSetting | null;
-    setLogSetting(logSetting: Gs2Quest.LogSetting | null): this;
-    withLogSetting(logSetting: Gs2Quest.LogSetting | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): UpdateNamespaceRequest;

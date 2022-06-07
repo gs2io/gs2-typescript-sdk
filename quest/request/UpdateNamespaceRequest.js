@@ -23,12 +23,13 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.description = null;
+        this.transactionSetting = null;
         this.startQuestScript = null;
         this.completeQuestScript = null;
         this.failedQuestScript = null;
+        this.logSetting = null;
         this.queueNamespaceId = null;
         this.keyId = null;
-        this.logSetting = null;
     }
     UpdateNamespaceRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -74,6 +75,17 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    UpdateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
     UpdateNamespaceRequest.prototype.getStartQuestScript = function () {
         return this.startQuestScript;
     };
@@ -107,6 +119,17 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.failedQuestScript = failedQuestScript;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getLogSetting = function () {
+        return this.logSetting;
+    };
+    UpdateNamespaceRequest.prototype.setLogSetting = function (logSetting) {
+        this.logSetting = logSetting;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withLogSetting = function (logSetting) {
+        this.logSetting = logSetting;
+        return this;
+    };
     UpdateNamespaceRequest.prototype.getQueueNamespaceId = function () {
         return this.queueNamespaceId;
     };
@@ -129,39 +152,30 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.keyId = keyId;
         return this;
     };
-    UpdateNamespaceRequest.prototype.getLogSetting = function () {
-        return this.logSetting;
-    };
-    UpdateNamespaceRequest.prototype.setLogSetting = function (logSetting) {
-        this.logSetting = logSetting;
-        return this;
-    };
-    UpdateNamespaceRequest.prototype.withLogSetting = function (logSetting) {
-        this.logSetting = logSetting;
-        return this;
-    };
     UpdateNamespaceRequest.fromDict = function (data) {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Quest.TransactionSetting.fromDict(data["transactionSetting"]))
             .withStartQuestScript(Gs2Quest.ScriptSetting.fromDict(data["startQuestScript"]))
             .withCompleteQuestScript(Gs2Quest.ScriptSetting.fromDict(data["completeQuestScript"]))
             .withFailedQuestScript(Gs2Quest.ScriptSetting.fromDict(data["failedQuestScript"]))
+            .withLogSetting(Gs2Quest.LogSetting.fromDict(data["logSetting"]))
             .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
-            .withLogSetting(Gs2Quest.LogSetting.fromDict(data["logSetting"]));
+            .withKeyId(data["keyId"]);
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
-            "startQuestScript": (_a = this.getStartQuestScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "completeQuestScript": (_b = this.getCompleteQuestScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "failedQuestScript": (_c = this.getFailedQuestScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "startQuestScript": (_b = this.getStartQuestScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "completeQuestScript": (_c = this.getCompleteQuestScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "failedQuestScript": (_d = this.getFailedQuestScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
         };
     };
     return UpdateNamespaceRequest;

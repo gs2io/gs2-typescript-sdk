@@ -24,13 +24,14 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.description = null;
         this.isAutomaticDeletingEnabled = null;
+        this.transactionSetting = null;
         this.receiveMessageScript = null;
         this.readMessageScript = null;
         this.deleteMessageScript = null;
-        this.queueNamespaceId = null;
-        this.keyId = null;
         this.receiveNotification = null;
         this.logSetting = null;
+        this.queueNamespaceId = null;
+        this.keyId = null;
     }
     UpdateNamespaceRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -87,6 +88,17 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.isAutomaticDeletingEnabled = isAutomaticDeletingEnabled;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    UpdateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
     UpdateNamespaceRequest.prototype.getReceiveMessageScript = function () {
         return this.receiveMessageScript;
     };
@@ -120,28 +132,6 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.deleteMessageScript = deleteMessageScript;
         return this;
     };
-    UpdateNamespaceRequest.prototype.getQueueNamespaceId = function () {
-        return this.queueNamespaceId;
-    };
-    UpdateNamespaceRequest.prototype.setQueueNamespaceId = function (queueNamespaceId) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    };
-    UpdateNamespaceRequest.prototype.withQueueNamespaceId = function (queueNamespaceId) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    };
-    UpdateNamespaceRequest.prototype.getKeyId = function () {
-        return this.keyId;
-    };
-    UpdateNamespaceRequest.prototype.setKeyId = function (keyId) {
-        this.keyId = keyId;
-        return this;
-    };
-    UpdateNamespaceRequest.prototype.withKeyId = function (keyId) {
-        this.keyId = keyId;
-        return this;
-    };
     UpdateNamespaceRequest.prototype.getReceiveNotification = function () {
         return this.receiveNotification;
     };
@@ -164,32 +154,56 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.logSetting = logSetting;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getQueueNamespaceId = function () {
+        return this.queueNamespaceId;
+    };
+    UpdateNamespaceRequest.prototype.setQueueNamespaceId = function (queueNamespaceId) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withQueueNamespaceId = function (queueNamespaceId) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getKeyId = function () {
+        return this.keyId;
+    };
+    UpdateNamespaceRequest.prototype.setKeyId = function (keyId) {
+        this.keyId = keyId;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withKeyId = function (keyId) {
+        this.keyId = keyId;
+        return this;
+    };
     UpdateNamespaceRequest.fromDict = function (data) {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
             .withIsAutomaticDeletingEnabled(data["isAutomaticDeletingEnabled"])
+            .withTransactionSetting(Gs2Inbox.TransactionSetting.fromDict(data["transactionSetting"]))
             .withReceiveMessageScript(Gs2Inbox.ScriptSetting.fromDict(data["receiveMessageScript"]))
             .withReadMessageScript(Gs2Inbox.ScriptSetting.fromDict(data["readMessageScript"]))
             .withDeleteMessageScript(Gs2Inbox.ScriptSetting.fromDict(data["deleteMessageScript"]))
-            .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
             .withReceiveNotification(Gs2Inbox.NotificationSetting.fromDict(data["receiveNotification"]))
-            .withLogSetting(Gs2Inbox.LogSetting.fromDict(data["logSetting"]));
+            .withLogSetting(Gs2Inbox.LogSetting.fromDict(data["logSetting"]))
+            .withQueueNamespaceId(data["queueNamespaceId"])
+            .withKeyId(data["keyId"]);
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
             "isAutomaticDeletingEnabled": this.getIsAutomaticDeletingEnabled(),
-            "receiveMessageScript": (_a = this.getReceiveMessageScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "readMessageScript": (_b = this.getReadMessageScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "deleteMessageScript": (_c = this.getDeleteMessageScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "receiveMessageScript": (_b = this.getReceiveMessageScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "readMessageScript": (_c = this.getReadMessageScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "deleteMessageScript": (_d = this.getDeleteMessageScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "receiveNotification": (_e = this.getReceiveNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
-            "receiveNotification": (_d = this.getReceiveNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
         };
     };
     return UpdateNamespaceRequest;

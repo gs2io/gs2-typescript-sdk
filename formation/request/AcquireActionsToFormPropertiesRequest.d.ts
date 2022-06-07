@@ -8,8 +8,6 @@ export default class AcquireActionsToFormPropertiesRequest implements IRequest {
     private moldName;
     private index;
     private acquireAction;
-    private queueNamespaceId;
-    private keyId;
     private config;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -33,12 +31,6 @@ export default class AcquireActionsToFormPropertiesRequest implements IRequest {
     getAcquireAction(): Gs2Formation.AcquireAction | null;
     setAcquireAction(acquireAction: Gs2Formation.AcquireAction | null): this;
     withAcquireAction(acquireAction: Gs2Formation.AcquireAction | null): this;
-    getQueueNamespaceId(): string | null;
-    setQueueNamespaceId(queueNamespaceId: string | null): this;
-    withQueueNamespaceId(queueNamespaceId: string | null): this;
-    getKeyId(): string | null;
-    setKeyId(keyId: string | null): this;
-    withKeyId(keyId: string | null): this;
     getConfig(): Gs2Formation.AcquireActionConfig[] | null;
     setConfig(config: Gs2Formation.AcquireActionConfig[] | null): this;
     withConfig(config: Gs2Formation.AcquireActionConfig[] | null): this;

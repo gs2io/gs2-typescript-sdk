@@ -19,8 +19,24 @@ import IResult from '../../core/interface/IResult';
 import * as Gs2Enhance from '../model'
 
 export default class StartResult implements IResult {
+    private transactionId: string|null = null;
     private stampSheet: string|null = null;
     private stampSheetEncryptionKeyId: string|null = null;
+    private autoRunStampSheet: boolean|null = null;
+
+    public getTransactionId(): string|null {
+        return this.transactionId;
+    }
+
+    public setTransactionId(transactionId: string|null) {
+        this.transactionId = transactionId;
+        return this;
+    }
+
+    public withTransactionId(transactionId: string|null): this {
+        this.transactionId = transactionId;
+        return this;
+    }
 
     public getStampSheet(): string|null {
         return this.stampSheet;
@@ -50,16 +66,34 @@ export default class StartResult implements IResult {
         return this;
     }
 
+    public getAutoRunStampSheet(): boolean|null {
+        return this.autoRunStampSheet;
+    }
+
+    public setAutoRunStampSheet(autoRunStampSheet: boolean|null) {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    }
+
+    public withAutoRunStampSheet(autoRunStampSheet: boolean|null): this {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): StartResult {
         return new StartResult()
+            .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
-            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"]);
+            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
+            .withAutoRunStampSheet(data["autoRunStampSheet"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "transactionId": this.getTransactionId(),
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
+            "autoRunStampSheet": this.getAutoRunStampSheet(),
         };
     }
 }

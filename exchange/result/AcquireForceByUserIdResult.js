@@ -20,8 +20,10 @@ var Gs2Exchange = tslib_1.__importStar(require("../model"));
 var AcquireForceByUserIdResult = /** @class */ (function () {
     function AcquireForceByUserIdResult() {
         this.item = null;
+        this.transactionId = null;
         this.stampSheet = null;
         this.stampSheetEncryptionKeyId = null;
+        this.autoRunStampSheet = null;
     }
     AcquireForceByUserIdResult.prototype.getItem = function () {
         return this.item;
@@ -32,6 +34,17 @@ var AcquireForceByUserIdResult = /** @class */ (function () {
     };
     AcquireForceByUserIdResult.prototype.withItem = function (item) {
         this.item = item;
+        return this;
+    };
+    AcquireForceByUserIdResult.prototype.getTransactionId = function () {
+        return this.transactionId;
+    };
+    AcquireForceByUserIdResult.prototype.setTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    };
+    AcquireForceByUserIdResult.prototype.withTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
         return this;
     };
     AcquireForceByUserIdResult.prototype.getStampSheet = function () {
@@ -56,18 +69,33 @@ var AcquireForceByUserIdResult = /** @class */ (function () {
         this.stampSheetEncryptionKeyId = stampSheetEncryptionKeyId;
         return this;
     };
+    AcquireForceByUserIdResult.prototype.getAutoRunStampSheet = function () {
+        return this.autoRunStampSheet;
+    };
+    AcquireForceByUserIdResult.prototype.setAutoRunStampSheet = function (autoRunStampSheet) {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    };
+    AcquireForceByUserIdResult.prototype.withAutoRunStampSheet = function (autoRunStampSheet) {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    };
     AcquireForceByUserIdResult.fromDict = function (data) {
         return new AcquireForceByUserIdResult()
             .withItem(Gs2Exchange.Await.fromDict(data["item"]))
+            .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
-            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"]);
+            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
+            .withAutoRunStampSheet(data["autoRunStampSheet"]);
     };
     AcquireForceByUserIdResult.prototype.toDict = function () {
         var _a;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "transactionId": this.getTransactionId(),
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
+            "autoRunStampSheet": this.getAutoRunStampSheet(),
         };
     };
     return AcquireForceByUserIdResult;

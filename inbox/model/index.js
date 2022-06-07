@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AcquireAction = exports.TimeSpan = exports.LogSetting = exports.GitHubCheckoutSetting = exports.NotificationSetting = exports.ScriptSetting = exports.Config = exports.Received = exports.GlobalMessage = exports.GlobalMessageMaster = exports.CurrentMessageMaster = exports.Message = exports.Namespace = void 0;
+exports.TransactionSetting = exports.LogSetting = exports.GitHubCheckoutSetting = exports.NotificationSetting = exports.ScriptSetting = exports.Config = exports.AcquireAction = exports.TimeSpan = exports.Received = exports.GlobalMessage = exports.GlobalMessageMaster = exports.CurrentMessageMaster = exports.Message = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,6 +29,10 @@ var GlobalMessage_1 = tslib_1.__importDefault(require("./GlobalMessage"));
 exports.GlobalMessage = GlobalMessage_1.default;
 var Received_1 = tslib_1.__importDefault(require("./Received"));
 exports.Received = Received_1.default;
+var TimeSpan_1 = tslib_1.__importDefault(require("./TimeSpan"));
+exports.TimeSpan = TimeSpan_1.default;
+var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
+exports.AcquireAction = AcquireAction_1.default;
 var Config_1 = tslib_1.__importDefault(require("./Config"));
 exports.Config = Config_1.default;
 var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
@@ -39,8 +43,6 @@ var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutS
 exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
-var TimeSpan_1 = tslib_1.__importDefault(require("./TimeSpan"));
-exports.TimeSpan = TimeSpan_1.default;
-var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
-exports.AcquireAction = AcquireAction_1.default;
+var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
+exports.TransactionSetting = TransactionSetting_1.default;
 //# sourceMappingURL=index.js.map

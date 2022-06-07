@@ -20,8 +20,10 @@ import * as Gs2Enhance from '../model'
 
 export default class DirectEnhanceResult implements IResult {
     private item: Gs2Enhance.RateModel|null = null;
+    private transactionId: string|null = null;
     private stampSheet: string|null = null;
     private stampSheetEncryptionKeyId: string|null = null;
+    private autoRunStampSheet: boolean|null = null;
     private acquireExperience: number|null = null;
     private bonusRate: number|null = null;
 
@@ -36,6 +38,20 @@ export default class DirectEnhanceResult implements IResult {
 
     public withItem(item: Gs2Enhance.RateModel|null): this {
         this.item = item;
+        return this;
+    }
+
+    public getTransactionId(): string|null {
+        return this.transactionId;
+    }
+
+    public setTransactionId(transactionId: string|null) {
+        this.transactionId = transactionId;
+        return this;
+    }
+
+    public withTransactionId(transactionId: string|null): this {
+        this.transactionId = transactionId;
         return this;
     }
 
@@ -64,6 +80,20 @@ export default class DirectEnhanceResult implements IResult {
 
     public withStampSheetEncryptionKeyId(stampSheetEncryptionKeyId: string|null): this {
         this.stampSheetEncryptionKeyId = stampSheetEncryptionKeyId;
+        return this;
+    }
+
+    public getAutoRunStampSheet(): boolean|null {
+        return this.autoRunStampSheet;
+    }
+
+    public setAutoRunStampSheet(autoRunStampSheet: boolean|null) {
+        this.autoRunStampSheet = autoRunStampSheet;
+        return this;
+    }
+
+    public withAutoRunStampSheet(autoRunStampSheet: boolean|null): this {
+        this.autoRunStampSheet = autoRunStampSheet;
         return this;
     }
 
@@ -98,8 +128,10 @@ export default class DirectEnhanceResult implements IResult {
     public static fromDict(data: {[key: string]: any}): DirectEnhanceResult {
         return new DirectEnhanceResult()
             .withItem(Gs2Enhance.RateModel.fromDict(data["item"]))
+            .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
             .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
+            .withAutoRunStampSheet(data["autoRunStampSheet"])
             .withAcquireExperience(data["acquireExperience"])
             .withBonusRate(data["bonusRate"]);
     }
@@ -107,8 +139,10 @@ export default class DirectEnhanceResult implements IResult {
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
+            "transactionId": this.getTransactionId(),
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
+            "autoRunStampSheet": this.getAutoRunStampSheet(),
             "acquireExperience": this.getAcquireExperience(),
             "bonusRate": this.getBonusRate(),
         };

@@ -19,13 +19,14 @@ import CurrentMessageMaster from "./CurrentMessageMaster"
 import GlobalMessageMaster from "./GlobalMessageMaster"
 import GlobalMessage from "./GlobalMessage"
 import Received from "./Received"
+import TimeSpan from "./TimeSpan"
+import AcquireAction from "./AcquireAction"
 import Config from "./Config"
 import ScriptSetting from "./ScriptSetting"
 import NotificationSetting from "./NotificationSetting"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import LogSetting from "./LogSetting"
-import TimeSpan from "./TimeSpan"
-import AcquireAction from "./AcquireAction"
+import TransactionSetting from "./TransactionSetting"
 
 export {
     Namespace,
@@ -34,11 +35,12 @@ export {
     GlobalMessageMaster,
     GlobalMessage,
     Received,
+    TimeSpan,
+    AcquireAction,
     Config,
     ScriptSetting,
     NotificationSetting,
     GitHubCheckoutSetting,
     LogSetting,
-    TimeSpan,
-    AcquireAction,
+    TransactionSetting,
 };

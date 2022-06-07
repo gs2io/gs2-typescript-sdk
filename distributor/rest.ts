@@ -68,6 +68,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
             'assumeUserId': request.getAssumeUserId() ?? null,
+            'autoRunStampSheetNotification': request.getAutoRunStampSheetNotification()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.post(
@@ -153,6 +154,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
             'assumeUserId': request.getAssumeUserId() ?? null,
+            'autoRunStampSheetNotification': request.getAutoRunStampSheetNotification()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.put(
@@ -767,6 +769,64 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
             } else {
                 throw [];
             }
+        });
+    }
+
+    public getStampSheetResult(request: Request.GetStampSheetResultRequest): Promise<Result.GetStampSheetResultResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stampSheet/{transactionId}/result')
+            .replace('{service}', 'distributor')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{transactionId}', String(request.getTransactionId() ?? 'null') === "" ? "null" : String(request.getTransactionId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetStampSheetResultResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getStampSheetResultByUserId(request: Request.GetStampSheetResultByUserIdRequest): Promise<Result.GetStampSheetResultByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stampSheet/{transactionId}/result')
+            .replace('{service}', 'distributor')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{transactionId}', String(request.getTransactionId() ?? 'null') === "" ? "null" : String(request.getTransactionId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetStampSheetResultByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
         });
     }
 }

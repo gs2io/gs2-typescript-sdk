@@ -16,6 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
+var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
 var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:exchange:{namespaceName}";
@@ -26,12 +27,13 @@ var Namespace = /** @class */ (function () {
         this.description = null;
         this.enableDirectExchange = null;
         this.enableAwaitExchange = null;
-        this.queueNamespaceId = null;
-        this.keyId = null;
+        this.transactionSetting = null;
         this.exchangeScript = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.queueNamespaceId = null;
+        this.keyId = null;
     }
     Namespace.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -136,26 +138,15 @@ var Namespace = /** @class */ (function () {
         this.enableAwaitExchange = enableAwaitExchange;
         return this;
     };
-    Namespace.prototype.getQueueNamespaceId = function () {
-        return this.queueNamespaceId;
+    Namespace.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
     };
-    Namespace.prototype.setQueueNamespaceId = function (queueNamespaceId) {
-        this.queueNamespaceId = queueNamespaceId;
+    Namespace.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
-    Namespace.prototype.withQueueNamespaceId = function (queueNamespaceId) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    };
-    Namespace.prototype.getKeyId = function () {
-        return this.keyId;
-    };
-    Namespace.prototype.setKeyId = function (keyId) {
-        this.keyId = keyId;
-        return this;
-    };
-    Namespace.prototype.withKeyId = function (keyId) {
-        this.keyId = keyId;
+    Namespace.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
     Namespace.prototype.getExchangeScript = function () {
@@ -202,6 +193,28 @@ var Namespace = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Namespace.prototype.getQueueNamespaceId = function () {
+        return this.queueNamespaceId;
+    };
+    Namespace.prototype.setQueueNamespaceId = function (queueNamespaceId) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    };
+    Namespace.prototype.withQueueNamespaceId = function (queueNamespaceId) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    };
+    Namespace.prototype.getKeyId = function () {
+        return this.keyId;
+    };
+    Namespace.prototype.setKeyId = function (keyId) {
+        this.keyId = keyId;
+        return this;
+    };
+    Namespace.prototype.withKeyId = function (keyId) {
+        this.keyId = keyId;
+        return this;
+    };
     Namespace.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -212,27 +225,29 @@ var Namespace = /** @class */ (function () {
             .withDescription(data["description"])
             .withEnableDirectExchange(data["enableDirectExchange"])
             .withEnableAwaitExchange(data["enableAwaitExchange"])
-            .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
+            .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
             .withExchangeScript(ScriptSetting_1.default.fromDict(data["exchangeScript"]))
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withQueueNamespaceId(data["queueNamespaceId"])
+            .withKeyId(data["keyId"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
             "enableDirectExchange": this.getEnableDirectExchange(),
             "enableAwaitExchange": this.getEnableAwaitExchange(),
-            "queueNamespaceId": this.getQueueNamespaceId(),
-            "keyId": this.getKeyId(),
-            "exchangeScript": (_a = this.getExchangeScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "exchangeScript": (_b = this.getExchangeScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "queueNamespaceId": this.getQueueNamespaceId(),
+            "keyId": this.getKeyId(),
         };
     };
     return Namespace;

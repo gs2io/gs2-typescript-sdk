@@ -68,13 +68,14 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
             'isAutomaticDeletingEnabled': request.getIsAutomaticDeletingEnabled() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'receiveMessageScript': request.getReceiveMessageScript()?.toDict() ?? null,
             'readMessageScript': request.getReadMessageScript()?.toDict() ?? null,
             'deleteMessageScript': request.getDeleteMessageScript()?.toDict() ?? null,
-            'queueNamespaceId': request.getQueueNamespaceId() ?? null,
-            'keyId': request.getKeyId() ?? null,
             'receiveNotification': request.getReceiveNotification()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
+            'queueNamespaceId': request.getQueueNamespaceId() ?? null,
+            'keyId': request.getKeyId() ?? null,
         };
         return axios.post(
             url,
@@ -159,13 +160,14 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
             'isAutomaticDeletingEnabled': request.getIsAutomaticDeletingEnabled() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'receiveMessageScript': request.getReceiveMessageScript()?.toDict() ?? null,
             'readMessageScript': request.getReadMessageScript()?.toDict() ?? null,
             'deleteMessageScript': request.getDeleteMessageScript()?.toDict() ?? null,
-            'queueNamespaceId': request.getQueueNamespaceId() ?? null,
-            'keyId': request.getKeyId() ?? null,
             'receiveNotification': request.getReceiveNotification()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
+            'queueNamespaceId': request.getQueueNamespaceId() ?? null,
+            'keyId': request.getKeyId() ?? null,
         };
         return axios.put(
             url,

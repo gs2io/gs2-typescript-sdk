@@ -24,12 +24,13 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Quest.TransactionSetting|null = null;
     private startQuestScript: Gs2Quest.ScriptSetting|null = null;
     private completeQuestScript: Gs2Quest.ScriptSetting|null = null;
     private failedQuestScript: Gs2Quest.ScriptSetting|null = null;
+    private logSetting: Gs2Quest.LogSetting|null = null;
     private queueNamespaceId: string|null = null;
     private keyId: string|null = null;
-    private logSetting: Gs2Quest.LogSetting|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -87,6 +88,20 @@ export default class UpdateNamespaceRequest implements IRequest {
         return this;
     }
 
+    public getTransactionSetting(): Gs2Quest.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+
+    public setTransactionSetting(transactionSetting: Gs2Quest.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+
+    public withTransactionSetting(transactionSetting: Gs2Quest.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+
     public getStartQuestScript(): Gs2Quest.ScriptSetting|null {
         return this.startQuestScript;
     }
@@ -129,6 +144,20 @@ export default class UpdateNamespaceRequest implements IRequest {
         return this;
     }
 
+    public getLogSetting(): Gs2Quest.LogSetting|null {
+        return this.logSetting;
+    }
+
+    public setLogSetting(logSetting: Gs2Quest.LogSetting|null) {
+        this.logSetting = logSetting;
+        return this;
+    }
+
+    public withLogSetting(logSetting: Gs2Quest.LogSetting|null): this {
+        this.logSetting = logSetting;
+        return this;
+    }
+
     public getQueueNamespaceId(): string|null {
         return this.queueNamespaceId;
     }
@@ -157,42 +186,30 @@ export default class UpdateNamespaceRequest implements IRequest {
         return this;
     }
 
-    public getLogSetting(): Gs2Quest.LogSetting|null {
-        return this.logSetting;
-    }
-
-    public setLogSetting(logSetting: Gs2Quest.LogSetting|null) {
-        this.logSetting = logSetting;
-        return this;
-    }
-
-    public withLogSetting(logSetting: Gs2Quest.LogSetting|null): this {
-        this.logSetting = logSetting;
-        return this;
-    }
-
     public static fromDict(data: {[key: string]: any}): UpdateNamespaceRequest {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Quest.TransactionSetting.fromDict(data["transactionSetting"]))
             .withStartQuestScript(Gs2Quest.ScriptSetting.fromDict(data["startQuestScript"]))
             .withCompleteQuestScript(Gs2Quest.ScriptSetting.fromDict(data["completeQuestScript"]))
             .withFailedQuestScript(Gs2Quest.ScriptSetting.fromDict(data["failedQuestScript"]))
+            .withLogSetting(Gs2Quest.LogSetting.fromDict(data["logSetting"]))
             .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
-            .withLogSetting(Gs2Quest.LogSetting.fromDict(data["logSetting"]));
+            .withKeyId(data["keyId"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "startQuestScript": this.getStartQuestScript()?.toDict(),
             "completeQuestScript": this.getCompleteQuestScript()?.toDict(),
             "failedQuestScript": this.getFailedQuestScript()?.toDict(),
+            "logSetting": this.getLogSetting()?.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
-            "logSetting": this.getLogSetting()?.toDict(),
         };
     }
 }

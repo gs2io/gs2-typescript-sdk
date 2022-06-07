@@ -69,10 +69,11 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
             'description': request.getDescription() ?? null,
             'enableAwaitExchange': request.getEnableAwaitExchange() ?? null,
             'enableDirectExchange': request.getEnableDirectExchange() ?? null,
-            'queueNamespaceId': request.getQueueNamespaceId() ?? null,
-            'keyId': request.getKeyId() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'exchangeScript': request.getExchangeScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
+            'queueNamespaceId': request.getQueueNamespaceId() ?? null,
+            'keyId': request.getKeyId() ?? null,
         };
         return axios.post(
             url,
@@ -158,10 +159,11 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
             'description': request.getDescription() ?? null,
             'enableAwaitExchange': request.getEnableAwaitExchange() ?? null,
             'enableDirectExchange': request.getEnableDirectExchange() ?? null,
-            'queueNamespaceId': request.getQueueNamespaceId() ?? null,
-            'keyId': request.getKeyId() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'exchangeScript': request.getExchangeScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
+            'queueNamespaceId': request.getQueueNamespaceId() ?? null,
+            'keyId': request.getKeyId() ?? null,
         };
         return axios.put(
             url,

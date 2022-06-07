@@ -1,4 +1,5 @@
 import IModel from '../../core/interface/IModel';
+import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 export default class Namespace implements IModel {
@@ -7,12 +8,13 @@ export default class Namespace implements IModel {
     private description;
     private enableDirectExchange;
     private enableAwaitExchange;
-    private queueNamespaceId;
-    private keyId;
+    private transactionSetting;
     private exchangeScript;
     private logSetting;
     private createdAt;
     private updatedAt;
+    private queueNamespaceId;
+    private keyId;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -33,12 +35,9 @@ export default class Namespace implements IModel {
     getEnableAwaitExchange(): boolean | null;
     setEnableAwaitExchange(enableAwaitExchange: boolean | null): this;
     withEnableAwaitExchange(enableAwaitExchange: boolean | null): this;
-    getQueueNamespaceId(): string | null;
-    setQueueNamespaceId(queueNamespaceId: string | null): this;
-    withQueueNamespaceId(queueNamespaceId: string | null): this;
-    getKeyId(): string | null;
-    setKeyId(keyId: string | null): this;
-    withKeyId(keyId: string | null): this;
+    getTransactionSetting(): TransactionSetting | null;
+    setTransactionSetting(transactionSetting: TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: TransactionSetting | null): this;
     getExchangeScript(): ScriptSetting | null;
     setExchangeScript(exchangeScript: ScriptSetting | null): this;
     withExchangeScript(exchangeScript: ScriptSetting | null): this;
@@ -51,6 +50,12 @@ export default class Namespace implements IModel {
     getUpdatedAt(): number | null;
     setUpdatedAt(updatedAt: number | null): this;
     withUpdatedAt(updatedAt: number | null): this;
+    getQueueNamespaceId(): string | null;
+    setQueueNamespaceId(queueNamespaceId: string | null): this;
+    withQueueNamespaceId(queueNamespaceId: string | null): this;
+    getKeyId(): string | null;
+    setKeyId(keyId: string | null): this;
+    withKeyId(keyId: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): Namespace | null;

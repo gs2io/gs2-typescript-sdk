@@ -1,10 +1,12 @@
 import IModel from '../../core/interface/IModel';
+import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
+    private transactionSetting;
     private updateMoldScript;
     private updateFormScript;
     private logSetting;
@@ -24,6 +26,9 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): TransactionSetting | null;
+    setTransactionSetting(transactionSetting: TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: TransactionSetting | null): this;
     getUpdateMoldScript(): ScriptSetting | null;
     setUpdateMoldScript(updateMoldScript: ScriptSetting | null): this;
     withUpdateMoldScript(updateMoldScript: ScriptSetting | null): this;

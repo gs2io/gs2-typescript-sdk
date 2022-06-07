@@ -23,9 +23,10 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.description = null;
+        this.transactionSetting = null;
+        this.logSetting = null;
         this.queueNamespaceId = null;
         this.keyId = null;
-        this.logSetting = null;
     }
     UpdateNamespaceRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -71,6 +72,28 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    UpdateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getLogSetting = function () {
+        return this.logSetting;
+    };
+    UpdateNamespaceRequest.prototype.setLogSetting = function (logSetting) {
+        this.logSetting = logSetting;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withLogSetting = function (logSetting) {
+        this.logSetting = logSetting;
+        return this;
+    };
     UpdateNamespaceRequest.prototype.getQueueNamespaceId = function () {
         return this.queueNamespaceId;
     };
@@ -93,33 +116,24 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.keyId = keyId;
         return this;
     };
-    UpdateNamespaceRequest.prototype.getLogSetting = function () {
-        return this.logSetting;
-    };
-    UpdateNamespaceRequest.prototype.setLogSetting = function (logSetting) {
-        this.logSetting = logSetting;
-        return this;
-    };
-    UpdateNamespaceRequest.prototype.withLogSetting = function (logSetting) {
-        this.logSetting = logSetting;
-        return this;
-    };
     UpdateNamespaceRequest.fromDict = function (data) {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Showcase.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withLogSetting(Gs2Showcase.LogSetting.fromDict(data["logSetting"]))
             .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
-            .withLogSetting(Gs2Showcase.LogSetting.fromDict(data["logSetting"]));
+            .withKeyId(data["keyId"]);
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
-            "logSetting": (_a = this.getLogSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
         };
     };
     return UpdateNamespaceRequest;

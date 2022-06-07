@@ -23,11 +23,12 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.description = null;
-        this.queueNamespaceId = null;
-        this.keyId = null;
+        this.transactionSetting = null;
         this.lotteryTriggerScriptId = null;
         this.choicePrizeTableScriptId = null;
         this.logSetting = null;
+        this.queueNamespaceId = null;
+        this.keyId = null;
     }
     UpdateNamespaceRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -73,26 +74,15 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
-    UpdateNamespaceRequest.prototype.getQueueNamespaceId = function () {
-        return this.queueNamespaceId;
+    UpdateNamespaceRequest.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
     };
-    UpdateNamespaceRequest.prototype.setQueueNamespaceId = function (queueNamespaceId) {
-        this.queueNamespaceId = queueNamespaceId;
+    UpdateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
-    UpdateNamespaceRequest.prototype.withQueueNamespaceId = function (queueNamespaceId) {
-        this.queueNamespaceId = queueNamespaceId;
-        return this;
-    };
-    UpdateNamespaceRequest.prototype.getKeyId = function () {
-        return this.keyId;
-    };
-    UpdateNamespaceRequest.prototype.setKeyId = function (keyId) {
-        this.keyId = keyId;
-        return this;
-    };
-    UpdateNamespaceRequest.prototype.withKeyId = function (keyId) {
-        this.keyId = keyId;
+    UpdateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
     UpdateNamespaceRequest.prototype.getLotteryTriggerScriptId = function () {
@@ -128,26 +118,50 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.logSetting = logSetting;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getQueueNamespaceId = function () {
+        return this.queueNamespaceId;
+    };
+    UpdateNamespaceRequest.prototype.setQueueNamespaceId = function (queueNamespaceId) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withQueueNamespaceId = function (queueNamespaceId) {
+        this.queueNamespaceId = queueNamespaceId;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getKeyId = function () {
+        return this.keyId;
+    };
+    UpdateNamespaceRequest.prototype.setKeyId = function (keyId) {
+        this.keyId = keyId;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withKeyId = function (keyId) {
+        this.keyId = keyId;
+        return this;
+    };
     UpdateNamespaceRequest.fromDict = function (data) {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
-            .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"])
+            .withTransactionSetting(Gs2Lottery.TransactionSetting.fromDict(data["transactionSetting"]))
             .withLotteryTriggerScriptId(data["lotteryTriggerScriptId"])
             .withChoicePrizeTableScriptId(data["choicePrizeTableScriptId"])
-            .withLogSetting(Gs2Lottery.LogSetting.fromDict(data["logSetting"]));
+            .withLogSetting(Gs2Lottery.LogSetting.fromDict(data["logSetting"]))
+            .withQueueNamespaceId(data["queueNamespaceId"])
+            .withKeyId(data["keyId"]);
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
-            "queueNamespaceId": this.getQueueNamespaceId(),
-            "keyId": this.getKeyId(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "lotteryTriggerScriptId": this.getLotteryTriggerScriptId(),
             "choicePrizeTableScriptId": this.getChoicePrizeTableScriptId(),
-            "logSetting": (_a = this.getLogSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "queueNamespaceId": this.getQueueNamespaceId(),
+            "keyId": this.getKeyId(),
         };
     };
     return UpdateNamespaceRequest;
