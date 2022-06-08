@@ -51,16 +51,13 @@ export default class ValidateRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getTemplate(): string|null {
         return this.template;
     }
-
     public setTemplate(template: string|null) {
         this.template = template;
         return this;
     }
-
     public withTemplate(template: string|null): this {
         this.template = template;
         return this;

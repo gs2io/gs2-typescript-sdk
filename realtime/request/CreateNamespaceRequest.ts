@@ -56,86 +56,68 @@ export default class CreateNamespaceRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getServerType(): string|null {
         return this.serverType;
     }
-
     public setServerType(serverType: string|null) {
         this.serverType = serverType;
         return this;
     }
-
     public withServerType(serverType: string|null): this {
         this.serverType = serverType;
         return this;
     }
-
     public getServerSpec(): string|null {
         return this.serverSpec;
     }
-
     public setServerSpec(serverSpec: string|null) {
         this.serverSpec = serverSpec;
         return this;
     }
-
     public withServerSpec(serverSpec: string|null): this {
         this.serverSpec = serverSpec;
         return this;
     }
-
     public getCreateNotification(): Gs2Realtime.NotificationSetting|null {
         return this.createNotification;
     }
-
     public setCreateNotification(createNotification: Gs2Realtime.NotificationSetting|null) {
         this.createNotification = createNotification;
         return this;
     }
-
     public withCreateNotification(createNotification: Gs2Realtime.NotificationSetting|null): this {
         this.createNotification = createNotification;
         return this;
     }
-
     public getLogSetting(): Gs2Realtime.LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: Gs2Realtime.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: Gs2Realtime.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;

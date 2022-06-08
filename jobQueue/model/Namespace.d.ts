@@ -5,6 +5,8 @@ export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
+    private enableAutoRun;
+    private runNotification;
     private pushNotification;
     private logSetting;
     private createdAt;
@@ -23,6 +25,12 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getEnableAutoRun(): boolean | null;
+    setEnableAutoRun(enableAutoRun: boolean | null): this;
+    withEnableAutoRun(enableAutoRun: boolean | null): this;
+    getRunNotification(): NotificationSetting | null;
+    setRunNotification(runNotification: NotificationSetting | null): this;
+    withRunNotification(runNotification: NotificationSetting | null): this;
     getPushNotification(): NotificationSetting | null;
     setPushNotification(pushNotification: NotificationSetting | null): this;
     withPushNotification(pushNotification: NotificationSetting | null): this;

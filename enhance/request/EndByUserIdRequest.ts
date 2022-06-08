@@ -56,72 +56,57 @@ export default class EndByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getRateName(): string|null {
         return this.rateName;
     }
-
     public setRateName(rateName: string|null) {
         this.rateName = rateName;
         return this;
     }
-
     public withRateName(rateName: string|null): this {
         this.rateName = rateName;
         return this;
     }
-
     public getProgressName(): string|null {
         return this.progressName;
     }
-
     public setProgressName(progressName: string|null) {
         this.progressName = progressName;
         return this;
     }
-
     public withProgressName(progressName: string|null): this {
         this.progressName = progressName;
         return this;
     }
-
     public getConfig(): Gs2Enhance.Config[]|null {
         return this.config;
     }
-
     public setConfig(config: Gs2Enhance.Config[]|null) {
         this.config = config;
         return this;
     }
-
     public withConfig(config: Gs2Enhance.Config[]|null): this {
         this.config = config;
         return this;

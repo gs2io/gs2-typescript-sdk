@@ -22,72 +22,57 @@ export default class SlotWithSignature implements IModel {
     private body: string|null = null;
     private signature: string|null = null;
     private metadata: string|null = null;
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getPropertyType(): string|null {
         return this.propertyType;
     }
-
     public setPropertyType(propertyType: string|null) {
         this.propertyType = propertyType;
         return this;
     }
-
     public withPropertyType(propertyType: string|null): this {
         this.propertyType = propertyType;
         return this;
     }
-
     public getBody(): string|null {
         return this.body;
     }
-
     public setBody(body: string|null) {
         this.body = body;
         return this;
     }
-
     public withBody(body: string|null): this {
         this.body = body;
         return this;
     }
-
     public getSignature(): string|null {
         return this.signature;
     }
-
     public setSignature(signature: string|null) {
         this.signature = signature;
         return this;
     }
-
     public withSignature(signature: string|null): this {
         this.signature = signature;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;

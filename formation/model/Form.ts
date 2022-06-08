@@ -154,86 +154,68 @@ export default class Form implements IModel {
             .replace('{moldName}', moldName ?? '')
             .replace('{index}', index ?? '');
     }
-
     public getFormId(): string|null {
         return this.formId;
     }
-
     public setFormId(formId: string|null) {
         this.formId = formId;
         return this;
     }
-
     public withFormId(formId: string|null): this {
         this.formId = formId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getIndex(): number|null {
         return this.index;
     }
-
     public setIndex(index: number|null) {
         this.index = index;
         return this;
     }
-
     public withIndex(index: number|null): this {
         this.index = index;
         return this;
     }
-
     public getSlots(): Slot[]|null {
         return this.slots;
     }
-
     public setSlots(slots: Slot[]|null) {
         this.slots = slots;
         return this;
     }
-
     public withSlots(slots: Slot[]|null): this {
         this.slots = slots;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

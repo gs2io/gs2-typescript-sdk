@@ -56,86 +56,68 @@ export default class DescribeScoresRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getCategoryName(): string|null {
         return this.categoryName;
     }
-
     public setCategoryName(categoryName: string|null) {
         this.categoryName = categoryName;
         return this;
     }
-
     public withCategoryName(categoryName: string|null): this {
         this.categoryName = categoryName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getScorerUserId(): string|null {
         return this.scorerUserId;
     }
-
     public setScorerUserId(scorerUserId: string|null) {
         this.scorerUserId = scorerUserId;
         return this;
     }
-
     public withScorerUserId(scorerUserId: string|null): this {
         this.scorerUserId = scorerUserId;
         return this;
     }
-
     public getPageToken(): string|null {
         return this.pageToken;
     }
-
     public setPageToken(pageToken: string|null) {
         this.pageToken = pageToken;
         return this;
     }
-
     public withPageToken(pageToken: string|null): this {
         this.pageToken = pageToken;
         return this;
     }
-
     public getLimit(): number|null {
         return this.limit;
     }
-
     public setLimit(limit: number|null) {
         this.limit = limit;
         return this;
     }
-
     public withLimit(limit: number|null): this {
         this.limit = limit;
         return this;

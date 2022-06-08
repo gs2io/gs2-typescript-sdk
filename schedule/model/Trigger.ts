@@ -127,72 +127,57 @@ export default class Trigger implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{triggerName}', triggerName ?? '');
     }
-
     public getTriggerId(): string|null {
         return this.triggerId;
     }
-
     public setTriggerId(triggerId: string|null) {
         this.triggerId = triggerId;
         return this;
     }
-
     public withTriggerId(triggerId: string|null): this {
         this.triggerId = triggerId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getExpiresAt(): number|null {
         return this.expiresAt;
     }
-
     public setExpiresAt(expiresAt: number|null) {
         this.expiresAt = expiresAt;
         return this;
     }
-
     public withExpiresAt(expiresAt: number|null): this {
         this.expiresAt = expiresAt;
         return this;

@@ -19,30 +19,24 @@ import IModel from '../../core/interface/IModel';
 export default class GameResult implements IModel {
     private rank: number|null = null;
     private userId: string|null = null;
-
     public getRank(): number|null {
         return this.rank;
     }
-
     public setRank(rank: number|null) {
         this.rank = rank;
         return this;
     }
-
     public withRank(rank: number|null): this {
         this.rank = rank;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;

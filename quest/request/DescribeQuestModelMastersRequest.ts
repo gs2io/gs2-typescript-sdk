@@ -54,58 +54,46 @@ export default class DescribeQuestModelMastersRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getQuestGroupName(): string|null {
         return this.questGroupName;
     }
-
     public setQuestGroupName(questGroupName: string|null) {
         this.questGroupName = questGroupName;
         return this;
     }
-
     public withQuestGroupName(questGroupName: string|null): this {
         this.questGroupName = questGroupName;
         return this;
     }
-
     public getPageToken(): string|null {
         return this.pageToken;
     }
-
     public setPageToken(pageToken: string|null) {
         this.pageToken = pageToken;
         return this;
     }
-
     public withPageToken(pageToken: string|null): this {
         this.pageToken = pageToken;
         return this;
     }
-
     public getLimit(): number|null {
         return this.limit;
     }
-
     public setLimit(limit: number|null) {
         this.limit = limit;
         return this;
     }
-
     public withLimit(limit: number|null): this {
         this.limit = limit;
         return this;

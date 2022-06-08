@@ -52,30 +52,24 @@ export default class DeleteCounterModelMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getCounterName(): string|null {
         return this.counterName;
     }
-
     public setCounterName(counterName: string|null) {
         this.counterName = counterName;
         return this;
     }
-
     public withCounterName(counterName: string|null): this {
         this.counterName = counterName;
         return this;

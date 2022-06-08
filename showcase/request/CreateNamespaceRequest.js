@@ -83,24 +83,30 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.getQueueNamespaceId = function () {
         return this.queueNamespaceId;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.setQueueNamespaceId = function (queueNamespaceId) {
         this.queueNamespaceId = queueNamespaceId;
         return this;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.withQueueNamespaceId = function (queueNamespaceId) {
         this.queueNamespaceId = queueNamespaceId;
         return this;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.getKeyId = function () {
         return this.keyId;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.setKeyId = function (keyId) {
         this.keyId = keyId;
         return this;
     };
+    /** @deprecated */
     CreateNamespaceRequest.prototype.withKeyId = function (keyId) {
         this.keyId = keyId;
         return this;

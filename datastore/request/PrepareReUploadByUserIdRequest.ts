@@ -55,58 +55,46 @@ export default class PrepareReUploadByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getDataObjectName(): string|null {
         return this.dataObjectName;
     }
-
     public setDataObjectName(dataObjectName: string|null) {
         this.dataObjectName = dataObjectName;
         return this;
     }
-
     public withDataObjectName(dataObjectName: string|null): this {
         this.dataObjectName = dataObjectName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getContentType(): string|null {
         return this.contentType;
     }
-
     public setContentType(contentType: string|null) {
         this.contentType = contentType;
         return this;
     }
-
     public withContentType(contentType: string|null): this {
         this.contentType = contentType;
         return this;

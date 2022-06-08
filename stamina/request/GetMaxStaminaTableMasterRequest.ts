@@ -52,30 +52,24 @@ export default class GetMaxStaminaTableMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getMaxStaminaTableName(): string|null {
         return this.maxStaminaTableName;
     }
-
     public setMaxStaminaTableName(maxStaminaTableName: string|null) {
         this.maxStaminaTableName = maxStaminaTableName;
         return this;
     }
-
     public withMaxStaminaTableName(maxStaminaTableName: string|null): this {
         this.maxStaminaTableName = maxStaminaTableName;
         return this;

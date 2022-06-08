@@ -53,44 +53,35 @@ export default class UpdateSecurityPolicyRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getSecurityPolicyName(): string|null {
         return this.securityPolicyName;
     }
-
     public setSecurityPolicyName(securityPolicyName: string|null) {
         this.securityPolicyName = securityPolicyName;
         return this;
     }
-
     public withSecurityPolicyName(securityPolicyName: string|null): this {
         this.securityPolicyName = securityPolicyName;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getPolicy(): string|null {
         return this.policy;
     }
-
     public setPolicy(policy: string|null) {
         this.policy = policy;
         return this;
     }
-
     public withPolicy(policy: string|null): this {
         this.policy = policy;
         return this;

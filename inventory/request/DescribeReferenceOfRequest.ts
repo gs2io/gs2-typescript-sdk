@@ -55,72 +55,57 @@ export default class DescribeReferenceOfRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getInventoryName(): string|null {
         return this.inventoryName;
     }
-
     public setInventoryName(inventoryName: string|null) {
         this.inventoryName = inventoryName;
         return this;
     }
-
     public withInventoryName(inventoryName: string|null): this {
         this.inventoryName = inventoryName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getItemName(): string|null {
         return this.itemName;
     }
-
     public setItemName(itemName: string|null) {
         this.itemName = itemName;
         return this;
     }
-
     public withItemName(itemName: string|null): this {
         this.itemName = itemName;
         return this;
     }
-
     public getItemSetName(): string|null {
         return this.itemSetName;
     }
-
     public setItemSetName(itemSetName: string|null) {
         this.itemSetName = itemSetName;
         return this;
     }
-
     public withItemSetName(itemSetName: string|null): this {
         this.itemSetName = itemSetName;
         return this;

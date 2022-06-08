@@ -113,156 +113,123 @@ export default class StaminaModel implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{staminaName}', staminaName ?? '');
     }
-
     public getStaminaModelId(): string|null {
         return this.staminaModelId;
     }
-
     public setStaminaModelId(staminaModelId: string|null) {
         this.staminaModelId = staminaModelId;
         return this;
     }
-
     public withStaminaModelId(staminaModelId: string|null): this {
         this.staminaModelId = staminaModelId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getRecoverIntervalMinutes(): number|null {
         return this.recoverIntervalMinutes;
     }
-
     public setRecoverIntervalMinutes(recoverIntervalMinutes: number|null) {
         this.recoverIntervalMinutes = recoverIntervalMinutes;
         return this;
     }
-
     public withRecoverIntervalMinutes(recoverIntervalMinutes: number|null): this {
         this.recoverIntervalMinutes = recoverIntervalMinutes;
         return this;
     }
-
     public getRecoverValue(): number|null {
         return this.recoverValue;
     }
-
     public setRecoverValue(recoverValue: number|null) {
         this.recoverValue = recoverValue;
         return this;
     }
-
     public withRecoverValue(recoverValue: number|null): this {
         this.recoverValue = recoverValue;
         return this;
     }
-
     public getInitialCapacity(): number|null {
         return this.initialCapacity;
     }
-
     public setInitialCapacity(initialCapacity: number|null) {
         this.initialCapacity = initialCapacity;
         return this;
     }
-
     public withInitialCapacity(initialCapacity: number|null): this {
         this.initialCapacity = initialCapacity;
         return this;
     }
-
     public getIsOverflow(): boolean|null {
         return this.isOverflow;
     }
-
     public setIsOverflow(isOverflow: boolean|null) {
         this.isOverflow = isOverflow;
         return this;
     }
-
     public withIsOverflow(isOverflow: boolean|null): this {
         this.isOverflow = isOverflow;
         return this;
     }
-
     public getMaxCapacity(): number|null {
         return this.maxCapacity;
     }
-
     public setMaxCapacity(maxCapacity: number|null) {
         this.maxCapacity = maxCapacity;
         return this;
     }
-
     public withMaxCapacity(maxCapacity: number|null): this {
         this.maxCapacity = maxCapacity;
         return this;
     }
-
     public getMaxStaminaTable(): MaxStaminaTable|null {
         return this.maxStaminaTable;
     }
-
     public setMaxStaminaTable(maxStaminaTable: MaxStaminaTable|null) {
         this.maxStaminaTable = maxStaminaTable;
         return this;
     }
-
     public withMaxStaminaTable(maxStaminaTable: MaxStaminaTable|null): this {
         this.maxStaminaTable = maxStaminaTable;
         return this;
     }
-
     public getRecoverIntervalTable(): RecoverIntervalTable|null {
         return this.recoverIntervalTable;
     }
-
     public setRecoverIntervalTable(recoverIntervalTable: RecoverIntervalTable|null) {
         this.recoverIntervalTable = recoverIntervalTable;
         return this;
     }
-
     public withRecoverIntervalTable(recoverIntervalTable: RecoverIntervalTable|null): this {
         this.recoverIntervalTable = recoverIntervalTable;
         return this;
     }
-
     public getRecoverValueTable(): RecoverValueTable|null {
         return this.recoverValueTable;
     }
-
     public setRecoverValueTable(recoverValueTable: RecoverValueTable|null) {
         this.recoverValueTable = recoverValueTable;
         return this;
     }
-
     public withRecoverValueTable(recoverValueTable: RecoverValueTable|null): this {
         this.recoverValueTable = recoverValueTable;
         return this;

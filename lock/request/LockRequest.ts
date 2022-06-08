@@ -55,72 +55,57 @@ export default class LockRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getPropertyId(): string|null {
         return this.propertyId;
     }
-
     public setPropertyId(propertyId: string|null) {
         this.propertyId = propertyId;
         return this;
     }
-
     public withPropertyId(propertyId: string|null): this {
         this.propertyId = propertyId;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getTransactionId(): string|null {
         return this.transactionId;
     }
-
     public setTransactionId(transactionId: string|null) {
         this.transactionId = transactionId;
         return this;
     }
-
     public withTransactionId(transactionId: string|null): this {
         this.transactionId = transactionId;
         return this;
     }
-
     public getTtl(): number|null {
         return this.ttl;
     }
-
     public setTtl(ttl: number|null) {
         this.ttl = ttl;
         return this;
     }
-
     public withTtl(ttl: number|null): this {
         this.ttl = ttl;
         return this;

@@ -109,142 +109,112 @@ export default class LimitModelMaster implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{limitName}', limitName ?? '');
     }
-
     public getLimitModelId(): string|null {
         return this.limitModelId;
     }
-
     public setLimitModelId(limitModelId: string|null) {
         this.limitModelId = limitModelId;
         return this;
     }
-
     public withLimitModelId(limitModelId: string|null): this {
         this.limitModelId = limitModelId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getResetType(): string|null {
         return this.resetType;
     }
-
     public setResetType(resetType: string|null) {
         this.resetType = resetType;
         return this;
     }
-
     public withResetType(resetType: string|null): this {
         this.resetType = resetType;
         return this;
     }
-
     public getResetDayOfMonth(): number|null {
         return this.resetDayOfMonth;
     }
-
     public setResetDayOfMonth(resetDayOfMonth: number|null) {
         this.resetDayOfMonth = resetDayOfMonth;
         return this;
     }
-
     public withResetDayOfMonth(resetDayOfMonth: number|null): this {
         this.resetDayOfMonth = resetDayOfMonth;
         return this;
     }
-
     public getResetDayOfWeek(): string|null {
         return this.resetDayOfWeek;
     }
-
     public setResetDayOfWeek(resetDayOfWeek: string|null) {
         this.resetDayOfWeek = resetDayOfWeek;
         return this;
     }
-
     public withResetDayOfWeek(resetDayOfWeek: string|null): this {
         this.resetDayOfWeek = resetDayOfWeek;
         return this;
     }
-
     public getResetHour(): number|null {
         return this.resetHour;
     }
-
     public setResetHour(resetHour: number|null) {
         this.resetHour = resetHour;
         return this;
     }
-
     public withResetHour(resetHour: number|null): this {
         this.resetHour = resetHour;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

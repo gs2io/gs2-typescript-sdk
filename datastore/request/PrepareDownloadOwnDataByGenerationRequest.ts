@@ -54,58 +54,46 @@ export default class PrepareDownloadOwnDataByGenerationRequest implements IReque
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getDataObjectName(): string|null {
         return this.dataObjectName;
     }
-
     public setDataObjectName(dataObjectName: string|null) {
         this.dataObjectName = dataObjectName;
         return this;
     }
-
     public withDataObjectName(dataObjectName: string|null): this {
         this.dataObjectName = dataObjectName;
         return this;
     }
-
     public getGeneration(): string|null {
         return this.generation;
     }
-
     public setGeneration(generation: string|null) {
         this.generation = generation;
         return this;
     }
-
     public withGeneration(generation: string|null): this {
         this.generation = generation;
         return this;

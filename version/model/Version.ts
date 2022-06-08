@@ -20,44 +20,35 @@ export default class Version implements IModel {
     private major: number|null = null;
     private minor: number|null = null;
     private micro: number|null = null;
-
     public getMajor(): number|null {
         return this.major;
     }
-
     public setMajor(major: number|null) {
         this.major = major;
         return this;
     }
-
     public withMajor(major: number|null): this {
         this.major = major;
         return this;
     }
-
     public getMinor(): number|null {
         return this.minor;
     }
-
     public setMinor(minor: number|null) {
         this.minor = minor;
         return this;
     }
-
     public withMinor(minor: number|null): this {
         this.minor = minor;
         return this;
     }
-
     public getMicro(): number|null {
         return this.micro;
     }
-
     public setMicro(micro: number|null) {
         this.micro = micro;
         return this;
     }
-
     public withMicro(micro: number|null): this {
         this.micro = micro;
         return this;

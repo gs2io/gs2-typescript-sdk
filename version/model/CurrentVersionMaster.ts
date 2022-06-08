@@ -80,30 +80,24 @@ export default class CurrentVersionMaster implements IModel {
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '');
     }
-
     public getNamespaceId(): string|null {
         return this.namespaceId;
     }
-
     public setNamespaceId(namespaceId: string|null) {
         this.namespaceId = namespaceId;
         return this;
     }
-
     public withNamespaceId(namespaceId: string|null): this {
         this.namespaceId = namespaceId;
         return this;
     }
-
     public getSettings(): string|null {
         return this.settings;
     }
-
     public setSettings(settings: string|null) {
         this.settings = settings;
         return this;
     }
-
     public withSettings(settings: string|null): this {
         this.settings = settings;
         return this;

@@ -53,44 +53,35 @@ export default class UpdateStackRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getStackName(): string|null {
         return this.stackName;
     }
-
     public setStackName(stackName: string|null) {
         this.stackName = stackName;
         return this;
     }
-
     public withStackName(stackName: string|null): this {
         this.stackName = stackName;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getTemplate(): string|null {
         return this.template;
     }
-
     public setTemplate(template: string|null) {
         this.template = template;
         return this;
     }
-
     public withTemplate(template: string|null): this {
         this.template = template;
         return this;

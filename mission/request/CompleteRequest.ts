@@ -55,72 +55,57 @@ export default class CompleteRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getMissionGroupName(): string|null {
         return this.missionGroupName;
     }
-
     public setMissionGroupName(missionGroupName: string|null) {
         this.missionGroupName = missionGroupName;
         return this;
     }
-
     public withMissionGroupName(missionGroupName: string|null): this {
         this.missionGroupName = missionGroupName;
         return this;
     }
-
     public getMissionTaskName(): string|null {
         return this.missionTaskName;
     }
-
     public setMissionTaskName(missionTaskName: string|null) {
         this.missionTaskName = missionTaskName;
         return this;
     }
-
     public withMissionTaskName(missionTaskName: string|null): this {
         this.missionTaskName = missionTaskName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getConfig(): Gs2Mission.Config[]|null {
         return this.config;
     }
-
     public setConfig(config: Gs2Mission.Config[]|null) {
         this.config = config;
         return this;
     }
-
     public withConfig(config: Gs2Mission.Config[]|null): this {
         this.config = config;
         return this;

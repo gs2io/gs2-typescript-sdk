@@ -52,30 +52,24 @@ export default class DeleteRatingModelMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getRatingName(): string|null {
         return this.ratingName;
     }
-
     public setRatingName(ratingName: string|null) {
         this.ratingName = ratingName;
         return this;
     }
-
     public withRatingName(ratingName: string|null): this {
         this.ratingName = ratingName;
         return this;

@@ -131,128 +131,101 @@ export default class Job implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{jobName}', jobName ?? '');
     }
-
     public getJobId(): string|null {
         return this.jobId;
     }
-
     public setJobId(jobId: string|null) {
         this.jobId = jobId;
         return this;
     }
-
     public withJobId(jobId: string|null): this {
         this.jobId = jobId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getScriptId(): string|null {
         return this.scriptId;
     }
-
     public setScriptId(scriptId: string|null) {
         this.scriptId = scriptId;
         return this;
     }
-
     public withScriptId(scriptId: string|null): this {
         this.scriptId = scriptId;
         return this;
     }
-
     public getArgs(): string|null {
         return this.args;
     }
-
     public setArgs(args: string|null) {
         this.args = args;
         return this;
     }
-
     public withArgs(args: string|null): this {
         this.args = args;
         return this;
     }
-
     public getCurrentRetryCount(): number|null {
         return this.currentRetryCount;
     }
-
     public setCurrentRetryCount(currentRetryCount: number|null) {
         this.currentRetryCount = currentRetryCount;
         return this;
     }
-
     public withCurrentRetryCount(currentRetryCount: number|null): this {
         this.currentRetryCount = currentRetryCount;
         return this;
     }
-
     public getMaxTryCount(): number|null {
         return this.maxTryCount;
     }
-
     public setMaxTryCount(maxTryCount: number|null) {
         this.maxTryCount = maxTryCount;
         return this;
     }
-
     public withMaxTryCount(maxTryCount: number|null): this {
         this.maxTryCount = maxTryCount;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

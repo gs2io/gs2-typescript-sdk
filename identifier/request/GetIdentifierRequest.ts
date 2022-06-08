@@ -52,30 +52,24 @@ export default class GetIdentifierRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getUserName(): string|null {
         return this.userName;
     }
-
     public setUserName(userName: string|null) {
         this.userName = userName;
         return this;
     }
-
     public withUserName(userName: string|null): this {
         this.userName = userName;
         return this;
     }
-
     public getClientId(): string|null {
         return this.clientId;
     }
-
     public setClientId(clientId: string|null) {
         this.clientId = clientId;
         return this;
     }
-
     public withClientId(clientId: string|null): this {
         this.clientId = clientId;
         return this;

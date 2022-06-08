@@ -54,58 +54,46 @@ export default class GetProjectTokenByIdentifierRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getAccountName(): string|null {
         return this.accountName;
     }
-
     public setAccountName(accountName: string|null) {
         this.accountName = accountName;
         return this;
     }
-
     public withAccountName(accountName: string|null): this {
         this.accountName = accountName;
         return this;
     }
-
     public getProjectName(): string|null {
         return this.projectName;
     }
-
     public setProjectName(projectName: string|null) {
         this.projectName = projectName;
         return this;
     }
-
     public withProjectName(projectName: string|null): this {
         this.projectName = projectName;
         return this;
     }
-
     public getUserName(): string|null {
         return this.userName;
     }
-
     public setUserName(userName: string|null) {
         this.userName = userName;
         return this;
     }
-
     public withUserName(userName: string|null): this {
         this.userName = userName;
         return this;
     }
-
     public getPassword(): string|null {
         return this.password;
     }
-
     public setPassword(password: string|null) {
         this.password = password;
         return this;
     }
-
     public withPassword(password: string|null): this {
         this.password = password;
         return this;

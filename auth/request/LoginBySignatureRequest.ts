@@ -53,44 +53,35 @@ export default class LoginBySignatureRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getKeyId(): string|null {
         return this.keyId;
     }
-
     public setKeyId(keyId: string|null) {
         this.keyId = keyId;
         return this;
     }
-
     public withKeyId(keyId: string|null): this {
         this.keyId = keyId;
         return this;
     }
-
     public getBody(): string|null {
         return this.body;
     }
-
     public setBody(body: string|null) {
         this.body = body;
         return this;
     }
-
     public withBody(body: string|null): this {
         this.body = body;
         return this;
     }
-
     public getSignature(): string|null {
         return this.signature;
     }
-
     public setSignature(signature: string|null) {
         this.signature = signature;
         return this;
     }
-
     public withSignature(signature: string|null): this {
         this.signature = signature;
         return this;

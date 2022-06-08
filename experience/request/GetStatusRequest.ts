@@ -54,58 +54,46 @@ export default class GetStatusRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getExperienceName(): string|null {
         return this.experienceName;
     }
-
     public setExperienceName(experienceName: string|null) {
         this.experienceName = experienceName;
         return this;
     }
-
     public withExperienceName(experienceName: string|null): this {
         this.experienceName = experienceName;
         return this;
     }
-
     public getPropertyId(): string|null {
         return this.propertyId;
     }
-
     public setPropertyId(propertyId: string|null) {
         this.propertyId = propertyId;
         return this;
     }
-
     public withPropertyId(propertyId: string|null): this {
         this.propertyId = propertyId;
         return this;

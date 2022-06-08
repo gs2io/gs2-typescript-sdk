@@ -52,30 +52,24 @@ export default class GetQuestGroupModelMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getQuestGroupName(): string|null {
         return this.questGroupName;
     }
-
     public setQuestGroupName(questGroupName: string|null) {
         this.questGroupName = questGroupName;
         return this;
     }
-
     public withQuestGroupName(questGroupName: string|null): this {
         this.questGroupName = questGroupName;
         return this;

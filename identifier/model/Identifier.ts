@@ -31,58 +31,46 @@ export default class Identifier implements IModel {
     ): string|null {
         return grnFormat;
     }
-
     public getClientId(): string|null {
         return this.clientId;
     }
-
     public setClientId(clientId: string|null) {
         this.clientId = clientId;
         return this;
     }
-
     public withClientId(clientId: string|null): this {
         this.clientId = clientId;
         return this;
     }
-
     public getUserName(): string|null {
         return this.userName;
     }
-
     public setUserName(userName: string|null) {
         this.userName = userName;
         return this;
     }
-
     public withUserName(userName: string|null): this {
         this.userName = userName;
         return this;
     }
-
     public getClientSecret(): string|null {
         return this.clientSecret;
     }
-
     public setClientSecret(clientSecret: string|null) {
         this.clientSecret = clientSecret;
         return this;
     }
-
     public withClientSecret(clientSecret: string|null): this {
         this.clientSecret = clientSecret;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;

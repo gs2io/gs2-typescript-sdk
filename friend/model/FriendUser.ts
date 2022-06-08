@@ -30,44 +30,35 @@ export default class FriendUser implements IModel {
     ): string|null {
         return grnFormat;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getPublicProfile(): string|null {
         return this.publicProfile;
     }
-
     public setPublicProfile(publicProfile: string|null) {
         this.publicProfile = publicProfile;
         return this;
     }
-
     public withPublicProfile(publicProfile: string|null): this {
         this.publicProfile = publicProfile;
         return this;
     }
-
     public getFriendProfile(): string|null {
         return this.friendProfile;
     }
-
     public setFriendProfile(friendProfile: string|null) {
         this.friendProfile = friendProfile;
         return this;
     }
-
     public withFriendProfile(friendProfile: string|null): this {
         this.friendProfile = friendProfile;
         return this;

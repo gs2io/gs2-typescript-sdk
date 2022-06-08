@@ -57,100 +57,79 @@ export default class CreateInventoryModelMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getInitialCapacity(): number|null {
         return this.initialCapacity;
     }
-
     public setInitialCapacity(initialCapacity: number|null) {
         this.initialCapacity = initialCapacity;
         return this;
     }
-
     public withInitialCapacity(initialCapacity: number|null): this {
         this.initialCapacity = initialCapacity;
         return this;
     }
-
     public getMaxCapacity(): number|null {
         return this.maxCapacity;
     }
-
     public setMaxCapacity(maxCapacity: number|null) {
         this.maxCapacity = maxCapacity;
         return this;
     }
-
     public withMaxCapacity(maxCapacity: number|null): this {
         this.maxCapacity = maxCapacity;
         return this;
     }
-
     public getProtectReferencedItem(): boolean|null {
         return this.protectReferencedItem;
     }
-
     public setProtectReferencedItem(protectReferencedItem: boolean|null) {
         this.protectReferencedItem = protectReferencedItem;
         return this;
     }
-
     public withProtectReferencedItem(protectReferencedItem: boolean|null): this {
         this.protectReferencedItem = protectReferencedItem;
         return this;

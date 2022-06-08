@@ -60,142 +60,112 @@ export default class CreateVersionModelMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getWarningVersion(): Gs2Version.Version|null {
         return this.warningVersion;
     }
-
     public setWarningVersion(warningVersion: Gs2Version.Version|null) {
         this.warningVersion = warningVersion;
         return this;
     }
-
     public withWarningVersion(warningVersion: Gs2Version.Version|null): this {
         this.warningVersion = warningVersion;
         return this;
     }
-
     public getErrorVersion(): Gs2Version.Version|null {
         return this.errorVersion;
     }
-
     public setErrorVersion(errorVersion: Gs2Version.Version|null) {
         this.errorVersion = errorVersion;
         return this;
     }
-
     public withErrorVersion(errorVersion: Gs2Version.Version|null): this {
         this.errorVersion = errorVersion;
         return this;
     }
-
     public getScope(): string|null {
         return this.scope;
     }
-
     public setScope(scope: string|null) {
         this.scope = scope;
         return this;
     }
-
     public withScope(scope: string|null): this {
         this.scope = scope;
         return this;
     }
-
     public getCurrentVersion(): Gs2Version.Version|null {
         return this.currentVersion;
     }
-
     public setCurrentVersion(currentVersion: Gs2Version.Version|null) {
         this.currentVersion = currentVersion;
         return this;
     }
-
     public withCurrentVersion(currentVersion: Gs2Version.Version|null): this {
         this.currentVersion = currentVersion;
         return this;
     }
-
     public getNeedSignature(): boolean|null {
         return this.needSignature;
     }
-
     public setNeedSignature(needSignature: boolean|null) {
         this.needSignature = needSignature;
         return this;
     }
-
     public withNeedSignature(needSignature: boolean|null): this {
         this.needSignature = needSignature;
         return this;
     }
-
     public getSignatureKeyId(): string|null {
         return this.signatureKeyId;
     }
-
     public setSignatureKeyId(signatureKeyId: string|null) {
         this.signatureKeyId = signatureKeyId;
         return this;
     }
-
     public withSignatureKeyId(signatureKeyId: string|null): this {
         this.signatureKeyId = signatureKeyId;
         return this;

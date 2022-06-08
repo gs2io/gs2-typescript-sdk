@@ -128,86 +128,68 @@ export default class Rating implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{ratingName}', ratingName ?? '');
     }
-
     public getRatingId(): string|null {
         return this.ratingId;
     }
-
     public setRatingId(ratingId: string|null) {
         this.ratingId = ratingId;
         return this;
     }
-
     public withRatingId(ratingId: string|null): this {
         this.ratingId = ratingId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getRateValue(): number|null {
         return this.rateValue;
     }
-
     public setRateValue(rateValue: number|null) {
         this.rateValue = rateValue;
         return this;
     }
-
     public withRateValue(rateValue: number|null): this {
         this.rateValue = rateValue;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

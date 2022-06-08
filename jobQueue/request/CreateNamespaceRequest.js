@@ -23,7 +23,9 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.contextStack = null;
         this.name = null;
         this.description = null;
+        this.enableAutoRun = null;
         this.pushNotification = null;
+        this.runNotification = null;
         this.logSetting = null;
     }
     CreateNamespaceRequest.prototype.getRequestId = function () {
@@ -70,6 +72,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    CreateNamespaceRequest.prototype.getEnableAutoRun = function () {
+        return this.enableAutoRun;
+    };
+    CreateNamespaceRequest.prototype.setEnableAutoRun = function (enableAutoRun) {
+        this.enableAutoRun = enableAutoRun;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withEnableAutoRun = function (enableAutoRun) {
+        this.enableAutoRun = enableAutoRun;
+        return this;
+    };
     CreateNamespaceRequest.prototype.getPushNotification = function () {
         return this.pushNotification;
     };
@@ -79,6 +92,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
     };
     CreateNamespaceRequest.prototype.withPushNotification = function (pushNotification) {
         this.pushNotification = pushNotification;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getRunNotification = function () {
+        return this.runNotification;
+    };
+    CreateNamespaceRequest.prototype.setRunNotification = function (runNotification) {
+        this.runNotification = runNotification;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withRunNotification = function (runNotification) {
+        this.runNotification = runNotification;
         return this;
     };
     CreateNamespaceRequest.prototype.getLogSetting = function () {
@@ -96,16 +120,20 @@ var CreateNamespaceRequest = /** @class */ (function () {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withEnableAutoRun(data["enableAutoRun"])
             .withPushNotification(Gs2JobQueue.NotificationSetting.fromDict(data["pushNotification"]))
+            .withRunNotification(Gs2JobQueue.NotificationSetting.fromDict(data["runNotification"]))
             .withLogSetting(Gs2JobQueue.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "enableAutoRun": this.getEnableAutoRun(),
             "pushNotification": (_a = this.getPushNotification()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "runNotification": (_b = this.getRunNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
         };
     };
     return CreateNamespaceRequest;

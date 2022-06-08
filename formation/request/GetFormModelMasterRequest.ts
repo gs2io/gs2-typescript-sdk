@@ -52,30 +52,24 @@ export default class GetFormModelMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getFormModelName(): string|null {
         return this.formModelName;
     }
-
     public setFormModelName(formModelName: string|null) {
         this.formModelName = formModelName;
         return this;
     }
-
     public withFormModelName(formModelName: string|null): this {
         this.formModelName = formModelName;
         return this;

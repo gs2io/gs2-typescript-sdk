@@ -56,72 +56,57 @@ export default class UpdateDataObjectByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getDataObjectName(): string|null {
         return this.dataObjectName;
     }
-
     public setDataObjectName(dataObjectName: string|null) {
         this.dataObjectName = dataObjectName;
         return this;
     }
-
     public withDataObjectName(dataObjectName: string|null): this {
         this.dataObjectName = dataObjectName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getScope(): string|null {
         return this.scope;
     }
-
     public setScope(scope: string|null) {
         this.scope = scope;
         return this;
     }
-
     public withScope(scope: string|null): this {
         this.scope = scope;
         return this;
     }
-
     public getAllowUserIds(): string[]|null {
         return this.allowUserIds;
     }
-
     public setAllowUserIds(allowUserIds: string[]|null) {
         this.allowUserIds = allowUserIds;
         return this;
     }
-
     public withAllowUserIds(allowUserIds: string[]|null): this {
         this.allowUserIds = allowUserIds;
         return this;

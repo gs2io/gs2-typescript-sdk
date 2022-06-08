@@ -104,58 +104,46 @@ export default class FormModel implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{formModelName}', formModelName ?? '');
     }
-
     public getFormModelId(): string|null {
         return this.formModelId;
     }
-
     public setFormModelId(formModelId: string|null) {
         this.formModelId = formModelId;
         return this;
     }
-
     public withFormModelId(formModelId: string|null): this {
         this.formModelId = formModelId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getSlots(): SlotModel[]|null {
         return this.slots;
     }
-
     public setSlots(slots: SlotModel[]|null) {
         this.slots = slots;
         return this;
     }
-
     public withSlots(slots: SlotModel[]|null): this {
         this.slots = slots;
         return this;

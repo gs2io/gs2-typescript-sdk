@@ -129,100 +129,79 @@ export default class Message implements IModel {
             .replace('{roomName}', roomName ?? '')
             .replace('{messageName}', messageName ?? '');
     }
-
     public getMessageId(): string|null {
         return this.messageId;
     }
-
     public setMessageId(messageId: string|null) {
         this.messageId = messageId;
         return this;
     }
-
     public withMessageId(messageId: string|null): this {
         this.messageId = messageId;
         return this;
     }
-
     public getRoomName(): string|null {
         return this.roomName;
     }
-
     public setRoomName(roomName: string|null) {
         this.roomName = roomName;
         return this;
     }
-
     public withRoomName(roomName: string|null): this {
         this.roomName = roomName;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getCategory(): number|null {
         return this.category;
     }
-
     public setCategory(category: number|null) {
         this.category = category;
         return this;
     }
-
     public withCategory(category: number|null): this {
         this.category = category;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;

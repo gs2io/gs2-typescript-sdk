@@ -52,30 +52,24 @@ export default class UpdateUserRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getUserName(): string|null {
         return this.userName;
     }
-
     public setUserName(userName: string|null) {
         this.userName = userName;
         return this;
     }
-
     public withUserName(userName: string|null): this {
         this.userName = userName;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;

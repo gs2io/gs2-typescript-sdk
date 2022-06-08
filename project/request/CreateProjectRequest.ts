@@ -58,114 +58,90 @@ export default class CreateProjectRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getAccountToken(): string|null {
         return this.accountToken;
     }
-
     public setAccountToken(accountToken: string|null) {
         this.accountToken = accountToken;
         return this;
     }
-
     public withAccountToken(accountToken: string|null): this {
         this.accountToken = accountToken;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getPlan(): string|null {
         return this.plan;
     }
-
     public setPlan(plan: string|null) {
         this.plan = plan;
         return this;
     }
-
     public withPlan(plan: string|null): this {
         this.plan = plan;
         return this;
     }
-
     public getBillingMethodName(): string|null {
         return this.billingMethodName;
     }
-
     public setBillingMethodName(billingMethodName: string|null) {
         this.billingMethodName = billingMethodName;
         return this;
     }
-
     public withBillingMethodName(billingMethodName: string|null): this {
         this.billingMethodName = billingMethodName;
         return this;
     }
-
     public getEnableEventBridge(): string|null {
         return this.enableEventBridge;
     }
-
     public setEnableEventBridge(enableEventBridge: string|null) {
         this.enableEventBridge = enableEventBridge;
         return this;
     }
-
     public withEnableEventBridge(enableEventBridge: string|null): this {
         this.enableEventBridge = enableEventBridge;
         return this;
     }
-
     public getEventBridgeAwsAccountId(): string|null {
         return this.eventBridgeAwsAccountId;
     }
-
     public setEventBridgeAwsAccountId(eventBridgeAwsAccountId: string|null) {
         this.eventBridgeAwsAccountId = eventBridgeAwsAccountId;
         return this;
     }
-
     public withEventBridgeAwsAccountId(eventBridgeAwsAccountId: string|null): this {
         this.eventBridgeAwsAccountId = eventBridgeAwsAccountId;
         return this;
     }
-
     public getEventBridgeAwsRegion(): string|null {
         return this.eventBridgeAwsRegion;
     }
-
     public setEventBridgeAwsRegion(eventBridgeAwsRegion: string|null) {
         this.eventBridgeAwsRegion = eventBridgeAwsRegion;
         return this;
     }
-
     public withEventBridgeAwsRegion(eventBridgeAwsRegion: string|null): this {
         this.eventBridgeAwsRegion = eventBridgeAwsRegion;
         return this;

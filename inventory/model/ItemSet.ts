@@ -185,156 +185,123 @@ export default class ItemSet implements IModel {
             .replace('{itemName}', itemName ?? '')
             .replace('{itemSetName}', itemSetName ?? '');
     }
-
     public getItemSetId(): string|null {
         return this.itemSetId;
     }
-
     public setItemSetId(itemSetId: string|null) {
         this.itemSetId = itemSetId;
         return this;
     }
-
     public withItemSetId(itemSetId: string|null): this {
         this.itemSetId = itemSetId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getInventoryName(): string|null {
         return this.inventoryName;
     }
-
     public setInventoryName(inventoryName: string|null) {
         this.inventoryName = inventoryName;
         return this;
     }
-
     public withInventoryName(inventoryName: string|null): this {
         this.inventoryName = inventoryName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getItemName(): string|null {
         return this.itemName;
     }
-
     public setItemName(itemName: string|null) {
         this.itemName = itemName;
         return this;
     }
-
     public withItemName(itemName: string|null): this {
         this.itemName = itemName;
         return this;
     }
-
     public getCount(): number|null {
         return this.count;
     }
-
     public setCount(count: number|null) {
         this.count = count;
         return this;
     }
-
     public withCount(count: number|null): this {
         this.count = count;
         return this;
     }
-
     public getReferenceOf(): string[]|null {
         return this.referenceOf;
     }
-
     public setReferenceOf(referenceOf: string[]|null) {
         this.referenceOf = referenceOf;
         return this;
     }
-
     public withReferenceOf(referenceOf: string[]|null): this {
         this.referenceOf = referenceOf;
         return this;
     }
-
     public getSortValue(): number|null {
         return this.sortValue;
     }
-
     public setSortValue(sortValue: number|null) {
         this.sortValue = sortValue;
         return this;
     }
-
     public withSortValue(sortValue: number|null): this {
         this.sortValue = sortValue;
         return this;
     }
-
     public getExpiresAt(): number|null {
         return this.expiresAt;
     }
-
     public setExpiresAt(expiresAt: number|null) {
         this.expiresAt = expiresAt;
         return this;
     }
-
     public withExpiresAt(expiresAt: number|null): this {
         this.expiresAt = expiresAt;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

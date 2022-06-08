@@ -129,100 +129,79 @@ export default class Inventory implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{inventoryName}', inventoryName ?? '');
     }
-
     public getInventoryId(): string|null {
         return this.inventoryId;
     }
-
     public setInventoryId(inventoryId: string|null) {
         this.inventoryId = inventoryId;
         return this;
     }
-
     public withInventoryId(inventoryId: string|null): this {
         this.inventoryId = inventoryId;
         return this;
     }
-
     public getInventoryName(): string|null {
         return this.inventoryName;
     }
-
     public setInventoryName(inventoryName: string|null) {
         this.inventoryName = inventoryName;
         return this;
     }
-
     public withInventoryName(inventoryName: string|null): this {
         this.inventoryName = inventoryName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getCurrentInventoryCapacityUsage(): number|null {
         return this.currentInventoryCapacityUsage;
     }
-
     public setCurrentInventoryCapacityUsage(currentInventoryCapacityUsage: number|null) {
         this.currentInventoryCapacityUsage = currentInventoryCapacityUsage;
         return this;
     }
-
     public withCurrentInventoryCapacityUsage(currentInventoryCapacityUsage: number|null): this {
         this.currentInventoryCapacityUsage = currentInventoryCapacityUsage;
         return this;
     }
-
     public getCurrentInventoryMaxCapacity(): number|null {
         return this.currentInventoryMaxCapacity;
     }
-
     public setCurrentInventoryMaxCapacity(currentInventoryMaxCapacity: number|null) {
         this.currentInventoryMaxCapacity = currentInventoryMaxCapacity;
         return this;
     }
-
     public withCurrentInventoryMaxCapacity(currentInventoryMaxCapacity: number|null): this {
         this.currentInventoryMaxCapacity = currentInventoryMaxCapacity;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

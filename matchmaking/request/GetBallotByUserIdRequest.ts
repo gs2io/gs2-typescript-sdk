@@ -56,86 +56,68 @@ export default class GetBallotByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getRatingName(): string|null {
         return this.ratingName;
     }
-
     public setRatingName(ratingName: string|null) {
         this.ratingName = ratingName;
         return this;
     }
-
     public withRatingName(ratingName: string|null): this {
         this.ratingName = ratingName;
         return this;
     }
-
     public getGatheringName(): string|null {
         return this.gatheringName;
     }
-
     public setGatheringName(gatheringName: string|null) {
         this.gatheringName = gatheringName;
         return this;
     }
-
     public withGatheringName(gatheringName: string|null): this {
         this.gatheringName = gatheringName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getNumberOfPlayer(): number|null {
         return this.numberOfPlayer;
     }
-
     public setNumberOfPlayer(numberOfPlayer: number|null) {
         this.numberOfPlayer = numberOfPlayer;
         return this;
     }
-
     public withNumberOfPlayer(numberOfPlayer: number|null): this {
         this.numberOfPlayer = numberOfPlayer;
         return this;
     }
-
     public getKeyId(): string|null {
         return this.keyId;
     }
-
     public setKeyId(keyId: string|null) {
         this.keyId = keyId;
         return this;
     }
-
     public withKeyId(keyId: string|null): this {
         this.keyId = keyId;
         return this;

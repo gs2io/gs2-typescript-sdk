@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteDeadLetterJobByUserIdRequest = exports.GetDeadLetterJobByUserIdRequest = exports.DescribeDeadLetterJobsByUserIdRequest = exports.PushByStampSheetRequest = exports.DeleteJobByUserIdRequest = exports.RunByUserIdRequest = exports.RunRequest = exports.PushByUserIdRequest = exports.GetJobByUserIdRequest = exports.DescribeJobsByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.DeleteDeadLetterJobByUserIdRequest = exports.GetDeadLetterJobByUserIdRequest = exports.DescribeDeadLetterJobsByUserIdRequest = exports.GetJobResultByUserIdRequest = exports.GetJobResultRequest = exports.PushByStampSheetRequest = exports.DeleteJobByUserIdRequest = exports.RunByUserIdRequest = exports.RunRequest = exports.PushByUserIdRequest = exports.GetJobByUserIdRequest = exports.DescribeJobsByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -43,6 +43,10 @@ var DeleteJobByUserIdRequest_1 = tslib_1.__importDefault(require("./DeleteJobByU
 exports.DeleteJobByUserIdRequest = DeleteJobByUserIdRequest_1.default;
 var PushByStampSheetRequest_1 = tslib_1.__importDefault(require("./PushByStampSheetRequest"));
 exports.PushByStampSheetRequest = PushByStampSheetRequest_1.default;
+var GetJobResultRequest_1 = tslib_1.__importDefault(require("./GetJobResultRequest"));
+exports.GetJobResultRequest = GetJobResultRequest_1.default;
+var GetJobResultByUserIdRequest_1 = tslib_1.__importDefault(require("./GetJobResultByUserIdRequest"));
+exports.GetJobResultByUserIdRequest = GetJobResultByUserIdRequest_1.default;
 var DescribeDeadLetterJobsByUserIdRequest_1 = tslib_1.__importDefault(require("./DescribeDeadLetterJobsByUserIdRequest"));
 exports.DescribeDeadLetterJobsByUserIdRequest = DescribeDeadLetterJobsByUserIdRequest_1.default;
 var GetDeadLetterJobByUserIdRequest_1 = tslib_1.__importDefault(require("./GetDeadLetterJobByUserIdRequest"));

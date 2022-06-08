@@ -104,72 +104,57 @@ export default class RecoverIntervalTable implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{recoverIntervalTableName}', recoverIntervalTableName ?? '');
     }
-
     public getRecoverIntervalTableId(): string|null {
         return this.recoverIntervalTableId;
     }
-
     public setRecoverIntervalTableId(recoverIntervalTableId: string|null) {
         this.recoverIntervalTableId = recoverIntervalTableId;
         return this;
     }
-
     public withRecoverIntervalTableId(recoverIntervalTableId: string|null): this {
         this.recoverIntervalTableId = recoverIntervalTableId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getExperienceModelId(): string|null {
         return this.experienceModelId;
     }
-
     public setExperienceModelId(experienceModelId: string|null) {
         this.experienceModelId = experienceModelId;
         return this;
     }
-
     public withExperienceModelId(experienceModelId: string|null): this {
         this.experienceModelId = experienceModelId;
         return this;
     }
-
     public getValues(): number[]|null {
         return this.values;
     }
-
     public setValues(values: number[]|null) {
         this.values = values;
         return this;
     }
-
     public withValues(values: number[]|null): this {
         this.values = values;
         return this;

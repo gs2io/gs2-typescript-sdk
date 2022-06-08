@@ -103,58 +103,46 @@ export default class Output implements IModel {
             .replace('{stackName}', stackName ?? '')
             .replace('{outputName}', outputName ?? '');
     }
-
     public getOutputId(): string|null {
         return this.outputId;
     }
-
     public setOutputId(outputId: string|null) {
         this.outputId = outputId;
         return this;
     }
-
     public withOutputId(outputId: string|null): this {
         this.outputId = outputId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getValue(): string|null {
         return this.value;
     }
-
     public setValue(value: string|null) {
         this.value = value;
         return this;
     }
-
     public withValue(value: string|null): this {
         this.value = value;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;

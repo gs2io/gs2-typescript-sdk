@@ -55,72 +55,57 @@ export default class DescribeCountersRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getLimitName(): string|null {
         return this.limitName;
     }
-
     public setLimitName(limitName: string|null) {
         this.limitName = limitName;
         return this;
     }
-
     public withLimitName(limitName: string|null): this {
         this.limitName = limitName;
         return this;
     }
-
     public getPageToken(): string|null {
         return this.pageToken;
     }
-
     public setPageToken(pageToken: string|null) {
         this.pageToken = pageToken;
         return this;
     }
-
     public withPageToken(pageToken: string|null): this {
         this.pageToken = pageToken;
         return this;
     }
-
     public getLimit(): number|null {
         return this.limit;
     }
-
     public setLimit(limit: number|null) {
         this.limit = limit;
         return this;
     }
-
     public withLimit(limit: number|null): this {
         this.limit = limit;
         return this;

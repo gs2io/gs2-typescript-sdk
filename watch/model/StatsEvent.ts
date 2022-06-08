@@ -25,114 +25,90 @@ export default class StatsEvent implements IModel {
     private value: number|null = null;
     private tags: string[]|null = null;
     private callAt: number|null = null;
-
     public getGrn(): string|null {
         return this.grn;
     }
-
     public setGrn(grn: string|null) {
         this.grn = grn;
         return this;
     }
-
     public withGrn(grn: string|null): this {
         this.grn = grn;
         return this;
     }
-
     public getService(): string|null {
         return this.service;
     }
-
     public setService(service: string|null) {
         this.service = service;
         return this;
     }
-
     public withService(service: string|null): this {
         this.service = service;
         return this;
     }
-
     public getMethod(): string|null {
         return this.method;
     }
-
     public setMethod(method: string|null) {
         this.method = method;
         return this;
     }
-
     public withMethod(method: string|null): this {
         this.method = method;
         return this;
     }
-
     public getMetric(): string|null {
         return this.metric;
     }
-
     public setMetric(metric: string|null) {
         this.metric = metric;
         return this;
     }
-
     public withMetric(metric: string|null): this {
         this.metric = metric;
         return this;
     }
-
     public getCumulative(): boolean|null {
         return this.cumulative;
     }
-
     public setCumulative(cumulative: boolean|null) {
         this.cumulative = cumulative;
         return this;
     }
-
     public withCumulative(cumulative: boolean|null): this {
         this.cumulative = cumulative;
         return this;
     }
-
     public getValue(): number|null {
         return this.value;
     }
-
     public setValue(value: number|null) {
         this.value = value;
         return this;
     }
-
     public withValue(value: number|null): this {
         this.value = value;
         return this;
     }
-
     public getTags(): string[]|null {
         return this.tags;
     }
-
     public setTags(tags: string[]|null) {
         this.tags = tags;
         return this;
     }
-
     public withTags(tags: string[]|null): this {
         this.tags = tags;
         return this;
     }
-
     public getCallAt(): number|null {
         return this.callAt;
     }
-
     public setCallAt(callAt: number|null) {
         this.callAt = callAt;
         return this;
     }
-
     public withCallAt(callAt: number|null): this {
         this.callAt = callAt;
         return this;

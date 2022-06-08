@@ -103,58 +103,46 @@ export default class RatingModel implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{ratingName}', ratingName ?? '');
     }
-
     public getRatingModelId(): string|null {
         return this.ratingModelId;
     }
-
     public setRatingModelId(ratingModelId: string|null) {
         this.ratingModelId = ratingModelId;
         return this;
     }
-
     public withRatingModelId(ratingModelId: string|null): this {
         this.ratingModelId = ratingModelId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getVolatility(): number|null {
         return this.volatility;
     }
-
     public setVolatility(volatility: number|null) {
         this.volatility = volatility;
         return this;
     }
-
     public withVolatility(volatility: number|null): this {
         this.volatility = volatility;
         return this;

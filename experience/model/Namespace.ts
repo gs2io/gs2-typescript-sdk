@@ -91,156 +91,123 @@ export default class Namespace implements IModel {
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '');
     }
-
     public getNamespaceId(): string|null {
         return this.namespaceId;
     }
-
     public setNamespaceId(namespaceId: string|null) {
         this.namespaceId = namespaceId;
         return this;
     }
-
     public withNamespaceId(namespaceId: string|null): this {
         this.namespaceId = namespaceId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getExperienceCapScriptId(): string|null {
         return this.experienceCapScriptId;
     }
-
     public setExperienceCapScriptId(experienceCapScriptId: string|null) {
         this.experienceCapScriptId = experienceCapScriptId;
         return this;
     }
-
     public withExperienceCapScriptId(experienceCapScriptId: string|null): this {
         this.experienceCapScriptId = experienceCapScriptId;
         return this;
     }
-
     public getChangeExperienceScript(): ScriptSetting|null {
         return this.changeExperienceScript;
     }
-
     public setChangeExperienceScript(changeExperienceScript: ScriptSetting|null) {
         this.changeExperienceScript = changeExperienceScript;
         return this;
     }
-
     public withChangeExperienceScript(changeExperienceScript: ScriptSetting|null): this {
         this.changeExperienceScript = changeExperienceScript;
         return this;
     }
-
     public getChangeRankScript(): ScriptSetting|null {
         return this.changeRankScript;
     }
-
     public setChangeRankScript(changeRankScript: ScriptSetting|null) {
         this.changeRankScript = changeRankScript;
         return this;
     }
-
     public withChangeRankScript(changeRankScript: ScriptSetting|null): this {
         this.changeRankScript = changeRankScript;
         return this;
     }
-
     public getChangeRankCapScript(): ScriptSetting|null {
         return this.changeRankCapScript;
     }
-
     public setChangeRankCapScript(changeRankCapScript: ScriptSetting|null) {
         this.changeRankCapScript = changeRankCapScript;
         return this;
     }
-
     public withChangeRankCapScript(changeRankCapScript: ScriptSetting|null): this {
         this.changeRankCapScript = changeRankCapScript;
         return this;
     }
-
     public getOverflowExperienceScript(): ScriptSetting|null {
         return this.overflowExperienceScript;
     }
-
     public setOverflowExperienceScript(overflowExperienceScript: ScriptSetting|null) {
         this.overflowExperienceScript = overflowExperienceScript;
         return this;
     }
-
     public withOverflowExperienceScript(overflowExperienceScript: ScriptSetting|null): this {
         this.overflowExperienceScript = overflowExperienceScript;
         return this;
     }
-
     public getLogSetting(): LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

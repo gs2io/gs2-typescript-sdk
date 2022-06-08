@@ -59,128 +59,101 @@ export default class CreateMissionGroupModelMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getResetType(): string|null {
         return this.resetType;
     }
-
     public setResetType(resetType: string|null) {
         this.resetType = resetType;
         return this;
     }
-
     public withResetType(resetType: string|null): this {
         this.resetType = resetType;
         return this;
     }
-
     public getResetDayOfMonth(): number|null {
         return this.resetDayOfMonth;
     }
-
     public setResetDayOfMonth(resetDayOfMonth: number|null) {
         this.resetDayOfMonth = resetDayOfMonth;
         return this;
     }
-
     public withResetDayOfMonth(resetDayOfMonth: number|null): this {
         this.resetDayOfMonth = resetDayOfMonth;
         return this;
     }
-
     public getResetDayOfWeek(): string|null {
         return this.resetDayOfWeek;
     }
-
     public setResetDayOfWeek(resetDayOfWeek: string|null) {
         this.resetDayOfWeek = resetDayOfWeek;
         return this;
     }
-
     public withResetDayOfWeek(resetDayOfWeek: string|null): this {
         this.resetDayOfWeek = resetDayOfWeek;
         return this;
     }
-
     public getResetHour(): number|null {
         return this.resetHour;
     }
-
     public setResetHour(resetHour: number|null) {
         this.resetHour = resetHour;
         return this;
     }
-
     public withResetHour(resetHour: number|null): this {
         this.resetHour = resetHour;
         return this;
     }
-
     public getCompleteNotificationNamespaceId(): string|null {
         return this.completeNotificationNamespaceId;
     }
-
     public setCompleteNotificationNamespaceId(completeNotificationNamespaceId: string|null) {
         this.completeNotificationNamespaceId = completeNotificationNamespaceId;
         return this;
     }
-
     public withCompleteNotificationNamespaceId(completeNotificationNamespaceId: string|null): this {
         this.completeNotificationNamespaceId = completeNotificationNamespaceId;
         return this;

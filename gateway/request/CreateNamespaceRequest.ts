@@ -54,58 +54,46 @@ export default class CreateNamespaceRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getFirebaseSecret(): string|null {
         return this.firebaseSecret;
     }
-
     public setFirebaseSecret(firebaseSecret: string|null) {
         this.firebaseSecret = firebaseSecret;
         return this;
     }
-
     public withFirebaseSecret(firebaseSecret: string|null): this {
         this.firebaseSecret = firebaseSecret;
         return this;
     }
-
     public getLogSetting(): Gs2Gateway.LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: Gs2Gateway.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: Gs2Gateway.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;

@@ -51,128 +51,101 @@ export default class Account implements IModel {
         return grnFormat
             .replace('{accountName}', accountName ?? '');
     }
-
     public getAccountId(): string|null {
         return this.accountId;
     }
-
     public setAccountId(accountId: string|null) {
         this.accountId = accountId;
         return this;
     }
-
     public withAccountId(accountId: string|null): this {
         this.accountId = accountId;
         return this;
     }
-
     public getOwnerId(): string|null {
         return this.ownerId;
     }
-
     public setOwnerId(ownerId: string|null) {
         this.ownerId = ownerId;
         return this;
     }
-
     public withOwnerId(ownerId: string|null): this {
         this.ownerId = ownerId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getEmail(): string|null {
         return this.email;
     }
-
     public setEmail(email: string|null) {
         this.email = email;
         return this;
     }
-
     public withEmail(email: string|null): this {
         this.email = email;
         return this;
     }
-
     public getFullName(): string|null {
         return this.fullName;
     }
-
     public setFullName(fullName: string|null) {
         this.fullName = fullName;
         return this;
     }
-
     public withFullName(fullName: string|null): this {
         this.fullName = fullName;
         return this;
     }
-
     public getCompanyName(): string|null {
         return this.companyName;
     }
-
     public setCompanyName(companyName: string|null) {
         this.companyName = companyName;
         return this;
     }
-
     public withCompanyName(companyName: string|null): this {
         this.companyName = companyName;
         return this;
     }
-
     public getStatus(): string|null {
         return this.status;
     }
-
     public setStatus(status: string|null) {
         this.status = status;
         return this;
     }
-
     public withStatus(status: string|null): this {
         this.status = status;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

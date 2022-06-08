@@ -129,86 +129,68 @@ export default class Counter implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{counterName}', counterName ?? '');
     }
-
     public getCounterId(): string|null {
         return this.counterId;
     }
-
     public setCounterId(counterId: string|null) {
         this.counterId = counterId;
         return this;
     }
-
     public withCounterId(counterId: string|null): this {
         this.counterId = counterId;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getValues(): ScopedValue[]|null {
         return this.values;
     }
-
     public setValues(values: ScopedValue[]|null) {
         this.values = values;
         return this;
     }
-
     public withValues(values: ScopedValue[]|null): this {
         this.values = values;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

@@ -107,114 +107,90 @@ export default class Room implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{roomName}', roomName ?? '');
     }
-
     public getRoomId(): string|null {
         return this.roomId;
     }
-
     public setRoomId(roomId: string|null) {
         this.roomId = roomId;
         return this;
     }
-
     public withRoomId(roomId: string|null): this {
         this.roomId = roomId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getIpAddress(): string|null {
         return this.ipAddress;
     }
-
     public setIpAddress(ipAddress: string|null) {
         this.ipAddress = ipAddress;
         return this;
     }
-
     public withIpAddress(ipAddress: string|null): this {
         this.ipAddress = ipAddress;
         return this;
     }
-
     public getPort(): number|null {
         return this.port;
     }
-
     public setPort(port: number|null) {
         this.port = port;
         return this;
     }
-
     public withPort(port: number|null): this {
         this.port = port;
         return this;
     }
-
     public getEncryptionKey(): string|null {
         return this.encryptionKey;
     }
-
     public setEncryptionKey(encryptionKey: string|null) {
         this.encryptionKey = encryptionKey;
         return this;
     }
-
     public withEncryptionKey(encryptionKey: string|null): this {
         this.encryptionKey = encryptionKey;
         return this;
     }
-
     public getNotificationUserIds(): string[]|null {
         return this.notificationUserIds;
     }
-
     public setNotificationUserIds(notificationUserIds: string[]|null) {
         this.notificationUserIds = notificationUserIds;
         return this;
     }
-
     public withNotificationUserIds(notificationUserIds: string[]|null): this {
         this.notificationUserIds = notificationUserIds;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

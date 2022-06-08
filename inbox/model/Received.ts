@@ -104,72 +104,57 @@ export default class Received implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{userId}', userId ?? '');
     }
-
     public getReceivedId(): string|null {
         return this.receivedId;
     }
-
     public setReceivedId(receivedId: string|null) {
         this.receivedId = receivedId;
         return this;
     }
-
     public withReceivedId(receivedId: string|null): this {
         this.receivedId = receivedId;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getReceivedGlobalMessageNames(): string[]|null {
         return this.receivedGlobalMessageNames;
     }
-
     public setReceivedGlobalMessageNames(receivedGlobalMessageNames: string[]|null) {
         this.receivedGlobalMessageNames = receivedGlobalMessageNames;
         return this;
     }
-
     public withReceivedGlobalMessageNames(receivedGlobalMessageNames: string[]|null): this {
         this.receivedGlobalMessageNames = receivedGlobalMessageNames;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

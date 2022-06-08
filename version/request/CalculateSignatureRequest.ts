@@ -53,44 +53,35 @@ export default class CalculateSignatureRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getVersionName(): string|null {
         return this.versionName;
     }
-
     public setVersionName(versionName: string|null) {
         this.versionName = versionName;
         return this;
     }
-
     public withVersionName(versionName: string|null): this {
         this.versionName = versionName;
         return this;
     }
-
     public getVersion(): Gs2Version.Version|null {
         return this.version;
     }
-
     public setVersion(version: Gs2Version.Version|null) {
         this.version = version;
         return this;
     }
-
     public withVersion(version: Gs2Version.Version|null): this {
         this.version = version;
         return this;

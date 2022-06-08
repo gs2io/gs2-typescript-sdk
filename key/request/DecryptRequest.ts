@@ -53,44 +53,35 @@ export default class DecryptRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getKeyName(): string|null {
         return this.keyName;
     }
-
     public setKeyName(keyName: string|null) {
         this.keyName = keyName;
         return this;
     }
-
     public withKeyName(keyName: string|null): this {
         this.keyName = keyName;
         return this;
     }
-
     public getData(): string|null {
         return this.data;
     }
-
     public setData(data: string|null) {
         this.data = data;
         return this;
     }
-
     public withData(data: string|null): this {
         this.data = data;
         return this;

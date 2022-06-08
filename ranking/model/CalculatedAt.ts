@@ -19,30 +19,24 @@ import IModel from '../../core/interface/IModel';
 export default class CalculatedAt implements IModel {
     private categoryName: string|null = null;
     private calculatedAt: number|null = null;
-
     public getCategoryName(): string|null {
         return this.categoryName;
     }
-
     public setCategoryName(categoryName: string|null) {
         this.categoryName = categoryName;
         return this;
     }
-
     public withCategoryName(categoryName: string|null): this {
         this.categoryName = categoryName;
         return this;
     }
-
     public getCalculatedAt(): number|null {
         return this.calculatedAt;
     }
-
     public setCalculatedAt(calculatedAt: number|null) {
         this.calculatedAt = calculatedAt;
         return this;
     }
-
     public withCalculatedAt(calculatedAt: number|null): this {
         this.calculatedAt = calculatedAt;
         return this;

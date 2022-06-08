@@ -23,44 +23,35 @@ export default class SalesItemGroup implements IModel {
     private name: string|null = null;
     private metadata: string|null = null;
     private salesItems: SalesItem[]|null = null;
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getSalesItems(): SalesItem[]|null {
         return this.salesItems;
     }
-
     public setSalesItems(salesItems: SalesItem[]|null) {
         this.salesItems = salesItems;
         return this;
     }
-
     public withSalesItems(salesItems: SalesItem[]|null): this {
         this.salesItems = salesItems;
         return this;

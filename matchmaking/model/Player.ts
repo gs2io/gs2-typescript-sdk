@@ -22,58 +22,46 @@ export default class Player implements IModel {
     private attributes: Attribute[]|null = null;
     private roleName: string|null = null;
     private denyUserIds: string[]|null = null;
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getAttributes(): Attribute[]|null {
         return this.attributes;
     }
-
     public setAttributes(attributes: Attribute[]|null) {
         this.attributes = attributes;
         return this;
     }
-
     public withAttributes(attributes: Attribute[]|null): this {
         this.attributes = attributes;
         return this;
     }
-
     public getRoleName(): string|null {
         return this.roleName;
     }
-
     public setRoleName(roleName: string|null) {
         this.roleName = roleName;
         return this;
     }
-
     public withRoleName(roleName: string|null): this {
         this.roleName = roleName;
         return this;
     }
-
     public getDenyUserIds(): string[]|null {
         return this.denyUserIds;
     }
-
     public setDenyUserIds(denyUserIds: string[]|null) {
         this.denyUserIds = denyUserIds;
         return this;
     }
-
     public withDenyUserIds(denyUserIds: string[]|null): this {
         this.denyUserIds = denyUserIds;
         return this;

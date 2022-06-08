@@ -21,44 +21,35 @@ export default class BoxItem implements IModel {
     private acquireActions: AcquireAction[]|null = null;
     private remaining: number|null = null;
     private initial: number|null = null;
-
     public getAcquireActions(): AcquireAction[]|null {
         return this.acquireActions;
     }
-
     public setAcquireActions(acquireActions: AcquireAction[]|null) {
         this.acquireActions = acquireActions;
         return this;
     }
-
     public withAcquireActions(acquireActions: AcquireAction[]|null): this {
         this.acquireActions = acquireActions;
         return this;
     }
-
     public getRemaining(): number|null {
         return this.remaining;
     }
-
     public setRemaining(remaining: number|null) {
         this.remaining = remaining;
         return this;
     }
-
     public withRemaining(remaining: number|null): this {
         this.remaining = remaining;
         return this;
     }
-
     public getInitial(): number|null {
         return this.initial;
     }
-
     public setInitial(initial: number|null) {
         this.initial = initial;
         return this;
     }
-
     public withInitial(initial: number|null): this {
         this.initial = initial;
         return this;

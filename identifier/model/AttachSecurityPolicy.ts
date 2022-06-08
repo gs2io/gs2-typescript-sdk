@@ -62,44 +62,35 @@ export default class AttachSecurityPolicy implements IModel {
             .replace('{ownerId}', ownerId ?? '')
             .replace('{userName}', userName ?? '');
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getSecurityPolicyIds(): string[]|null {
         return this.securityPolicyIds;
     }
-
     public setSecurityPolicyIds(securityPolicyIds: string[]|null) {
         this.securityPolicyIds = securityPolicyIds;
         return this;
     }
-
     public withSecurityPolicyIds(securityPolicyIds: string[]|null): this {
         this.securityPolicyIds = securityPolicyIds;
         return this;
     }
-
     public getAttachedAt(): number|null {
         return this.attachedAt;
     }
-
     public setAttachedAt(attachedAt: number|null) {
         this.attachedAt = attachedAt;
         return this;
     }
-
     public withAttachedAt(attachedAt: number|null): this {
         this.attachedAt = attachedAt;
         return this;

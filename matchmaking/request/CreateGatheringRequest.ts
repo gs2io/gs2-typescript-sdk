@@ -58,114 +58,90 @@ export default class CreateGatheringRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getPlayer(): Gs2Matchmaking.Player|null {
         return this.player;
     }
-
     public setPlayer(player: Gs2Matchmaking.Player|null) {
         this.player = player;
         return this;
     }
-
     public withPlayer(player: Gs2Matchmaking.Player|null): this {
         this.player = player;
         return this;
     }
-
     public getAttributeRanges(): Gs2Matchmaking.AttributeRange[]|null {
         return this.attributeRanges;
     }
-
     public setAttributeRanges(attributeRanges: Gs2Matchmaking.AttributeRange[]|null) {
         this.attributeRanges = attributeRanges;
         return this;
     }
-
     public withAttributeRanges(attributeRanges: Gs2Matchmaking.AttributeRange[]|null): this {
         this.attributeRanges = attributeRanges;
         return this;
     }
-
     public getCapacityOfRoles(): Gs2Matchmaking.CapacityOfRole[]|null {
         return this.capacityOfRoles;
     }
-
     public setCapacityOfRoles(capacityOfRoles: Gs2Matchmaking.CapacityOfRole[]|null) {
         this.capacityOfRoles = capacityOfRoles;
         return this;
     }
-
     public withCapacityOfRoles(capacityOfRoles: Gs2Matchmaking.CapacityOfRole[]|null): this {
         this.capacityOfRoles = capacityOfRoles;
         return this;
     }
-
     public getAllowUserIds(): string[]|null {
         return this.allowUserIds;
     }
-
     public setAllowUserIds(allowUserIds: string[]|null) {
         this.allowUserIds = allowUserIds;
         return this;
     }
-
     public withAllowUserIds(allowUserIds: string[]|null): this {
         this.allowUserIds = allowUserIds;
         return this;
     }
-
     public getExpiresAt(): number|null {
         return this.expiresAt;
     }
-
     public setExpiresAt(expiresAt: number|null) {
         this.expiresAt = expiresAt;
         return this;
     }
-
     public withExpiresAt(expiresAt: number|null): this {
         this.expiresAt = expiresAt;
         return this;
     }
-
     public getExpiresAtTimeSpan(): Gs2Matchmaking.TimeSpan|null {
         return this.expiresAtTimeSpan;
     }
-
     public setExpiresAtTimeSpan(expiresAtTimeSpan: Gs2Matchmaking.TimeSpan|null) {
         this.expiresAtTimeSpan = expiresAtTimeSpan;
         return this;
     }
-
     public withExpiresAtTimeSpan(expiresAtTimeSpan: Gs2Matchmaking.TimeSpan|null): this {
         this.expiresAtTimeSpan = expiresAtTimeSpan;
         return this;

@@ -55,72 +55,57 @@ export default class CreateBillingMethodRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getAccountToken(): string|null {
         return this.accountToken;
     }
-
     public setAccountToken(accountToken: string|null) {
         this.accountToken = accountToken;
         return this;
     }
-
     public withAccountToken(accountToken: string|null): this {
         this.accountToken = accountToken;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMethodType(): string|null {
         return this.methodType;
     }
-
     public setMethodType(methodType: string|null) {
         this.methodType = methodType;
         return this;
     }
-
     public withMethodType(methodType: string|null): this {
         this.methodType = methodType;
         return this;
     }
-
     public getCardCustomerId(): string|null {
         return this.cardCustomerId;
     }
-
     public setCardCustomerId(cardCustomerId: string|null) {
         this.cardCustomerId = cardCustomerId;
         return this;
     }
-
     public withCardCustomerId(cardCustomerId: string|null): this {
         this.cardCustomerId = cardCustomerId;
         return this;
     }
-
     public getPartnerId(): string|null {
         return this.partnerId;
     }
-
     public setPartnerId(partnerId: string|null) {
         this.partnerId = partnerId;
         return this;
     }
-
     public withPartnerId(partnerId: string|null): this {
         this.partnerId = partnerId;
         return this;

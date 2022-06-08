@@ -57,86 +57,68 @@ export default class SendNotificationRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getSubject(): string|null {
         return this.subject;
     }
-
     public setSubject(subject: string|null) {
         this.subject = subject;
         return this;
     }
-
     public withSubject(subject: string|null): this {
         this.subject = subject;
         return this;
     }
-
     public getPayload(): string|null {
         return this.payload;
     }
-
     public setPayload(payload: string|null) {
         this.payload = payload;
         return this;
     }
-
     public withPayload(payload: string|null): this {
         this.payload = payload;
         return this;
     }
-
     public getEnableTransferMobileNotification(): boolean|null {
         return this.enableTransferMobileNotification;
     }
-
     public setEnableTransferMobileNotification(enableTransferMobileNotification: boolean|null) {
         this.enableTransferMobileNotification = enableTransferMobileNotification;
         return this;
     }
-
     public withEnableTransferMobileNotification(enableTransferMobileNotification: boolean|null): this {
         this.enableTransferMobileNotification = enableTransferMobileNotification;
         return this;
     }
-
     public getSound(): string|null {
         return this.sound;
     }
-
     public setSound(sound: string|null) {
         this.sound = sound;
         return this;
     }
-
     public withSound(sound: string|null): this {
         this.sound = sound;
         return this;

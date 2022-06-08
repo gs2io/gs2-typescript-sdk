@@ -20,30 +20,24 @@ import Config from './Config';
 export default class AcquireActionConfig implements IModel {
     private name: string|null = null;
     private config: Config[]|null = null;
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getConfig(): Config[]|null {
         return this.config;
     }
-
     public setConfig(config: Config[]|null) {
         this.config = config;
         return this;
     }
-
     public withConfig(config: Config[]|null): this {
         this.config = config;
         return this;

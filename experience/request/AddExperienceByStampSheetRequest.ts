@@ -52,30 +52,24 @@ export default class AddExperienceByStampSheetRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getStampSheet(): string|null {
         return this.stampSheet;
     }
-
     public setStampSheet(stampSheet: string|null) {
         this.stampSheet = stampSheet;
         return this;
     }
-
     public withStampSheet(stampSheet: string|null): this {
         this.stampSheet = stampSheet;
         return this;
     }
-
     public getKeyId(): string|null {
         return this.keyId;
     }
-
     public setKeyId(keyId: string|null) {
         this.keyId = keyId;
         return this;
     }
-
     public withKeyId(keyId: string|null): this {
         this.keyId = keyId;
         return this;

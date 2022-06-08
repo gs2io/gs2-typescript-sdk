@@ -107,86 +107,68 @@ export default class MoldModel implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{moldName}', moldName ?? '');
     }
-
     public getMoldModelId(): string|null {
         return this.moldModelId;
     }
-
     public setMoldModelId(moldModelId: string|null) {
         this.moldModelId = moldModelId;
         return this;
     }
-
     public withMoldModelId(moldModelId: string|null): this {
         this.moldModelId = moldModelId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getInitialMaxCapacity(): number|null {
         return this.initialMaxCapacity;
     }
-
     public setInitialMaxCapacity(initialMaxCapacity: number|null) {
         this.initialMaxCapacity = initialMaxCapacity;
         return this;
     }
-
     public withInitialMaxCapacity(initialMaxCapacity: number|null): this {
         this.initialMaxCapacity = initialMaxCapacity;
         return this;
     }
-
     public getMaxCapacity(): number|null {
         return this.maxCapacity;
     }
-
     public setMaxCapacity(maxCapacity: number|null) {
         this.maxCapacity = maxCapacity;
         return this;
     }
-
     public withMaxCapacity(maxCapacity: number|null): this {
         this.maxCapacity = maxCapacity;
         return this;
     }
-
     public getFormModel(): FormModel|null {
         return this.formModel;
     }
-
     public setFormModel(formModel: FormModel|null) {
         this.formModel = formModel;
         return this;
     }
-
     public withFormModel(formModel: FormModel|null): this {
         this.formModel = formModel;
         return this;

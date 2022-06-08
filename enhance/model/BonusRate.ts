@@ -19,30 +19,24 @@ import IModel from '../../core/interface/IModel';
 export default class BonusRate implements IModel {
     private rate: number|null = null;
     private weight: number|null = null;
-
     public getRate(): number|null {
         return this.rate;
     }
-
     public setRate(rate: number|null) {
         this.rate = rate;
         return this;
     }
-
     public withRate(rate: number|null): this {
         this.rate = rate;
         return this;
     }
-
     public getWeight(): number|null {
         return this.weight;
     }
-
     public setWeight(weight: number|null) {
         this.weight = weight;
         return this;
     }
-
     public withWeight(weight: number|null): this {
         this.weight = weight;
         return this;

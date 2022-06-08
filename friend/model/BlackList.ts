@@ -104,72 +104,57 @@ export default class BlackList implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{userId}', userId ?? '');
     }
-
     public getBlackListId(): string|null {
         return this.blackListId;
     }
-
     public setBlackListId(blackListId: string|null) {
         this.blackListId = blackListId;
         return this;
     }
-
     public withBlackListId(blackListId: string|null): this {
         this.blackListId = blackListId;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getTargetUserIds(): string[]|null {
         return this.targetUserIds;
     }
-
     public setTargetUserIds(targetUserIds: string[]|null) {
         this.targetUserIds = targetUserIds;
         return this;
     }
-
     public withTargetUserIds(targetUserIds: string[]|null): this {
         this.targetUserIds = targetUserIds;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

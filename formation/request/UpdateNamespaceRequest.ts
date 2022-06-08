@@ -56,86 +56,68 @@ export default class UpdateNamespaceRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getTransactionSetting(): Gs2Formation.TransactionSetting|null {
         return this.transactionSetting;
     }
-
     public setTransactionSetting(transactionSetting: Gs2Formation.TransactionSetting|null) {
         this.transactionSetting = transactionSetting;
         return this;
     }
-
     public withTransactionSetting(transactionSetting: Gs2Formation.TransactionSetting|null): this {
         this.transactionSetting = transactionSetting;
         return this;
     }
-
     public getUpdateMoldScript(): Gs2Formation.ScriptSetting|null {
         return this.updateMoldScript;
     }
-
     public setUpdateMoldScript(updateMoldScript: Gs2Formation.ScriptSetting|null) {
         this.updateMoldScript = updateMoldScript;
         return this;
     }
-
     public withUpdateMoldScript(updateMoldScript: Gs2Formation.ScriptSetting|null): this {
         this.updateMoldScript = updateMoldScript;
         return this;
     }
-
     public getUpdateFormScript(): Gs2Formation.ScriptSetting|null {
         return this.updateFormScript;
     }
-
     public setUpdateFormScript(updateFormScript: Gs2Formation.ScriptSetting|null) {
         this.updateFormScript = updateFormScript;
         return this;
     }
-
     public withUpdateFormScript(updateFormScript: Gs2Formation.ScriptSetting|null): this {
         this.updateFormScript = updateFormScript;
         return this;
     }
-
     public getLogSetting(): Gs2Formation.LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: Gs2Formation.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: Gs2Formation.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;

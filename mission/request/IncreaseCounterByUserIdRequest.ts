@@ -55,58 +55,46 @@ export default class IncreaseCounterByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getCounterName(): string|null {
         return this.counterName;
     }
-
     public setCounterName(counterName: string|null) {
         this.counterName = counterName;
         return this;
     }
-
     public withCounterName(counterName: string|null): this {
         this.counterName = counterName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getValue(): number|null {
         return this.value;
     }
-
     public setValue(value: number|null) {
         this.value = value;
         return this;
     }
-
     public withValue(value: number|null): this {
         this.value = value;
         return this;

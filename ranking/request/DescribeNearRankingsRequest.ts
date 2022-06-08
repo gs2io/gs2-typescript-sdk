@@ -53,44 +53,35 @@ export default class DescribeNearRankingsRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getCategoryName(): string|null {
         return this.categoryName;
     }
-
     public setCategoryName(categoryName: string|null) {
         this.categoryName = categoryName;
         return this;
     }
-
     public withCategoryName(categoryName: string|null): this {
         this.categoryName = categoryName;
         return this;
     }
-
     public getScore(): number|null {
         return this.score;
     }
-
     public setScore(score: number|null) {
         this.score = score;
         return this;
     }
-
     public withScore(score: number|null): this {
         this.score = score;
         return this;

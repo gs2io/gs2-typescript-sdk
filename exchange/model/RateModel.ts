@@ -110,128 +110,101 @@ export default class RateModel implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{rateName}', rateName ?? '');
     }
-
     public getRateModelId(): string|null {
         return this.rateModelId;
     }
-
     public setRateModelId(rateModelId: string|null) {
         this.rateModelId = rateModelId;
         return this;
     }
-
     public withRateModelId(rateModelId: string|null): this {
         this.rateModelId = rateModelId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getConsumeActions(): ConsumeAction[]|null {
         return this.consumeActions;
     }
-
     public setConsumeActions(consumeActions: ConsumeAction[]|null) {
         this.consumeActions = consumeActions;
         return this;
     }
-
     public withConsumeActions(consumeActions: ConsumeAction[]|null): this {
         this.consumeActions = consumeActions;
         return this;
     }
-
     public getTimingType(): string|null {
         return this.timingType;
     }
-
     public setTimingType(timingType: string|null) {
         this.timingType = timingType;
         return this;
     }
-
     public withTimingType(timingType: string|null): this {
         this.timingType = timingType;
         return this;
     }
-
     public getLockTime(): number|null {
         return this.lockTime;
     }
-
     public setLockTime(lockTime: number|null) {
         this.lockTime = lockTime;
         return this;
     }
-
     public withLockTime(lockTime: number|null): this {
         this.lockTime = lockTime;
         return this;
     }
-
     public getEnableSkip(): boolean|null {
         return this.enableSkip;
     }
-
     public setEnableSkip(enableSkip: boolean|null) {
         this.enableSkip = enableSkip;
         return this;
     }
-
     public withEnableSkip(enableSkip: boolean|null): this {
         this.enableSkip = enableSkip;
         return this;
     }
-
     public getSkipConsumeActions(): ConsumeAction[]|null {
         return this.skipConsumeActions;
     }
-
     public setSkipConsumeActions(skipConsumeActions: ConsumeAction[]|null) {
         this.skipConsumeActions = skipConsumeActions;
         return this;
     }
-
     public withSkipConsumeActions(skipConsumeActions: ConsumeAction[]|null): this {
         this.skipConsumeActions = skipConsumeActions;
         return this;
     }
-
     public getAcquireActions(): AcquireAction[]|null {
         return this.acquireActions;
     }
-
     public setAcquireActions(acquireActions: AcquireAction[]|null) {
         this.acquireActions = acquireActions;
         return this;
     }
-
     public withAcquireActions(acquireActions: AcquireAction[]|null): this {
         this.acquireActions = acquireActions;
         return this;

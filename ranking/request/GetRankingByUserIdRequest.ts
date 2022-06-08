@@ -55,72 +55,57 @@ export default class GetRankingByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getCategoryName(): string|null {
         return this.categoryName;
     }
-
     public setCategoryName(categoryName: string|null) {
         this.categoryName = categoryName;
         return this;
     }
-
     public withCategoryName(categoryName: string|null): this {
         this.categoryName = categoryName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getScorerUserId(): string|null {
         return this.scorerUserId;
     }
-
     public setScorerUserId(scorerUserId: string|null) {
         this.scorerUserId = scorerUserId;
         return this;
     }
-
     public withScorerUserId(scorerUserId: string|null): this {
         this.scorerUserId = scorerUserId;
         return this;
     }
-
     public getUniqueId(): string|null {
         return this.uniqueId;
     }
-
     public setUniqueId(uniqueId: string|null) {
         this.uniqueId = uniqueId;
         return this;
     }
-
     public withUniqueId(uniqueId: string|null): this {
         this.uniqueId = uniqueId;
         return this;

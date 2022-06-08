@@ -60,142 +60,118 @@ export default class CreateNamespaceRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getTransactionSetting(): Gs2Mission.TransactionSetting|null {
         return this.transactionSetting;
     }
-
     public setTransactionSetting(transactionSetting: Gs2Mission.TransactionSetting|null) {
         this.transactionSetting = transactionSetting;
         return this;
     }
-
     public withTransactionSetting(transactionSetting: Gs2Mission.TransactionSetting|null): this {
         this.transactionSetting = transactionSetting;
         return this;
     }
-
     public getMissionCompleteScript(): Gs2Mission.ScriptSetting|null {
         return this.missionCompleteScript;
     }
-
     public setMissionCompleteScript(missionCompleteScript: Gs2Mission.ScriptSetting|null) {
         this.missionCompleteScript = missionCompleteScript;
         return this;
     }
-
     public withMissionCompleteScript(missionCompleteScript: Gs2Mission.ScriptSetting|null): this {
         this.missionCompleteScript = missionCompleteScript;
         return this;
     }
-
     public getCounterIncrementScript(): Gs2Mission.ScriptSetting|null {
         return this.counterIncrementScript;
     }
-
     public setCounterIncrementScript(counterIncrementScript: Gs2Mission.ScriptSetting|null) {
         this.counterIncrementScript = counterIncrementScript;
         return this;
     }
-
     public withCounterIncrementScript(counterIncrementScript: Gs2Mission.ScriptSetting|null): this {
         this.counterIncrementScript = counterIncrementScript;
         return this;
     }
-
     public getReceiveRewardsScript(): Gs2Mission.ScriptSetting|null {
         return this.receiveRewardsScript;
     }
-
     public setReceiveRewardsScript(receiveRewardsScript: Gs2Mission.ScriptSetting|null) {
         this.receiveRewardsScript = receiveRewardsScript;
         return this;
     }
-
     public withReceiveRewardsScript(receiveRewardsScript: Gs2Mission.ScriptSetting|null): this {
         this.receiveRewardsScript = receiveRewardsScript;
         return this;
     }
-
     public getCompleteNotification(): Gs2Mission.NotificationSetting|null {
         return this.completeNotification;
     }
-
     public setCompleteNotification(completeNotification: Gs2Mission.NotificationSetting|null) {
         this.completeNotification = completeNotification;
         return this;
     }
-
     public withCompleteNotification(completeNotification: Gs2Mission.NotificationSetting|null): this {
         this.completeNotification = completeNotification;
         return this;
     }
-
     public getLogSetting(): Gs2Mission.LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: Gs2Mission.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: Gs2Mission.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
-
+    /** @deprecated */
     public getQueueNamespaceId(): string|null {
         return this.queueNamespaceId;
     }
-
+    /** @deprecated */
     public setQueueNamespaceId(queueNamespaceId: string|null) {
         this.queueNamespaceId = queueNamespaceId;
         return this;
     }
-
+    /** @deprecated */
     public withQueueNamespaceId(queueNamespaceId: string|null): this {
         this.queueNamespaceId = queueNamespaceId;
         return this;
     }
-
+    /** @deprecated */
     public getKeyId(): string|null {
         return this.keyId;
     }
-
+    /** @deprecated */
     public setKeyId(keyId: string|null) {
         this.keyId = keyId;
         return this;
     }
-
+    /** @deprecated */
     public withKeyId(keyId: string|null): this {
         this.keyId = keyId;
         return this;

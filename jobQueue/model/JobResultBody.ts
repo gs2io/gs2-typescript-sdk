@@ -21,58 +21,46 @@ export default class JobResultBody implements IModel {
     private statusCode: number|null = null;
     private result: string|null = null;
     private tryAt: number|null = null;
-
     public getTryNumber(): number|null {
         return this.tryNumber;
     }
-
     public setTryNumber(tryNumber: number|null) {
         this.tryNumber = tryNumber;
         return this;
     }
-
     public withTryNumber(tryNumber: number|null): this {
         this.tryNumber = tryNumber;
         return this;
     }
-
     public getStatusCode(): number|null {
         return this.statusCode;
     }
-
     public setStatusCode(statusCode: number|null) {
         this.statusCode = statusCode;
         return this;
     }
-
     public withStatusCode(statusCode: number|null): this {
         this.statusCode = statusCode;
         return this;
     }
-
     public getResult(): string|null {
         return this.result;
     }
-
     public setResult(result: string|null) {
         this.result = result;
         return this;
     }
-
     public withResult(result: string|null): this {
         this.result = result;
         return this;
     }
-
     public getTryAt(): number|null {
         return this.tryAt;
     }
-
     public setTryAt(tryAt: number|null) {
         this.tryAt = tryAt;
         return this;
     }
-
     public withTryAt(tryAt: number|null): this {
         this.tryAt = tryAt;
         return this;

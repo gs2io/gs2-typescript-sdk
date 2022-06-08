@@ -130,114 +130,90 @@ export default class Complete implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{missionGroupName}', missionGroupName ?? '');
     }
-
     public getCompleteId(): string|null {
         return this.completeId;
     }
-
     public setCompleteId(completeId: string|null) {
         this.completeId = completeId;
         return this;
     }
-
     public withCompleteId(completeId: string|null): this {
         this.completeId = completeId;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getMissionGroupName(): string|null {
         return this.missionGroupName;
     }
-
     public setMissionGroupName(missionGroupName: string|null) {
         this.missionGroupName = missionGroupName;
         return this;
     }
-
     public withMissionGroupName(missionGroupName: string|null): this {
         this.missionGroupName = missionGroupName;
         return this;
     }
-
     public getCompletedMissionTaskNames(): string[]|null {
         return this.completedMissionTaskNames;
     }
-
     public setCompletedMissionTaskNames(completedMissionTaskNames: string[]|null) {
         this.completedMissionTaskNames = completedMissionTaskNames;
         return this;
     }
-
     public withCompletedMissionTaskNames(completedMissionTaskNames: string[]|null): this {
         this.completedMissionTaskNames = completedMissionTaskNames;
         return this;
     }
-
     public getReceivedMissionTaskNames(): string[]|null {
         return this.receivedMissionTaskNames;
     }
-
     public setReceivedMissionTaskNames(receivedMissionTaskNames: string[]|null) {
         this.receivedMissionTaskNames = receivedMissionTaskNames;
         return this;
     }
-
     public withReceivedMissionTaskNames(receivedMissionTaskNames: string[]|null): this {
         this.receivedMissionTaskNames = receivedMissionTaskNames;
         return this;
     }
-
     public getNextResetAt(): number|null {
         return this.nextResetAt;
     }
-
     public setNextResetAt(nextResetAt: number|null) {
         this.nextResetAt = nextResetAt;
         return this;
     }
-
     public withNextResetAt(nextResetAt: number|null): this {
         this.nextResetAt = nextResetAt;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

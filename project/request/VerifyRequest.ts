@@ -51,16 +51,13 @@ export default class VerifyRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getVerifyToken(): string|null {
         return this.verifyToken;
     }
-
     public setVerifyToken(verifyToken: string|null) {
         this.verifyToken = verifyToken;
         return this;
     }
-
     public withVerifyToken(verifyToken: string|null): this {
         this.verifyToken = verifyToken;
         return this;

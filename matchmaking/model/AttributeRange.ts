@@ -20,44 +20,35 @@ export default class AttributeRange implements IModel {
     private name: string|null = null;
     private min: number|null = null;
     private max: number|null = null;
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMin(): number|null {
         return this.min;
     }
-
     public setMin(min: number|null) {
         this.min = min;
         return this;
     }
-
     public withMin(min: number|null): this {
         this.min = min;
         return this;
     }
-
     public getMax(): number|null {
         return this.max;
     }
-
     public setMax(max: number|null) {
         this.max = max;
         return this;
     }
-
     public withMax(max: number|null): this {
         this.max = max;
         return this;

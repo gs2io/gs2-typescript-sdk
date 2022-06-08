@@ -52,30 +52,24 @@ export default class DescribeItemModelsRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getInventoryName(): string|null {
         return this.inventoryName;
     }
-
     public setInventoryName(inventoryName: string|null) {
         this.inventoryName = inventoryName;
         return this;
     }
-
     public withInventoryName(inventoryName: string|null): this {
         this.inventoryName = inventoryName;
         return this;

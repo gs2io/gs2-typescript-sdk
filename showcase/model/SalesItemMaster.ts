@@ -109,114 +109,90 @@ export default class SalesItemMaster implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{salesItemName}', salesItemName ?? '');
     }
-
     public getSalesItemId(): string|null {
         return this.salesItemId;
     }
-
     public setSalesItemId(salesItemId: string|null) {
         this.salesItemId = salesItemId;
         return this;
     }
-
     public withSalesItemId(salesItemId: string|null): this {
         this.salesItemId = salesItemId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getConsumeActions(): ConsumeAction[]|null {
         return this.consumeActions;
     }
-
     public setConsumeActions(consumeActions: ConsumeAction[]|null) {
         this.consumeActions = consumeActions;
         return this;
     }
-
     public withConsumeActions(consumeActions: ConsumeAction[]|null): this {
         this.consumeActions = consumeActions;
         return this;
     }
-
     public getAcquireActions(): AcquireAction[]|null {
         return this.acquireActions;
     }
-
     public setAcquireActions(acquireActions: AcquireAction[]|null) {
         this.acquireActions = acquireActions;
         return this;
     }
-
     public withAcquireActions(acquireActions: AcquireAction[]|null): this {
         this.acquireActions = acquireActions;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

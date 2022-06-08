@@ -89,128 +89,101 @@ export default class Namespace implements IModel {
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '');
     }
-
     public getNamespaceId(): string|null {
         return this.namespaceId;
     }
-
     public setNamespaceId(namespaceId: string|null) {
         this.namespaceId = namespaceId;
         return this;
     }
-
     public withNamespaceId(namespaceId: string|null): this {
         this.namespaceId = namespaceId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getAssumeUserId(): string|null {
         return this.assumeUserId;
     }
-
     public setAssumeUserId(assumeUserId: string|null) {
         this.assumeUserId = assumeUserId;
         return this;
     }
-
     public withAssumeUserId(assumeUserId: string|null): this {
         this.assumeUserId = assumeUserId;
         return this;
     }
-
     public getAcceptVersionScript(): ScriptSetting|null {
         return this.acceptVersionScript;
     }
-
     public setAcceptVersionScript(acceptVersionScript: ScriptSetting|null) {
         this.acceptVersionScript = acceptVersionScript;
         return this;
     }
-
     public withAcceptVersionScript(acceptVersionScript: ScriptSetting|null): this {
         this.acceptVersionScript = acceptVersionScript;
         return this;
     }
-
     public getCheckVersionTriggerScriptId(): string|null {
         return this.checkVersionTriggerScriptId;
     }
-
     public setCheckVersionTriggerScriptId(checkVersionTriggerScriptId: string|null) {
         this.checkVersionTriggerScriptId = checkVersionTriggerScriptId;
         return this;
     }
-
     public withCheckVersionTriggerScriptId(checkVersionTriggerScriptId: string|null): this {
         this.checkVersionTriggerScriptId = checkVersionTriggerScriptId;
         return this;
     }
-
     public getLogSetting(): LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

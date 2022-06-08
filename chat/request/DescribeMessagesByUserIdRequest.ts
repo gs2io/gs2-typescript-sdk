@@ -56,86 +56,68 @@ export default class DescribeMessagesByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getRoomName(): string|null {
         return this.roomName;
     }
-
     public setRoomName(roomName: string|null) {
         this.roomName = roomName;
         return this;
     }
-
     public withRoomName(roomName: string|null): this {
         this.roomName = roomName;
         return this;
     }
-
     public getPassword(): string|null {
         return this.password;
     }
-
     public setPassword(password: string|null) {
         this.password = password;
         return this;
     }
-
     public withPassword(password: string|null): this {
         this.password = password;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getStartAt(): number|null {
         return this.startAt;
     }
-
     public setStartAt(startAt: number|null) {
         this.startAt = startAt;
         return this;
     }
-
     public withStartAt(startAt: number|null): this {
         this.startAt = startAt;
         return this;
     }
-
     public getLimit(): number|null {
         return this.limit;
     }
-
     public setLimit(limit: number|null) {
         this.limit = limit;
         return this;
     }
-
     public withLimit(limit: number|null): this {
         this.limit = limit;
         return this;

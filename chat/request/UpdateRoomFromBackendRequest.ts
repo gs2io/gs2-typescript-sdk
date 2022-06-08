@@ -56,86 +56,68 @@ export default class UpdateRoomFromBackendRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getRoomName(): string|null {
         return this.roomName;
     }
-
     public setRoomName(roomName: string|null) {
         this.roomName = roomName;
         return this;
     }
-
     public withRoomName(roomName: string|null): this {
         this.roomName = roomName;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getPassword(): string|null {
         return this.password;
     }
-
     public setPassword(password: string|null) {
         this.password = password;
         return this;
     }
-
     public withPassword(password: string|null): this {
         this.password = password;
         return this;
     }
-
     public getWhiteListUserIds(): string[]|null {
         return this.whiteListUserIds;
     }
-
     public setWhiteListUserIds(whiteListUserIds: string[]|null) {
         this.whiteListUserIds = whiteListUserIds;
         return this;
     }
-
     public withWhiteListUserIds(whiteListUserIds: string[]|null): this {
         this.whiteListUserIds = whiteListUserIds;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;

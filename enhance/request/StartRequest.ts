@@ -57,100 +57,79 @@ export default class StartRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getRateName(): string|null {
         return this.rateName;
     }
-
     public setRateName(rateName: string|null) {
         this.rateName = rateName;
         return this;
     }
-
     public withRateName(rateName: string|null): this {
         this.rateName = rateName;
         return this;
     }
-
     public getTargetItemSetId(): string|null {
         return this.targetItemSetId;
     }
-
     public setTargetItemSetId(targetItemSetId: string|null) {
         this.targetItemSetId = targetItemSetId;
         return this;
     }
-
     public withTargetItemSetId(targetItemSetId: string|null): this {
         this.targetItemSetId = targetItemSetId;
         return this;
     }
-
     public getMaterials(): Gs2Enhance.Material[]|null {
         return this.materials;
     }
-
     public setMaterials(materials: Gs2Enhance.Material[]|null) {
         this.materials = materials;
         return this;
     }
-
     public withMaterials(materials: Gs2Enhance.Material[]|null): this {
         this.materials = materials;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getForce(): boolean|null {
         return this.force;
     }
-
     public setForce(force: boolean|null) {
         this.force = force;
         return this;
     }
-
     public withForce(force: boolean|null): this {
         this.force = force;
         return this;
     }
-
     public getConfig(): Gs2Enhance.Config[]|null {
         return this.config;
     }
-
     public setConfig(config: Gs2Enhance.Config[]|null) {
         this.config = config;
         return this;
     }
-
     public withConfig(config: Gs2Enhance.Config[]|null): this {
         this.config = config;
         return this;

@@ -21,58 +21,46 @@ export default class ScopedValue implements IModel {
     private value: number|null = null;
     private nextResetAt: number|null = null;
     private updatedAt: number|null = null;
-
     public getResetType(): string|null {
         return this.resetType;
     }
-
     public setResetType(resetType: string|null) {
         this.resetType = resetType;
         return this;
     }
-
     public withResetType(resetType: string|null): this {
         this.resetType = resetType;
         return this;
     }
-
     public getValue(): number|null {
         return this.value;
     }
-
     public setValue(value: number|null) {
         this.value = value;
         return this;
     }
-
     public withValue(value: number|null): this {
         this.value = value;
         return this;
     }
-
     public getNextResetAt(): number|null {
         return this.nextResetAt;
     }
-
     public setNextResetAt(nextResetAt: number|null) {
         this.nextResetAt = nextResetAt;
         return this;
     }
-
     public withNextResetAt(nextResetAt: number|null): this {
         this.nextResetAt = nextResetAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

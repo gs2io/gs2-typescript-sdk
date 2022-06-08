@@ -56,86 +56,68 @@ export default class UpdateDistributorModelMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getDistributorName(): string|null {
         return this.distributorName;
     }
-
     public setDistributorName(distributorName: string|null) {
         this.distributorName = distributorName;
         return this;
     }
-
     public withDistributorName(distributorName: string|null): this {
         this.distributorName = distributorName;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getInboxNamespaceId(): string|null {
         return this.inboxNamespaceId;
     }
-
     public setInboxNamespaceId(inboxNamespaceId: string|null) {
         this.inboxNamespaceId = inboxNamespaceId;
         return this;
     }
-
     public withInboxNamespaceId(inboxNamespaceId: string|null): this {
         this.inboxNamespaceId = inboxNamespaceId;
         return this;
     }
-
     public getWhiteListTargetIds(): string[]|null {
         return this.whiteListTargetIds;
     }
-
     public setWhiteListTargetIds(whiteListTargetIds: string[]|null) {
         this.whiteListTargetIds = whiteListTargetIds;
         return this;
     }
-
     public withWhiteListTargetIds(whiteListTargetIds: string[]|null): this {
         this.whiteListTargetIds = whiteListTargetIds;
         return this;

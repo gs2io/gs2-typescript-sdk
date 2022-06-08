@@ -23,58 +23,46 @@ export default class SalesItem implements IModel {
     private metadata: string|null = null;
     private consumeActions: ConsumeAction[]|null = null;
     private acquireActions: AcquireAction[]|null = null;
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getConsumeActions(): ConsumeAction[]|null {
         return this.consumeActions;
     }
-
     public setConsumeActions(consumeActions: ConsumeAction[]|null) {
         this.consumeActions = consumeActions;
         return this;
     }
-
     public withConsumeActions(consumeActions: ConsumeAction[]|null): this {
         this.consumeActions = consumeActions;
         return this;
     }
-
     public getAcquireActions(): AcquireAction[]|null {
         return this.acquireActions;
     }
-
     public setAcquireActions(acquireActions: AcquireAction[]|null) {
         this.acquireActions = acquireActions;
         return this;
     }
-
     public withAcquireActions(acquireActions: AcquireAction[]|null): this {
         this.acquireActions = acquireActions;
         return this;

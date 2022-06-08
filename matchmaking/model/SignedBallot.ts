@@ -19,30 +19,24 @@ import IModel from '../../core/interface/IModel';
 export default class SignedBallot implements IModel {
     private body: string|null = null;
     private signature: string|null = null;
-
     public getBody(): string|null {
         return this.body;
     }
-
     public setBody(body: string|null) {
         this.body = body;
         return this;
     }
-
     public withBody(body: string|null): this {
         this.body = body;
         return this;
     }
-
     public getSignature(): string|null {
         return this.signature;
     }
-
     public setSignature(signature: string|null) {
         this.signature = signature;
         return this;
     }
-
     public withSignature(signature: string|null): this {
         this.signature = signature;
         return this;

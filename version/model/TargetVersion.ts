@@ -22,58 +22,46 @@ export default class TargetVersion implements IModel {
     private version: Version|null = null;
     private body: string|null = null;
     private signature: string|null = null;
-
     public getVersionName(): string|null {
         return this.versionName;
     }
-
     public setVersionName(versionName: string|null) {
         this.versionName = versionName;
         return this;
     }
-
     public withVersionName(versionName: string|null): this {
         this.versionName = versionName;
         return this;
     }
-
     public getVersion(): Version|null {
         return this.version;
     }
-
     public setVersion(version: Version|null) {
         this.version = version;
         return this;
     }
-
     public withVersion(version: Version|null): this {
         this.version = version;
         return this;
     }
-
     public getBody(): string|null {
         return this.body;
     }
-
     public setBody(body: string|null) {
         this.body = body;
         return this;
     }
-
     public withBody(body: string|null): this {
         this.body = body;
         return this;
     }
-
     public getSignature(): string|null {
         return this.signature;
     }
-
     public setSignature(signature: string|null) {
         this.signature = signature;
         return this;
     }
-
     public withSignature(signature: string|null): this {
         this.signature = signature;
         return this;

@@ -52,30 +52,24 @@ export default class GetMoldModelRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getMoldName(): string|null {
         return this.moldName;
     }
-
     public setMoldName(moldName: string|null) {
         this.moldName = moldName;
         return this;
     }
-
     public withMoldName(moldName: string|null): this {
         this.moldName = moldName;
         return this;

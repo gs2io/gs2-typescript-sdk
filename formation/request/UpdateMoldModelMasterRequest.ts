@@ -57,100 +57,79 @@ export default class UpdateMoldModelMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getMoldName(): string|null {
         return this.moldName;
     }
-
     public setMoldName(moldName: string|null) {
         this.moldName = moldName;
         return this;
     }
-
     public withMoldName(moldName: string|null): this {
         this.moldName = moldName;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getFormModelName(): string|null {
         return this.formModelName;
     }
-
     public setFormModelName(formModelName: string|null) {
         this.formModelName = formModelName;
         return this;
     }
-
     public withFormModelName(formModelName: string|null): this {
         this.formModelName = formModelName;
         return this;
     }
-
     public getInitialMaxCapacity(): number|null {
         return this.initialMaxCapacity;
     }
-
     public setInitialMaxCapacity(initialMaxCapacity: number|null) {
         this.initialMaxCapacity = initialMaxCapacity;
         return this;
     }
-
     public withInitialMaxCapacity(initialMaxCapacity: number|null): this {
         this.initialMaxCapacity = initialMaxCapacity;
         return this;
     }
-
     public getMaxCapacity(): number|null {
         return this.maxCapacity;
     }
-
     public setMaxCapacity(maxCapacity: number|null) {
         this.maxCapacity = maxCapacity;
         return this;
     }
-
     public withMaxCapacity(maxCapacity: number|null): this {
         this.maxCapacity = maxCapacity;
         return this;

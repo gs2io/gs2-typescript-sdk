@@ -52,30 +52,24 @@ export default class GetGlobalMessageMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getGlobalMessageName(): string|null {
         return this.globalMessageName;
     }
-
     public setGlobalMessageName(globalMessageName: string|null) {
         this.globalMessageName = globalMessageName;
         return this;
     }
-
     public withGlobalMessageName(globalMessageName: string|null): this {
         this.globalMessageName = globalMessageName;
         return this;

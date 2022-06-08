@@ -52,30 +52,24 @@ export default class LoginRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getClientId(): string|null {
         return this.clientId;
     }
-
     public setClientId(clientId: string|null) {
         this.clientId = clientId;
         return this;
     }
-
     public withClientId(clientId: string|null): this {
         this.clientId = clientId;
         return this;
     }
-
     public getClientSecret(): string|null {
         return this.clientSecret;
     }
-
     public setClientSecret(clientSecret: string|null) {
         this.clientSecret = clientSecret;
         return this;
     }
-
     public withClientSecret(clientSecret: string|null): this {
         this.clientSecret = clientSecret;
         return this;

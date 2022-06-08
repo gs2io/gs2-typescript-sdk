@@ -57,86 +57,68 @@ export default class AcquireActionsToFormPropertiesRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getMoldName(): string|null {
         return this.moldName;
     }
-
     public setMoldName(moldName: string|null) {
         this.moldName = moldName;
         return this;
     }
-
     public withMoldName(moldName: string|null): this {
         this.moldName = moldName;
         return this;
     }
-
     public getIndex(): number|null {
         return this.index;
     }
-
     public setIndex(index: number|null) {
         this.index = index;
         return this;
     }
-
     public withIndex(index: number|null): this {
         this.index = index;
         return this;
     }
-
     public getAcquireAction(): Gs2Formation.AcquireAction|null {
         return this.acquireAction;
     }
-
     public setAcquireAction(acquireAction: Gs2Formation.AcquireAction|null) {
         this.acquireAction = acquireAction;
         return this;
     }
-
     public withAcquireAction(acquireAction: Gs2Formation.AcquireAction|null): this {
         this.acquireAction = acquireAction;
         return this;
     }
-
     public getConfig(): Gs2Formation.AcquireActionConfig[]|null {
         return this.config;
     }
-
     public setConfig(config: Gs2Formation.AcquireActionConfig[]|null) {
         this.config = config;
         return this;
     }
-
     public withConfig(config: Gs2Formation.AcquireActionConfig[]|null): this {
         this.config = config;
         return this;

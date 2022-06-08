@@ -36,72 +36,57 @@ export default class DisplayItem implements IModel {
     ): string|null {
         return grnFormat;
     }
-
     public getDisplayItemId(): string|null {
         return this.displayItemId;
     }
-
     public setDisplayItemId(displayItemId: string|null) {
         this.displayItemId = displayItemId;
         return this;
     }
-
     public withDisplayItemId(displayItemId: string|null): this {
         this.displayItemId = displayItemId;
         return this;
     }
-
     public getType(): string|null {
         return this.type;
     }
-
     public setType(type: string|null) {
         this.type = type;
         return this;
     }
-
     public withType(type: string|null): this {
         this.type = type;
         return this;
     }
-
     public getSalesItem(): SalesItem|null {
         return this.salesItem;
     }
-
     public setSalesItem(salesItem: SalesItem|null) {
         this.salesItem = salesItem;
         return this;
     }
-
     public withSalesItem(salesItem: SalesItem|null): this {
         this.salesItem = salesItem;
         return this;
     }
-
     public getSalesItemGroup(): SalesItemGroup|null {
         return this.salesItemGroup;
     }
-
     public setSalesItemGroup(salesItemGroup: SalesItemGroup|null) {
         this.salesItemGroup = salesItemGroup;
         return this;
     }
-
     public withSalesItemGroup(salesItemGroup: SalesItemGroup|null): this {
         this.salesItemGroup = salesItemGroup;
         return this;
     }
-
     public getSalesPeriodEventId(): string|null {
         return this.salesPeriodEventId;
     }
-
     public setSalesPeriodEventId(salesPeriodEventId: string|null) {
         this.salesPeriodEventId = salesPeriodEventId;
         return this;
     }
-
     public withSalesPeriodEventId(salesPeriodEventId: string|null): this {
         this.salesPeriodEventId = salesPeriodEventId;
         return this;

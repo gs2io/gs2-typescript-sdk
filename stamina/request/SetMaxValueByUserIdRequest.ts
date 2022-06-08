@@ -55,58 +55,46 @@ export default class SetMaxValueByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getStaminaName(): string|null {
         return this.staminaName;
     }
-
     public setStaminaName(staminaName: string|null) {
         this.staminaName = staminaName;
         return this;
     }
-
     public withStaminaName(staminaName: string|null): this {
         this.staminaName = staminaName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getMaxValue(): number|null {
         return this.maxValue;
     }
-
     public setMaxValue(maxValue: number|null) {
         this.maxValue = maxValue;
         return this;
     }
-
     public withMaxValue(maxValue: number|null): this {
         this.maxValue = maxValue;
         return this;

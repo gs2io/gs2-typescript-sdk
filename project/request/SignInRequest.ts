@@ -52,30 +52,24 @@ export default class SignInRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getEmail(): string|null {
         return this.email;
     }
-
     public setEmail(email: string|null) {
         this.email = email;
         return this;
     }
-
     public withEmail(email: string|null): this {
         this.email = email;
         return this;
     }
-
     public getPassword(): string|null {
         return this.password;
     }
-
     public setPassword(password: string|null) {
         this.password = password;
         return this;
     }
-
     public withPassword(password: string|null): this {
         this.password = password;
         return this;

@@ -131,114 +131,90 @@ export default class DeadLetterJob implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{deadLetterJobName}', deadLetterJobName ?? '');
     }
-
     public getDeadLetterJobId(): string|null {
         return this.deadLetterJobId;
     }
-
     public setDeadLetterJobId(deadLetterJobId: string|null) {
         this.deadLetterJobId = deadLetterJobId;
         return this;
     }
-
     public withDeadLetterJobId(deadLetterJobId: string|null): this {
         this.deadLetterJobId = deadLetterJobId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getScriptId(): string|null {
         return this.scriptId;
     }
-
     public setScriptId(scriptId: string|null) {
         this.scriptId = scriptId;
         return this;
     }
-
     public withScriptId(scriptId: string|null): this {
         this.scriptId = scriptId;
         return this;
     }
-
     public getArgs(): string|null {
         return this.args;
     }
-
     public setArgs(args: string|null) {
         this.args = args;
         return this;
     }
-
     public withArgs(args: string|null): this {
         this.args = args;
         return this;
     }
-
     public getResult(): JobResultBody[]|null {
         return this.result;
     }
-
     public setResult(result: JobResultBody[]|null) {
         this.result = result;
         return this;
     }
-
     public withResult(result: JobResultBody[]|null): this {
         this.result = result;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

@@ -60,142 +60,112 @@ export default class UpdateRateModelMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getRateName(): string|null {
         return this.rateName;
     }
-
     public setRateName(rateName: string|null) {
         this.rateName = rateName;
         return this;
     }
-
     public withRateName(rateName: string|null): this {
         this.rateName = rateName;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getTimingType(): string|null {
         return this.timingType;
     }
-
     public setTimingType(timingType: string|null) {
         this.timingType = timingType;
         return this;
     }
-
     public withTimingType(timingType: string|null): this {
         this.timingType = timingType;
         return this;
     }
-
     public getLockTime(): number|null {
         return this.lockTime;
     }
-
     public setLockTime(lockTime: number|null) {
         this.lockTime = lockTime;
         return this;
     }
-
     public withLockTime(lockTime: number|null): this {
         this.lockTime = lockTime;
         return this;
     }
-
     public getEnableSkip(): boolean|null {
         return this.enableSkip;
     }
-
     public setEnableSkip(enableSkip: boolean|null) {
         this.enableSkip = enableSkip;
         return this;
     }
-
     public withEnableSkip(enableSkip: boolean|null): this {
         this.enableSkip = enableSkip;
         return this;
     }
-
     public getSkipConsumeActions(): Gs2Exchange.ConsumeAction[]|null {
         return this.skipConsumeActions;
     }
-
     public setSkipConsumeActions(skipConsumeActions: Gs2Exchange.ConsumeAction[]|null) {
         this.skipConsumeActions = skipConsumeActions;
         return this;
     }
-
     public withSkipConsumeActions(skipConsumeActions: Gs2Exchange.ConsumeAction[]|null): this {
         this.skipConsumeActions = skipConsumeActions;
         return this;
     }
-
     public getAcquireActions(): Gs2Exchange.AcquireAction[]|null {
         return this.acquireActions;
     }
-
     public setAcquireActions(acquireActions: Gs2Exchange.AcquireAction[]|null) {
         this.acquireActions = acquireActions;
         return this;
     }
-
     public withAcquireActions(acquireActions: Gs2Exchange.AcquireAction[]|null): this {
         this.acquireActions = acquireActions;
         return this;
     }
-
     public getConsumeActions(): Gs2Exchange.ConsumeAction[]|null {
         return this.consumeActions;
     }
-
     public setConsumeActions(consumeActions: Gs2Exchange.ConsumeAction[]|null) {
         this.consumeActions = consumeActions;
         return this;
     }
-
     public withConsumeActions(consumeActions: Gs2Exchange.ConsumeAction[]|null): this {
         this.consumeActions = consumeActions;
         return this;

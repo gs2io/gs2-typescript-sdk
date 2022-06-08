@@ -55,72 +55,57 @@ export default class CreateNamespaceRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getAssumeUserId(): string|null {
         return this.assumeUserId;
     }
-
     public setAssumeUserId(assumeUserId: string|null) {
         this.assumeUserId = assumeUserId;
         return this;
     }
-
     public withAssumeUserId(assumeUserId: string|null): this {
         this.assumeUserId = assumeUserId;
         return this;
     }
-
     public getAutoRunStampSheetNotification(): Gs2Distributor.NotificationSetting|null {
         return this.autoRunStampSheetNotification;
     }
-
     public setAutoRunStampSheetNotification(autoRunStampSheetNotification: Gs2Distributor.NotificationSetting|null) {
         this.autoRunStampSheetNotification = autoRunStampSheetNotification;
         return this;
     }
-
     public withAutoRunStampSheetNotification(autoRunStampSheetNotification: Gs2Distributor.NotificationSetting|null): this {
         this.autoRunStampSheetNotification = autoRunStampSheetNotification;
         return this;
     }
-
     public getLogSetting(): Gs2Distributor.LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: Gs2Distributor.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: Gs2Distributor.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;

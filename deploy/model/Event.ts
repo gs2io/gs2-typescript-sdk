@@ -105,86 +105,68 @@ export default class Event implements IModel {
             .replace('{stackName}', stackName ?? '')
             .replace('{eventName}', eventName ?? '');
     }
-
     public getEventId(): string|null {
         return this.eventId;
     }
-
     public setEventId(eventId: string|null) {
         this.eventId = eventId;
         return this;
     }
-
     public withEventId(eventId: string|null): this {
         this.eventId = eventId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getResourceName(): string|null {
         return this.resourceName;
     }
-
     public setResourceName(resourceName: string|null) {
         this.resourceName = resourceName;
         return this;
     }
-
     public withResourceName(resourceName: string|null): this {
         this.resourceName = resourceName;
         return this;
     }
-
     public getType(): string|null {
         return this.type;
     }
-
     public setType(type: string|null) {
         this.type = type;
         return this;
     }
-
     public withType(type: string|null): this {
         this.type = type;
         return this;
     }
-
     public getMessage(): string|null {
         return this.message;
     }
-
     public setMessage(message: string|null) {
         this.message = message;
         return this;
     }
-
     public withMessage(message: string|null): this {
         this.message = message;
         return this;
     }
-
     public getEventAt(): number|null {
         return this.eventAt;
     }
-
     public setEventAt(eventAt: number|null) {
         this.eventAt = eventAt;
         return this;
     }
-
     public withEventAt(eventAt: number|null): this {
         this.eventAt = eventAt;
         return this;

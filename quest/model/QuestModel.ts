@@ -133,114 +133,90 @@ export default class QuestModel implements IModel {
             .replace('{questGroupName}', questGroupName ?? '')
             .replace('{questName}', questName ?? '');
     }
-
     public getQuestModelId(): string|null {
         return this.questModelId;
     }
-
     public setQuestModelId(questModelId: string|null) {
         this.questModelId = questModelId;
         return this;
     }
-
     public withQuestModelId(questModelId: string|null): this {
         this.questModelId = questModelId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getContents(): Contents[]|null {
         return this.contents;
     }
-
     public setContents(contents: Contents[]|null) {
         this.contents = contents;
         return this;
     }
-
     public withContents(contents: Contents[]|null): this {
         this.contents = contents;
         return this;
     }
-
     public getChallengePeriodEventId(): string|null {
         return this.challengePeriodEventId;
     }
-
     public setChallengePeriodEventId(challengePeriodEventId: string|null) {
         this.challengePeriodEventId = challengePeriodEventId;
         return this;
     }
-
     public withChallengePeriodEventId(challengePeriodEventId: string|null): this {
         this.challengePeriodEventId = challengePeriodEventId;
         return this;
     }
-
     public getConsumeActions(): ConsumeAction[]|null {
         return this.consumeActions;
     }
-
     public setConsumeActions(consumeActions: ConsumeAction[]|null) {
         this.consumeActions = consumeActions;
         return this;
     }
-
     public withConsumeActions(consumeActions: ConsumeAction[]|null): this {
         this.consumeActions = consumeActions;
         return this;
     }
-
     public getFailedAcquireActions(): AcquireAction[]|null {
         return this.failedAcquireActions;
     }
-
     public setFailedAcquireActions(failedAcquireActions: AcquireAction[]|null) {
         this.failedAcquireActions = failedAcquireActions;
         return this;
     }
-
     public withFailedAcquireActions(failedAcquireActions: AcquireAction[]|null): this {
         this.failedAcquireActions = failedAcquireActions;
         return this;
     }
-
     public getPremiseQuestNames(): string[]|null {
         return this.premiseQuestNames;
     }
-
     public setPremiseQuestNames(premiseQuestNames: string[]|null) {
         this.premiseQuestNames = premiseQuestNames;
         return this;
     }
-
     public withPremiseQuestNames(premiseQuestNames: string[]|null): this {
         this.premiseQuestNames = premiseQuestNames;
         return this;

@@ -53,44 +53,35 @@ export default class ResetBoxRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getPrizeTableName(): string|null {
         return this.prizeTableName;
     }
-
     public setPrizeTableName(prizeTableName: string|null) {
         this.prizeTableName = prizeTableName;
         return this;
     }
-
     public withPrizeTableName(prizeTableName: string|null): this {
         this.prizeTableName = prizeTableName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;

@@ -126,58 +126,46 @@ export default class Entry implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{entryModelName}', entryModelName ?? '');
     }
-
     public getEntryId(): string|null {
         return this.entryId;
     }
-
     public setEntryId(entryId: string|null) {
         this.entryId = entryId;
         return this;
     }
-
     public withEntryId(entryId: string|null): this {
         this.entryId = entryId;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getAcquiredAt(): number|null {
         return this.acquiredAt;
     }
-
     public setAcquiredAt(acquiredAt: number|null) {
         this.acquiredAt = acquiredAt;
         return this;
     }
-
     public withAcquiredAt(acquiredAt: number|null): this {
         this.acquiredAt = acquiredAt;
         return this;

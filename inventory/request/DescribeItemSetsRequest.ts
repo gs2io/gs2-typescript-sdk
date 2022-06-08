@@ -55,72 +55,57 @@ export default class DescribeItemSetsRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getInventoryName(): string|null {
         return this.inventoryName;
     }
-
     public setInventoryName(inventoryName: string|null) {
         this.inventoryName = inventoryName;
         return this;
     }
-
     public withInventoryName(inventoryName: string|null): this {
         this.inventoryName = inventoryName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getPageToken(): string|null {
         return this.pageToken;
     }
-
     public setPageToken(pageToken: string|null) {
         this.pageToken = pageToken;
         return this;
     }
-
     public withPageToken(pageToken: string|null): this {
         this.pageToken = pageToken;
         return this;
     }
-
     public getLimit(): number|null {
         return this.limit;
     }
-
     public setLimit(limit: number|null) {
         this.limit = limit;
         return this;
     }
-
     public withLimit(limit: number|null): this {
         this.limit = limit;
         return this;

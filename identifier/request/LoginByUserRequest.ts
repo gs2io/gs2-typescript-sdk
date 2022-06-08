@@ -52,30 +52,24 @@ export default class LoginByUserRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getUserName(): string|null {
         return this.userName;
     }
-
     public setUserName(userName: string|null) {
         this.userName = userName;
         return this;
     }
-
     public withUserName(userName: string|null): this {
         this.userName = userName;
         return this;
     }
-
     public getPassword(): string|null {
         return this.password;
     }
-
     public setPassword(password: string|null) {
         this.password = password;
         return this;
     }
-
     public withPassword(password: string|null): this {
         this.password = password;
         return this;

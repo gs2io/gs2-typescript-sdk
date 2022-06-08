@@ -23,86 +23,68 @@ export default class Ranking implements IModel {
     private score: number|null = null;
     private metadata: string|null = null;
     private createdAt: number|null = null;
-
     public getRank(): number|null {
         return this.rank;
     }
-
     public setRank(rank: number|null) {
         this.rank = rank;
         return this;
     }
-
     public withRank(rank: number|null): this {
         this.rank = rank;
         return this;
     }
-
     public getIndex(): number|null {
         return this.index;
     }
-
     public setIndex(index: number|null) {
         this.index = index;
         return this;
     }
-
     public withIndex(index: number|null): this {
         this.index = index;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getScore(): number|null {
         return this.score;
     }
-
     public setScore(score: number|null) {
         this.score = score;
         return this;
     }
-
     public withScore(score: number|null): this {
         this.score = score;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;

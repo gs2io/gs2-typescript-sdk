@@ -104,72 +104,57 @@ export default class FirebaseToken implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{userId}', userId ?? '');
     }
-
     public getFirebaseTokenId(): string|null {
         return this.firebaseTokenId;
     }
-
     public setFirebaseTokenId(firebaseTokenId: string|null) {
         this.firebaseTokenId = firebaseTokenId;
         return this;
     }
-
     public withFirebaseTokenId(firebaseTokenId: string|null): this {
         this.firebaseTokenId = firebaseTokenId;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getToken(): string|null {
         return this.token;
     }
-
     public setToken(token: string|null) {
         this.token = token;
         return this;
     }
-
     public withToken(token: string|null): this {
         this.token = token;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

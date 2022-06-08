@@ -52,30 +52,24 @@ export default class GetEventRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getStackName(): string|null {
         return this.stackName;
     }
-
     public setStackName(stackName: string|null) {
         this.stackName = stackName;
         return this;
     }
-
     public withStackName(stackName: string|null): this {
         this.stackName = stackName;
         return this;
     }
-
     public getEventName(): string|null {
         return this.eventName;
     }
-
     public setEventName(eventName: string|null) {
         this.eventName = eventName;
         return this;
     }
-
     public withEventName(eventName: string|null): this {
         this.eventName = eventName;
         return this;

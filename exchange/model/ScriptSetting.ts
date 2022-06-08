@@ -21,58 +21,46 @@ export default class ScriptSetting implements IModel {
     private doneTriggerTargetType: string|null = null;
     private doneTriggerScriptId: string|null = null;
     private doneTriggerQueueNamespaceId: string|null = null;
-
     public getTriggerScriptId(): string|null {
         return this.triggerScriptId;
     }
-
     public setTriggerScriptId(triggerScriptId: string|null) {
         this.triggerScriptId = triggerScriptId;
         return this;
     }
-
     public withTriggerScriptId(triggerScriptId: string|null): this {
         this.triggerScriptId = triggerScriptId;
         return this;
     }
-
     public getDoneTriggerTargetType(): string|null {
         return this.doneTriggerTargetType;
     }
-
     public setDoneTriggerTargetType(doneTriggerTargetType: string|null) {
         this.doneTriggerTargetType = doneTriggerTargetType;
         return this;
     }
-
     public withDoneTriggerTargetType(doneTriggerTargetType: string|null): this {
         this.doneTriggerTargetType = doneTriggerTargetType;
         return this;
     }
-
     public getDoneTriggerScriptId(): string|null {
         return this.doneTriggerScriptId;
     }
-
     public setDoneTriggerScriptId(doneTriggerScriptId: string|null) {
         this.doneTriggerScriptId = doneTriggerScriptId;
         return this;
     }
-
     public withDoneTriggerScriptId(doneTriggerScriptId: string|null): this {
         this.doneTriggerScriptId = doneTriggerScriptId;
         return this;
     }
-
     public getDoneTriggerQueueNamespaceId(): string|null {
         return this.doneTriggerQueueNamespaceId;
     }
-
     public setDoneTriggerQueueNamespaceId(doneTriggerQueueNamespaceId: string|null) {
         this.doneTriggerQueueNamespaceId = doneTriggerQueueNamespaceId;
         return this;
     }
-
     public withDoneTriggerQueueNamespaceId(doneTriggerQueueNamespaceId: string|null): this {
         this.doneTriggerQueueNamespaceId = doneTriggerQueueNamespaceId;
         return this;

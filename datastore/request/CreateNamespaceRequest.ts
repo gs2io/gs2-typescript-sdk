@@ -54,58 +54,46 @@ export default class CreateNamespaceRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getLogSetting(): Gs2Datastore.LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: Gs2Datastore.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: Gs2Datastore.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
-
     public getDoneUploadScript(): Gs2Datastore.ScriptSetting|null {
         return this.doneUploadScript;
     }
-
     public setDoneUploadScript(doneUploadScript: Gs2Datastore.ScriptSetting|null) {
         this.doneUploadScript = doneUploadScript;
         return this;
     }
-
     public withDoneUploadScript(doneUploadScript: Gs2Datastore.ScriptSetting|null): this {
         this.doneUploadScript = doneUploadScript;
         return this;

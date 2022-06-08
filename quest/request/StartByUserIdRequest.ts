@@ -57,86 +57,68 @@ export default class StartByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getQuestGroupName(): string|null {
         return this.questGroupName;
     }
-
     public setQuestGroupName(questGroupName: string|null) {
         this.questGroupName = questGroupName;
         return this;
     }
-
     public withQuestGroupName(questGroupName: string|null): this {
         this.questGroupName = questGroupName;
         return this;
     }
-
     public getQuestName(): string|null {
         return this.questName;
     }
-
     public setQuestName(questName: string|null) {
         this.questName = questName;
         return this;
     }
-
     public withQuestName(questName: string|null): this {
         this.questName = questName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getForce(): boolean|null {
         return this.force;
     }
-
     public setForce(force: boolean|null) {
         this.force = force;
         return this;
     }
-
     public withForce(force: boolean|null): this {
         this.force = force;
         return this;
     }
-
     public getConfig(): Gs2Quest.Config[]|null {
         return this.config;
     }
-
     public setConfig(config: Gs2Quest.Config[]|null) {
         this.config = config;
         return this;
     }
-
     public withConfig(config: Gs2Quest.Config[]|null): this {
         this.config = config;
         return this;

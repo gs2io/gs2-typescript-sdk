@@ -51,16 +51,13 @@ export default class IssueAccountTokenRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getAccountName(): string|null {
         return this.accountName;
     }
-
     public setAccountName(accountName: string|null) {
         this.accountName = accountName;
         return this;
     }
-
     public withAccountName(accountName: string|null): this {
         this.accountName = accountName;
         return this;

@@ -51,16 +51,13 @@ export default class GetPasswordRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getUserName(): string|null {
         return this.userName;
     }
-
     public setUserName(userName: string|null) {
         this.userName = userName;
         return this;
     }
-
     public withUserName(userName: string|null): this {
         this.userName = userName;
         return this;

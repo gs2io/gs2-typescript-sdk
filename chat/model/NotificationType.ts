@@ -19,30 +19,24 @@ import IModel from '../../core/interface/IModel';
 export default class NotificationType implements IModel {
     private category: number|null = null;
     private enableTransferMobilePushNotification: boolean|null = null;
-
     public getCategory(): number|null {
         return this.category;
     }
-
     public setCategory(category: number|null) {
         this.category = category;
         return this;
     }
-
     public withCategory(category: number|null): this {
         this.category = category;
         return this;
     }
-
     public getEnableTransferMobilePushNotification(): boolean|null {
         return this.enableTransferMobilePushNotification;
     }
-
     public setEnableTransferMobilePushNotification(enableTransferMobilePushNotification: boolean|null) {
         this.enableTransferMobilePushNotification = enableTransferMobilePushNotification;
         return this;
     }
-
     public withEnableTransferMobilePushNotification(enableTransferMobilePushNotification: boolean|null): this {
         this.enableTransferMobilePushNotification = enableTransferMobilePushNotification;
         return this;

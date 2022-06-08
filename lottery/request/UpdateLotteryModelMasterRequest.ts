@@ -58,114 +58,90 @@ export default class UpdateLotteryModelMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getLotteryName(): string|null {
         return this.lotteryName;
     }
-
     public setLotteryName(lotteryName: string|null) {
         this.lotteryName = lotteryName;
         return this;
     }
-
     public withLotteryName(lotteryName: string|null): this {
         this.lotteryName = lotteryName;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getMode(): string|null {
         return this.mode;
     }
-
     public setMode(mode: string|null) {
         this.mode = mode;
         return this;
     }
-
     public withMode(mode: string|null): this {
         this.mode = mode;
         return this;
     }
-
     public getMethod(): string|null {
         return this.method;
     }
-
     public setMethod(method: string|null) {
         this.method = method;
         return this;
     }
-
     public withMethod(method: string|null): this {
         this.method = method;
         return this;
     }
-
     public getPrizeTableName(): string|null {
         return this.prizeTableName;
     }
-
     public setPrizeTableName(prizeTableName: string|null) {
         this.prizeTableName = prizeTableName;
         return this;
     }
-
     public withPrizeTableName(prizeTableName: string|null): this {
         this.prizeTableName = prizeTableName;
         return this;
     }
-
     public getChoicePrizeTableScriptId(): string|null {
         return this.choicePrizeTableScriptId;
     }
-
     public setChoicePrizeTableScriptId(choicePrizeTableScriptId: string|null) {
         this.choicePrizeTableScriptId = choicePrizeTableScriptId;
         return this;
     }
-
     public withChoicePrizeTableScriptId(choicePrizeTableScriptId: string|null): this {
         this.choicePrizeTableScriptId = choicePrizeTableScriptId;
         return this;

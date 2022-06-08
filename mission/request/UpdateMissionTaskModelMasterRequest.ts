@@ -60,142 +60,112 @@ export default class UpdateMissionTaskModelMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getMissionGroupName(): string|null {
         return this.missionGroupName;
     }
-
     public setMissionGroupName(missionGroupName: string|null) {
         this.missionGroupName = missionGroupName;
         return this;
     }
-
     public withMissionGroupName(missionGroupName: string|null): this {
         this.missionGroupName = missionGroupName;
         return this;
     }
-
     public getMissionTaskName(): string|null {
         return this.missionTaskName;
     }
-
     public setMissionTaskName(missionTaskName: string|null) {
         this.missionTaskName = missionTaskName;
         return this;
     }
-
     public withMissionTaskName(missionTaskName: string|null): this {
         this.missionTaskName = missionTaskName;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getCounterName(): string|null {
         return this.counterName;
     }
-
     public setCounterName(counterName: string|null) {
         this.counterName = counterName;
         return this;
     }
-
     public withCounterName(counterName: string|null): this {
         this.counterName = counterName;
         return this;
     }
-
     public getTargetValue(): number|null {
         return this.targetValue;
     }
-
     public setTargetValue(targetValue: number|null) {
         this.targetValue = targetValue;
         return this;
     }
-
     public withTargetValue(targetValue: number|null): this {
         this.targetValue = targetValue;
         return this;
     }
-
     public getCompleteAcquireActions(): Gs2Mission.AcquireAction[]|null {
         return this.completeAcquireActions;
     }
-
     public setCompleteAcquireActions(completeAcquireActions: Gs2Mission.AcquireAction[]|null) {
         this.completeAcquireActions = completeAcquireActions;
         return this;
     }
-
     public withCompleteAcquireActions(completeAcquireActions: Gs2Mission.AcquireAction[]|null): this {
         this.completeAcquireActions = completeAcquireActions;
         return this;
     }
-
     public getChallengePeriodEventId(): string|null {
         return this.challengePeriodEventId;
     }
-
     public setChallengePeriodEventId(challengePeriodEventId: string|null) {
         this.challengePeriodEventId = challengePeriodEventId;
         return this;
     }
-
     public withChallengePeriodEventId(challengePeriodEventId: string|null): this {
         this.challengePeriodEventId = challengePeriodEventId;
         return this;
     }
-
     public getPremiseMissionTaskName(): string|null {
         return this.premiseMissionTaskName;
     }
-
     public setPremiseMissionTaskName(premiseMissionTaskName: string|null) {
         this.premiseMissionTaskName = premiseMissionTaskName;
         return this;
     }
-
     public withPremiseMissionTaskName(premiseMissionTaskName: string|null): this {
         this.premiseMissionTaskName = premiseMissionTaskName;
         return this;

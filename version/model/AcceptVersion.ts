@@ -129,86 +129,68 @@ export default class AcceptVersion implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{versionName}', versionName ?? '');
     }
-
     public getAcceptVersionId(): string|null {
         return this.acceptVersionId;
     }
-
     public setAcceptVersionId(acceptVersionId: string|null) {
         this.acceptVersionId = acceptVersionId;
         return this;
     }
-
     public withAcceptVersionId(acceptVersionId: string|null): this {
         this.acceptVersionId = acceptVersionId;
         return this;
     }
-
     public getVersionName(): string|null {
         return this.versionName;
     }
-
     public setVersionName(versionName: string|null) {
         this.versionName = versionName;
         return this;
     }
-
     public withVersionName(versionName: string|null): this {
         this.versionName = versionName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getVersion(): Version|null {
         return this.version;
     }
-
     public setVersion(version: Version|null) {
         this.version = version;
         return this;
     }
-
     public withVersion(version: Version|null): this {
         this.version = version;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

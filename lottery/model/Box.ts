@@ -154,100 +154,79 @@ export default class Box implements IModel {
             .replace('{prizeTableName}', prizeTableName ?? '')
             .replace('{index}', index ?? '');
     }
-
     public getBoxId(): string|null {
         return this.boxId;
     }
-
     public setBoxId(boxId: string|null) {
         this.boxId = boxId;
         return this;
     }
-
     public withBoxId(boxId: string|null): this {
         this.boxId = boxId;
         return this;
     }
-
     public getPrizeTableName(): string|null {
         return this.prizeTableName;
     }
-
     public setPrizeTableName(prizeTableName: string|null) {
         this.prizeTableName = prizeTableName;
         return this;
     }
-
     public withPrizeTableName(prizeTableName: string|null): this {
         this.prizeTableName = prizeTableName;
         return this;
     }
-
     public getIndex(): number|null {
         return this.index;
     }
-
     public setIndex(index: number|null) {
         this.index = index;
         return this;
     }
-
     public withIndex(index: number|null): this {
         this.index = index;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getDrawnIndexes(): number[]|null {
         return this.drawnIndexes;
     }
-
     public setDrawnIndexes(drawnIndexes: number[]|null) {
         this.drawnIndexes = drawnIndexes;
         return this;
     }
-
     public withDrawnIndexes(drawnIndexes: number[]|null): this {
         this.drawnIndexes = drawnIndexes;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

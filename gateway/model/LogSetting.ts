@@ -18,16 +18,13 @@ import IModel from '../../core/interface/IModel';
 
 export default class LogSetting implements IModel {
     private loggingNamespaceId: string|null = null;
-
     public getLoggingNamespaceId(): string|null {
         return this.loggingNamespaceId;
     }
-
     public setLoggingNamespaceId(loggingNamespaceId: string|null) {
         this.loggingNamespaceId = loggingNamespaceId;
         return this;
     }
-
     public withLoggingNamespaceId(loggingNamespaceId: string|null): this {
         this.loggingNamespaceId = loggingNamespaceId;
         return this;

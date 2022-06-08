@@ -19,30 +19,24 @@ import IModel from '../../core/interface/IModel';
 export default class SetCookieRequestEntry implements IModel {
     private key: string|null = null;
     private value: string|null = null;
-
     public getKey(): string|null {
         return this.key;
     }
-
     public setKey(key: string|null) {
         this.key = key;
         return this;
     }
-
     public withKey(key: string|null): this {
         this.key = key;
         return this;
     }
-
     public getValue(): string|null {
         return this.value;
     }
-
     public setValue(value: string|null) {
         this.value = value;
         return this;
     }
-
     public withValue(value: string|null): this {
         this.value = value;
         return this;

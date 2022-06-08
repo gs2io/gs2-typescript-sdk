@@ -46,11 +46,17 @@ export default class Namespace implements IModel {
     getUpdatedAt(): number | null;
     setUpdatedAt(updatedAt: number | null): this;
     withUpdatedAt(updatedAt: number | null): this;
+    /** @deprecated */
     getQueueNamespaceId(): string | null;
+    /** @deprecated */
     setQueueNamespaceId(queueNamespaceId: string | null): this;
+    /** @deprecated */
     withQueueNamespaceId(queueNamespaceId: string | null): this;
+    /** @deprecated */
     getKeyId(): string | null;
+    /** @deprecated */
     setKeyId(keyId: string | null): this;
+    /** @deprecated */
     withKeyId(keyId: string | null): this;
     static fromDict(data: {
         [key: string]: any;

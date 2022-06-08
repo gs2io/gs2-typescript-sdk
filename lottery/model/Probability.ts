@@ -21,30 +21,24 @@ import DrawnPrize from './DrawnPrize';
 export default class Probability implements IModel {
     private prize: DrawnPrize|null = null;
     private rate: number|null = null;
-
     public getPrize(): DrawnPrize|null {
         return this.prize;
     }
-
     public setPrize(prize: DrawnPrize|null) {
         this.prize = prize;
         return this;
     }
-
     public withPrize(prize: DrawnPrize|null): this {
         this.prize = prize;
         return this;
     }
-
     public getRate(): number|null {
         return this.rate;
     }
-
     public setRate(rate: number|null) {
         this.rate = rate;
         return this;
     }
-
     public withRate(rate: number|null): this {
         this.rate = rate;
         return this;

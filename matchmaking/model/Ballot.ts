@@ -21,58 +21,46 @@ export default class Ballot implements IModel {
     private ratingName: string|null = null;
     private gatheringName: string|null = null;
     private numberOfPlayer: number|null = null;
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getRatingName(): string|null {
         return this.ratingName;
     }
-
     public setRatingName(ratingName: string|null) {
         this.ratingName = ratingName;
         return this;
     }
-
     public withRatingName(ratingName: string|null): this {
         this.ratingName = ratingName;
         return this;
     }
-
     public getGatheringName(): string|null {
         return this.gatheringName;
     }
-
     public setGatheringName(gatheringName: string|null) {
         this.gatheringName = gatheringName;
         return this;
     }
-
     public withGatheringName(gatheringName: string|null): this {
         this.gatheringName = gatheringName;
         return this;
     }
-
     public getNumberOfPlayer(): number|null {
         return this.numberOfPlayer;
     }
-
     public setNumberOfPlayer(numberOfPlayer: number|null) {
         this.numberOfPlayer = numberOfPlayer;
         return this;
     }
-
     public withNumberOfPlayer(numberOfPlayer: number|null): this {
         this.numberOfPlayer = numberOfPlayer;
         return this;

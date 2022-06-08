@@ -18,16 +18,13 @@ import IModel from '../../core/interface/IModel';
 
 export default class ProjectToken implements IModel {
     private token: string|null = null;
-
     public getToken(): string|null {
         return this.token;
     }
-
     public setToken(token: string|null) {
         this.token = token;
         return this;
     }
-
     public withToken(token: string|null): this {
         this.token = token;
         return this;

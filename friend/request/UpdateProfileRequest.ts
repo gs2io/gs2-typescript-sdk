@@ -55,72 +55,57 @@ export default class UpdateProfileRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getPublicProfile(): string|null {
         return this.publicProfile;
     }
-
     public setPublicProfile(publicProfile: string|null) {
         this.publicProfile = publicProfile;
         return this;
     }
-
     public withPublicProfile(publicProfile: string|null): this {
         this.publicProfile = publicProfile;
         return this;
     }
-
     public getFollowerProfile(): string|null {
         return this.followerProfile;
     }
-
     public setFollowerProfile(followerProfile: string|null) {
         this.followerProfile = followerProfile;
         return this;
     }
-
     public withFollowerProfile(followerProfile: string|null): this {
         this.followerProfile = followerProfile;
         return this;
     }
-
     public getFriendProfile(): string|null {
         return this.friendProfile;
     }
-
     public setFriendProfile(friendProfile: string|null) {
         this.friendProfile = friendProfile;
         return this;
     }
-
     public withFriendProfile(friendProfile: string|null): this {
         this.friendProfile = friendProfile;
         return this;

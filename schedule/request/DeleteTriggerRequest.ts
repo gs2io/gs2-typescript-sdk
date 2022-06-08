@@ -53,44 +53,35 @@ export default class DeleteTriggerRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getTriggerName(): string|null {
         return this.triggerName;
     }
-
     public setTriggerName(triggerName: string|null) {
         this.triggerName = triggerName;
         return this;
     }
-
     public withTriggerName(triggerName: string|null): this {
         this.triggerName = triggerName;
         return this;

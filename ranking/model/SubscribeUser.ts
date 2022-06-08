@@ -20,44 +20,35 @@ export default class SubscribeUser implements IModel {
     private categoryName: string|null = null;
     private userId: string|null = null;
     private targetUserId: string|null = null;
-
     public getCategoryName(): string|null {
         return this.categoryName;
     }
-
     public setCategoryName(categoryName: string|null) {
         this.categoryName = categoryName;
         return this;
     }
-
     public withCategoryName(categoryName: string|null): this {
         this.categoryName = categoryName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getTargetUserId(): string|null {
         return this.targetUserId;
     }
-
     public setTargetUserId(targetUserId: string|null) {
         this.targetUserId = targetUserId;
         return this;
     }
-
     public withTargetUserId(targetUserId: string|null): this {
         this.targetUserId = targetUserId;
         return this;

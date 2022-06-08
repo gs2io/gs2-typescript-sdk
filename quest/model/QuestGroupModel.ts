@@ -108,72 +108,57 @@ export default class QuestGroupModel implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{questGroupName}', questGroupName ?? '');
     }
-
     public getQuestGroupModelId(): string|null {
         return this.questGroupModelId;
     }
-
     public setQuestGroupModelId(questGroupModelId: string|null) {
         this.questGroupModelId = questGroupModelId;
         return this;
     }
-
     public withQuestGroupModelId(questGroupModelId: string|null): this {
         this.questGroupModelId = questGroupModelId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getQuests(): QuestModel[]|null {
         return this.quests;
     }
-
     public setQuests(quests: QuestModel[]|null) {
         this.quests = quests;
         return this;
     }
-
     public withQuests(quests: QuestModel[]|null): this {
         this.quests = quests;
         return this;
     }
-
     public getChallengePeriodEventId(): string|null {
         return this.challengePeriodEventId;
     }
-
     public setChallengePeriodEventId(challengePeriodEventId: string|null) {
         this.challengePeriodEventId = challengePeriodEventId;
         return this;
     }
-
     public withChallengePeriodEventId(challengePeriodEventId: string|null): this {
         this.challengePeriodEventId = challengePeriodEventId;
         return this;

@@ -54,44 +54,35 @@ export default class UpdateReceivedByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getReceivedGlobalMessageNames(): string[]|null {
         return this.receivedGlobalMessageNames;
     }
-
     public setReceivedGlobalMessageNames(receivedGlobalMessageNames: string[]|null) {
         this.receivedGlobalMessageNames = receivedGlobalMessageNames;
         return this;
     }
-
     public withReceivedGlobalMessageNames(receivedGlobalMessageNames: string[]|null): this {
         this.receivedGlobalMessageNames = receivedGlobalMessageNames;
         return this;

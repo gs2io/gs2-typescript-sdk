@@ -55,72 +55,57 @@ export default class UpdateGitHubApiKeyRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getApiKeyName(): string|null {
         return this.apiKeyName;
     }
-
     public setApiKeyName(apiKeyName: string|null) {
         this.apiKeyName = apiKeyName;
         return this;
     }
-
     public withApiKeyName(apiKeyName: string|null): this {
         this.apiKeyName = apiKeyName;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getApiKey(): string|null {
         return this.apiKey;
     }
-
     public setApiKey(apiKey: string|null) {
         this.apiKey = apiKey;
         return this;
     }
-
     public withApiKey(apiKey: string|null): this {
         this.apiKey = apiKey;
         return this;
     }
-
     public getEncryptionKeyName(): string|null {
         return this.encryptionKeyName;
     }
-
     public setEncryptionKeyName(encryptionKeyName: string|null) {
         this.encryptionKeyName = encryptionKeyName;
         return this;
     }
-
     public withEncryptionKeyName(encryptionKeyName: string|null): this {
         this.encryptionKeyName = encryptionKeyName;
         return this;

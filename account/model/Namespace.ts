@@ -92,170 +92,134 @@ export default class Namespace implements IModel {
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '');
     }
-
     public getNamespaceId(): string|null {
         return this.namespaceId;
     }
-
     public setNamespaceId(namespaceId: string|null) {
         this.namespaceId = namespaceId;
         return this;
     }
-
     public withNamespaceId(namespaceId: string|null): this {
         this.namespaceId = namespaceId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getChangePasswordIfTakeOver(): boolean|null {
         return this.changePasswordIfTakeOver;
     }
-
     public setChangePasswordIfTakeOver(changePasswordIfTakeOver: boolean|null) {
         this.changePasswordIfTakeOver = changePasswordIfTakeOver;
         return this;
     }
-
     public withChangePasswordIfTakeOver(changePasswordIfTakeOver: boolean|null): this {
         this.changePasswordIfTakeOver = changePasswordIfTakeOver;
         return this;
     }
-
     public getDifferentUserIdForLoginAndDataRetention(): boolean|null {
         return this.differentUserIdForLoginAndDataRetention;
     }
-
     public setDifferentUserIdForLoginAndDataRetention(differentUserIdForLoginAndDataRetention: boolean|null) {
         this.differentUserIdForLoginAndDataRetention = differentUserIdForLoginAndDataRetention;
         return this;
     }
-
     public withDifferentUserIdForLoginAndDataRetention(differentUserIdForLoginAndDataRetention: boolean|null): this {
         this.differentUserIdForLoginAndDataRetention = differentUserIdForLoginAndDataRetention;
         return this;
     }
-
     public getCreateAccountScript(): ScriptSetting|null {
         return this.createAccountScript;
     }
-
     public setCreateAccountScript(createAccountScript: ScriptSetting|null) {
         this.createAccountScript = createAccountScript;
         return this;
     }
-
     public withCreateAccountScript(createAccountScript: ScriptSetting|null): this {
         this.createAccountScript = createAccountScript;
         return this;
     }
-
     public getAuthenticationScript(): ScriptSetting|null {
         return this.authenticationScript;
     }
-
     public setAuthenticationScript(authenticationScript: ScriptSetting|null) {
         this.authenticationScript = authenticationScript;
         return this;
     }
-
     public withAuthenticationScript(authenticationScript: ScriptSetting|null): this {
         this.authenticationScript = authenticationScript;
         return this;
     }
-
     public getCreateTakeOverScript(): ScriptSetting|null {
         return this.createTakeOverScript;
     }
-
     public setCreateTakeOverScript(createTakeOverScript: ScriptSetting|null) {
         this.createTakeOverScript = createTakeOverScript;
         return this;
     }
-
     public withCreateTakeOverScript(createTakeOverScript: ScriptSetting|null): this {
         this.createTakeOverScript = createTakeOverScript;
         return this;
     }
-
     public getDoTakeOverScript(): ScriptSetting|null {
         return this.doTakeOverScript;
     }
-
     public setDoTakeOverScript(doTakeOverScript: ScriptSetting|null) {
         this.doTakeOverScript = doTakeOverScript;
         return this;
     }
-
     public withDoTakeOverScript(doTakeOverScript: ScriptSetting|null): this {
         this.doTakeOverScript = doTakeOverScript;
         return this;
     }
-
     public getLogSetting(): LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

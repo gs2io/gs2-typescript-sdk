@@ -55,72 +55,57 @@ export default class UpdateTakeOverRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getType(): number|null {
         return this.type;
     }
-
     public setType(type: number|null) {
         this.type = type;
         return this;
     }
-
     public withType(type: number|null): this {
         this.type = type;
         return this;
     }
-
     public getOldPassword(): string|null {
         return this.oldPassword;
     }
-
     public setOldPassword(oldPassword: string|null) {
         this.oldPassword = oldPassword;
         return this;
     }
-
     public withOldPassword(oldPassword: string|null): this {
         this.oldPassword = oldPassword;
         return this;
     }
-
     public getPassword(): string|null {
         return this.password;
     }
-
     public setPassword(password: string|null) {
         this.password = password;
         return this;
     }
-
     public withPassword(password: string|null): this {
         this.password = password;
         return this;

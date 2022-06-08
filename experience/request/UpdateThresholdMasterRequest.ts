@@ -55,72 +55,57 @@ export default class UpdateThresholdMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getThresholdName(): string|null {
         return this.thresholdName;
     }
-
     public setThresholdName(thresholdName: string|null) {
         this.thresholdName = thresholdName;
         return this;
     }
-
     public withThresholdName(thresholdName: string|null): this {
         this.thresholdName = thresholdName;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getValues(): number[]|null {
         return this.values;
     }
-
     public setValues(values: number[]|null) {
         this.values = values;
         return this;
     }
-
     public withValues(values: number[]|null): this {
         this.values = values;
         return this;

@@ -56,86 +56,68 @@ export default class UpdateMaxStaminaTableMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getMaxStaminaTableName(): string|null {
         return this.maxStaminaTableName;
     }
-
     public setMaxStaminaTableName(maxStaminaTableName: string|null) {
         this.maxStaminaTableName = maxStaminaTableName;
         return this;
     }
-
     public withMaxStaminaTableName(maxStaminaTableName: string|null): this {
         this.maxStaminaTableName = maxStaminaTableName;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getExperienceModelId(): string|null {
         return this.experienceModelId;
     }
-
     public setExperienceModelId(experienceModelId: string|null) {
         this.experienceModelId = experienceModelId;
         return this;
     }
-
     public withExperienceModelId(experienceModelId: string|null): this {
         this.experienceModelId = experienceModelId;
         return this;
     }
-
     public getValues(): number[]|null {
         return this.values;
     }
-
     public setValues(values: number[]|null) {
         this.values = values;
         return this;
     }
-
     public withValues(values: number[]|null): this {
         this.values = values;
         return this;

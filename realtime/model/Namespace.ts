@@ -89,128 +89,101 @@ export default class Namespace implements IModel {
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '');
     }
-
     public getNamespaceId(): string|null {
         return this.namespaceId;
     }
-
     public setNamespaceId(namespaceId: string|null) {
         this.namespaceId = namespaceId;
         return this;
     }
-
     public withNamespaceId(namespaceId: string|null): this {
         this.namespaceId = namespaceId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getServerType(): string|null {
         return this.serverType;
     }
-
     public setServerType(serverType: string|null) {
         this.serverType = serverType;
         return this;
     }
-
     public withServerType(serverType: string|null): this {
         this.serverType = serverType;
         return this;
     }
-
     public getServerSpec(): string|null {
         return this.serverSpec;
     }
-
     public setServerSpec(serverSpec: string|null) {
         this.serverSpec = serverSpec;
         return this;
     }
-
     public withServerSpec(serverSpec: string|null): this {
         this.serverSpec = serverSpec;
         return this;
     }
-
     public getCreateNotification(): NotificationSetting|null {
         return this.createNotification;
     }
-
     public setCreateNotification(createNotification: NotificationSetting|null) {
         this.createNotification = createNotification;
         return this;
     }
-
     public withCreateNotification(createNotification: NotificationSetting|null): this {
         this.createNotification = createNotification;
         return this;
     }
-
     public getLogSetting(): LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

@@ -56,86 +56,68 @@ export default class CreateNamespaceRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getAssumeUserId(): string|null {
         return this.assumeUserId;
     }
-
     public setAssumeUserId(assumeUserId: string|null) {
         this.assumeUserId = assumeUserId;
         return this;
     }
-
     public withAssumeUserId(assumeUserId: string|null): this {
         this.assumeUserId = assumeUserId;
         return this;
     }
-
     public getAcceptVersionScript(): Gs2Version.ScriptSetting|null {
         return this.acceptVersionScript;
     }
-
     public setAcceptVersionScript(acceptVersionScript: Gs2Version.ScriptSetting|null) {
         this.acceptVersionScript = acceptVersionScript;
         return this;
     }
-
     public withAcceptVersionScript(acceptVersionScript: Gs2Version.ScriptSetting|null): this {
         this.acceptVersionScript = acceptVersionScript;
         return this;
     }
-
     public getCheckVersionTriggerScriptId(): string|null {
         return this.checkVersionTriggerScriptId;
     }
-
     public setCheckVersionTriggerScriptId(checkVersionTriggerScriptId: string|null) {
         this.checkVersionTriggerScriptId = checkVersionTriggerScriptId;
         return this;
     }
-
     public withCheckVersionTriggerScriptId(checkVersionTriggerScriptId: string|null): this {
         this.checkVersionTriggerScriptId = checkVersionTriggerScriptId;
         return this;
     }
-
     public getLogSetting(): Gs2Version.LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: Gs2Version.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: Gs2Version.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;

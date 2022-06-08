@@ -30,44 +30,35 @@ export default class Chart implements IModel {
     ): string|null {
         return grnFormat;
     }
-
     public getChartId(): string|null {
         return this.chartId;
     }
-
     public setChartId(chartId: string|null) {
         this.chartId = chartId;
         return this;
     }
-
     public withChartId(chartId: string|null): this {
         this.chartId = chartId;
         return this;
     }
-
     public getEmbedId(): string|null {
         return this.embedId;
     }
-
     public setEmbedId(embedId: string|null) {
         this.embedId = embedId;
         return this;
     }
-
     public withEmbedId(embedId: string|null): this {
         this.embedId = embedId;
         return this;
     }
-
     public getHtml(): string|null {
         return this.html;
     }
-
     public setHtml(html: string|null) {
         this.html = html;
         return this;
     }
-
     public withHtml(html: string|null): this {
         this.html = html;
         return this;

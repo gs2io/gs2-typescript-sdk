@@ -21,30 +21,24 @@ import GameResult from './GameResult';
 export default class WrittenBallot implements IModel {
     private ballot: Ballot|null = null;
     private gameResults: GameResult[]|null = null;
-
     public getBallot(): Ballot|null {
         return this.ballot;
     }
-
     public setBallot(ballot: Ballot|null) {
         this.ballot = ballot;
         return this;
     }
-
     public withBallot(ballot: Ballot|null): this {
         this.ballot = ballot;
         return this;
     }
-
     public getGameResults(): GameResult[]|null {
         return this.gameResults;
     }
-
     public setGameResults(gameResults: GameResult[]|null) {
         this.gameResults = gameResults;
         return this;
     }
-
     public withGameResults(gameResults: GameResult[]|null): this {
         this.gameResults = gameResults;
         return this;

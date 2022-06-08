@@ -128,86 +128,68 @@ export default class CompletedQuestList implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{questGroupName}', questGroupName ?? '');
     }
-
     public getCompletedQuestListId(): string|null {
         return this.completedQuestListId;
     }
-
     public setCompletedQuestListId(completedQuestListId: string|null) {
         this.completedQuestListId = completedQuestListId;
         return this;
     }
-
     public withCompletedQuestListId(completedQuestListId: string|null): this {
         this.completedQuestListId = completedQuestListId;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getQuestGroupName(): string|null {
         return this.questGroupName;
     }
-
     public setQuestGroupName(questGroupName: string|null) {
         this.questGroupName = questGroupName;
         return this;
     }
-
     public withQuestGroupName(questGroupName: string|null): this {
         this.questGroupName = questGroupName;
         return this;
     }
-
     public getCompleteQuestNames(): string[]|null {
         return this.completeQuestNames;
     }
-
     public setCompleteQuestNames(completeQuestNames: string[]|null) {
         this.completeQuestNames = completeQuestNames;
         return this;
     }
-
     public withCompleteQuestNames(completeQuestNames: string[]|null): this {
         this.completeQuestNames = completeQuestNames;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

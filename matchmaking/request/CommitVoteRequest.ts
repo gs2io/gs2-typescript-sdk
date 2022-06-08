@@ -53,44 +53,35 @@ export default class CommitVoteRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getRatingName(): string|null {
         return this.ratingName;
     }
-
     public setRatingName(ratingName: string|null) {
         this.ratingName = ratingName;
         return this;
     }
-
     public withRatingName(ratingName: string|null): this {
         this.ratingName = ratingName;
         return this;
     }
-
     public getGatheringName(): string|null {
         return this.gatheringName;
     }
-
     public setGatheringName(gatheringName: string|null) {
         this.gatheringName = gatheringName;
         return this;
     }
-
     public withGatheringName(gatheringName: string|null): this {
         this.gatheringName = gatheringName;
         return this;

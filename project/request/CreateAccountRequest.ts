@@ -55,72 +55,57 @@ export default class CreateAccountRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getEmail(): string|null {
         return this.email;
     }
-
     public setEmail(email: string|null) {
         this.email = email;
         return this;
     }
-
     public withEmail(email: string|null): this {
         this.email = email;
         return this;
     }
-
     public getFullName(): string|null {
         return this.fullName;
     }
-
     public setFullName(fullName: string|null) {
         this.fullName = fullName;
         return this;
     }
-
     public withFullName(fullName: string|null): this {
         this.fullName = fullName;
         return this;
     }
-
     public getCompanyName(): string|null {
         return this.companyName;
     }
-
     public setCompanyName(companyName: string|null) {
         this.companyName = companyName;
         return this;
     }
-
     public withCompanyName(companyName: string|null): this {
         this.companyName = companyName;
         return this;
     }
-
     public getPassword(): string|null {
         return this.password;
     }
-
     public setPassword(password: string|null) {
         this.password = password;
         return this;
     }
-
     public withPassword(password: string|null): this {
         this.password = password;
         return this;
     }
-
     public getLang(): string|null {
         return this.lang;
     }
-
     public setLang(lang: string|null) {
         this.lang = lang;
         return this;
     }
-
     public withLang(lang: string|null): this {
         this.lang = lang;
         return this;

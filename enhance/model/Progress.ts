@@ -156,128 +156,101 @@ export default class Progress implements IModel {
             .replace('{rateName}', rateName ?? '')
             .replace('{progressName}', progressName ?? '');
     }
-
     public getProgressId(): string|null {
         return this.progressId;
     }
-
     public setProgressId(progressId: string|null) {
         this.progressId = progressId;
         return this;
     }
-
     public withProgressId(progressId: string|null): this {
         this.progressId = progressId;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getRateName(): string|null {
         return this.rateName;
     }
-
     public setRateName(rateName: string|null) {
         this.rateName = rateName;
         return this;
     }
-
     public withRateName(rateName: string|null): this {
         this.rateName = rateName;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getPropertyId(): string|null {
         return this.propertyId;
     }
-
     public setPropertyId(propertyId: string|null) {
         this.propertyId = propertyId;
         return this;
     }
-
     public withPropertyId(propertyId: string|null): this {
         this.propertyId = propertyId;
         return this;
     }
-
     public getExperienceValue(): number|null {
         return this.experienceValue;
     }
-
     public setExperienceValue(experienceValue: number|null) {
         this.experienceValue = experienceValue;
         return this;
     }
-
     public withExperienceValue(experienceValue: number|null): this {
         this.experienceValue = experienceValue;
         return this;
     }
-
     public getRate(): number|null {
         return this.rate;
     }
-
     public setRate(rate: number|null) {
         this.rate = rate;
         return this;
     }
-
     public withRate(rate: number|null): this {
         this.rate = rate;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

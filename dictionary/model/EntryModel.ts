@@ -102,44 +102,35 @@ export default class EntryModel implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{entryName}', entryName ?? '');
     }
-
     public getEntryModelId(): string|null {
         return this.entryModelId;
     }
-
     public setEntryModelId(entryModelId: string|null) {
         this.entryModelId = entryModelId;
         return this;
     }
-
     public withEntryModelId(entryModelId: string|null): this {
         this.entryModelId = entryModelId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;

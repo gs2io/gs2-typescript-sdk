@@ -23,58 +23,46 @@ export default class BoxItems implements IModel {
     private prizeTableName: string|null = null;
     private userId: string|null = null;
     private items: BoxItem[]|null = null;
-
     public getBoxId(): string|null {
         return this.boxId;
     }
-
     public setBoxId(boxId: string|null) {
         this.boxId = boxId;
         return this;
     }
-
     public withBoxId(boxId: string|null): this {
         this.boxId = boxId;
         return this;
     }
-
     public getPrizeTableName(): string|null {
         return this.prizeTableName;
     }
-
     public setPrizeTableName(prizeTableName: string|null) {
         this.prizeTableName = prizeTableName;
         return this;
     }
-
     public withPrizeTableName(prizeTableName: string|null): this {
         this.prizeTableName = prizeTableName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getItems(): BoxItem[]|null {
         return this.items;
     }
-
     public setItems(items: BoxItem[]|null) {
         this.items = items;
         return this;
     }
-
     public withItems(items: BoxItem[]|null): this {
         this.items = items;
         return this;

@@ -104,72 +104,57 @@ export default class DistributorModel implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{distributorName}', distributorName ?? '');
     }
-
     public getDistributorModelId(): string|null {
         return this.distributorModelId;
     }
-
     public setDistributorModelId(distributorModelId: string|null) {
         this.distributorModelId = distributorModelId;
         return this;
     }
-
     public withDistributorModelId(distributorModelId: string|null): this {
         this.distributorModelId = distributorModelId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getInboxNamespaceId(): string|null {
         return this.inboxNamespaceId;
     }
-
     public setInboxNamespaceId(inboxNamespaceId: string|null) {
         this.inboxNamespaceId = inboxNamespaceId;
         return this;
     }
-
     public withInboxNamespaceId(inboxNamespaceId: string|null): this {
         this.inboxNamespaceId = inboxNamespaceId;
         return this;
     }
-
     public getWhiteListTargetIds(): string[]|null {
         return this.whiteListTargetIds;
     }
-
     public setWhiteListTargetIds(whiteListTargetIds: string[]|null) {
         this.whiteListTargetIds = whiteListTargetIds;
         return this;
     }
-
     public withWhiteListTargetIds(whiteListTargetIds: string[]|null): this {
         this.whiteListTargetIds = whiteListTargetIds;
         return this;

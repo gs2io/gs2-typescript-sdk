@@ -56,72 +56,57 @@ export default class DepositByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getSlot(): number|null {
         return this.slot;
     }
-
     public setSlot(slot: number|null) {
         this.slot = slot;
         return this;
     }
-
     public withSlot(slot: number|null): this {
         this.slot = slot;
         return this;
     }
-
     public getPrice(): number|null {
         return this.price;
     }
-
     public setPrice(price: number|null) {
         this.price = price;
         return this;
     }
-
     public withPrice(price: number|null): this {
         this.price = price;
         return this;
     }
-
     public getCount(): number|null {
         return this.count;
     }
-
     public setCount(count: number|null) {
         this.count = count;
         return this;
     }
-
     public withCount(count: number|null): this {
         this.count = count;
         return this;

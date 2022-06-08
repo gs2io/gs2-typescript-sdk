@@ -51,16 +51,13 @@ export default class DeleteAccountRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getAccountToken(): string|null {
         return this.accountToken;
     }
-
     public setAccountToken(accountToken: string|null) {
         this.accountToken = accountToken;
         return this;
     }
-
     public withAccountToken(accountToken: string|null): this {
         this.accountToken = accountToken;
         return this;

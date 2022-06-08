@@ -106,100 +106,79 @@ export default class LimitModel implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{limitName}', limitName ?? '');
     }
-
     public getLimitModelId(): string|null {
         return this.limitModelId;
     }
-
     public setLimitModelId(limitModelId: string|null) {
         this.limitModelId = limitModelId;
         return this;
     }
-
     public withLimitModelId(limitModelId: string|null): this {
         this.limitModelId = limitModelId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getResetType(): string|null {
         return this.resetType;
     }
-
     public setResetType(resetType: string|null) {
         this.resetType = resetType;
         return this;
     }
-
     public withResetType(resetType: string|null): this {
         this.resetType = resetType;
         return this;
     }
-
     public getResetDayOfMonth(): number|null {
         return this.resetDayOfMonth;
     }
-
     public setResetDayOfMonth(resetDayOfMonth: number|null) {
         this.resetDayOfMonth = resetDayOfMonth;
         return this;
     }
-
     public withResetDayOfMonth(resetDayOfMonth: number|null): this {
         this.resetDayOfMonth = resetDayOfMonth;
         return this;
     }
-
     public getResetDayOfWeek(): string|null {
         return this.resetDayOfWeek;
     }
-
     public setResetDayOfWeek(resetDayOfWeek: string|null) {
         this.resetDayOfWeek = resetDayOfWeek;
         return this;
     }
-
     public withResetDayOfWeek(resetDayOfWeek: string|null): this {
         this.resetDayOfWeek = resetDayOfWeek;
         return this;
     }
-
     public getResetHour(): number|null {
         return this.resetHour;
     }
-
     public setResetHour(resetHour: number|null) {
         this.resetHour = resetHour;
         return this;
     }
-
     public withResetHour(resetHour: number|null): this {
         this.resetHour = resetHour;
         return this;

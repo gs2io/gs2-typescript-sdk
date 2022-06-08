@@ -20,44 +20,35 @@ export default class TimeSpan implements IModel {
     private days: number|null = null;
     private hours: number|null = null;
     private minutes: number|null = null;
-
     public getDays(): number|null {
         return this.days;
     }
-
     public setDays(days: number|null) {
         this.days = days;
         return this;
     }
-
     public withDays(days: number|null): this {
         this.days = days;
         return this;
     }
-
     public getHours(): number|null {
         return this.hours;
     }
-
     public setHours(hours: number|null) {
         this.hours = hours;
         return this;
     }
-
     public withHours(hours: number|null): this {
         this.hours = hours;
         return this;
     }
-
     public getMinutes(): number|null {
         return this.minutes;
     }
-
     public setMinutes(minutes: number|null) {
         this.minutes = minutes;
         return this;
     }
-
     public withMinutes(minutes: number|null): this {
         this.minutes = minutes;
         return this;

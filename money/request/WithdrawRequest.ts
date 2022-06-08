@@ -55,72 +55,57 @@ export default class WithdrawRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getSlot(): number|null {
         return this.slot;
     }
-
     public setSlot(slot: number|null) {
         this.slot = slot;
         return this;
     }
-
     public withSlot(slot: number|null): this {
         this.slot = slot;
         return this;
     }
-
     public getCount(): number|null {
         return this.count;
     }
-
     public setCount(count: number|null) {
         this.count = count;
         return this;
     }
-
     public withCount(count: number|null): this {
         this.count = count;
         return this;
     }
-
     public getPaidOnly(): boolean|null {
         return this.paidOnly;
     }
-
     public setPaidOnly(paidOnly: boolean|null) {
         this.paidOnly = paidOnly;
         return this;
     }
-
     public withPaidOnly(paidOnly: boolean|null): this {
         this.paidOnly = paidOnly;
         return this;

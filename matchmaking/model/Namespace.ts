@@ -96,226 +96,178 @@ export default class Namespace implements IModel {
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '');
     }
-
     public getNamespaceId(): string|null {
         return this.namespaceId;
     }
-
     public setNamespaceId(namespaceId: string|null) {
         this.namespaceId = namespaceId;
         return this;
     }
-
     public withNamespaceId(namespaceId: string|null): this {
         this.namespaceId = namespaceId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getEnableRating(): boolean|null {
         return this.enableRating;
     }
-
     public setEnableRating(enableRating: boolean|null) {
         this.enableRating = enableRating;
         return this;
     }
-
     public withEnableRating(enableRating: boolean|null): this {
         this.enableRating = enableRating;
         return this;
     }
-
     public getCreateGatheringTriggerType(): string|null {
         return this.createGatheringTriggerType;
     }
-
     public setCreateGatheringTriggerType(createGatheringTriggerType: string|null) {
         this.createGatheringTriggerType = createGatheringTriggerType;
         return this;
     }
-
     public withCreateGatheringTriggerType(createGatheringTriggerType: string|null): this {
         this.createGatheringTriggerType = createGatheringTriggerType;
         return this;
     }
-
     public getCreateGatheringTriggerRealtimeNamespaceId(): string|null {
         return this.createGatheringTriggerRealtimeNamespaceId;
     }
-
     public setCreateGatheringTriggerRealtimeNamespaceId(createGatheringTriggerRealtimeNamespaceId: string|null) {
         this.createGatheringTriggerRealtimeNamespaceId = createGatheringTriggerRealtimeNamespaceId;
         return this;
     }
-
     public withCreateGatheringTriggerRealtimeNamespaceId(createGatheringTriggerRealtimeNamespaceId: string|null): this {
         this.createGatheringTriggerRealtimeNamespaceId = createGatheringTriggerRealtimeNamespaceId;
         return this;
     }
-
     public getCreateGatheringTriggerScriptId(): string|null {
         return this.createGatheringTriggerScriptId;
     }
-
     public setCreateGatheringTriggerScriptId(createGatheringTriggerScriptId: string|null) {
         this.createGatheringTriggerScriptId = createGatheringTriggerScriptId;
         return this;
     }
-
     public withCreateGatheringTriggerScriptId(createGatheringTriggerScriptId: string|null): this {
         this.createGatheringTriggerScriptId = createGatheringTriggerScriptId;
         return this;
     }
-
     public getCompleteMatchmakingTriggerType(): string|null {
         return this.completeMatchmakingTriggerType;
     }
-
     public setCompleteMatchmakingTriggerType(completeMatchmakingTriggerType: string|null) {
         this.completeMatchmakingTriggerType = completeMatchmakingTriggerType;
         return this;
     }
-
     public withCompleteMatchmakingTriggerType(completeMatchmakingTriggerType: string|null): this {
         this.completeMatchmakingTriggerType = completeMatchmakingTriggerType;
         return this;
     }
-
     public getCompleteMatchmakingTriggerRealtimeNamespaceId(): string|null {
         return this.completeMatchmakingTriggerRealtimeNamespaceId;
     }
-
     public setCompleteMatchmakingTriggerRealtimeNamespaceId(completeMatchmakingTriggerRealtimeNamespaceId: string|null) {
         this.completeMatchmakingTriggerRealtimeNamespaceId = completeMatchmakingTriggerRealtimeNamespaceId;
         return this;
     }
-
     public withCompleteMatchmakingTriggerRealtimeNamespaceId(completeMatchmakingTriggerRealtimeNamespaceId: string|null): this {
         this.completeMatchmakingTriggerRealtimeNamespaceId = completeMatchmakingTriggerRealtimeNamespaceId;
         return this;
     }
-
     public getCompleteMatchmakingTriggerScriptId(): string|null {
         return this.completeMatchmakingTriggerScriptId;
     }
-
     public setCompleteMatchmakingTriggerScriptId(completeMatchmakingTriggerScriptId: string|null) {
         this.completeMatchmakingTriggerScriptId = completeMatchmakingTriggerScriptId;
         return this;
     }
-
     public withCompleteMatchmakingTriggerScriptId(completeMatchmakingTriggerScriptId: string|null): this {
         this.completeMatchmakingTriggerScriptId = completeMatchmakingTriggerScriptId;
         return this;
     }
-
     public getJoinNotification(): NotificationSetting|null {
         return this.joinNotification;
     }
-
     public setJoinNotification(joinNotification: NotificationSetting|null) {
         this.joinNotification = joinNotification;
         return this;
     }
-
     public withJoinNotification(joinNotification: NotificationSetting|null): this {
         this.joinNotification = joinNotification;
         return this;
     }
-
     public getLeaveNotification(): NotificationSetting|null {
         return this.leaveNotification;
     }
-
     public setLeaveNotification(leaveNotification: NotificationSetting|null) {
         this.leaveNotification = leaveNotification;
         return this;
     }
-
     public withLeaveNotification(leaveNotification: NotificationSetting|null): this {
         this.leaveNotification = leaveNotification;
         return this;
     }
-
     public getCompleteNotification(): NotificationSetting|null {
         return this.completeNotification;
     }
-
     public setCompleteNotification(completeNotification: NotificationSetting|null) {
         this.completeNotification = completeNotification;
         return this;
     }
-
     public withCompleteNotification(completeNotification: NotificationSetting|null): this {
         this.completeNotification = completeNotification;
         return this;
     }
-
     public getLogSetting(): LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

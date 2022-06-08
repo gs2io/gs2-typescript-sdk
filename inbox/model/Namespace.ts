@@ -96,198 +96,162 @@ export default class Namespace implements IModel {
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '');
     }
-
     public getNamespaceId(): string|null {
         return this.namespaceId;
     }
-
     public setNamespaceId(namespaceId: string|null) {
         this.namespaceId = namespaceId;
         return this;
     }
-
     public withNamespaceId(namespaceId: string|null): this {
         this.namespaceId = namespaceId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getIsAutomaticDeletingEnabled(): boolean|null {
         return this.isAutomaticDeletingEnabled;
     }
-
     public setIsAutomaticDeletingEnabled(isAutomaticDeletingEnabled: boolean|null) {
         this.isAutomaticDeletingEnabled = isAutomaticDeletingEnabled;
         return this;
     }
-
     public withIsAutomaticDeletingEnabled(isAutomaticDeletingEnabled: boolean|null): this {
         this.isAutomaticDeletingEnabled = isAutomaticDeletingEnabled;
         return this;
     }
-
     public getTransactionSetting(): TransactionSetting|null {
         return this.transactionSetting;
     }
-
     public setTransactionSetting(transactionSetting: TransactionSetting|null) {
         this.transactionSetting = transactionSetting;
         return this;
     }
-
     public withTransactionSetting(transactionSetting: TransactionSetting|null): this {
         this.transactionSetting = transactionSetting;
         return this;
     }
-
     public getReceiveMessageScript(): ScriptSetting|null {
         return this.receiveMessageScript;
     }
-
     public setReceiveMessageScript(receiveMessageScript: ScriptSetting|null) {
         this.receiveMessageScript = receiveMessageScript;
         return this;
     }
-
     public withReceiveMessageScript(receiveMessageScript: ScriptSetting|null): this {
         this.receiveMessageScript = receiveMessageScript;
         return this;
     }
-
     public getReadMessageScript(): ScriptSetting|null {
         return this.readMessageScript;
     }
-
     public setReadMessageScript(readMessageScript: ScriptSetting|null) {
         this.readMessageScript = readMessageScript;
         return this;
     }
-
     public withReadMessageScript(readMessageScript: ScriptSetting|null): this {
         this.readMessageScript = readMessageScript;
         return this;
     }
-
     public getDeleteMessageScript(): ScriptSetting|null {
         return this.deleteMessageScript;
     }
-
     public setDeleteMessageScript(deleteMessageScript: ScriptSetting|null) {
         this.deleteMessageScript = deleteMessageScript;
         return this;
     }
-
     public withDeleteMessageScript(deleteMessageScript: ScriptSetting|null): this {
         this.deleteMessageScript = deleteMessageScript;
         return this;
     }
-
     public getReceiveNotification(): NotificationSetting|null {
         return this.receiveNotification;
     }
-
     public setReceiveNotification(receiveNotification: NotificationSetting|null) {
         this.receiveNotification = receiveNotification;
         return this;
     }
-
     public withReceiveNotification(receiveNotification: NotificationSetting|null): this {
         this.receiveNotification = receiveNotification;
         return this;
     }
-
     public getLogSetting(): LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;
     }
-
+    /** @deprecated */
     public getQueueNamespaceId(): string|null {
         return this.queueNamespaceId;
     }
-
+    /** @deprecated */
     public setQueueNamespaceId(queueNamespaceId: string|null) {
         this.queueNamespaceId = queueNamespaceId;
         return this;
     }
-
+    /** @deprecated */
     public withQueueNamespaceId(queueNamespaceId: string|null): this {
         this.queueNamespaceId = queueNamespaceId;
         return this;
     }
-
+    /** @deprecated */
     public getKeyId(): string|null {
         return this.keyId;
     }
-
+    /** @deprecated */
     public setKeyId(keyId: string|null) {
         this.keyId = keyId;
         return this;
     }
-
+    /** @deprecated */
     public withKeyId(keyId: string|null): this {
         this.keyId = keyId;
         return this;

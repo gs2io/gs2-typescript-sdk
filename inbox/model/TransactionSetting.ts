@@ -21,58 +21,46 @@ export default class TransactionSetting implements IModel {
     private distributorNamespaceId: string|null = null;
     private keyId: string|null = null;
     private queueNamespaceId: string|null = null;
-
     public getEnableAutoRun(): boolean|null {
         return this.enableAutoRun;
     }
-
     public setEnableAutoRun(enableAutoRun: boolean|null) {
         this.enableAutoRun = enableAutoRun;
         return this;
     }
-
     public withEnableAutoRun(enableAutoRun: boolean|null): this {
         this.enableAutoRun = enableAutoRun;
         return this;
     }
-
     public getDistributorNamespaceId(): string|null {
         return this.distributorNamespaceId;
     }
-
     public setDistributorNamespaceId(distributorNamespaceId: string|null) {
         this.distributorNamespaceId = distributorNamespaceId;
         return this;
     }
-
     public withDistributorNamespaceId(distributorNamespaceId: string|null): this {
         this.distributorNamespaceId = distributorNamespaceId;
         return this;
     }
-
     public getKeyId(): string|null {
         return this.keyId;
     }
-
     public setKeyId(keyId: string|null) {
         this.keyId = keyId;
         return this;
     }
-
     public withKeyId(keyId: string|null): this {
         this.keyId = keyId;
         return this;
     }
-
     public getQueueNamespaceId(): string|null {
         return this.queueNamespaceId;
     }
-
     public setQueueNamespaceId(queueNamespaceId: string|null) {
         this.queueNamespaceId = queueNamespaceId;
         return this;
     }
-
     public withQueueNamespaceId(queueNamespaceId: string|null): this {
         this.queueNamespaceId = queueNamespaceId;
         return this;

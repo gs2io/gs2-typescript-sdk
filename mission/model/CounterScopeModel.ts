@@ -21,58 +21,46 @@ export default class CounterScopeModel implements IModel {
     private resetDayOfMonth: number|null = null;
     private resetDayOfWeek: string|null = null;
     private resetHour: number|null = null;
-
     public getResetType(): string|null {
         return this.resetType;
     }
-
     public setResetType(resetType: string|null) {
         this.resetType = resetType;
         return this;
     }
-
     public withResetType(resetType: string|null): this {
         this.resetType = resetType;
         return this;
     }
-
     public getResetDayOfMonth(): number|null {
         return this.resetDayOfMonth;
     }
-
     public setResetDayOfMonth(resetDayOfMonth: number|null) {
         this.resetDayOfMonth = resetDayOfMonth;
         return this;
     }
-
     public withResetDayOfMonth(resetDayOfMonth: number|null): this {
         this.resetDayOfMonth = resetDayOfMonth;
         return this;
     }
-
     public getResetDayOfWeek(): string|null {
         return this.resetDayOfWeek;
     }
-
     public setResetDayOfWeek(resetDayOfWeek: string|null) {
         this.resetDayOfWeek = resetDayOfWeek;
         return this;
     }
-
     public withResetDayOfWeek(resetDayOfWeek: string|null): this {
         this.resetDayOfWeek = resetDayOfWeek;
         return this;
     }
-
     public getResetHour(): number|null {
         return this.resetHour;
     }
-
     public setResetHour(resetHour: number|null) {
         this.resetHour = resetHour;
         return this;
     }
-
     public withResetHour(resetHour: number|null): this {
         this.resetHour = resetHour;
         return this;

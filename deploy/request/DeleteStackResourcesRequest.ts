@@ -51,16 +51,13 @@ export default class DeleteStackResourcesRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getStackName(): string|null {
         return this.stackName;
     }
-
     public setStackName(stackName: string|null) {
         this.stackName = stackName;
         return this;
     }
-
     public withStackName(stackName: string|null): this {
         this.stackName = stackName;
         return this;

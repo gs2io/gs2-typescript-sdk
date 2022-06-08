@@ -52,30 +52,24 @@ export default class GetRecoverValueTableMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getRecoverValueTableName(): string|null {
         return this.recoverValueTableName;
     }
-
     public setRecoverValueTableName(recoverValueTableName: string|null) {
         this.recoverValueTableName = recoverValueTableName;
         return this;
     }
-
     public withRecoverValueTableName(recoverValueTableName: string|null): this {
         this.recoverValueTableName = recoverValueTableName;
         return this;

@@ -56,86 +56,68 @@ export default class CreateNamespaceRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getAcquireScript(): Gs2Inventory.ScriptSetting|null {
         return this.acquireScript;
     }
-
     public setAcquireScript(acquireScript: Gs2Inventory.ScriptSetting|null) {
         this.acquireScript = acquireScript;
         return this;
     }
-
     public withAcquireScript(acquireScript: Gs2Inventory.ScriptSetting|null): this {
         this.acquireScript = acquireScript;
         return this;
     }
-
     public getOverflowScript(): Gs2Inventory.ScriptSetting|null {
         return this.overflowScript;
     }
-
     public setOverflowScript(overflowScript: Gs2Inventory.ScriptSetting|null) {
         this.overflowScript = overflowScript;
         return this;
     }
-
     public withOverflowScript(overflowScript: Gs2Inventory.ScriptSetting|null): this {
         this.overflowScript = overflowScript;
         return this;
     }
-
     public getConsumeScript(): Gs2Inventory.ScriptSetting|null {
         return this.consumeScript;
     }
-
     public setConsumeScript(consumeScript: Gs2Inventory.ScriptSetting|null) {
         this.consumeScript = consumeScript;
         return this;
     }
-
     public withConsumeScript(consumeScript: Gs2Inventory.ScriptSetting|null): this {
         this.consumeScript = consumeScript;
         return this;
     }
-
     public getLogSetting(): Gs2Inventory.LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: Gs2Inventory.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: Gs2Inventory.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;

@@ -109,142 +109,112 @@ export default class ExperienceModelMaster implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{experienceName}', experienceName ?? '');
     }
-
     public getExperienceModelId(): string|null {
         return this.experienceModelId;
     }
-
     public setExperienceModelId(experienceModelId: string|null) {
         this.experienceModelId = experienceModelId;
         return this;
     }
-
     public withExperienceModelId(experienceModelId: string|null): this {
         this.experienceModelId = experienceModelId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getDefaultExperience(): number|null {
         return this.defaultExperience;
     }
-
     public setDefaultExperience(defaultExperience: number|null) {
         this.defaultExperience = defaultExperience;
         return this;
     }
-
     public withDefaultExperience(defaultExperience: number|null): this {
         this.defaultExperience = defaultExperience;
         return this;
     }
-
     public getDefaultRankCap(): number|null {
         return this.defaultRankCap;
     }
-
     public setDefaultRankCap(defaultRankCap: number|null) {
         this.defaultRankCap = defaultRankCap;
         return this;
     }
-
     public withDefaultRankCap(defaultRankCap: number|null): this {
         this.defaultRankCap = defaultRankCap;
         return this;
     }
-
     public getMaxRankCap(): number|null {
         return this.maxRankCap;
     }
-
     public setMaxRankCap(maxRankCap: number|null) {
         this.maxRankCap = maxRankCap;
         return this;
     }
-
     public withMaxRankCap(maxRankCap: number|null): this {
         this.maxRankCap = maxRankCap;
         return this;
     }
-
     public getRankThresholdName(): string|null {
         return this.rankThresholdName;
     }
-
     public setRankThresholdName(rankThresholdName: string|null) {
         this.rankThresholdName = rankThresholdName;
         return this;
     }
-
     public withRankThresholdName(rankThresholdName: string|null): this {
         this.rankThresholdName = rankThresholdName;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

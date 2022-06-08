@@ -58,114 +58,96 @@ export default class CreateNamespaceRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getEnableDirectEnhance(): boolean|null {
         return this.enableDirectEnhance;
     }
-
     public setEnableDirectEnhance(enableDirectEnhance: boolean|null) {
         this.enableDirectEnhance = enableDirectEnhance;
         return this;
     }
-
     public withEnableDirectEnhance(enableDirectEnhance: boolean|null): this {
         this.enableDirectEnhance = enableDirectEnhance;
         return this;
     }
-
     public getTransactionSetting(): Gs2Enhance.TransactionSetting|null {
         return this.transactionSetting;
     }
-
     public setTransactionSetting(transactionSetting: Gs2Enhance.TransactionSetting|null) {
         this.transactionSetting = transactionSetting;
         return this;
     }
-
     public withTransactionSetting(transactionSetting: Gs2Enhance.TransactionSetting|null): this {
         this.transactionSetting = transactionSetting;
         return this;
     }
-
     public getEnhanceScript(): Gs2Enhance.ScriptSetting|null {
         return this.enhanceScript;
     }
-
     public setEnhanceScript(enhanceScript: Gs2Enhance.ScriptSetting|null) {
         this.enhanceScript = enhanceScript;
         return this;
     }
-
     public withEnhanceScript(enhanceScript: Gs2Enhance.ScriptSetting|null): this {
         this.enhanceScript = enhanceScript;
         return this;
     }
-
     public getLogSetting(): Gs2Enhance.LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: Gs2Enhance.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: Gs2Enhance.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
-
+    /** @deprecated */
     public getQueueNamespaceId(): string|null {
         return this.queueNamespaceId;
     }
-
+    /** @deprecated */
     public setQueueNamespaceId(queueNamespaceId: string|null) {
         this.queueNamespaceId = queueNamespaceId;
         return this;
     }
-
+    /** @deprecated */
     public withQueueNamespaceId(queueNamespaceId: string|null): this {
         this.queueNamespaceId = queueNamespaceId;
         return this;
     }
-
+    /** @deprecated */
     public getKeyId(): string|null {
         return this.keyId;
     }
-
+    /** @deprecated */
     public setKeyId(keyId: string|null) {
         this.keyId = keyId;
         return this;
     }
-
+    /** @deprecated */
     public withKeyId(keyId: string|null): this {
         this.keyId = keyId;
         return this;

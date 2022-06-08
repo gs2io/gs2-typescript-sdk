@@ -52,30 +52,24 @@ export default class GetPrizeTableRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getPrizeTableName(): string|null {
         return this.prizeTableName;
     }
-
     public setPrizeTableName(prizeTableName: string|null) {
         this.prizeTableName = prizeTableName;
         return this;
     }
-
     public withPrizeTableName(prizeTableName: string|null): this {
         this.prizeTableName = prizeTableName;
         return this;

@@ -128,72 +128,57 @@ export default class Subscribe implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{roomName}', roomName ?? '');
     }
-
     public getSubscribeId(): string|null {
         return this.subscribeId;
     }
-
     public setSubscribeId(subscribeId: string|null) {
         this.subscribeId = subscribeId;
         return this;
     }
-
     public withSubscribeId(subscribeId: string|null): this {
         this.subscribeId = subscribeId;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getRoomName(): string|null {
         return this.roomName;
     }
-
     public setRoomName(roomName: string|null) {
         this.roomName = roomName;
         return this;
     }
-
     public withRoomName(roomName: string|null): this {
         this.roomName = roomName;
         return this;
     }
-
     public getNotificationTypes(): NotificationType[]|null {
         return this.notificationTypes;
     }
-
     public setNotificationTypes(notificationTypes: NotificationType[]|null) {
         this.notificationTypes = notificationTypes;
         return this;
     }
-
     public withNotificationTypes(notificationTypes: NotificationType[]|null): this {
         this.notificationTypes = notificationTypes;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;

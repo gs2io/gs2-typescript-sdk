@@ -56,72 +56,57 @@ export default class ExchangeByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getRateName(): string|null {
         return this.rateName;
     }
-
     public setRateName(rateName: string|null) {
         this.rateName = rateName;
         return this;
     }
-
     public withRateName(rateName: string|null): this {
         this.rateName = rateName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getCount(): number|null {
         return this.count;
     }
-
     public setCount(count: number|null) {
         this.count = count;
         return this;
     }
-
     public withCount(count: number|null): this {
         this.count = count;
         return this;
     }
-
     public getConfig(): Gs2Exchange.Config[]|null {
         return this.config;
     }
-
     public setConfig(config: Gs2Exchange.Config[]|null) {
         this.config = config;
         return this;
     }
-
     public withConfig(config: Gs2Exchange.Config[]|null): this {
         this.config = config;
         return this;

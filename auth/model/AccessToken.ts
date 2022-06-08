@@ -21,58 +21,46 @@ export default class AccessToken implements IModel {
     private userId: string|null = null;
     private expire: number|null = null;
     private timeOffset: number|null = null;
-
     public getToken(): string|null {
         return this.token;
     }
-
     public setToken(token: string|null) {
         this.token = token;
         return this;
     }
-
     public withToken(token: string|null): this {
         this.token = token;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getExpire(): number|null {
         return this.expire;
     }
-
     public setExpire(expire: number|null) {
         this.expire = expire;
         return this;
     }
-
     public withExpire(expire: number|null): this {
         this.expire = expire;
         return this;
     }
-
     public getTimeOffset(): number|null {
         return this.timeOffset;
     }
-
     public setTimeOffset(timeOffset: number|null) {
         this.timeOffset = timeOffset;
         return this;
     }
-
     public withTimeOffset(timeOffset: number|null): this {
         this.timeOffset = timeOffset;
         return this;

@@ -56,72 +56,57 @@ export default class CreateProgressByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getQuestModelId(): string|null {
         return this.questModelId;
     }
-
     public setQuestModelId(questModelId: string|null) {
         this.questModelId = questModelId;
         return this;
     }
-
     public withQuestModelId(questModelId: string|null): this {
         this.questModelId = questModelId;
         return this;
     }
-
     public getForce(): boolean|null {
         return this.force;
     }
-
     public setForce(force: boolean|null) {
         this.force = force;
         return this;
     }
-
     public withForce(force: boolean|null): this {
         this.force = force;
         return this;
     }
-
     public getConfig(): Gs2Quest.Config[]|null {
         return this.config;
     }
-
     public setConfig(config: Gs2Quest.Config[]|null) {
         this.config = config;
         return this;
     }
-
     public withConfig(config: Gs2Quest.Config[]|null): this {
         this.config = config;
         return this;

@@ -155,114 +155,90 @@ export default class Counter implements IModel {
             .replace('{limitName}', limitName ?? '')
             .replace('{counterName}', counterName ?? '');
     }
-
     public getCounterId(): string|null {
         return this.counterId;
     }
-
     public setCounterId(counterId: string|null) {
         this.counterId = counterId;
         return this;
     }
-
     public withCounterId(counterId: string|null): this {
         this.counterId = counterId;
         return this;
     }
-
     public getLimitName(): string|null {
         return this.limitName;
     }
-
     public setLimitName(limitName: string|null) {
         this.limitName = limitName;
         return this;
     }
-
     public withLimitName(limitName: string|null): this {
         this.limitName = limitName;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getCount(): number|null {
         return this.count;
     }
-
     public setCount(count: number|null) {
         this.count = count;
         return this;
     }
-
     public withCount(count: number|null): this {
         this.count = count;
         return this;
     }
-
     public getNextResetAt(): number|null {
         return this.nextResetAt;
     }
-
     public setNextResetAt(nextResetAt: number|null) {
         this.nextResetAt = nextResetAt;
         return this;
     }
-
     public withNextResetAt(nextResetAt: number|null): this {
         this.nextResetAt = nextResetAt;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

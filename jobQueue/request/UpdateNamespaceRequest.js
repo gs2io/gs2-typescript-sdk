@@ -23,7 +23,9 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.description = null;
+        this.enableAutoRun = null;
         this.pushNotification = null;
+        this.runNotification = null;
         this.logSetting = null;
     }
     UpdateNamespaceRequest.prototype.getRequestId = function () {
@@ -70,6 +72,17 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getEnableAutoRun = function () {
+        return this.enableAutoRun;
+    };
+    UpdateNamespaceRequest.prototype.setEnableAutoRun = function (enableAutoRun) {
+        this.enableAutoRun = enableAutoRun;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withEnableAutoRun = function (enableAutoRun) {
+        this.enableAutoRun = enableAutoRun;
+        return this;
+    };
     UpdateNamespaceRequest.prototype.getPushNotification = function () {
         return this.pushNotification;
     };
@@ -79,6 +92,17 @@ var UpdateNamespaceRequest = /** @class */ (function () {
     };
     UpdateNamespaceRequest.prototype.withPushNotification = function (pushNotification) {
         this.pushNotification = pushNotification;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getRunNotification = function () {
+        return this.runNotification;
+    };
+    UpdateNamespaceRequest.prototype.setRunNotification = function (runNotification) {
+        this.runNotification = runNotification;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withRunNotification = function (runNotification) {
+        this.runNotification = runNotification;
         return this;
     };
     UpdateNamespaceRequest.prototype.getLogSetting = function () {
@@ -96,16 +120,20 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
+            .withEnableAutoRun(data["enableAutoRun"])
             .withPushNotification(Gs2JobQueue.NotificationSetting.fromDict(data["pushNotification"]))
+            .withRunNotification(Gs2JobQueue.NotificationSetting.fromDict(data["runNotification"]))
             .withLogSetting(Gs2JobQueue.LogSetting.fromDict(data["logSetting"]));
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
+            "enableAutoRun": this.getEnableAutoRun(),
             "pushNotification": (_a = this.getPushNotification()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "runNotification": (_b = this.getRunNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
         };
     };
     return UpdateNamespaceRequest;

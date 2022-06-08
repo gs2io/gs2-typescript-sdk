@@ -30,44 +30,35 @@ export default class FollowUser implements IModel {
     ): string|null {
         return grnFormat;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getPublicProfile(): string|null {
         return this.publicProfile;
     }
-
     public setPublicProfile(publicProfile: string|null) {
         this.publicProfile = publicProfile;
         return this;
     }
-
     public withPublicProfile(publicProfile: string|null): this {
         this.publicProfile = publicProfile;
         return this;
     }
-
     public getFollowerProfile(): string|null {
         return this.followerProfile;
     }
-
     public setFollowerProfile(followerProfile: string|null) {
         this.followerProfile = followerProfile;
         return this;
     }
-
     public withFollowerProfile(followerProfile: string|null): this {
         this.followerProfile = followerProfile;
         return this;

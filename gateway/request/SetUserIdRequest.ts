@@ -53,44 +53,35 @@ export default class SetUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getAllowConcurrentAccess(): boolean|null {
         return this.allowConcurrentAccess;
     }
-
     public setAllowConcurrentAccess(allowConcurrentAccess: boolean|null) {
         this.allowConcurrentAccess = allowConcurrentAccess;
         return this;
     }
-
     public withAllowConcurrentAccess(allowConcurrentAccess: boolean|null): this {
         this.allowConcurrentAccess = allowConcurrentAccess;
         return this;

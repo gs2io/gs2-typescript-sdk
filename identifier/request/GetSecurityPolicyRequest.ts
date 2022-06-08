@@ -51,16 +51,13 @@ export default class GetSecurityPolicyRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getSecurityPolicyName(): string|null {
         return this.securityPolicyName;
     }
-
     public setSecurityPolicyName(securityPolicyName: string|null) {
         this.securityPolicyName = securityPolicyName;
         return this;
     }
-
     public withSecurityPolicyName(securityPolicyName: string|null): this {
         this.securityPolicyName = securityPolicyName;
         return this;

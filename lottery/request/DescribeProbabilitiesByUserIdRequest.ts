@@ -53,44 +53,35 @@ export default class DescribeProbabilitiesByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getLotteryName(): string|null {
         return this.lotteryName;
     }
-
     public setLotteryName(lotteryName: string|null) {
         this.lotteryName = lotteryName;
         return this;
     }
-
     public withLotteryName(lotteryName: string|null): this {
         this.lotteryName = lotteryName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;

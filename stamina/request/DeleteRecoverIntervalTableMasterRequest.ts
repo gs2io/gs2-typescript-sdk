@@ -52,30 +52,24 @@ export default class DeleteRecoverIntervalTableMasterRequest implements IRequest
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getRecoverIntervalTableName(): string|null {
         return this.recoverIntervalTableName;
     }
-
     public setRecoverIntervalTableName(recoverIntervalTableName: string|null) {
         this.recoverIntervalTableName = recoverIntervalTableName;
         return this;
     }
-
     public withRecoverIntervalTableName(recoverIntervalTableName: string|null): this {
         this.recoverIntervalTableName = recoverIntervalTableName;
         return this;

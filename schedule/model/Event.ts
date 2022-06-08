@@ -114,212 +114,167 @@ export default class Event implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{eventName}', eventName ?? '');
     }
-
     public getEventId(): string|null {
         return this.eventId;
     }
-
     public setEventId(eventId: string|null) {
         this.eventId = eventId;
         return this;
     }
-
     public withEventId(eventId: string|null): this {
         this.eventId = eventId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getScheduleType(): string|null {
         return this.scheduleType;
     }
-
     public setScheduleType(scheduleType: string|null) {
         this.scheduleType = scheduleType;
         return this;
     }
-
     public withScheduleType(scheduleType: string|null): this {
         this.scheduleType = scheduleType;
         return this;
     }
-
     public getRepeatType(): string|null {
         return this.repeatType;
     }
-
     public setRepeatType(repeatType: string|null) {
         this.repeatType = repeatType;
         return this;
     }
-
     public withRepeatType(repeatType: string|null): this {
         this.repeatType = repeatType;
         return this;
     }
-
     public getAbsoluteBegin(): number|null {
         return this.absoluteBegin;
     }
-
     public setAbsoluteBegin(absoluteBegin: number|null) {
         this.absoluteBegin = absoluteBegin;
         return this;
     }
-
     public withAbsoluteBegin(absoluteBegin: number|null): this {
         this.absoluteBegin = absoluteBegin;
         return this;
     }
-
     public getAbsoluteEnd(): number|null {
         return this.absoluteEnd;
     }
-
     public setAbsoluteEnd(absoluteEnd: number|null) {
         this.absoluteEnd = absoluteEnd;
         return this;
     }
-
     public withAbsoluteEnd(absoluteEnd: number|null): this {
         this.absoluteEnd = absoluteEnd;
         return this;
     }
-
     public getRepeatBeginDayOfMonth(): number|null {
         return this.repeatBeginDayOfMonth;
     }
-
     public setRepeatBeginDayOfMonth(repeatBeginDayOfMonth: number|null) {
         this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
         return this;
     }
-
     public withRepeatBeginDayOfMonth(repeatBeginDayOfMonth: number|null): this {
         this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
         return this;
     }
-
     public getRepeatEndDayOfMonth(): number|null {
         return this.repeatEndDayOfMonth;
     }
-
     public setRepeatEndDayOfMonth(repeatEndDayOfMonth: number|null) {
         this.repeatEndDayOfMonth = repeatEndDayOfMonth;
         return this;
     }
-
     public withRepeatEndDayOfMonth(repeatEndDayOfMonth: number|null): this {
         this.repeatEndDayOfMonth = repeatEndDayOfMonth;
         return this;
     }
-
     public getRepeatBeginDayOfWeek(): string|null {
         return this.repeatBeginDayOfWeek;
     }
-
     public setRepeatBeginDayOfWeek(repeatBeginDayOfWeek: string|null) {
         this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
         return this;
     }
-
     public withRepeatBeginDayOfWeek(repeatBeginDayOfWeek: string|null): this {
         this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
         return this;
     }
-
     public getRepeatEndDayOfWeek(): string|null {
         return this.repeatEndDayOfWeek;
     }
-
     public setRepeatEndDayOfWeek(repeatEndDayOfWeek: string|null) {
         this.repeatEndDayOfWeek = repeatEndDayOfWeek;
         return this;
     }
-
     public withRepeatEndDayOfWeek(repeatEndDayOfWeek: string|null): this {
         this.repeatEndDayOfWeek = repeatEndDayOfWeek;
         return this;
     }
-
     public getRepeatBeginHour(): number|null {
         return this.repeatBeginHour;
     }
-
     public setRepeatBeginHour(repeatBeginHour: number|null) {
         this.repeatBeginHour = repeatBeginHour;
         return this;
     }
-
     public withRepeatBeginHour(repeatBeginHour: number|null): this {
         this.repeatBeginHour = repeatBeginHour;
         return this;
     }
-
     public getRepeatEndHour(): number|null {
         return this.repeatEndHour;
     }
-
     public setRepeatEndHour(repeatEndHour: number|null) {
         this.repeatEndHour = repeatEndHour;
         return this;
     }
-
     public withRepeatEndHour(repeatEndHour: number|null): this {
         this.repeatEndHour = repeatEndHour;
         return this;
     }
-
     public getRelativeTriggerName(): string|null {
         return this.relativeTriggerName;
     }
-
     public setRelativeTriggerName(relativeTriggerName: string|null) {
         this.relativeTriggerName = relativeTriggerName;
         return this;
     }
-
     public withRelativeTriggerName(relativeTriggerName: string|null): this {
         this.relativeTriggerName = relativeTriggerName;
         return this;
     }
-
     public getRelativeDuration(): number|null {
         return this.relativeDuration;
     }
-
     public setRelativeDuration(relativeDuration: number|null) {
         this.relativeDuration = relativeDuration;
         return this;
     }
-
     public withRelativeDuration(relativeDuration: number|null): this {
         this.relativeDuration = relativeDuration;
         return this;

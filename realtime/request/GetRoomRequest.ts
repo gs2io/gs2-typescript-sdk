@@ -52,30 +52,24 @@ export default class GetRoomRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getRoomName(): string|null {
         return this.roomName;
     }
-
     public setRoomName(roomName: string|null) {
         this.roomName = roomName;
         return this;
     }
-
     public withRoomName(roomName: string|null): this {
         this.roomName = roomName;
         return this;

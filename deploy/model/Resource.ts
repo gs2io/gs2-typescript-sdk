@@ -111,156 +111,123 @@ export default class Resource implements IModel {
             .replace('{stackName}', stackName ?? '')
             .replace('{resourceName}', resourceName ?? '');
     }
-
     public getResourceId(): string|null {
         return this.resourceId;
     }
-
     public setResourceId(resourceId: string|null) {
         this.resourceId = resourceId;
         return this;
     }
-
     public withResourceId(resourceId: string|null): this {
         this.resourceId = resourceId;
         return this;
     }
-
     public getType(): string|null {
         return this.type;
     }
-
     public setType(type: string|null) {
         this.type = type;
         return this;
     }
-
     public withType(type: string|null): this {
         this.type = type;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getRequest(): string|null {
         return this.request;
     }
-
     public setRequest(request: string|null) {
         this.request = request;
         return this;
     }
-
     public withRequest(request: string|null): this {
         this.request = request;
         return this;
     }
-
     public getResponse(): string|null {
         return this.response;
     }
-
     public setResponse(response: string|null) {
         this.response = response;
         return this;
     }
-
     public withResponse(response: string|null): this {
         this.response = response;
         return this;
     }
-
     public getRollbackContext(): string|null {
         return this.rollbackContext;
     }
-
     public setRollbackContext(rollbackContext: string|null) {
         this.rollbackContext = rollbackContext;
         return this;
     }
-
     public withRollbackContext(rollbackContext: string|null): this {
         this.rollbackContext = rollbackContext;
         return this;
     }
-
     public getRollbackRequest(): string|null {
         return this.rollbackRequest;
     }
-
     public setRollbackRequest(rollbackRequest: string|null) {
         this.rollbackRequest = rollbackRequest;
         return this;
     }
-
     public withRollbackRequest(rollbackRequest: string|null): this {
         this.rollbackRequest = rollbackRequest;
         return this;
     }
-
     public getRollbackAfter(): string[]|null {
         return this.rollbackAfter;
     }
-
     public setRollbackAfter(rollbackAfter: string[]|null) {
         this.rollbackAfter = rollbackAfter;
         return this;
     }
-
     public withRollbackAfter(rollbackAfter: string[]|null): this {
         this.rollbackAfter = rollbackAfter;
         return this;
     }
-
     public getOutputFields(): OutputField[]|null {
         return this.outputFields;
     }
-
     public setOutputFields(outputFields: OutputField[]|null) {
         this.outputFields = outputFields;
         return this;
     }
-
     public withOutputFields(outputFields: OutputField[]|null): this {
         this.outputFields = outputFields;
         return this;
     }
-
     public getWorkId(): string|null {
         return this.workId;
     }
-
     public setWorkId(workId: string|null) {
         this.workId = workId;
         return this;
     }
-
     public withWorkId(workId: string|null): this {
         this.workId = workId;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;

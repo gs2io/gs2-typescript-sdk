@@ -24,100 +24,79 @@ export default class GitHubCheckoutSetting implements IModel {
     private commitHash: string|null = null;
     private branchName: string|null = null;
     private tagName: string|null = null;
-
     public getApiKeyId(): string|null {
         return this.apiKeyId;
     }
-
     public setApiKeyId(apiKeyId: string|null) {
         this.apiKeyId = apiKeyId;
         return this;
     }
-
     public withApiKeyId(apiKeyId: string|null): this {
         this.apiKeyId = apiKeyId;
         return this;
     }
-
     public getRepositoryName(): string|null {
         return this.repositoryName;
     }
-
     public setRepositoryName(repositoryName: string|null) {
         this.repositoryName = repositoryName;
         return this;
     }
-
     public withRepositoryName(repositoryName: string|null): this {
         this.repositoryName = repositoryName;
         return this;
     }
-
     public getSourcePath(): string|null {
         return this.sourcePath;
     }
-
     public setSourcePath(sourcePath: string|null) {
         this.sourcePath = sourcePath;
         return this;
     }
-
     public withSourcePath(sourcePath: string|null): this {
         this.sourcePath = sourcePath;
         return this;
     }
-
     public getReferenceType(): string|null {
         return this.referenceType;
     }
-
     public setReferenceType(referenceType: string|null) {
         this.referenceType = referenceType;
         return this;
     }
-
     public withReferenceType(referenceType: string|null): this {
         this.referenceType = referenceType;
         return this;
     }
-
     public getCommitHash(): string|null {
         return this.commitHash;
     }
-
     public setCommitHash(commitHash: string|null) {
         this.commitHash = commitHash;
         return this;
     }
-
     public withCommitHash(commitHash: string|null): this {
         this.commitHash = commitHash;
         return this;
     }
-
     public getBranchName(): string|null {
         return this.branchName;
     }
-
     public setBranchName(branchName: string|null) {
         this.branchName = branchName;
         return this;
     }
-
     public withBranchName(branchName: string|null): this {
         this.branchName = branchName;
         return this;
     }
-
     public getTagName(): string|null {
         return this.tagName;
     }
-
     public setTagName(tagName: string|null) {
         this.tagName = tagName;
         return this;
     }
-
     public withTagName(tagName: string|null): this {
         this.tagName = tagName;
         return this;

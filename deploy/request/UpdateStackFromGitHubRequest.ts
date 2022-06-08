@@ -53,44 +53,35 @@ export default class UpdateStackFromGitHubRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getStackName(): string|null {
         return this.stackName;
     }
-
     public setStackName(stackName: string|null) {
         this.stackName = stackName;
         return this;
     }
-
     public withStackName(stackName: string|null): this {
         this.stackName = stackName;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getCheckoutSetting(): Gs2Deploy.GitHubCheckoutSetting|null {
         return this.checkoutSetting;
     }
-
     public setCheckoutSetting(checkoutSetting: Gs2Deploy.GitHubCheckoutSetting|null) {
         this.checkoutSetting = checkoutSetting;
         return this;
     }
-
     public withCheckoutSetting(checkoutSetting: Gs2Deploy.GitHubCheckoutSetting|null): this {
         this.checkoutSetting = checkoutSetting;
         return this;

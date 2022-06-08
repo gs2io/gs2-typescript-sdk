@@ -21,58 +21,46 @@ export default class Reward implements IModel {
     private request: string|null = null;
     private itemId: string|null = null;
     private value: number|null = null;
-
     public getAction(): string|null {
         return this.action;
     }
-
     public setAction(action: string|null) {
         this.action = action;
         return this;
     }
-
     public withAction(action: string|null): this {
         this.action = action;
         return this;
     }
-
     public getRequest(): string|null {
         return this.request;
     }
-
     public setRequest(request: string|null) {
         this.request = request;
         return this;
     }
-
     public withRequest(request: string|null): this {
         this.request = request;
         return this;
     }
-
     public getItemId(): string|null {
         return this.itemId;
     }
-
     public setItemId(itemId: string|null) {
         this.itemId = itemId;
         return this;
     }
-
     public withItemId(itemId: string|null): this {
         this.itemId = itemId;
         return this;
     }
-
     public getValue(): number|null {
         return this.value;
     }
-
     public setValue(value: number|null) {
         this.value = value;
         return this;
     }
-
     public withValue(value: number|null): this {
         this.value = value;
         return this;

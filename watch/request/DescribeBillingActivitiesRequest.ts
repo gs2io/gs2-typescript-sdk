@@ -55,72 +55,57 @@ export default class DescribeBillingActivitiesRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getYear(): number|null {
         return this.year;
     }
-
     public setYear(year: number|null) {
         this.year = year;
         return this;
     }
-
     public withYear(year: number|null): this {
         this.year = year;
         return this;
     }
-
     public getMonth(): number|null {
         return this.month;
     }
-
     public setMonth(month: number|null) {
         this.month = month;
         return this;
     }
-
     public withMonth(month: number|null): this {
         this.month = month;
         return this;
     }
-
     public getService(): string|null {
         return this.service;
     }
-
     public setService(service: string|null) {
         this.service = service;
         return this;
     }
-
     public withService(service: string|null): this {
         this.service = service;
         return this;
     }
-
     public getPageToken(): string|null {
         return this.pageToken;
     }
-
     public setPageToken(pageToken: string|null) {
         this.pageToken = pageToken;
         return this;
     }
-
     public withPageToken(pageToken: string|null): this {
         this.pageToken = pageToken;
         return this;
     }
-
     public getLimit(): number|null {
         return this.limit;
     }
-
     public setLimit(limit: number|null) {
         this.limit = limit;
         return this;
     }
-
     public withLimit(limit: number|null): this {
         this.limit = limit;
         return this;

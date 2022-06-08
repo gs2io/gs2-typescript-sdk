@@ -55,72 +55,57 @@ export default class VoteRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getBallotBody(): string|null {
         return this.ballotBody;
     }
-
     public setBallotBody(ballotBody: string|null) {
         this.ballotBody = ballotBody;
         return this;
     }
-
     public withBallotBody(ballotBody: string|null): this {
         this.ballotBody = ballotBody;
         return this;
     }
-
     public getBallotSignature(): string|null {
         return this.ballotSignature;
     }
-
     public setBallotSignature(ballotSignature: string|null) {
         this.ballotSignature = ballotSignature;
         return this;
     }
-
     public withBallotSignature(ballotSignature: string|null): this {
         this.ballotSignature = ballotSignature;
         return this;
     }
-
     public getGameResults(): Gs2Matchmaking.GameResult[]|null {
         return this.gameResults;
     }
-
     public setGameResults(gameResults: Gs2Matchmaking.GameResult[]|null) {
         this.gameResults = gameResults;
         return this;
     }
-
     public withGameResults(gameResults: Gs2Matchmaking.GameResult[]|null): this {
         this.gameResults = gameResults;
         return this;
     }
-
     public getKeyId(): string|null {
         return this.keyId;
     }
-
     public setKeyId(keyId: string|null) {
         this.keyId = keyId;
         return this;
     }
-
     public withKeyId(keyId: string|null): this {
         this.keyId = keyId;
         return this;

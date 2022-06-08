@@ -52,30 +52,24 @@ export default class DeleteKeyRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getKeyName(): string|null {
         return this.keyName;
     }
-
     public setKeyName(keyName: string|null) {
         this.keyName = keyName;
         return this;
     }
-
     public withKeyName(keyName: string|null): this {
         this.keyName = keyName;
         return this;

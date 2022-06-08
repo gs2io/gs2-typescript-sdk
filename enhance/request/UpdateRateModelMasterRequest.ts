@@ -60,142 +60,112 @@ export default class UpdateRateModelMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getRateName(): string|null {
         return this.rateName;
     }
-
     public setRateName(rateName: string|null) {
         this.rateName = rateName;
         return this;
     }
-
     public withRateName(rateName: string|null): this {
         this.rateName = rateName;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getTargetInventoryModelId(): string|null {
         return this.targetInventoryModelId;
     }
-
     public setTargetInventoryModelId(targetInventoryModelId: string|null) {
         this.targetInventoryModelId = targetInventoryModelId;
         return this;
     }
-
     public withTargetInventoryModelId(targetInventoryModelId: string|null): this {
         this.targetInventoryModelId = targetInventoryModelId;
         return this;
     }
-
     public getAcquireExperienceSuffix(): string|null {
         return this.acquireExperienceSuffix;
     }
-
     public setAcquireExperienceSuffix(acquireExperienceSuffix: string|null) {
         this.acquireExperienceSuffix = acquireExperienceSuffix;
         return this;
     }
-
     public withAcquireExperienceSuffix(acquireExperienceSuffix: string|null): this {
         this.acquireExperienceSuffix = acquireExperienceSuffix;
         return this;
     }
-
     public getMaterialInventoryModelId(): string|null {
         return this.materialInventoryModelId;
     }
-
     public setMaterialInventoryModelId(materialInventoryModelId: string|null) {
         this.materialInventoryModelId = materialInventoryModelId;
         return this;
     }
-
     public withMaterialInventoryModelId(materialInventoryModelId: string|null): this {
         this.materialInventoryModelId = materialInventoryModelId;
         return this;
     }
-
     public getAcquireExperienceHierarchy(): string[]|null {
         return this.acquireExperienceHierarchy;
     }
-
     public setAcquireExperienceHierarchy(acquireExperienceHierarchy: string[]|null) {
         this.acquireExperienceHierarchy = acquireExperienceHierarchy;
         return this;
     }
-
     public withAcquireExperienceHierarchy(acquireExperienceHierarchy: string[]|null): this {
         this.acquireExperienceHierarchy = acquireExperienceHierarchy;
         return this;
     }
-
     public getExperienceModelId(): string|null {
         return this.experienceModelId;
     }
-
     public setExperienceModelId(experienceModelId: string|null) {
         this.experienceModelId = experienceModelId;
         return this;
     }
-
     public withExperienceModelId(experienceModelId: string|null): this {
         this.experienceModelId = experienceModelId;
         return this;
     }
-
     public getBonusRates(): Gs2Enhance.BonusRate[]|null {
         return this.bonusRates;
     }
-
     public setBonusRates(bonusRates: Gs2Enhance.BonusRate[]|null) {
         this.bonusRates = bonusRates;
         return this;
     }
-
     public withBonusRates(bonusRates: Gs2Enhance.BonusRate[]|null): this {
         this.bonusRates = bonusRates;
         return this;

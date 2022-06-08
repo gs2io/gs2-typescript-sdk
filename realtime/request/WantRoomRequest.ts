@@ -53,44 +53,35 @@ export default class WantRoomRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getNotificationUserIds(): string[]|null {
         return this.notificationUserIds;
     }
-
     public setNotificationUserIds(notificationUserIds: string[]|null) {
         this.notificationUserIds = notificationUserIds;
         return this;
     }
-
     public withNotificationUserIds(notificationUserIds: string[]|null): this {
         this.notificationUserIds = notificationUserIds;
         return this;

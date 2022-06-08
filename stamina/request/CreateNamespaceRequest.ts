@@ -54,58 +54,46 @@ export default class CreateNamespaceRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getOverflowTriggerScript(): Gs2Stamina.ScriptSetting|null {
         return this.overflowTriggerScript;
     }
-
     public setOverflowTriggerScript(overflowTriggerScript: Gs2Stamina.ScriptSetting|null) {
         this.overflowTriggerScript = overflowTriggerScript;
         return this;
     }
-
     public withOverflowTriggerScript(overflowTriggerScript: Gs2Stamina.ScriptSetting|null): this {
         this.overflowTriggerScript = overflowTriggerScript;
         return this;
     }
-
     public getLogSetting(): Gs2Stamina.LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: Gs2Stamina.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: Gs2Stamina.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;

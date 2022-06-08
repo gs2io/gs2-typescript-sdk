@@ -52,30 +52,24 @@ export default class UpdateCurrentFormMasterFromGitHubRequest implements IReques
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getCheckoutSetting(): Gs2Formation.GitHubCheckoutSetting|null {
         return this.checkoutSetting;
     }
-
     public setCheckoutSetting(checkoutSetting: Gs2Formation.GitHubCheckoutSetting|null) {
         this.checkoutSetting = checkoutSetting;
         return this;
     }
-
     public withCheckoutSetting(checkoutSetting: Gs2Formation.GitHubCheckoutSetting|null): this {
         this.checkoutSetting = checkoutSetting;
         return this;

@@ -52,30 +52,24 @@ export default class GetEntryModelMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getEntryName(): string|null {
         return this.entryName;
     }
-
     public setEntryName(entryName: string|null) {
         this.entryName = entryName;
         return this;
     }
-
     public withEntryName(entryName: string|null): this {
         this.entryName = entryName;
         return this;

@@ -22,58 +22,46 @@ export default class SignTargetVersion implements IModel {
     private namespaceName: string|null = null;
     private versionName: string|null = null;
     private version: Version|null = null;
-
     public getRegion(): string|null {
         return this.region;
     }
-
     public setRegion(region: string|null) {
         this.region = region;
         return this;
     }
-
     public withRegion(region: string|null): this {
         this.region = region;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getVersionName(): string|null {
         return this.versionName;
     }
-
     public setVersionName(versionName: string|null) {
         this.versionName = versionName;
         return this;
     }
-
     public withVersionName(versionName: string|null): this {
         this.versionName = versionName;
         return this;
     }
-
     public getVersion(): Version|null {
         return this.version;
     }
-
     public setVersion(version: Version|null) {
         this.version = version;
         return this;
     }
-
     public withVersion(version: Version|null): this {
         this.version = version;
         return this;

@@ -52,30 +52,24 @@ export default class InvokeScriptRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getScriptId(): string|null {
         return this.scriptId;
     }
-
     public setScriptId(scriptId: string|null) {
         this.scriptId = scriptId;
         return this;
     }
-
     public withScriptId(scriptId: string|null): this {
         this.scriptId = scriptId;
         return this;
     }
-
     public getArgs(): string|null {
         return this.args;
     }
-
     public setArgs(args: string|null) {
         this.args = args;
         return this;
     }
-
     public withArgs(args: string|null): this {
         this.args = args;
         return this;

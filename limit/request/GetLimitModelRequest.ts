@@ -52,30 +52,24 @@ export default class GetLimitModelRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getLimitName(): string|null {
         return this.limitName;
     }
-
     public setLimitName(limitName: string|null) {
         this.limitName = limitName;
         return this;
     }
-
     public withLimitName(limitName: string|null): this {
         this.limitName = limitName;
         return this;

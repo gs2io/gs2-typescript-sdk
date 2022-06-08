@@ -67,7 +67,9 @@ export default class Gs2JobQueueRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
+            'enableAutoRun': request.getEnableAutoRun() ?? null,
             'pushNotification': request.getPushNotification()?.toDict() ?? null,
+            'runNotification': request.getRunNotification()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.post(
@@ -152,7 +154,9 @@ export default class Gs2JobQueueRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
+            'enableAutoRun': request.getEnableAutoRun() ?? null,
             'pushNotification': request.getPushNotification()?.toDict() ?? null,
+            'runNotification': request.getRunNotification()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.put(
@@ -416,6 +420,64 @@ export default class Gs2JobQueueRestClient extends AbstractGs2RestClient {
             } else {
                 throw [];
             }
+        });
+    }
+
+    public getJobResult(request: Request.GetJobResultRequest): Promise<Result.GetJobResultResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/job/{jobName}/result')
+            .replace('{service}', 'job-queue')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{jobName}', String(request.getJobName() ?? 'null') === "" ? "null" : String(request.getJobName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetJobResultResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getJobResultByUserId(request: Request.GetJobResultByUserIdRequest): Promise<Result.GetJobResultByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/job/{jobName}/result')
+            .replace('{service}', 'job-queue')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{jobName}', String(request.getJobName() ?? 'null') === "" ? "null" : String(request.getJobName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetJobResultByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
         });
     }
 

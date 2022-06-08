@@ -157,142 +157,112 @@ export default class Status implements IModel {
             .replace('{experienceName}', experienceName ?? '')
             .replace('{propertyId}', propertyId ?? '');
     }
-
     public getStatusId(): string|null {
         return this.statusId;
     }
-
     public setStatusId(statusId: string|null) {
         this.statusId = statusId;
         return this;
     }
-
     public withStatusId(statusId: string|null): this {
         this.statusId = statusId;
         return this;
     }
-
     public getExperienceName(): string|null {
         return this.experienceName;
     }
-
     public setExperienceName(experienceName: string|null) {
         this.experienceName = experienceName;
         return this;
     }
-
     public withExperienceName(experienceName: string|null): this {
         this.experienceName = experienceName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getPropertyId(): string|null {
         return this.propertyId;
     }
-
     public setPropertyId(propertyId: string|null) {
         this.propertyId = propertyId;
         return this;
     }
-
     public withPropertyId(propertyId: string|null): this {
         this.propertyId = propertyId;
         return this;
     }
-
     public getExperienceValue(): number|null {
         return this.experienceValue;
     }
-
     public setExperienceValue(experienceValue: number|null) {
         this.experienceValue = experienceValue;
         return this;
     }
-
     public withExperienceValue(experienceValue: number|null): this {
         this.experienceValue = experienceValue;
         return this;
     }
-
     public getRankValue(): number|null {
         return this.rankValue;
     }
-
     public setRankValue(rankValue: number|null) {
         this.rankValue = rankValue;
         return this;
     }
-
     public withRankValue(rankValue: number|null): this {
         this.rankValue = rankValue;
         return this;
     }
-
     public getRankCapValue(): number|null {
         return this.rankCapValue;
     }
-
     public setRankCapValue(rankCapValue: number|null) {
         this.rankCapValue = rankCapValue;
         return this;
     }
-
     public withRankCapValue(rankCapValue: number|null): this {
         this.rankCapValue = rankCapValue;
         return this;
     }
-
     public getNextRankUpExperienceValue(): number|null {
         return this.nextRankUpExperienceValue;
     }
-
     public setNextRankUpExperienceValue(nextRankUpExperienceValue: number|null) {
         this.nextRankUpExperienceValue = nextRankUpExperienceValue;
         return this;
     }
-
     public withNextRankUpExperienceValue(nextRankUpExperienceValue: number|null): this {
         this.nextRankUpExperienceValue = nextRankUpExperienceValue;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

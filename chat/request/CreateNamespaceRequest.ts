@@ -60,142 +60,112 @@ export default class CreateNamespaceRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getAllowCreateRoom(): boolean|null {
         return this.allowCreateRoom;
     }
-
     public setAllowCreateRoom(allowCreateRoom: boolean|null) {
         this.allowCreateRoom = allowCreateRoom;
         return this;
     }
-
     public withAllowCreateRoom(allowCreateRoom: boolean|null): this {
         this.allowCreateRoom = allowCreateRoom;
         return this;
     }
-
     public getPostMessageScript(): Gs2Chat.ScriptSetting|null {
         return this.postMessageScript;
     }
-
     public setPostMessageScript(postMessageScript: Gs2Chat.ScriptSetting|null) {
         this.postMessageScript = postMessageScript;
         return this;
     }
-
     public withPostMessageScript(postMessageScript: Gs2Chat.ScriptSetting|null): this {
         this.postMessageScript = postMessageScript;
         return this;
     }
-
     public getCreateRoomScript(): Gs2Chat.ScriptSetting|null {
         return this.createRoomScript;
     }
-
     public setCreateRoomScript(createRoomScript: Gs2Chat.ScriptSetting|null) {
         this.createRoomScript = createRoomScript;
         return this;
     }
-
     public withCreateRoomScript(createRoomScript: Gs2Chat.ScriptSetting|null): this {
         this.createRoomScript = createRoomScript;
         return this;
     }
-
     public getDeleteRoomScript(): Gs2Chat.ScriptSetting|null {
         return this.deleteRoomScript;
     }
-
     public setDeleteRoomScript(deleteRoomScript: Gs2Chat.ScriptSetting|null) {
         this.deleteRoomScript = deleteRoomScript;
         return this;
     }
-
     public withDeleteRoomScript(deleteRoomScript: Gs2Chat.ScriptSetting|null): this {
         this.deleteRoomScript = deleteRoomScript;
         return this;
     }
-
     public getSubscribeRoomScript(): Gs2Chat.ScriptSetting|null {
         return this.subscribeRoomScript;
     }
-
     public setSubscribeRoomScript(subscribeRoomScript: Gs2Chat.ScriptSetting|null) {
         this.subscribeRoomScript = subscribeRoomScript;
         return this;
     }
-
     public withSubscribeRoomScript(subscribeRoomScript: Gs2Chat.ScriptSetting|null): this {
         this.subscribeRoomScript = subscribeRoomScript;
         return this;
     }
-
     public getUnsubscribeRoomScript(): Gs2Chat.ScriptSetting|null {
         return this.unsubscribeRoomScript;
     }
-
     public setUnsubscribeRoomScript(unsubscribeRoomScript: Gs2Chat.ScriptSetting|null) {
         this.unsubscribeRoomScript = unsubscribeRoomScript;
         return this;
     }
-
     public withUnsubscribeRoomScript(unsubscribeRoomScript: Gs2Chat.ScriptSetting|null): this {
         this.unsubscribeRoomScript = unsubscribeRoomScript;
         return this;
     }
-
     public getPostNotification(): Gs2Chat.NotificationSetting|null {
         return this.postNotification;
     }
-
     public setPostNotification(postNotification: Gs2Chat.NotificationSetting|null) {
         this.postNotification = postNotification;
         return this;
     }
-
     public withPostNotification(postNotification: Gs2Chat.NotificationSetting|null): this {
         this.postNotification = postNotification;
         return this;
     }
-
     public getLogSetting(): Gs2Chat.LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: Gs2Chat.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: Gs2Chat.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;

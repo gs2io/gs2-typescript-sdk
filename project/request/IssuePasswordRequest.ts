@@ -51,16 +51,13 @@ export default class IssuePasswordRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getIssuePasswordToken(): string|null {
         return this.issuePasswordToken;
     }
-
     public setIssuePasswordToken(issuePasswordToken: string|null) {
         this.issuePasswordToken = issuePasswordToken;
         return this;
     }
-
     public withIssuePasswordToken(issuePasswordToken: string|null): this {
         this.issuePasswordToken = issuePasswordToken;
         return this;

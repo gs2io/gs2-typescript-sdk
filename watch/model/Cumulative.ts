@@ -104,72 +104,57 @@ export default class Cumulative implements IModel {
             .replace('{resourceGrn}', resourceGrn ?? '')
             .replace('{name}', name ?? '');
     }
-
     public getCumulativeId(): string|null {
         return this.cumulativeId;
     }
-
     public setCumulativeId(cumulativeId: string|null) {
         this.cumulativeId = cumulativeId;
         return this;
     }
-
     public withCumulativeId(cumulativeId: string|null): this {
         this.cumulativeId = cumulativeId;
         return this;
     }
-
     public getResourceGrn(): string|null {
         return this.resourceGrn;
     }
-
     public setResourceGrn(resourceGrn: string|null) {
         this.resourceGrn = resourceGrn;
         return this;
     }
-
     public withResourceGrn(resourceGrn: string|null): this {
         this.resourceGrn = resourceGrn;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getValue(): number|null {
         return this.value;
     }
-
     public setValue(value: number|null) {
         this.value = value;
         return this;
     }
-
     public withValue(value: number|null): this {
         this.value = value;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

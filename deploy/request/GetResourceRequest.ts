@@ -52,30 +52,24 @@ export default class GetResourceRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getStackName(): string|null {
         return this.stackName;
     }
-
     public setStackName(stackName: string|null) {
         this.stackName = stackName;
         return this;
     }
-
     public withStackName(stackName: string|null): this {
         this.stackName = stackName;
         return this;
     }
-
     public getResourceName(): string|null {
         return this.resourceName;
     }
-
     public setResourceName(resourceName: string|null) {
         this.resourceName = resourceName;
         return this;
     }
-
     public withResourceName(resourceName: string|null): this {
         this.resourceName = resourceName;
         return this;

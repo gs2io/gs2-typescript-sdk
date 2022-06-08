@@ -131,86 +131,68 @@ export default class Vote implements IModel {
             .replace('{ratingName}', ratingName ?? '')
             .replace('{gatheringName}', gatheringName ?? '');
     }
-
     public getVoteId(): string|null {
         return this.voteId;
     }
-
     public setVoteId(voteId: string|null) {
         this.voteId = voteId;
         return this;
     }
-
     public withVoteId(voteId: string|null): this {
         this.voteId = voteId;
         return this;
     }
-
     public getRatingName(): string|null {
         return this.ratingName;
     }
-
     public setRatingName(ratingName: string|null) {
         this.ratingName = ratingName;
         return this;
     }
-
     public withRatingName(ratingName: string|null): this {
         this.ratingName = ratingName;
         return this;
     }
-
     public getGatheringName(): string|null {
         return this.gatheringName;
     }
-
     public setGatheringName(gatheringName: string|null) {
         this.gatheringName = gatheringName;
         return this;
     }
-
     public withGatheringName(gatheringName: string|null): this {
         this.gatheringName = gatheringName;
         return this;
     }
-
     public getWrittenBallots(): WrittenBallot[]|null {
         return this.writtenBallots;
     }
-
     public setWrittenBallots(writtenBallots: WrittenBallot[]|null) {
         this.writtenBallots = writtenBallots;
         return this;
     }
-
     public withWrittenBallots(writtenBallots: WrittenBallot[]|null): this {
         this.writtenBallots = writtenBallots;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

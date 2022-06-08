@@ -108,100 +108,79 @@ export default class GlobalMessageMaster implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{globalMessageName}', globalMessageName ?? '');
     }
-
     public getGlobalMessageId(): string|null {
         return this.globalMessageId;
     }
-
     public setGlobalMessageId(globalMessageId: string|null) {
         this.globalMessageId = globalMessageId;
         return this;
     }
-
     public withGlobalMessageId(globalMessageId: string|null): this {
         this.globalMessageId = globalMessageId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getReadAcquireActions(): AcquireAction[]|null {
         return this.readAcquireActions;
     }
-
     public setReadAcquireActions(readAcquireActions: AcquireAction[]|null) {
         this.readAcquireActions = readAcquireActions;
         return this;
     }
-
     public withReadAcquireActions(readAcquireActions: AcquireAction[]|null): this {
         this.readAcquireActions = readAcquireActions;
         return this;
     }
-
     public getExpiresTimeSpan(): TimeSpan|null {
         return this.expiresTimeSpan;
     }
-
     public setExpiresTimeSpan(expiresTimeSpan: TimeSpan|null) {
         this.expiresTimeSpan = expiresTimeSpan;
         return this;
     }
-
     public withExpiresTimeSpan(expiresTimeSpan: TimeSpan|null): this {
         this.expiresTimeSpan = expiresTimeSpan;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getExpiresAt(): number|null {
         return this.expiresAt;
     }
-
     public setExpiresAt(expiresAt: number|null) {
         this.expiresAt = expiresAt;
         return this;
     }
-
     public withExpiresAt(expiresAt: number|null): this {
         this.expiresAt = expiresAt;
         return this;

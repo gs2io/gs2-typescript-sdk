@@ -54,58 +54,46 @@ export default class GetFriendByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getTargetUserId(): string|null {
         return this.targetUserId;
     }
-
     public setTargetUserId(targetUserId: string|null) {
         this.targetUserId = targetUserId;
         return this;
     }
-
     public withTargetUserId(targetUserId: string|null): this {
         this.targetUserId = targetUserId;
         return this;
     }
-
     public getWithProfile(): boolean|null {
         return this.withProfile;
     }
-
     public setWithProfile(withProfile: boolean|null) {
         this.withProfile = withProfile;
         return this;
     }
-
     public withWithProfile(withProfile: boolean|null): this {
         this.withProfile = withProfile;
         return this;

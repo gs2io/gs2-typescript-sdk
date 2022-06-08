@@ -134,170 +134,134 @@ export default class Stamina implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{staminaName}', staminaName ?? '');
     }
-
     public getStaminaId(): string|null {
         return this.staminaId;
     }
-
     public setStaminaId(staminaId: string|null) {
         this.staminaId = staminaId;
         return this;
     }
-
     public withStaminaId(staminaId: string|null): this {
         this.staminaId = staminaId;
         return this;
     }
-
     public getStaminaName(): string|null {
         return this.staminaName;
     }
-
     public setStaminaName(staminaName: string|null) {
         this.staminaName = staminaName;
         return this;
     }
-
     public withStaminaName(staminaName: string|null): this {
         this.staminaName = staminaName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getValue(): number|null {
         return this.value;
     }
-
     public setValue(value: number|null) {
         this.value = value;
         return this;
     }
-
     public withValue(value: number|null): this {
         this.value = value;
         return this;
     }
-
     public getMaxValue(): number|null {
         return this.maxValue;
     }
-
     public setMaxValue(maxValue: number|null) {
         this.maxValue = maxValue;
         return this;
     }
-
     public withMaxValue(maxValue: number|null): this {
         this.maxValue = maxValue;
         return this;
     }
-
     public getRecoverIntervalMinutes(): number|null {
         return this.recoverIntervalMinutes;
     }
-
     public setRecoverIntervalMinutes(recoverIntervalMinutes: number|null) {
         this.recoverIntervalMinutes = recoverIntervalMinutes;
         return this;
     }
-
     public withRecoverIntervalMinutes(recoverIntervalMinutes: number|null): this {
         this.recoverIntervalMinutes = recoverIntervalMinutes;
         return this;
     }
-
     public getRecoverValue(): number|null {
         return this.recoverValue;
     }
-
     public setRecoverValue(recoverValue: number|null) {
         this.recoverValue = recoverValue;
         return this;
     }
-
     public withRecoverValue(recoverValue: number|null): this {
         this.recoverValue = recoverValue;
         return this;
     }
-
     public getOverflowValue(): number|null {
         return this.overflowValue;
     }
-
     public setOverflowValue(overflowValue: number|null) {
         this.overflowValue = overflowValue;
         return this;
     }
-
     public withOverflowValue(overflowValue: number|null): this {
         this.overflowValue = overflowValue;
         return this;
     }
-
     public getNextRecoverAt(): number|null {
         return this.nextRecoverAt;
     }
-
     public setNextRecoverAt(nextRecoverAt: number|null) {
         this.nextRecoverAt = nextRecoverAt;
         return this;
     }
-
     public withNextRecoverAt(nextRecoverAt: number|null): this {
         this.nextRecoverAt = nextRecoverAt;
         return this;
     }
-
     public getLastRecoveredAt(): number|null {
         return this.lastRecoveredAt;
     }
-
     public setLastRecoveredAt(lastRecoveredAt: number|null) {
         this.lastRecoveredAt = lastRecoveredAt;
         return this;
     }
-
     public withLastRecoveredAt(lastRecoveredAt: number|null): this {
         this.lastRecoveredAt = lastRecoveredAt;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

@@ -52,30 +52,24 @@ export default class GetThresholdMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getThresholdName(): string|null {
         return this.thresholdName;
     }
-
     public setThresholdName(thresholdName: string|null) {
         this.thresholdName = thresholdName;
         return this;
     }
-
     public withThresholdName(thresholdName: string|null): this {
         this.thresholdName = thresholdName;
         return this;

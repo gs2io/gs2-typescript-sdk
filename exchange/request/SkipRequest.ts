@@ -55,72 +55,57 @@ export default class SkipRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getRateName(): string|null {
         return this.rateName;
     }
-
     public setRateName(rateName: string|null) {
         this.rateName = rateName;
         return this;
     }
-
     public withRateName(rateName: string|null): this {
         this.rateName = rateName;
         return this;
     }
-
     public getAwaitName(): string|null {
         return this.awaitName;
     }
-
     public setAwaitName(awaitName: string|null) {
         this.awaitName = awaitName;
         return this;
     }
-
     public withAwaitName(awaitName: string|null): this {
         this.awaitName = awaitName;
         return this;
     }
-
     public getConfig(): Gs2Exchange.Config[]|null {
         return this.config;
     }
-
     public setConfig(config: Gs2Exchange.Config[]|null) {
         this.config = config;
         return this;
     }
-
     public withConfig(config: Gs2Exchange.Config[]|null): this {
         this.config = config;
         return this;

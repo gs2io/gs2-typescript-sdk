@@ -134,156 +134,123 @@ export default class MissionTaskModelMaster implements IModel {
             .replace('{missionGroupName}', missionGroupName ?? '')
             .replace('{missionTaskName}', missionTaskName ?? '');
     }
-
     public getMissionTaskId(): string|null {
         return this.missionTaskId;
     }
-
     public setMissionTaskId(missionTaskId: string|null) {
         this.missionTaskId = missionTaskId;
         return this;
     }
-
     public withMissionTaskId(missionTaskId: string|null): this {
         this.missionTaskId = missionTaskId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getCounterName(): string|null {
         return this.counterName;
     }
-
     public setCounterName(counterName: string|null) {
         this.counterName = counterName;
         return this;
     }
-
     public withCounterName(counterName: string|null): this {
         this.counterName = counterName;
         return this;
     }
-
     public getTargetValue(): number|null {
         return this.targetValue;
     }
-
     public setTargetValue(targetValue: number|null) {
         this.targetValue = targetValue;
         return this;
     }
-
     public withTargetValue(targetValue: number|null): this {
         this.targetValue = targetValue;
         return this;
     }
-
     public getCompleteAcquireActions(): AcquireAction[]|null {
         return this.completeAcquireActions;
     }
-
     public setCompleteAcquireActions(completeAcquireActions: AcquireAction[]|null) {
         this.completeAcquireActions = completeAcquireActions;
         return this;
     }
-
     public withCompleteAcquireActions(completeAcquireActions: AcquireAction[]|null): this {
         this.completeAcquireActions = completeAcquireActions;
         return this;
     }
-
     public getChallengePeriodEventId(): string|null {
         return this.challengePeriodEventId;
     }
-
     public setChallengePeriodEventId(challengePeriodEventId: string|null) {
         this.challengePeriodEventId = challengePeriodEventId;
         return this;
     }
-
     public withChallengePeriodEventId(challengePeriodEventId: string|null): this {
         this.challengePeriodEventId = challengePeriodEventId;
         return this;
     }
-
     public getPremiseMissionTaskName(): string|null {
         return this.premiseMissionTaskName;
     }
-
     public setPremiseMissionTaskName(premiseMissionTaskName: string|null) {
         this.premiseMissionTaskName = premiseMissionTaskName;
         return this;
     }
-
     public withPremiseMissionTaskName(premiseMissionTaskName: string|null): this {
         this.premiseMissionTaskName = premiseMissionTaskName;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

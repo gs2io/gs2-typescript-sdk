@@ -52,30 +52,24 @@ export default class DistributeWithoutOverflowProcessRequest implements IRequest
         this.contextStack = contextStack;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getDistributeResource(): Gs2Distributor.DistributeResource|null {
         return this.distributeResource;
     }
-
     public setDistributeResource(distributeResource: Gs2Distributor.DistributeResource|null) {
         this.distributeResource = distributeResource;
         return this;
     }
-
     public withDistributeResource(distributeResource: Gs2Distributor.DistributeResource|null): this {
         this.distributeResource = distributeResource;
         return this;

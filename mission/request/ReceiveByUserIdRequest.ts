@@ -55,58 +55,46 @@ export default class ReceiveByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getMissionGroupName(): string|null {
         return this.missionGroupName;
     }
-
     public setMissionGroupName(missionGroupName: string|null) {
         this.missionGroupName = missionGroupName;
         return this;
     }
-
     public withMissionGroupName(missionGroupName: string|null): this {
         this.missionGroupName = missionGroupName;
         return this;
     }
-
     public getMissionTaskName(): string|null {
         return this.missionTaskName;
     }
-
     public setMissionTaskName(missionTaskName: string|null) {
         this.missionTaskName = missionTaskName;
         return this;
     }
-
     public withMissionTaskName(missionTaskName: string|null): this {
         this.missionTaskName = missionTaskName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;

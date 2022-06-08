@@ -53,44 +53,35 @@ export default class CancelMatchmakingRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getGatheringName(): string|null {
         return this.gatheringName;
     }
-
     public setGatheringName(gatheringName: string|null) {
         this.gatheringName = gatheringName;
         return this;
     }
-
     public withGatheringName(gatheringName: string|null): this {
         this.gatheringName = gatheringName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;

@@ -56,72 +56,57 @@ export default class TriggerByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getTriggerName(): string|null {
         return this.triggerName;
     }
-
     public setTriggerName(triggerName: string|null) {
         this.triggerName = triggerName;
         return this;
     }
-
     public withTriggerName(triggerName: string|null): this {
         this.triggerName = triggerName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getTriggerStrategy(): string|null {
         return this.triggerStrategy;
     }
-
     public setTriggerStrategy(triggerStrategy: string|null) {
         this.triggerStrategy = triggerStrategy;
         return this;
     }
-
     public withTriggerStrategy(triggerStrategy: string|null): this {
         this.triggerStrategy = triggerStrategy;
         return this;
     }
-
     public getTtl(): number|null {
         return this.ttl;
     }
-
     public setTtl(ttl: number|null) {
         this.ttl = ttl;
         return this;
     }
-
     public withTtl(ttl: number|null): this {
         this.ttl = ttl;
         return this;

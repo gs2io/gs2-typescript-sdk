@@ -54,44 +54,35 @@ export default class CheckVersionByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getTargetVersions(): Gs2Version.TargetVersion[]|null {
         return this.targetVersions;
     }
-
     public setTargetVersions(targetVersions: Gs2Version.TargetVersion[]|null) {
         this.targetVersions = targetVersions;
         return this;
     }
-
     public withTargetVersions(targetVersions: Gs2Version.TargetVersion[]|null): this {
         this.targetVersions = targetVersions;
         return this;

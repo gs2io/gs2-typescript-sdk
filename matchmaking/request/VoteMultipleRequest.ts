@@ -54,58 +54,46 @@ export default class VoteMultipleRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getSignedBallots(): Gs2Matchmaking.SignedBallot[]|null {
         return this.signedBallots;
     }
-
     public setSignedBallots(signedBallots: Gs2Matchmaking.SignedBallot[]|null) {
         this.signedBallots = signedBallots;
         return this;
     }
-
     public withSignedBallots(signedBallots: Gs2Matchmaking.SignedBallot[]|null): this {
         this.signedBallots = signedBallots;
         return this;
     }
-
     public getGameResults(): Gs2Matchmaking.GameResult[]|null {
         return this.gameResults;
     }
-
     public setGameResults(gameResults: Gs2Matchmaking.GameResult[]|null) {
         this.gameResults = gameResults;
         return this;
     }
-
     public withGameResults(gameResults: Gs2Matchmaking.GameResult[]|null): this {
         this.gameResults = gameResults;
         return this;
     }
-
     public getKeyId(): string|null {
         return this.keyId;
     }
-
     public setKeyId(keyId: string|null) {
         this.keyId = keyId;
         return this;
     }
-
     public withKeyId(keyId: string|null): this {
         this.keyId = keyId;
         return this;

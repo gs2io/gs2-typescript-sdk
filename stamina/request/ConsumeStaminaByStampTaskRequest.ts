@@ -52,30 +52,24 @@ export default class ConsumeStaminaByStampTaskRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getStampTask(): string|null {
         return this.stampTask;
     }
-
     public setStampTask(stampTask: string|null) {
         this.stampTask = stampTask;
         return this;
     }
-
     public withStampTask(stampTask: string|null): this {
         this.stampTask = stampTask;
         return this;
     }
-
     public getKeyId(): string|null {
         return this.keyId;
     }
-
     public setKeyId(keyId: string|null) {
         this.keyId = keyId;
         return this;
     }
-
     public withKeyId(keyId: string|null): this {
         this.keyId = keyId;
         return this;

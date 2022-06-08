@@ -53,44 +53,35 @@ export default class CheckVersionRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getTargetVersions(): Gs2Version.TargetVersion[]|null {
         return this.targetVersions;
     }
-
     public setTargetVersions(targetVersions: Gs2Version.TargetVersion[]|null) {
         this.targetVersions = targetVersions;
         return this;
     }
-
     public withTargetVersions(targetVersions: Gs2Version.TargetVersion[]|null): this {
         this.targetVersions = targetVersions;
         return this;

@@ -19,30 +19,24 @@ import IModel from '../../core/interface/IModel';
 export default class OutputField implements IModel {
     private name: string|null = null;
     private fieldName: string|null = null;
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getFieldName(): string|null {
         return this.fieldName;
     }
-
     public setFieldName(fieldName: string|null) {
         this.fieldName = fieldName;
         return this;
     }
-
     public withFieldName(fieldName: string|null): this {
         this.fieldName = fieldName;
         return this;

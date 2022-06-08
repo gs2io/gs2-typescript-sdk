@@ -53,44 +53,35 @@ export default class DescribeBillingMethodsRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getAccountToken(): string|null {
         return this.accountToken;
     }
-
     public setAccountToken(accountToken: string|null) {
         this.accountToken = accountToken;
         return this;
     }
-
     public withAccountToken(accountToken: string|null): this {
         this.accountToken = accountToken;
         return this;
     }
-
     public getPageToken(): string|null {
         return this.pageToken;
     }
-
     public setPageToken(pageToken: string|null) {
         this.pageToken = pageToken;
         return this;
     }
-
     public withPageToken(pageToken: string|null): this {
         this.pageToken = pageToken;
         return this;
     }
-
     public getLimit(): number|null {
         return this.limit;
     }
-
     public setLimit(limit: number|null) {
         this.limit = limit;
         return this;
     }
-
     public withLimit(limit: number|null): this {
         this.limit = limit;
         return this;

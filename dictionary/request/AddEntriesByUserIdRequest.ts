@@ -54,44 +54,35 @@ export default class AddEntriesByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getEntryModelNames(): string[]|null {
         return this.entryModelNames;
     }
-
     public setEntryModelNames(entryModelNames: string[]|null) {
         this.entryModelNames = entryModelNames;
         return this;
     }
-
     public withEntryModelNames(entryModelNames: string[]|null): this {
         this.entryModelNames = entryModelNames;
         return this;

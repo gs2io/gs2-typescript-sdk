@@ -70,156 +70,123 @@ export default class BillingMethod implements IModel {
             .replace('{accountName}', accountName ?? '')
             .replace('{billingMethodName}', billingMethodName ?? '');
     }
-
     public getBillingMethodId(): string|null {
         return this.billingMethodId;
     }
-
     public setBillingMethodId(billingMethodId: string|null) {
         this.billingMethodId = billingMethodId;
         return this;
     }
-
     public withBillingMethodId(billingMethodId: string|null): this {
         this.billingMethodId = billingMethodId;
         return this;
     }
-
     public getAccountName(): string|null {
         return this.accountName;
     }
-
     public setAccountName(accountName: string|null) {
         this.accountName = accountName;
         return this;
     }
-
     public withAccountName(accountName: string|null): this {
         this.accountName = accountName;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMethodType(): string|null {
         return this.methodType;
     }
-
     public setMethodType(methodType: string|null) {
         this.methodType = methodType;
         return this;
     }
-
     public withMethodType(methodType: string|null): this {
         this.methodType = methodType;
         return this;
     }
-
     public getCardSignatureName(): string|null {
         return this.cardSignatureName;
     }
-
     public setCardSignatureName(cardSignatureName: string|null) {
         this.cardSignatureName = cardSignatureName;
         return this;
     }
-
     public withCardSignatureName(cardSignatureName: string|null): this {
         this.cardSignatureName = cardSignatureName;
         return this;
     }
-
     public getCardBrand(): string|null {
         return this.cardBrand;
     }
-
     public setCardBrand(cardBrand: string|null) {
         this.cardBrand = cardBrand;
         return this;
     }
-
     public withCardBrand(cardBrand: string|null): this {
         this.cardBrand = cardBrand;
         return this;
     }
-
     public getCardLast4(): string|null {
         return this.cardLast4;
     }
-
     public setCardLast4(cardLast4: string|null) {
         this.cardLast4 = cardLast4;
         return this;
     }
-
     public withCardLast4(cardLast4: string|null): this {
         this.cardLast4 = cardLast4;
         return this;
     }
-
     public getPartnerId(): string|null {
         return this.partnerId;
     }
-
     public setPartnerId(partnerId: string|null) {
         this.partnerId = partnerId;
         return this;
     }
-
     public withPartnerId(partnerId: string|null): this {
         this.partnerId = partnerId;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

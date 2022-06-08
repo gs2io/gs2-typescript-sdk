@@ -112,184 +112,145 @@ export default class Billing implements IModel {
             .replace('{year}', year ?? '')
             .replace('{month}', month ?? '');
     }
-
     public getBillingId(): string|null {
         return this.billingId;
     }
-
     public setBillingId(billingId: string|null) {
         this.billingId = billingId;
         return this;
     }
-
     public withBillingId(billingId: string|null): this {
         this.billingId = billingId;
         return this;
     }
-
     public getProjectName(): string|null {
         return this.projectName;
     }
-
     public setProjectName(projectName: string|null) {
         this.projectName = projectName;
         return this;
     }
-
     public withProjectName(projectName: string|null): this {
         this.projectName = projectName;
         return this;
     }
-
     public getYear(): number|null {
         return this.year;
     }
-
     public setYear(year: number|null) {
         this.year = year;
         return this;
     }
-
     public withYear(year: number|null): this {
         this.year = year;
         return this;
     }
-
     public getMonth(): number|null {
         return this.month;
     }
-
     public setMonth(month: number|null) {
         this.month = month;
         return this;
     }
-
     public withMonth(month: number|null): this {
         this.month = month;
         return this;
     }
-
     public getRegion(): string|null {
         return this.region;
     }
-
     public setRegion(region: string|null) {
         this.region = region;
         return this;
     }
-
     public withRegion(region: string|null): this {
         this.region = region;
         return this;
     }
-
     public getService(): string|null {
         return this.service;
     }
-
     public setService(service: string|null) {
         this.service = service;
         return this;
     }
-
     public withService(service: string|null): this {
         this.service = service;
         return this;
     }
-
     public getActivityType(): string|null {
         return this.activityType;
     }
-
     public setActivityType(activityType: string|null) {
         this.activityType = activityType;
         return this;
     }
-
     public withActivityType(activityType: string|null): this {
         this.activityType = activityType;
         return this;
     }
-
     public getUnit(): number|null {
         return this.unit;
     }
-
     public setUnit(unit: number|null) {
         this.unit = unit;
         return this;
     }
-
     public withUnit(unit: number|null): this {
         this.unit = unit;
         return this;
     }
-
     public getUnitName(): string|null {
         return this.unitName;
     }
-
     public setUnitName(unitName: string|null) {
         this.unitName = unitName;
         return this;
     }
-
     public withUnitName(unitName: string|null): this {
         this.unitName = unitName;
         return this;
     }
-
     public getPrice(): number|null {
         return this.price;
     }
-
     public setPrice(price: number|null) {
         this.price = price;
         return this;
     }
-
     public withPrice(price: number|null): this {
         this.price = price;
         return this;
     }
-
     public getCurrency(): string|null {
         return this.currency;
     }
-
     public setCurrency(currency: string|null) {
         this.currency = currency;
         return this;
     }
-
     public withCurrency(currency: string|null): this {
         this.currency = currency;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

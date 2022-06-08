@@ -52,30 +52,24 @@ export default class UpdateCurrentStaminaMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getSettings(): string|null {
         return this.settings;
     }
-
     public setSettings(settings: string|null) {
         this.settings = settings;
         return this;
     }
-
     public withSettings(settings: string|null): this {
         this.settings = settings;
         return this;

@@ -52,30 +52,24 @@ export default class DebugInvokeRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getScript(): string|null {
         return this.script;
     }
-
     public setScript(script: string|null) {
         this.script = script;
         return this;
     }
-
     public withScript(script: string|null): this {
         this.script = script;
         return this;
     }
-
     public getArgs(): string|null {
         return this.args;
     }
-
     public setArgs(args: string|null) {
         this.args = args;
         return this;
     }
-
     public withArgs(args: string|null): this {
         this.args = args;
         return this;

@@ -23,58 +23,46 @@ export default class CapacityOfRole implements IModel {
     private roleAliases: string[]|null = null;
     private capacity: number|null = null;
     private participants: Player[]|null = null;
-
     public getRoleName(): string|null {
         return this.roleName;
     }
-
     public setRoleName(roleName: string|null) {
         this.roleName = roleName;
         return this;
     }
-
     public withRoleName(roleName: string|null): this {
         this.roleName = roleName;
         return this;
     }
-
     public getRoleAliases(): string[]|null {
         return this.roleAliases;
     }
-
     public setRoleAliases(roleAliases: string[]|null) {
         this.roleAliases = roleAliases;
         return this;
     }
-
     public withRoleAliases(roleAliases: string[]|null): this {
         this.roleAliases = roleAliases;
         return this;
     }
-
     public getCapacity(): number|null {
         return this.capacity;
     }
-
     public setCapacity(capacity: number|null) {
         this.capacity = capacity;
         return this;
     }
-
     public withCapacity(capacity: number|null): this {
         this.capacity = capacity;
         return this;
     }
-
     public getParticipants(): Player[]|null {
         return this.participants;
     }
-
     public setParticipants(participants: Player[]|null) {
         this.participants = participants;
         return this;
     }
-
     public withParticipants(participants: Player[]|null): this {
         this.participants = participants;
         return this;

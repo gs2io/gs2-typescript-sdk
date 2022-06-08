@@ -153,86 +153,68 @@ export default class BillingActivity implements IModel {
             .replace('{service}', service ?? '')
             .replace('{activityType}', activityType ?? '');
     }
-
     public getBillingActivityId(): string|null {
         return this.billingActivityId;
     }
-
     public setBillingActivityId(billingActivityId: string|null) {
         this.billingActivityId = billingActivityId;
         return this;
     }
-
     public withBillingActivityId(billingActivityId: string|null): this {
         this.billingActivityId = billingActivityId;
         return this;
     }
-
     public getYear(): number|null {
         return this.year;
     }
-
     public setYear(year: number|null) {
         this.year = year;
         return this;
     }
-
     public withYear(year: number|null): this {
         this.year = year;
         return this;
     }
-
     public getMonth(): number|null {
         return this.month;
     }
-
     public setMonth(month: number|null) {
         this.month = month;
         return this;
     }
-
     public withMonth(month: number|null): this {
         this.month = month;
         return this;
     }
-
     public getService(): string|null {
         return this.service;
     }
-
     public setService(service: string|null) {
         this.service = service;
         return this;
     }
-
     public withService(service: string|null): this {
         this.service = service;
         return this;
     }
-
     public getActivityType(): string|null {
         return this.activityType;
     }
-
     public setActivityType(activityType: string|null) {
         this.activityType = activityType;
         return this;
     }
-
     public withActivityType(activityType: string|null): this {
         this.activityType = activityType;
         return this;
     }
-
     public getValue(): number|null {
         return this.value;
     }
-
     public setValue(value: number|null) {
         this.value = value;
         return this;
     }
-
     public withValue(value: number|null): this {
         this.value = value;
         return this;

@@ -57,86 +57,68 @@ export default class CountUpByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getLimitName(): string|null {
         return this.limitName;
     }
-
     public setLimitName(limitName: string|null) {
         this.limitName = limitName;
         return this;
     }
-
     public withLimitName(limitName: string|null): this {
         this.limitName = limitName;
         return this;
     }
-
     public getCounterName(): string|null {
         return this.counterName;
     }
-
     public setCounterName(counterName: string|null) {
         this.counterName = counterName;
         return this;
     }
-
     public withCounterName(counterName: string|null): this {
         this.counterName = counterName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getCountUpValue(): number|null {
         return this.countUpValue;
     }
-
     public setCountUpValue(countUpValue: number|null) {
         this.countUpValue = countUpValue;
         return this;
     }
-
     public withCountUpValue(countUpValue: number|null): this {
         this.countUpValue = countUpValue;
         return this;
     }
-
     public getMaxValue(): number|null {
         return this.maxValue;
     }
-
     public setMaxValue(maxValue: number|null) {
         this.maxValue = maxValue;
         return this;
     }
-
     public withMaxValue(maxValue: number|null): this {
         this.maxValue = maxValue;
         return this;

@@ -56,86 +56,68 @@ export default class EndRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getTransactionId(): string|null {
         return this.transactionId;
     }
-
     public setTransactionId(transactionId: string|null) {
         this.transactionId = transactionId;
         return this;
     }
-
     public withTransactionId(transactionId: string|null): this {
         this.transactionId = transactionId;
         return this;
     }
-
     public getRewards(): Gs2Quest.Reward[]|null {
         return this.rewards;
     }
-
     public setRewards(rewards: Gs2Quest.Reward[]|null) {
         this.rewards = rewards;
         return this;
     }
-
     public withRewards(rewards: Gs2Quest.Reward[]|null): this {
         this.rewards = rewards;
         return this;
     }
-
     public getIsComplete(): boolean|null {
         return this.isComplete;
     }
-
     public setIsComplete(isComplete: boolean|null) {
         this.isComplete = isComplete;
         return this;
     }
-
     public withIsComplete(isComplete: boolean|null): this {
         this.isComplete = isComplete;
         return this;
     }
-
     public getConfig(): Gs2Quest.Config[]|null {
         return this.config;
     }
-
     public setConfig(config: Gs2Quest.Config[]|null) {
         this.config = config;
         return this;
     }
-
     public withConfig(config: Gs2Quest.Config[]|null): this {
         this.config = config;
         return this;

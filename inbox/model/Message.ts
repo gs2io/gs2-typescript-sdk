@@ -132,128 +132,101 @@ export default class Message implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{messageName}', messageName ?? '');
     }
-
     public getMessageId(): string|null {
         return this.messageId;
     }
-
     public setMessageId(messageId: string|null) {
         this.messageId = messageId;
         return this;
     }
-
     public withMessageId(messageId: string|null): this {
         this.messageId = messageId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getIsRead(): boolean|null {
         return this.isRead;
     }
-
     public setIsRead(isRead: boolean|null) {
         this.isRead = isRead;
         return this;
     }
-
     public withIsRead(isRead: boolean|null): this {
         this.isRead = isRead;
         return this;
     }
-
     public getReadAcquireActions(): AcquireAction[]|null {
         return this.readAcquireActions;
     }
-
     public setReadAcquireActions(readAcquireActions: AcquireAction[]|null) {
         this.readAcquireActions = readAcquireActions;
         return this;
     }
-
     public withReadAcquireActions(readAcquireActions: AcquireAction[]|null): this {
         this.readAcquireActions = readAcquireActions;
         return this;
     }
-
     public getReceivedAt(): number|null {
         return this.receivedAt;
     }
-
     public setReceivedAt(receivedAt: number|null) {
         this.receivedAt = receivedAt;
         return this;
     }
-
     public withReceivedAt(receivedAt: number|null): this {
         this.receivedAt = receivedAt;
         return this;
     }
-
     public getReadAt(): number|null {
         return this.readAt;
     }
-
     public setReadAt(readAt: number|null) {
         this.readAt = readAt;
         return this;
     }
-
     public withReadAt(readAt: number|null): this {
         this.readAt = readAt;
         return this;
     }
-
     public getExpiresAt(): number|null {
         return this.expiresAt;
     }
-
     public setExpiresAt(expiresAt: number|null) {
         this.expiresAt = expiresAt;
         return this;
     }
-
     public withExpiresAt(expiresAt: number|null): this {
         this.expiresAt = expiresAt;
         return this;

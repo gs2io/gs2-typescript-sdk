@@ -59,128 +59,107 @@ export default class CreateNamespaceRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getEnableAwaitExchange(): boolean|null {
         return this.enableAwaitExchange;
     }
-
     public setEnableAwaitExchange(enableAwaitExchange: boolean|null) {
         this.enableAwaitExchange = enableAwaitExchange;
         return this;
     }
-
     public withEnableAwaitExchange(enableAwaitExchange: boolean|null): this {
         this.enableAwaitExchange = enableAwaitExchange;
         return this;
     }
-
     public getEnableDirectExchange(): boolean|null {
         return this.enableDirectExchange;
     }
-
     public setEnableDirectExchange(enableDirectExchange: boolean|null) {
         this.enableDirectExchange = enableDirectExchange;
         return this;
     }
-
     public withEnableDirectExchange(enableDirectExchange: boolean|null): this {
         this.enableDirectExchange = enableDirectExchange;
         return this;
     }
-
     public getTransactionSetting(): Gs2Exchange.TransactionSetting|null {
         return this.transactionSetting;
     }
-
     public setTransactionSetting(transactionSetting: Gs2Exchange.TransactionSetting|null) {
         this.transactionSetting = transactionSetting;
         return this;
     }
-
     public withTransactionSetting(transactionSetting: Gs2Exchange.TransactionSetting|null): this {
         this.transactionSetting = transactionSetting;
         return this;
     }
-
     public getExchangeScript(): Gs2Exchange.ScriptSetting|null {
         return this.exchangeScript;
     }
-
     public setExchangeScript(exchangeScript: Gs2Exchange.ScriptSetting|null) {
         this.exchangeScript = exchangeScript;
         return this;
     }
-
     public withExchangeScript(exchangeScript: Gs2Exchange.ScriptSetting|null): this {
         this.exchangeScript = exchangeScript;
         return this;
     }
-
     public getLogSetting(): Gs2Exchange.LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: Gs2Exchange.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: Gs2Exchange.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
-
+    /** @deprecated */
     public getQueueNamespaceId(): string|null {
         return this.queueNamespaceId;
     }
-
+    /** @deprecated */
     public setQueueNamespaceId(queueNamespaceId: string|null) {
         this.queueNamespaceId = queueNamespaceId;
         return this;
     }
-
+    /** @deprecated */
     public withQueueNamespaceId(queueNamespaceId: string|null): this {
         this.queueNamespaceId = queueNamespaceId;
         return this;
     }
-
+    /** @deprecated */
     public getKeyId(): string|null {
         return this.keyId;
     }
-
+    /** @deprecated */
     public setKeyId(keyId: string|null) {
         this.keyId = keyId;
         return this;
     }
-
+    /** @deprecated */
     public withKeyId(keyId: string|null): this {
         this.keyId = keyId;
         return this;

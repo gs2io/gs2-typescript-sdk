@@ -57,100 +57,79 @@ export default class PrepareUploadRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getContentType(): string|null {
         return this.contentType;
     }
-
     public setContentType(contentType: string|null) {
         this.contentType = contentType;
         return this;
     }
-
     public withContentType(contentType: string|null): this {
         this.contentType = contentType;
         return this;
     }
-
     public getScope(): string|null {
         return this.scope;
     }
-
     public setScope(scope: string|null) {
         this.scope = scope;
         return this;
     }
-
     public withScope(scope: string|null): this {
         this.scope = scope;
         return this;
     }
-
     public getAllowUserIds(): string[]|null {
         return this.allowUserIds;
     }
-
     public setAllowUserIds(allowUserIds: string[]|null) {
         this.allowUserIds = allowUserIds;
         return this;
     }
-
     public withAllowUserIds(allowUserIds: string[]|null): this {
         this.allowUserIds = allowUserIds;
         return this;
     }
-
     public getUpdateIfExists(): boolean|null {
         return this.updateIfExists;
     }
-
     public setUpdateIfExists(updateIfExists: boolean|null) {
         this.updateIfExists = updateIfExists;
         return this;
     }
-
     public withUpdateIfExists(updateIfExists: boolean|null): this {
         this.updateIfExists = updateIfExists;
         return this;

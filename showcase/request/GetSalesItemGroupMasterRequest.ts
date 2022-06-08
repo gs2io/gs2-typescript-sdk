@@ -52,30 +52,24 @@ export default class GetSalesItemGroupMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getSalesItemGroupName(): string|null {
         return this.salesItemGroupName;
     }
-
     public setSalesItemGroupName(salesItemGroupName: string|null) {
         this.salesItemGroupName = salesItemGroupName;
         return this;
     }
-
     public withSalesItemGroupName(salesItemGroupName: string|null): this {
         this.salesItemGroupName = salesItemGroupName;
         return this;

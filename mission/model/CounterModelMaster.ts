@@ -108,114 +108,90 @@ export default class CounterModelMaster implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{counterName}', counterName ?? '');
     }
-
     public getCounterId(): string|null {
         return this.counterId;
     }
-
     public setCounterId(counterId: string|null) {
         this.counterId = counterId;
         return this;
     }
-
     public withCounterId(counterId: string|null): this {
         this.counterId = counterId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getScopes(): CounterScopeModel[]|null {
         return this.scopes;
     }
-
     public setScopes(scopes: CounterScopeModel[]|null) {
         this.scopes = scopes;
         return this;
     }
-
     public withScopes(scopes: CounterScopeModel[]|null): this {
         this.scopes = scopes;
         return this;
     }
-
     public getChallengePeriodEventId(): string|null {
         return this.challengePeriodEventId;
     }
-
     public setChallengePeriodEventId(challengePeriodEventId: string|null) {
         this.challengePeriodEventId = challengePeriodEventId;
         return this;
     }
-
     public withChallengePeriodEventId(challengePeriodEventId: string|null): this {
         this.challengePeriodEventId = challengePeriodEventId;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

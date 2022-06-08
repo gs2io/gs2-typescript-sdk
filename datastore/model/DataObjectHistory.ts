@@ -152,72 +152,57 @@ export default class DataObjectHistory implements IModel {
             .replace('{dataObjectName}', dataObjectName ?? '')
             .replace('{generation}', generation ?? '');
     }
-
     public getDataObjectHistoryId(): string|null {
         return this.dataObjectHistoryId;
     }
-
     public setDataObjectHistoryId(dataObjectHistoryId: string|null) {
         this.dataObjectHistoryId = dataObjectHistoryId;
         return this;
     }
-
     public withDataObjectHistoryId(dataObjectHistoryId: string|null): this {
         this.dataObjectHistoryId = dataObjectHistoryId;
         return this;
     }
-
     public getDataObjectName(): string|null {
         return this.dataObjectName;
     }
-
     public setDataObjectName(dataObjectName: string|null) {
         this.dataObjectName = dataObjectName;
         return this;
     }
-
     public withDataObjectName(dataObjectName: string|null): this {
         this.dataObjectName = dataObjectName;
         return this;
     }
-
     public getGeneration(): string|null {
         return this.generation;
     }
-
     public setGeneration(generation: string|null) {
         this.generation = generation;
         return this;
     }
-
     public withGeneration(generation: string|null): this {
         this.generation = generation;
         return this;
     }
-
     public getContentLength(): number|null {
         return this.contentLength;
     }
-
     public setContentLength(contentLength: number|null) {
         this.contentLength = contentLength;
         return this;
     }
-
     public withContentLength(contentLength: number|null): this {
         this.contentLength = contentLength;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;

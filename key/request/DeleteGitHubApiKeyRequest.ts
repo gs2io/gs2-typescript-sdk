@@ -52,30 +52,24 @@ export default class DeleteGitHubApiKeyRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getApiKeyName(): string|null {
         return this.apiKeyName;
     }
-
     public setApiKeyName(apiKeyName: string|null) {
         this.apiKeyName = apiKeyName;
         return this;
     }
-
     public withApiKeyName(apiKeyName: string|null): this {
         this.apiKeyName = apiKeyName;
         return this;

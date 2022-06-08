@@ -59,128 +59,101 @@ export default class UpdateNamespaceRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getChangePasswordIfTakeOver(): boolean|null {
         return this.changePasswordIfTakeOver;
     }
-
     public setChangePasswordIfTakeOver(changePasswordIfTakeOver: boolean|null) {
         this.changePasswordIfTakeOver = changePasswordIfTakeOver;
         return this;
     }
-
     public withChangePasswordIfTakeOver(changePasswordIfTakeOver: boolean|null): this {
         this.changePasswordIfTakeOver = changePasswordIfTakeOver;
         return this;
     }
-
     public getDifferentUserIdForLoginAndDataRetention(): boolean|null {
         return this.differentUserIdForLoginAndDataRetention;
     }
-
     public setDifferentUserIdForLoginAndDataRetention(differentUserIdForLoginAndDataRetention: boolean|null) {
         this.differentUserIdForLoginAndDataRetention = differentUserIdForLoginAndDataRetention;
         return this;
     }
-
     public withDifferentUserIdForLoginAndDataRetention(differentUserIdForLoginAndDataRetention: boolean|null): this {
         this.differentUserIdForLoginAndDataRetention = differentUserIdForLoginAndDataRetention;
         return this;
     }
-
     public getCreateAccountScript(): Gs2Account.ScriptSetting|null {
         return this.createAccountScript;
     }
-
     public setCreateAccountScript(createAccountScript: Gs2Account.ScriptSetting|null) {
         this.createAccountScript = createAccountScript;
         return this;
     }
-
     public withCreateAccountScript(createAccountScript: Gs2Account.ScriptSetting|null): this {
         this.createAccountScript = createAccountScript;
         return this;
     }
-
     public getAuthenticationScript(): Gs2Account.ScriptSetting|null {
         return this.authenticationScript;
     }
-
     public setAuthenticationScript(authenticationScript: Gs2Account.ScriptSetting|null) {
         this.authenticationScript = authenticationScript;
         return this;
     }
-
     public withAuthenticationScript(authenticationScript: Gs2Account.ScriptSetting|null): this {
         this.authenticationScript = authenticationScript;
         return this;
     }
-
     public getCreateTakeOverScript(): Gs2Account.ScriptSetting|null {
         return this.createTakeOverScript;
     }
-
     public setCreateTakeOverScript(createTakeOverScript: Gs2Account.ScriptSetting|null) {
         this.createTakeOverScript = createTakeOverScript;
         return this;
     }
-
     public withCreateTakeOverScript(createTakeOverScript: Gs2Account.ScriptSetting|null): this {
         this.createTakeOverScript = createTakeOverScript;
         return this;
     }
-
     public getDoTakeOverScript(): Gs2Account.ScriptSetting|null {
         return this.doTakeOverScript;
     }
-
     public setDoTakeOverScript(doTakeOverScript: Gs2Account.ScriptSetting|null) {
         this.doTakeOverScript = doTakeOverScript;
         return this;
     }
-
     public withDoTakeOverScript(doTakeOverScript: Gs2Account.ScriptSetting|null): this {
         this.doTakeOverScript = doTakeOverScript;
         return this;
     }
-
     public getLogSetting(): Gs2Account.LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: Gs2Account.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: Gs2Account.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;

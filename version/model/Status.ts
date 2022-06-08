@@ -21,30 +21,24 @@ import VersionModel from './VersionModel';
 export default class Status implements IModel {
     private versionModel: VersionModel|null = null;
     private currentVersion: Version|null = null;
-
     public getVersionModel(): VersionModel|null {
         return this.versionModel;
     }
-
     public setVersionModel(versionModel: VersionModel|null) {
         this.versionModel = versionModel;
         return this;
     }
-
     public withVersionModel(versionModel: VersionModel|null): this {
         this.versionModel = versionModel;
         return this;
     }
-
     public getCurrentVersion(): Version|null {
         return this.currentVersion;
     }
-
     public setCurrentVersion(currentVersion: Version|null) {
         this.currentVersion = currentVersion;
         return this;
     }
-
     public withCurrentVersion(currentVersion: Version|null): this {
         this.currentVersion = currentVersion;
         return this;

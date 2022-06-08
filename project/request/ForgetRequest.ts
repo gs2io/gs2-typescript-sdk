@@ -52,30 +52,24 @@ export default class ForgetRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getEmail(): string|null {
         return this.email;
     }
-
     public setEmail(email: string|null) {
         this.email = email;
         return this;
     }
-
     public withEmail(email: string|null): this {
         this.email = email;
         return this;
     }
-
     public getLang(): string|null {
         return this.lang;
     }
-
     public setLang(lang: string|null) {
         this.lang = lang;
         return this;
     }
-
     public withLang(lang: string|null): this {
         this.lang = lang;
         return this;

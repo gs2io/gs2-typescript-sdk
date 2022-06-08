@@ -53,44 +53,35 @@ export default class PutResultRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getRatingName(): string|null {
         return this.ratingName;
     }
-
     public setRatingName(ratingName: string|null) {
         this.ratingName = ratingName;
         return this;
     }
-
     public withRatingName(ratingName: string|null): this {
         this.ratingName = ratingName;
         return this;
     }
-
     public getGameResults(): Gs2Matchmaking.GameResult[]|null {
         return this.gameResults;
     }
-
     public setGameResults(gameResults: Gs2Matchmaking.GameResult[]|null) {
         this.gameResults = gameResults;
         return this;
     }
-
     public withGameResults(gameResults: Gs2Matchmaking.GameResult[]|null): this {
         this.gameResults = gameResults;
         return this;

@@ -63,184 +63,145 @@ export default class UpdateNamespaceRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getEnableRating(): boolean|null {
         return this.enableRating;
     }
-
     public setEnableRating(enableRating: boolean|null) {
         this.enableRating = enableRating;
         return this;
     }
-
     public withEnableRating(enableRating: boolean|null): this {
         this.enableRating = enableRating;
         return this;
     }
-
     public getCreateGatheringTriggerType(): string|null {
         return this.createGatheringTriggerType;
     }
-
     public setCreateGatheringTriggerType(createGatheringTriggerType: string|null) {
         this.createGatheringTriggerType = createGatheringTriggerType;
         return this;
     }
-
     public withCreateGatheringTriggerType(createGatheringTriggerType: string|null): this {
         this.createGatheringTriggerType = createGatheringTriggerType;
         return this;
     }
-
     public getCreateGatheringTriggerRealtimeNamespaceId(): string|null {
         return this.createGatheringTriggerRealtimeNamespaceId;
     }
-
     public setCreateGatheringTriggerRealtimeNamespaceId(createGatheringTriggerRealtimeNamespaceId: string|null) {
         this.createGatheringTriggerRealtimeNamespaceId = createGatheringTriggerRealtimeNamespaceId;
         return this;
     }
-
     public withCreateGatheringTriggerRealtimeNamespaceId(createGatheringTriggerRealtimeNamespaceId: string|null): this {
         this.createGatheringTriggerRealtimeNamespaceId = createGatheringTriggerRealtimeNamespaceId;
         return this;
     }
-
     public getCreateGatheringTriggerScriptId(): string|null {
         return this.createGatheringTriggerScriptId;
     }
-
     public setCreateGatheringTriggerScriptId(createGatheringTriggerScriptId: string|null) {
         this.createGatheringTriggerScriptId = createGatheringTriggerScriptId;
         return this;
     }
-
     public withCreateGatheringTriggerScriptId(createGatheringTriggerScriptId: string|null): this {
         this.createGatheringTriggerScriptId = createGatheringTriggerScriptId;
         return this;
     }
-
     public getCompleteMatchmakingTriggerType(): string|null {
         return this.completeMatchmakingTriggerType;
     }
-
     public setCompleteMatchmakingTriggerType(completeMatchmakingTriggerType: string|null) {
         this.completeMatchmakingTriggerType = completeMatchmakingTriggerType;
         return this;
     }
-
     public withCompleteMatchmakingTriggerType(completeMatchmakingTriggerType: string|null): this {
         this.completeMatchmakingTriggerType = completeMatchmakingTriggerType;
         return this;
     }
-
     public getCompleteMatchmakingTriggerRealtimeNamespaceId(): string|null {
         return this.completeMatchmakingTriggerRealtimeNamespaceId;
     }
-
     public setCompleteMatchmakingTriggerRealtimeNamespaceId(completeMatchmakingTriggerRealtimeNamespaceId: string|null) {
         this.completeMatchmakingTriggerRealtimeNamespaceId = completeMatchmakingTriggerRealtimeNamespaceId;
         return this;
     }
-
     public withCompleteMatchmakingTriggerRealtimeNamespaceId(completeMatchmakingTriggerRealtimeNamespaceId: string|null): this {
         this.completeMatchmakingTriggerRealtimeNamespaceId = completeMatchmakingTriggerRealtimeNamespaceId;
         return this;
     }
-
     public getCompleteMatchmakingTriggerScriptId(): string|null {
         return this.completeMatchmakingTriggerScriptId;
     }
-
     public setCompleteMatchmakingTriggerScriptId(completeMatchmakingTriggerScriptId: string|null) {
         this.completeMatchmakingTriggerScriptId = completeMatchmakingTriggerScriptId;
         return this;
     }
-
     public withCompleteMatchmakingTriggerScriptId(completeMatchmakingTriggerScriptId: string|null): this {
         this.completeMatchmakingTriggerScriptId = completeMatchmakingTriggerScriptId;
         return this;
     }
-
     public getJoinNotification(): Gs2Matchmaking.NotificationSetting|null {
         return this.joinNotification;
     }
-
     public setJoinNotification(joinNotification: Gs2Matchmaking.NotificationSetting|null) {
         this.joinNotification = joinNotification;
         return this;
     }
-
     public withJoinNotification(joinNotification: Gs2Matchmaking.NotificationSetting|null): this {
         this.joinNotification = joinNotification;
         return this;
     }
-
     public getLeaveNotification(): Gs2Matchmaking.NotificationSetting|null {
         return this.leaveNotification;
     }
-
     public setLeaveNotification(leaveNotification: Gs2Matchmaking.NotificationSetting|null) {
         this.leaveNotification = leaveNotification;
         return this;
     }
-
     public withLeaveNotification(leaveNotification: Gs2Matchmaking.NotificationSetting|null): this {
         this.leaveNotification = leaveNotification;
         return this;
     }
-
     public getCompleteNotification(): Gs2Matchmaking.NotificationSetting|null {
         return this.completeNotification;
     }
-
     public setCompleteNotification(completeNotification: Gs2Matchmaking.NotificationSetting|null) {
         this.completeNotification = completeNotification;
         return this;
     }
-
     public withCompleteNotification(completeNotification: Gs2Matchmaking.NotificationSetting|null): this {
         this.completeNotification = completeNotification;
         return this;
     }
-
     public getLogSetting(): Gs2Matchmaking.LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: Gs2Matchmaking.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: Gs2Matchmaking.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;

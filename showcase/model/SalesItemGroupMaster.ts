@@ -106,100 +106,79 @@ export default class SalesItemGroupMaster implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{salesItemGroupName}', salesItemGroupName ?? '');
     }
-
     public getSalesItemGroupId(): string|null {
         return this.salesItemGroupId;
     }
-
     public setSalesItemGroupId(salesItemGroupId: string|null) {
         this.salesItemGroupId = salesItemGroupId;
         return this;
     }
-
     public withSalesItemGroupId(salesItemGroupId: string|null): this {
         this.salesItemGroupId = salesItemGroupId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getSalesItemNames(): string[]|null {
         return this.salesItemNames;
     }
-
     public setSalesItemNames(salesItemNames: string[]|null) {
         this.salesItemNames = salesItemNames;
         return this;
     }
-
     public withSalesItemNames(salesItemNames: string[]|null): this {
         this.salesItemNames = salesItemNames;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

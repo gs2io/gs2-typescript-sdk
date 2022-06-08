@@ -57,100 +57,79 @@ export default class DescribeReceiptsRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getSlot(): number|null {
         return this.slot;
     }
-
     public setSlot(slot: number|null) {
         this.slot = slot;
         return this;
     }
-
     public withSlot(slot: number|null): this {
         this.slot = slot;
         return this;
     }
-
     public getBegin(): number|null {
         return this.begin;
     }
-
     public setBegin(begin: number|null) {
         this.begin = begin;
         return this;
     }
-
     public withBegin(begin: number|null): this {
         this.begin = begin;
         return this;
     }
-
     public getEnd(): number|null {
         return this.end;
     }
-
     public setEnd(end: number|null) {
         this.end = end;
         return this;
     }
-
     public withEnd(end: number|null): this {
         this.end = end;
         return this;
     }
-
     public getPageToken(): string|null {
         return this.pageToken;
     }
-
     public setPageToken(pageToken: string|null) {
         this.pageToken = pageToken;
         return this;
     }
-
     public withPageToken(pageToken: string|null): this {
         this.pageToken = pageToken;
         return this;
     }
-
     public getLimit(): number|null {
         return this.limit;
     }
-
     public setLimit(limit: number|null) {
         this.limit = limit;
         return this;
     }
-
     public withLimit(limit: number|null): this {
         this.limit = limit;
         return this;

@@ -107,114 +107,90 @@ export default class Room implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{roomName}', roomName ?? '');
     }
-
     public getRoomId(): string|null {
         return this.roomId;
     }
-
     public setRoomId(roomId: string|null) {
         this.roomId = roomId;
         return this;
     }
-
     public withRoomId(roomId: string|null): this {
         this.roomId = roomId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getPassword(): string|null {
         return this.password;
     }
-
     public setPassword(password: string|null) {
         this.password = password;
         return this;
     }
-
     public withPassword(password: string|null): this {
         this.password = password;
         return this;
     }
-
     public getWhiteListUserIds(): string[]|null {
         return this.whiteListUserIds;
     }
-
     public setWhiteListUserIds(whiteListUserIds: string[]|null) {
         this.whiteListUserIds = whiteListUserIds;
         return this;
     }
-
     public withWhiteListUserIds(whiteListUserIds: string[]|null): this {
         this.whiteListUserIds = whiteListUserIds;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

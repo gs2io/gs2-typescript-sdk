@@ -20,44 +20,35 @@ export default class NotificationSetting implements IModel {
     private gatewayNamespaceId: string|null = null;
     private enableTransferMobileNotification: boolean|null = null;
     private sound: string|null = null;
-
     public getGatewayNamespaceId(): string|null {
         return this.gatewayNamespaceId;
     }
-
     public setGatewayNamespaceId(gatewayNamespaceId: string|null) {
         this.gatewayNamespaceId = gatewayNamespaceId;
         return this;
     }
-
     public withGatewayNamespaceId(gatewayNamespaceId: string|null): this {
         this.gatewayNamespaceId = gatewayNamespaceId;
         return this;
     }
-
     public getEnableTransferMobileNotification(): boolean|null {
         return this.enableTransferMobileNotification;
     }
-
     public setEnableTransferMobileNotification(enableTransferMobileNotification: boolean|null) {
         this.enableTransferMobileNotification = enableTransferMobileNotification;
         return this;
     }
-
     public withEnableTransferMobileNotification(enableTransferMobileNotification: boolean|null): this {
         this.enableTransferMobileNotification = enableTransferMobileNotification;
         return this;
     }
-
     public getSound(): string|null {
         return this.sound;
     }
-
     public setSound(sound: string|null) {
         this.sound = sound;
         return this;
     }
-
     public withSound(sound: string|null): this {
         this.sound = sound;
         return this;

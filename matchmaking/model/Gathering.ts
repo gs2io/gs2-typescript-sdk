@@ -112,128 +112,101 @@ export default class Gathering implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{gatheringName}', gatheringName ?? '');
     }
-
     public getGatheringId(): string|null {
         return this.gatheringId;
     }
-
     public setGatheringId(gatheringId: string|null) {
         this.gatheringId = gatheringId;
         return this;
     }
-
     public withGatheringId(gatheringId: string|null): this {
         this.gatheringId = gatheringId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getAttributeRanges(): AttributeRange[]|null {
         return this.attributeRanges;
     }
-
     public setAttributeRanges(attributeRanges: AttributeRange[]|null) {
         this.attributeRanges = attributeRanges;
         return this;
     }
-
     public withAttributeRanges(attributeRanges: AttributeRange[]|null): this {
         this.attributeRanges = attributeRanges;
         return this;
     }
-
     public getCapacityOfRoles(): CapacityOfRole[]|null {
         return this.capacityOfRoles;
     }
-
     public setCapacityOfRoles(capacityOfRoles: CapacityOfRole[]|null) {
         this.capacityOfRoles = capacityOfRoles;
         return this;
     }
-
     public withCapacityOfRoles(capacityOfRoles: CapacityOfRole[]|null): this {
         this.capacityOfRoles = capacityOfRoles;
         return this;
     }
-
     public getAllowUserIds(): string[]|null {
         return this.allowUserIds;
     }
-
     public setAllowUserIds(allowUserIds: string[]|null) {
         this.allowUserIds = allowUserIds;
         return this;
     }
-
     public withAllowUserIds(allowUserIds: string[]|null): this {
         this.allowUserIds = allowUserIds;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getExpiresAt(): number|null {
         return this.expiresAt;
     }
-
     public setExpiresAt(expiresAt: number|null) {
         this.expiresAt = expiresAt;
         return this;
     }
-
     public withExpiresAt(expiresAt: number|null): this {
         this.expiresAt = expiresAt;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

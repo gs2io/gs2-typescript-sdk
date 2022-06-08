@@ -55,58 +55,46 @@ export default class AddMoldCapacityByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getMoldName(): string|null {
         return this.moldName;
     }
-
     public setMoldName(moldName: string|null) {
         this.moldName = moldName;
         return this;
     }
-
     public withMoldName(moldName: string|null): this {
         this.moldName = moldName;
         return this;
     }
-
     public getCapacity(): number|null {
         return this.capacity;
     }
-
     public setCapacity(capacity: number|null) {
         this.capacity = capacity;
         return this;
     }
-
     public withCapacity(capacity: number|null): this {
         this.capacity = capacity;
         return this;

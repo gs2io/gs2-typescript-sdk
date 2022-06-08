@@ -56,86 +56,68 @@ export default class CreateGlobalMessageMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getReadAcquireActions(): Gs2Inbox.AcquireAction[]|null {
         return this.readAcquireActions;
     }
-
     public setReadAcquireActions(readAcquireActions: Gs2Inbox.AcquireAction[]|null) {
         this.readAcquireActions = readAcquireActions;
         return this;
     }
-
     public withReadAcquireActions(readAcquireActions: Gs2Inbox.AcquireAction[]|null): this {
         this.readAcquireActions = readAcquireActions;
         return this;
     }
-
     public getExpiresTimeSpan(): Gs2Inbox.TimeSpan|null {
         return this.expiresTimeSpan;
     }
-
     public setExpiresTimeSpan(expiresTimeSpan: Gs2Inbox.TimeSpan|null) {
         this.expiresTimeSpan = expiresTimeSpan;
         return this;
     }
-
     public withExpiresTimeSpan(expiresTimeSpan: Gs2Inbox.TimeSpan|null): this {
         this.expiresTimeSpan = expiresTimeSpan;
         return this;
     }
-
     public getExpiresAt(): number|null {
         return this.expiresAt;
     }
-
     public setExpiresAt(expiresAt: number|null) {
         this.expiresAt = expiresAt;
         return this;
     }
-
     public withExpiresAt(expiresAt: number|null): this {
         this.expiresAt = expiresAt;
         return this;

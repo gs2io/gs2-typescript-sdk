@@ -105,72 +105,57 @@ export default class CounterModel implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{counterName}', counterName ?? '');
     }
-
     public getCounterId(): string|null {
         return this.counterId;
     }
-
     public setCounterId(counterId: string|null) {
         this.counterId = counterId;
         return this;
     }
-
     public withCounterId(counterId: string|null): this {
         this.counterId = counterId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getScopes(): CounterScopeModel[]|null {
         return this.scopes;
     }
-
     public setScopes(scopes: CounterScopeModel[]|null) {
         this.scopes = scopes;
         return this;
     }
-
     public withScopes(scopes: CounterScopeModel[]|null): this {
         this.scopes = scopes;
         return this;
     }
-
     public getChallengePeriodEventId(): string|null {
         return this.challengePeriodEventId;
     }
-
     public setChallengePeriodEventId(challengePeriodEventId: string|null) {
         this.challengePeriodEventId = challengePeriodEventId;
         return this;
     }
-
     public withChallengePeriodEventId(challengePeriodEventId: string|null): this {
         this.challengePeriodEventId = challengePeriodEventId;
         return this;

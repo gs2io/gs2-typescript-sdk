@@ -53,44 +53,35 @@ export default class GetStaminaByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getStaminaName(): string|null {
         return this.staminaName;
     }
-
     public setStaminaName(staminaName: string|null) {
         this.staminaName = staminaName;
         return this;
     }
-
     public withStaminaName(staminaName: string|null): this {
         this.staminaName = staminaName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;

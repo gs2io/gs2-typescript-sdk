@@ -128,86 +128,68 @@ export default class Subscribe implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{categoryName}', categoryName ?? '');
     }
-
     public getSubscribeId(): string|null {
         return this.subscribeId;
     }
-
     public setSubscribeId(subscribeId: string|null) {
         this.subscribeId = subscribeId;
         return this;
     }
-
     public withSubscribeId(subscribeId: string|null): this {
         this.subscribeId = subscribeId;
         return this;
     }
-
     public getCategoryName(): string|null {
         return this.categoryName;
     }
-
     public setCategoryName(categoryName: string|null) {
         this.categoryName = categoryName;
         return this;
     }
-
     public withCategoryName(categoryName: string|null): this {
         this.categoryName = categoryName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getTargetUserIds(): string[]|null {
         return this.targetUserIds;
     }
-
     public setTargetUserIds(targetUserIds: string[]|null) {
         this.targetUserIds = targetUserIds;
         return this;
     }
-
     public withTargetUserIds(targetUserIds: string[]|null): this {
         this.targetUserIds = targetUserIds;
         return this;
     }
-
     public getSubscribedUserIds(): string[]|null {
         return this.subscribedUserIds;
     }
-
     public setSubscribedUserIds(subscribedUserIds: string[]|null) {
         this.subscribedUserIds = subscribedUserIds;
         return this;
     }
-
     public withSubscribedUserIds(subscribedUserIds: string[]|null): this {
         this.subscribedUserIds = subscribedUserIds;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;

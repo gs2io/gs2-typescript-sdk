@@ -23,6 +23,8 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private enableAutoRun: boolean|null = null;
+    private runNotification: NotificationSetting|null = null;
     private pushNotification: NotificationSetting|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
@@ -87,100 +89,101 @@ export default class Namespace implements IModel {
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '');
     }
-
     public getNamespaceId(): string|null {
         return this.namespaceId;
     }
-
     public setNamespaceId(namespaceId: string|null) {
         this.namespaceId = namespaceId;
         return this;
     }
-
     public withNamespaceId(namespaceId: string|null): this {
         this.namespaceId = namespaceId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
+    public getEnableAutoRun(): boolean|null {
+        return this.enableAutoRun;
+    }
+    public setEnableAutoRun(enableAutoRun: boolean|null) {
+        this.enableAutoRun = enableAutoRun;
+        return this;
+    }
+    public withEnableAutoRun(enableAutoRun: boolean|null): this {
+        this.enableAutoRun = enableAutoRun;
+        return this;
+    }
+    public getRunNotification(): NotificationSetting|null {
+        return this.runNotification;
+    }
+    public setRunNotification(runNotification: NotificationSetting|null) {
+        this.runNotification = runNotification;
+        return this;
+    }
+    public withRunNotification(runNotification: NotificationSetting|null): this {
+        this.runNotification = runNotification;
+        return this;
+    }
     public getPushNotification(): NotificationSetting|null {
         return this.pushNotification;
     }
-
     public setPushNotification(pushNotification: NotificationSetting|null) {
         this.pushNotification = pushNotification;
         return this;
     }
-
     public withPushNotification(pushNotification: NotificationSetting|null): this {
         this.pushNotification = pushNotification;
         return this;
     }
-
     public getLogSetting(): LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;
@@ -194,6 +197,8 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withEnableAutoRun(data["enableAutoRun"])
+            .withRunNotification(NotificationSetting.fromDict(data["runNotification"]))
             .withPushNotification(NotificationSetting.fromDict(data["pushNotification"]))
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
@@ -205,6 +210,8 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "enableAutoRun": this.getEnableAutoRun(),
+            "runNotification": this.getRunNotification()?.toDict(),
             "pushNotification": this.getPushNotification()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),

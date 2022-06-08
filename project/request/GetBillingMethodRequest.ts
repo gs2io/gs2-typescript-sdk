@@ -52,30 +52,24 @@ export default class GetBillingMethodRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getAccountToken(): string|null {
         return this.accountToken;
     }
-
     public setAccountToken(accountToken: string|null) {
         this.accountToken = accountToken;
         return this;
     }
-
     public withAccountToken(accountToken: string|null): this {
         this.accountToken = accountToken;
         return this;
     }
-
     public getBillingMethodName(): string|null {
         return this.billingMethodName;
     }
-
     public setBillingMethodName(billingMethodName: string|null) {
         this.billingMethodName = billingMethodName;
         return this;
     }
-
     public withBillingMethodName(billingMethodName: string|null): this {
         this.billingMethodName = billingMethodName;
         return this;

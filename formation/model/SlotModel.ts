@@ -20,44 +20,35 @@ export default class SlotModel implements IModel {
     private name: string|null = null;
     private propertyRegex: string|null = null;
     private metadata: string|null = null;
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getPropertyRegex(): string|null {
         return this.propertyRegex;
     }
-
     public setPropertyRegex(propertyRegex: string|null) {
         this.propertyRegex = propertyRegex;
         return this;
     }
-
     public withPropertyRegex(propertyRegex: string|null): this {
         this.propertyRegex = propertyRegex;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;

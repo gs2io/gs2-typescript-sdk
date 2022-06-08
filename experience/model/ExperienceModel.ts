@@ -107,100 +107,79 @@ export default class ExperienceModel implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{experienceName}', experienceName ?? '');
     }
-
     public getExperienceModelId(): string|null {
         return this.experienceModelId;
     }
-
     public setExperienceModelId(experienceModelId: string|null) {
         this.experienceModelId = experienceModelId;
         return this;
     }
-
     public withExperienceModelId(experienceModelId: string|null): this {
         this.experienceModelId = experienceModelId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getDefaultExperience(): number|null {
         return this.defaultExperience;
     }
-
     public setDefaultExperience(defaultExperience: number|null) {
         this.defaultExperience = defaultExperience;
         return this;
     }
-
     public withDefaultExperience(defaultExperience: number|null): this {
         this.defaultExperience = defaultExperience;
         return this;
     }
-
     public getDefaultRankCap(): number|null {
         return this.defaultRankCap;
     }
-
     public setDefaultRankCap(defaultRankCap: number|null) {
         this.defaultRankCap = defaultRankCap;
         return this;
     }
-
     public withDefaultRankCap(defaultRankCap: number|null): this {
         this.defaultRankCap = defaultRankCap;
         return this;
     }
-
     public getMaxRankCap(): number|null {
         return this.maxRankCap;
     }
-
     public setMaxRankCap(maxRankCap: number|null) {
         this.maxRankCap = maxRankCap;
         return this;
     }
-
     public withMaxRankCap(maxRankCap: number|null): this {
         this.maxRankCap = maxRankCap;
         return this;
     }
-
     public getRankThreshold(): Threshold|null {
         return this.rankThreshold;
     }
-
     public setRankThreshold(rankThreshold: Threshold|null) {
         this.rankThreshold = rankThreshold;
         return this;
     }
-
     public withRankThreshold(rankThreshold: Threshold|null): this {
         this.rankThreshold = rankThreshold;
         return this;

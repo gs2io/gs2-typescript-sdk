@@ -24,7 +24,9 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private enableAutoRun: boolean|null = null;
     private pushNotification: Gs2JobQueue.NotificationSetting|null = null;
+    private runNotification: Gs2JobQueue.NotificationSetting|null = null;
     private logSetting: Gs2JobQueue.LogSetting|null = null;
 
     public getRequestId(): string|null {
@@ -54,58 +56,68 @@ export default class CreateNamespaceRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
+    public getEnableAutoRun(): boolean|null {
+        return this.enableAutoRun;
+    }
+    public setEnableAutoRun(enableAutoRun: boolean|null) {
+        this.enableAutoRun = enableAutoRun;
+        return this;
+    }
+    public withEnableAutoRun(enableAutoRun: boolean|null): this {
+        this.enableAutoRun = enableAutoRun;
+        return this;
+    }
     public getPushNotification(): Gs2JobQueue.NotificationSetting|null {
         return this.pushNotification;
     }
-
     public setPushNotification(pushNotification: Gs2JobQueue.NotificationSetting|null) {
         this.pushNotification = pushNotification;
         return this;
     }
-
     public withPushNotification(pushNotification: Gs2JobQueue.NotificationSetting|null): this {
         this.pushNotification = pushNotification;
         return this;
     }
-
+    public getRunNotification(): Gs2JobQueue.NotificationSetting|null {
+        return this.runNotification;
+    }
+    public setRunNotification(runNotification: Gs2JobQueue.NotificationSetting|null) {
+        this.runNotification = runNotification;
+        return this;
+    }
+    public withRunNotification(runNotification: Gs2JobQueue.NotificationSetting|null): this {
+        this.runNotification = runNotification;
+        return this;
+    }
     public getLogSetting(): Gs2JobQueue.LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: Gs2JobQueue.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: Gs2JobQueue.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
@@ -115,7 +127,9 @@ export default class CreateNamespaceRequest implements IRequest {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withEnableAutoRun(data["enableAutoRun"])
             .withPushNotification(Gs2JobQueue.NotificationSetting.fromDict(data["pushNotification"]))
+            .withRunNotification(Gs2JobQueue.NotificationSetting.fromDict(data["runNotification"]))
             .withLogSetting(Gs2JobQueue.LogSetting.fromDict(data["logSetting"]));
     }
 
@@ -123,7 +137,9 @@ export default class CreateNamespaceRequest implements IRequest {
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "enableAutoRun": this.getEnableAutoRun(),
             "pushNotification": this.getPushNotification()?.toDict(),
+            "runNotification": this.getRunNotification()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
         };
     }

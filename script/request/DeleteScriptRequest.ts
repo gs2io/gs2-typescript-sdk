@@ -52,30 +52,24 @@ export default class DeleteScriptRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getScriptName(): string|null {
         return this.scriptName;
     }
-
     public setScriptName(scriptName: string|null) {
         this.scriptName = scriptName;
         return this;
     }
-
     public withScriptName(scriptName: string|null): this {
         this.scriptName = scriptName;
         return this;

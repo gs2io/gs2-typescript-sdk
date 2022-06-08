@@ -153,86 +153,68 @@ export default class JobResult implements IModel {
             .replace('{jobName}', jobName ?? '')
             .replace('{tryNumber}', tryNumber ?? '');
     }
-
     public getJobResultId(): string|null {
         return this.jobResultId;
     }
-
     public setJobResultId(jobResultId: string|null) {
         this.jobResultId = jobResultId;
         return this;
     }
-
     public withJobResultId(jobResultId: string|null): this {
         this.jobResultId = jobResultId;
         return this;
     }
-
     public getJobId(): string|null {
         return this.jobId;
     }
-
     public setJobId(jobId: string|null) {
         this.jobId = jobId;
         return this;
     }
-
     public withJobId(jobId: string|null): this {
         this.jobId = jobId;
         return this;
     }
-
     public getTryNumber(): number|null {
         return this.tryNumber;
     }
-
     public setTryNumber(tryNumber: number|null) {
         this.tryNumber = tryNumber;
         return this;
     }
-
     public withTryNumber(tryNumber: number|null): this {
         this.tryNumber = tryNumber;
         return this;
     }
-
     public getStatusCode(): number|null {
         return this.statusCode;
     }
-
     public setStatusCode(statusCode: number|null) {
         this.statusCode = statusCode;
         return this;
     }
-
     public withStatusCode(statusCode: number|null): this {
         this.statusCode = statusCode;
         return this;
     }
-
     public getResult(): string|null {
         return this.result;
     }
-
     public setResult(result: string|null) {
         this.result = result;
         return this;
     }
-
     public withResult(result: string|null): this {
         this.result = result;
         return this;
     }
-
     public getTryAt(): number|null {
         return this.tryAt;
     }
-
     public setTryAt(tryAt: number|null) {
         this.tryAt = tryAt;
         return this;
     }
-
     public withTryAt(tryAt: number|null): this {
         this.tryAt = tryAt;
         return this;

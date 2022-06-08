@@ -52,30 +52,24 @@ export default class GetCumulativeRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getResourceGrn(): string|null {
         return this.resourceGrn;
     }
-
     public setResourceGrn(resourceGrn: string|null) {
         this.resourceGrn = resourceGrn;
         return this;
     }
-
     public withResourceGrn(resourceGrn: string|null): this {
         this.resourceGrn = resourceGrn;
         return this;

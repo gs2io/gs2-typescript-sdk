@@ -116,240 +116,189 @@ export default class CategoryModelMaster implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{categoryName}', categoryName ?? '');
     }
-
     public getCategoryModelId(): string|null {
         return this.categoryModelId;
     }
-
     public setCategoryModelId(categoryModelId: string|null) {
         this.categoryModelId = categoryModelId;
         return this;
     }
-
     public withCategoryModelId(categoryModelId: string|null): this {
         this.categoryModelId = categoryModelId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getMinimumValue(): number|null {
         return this.minimumValue;
     }
-
     public setMinimumValue(minimumValue: number|null) {
         this.minimumValue = minimumValue;
         return this;
     }
-
     public withMinimumValue(minimumValue: number|null): this {
         this.minimumValue = minimumValue;
         return this;
     }
-
     public getMaximumValue(): number|null {
         return this.maximumValue;
     }
-
     public setMaximumValue(maximumValue: number|null) {
         this.maximumValue = maximumValue;
         return this;
     }
-
     public withMaximumValue(maximumValue: number|null): this {
         this.maximumValue = maximumValue;
         return this;
     }
-
     public getOrderDirection(): string|null {
         return this.orderDirection;
     }
-
     public setOrderDirection(orderDirection: string|null) {
         this.orderDirection = orderDirection;
         return this;
     }
-
     public withOrderDirection(orderDirection: string|null): this {
         this.orderDirection = orderDirection;
         return this;
     }
-
     public getScope(): string|null {
         return this.scope;
     }
-
     public setScope(scope: string|null) {
         this.scope = scope;
         return this;
     }
-
     public withScope(scope: string|null): this {
         this.scope = scope;
         return this;
     }
-
     public getUniqueByUserId(): boolean|null {
         return this.uniqueByUserId;
     }
-
     public setUniqueByUserId(uniqueByUserId: boolean|null) {
         this.uniqueByUserId = uniqueByUserId;
         return this;
     }
-
     public withUniqueByUserId(uniqueByUserId: boolean|null): this {
         this.uniqueByUserId = uniqueByUserId;
         return this;
     }
-
     public getCalculateFixedTimingHour(): number|null {
         return this.calculateFixedTimingHour;
     }
-
     public setCalculateFixedTimingHour(calculateFixedTimingHour: number|null) {
         this.calculateFixedTimingHour = calculateFixedTimingHour;
         return this;
     }
-
     public withCalculateFixedTimingHour(calculateFixedTimingHour: number|null): this {
         this.calculateFixedTimingHour = calculateFixedTimingHour;
         return this;
     }
-
     public getCalculateFixedTimingMinute(): number|null {
         return this.calculateFixedTimingMinute;
     }
-
     public setCalculateFixedTimingMinute(calculateFixedTimingMinute: number|null) {
         this.calculateFixedTimingMinute = calculateFixedTimingMinute;
         return this;
     }
-
     public withCalculateFixedTimingMinute(calculateFixedTimingMinute: number|null): this {
         this.calculateFixedTimingMinute = calculateFixedTimingMinute;
         return this;
     }
-
     public getCalculateIntervalMinutes(): number|null {
         return this.calculateIntervalMinutes;
     }
-
     public setCalculateIntervalMinutes(calculateIntervalMinutes: number|null) {
         this.calculateIntervalMinutes = calculateIntervalMinutes;
         return this;
     }
-
     public withCalculateIntervalMinutes(calculateIntervalMinutes: number|null): this {
         this.calculateIntervalMinutes = calculateIntervalMinutes;
         return this;
     }
-
     public getEntryPeriodEventId(): string|null {
         return this.entryPeriodEventId;
     }
-
     public setEntryPeriodEventId(entryPeriodEventId: string|null) {
         this.entryPeriodEventId = entryPeriodEventId;
         return this;
     }
-
     public withEntryPeriodEventId(entryPeriodEventId: string|null): this {
         this.entryPeriodEventId = entryPeriodEventId;
         return this;
     }
-
     public getAccessPeriodEventId(): string|null {
         return this.accessPeriodEventId;
     }
-
     public setAccessPeriodEventId(accessPeriodEventId: string|null) {
         this.accessPeriodEventId = accessPeriodEventId;
         return this;
     }
-
     public withAccessPeriodEventId(accessPeriodEventId: string|null): this {
         this.accessPeriodEventId = accessPeriodEventId;
         return this;
     }
-
     public getGeneration(): string|null {
         return this.generation;
     }
-
     public setGeneration(generation: string|null) {
         this.generation = generation;
         return this;
     }
-
     public withGeneration(generation: string|null): this {
         this.generation = generation;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

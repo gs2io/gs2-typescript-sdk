@@ -108,128 +108,101 @@ export default class MoldModelMaster implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{moldName}', moldName ?? '');
     }
-
     public getMoldModelId(): string|null {
         return this.moldModelId;
     }
-
     public setMoldModelId(moldModelId: string|null) {
         this.moldModelId = moldModelId;
         return this;
     }
-
     public withMoldModelId(moldModelId: string|null): this {
         this.moldModelId = moldModelId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getInitialMaxCapacity(): number|null {
         return this.initialMaxCapacity;
     }
-
     public setInitialMaxCapacity(initialMaxCapacity: number|null) {
         this.initialMaxCapacity = initialMaxCapacity;
         return this;
     }
-
     public withInitialMaxCapacity(initialMaxCapacity: number|null): this {
         this.initialMaxCapacity = initialMaxCapacity;
         return this;
     }
-
     public getMaxCapacity(): number|null {
         return this.maxCapacity;
     }
-
     public setMaxCapacity(maxCapacity: number|null) {
         this.maxCapacity = maxCapacity;
         return this;
     }
-
     public withMaxCapacity(maxCapacity: number|null): this {
         this.maxCapacity = maxCapacity;
         return this;
     }
-
     public getFormModelName(): string|null {
         return this.formModelName;
     }
-
     public setFormModelName(formModelName: string|null) {
         this.formModelName = formModelName;
         return this;
     }
-
     public withFormModelName(formModelName: string|null): this {
         this.formModelName = formModelName;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

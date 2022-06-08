@@ -23,86 +23,68 @@ export default class News implements IModel {
     private scheduleEventId: string|null = null;
     private timestamp: number|null = null;
     private frontMatter: string|null = null;
-
     public getSection(): string|null {
         return this.section;
     }
-
     public setSection(section: string|null) {
         this.section = section;
         return this;
     }
-
     public withSection(section: string|null): this {
         this.section = section;
         return this;
     }
-
     public getContent(): string|null {
         return this.content;
     }
-
     public setContent(content: string|null) {
         this.content = content;
         return this;
     }
-
     public withContent(content: string|null): this {
         this.content = content;
         return this;
     }
-
     public getTitle(): string|null {
         return this.title;
     }
-
     public setTitle(title: string|null) {
         this.title = title;
         return this;
     }
-
     public withTitle(title: string|null): this {
         this.title = title;
         return this;
     }
-
     public getScheduleEventId(): string|null {
         return this.scheduleEventId;
     }
-
     public setScheduleEventId(scheduleEventId: string|null) {
         this.scheduleEventId = scheduleEventId;
         return this;
     }
-
     public withScheduleEventId(scheduleEventId: string|null): this {
         this.scheduleEventId = scheduleEventId;
         return this;
     }
-
     public getTimestamp(): number|null {
         return this.timestamp;
     }
-
     public setTimestamp(timestamp: number|null) {
         this.timestamp = timestamp;
         return this;
     }
-
     public withTimestamp(timestamp: number|null): this {
         this.timestamp = timestamp;
         return this;
     }
-
     public getFrontMatter(): string|null {
         return this.frontMatter;
     }
-
     public setFrontMatter(frontMatter: string|null) {
         this.frontMatter = frontMatter;
         return this;
     }
-
     public withFrontMatter(frontMatter: string|null): this {
         this.frontMatter = frontMatter;
         return this;

@@ -67,114 +67,90 @@ export default class Receipt implements IModel {
             .replace('{accountName}', accountName ?? '')
             .replace('{receiptName}', receiptName ?? '');
     }
-
     public getReceiptId(): string|null {
         return this.receiptId;
     }
-
     public setReceiptId(receiptId: string|null) {
         this.receiptId = receiptId;
         return this;
     }
-
     public withReceiptId(receiptId: string|null): this {
         this.receiptId = receiptId;
         return this;
     }
-
     public getAccountName(): string|null {
         return this.accountName;
     }
-
     public setAccountName(accountName: string|null) {
         this.accountName = accountName;
         return this;
     }
-
     public withAccountName(accountName: string|null): this {
         this.accountName = accountName;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDate(): number|null {
         return this.date;
     }
-
     public setDate(date: number|null) {
         this.date = date;
         return this;
     }
-
     public withDate(date: number|null): this {
         this.date = date;
         return this;
     }
-
     public getAmount(): string|null {
         return this.amount;
     }
-
     public setAmount(amount: string|null) {
         this.amount = amount;
         return this;
     }
-
     public withAmount(amount: string|null): this {
         this.amount = amount;
         return this;
     }
-
     public getPdfUrl(): string|null {
         return this.pdfUrl;
     }
-
     public setPdfUrl(pdfUrl: string|null) {
         this.pdfUrl = pdfUrl;
         return this;
     }
-
     public withPdfUrl(pdfUrl: string|null): this {
         this.pdfUrl = pdfUrl;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

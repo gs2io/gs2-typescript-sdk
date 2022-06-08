@@ -109,128 +109,101 @@ export default class Progress implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{userId}', userId ?? '');
     }
-
     public getProgressId(): string|null {
         return this.progressId;
     }
-
     public setProgressId(progressId: string|null) {
         this.progressId = progressId;
         return this;
     }
-
     public withProgressId(progressId: string|null): this {
         this.progressId = progressId;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getTransactionId(): string|null {
         return this.transactionId;
     }
-
     public setTransactionId(transactionId: string|null) {
         this.transactionId = transactionId;
         return this;
     }
-
     public withTransactionId(transactionId: string|null): this {
         this.transactionId = transactionId;
         return this;
     }
-
     public getQuestModelId(): string|null {
         return this.questModelId;
     }
-
     public setQuestModelId(questModelId: string|null) {
         this.questModelId = questModelId;
         return this;
     }
-
     public withQuestModelId(questModelId: string|null): this {
         this.questModelId = questModelId;
         return this;
     }
-
     public getRandomSeed(): number|null {
         return this.randomSeed;
     }
-
     public setRandomSeed(randomSeed: number|null) {
         this.randomSeed = randomSeed;
         return this;
     }
-
     public withRandomSeed(randomSeed: number|null): this {
         this.randomSeed = randomSeed;
         return this;
     }
-
     public getRewards(): Reward[]|null {
         return this.rewards;
     }
-
     public setRewards(rewards: Reward[]|null) {
         this.rewards = rewards;
         return this;
     }
-
     public withRewards(rewards: Reward[]|null): this {
         this.rewards = rewards;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

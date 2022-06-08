@@ -108,114 +108,90 @@ export default class ShowcaseMaster implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{showcaseName}', showcaseName ?? '');
     }
-
     public getShowcaseId(): string|null {
         return this.showcaseId;
     }
-
     public setShowcaseId(showcaseId: string|null) {
         this.showcaseId = showcaseId;
         return this;
     }
-
     public withShowcaseId(showcaseId: string|null): this {
         this.showcaseId = showcaseId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getSalesPeriodEventId(): string|null {
         return this.salesPeriodEventId;
     }
-
     public setSalesPeriodEventId(salesPeriodEventId: string|null) {
         this.salesPeriodEventId = salesPeriodEventId;
         return this;
     }
-
     public withSalesPeriodEventId(salesPeriodEventId: string|null): this {
         this.salesPeriodEventId = salesPeriodEventId;
         return this;
     }
-
     public getDisplayItems(): DisplayItemMaster[]|null {
         return this.displayItems;
     }
-
     public setDisplayItems(displayItems: DisplayItemMaster[]|null) {
         this.displayItems = displayItems;
         return this;
     }
-
     public withDisplayItems(displayItems: DisplayItemMaster[]|null): this {
         this.displayItems = displayItems;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

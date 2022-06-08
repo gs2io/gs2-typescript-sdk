@@ -128,86 +128,68 @@ export default class WebSocketSession implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{connectionId}', connectionId ?? '');
     }
-
     public getWebSocketSessionId(): string|null {
         return this.webSocketSessionId;
     }
-
     public setWebSocketSessionId(webSocketSessionId: string|null) {
         this.webSocketSessionId = webSocketSessionId;
         return this;
     }
-
     public withWebSocketSessionId(webSocketSessionId: string|null): this {
         this.webSocketSessionId = webSocketSessionId;
         return this;
     }
-
     public getConnectionId(): string|null {
         return this.connectionId;
     }
-
     public setConnectionId(connectionId: string|null) {
         this.connectionId = connectionId;
         return this;
     }
-
     public withConnectionId(connectionId: string|null): this {
         this.connectionId = connectionId;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

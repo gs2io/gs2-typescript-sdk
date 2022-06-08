@@ -55,72 +55,57 @@ export default class EndRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getRateName(): string|null {
         return this.rateName;
     }
-
     public setRateName(rateName: string|null) {
         this.rateName = rateName;
         return this;
     }
-
     public withRateName(rateName: string|null): this {
         this.rateName = rateName;
         return this;
     }
-
     public getProgressName(): string|null {
         return this.progressName;
     }
-
     public setProgressName(progressName: string|null) {
         this.progressName = progressName;
         return this;
     }
-
     public withProgressName(progressName: string|null): this {
         this.progressName = progressName;
         return this;
     }
-
     public getConfig(): Gs2Enhance.Config[]|null {
         return this.config;
     }
-
     public setConfig(config: Gs2Enhance.Config[]|null) {
         this.config = config;
         return this;
     }
-
     public withConfig(config: Gs2Enhance.Config[]|null): this {
         this.config = config;
         return this;

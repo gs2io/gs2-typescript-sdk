@@ -24,11 +24,17 @@ export default class CreateNamespaceRequest implements IRequest {
     getTransactionSetting(): Gs2Showcase.TransactionSetting | null;
     setTransactionSetting(transactionSetting: Gs2Showcase.TransactionSetting | null): this;
     withTransactionSetting(transactionSetting: Gs2Showcase.TransactionSetting | null): this;
+    /** @deprecated */
     getQueueNamespaceId(): string | null;
+    /** @deprecated */
     setQueueNamespaceId(queueNamespaceId: string | null): this;
+    /** @deprecated */
     withQueueNamespaceId(queueNamespaceId: string | null): this;
+    /** @deprecated */
     getKeyId(): string | null;
+    /** @deprecated */
     setKeyId(keyId: string | null): this;
+    /** @deprecated */
     withKeyId(keyId: string | null): this;
     getLogSetting(): Gs2Showcase.LogSetting | null;
     setLogSetting(logSetting: Gs2Showcase.LogSetting | null): this;

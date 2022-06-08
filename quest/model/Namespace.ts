@@ -93,170 +93,140 @@ export default class Namespace implements IModel {
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '');
     }
-
     public getNamespaceId(): string|null {
         return this.namespaceId;
     }
-
     public setNamespaceId(namespaceId: string|null) {
         this.namespaceId = namespaceId;
         return this;
     }
-
     public withNamespaceId(namespaceId: string|null): this {
         this.namespaceId = namespaceId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getTransactionSetting(): TransactionSetting|null {
         return this.transactionSetting;
     }
-
     public setTransactionSetting(transactionSetting: TransactionSetting|null) {
         this.transactionSetting = transactionSetting;
         return this;
     }
-
     public withTransactionSetting(transactionSetting: TransactionSetting|null): this {
         this.transactionSetting = transactionSetting;
         return this;
     }
-
     public getStartQuestScript(): ScriptSetting|null {
         return this.startQuestScript;
     }
-
     public setStartQuestScript(startQuestScript: ScriptSetting|null) {
         this.startQuestScript = startQuestScript;
         return this;
     }
-
     public withStartQuestScript(startQuestScript: ScriptSetting|null): this {
         this.startQuestScript = startQuestScript;
         return this;
     }
-
     public getCompleteQuestScript(): ScriptSetting|null {
         return this.completeQuestScript;
     }
-
     public setCompleteQuestScript(completeQuestScript: ScriptSetting|null) {
         this.completeQuestScript = completeQuestScript;
         return this;
     }
-
     public withCompleteQuestScript(completeQuestScript: ScriptSetting|null): this {
         this.completeQuestScript = completeQuestScript;
         return this;
     }
-
     public getFailedQuestScript(): ScriptSetting|null {
         return this.failedQuestScript;
     }
-
     public setFailedQuestScript(failedQuestScript: ScriptSetting|null) {
         this.failedQuestScript = failedQuestScript;
         return this;
     }
-
     public withFailedQuestScript(failedQuestScript: ScriptSetting|null): this {
         this.failedQuestScript = failedQuestScript;
         return this;
     }
-
     public getLogSetting(): LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;
     }
-
+    /** @deprecated */
     public getQueueNamespaceId(): string|null {
         return this.queueNamespaceId;
     }
-
+    /** @deprecated */
     public setQueueNamespaceId(queueNamespaceId: string|null) {
         this.queueNamespaceId = queueNamespaceId;
         return this;
     }
-
+    /** @deprecated */
     public withQueueNamespaceId(queueNamespaceId: string|null): this {
         this.queueNamespaceId = queueNamespaceId;
         return this;
     }
-
+    /** @deprecated */
     public getKeyId(): string|null {
         return this.keyId;
     }
-
+    /** @deprecated */
     public setKeyId(keyId: string|null) {
         this.keyId = keyId;
         return this;
     }
-
+    /** @deprecated */
     public withKeyId(keyId: string|null): this {
         this.keyId = keyId;
         return this;

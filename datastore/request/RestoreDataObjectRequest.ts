@@ -52,30 +52,24 @@ export default class RestoreDataObjectRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getDataObjectId(): string|null {
         return this.dataObjectId;
     }
-
     public setDataObjectId(dataObjectId: string|null) {
         this.dataObjectId = dataObjectId;
         return this;
     }
-
     public withDataObjectId(dataObjectId: string|null): this {
         this.dataObjectId = dataObjectId;
         return this;

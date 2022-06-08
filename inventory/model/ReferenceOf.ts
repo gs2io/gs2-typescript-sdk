@@ -176,30 +176,24 @@ export default class ReferenceOf implements IModel {
             .replace('{itemName}', itemName ?? '')
             .replace('{itemSetName}', itemSetName ?? '');
     }
-
     public getReferenceOfId(): string|null {
         return this.referenceOfId;
     }
-
     public setReferenceOfId(referenceOfId: string|null) {
         this.referenceOfId = referenceOfId;
         return this;
     }
-
     public withReferenceOfId(referenceOfId: string|null): this {
         this.referenceOfId = referenceOfId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;

@@ -23,72 +23,57 @@ export default class Prize implements IModel {
     private acquireActions: AcquireAction[]|null = null;
     private prizeTableName: string|null = null;
     private weight: number|null = null;
-
     public getPrizeId(): string|null {
         return this.prizeId;
     }
-
     public setPrizeId(prizeId: string|null) {
         this.prizeId = prizeId;
         return this;
     }
-
     public withPrizeId(prizeId: string|null): this {
         this.prizeId = prizeId;
         return this;
     }
-
     public getType(): string|null {
         return this.type;
     }
-
     public setType(type: string|null) {
         this.type = type;
         return this;
     }
-
     public withType(type: string|null): this {
         this.type = type;
         return this;
     }
-
     public getAcquireActions(): AcquireAction[]|null {
         return this.acquireActions;
     }
-
     public setAcquireActions(acquireActions: AcquireAction[]|null) {
         this.acquireActions = acquireActions;
         return this;
     }
-
     public withAcquireActions(acquireActions: AcquireAction[]|null): this {
         this.acquireActions = acquireActions;
         return this;
     }
-
     public getPrizeTableName(): string|null {
         return this.prizeTableName;
     }
-
     public setPrizeTableName(prizeTableName: string|null) {
         this.prizeTableName = prizeTableName;
         return this;
     }
-
     public withPrizeTableName(prizeTableName: string|null): this {
         this.prizeTableName = prizeTableName;
         return this;
     }
-
     public getWeight(): number|null {
         return this.weight;
     }
-
     public setWeight(weight: number|null) {
         this.weight = weight;
         return this;
     }
-
     public withWeight(weight: number|null): this {
         this.weight = weight;
         return this;

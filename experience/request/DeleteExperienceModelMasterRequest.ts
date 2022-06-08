@@ -52,30 +52,24 @@ export default class DeleteExperienceModelMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getExperienceName(): string|null {
         return this.experienceName;
     }
-
     public setExperienceName(experienceName: string|null) {
         this.experienceName = experienceName;
         return this;
     }
-
     public withExperienceName(experienceName: string|null): this {
         this.experienceName = experienceName;
         return this;

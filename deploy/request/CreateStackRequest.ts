@@ -53,44 +53,35 @@ export default class CreateStackRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getTemplate(): string|null {
         return this.template;
     }
-
     public setTemplate(template: string|null) {
         this.template = template;
         return this;
     }
-
     public withTemplate(template: string|null): this {
         this.template = template;
         return this;

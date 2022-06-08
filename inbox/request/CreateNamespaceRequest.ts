@@ -61,156 +61,129 @@ export default class CreateNamespaceRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getIsAutomaticDeletingEnabled(): boolean|null {
         return this.isAutomaticDeletingEnabled;
     }
-
     public setIsAutomaticDeletingEnabled(isAutomaticDeletingEnabled: boolean|null) {
         this.isAutomaticDeletingEnabled = isAutomaticDeletingEnabled;
         return this;
     }
-
     public withIsAutomaticDeletingEnabled(isAutomaticDeletingEnabled: boolean|null): this {
         this.isAutomaticDeletingEnabled = isAutomaticDeletingEnabled;
         return this;
     }
-
     public getTransactionSetting(): Gs2Inbox.TransactionSetting|null {
         return this.transactionSetting;
     }
-
     public setTransactionSetting(transactionSetting: Gs2Inbox.TransactionSetting|null) {
         this.transactionSetting = transactionSetting;
         return this;
     }
-
     public withTransactionSetting(transactionSetting: Gs2Inbox.TransactionSetting|null): this {
         this.transactionSetting = transactionSetting;
         return this;
     }
-
     public getReceiveMessageScript(): Gs2Inbox.ScriptSetting|null {
         return this.receiveMessageScript;
     }
-
     public setReceiveMessageScript(receiveMessageScript: Gs2Inbox.ScriptSetting|null) {
         this.receiveMessageScript = receiveMessageScript;
         return this;
     }
-
     public withReceiveMessageScript(receiveMessageScript: Gs2Inbox.ScriptSetting|null): this {
         this.receiveMessageScript = receiveMessageScript;
         return this;
     }
-
     public getReadMessageScript(): Gs2Inbox.ScriptSetting|null {
         return this.readMessageScript;
     }
-
     public setReadMessageScript(readMessageScript: Gs2Inbox.ScriptSetting|null) {
         this.readMessageScript = readMessageScript;
         return this;
     }
-
     public withReadMessageScript(readMessageScript: Gs2Inbox.ScriptSetting|null): this {
         this.readMessageScript = readMessageScript;
         return this;
     }
-
     public getDeleteMessageScript(): Gs2Inbox.ScriptSetting|null {
         return this.deleteMessageScript;
     }
-
     public setDeleteMessageScript(deleteMessageScript: Gs2Inbox.ScriptSetting|null) {
         this.deleteMessageScript = deleteMessageScript;
         return this;
     }
-
     public withDeleteMessageScript(deleteMessageScript: Gs2Inbox.ScriptSetting|null): this {
         this.deleteMessageScript = deleteMessageScript;
         return this;
     }
-
     public getReceiveNotification(): Gs2Inbox.NotificationSetting|null {
         return this.receiveNotification;
     }
-
     public setReceiveNotification(receiveNotification: Gs2Inbox.NotificationSetting|null) {
         this.receiveNotification = receiveNotification;
         return this;
     }
-
     public withReceiveNotification(receiveNotification: Gs2Inbox.NotificationSetting|null): this {
         this.receiveNotification = receiveNotification;
         return this;
     }
-
     public getLogSetting(): Gs2Inbox.LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: Gs2Inbox.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: Gs2Inbox.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
-
+    /** @deprecated */
     public getQueueNamespaceId(): string|null {
         return this.queueNamespaceId;
     }
-
+    /** @deprecated */
     public setQueueNamespaceId(queueNamespaceId: string|null) {
         this.queueNamespaceId = queueNamespaceId;
         return this;
     }
-
+    /** @deprecated */
     public withQueueNamespaceId(queueNamespaceId: string|null): this {
         this.queueNamespaceId = queueNamespaceId;
         return this;
     }
-
+    /** @deprecated */
     public getKeyId(): string|null {
         return this.keyId;
     }
-
+    /** @deprecated */
     public setKeyId(keyId: string|null) {
         this.keyId = keyId;
         return this;
     }
-
+    /** @deprecated */
     public withKeyId(keyId: string|null): this {
         this.keyId = keyId;
         return this;

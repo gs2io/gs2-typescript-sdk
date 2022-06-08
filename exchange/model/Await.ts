@@ -128,86 +128,68 @@ export default class Await implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{awaitName}', awaitName ?? '');
     }
-
     public getAwaitId(): string|null {
         return this.awaitId;
     }
-
     public setAwaitId(awaitId: string|null) {
         this.awaitId = awaitId;
         return this;
     }
-
     public withAwaitId(awaitId: string|null): this {
         this.awaitId = awaitId;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getRateName(): string|null {
         return this.rateName;
     }
-
     public setRateName(rateName: string|null) {
         this.rateName = rateName;
         return this;
     }
-
     public withRateName(rateName: string|null): this {
         this.rateName = rateName;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getCount(): number|null {
         return this.count;
     }
-
     public setCount(count: number|null) {
         this.count = count;
         return this;
     }
-
     public withCount(count: number|null): this {
         this.count = count;
         return this;
     }
-
     public getExchangedAt(): number|null {
         return this.exchangedAt;
     }
-
     public setExchangedAt(exchangedAt: number|null) {
         this.exchangedAt = exchangedAt;
         return this;
     }
-
     public withExchangedAt(exchangedAt: number|null): this {
         this.exchangedAt = exchangedAt;
         return this;

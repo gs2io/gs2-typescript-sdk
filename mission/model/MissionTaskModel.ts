@@ -131,114 +131,90 @@ export default class MissionTaskModel implements IModel {
             .replace('{missionGroupName}', missionGroupName ?? '')
             .replace('{missionTaskName}', missionTaskName ?? '');
     }
-
     public getMissionTaskId(): string|null {
         return this.missionTaskId;
     }
-
     public setMissionTaskId(missionTaskId: string|null) {
         this.missionTaskId = missionTaskId;
         return this;
     }
-
     public withMissionTaskId(missionTaskId: string|null): this {
         this.missionTaskId = missionTaskId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getCounterName(): string|null {
         return this.counterName;
     }
-
     public setCounterName(counterName: string|null) {
         this.counterName = counterName;
         return this;
     }
-
     public withCounterName(counterName: string|null): this {
         this.counterName = counterName;
         return this;
     }
-
     public getTargetValue(): number|null {
         return this.targetValue;
     }
-
     public setTargetValue(targetValue: number|null) {
         this.targetValue = targetValue;
         return this;
     }
-
     public withTargetValue(targetValue: number|null): this {
         this.targetValue = targetValue;
         return this;
     }
-
     public getCompleteAcquireActions(): AcquireAction[]|null {
         return this.completeAcquireActions;
     }
-
     public setCompleteAcquireActions(completeAcquireActions: AcquireAction[]|null) {
         this.completeAcquireActions = completeAcquireActions;
         return this;
     }
-
     public withCompleteAcquireActions(completeAcquireActions: AcquireAction[]|null): this {
         this.completeAcquireActions = completeAcquireActions;
         return this;
     }
-
     public getChallengePeriodEventId(): string|null {
         return this.challengePeriodEventId;
     }
-
     public setChallengePeriodEventId(challengePeriodEventId: string|null) {
         this.challengePeriodEventId = challengePeriodEventId;
         return this;
     }
-
     public withChallengePeriodEventId(challengePeriodEventId: string|null): this {
         this.challengePeriodEventId = challengePeriodEventId;
         return this;
     }
-
     public getPremiseMissionTaskName(): string|null {
         return this.premiseMissionTaskName;
     }
-
     public setPremiseMissionTaskName(premiseMissionTaskName: string|null) {
         this.premiseMissionTaskName = premiseMissionTaskName;
         return this;
     }
-
     public withPremiseMissionTaskName(premiseMissionTaskName: string|null): this {
         this.premiseMissionTaskName = premiseMissionTaskName;
         return this;

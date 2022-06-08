@@ -128,86 +128,68 @@ export default class TakeOver implements IModel {
             .replace('{type}', type ?? '')
             .replace('{userIdentifier}', userIdentifier ?? '');
     }
-
     public getTakeOverId(): string|null {
         return this.takeOverId;
     }
-
     public setTakeOverId(takeOverId: string|null) {
         this.takeOverId = takeOverId;
         return this;
     }
-
     public withTakeOverId(takeOverId: string|null): this {
         this.takeOverId = takeOverId;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getType(): number|null {
         return this.type;
     }
-
     public setType(type: number|null) {
         this.type = type;
         return this;
     }
-
     public withType(type: number|null): this {
         this.type = type;
         return this;
     }
-
     public getUserIdentifier(): string|null {
         return this.userIdentifier;
     }
-
     public setUserIdentifier(userIdentifier: string|null) {
         this.userIdentifier = userIdentifier;
         return this;
     }
-
     public withUserIdentifier(userIdentifier: string|null): this {
         this.userIdentifier = userIdentifier;
         return this;
     }
-
     public getPassword(): string|null {
         return this.password;
     }
-
     public setPassword(password: string|null) {
         this.password = password;
         return this;
     }
-
     public withPassword(password: string|null): this {
         this.password = password;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;

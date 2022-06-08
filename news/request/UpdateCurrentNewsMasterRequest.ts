@@ -52,30 +52,24 @@ export default class UpdateCurrentNewsMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getUploadToken(): string|null {
         return this.uploadToken;
     }
-
     public setUploadToken(uploadToken: string|null) {
         this.uploadToken = uploadToken;
         return this;
     }
-
     public withUploadToken(uploadToken: string|null): this {
         this.uploadToken = uploadToken;
         return this;

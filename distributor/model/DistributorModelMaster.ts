@@ -107,114 +107,90 @@ export default class DistributorModelMaster implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{distributorName}', distributorName ?? '');
     }
-
     public getDistributorModelId(): string|null {
         return this.distributorModelId;
     }
-
     public setDistributorModelId(distributorModelId: string|null) {
         this.distributorModelId = distributorModelId;
         return this;
     }
-
     public withDistributorModelId(distributorModelId: string|null): this {
         this.distributorModelId = distributorModelId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getInboxNamespaceId(): string|null {
         return this.inboxNamespaceId;
     }
-
     public setInboxNamespaceId(inboxNamespaceId: string|null) {
         this.inboxNamespaceId = inboxNamespaceId;
         return this;
     }
-
     public withInboxNamespaceId(inboxNamespaceId: string|null): this {
         this.inboxNamespaceId = inboxNamespaceId;
         return this;
     }
-
     public getWhiteListTargetIds(): string[]|null {
         return this.whiteListTargetIds;
     }
-
     public setWhiteListTargetIds(whiteListTargetIds: string[]|null) {
         this.whiteListTargetIds = whiteListTargetIds;
         return this;
     }
-
     public withWhiteListTargetIds(whiteListTargetIds: string[]|null): this {
         this.whiteListTargetIds = whiteListTargetIds;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

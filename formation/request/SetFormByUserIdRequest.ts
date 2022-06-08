@@ -56,72 +56,57 @@ export default class SetFormByUserIdRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getMoldName(): string|null {
         return this.moldName;
     }
-
     public setMoldName(moldName: string|null) {
         this.moldName = moldName;
         return this;
     }
-
     public withMoldName(moldName: string|null): this {
         this.moldName = moldName;
         return this;
     }
-
     public getIndex(): number|null {
         return this.index;
     }
-
     public setIndex(index: number|null) {
         this.index = index;
         return this;
     }
-
     public withIndex(index: number|null): this {
         this.index = index;
         return this;
     }
-
     public getSlots(): Gs2Formation.Slot[]|null {
         return this.slots;
     }
-
     public setSlots(slots: Gs2Formation.Slot[]|null) {
         this.slots = slots;
         return this;
     }
-
     public withSlots(slots: Gs2Formation.Slot[]|null): this {
         this.slots = slots;
         return this;

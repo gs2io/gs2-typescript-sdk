@@ -52,30 +52,24 @@ export default class DetachSecurityPolicyRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getUserName(): string|null {
         return this.userName;
     }
-
     public setUserName(userName: string|null) {
         this.userName = userName;
         return this;
     }
-
     public withUserName(userName: string|null): this {
         this.userName = userName;
         return this;
     }
-
     public getSecurityPolicyId(): string|null {
         return this.securityPolicyId;
     }
-
     public setSecurityPolicyId(securityPolicyId: string|null) {
         this.securityPolicyId = securityPolicyId;
         return this;
     }
-
     public withSecurityPolicyId(securityPolicyId: string|null): this {
         this.securityPolicyId = securityPolicyId;
         return this;

@@ -109,72 +109,57 @@ export default class Showcase implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{showcaseName}', showcaseName ?? '');
     }
-
     public getShowcaseId(): string|null {
         return this.showcaseId;
     }
-
     public setShowcaseId(showcaseId: string|null) {
         this.showcaseId = showcaseId;
         return this;
     }
-
     public withShowcaseId(showcaseId: string|null): this {
         this.showcaseId = showcaseId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getSalesPeriodEventId(): string|null {
         return this.salesPeriodEventId;
     }
-
     public setSalesPeriodEventId(salesPeriodEventId: string|null) {
         this.salesPeriodEventId = salesPeriodEventId;
         return this;
     }
-
     public withSalesPeriodEventId(salesPeriodEventId: string|null): this {
         this.salesPeriodEventId = salesPeriodEventId;
         return this;
     }
-
     public getDisplayItems(): DisplayItem[]|null {
         return this.displayItems;
     }
-
     public setDisplayItems(displayItems: DisplayItem[]|null) {
         this.displayItems = displayItems;
         return this;
     }
-
     public withDisplayItems(displayItems: DisplayItem[]|null): this {
         this.displayItems = displayItems;
         return this;

@@ -19,30 +19,24 @@ import IModel from '../../core/interface/IModel';
 export default class Threshold implements IModel {
     private metadata: string|null = null;
     private values: number[]|null = null;
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getValues(): number[]|null {
         return this.values;
     }
-
     public setValues(values: number[]|null) {
         this.values = values;
         return this;
     }
-
     public withValues(values: number[]|null): this {
         this.values = values;
         return this;

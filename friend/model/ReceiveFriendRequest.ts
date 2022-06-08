@@ -29,30 +29,24 @@ export default class ReceiveFriendRequest implements IModel {
     ): string|null {
         return grnFormat;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getTargetUserId(): string|null {
         return this.targetUserId;
     }
-
     public setTargetUserId(targetUserId: string|null) {
         this.targetUserId = targetUserId;
         return this;
     }
-
     public withTargetUserId(targetUserId: string|null): this {
         this.targetUserId = targetUserId;
         return this;

@@ -129,100 +129,79 @@ export default class StampSheetResult implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{transactionId}', transactionId ?? '');
     }
-
     public getStampSheetResultId(): string|null {
         return this.stampSheetResultId;
     }
-
     public setStampSheetResultId(stampSheetResultId: string|null) {
         this.stampSheetResultId = stampSheetResultId;
         return this;
     }
-
     public withStampSheetResultId(stampSheetResultId: string|null): this {
         this.stampSheetResultId = stampSheetResultId;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getTransactionId(): string|null {
         return this.transactionId;
     }
-
     public setTransactionId(transactionId: string|null) {
         this.transactionId = transactionId;
         return this;
     }
-
     public withTransactionId(transactionId: string|null): this {
         this.transactionId = transactionId;
         return this;
     }
-
     public getTaskResults(): string[]|null {
         return this.taskResults;
     }
-
     public setTaskResults(taskResults: string[]|null) {
         this.taskResults = taskResults;
         return this;
     }
-
     public withTaskResults(taskResults: string[]|null): this {
         this.taskResults = taskResults;
         return this;
     }
-
     public getSheetResult(): string|null {
         return this.sheetResult;
     }
-
     public setSheetResult(sheetResult: string|null) {
         this.sheetResult = sheetResult;
         return this;
     }
-
     public withSheetResult(sheetResult: string|null): this {
         this.sheetResult = sheetResult;
         return this;
     }
-
     public getNextTransactionId(): string|null {
         return this.nextTransactionId;
     }
-
     public setNextTransactionId(nextTransactionId: string|null) {
         this.nextTransactionId = nextTransactionId;
         return this;
     }
-
     public withNextTransactionId(nextTransactionId: string|null): this {
         this.nextTransactionId = nextTransactionId;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;

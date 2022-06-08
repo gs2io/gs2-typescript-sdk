@@ -19,30 +19,24 @@ import IModel from '../../core/interface/IModel';
 export default class DistributeResource implements IModel {
     private action: string|null = null;
     private request: string|null = null;
-
     public getAction(): string|null {
         return this.action;
     }
-
     public setAction(action: string|null) {
         this.action = action;
         return this;
     }
-
     public withAction(action: string|null): this {
         this.action = action;
         return this;
     }
-
     public getRequest(): string|null {
         return this.request;
     }
-
     public setRequest(request: string|null) {
         this.request = request;
         return this;
     }
-
     public withRequest(request: string|null): this {
         this.request = request;
         return this;

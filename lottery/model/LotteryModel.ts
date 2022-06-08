@@ -106,100 +106,79 @@ export default class LotteryModel implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{lotteryName}', lotteryName ?? '');
     }
-
     public getLotteryModelId(): string|null {
         return this.lotteryModelId;
     }
-
     public setLotteryModelId(lotteryModelId: string|null) {
         this.lotteryModelId = lotteryModelId;
         return this;
     }
-
     public withLotteryModelId(lotteryModelId: string|null): this {
         this.lotteryModelId = lotteryModelId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getMode(): string|null {
         return this.mode;
     }
-
     public setMode(mode: string|null) {
         this.mode = mode;
         return this;
     }
-
     public withMode(mode: string|null): this {
         this.mode = mode;
         return this;
     }
-
     public getMethod(): string|null {
         return this.method;
     }
-
     public setMethod(method: string|null) {
         this.method = method;
         return this;
     }
-
     public withMethod(method: string|null): this {
         this.method = method;
         return this;
     }
-
     public getPrizeTableName(): string|null {
         return this.prizeTableName;
     }
-
     public setPrizeTableName(prizeTableName: string|null) {
         this.prizeTableName = prizeTableName;
         return this;
     }
-
     public withPrizeTableName(prizeTableName: string|null): this {
         this.prizeTableName = prizeTableName;
         return this;
     }
-
     public getChoicePrizeTableScriptId(): string|null {
         return this.choicePrizeTableScriptId;
     }
-
     public setChoicePrizeTableScriptId(choicePrizeTableScriptId: string|null) {
         this.choicePrizeTableScriptId = choicePrizeTableScriptId;
         return this;
     }
-
     public withChoicePrizeTableScriptId(choicePrizeTableScriptId: string|null): this {
         this.choicePrizeTableScriptId = choicePrizeTableScriptId;
         return this;

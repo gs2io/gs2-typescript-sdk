@@ -19,30 +19,24 @@ import IModel from '../../core/interface/IModel';
 export default class WalletDetail implements IModel {
     private price: number|null = null;
     private count: number|null = null;
-
     public getPrice(): number|null {
         return this.price;
     }
-
     public setPrice(price: number|null) {
         this.price = price;
         return this;
     }
-
     public withPrice(price: number|null): this {
         this.price = price;
         return this;
     }
-
     public getCount(): number|null {
         return this.count;
     }
-
     public setCount(count: number|null) {
         this.count = count;
         return this;
     }
-
     public withCount(count: number|null): this {
         this.count = count;
         return this;

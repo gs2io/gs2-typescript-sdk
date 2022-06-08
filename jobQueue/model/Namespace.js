@@ -24,6 +24,8 @@ var Namespace = /** @class */ (function () {
         this.namespaceId = null;
         this.name = null;
         this.description = null;
+        this.enableAutoRun = null;
+        this.runNotification = null;
         this.pushNotification = null;
         this.logSetting = null;
         this.createdAt = null;
@@ -110,6 +112,28 @@ var Namespace = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    Namespace.prototype.getEnableAutoRun = function () {
+        return this.enableAutoRun;
+    };
+    Namespace.prototype.setEnableAutoRun = function (enableAutoRun) {
+        this.enableAutoRun = enableAutoRun;
+        return this;
+    };
+    Namespace.prototype.withEnableAutoRun = function (enableAutoRun) {
+        this.enableAutoRun = enableAutoRun;
+        return this;
+    };
+    Namespace.prototype.getRunNotification = function () {
+        return this.runNotification;
+    };
+    Namespace.prototype.setRunNotification = function (runNotification) {
+        this.runNotification = runNotification;
+        return this;
+    };
+    Namespace.prototype.withRunNotification = function (runNotification) {
+        this.runNotification = runNotification;
+        return this;
+    };
     Namespace.prototype.getPushNotification = function () {
         return this.pushNotification;
     };
@@ -162,19 +186,23 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withEnableAutoRun(data["enableAutoRun"])
+            .withRunNotification(NotificationSetting_1.default.fromDict(data["runNotification"]))
             .withPushNotification(NotificationSetting_1.default.fromDict(data["pushNotification"]))
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
-            "pushNotification": (_a = this.getPushNotification()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "enableAutoRun": this.getEnableAutoRun(),
+            "runNotification": (_a = this.getRunNotification()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "pushNotification": (_b = this.getPushNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

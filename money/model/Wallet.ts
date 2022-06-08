@@ -131,114 +131,90 @@ export default class Wallet implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{slot}', slot ?? '');
     }
-
     public getWalletId(): string|null {
         return this.walletId;
     }
-
     public setWalletId(walletId: string|null) {
         this.walletId = walletId;
         return this;
     }
-
     public withWalletId(walletId: string|null): this {
         this.walletId = walletId;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getSlot(): number|null {
         return this.slot;
     }
-
     public setSlot(slot: number|null) {
         this.slot = slot;
         return this;
     }
-
     public withSlot(slot: number|null): this {
         this.slot = slot;
         return this;
     }
-
     public getPaid(): number|null {
         return this.paid;
     }
-
     public setPaid(paid: number|null) {
         this.paid = paid;
         return this;
     }
-
     public withPaid(paid: number|null): this {
         this.paid = paid;
         return this;
     }
-
     public getFree(): number|null {
         return this.free;
     }
-
     public setFree(free: number|null) {
         this.free = free;
         return this;
     }
-
     public withFree(free: number|null): this {
         this.free = free;
         return this;
     }
-
     public getDetail(): WalletDetail[]|null {
         return this.detail;
     }
-
     public setDetail(detail: WalletDetail[]|null) {
         this.detail = detail;
         return this;
     }
-
     public withDetail(detail: WalletDetail[]|null): this {
         this.detail = detail;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

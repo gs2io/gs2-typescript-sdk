@@ -20,44 +20,35 @@ export default class JobEntry implements IModel {
     private scriptId: string|null = null;
     private args: string|null = null;
     private maxTryCount: number|null = null;
-
     public getScriptId(): string|null {
         return this.scriptId;
     }
-
     public setScriptId(scriptId: string|null) {
         this.scriptId = scriptId;
         return this;
     }
-
     public withScriptId(scriptId: string|null): this {
         this.scriptId = scriptId;
         return this;
     }
-
     public getArgs(): string|null {
         return this.args;
     }
-
     public setArgs(args: string|null) {
         this.args = args;
         return this;
     }
-
     public withArgs(args: string|null): this {
         this.args = args;
         return this;
     }
-
     public getMaxTryCount(): number|null {
         return this.maxTryCount;
     }
-
     public setMaxTryCount(maxTryCount: number|null) {
         this.maxTryCount = maxTryCount;
         return this;
     }
-
     public withMaxTryCount(maxTryCount: number|null): this {
         this.maxTryCount = maxTryCount;
         return this;

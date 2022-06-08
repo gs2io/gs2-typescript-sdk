@@ -52,30 +52,24 @@ export default class GetDistributorModelRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getDistributorName(): string|null {
         return this.distributorName;
     }
-
     public setDistributorName(distributorName: string|null) {
         this.distributorName = distributorName;
         return this;
     }
-
     public withDistributorName(distributorName: string|null): this {
         this.distributorName = distributorName;
         return this;

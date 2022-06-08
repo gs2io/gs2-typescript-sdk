@@ -127,72 +127,57 @@ export default class Mutex implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{propertyId}', propertyId ?? '');
     }
-
     public getMutexId(): string|null {
         return this.mutexId;
     }
-
     public setMutexId(mutexId: string|null) {
         this.mutexId = mutexId;
         return this;
     }
-
     public withMutexId(mutexId: string|null): this {
         this.mutexId = mutexId;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getPropertyId(): string|null {
         return this.propertyId;
     }
-
     public setPropertyId(propertyId: string|null) {
         this.propertyId = propertyId;
         return this;
     }
-
     public withPropertyId(propertyId: string|null): this {
         this.propertyId = propertyId;
         return this;
     }
-
     public getTransactionId(): string|null {
         return this.transactionId;
     }
-
     public setTransactionId(transactionId: string|null) {
         this.transactionId = transactionId;
         return this;
     }
-
     public withTransactionId(transactionId: string|null): this {
         this.transactionId = transactionId;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;

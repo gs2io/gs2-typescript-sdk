@@ -54,58 +54,46 @@ export default class UpdateNotificationTypeRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getRoomName(): string|null {
         return this.roomName;
     }
-
     public setRoomName(roomName: string|null) {
         this.roomName = roomName;
         return this;
     }
-
     public withRoomName(roomName: string|null): this {
         this.roomName = roomName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getNotificationTypes(): Gs2Chat.NotificationType[]|null {
         return this.notificationTypes;
     }
-
     public setNotificationTypes(notificationTypes: Gs2Chat.NotificationType[]|null) {
         this.notificationTypes = notificationTypes;
         return this;
     }
-
     public withNotificationTypes(notificationTypes: Gs2Chat.NotificationType[]|null): this {
         this.notificationTypes = notificationTypes;
         return this;

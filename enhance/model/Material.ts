@@ -19,30 +19,24 @@ import IModel from '../../core/interface/IModel';
 export default class Material implements IModel {
     private materialItemSetId: string|null = null;
     private count: number|null = null;
-
     public getMaterialItemSetId(): string|null {
         return this.materialItemSetId;
     }
-
     public setMaterialItemSetId(materialItemSetId: string|null) {
         this.materialItemSetId = materialItemSetId;
         return this;
     }
-
     public withMaterialItemSetId(materialItemSetId: string|null): this {
         this.materialItemSetId = materialItemSetId;
         return this;
     }
-
     public getCount(): number|null {
         return this.count;
     }
-
     public setCount(count: number|null) {
         this.count = count;
         return this;
     }
-
     public withCount(count: number|null): this {
         this.count = count;
         return this;

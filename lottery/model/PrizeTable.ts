@@ -105,58 +105,46 @@ export default class PrizeTable implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{prizeTableName}', prizeTableName ?? '');
     }
-
     public getPrizeTableId(): string|null {
         return this.prizeTableId;
     }
-
     public setPrizeTableId(prizeTableId: string|null) {
         this.prizeTableId = prizeTableId;
         return this;
     }
-
     public withPrizeTableId(prizeTableId: string|null): this {
         this.prizeTableId = prizeTableId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getPrizes(): Prize[]|null {
         return this.prizes;
     }
-
     public setPrizes(prizes: Prize[]|null) {
         this.prizes = prizes;
         return this;
     }
-
     public withPrizes(prizes: Prize[]|null): this {
         this.prizes = prizes;
         return this;

@@ -105,86 +105,68 @@ export default class GitHubApiKey implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{apiKeyName}', apiKeyName ?? '');
     }
-
     public getApiKeyId(): string|null {
         return this.apiKeyId;
     }
-
     public setApiKeyId(apiKeyId: string|null) {
         this.apiKeyId = apiKeyId;
         return this;
     }
-
     public withApiKeyId(apiKeyId: string|null): this {
         this.apiKeyId = apiKeyId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getEncryptionKeyName(): string|null {
         return this.encryptionKeyName;
     }
-
     public setEncryptionKeyName(encryptionKeyName: string|null) {
         this.encryptionKeyName = encryptionKeyName;
         return this;
     }
-
     public withEncryptionKeyName(encryptionKeyName: string|null): this {
         this.encryptionKeyName = encryptionKeyName;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

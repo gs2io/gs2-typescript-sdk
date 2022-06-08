@@ -59,128 +59,107 @@ export default class CreateNamespaceRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getTransactionSetting(): Gs2Quest.TransactionSetting|null {
         return this.transactionSetting;
     }
-
     public setTransactionSetting(transactionSetting: Gs2Quest.TransactionSetting|null) {
         this.transactionSetting = transactionSetting;
         return this;
     }
-
     public withTransactionSetting(transactionSetting: Gs2Quest.TransactionSetting|null): this {
         this.transactionSetting = transactionSetting;
         return this;
     }
-
     public getStartQuestScript(): Gs2Quest.ScriptSetting|null {
         return this.startQuestScript;
     }
-
     public setStartQuestScript(startQuestScript: Gs2Quest.ScriptSetting|null) {
         this.startQuestScript = startQuestScript;
         return this;
     }
-
     public withStartQuestScript(startQuestScript: Gs2Quest.ScriptSetting|null): this {
         this.startQuestScript = startQuestScript;
         return this;
     }
-
     public getCompleteQuestScript(): Gs2Quest.ScriptSetting|null {
         return this.completeQuestScript;
     }
-
     public setCompleteQuestScript(completeQuestScript: Gs2Quest.ScriptSetting|null) {
         this.completeQuestScript = completeQuestScript;
         return this;
     }
-
     public withCompleteQuestScript(completeQuestScript: Gs2Quest.ScriptSetting|null): this {
         this.completeQuestScript = completeQuestScript;
         return this;
     }
-
     public getFailedQuestScript(): Gs2Quest.ScriptSetting|null {
         return this.failedQuestScript;
     }
-
     public setFailedQuestScript(failedQuestScript: Gs2Quest.ScriptSetting|null) {
         this.failedQuestScript = failedQuestScript;
         return this;
     }
-
     public withFailedQuestScript(failedQuestScript: Gs2Quest.ScriptSetting|null): this {
         this.failedQuestScript = failedQuestScript;
         return this;
     }
-
     public getLogSetting(): Gs2Quest.LogSetting|null {
         return this.logSetting;
     }
-
     public setLogSetting(logSetting: Gs2Quest.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-
     public withLogSetting(logSetting: Gs2Quest.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
-
+    /** @deprecated */
     public getQueueNamespaceId(): string|null {
         return this.queueNamespaceId;
     }
-
+    /** @deprecated */
     public setQueueNamespaceId(queueNamespaceId: string|null) {
         this.queueNamespaceId = queueNamespaceId;
         return this;
     }
-
+    /** @deprecated */
     public withQueueNamespaceId(queueNamespaceId: string|null): this {
         this.queueNamespaceId = queueNamespaceId;
         return this;
     }
-
+    /** @deprecated */
     public getKeyId(): string|null {
         return this.keyId;
     }
-
+    /** @deprecated */
     public setKeyId(keyId: string|null) {
         this.keyId = keyId;
         return this;
     }
-
+    /** @deprecated */
     public withKeyId(keyId: string|null): this {
         this.keyId = keyId;
         return this;

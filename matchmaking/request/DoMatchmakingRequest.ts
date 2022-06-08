@@ -54,58 +54,46 @@ export default class DoMatchmakingRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getAccessToken(): string|null {
         return this.accessToken;
     }
-
     public setAccessToken(accessToken: string|null) {
         this.accessToken = accessToken;
         return this;
     }
-
     public withAccessToken(accessToken: string|null): this {
         this.accessToken = accessToken;
         return this;
     }
-
     public getPlayer(): Gs2Matchmaking.Player|null {
         return this.player;
     }
-
     public setPlayer(player: Gs2Matchmaking.Player|null) {
         this.player = player;
         return this;
     }
-
     public withPlayer(player: Gs2Matchmaking.Player|null): this {
         this.player = player;
         return this;
     }
-
     public getMatchmakingContextToken(): string|null {
         return this.matchmakingContextToken;
     }
-
     public setMatchmakingContextToken(matchmakingContextToken: string|null) {
         this.matchmakingContextToken = matchmakingContextToken;
         return this;
     }
-
     public withMatchmakingContextToken(matchmakingContextToken: string|null): this {
         this.matchmakingContextToken = matchmakingContextToken;
         return this;

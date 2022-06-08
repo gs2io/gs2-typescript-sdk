@@ -55,72 +55,57 @@ export default class UpdateSalesItemGroupMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getSalesItemGroupName(): string|null {
         return this.salesItemGroupName;
     }
-
     public setSalesItemGroupName(salesItemGroupName: string|null) {
         this.salesItemGroupName = salesItemGroupName;
         return this;
     }
-
     public withSalesItemGroupName(salesItemGroupName: string|null): this {
         this.salesItemGroupName = salesItemGroupName;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getMetadata(): string|null {
         return this.metadata;
     }
-
     public setMetadata(metadata: string|null) {
         this.metadata = metadata;
         return this;
     }
-
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
         return this;
     }
-
     public getSalesItemNames(): string[]|null {
         return this.salesItemNames;
     }
-
     public setSalesItemNames(salesItemNames: string[]|null) {
         this.salesItemNames = salesItemNames;
         return this;
     }
-
     public withSalesItemNames(salesItemNames: string[]|null): this {
         this.salesItemNames = salesItemNames;
         return this;

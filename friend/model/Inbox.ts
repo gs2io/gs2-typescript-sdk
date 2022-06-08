@@ -104,72 +104,57 @@ export default class Inbox implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{userId}', userId ?? '');
     }
-
     public getInboxId(): string|null {
         return this.inboxId;
     }
-
     public setInboxId(inboxId: string|null) {
         this.inboxId = inboxId;
         return this;
     }
-
     public withInboxId(inboxId: string|null): this {
         this.inboxId = inboxId;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getFromUserIds(): string[]|null {
         return this.fromUserIds;
     }
-
     public setFromUserIds(fromUserIds: string[]|null) {
         this.fromUserIds = fromUserIds;
         return this;
     }
-
     public withFromUserIds(fromUserIds: string[]|null): this {
         this.fromUserIds = fromUserIds;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;
     }
-
     public getUpdatedAt(): number|null {
         return this.updatedAt;
     }
-
     public setUpdatedAt(updatedAt: number|null) {
         this.updatedAt = updatedAt;
         return this;
     }
-
     public withUpdatedAt(updatedAt: number|null): this {
         this.updatedAt = updatedAt;
         return this;

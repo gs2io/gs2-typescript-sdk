@@ -19,16 +19,13 @@ import AcquireAction from './AcquireAction';
 
 export default class DrawnPrize implements IModel {
     private acquireActions: AcquireAction[]|null = null;
-
     public getAcquireActions(): AcquireAction[]|null {
         return this.acquireActions;
     }
-
     public setAcquireActions(acquireActions: AcquireAction[]|null) {
         this.acquireActions = acquireActions;
         return this;
     }
-
     public withAcquireActions(acquireActions: AcquireAction[]|null): this {
         this.acquireActions = acquireActions;
         return this;

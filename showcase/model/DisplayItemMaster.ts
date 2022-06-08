@@ -22,72 +22,57 @@ export default class DisplayItemMaster implements IModel {
     private salesItemName: string|null = null;
     private salesItemGroupName: string|null = null;
     private salesPeriodEventId: string|null = null;
-
     public getDisplayItemId(): string|null {
         return this.displayItemId;
     }
-
     public setDisplayItemId(displayItemId: string|null) {
         this.displayItemId = displayItemId;
         return this;
     }
-
     public withDisplayItemId(displayItemId: string|null): this {
         this.displayItemId = displayItemId;
         return this;
     }
-
     public getType(): string|null {
         return this.type;
     }
-
     public setType(type: string|null) {
         this.type = type;
         return this;
     }
-
     public withType(type: string|null): this {
         this.type = type;
         return this;
     }
-
     public getSalesItemName(): string|null {
         return this.salesItemName;
     }
-
     public setSalesItemName(salesItemName: string|null) {
         this.salesItemName = salesItemName;
         return this;
     }
-
     public withSalesItemName(salesItemName: string|null): this {
         this.salesItemName = salesItemName;
         return this;
     }
-
     public getSalesItemGroupName(): string|null {
         return this.salesItemGroupName;
     }
-
     public setSalesItemGroupName(salesItemGroupName: string|null) {
         this.salesItemGroupName = salesItemGroupName;
         return this;
     }
-
     public withSalesItemGroupName(salesItemGroupName: string|null): this {
         this.salesItemGroupName = salesItemGroupName;
         return this;
     }
-
     public getSalesPeriodEventId(): string|null {
         return this.salesPeriodEventId;
     }
-
     public setSalesPeriodEventId(salesPeriodEventId: string|null) {
         this.salesPeriodEventId = salesPeriodEventId;
         return this;
     }
-
     public withSalesPeriodEventId(salesPeriodEventId: string|null): this {
         this.salesPeriodEventId = salesPeriodEventId;
         return this;

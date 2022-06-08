@@ -52,30 +52,24 @@ export default class GetLotteryModelMasterRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getLotteryName(): string|null {
         return this.lotteryName;
     }
-
     public setLotteryName(lotteryName: string|null) {
         this.lotteryName = lotteryName;
         return this;
     }
-
     public withLotteryName(lotteryName: string|null): this {
         this.lotteryName = lotteryName;
         return this;

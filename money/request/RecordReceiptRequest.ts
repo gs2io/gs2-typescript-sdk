@@ -55,58 +55,46 @@ export default class RecordReceiptRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getContentsId(): string|null {
         return this.contentsId;
     }
-
     public setContentsId(contentsId: string|null) {
         this.contentsId = contentsId;
         return this;
     }
-
     public withContentsId(contentsId: string|null): this {
         this.contentsId = contentsId;
         return this;
     }
-
     public getReceipt(): string|null {
         return this.receipt;
     }
-
     public setReceipt(receipt: string|null) {
         this.receipt = receipt;
         return this;
     }
-
     public withReceipt(receipt: string|null): this {
         this.receipt = receipt;
         return this;

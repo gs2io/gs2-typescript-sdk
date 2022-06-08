@@ -126,58 +126,46 @@ export default class DataOwner implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{dataOwnerName}', dataOwnerName ?? '');
     }
-
     public getDataOwnerId(): string|null {
         return this.dataOwnerId;
     }
-
     public setDataOwnerId(dataOwnerId: string|null) {
         this.dataOwnerId = dataOwnerId;
         return this;
     }
-
     public withDataOwnerId(dataOwnerId: string|null): this {
         this.dataOwnerId = dataOwnerId;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;

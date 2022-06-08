@@ -105,86 +105,68 @@ export default class Account implements IModel {
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{userId}', userId ?? '');
     }
-
     public getAccountId(): string|null {
         return this.accountId;
     }
-
     public setAccountId(accountId: string|null) {
         this.accountId = accountId;
         return this;
     }
-
     public withAccountId(accountId: string|null): this {
         this.accountId = accountId;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getPassword(): string|null {
         return this.password;
     }
-
     public setPassword(password: string|null) {
         this.password = password;
         return this;
     }
-
     public withPassword(password: string|null): this {
         this.password = password;
         return this;
     }
-
     public getTimeOffset(): number|null {
         return this.timeOffset;
     }
-
     public setTimeOffset(timeOffset: number|null) {
         this.timeOffset = timeOffset;
         return this;
     }
-
     public withTimeOffset(timeOffset: number|null): this {
         this.timeOffset = timeOffset;
         return this;
     }
-
     public getBanned(): boolean|null {
         return this.banned;
     }
-
     public setBanned(banned: boolean|null) {
         this.banned = banned;
         return this;
     }
-
     public withBanned(banned: boolean|null): this {
         this.banned = banned;
         return this;
     }
-
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
-
     public setCreatedAt(createdAt: number|null) {
         this.createdAt = createdAt;
         return this;
     }
-
     public withCreatedAt(createdAt: number|null): this {
         this.createdAt = createdAt;
         return this;

@@ -156,24 +156,30 @@ var Namespace = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.getQueueNamespaceId = function () {
         return this.queueNamespaceId;
     };
+    /** @deprecated */
     Namespace.prototype.setQueueNamespaceId = function (queueNamespaceId) {
         this.queueNamespaceId = queueNamespaceId;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.withQueueNamespaceId = function (queueNamespaceId) {
         this.queueNamespaceId = queueNamespaceId;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.getKeyId = function () {
         return this.keyId;
     };
+    /** @deprecated */
     Namespace.prototype.setKeyId = function (keyId) {
         this.keyId = keyId;
         return this;
     };
+    /** @deprecated */
     Namespace.prototype.withKeyId = function (keyId) {
         this.keyId = keyId;
         return this;
