@@ -15,12 +15,16 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import ConsumeAction from './ConsumeAction';
+import AcquireAction from './AcquireAction';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:distributor:{namespaceName}:user:{userId}:stampSheet:result:{transactionId}";
 
 export default class StampSheetResult implements IModel {
     private stampSheetResultId: string|null = null;
     private userId: string|null = null;
     private transactionId: string|null = null;
+    private taskRequests: ConsumeAction[]|null = null;
+    private sheetRequest: AcquireAction|null = null;
     private taskResults: string[]|null = null;
     private sheetResult: string|null = null;
     private nextTransactionId: string|null = null;
@@ -162,6 +166,28 @@ export default class StampSheetResult implements IModel {
         this.transactionId = transactionId;
         return this;
     }
+    public getTaskRequests(): ConsumeAction[]|null {
+        return this.taskRequests;
+    }
+    public setTaskRequests(taskRequests: ConsumeAction[]|null) {
+        this.taskRequests = taskRequests;
+        return this;
+    }
+    public withTaskRequests(taskRequests: ConsumeAction[]|null): this {
+        this.taskRequests = taskRequests;
+        return this;
+    }
+    public getSheetRequest(): AcquireAction|null {
+        return this.sheetRequest;
+    }
+    public setSheetRequest(sheetRequest: AcquireAction|null) {
+        this.sheetRequest = sheetRequest;
+        return this;
+    }
+    public withSheetRequest(sheetRequest: AcquireAction|null): this {
+        this.sheetRequest = sheetRequest;
+        return this;
+    }
     public getTaskResults(): string[]|null {
         return this.taskResults;
     }
@@ -215,6 +241,12 @@ export default class StampSheetResult implements IModel {
             .withStampSheetResultId(data["stampSheetResultId"])
             .withUserId(data["userId"])
             .withTransactionId(data["transactionId"])
+            .withTaskRequests(data.taskRequests ?
+                data.taskRequests.map((item: {[key: string]: any}) => {
+                    return ConsumeAction.fromDict(item);
+                }
+            ) : [])
+            .withSheetRequest(AcquireAction.fromDict(data["sheetRequest"]))
             .withTaskResults(data.taskResults ?
                 data.taskResults.map((item: {[key: string]: any}) => {
                     return item;
@@ -230,6 +262,12 @@ export default class StampSheetResult implements IModel {
             "stampSheetResultId": this.getStampSheetResultId(),
             "userId": this.getUserId(),
             "transactionId": this.getTransactionId(),
+            "taskRequests": this.getTaskRequests() ?
+                this.getTaskRequests()!.map((item: ConsumeAction) => {
+                    return item.toDict();
+                }
+            ) : [],
+            "sheetRequest": this.getSheetRequest()?.toDict(),
             "taskResults": this.getTaskResults() ?
                 this.getTaskResults()!.map((item: string) => {
                     return item;

@@ -1,8 +1,12 @@
 import IModel from '../../core/interface/IModel';
+import ConsumeAction from './ConsumeAction';
+import AcquireAction from './AcquireAction';
 export default class StampSheetResult implements IModel {
     private stampSheetResultId;
     private userId;
     private transactionId;
+    private taskRequests;
+    private sheetRequest;
     private taskResults;
     private sheetResult;
     private nextTransactionId;
@@ -23,6 +27,12 @@ export default class StampSheetResult implements IModel {
     getTransactionId(): string | null;
     setTransactionId(transactionId: string | null): this;
     withTransactionId(transactionId: string | null): this;
+    getTaskRequests(): ConsumeAction[] | null;
+    setTaskRequests(taskRequests: ConsumeAction[] | null): this;
+    withTaskRequests(taskRequests: ConsumeAction[] | null): this;
+    getSheetRequest(): AcquireAction | null;
+    setSheetRequest(sheetRequest: AcquireAction | null): this;
+    withSheetRequest(sheetRequest: AcquireAction | null): this;
     getTaskResults(): string[] | null;
     setTaskResults(taskResults: string[] | null): this;
     withTaskResults(taskResults: string[] | null): this;

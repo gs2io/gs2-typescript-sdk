@@ -15,12 +15,17 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
+var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:distributor:{namespaceName}:user:{userId}:stampSheet:result:{transactionId}";
 var StampSheetResult = /** @class */ (function () {
     function StampSheetResult() {
         this.stampSheetResultId = null;
         this.userId = null;
         this.transactionId = null;
+        this.taskRequests = null;
+        this.sheetRequest = null;
         this.taskResults = null;
         this.sheetResult = null;
         this.nextTransactionId = null;
@@ -145,6 +150,28 @@ var StampSheetResult = /** @class */ (function () {
         this.transactionId = transactionId;
         return this;
     };
+    StampSheetResult.prototype.getTaskRequests = function () {
+        return this.taskRequests;
+    };
+    StampSheetResult.prototype.setTaskRequests = function (taskRequests) {
+        this.taskRequests = taskRequests;
+        return this;
+    };
+    StampSheetResult.prototype.withTaskRequests = function (taskRequests) {
+        this.taskRequests = taskRequests;
+        return this;
+    };
+    StampSheetResult.prototype.getSheetRequest = function () {
+        return this.sheetRequest;
+    };
+    StampSheetResult.prototype.setSheetRequest = function (sheetRequest) {
+        this.sheetRequest = sheetRequest;
+        return this;
+    };
+    StampSheetResult.prototype.withSheetRequest = function (sheetRequest) {
+        this.sheetRequest = sheetRequest;
+        return this;
+    };
     StampSheetResult.prototype.getTaskResults = function () {
         return this.taskResults;
     };
@@ -197,6 +224,11 @@ var StampSheetResult = /** @class */ (function () {
             .withStampSheetResultId(data["stampSheetResultId"])
             .withUserId(data["userId"])
             .withTransactionId(data["transactionId"])
+            .withTaskRequests(data.taskRequests ?
+            data.taskRequests.map(function (item) {
+                return ConsumeAction_1.default.fromDict(item);
+            }) : [])
+            .withSheetRequest(AcquireAction_1.default.fromDict(data["sheetRequest"]))
             .withTaskResults(data.taskResults ?
             data.taskResults.map(function (item) {
                 return item;
@@ -206,10 +238,16 @@ var StampSheetResult = /** @class */ (function () {
             .withCreatedAt(data["createdAt"]);
     };
     StampSheetResult.prototype.toDict = function () {
+        var _a;
         return {
             "stampSheetResultId": this.getStampSheetResultId(),
             "userId": this.getUserId(),
             "transactionId": this.getTransactionId(),
+            "taskRequests": this.getTaskRequests() ?
+                this.getTaskRequests().map(function (item) {
+                    return item.toDict();
+                }) : [],
+            "sheetRequest": (_a = this.getSheetRequest()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "taskResults": this.getTaskResults() ?
                 this.getTaskResults().map(function (item) {
                     return item;
