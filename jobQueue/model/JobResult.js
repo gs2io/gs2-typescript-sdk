@@ -20,6 +20,8 @@ var JobResult = /** @class */ (function () {
     function JobResult() {
         this.jobResultId = null;
         this.jobId = null;
+        this.scriptId = null;
+        this.args = null;
         this.tryNumber = null;
         this.statusCode = null;
         this.result = null;
@@ -155,6 +157,28 @@ var JobResult = /** @class */ (function () {
         this.jobId = jobId;
         return this;
     };
+    JobResult.prototype.getScriptId = function () {
+        return this.scriptId;
+    };
+    JobResult.prototype.setScriptId = function (scriptId) {
+        this.scriptId = scriptId;
+        return this;
+    };
+    JobResult.prototype.withScriptId = function (scriptId) {
+        this.scriptId = scriptId;
+        return this;
+    };
+    JobResult.prototype.getArgs = function () {
+        return this.args;
+    };
+    JobResult.prototype.setArgs = function (args) {
+        this.args = args;
+        return this;
+    };
+    JobResult.prototype.withArgs = function (args) {
+        this.args = args;
+        return this;
+    };
     JobResult.prototype.getTryNumber = function () {
         return this.tryNumber;
     };
@@ -206,6 +230,8 @@ var JobResult = /** @class */ (function () {
         return new JobResult()
             .withJobResultId(data["jobResultId"])
             .withJobId(data["jobId"])
+            .withScriptId(data["scriptId"])
+            .withArgs(data["args"])
             .withTryNumber(data["tryNumber"])
             .withStatusCode(data["statusCode"])
             .withResult(data["result"])
@@ -215,6 +241,8 @@ var JobResult = /** @class */ (function () {
         return {
             "jobResultId": this.getJobResultId(),
             "jobId": this.getJobId(),
+            "scriptId": this.getScriptId(),
+            "args": this.getArgs(),
             "tryNumber": this.getTryNumber(),
             "statusCode": this.getStatusCode(),
             "result": this.getResult(),

@@ -20,6 +20,7 @@ var Gs2JobQueue = tslib_1.__importStar(require("../model"));
 var PushByStampSheetResult = /** @class */ (function () {
     function PushByStampSheetResult() {
         this.items = null;
+        this.autoRun = null;
     }
     PushByStampSheetResult.prototype.getItems = function () {
         return this.items;
@@ -32,12 +33,24 @@ var PushByStampSheetResult = /** @class */ (function () {
         this.items = items;
         return this;
     };
+    PushByStampSheetResult.prototype.getAutoRun = function () {
+        return this.autoRun;
+    };
+    PushByStampSheetResult.prototype.setAutoRun = function (autoRun) {
+        this.autoRun = autoRun;
+        return this;
+    };
+    PushByStampSheetResult.prototype.withAutoRun = function (autoRun) {
+        this.autoRun = autoRun;
+        return this;
+    };
     PushByStampSheetResult.fromDict = function (data) {
         return new PushByStampSheetResult()
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2JobQueue.Job.fromDict(item);
-            }) : []);
+            }) : [])
+            .withAutoRun(data["autoRun"]);
     };
     PushByStampSheetResult.prototype.toDict = function () {
         return {
@@ -45,6 +58,7 @@ var PushByStampSheetResult = /** @class */ (function () {
                 this.getItems().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "autoRun": this.getAutoRun(),
         };
     };
     return PushByStampSheetResult;

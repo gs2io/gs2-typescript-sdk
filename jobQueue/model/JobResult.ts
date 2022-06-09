@@ -20,6 +20,8 @@ const grnFormat: string = "grn:gs2:{region}:{ownerId}:queue:{namespaceName}:user
 export default class JobResult implements IModel {
     private jobResultId: string|null = null;
     private jobId: string|null = null;
+    private scriptId: string|null = null;
+    private args: string|null = null;
     private tryNumber: number|null = null;
     private statusCode: number|null = null;
     private result: string|null = null;
@@ -175,6 +177,28 @@ export default class JobResult implements IModel {
         this.jobId = jobId;
         return this;
     }
+    public getScriptId(): string|null {
+        return this.scriptId;
+    }
+    public setScriptId(scriptId: string|null) {
+        this.scriptId = scriptId;
+        return this;
+    }
+    public withScriptId(scriptId: string|null): this {
+        this.scriptId = scriptId;
+        return this;
+    }
+    public getArgs(): string|null {
+        return this.args;
+    }
+    public setArgs(args: string|null) {
+        this.args = args;
+        return this;
+    }
+    public withArgs(args: string|null): this {
+        this.args = args;
+        return this;
+    }
     public getTryNumber(): number|null {
         return this.tryNumber;
     }
@@ -227,6 +251,8 @@ export default class JobResult implements IModel {
         return new JobResult()
             .withJobResultId(data["jobResultId"])
             .withJobId(data["jobId"])
+            .withScriptId(data["scriptId"])
+            .withArgs(data["args"])
             .withTryNumber(data["tryNumber"])
             .withStatusCode(data["statusCode"])
             .withResult(data["result"])
@@ -237,6 +263,8 @@ export default class JobResult implements IModel {
         return {
             "jobResultId": this.getJobResultId(),
             "jobId": this.getJobId(),
+            "scriptId": this.getScriptId(),
+            "args": this.getArgs(),
             "tryNumber": this.getTryNumber(),
             "statusCode": this.getStatusCode(),
             "result": this.getResult(),

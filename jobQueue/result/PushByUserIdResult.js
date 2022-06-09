@@ -20,6 +20,7 @@ var Gs2JobQueue = tslib_1.__importStar(require("../model"));
 var PushByUserIdResult = /** @class */ (function () {
     function PushByUserIdResult() {
         this.items = null;
+        this.autoRun = null;
     }
     PushByUserIdResult.prototype.getItems = function () {
         return this.items;
@@ -32,12 +33,24 @@ var PushByUserIdResult = /** @class */ (function () {
         this.items = items;
         return this;
     };
+    PushByUserIdResult.prototype.getAutoRun = function () {
+        return this.autoRun;
+    };
+    PushByUserIdResult.prototype.setAutoRun = function (autoRun) {
+        this.autoRun = autoRun;
+        return this;
+    };
+    PushByUserIdResult.prototype.withAutoRun = function (autoRun) {
+        this.autoRun = autoRun;
+        return this;
+    };
     PushByUserIdResult.fromDict = function (data) {
         return new PushByUserIdResult()
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2JobQueue.Job.fromDict(item);
-            }) : []);
+            }) : [])
+            .withAutoRun(data["autoRun"]);
     };
     PushByUserIdResult.prototype.toDict = function () {
         return {
@@ -45,6 +58,7 @@ var PushByUserIdResult = /** @class */ (function () {
                 this.getItems().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "autoRun": this.getAutoRun(),
         };
     };
     return PushByUserIdResult;

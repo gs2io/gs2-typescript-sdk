@@ -2,6 +2,8 @@ import IModel from '../../core/interface/IModel';
 export default class JobResult implements IModel {
     private jobResultId;
     private jobId;
+    private scriptId;
+    private args;
     private tryNumber;
     private statusCode;
     private result;
@@ -20,6 +22,12 @@ export default class JobResult implements IModel {
     getJobId(): string | null;
     setJobId(jobId: string | null): this;
     withJobId(jobId: string | null): this;
+    getScriptId(): string | null;
+    setScriptId(scriptId: string | null): this;
+    withScriptId(scriptId: string | null): this;
+    getArgs(): string | null;
+    setArgs(args: string | null): this;
+    withArgs(args: string | null): this;
     getTryNumber(): number | null;
     setTryNumber(tryNumber: number | null): this;
     withTryNumber(tryNumber: number | null): this;

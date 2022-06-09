@@ -20,6 +20,7 @@ import * as Gs2JobQueue from '../model'
 
 export default class PushByUserIdResult implements IResult {
     private items: Gs2JobQueue.Job[]|null = null;
+    private autoRun: boolean|null = null;
 
     public getItems(): Gs2JobQueue.Job[]|null {
         return this.items;
@@ -35,13 +36,28 @@ export default class PushByUserIdResult implements IResult {
         return this;
     }
 
+    public getAutoRun(): boolean|null {
+        return this.autoRun;
+    }
+
+    public setAutoRun(autoRun: boolean|null) {
+        this.autoRun = autoRun;
+        return this;
+    }
+
+    public withAutoRun(autoRun: boolean|null): this {
+        this.autoRun = autoRun;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): PushByUserIdResult {
         return new PushByUserIdResult()
             .withItems(data.items ?
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2JobQueue.Job.fromDict(item);
                 }
-            ) : []);
+            ) : [])
+            .withAutoRun(data["autoRun"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -51,6 +67,7 @@ export default class PushByUserIdResult implements IResult {
                     return item.toDict();
                 }
             ) : [],
+            "autoRun": this.getAutoRun(),
         };
     }
 }
