@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionSetting = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.AcquireActionConfig = exports.AcquireAction = exports.SlotWithSignature = exports.SlotModel = exports.Slot = exports.Form = exports.Mold = exports.CurrentFormMaster = exports.MoldModelMaster = exports.MoldModel = exports.FormModelMaster = exports.FormModel = exports.Namespace = void 0;
+exports.TransactionSetting = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.AcquireActionConfig = exports.AcquireAction = exports.SlotWithSignature = exports.SlotModel = exports.Slot = exports.PropertyForm = exports.Form = exports.Mold = exports.CurrentFormMaster = exports.MoldModelMaster = exports.MoldModel = exports.FormModelMaster = exports.FormModel = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -33,6 +33,8 @@ var Mold_1 = tslib_1.__importDefault(require("./Mold"));
 exports.Mold = Mold_1.default;
 var Form_1 = tslib_1.__importDefault(require("./Form"));
 exports.Form = Form_1.default;
+var PropertyForm_1 = tslib_1.__importDefault(require("./PropertyForm"));
+exports.PropertyForm = PropertyForm_1.default;
 var Slot_1 = tslib_1.__importDefault(require("./Slot"));
 exports.Slot = Slot_1.default;
 var SlotModel_1 = tslib_1.__importDefault(require("./SlotModel"));

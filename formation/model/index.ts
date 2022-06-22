@@ -21,6 +21,7 @@ import MoldModelMaster from "./MoldModelMaster"
 import CurrentFormMaster from "./CurrentFormMaster"
 import Mold from "./Mold"
 import Form from "./Form"
+import PropertyForm from "./PropertyForm"
 import Slot from "./Slot"
 import SlotModel from "./SlotModel"
 import SlotWithSignature from "./SlotWithSignature"
@@ -41,6 +42,7 @@ export {
     CurrentFormMaster,
     Mold,
     Form,
+    PropertyForm,
     Slot,
     SlotModel,
     SlotWithSignature,

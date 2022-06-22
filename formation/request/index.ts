@@ -19,6 +19,8 @@ import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
 import GetNamespaceRequest from "./GetNamespaceRequest"
 import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
 import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DescribeFormModelsRequest from "./DescribeFormModelsRequest"
+import GetFormModelRequest from "./GetFormModelRequest"
 import DescribeFormModelMastersRequest from "./DescribeFormModelMastersRequest"
 import CreateFormModelMasterRequest from "./CreateFormModelMasterRequest"
 import GetFormModelMasterRequest from "./GetFormModelMasterRequest"
@@ -57,6 +59,18 @@ import AcquireActionsToFormPropertiesRequest from "./AcquireActionsToFormPropert
 import DeleteFormRequest from "./DeleteFormRequest"
 import DeleteFormByUserIdRequest from "./DeleteFormByUserIdRequest"
 import AcquireActionToFormPropertiesByStampSheetRequest from "./AcquireActionToFormPropertiesByStampSheetRequest"
+import DescribePropertyFormsRequest from "./DescribePropertyFormsRequest"
+import DescribePropertyFormsByUserIdRequest from "./DescribePropertyFormsByUserIdRequest"
+import GetPropertyFormRequest from "./GetPropertyFormRequest"
+import GetPropertyFormByUserIdRequest from "./GetPropertyFormByUserIdRequest"
+import GetPropertyFormWithSignatureRequest from "./GetPropertyFormWithSignatureRequest"
+import GetPropertyFormWithSignatureByUserIdRequest from "./GetPropertyFormWithSignatureByUserIdRequest"
+import SetPropertyFormByUserIdRequest from "./SetPropertyFormByUserIdRequest"
+import SetPropertyFormWithSignatureRequest from "./SetPropertyFormWithSignatureRequest"
+import AcquireActionsToPropertyFormPropertiesRequest from "./AcquireActionsToPropertyFormPropertiesRequest"
+import DeletePropertyFormRequest from "./DeletePropertyFormRequest"
+import DeletePropertyFormByUserIdRequest from "./DeletePropertyFormByUserIdRequest"
+import AcquireActionToPropertyFormPropertiesByStampSheetRequest from "./AcquireActionToPropertyFormPropertiesByStampSheetRequest"
 
 export {
     DescribeNamespacesRequest,
@@ -65,6 +79,8 @@ export {
     GetNamespaceRequest,
     UpdateNamespaceRequest,
     DeleteNamespaceRequest,
+    DescribeFormModelsRequest,
+    GetFormModelRequest,
     DescribeFormModelMastersRequest,
     CreateFormModelMasterRequest,
     GetFormModelMasterRequest,
@@ -103,4 +119,16 @@ export {
     DeleteFormRequest,
     DeleteFormByUserIdRequest,
     AcquireActionToFormPropertiesByStampSheetRequest,
+    DescribePropertyFormsRequest,
+    DescribePropertyFormsByUserIdRequest,
+    GetPropertyFormRequest,
+    GetPropertyFormByUserIdRequest,
+    GetPropertyFormWithSignatureRequest,
+    GetPropertyFormWithSignatureByUserIdRequest,
+    SetPropertyFormByUserIdRequest,
+    SetPropertyFormWithSignatureRequest,
+    AcquireActionsToPropertyFormPropertiesRequest,
+    DeletePropertyFormRequest,
+    DeletePropertyFormByUserIdRequest,
+    AcquireActionToPropertyFormPropertiesByStampSheetRequest,
 };

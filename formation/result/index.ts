@@ -19,6 +19,8 @@ import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
 import GetNamespaceResult from "./GetNamespaceResult"
 import UpdateNamespaceResult from "./UpdateNamespaceResult"
 import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeFormModelsResult from "./DescribeFormModelsResult"
+import GetFormModelResult from "./GetFormModelResult"
 import DescribeFormModelMastersResult from "./DescribeFormModelMastersResult"
 import CreateFormModelMasterResult from "./CreateFormModelMasterResult"
 import GetFormModelMasterResult from "./GetFormModelMasterResult"
@@ -57,6 +59,18 @@ import AcquireActionsToFormPropertiesResult from "./AcquireActionsToFormProperti
 import DeleteFormResult from "./DeleteFormResult"
 import DeleteFormByUserIdResult from "./DeleteFormByUserIdResult"
 import AcquireActionToFormPropertiesByStampSheetResult from "./AcquireActionToFormPropertiesByStampSheetResult"
+import DescribePropertyFormsResult from "./DescribePropertyFormsResult"
+import DescribePropertyFormsByUserIdResult from "./DescribePropertyFormsByUserIdResult"
+import GetPropertyFormResult from "./GetPropertyFormResult"
+import GetPropertyFormByUserIdResult from "./GetPropertyFormByUserIdResult"
+import GetPropertyFormWithSignatureResult from "./GetPropertyFormWithSignatureResult"
+import GetPropertyFormWithSignatureByUserIdResult from "./GetPropertyFormWithSignatureByUserIdResult"
+import SetPropertyFormByUserIdResult from "./SetPropertyFormByUserIdResult"
+import SetPropertyFormWithSignatureResult from "./SetPropertyFormWithSignatureResult"
+import AcquireActionsToPropertyFormPropertiesResult from "./AcquireActionsToPropertyFormPropertiesResult"
+import DeletePropertyFormResult from "./DeletePropertyFormResult"
+import DeletePropertyFormByUserIdResult from "./DeletePropertyFormByUserIdResult"
+import AcquireActionToPropertyFormPropertiesByStampSheetResult from "./AcquireActionToPropertyFormPropertiesByStampSheetResult"
 
 export {
     DescribeNamespacesResult,
@@ -65,6 +79,8 @@ export {
     GetNamespaceResult,
     UpdateNamespaceResult,
     DeleteNamespaceResult,
+    DescribeFormModelsResult,
+    GetFormModelResult,
     DescribeFormModelMastersResult,
     CreateFormModelMasterResult,
     GetFormModelMasterResult,
@@ -103,4 +119,16 @@ export {
     DeleteFormResult,
     DeleteFormByUserIdResult,
     AcquireActionToFormPropertiesByStampSheetResult,
+    DescribePropertyFormsResult,
+    DescribePropertyFormsByUserIdResult,
+    GetPropertyFormResult,
+    GetPropertyFormByUserIdResult,
+    GetPropertyFormWithSignatureResult,
+    GetPropertyFormWithSignatureByUserIdResult,
+    SetPropertyFormByUserIdResult,
+    SetPropertyFormWithSignatureResult,
+    AcquireActionsToPropertyFormPropertiesResult,
+    DeletePropertyFormResult,
+    DeletePropertyFormByUserIdResult,
+    AcquireActionToPropertyFormPropertiesByStampSheetResult,
 };

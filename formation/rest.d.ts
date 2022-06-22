@@ -10,6 +10,8 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
     updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
     deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    describeFormModels(request: Request.DescribeFormModelsRequest): Promise<Result.DescribeFormModelsResult>;
+    getFormModel(request: Request.GetFormModelRequest): Promise<Result.GetFormModelResult>;
     describeFormModelMasters(request: Request.DescribeFormModelMastersRequest): Promise<Result.DescribeFormModelMastersResult>;
     createFormModelMaster(request: Request.CreateFormModelMasterRequest): Promise<Result.CreateFormModelMasterResult>;
     getFormModelMaster(request: Request.GetFormModelMasterRequest): Promise<Result.GetFormModelMasterResult>;
@@ -48,4 +50,16 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     deleteForm(request: Request.DeleteFormRequest): Promise<Result.DeleteFormResult>;
     deleteFormByUserId(request: Request.DeleteFormByUserIdRequest): Promise<Result.DeleteFormByUserIdResult>;
     acquireActionToFormPropertiesByStampSheet(request: Request.AcquireActionToFormPropertiesByStampSheetRequest): Promise<Result.AcquireActionToFormPropertiesByStampSheetResult>;
+    describePropertyForms(request: Request.DescribePropertyFormsRequest): Promise<Result.DescribePropertyFormsResult>;
+    describePropertyFormsByUserId(request: Request.DescribePropertyFormsByUserIdRequest): Promise<Result.DescribePropertyFormsByUserIdResult>;
+    getPropertyForm(request: Request.GetPropertyFormRequest): Promise<Result.GetPropertyFormResult>;
+    getPropertyFormByUserId(request: Request.GetPropertyFormByUserIdRequest): Promise<Result.GetPropertyFormByUserIdResult>;
+    getPropertyFormWithSignature(request: Request.GetPropertyFormWithSignatureRequest): Promise<Result.GetPropertyFormWithSignatureResult>;
+    getPropertyFormWithSignatureByUserId(request: Request.GetPropertyFormWithSignatureByUserIdRequest): Promise<Result.GetPropertyFormWithSignatureByUserIdResult>;
+    setPropertyFormByUserId(request: Request.SetPropertyFormByUserIdRequest): Promise<Result.SetPropertyFormByUserIdResult>;
+    setPropertyFormWithSignature(request: Request.SetPropertyFormWithSignatureRequest): Promise<Result.SetPropertyFormWithSignatureResult>;
+    acquireActionsToPropertyFormProperties(request: Request.AcquireActionsToPropertyFormPropertiesRequest): Promise<Result.AcquireActionsToPropertyFormPropertiesResult>;
+    deletePropertyForm(request: Request.DeletePropertyFormRequest): Promise<Result.DeletePropertyFormResult>;
+    deletePropertyFormByUserId(request: Request.DeletePropertyFormByUserIdRequest): Promise<Result.DeletePropertyFormByUserIdResult>;
+    acquireActionToPropertyFormPropertiesByStampSheet(request: Request.AcquireActionToPropertyFormPropertiesByStampSheetRequest): Promise<Result.AcquireActionToPropertyFormPropertiesByStampSheetResult>;
 }
