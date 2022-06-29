@@ -25,6 +25,7 @@ var Inventory = /** @class */ (function () {
         this.currentInventoryMaxCapacity = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Inventory.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -189,6 +190,17 @@ var Inventory = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Inventory.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Inventory.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Inventory.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Inventory.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -200,7 +212,8 @@ var Inventory = /** @class */ (function () {
             .withCurrentInventoryCapacityUsage(data["currentInventoryCapacityUsage"])
             .withCurrentInventoryMaxCapacity(data["currentInventoryMaxCapacity"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Inventory.prototype.toDict = function () {
         return {
@@ -211,6 +224,7 @@ var Inventory = /** @class */ (function () {
             "currentInventoryMaxCapacity": this.getCurrentInventoryMaxCapacity(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Inventory;
