@@ -26,6 +26,7 @@ export default class BuyByUserIdRequest implements IRequest {
     private showcaseName: string|null = null;
     private displayItemId: string|null = null;
     private userId: string|null = null;
+    private quantity: number|null = null;
     private config: Gs2Showcase.Config[]|null = null;
 
     public getRequestId(): string|null {
@@ -99,6 +100,17 @@ export default class BuyByUserIdRequest implements IRequest {
         this.userId = userId;
         return this;
     }
+    public getQuantity(): number|null {
+        return this.quantity;
+    }
+    public setQuantity(quantity: number|null) {
+        this.quantity = quantity;
+        return this;
+    }
+    public withQuantity(quantity: number|null): this {
+        this.quantity = quantity;
+        return this;
+    }
     public getConfig(): Gs2Showcase.Config[]|null {
         return this.config;
     }
@@ -117,6 +129,7 @@ export default class BuyByUserIdRequest implements IRequest {
             .withShowcaseName(data["showcaseName"])
             .withDisplayItemId(data["displayItemId"])
             .withUserId(data["userId"])
+            .withQuantity(data["quantity"])
             .withConfig(data.config ?
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Showcase.Config.fromDict(item);
@@ -130,6 +143,7 @@ export default class BuyByUserIdRequest implements IRequest {
             "showcaseName": this.getShowcaseName(),
             "displayItemId": this.getDisplayItemId(),
             "userId": this.getUserId(),
+            "quantity": this.getQuantity(),
             "config": this.getConfig() ?
                 this.getConfig()!.map((item: Gs2Showcase.Config) => {
                     return item.toDict();

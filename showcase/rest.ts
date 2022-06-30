@@ -901,6 +901,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'quantity': request.getQuantity() ?? null,
             'config': request.getConfig()?.map((item) => item.toDict()) ?? null,
         };
         return axios.post(
@@ -935,6 +936,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'quantity': request.getQuantity() ?? null,
             'config': request.getConfig()?.map((item) => item.toDict()) ?? null,
         };
         return axios.post(

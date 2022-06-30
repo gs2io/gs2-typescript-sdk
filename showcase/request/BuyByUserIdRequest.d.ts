@@ -7,6 +7,7 @@ export default class BuyByUserIdRequest implements IRequest {
     private showcaseName;
     private displayItemId;
     private userId;
+    private quantity;
     private config;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -26,6 +27,9 @@ export default class BuyByUserIdRequest implements IRequest {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
+    getQuantity(): number | null;
+    setQuantity(quantity: number | null): this;
+    withQuantity(quantity: number | null): this;
     getConfig(): Gs2Showcase.Config[] | null;
     setConfig(config: Gs2Showcase.Config[] | null): this;
     withConfig(config: Gs2Showcase.Config[] | null): this;

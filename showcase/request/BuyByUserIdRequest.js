@@ -25,6 +25,7 @@ var BuyByUserIdRequest = /** @class */ (function () {
         this.showcaseName = null;
         this.displayItemId = null;
         this.userId = null;
+        this.quantity = null;
         this.config = null;
     }
     BuyByUserIdRequest.prototype.getRequestId = function () {
@@ -93,6 +94,17 @@ var BuyByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    BuyByUserIdRequest.prototype.getQuantity = function () {
+        return this.quantity;
+    };
+    BuyByUserIdRequest.prototype.setQuantity = function (quantity) {
+        this.quantity = quantity;
+        return this;
+    };
+    BuyByUserIdRequest.prototype.withQuantity = function (quantity) {
+        this.quantity = quantity;
+        return this;
+    };
     BuyByUserIdRequest.prototype.getConfig = function () {
         return this.config;
     };
@@ -110,6 +122,7 @@ var BuyByUserIdRequest = /** @class */ (function () {
             .withShowcaseName(data["showcaseName"])
             .withDisplayItemId(data["displayItemId"])
             .withUserId(data["userId"])
+            .withQuantity(data["quantity"])
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Showcase.Config.fromDict(item);
@@ -121,6 +134,7 @@ var BuyByUserIdRequest = /** @class */ (function () {
             "showcaseName": this.getShowcaseName(),
             "displayItemId": this.getDisplayItemId(),
             "userId": this.getUserId(),
+            "quantity": this.getQuantity(),
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();

@@ -25,6 +25,7 @@ var BuyRequest = /** @class */ (function () {
         this.showcaseName = null;
         this.displayItemId = null;
         this.accessToken = null;
+        this.quantity = null;
         this.config = null;
     }
     BuyRequest.prototype.getRequestId = function () {
@@ -93,6 +94,17 @@ var BuyRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
+    BuyRequest.prototype.getQuantity = function () {
+        return this.quantity;
+    };
+    BuyRequest.prototype.setQuantity = function (quantity) {
+        this.quantity = quantity;
+        return this;
+    };
+    BuyRequest.prototype.withQuantity = function (quantity) {
+        this.quantity = quantity;
+        return this;
+    };
     BuyRequest.prototype.getConfig = function () {
         return this.config;
     };
@@ -110,6 +122,7 @@ var BuyRequest = /** @class */ (function () {
             .withShowcaseName(data["showcaseName"])
             .withDisplayItemId(data["displayItemId"])
             .withAccessToken(data["accessToken"])
+            .withQuantity(data["quantity"])
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Showcase.Config.fromDict(item);
@@ -121,6 +134,7 @@ var BuyRequest = /** @class */ (function () {
             "showcaseName": this.getShowcaseName(),
             "displayItemId": this.getDisplayItemId(),
             "accessToken": this.getAccessToken(),
+            "quantity": this.getQuantity(),
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
