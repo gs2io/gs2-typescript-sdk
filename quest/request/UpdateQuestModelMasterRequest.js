@@ -28,6 +28,7 @@ var UpdateQuestModelMasterRequest = /** @class */ (function () {
         this.metadata = null;
         this.contents = null;
         this.challengePeriodEventId = null;
+        this.firstCompleteAcquireActions = null;
         this.consumeActions = null;
         this.failedAcquireActions = null;
         this.premiseQuestNames = null;
@@ -131,6 +132,17 @@ var UpdateQuestModelMasterRequest = /** @class */ (function () {
         this.challengePeriodEventId = challengePeriodEventId;
         return this;
     };
+    UpdateQuestModelMasterRequest.prototype.getFirstCompleteAcquireActions = function () {
+        return this.firstCompleteAcquireActions;
+    };
+    UpdateQuestModelMasterRequest.prototype.setFirstCompleteAcquireActions = function (firstCompleteAcquireActions) {
+        this.firstCompleteAcquireActions = firstCompleteAcquireActions;
+        return this;
+    };
+    UpdateQuestModelMasterRequest.prototype.withFirstCompleteAcquireActions = function (firstCompleteAcquireActions) {
+        this.firstCompleteAcquireActions = firstCompleteAcquireActions;
+        return this;
+    };
     UpdateQuestModelMasterRequest.prototype.getConsumeActions = function () {
         return this.consumeActions;
     };
@@ -176,6 +188,10 @@ var UpdateQuestModelMasterRequest = /** @class */ (function () {
                 return Gs2Quest.Contents.fromDict(item);
             }) : [])
             .withChallengePeriodEventId(data["challengePeriodEventId"])
+            .withFirstCompleteAcquireActions(data.firstCompleteAcquireActions ?
+            data.firstCompleteAcquireActions.map(function (item) {
+                return Gs2Quest.AcquireAction.fromDict(item);
+            }) : [])
             .withConsumeActions(data.consumeActions ?
             data.consumeActions.map(function (item) {
                 return Gs2Quest.ConsumeAction.fromDict(item);
@@ -201,6 +217,10 @@ var UpdateQuestModelMasterRequest = /** @class */ (function () {
                     return item.toDict();
                 }) : [],
             "challengePeriodEventId": this.getChallengePeriodEventId(),
+            "firstCompleteAcquireActions": this.getFirstCompleteAcquireActions() ?
+                this.getFirstCompleteAcquireActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions().map(function (item) {
                     return item.toDict();

@@ -29,6 +29,7 @@ export default class CreateQuestModelMasterRequest implements IRequest {
     private metadata: string|null = null;
     private contents: Gs2Quest.Contents[]|null = null;
     private challengePeriodEventId: string|null = null;
+    private firstCompleteAcquireActions: Gs2Quest.AcquireAction[]|null = null;
     private consumeActions: Gs2Quest.ConsumeAction[]|null = null;
     private failedAcquireActions: Gs2Quest.AcquireAction[]|null = null;
     private premiseQuestNames: string[]|null = null;
@@ -137,6 +138,17 @@ export default class CreateQuestModelMasterRequest implements IRequest {
         this.challengePeriodEventId = challengePeriodEventId;
         return this;
     }
+    public getFirstCompleteAcquireActions(): Gs2Quest.AcquireAction[]|null {
+        return this.firstCompleteAcquireActions;
+    }
+    public setFirstCompleteAcquireActions(firstCompleteAcquireActions: Gs2Quest.AcquireAction[]|null) {
+        this.firstCompleteAcquireActions = firstCompleteAcquireActions;
+        return this;
+    }
+    public withFirstCompleteAcquireActions(firstCompleteAcquireActions: Gs2Quest.AcquireAction[]|null): this {
+        this.firstCompleteAcquireActions = firstCompleteAcquireActions;
+        return this;
+    }
     public getConsumeActions(): Gs2Quest.ConsumeAction[]|null {
         return this.consumeActions;
     }
@@ -184,6 +196,11 @@ export default class CreateQuestModelMasterRequest implements IRequest {
                 }
             ) : [])
             .withChallengePeriodEventId(data["challengePeriodEventId"])
+            .withFirstCompleteAcquireActions(data.firstCompleteAcquireActions ?
+                data.firstCompleteAcquireActions.map((item: {[key: string]: any}) => {
+                    return Gs2Quest.AcquireAction.fromDict(item);
+                }
+            ) : [])
             .withConsumeActions(data.consumeActions ?
                 data.consumeActions.map((item: {[key: string]: any}) => {
                     return Gs2Quest.ConsumeAction.fromDict(item);
@@ -214,6 +231,11 @@ export default class CreateQuestModelMasterRequest implements IRequest {
                 }
             ) : [],
             "challengePeriodEventId": this.getChallengePeriodEventId(),
+            "firstCompleteAcquireActions": this.getFirstCompleteAcquireActions() ?
+                this.getFirstCompleteAcquireActions()!.map((item: Gs2Quest.AcquireAction) => {
+                    return item.toDict();
+                }
+            ) : [],
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions()!.map((item: Gs2Quest.ConsumeAction) => {
                     return item.toDict();

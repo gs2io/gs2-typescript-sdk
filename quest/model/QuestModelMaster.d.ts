@@ -10,6 +10,7 @@ export default class QuestModelMaster implements IModel {
     private metadata;
     private contents;
     private challengePeriodEventId;
+    private firstCompleteAcquireActions;
     private consumeActions;
     private failedAcquireActions;
     private premiseQuestNames;
@@ -43,6 +44,9 @@ export default class QuestModelMaster implements IModel {
     getChallengePeriodEventId(): string | null;
     setChallengePeriodEventId(challengePeriodEventId: string | null): this;
     withChallengePeriodEventId(challengePeriodEventId: string | null): this;
+    getFirstCompleteAcquireActions(): AcquireAction[] | null;
+    setFirstCompleteAcquireActions(firstCompleteAcquireActions: AcquireAction[] | null): this;
+    withFirstCompleteAcquireActions(firstCompleteAcquireActions: AcquireAction[] | null): this;
     getConsumeActions(): ConsumeAction[] | null;
     setConsumeActions(consumeActions: ConsumeAction[] | null): this;
     withConsumeActions(consumeActions: ConsumeAction[] | null): this;

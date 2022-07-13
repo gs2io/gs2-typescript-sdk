@@ -27,6 +27,7 @@ var QuestModel = /** @class */ (function () {
         this.metadata = null;
         this.contents = null;
         this.challengePeriodEventId = null;
+        this.firstCompleteAcquireActions = null;
         this.consumeActions = null;
         this.failedAcquireActions = null;
         this.premiseQuestNames = null;
@@ -172,6 +173,17 @@ var QuestModel = /** @class */ (function () {
         this.challengePeriodEventId = challengePeriodEventId;
         return this;
     };
+    QuestModel.prototype.getFirstCompleteAcquireActions = function () {
+        return this.firstCompleteAcquireActions;
+    };
+    QuestModel.prototype.setFirstCompleteAcquireActions = function (firstCompleteAcquireActions) {
+        this.firstCompleteAcquireActions = firstCompleteAcquireActions;
+        return this;
+    };
+    QuestModel.prototype.withFirstCompleteAcquireActions = function (firstCompleteAcquireActions) {
+        this.firstCompleteAcquireActions = firstCompleteAcquireActions;
+        return this;
+    };
     QuestModel.prototype.getConsumeActions = function () {
         return this.consumeActions;
     };
@@ -218,6 +230,10 @@ var QuestModel = /** @class */ (function () {
                 return Contents_1.default.fromDict(item);
             }) : [])
             .withChallengePeriodEventId(data["challengePeriodEventId"])
+            .withFirstCompleteAcquireActions(data.firstCompleteAcquireActions ?
+            data.firstCompleteAcquireActions.map(function (item) {
+                return AcquireAction_1.default.fromDict(item);
+            }) : [])
             .withConsumeActions(data.consumeActions ?
             data.consumeActions.map(function (item) {
                 return ConsumeAction_1.default.fromDict(item);
@@ -241,6 +257,10 @@ var QuestModel = /** @class */ (function () {
                     return item.toDict();
                 }) : [],
             "challengePeriodEventId": this.getChallengePeriodEventId(),
+            "firstCompleteAcquireActions": this.getFirstCompleteAcquireActions() ?
+                this.getFirstCompleteAcquireActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions().map(function (item) {
                     return item.toDict();

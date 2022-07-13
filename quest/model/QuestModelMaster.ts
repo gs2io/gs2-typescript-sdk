@@ -28,6 +28,7 @@ export default class QuestModelMaster implements IModel {
     private metadata: string|null = null;
     private contents: Contents[]|null = null;
     private challengePeriodEventId: string|null = null;
+    private firstCompleteAcquireActions: AcquireAction[]|null = null;
     private consumeActions: ConsumeAction[]|null = null;
     private failedAcquireActions: AcquireAction[]|null = null;
     private premiseQuestNames: string[]|null = null;
@@ -214,6 +215,17 @@ export default class QuestModelMaster implements IModel {
         this.challengePeriodEventId = challengePeriodEventId;
         return this;
     }
+    public getFirstCompleteAcquireActions(): AcquireAction[]|null {
+        return this.firstCompleteAcquireActions;
+    }
+    public setFirstCompleteAcquireActions(firstCompleteAcquireActions: AcquireAction[]|null) {
+        this.firstCompleteAcquireActions = firstCompleteAcquireActions;
+        return this;
+    }
+    public withFirstCompleteAcquireActions(firstCompleteAcquireActions: AcquireAction[]|null): this {
+        this.firstCompleteAcquireActions = firstCompleteAcquireActions;
+        return this;
+    }
     public getConsumeActions(): ConsumeAction[]|null {
         return this.consumeActions;
     }
@@ -286,6 +298,11 @@ export default class QuestModelMaster implements IModel {
                 }
             ) : [])
             .withChallengePeriodEventId(data["challengePeriodEventId"])
+            .withFirstCompleteAcquireActions(data.firstCompleteAcquireActions ?
+                data.firstCompleteAcquireActions.map((item: {[key: string]: any}) => {
+                    return AcquireAction.fromDict(item);
+                }
+            ) : [])
             .withConsumeActions(data.consumeActions ?
                 data.consumeActions.map((item: {[key: string]: any}) => {
                     return ConsumeAction.fromDict(item);
@@ -318,6 +335,11 @@ export default class QuestModelMaster implements IModel {
                 }
             ) : [],
             "challengePeriodEventId": this.getChallengePeriodEventId(),
+            "firstCompleteAcquireActions": this.getFirstCompleteAcquireActions() ?
+                this.getFirstCompleteAcquireActions()!.map((item: AcquireAction) => {
+                    return item.toDict();
+                }
+            ) : [],
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions()!.map((item: ConsumeAction) => {
                     return item.toDict();
