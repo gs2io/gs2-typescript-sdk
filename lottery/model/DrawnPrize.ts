@@ -18,7 +18,19 @@ import IModel from '../../core/interface/IModel';
 import AcquireAction from './AcquireAction';
 
 export default class DrawnPrize implements IModel {
+    private prizeId: string|null = null;
     private acquireActions: AcquireAction[]|null = null;
+    public getPrizeId(): string|null {
+        return this.prizeId;
+    }
+    public setPrizeId(prizeId: string|null) {
+        this.prizeId = prizeId;
+        return this;
+    }
+    public withPrizeId(prizeId: string|null): this {
+        this.prizeId = prizeId;
+        return this;
+    }
     public getAcquireActions(): AcquireAction[]|null {
         return this.acquireActions;
     }
@@ -36,6 +48,7 @@ export default class DrawnPrize implements IModel {
             return null;
         }
         return new DrawnPrize()
+            .withPrizeId(data["prizeId"])
             .withAcquireActions(data.acquireActions ?
                 data.acquireActions.map((item: {[key: string]: any}) => {
                     return AcquireAction.fromDict(item);
@@ -45,6 +58,7 @@ export default class DrawnPrize implements IModel {
 
     public toDict(): {[key: string]: any} {
         return {
+            "prizeId": this.getPrizeId(),
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions()!.map((item: AcquireAction) => {
                     return item.toDict();

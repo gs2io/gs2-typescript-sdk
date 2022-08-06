@@ -22,6 +22,8 @@ var Prize = /** @class */ (function () {
         this.prizeId = null;
         this.type = null;
         this.acquireActions = null;
+        this.drawnLimit = null;
+        this.limitFailOverPrizeId = null;
         this.prizeTableName = null;
         this.weight = null;
     }
@@ -58,6 +60,28 @@ var Prize = /** @class */ (function () {
         this.acquireActions = acquireActions;
         return this;
     };
+    Prize.prototype.getDrawnLimit = function () {
+        return this.drawnLimit;
+    };
+    Prize.prototype.setDrawnLimit = function (drawnLimit) {
+        this.drawnLimit = drawnLimit;
+        return this;
+    };
+    Prize.prototype.withDrawnLimit = function (drawnLimit) {
+        this.drawnLimit = drawnLimit;
+        return this;
+    };
+    Prize.prototype.getLimitFailOverPrizeId = function () {
+        return this.limitFailOverPrizeId;
+    };
+    Prize.prototype.setLimitFailOverPrizeId = function (limitFailOverPrizeId) {
+        this.limitFailOverPrizeId = limitFailOverPrizeId;
+        return this;
+    };
+    Prize.prototype.withLimitFailOverPrizeId = function (limitFailOverPrizeId) {
+        this.limitFailOverPrizeId = limitFailOverPrizeId;
+        return this;
+    };
     Prize.prototype.getPrizeTableName = function () {
         return this.prizeTableName;
     };
@@ -91,6 +115,8 @@ var Prize = /** @class */ (function () {
             data.acquireActions.map(function (item) {
                 return AcquireAction_1.default.fromDict(item);
             }) : [])
+            .withDrawnLimit(data["drawnLimit"])
+            .withLimitFailOverPrizeId(data["limitFailOverPrizeId"])
             .withPrizeTableName(data["prizeTableName"])
             .withWeight(data["weight"]);
     };
@@ -102,6 +128,8 @@ var Prize = /** @class */ (function () {
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "drawnLimit": this.getDrawnLimit(),
+            "limitFailOverPrizeId": this.getLimitFailOverPrizeId(),
             "prizeTableName": this.getPrizeTableName(),
             "weight": this.getWeight(),
         };

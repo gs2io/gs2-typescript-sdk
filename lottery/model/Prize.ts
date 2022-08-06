@@ -21,6 +21,8 @@ export default class Prize implements IModel {
     private prizeId: string|null = null;
     private type: string|null = null;
     private acquireActions: AcquireAction[]|null = null;
+    private drawnLimit: number|null = null;
+    private limitFailOverPrizeId: string|null = null;
     private prizeTableName: string|null = null;
     private weight: number|null = null;
     public getPrizeId(): string|null {
@@ -54,6 +56,28 @@ export default class Prize implements IModel {
     }
     public withAcquireActions(acquireActions: AcquireAction[]|null): this {
         this.acquireActions = acquireActions;
+        return this;
+    }
+    public getDrawnLimit(): number|null {
+        return this.drawnLimit;
+    }
+    public setDrawnLimit(drawnLimit: number|null) {
+        this.drawnLimit = drawnLimit;
+        return this;
+    }
+    public withDrawnLimit(drawnLimit: number|null): this {
+        this.drawnLimit = drawnLimit;
+        return this;
+    }
+    public getLimitFailOverPrizeId(): string|null {
+        return this.limitFailOverPrizeId;
+    }
+    public setLimitFailOverPrizeId(limitFailOverPrizeId: string|null) {
+        this.limitFailOverPrizeId = limitFailOverPrizeId;
+        return this;
+    }
+    public withLimitFailOverPrizeId(limitFailOverPrizeId: string|null): this {
+        this.limitFailOverPrizeId = limitFailOverPrizeId;
         return this;
     }
     public getPrizeTableName(): string|null {
@@ -91,6 +115,8 @@ export default class Prize implements IModel {
                     return AcquireAction.fromDict(item);
                 }
             ) : [])
+            .withDrawnLimit(data["drawnLimit"])
+            .withLimitFailOverPrizeId(data["limitFailOverPrizeId"])
             .withPrizeTableName(data["prizeTableName"])
             .withWeight(data["weight"]);
     }
@@ -104,6 +130,8 @@ export default class Prize implements IModel {
                     return item.toDict();
                 }
             ) : [],
+            "drawnLimit": this.getDrawnLimit(),
+            "limitFailOverPrizeId": this.getLimitFailOverPrizeId(),
             "prizeTableName": this.getPrizeTableName(),
             "weight": this.getWeight(),
         };

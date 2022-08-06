@@ -47,6 +47,9 @@ import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentLotteryMasterResult from "./GetCurrentLotteryMasterResult"
 import UpdateCurrentLotteryMasterResult from "./UpdateCurrentLotteryMasterResult"
 import UpdateCurrentLotteryMasterFromGitHubResult from "./UpdateCurrentLotteryMasterFromGitHubResult"
+import DescribePrizeLimitsResult from "./DescribePrizeLimitsResult"
+import GetPrizeLimitResult from "./GetPrizeLimitResult"
+import ResetPrizeLimitResult from "./ResetPrizeLimitResult"
 
 export {
     DescribeNamespacesResult,
@@ -83,4 +86,7 @@ export {
     GetCurrentLotteryMasterResult,
     UpdateCurrentLotteryMasterResult,
     UpdateCurrentLotteryMasterFromGitHubResult,
+    DescribePrizeLimitsResult,
+    GetPrizeLimitResult,
+    ResetPrizeLimitResult,
 };

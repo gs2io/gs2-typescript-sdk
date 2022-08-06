@@ -1036,4 +1036,89 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
             }
         });
     }
+
+    public describePrizeLimits(request: Request.DescribePrizeLimitsRequest): Promise<Result.DescribePrizeLimitsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/prizeLimit/{prizeTableName}')
+            .replace('{service}', 'lottery')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{prizeTableName}', String(request.getPrizeTableName() ?? 'null') === "" ? "null" : String(request.getPrizeTableName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribePrizeLimitsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getPrizeLimit(request: Request.GetPrizeLimitRequest): Promise<Result.GetPrizeLimitResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/prizeLimit/{prizeTableName}/{prizeId}')
+            .replace('{service}', 'lottery')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{prizeTableName}', String(request.getPrizeTableName() ?? 'null') === "" ? "null" : String(request.getPrizeTableName() ?? 'null'))
+            .replace('{prizeId}', String(request.getPrizeId() ?? 'null') === "" ? "null" : String(request.getPrizeId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetPrizeLimitResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public resetPrizeLimit(request: Request.ResetPrizeLimitRequest): Promise<Result.ResetPrizeLimitResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/prizeLimit/{prizeTableName}/{prizeId}')
+            .replace('{service}', 'lottery')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{prizeTableName}', String(request.getPrizeTableName() ?? 'null') === "" ? "null" : String(request.getPrizeTableName() ?? 'null'))
+            .replace('{prizeId}', String(request.getPrizeId() ?? 'null') === "" ? "null" : String(request.getPrizeId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ResetPrizeLimitResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
 }

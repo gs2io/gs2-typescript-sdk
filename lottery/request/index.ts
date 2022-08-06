@@ -47,6 +47,9 @@ import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentLotteryMasterRequest from "./GetCurrentLotteryMasterRequest"
 import UpdateCurrentLotteryMasterRequest from "./UpdateCurrentLotteryMasterRequest"
 import UpdateCurrentLotteryMasterFromGitHubRequest from "./UpdateCurrentLotteryMasterFromGitHubRequest"
+import DescribePrizeLimitsRequest from "./DescribePrizeLimitsRequest"
+import GetPrizeLimitRequest from "./GetPrizeLimitRequest"
+import ResetPrizeLimitRequest from "./ResetPrizeLimitRequest"
 
 export {
     DescribeNamespacesRequest,
@@ -83,4 +86,7 @@ export {
     GetCurrentLotteryMasterRequest,
     UpdateCurrentLotteryMasterRequest,
     UpdateCurrentLotteryMasterFromGitHubRequest,
+    DescribePrizeLimitsRequest,
+    GetPrizeLimitRequest,
+    ResetPrizeLimitRequest,
 };

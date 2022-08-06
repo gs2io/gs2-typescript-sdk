@@ -22,6 +22,7 @@ import PrizeTable from "./PrizeTable"
 import Probability from "./Probability"
 import CurrentLotteryMaster from "./CurrentLotteryMaster"
 import Prize from "./Prize"
+import PrizeLimit from "./PrizeLimit"
 import DrawnPrize from "./DrawnPrize"
 import BoxItem from "./BoxItem"
 import BoxItems from "./BoxItems"
@@ -41,6 +42,7 @@ export {
     Probability,
     CurrentLotteryMaster,
     Prize,
+    PrizeLimit,
     DrawnPrize,
     BoxItem,
     BoxItems,

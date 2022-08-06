@@ -4,6 +4,8 @@ export default class Prize implements IModel {
     private prizeId;
     private type;
     private acquireActions;
+    private drawnLimit;
+    private limitFailOverPrizeId;
     private prizeTableName;
     private weight;
     getPrizeId(): string | null;
@@ -15,6 +17,12 @@ export default class Prize implements IModel {
     getAcquireActions(): AcquireAction[] | null;
     setAcquireActions(acquireActions: AcquireAction[] | null): this;
     withAcquireActions(acquireActions: AcquireAction[] | null): this;
+    getDrawnLimit(): number | null;
+    setDrawnLimit(drawnLimit: number | null): this;
+    withDrawnLimit(drawnLimit: number | null): this;
+    getLimitFailOverPrizeId(): string | null;
+    setLimitFailOverPrizeId(limitFailOverPrizeId: string | null): this;
+    withLimitFailOverPrizeId(limitFailOverPrizeId: string | null): this;
     getPrizeTableName(): string | null;
     setPrizeTableName(prizeTableName: string | null): this;
     withPrizeTableName(prizeTableName: string | null): this;

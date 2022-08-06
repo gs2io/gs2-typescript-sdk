@@ -899,6 +899,79 @@ var Gs2LotteryRestClient = /** @class */ (function (_super) {
             }
         });
     };
+    Gs2LotteryRestClient.prototype.describePrizeLimits = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/prizeLimit/{prizeTableName}')
+            .replace('{service}', 'lottery')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{prizeTableName}', String((_c = request.getPrizeTableName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getPrizeTableName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
+            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DescribePrizeLimitsResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2LotteryRestClient.prototype.getPrizeLimit = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/prizeLimit/{prizeTableName}/{prizeId}')
+            .replace('{service}', 'lottery')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{prizeTableName}', String((_c = request.getPrizeTableName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getPrizeTableName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{prizeId}', String((_e = request.getPrizeId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getPrizeId()) !== null && _f !== void 0 ? _f : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetPrizeLimitResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2LotteryRestClient.prototype.resetPrizeLimit = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/prizeLimit/{prizeTableName}/{prizeId}')
+            .replace('{service}', 'lottery')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{prizeTableName}', String((_c = request.getPrizeTableName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getPrizeTableName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{prizeId}', String((_e = request.getPrizeId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getPrizeId()) !== null && _f !== void 0 ? _f : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+        };
+        return axios_1.default.delete(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.ResetPrizeLimitResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
     return Gs2LotteryRestClient;
 }(AbstractGs2RestClient_1.default));
 exports.default = Gs2LotteryRestClient;
