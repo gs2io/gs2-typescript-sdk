@@ -28,6 +28,10 @@ import CountExecuteStampSheetLogResult from "./CountExecuteStampSheetLogResult"
 import QueryExecuteStampTaskLogResult from "./QueryExecuteStampTaskLogResult"
 import CountExecuteStampTaskLogResult from "./CountExecuteStampTaskLogResult"
 import PutLogResult from "./PutLogResult"
+import DescribeInsightsResult from "./DescribeInsightsResult"
+import CreateInsightResult from "./CreateInsightResult"
+import GetInsightResult from "./GetInsightResult"
+import DeleteInsightResult from "./DeleteInsightResult"
 
 export {
     DescribeNamespacesResult,
@@ -45,4 +49,8 @@ export {
     QueryExecuteStampTaskLogResult,
     CountExecuteStampTaskLogResult,
     PutLogResult,
+    DescribeInsightsResult,
+    CreateInsightResult,
+    GetInsightResult,
+    DeleteInsightResult,
 };

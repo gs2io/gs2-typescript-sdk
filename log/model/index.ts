@@ -22,6 +22,7 @@ import ExecuteStampSheetLog from "./ExecuteStampSheetLog"
 import ExecuteStampSheetLogCount from "./ExecuteStampSheetLogCount"
 import ExecuteStampTaskLog from "./ExecuteStampTaskLog"
 import ExecuteStampTaskLogCount from "./ExecuteStampTaskLogCount"
+import Insight from "./Insight"
 
 export {
     Namespace,
@@ -33,4 +34,5 @@ export {
     ExecuteStampSheetLogCount,
     ExecuteStampTaskLog,
     ExecuteStampTaskLogCount,
+    Insight,
 };

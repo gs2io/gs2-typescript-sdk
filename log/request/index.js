@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PutLogRequest = exports.CountExecuteStampTaskLogRequest = exports.QueryExecuteStampTaskLogRequest = exports.CountExecuteStampSheetLogRequest = exports.QueryExecuteStampSheetLogRequest = exports.CountIssueStampSheetLogRequest = exports.QueryIssueStampSheetLogRequest = exports.CountAccessLogRequest = exports.QueryAccessLogRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.DeleteInsightRequest = exports.GetInsightRequest = exports.CreateInsightRequest = exports.DescribeInsightsRequest = exports.PutLogRequest = exports.CountExecuteStampTaskLogRequest = exports.QueryExecuteStampTaskLogRequest = exports.CountExecuteStampSheetLogRequest = exports.QueryExecuteStampSheetLogRequest = exports.CountIssueStampSheetLogRequest = exports.QueryIssueStampSheetLogRequest = exports.CountAccessLogRequest = exports.QueryAccessLogRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -47,4 +47,12 @@ var CountExecuteStampTaskLogRequest_1 = tslib_1.__importDefault(require("./Count
 exports.CountExecuteStampTaskLogRequest = CountExecuteStampTaskLogRequest_1.default;
 var PutLogRequest_1 = tslib_1.__importDefault(require("./PutLogRequest"));
 exports.PutLogRequest = PutLogRequest_1.default;
+var DescribeInsightsRequest_1 = tslib_1.__importDefault(require("./DescribeInsightsRequest"));
+exports.DescribeInsightsRequest = DescribeInsightsRequest_1.default;
+var CreateInsightRequest_1 = tslib_1.__importDefault(require("./CreateInsightRequest"));
+exports.CreateInsightRequest = CreateInsightRequest_1.default;
+var GetInsightRequest_1 = tslib_1.__importDefault(require("./GetInsightRequest"));
+exports.GetInsightRequest = GetInsightRequest_1.default;
+var DeleteInsightRequest_1 = tslib_1.__importDefault(require("./DeleteInsightRequest"));
+exports.DeleteInsightRequest = DeleteInsightRequest_1.default;
 //# sourceMappingURL=index.js.map

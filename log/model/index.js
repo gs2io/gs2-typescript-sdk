@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExecuteStampTaskLogCount = exports.ExecuteStampTaskLog = exports.ExecuteStampSheetLogCount = exports.ExecuteStampSheetLog = exports.IssueStampSheetLogCount = exports.IssueStampSheetLog = exports.AccessLogCount = exports.AccessLog = exports.Namespace = void 0;
+exports.Insight = exports.ExecuteStampTaskLogCount = exports.ExecuteStampTaskLog = exports.ExecuteStampSheetLogCount = exports.ExecuteStampSheetLog = exports.IssueStampSheetLogCount = exports.IssueStampSheetLog = exports.AccessLogCount = exports.AccessLog = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -35,4 +35,6 @@ var ExecuteStampTaskLog_1 = tslib_1.__importDefault(require("./ExecuteStampTaskL
 exports.ExecuteStampTaskLog = ExecuteStampTaskLog_1.default;
 var ExecuteStampTaskLogCount_1 = tslib_1.__importDefault(require("./ExecuteStampTaskLogCount"));
 exports.ExecuteStampTaskLogCount = ExecuteStampTaskLogCount_1.default;
+var Insight_1 = tslib_1.__importDefault(require("./Insight"));
+exports.Insight = Insight_1.default;
 //# sourceMappingURL=index.js.map

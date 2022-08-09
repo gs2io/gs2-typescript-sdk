@@ -24,100 +24,79 @@ export default class AccessLog implements IModel {
     private userId: string|null = null;
     private request: string|null = null;
     private result: string|null = null;
-
     public getTimestamp(): number|null {
         return this.timestamp;
     }
-
     public setTimestamp(timestamp: number|null) {
         this.timestamp = timestamp;
         return this;
     }
-
     public withTimestamp(timestamp: number|null): this {
         this.timestamp = timestamp;
         return this;
     }
-
     public getRequestId(): string|null {
         return this.requestId;
     }
-
     public setRequestId(requestId: string|null) {
         this.requestId = requestId;
         return this;
     }
-
     public withRequestId(requestId: string|null): this {
         this.requestId = requestId;
         return this;
     }
-
     public getService(): string|null {
         return this.service;
     }
-
     public setService(service: string|null) {
         this.service = service;
         return this;
     }
-
     public withService(service: string|null): this {
         this.service = service;
         return this;
     }
-
     public getMethod(): string|null {
         return this.method;
     }
-
     public setMethod(method: string|null) {
         this.method = method;
         return this;
     }
-
     public withMethod(method: string|null): this {
         this.method = method;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getRequest(): string|null {
         return this.request;
     }
-
     public setRequest(request: string|null) {
         this.request = request;
         return this;
     }
-
     public withRequest(request: string|null): this {
         this.request = request;
         return this;
     }
-
     public getResult(): string|null {
         return this.result;
     }
-
     public setResult(result: string|null) {
         this.result = result;
         return this;
     }
-
     public withResult(result: string|null): this {
         this.result = result;
         return this;

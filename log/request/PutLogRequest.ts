@@ -53,44 +53,35 @@ export default class PutLogRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getLoggingNamespaceId(): string|null {
         return this.loggingNamespaceId;
     }
-
     public setLoggingNamespaceId(loggingNamespaceId: string|null) {
         this.loggingNamespaceId = loggingNamespaceId;
         return this;
     }
-
     public withLoggingNamespaceId(loggingNamespaceId: string|null): this {
         this.loggingNamespaceId = loggingNamespaceId;
         return this;
     }
-
     public getLogCategory(): string|null {
         return this.logCategory;
     }
-
     public setLogCategory(logCategory: string|null) {
         this.logCategory = logCategory;
         return this;
     }
-
     public withLogCategory(logCategory: string|null): this {
         this.logCategory = logCategory;
         return this;
     }
-
     public getPayload(): string|null {
         return this.payload;
     }
-
     public setPayload(payload: string|null) {
         this.payload = payload;
         return this;
     }
-
     public withPayload(payload: string|null): this {
         this.payload = payload;
         return this;

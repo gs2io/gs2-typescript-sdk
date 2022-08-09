@@ -60,142 +60,112 @@ export default class QueryIssueStampSheetLogRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
-
     public setNamespaceName(namespaceName: string|null) {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public withNamespaceName(namespaceName: string|null): this {
         this.namespaceName = namespaceName;
         return this;
     }
-
     public getService(): string|null {
         return this.service;
     }
-
     public setService(service: string|null) {
         this.service = service;
         return this;
     }
-
     public withService(service: string|null): this {
         this.service = service;
         return this;
     }
-
     public getMethod(): string|null {
         return this.method;
     }
-
     public setMethod(method: string|null) {
         this.method = method;
         return this;
     }
-
     public withMethod(method: string|null): this {
         this.method = method;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getAction(): string|null {
         return this.action;
     }
-
     public setAction(action: string|null) {
         this.action = action;
         return this;
     }
-
     public withAction(action: string|null): this {
         this.action = action;
         return this;
     }
-
     public getBegin(): number|null {
         return this.begin;
     }
-
     public setBegin(begin: number|null) {
         this.begin = begin;
         return this;
     }
-
     public withBegin(begin: number|null): this {
         this.begin = begin;
         return this;
     }
-
     public getEnd(): number|null {
         return this.end;
     }
-
     public setEnd(end: number|null) {
         this.end = end;
         return this;
     }
-
     public withEnd(end: number|null): this {
         this.end = end;
         return this;
     }
-
     public getLongTerm(): boolean|null {
         return this.longTerm;
     }
-
     public setLongTerm(longTerm: boolean|null) {
         this.longTerm = longTerm;
         return this;
     }
-
     public withLongTerm(longTerm: boolean|null): this {
         this.longTerm = longTerm;
         return this;
     }
-
     public getPageToken(): string|null {
         return this.pageToken;
     }
-
     public setPageToken(pageToken: string|null) {
         this.pageToken = pageToken;
         return this;
     }
-
     public withPageToken(pageToken: string|null): this {
         this.pageToken = pageToken;
         return this;
     }
-
     public getLimit(): number|null {
         return this.limit;
     }
-
     public setLimit(limit: number|null) {
         this.limit = limit;
         return this;
     }
-
     public withLimit(limit: number|null): this {
         this.limit = limit;
         return this;

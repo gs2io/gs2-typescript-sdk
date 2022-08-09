@@ -60,142 +60,112 @@ export default class CreateNamespaceRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-
     public getName(): string|null {
         return this.name;
     }
-
     public setName(name: string|null) {
         this.name = name;
         return this;
     }
-
     public withName(name: string|null): this {
         this.name = name;
         return this;
     }
-
     public getDescription(): string|null {
         return this.description;
     }
-
     public setDescription(description: string|null) {
         this.description = description;
         return this;
     }
-
     public withDescription(description: string|null): this {
         this.description = description;
         return this;
     }
-
     public getType(): string|null {
         return this.type;
     }
-
     public setType(type: string|null) {
         this.type = type;
         return this;
     }
-
     public withType(type: string|null): this {
         this.type = type;
         return this;
     }
-
     public getGcpCredentialJson(): string|null {
         return this.gcpCredentialJson;
     }
-
     public setGcpCredentialJson(gcpCredentialJson: string|null) {
         this.gcpCredentialJson = gcpCredentialJson;
         return this;
     }
-
     public withGcpCredentialJson(gcpCredentialJson: string|null): this {
         this.gcpCredentialJson = gcpCredentialJson;
         return this;
     }
-
     public getBigQueryDatasetName(): string|null {
         return this.bigQueryDatasetName;
     }
-
     public setBigQueryDatasetName(bigQueryDatasetName: string|null) {
         this.bigQueryDatasetName = bigQueryDatasetName;
         return this;
     }
-
     public withBigQueryDatasetName(bigQueryDatasetName: string|null): this {
         this.bigQueryDatasetName = bigQueryDatasetName;
         return this;
     }
-
     public getLogExpireDays(): number|null {
         return this.logExpireDays;
     }
-
     public setLogExpireDays(logExpireDays: number|null) {
         this.logExpireDays = logExpireDays;
         return this;
     }
-
     public withLogExpireDays(logExpireDays: number|null): this {
         this.logExpireDays = logExpireDays;
         return this;
     }
-
     public getAwsRegion(): string|null {
         return this.awsRegion;
     }
-
     public setAwsRegion(awsRegion: string|null) {
         this.awsRegion = awsRegion;
         return this;
     }
-
     public withAwsRegion(awsRegion: string|null): this {
         this.awsRegion = awsRegion;
         return this;
     }
-
     public getAwsAccessKeyId(): string|null {
         return this.awsAccessKeyId;
     }
-
     public setAwsAccessKeyId(awsAccessKeyId: string|null) {
         this.awsAccessKeyId = awsAccessKeyId;
         return this;
     }
-
     public withAwsAccessKeyId(awsAccessKeyId: string|null): this {
         this.awsAccessKeyId = awsAccessKeyId;
         return this;
     }
-
     public getAwsSecretAccessKey(): string|null {
         return this.awsSecretAccessKey;
     }
-
     public setAwsSecretAccessKey(awsSecretAccessKey: string|null) {
         this.awsSecretAccessKey = awsSecretAccessKey;
         return this;
     }
-
     public withAwsSecretAccessKey(awsSecretAccessKey: string|null): this {
         this.awsSecretAccessKey = awsSecretAccessKey;
         return this;
     }
-
     public getFirehoseStreamName(): string|null {
         return this.firehoseStreamName;
     }
-
     public setFirehoseStreamName(firehoseStreamName: string|null) {
         this.firehoseStreamName = firehoseStreamName;
         return this;
     }
-
     public withFirehoseStreamName(firehoseStreamName: string|null): this {
         this.firehoseStreamName = firehoseStreamName;
         return this;

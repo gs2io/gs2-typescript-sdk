@@ -24,100 +24,79 @@ export default class ExecuteStampSheetLog implements IModel {
     private userId: string|null = null;
     private action: string|null = null;
     private args: string|null = null;
-
     public getTimestamp(): number|null {
         return this.timestamp;
     }
-
     public setTimestamp(timestamp: number|null) {
         this.timestamp = timestamp;
         return this;
     }
-
     public withTimestamp(timestamp: number|null): this {
         this.timestamp = timestamp;
         return this;
     }
-
     public getTransactionId(): string|null {
         return this.transactionId;
     }
-
     public setTransactionId(transactionId: string|null) {
         this.transactionId = transactionId;
         return this;
     }
-
     public withTransactionId(transactionId: string|null): this {
         this.transactionId = transactionId;
         return this;
     }
-
     public getService(): string|null {
         return this.service;
     }
-
     public setService(service: string|null) {
         this.service = service;
         return this;
     }
-
     public withService(service: string|null): this {
         this.service = service;
         return this;
     }
-
     public getMethod(): string|null {
         return this.method;
     }
-
     public setMethod(method: string|null) {
         this.method = method;
         return this;
     }
-
     public withMethod(method: string|null): this {
         this.method = method;
         return this;
     }
-
     public getUserId(): string|null {
         return this.userId;
     }
-
     public setUserId(userId: string|null) {
         this.userId = userId;
         return this;
     }
-
     public withUserId(userId: string|null): this {
         this.userId = userId;
         return this;
     }
-
     public getAction(): string|null {
         return this.action;
     }
-
     public setAction(action: string|null) {
         this.action = action;
         return this;
     }
-
     public withAction(action: string|null): this {
         this.action = action;
         return this;
     }
-
     public getArgs(): string|null {
         return this.args;
     }
-
     public setArgs(args: string|null) {
         this.args = args;
         return this;
     }
-
     public withArgs(args: string|null): this {
         this.args = args;
         return this;
