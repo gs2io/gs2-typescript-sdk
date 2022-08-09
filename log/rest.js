@@ -484,7 +484,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
     };
     Gs2LogRestClient.prototype.createInsight = function (request) {
         var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/insight/{insightName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/insight')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));

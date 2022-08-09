@@ -549,7 +549,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     }
 
     public createInsight(request: Request.CreateInsightRequest): Promise<Result.CreateInsightResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/insight/{insightName}')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/insight')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
