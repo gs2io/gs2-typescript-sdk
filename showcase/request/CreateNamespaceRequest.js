@@ -24,6 +24,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.transactionSetting = null;
+        this.buyScript = null;
         this.queueNamespaceId = null;
         this.keyId = null;
         this.logSetting = null;
@@ -83,6 +84,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    CreateNamespaceRequest.prototype.getBuyScript = function () {
+        return this.buyScript;
+    };
+    CreateNamespaceRequest.prototype.setBuyScript = function (buyScript) {
+        this.buyScript = buyScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withBuyScript = function (buyScript) {
+        this.buyScript = buyScript;
+        return this;
+    };
     /** @deprecated */
     CreateNamespaceRequest.prototype.getQueueNamespaceId = function () {
         return this.queueNamespaceId;
@@ -127,19 +139,21 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Showcase.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withBuyScript(Gs2Showcase.ScriptSetting.fromDict(data["buyScript"]))
             .withQueueNamespaceId(data["queueNamespaceId"])
             .withKeyId(data["keyId"])
             .withLogSetting(Gs2Showcase.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "buyScript": (_b = this.getBuyScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
-            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
         };
     };
     return CreateNamespaceRequest;

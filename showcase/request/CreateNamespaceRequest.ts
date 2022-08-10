@@ -25,6 +25,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private name: string|null = null;
     private description: string|null = null;
     private transactionSetting: Gs2Showcase.TransactionSetting|null = null;
+    private buyScript: Gs2Showcase.ScriptSetting|null = null;
     private queueNamespaceId: string|null = null;
     private keyId: string|null = null;
     private logSetting: Gs2Showcase.LogSetting|null = null;
@@ -89,6 +90,17 @@ export default class CreateNamespaceRequest implements IRequest {
         this.transactionSetting = transactionSetting;
         return this;
     }
+    public getBuyScript(): Gs2Showcase.ScriptSetting|null {
+        return this.buyScript;
+    }
+    public setBuyScript(buyScript: Gs2Showcase.ScriptSetting|null) {
+        this.buyScript = buyScript;
+        return this;
+    }
+    public withBuyScript(buyScript: Gs2Showcase.ScriptSetting|null): this {
+        this.buyScript = buyScript;
+        return this;
+    }
     /** @deprecated */
     public getQueueNamespaceId(): string|null {
         return this.queueNamespaceId;
@@ -134,6 +146,7 @@ export default class CreateNamespaceRequest implements IRequest {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Showcase.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withBuyScript(Gs2Showcase.ScriptSetting.fromDict(data["buyScript"]))
             .withQueueNamespaceId(data["queueNamespaceId"])
             .withKeyId(data["keyId"])
             .withLogSetting(Gs2Showcase.LogSetting.fromDict(data["logSetting"]));
@@ -144,6 +157,7 @@ export default class CreateNamespaceRequest implements IRequest {
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": this.getTransactionSetting()?.toDict(),
+            "buyScript": this.getBuyScript()?.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
             "logSetting": this.getLogSetting()?.toDict(),

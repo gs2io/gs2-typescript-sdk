@@ -25,6 +25,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private namespaceName: string|null = null;
     private description: string|null = null;
     private transactionSetting: Gs2Showcase.TransactionSetting|null = null;
+    private buyScript: Gs2Showcase.ScriptSetting|null = null;
     private logSetting: Gs2Showcase.LogSetting|null = null;
     private queueNamespaceId: string|null = null;
     private keyId: string|null = null;
@@ -89,6 +90,17 @@ export default class UpdateNamespaceRequest implements IRequest {
         this.transactionSetting = transactionSetting;
         return this;
     }
+    public getBuyScript(): Gs2Showcase.ScriptSetting|null {
+        return this.buyScript;
+    }
+    public setBuyScript(buyScript: Gs2Showcase.ScriptSetting|null) {
+        this.buyScript = buyScript;
+        return this;
+    }
+    public withBuyScript(buyScript: Gs2Showcase.ScriptSetting|null): this {
+        this.buyScript = buyScript;
+        return this;
+    }
     public getLogSetting(): Gs2Showcase.LogSetting|null {
         return this.logSetting;
     }
@@ -134,6 +146,7 @@ export default class UpdateNamespaceRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Showcase.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withBuyScript(Gs2Showcase.ScriptSetting.fromDict(data["buyScript"]))
             .withLogSetting(Gs2Showcase.LogSetting.fromDict(data["logSetting"]))
             .withQueueNamespaceId(data["queueNamespaceId"])
             .withKeyId(data["keyId"]);
@@ -144,6 +157,7 @@ export default class UpdateNamespaceRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
             "transactionSetting": this.getTransactionSetting()?.toDict(),
+            "buyScript": this.getBuyScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),

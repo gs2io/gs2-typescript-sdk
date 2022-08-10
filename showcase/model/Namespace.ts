@@ -16,6 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 import TransactionSetting from './TransactionSetting';
+import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:showcase:{namespaceName}";
 
@@ -24,6 +25,7 @@ export default class Namespace implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private transactionSetting: TransactionSetting|null = null;
+    private buyScript: ScriptSetting|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -133,6 +135,17 @@ export default class Namespace implements IModel {
         this.transactionSetting = transactionSetting;
         return this;
     }
+    public getBuyScript(): ScriptSetting|null {
+        return this.buyScript;
+    }
+    public setBuyScript(buyScript: ScriptSetting|null) {
+        this.buyScript = buyScript;
+        return this;
+    }
+    public withBuyScript(buyScript: ScriptSetting|null): this {
+        this.buyScript = buyScript;
+        return this;
+    }
     public getLogSetting(): LogSetting|null {
         return this.logSetting;
     }
@@ -204,6 +217,7 @@ export default class Namespace implements IModel {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
+            .withBuyScript(ScriptSetting.fromDict(data["buyScript"]))
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -217,6 +231,7 @@ export default class Namespace implements IModel {
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": this.getTransactionSetting()?.toDict(),
+            "buyScript": this.getBuyScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

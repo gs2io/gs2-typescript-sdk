@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
+var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:showcase:{namespaceName}";
 var Namespace = /** @class */ (function () {
@@ -25,6 +26,7 @@ var Namespace = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.transactionSetting = null;
+        this.buyScript = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -123,6 +125,17 @@ var Namespace = /** @class */ (function () {
         this.transactionSetting = transactionSetting;
         return this;
     };
+    Namespace.prototype.getBuyScript = function () {
+        return this.buyScript;
+    };
+    Namespace.prototype.setBuyScript = function (buyScript) {
+        this.buyScript = buyScript;
+        return this;
+    };
+    Namespace.prototype.withBuyScript = function (buyScript) {
+        this.buyScript = buyScript;
+        return this;
+    };
     Namespace.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -193,6 +206,7 @@ var Namespace = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
+            .withBuyScript(ScriptSetting_1.default.fromDict(data["buyScript"]))
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -200,13 +214,14 @@ var Namespace = /** @class */ (function () {
             .withKeyId(data["keyId"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "buyScript": (_b = this.getBuyScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "queueNamespaceId": this.getQueueNamespaceId(),
