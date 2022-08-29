@@ -1,0 +1,55 @@
+import IModel from '../../core/interface/IModel';
+import Position from './Position';
+import Vector from './Vector';
+export default class Spatial implements IModel {
+    private spatialId;
+    private userId;
+    private areaModelName;
+    private layerModelName;
+    private position;
+    private vector;
+    private r;
+    private lastSyncAt;
+    private createdAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getAreaModelName(grn: string): string | null;
+    static getLayerModelName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, areaModelName: string | null, layerModelName: string | null): string | null;
+    getSpatialId(): string | null;
+    setSpatialId(spatialId: string | null): this;
+    withSpatialId(spatialId: string | null): this;
+    getUserId(): string | null;
+    setUserId(userId: string | null): this;
+    withUserId(userId: string | null): this;
+    getAreaModelName(): string | null;
+    setAreaModelName(areaModelName: string | null): this;
+    withAreaModelName(areaModelName: string | null): this;
+    getLayerModelName(): string | null;
+    setLayerModelName(layerModelName: string | null): this;
+    withLayerModelName(layerModelName: string | null): this;
+    getPosition(): Position | null;
+    setPosition(position: Position | null): this;
+    withPosition(position: Position | null): this;
+    getVector(): Vector | null;
+    setVector(vector: Vector | null): this;
+    withVector(vector: Vector | null): this;
+    getR(): number | null;
+    setR(r: number | null): this;
+    withR(r: number | null): this;
+    getLastSyncAt(): number | null;
+    setLastSyncAt(lastSyncAt: number | null): this;
+    withLastSyncAt(lastSyncAt: number | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): Spatial | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

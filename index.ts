@@ -38,6 +38,7 @@ import * as lock from './lock';
 import * as log from './log';
 import * as lottery from './lottery';
 import * as matchmaking from './matchmaking';
+import * as megaField from './megaField';
 import * as mission from './mission';
 import * as money from './money';
 import * as news from './news';
@@ -77,6 +78,7 @@ export {
   log,
   lottery,
   matchmaking,
+  megaField,
   mission,
   money,
   news,
