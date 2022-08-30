@@ -19,7 +19,6 @@ var grnFormat = "grn:gs2:{region}:{ownerId}:megaField:{namespaceName}:model:area
 var LayerModelMaster = /** @class */ (function () {
     function LayerModelMaster() {
         this.layerModelMasterId = null;
-        this.areaModelName = null;
         this.name = null;
         this.description = null;
         this.metadata = null;
@@ -123,17 +122,6 @@ var LayerModelMaster = /** @class */ (function () {
         this.layerModelMasterId = layerModelMasterId;
         return this;
     };
-    LayerModelMaster.prototype.getAreaModelName = function () {
-        return this.areaModelName;
-    };
-    LayerModelMaster.prototype.setAreaModelName = function (areaModelName) {
-        this.areaModelName = areaModelName;
-        return this;
-    };
-    LayerModelMaster.prototype.withAreaModelName = function (areaModelName) {
-        this.areaModelName = areaModelName;
-        return this;
-    };
     LayerModelMaster.prototype.getName = function () {
         return this.name;
     };
@@ -195,7 +183,6 @@ var LayerModelMaster = /** @class */ (function () {
         }
         return new LayerModelMaster()
             .withLayerModelMasterId(data["layerModelMasterId"])
-            .withAreaModelName(data["areaModelName"])
             .withName(data["name"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
@@ -205,7 +192,6 @@ var LayerModelMaster = /** @class */ (function () {
     LayerModelMaster.prototype.toDict = function () {
         return {
             "layerModelMasterId": this.getLayerModelMasterId(),
-            "areaModelName": this.getAreaModelName(),
             "name": this.getName(),
             "description": this.getDescription(),
             "metadata": this.getMetadata(),

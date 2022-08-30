@@ -1,7 +1,6 @@
 import IModel from '../../core/interface/IModel';
 export default class LayerModelMaster implements IModel {
     private layerModelMasterId;
-    private areaModelName;
     private name;
     private description;
     private metadata;
@@ -17,9 +16,6 @@ export default class LayerModelMaster implements IModel {
     getLayerModelMasterId(): string | null;
     setLayerModelMasterId(layerModelMasterId: string | null): this;
     withLayerModelMasterId(layerModelMasterId: string | null): this;
-    getAreaModelName(): string | null;
-    setAreaModelName(areaModelName: string | null): this;
-    withAreaModelName(areaModelName: string | null): this;
     getName(): string | null;
     setName(name: string | null): this;
     withName(name: string | null): this;

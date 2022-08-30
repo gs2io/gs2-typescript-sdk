@@ -19,7 +19,6 @@ const grnFormat: string = "grn:gs2:{region}:{ownerId}:megaField:{namespaceName}:
 
 export default class LayerModelMaster implements IModel {
     private layerModelMasterId: string|null = null;
-    private areaModelName: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
     private metadata: string|null = null;
@@ -140,17 +139,6 @@ export default class LayerModelMaster implements IModel {
         this.layerModelMasterId = layerModelMasterId;
         return this;
     }
-    public getAreaModelName(): string|null {
-        return this.areaModelName;
-    }
-    public setAreaModelName(areaModelName: string|null) {
-        this.areaModelName = areaModelName;
-        return this;
-    }
-    public withAreaModelName(areaModelName: string|null): this {
-        this.areaModelName = areaModelName;
-        return this;
-    }
     public getName(): string|null {
         return this.name;
     }
@@ -213,7 +201,6 @@ export default class LayerModelMaster implements IModel {
         }
         return new LayerModelMaster()
             .withLayerModelMasterId(data["layerModelMasterId"])
-            .withAreaModelName(data["areaModelName"])
             .withName(data["name"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
@@ -224,7 +211,6 @@ export default class LayerModelMaster implements IModel {
     public toDict(): {[key: string]: any} {
         return {
             "layerModelMasterId": this.getLayerModelMasterId(),
-            "areaModelName": this.getAreaModelName(),
             "name": this.getName(),
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
