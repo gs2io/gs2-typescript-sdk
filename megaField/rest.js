@@ -824,7 +824,7 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
     };
     Gs2MegaFieldRestClient.prototype.action = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/spatial/{areaModelName}/{layerModelName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/spatial/{areaModelName}/{layerModelName}/action')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -857,7 +857,7 @@ var Gs2MegaFieldRestClient = /** @class */ (function (_super) {
     };
     Gs2MegaFieldRestClient.prototype.actionByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/spatial/{areaModelName}/{layerModelName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/spatial/{areaModelName}/{layerModelName}/action')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))

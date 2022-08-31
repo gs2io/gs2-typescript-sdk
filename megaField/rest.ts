@@ -945,7 +945,7 @@ export default class Gs2MegaFieldRestClient extends AbstractGs2RestClient {
     }
 
     public action(request: Request.ActionRequest): Promise<Result.ActionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/spatial/{areaModelName}/{layerModelName}')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/spatial/{areaModelName}/{layerModelName}/action')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -982,7 +982,7 @@ export default class Gs2MegaFieldRestClient extends AbstractGs2RestClient {
     }
 
     public actionByUserId(request: Request.ActionByUserIdRequest): Promise<Result.ActionByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/spatial/{areaModelName}/{layerModelName}')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/spatial/{areaModelName}/{layerModelName}/action')
             .replace('{service}', 'mega-field')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
