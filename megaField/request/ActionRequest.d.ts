@@ -8,7 +8,7 @@ export default class ActionRequest implements IRequest {
     private areaModelName;
     private layerModelName;
     private position;
-    private scope;
+    private scopes;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -30,9 +30,9 @@ export default class ActionRequest implements IRequest {
     getPosition(): Gs2MegaField.MyPosition | null;
     setPosition(position: Gs2MegaField.MyPosition | null): this;
     withPosition(position: Gs2MegaField.MyPosition | null): this;
-    getScope(): Gs2MegaField.Scope | null;
-    setScope(scope: Gs2MegaField.Scope | null): this;
-    withScope(scope: Gs2MegaField.Scope | null): this;
+    getScopes(): Gs2MegaField.Scope[] | null;
+    setScopes(scopes: Gs2MegaField.Scope[] | null): this;
+    withScopes(scopes: Gs2MegaField.Scope[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ActionRequest;

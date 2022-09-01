@@ -26,7 +26,7 @@ var ActionRequest = /** @class */ (function () {
         this.areaModelName = null;
         this.layerModelName = null;
         this.position = null;
-        this.scope = null;
+        this.scopes = null;
     }
     ActionRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -105,15 +105,15 @@ var ActionRequest = /** @class */ (function () {
         this.position = position;
         return this;
     };
-    ActionRequest.prototype.getScope = function () {
-        return this.scope;
+    ActionRequest.prototype.getScopes = function () {
+        return this.scopes;
     };
-    ActionRequest.prototype.setScope = function (scope) {
-        this.scope = scope;
+    ActionRequest.prototype.setScopes = function (scopes) {
+        this.scopes = scopes;
         return this;
     };
-    ActionRequest.prototype.withScope = function (scope) {
-        this.scope = scope;
+    ActionRequest.prototype.withScopes = function (scopes) {
+        this.scopes = scopes;
         return this;
     };
     ActionRequest.fromDict = function (data) {
@@ -123,17 +123,23 @@ var ActionRequest = /** @class */ (function () {
             .withAreaModelName(data["areaModelName"])
             .withLayerModelName(data["layerModelName"])
             .withPosition(Gs2MegaField.MyPosition.fromDict(data["position"]))
-            .withScope(Gs2MegaField.Scope.fromDict(data["scope"]));
+            .withScopes(data.scopes ?
+            data.scopes.map(function (item) {
+                return Gs2MegaField.Scope.fromDict(item);
+            }) : []);
     };
     ActionRequest.prototype.toDict = function () {
-        var _a, _b;
+        var _a;
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
             "areaModelName": this.getAreaModelName(),
             "layerModelName": this.getLayerModelName(),
             "position": (_a = this.getPosition()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "scope": (_b = this.getScope()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "scopes": this.getScopes() ?
+                this.getScopes().map(function (item) {
+                    return item.toDict();
+                }) : [],
         };
     };
     return ActionRequest;

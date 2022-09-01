@@ -8,7 +8,7 @@ export default class ActionByUserIdRequest implements IRequest {
     private areaModelName;
     private layerModelName;
     private position;
-    private scope;
+    private scopes;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -31,9 +31,9 @@ export default class ActionByUserIdRequest implements IRequest {
     getPosition(): Gs2MegaField.MyPosition | null;
     setPosition(position: Gs2MegaField.MyPosition | null): this;
     withPosition(position: Gs2MegaField.MyPosition | null): this;
-    getScope(): Gs2MegaField.Scope | null;
-    setScope(scope: Gs2MegaField.Scope | null): this;
-    withScope(scope: Gs2MegaField.Scope | null): this;
+    getScopes(): Gs2MegaField.Scope[] | null;
+    setScopes(scopes: Gs2MegaField.Scope[] | null): this;
+    withScopes(scopes: Gs2MegaField.Scope[] | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

@@ -27,7 +27,7 @@ export default class ActionByUserIdRequest implements IRequest {
     private areaModelName: string|null = null;
     private layerModelName: string|null = null;
     private position: Gs2MegaField.MyPosition|null = null;
-    private scope: Gs2MegaField.Scope|null = null;
+    private scopes: Gs2MegaField.Scope[]|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -112,15 +112,15 @@ export default class ActionByUserIdRequest implements IRequest {
         this.position = position;
         return this;
     }
-    public getScope(): Gs2MegaField.Scope|null {
-        return this.scope;
+    public getScopes(): Gs2MegaField.Scope[]|null {
+        return this.scopes;
     }
-    public setScope(scope: Gs2MegaField.Scope|null) {
-        this.scope = scope;
+    public setScopes(scopes: Gs2MegaField.Scope[]|null) {
+        this.scopes = scopes;
         return this;
     }
-    public withScope(scope: Gs2MegaField.Scope|null): this {
-        this.scope = scope;
+    public withScopes(scopes: Gs2MegaField.Scope[]|null): this {
+        this.scopes = scopes;
         return this;
     }
 
@@ -145,7 +145,11 @@ export default class ActionByUserIdRequest implements IRequest {
             .withAreaModelName(data["areaModelName"])
             .withLayerModelName(data["layerModelName"])
             .withPosition(Gs2MegaField.MyPosition.fromDict(data["position"]))
-            .withScope(Gs2MegaField.Scope.fromDict(data["scope"]));
+            .withScopes(data.scopes ?
+                data.scopes.map((item: {[key: string]: any}) => {
+                    return Gs2MegaField.Scope.fromDict(item);
+                }
+            ) : []);
     }
 
     public toDict(): {[key: string]: any} {
@@ -155,7 +159,11 @@ export default class ActionByUserIdRequest implements IRequest {
             "areaModelName": this.getAreaModelName(),
             "layerModelName": this.getLayerModelName(),
             "position": this.getPosition()?.toDict(),
-            "scope": this.getScope()?.toDict(),
+            "scopes": this.getScopes() ?
+                this.getScopes()!.map((item: Gs2MegaField.Scope) => {
+                    return item.toDict();
+                }
+            ) : [],
         };
     }
 }

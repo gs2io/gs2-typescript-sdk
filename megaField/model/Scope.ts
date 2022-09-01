@@ -17,8 +17,20 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 export default class Scope implements IModel {
+    private layerName: string|null = null;
     private r: number|null = null;
     private limit: number|null = null;
+    public getLayerName(): string|null {
+        return this.layerName;
+    }
+    public setLayerName(layerName: string|null) {
+        this.layerName = layerName;
+        return this;
+    }
+    public withLayerName(layerName: string|null): this {
+        this.layerName = layerName;
+        return this;
+    }
     public getR(): number|null {
         return this.r;
     }
@@ -47,12 +59,14 @@ export default class Scope implements IModel {
             return null;
         }
         return new Scope()
+            .withLayerName(data["layerName"])
             .withR(data["r"])
             .withLimit(data["limit"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "layerName": this.getLayerName(),
             "r": this.getR(),
             "limit": this.getLimit(),
         };

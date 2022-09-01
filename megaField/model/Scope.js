@@ -17,9 +17,21 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var Scope = /** @class */ (function () {
     function Scope() {
+        this.layerName = null;
         this.r = null;
         this.limit = null;
     }
+    Scope.prototype.getLayerName = function () {
+        return this.layerName;
+    };
+    Scope.prototype.setLayerName = function (layerName) {
+        this.layerName = layerName;
+        return this;
+    };
+    Scope.prototype.withLayerName = function (layerName) {
+        this.layerName = layerName;
+        return this;
+    };
     Scope.prototype.getR = function () {
         return this.r;
     };
@@ -47,11 +59,13 @@ var Scope = /** @class */ (function () {
             return null;
         }
         return new Scope()
+            .withLayerName(data["layerName"])
             .withR(data["r"])
             .withLimit(data["limit"]);
     };
     Scope.prototype.toDict = function () {
         return {
+            "layerName": this.getLayerName(),
             "r": this.getR(),
             "limit": this.getLimit(),
         };

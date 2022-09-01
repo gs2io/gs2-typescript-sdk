@@ -1,7 +1,11 @@
 import IModel from '../../core/interface/IModel';
 export default class Scope implements IModel {
+    private layerName;
     private r;
     private limit;
+    getLayerName(): string | null;
+    setLayerName(layerName: string | null): this;
+    withLayerName(layerName: string | null): this;
     getR(): number | null;
     setR(r: number | null): this;
     withR(r: number | null): this;

@@ -962,7 +962,7 @@ export default class Gs2MegaFieldRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'position': request.getPosition()?.toDict() ?? null,
-            'scope': request.getScope()?.toDict() ?? null,
+            'scopes': request.getScopes()?.map((item) => item.toDict()) ?? null,
         };
         return axios.post(
             url,
@@ -1000,7 +1000,7 @@ export default class Gs2MegaFieldRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'position': request.getPosition()?.toDict() ?? null,
-            'scope': request.getScope()?.toDict() ?? null,
+            'scopes': request.getScopes()?.map((item) => item.toDict()) ?? null,
         };
         return axios.post(
             url,
