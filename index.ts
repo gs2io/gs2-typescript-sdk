@@ -48,6 +48,7 @@ import * as ranking from './ranking';
 import * as realtime from './realtime';
 import * as schedule from './schedule';
 import * as script from './script';
+import * as serialKey from './serialKey';
 import * as showcase from './showcase';
 import * as stamina from './stamina';
 import * as version from './version';
@@ -88,6 +89,7 @@ export {
   realtime,
   schedule,
   script,
+  serialKey,
   showcase,
   stamina,
   version,

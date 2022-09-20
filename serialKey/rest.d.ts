@@ -1,0 +1,31 @@
+import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
+import { Gs2RestSession } from '../core/model';
+import * as Request from './request';
+import * as Result from './result';
+export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
+    constructor(session: Gs2RestSession);
+    describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult>;
+    createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult>;
+    getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult>;
+    getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
+    updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
+    deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    describeIssueJobs(request: Request.DescribeIssueJobsRequest): Promise<Result.DescribeIssueJobsResult>;
+    getIssueJob(request: Request.GetIssueJobRequest): Promise<Result.GetIssueJobResult>;
+    issue(request: Request.IssueRequest): Promise<Result.IssueResult>;
+    describeSerialCodes(request: Request.DescribeSerialCodesRequest): Promise<Result.DescribeSerialCodesResult>;
+    use(request: Request.UseRequest): Promise<Result.UseResult>;
+    useByUserId(request: Request.UseByUserIdRequest): Promise<Result.UseByUserIdResult>;
+    useByStampTask(request: Request.UseByStampTaskRequest): Promise<Result.UseByStampTaskResult>;
+    describeCampaignModels(request: Request.DescribeCampaignModelsRequest): Promise<Result.DescribeCampaignModelsResult>;
+    getCampaignModel(request: Request.GetCampaignModelRequest): Promise<Result.GetCampaignModelResult>;
+    describeCampaignModelMasters(request: Request.DescribeCampaignModelMastersRequest): Promise<Result.DescribeCampaignModelMastersResult>;
+    createCampaignModelMaster(request: Request.CreateCampaignModelMasterRequest): Promise<Result.CreateCampaignModelMasterResult>;
+    getCampaignModelMaster(request: Request.GetCampaignModelMasterRequest): Promise<Result.GetCampaignModelMasterResult>;
+    updateCampaignModelMaster(request: Request.UpdateCampaignModelMasterRequest): Promise<Result.UpdateCampaignModelMasterResult>;
+    deleteCampaignModelMaster(request: Request.DeleteCampaignModelMasterRequest): Promise<Result.DeleteCampaignModelMasterResult>;
+    exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
+    getCurrentCampaignMaster(request: Request.GetCurrentCampaignMasterRequest): Promise<Result.GetCurrentCampaignMasterResult>;
+    updateCurrentCampaignMaster(request: Request.UpdateCurrentCampaignMasterRequest): Promise<Result.UpdateCurrentCampaignMasterResult>;
+    updateCurrentCampaignMasterFromGitHub(request: Request.UpdateCurrentCampaignMasterFromGitHubRequest): Promise<Result.UpdateCurrentCampaignMasterFromGitHubResult>;
+}
