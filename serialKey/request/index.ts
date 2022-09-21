@@ -23,6 +23,7 @@ import DescribeIssueJobsRequest from "./DescribeIssueJobsRequest"
 import GetIssueJobRequest from "./GetIssueJobRequest"
 import IssueRequest from "./IssueRequest"
 import DescribeSerialCodesRequest from "./DescribeSerialCodesRequest"
+import DownloadSerialCodesRequest from "./DownloadSerialCodesRequest"
 import UseRequest from "./UseRequest"
 import UseByUserIdRequest from "./UseByUserIdRequest"
 import UseByStampTaskRequest from "./UseByStampTaskRequest"
@@ -49,6 +50,7 @@ export {
     GetIssueJobRequest,
     IssueRequest,
     DescribeSerialCodesRequest,
+    DownloadSerialCodesRequest,
     UseRequest,
     UseByUserIdRequest,
     UseByStampTaskRequest,

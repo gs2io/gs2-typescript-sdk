@@ -23,6 +23,7 @@ import DescribeIssueJobsResult from "./DescribeIssueJobsResult"
 import GetIssueJobResult from "./GetIssueJobResult"
 import IssueResult from "./IssueResult"
 import DescribeSerialCodesResult from "./DescribeSerialCodesResult"
+import DownloadSerialCodesResult from "./DownloadSerialCodesResult"
 import UseResult from "./UseResult"
 import UseByUserIdResult from "./UseByUserIdResult"
 import UseByStampTaskResult from "./UseByStampTaskResult"
@@ -49,6 +50,7 @@ export {
     GetIssueJobResult,
     IssueResult,
     DescribeSerialCodesResult,
+    DownloadSerialCodesResult,
     UseResult,
     UseByUserIdResult,
     UseByStampTaskResult,

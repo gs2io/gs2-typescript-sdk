@@ -274,6 +274,30 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             throw JSON.parse(error.response.data.message);
         });
     };
+    Gs2SerialKeyRestClient.prototype.downloadSerialCodes = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}/issue/{issueJobName}/serialCode/download')
+            .replace('{service}', 'serial-key')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{campaignModelName}', String((_c = request.getCampaignModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getCampaignModelName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{issueJobName}', String((_e = request.getIssueJobName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getIssueJobName()) !== null && _f !== void 0 ? _f : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DownloadSerialCodesResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
     Gs2SerialKeyRestClient.prototype.use = function (request) {
         var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/serialKey')

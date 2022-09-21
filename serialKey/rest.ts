@@ -316,6 +316,34 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public downloadSerialCodes(request: Request.DownloadSerialCodesRequest): Promise<Result.DownloadSerialCodesResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}/issue/{issueJobName}/serialCode/download')
+            .replace('{service}', 'serial-key')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{campaignModelName}', String(request.getCampaignModelName() ?? 'null') === "" ? "null" : String(request.getCampaignModelName() ?? 'null'))
+            .replace('{issueJobName}', String(request.getIssueJobName() ?? 'null') === "" ? "null" : String(request.getIssueJobName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DownloadSerialCodesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
     public use(request: Request.UseRequest): Promise<Result.UseResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/serialKey')
             .replace('{service}', 'serial-key')
