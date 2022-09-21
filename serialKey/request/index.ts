@@ -22,8 +22,9 @@ import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
 import DescribeIssueJobsRequest from "./DescribeIssueJobsRequest"
 import GetIssueJobRequest from "./GetIssueJobRequest"
 import IssueRequest from "./IssueRequest"
-import DescribeSerialCodesRequest from "./DescribeSerialCodesRequest"
+import DescribeSerialKeysRequest from "./DescribeSerialKeysRequest"
 import DownloadSerialCodesRequest from "./DownloadSerialCodesRequest"
+import GetSerialKeyRequest from "./GetSerialKeyRequest"
 import UseRequest from "./UseRequest"
 import UseByUserIdRequest from "./UseByUserIdRequest"
 import UseByStampTaskRequest from "./UseByStampTaskRequest"
@@ -49,8 +50,9 @@ export {
     DescribeIssueJobsRequest,
     GetIssueJobRequest,
     IssueRequest,
-    DescribeSerialCodesRequest,
+    DescribeSerialKeysRequest,
     DownloadSerialCodesRequest,
+    GetSerialKeyRequest,
     UseRequest,
     UseByUserIdRequest,
     UseByStampTaskRequest,

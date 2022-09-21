@@ -22,8 +22,9 @@ import DeleteNamespaceResult from "./DeleteNamespaceResult"
 import DescribeIssueJobsResult from "./DescribeIssueJobsResult"
 import GetIssueJobResult from "./GetIssueJobResult"
 import IssueResult from "./IssueResult"
-import DescribeSerialCodesResult from "./DescribeSerialCodesResult"
+import DescribeSerialKeysResult from "./DescribeSerialKeysResult"
 import DownloadSerialCodesResult from "./DownloadSerialCodesResult"
+import GetSerialKeyResult from "./GetSerialKeyResult"
 import UseResult from "./UseResult"
 import UseByUserIdResult from "./UseByUserIdResult"
 import UseByStampTaskResult from "./UseByStampTaskResult"
@@ -49,8 +50,9 @@ export {
     DescribeIssueJobsResult,
     GetIssueJobResult,
     IssueResult,
-    DescribeSerialCodesResult,
+    DescribeSerialKeysResult,
     DownloadSerialCodesResult,
+    GetSerialKeyResult,
     UseResult,
     UseByUserIdResult,
     UseByStampTaskResult,

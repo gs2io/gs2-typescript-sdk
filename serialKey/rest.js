@@ -248,9 +248,9 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             }
         });
     };
-    Gs2SerialKeyRestClient.prototype.describeSerialCodes = function (request) {
+    Gs2SerialKeyRestClient.prototype.describeSerialKeys = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}/issue/{issueJobName}/serialCode')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}/issue/{issueJobName}/serialKey')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -269,7 +269,7 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             params: params,
             headers: headers,
         }).then(function (response) {
-            return Result.DescribeSerialCodesResult.fromDict(response.data);
+            return Result.DescribeSerialKeysResult.fromDict(response.data);
         }).catch(function (error) {
             throw JSON.parse(error.response.data.message);
         });
@@ -294,6 +294,29 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             headers: headers,
         }).then(function (response) {
             return Result.DownloadSerialCodesResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2SerialKeyRestClient.prototype.getSerialKey = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/serialKey/{code}')
+            .replace('{service}', 'serial-key')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{code}', String((_c = request.getCode()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getCode()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetSerialKeyResult.fromDict(response.data);
         }).catch(function (error) {
             throw JSON.parse(error.response.data.message);
         });

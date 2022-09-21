@@ -286,8 +286,8 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
         });
     }
 
-    public describeSerialCodes(request: Request.DescribeSerialCodesRequest): Promise<Result.DescribeSerialCodesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}/issue/{issueJobName}/serialCode')
+    public describeSerialKeys(request: Request.DescribeSerialKeysRequest): Promise<Result.DescribeSerialKeysResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}/issue/{issueJobName}/serialKey')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -310,7 +310,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
                 headers,
             },
         ).then((response: any) => {
-            return Result.DescribeSerialCodesResult.fromDict(response.data);
+            return Result.DescribeSerialKeysResult.fromDict(response.data);
         }).catch((error: any) => {
             throw JSON.parse(error.response.data.message);
         });
@@ -339,6 +339,33 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.DownloadSerialCodesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getSerialKey(request: Request.GetSerialKeyRequest): Promise<Result.GetSerialKeyResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/serialKey/{code}')
+            .replace('{service}', 'serial-key')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{code}', String(request.getCode() ?? 'null') === "" ? "null" : String(request.getCode() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetSerialKeyResult.fromDict(response.data);
         }).catch((error: any) => {
             throw JSON.parse(error.response.data.message);
         });

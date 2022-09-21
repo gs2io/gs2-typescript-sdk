@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentCampaignMasterFromGitHubRequest = exports.UpdateCurrentCampaignMasterRequest = exports.GetCurrentCampaignMasterRequest = exports.ExportMasterRequest = exports.DeleteCampaignModelMasterRequest = exports.UpdateCampaignModelMasterRequest = exports.GetCampaignModelMasterRequest = exports.CreateCampaignModelMasterRequest = exports.DescribeCampaignModelMastersRequest = exports.GetCampaignModelRequest = exports.DescribeCampaignModelsRequest = exports.UseByStampTaskRequest = exports.UseByUserIdRequest = exports.UseRequest = exports.DownloadSerialCodesRequest = exports.DescribeSerialCodesRequest = exports.IssueRequest = exports.GetIssueJobRequest = exports.DescribeIssueJobsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.UpdateCurrentCampaignMasterFromGitHubRequest = exports.UpdateCurrentCampaignMasterRequest = exports.GetCurrentCampaignMasterRequest = exports.ExportMasterRequest = exports.DeleteCampaignModelMasterRequest = exports.UpdateCampaignModelMasterRequest = exports.GetCampaignModelMasterRequest = exports.CreateCampaignModelMasterRequest = exports.DescribeCampaignModelMastersRequest = exports.GetCampaignModelRequest = exports.DescribeCampaignModelsRequest = exports.UseByStampTaskRequest = exports.UseByUserIdRequest = exports.UseRequest = exports.GetSerialKeyRequest = exports.DownloadSerialCodesRequest = exports.DescribeSerialKeysRequest = exports.IssueRequest = exports.GetIssueJobRequest = exports.DescribeIssueJobsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -35,10 +35,12 @@ var GetIssueJobRequest_1 = tslib_1.__importDefault(require("./GetIssueJobRequest
 exports.GetIssueJobRequest = GetIssueJobRequest_1.default;
 var IssueRequest_1 = tslib_1.__importDefault(require("./IssueRequest"));
 exports.IssueRequest = IssueRequest_1.default;
-var DescribeSerialCodesRequest_1 = tslib_1.__importDefault(require("./DescribeSerialCodesRequest"));
-exports.DescribeSerialCodesRequest = DescribeSerialCodesRequest_1.default;
+var DescribeSerialKeysRequest_1 = tslib_1.__importDefault(require("./DescribeSerialKeysRequest"));
+exports.DescribeSerialKeysRequest = DescribeSerialKeysRequest_1.default;
 var DownloadSerialCodesRequest_1 = tslib_1.__importDefault(require("./DownloadSerialCodesRequest"));
 exports.DownloadSerialCodesRequest = DownloadSerialCodesRequest_1.default;
+var GetSerialKeyRequest_1 = tslib_1.__importDefault(require("./GetSerialKeyRequest"));
+exports.GetSerialKeyRequest = GetSerialKeyRequest_1.default;
 var UseRequest_1 = tslib_1.__importDefault(require("./UseRequest"));
 exports.UseRequest = UseRequest_1.default;
 var UseByUserIdRequest_1 = tslib_1.__importDefault(require("./UseByUserIdRequest"));

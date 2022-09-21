@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentCampaignMasterFromGitHubResult = exports.UpdateCurrentCampaignMasterResult = exports.GetCurrentCampaignMasterResult = exports.ExportMasterResult = exports.DeleteCampaignModelMasterResult = exports.UpdateCampaignModelMasterResult = exports.GetCampaignModelMasterResult = exports.CreateCampaignModelMasterResult = exports.DescribeCampaignModelMastersResult = exports.GetCampaignModelResult = exports.DescribeCampaignModelsResult = exports.UseByStampTaskResult = exports.UseByUserIdResult = exports.UseResult = exports.DownloadSerialCodesResult = exports.DescribeSerialCodesResult = exports.IssueResult = exports.GetIssueJobResult = exports.DescribeIssueJobsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.UpdateCurrentCampaignMasterFromGitHubResult = exports.UpdateCurrentCampaignMasterResult = exports.GetCurrentCampaignMasterResult = exports.ExportMasterResult = exports.DeleteCampaignModelMasterResult = exports.UpdateCampaignModelMasterResult = exports.GetCampaignModelMasterResult = exports.CreateCampaignModelMasterResult = exports.DescribeCampaignModelMastersResult = exports.GetCampaignModelResult = exports.DescribeCampaignModelsResult = exports.UseByStampTaskResult = exports.UseByUserIdResult = exports.UseResult = exports.GetSerialKeyResult = exports.DownloadSerialCodesResult = exports.DescribeSerialKeysResult = exports.IssueResult = exports.GetIssueJobResult = exports.DescribeIssueJobsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -35,10 +35,12 @@ var GetIssueJobResult_1 = tslib_1.__importDefault(require("./GetIssueJobResult")
 exports.GetIssueJobResult = GetIssueJobResult_1.default;
 var IssueResult_1 = tslib_1.__importDefault(require("./IssueResult"));
 exports.IssueResult = IssueResult_1.default;
-var DescribeSerialCodesResult_1 = tslib_1.__importDefault(require("./DescribeSerialCodesResult"));
-exports.DescribeSerialCodesResult = DescribeSerialCodesResult_1.default;
+var DescribeSerialKeysResult_1 = tslib_1.__importDefault(require("./DescribeSerialKeysResult"));
+exports.DescribeSerialKeysResult = DescribeSerialKeysResult_1.default;
 var DownloadSerialCodesResult_1 = tslib_1.__importDefault(require("./DownloadSerialCodesResult"));
 exports.DownloadSerialCodesResult = DownloadSerialCodesResult_1.default;
+var GetSerialKeyResult_1 = tslib_1.__importDefault(require("./GetSerialKeyResult"));
+exports.GetSerialKeyResult = GetSerialKeyResult_1.default;
 var UseResult_1 = tslib_1.__importDefault(require("./UseResult"));
 exports.UseResult = UseResult_1.default;
 var UseByUserIdResult_1 = tslib_1.__importDefault(require("./UseByUserIdResult"));

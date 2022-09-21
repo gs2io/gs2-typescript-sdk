@@ -13,8 +13,9 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     describeIssueJobs(request: Request.DescribeIssueJobsRequest): Promise<Result.DescribeIssueJobsResult>;
     getIssueJob(request: Request.GetIssueJobRequest): Promise<Result.GetIssueJobResult>;
     issue(request: Request.IssueRequest): Promise<Result.IssueResult>;
-    describeSerialCodes(request: Request.DescribeSerialCodesRequest): Promise<Result.DescribeSerialCodesResult>;
+    describeSerialKeys(request: Request.DescribeSerialKeysRequest): Promise<Result.DescribeSerialKeysResult>;
     downloadSerialCodes(request: Request.DownloadSerialCodesRequest): Promise<Result.DownloadSerialCodesResult>;
+    getSerialKey(request: Request.GetSerialKeyRequest): Promise<Result.GetSerialKeyResult>;
     use(request: Request.UseRequest): Promise<Result.UseResult>;
     useByUserId(request: Request.UseByUserIdRequest): Promise<Result.UseByUserIdResult>;
     useByStampTask(request: Request.UseByStampTaskRequest): Promise<Result.UseByStampTaskResult>;
