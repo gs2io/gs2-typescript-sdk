@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteRoomResult = exports.GetRoomResult = exports.WantRoomResult = exports.DescribeRoomsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.DeleteRoomResult = exports.GetRoomResult = exports.WantRoomResult = exports.DescribeRoomsResult = exports.NowResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,6 +29,8 @@ var UpdateNamespaceResult_1 = tslib_1.__importDefault(require("./UpdateNamespace
 exports.UpdateNamespaceResult = UpdateNamespaceResult_1.default;
 var DeleteNamespaceResult_1 = tslib_1.__importDefault(require("./DeleteNamespaceResult"));
 exports.DeleteNamespaceResult = DeleteNamespaceResult_1.default;
+var NowResult_1 = tslib_1.__importDefault(require("./NowResult"));
+exports.NowResult = NowResult_1.default;
 var DescribeRoomsResult_1 = tslib_1.__importDefault(require("./DescribeRoomsResult"));
 exports.DescribeRoomsResult = DescribeRoomsResult_1.default;
 var WantRoomResult_1 = tslib_1.__importDefault(require("./WantRoomResult"));

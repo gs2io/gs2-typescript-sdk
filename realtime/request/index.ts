@@ -19,6 +19,7 @@ import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
 import GetNamespaceRequest from "./GetNamespaceRequest"
 import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
 import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import NowRequest from "./NowRequest"
 import DescribeRoomsRequest from "./DescribeRoomsRequest"
 import WantRoomRequest from "./WantRoomRequest"
 import GetRoomRequest from "./GetRoomRequest"
@@ -31,6 +32,7 @@ export {
     GetNamespaceRequest,
     UpdateNamespaceRequest,
     DeleteNamespaceRequest,
+    NowRequest,
     DescribeRoomsRequest,
     WantRoomRequest,
     GetRoomRequest,

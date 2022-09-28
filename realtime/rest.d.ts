@@ -10,6 +10,7 @@ export default class Gs2RealtimeRestClient extends AbstractGs2RestClient {
     getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
     updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
     deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    now(request: Request.NowRequest): Promise<Result.NowResult>;
     describeRooms(request: Request.DescribeRoomsRequest): Promise<Result.DescribeRoomsResult>;
     wantRoom(request: Request.WantRoomRequest): Promise<Result.WantRoomResult>;
     getRoom(request: Request.GetRoomRequest): Promise<Result.GetRoomResult>;

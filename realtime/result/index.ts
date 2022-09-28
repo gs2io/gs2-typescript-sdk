@@ -19,6 +19,7 @@ import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
 import GetNamespaceResult from "./GetNamespaceResult"
 import UpdateNamespaceResult from "./UpdateNamespaceResult"
 import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import NowResult from "./NowResult"
 import DescribeRoomsResult from "./DescribeRoomsResult"
 import WantRoomResult from "./WantRoomResult"
 import GetRoomResult from "./GetRoomResult"
@@ -31,6 +32,7 @@ export {
     GetNamespaceResult,
     UpdateNamespaceResult,
     DeleteNamespaceResult,
+    NowResult,
     DescribeRoomsResult,
     WantRoomResult,
     GetRoomResult,
