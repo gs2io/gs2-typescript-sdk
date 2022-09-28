@@ -177,7 +177,7 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2RealtimeRestClient.prototype.now = function (request) {
-        var _a;
+        var _a, _b;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/now')
             .replace('{service}', 'realtime')
             .replace('{region}', this.session.region);
@@ -185,8 +185,11 @@ var Gs2RealtimeRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_a = request.getAccessToken()) !== null && _a !== void 0 ? _a : null;
+        }
         var params = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
         };
         return axios_1.default.get(url, {
             params: params,

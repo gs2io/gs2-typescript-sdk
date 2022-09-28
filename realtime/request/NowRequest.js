@@ -19,6 +19,7 @@ var NowRequest = /** @class */ (function () {
     function NowRequest() {
         this.requestId = null;
         this.contextStack = null;
+        this.accessToken = null;
     }
     NowRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -42,11 +43,25 @@ var NowRequest = /** @class */ (function () {
         this.contextStack = contextStack;
         return this;
     };
+    NowRequest.prototype.getAccessToken = function () {
+        return this.accessToken;
+    };
+    NowRequest.prototype.setAccessToken = function (accessToken) {
+        this.accessToken = accessToken;
+        return this;
+    };
+    NowRequest.prototype.withAccessToken = function (accessToken) {
+        this.accessToken = accessToken;
+        return this;
+    };
     NowRequest.fromDict = function (data) {
-        return new NowRequest();
+        return new NowRequest()
+            .withAccessToken(data["accessToken"]);
     };
     NowRequest.prototype.toDict = function () {
-        return {};
+        return {
+            "accessToken": this.getAccessToken(),
+        };
     };
     return NowRequest;
 }());
