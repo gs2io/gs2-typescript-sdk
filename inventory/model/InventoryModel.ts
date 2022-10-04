@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import ItemModel from './ItemModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:model:{inventoryName}";
 
 export default class InventoryModel implements IModel {
@@ -24,6 +25,7 @@ export default class InventoryModel implements IModel {
     private initialCapacity: number|null = null;
     private maxCapacity: number|null = null;
     private protectReferencedItem: boolean|null = null;
+    private itemModels: ItemModel[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -171,6 +173,17 @@ export default class InventoryModel implements IModel {
         this.protectReferencedItem = protectReferencedItem;
         return this;
     }
+    public getItemModels(): ItemModel[]|null {
+        return this.itemModels;
+    }
+    public setItemModels(itemModels: ItemModel[]|null) {
+        this.itemModels = itemModels;
+        return this;
+    }
+    public withItemModels(itemModels: ItemModel[]|null): this {
+        this.itemModels = itemModels;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): InventoryModel|null {
         if (data == undefined || data == null) {
@@ -182,7 +195,12 @@ export default class InventoryModel implements IModel {
             .withMetadata(data["metadata"])
             .withInitialCapacity(data["initialCapacity"])
             .withMaxCapacity(data["maxCapacity"])
-            .withProtectReferencedItem(data["protectReferencedItem"]);
+            .withProtectReferencedItem(data["protectReferencedItem"])
+            .withItemModels(data.itemModels ?
+                data.itemModels.map((item: {[key: string]: any}) => {
+                    return ItemModel.fromDict(item);
+                }
+            ) : []);
     }
 
     public toDict(): {[key: string]: any} {
@@ -193,6 +211,11 @@ export default class InventoryModel implements IModel {
             "initialCapacity": this.getInitialCapacity(),
             "maxCapacity": this.getMaxCapacity(),
             "protectReferencedItem": this.getProtectReferencedItem(),
+            "itemModels": this.getItemModels() ?
+                this.getItemModels()!.map((item: ItemModel) => {
+                    return item.toDict();
+                }
+            ) : [],
         };
     }
 }

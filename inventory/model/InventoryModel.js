@@ -15,6 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var ItemModel_1 = tslib_1.__importDefault(require("./ItemModel"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:model:{inventoryName}";
 var InventoryModel = /** @class */ (function () {
     function InventoryModel() {
@@ -24,6 +26,7 @@ var InventoryModel = /** @class */ (function () {
         this.initialCapacity = null;
         this.maxCapacity = null;
         this.protectReferencedItem = null;
+        this.itemModels = null;
     }
     InventoryModel.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -157,6 +160,17 @@ var InventoryModel = /** @class */ (function () {
         this.protectReferencedItem = protectReferencedItem;
         return this;
     };
+    InventoryModel.prototype.getItemModels = function () {
+        return this.itemModels;
+    };
+    InventoryModel.prototype.setItemModels = function (itemModels) {
+        this.itemModels = itemModels;
+        return this;
+    };
+    InventoryModel.prototype.withItemModels = function (itemModels) {
+        this.itemModels = itemModels;
+        return this;
+    };
     InventoryModel.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -167,7 +181,11 @@ var InventoryModel = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withInitialCapacity(data["initialCapacity"])
             .withMaxCapacity(data["maxCapacity"])
-            .withProtectReferencedItem(data["protectReferencedItem"]);
+            .withProtectReferencedItem(data["protectReferencedItem"])
+            .withItemModels(data.itemModels ?
+            data.itemModels.map(function (item) {
+                return ItemModel_1.default.fromDict(item);
+            }) : []);
     };
     InventoryModel.prototype.toDict = function () {
         return {
@@ -177,6 +195,10 @@ var InventoryModel = /** @class */ (function () {
             "initialCapacity": this.getInitialCapacity(),
             "maxCapacity": this.getMaxCapacity(),
             "protectReferencedItem": this.getProtectReferencedItem(),
+            "itemModels": this.getItemModels() ?
+                this.getItemModels().map(function (item) {
+                    return item.toDict();
+                }) : [],
         };
     };
     return InventoryModel;

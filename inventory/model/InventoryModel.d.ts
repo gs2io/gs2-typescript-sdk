@@ -1,4 +1,5 @@
 import IModel from '../../core/interface/IModel';
+import ItemModel from './ItemModel';
 export default class InventoryModel implements IModel {
     private inventoryModelId;
     private name;
@@ -6,6 +7,7 @@ export default class InventoryModel implements IModel {
     private initialCapacity;
     private maxCapacity;
     private protectReferencedItem;
+    private itemModels;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -30,6 +32,9 @@ export default class InventoryModel implements IModel {
     getProtectReferencedItem(): boolean | null;
     setProtectReferencedItem(protectReferencedItem: boolean | null): this;
     withProtectReferencedItem(protectReferencedItem: boolean | null): this;
+    getItemModels(): ItemModel[] | null;
+    setItemModels(itemModels: ItemModel[] | null): this;
+    withItemModels(itemModels: ItemModel[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): InventoryModel | null;
