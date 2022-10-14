@@ -16,6 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
+var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:matchmaking:{namespaceName}";
@@ -31,6 +32,7 @@ var Namespace = /** @class */ (function () {
         this.completeMatchmakingTriggerType = null;
         this.completeMatchmakingTriggerRealtimeNamespaceId = null;
         this.completeMatchmakingTriggerScriptId = null;
+        this.changeRatingScript = null;
         this.joinNotification = null;
         this.leaveNotification = null;
         this.completeNotification = null;
@@ -196,6 +198,17 @@ var Namespace = /** @class */ (function () {
         this.completeMatchmakingTriggerScriptId = completeMatchmakingTriggerScriptId;
         return this;
     };
+    Namespace.prototype.getChangeRatingScript = function () {
+        return this.changeRatingScript;
+    };
+    Namespace.prototype.setChangeRatingScript = function (changeRatingScript) {
+        this.changeRatingScript = changeRatingScript;
+        return this;
+    };
+    Namespace.prototype.withChangeRatingScript = function (changeRatingScript) {
+        this.changeRatingScript = changeRatingScript;
+        return this;
+    };
     Namespace.prototype.getJoinNotification = function () {
         return this.joinNotification;
     };
@@ -277,6 +290,7 @@ var Namespace = /** @class */ (function () {
             .withCompleteMatchmakingTriggerType(data["completeMatchmakingTriggerType"])
             .withCompleteMatchmakingTriggerRealtimeNamespaceId(data["completeMatchmakingTriggerRealtimeNamespaceId"])
             .withCompleteMatchmakingTriggerScriptId(data["completeMatchmakingTriggerScriptId"])
+            .withChangeRatingScript(ScriptSetting_1.default.fromDict(data["changeRatingScript"]))
             .withJoinNotification(NotificationSetting_1.default.fromDict(data["joinNotification"]))
             .withLeaveNotification(NotificationSetting_1.default.fromDict(data["leaveNotification"]))
             .withCompleteNotification(NotificationSetting_1.default.fromDict(data["completeNotification"]))
@@ -285,7 +299,7 @@ var Namespace = /** @class */ (function () {
             .withUpdatedAt(data["updatedAt"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
@@ -297,10 +311,11 @@ var Namespace = /** @class */ (function () {
             "completeMatchmakingTriggerType": this.getCompleteMatchmakingTriggerType(),
             "completeMatchmakingTriggerRealtimeNamespaceId": this.getCompleteMatchmakingTriggerRealtimeNamespaceId(),
             "completeMatchmakingTriggerScriptId": this.getCompleteMatchmakingTriggerScriptId(),
-            "joinNotification": (_a = this.getJoinNotification()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "leaveNotification": (_b = this.getLeaveNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "completeNotification": (_c = this.getCompleteNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "changeRatingScript": (_a = this.getChangeRatingScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "joinNotification": (_b = this.getJoinNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "leaveNotification": (_c = this.getLeaveNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "completeNotification": (_d = this.getCompleteNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

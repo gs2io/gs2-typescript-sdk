@@ -12,6 +12,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private completeMatchmakingTriggerType;
     private completeMatchmakingTriggerRealtimeNamespaceId;
     private completeMatchmakingTriggerScriptId;
+    private changeRatingScript;
     private joinNotification;
     private leaveNotification;
     private completeNotification;
@@ -49,6 +50,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getCompleteMatchmakingTriggerScriptId(): string | null;
     setCompleteMatchmakingTriggerScriptId(completeMatchmakingTriggerScriptId: string | null): this;
     withCompleteMatchmakingTriggerScriptId(completeMatchmakingTriggerScriptId: string | null): this;
+    getChangeRatingScript(): Gs2Matchmaking.ScriptSetting | null;
+    setChangeRatingScript(changeRatingScript: Gs2Matchmaking.ScriptSetting | null): this;
+    withChangeRatingScript(changeRatingScript: Gs2Matchmaking.ScriptSetting | null): this;
     getJoinNotification(): Gs2Matchmaking.NotificationSetting | null;
     setJoinNotification(joinNotification: Gs2Matchmaking.NotificationSetting | null): this;
     withJoinNotification(joinNotification: Gs2Matchmaking.NotificationSetting | null): this;

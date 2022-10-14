@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TimeSpan = exports.Vote = exports.WrittenBallot = exports.SignedBallot = exports.Ballot = exports.GameResult = exports.Rating = exports.Player = exports.Attribute = exports.CapacityOfRole = exports.AttributeRange = exports.GitHubCheckoutSetting = exports.LogSetting = exports.NotificationSetting = exports.CurrentRatingModelMaster = exports.RatingModel = exports.RatingModelMaster = exports.Gathering = exports.Namespace = void 0;
+exports.TimeSpan = exports.Vote = exports.WrittenBallot = exports.SignedBallot = exports.Ballot = exports.GameResult = exports.Rating = exports.Player = exports.Attribute = exports.CapacityOfRole = exports.AttributeRange = exports.GitHubCheckoutSetting = exports.LogSetting = exports.NotificationSetting = exports.ScriptSetting = exports.CurrentRatingModelMaster = exports.RatingModel = exports.RatingModelMaster = exports.Gathering = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -27,6 +27,8 @@ var RatingModel_1 = tslib_1.__importDefault(require("./RatingModel"));
 exports.RatingModel = RatingModel_1.default;
 var CurrentRatingModelMaster_1 = tslib_1.__importDefault(require("./CurrentRatingModelMaster"));
 exports.CurrentRatingModelMaster = CurrentRatingModelMaster_1.default;
+var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
+exports.ScriptSetting = ScriptSetting_1.default;
 var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
 exports.NotificationSetting = NotificationSetting_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));

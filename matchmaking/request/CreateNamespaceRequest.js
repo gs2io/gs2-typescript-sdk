@@ -30,6 +30,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.completeMatchmakingTriggerType = null;
         this.completeMatchmakingTriggerRealtimeNamespaceId = null;
         this.completeMatchmakingTriggerScriptId = null;
+        this.changeRatingScript = null;
         this.joinNotification = null;
         this.leaveNotification = null;
         this.completeNotification = null;
@@ -156,6 +157,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.completeMatchmakingTriggerScriptId = completeMatchmakingTriggerScriptId;
         return this;
     };
+    CreateNamespaceRequest.prototype.getChangeRatingScript = function () {
+        return this.changeRatingScript;
+    };
+    CreateNamespaceRequest.prototype.setChangeRatingScript = function (changeRatingScript) {
+        this.changeRatingScript = changeRatingScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withChangeRatingScript = function (changeRatingScript) {
+        this.changeRatingScript = changeRatingScript;
+        return this;
+    };
     CreateNamespaceRequest.prototype.getJoinNotification = function () {
         return this.joinNotification;
     };
@@ -211,13 +223,14 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withCompleteMatchmakingTriggerType(data["completeMatchmakingTriggerType"])
             .withCompleteMatchmakingTriggerRealtimeNamespaceId(data["completeMatchmakingTriggerRealtimeNamespaceId"])
             .withCompleteMatchmakingTriggerScriptId(data["completeMatchmakingTriggerScriptId"])
+            .withChangeRatingScript(Gs2Matchmaking.ScriptSetting.fromDict(data["changeRatingScript"]))
             .withJoinNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["joinNotification"]))
             .withLeaveNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["leaveNotification"]))
             .withCompleteNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["completeNotification"]))
             .withLogSetting(Gs2Matchmaking.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
@@ -228,10 +241,11 @@ var CreateNamespaceRequest = /** @class */ (function () {
             "completeMatchmakingTriggerType": this.getCompleteMatchmakingTriggerType(),
             "completeMatchmakingTriggerRealtimeNamespaceId": this.getCompleteMatchmakingTriggerRealtimeNamespaceId(),
             "completeMatchmakingTriggerScriptId": this.getCompleteMatchmakingTriggerScriptId(),
-            "joinNotification": (_a = this.getJoinNotification()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "leaveNotification": (_b = this.getLeaveNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "completeNotification": (_c = this.getCompleteNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "changeRatingScript": (_a = this.getChangeRatingScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "joinNotification": (_b = this.getJoinNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "leaveNotification": (_c = this.getLeaveNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "completeNotification": (_d = this.getCompleteNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
         };
     };
     return CreateNamespaceRequest;

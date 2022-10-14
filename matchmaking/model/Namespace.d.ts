@@ -1,4 +1,5 @@
 import IModel from '../../core/interface/IModel';
+import ScriptSetting from './ScriptSetting';
 import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
 export default class Namespace implements IModel {
@@ -12,6 +13,7 @@ export default class Namespace implements IModel {
     private completeMatchmakingTriggerType;
     private completeMatchmakingTriggerRealtimeNamespaceId;
     private completeMatchmakingTriggerScriptId;
+    private changeRatingScript;
     private joinNotification;
     private leaveNotification;
     private completeNotification;
@@ -53,6 +55,9 @@ export default class Namespace implements IModel {
     getCompleteMatchmakingTriggerScriptId(): string | null;
     setCompleteMatchmakingTriggerScriptId(completeMatchmakingTriggerScriptId: string | null): this;
     withCompleteMatchmakingTriggerScriptId(completeMatchmakingTriggerScriptId: string | null): this;
+    getChangeRatingScript(): ScriptSetting | null;
+    setChangeRatingScript(changeRatingScript: ScriptSetting | null): this;
+    withChangeRatingScript(changeRatingScript: ScriptSetting | null): this;
     getJoinNotification(): NotificationSetting | null;
     setJoinNotification(joinNotification: NotificationSetting | null): this;
     withJoinNotification(joinNotification: NotificationSetting | null): this;

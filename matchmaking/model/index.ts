@@ -18,6 +18,7 @@ import Gathering from "./Gathering"
 import RatingModelMaster from "./RatingModelMaster"
 import RatingModel from "./RatingModel"
 import CurrentRatingModelMaster from "./CurrentRatingModelMaster"
+import ScriptSetting from "./ScriptSetting"
 import NotificationSetting from "./NotificationSetting"
 import LogSetting from "./LogSetting"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
@@ -39,6 +40,7 @@ export {
     RatingModelMaster,
     RatingModel,
     CurrentRatingModelMaster,
+    ScriptSetting,
     NotificationSetting,
     LogSetting,
     GitHubCheckoutSetting,

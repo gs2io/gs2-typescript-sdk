@@ -31,6 +31,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private completeMatchmakingTriggerType: string|null = null;
     private completeMatchmakingTriggerRealtimeNamespaceId: string|null = null;
     private completeMatchmakingTriggerScriptId: string|null = null;
+    private changeRatingScript: Gs2Matchmaking.ScriptSetting|null = null;
     private joinNotification: Gs2Matchmaking.NotificationSetting|null = null;
     private leaveNotification: Gs2Matchmaking.NotificationSetting|null = null;
     private completeNotification: Gs2Matchmaking.NotificationSetting|null = null;
@@ -162,6 +163,17 @@ export default class CreateNamespaceRequest implements IRequest {
         this.completeMatchmakingTriggerScriptId = completeMatchmakingTriggerScriptId;
         return this;
     }
+    public getChangeRatingScript(): Gs2Matchmaking.ScriptSetting|null {
+        return this.changeRatingScript;
+    }
+    public setChangeRatingScript(changeRatingScript: Gs2Matchmaking.ScriptSetting|null) {
+        this.changeRatingScript = changeRatingScript;
+        return this;
+    }
+    public withChangeRatingScript(changeRatingScript: Gs2Matchmaking.ScriptSetting|null): this {
+        this.changeRatingScript = changeRatingScript;
+        return this;
+    }
     public getJoinNotification(): Gs2Matchmaking.NotificationSetting|null {
         return this.joinNotification;
     }
@@ -218,6 +230,7 @@ export default class CreateNamespaceRequest implements IRequest {
             .withCompleteMatchmakingTriggerType(data["completeMatchmakingTriggerType"])
             .withCompleteMatchmakingTriggerRealtimeNamespaceId(data["completeMatchmakingTriggerRealtimeNamespaceId"])
             .withCompleteMatchmakingTriggerScriptId(data["completeMatchmakingTriggerScriptId"])
+            .withChangeRatingScript(Gs2Matchmaking.ScriptSetting.fromDict(data["changeRatingScript"]))
             .withJoinNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["joinNotification"]))
             .withLeaveNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["leaveNotification"]))
             .withCompleteNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["completeNotification"]))
@@ -235,6 +248,7 @@ export default class CreateNamespaceRequest implements IRequest {
             "completeMatchmakingTriggerType": this.getCompleteMatchmakingTriggerType(),
             "completeMatchmakingTriggerRealtimeNamespaceId": this.getCompleteMatchmakingTriggerRealtimeNamespaceId(),
             "completeMatchmakingTriggerScriptId": this.getCompleteMatchmakingTriggerScriptId(),
+            "changeRatingScript": this.getChangeRatingScript()?.toDict(),
             "joinNotification": this.getJoinNotification()?.toDict(),
             "leaveNotification": this.getLeaveNotification()?.toDict(),
             "completeNotification": this.getCompleteNotification()?.toDict(),

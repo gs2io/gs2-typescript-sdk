@@ -49,7 +49,7 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MatchmakingRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region);
@@ -68,10 +68,11 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'completeMatchmakingTriggerType': (_h = request.getCompleteMatchmakingTriggerType()) !== null && _h !== void 0 ? _h : null,
             'completeMatchmakingTriggerRealtimeNamespaceId': (_j = request.getCompleteMatchmakingTriggerRealtimeNamespaceId()) !== null && _j !== void 0 ? _j : null,
             'completeMatchmakingTriggerScriptId': (_k = request.getCompleteMatchmakingTriggerScriptId()) !== null && _k !== void 0 ? _k : null,
-            'joinNotification': (_m = (_l = request.getJoinNotification()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
-            'leaveNotification': (_p = (_o = request.getLeaveNotification()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
-            'completeNotification': (_r = (_q = request.getCompleteNotification()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
-            'logSetting': (_t = (_s = request.getLogSetting()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'changeRatingScript': (_m = (_l = request.getChangeRatingScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'joinNotification': (_p = (_o = request.getJoinNotification()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'leaveNotification': (_r = (_q = request.getLeaveNotification()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'completeNotification': (_t = (_s = request.getCompleteNotification()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'logSetting': (_v = (_u = request.getLogSetting()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -131,7 +132,7 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MatchmakingRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
@@ -150,10 +151,11 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'completeMatchmakingTriggerType': (_j = request.getCompleteMatchmakingTriggerType()) !== null && _j !== void 0 ? _j : null,
             'completeMatchmakingTriggerRealtimeNamespaceId': (_k = request.getCompleteMatchmakingTriggerRealtimeNamespaceId()) !== null && _k !== void 0 ? _k : null,
             'completeMatchmakingTriggerScriptId': (_l = request.getCompleteMatchmakingTriggerScriptId()) !== null && _l !== void 0 ? _l : null,
-            'joinNotification': (_o = (_m = request.getJoinNotification()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'leaveNotification': (_q = (_p = request.getLeaveNotification()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
-            'completeNotification': (_s = (_r = request.getCompleteNotification()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
-            'logSetting': (_u = (_t = request.getLogSetting()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'changeRatingScript': (_o = (_m = request.getChangeRatingScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'joinNotification': (_q = (_p = request.getJoinNotification()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'leaveNotification': (_s = (_r = request.getLeaveNotification()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'completeNotification': (_u = (_t = request.getCompleteNotification()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'logSetting': (_w = (_v = request.getLogSetting()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

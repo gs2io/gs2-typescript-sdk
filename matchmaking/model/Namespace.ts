@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import ScriptSetting from './ScriptSetting';
 import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:matchmaking:{namespaceName}";
@@ -30,6 +31,7 @@ export default class Namespace implements IModel {
     private completeMatchmakingTriggerType: string|null = null;
     private completeMatchmakingTriggerRealtimeNamespaceId: string|null = null;
     private completeMatchmakingTriggerScriptId: string|null = null;
+    private changeRatingScript: ScriptSetting|null = null;
     private joinNotification: NotificationSetting|null = null;
     private leaveNotification: NotificationSetting|null = null;
     private completeNotification: NotificationSetting|null = null;
@@ -206,6 +208,17 @@ export default class Namespace implements IModel {
         this.completeMatchmakingTriggerScriptId = completeMatchmakingTriggerScriptId;
         return this;
     }
+    public getChangeRatingScript(): ScriptSetting|null {
+        return this.changeRatingScript;
+    }
+    public setChangeRatingScript(changeRatingScript: ScriptSetting|null) {
+        this.changeRatingScript = changeRatingScript;
+        return this;
+    }
+    public withChangeRatingScript(changeRatingScript: ScriptSetting|null): this {
+        this.changeRatingScript = changeRatingScript;
+        return this;
+    }
     public getJoinNotification(): NotificationSetting|null {
         return this.joinNotification;
     }
@@ -288,6 +301,7 @@ export default class Namespace implements IModel {
             .withCompleteMatchmakingTriggerType(data["completeMatchmakingTriggerType"])
             .withCompleteMatchmakingTriggerRealtimeNamespaceId(data["completeMatchmakingTriggerRealtimeNamespaceId"])
             .withCompleteMatchmakingTriggerScriptId(data["completeMatchmakingTriggerScriptId"])
+            .withChangeRatingScript(ScriptSetting.fromDict(data["changeRatingScript"]))
             .withJoinNotification(NotificationSetting.fromDict(data["joinNotification"]))
             .withLeaveNotification(NotificationSetting.fromDict(data["leaveNotification"]))
             .withCompleteNotification(NotificationSetting.fromDict(data["completeNotification"]))
@@ -308,6 +322,7 @@ export default class Namespace implements IModel {
             "completeMatchmakingTriggerType": this.getCompleteMatchmakingTriggerType(),
             "completeMatchmakingTriggerRealtimeNamespaceId": this.getCompleteMatchmakingTriggerRealtimeNamespaceId(),
             "completeMatchmakingTriggerScriptId": this.getCompleteMatchmakingTriggerScriptId(),
+            "changeRatingScript": this.getChangeRatingScript()?.toDict(),
             "joinNotification": this.getJoinNotification()?.toDict(),
             "leaveNotification": this.getLeaveNotification()?.toDict(),
             "completeNotification": this.getCompleteNotification()?.toDict(),
