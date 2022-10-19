@@ -802,7 +802,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ShowcaseRestClient.prototype.buyByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/showcase/{showcaseName}/{displayItemId}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
@@ -814,10 +814,13 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+        }
         var body = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'quantity': (_k = request.getQuantity()) !== null && _k !== void 0 ? _k : null,
-            'config': (_m = (_l = request.getConfig()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'quantity': (_l = request.getQuantity()) !== null && _l !== void 0 ? _l : null,
+            'config': (_o = (_m = request.getConfig()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
