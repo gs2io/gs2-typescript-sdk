@@ -19,6 +19,7 @@ import IModel from '../../core/interface/IModel';
 export default class Ranking implements IModel {
     private rank: number|null = null;
     private index: number|null = null;
+    private categoryName: string|null = null;
     private userId: string|null = null;
     private score: number|null = null;
     private metadata: string|null = null;
@@ -43,6 +44,17 @@ export default class Ranking implements IModel {
     }
     public withIndex(index: number|null): this {
         this.index = index;
+        return this;
+    }
+    public getCategoryName(): string|null {
+        return this.categoryName;
+    }
+    public setCategoryName(categoryName: string|null) {
+        this.categoryName = categoryName;
+        return this;
+    }
+    public withCategoryName(categoryName: string|null): this {
+        this.categoryName = categoryName;
         return this;
     }
     public getUserId(): string|null {
@@ -97,6 +109,7 @@ export default class Ranking implements IModel {
         return new Ranking()
             .withRank(data["rank"])
             .withIndex(data["index"])
+            .withCategoryName(data["categoryName"])
             .withUserId(data["userId"])
             .withScore(data["score"])
             .withMetadata(data["metadata"])
@@ -107,6 +120,7 @@ export default class Ranking implements IModel {
         return {
             "rank": this.getRank(),
             "index": this.getIndex(),
+            "categoryName": this.getCategoryName(),
             "userId": this.getUserId(),
             "score": this.getScore(),
             "metadata": this.getMetadata(),

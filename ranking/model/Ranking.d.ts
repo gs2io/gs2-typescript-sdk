@@ -2,6 +2,7 @@ import IModel from '../../core/interface/IModel';
 export default class Ranking implements IModel {
     private rank;
     private index;
+    private categoryName;
     private userId;
     private score;
     private metadata;
@@ -12,6 +13,9 @@ export default class Ranking implements IModel {
     getIndex(): number | null;
     setIndex(index: number | null): this;
     withIndex(index: number | null): this;
+    getCategoryName(): string | null;
+    setCategoryName(categoryName: string | null): this;
+    withCategoryName(categoryName: string | null): this;
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;

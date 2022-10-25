@@ -19,6 +19,7 @@ var Ranking = /** @class */ (function () {
     function Ranking() {
         this.rank = null;
         this.index = null;
+        this.categoryName = null;
         this.userId = null;
         this.score = null;
         this.metadata = null;
@@ -44,6 +45,17 @@ var Ranking = /** @class */ (function () {
     };
     Ranking.prototype.withIndex = function (index) {
         this.index = index;
+        return this;
+    };
+    Ranking.prototype.getCategoryName = function () {
+        return this.categoryName;
+    };
+    Ranking.prototype.setCategoryName = function (categoryName) {
+        this.categoryName = categoryName;
+        return this;
+    };
+    Ranking.prototype.withCategoryName = function (categoryName) {
+        this.categoryName = categoryName;
         return this;
     };
     Ranking.prototype.getUserId = function () {
@@ -97,6 +109,7 @@ var Ranking = /** @class */ (function () {
         return new Ranking()
             .withRank(data["rank"])
             .withIndex(data["index"])
+            .withCategoryName(data["categoryName"])
             .withUserId(data["userId"])
             .withScore(data["score"])
             .withMetadata(data["metadata"])
@@ -106,6 +119,7 @@ var Ranking = /** @class */ (function () {
         return {
             "rank": this.getRank(),
             "index": this.getIndex(),
+            "categoryName": this.getCategoryName(),
             "userId": this.getUserId(),
             "score": this.getScore(),
             "metadata": this.getMetadata(),
