@@ -21,8 +21,7 @@ var DeleteProgressRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
-        this.rateName = null;
-        this.progressName = null;
+        this.duplicationAvoider = null;
     }
     DeleteProgressRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -68,41 +67,26 @@ var DeleteProgressRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
-    DeleteProgressRequest.prototype.getRateName = function () {
-        return this.rateName;
+    DeleteProgressRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
     };
-    DeleteProgressRequest.prototype.setRateName = function (rateName) {
-        this.rateName = rateName;
+    DeleteProgressRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
-    DeleteProgressRequest.prototype.withRateName = function (rateName) {
-        this.rateName = rateName;
-        return this;
-    };
-    DeleteProgressRequest.prototype.getProgressName = function () {
-        return this.progressName;
-    };
-    DeleteProgressRequest.prototype.setProgressName = function (progressName) {
-        this.progressName = progressName;
-        return this;
-    };
-    DeleteProgressRequest.prototype.withProgressName = function (progressName) {
-        this.progressName = progressName;
+    DeleteProgressRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteProgressRequest.fromDict = function (data) {
         return new DeleteProgressRequest()
             .withNamespaceName(data["namespaceName"])
-            .withAccessToken(data["accessToken"])
-            .withRateName(data["rateName"])
-            .withProgressName(data["progressName"]);
+            .withAccessToken(data["accessToken"]);
     };
     DeleteProgressRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "rateName": this.getRateName(),
-            "progressName": this.getProgressName(),
         };
     };
     return DeleteProgressRequest;

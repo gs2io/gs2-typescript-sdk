@@ -435,6 +435,9 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'count': request.getCount() ?? null,
@@ -812,6 +815,9 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'config': request.getConfig()?.map((item) => item.toDict()) ?? null,
@@ -922,6 +928,9 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'config': request.getConfig()?.map((item) => item.toDict()) ?? null,
@@ -994,6 +1003,9 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
         }
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,

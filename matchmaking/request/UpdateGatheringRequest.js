@@ -25,6 +25,7 @@ var UpdateGatheringRequest = /** @class */ (function () {
         this.gatheringName = null;
         this.accessToken = null;
         this.attributeRanges = null;
+        this.duplicationAvoider = null;
     }
     UpdateGatheringRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,6 +91,17 @@ var UpdateGatheringRequest = /** @class */ (function () {
     };
     UpdateGatheringRequest.prototype.withAttributeRanges = function (attributeRanges) {
         this.attributeRanges = attributeRanges;
+        return this;
+    };
+    UpdateGatheringRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    UpdateGatheringRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    UpdateGatheringRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     UpdateGatheringRequest.fromDict = function (data) {

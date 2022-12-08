@@ -6,6 +6,7 @@ export default class DeleteFormRequest implements IRequest {
     private accessToken;
     private moldName;
     private index;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class DeleteFormRequest implements IRequest {
     getIndex(): number | null;
     setIndex(index: number | null): this;
     withIndex(index: number | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): DeleteFormRequest;

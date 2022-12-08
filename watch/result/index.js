@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetBillingActivityResult = exports.DescribeBillingActivitiesResult = exports.GetCumulativeResult = exports.GetChartResult = void 0;
+exports.GetBillingActivityResult = exports.DescribeBillingActivitiesResult = exports.GetCumulativeResult = exports.GetDistributionResult = exports.GetChartResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -19,6 +19,8 @@ permissions and limitations under the License.
  */
 var GetChartResult_1 = tslib_1.__importDefault(require("./GetChartResult"));
 exports.GetChartResult = GetChartResult_1.default;
+var GetDistributionResult_1 = tslib_1.__importDefault(require("./GetDistributionResult"));
+exports.GetDistributionResult = GetDistributionResult_1.default;
 var GetCumulativeResult_1 = tslib_1.__importDefault(require("./GetCumulativeResult"));
 exports.GetCumulativeResult = GetCumulativeResult_1.default;
 var DescribeBillingActivitiesResult_1 = tslib_1.__importDefault(require("./DescribeBillingActivitiesResult"));

@@ -25,6 +25,7 @@ var SetRecoverIntervalByStatusRequest = /** @class */ (function () {
         this.keyId = null;
         this.signedStatusBody = null;
         this.signedStatusSignature = null;
+        this.duplicationAvoider = null;
     }
     SetRecoverIntervalByStatusRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -112,6 +113,17 @@ var SetRecoverIntervalByStatusRequest = /** @class */ (function () {
     };
     SetRecoverIntervalByStatusRequest.prototype.withSignedStatusSignature = function (signedStatusSignature) {
         this.signedStatusSignature = signedStatusSignature;
+        return this;
+    };
+    SetRecoverIntervalByStatusRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SetRecoverIntervalByStatusRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SetRecoverIntervalByStatusRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SetRecoverIntervalByStatusRequest.fromDict = function (data) {

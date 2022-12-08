@@ -28,10 +28,10 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getChart(request: Request.GetChartRequest): Promise<Result.GetChartResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/chart/{metrics}')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/chart/{measure}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
-            .replace('{metrics}', String(request.getMetrics() ?? 'null') === "" ? "null" : String(request.getMetrics() ?? 'null'));
+            .replace('{measure}', String(request.getMeasure() ?? 'null') === "" ? "null" : String(request.getMeasure() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -40,14 +40,14 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'grn': request.getGrn() ?? null,
-            'queries': request.getQueries() ?? null,
-            'by': request.getBy() ?? null,
-            'timeframe': request.getTimeframe() ?? null,
-            'size': request.getSize() ?? null,
-            'format': request.getFormat() ?? null,
-            'aggregator': request.getAggregator() ?? null,
-            'style': request.getStyle() ?? null,
-            'title': request.getTitle() ?? null,
+            'round': request.getRound() ?? null,
+            'filters': request.getFilters()?.map((item) => item.toDict()) ?? null,
+            'groupBys': request.getGroupBys() ?? null,
+            'countBy': request.getCountBy() ?? null,
+            'begin': request.getBegin() ?? null,
+            'end': request.getEnd() ?? null,
+            'pageToken': request.getPageToken() ?? null,
+            'limit': request.getLimit() ?? null,
         };
         return axios.post(
             url,
@@ -57,6 +57,43 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.GetChartResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public getDistribution(request: Request.GetDistributionRequest): Promise<Result.GetDistributionResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/chart/{measure}')
+            .replace('{service}', 'watch')
+            .replace('{region}', this.session.region)
+            .replace('{measure}', String(request.getMeasure() ?? 'null') === "" ? "null" : String(request.getMeasure() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'grn': request.getGrn() ?? null,
+            'filters': request.getFilters()?.map((item) => item.toDict()) ?? null,
+            'groupBys': request.getGroupBys() ?? null,
+            'begin': request.getBegin() ?? null,
+            'end': request.getEnd() ?? null,
+            'pageToken': request.getPageToken() ?? null,
+            'limit': request.getLimit() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetDistributionResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

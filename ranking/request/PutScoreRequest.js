@@ -24,6 +24,7 @@ var PutScoreRequest = /** @class */ (function () {
         this.accessToken = null;
         this.score = null;
         this.metadata = null;
+        this.duplicationAvoider = null;
     }
     PutScoreRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -100,6 +101,17 @@ var PutScoreRequest = /** @class */ (function () {
     };
     PutScoreRequest.prototype.withMetadata = function (metadata) {
         this.metadata = metadata;
+        return this;
+    };
+    PutScoreRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    PutScoreRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    PutScoreRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     PutScoreRequest.fromDict = function (data) {

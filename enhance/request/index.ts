@@ -29,7 +29,6 @@ import DeleteRateModelMasterRequest from "./DeleteRateModelMasterRequest"
 import DirectEnhanceRequest from "./DirectEnhanceRequest"
 import DirectEnhanceByUserIdRequest from "./DirectEnhanceByUserIdRequest"
 import DirectEnhanceByStampSheetRequest from "./DirectEnhanceByStampSheetRequest"
-import DescribeProgressesByUserIdRequest from "./DescribeProgressesByUserIdRequest"
 import CreateProgressByUserIdRequest from "./CreateProgressByUserIdRequest"
 import GetProgressRequest from "./GetProgressRequest"
 import GetProgressByUserIdRequest from "./GetProgressByUserIdRequest"
@@ -63,7 +62,6 @@ export {
     DirectEnhanceRequest,
     DirectEnhanceByUserIdRequest,
     DirectEnhanceByStampSheetRequest,
-    DescribeProgressesByUserIdRequest,
     CreateProgressByUserIdRequest,
     GetProgressRequest,
     GetProgressByUserIdRequest,

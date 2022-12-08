@@ -20,7 +20,6 @@ var Gs2Enhance = tslib_1.__importStar(require("../model"));
 var GetProgressByUserIdResult = /** @class */ (function () {
     function GetProgressByUserIdResult() {
         this.item = null;
-        this.rateModel = null;
     }
     GetProgressByUserIdResult.prototype.getItem = function () {
         return this.item;
@@ -33,27 +32,14 @@ var GetProgressByUserIdResult = /** @class */ (function () {
         this.item = item;
         return this;
     };
-    GetProgressByUserIdResult.prototype.getRateModel = function () {
-        return this.rateModel;
-    };
-    GetProgressByUserIdResult.prototype.setRateModel = function (rateModel) {
-        this.rateModel = rateModel;
-        return this;
-    };
-    GetProgressByUserIdResult.prototype.withRateModel = function (rateModel) {
-        this.rateModel = rateModel;
-        return this;
-    };
     GetProgressByUserIdResult.fromDict = function (data) {
         return new GetProgressByUserIdResult()
-            .withItem(Gs2Enhance.Progress.fromDict(data["item"]))
-            .withRateModel(Gs2Enhance.RateModel.fromDict(data["rateModel"]));
+            .withItem(Gs2Enhance.Progress.fromDict(data["item"]));
     };
     GetProgressByUserIdResult.prototype.toDict = function () {
-        var _a, _b;
+        var _a;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "rateModel": (_b = this.getRateModel()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return GetProgressByUserIdResult;

@@ -25,6 +25,7 @@ var DoMatchmakingRequest = /** @class */ (function () {
         this.accessToken = null;
         this.player = null;
         this.matchmakingContextToken = null;
+        this.duplicationAvoider = null;
     }
     DoMatchmakingRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,6 +91,17 @@ var DoMatchmakingRequest = /** @class */ (function () {
     };
     DoMatchmakingRequest.prototype.withMatchmakingContextToken = function (matchmakingContextToken) {
         this.matchmakingContextToken = matchmakingContextToken;
+        return this;
+    };
+    DoMatchmakingRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DoMatchmakingRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DoMatchmakingRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DoMatchmakingRequest.fromDict = function (data) {

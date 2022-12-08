@@ -24,6 +24,7 @@ var CreateTakeOverRequest = /** @class */ (function () {
         this.type = null;
         this.userIdentifier = null;
         this.password = null;
+        this.duplicationAvoider = null;
     }
     CreateTakeOverRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -100,6 +101,17 @@ var CreateTakeOverRequest = /** @class */ (function () {
     };
     CreateTakeOverRequest.prototype.withPassword = function (password) {
         this.password = password;
+        return this;
+    };
+    CreateTakeOverRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    CreateTakeOverRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    CreateTakeOverRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     CreateTakeOverRequest.fromDict = function (data) {

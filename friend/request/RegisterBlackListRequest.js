@@ -22,6 +22,7 @@ var RegisterBlackListRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.accessToken = null;
         this.targetUserId = null;
+        this.duplicationAvoider = null;
     }
     RegisterBlackListRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var RegisterBlackListRequest = /** @class */ (function () {
     };
     RegisterBlackListRequest.prototype.withTargetUserId = function (targetUserId) {
         this.targetUserId = targetUserId;
+        return this;
+    };
+    RegisterBlackListRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    RegisterBlackListRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    RegisterBlackListRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     RegisterBlackListRequest.fromDict = function (data) {

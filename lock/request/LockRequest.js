@@ -24,6 +24,7 @@ var LockRequest = /** @class */ (function () {
         this.accessToken = null;
         this.transactionId = null;
         this.ttl = null;
+        this.duplicationAvoider = null;
     }
     LockRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -100,6 +101,17 @@ var LockRequest = /** @class */ (function () {
     };
     LockRequest.prototype.withTtl = function (ttl) {
         this.ttl = ttl;
+        return this;
+    };
+    LockRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    LockRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    LockRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     LockRequest.fromDict = function (data) {

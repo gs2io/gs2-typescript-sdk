@@ -21,6 +21,7 @@ var RunRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
+        this.duplicationAvoider = null;
     }
     RunRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -64,6 +65,17 @@ var RunRequest = /** @class */ (function () {
     };
     RunRequest.prototype.withAccessToken = function (accessToken) {
         this.accessToken = accessToken;
+        return this;
+    };
+    RunRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    RunRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    RunRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     RunRequest.fromDict = function (data) {

@@ -19,30 +19,55 @@ import IResult from '../../core/interface/IResult';
 import * as Gs2Watch from '../model'
 
 export default class GetChartResult implements IResult {
-    private item: Gs2Watch.Chart|null = null;
+    private items: Gs2Watch.Chart[]|null = null;
+    private nextPageToken: string|null = null;
 
-    public getItem(): Gs2Watch.Chart|null {
-        return this.item;
+    public getItems(): Gs2Watch.Chart[]|null {
+        return this.items;
     }
 
-    public setItem(item: Gs2Watch.Chart|null) {
-        this.item = item;
+    public setItems(items: Gs2Watch.Chart[]|null) {
+        this.items = items;
         return this;
     }
 
-    public withItem(item: Gs2Watch.Chart|null): this {
-        this.item = item;
+    public withItems(items: Gs2Watch.Chart[]|null): this {
+        this.items = items;
+        return this;
+    }
+
+    public getNextPageToken(): string|null {
+        return this.nextPageToken;
+    }
+
+    public setNextPageToken(nextPageToken: string|null) {
+        this.nextPageToken = nextPageToken;
+        return this;
+    }
+
+    public withNextPageToken(nextPageToken: string|null): this {
+        this.nextPageToken = nextPageToken;
         return this;
     }
 
     public static fromDict(data: {[key: string]: any}): GetChartResult {
         return new GetChartResult()
-            .withItem(Gs2Watch.Chart.fromDict(data["item"]));
+            .withItems(data.items ?
+                data.items.map((item: {[key: string]: any}) => {
+                    return Gs2Watch.Chart.fromDict(item);
+                }
+            ) : [])
+            .withNextPageToken(data["nextPageToken"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
-            "item": this.getItem()?.toDict(),
+            "items": this.getItems() ?
+                this.getItems()!.map((item: Gs2Watch.Chart) => {
+                    return item.toDict();
+                }
+            ) : [],
+            "nextPageToken": this.getNextPageToken(),
         };
     }
 }

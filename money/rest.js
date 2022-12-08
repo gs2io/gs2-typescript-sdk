@@ -322,7 +322,7 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MoneyRestClient.prototype.withdraw = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/wallet/{slot}/withdraw')
             .replace('{service}', 'money')
             .replace('{region}', this.session.region)
@@ -335,10 +335,13 @@ var Gs2MoneyRestClient = /** @class */ (function (_super) {
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+        }
         var body = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'count': (_g = request.getCount()) !== null && _g !== void 0 ? _g : null,
-            'paidOnly': (_h = request.getPaidOnly()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'count': (_h = request.getCount()) !== null && _h !== void 0 ? _h : null,
+            'paidOnly': (_j = request.getPaidOnly()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

@@ -22,6 +22,7 @@ var RejectRequestRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.accessToken = null;
         this.fromUserId = null;
+        this.duplicationAvoider = null;
     }
     RejectRequestRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var RejectRequestRequest = /** @class */ (function () {
     };
     RejectRequestRequest.prototype.withFromUserId = function (fromUserId) {
         this.fromUserId = fromUserId;
+        return this;
+    };
+    RejectRequestRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    RejectRequestRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    RejectRequestRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     RejectRequestRequest.fromDict = function (data) {

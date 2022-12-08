@@ -27,6 +27,7 @@ export default class CreateTakeOverRequest implements IRequest {
     private type: number|null = null;
     private userIdentifier: string|null = null;
     private password: string|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -108,6 +109,20 @@ export default class CreateTakeOverRequest implements IRequest {
     }
     public withPassword(password: string|null): this {
         this.password = password;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

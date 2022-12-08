@@ -23,6 +23,7 @@ var PrepareReUploadRequest = /** @class */ (function () {
         this.dataObjectName = null;
         this.accessToken = null;
         this.contentType = null;
+        this.duplicationAvoider = null;
     }
     PrepareReUploadRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var PrepareReUploadRequest = /** @class */ (function () {
     };
     PrepareReUploadRequest.prototype.withContentType = function (contentType) {
         this.contentType = contentType;
+        return this;
+    };
+    PrepareReUploadRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    PrepareReUploadRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    PrepareReUploadRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     PrepareReUploadRequest.fromDict = function (data) {

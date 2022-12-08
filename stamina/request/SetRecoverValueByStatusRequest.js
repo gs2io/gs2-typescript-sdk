@@ -25,6 +25,7 @@ var SetRecoverValueByStatusRequest = /** @class */ (function () {
         this.keyId = null;
         this.signedStatusBody = null;
         this.signedStatusSignature = null;
+        this.duplicationAvoider = null;
     }
     SetRecoverValueByStatusRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -112,6 +113,17 @@ var SetRecoverValueByStatusRequest = /** @class */ (function () {
     };
     SetRecoverValueByStatusRequest.prototype.withSignedStatusSignature = function (signedStatusSignature) {
         this.signedStatusSignature = signedStatusSignature;
+        return this;
+    };
+    SetRecoverValueByStatusRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SetRecoverValueByStatusRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SetRecoverValueByStatusRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SetRecoverValueByStatusRequest.fromDict = function (data) {

@@ -24,9 +24,8 @@ export default class EndRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private accessToken: string|null = null;
-    private rateName: string|null = null;
-    private progressName: string|null = null;
     private config: Gs2Enhance.Config[]|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -77,28 +76,6 @@ export default class EndRequest implements IRequest {
         this.accessToken = accessToken;
         return this;
     }
-    public getRateName(): string|null {
-        return this.rateName;
-    }
-    public setRateName(rateName: string|null) {
-        this.rateName = rateName;
-        return this;
-    }
-    public withRateName(rateName: string|null): this {
-        this.rateName = rateName;
-        return this;
-    }
-    public getProgressName(): string|null {
-        return this.progressName;
-    }
-    public setProgressName(progressName: string|null) {
-        this.progressName = progressName;
-        return this;
-    }
-    public withProgressName(progressName: string|null): this {
-        this.progressName = progressName;
-        return this;
-    }
     public getConfig(): Gs2Enhance.Config[]|null {
         return this.config;
     }
@@ -111,12 +88,24 @@ export default class EndRequest implements IRequest {
         return this;
     }
 
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): EndRequest {
         return new EndRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withRateName(data["rateName"])
-            .withProgressName(data["progressName"])
             .withConfig(data.config ?
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Enhance.Config.fromDict(item);
@@ -128,8 +117,6 @@ export default class EndRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "rateName": this.getRateName(),
-            "progressName": this.getProgressName(),
             "config": this.getConfig() ?
                 this.getConfig()!.map((item: Gs2Enhance.Config) => {
                     return item.toDict();

@@ -26,6 +26,7 @@ var CompleteRequest = /** @class */ (function () {
         this.missionTaskName = null;
         this.accessToken = null;
         this.config = null;
+        this.duplicationAvoider = null;
     }
     CompleteRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -102,6 +103,17 @@ var CompleteRequest = /** @class */ (function () {
     };
     CompleteRequest.prototype.withConfig = function (config) {
         this.config = config;
+        return this;
+    };
+    CompleteRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    CompleteRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    CompleteRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     CompleteRequest.fromDict = function (data) {

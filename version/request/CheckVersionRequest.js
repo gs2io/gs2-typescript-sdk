@@ -24,6 +24,7 @@ var CheckVersionRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.accessToken = null;
         this.targetVersions = null;
+        this.duplicationAvoider = null;
     }
     CheckVersionRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,6 +79,17 @@ var CheckVersionRequest = /** @class */ (function () {
     };
     CheckVersionRequest.prototype.withTargetVersions = function (targetVersions) {
         this.targetVersions = targetVersions;
+        return this;
+    };
+    CheckVersionRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    CheckVersionRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    CheckVersionRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     CheckVersionRequest.fromDict = function (data) {

@@ -22,16 +22,16 @@ export default class GetChartRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
-    private metrics: string|null = null;
+    private measure: string|null = null;
     private grn: string|null = null;
-    private queries: string[]|null = null;
-    private by: string|null = null;
-    private timeframe: string|null = null;
-    private size: string|null = null;
-    private format: string|null = null;
-    private aggregator: string|null = null;
-    private style: string|null = null;
-    private title: string|null = null;
+    private round: string|null = null;
+    private filters: Gs2Watch.Filter[]|null = null;
+    private groupBys: string[]|null = null;
+    private countBy: string|null = null;
+    private begin: number|null = null;
+    private end: number|null = null;
+    private pageToken: string|null = null;
+    private limit: number|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -60,15 +60,15 @@ export default class GetChartRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-    public getMetrics(): string|null {
-        return this.metrics;
+    public getMeasure(): string|null {
+        return this.measure;
     }
-    public setMetrics(metrics: string|null) {
-        this.metrics = metrics;
+    public setMeasure(measure: string|null) {
+        this.measure = measure;
         return this;
     }
-    public withMetrics(metrics: string|null): this {
-        this.metrics = metrics;
+    public withMeasure(measure: string|null): this {
+        this.measure = measure;
         return this;
     }
     public getGrn(): string|null {
@@ -82,129 +82,137 @@ export default class GetChartRequest implements IRequest {
         this.grn = grn;
         return this;
     }
-    public getQueries(): string[]|null {
-        return this.queries;
+    public getRound(): string|null {
+        return this.round;
     }
-    public setQueries(queries: string[]|null) {
-        this.queries = queries;
+    public setRound(round: string|null) {
+        this.round = round;
         return this;
     }
-    public withQueries(queries: string[]|null): this {
-        this.queries = queries;
+    public withRound(round: string|null): this {
+        this.round = round;
         return this;
     }
-    public getBy(): string|null {
-        return this.by;
+    public getFilters(): Gs2Watch.Filter[]|null {
+        return this.filters;
     }
-    public setBy(by: string|null) {
-        this.by = by;
+    public setFilters(filters: Gs2Watch.Filter[]|null) {
+        this.filters = filters;
         return this;
     }
-    public withBy(by: string|null): this {
-        this.by = by;
+    public withFilters(filters: Gs2Watch.Filter[]|null): this {
+        this.filters = filters;
         return this;
     }
-    public getTimeframe(): string|null {
-        return this.timeframe;
+    public getGroupBys(): string[]|null {
+        return this.groupBys;
     }
-    public setTimeframe(timeframe: string|null) {
-        this.timeframe = timeframe;
+    public setGroupBys(groupBys: string[]|null) {
+        this.groupBys = groupBys;
         return this;
     }
-    public withTimeframe(timeframe: string|null): this {
-        this.timeframe = timeframe;
+    public withGroupBys(groupBys: string[]|null): this {
+        this.groupBys = groupBys;
         return this;
     }
-    public getSize(): string|null {
-        return this.size;
+    public getCountBy(): string|null {
+        return this.countBy;
     }
-    public setSize(size: string|null) {
-        this.size = size;
+    public setCountBy(countBy: string|null) {
+        this.countBy = countBy;
         return this;
     }
-    public withSize(size: string|null): this {
-        this.size = size;
+    public withCountBy(countBy: string|null): this {
+        this.countBy = countBy;
         return this;
     }
-    public getFormat(): string|null {
-        return this.format;
+    public getBegin(): number|null {
+        return this.begin;
     }
-    public setFormat(format: string|null) {
-        this.format = format;
+    public setBegin(begin: number|null) {
+        this.begin = begin;
         return this;
     }
-    public withFormat(format: string|null): this {
-        this.format = format;
+    public withBegin(begin: number|null): this {
+        this.begin = begin;
         return this;
     }
-    public getAggregator(): string|null {
-        return this.aggregator;
+    public getEnd(): number|null {
+        return this.end;
     }
-    public setAggregator(aggregator: string|null) {
-        this.aggregator = aggregator;
+    public setEnd(end: number|null) {
+        this.end = end;
         return this;
     }
-    public withAggregator(aggregator: string|null): this {
-        this.aggregator = aggregator;
+    public withEnd(end: number|null): this {
+        this.end = end;
         return this;
     }
-    public getStyle(): string|null {
-        return this.style;
+    public getPageToken(): string|null {
+        return this.pageToken;
     }
-    public setStyle(style: string|null) {
-        this.style = style;
+    public setPageToken(pageToken: string|null) {
+        this.pageToken = pageToken;
         return this;
     }
-    public withStyle(style: string|null): this {
-        this.style = style;
+    public withPageToken(pageToken: string|null): this {
+        this.pageToken = pageToken;
         return this;
     }
-    public getTitle(): string|null {
-        return this.title;
+    public getLimit(): number|null {
+        return this.limit;
     }
-    public setTitle(title: string|null) {
-        this.title = title;
+    public setLimit(limit: number|null) {
+        this.limit = limit;
         return this;
     }
-    public withTitle(title: string|null): this {
-        this.title = title;
+    public withLimit(limit: number|null): this {
+        this.limit = limit;
         return this;
     }
 
     public static fromDict(data: {[key: string]: any}): GetChartRequest {
         return new GetChartRequest()
-            .withMetrics(data["metrics"])
+            .withMeasure(data["measure"])
             .withGrn(data["grn"])
-            .withQueries(data.queries ?
-                data.queries.map((item: {[key: string]: any}) => {
+            .withRound(data["round"])
+            .withFilters(data.filters ?
+                data.filters.map((item: {[key: string]: any}) => {
+                    return Gs2Watch.Filter.fromDict(item);
+                }
+            ) : [])
+            .withGroupBys(data.groupBys ?
+                data.groupBys.map((item: {[key: string]: any}) => {
                     return item;
                 }
             ) : [])
-            .withBy(data["by"])
-            .withTimeframe(data["timeframe"])
-            .withSize(data["size"])
-            .withFormat(data["format"])
-            .withAggregator(data["aggregator"])
-            .withStyle(data["style"])
-            .withTitle(data["title"]);
+            .withCountBy(data["countBy"])
+            .withBegin(data["begin"])
+            .withEnd(data["end"])
+            .withPageToken(data["pageToken"])
+            .withLimit(data["limit"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
-            "metrics": this.getMetrics(),
+            "measure": this.getMeasure(),
             "grn": this.getGrn(),
-            "queries": this.getQueries() ?
-                this.getQueries()!.map((item: string) => {
+            "round": this.getRound(),
+            "filters": this.getFilters() ?
+                this.getFilters()!.map((item: Gs2Watch.Filter) => {
+                    return item.toDict();
+                }
+            ) : [],
+            "groupBys": this.getGroupBys() ?
+                this.getGroupBys()!.map((item: string) => {
                     return item;
                 }
             ) : [],
-            "by": this.getBy(),
-            "timeframe": this.getTimeframe(),
-            "size": this.getSize(),
-            "format": this.getFormat(),
-            "aggregator": this.getAggregator(),
-            "style": this.getStyle(),
-            "title": this.getTitle(),
+            "countBy": this.getCountBy(),
+            "begin": this.getBegin(),
+            "end": this.getEnd(),
+            "pageToken": this.getPageToken(),
+            "limit": this.getLimit(),
         };
     }
 }

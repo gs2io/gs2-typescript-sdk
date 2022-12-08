@@ -21,6 +21,7 @@ var DeleteProgressRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
+        this.duplicationAvoider = null;
     }
     DeleteProgressRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -64,6 +65,17 @@ var DeleteProgressRequest = /** @class */ (function () {
     };
     DeleteProgressRequest.prototype.withAccessToken = function (accessToken) {
         this.accessToken = accessToken;
+        return this;
+    };
+    DeleteProgressRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteProgressRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteProgressRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteProgressRequest.fromDict = function (data) {

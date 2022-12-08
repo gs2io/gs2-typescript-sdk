@@ -27,6 +27,7 @@ var SetFormWithSignatureRequest = /** @class */ (function () {
         this.index = null;
         this.slots = null;
         this.keyId = null;
+        this.duplicationAvoider = null;
     }
     SetFormWithSignatureRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -114,6 +115,17 @@ var SetFormWithSignatureRequest = /** @class */ (function () {
     };
     SetFormWithSignatureRequest.prototype.withKeyId = function (keyId) {
         this.keyId = keyId;
+        return this;
+    };
+    SetFormWithSignatureRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SetFormWithSignatureRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SetFormWithSignatureRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SetFormWithSignatureRequest.fromDict = function (data) {

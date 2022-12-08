@@ -20,6 +20,7 @@ var InvokeScriptRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.scriptId = null;
+        this.userId = null;
         this.args = null;
     }
     InvokeScriptRequest.prototype.getRequestId = function () {
@@ -55,6 +56,17 @@ var InvokeScriptRequest = /** @class */ (function () {
         this.scriptId = scriptId;
         return this;
     };
+    InvokeScriptRequest.prototype.getUserId = function () {
+        return this.userId;
+    };
+    InvokeScriptRequest.prototype.setUserId = function (userId) {
+        this.userId = userId;
+        return this;
+    };
+    InvokeScriptRequest.prototype.withUserId = function (userId) {
+        this.userId = userId;
+        return this;
+    };
     InvokeScriptRequest.prototype.getArgs = function () {
         return this.args;
     };
@@ -69,11 +81,13 @@ var InvokeScriptRequest = /** @class */ (function () {
     InvokeScriptRequest.fromDict = function (data) {
         return new InvokeScriptRequest()
             .withScriptId(data["scriptId"])
+            .withUserId(data["userId"])
             .withArgs(data["args"]);
     };
     InvokeScriptRequest.prototype.toDict = function () {
         return {
             "scriptId": this.getScriptId(),
+            "userId": this.getUserId(),
             "args": this.getArgs(),
         };
     };

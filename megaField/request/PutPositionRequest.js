@@ -28,6 +28,7 @@ var PutPositionRequest = /** @class */ (function () {
         this.position = null;
         this.vector = null;
         this.r = null;
+        this.duplicationAvoider = null;
     }
     PutPositionRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -126,6 +127,17 @@ var PutPositionRequest = /** @class */ (function () {
     };
     PutPositionRequest.prototype.withR = function (r) {
         this.r = r;
+        return this;
+    };
+    PutPositionRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    PutPositionRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    PutPositionRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     PutPositionRequest.fromDict = function (data) {

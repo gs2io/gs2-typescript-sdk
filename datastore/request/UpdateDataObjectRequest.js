@@ -24,6 +24,7 @@ var UpdateDataObjectRequest = /** @class */ (function () {
         this.accessToken = null;
         this.scope = null;
         this.allowUserIds = null;
+        this.duplicationAvoider = null;
     }
     UpdateDataObjectRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -100,6 +101,17 @@ var UpdateDataObjectRequest = /** @class */ (function () {
     };
     UpdateDataObjectRequest.prototype.withAllowUserIds = function (allowUserIds) {
         this.allowUserIds = allowUserIds;
+        return this;
+    };
+    UpdateDataObjectRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    UpdateDataObjectRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    UpdateDataObjectRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     UpdateDataObjectRequest.fromDict = function (data) {

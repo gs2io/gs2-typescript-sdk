@@ -28,6 +28,7 @@ var QueryAccessLogRequest = /** @class */ (function () {
         this.longTerm = null;
         this.pageToken = null;
         this.limit = null;
+        this.duplicationAvoider = null;
     }
     QueryAccessLogRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -148,6 +149,17 @@ var QueryAccessLogRequest = /** @class */ (function () {
     };
     QueryAccessLogRequest.prototype.withLimit = function (limit) {
         this.limit = limit;
+        return this;
+    };
+    QueryAccessLogRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    QueryAccessLogRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    QueryAccessLogRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     QueryAccessLogRequest.fromDict = function (data) {

@@ -23,9 +23,8 @@ var EndRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
-        this.rateName = null;
-        this.progressName = null;
         this.config = null;
+        this.duplicationAvoider = null;
     }
     EndRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -71,28 +70,6 @@ var EndRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
-    EndRequest.prototype.getRateName = function () {
-        return this.rateName;
-    };
-    EndRequest.prototype.setRateName = function (rateName) {
-        this.rateName = rateName;
-        return this;
-    };
-    EndRequest.prototype.withRateName = function (rateName) {
-        this.rateName = rateName;
-        return this;
-    };
-    EndRequest.prototype.getProgressName = function () {
-        return this.progressName;
-    };
-    EndRequest.prototype.setProgressName = function (progressName) {
-        this.progressName = progressName;
-        return this;
-    };
-    EndRequest.prototype.withProgressName = function (progressName) {
-        this.progressName = progressName;
-        return this;
-    };
     EndRequest.prototype.getConfig = function () {
         return this.config;
     };
@@ -104,12 +81,21 @@ var EndRequest = /** @class */ (function () {
         this.config = config;
         return this;
     };
+    EndRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    EndRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    EndRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
     EndRequest.fromDict = function (data) {
         return new EndRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withRateName(data["rateName"])
-            .withProgressName(data["progressName"])
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Enhance.Config.fromDict(item);
@@ -119,8 +105,6 @@ var EndRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "rateName": this.getRateName(),
-            "progressName": this.getProgressName(),
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();

@@ -24,8 +24,6 @@ export default class DeleteProgressByUserIdRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private userId: string|null = null;
-    private rateName: string|null = null;
-    private progressName: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -77,28 +75,6 @@ export default class DeleteProgressByUserIdRequest implements IRequest {
         this.userId = userId;
         return this;
     }
-    public getRateName(): string|null {
-        return this.rateName;
-    }
-    public setRateName(rateName: string|null) {
-        this.rateName = rateName;
-        return this;
-    }
-    public withRateName(rateName: string|null): this {
-        this.rateName = rateName;
-        return this;
-    }
-    public getProgressName(): string|null {
-        return this.progressName;
-    }
-    public setProgressName(progressName: string|null) {
-        this.progressName = progressName;
-        return this;
-    }
-    public withProgressName(progressName: string|null): this {
-        this.progressName = progressName;
-        return this;
-    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -117,17 +93,13 @@ export default class DeleteProgressByUserIdRequest implements IRequest {
     public static fromDict(data: {[key: string]: any}): DeleteProgressByUserIdRequest {
         return new DeleteProgressByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
-            .withUserId(data["userId"])
-            .withRateName(data["rateName"])
-            .withProgressName(data["progressName"]);
+            .withUserId(data["userId"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "rateName": this.getRateName(),
-            "progressName": this.getProgressName(),
         };
     }
 }

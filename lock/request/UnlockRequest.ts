@@ -26,6 +26,7 @@ export default class UnlockRequest implements IRequest {
     private propertyId: string|null = null;
     private accessToken: string|null = null;
     private transactionId: string|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -96,6 +97,20 @@ export default class UnlockRequest implements IRequest {
     }
     public withTransactionId(transactionId: string|null): this {
         this.transactionId = transactionId;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

@@ -357,7 +357,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ScriptRestClient.prototype.invokeScript = function (request) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/invoke')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region);
@@ -368,7 +368,8 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
             'scriptId': (_b = request.getScriptId()) !== null && _b !== void 0 ? _b : null,
-            'args': (_c = request.getArgs()) !== null && _c !== void 0 ? _c : null,
+            'userId': (_c = request.getUserId()) !== null && _c !== void 0 ? _c : null,
+            'args': (_d = request.getArgs()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

@@ -26,6 +26,7 @@ export default class PrepareDownloadByGenerationRequest implements IRequest {
     private accessToken: string|null = null;
     private dataObjectId: string|null = null;
     private generation: string|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -96,6 +97,20 @@ export default class PrepareDownloadByGenerationRequest implements IRequest {
     }
     public withGeneration(generation: string|null): this {
         this.generation = generation;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

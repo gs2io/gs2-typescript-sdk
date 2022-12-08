@@ -22,6 +22,7 @@ var DeleteRequestRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.accessToken = null;
         this.targetUserId = null;
+        this.duplicationAvoider = null;
     }
     DeleteRequestRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var DeleteRequestRequest = /** @class */ (function () {
     };
     DeleteRequestRequest.prototype.withTargetUserId = function (targetUserId) {
         this.targetUserId = targetUserId;
+        return this;
+    };
+    DeleteRequestRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteRequestRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteRequestRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteRequestRequest.fromDict = function (data) {

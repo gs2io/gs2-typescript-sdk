@@ -22,6 +22,7 @@ var UnfollowRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.accessToken = null;
         this.targetUserId = null;
+        this.duplicationAvoider = null;
     }
     UnfollowRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var UnfollowRequest = /** @class */ (function () {
     };
     UnfollowRequest.prototype.withTargetUserId = function (targetUserId) {
         this.targetUserId = targetUserId;
+        return this;
+    };
+    UnfollowRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    UnfollowRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    UnfollowRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     UnfollowRequest.fromDict = function (data) {

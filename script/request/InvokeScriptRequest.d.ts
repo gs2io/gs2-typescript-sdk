@@ -3,6 +3,7 @@ export default class InvokeScriptRequest implements IRequest {
     private requestId;
     private contextStack;
     private scriptId;
+    private userId;
     private args;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -13,6 +14,9 @@ export default class InvokeScriptRequest implements IRequest {
     getScriptId(): string | null;
     setScriptId(scriptId: string | null): this;
     withScriptId(scriptId: string | null): this;
+    getUserId(): string | null;
+    setUserId(userId: string | null): this;
+    withUserId(userId: string | null): this;
     getArgs(): string | null;
     setArgs(args: string | null): this;
     withArgs(args: string | null): this;

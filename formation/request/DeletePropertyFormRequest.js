@@ -23,6 +23,7 @@ var DeletePropertyFormRequest = /** @class */ (function () {
         this.accessToken = null;
         this.formModelName = null;
         this.propertyId = null;
+        this.duplicationAvoider = null;
     }
     DeletePropertyFormRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var DeletePropertyFormRequest = /** @class */ (function () {
     };
     DeletePropertyFormRequest.prototype.withPropertyId = function (propertyId) {
         this.propertyId = propertyId;
+        return this;
+    };
+    DeletePropertyFormRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeletePropertyFormRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeletePropertyFormRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeletePropertyFormRequest.fromDict = function (data) {

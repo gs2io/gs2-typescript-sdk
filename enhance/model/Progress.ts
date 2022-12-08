@@ -15,7 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:enhance:{namespaceName}:user:{userId}:rate:{rateName}:progress:{progressName}";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:enhance:{namespaceName}:user:{userId}:progress";
 
 export default class Progress implements IModel {
     private progressId: string|null = null;
@@ -34,8 +34,6 @@ export default class Progress implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{rateName}', '.*')
-            .replace('{progressName}', '.*')
         );
         if (match) {
             return match[1];
@@ -49,8 +47,6 @@ export default class Progress implements IModel {
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{rateName}', '.*')
-            .replace('{progressName}', '.*')
         );
         if (match) {
             return match[1];
@@ -64,8 +60,6 @@ export default class Progress implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
             .replace('{userId}', '.*')
-            .replace('{rateName}', '.*')
-            .replace('{progressName}', '.*')
         );
         if (match) {
             return match[1];
@@ -79,38 +73,6 @@ export default class Progress implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '(.*)')
-            .replace('{rateName}', '.*')
-            .replace('{progressName}', '.*')
-        );
-        if (match) {
-            return match[1];
-        }
-        return null;
-    }
-
-    public static getRateName(grn: string): string|null {
-        const match = grn.match(grnFormat
-            .replace('{region}', '.*')
-            .replace('{ownerId}', '.*')
-            .replace('{namespaceName}', '.*')
-            .replace('{userId}', '.*')
-            .replace('{rateName}', '(.*)')
-            .replace('{progressName}', '.*')
-        );
-        if (match) {
-            return match[1];
-        }
-        return null;
-    }
-
-    public static getProgressName(grn: string): string|null {
-        const match = grn.match(grnFormat
-            .replace('{region}', '.*')
-            .replace('{ownerId}', '.*')
-            .replace('{namespaceName}', '.*')
-            .replace('{userId}', '.*')
-            .replace('{rateName}', '.*')
-            .replace('{progressName}', '(.*)')
         );
         if (match) {
             return match[1];
@@ -131,12 +93,6 @@ export default class Progress implements IModel {
         if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
             return false;
         }
-        if (this.getRateName(grn) == null || this.getRateName(grn) === '') {
-            return false;
-        }
-        if (this.getProgressName(grn) == null || this.getProgressName(grn) === '') {
-            return false;
-        }
         return true;
     }
 
@@ -145,16 +101,12 @@ export default class Progress implements IModel {
         ownerId: string|null,
         namespaceName: string|null,
         userId: string|null,
-        rateName: string|null,
-        progressName: string|null,
     ): string|null {
         return grnFormat
             .replace('{region}', region ?? '')
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '')
-            .replace('{userId}', userId ?? '')
-            .replace('{rateName}', rateName ?? '')
-            .replace('{progressName}', progressName ?? '');
+            .replace('{userId}', userId ?? '');
     }
     public getProgressId(): string|null {
         return this.progressId;

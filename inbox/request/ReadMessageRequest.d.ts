@@ -7,6 +7,7 @@ export default class ReadMessageRequest implements IRequest {
     private accessToken;
     private messageName;
     private config;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -25,6 +26,9 @@ export default class ReadMessageRequest implements IRequest {
     getConfig(): Gs2Inbox.Config[] | null;
     setConfig(config: Gs2Inbox.Config[] | null): this;
     withConfig(config: Gs2Inbox.Config[] | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ReadMessageRequest;

@@ -21,6 +21,7 @@ var ReceiveGlobalMessageRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
+        this.duplicationAvoider = null;
     }
     ReceiveGlobalMessageRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -64,6 +65,17 @@ var ReceiveGlobalMessageRequest = /** @class */ (function () {
     };
     ReceiveGlobalMessageRequest.prototype.withAccessToken = function (accessToken) {
         this.accessToken = accessToken;
+        return this;
+    };
+    ReceiveGlobalMessageRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    ReceiveGlobalMessageRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    ReceiveGlobalMessageRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     ReceiveGlobalMessageRequest.fromDict = function (data) {

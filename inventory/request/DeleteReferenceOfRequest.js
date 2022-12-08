@@ -25,6 +25,7 @@ var DeleteReferenceOfRequest = /** @class */ (function () {
         this.itemName = null;
         this.itemSetName = null;
         this.referenceOf = null;
+        this.duplicationAvoider = null;
     }
     DeleteReferenceOfRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -112,6 +113,17 @@ var DeleteReferenceOfRequest = /** @class */ (function () {
     };
     DeleteReferenceOfRequest.prototype.withReferenceOf = function (referenceOf) {
         this.referenceOf = referenceOf;
+        return this;
+    };
+    DeleteReferenceOfRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteReferenceOfRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteReferenceOfRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteReferenceOfRequest.fromDict = function (data) {

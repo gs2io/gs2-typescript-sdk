@@ -27,6 +27,7 @@ export default class WithdrawRequest implements IRequest {
     private slot: number|null = null;
     private count: number|null = null;
     private paidOnly: boolean|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -108,6 +109,20 @@ export default class WithdrawRequest implements IRequest {
     }
     public withPaidOnly(paidOnly: boolean|null): this {
         this.paidOnly = paidOnly;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

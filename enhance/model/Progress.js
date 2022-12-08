@@ -15,7 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var grnFormat = "grn:gs2:{region}:{ownerId}:enhance:{namespaceName}:user:{userId}:rate:{rateName}:progress:{progressName}";
+var grnFormat = "grn:gs2:{region}:{ownerId}:enhance:{namespaceName}:user:{userId}:progress";
 var Progress = /** @class */ (function () {
     function Progress() {
         this.progressId = null;
@@ -33,9 +33,7 @@ var Progress = /** @class */ (function () {
             .replace('{region}', '(.*)')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{userId}', '.*')
-            .replace('{rateName}', '.*')
-            .replace('{progressName}', '.*'));
+            .replace('{userId}', '.*'));
         if (match) {
             return match[1];
         }
@@ -46,9 +44,7 @@ var Progress = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
-            .replace('{userId}', '.*')
-            .replace('{rateName}', '.*')
-            .replace('{progressName}', '.*'));
+            .replace('{userId}', '.*'));
         if (match) {
             return match[1];
         }
@@ -59,9 +55,7 @@ var Progress = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
-            .replace('{userId}', '.*')
-            .replace('{rateName}', '.*')
-            .replace('{progressName}', '.*'));
+            .replace('{userId}', '.*'));
         if (match) {
             return match[1];
         }
@@ -72,35 +66,7 @@ var Progress = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{userId}', '(.*)')
-            .replace('{rateName}', '.*')
-            .replace('{progressName}', '.*'));
-        if (match) {
-            return match[1];
-        }
-        return null;
-    };
-    Progress.getRateName = function (grn) {
-        var match = grn.match(grnFormat
-            .replace('{region}', '.*')
-            .replace('{ownerId}', '.*')
-            .replace('{namespaceName}', '.*')
-            .replace('{userId}', '.*')
-            .replace('{rateName}', '(.*)')
-            .replace('{progressName}', '.*'));
-        if (match) {
-            return match[1];
-        }
-        return null;
-    };
-    Progress.getProgressName = function (grn) {
-        var match = grn.match(grnFormat
-            .replace('{region}', '.*')
-            .replace('{ownerId}', '.*')
-            .replace('{namespaceName}', '.*')
-            .replace('{userId}', '.*')
-            .replace('{rateName}', '.*')
-            .replace('{progressName}', '(.*)'));
+            .replace('{userId}', '(.*)'));
         if (match) {
             return match[1];
         }
@@ -119,22 +85,14 @@ var Progress = /** @class */ (function () {
         if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
             return false;
         }
-        if (this.getRateName(grn) == null || this.getRateName(grn) === '') {
-            return false;
-        }
-        if (this.getProgressName(grn) == null || this.getProgressName(grn) === '') {
-            return false;
-        }
         return true;
     };
-    Progress.createGrn = function (region, ownerId, namespaceName, userId, rateName, progressName) {
+    Progress.createGrn = function (region, ownerId, namespaceName, userId) {
         return grnFormat
             .replace('{region}', region !== null && region !== void 0 ? region : '')
             .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
             .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
-            .replace('{userId}', userId !== null && userId !== void 0 ? userId : '')
-            .replace('{rateName}', rateName !== null && rateName !== void 0 ? rateName : '')
-            .replace('{progressName}', progressName !== null && progressName !== void 0 ? progressName : '');
+            .replace('{userId}', userId !== null && userId !== void 0 ? userId : '');
     };
     Progress.prototype.getProgressId = function () {
         return this.progressId;

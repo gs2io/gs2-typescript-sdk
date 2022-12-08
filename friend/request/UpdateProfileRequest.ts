@@ -27,6 +27,7 @@ export default class UpdateProfileRequest implements IRequest {
     private publicProfile: string|null = null;
     private followerProfile: string|null = null;
     private friendProfile: string|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -108,6 +109,20 @@ export default class UpdateProfileRequest implements IRequest {
     }
     public withFriendProfile(friendProfile: string|null): this {
         this.friendProfile = friendProfile;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

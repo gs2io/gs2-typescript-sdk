@@ -993,7 +993,7 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2StaminaRestClient.prototype.consumeStamina = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stamina/{staminaName}/consume')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
@@ -1006,9 +1006,12 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+        }
         var body = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'consumeValue': (_g = request.getConsumeValue()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'consumeValue': (_h = request.getConsumeValue()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1216,7 +1219,7 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2StaminaRestClient.prototype.setMaxValueByStatus = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stamina/{staminaName}/set')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
@@ -1229,11 +1232,14 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+        }
         var body = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'keyId': (_g = request.getKeyId()) !== null && _g !== void 0 ? _g : null,
-            'signedStatusBody': (_h = request.getSignedStatusBody()) !== null && _h !== void 0 ? _h : null,
-            'signedStatusSignature': (_j = request.getSignedStatusSignature()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'keyId': (_h = request.getKeyId()) !== null && _h !== void 0 ? _h : null,
+            'signedStatusBody': (_j = request.getSignedStatusBody()) !== null && _j !== void 0 ? _j : null,
+            'signedStatusSignature': (_k = request.getSignedStatusSignature()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1249,7 +1255,7 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2StaminaRestClient.prototype.setRecoverIntervalByStatus = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stamina/{staminaName}/recoverInterval/set')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
@@ -1262,11 +1268,14 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+        }
         var body = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'keyId': (_g = request.getKeyId()) !== null && _g !== void 0 ? _g : null,
-            'signedStatusBody': (_h = request.getSignedStatusBody()) !== null && _h !== void 0 ? _h : null,
-            'signedStatusSignature': (_j = request.getSignedStatusSignature()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'keyId': (_h = request.getKeyId()) !== null && _h !== void 0 ? _h : null,
+            'signedStatusBody': (_j = request.getSignedStatusBody()) !== null && _j !== void 0 ? _j : null,
+            'signedStatusSignature': (_k = request.getSignedStatusSignature()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1282,7 +1291,7 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2StaminaRestClient.prototype.setRecoverValueByStatus = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stamina/{staminaName}/recoverValue/set')
             .replace('{service}', 'stamina')
             .replace('{region}', this.session.region)
@@ -1295,11 +1304,14 @@ var Gs2StaminaRestClient = /** @class */ (function (_super) {
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+        }
         var body = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'keyId': (_g = request.getKeyId()) !== null && _g !== void 0 ? _g : null,
-            'signedStatusBody': (_h = request.getSignedStatusBody()) !== null && _h !== void 0 ? _h : null,
-            'signedStatusSignature': (_j = request.getSignedStatusSignature()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'keyId': (_h = request.getKeyId()) !== null && _h !== void 0 ? _h : null,
+            'signedStatusBody': (_j = request.getSignedStatusBody()) !== null && _j !== void 0 ? _j : null,
+            'signedStatusSignature': (_k = request.getSignedStatusSignature()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

@@ -29,6 +29,7 @@ var CreateGatheringRequest = /** @class */ (function () {
         this.allowUserIds = null;
         this.expiresAt = null;
         this.expiresAtTimeSpan = null;
+        this.duplicationAvoider = null;
     }
     CreateGatheringRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -138,6 +139,17 @@ var CreateGatheringRequest = /** @class */ (function () {
     };
     CreateGatheringRequest.prototype.withExpiresAtTimeSpan = function (expiresAtTimeSpan) {
         this.expiresAtTimeSpan = expiresAtTimeSpan;
+        return this;
+    };
+    CreateGatheringRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    CreateGatheringRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    CreateGatheringRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     CreateGatheringRequest.fromDict = function (data) {

@@ -21,8 +21,6 @@ var DeleteProgressByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
-        this.rateName = null;
-        this.progressName = null;
         this.duplicationAvoider = null;
     }
     DeleteProgressByUserIdRequest.prototype.getRequestId = function () {
@@ -69,28 +67,6 @@ var DeleteProgressByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
-    DeleteProgressByUserIdRequest.prototype.getRateName = function () {
-        return this.rateName;
-    };
-    DeleteProgressByUserIdRequest.prototype.setRateName = function (rateName) {
-        this.rateName = rateName;
-        return this;
-    };
-    DeleteProgressByUserIdRequest.prototype.withRateName = function (rateName) {
-        this.rateName = rateName;
-        return this;
-    };
-    DeleteProgressByUserIdRequest.prototype.getProgressName = function () {
-        return this.progressName;
-    };
-    DeleteProgressByUserIdRequest.prototype.setProgressName = function (progressName) {
-        this.progressName = progressName;
-        return this;
-    };
-    DeleteProgressByUserIdRequest.prototype.withProgressName = function (progressName) {
-        this.progressName = progressName;
-        return this;
-    };
     DeleteProgressByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -105,16 +81,12 @@ var DeleteProgressByUserIdRequest = /** @class */ (function () {
     DeleteProgressByUserIdRequest.fromDict = function (data) {
         return new DeleteProgressByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
-            .withUserId(data["userId"])
-            .withRateName(data["rateName"])
-            .withProgressName(data["progressName"]);
+            .withUserId(data["userId"]);
     };
     DeleteProgressByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "rateName": this.getRateName(),
-            "progressName": this.getProgressName(),
         };
     };
     return DeleteProgressByUserIdRequest;

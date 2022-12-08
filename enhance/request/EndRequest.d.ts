@@ -5,9 +5,8 @@ export default class EndRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private accessToken;
-    private rateName;
-    private progressName;
     private config;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -20,15 +19,12 @@ export default class EndRequest implements IRequest {
     getAccessToken(): string | null;
     setAccessToken(accessToken: string | null): this;
     withAccessToken(accessToken: string | null): this;
-    getRateName(): string | null;
-    setRateName(rateName: string | null): this;
-    withRateName(rateName: string | null): this;
-    getProgressName(): string | null;
-    setProgressName(progressName: string | null): this;
-    withProgressName(progressName: string | null): this;
     getConfig(): Gs2Enhance.Config[] | null;
     setConfig(config: Gs2Enhance.Config[] | null): this;
     withConfig(config: Gs2Enhance.Config[] | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): EndRequest;

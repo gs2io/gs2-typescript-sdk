@@ -26,6 +26,7 @@ export default class SubscribeRequest implements IRequest {
     private roomName: string|null = null;
     private accessToken: string|null = null;
     private notificationTypes: Gs2Chat.NotificationType[]|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -96,6 +97,20 @@ export default class SubscribeRequest implements IRequest {
     }
     public withNotificationTypes(notificationTypes: Gs2Chat.NotificationType[]|null): this {
         this.notificationTypes = notificationTypes;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

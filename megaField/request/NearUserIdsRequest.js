@@ -28,6 +28,7 @@ var NearUserIdsRequest = /** @class */ (function () {
         this.point = null;
         this.r = null;
         this.limit = null;
+        this.duplicationAvoider = null;
     }
     NearUserIdsRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -126,6 +127,17 @@ var NearUserIdsRequest = /** @class */ (function () {
     };
     NearUserIdsRequest.prototype.withLimit = function (limit) {
         this.limit = limit;
+        return this;
+    };
+    NearUserIdsRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    NearUserIdsRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    NearUserIdsRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     NearUserIdsRequest.fromDict = function (data) {

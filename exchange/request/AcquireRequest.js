@@ -26,6 +26,7 @@ var AcquireRequest = /** @class */ (function () {
         this.rateName = null;
         this.awaitName = null;
         this.config = null;
+        this.duplicationAvoider = null;
     }
     AcquireRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -102,6 +103,17 @@ var AcquireRequest = /** @class */ (function () {
     };
     AcquireRequest.prototype.withConfig = function (config) {
         this.config = config;
+        return this;
+    };
+    AcquireRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    AcquireRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    AcquireRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     AcquireRequest.fromDict = function (data) {

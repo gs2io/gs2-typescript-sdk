@@ -22,6 +22,7 @@ var UnsubscribeRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.roomName = null;
         this.accessToken = null;
+        this.duplicationAvoider = null;
     }
     UnsubscribeRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var UnsubscribeRequest = /** @class */ (function () {
     };
     UnsubscribeRequest.prototype.withAccessToken = function (accessToken) {
         this.accessToken = accessToken;
+        return this;
+    };
+    UnsubscribeRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    UnsubscribeRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    UnsubscribeRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     UnsubscribeRequest.fromDict = function (data) {

@@ -30,6 +30,7 @@ export default class CreateGatheringRequest implements IRequest {
     private allowUserIds: string[]|null = null;
     private expiresAt: number|null = null;
     private expiresAtTimeSpan: Gs2Matchmaking.TimeSpan|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -144,6 +145,20 @@ export default class CreateGatheringRequest implements IRequest {
     }
     public withExpiresAtTimeSpan(expiresAtTimeSpan: Gs2Matchmaking.TimeSpan|null): this {
         this.expiresAtTimeSpan = expiresAtTimeSpan;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

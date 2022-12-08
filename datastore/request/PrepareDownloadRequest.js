@@ -22,6 +22,7 @@ var PrepareDownloadRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.accessToken = null;
         this.dataObjectId = null;
+        this.duplicationAvoider = null;
     }
     PrepareDownloadRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var PrepareDownloadRequest = /** @class */ (function () {
     };
     PrepareDownloadRequest.prototype.withDataObjectId = function (dataObjectId) {
         this.dataObjectId = dataObjectId;
+        return this;
+    };
+    PrepareDownloadRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    PrepareDownloadRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    PrepareDownloadRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     PrepareDownloadRequest.fromDict = function (data) {

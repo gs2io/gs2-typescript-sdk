@@ -5,6 +5,7 @@ import * as Result from './result';
 export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     constructor(session: Gs2RestSession);
     getChart(request: Request.GetChartRequest): Promise<Result.GetChartResult>;
+    getDistribution(request: Request.GetDistributionRequest): Promise<Result.GetDistributionResult>;
     getCumulative(request: Request.GetCumulativeRequest): Promise<Result.GetCumulativeResult>;
     describeBillingActivities(request: Request.DescribeBillingActivitiesRequest): Promise<Result.DescribeBillingActivitiesResult>;
     getBillingActivity(request: Request.GetBillingActivityRequest): Promise<Result.GetBillingActivityResult>;

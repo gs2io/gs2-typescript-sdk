@@ -15,7 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:stack:{stackName}:event:{eventName}";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:deploy:{stackName}:event:{eventName}";
 
 export default class Event implements IModel {
     private eventId: string|null = null;

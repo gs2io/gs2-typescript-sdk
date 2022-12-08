@@ -25,6 +25,7 @@ var UpdateRoomFromBackendRequest = /** @class */ (function () {
         this.password = null;
         this.whiteListUserIds = null;
         this.userId = null;
+        this.duplicationAvoider = null;
     }
     UpdateRoomFromBackendRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -112,6 +113,17 @@ var UpdateRoomFromBackendRequest = /** @class */ (function () {
     };
     UpdateRoomFromBackendRequest.prototype.withUserId = function (userId) {
         this.userId = userId;
+        return this;
+    };
+    UpdateRoomFromBackendRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    UpdateRoomFromBackendRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    UpdateRoomFromBackendRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     UpdateRoomFromBackendRequest.fromDict = function (data) {

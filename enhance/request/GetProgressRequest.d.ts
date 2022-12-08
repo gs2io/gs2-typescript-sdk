@@ -4,8 +4,6 @@ export default class GetProgressRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private accessToken;
-    private rateName;
-    private progressName;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -18,12 +16,6 @@ export default class GetProgressRequest implements IRequest {
     getAccessToken(): string | null;
     setAccessToken(accessToken: string | null): this;
     withAccessToken(accessToken: string | null): this;
-    getRateName(): string | null;
-    setRateName(rateName: string | null): this;
-    withRateName(rateName: string | null): this;
-    getProgressName(): string | null;
-    setProgressName(progressName: string | null): this;
-    withProgressName(progressName: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetProgressRequest;

@@ -27,6 +27,7 @@ var BuyRequest = /** @class */ (function () {
         this.accessToken = null;
         this.quantity = null;
         this.config = null;
+        this.duplicationAvoider = null;
     }
     BuyRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -114,6 +115,17 @@ var BuyRequest = /** @class */ (function () {
     };
     BuyRequest.prototype.withConfig = function (config) {
         this.config = config;
+        return this;
+    };
+    BuyRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    BuyRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    BuyRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     BuyRequest.fromDict = function (data) {

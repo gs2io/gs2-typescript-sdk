@@ -27,6 +27,7 @@ var DirectEnhanceRequest = /** @class */ (function () {
         this.targetItemSetId = null;
         this.materials = null;
         this.config = null;
+        this.duplicationAvoider = null;
     }
     DirectEnhanceRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -114,6 +115,17 @@ var DirectEnhanceRequest = /** @class */ (function () {
     };
     DirectEnhanceRequest.prototype.withConfig = function (config) {
         this.config = config;
+        return this;
+    };
+    DirectEnhanceRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DirectEnhanceRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DirectEnhanceRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DirectEnhanceRequest.fromDict = function (data) {

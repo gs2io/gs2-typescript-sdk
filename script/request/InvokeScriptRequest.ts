@@ -23,6 +23,7 @@ export default class InvokeScriptRequest implements IRequest {
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private scriptId: string|null = null;
+    private userId: string|null = null;
     private args: string|null = null;
 
     public getRequestId(): string|null {
@@ -63,6 +64,17 @@ export default class InvokeScriptRequest implements IRequest {
         this.scriptId = scriptId;
         return this;
     }
+    public getUserId(): string|null {
+        return this.userId;
+    }
+    public setUserId(userId: string|null) {
+        this.userId = userId;
+        return this;
+    }
+    public withUserId(userId: string|null): this {
+        this.userId = userId;
+        return this;
+    }
     public getArgs(): string|null {
         return this.args;
     }
@@ -78,12 +90,14 @@ export default class InvokeScriptRequest implements IRequest {
     public static fromDict(data: {[key: string]: any}): InvokeScriptRequest {
         return new InvokeScriptRequest()
             .withScriptId(data["scriptId"])
+            .withUserId(data["userId"])
             .withArgs(data["args"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "scriptId": this.getScriptId(),
+            "userId": this.getUserId(),
             "args": this.getArgs(),
         };
     }

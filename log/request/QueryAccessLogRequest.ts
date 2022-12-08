@@ -31,6 +31,7 @@ export default class QueryAccessLogRequest implements IRequest {
     private longTerm: boolean|null = null;
     private pageToken: string|null = null;
     private limit: number|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -156,6 +157,20 @@ export default class QueryAccessLogRequest implements IRequest {
     }
     public withLimit(limit: number|null): this {
         this.limit = limit;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

@@ -26,6 +26,7 @@ var SkipRequest = /** @class */ (function () {
         this.rateName = null;
         this.awaitName = null;
         this.config = null;
+        this.duplicationAvoider = null;
     }
     SkipRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -102,6 +103,17 @@ var SkipRequest = /** @class */ (function () {
     };
     SkipRequest.prototype.withConfig = function (config) {
         this.config = config;
+        return this;
+    };
+    SkipRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SkipRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SkipRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SkipRequest.fromDict = function (data) {

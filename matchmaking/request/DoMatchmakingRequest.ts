@@ -26,6 +26,7 @@ export default class DoMatchmakingRequest implements IRequest {
     private accessToken: string|null = null;
     private player: Gs2Matchmaking.Player|null = null;
     private matchmakingContextToken: string|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -96,6 +97,20 @@ export default class DoMatchmakingRequest implements IRequest {
     }
     public withMatchmakingContextToken(matchmakingContextToken: string|null): this {
         this.matchmakingContextToken = matchmakingContextToken;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

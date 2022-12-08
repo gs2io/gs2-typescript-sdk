@@ -22,6 +22,7 @@ var ResetBoxRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.prizeTableName = null;
         this.accessToken = null;
+        this.duplicationAvoider = null;
     }
     ResetBoxRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var ResetBoxRequest = /** @class */ (function () {
     };
     ResetBoxRequest.prototype.withAccessToken = function (accessToken) {
         this.accessToken = accessToken;
+        return this;
+    };
+    ResetBoxRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    ResetBoxRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    ResetBoxRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     ResetBoxRequest.fromDict = function (data) {

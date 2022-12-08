@@ -26,6 +26,7 @@ var ExchangeRequest = /** @class */ (function () {
         this.accessToken = null;
         this.count = null;
         this.config = null;
+        this.duplicationAvoider = null;
     }
     ExchangeRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -102,6 +103,17 @@ var ExchangeRequest = /** @class */ (function () {
     };
     ExchangeRequest.prototype.withConfig = function (config) {
         this.config = config;
+        return this;
+    };
+    ExchangeRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    ExchangeRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    ExchangeRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     ExchangeRequest.fromDict = function (data) {

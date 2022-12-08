@@ -16,7 +16,6 @@ permissions and limitations under the License.
 import Namespace from "./Namespace"
 import LotteryModelMaster from "./LotteryModelMaster"
 import PrizeTableMaster from "./PrizeTableMaster"
-import Box from "./Box"
 import LotteryModel from "./LotteryModel"
 import PrizeTable from "./PrizeTable"
 import Probability from "./Probability"
@@ -36,7 +35,6 @@ export {
     Namespace,
     LotteryModelMaster,
     PrizeTableMaster,
-    Box,
     LotteryModel,
     PrizeTable,
     Probability,

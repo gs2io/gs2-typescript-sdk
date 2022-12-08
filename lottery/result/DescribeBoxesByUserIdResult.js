@@ -48,7 +48,7 @@ var DescribeBoxesByUserIdResult = /** @class */ (function () {
         return new DescribeBoxesByUserIdResult()
             .withItems(data.items ?
             data.items.map(function (item) {
-                return Gs2Lottery.Box.fromDict(item);
+                return Gs2Lottery.BoxItems.fromDict(item);
             }) : [])
             .withNextPageToken(data["nextPageToken"]);
     };

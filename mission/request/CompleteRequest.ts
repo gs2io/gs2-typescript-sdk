@@ -27,6 +27,7 @@ export default class CompleteRequest implements IRequest {
     private missionTaskName: string|null = null;
     private accessToken: string|null = null;
     private config: Gs2Mission.Config[]|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -108,6 +109,20 @@ export default class CompleteRequest implements IRequest {
     }
     public withConfig(config: Gs2Mission.Config[]|null): this {
         this.config = config;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

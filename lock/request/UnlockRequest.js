@@ -23,6 +23,7 @@ var UnlockRequest = /** @class */ (function () {
         this.propertyId = null;
         this.accessToken = null;
         this.transactionId = null;
+        this.duplicationAvoider = null;
     }
     UnlockRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var UnlockRequest = /** @class */ (function () {
     };
     UnlockRequest.prototype.withTransactionId = function (transactionId) {
         this.transactionId = transactionId;
+        return this;
+    };
+    UnlockRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    UnlockRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    UnlockRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     UnlockRequest.fromDict = function (data) {

@@ -27,6 +27,7 @@ var EndRequest = /** @class */ (function () {
         this.rewards = null;
         this.isComplete = null;
         this.config = null;
+        this.duplicationAvoider = null;
     }
     EndRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -114,6 +115,17 @@ var EndRequest = /** @class */ (function () {
     };
     EndRequest.prototype.withConfig = function (config) {
         this.config = config;
+        return this;
+    };
+    EndRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    EndRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    EndRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     EndRequest.fromDict = function (data) {

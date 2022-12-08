@@ -28,6 +28,7 @@ export default class DirectEnhanceRequest implements IRequest {
     private targetItemSetId: string|null = null;
     private materials: Gs2Enhance.Material[]|null = null;
     private config: Gs2Enhance.Config[]|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -120,6 +121,20 @@ export default class DirectEnhanceRequest implements IRequest {
     }
     public withConfig(config: Gs2Enhance.Config[]|null): this {
         this.config = config;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

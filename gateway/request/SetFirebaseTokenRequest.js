@@ -22,6 +22,7 @@ var SetFirebaseTokenRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.accessToken = null;
         this.token = null;
+        this.duplicationAvoider = null;
     }
     SetFirebaseTokenRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var SetFirebaseTokenRequest = /** @class */ (function () {
     };
     SetFirebaseTokenRequest.prototype.withToken = function (token) {
         this.token = token;
+        return this;
+    };
+    SetFirebaseTokenRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SetFirebaseTokenRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SetFirebaseTokenRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SetFirebaseTokenRequest.fromDict = function (data) {

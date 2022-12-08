@@ -22,6 +22,7 @@ var DoneUploadRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.dataObjectName = null;
         this.accessToken = null;
+        this.duplicationAvoider = null;
     }
     DoneUploadRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var DoneUploadRequest = /** @class */ (function () {
     };
     DoneUploadRequest.prototype.withAccessToken = function (accessToken) {
         this.accessToken = accessToken;
+        return this;
+    };
+    DoneUploadRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DoneUploadRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DoneUploadRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DoneUploadRequest.fromDict = function (data) {

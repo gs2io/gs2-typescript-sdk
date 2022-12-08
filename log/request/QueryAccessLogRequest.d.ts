@@ -11,6 +11,7 @@ export default class QueryAccessLogRequest implements IRequest {
     private longTerm;
     private pageToken;
     private limit;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -44,6 +45,9 @@ export default class QueryAccessLogRequest implements IRequest {
     getLimit(): number | null;
     setLimit(limit: number | null): this;
     withLimit(limit: number | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): QueryAccessLogRequest;

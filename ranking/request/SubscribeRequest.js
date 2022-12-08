@@ -23,6 +23,7 @@ var SubscribeRequest = /** @class */ (function () {
         this.categoryName = null;
         this.accessToken = null;
         this.targetUserId = null;
+        this.duplicationAvoider = null;
     }
     SubscribeRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var SubscribeRequest = /** @class */ (function () {
     };
     SubscribeRequest.prototype.withTargetUserId = function (targetUserId) {
         this.targetUserId = targetUserId;
+        return this;
+    };
+    SubscribeRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SubscribeRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SubscribeRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SubscribeRequest.fromDict = function (data) {

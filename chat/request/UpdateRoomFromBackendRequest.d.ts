@@ -8,6 +8,7 @@ export default class UpdateRoomFromBackendRequest implements IRequest {
     private password;
     private whiteListUserIds;
     private userId;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -32,6 +33,9 @@ export default class UpdateRoomFromBackendRequest implements IRequest {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): UpdateRoomFromBackendRequest;

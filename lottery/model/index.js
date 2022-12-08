@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionSetting = exports.LogSetting = exports.GitHubCheckoutSetting = exports.Config = exports.AcquireAction = exports.BoxItems = exports.BoxItem = exports.DrawnPrize = exports.PrizeLimit = exports.Prize = exports.CurrentLotteryMaster = exports.Probability = exports.PrizeTable = exports.LotteryModel = exports.Box = exports.PrizeTableMaster = exports.LotteryModelMaster = exports.Namespace = void 0;
+exports.TransactionSetting = exports.LogSetting = exports.GitHubCheckoutSetting = exports.Config = exports.AcquireAction = exports.BoxItems = exports.BoxItem = exports.DrawnPrize = exports.PrizeLimit = exports.Prize = exports.CurrentLotteryMaster = exports.Probability = exports.PrizeTable = exports.LotteryModel = exports.PrizeTableMaster = exports.LotteryModelMaster = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -23,8 +23,6 @@ var LotteryModelMaster_1 = tslib_1.__importDefault(require("./LotteryModelMaster
 exports.LotteryModelMaster = LotteryModelMaster_1.default;
 var PrizeTableMaster_1 = tslib_1.__importDefault(require("./PrizeTableMaster"));
 exports.PrizeTableMaster = PrizeTableMaster_1.default;
-var Box_1 = tslib_1.__importDefault(require("./Box"));
-exports.Box = Box_1.default;
 var LotteryModel_1 = tslib_1.__importDefault(require("./LotteryModel"));
 exports.LotteryModel = LotteryModel_1.default;
 var PrizeTable_1 = tslib_1.__importDefault(require("./PrizeTable"));

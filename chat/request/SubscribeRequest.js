@@ -25,6 +25,7 @@ var SubscribeRequest = /** @class */ (function () {
         this.roomName = null;
         this.accessToken = null;
         this.notificationTypes = null;
+        this.duplicationAvoider = null;
     }
     SubscribeRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,6 +91,17 @@ var SubscribeRequest = /** @class */ (function () {
     };
     SubscribeRequest.prototype.withNotificationTypes = function (notificationTypes) {
         this.notificationTypes = notificationTypes;
+        return this;
+    };
+    SubscribeRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SubscribeRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SubscribeRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SubscribeRequest.fromDict = function (data) {

@@ -13,10 +13,8 @@ export default class Progress implements IModel {
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
     static getUserId(grn: string): string | null;
-    static getRateName(grn: string): string | null;
-    static getProgressName(grn: string): string | null;
     static isValid(grn: string): boolean;
-    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, rateName: string | null, progressName: string | null): string | null;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null): string | null;
     getProgressId(): string | null;
     setProgressId(progressId: string | null): this;
     withProgressId(progressId: string | null): this;

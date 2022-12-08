@@ -29,6 +29,7 @@ var QueryExecuteStampTaskLogRequest = /** @class */ (function () {
         this.longTerm = null;
         this.pageToken = null;
         this.limit = null;
+        this.duplicationAvoider = null;
     }
     QueryExecuteStampTaskLogRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -160,6 +161,17 @@ var QueryExecuteStampTaskLogRequest = /** @class */ (function () {
     };
     QueryExecuteStampTaskLogRequest.prototype.withLimit = function (limit) {
         this.limit = limit;
+        return this;
+    };
+    QueryExecuteStampTaskLogRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    QueryExecuteStampTaskLogRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    QueryExecuteStampTaskLogRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     QueryExecuteStampTaskLogRequest.fromDict = function (data) {

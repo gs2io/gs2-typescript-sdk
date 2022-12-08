@@ -15,7 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:stack:{stackName}";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:deploy:{stackName}";
 
 export default class Stack implements IModel {
     private stackId: string|null = null;

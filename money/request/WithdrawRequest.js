@@ -24,6 +24,7 @@ var WithdrawRequest = /** @class */ (function () {
         this.slot = null;
         this.count = null;
         this.paidOnly = null;
+        this.duplicationAvoider = null;
     }
     WithdrawRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -100,6 +101,17 @@ var WithdrawRequest = /** @class */ (function () {
     };
     WithdrawRequest.prototype.withPaidOnly = function (paidOnly) {
         this.paidOnly = paidOnly;
+        return this;
+    };
+    WithdrawRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    WithdrawRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    WithdrawRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     WithdrawRequest.fromDict = function (data) {

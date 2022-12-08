@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentRateMasterFromGitHubRequest = exports.UpdateCurrentRateMasterRequest = exports.GetCurrentRateMasterRequest = exports.ExportMasterRequest = exports.DeleteProgressByStampTaskRequest = exports.CreateProgressByStampSheetRequest = exports.DeleteProgressByUserIdRequest = exports.DeleteProgressRequest = exports.EndByUserIdRequest = exports.EndRequest = exports.StartByUserIdRequest = exports.StartRequest = exports.GetProgressByUserIdRequest = exports.GetProgressRequest = exports.CreateProgressByUserIdRequest = exports.DescribeProgressesByUserIdRequest = exports.DirectEnhanceByStampSheetRequest = exports.DirectEnhanceByUserIdRequest = exports.DirectEnhanceRequest = exports.DeleteRateModelMasterRequest = exports.UpdateRateModelMasterRequest = exports.GetRateModelMasterRequest = exports.CreateRateModelMasterRequest = exports.DescribeRateModelMastersRequest = exports.GetRateModelRequest = exports.DescribeRateModelsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.UpdateCurrentRateMasterFromGitHubRequest = exports.UpdateCurrentRateMasterRequest = exports.GetCurrentRateMasterRequest = exports.ExportMasterRequest = exports.DeleteProgressByStampTaskRequest = exports.CreateProgressByStampSheetRequest = exports.DeleteProgressByUserIdRequest = exports.DeleteProgressRequest = exports.EndByUserIdRequest = exports.EndRequest = exports.StartByUserIdRequest = exports.StartRequest = exports.GetProgressByUserIdRequest = exports.GetProgressRequest = exports.CreateProgressByUserIdRequest = exports.DirectEnhanceByStampSheetRequest = exports.DirectEnhanceByUserIdRequest = exports.DirectEnhanceRequest = exports.DeleteRateModelMasterRequest = exports.UpdateRateModelMasterRequest = exports.GetRateModelMasterRequest = exports.CreateRateModelMasterRequest = exports.DescribeRateModelMastersRequest = exports.GetRateModelRequest = exports.DescribeRateModelsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -49,8 +49,6 @@ var DirectEnhanceByUserIdRequest_1 = tslib_1.__importDefault(require("./DirectEn
 exports.DirectEnhanceByUserIdRequest = DirectEnhanceByUserIdRequest_1.default;
 var DirectEnhanceByStampSheetRequest_1 = tslib_1.__importDefault(require("./DirectEnhanceByStampSheetRequest"));
 exports.DirectEnhanceByStampSheetRequest = DirectEnhanceByStampSheetRequest_1.default;
-var DescribeProgressesByUserIdRequest_1 = tslib_1.__importDefault(require("./DescribeProgressesByUserIdRequest"));
-exports.DescribeProgressesByUserIdRequest = DescribeProgressesByUserIdRequest_1.default;
 var CreateProgressByUserIdRequest_1 = tslib_1.__importDefault(require("./CreateProgressByUserIdRequest"));
 exports.CreateProgressByUserIdRequest = CreateProgressByUserIdRequest_1.default;
 var GetProgressRequest_1 = tslib_1.__importDefault(require("./GetProgressRequest"));

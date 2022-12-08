@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 import OutputField from './OutputField';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:stack:{stackName}:resource:{resourceName}";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:deploy:{stackName}:resource:{resourceName}";
 
 export default class Resource implements IModel {
     private resourceId: string|null = null;

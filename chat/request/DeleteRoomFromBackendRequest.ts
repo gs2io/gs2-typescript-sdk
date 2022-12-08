@@ -25,6 +25,7 @@ export default class DeleteRoomFromBackendRequest implements IRequest {
     private namespaceName: string|null = null;
     private roomName: string|null = null;
     private userId: string|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -84,6 +85,20 @@ export default class DeleteRoomFromBackendRequest implements IRequest {
     }
     public withUserId(userId: string|null): this {
         this.userId = userId;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

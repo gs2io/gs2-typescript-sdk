@@ -422,6 +422,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'scriptId': request.getScriptId() ?? null,
+            'userId': request.getUserId() ?? null,
             'args': request.getArgs() ?? null,
         };
         return axios.post(

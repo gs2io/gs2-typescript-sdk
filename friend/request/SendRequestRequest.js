@@ -22,6 +22,7 @@ var SendRequestRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.accessToken = null;
         this.targetUserId = null;
+        this.duplicationAvoider = null;
     }
     SendRequestRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var SendRequestRequest = /** @class */ (function () {
     };
     SendRequestRequest.prototype.withTargetUserId = function (targetUserId) {
         this.targetUserId = targetUserId;
+        return this;
+    };
+    SendRequestRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SendRequestRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SendRequestRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SendRequestRequest.fromDict = function (data) {

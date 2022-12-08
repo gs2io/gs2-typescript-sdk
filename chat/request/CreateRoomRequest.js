@@ -25,6 +25,7 @@ var CreateRoomRequest = /** @class */ (function () {
         this.metadata = null;
         this.password = null;
         this.whiteListUserIds = null;
+        this.duplicationAvoider = null;
     }
     CreateRoomRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -112,6 +113,17 @@ var CreateRoomRequest = /** @class */ (function () {
     };
     CreateRoomRequest.prototype.withWhiteListUserIds = function (whiteListUserIds) {
         this.whiteListUserIds = whiteListUserIds;
+        return this;
+    };
+    CreateRoomRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    CreateRoomRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    CreateRoomRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     CreateRoomRequest.fromDict = function (data) {

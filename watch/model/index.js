@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StatsEvent = exports.BillingActivity = exports.Cumulative = exports.Chart = void 0;
+exports.Filter = exports.StatsEvent = exports.BillingActivity = exports.Cumulative = exports.Distribution = exports.Chart = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -19,10 +19,14 @@ permissions and limitations under the License.
  */
 var Chart_1 = tslib_1.__importDefault(require("./Chart"));
 exports.Chart = Chart_1.default;
+var Distribution_1 = tslib_1.__importDefault(require("./Distribution"));
+exports.Distribution = Distribution_1.default;
 var Cumulative_1 = tslib_1.__importDefault(require("./Cumulative"));
 exports.Cumulative = Cumulative_1.default;
 var BillingActivity_1 = tslib_1.__importDefault(require("./BillingActivity"));
 exports.BillingActivity = BillingActivity_1.default;
 var StatsEvent_1 = tslib_1.__importDefault(require("./StatsEvent"));
 exports.StatsEvent = StatsEvent_1.default;
+var Filter_1 = tslib_1.__importDefault(require("./Filter"));
+exports.Filter = Filter_1.default;
 //# sourceMappingURL=index.js.map

@@ -29,6 +29,7 @@ var QueryIssueStampSheetLogRequest = /** @class */ (function () {
         this.longTerm = null;
         this.pageToken = null;
         this.limit = null;
+        this.duplicationAvoider = null;
     }
     QueryIssueStampSheetLogRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -160,6 +161,17 @@ var QueryIssueStampSheetLogRequest = /** @class */ (function () {
     };
     QueryIssueStampSheetLogRequest.prototype.withLimit = function (limit) {
         this.limit = limit;
+        return this;
+    };
+    QueryIssueStampSheetLogRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    QueryIssueStampSheetLogRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    QueryIssueStampSheetLogRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     QueryIssueStampSheetLogRequest.fromDict = function (data) {

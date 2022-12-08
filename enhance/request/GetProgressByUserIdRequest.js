@@ -21,8 +21,6 @@ var GetProgressByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
-        this.rateName = null;
-        this.progressName = null;
     }
     GetProgressByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -68,41 +66,15 @@ var GetProgressByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
-    GetProgressByUserIdRequest.prototype.getRateName = function () {
-        return this.rateName;
-    };
-    GetProgressByUserIdRequest.prototype.setRateName = function (rateName) {
-        this.rateName = rateName;
-        return this;
-    };
-    GetProgressByUserIdRequest.prototype.withRateName = function (rateName) {
-        this.rateName = rateName;
-        return this;
-    };
-    GetProgressByUserIdRequest.prototype.getProgressName = function () {
-        return this.progressName;
-    };
-    GetProgressByUserIdRequest.prototype.setProgressName = function (progressName) {
-        this.progressName = progressName;
-        return this;
-    };
-    GetProgressByUserIdRequest.prototype.withProgressName = function (progressName) {
-        this.progressName = progressName;
-        return this;
-    };
     GetProgressByUserIdRequest.fromDict = function (data) {
         return new GetProgressByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
-            .withUserId(data["userId"])
-            .withRateName(data["rateName"])
-            .withProgressName(data["progressName"]);
+            .withUserId(data["userId"]);
     };
     GetProgressByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "rateName": this.getRateName(),
-            "progressName": this.getProgressName(),
         };
     };
     return GetProgressByUserIdRequest;

@@ -15,50 +15,43 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var grnFormat = "";
 var Chart = /** @class */ (function () {
     function Chart() {
-        this.chartId = null;
-        this.embedId = null;
-        this.html = null;
+        this.timestamp = null;
+        this.value = null;
+        this.groupBys = null;
     }
-    Chart.isValid = function (grn) {
-        return true;
+    Chart.prototype.getTimestamp = function () {
+        return this.timestamp;
     };
-    Chart.createGrn = function () {
-        return grnFormat;
-    };
-    Chart.prototype.getChartId = function () {
-        return this.chartId;
-    };
-    Chart.prototype.setChartId = function (chartId) {
-        this.chartId = chartId;
+    Chart.prototype.setTimestamp = function (timestamp) {
+        this.timestamp = timestamp;
         return this;
     };
-    Chart.prototype.withChartId = function (chartId) {
-        this.chartId = chartId;
+    Chart.prototype.withTimestamp = function (timestamp) {
+        this.timestamp = timestamp;
         return this;
     };
-    Chart.prototype.getEmbedId = function () {
-        return this.embedId;
+    Chart.prototype.getValue = function () {
+        return this.value;
     };
-    Chart.prototype.setEmbedId = function (embedId) {
-        this.embedId = embedId;
+    Chart.prototype.setValue = function (value) {
+        this.value = value;
         return this;
     };
-    Chart.prototype.withEmbedId = function (embedId) {
-        this.embedId = embedId;
+    Chart.prototype.withValue = function (value) {
+        this.value = value;
         return this;
     };
-    Chart.prototype.getHtml = function () {
-        return this.html;
+    Chart.prototype.getGroupBys = function () {
+        return this.groupBys;
     };
-    Chart.prototype.setHtml = function (html) {
-        this.html = html;
+    Chart.prototype.setGroupBys = function (groupBys) {
+        this.groupBys = groupBys;
         return this;
     };
-    Chart.prototype.withHtml = function (html) {
-        this.html = html;
+    Chart.prototype.withGroupBys = function (groupBys) {
+        this.groupBys = groupBys;
         return this;
     };
     Chart.fromDict = function (data) {
@@ -66,15 +59,21 @@ var Chart = /** @class */ (function () {
             return null;
         }
         return new Chart()
-            .withChartId(data["chartId"])
-            .withEmbedId(data["embedId"])
-            .withHtml(data["html"]);
+            .withTimestamp(data["timestamp"])
+            .withValue(data["value"])
+            .withGroupBys(data.groupBys ?
+            data.groupBys.map(function (item) {
+                return item;
+            }) : []);
     };
     Chart.prototype.toDict = function () {
         return {
-            "chartId": this.getChartId(),
-            "embedId": this.getEmbedId(),
-            "html": this.getHtml(),
+            "timestamp": this.getTimestamp(),
+            "value": this.getValue(),
+            "groupBys": this.getGroupBys() ?
+                this.getGroupBys().map(function (item) {
+                    return item;
+                }) : [],
         };
     };
     return Chart;

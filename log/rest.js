@@ -185,7 +185,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LogRestClient.prototype.queryAccessLog = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/access')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
@@ -194,16 +194,19 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
+        }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'service': String((_d = request.getService()) !== null && _d !== void 0 ? _d : null),
-            'method': String((_e = request.getMethod()) !== null && _e !== void 0 ? _e : null),
-            'userId': String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : null),
-            'begin': String((_g = request.getBegin()) !== null && _g !== void 0 ? _g : null),
-            'end': String((_h = request.getEnd()) !== null && _h !== void 0 ? _h : null),
-            'longTerm': String((_j = request.getLongTerm()) !== null && _j !== void 0 ? _j : null),
-            'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
-            'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'service': String((_e = request.getService()) !== null && _e !== void 0 ? _e : null),
+            'method': String((_f = request.getMethod()) !== null && _f !== void 0 ? _f : null),
+            'userId': String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : null),
+            'begin': String((_h = request.getBegin()) !== null && _h !== void 0 ? _h : null),
+            'end': String((_j = request.getEnd()) !== null && _j !== void 0 ? _j : null),
+            'longTerm': String((_k = request.getLongTerm()) !== null && _k !== void 0 ? _k : null),
+            'pageToken': String((_l = request.getPageToken()) !== null && _l !== void 0 ? _l : null),
+            'limit': String((_m = request.getLimit()) !== null && _m !== void 0 ? _m : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -245,7 +248,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LogRestClient.prototype.queryIssueStampSheetLog = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/issue/stamp/sheet')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
@@ -254,17 +257,20 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
+        }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'service': String((_d = request.getService()) !== null && _d !== void 0 ? _d : null),
-            'method': String((_e = request.getMethod()) !== null && _e !== void 0 ? _e : null),
-            'userId': String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : null),
-            'action': String((_g = request.getAction()) !== null && _g !== void 0 ? _g : null),
-            'begin': String((_h = request.getBegin()) !== null && _h !== void 0 ? _h : null),
-            'end': String((_j = request.getEnd()) !== null && _j !== void 0 ? _j : null),
-            'longTerm': String((_k = request.getLongTerm()) !== null && _k !== void 0 ? _k : null),
-            'pageToken': String((_l = request.getPageToken()) !== null && _l !== void 0 ? _l : null),
-            'limit': String((_m = request.getLimit()) !== null && _m !== void 0 ? _m : null),
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'service': String((_e = request.getService()) !== null && _e !== void 0 ? _e : null),
+            'method': String((_f = request.getMethod()) !== null && _f !== void 0 ? _f : null),
+            'userId': String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : null),
+            'action': String((_h = request.getAction()) !== null && _h !== void 0 ? _h : null),
+            'begin': String((_j = request.getBegin()) !== null && _j !== void 0 ? _j : null),
+            'end': String((_k = request.getEnd()) !== null && _k !== void 0 ? _k : null),
+            'longTerm': String((_l = request.getLongTerm()) !== null && _l !== void 0 ? _l : null),
+            'pageToken': String((_m = request.getPageToken()) !== null && _m !== void 0 ? _m : null),
+            'limit': String((_o = request.getLimit()) !== null && _o !== void 0 ? _o : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -307,7 +313,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LogRestClient.prototype.queryExecuteStampSheetLog = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/execute/stamp/sheet')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
@@ -316,17 +322,20 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
+        }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'service': String((_d = request.getService()) !== null && _d !== void 0 ? _d : null),
-            'method': String((_e = request.getMethod()) !== null && _e !== void 0 ? _e : null),
-            'userId': String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : null),
-            'action': String((_g = request.getAction()) !== null && _g !== void 0 ? _g : null),
-            'begin': String((_h = request.getBegin()) !== null && _h !== void 0 ? _h : null),
-            'end': String((_j = request.getEnd()) !== null && _j !== void 0 ? _j : null),
-            'longTerm': String((_k = request.getLongTerm()) !== null && _k !== void 0 ? _k : null),
-            'pageToken': String((_l = request.getPageToken()) !== null && _l !== void 0 ? _l : null),
-            'limit': String((_m = request.getLimit()) !== null && _m !== void 0 ? _m : null),
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'service': String((_e = request.getService()) !== null && _e !== void 0 ? _e : null),
+            'method': String((_f = request.getMethod()) !== null && _f !== void 0 ? _f : null),
+            'userId': String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : null),
+            'action': String((_h = request.getAction()) !== null && _h !== void 0 ? _h : null),
+            'begin': String((_j = request.getBegin()) !== null && _j !== void 0 ? _j : null),
+            'end': String((_k = request.getEnd()) !== null && _k !== void 0 ? _k : null),
+            'longTerm': String((_l = request.getLongTerm()) !== null && _l !== void 0 ? _l : null),
+            'pageToken': String((_m = request.getPageToken()) !== null && _m !== void 0 ? _m : null),
+            'limit': String((_o = request.getLimit()) !== null && _o !== void 0 ? _o : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -369,7 +378,7 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LogRestClient.prototype.queryExecuteStampTaskLog = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/execute/stamp/task')
             .replace('{service}', 'log')
             .replace('{region}', this.session.region)
@@ -378,17 +387,20 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
+        }
         var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'service': String((_d = request.getService()) !== null && _d !== void 0 ? _d : null),
-            'method': String((_e = request.getMethod()) !== null && _e !== void 0 ? _e : null),
-            'userId': String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : null),
-            'action': String((_g = request.getAction()) !== null && _g !== void 0 ? _g : null),
-            'begin': String((_h = request.getBegin()) !== null && _h !== void 0 ? _h : null),
-            'end': String((_j = request.getEnd()) !== null && _j !== void 0 ? _j : null),
-            'longTerm': String((_k = request.getLongTerm()) !== null && _k !== void 0 ? _k : null),
-            'pageToken': String((_l = request.getPageToken()) !== null && _l !== void 0 ? _l : null),
-            'limit': String((_m = request.getLimit()) !== null && _m !== void 0 ? _m : null),
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'service': String((_e = request.getService()) !== null && _e !== void 0 ? _e : null),
+            'method': String((_f = request.getMethod()) !== null && _f !== void 0 ? _f : null),
+            'userId': String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : null),
+            'action': String((_h = request.getAction()) !== null && _h !== void 0 ? _h : null),
+            'begin': String((_j = request.getBegin()) !== null && _j !== void 0 ? _j : null),
+            'end': String((_k = request.getEnd()) !== null && _k !== void 0 ? _k : null),
+            'longTerm': String((_l = request.getLongTerm()) !== null && _l !== void 0 ? _l : null),
+            'pageToken': String((_m = request.getPageToken()) !== null && _m !== void 0 ? _m : null),
+            'limit': String((_o = request.getLimit()) !== null && _o !== void 0 ? _o : null),
         };
         return axios_1.default.get(url, {
             params: params,

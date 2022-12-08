@@ -22,6 +22,7 @@ var FollowRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.accessToken = null;
         this.targetUserId = null;
+        this.duplicationAvoider = null;
     }
     FollowRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var FollowRequest = /** @class */ (function () {
     };
     FollowRequest.prototype.withTargetUserId = function (targetUserId) {
         this.targetUserId = targetUserId;
+        return this;
+    };
+    FollowRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    FollowRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    FollowRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     FollowRequest.fromDict = function (data) {

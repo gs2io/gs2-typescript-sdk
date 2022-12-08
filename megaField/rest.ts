@@ -734,6 +734,9 @@ export default class Gs2MegaFieldRestClient extends AbstractGs2RestClient {
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'position': request.getPosition()?.toDict() ?? null,
@@ -811,6 +814,9 @@ export default class Gs2MegaFieldRestClient extends AbstractGs2RestClient {
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'userIds': request.getUserIds() ?? null,
@@ -882,6 +888,9 @@ export default class Gs2MegaFieldRestClient extends AbstractGs2RestClient {
         }
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
@@ -958,6 +967,9 @@ export default class Gs2MegaFieldRestClient extends AbstractGs2RestClient {
         }
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,

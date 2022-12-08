@@ -1,19 +1,17 @@
 import IModel from '../../core/interface/IModel';
 export default class Chart implements IModel {
-    private chartId;
-    private embedId;
-    private html;
-    static isValid(grn: string): boolean;
-    static createGrn(): string | null;
-    getChartId(): string | null;
-    setChartId(chartId: string | null): this;
-    withChartId(chartId: string | null): this;
-    getEmbedId(): string | null;
-    setEmbedId(embedId: string | null): this;
-    withEmbedId(embedId: string | null): this;
-    getHtml(): string | null;
-    setHtml(html: string | null): this;
-    withHtml(html: string | null): this;
+    private timestamp;
+    private value;
+    private groupBys;
+    getTimestamp(): number | null;
+    setTimestamp(timestamp: number | null): this;
+    withTimestamp(timestamp: number | null): this;
+    getValue(): number | null;
+    setValue(value: number | null): this;
+    withValue(value: number | null): this;
+    getGroupBys(): string[] | null;
+    setGroupBys(groupBys: string[] | null): this;
+    withGroupBys(groupBys: string[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): Chart | null;

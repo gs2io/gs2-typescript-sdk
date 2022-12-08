@@ -28,6 +28,7 @@ export default class ActionRequest implements IRequest {
     private layerModelName: string|null = null;
     private position: Gs2MegaField.MyPosition|null = null;
     private scopes: Gs2MegaField.Scope[]|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -120,6 +121,20 @@ export default class ActionRequest implements IRequest {
     }
     public withScopes(scopes: Gs2MegaField.Scope[]|null): this {
         this.scopes = scopes;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

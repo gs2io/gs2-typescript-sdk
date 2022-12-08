@@ -25,6 +25,7 @@ var UpdateRoomRequest = /** @class */ (function () {
         this.password = null;
         this.whiteListUserIds = null;
         this.accessToken = null;
+        this.duplicationAvoider = null;
     }
     UpdateRoomRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -112,6 +113,17 @@ var UpdateRoomRequest = /** @class */ (function () {
     };
     UpdateRoomRequest.prototype.withAccessToken = function (accessToken) {
         this.accessToken = accessToken;
+        return this;
+    };
+    UpdateRoomRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    UpdateRoomRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    UpdateRoomRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     UpdateRoomRequest.fromDict = function (data) {

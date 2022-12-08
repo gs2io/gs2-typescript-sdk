@@ -6,6 +6,7 @@ export default class PrepareDownloadOwnDataByGenerationRequest implements IReque
     private accessToken;
     private dataObjectName;
     private generation;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class PrepareDownloadOwnDataByGenerationRequest implements IReque
     getGeneration(): string | null;
     setGeneration(generation: string | null): this;
     withGeneration(generation: string | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): PrepareDownloadOwnDataByGenerationRequest;

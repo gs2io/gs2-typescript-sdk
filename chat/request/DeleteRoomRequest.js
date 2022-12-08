@@ -22,6 +22,7 @@ var DeleteRoomRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.roomName = null;
         this.accessToken = null;
+        this.duplicationAvoider = null;
     }
     DeleteRoomRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var DeleteRoomRequest = /** @class */ (function () {
     };
     DeleteRoomRequest.prototype.withAccessToken = function (accessToken) {
         this.accessToken = accessToken;
+        return this;
+    };
+    DeleteRoomRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteRoomRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteRoomRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteRoomRequest.fromDict = function (data) {

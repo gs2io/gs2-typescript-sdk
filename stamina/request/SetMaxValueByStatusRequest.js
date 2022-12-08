@@ -25,6 +25,7 @@ var SetMaxValueByStatusRequest = /** @class */ (function () {
         this.keyId = null;
         this.signedStatusBody = null;
         this.signedStatusSignature = null;
+        this.duplicationAvoider = null;
     }
     SetMaxValueByStatusRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -112,6 +113,17 @@ var SetMaxValueByStatusRequest = /** @class */ (function () {
     };
     SetMaxValueByStatusRequest.prototype.withSignedStatusSignature = function (signedStatusSignature) {
         this.signedStatusSignature = signedStatusSignature;
+        return this;
+    };
+    SetMaxValueByStatusRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SetMaxValueByStatusRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SetMaxValueByStatusRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SetMaxValueByStatusRequest.fromDict = function (data) {

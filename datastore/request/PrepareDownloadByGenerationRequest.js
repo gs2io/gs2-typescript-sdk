@@ -23,6 +23,7 @@ var PrepareDownloadByGenerationRequest = /** @class */ (function () {
         this.accessToken = null;
         this.dataObjectId = null;
         this.generation = null;
+        this.duplicationAvoider = null;
     }
     PrepareDownloadByGenerationRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var PrepareDownloadByGenerationRequest = /** @class */ (function () {
     };
     PrepareDownloadByGenerationRequest.prototype.withGeneration = function (generation) {
         this.generation = generation;
+        return this;
+    };
+    PrepareDownloadByGenerationRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    PrepareDownloadByGenerationRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    PrepareDownloadByGenerationRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     PrepareDownloadByGenerationRequest.fromDict = function (data) {

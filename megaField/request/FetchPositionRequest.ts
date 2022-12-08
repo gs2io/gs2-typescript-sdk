@@ -27,6 +27,7 @@ export default class FetchPositionRequest implements IRequest {
     private areaModelName: string|null = null;
     private layerModelName: string|null = null;
     private userIds: string[]|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -108,6 +109,20 @@ export default class FetchPositionRequest implements IRequest {
     }
     public withUserIds(userIds: string[]|null): this {
         this.userIds = userIds;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

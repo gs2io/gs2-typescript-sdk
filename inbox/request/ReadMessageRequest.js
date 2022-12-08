@@ -25,6 +25,7 @@ var ReadMessageRequest = /** @class */ (function () {
         this.accessToken = null;
         this.messageName = null;
         this.config = null;
+        this.duplicationAvoider = null;
     }
     ReadMessageRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,6 +91,17 @@ var ReadMessageRequest = /** @class */ (function () {
     };
     ReadMessageRequest.prototype.withConfig = function (config) {
         this.config = config;
+        return this;
+    };
+    ReadMessageRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    ReadMessageRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    ReadMessageRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     ReadMessageRequest.fromDict = function (data) {

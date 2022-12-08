@@ -20,7 +20,6 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
     directEnhance(request: Request.DirectEnhanceRequest): Promise<Result.DirectEnhanceResult>;
     directEnhanceByUserId(request: Request.DirectEnhanceByUserIdRequest): Promise<Result.DirectEnhanceByUserIdResult>;
     directEnhanceByStampSheet(request: Request.DirectEnhanceByStampSheetRequest): Promise<Result.DirectEnhanceByStampSheetResult>;
-    describeProgressesByUserId(request: Request.DescribeProgressesByUserIdRequest): Promise<Result.DescribeProgressesByUserIdResult>;
     createProgressByUserId(request: Request.CreateProgressByUserIdRequest): Promise<Result.CreateProgressByUserIdResult>;
     getProgress(request: Request.GetProgressRequest): Promise<Result.GetProgressResult>;
     getProgressByUserId(request: Request.GetProgressByUserIdRequest): Promise<Result.GetProgressByUserIdResult>;

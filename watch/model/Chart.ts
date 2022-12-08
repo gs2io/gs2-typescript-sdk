@@ -15,52 +15,42 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-const grnFormat: string = "";
 
 export default class Chart implements IModel {
-    private chartId: string|null = null;
-    private embedId: string|null = null;
-    private html: string|null = null;
-
-    public static isValid(grn: string): boolean {
-        return true;
+    private timestamp: number|null = null;
+    private value: number|null = null;
+    private groupBys: string[]|null = null;
+    public getTimestamp(): number|null {
+        return this.timestamp;
     }
-
-    public static createGrn(
-    ): string|null {
-        return grnFormat;
-    }
-    public getChartId(): string|null {
-        return this.chartId;
-    }
-    public setChartId(chartId: string|null) {
-        this.chartId = chartId;
+    public setTimestamp(timestamp: number|null) {
+        this.timestamp = timestamp;
         return this;
     }
-    public withChartId(chartId: string|null): this {
-        this.chartId = chartId;
+    public withTimestamp(timestamp: number|null): this {
+        this.timestamp = timestamp;
         return this;
     }
-    public getEmbedId(): string|null {
-        return this.embedId;
+    public getValue(): number|null {
+        return this.value;
     }
-    public setEmbedId(embedId: string|null) {
-        this.embedId = embedId;
+    public setValue(value: number|null) {
+        this.value = value;
         return this;
     }
-    public withEmbedId(embedId: string|null): this {
-        this.embedId = embedId;
+    public withValue(value: number|null): this {
+        this.value = value;
         return this;
     }
-    public getHtml(): string|null {
-        return this.html;
+    public getGroupBys(): string[]|null {
+        return this.groupBys;
     }
-    public setHtml(html: string|null) {
-        this.html = html;
+    public setGroupBys(groupBys: string[]|null) {
+        this.groupBys = groupBys;
         return this;
     }
-    public withHtml(html: string|null): this {
-        this.html = html;
+    public withGroupBys(groupBys: string[]|null): this {
+        this.groupBys = groupBys;
         return this;
     }
 
@@ -69,16 +59,24 @@ export default class Chart implements IModel {
             return null;
         }
         return new Chart()
-            .withChartId(data["chartId"])
-            .withEmbedId(data["embedId"])
-            .withHtml(data["html"]);
+            .withTimestamp(data["timestamp"])
+            .withValue(data["value"])
+            .withGroupBys(data.groupBys ?
+                data.groupBys.map((item: {[key: string]: any}) => {
+                    return item;
+                }
+            ) : []);
     }
 
     public toDict(): {[key: string]: any} {
         return {
-            "chartId": this.getChartId(),
-            "embedId": this.getEmbedId(),
-            "html": this.getHtml(),
+            "timestamp": this.getTimestamp(),
+            "value": this.getValue(),
+            "groupBys": this.getGroupBys() ?
+                this.getGroupBys()!.map((item: string) => {
+                    return item;
+                }
+            ) : [],
         };
     }
 }

@@ -22,6 +22,7 @@ var OpenMessageRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.accessToken = null;
         this.messageName = null;
+        this.duplicationAvoider = null;
     }
     OpenMessageRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var OpenMessageRequest = /** @class */ (function () {
     };
     OpenMessageRequest.prototype.withMessageName = function (messageName) {
         this.messageName = messageName;
+        return this;
+    };
+    OpenMessageRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    OpenMessageRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    OpenMessageRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     OpenMessageRequest.fromDict = function (data) {

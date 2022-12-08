@@ -8,6 +8,7 @@ export default class SetRecoverIntervalByStatusRequest implements IRequest {
     private keyId;
     private signedStatusBody;
     private signedStatusSignature;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -32,6 +33,9 @@ export default class SetRecoverIntervalByStatusRequest implements IRequest {
     getSignedStatusSignature(): string | null;
     setSignedStatusSignature(signedStatusSignature: string | null): this;
     withSignedStatusSignature(signedStatusSignature: string | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): SetRecoverIntervalByStatusRequest;

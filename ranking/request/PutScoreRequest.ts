@@ -27,6 +27,7 @@ export default class PutScoreRequest implements IRequest {
     private accessToken: string|null = null;
     private score: number|null = null;
     private metadata: string|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -108,6 +109,20 @@ export default class PutScoreRequest implements IRequest {
     }
     public withMetadata(metadata: string|null): this {
         this.metadata = metadata;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

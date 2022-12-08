@@ -19,27 +19,46 @@ var tslib_1 = require("tslib");
 var Gs2Watch = tslib_1.__importStar(require("../model"));
 var GetChartResult = /** @class */ (function () {
     function GetChartResult() {
-        this.item = null;
+        this.items = null;
+        this.nextPageToken = null;
     }
-    GetChartResult.prototype.getItem = function () {
-        return this.item;
+    GetChartResult.prototype.getItems = function () {
+        return this.items;
     };
-    GetChartResult.prototype.setItem = function (item) {
-        this.item = item;
+    GetChartResult.prototype.setItems = function (items) {
+        this.items = items;
         return this;
     };
-    GetChartResult.prototype.withItem = function (item) {
-        this.item = item;
+    GetChartResult.prototype.withItems = function (items) {
+        this.items = items;
+        return this;
+    };
+    GetChartResult.prototype.getNextPageToken = function () {
+        return this.nextPageToken;
+    };
+    GetChartResult.prototype.setNextPageToken = function (nextPageToken) {
+        this.nextPageToken = nextPageToken;
+        return this;
+    };
+    GetChartResult.prototype.withNextPageToken = function (nextPageToken) {
+        this.nextPageToken = nextPageToken;
         return this;
     };
     GetChartResult.fromDict = function (data) {
         return new GetChartResult()
-            .withItem(Gs2Watch.Chart.fromDict(data["item"]));
+            .withItems(data.items ?
+            data.items.map(function (item) {
+                return Gs2Watch.Chart.fromDict(item);
+            }) : [])
+            .withNextPageToken(data["nextPageToken"]);
     };
     GetChartResult.prototype.toDict = function () {
-        var _a;
         return {
-            "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "items": this.getItems() ?
+                this.getItems().map(function (item) {
+                    return item.toDict();
+                }) : [],
+            "nextPageToken": this.getNextPageToken(),
         };
     };
     return GetChartResult;

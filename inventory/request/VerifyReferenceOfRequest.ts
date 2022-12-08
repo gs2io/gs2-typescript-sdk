@@ -29,6 +29,7 @@ export default class VerifyReferenceOfRequest implements IRequest {
     private itemSetName: string|null = null;
     private referenceOf: string|null = null;
     private verifyType: string|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -132,6 +133,20 @@ export default class VerifyReferenceOfRequest implements IRequest {
     }
     public withVerifyType(verifyType: string|null): this {
         this.verifyType = verifyType;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

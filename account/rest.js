@@ -422,7 +422,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AccountRestClient.prototype.createTakeOver = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/takeover')
             .replace('{service}', 'account')
             .replace('{region}', this.session.region)
@@ -434,11 +434,14 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_d = request.getDuplicationAvoider()) !== null && _d !== void 0 ? _d : null;
+        }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'type': (_e = request.getType()) !== null && _e !== void 0 ? _e : null,
-            'userIdentifier': (_f = request.getUserIdentifier()) !== null && _f !== void 0 ? _f : null,
-            'password': (_g = request.getPassword()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'type': (_f = request.getType()) !== null && _f !== void 0 ? _f : null,
+            'userIdentifier': (_g = request.getUserIdentifier()) !== null && _g !== void 0 ? _g : null,
+            'password': (_h = request.getPassword()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -537,7 +540,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AccountRestClient.prototype.updateTakeOver = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/takeover/type/{type}')
             .replace('{service}', 'account')
             .replace('{region}', this.session.region)
@@ -550,10 +553,13 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+        }
         var body = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'oldPassword': (_g = request.getOldPassword()) !== null && _g !== void 0 ? _g : null,
-            'password': (_h = request.getPassword()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'oldPassword': (_h = request.getOldPassword()) !== null && _h !== void 0 ? _h : null,
+            'password': (_j = request.getPassword()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -602,7 +608,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AccountRestClient.prototype.deleteTakeOver = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/takeover/type/{type}')
             .replace('{service}', 'account')
             .replace('{region}', this.session.region)
@@ -615,9 +621,12 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         if (request.getAccessToken()) {
             headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+        }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'userIdentifier': String((_g = request.getUserIdentifier()) !== null && _g !== void 0 ? _g : null),
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'userIdentifier': String((_h = request.getUserIdentifier()) !== null && _h !== void 0 ? _h : null),
         };
         return axios_1.default.delete(url, {
             params: params,

@@ -25,6 +25,7 @@ var CountUpRequest = /** @class */ (function () {
         this.accessToken = null;
         this.countUpValue = null;
         this.maxValue = null;
+        this.duplicationAvoider = null;
     }
     CountUpRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -112,6 +113,17 @@ var CountUpRequest = /** @class */ (function () {
     };
     CountUpRequest.prototype.withMaxValue = function (maxValue) {
         this.maxValue = maxValue;
+        return this;
+    };
+    CountUpRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    CountUpRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    CountUpRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     CountUpRequest.fromDict = function (data) {

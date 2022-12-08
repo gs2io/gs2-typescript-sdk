@@ -6,6 +6,7 @@ export default class PrepareDownloadByGenerationRequest implements IRequest {
     private accessToken;
     private dataObjectId;
     private generation;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class PrepareDownloadByGenerationRequest implements IRequest {
     getGeneration(): string | null;
     setGeneration(generation: string | null): this;
     withGeneration(generation: string | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): PrepareDownloadByGenerationRequest;

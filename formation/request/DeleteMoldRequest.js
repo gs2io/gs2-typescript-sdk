@@ -22,6 +22,7 @@ var DeleteMoldRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.accessToken = null;
         this.moldName = null;
+        this.duplicationAvoider = null;
     }
     DeleteMoldRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var DeleteMoldRequest = /** @class */ (function () {
     };
     DeleteMoldRequest.prototype.withMoldName = function (moldName) {
         this.moldName = moldName;
+        return this;
+    };
+    DeleteMoldRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteMoldRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteMoldRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteMoldRequest.fromDict = function (data) {

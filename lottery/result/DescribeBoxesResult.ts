@@ -19,19 +19,19 @@ import IResult from '../../core/interface/IResult';
 import * as Gs2Lottery from '../model'
 
 export default class DescribeBoxesResult implements IResult {
-    private items: Gs2Lottery.Box[]|null = null;
+    private items: Gs2Lottery.BoxItems[]|null = null;
     private nextPageToken: string|null = null;
 
-    public getItems(): Gs2Lottery.Box[]|null {
+    public getItems(): Gs2Lottery.BoxItems[]|null {
         return this.items;
     }
 
-    public setItems(items: Gs2Lottery.Box[]|null) {
+    public setItems(items: Gs2Lottery.BoxItems[]|null) {
         this.items = items;
         return this;
     }
 
-    public withItems(items: Gs2Lottery.Box[]|null): this {
+    public withItems(items: Gs2Lottery.BoxItems[]|null): this {
         this.items = items;
         return this;
     }
@@ -54,7 +54,7 @@ export default class DescribeBoxesResult implements IResult {
         return new DescribeBoxesResult()
             .withItems(data.items ?
                 data.items.map((item: {[key: string]: any}) => {
-                    return Gs2Lottery.Box.fromDict(item);
+                    return Gs2Lottery.BoxItems.fromDict(item);
                 }
             ) : [])
             .withNextPageToken(data["nextPageToken"]);
@@ -63,7 +63,7 @@ export default class DescribeBoxesResult implements IResult {
     public toDict(): {[key: string]: any} {
         return {
             "items": this.getItems() ?
-                this.getItems()!.map((item: Gs2Lottery.Box) => {
+                this.getItems()!.map((item: Gs2Lottery.BoxItems) => {
                     return item.toDict();
                 }
             ) : [],

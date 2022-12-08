@@ -15,20 +15,22 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Watch = tslib_1.__importStar(require("../model"));
 var GetChartRequest = /** @class */ (function () {
     function GetChartRequest() {
         this.requestId = null;
         this.contextStack = null;
-        this.metrics = null;
+        this.measure = null;
         this.grn = null;
-        this.queries = null;
-        this.by = null;
-        this.timeframe = null;
-        this.size = null;
-        this.format = null;
-        this.aggregator = null;
-        this.style = null;
-        this.title = null;
+        this.round = null;
+        this.filters = null;
+        this.groupBys = null;
+        this.countBy = null;
+        this.begin = null;
+        this.end = null;
+        this.pageToken = null;
+        this.limit = null;
     }
     GetChartRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -52,15 +54,15 @@ var GetChartRequest = /** @class */ (function () {
         this.contextStack = contextStack;
         return this;
     };
-    GetChartRequest.prototype.getMetrics = function () {
-        return this.metrics;
+    GetChartRequest.prototype.getMeasure = function () {
+        return this.measure;
     };
-    GetChartRequest.prototype.setMetrics = function (metrics) {
-        this.metrics = metrics;
+    GetChartRequest.prototype.setMeasure = function (measure) {
+        this.measure = measure;
         return this;
     };
-    GetChartRequest.prototype.withMetrics = function (metrics) {
-        this.metrics = metrics;
+    GetChartRequest.prototype.withMeasure = function (measure) {
+        this.measure = measure;
         return this;
     };
     GetChartRequest.prototype.getGrn = function () {
@@ -74,125 +76,131 @@ var GetChartRequest = /** @class */ (function () {
         this.grn = grn;
         return this;
     };
-    GetChartRequest.prototype.getQueries = function () {
-        return this.queries;
+    GetChartRequest.prototype.getRound = function () {
+        return this.round;
     };
-    GetChartRequest.prototype.setQueries = function (queries) {
-        this.queries = queries;
+    GetChartRequest.prototype.setRound = function (round) {
+        this.round = round;
         return this;
     };
-    GetChartRequest.prototype.withQueries = function (queries) {
-        this.queries = queries;
+    GetChartRequest.prototype.withRound = function (round) {
+        this.round = round;
         return this;
     };
-    GetChartRequest.prototype.getBy = function () {
-        return this.by;
+    GetChartRequest.prototype.getFilters = function () {
+        return this.filters;
     };
-    GetChartRequest.prototype.setBy = function (by) {
-        this.by = by;
+    GetChartRequest.prototype.setFilters = function (filters) {
+        this.filters = filters;
         return this;
     };
-    GetChartRequest.prototype.withBy = function (by) {
-        this.by = by;
+    GetChartRequest.prototype.withFilters = function (filters) {
+        this.filters = filters;
         return this;
     };
-    GetChartRequest.prototype.getTimeframe = function () {
-        return this.timeframe;
+    GetChartRequest.prototype.getGroupBys = function () {
+        return this.groupBys;
     };
-    GetChartRequest.prototype.setTimeframe = function (timeframe) {
-        this.timeframe = timeframe;
+    GetChartRequest.prototype.setGroupBys = function (groupBys) {
+        this.groupBys = groupBys;
         return this;
     };
-    GetChartRequest.prototype.withTimeframe = function (timeframe) {
-        this.timeframe = timeframe;
+    GetChartRequest.prototype.withGroupBys = function (groupBys) {
+        this.groupBys = groupBys;
         return this;
     };
-    GetChartRequest.prototype.getSize = function () {
-        return this.size;
+    GetChartRequest.prototype.getCountBy = function () {
+        return this.countBy;
     };
-    GetChartRequest.prototype.setSize = function (size) {
-        this.size = size;
+    GetChartRequest.prototype.setCountBy = function (countBy) {
+        this.countBy = countBy;
         return this;
     };
-    GetChartRequest.prototype.withSize = function (size) {
-        this.size = size;
+    GetChartRequest.prototype.withCountBy = function (countBy) {
+        this.countBy = countBy;
         return this;
     };
-    GetChartRequest.prototype.getFormat = function () {
-        return this.format;
+    GetChartRequest.prototype.getBegin = function () {
+        return this.begin;
     };
-    GetChartRequest.prototype.setFormat = function (format) {
-        this.format = format;
+    GetChartRequest.prototype.setBegin = function (begin) {
+        this.begin = begin;
         return this;
     };
-    GetChartRequest.prototype.withFormat = function (format) {
-        this.format = format;
+    GetChartRequest.prototype.withBegin = function (begin) {
+        this.begin = begin;
         return this;
     };
-    GetChartRequest.prototype.getAggregator = function () {
-        return this.aggregator;
+    GetChartRequest.prototype.getEnd = function () {
+        return this.end;
     };
-    GetChartRequest.prototype.setAggregator = function (aggregator) {
-        this.aggregator = aggregator;
+    GetChartRequest.prototype.setEnd = function (end) {
+        this.end = end;
         return this;
     };
-    GetChartRequest.prototype.withAggregator = function (aggregator) {
-        this.aggregator = aggregator;
+    GetChartRequest.prototype.withEnd = function (end) {
+        this.end = end;
         return this;
     };
-    GetChartRequest.prototype.getStyle = function () {
-        return this.style;
+    GetChartRequest.prototype.getPageToken = function () {
+        return this.pageToken;
     };
-    GetChartRequest.prototype.setStyle = function (style) {
-        this.style = style;
+    GetChartRequest.prototype.setPageToken = function (pageToken) {
+        this.pageToken = pageToken;
         return this;
     };
-    GetChartRequest.prototype.withStyle = function (style) {
-        this.style = style;
+    GetChartRequest.prototype.withPageToken = function (pageToken) {
+        this.pageToken = pageToken;
         return this;
     };
-    GetChartRequest.prototype.getTitle = function () {
-        return this.title;
+    GetChartRequest.prototype.getLimit = function () {
+        return this.limit;
     };
-    GetChartRequest.prototype.setTitle = function (title) {
-        this.title = title;
+    GetChartRequest.prototype.setLimit = function (limit) {
+        this.limit = limit;
         return this;
     };
-    GetChartRequest.prototype.withTitle = function (title) {
-        this.title = title;
+    GetChartRequest.prototype.withLimit = function (limit) {
+        this.limit = limit;
         return this;
     };
     GetChartRequest.fromDict = function (data) {
         return new GetChartRequest()
-            .withMetrics(data["metrics"])
+            .withMeasure(data["measure"])
             .withGrn(data["grn"])
-            .withQueries(data.queries ?
-            data.queries.map(function (item) {
+            .withRound(data["round"])
+            .withFilters(data.filters ?
+            data.filters.map(function (item) {
+                return Gs2Watch.Filter.fromDict(item);
+            }) : [])
+            .withGroupBys(data.groupBys ?
+            data.groupBys.map(function (item) {
                 return item;
             }) : [])
-            .withBy(data["by"])
-            .withTimeframe(data["timeframe"])
-            .withSize(data["size"])
-            .withFormat(data["format"])
-            .withAggregator(data["aggregator"])
-            .withStyle(data["style"])
-            .withTitle(data["title"]);
+            .withCountBy(data["countBy"])
+            .withBegin(data["begin"])
+            .withEnd(data["end"])
+            .withPageToken(data["pageToken"])
+            .withLimit(data["limit"]);
     };
     GetChartRequest.prototype.toDict = function () {
         return {
-            "metrics": this.getMetrics(),
+            "measure": this.getMeasure(),
             "grn": this.getGrn(),
-            "queries": this.getQueries() ?
-                this.getQueries().map(function (item) {
+            "round": this.getRound(),
+            "filters": this.getFilters() ?
+                this.getFilters().map(function (item) {
+                    return item.toDict();
+                }) : [],
+            "groupBys": this.getGroupBys() ?
+                this.getGroupBys().map(function (item) {
                     return item;
                 }) : [],
-            "by": this.getBy(),
-            "timeframe": this.getTimeframe(),
-            "size": this.getSize(),
-            "format": this.getFormat(),
-            "aggregator": this.getAggregator(),
-            "style": this.getStyle(),
-            "title": this.getTitle(),
+            "countBy": this.getCountBy(),
+            "begin": this.getBegin(),
+            "end": this.getEnd(),
+            "pageToken": this.getPageToken(),
+            "limit": this.getLimit(),
         };
     };
     return GetChartRequest;

@@ -24,6 +24,7 @@ var FetchPositionRequest = /** @class */ (function () {
         this.areaModelName = null;
         this.layerModelName = null;
         this.userIds = null;
+        this.duplicationAvoider = null;
     }
     FetchPositionRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -100,6 +101,17 @@ var FetchPositionRequest = /** @class */ (function () {
     };
     FetchPositionRequest.prototype.withUserIds = function (userIds) {
         this.userIds = userIds;
+        return this;
+    };
+    FetchPositionRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    FetchPositionRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    FetchPositionRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     FetchPositionRequest.fromDict = function (data) {

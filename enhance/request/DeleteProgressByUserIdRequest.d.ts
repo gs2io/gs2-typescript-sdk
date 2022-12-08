@@ -4,8 +4,6 @@ export default class DeleteProgressByUserIdRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private userId;
-    private rateName;
-    private progressName;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -19,12 +17,6 @@ export default class DeleteProgressByUserIdRequest implements IRequest {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
-    getRateName(): string | null;
-    setRateName(rateName: string | null): this;
-    withRateName(rateName: string | null): this;
-    getProgressName(): string | null;
-    setProgressName(progressName: string | null): this;
-    withProgressName(progressName: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

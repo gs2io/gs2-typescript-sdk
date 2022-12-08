@@ -24,8 +24,6 @@ export default class GetProgressRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private accessToken: string|null = null;
-    private rateName: string|null = null;
-    private progressName: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -76,43 +74,17 @@ export default class GetProgressRequest implements IRequest {
         this.accessToken = accessToken;
         return this;
     }
-    public getRateName(): string|null {
-        return this.rateName;
-    }
-    public setRateName(rateName: string|null) {
-        this.rateName = rateName;
-        return this;
-    }
-    public withRateName(rateName: string|null): this {
-        this.rateName = rateName;
-        return this;
-    }
-    public getProgressName(): string|null {
-        return this.progressName;
-    }
-    public setProgressName(progressName: string|null) {
-        this.progressName = progressName;
-        return this;
-    }
-    public withProgressName(progressName: string|null): this {
-        this.progressName = progressName;
-        return this;
-    }
 
     public static fromDict(data: {[key: string]: any}): GetProgressRequest {
         return new GetProgressRequest()
             .withNamespaceName(data["namespaceName"])
-            .withAccessToken(data["accessToken"])
-            .withRateName(data["rateName"])
-            .withProgressName(data["progressName"]);
+            .withAccessToken(data["accessToken"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "rateName": this.getRateName(),
-            "progressName": this.getProgressName(),
         };
     }
 }

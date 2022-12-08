@@ -27,6 +27,7 @@ var ActionRequest = /** @class */ (function () {
         this.layerModelName = null;
         this.position = null;
         this.scopes = null;
+        this.duplicationAvoider = null;
     }
     ActionRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -114,6 +115,17 @@ var ActionRequest = /** @class */ (function () {
     };
     ActionRequest.prototype.withScopes = function (scopes) {
         this.scopes = scopes;
+        return this;
+    };
+    ActionRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    ActionRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    ActionRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     ActionRequest.fromDict = function (data) {

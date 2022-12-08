@@ -28,6 +28,7 @@ export default class CountUpRequest implements IRequest {
     private accessToken: string|null = null;
     private countUpValue: number|null = null;
     private maxValue: number|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -120,6 +121,20 @@ export default class CountUpRequest implements IRequest {
     }
     public withMaxValue(maxValue: number|null): this {
         this.maxValue = maxValue;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

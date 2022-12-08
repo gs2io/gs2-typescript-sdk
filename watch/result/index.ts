@@ -14,12 +14,14 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 import GetChartResult from "./GetChartResult"
+import GetDistributionResult from "./GetDistributionResult"
 import GetCumulativeResult from "./GetCumulativeResult"
 import DescribeBillingActivitiesResult from "./DescribeBillingActivitiesResult"
 import GetBillingActivityResult from "./GetBillingActivityResult"
 
 export {
     GetChartResult,
+    GetDistributionResult,
     GetCumulativeResult,
     DescribeBillingActivitiesResult,
     GetBillingActivityResult,

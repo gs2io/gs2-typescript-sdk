@@ -22,6 +22,7 @@ var DeleteRoomFromBackendRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.roomName = null;
         this.userId = null;
+        this.duplicationAvoider = null;
     }
     DeleteRoomFromBackendRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -76,6 +77,17 @@ var DeleteRoomFromBackendRequest = /** @class */ (function () {
     };
     DeleteRoomFromBackendRequest.prototype.withUserId = function (userId) {
         this.userId = userId;
+        return this;
+    };
+    DeleteRoomFromBackendRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DeleteRoomFromBackendRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DeleteRoomFromBackendRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DeleteRoomFromBackendRequest.fromDict = function (data) {

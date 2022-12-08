@@ -29,7 +29,6 @@ import DeleteRateModelMasterResult from "./DeleteRateModelMasterResult"
 import DirectEnhanceResult from "./DirectEnhanceResult"
 import DirectEnhanceByUserIdResult from "./DirectEnhanceByUserIdResult"
 import DirectEnhanceByStampSheetResult from "./DirectEnhanceByStampSheetResult"
-import DescribeProgressesByUserIdResult from "./DescribeProgressesByUserIdResult"
 import CreateProgressByUserIdResult from "./CreateProgressByUserIdResult"
 import GetProgressResult from "./GetProgressResult"
 import GetProgressByUserIdResult from "./GetProgressByUserIdResult"
@@ -63,7 +62,6 @@ export {
     DirectEnhanceResult,
     DirectEnhanceByUserIdResult,
     DirectEnhanceByStampSheetResult,
-    DescribeProgressesByUserIdResult,
     CreateProgressByUserIdResult,
     GetProgressResult,
     GetProgressByUserIdResult,

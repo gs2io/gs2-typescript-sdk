@@ -26,6 +26,7 @@ export default class DeleteMessageRequest implements IRequest {
     private roomName: string|null = null;
     private userId: string|null = null;
     private messageName: string|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -96,6 +97,20 @@ export default class DeleteMessageRequest implements IRequest {
     }
     public withMessageName(messageName: string|null): this {
         this.messageName = messageName;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

@@ -20,7 +20,6 @@ import * as Gs2Enhance from '../model'
 
 export default class GetProgressByUserIdResult implements IResult {
     private item: Gs2Enhance.Progress|null = null;
-    private rateModel: Gs2Enhance.RateModel|null = null;
 
     public getItem(): Gs2Enhance.Progress|null {
         return this.item;
@@ -36,30 +35,14 @@ export default class GetProgressByUserIdResult implements IResult {
         return this;
     }
 
-    public getRateModel(): Gs2Enhance.RateModel|null {
-        return this.rateModel;
-    }
-
-    public setRateModel(rateModel: Gs2Enhance.RateModel|null) {
-        this.rateModel = rateModel;
-        return this;
-    }
-
-    public withRateModel(rateModel: Gs2Enhance.RateModel|null): this {
-        this.rateModel = rateModel;
-        return this;
-    }
-
     public static fromDict(data: {[key: string]: any}): GetProgressByUserIdResult {
         return new GetProgressByUserIdResult()
-            .withItem(Gs2Enhance.Progress.fromDict(data["item"]))
-            .withRateModel(Gs2Enhance.RateModel.fromDict(data["rateModel"]));
+            .withItem(Gs2Enhance.Progress.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
-            "rateModel": this.getRateModel()?.toDict(),
         };
     }
 }

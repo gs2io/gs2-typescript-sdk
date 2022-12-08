@@ -5,8 +5,6 @@ export default class EndByUserIdRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private userId;
-    private rateName;
-    private progressName;
     private config;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -21,12 +19,6 @@ export default class EndByUserIdRequest implements IRequest {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
-    getRateName(): string | null;
-    setRateName(rateName: string | null): this;
-    withRateName(rateName: string | null): this;
-    getProgressName(): string | null;
-    setProgressName(progressName: string | null): this;
-    withProgressName(progressName: string | null): this;
     getConfig(): Gs2Enhance.Config[] | null;
     setConfig(config: Gs2Enhance.Config[] | null): this;
     withConfig(config: Gs2Enhance.Config[] | null): this;

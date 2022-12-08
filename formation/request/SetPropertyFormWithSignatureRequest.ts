@@ -28,6 +28,7 @@ export default class SetPropertyFormWithSignatureRequest implements IRequest {
     private propertyId: string|null = null;
     private slots: Gs2Formation.SlotWithSignature[]|null = null;
     private keyId: string|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -120,6 +121,20 @@ export default class SetPropertyFormWithSignatureRequest implements IRequest {
     }
     public withKeyId(keyId: string|null): this {
         this.keyId = keyId;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

@@ -9,6 +9,7 @@ export default class ActionRequest implements IRequest {
     private layerModelName;
     private position;
     private scopes;
+    private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -33,6 +34,9 @@ export default class ActionRequest implements IRequest {
     getScopes(): Gs2MegaField.Scope[] | null;
     setScopes(scopes: Gs2MegaField.Scope[] | null): this;
     withScopes(scopes: Gs2MegaField.Scope[] | null): this;
+    getDuplicationAvoider(): string | null;
+    setDuplicationAvoider(duplicationAvoider: string | null): this;
+    withDuplicationAvoider(duplicationAvoider: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ActionRequest;

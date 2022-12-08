@@ -28,6 +28,7 @@ export default class ConsumeItemSetRequest implements IRequest {
     private itemName: string|null = null;
     private consumeCount: number|null = null;
     private itemSetName: string|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -120,6 +121,20 @@ export default class ConsumeItemSetRequest implements IRequest {
     }
     public withItemSetName(itemSetName: string|null): this {
         this.itemSetName = itemSetName;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

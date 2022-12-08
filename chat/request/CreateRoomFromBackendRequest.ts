@@ -28,6 +28,7 @@ export default class CreateRoomFromBackendRequest implements IRequest {
     private metadata: string|null = null;
     private password: string|null = null;
     private whiteListUserIds: string[]|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -120,6 +121,20 @@ export default class CreateRoomFromBackendRequest implements IRequest {
     }
     public withWhiteListUserIds(whiteListUserIds: string[]|null): this {
         this.whiteListUserIds = whiteListUserIds;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 
