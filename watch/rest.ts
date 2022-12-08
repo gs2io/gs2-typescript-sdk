@@ -67,7 +67,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getDistribution(request: Request.GetDistributionRequest): Promise<Result.GetDistributionResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/chart/{measure}')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/distribution/{measure}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{measure}', String(request.getMeasure() ?? 'null') === "" ? "null" : String(request.getMeasure() ?? 'null'));

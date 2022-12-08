@@ -62,7 +62,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
     };
     Gs2WatchRestClient.prototype.getDistribution = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/chart/{measure}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/distribution/{measure}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{measure}', String((_a = request.getMeasure()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getMeasure()) !== null && _b !== void 0 ? _b : 'null'));
