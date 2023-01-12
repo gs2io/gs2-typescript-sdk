@@ -1,5 +1,6 @@
 import IModel from '../../core/interface/IModel';
 export default class Password implements IModel {
+    private passwordId;
     private userId;
     private userName;
     private createdAt;
@@ -7,6 +8,9 @@ export default class Password implements IModel {
     static getUserName(grn: string): string | null;
     static isValid(grn: string): boolean;
     static createGrn(ownerId: string | null, userName: string | null): string | null;
+    getPasswordId(): string | null;
+    setPasswordId(passwordId: string | null): this;
+    withPasswordId(passwordId: string | null): this;
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;

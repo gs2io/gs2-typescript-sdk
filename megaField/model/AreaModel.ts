@@ -15,12 +15,14 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import LayerModel from './LayerModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:megaField:{namespaceName}:model:area:{areaModelName}";
 
 export default class AreaModel implements IModel {
     private areaModelId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;
+    private layerModels: LayerModel[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -135,6 +137,17 @@ export default class AreaModel implements IModel {
         this.metadata = metadata;
         return this;
     }
+    public getLayerModels(): LayerModel[]|null {
+        return this.layerModels;
+    }
+    public setLayerModels(layerModels: LayerModel[]|null) {
+        this.layerModels = layerModels;
+        return this;
+    }
+    public withLayerModels(layerModels: LayerModel[]|null): this {
+        this.layerModels = layerModels;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): AreaModel|null {
         if (data == undefined || data == null) {
@@ -143,7 +156,12 @@ export default class AreaModel implements IModel {
         return new AreaModel()
             .withAreaModelId(data["areaModelId"])
             .withName(data["name"])
-            .withMetadata(data["metadata"]);
+            .withMetadata(data["metadata"])
+            .withLayerModels(data.layerModels ?
+                data.layerModels.map((item: {[key: string]: any}) => {
+                    return LayerModel.fromDict(item);
+                }
+            ) : []);
     }
 
     public toDict(): {[key: string]: any} {
@@ -151,6 +169,11 @@ export default class AreaModel implements IModel {
             "areaModelId": this.getAreaModelId(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
+            "layerModels": this.getLayerModels() ?
+                this.getLayerModels()!.map((item: LayerModel) => {
+                    return item.toDict();
+                }
+            ) : [],
         };
     }
 }

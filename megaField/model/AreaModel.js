@@ -15,12 +15,15 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var LayerModel_1 = tslib_1.__importDefault(require("./LayerModel"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:megaField:{namespaceName}:model:area:{areaModelName}";
 var AreaModel = /** @class */ (function () {
     function AreaModel() {
         this.areaModelId = null;
         this.name = null;
         this.metadata = null;
+        this.layerModels = null;
     }
     AreaModel.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -121,6 +124,17 @@ var AreaModel = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
+    AreaModel.prototype.getLayerModels = function () {
+        return this.layerModels;
+    };
+    AreaModel.prototype.setLayerModels = function (layerModels) {
+        this.layerModels = layerModels;
+        return this;
+    };
+    AreaModel.prototype.withLayerModels = function (layerModels) {
+        this.layerModels = layerModels;
+        return this;
+    };
     AreaModel.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -128,13 +142,21 @@ var AreaModel = /** @class */ (function () {
         return new AreaModel()
             .withAreaModelId(data["areaModelId"])
             .withName(data["name"])
-            .withMetadata(data["metadata"]);
+            .withMetadata(data["metadata"])
+            .withLayerModels(data.layerModels ?
+            data.layerModels.map(function (item) {
+                return LayerModel_1.default.fromDict(item);
+            }) : []);
     };
     AreaModel.prototype.toDict = function () {
         return {
             "areaModelId": this.getAreaModelId(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
+            "layerModels": this.getLayerModels() ?
+                this.getLayerModels().map(function (item) {
+                    return item.toDict();
+                }) : [],
         };
     };
     return AreaModel;

@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var grnFormat = "grn:gs2::{ownerId}:identifier:user:{userName}";
 var Password = /** @class */ (function () {
     function Password() {
+        this.passwordId = null;
         this.userId = null;
         this.userName = null;
         this.createdAt = null;
@@ -53,6 +54,17 @@ var Password = /** @class */ (function () {
         return grnFormat
             .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
             .replace('{userName}', userName !== null && userName !== void 0 ? userName : '');
+    };
+    Password.prototype.getPasswordId = function () {
+        return this.passwordId;
+    };
+    Password.prototype.setPasswordId = function (passwordId) {
+        this.passwordId = passwordId;
+        return this;
+    };
+    Password.prototype.withPasswordId = function (passwordId) {
+        this.passwordId = passwordId;
+        return this;
     };
     Password.prototype.getUserId = function () {
         return this.userId;
@@ -92,12 +104,14 @@ var Password = /** @class */ (function () {
             return null;
         }
         return new Password()
+            .withPasswordId(data["passwordId"])
             .withUserId(data["userId"])
             .withUserName(data["userName"])
             .withCreatedAt(data["createdAt"]);
     };
     Password.prototype.toDict = function () {
         return {
+            "passwordId": this.getPasswordId(),
             "userId": this.getUserId(),
             "userName": this.getUserName(),
             "createdAt": this.getCreatedAt(),

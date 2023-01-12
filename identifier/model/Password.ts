@@ -18,6 +18,7 @@ import IModel from '../../core/interface/IModel';
 const grnFormat: string = "grn:gs2::{ownerId}:identifier:user:{userName}";
 
 export default class Password implements IModel {
+    private passwordId: string|null = null;
     private userId: string|null = null;
     private userName: string|null = null;
     private createdAt: number|null = null;
@@ -62,6 +63,17 @@ export default class Password implements IModel {
             .replace('{ownerId}', ownerId ?? '')
             .replace('{userName}', userName ?? '');
     }
+    public getPasswordId(): string|null {
+        return this.passwordId;
+    }
+    public setPasswordId(passwordId: string|null) {
+        this.passwordId = passwordId;
+        return this;
+    }
+    public withPasswordId(passwordId: string|null): this {
+        this.passwordId = passwordId;
+        return this;
+    }
     public getUserId(): string|null {
         return this.userId;
     }
@@ -101,6 +113,7 @@ export default class Password implements IModel {
             return null;
         }
         return new Password()
+            .withPasswordId(data["passwordId"])
             .withUserId(data["userId"])
             .withUserName(data["userName"])
             .withCreatedAt(data["createdAt"]);
@@ -108,6 +121,7 @@ export default class Password implements IModel {
 
     public toDict(): {[key: string]: any} {
         return {
+            "passwordId": this.getPasswordId(),
             "userId": this.getUserId(),
             "userName": this.getUserName(),
             "createdAt": this.getCreatedAt(),

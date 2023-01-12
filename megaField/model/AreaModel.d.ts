@@ -1,8 +1,10 @@
 import IModel from '../../core/interface/IModel';
+import LayerModel from './LayerModel';
 export default class AreaModel implements IModel {
     private areaModelId;
     private name;
     private metadata;
+    private layerModels;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -18,6 +20,9 @@ export default class AreaModel implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
+    getLayerModels(): LayerModel[] | null;
+    setLayerModels(layerModels: LayerModel[] | null): this;
+    withLayerModels(layerModels: LayerModel[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): AreaModel | null;

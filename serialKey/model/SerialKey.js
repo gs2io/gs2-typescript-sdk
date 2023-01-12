@@ -15,7 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var grnFormat = "grn:gs2:{region}:{ownerId}:serialKey:{namespaceName}:serialKey:{serialKeyCode}";
+var grnFormat = "grn:gs2:{region}:{ownerId}:serialKey:{namespaceName}:serialKey:{code}";
 var SerialKey = /** @class */ (function () {
     function SerialKey() {
         this.serialKeyId = null;
@@ -33,7 +33,7 @@ var SerialKey = /** @class */ (function () {
             .replace('{region}', '(.*)')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{serialKeyCode}', '.*'));
+            .replace('{code}', '.*'));
         if (match) {
             return match[1];
         }
@@ -44,7 +44,7 @@ var SerialKey = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
-            .replace('{serialKeyCode}', '.*'));
+            .replace('{code}', '.*'));
         if (match) {
             return match[1];
         }
@@ -55,18 +55,18 @@ var SerialKey = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
-            .replace('{serialKeyCode}', '.*'));
+            .replace('{code}', '.*'));
         if (match) {
             return match[1];
         }
         return null;
     };
-    SerialKey.getSerialKeyCode = function (grn) {
+    SerialKey.getCode = function (grn) {
         var match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{serialKeyCode}', '(.*)'));
+            .replace('{code}', '(.*)'));
         if (match) {
             return match[1];
         }
@@ -82,17 +82,17 @@ var SerialKey = /** @class */ (function () {
         if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getSerialKeyCode(grn) == null || this.getSerialKeyCode(grn) === '') {
+        if (this.getCode(grn) == null || this.getCode(grn) === '') {
             return false;
         }
         return true;
     };
-    SerialKey.createGrn = function (region, ownerId, namespaceName, serialKeyCode) {
+    SerialKey.createGrn = function (region, ownerId, namespaceName, code) {
         return grnFormat
             .replace('{region}', region !== null && region !== void 0 ? region : '')
             .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
             .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
-            .replace('{serialKeyCode}', serialKeyCode !== null && serialKeyCode !== void 0 ? serialKeyCode : '');
+            .replace('{code}', code !== null && code !== void 0 ? code : '');
     };
     SerialKey.prototype.getSerialKeyId = function () {
         return this.serialKeyId;
