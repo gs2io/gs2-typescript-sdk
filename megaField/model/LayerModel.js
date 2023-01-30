@@ -19,7 +19,6 @@ var grnFormat = "grn:gs2:{region}:{ownerId}:megaField:{namespaceName}:model:area
 var LayerModel = /** @class */ (function () {
     function LayerModel() {
         this.layerModelId = null;
-        this.areaModelName = null;
         this.name = null;
         this.metadata = null;
     }
@@ -120,17 +119,6 @@ var LayerModel = /** @class */ (function () {
         this.layerModelId = layerModelId;
         return this;
     };
-    LayerModel.prototype.getAreaModelName = function () {
-        return this.areaModelName;
-    };
-    LayerModel.prototype.setAreaModelName = function (areaModelName) {
-        this.areaModelName = areaModelName;
-        return this;
-    };
-    LayerModel.prototype.withAreaModelName = function (areaModelName) {
-        this.areaModelName = areaModelName;
-        return this;
-    };
     LayerModel.prototype.getName = function () {
         return this.name;
     };
@@ -159,14 +147,12 @@ var LayerModel = /** @class */ (function () {
         }
         return new LayerModel()
             .withLayerModelId(data["layerModelId"])
-            .withAreaModelName(data["areaModelName"])
             .withName(data["name"])
             .withMetadata(data["metadata"]);
     };
     LayerModel.prototype.toDict = function () {
         return {
             "layerModelId": this.getLayerModelId(),
-            "areaModelName": this.getAreaModelName(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
         };

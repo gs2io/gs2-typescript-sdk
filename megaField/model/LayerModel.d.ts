@@ -1,7 +1,6 @@
 import IModel from '../../core/interface/IModel';
 export default class LayerModel implements IModel {
     private layerModelId;
-    private areaModelName;
     private name;
     private metadata;
     static getRegion(grn: string): string | null;
@@ -14,9 +13,6 @@ export default class LayerModel implements IModel {
     getLayerModelId(): string | null;
     setLayerModelId(layerModelId: string | null): this;
     withLayerModelId(layerModelId: string | null): this;
-    getAreaModelName(): string | null;
-    setAreaModelName(areaModelName: string | null): this;
-    withAreaModelName(areaModelName: string | null): this;
     getName(): string | null;
     setName(name: string | null): this;
     withName(name: string | null): this;
