@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ResetPrizeLimitRequest = exports.GetPrizeLimitRequest = exports.DescribePrizeLimitsRequest = exports.UpdateCurrentLotteryMasterFromGitHubRequest = exports.UpdateCurrentLotteryMasterRequest = exports.GetCurrentLotteryMasterRequest = exports.ExportMasterRequest = exports.DescribeProbabilitiesByUserIdRequest = exports.DescribeProbabilitiesRequest = exports.DrawByStampSheetRequest = exports.DrawByUserIdRequest = exports.GetPrizeTableRequest = exports.DescribePrizeTablesRequest = exports.GetLotteryModelRequest = exports.DescribeLotteryModelsRequest = exports.ResetBoxByUserIdRequest = exports.ResetBoxRequest = exports.GetBoxByUserIdRequest = exports.GetBoxRequest = exports.DescribeBoxesByUserIdRequest = exports.DescribeBoxesRequest = exports.DeletePrizeTableMasterRequest = exports.UpdatePrizeTableMasterRequest = exports.GetPrizeTableMasterRequest = exports.CreatePrizeTableMasterRequest = exports.DescribePrizeTableMastersRequest = exports.DeleteLotteryModelMasterRequest = exports.UpdateLotteryModelMasterRequest = exports.GetLotteryModelMasterRequest = exports.CreateLotteryModelMasterRequest = exports.DescribeLotteryModelMastersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.ResetBoxByUserIdRequest = exports.ResetBoxRequest = exports.GetBoxByUserIdRequest = exports.GetBoxRequest = exports.DescribeBoxesByUserIdRequest = exports.DescribeBoxesRequest = exports.ResetPrizeLimitRequest = exports.GetPrizeLimitRequest = exports.DescribePrizeLimitsRequest = exports.UpdateCurrentLotteryMasterFromGitHubRequest = exports.UpdateCurrentLotteryMasterRequest = exports.GetCurrentLotteryMasterRequest = exports.ExportMasterRequest = exports.DescribeProbabilitiesByUserIdRequest = exports.DescribeProbabilitiesRequest = exports.DrawByStampSheetRequest = exports.DrawByUserIdRequest = exports.GetPrizeTableRequest = exports.DescribePrizeTablesRequest = exports.GetLotteryModelRequest = exports.DescribeLotteryModelsRequest = exports.DeletePrizeTableMasterRequest = exports.UpdatePrizeTableMasterRequest = exports.GetPrizeTableMasterRequest = exports.CreatePrizeTableMasterRequest = exports.DescribePrizeTableMastersRequest = exports.DeleteLotteryModelMasterRequest = exports.UpdateLotteryModelMasterRequest = exports.GetLotteryModelMasterRequest = exports.CreateLotteryModelMasterRequest = exports.DescribeLotteryModelMastersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -49,18 +49,6 @@ var UpdatePrizeTableMasterRequest_1 = tslib_1.__importDefault(require("./UpdateP
 exports.UpdatePrizeTableMasterRequest = UpdatePrizeTableMasterRequest_1.default;
 var DeletePrizeTableMasterRequest_1 = tslib_1.__importDefault(require("./DeletePrizeTableMasterRequest"));
 exports.DeletePrizeTableMasterRequest = DeletePrizeTableMasterRequest_1.default;
-var DescribeBoxesRequest_1 = tslib_1.__importDefault(require("./DescribeBoxesRequest"));
-exports.DescribeBoxesRequest = DescribeBoxesRequest_1.default;
-var DescribeBoxesByUserIdRequest_1 = tslib_1.__importDefault(require("./DescribeBoxesByUserIdRequest"));
-exports.DescribeBoxesByUserIdRequest = DescribeBoxesByUserIdRequest_1.default;
-var GetBoxRequest_1 = tslib_1.__importDefault(require("./GetBoxRequest"));
-exports.GetBoxRequest = GetBoxRequest_1.default;
-var GetBoxByUserIdRequest_1 = tslib_1.__importDefault(require("./GetBoxByUserIdRequest"));
-exports.GetBoxByUserIdRequest = GetBoxByUserIdRequest_1.default;
-var ResetBoxRequest_1 = tslib_1.__importDefault(require("./ResetBoxRequest"));
-exports.ResetBoxRequest = ResetBoxRequest_1.default;
-var ResetBoxByUserIdRequest_1 = tslib_1.__importDefault(require("./ResetBoxByUserIdRequest"));
-exports.ResetBoxByUserIdRequest = ResetBoxByUserIdRequest_1.default;
 var DescribeLotteryModelsRequest_1 = tslib_1.__importDefault(require("./DescribeLotteryModelsRequest"));
 exports.DescribeLotteryModelsRequest = DescribeLotteryModelsRequest_1.default;
 var GetLotteryModelRequest_1 = tslib_1.__importDefault(require("./GetLotteryModelRequest"));
@@ -91,4 +79,16 @@ var GetPrizeLimitRequest_1 = tslib_1.__importDefault(require("./GetPrizeLimitReq
 exports.GetPrizeLimitRequest = GetPrizeLimitRequest_1.default;
 var ResetPrizeLimitRequest_1 = tslib_1.__importDefault(require("./ResetPrizeLimitRequest"));
 exports.ResetPrizeLimitRequest = ResetPrizeLimitRequest_1.default;
+var DescribeBoxesRequest_1 = tslib_1.__importDefault(require("./DescribeBoxesRequest"));
+exports.DescribeBoxesRequest = DescribeBoxesRequest_1.default;
+var DescribeBoxesByUserIdRequest_1 = tslib_1.__importDefault(require("./DescribeBoxesByUserIdRequest"));
+exports.DescribeBoxesByUserIdRequest = DescribeBoxesByUserIdRequest_1.default;
+var GetBoxRequest_1 = tslib_1.__importDefault(require("./GetBoxRequest"));
+exports.GetBoxRequest = GetBoxRequest_1.default;
+var GetBoxByUserIdRequest_1 = tslib_1.__importDefault(require("./GetBoxByUserIdRequest"));
+exports.GetBoxByUserIdRequest = GetBoxByUserIdRequest_1.default;
+var ResetBoxRequest_1 = tslib_1.__importDefault(require("./ResetBoxRequest"));
+exports.ResetBoxRequest = ResetBoxRequest_1.default;
+var ResetBoxByUserIdRequest_1 = tslib_1.__importDefault(require("./ResetBoxByUserIdRequest"));
+exports.ResetBoxByUserIdRequest = ResetBoxByUserIdRequest_1.default;
 //# sourceMappingURL=index.js.map

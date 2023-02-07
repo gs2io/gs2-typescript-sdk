@@ -29,12 +29,6 @@ import CreatePrizeTableMasterResult from "./CreatePrizeTableMasterResult"
 import GetPrizeTableMasterResult from "./GetPrizeTableMasterResult"
 import UpdatePrizeTableMasterResult from "./UpdatePrizeTableMasterResult"
 import DeletePrizeTableMasterResult from "./DeletePrizeTableMasterResult"
-import DescribeBoxesResult from "./DescribeBoxesResult"
-import DescribeBoxesByUserIdResult from "./DescribeBoxesByUserIdResult"
-import GetBoxResult from "./GetBoxResult"
-import GetBoxByUserIdResult from "./GetBoxByUserIdResult"
-import ResetBoxResult from "./ResetBoxResult"
-import ResetBoxByUserIdResult from "./ResetBoxByUserIdResult"
 import DescribeLotteryModelsResult from "./DescribeLotteryModelsResult"
 import GetLotteryModelResult from "./GetLotteryModelResult"
 import DescribePrizeTablesResult from "./DescribePrizeTablesResult"
@@ -50,6 +44,12 @@ import UpdateCurrentLotteryMasterFromGitHubResult from "./UpdateCurrentLotteryMa
 import DescribePrizeLimitsResult from "./DescribePrizeLimitsResult"
 import GetPrizeLimitResult from "./GetPrizeLimitResult"
 import ResetPrizeLimitResult from "./ResetPrizeLimitResult"
+import DescribeBoxesResult from "./DescribeBoxesResult"
+import DescribeBoxesByUserIdResult from "./DescribeBoxesByUserIdResult"
+import GetBoxResult from "./GetBoxResult"
+import GetBoxByUserIdResult from "./GetBoxByUserIdResult"
+import ResetBoxResult from "./ResetBoxResult"
+import ResetBoxByUserIdResult from "./ResetBoxByUserIdResult"
 
 export {
     DescribeNamespacesResult,
@@ -68,12 +68,6 @@ export {
     GetPrizeTableMasterResult,
     UpdatePrizeTableMasterResult,
     DeletePrizeTableMasterResult,
-    DescribeBoxesResult,
-    DescribeBoxesByUserIdResult,
-    GetBoxResult,
-    GetBoxByUserIdResult,
-    ResetBoxResult,
-    ResetBoxByUserIdResult,
     DescribeLotteryModelsResult,
     GetLotteryModelResult,
     DescribePrizeTablesResult,
@@ -89,4 +83,10 @@ export {
     DescribePrizeLimitsResult,
     GetPrizeLimitResult,
     ResetPrizeLimitResult,
+    DescribeBoxesResult,
+    DescribeBoxesByUserIdResult,
+    GetBoxResult,
+    GetBoxByUserIdResult,
+    ResetBoxResult,
+    ResetBoxByUserIdResult,
 };

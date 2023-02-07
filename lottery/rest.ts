@@ -512,188 +512,6 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
         });
     }
 
-    public describeBoxes(request: Request.DescribeBoxesRequest): Promise<Result.DescribeBoxesResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/box')
-            .replace('{service}', 'lottery')
-            .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
-    
-        const headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
-        }
-        const params: {[key: string]: any} = {
-            'contextStack': request.getContextStack() ?? null,
-            'pageToken': String(request.getPageToken() ?? null),
-            'limit': String(request.getLimit() ?? null),
-        };
-        return axios.get(
-            url,
-             {
-                params,
-                headers,
-            },
-        ).then((response: any) => {
-            return Result.DescribeBoxesResult.fromDict(response.data);
-        }).catch((error: any) => {
-            throw JSON.parse(error.response.data.message);
-        });
-    }
-
-    public describeBoxesByUserId(request: Request.DescribeBoxesByUserIdRequest): Promise<Result.DescribeBoxesByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box')
-            .replace('{service}', 'lottery')
-            .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
-    
-        const headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        const params: {[key: string]: any} = {
-            'contextStack': request.getContextStack() ?? null,
-            'pageToken': String(request.getPageToken() ?? null),
-            'limit': String(request.getLimit() ?? null),
-        };
-        return axios.get(
-            url,
-             {
-                params,
-                headers,
-            },
-        ).then((response: any) => {
-            return Result.DescribeBoxesByUserIdResult.fromDict(response.data);
-        }).catch((error: any) => {
-            throw JSON.parse(error.response.data.message);
-        });
-    }
-
-    public getBox(request: Request.GetBoxRequest): Promise<Result.GetBoxResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/box/{prizeTableName}')
-            .replace('{service}', 'lottery')
-            .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{prizeTableName}', String(request.getPrizeTableName() ?? 'null') === "" ? "null" : String(request.getPrizeTableName() ?? 'null'));
-    
-        const headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
-        }
-        const params: {[key: string]: any} = {
-            'contextStack': request.getContextStack() ?? null,
-        };
-        return axios.get(
-            url,
-             {
-                params,
-                headers,
-            },
-        ).then((response: any) => {
-            return Result.GetBoxResult.fromDict(response.data);
-        }).catch((error: any) => {
-            throw JSON.parse(error.response.data.message);
-        });
-    }
-
-    public getBoxByUserId(request: Request.GetBoxByUserIdRequest): Promise<Result.GetBoxByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box/{prizeTableName}')
-            .replace('{service}', 'lottery')
-            .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{prizeTableName}', String(request.getPrizeTableName() ?? 'null') === "" ? "null" : String(request.getPrizeTableName() ?? 'null'))
-            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
-    
-        const headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        const params: {[key: string]: any} = {
-            'contextStack': request.getContextStack() ?? null,
-        };
-        return axios.get(
-            url,
-             {
-                params,
-                headers,
-            },
-        ).then((response: any) => {
-            return Result.GetBoxByUserIdResult.fromDict(response.data);
-        }).catch((error: any) => {
-            throw JSON.parse(error.response.data.message);
-        });
-    }
-
-    public resetBox(request: Request.ResetBoxRequest): Promise<Result.ResetBoxResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/box/{prizeTableName}')
-            .replace('{service}', 'lottery')
-            .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{prizeTableName}', String(request.getPrizeTableName() ?? 'null') === "" ? "null" : String(request.getPrizeTableName() ?? 'null'));
-    
-        const headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
-        }
-        if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
-        }
-        const params: {[key: string]: any} = {
-            'contextStack': request.getContextStack() ?? null,
-        };
-        return axios.delete(
-            url,
-             {
-                params,
-                headers,
-            },
-        ).then((response: any) => {
-            return Result.ResetBoxResult.fromDict(response.data);
-        }).catch((error: any) => {
-            throw JSON.parse(error.response.data.message);
-        });
-    }
-
-    public resetBoxByUserId(request: Request.ResetBoxByUserIdRequest): Promise<Result.ResetBoxByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box/{prizeTableName}')
-            .replace('{service}', 'lottery')
-            .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{prizeTableName}', String(request.getPrizeTableName() ?? 'null') === "" ? "null" : String(request.getPrizeTableName() ?? 'null'))
-            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
-    
-        const headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
-        }
-        const params: {[key: string]: any} = {
-            'contextStack': request.getContextStack() ?? null,
-        };
-        return axios.delete(
-            url,
-             {
-                params,
-                headers,
-            },
-        ).then((response: any) => {
-            return Result.ResetBoxByUserIdResult.fromDict(response.data);
-        }).catch((error: any) => {
-            throw JSON.parse(error.response.data.message);
-        });
-    }
-
     public describeLotteryModels(request: Request.DescribeLotteryModelsRequest): Promise<Result.DescribeLotteryModelsResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/lottery')
             .replace('{service}', 'lottery')
@@ -1120,6 +938,188 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.ResetPrizeLimitResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeBoxes(request: Request.DescribeBoxesRequest): Promise<Result.DescribeBoxesResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/box')
+            .replace('{service}', 'lottery')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeBoxesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeBoxesByUserId(request: Request.DescribeBoxesByUserIdRequest): Promise<Result.DescribeBoxesByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box')
+            .replace('{service}', 'lottery')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeBoxesByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getBox(request: Request.GetBoxRequest): Promise<Result.GetBoxResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/box/{prizeTableName}')
+            .replace('{service}', 'lottery')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{prizeTableName}', String(request.getPrizeTableName() ?? 'null') === "" ? "null" : String(request.getPrizeTableName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetBoxResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getBoxByUserId(request: Request.GetBoxByUserIdRequest): Promise<Result.GetBoxByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box/{prizeTableName}')
+            .replace('{service}', 'lottery')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{prizeTableName}', String(request.getPrizeTableName() ?? 'null') === "" ? "null" : String(request.getPrizeTableName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetBoxByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public resetBox(request: Request.ResetBoxRequest): Promise<Result.ResetBoxResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/box/{prizeTableName}')
+            .replace('{service}', 'lottery')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{prizeTableName}', String(request.getPrizeTableName() ?? 'null') === "" ? "null" : String(request.getPrizeTableName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ResetBoxResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public resetBoxByUserId(request: Request.ResetBoxByUserIdRequest): Promise<Result.ResetBoxByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/box/{prizeTableName}')
+            .replace('{service}', 'lottery')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{prizeTableName}', String(request.getPrizeTableName() ?? 'null') === "" ? "null" : String(request.getPrizeTableName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ResetBoxByUserIdResult.fromDict(response.data);
         }).catch((error: any) => {
             throw JSON.parse(error.response.data.message);
         });

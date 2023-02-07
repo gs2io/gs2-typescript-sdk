@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var BoxItem_1 = tslib_1.__importDefault(require("./BoxItem"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:lottery:{namespaceName}:user:{userId}:box:items:{prizeTableName}";
 var BoxItems = /** @class */ (function () {
     function BoxItems() {
         this.boxId = null;
@@ -24,6 +25,92 @@ var BoxItems = /** @class */ (function () {
         this.userId = null;
         this.items = null;
     }
+    BoxItems.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{prizeTableName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    BoxItems.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{prizeTableName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    BoxItems.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{prizeTableName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    BoxItems.getUserId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{prizeTableName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    BoxItems.getPrizeTableName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{prizeTableName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    BoxItems.isValid = function (grn) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
+            return false;
+        }
+        if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
+            return false;
+        }
+        if (this.getPrizeTableName(grn) == null || this.getPrizeTableName(grn) === '') {
+            return false;
+        }
+        return true;
+    };
+    BoxItems.createGrn = function (region, ownerId, namespaceName, userId, prizeTableName) {
+        return grnFormat
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{userId}', userId !== null && userId !== void 0 ? userId : '')
+            .replace('{prizeTableName}', prizeTableName !== null && prizeTableName !== void 0 ? prizeTableName : '');
+    };
     BoxItems.prototype.getBoxId = function () {
         return this.boxId;
     };

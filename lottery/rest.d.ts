@@ -20,12 +20,6 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     getPrizeTableMaster(request: Request.GetPrizeTableMasterRequest): Promise<Result.GetPrizeTableMasterResult>;
     updatePrizeTableMaster(request: Request.UpdatePrizeTableMasterRequest): Promise<Result.UpdatePrizeTableMasterResult>;
     deletePrizeTableMaster(request: Request.DeletePrizeTableMasterRequest): Promise<Result.DeletePrizeTableMasterResult>;
-    describeBoxes(request: Request.DescribeBoxesRequest): Promise<Result.DescribeBoxesResult>;
-    describeBoxesByUserId(request: Request.DescribeBoxesByUserIdRequest): Promise<Result.DescribeBoxesByUserIdResult>;
-    getBox(request: Request.GetBoxRequest): Promise<Result.GetBoxResult>;
-    getBoxByUserId(request: Request.GetBoxByUserIdRequest): Promise<Result.GetBoxByUserIdResult>;
-    resetBox(request: Request.ResetBoxRequest): Promise<Result.ResetBoxResult>;
-    resetBoxByUserId(request: Request.ResetBoxByUserIdRequest): Promise<Result.ResetBoxByUserIdResult>;
     describeLotteryModels(request: Request.DescribeLotteryModelsRequest): Promise<Result.DescribeLotteryModelsResult>;
     getLotteryModel(request: Request.GetLotteryModelRequest): Promise<Result.GetLotteryModelResult>;
     describePrizeTables(request: Request.DescribePrizeTablesRequest): Promise<Result.DescribePrizeTablesResult>;
@@ -41,4 +35,10 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     describePrizeLimits(request: Request.DescribePrizeLimitsRequest): Promise<Result.DescribePrizeLimitsResult>;
     getPrizeLimit(request: Request.GetPrizeLimitRequest): Promise<Result.GetPrizeLimitResult>;
     resetPrizeLimit(request: Request.ResetPrizeLimitRequest): Promise<Result.ResetPrizeLimitResult>;
+    describeBoxes(request: Request.DescribeBoxesRequest): Promise<Result.DescribeBoxesResult>;
+    describeBoxesByUserId(request: Request.DescribeBoxesByUserIdRequest): Promise<Result.DescribeBoxesByUserIdResult>;
+    getBox(request: Request.GetBoxRequest): Promise<Result.GetBoxResult>;
+    getBoxByUserId(request: Request.GetBoxByUserIdRequest): Promise<Result.GetBoxByUserIdResult>;
+    resetBox(request: Request.ResetBoxRequest): Promise<Result.ResetBoxResult>;
+    resetBoxByUserId(request: Request.ResetBoxByUserIdRequest): Promise<Result.ResetBoxByUserIdResult>;
 }

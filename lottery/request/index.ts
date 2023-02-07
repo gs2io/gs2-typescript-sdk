@@ -29,12 +29,6 @@ import CreatePrizeTableMasterRequest from "./CreatePrizeTableMasterRequest"
 import GetPrizeTableMasterRequest from "./GetPrizeTableMasterRequest"
 import UpdatePrizeTableMasterRequest from "./UpdatePrizeTableMasterRequest"
 import DeletePrizeTableMasterRequest from "./DeletePrizeTableMasterRequest"
-import DescribeBoxesRequest from "./DescribeBoxesRequest"
-import DescribeBoxesByUserIdRequest from "./DescribeBoxesByUserIdRequest"
-import GetBoxRequest from "./GetBoxRequest"
-import GetBoxByUserIdRequest from "./GetBoxByUserIdRequest"
-import ResetBoxRequest from "./ResetBoxRequest"
-import ResetBoxByUserIdRequest from "./ResetBoxByUserIdRequest"
 import DescribeLotteryModelsRequest from "./DescribeLotteryModelsRequest"
 import GetLotteryModelRequest from "./GetLotteryModelRequest"
 import DescribePrizeTablesRequest from "./DescribePrizeTablesRequest"
@@ -50,6 +44,12 @@ import UpdateCurrentLotteryMasterFromGitHubRequest from "./UpdateCurrentLotteryM
 import DescribePrizeLimitsRequest from "./DescribePrizeLimitsRequest"
 import GetPrizeLimitRequest from "./GetPrizeLimitRequest"
 import ResetPrizeLimitRequest from "./ResetPrizeLimitRequest"
+import DescribeBoxesRequest from "./DescribeBoxesRequest"
+import DescribeBoxesByUserIdRequest from "./DescribeBoxesByUserIdRequest"
+import GetBoxRequest from "./GetBoxRequest"
+import GetBoxByUserIdRequest from "./GetBoxByUserIdRequest"
+import ResetBoxRequest from "./ResetBoxRequest"
+import ResetBoxByUserIdRequest from "./ResetBoxByUserIdRequest"
 
 export {
     DescribeNamespacesRequest,
@@ -68,12 +68,6 @@ export {
     GetPrizeTableMasterRequest,
     UpdatePrizeTableMasterRequest,
     DeletePrizeTableMasterRequest,
-    DescribeBoxesRequest,
-    DescribeBoxesByUserIdRequest,
-    GetBoxRequest,
-    GetBoxByUserIdRequest,
-    ResetBoxRequest,
-    ResetBoxByUserIdRequest,
     DescribeLotteryModelsRequest,
     GetLotteryModelRequest,
     DescribePrizeTablesRequest,
@@ -89,4 +83,10 @@ export {
     DescribePrizeLimitsRequest,
     GetPrizeLimitRequest,
     ResetPrizeLimitRequest,
+    DescribeBoxesRequest,
+    DescribeBoxesByUserIdRequest,
+    GetBoxRequest,
+    GetBoxByUserIdRequest,
+    ResetBoxRequest,
+    ResetBoxByUserIdRequest,
 };

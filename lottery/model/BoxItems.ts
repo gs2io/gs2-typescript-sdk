@@ -17,12 +17,117 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 import AcquireAction from './AcquireAction';
 import BoxItem from './BoxItem';
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:lottery:{namespaceName}:user:{userId}:box:items:{prizeTableName}";
 
 export default class BoxItems implements IModel {
     private boxId: string|null = null;
     private prizeTableName: string|null = null;
     private userId: string|null = null;
     private items: BoxItem[]|null = null;
+
+    public static getRegion(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{prizeTableName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getOwnerId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{prizeTableName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getNamespaceName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{prizeTableName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getUserId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{prizeTableName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getPrizeTableName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{prizeTableName}', '(.*)')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static isValid(grn: string): boolean {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
+            return false;
+        }
+        if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
+            return false;
+        }
+        if (this.getPrizeTableName(grn) == null || this.getPrizeTableName(grn) === '') {
+            return false;
+        }
+        return true;
+    }
+
+    public static createGrn(
+        region: string|null,
+        ownerId: string|null,
+        namespaceName: string|null,
+        userId: string|null,
+        prizeTableName: string|null,
+    ): string|null {
+        return grnFormat
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{userId}', userId ?? '')
+            .replace('{prizeTableName}', prizeTableName ?? '');
+    }
     public getBoxId(): string|null {
         return this.boxId;
     }
