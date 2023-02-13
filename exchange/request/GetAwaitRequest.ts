@@ -24,7 +24,6 @@ export default class GetAwaitRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private accessToken: string|null = null;
-    private rateName: string|null = null;
     private awaitName: string|null = null;
 
     public getRequestId(): string|null {
@@ -76,17 +75,6 @@ export default class GetAwaitRequest implements IRequest {
         this.accessToken = accessToken;
         return this;
     }
-    public getRateName(): string|null {
-        return this.rateName;
-    }
-    public setRateName(rateName: string|null) {
-        this.rateName = rateName;
-        return this;
-    }
-    public withRateName(rateName: string|null): this {
-        this.rateName = rateName;
-        return this;
-    }
     public getAwaitName(): string|null {
         return this.awaitName;
     }
@@ -103,7 +91,6 @@ export default class GetAwaitRequest implements IRequest {
         return new GetAwaitRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withRateName(data["rateName"])
             .withAwaitName(data["awaitName"]);
     }
 
@@ -111,7 +98,6 @@ export default class GetAwaitRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "rateName": this.getRateName(),
             "awaitName": this.getAwaitName(),
         };
     }

@@ -23,7 +23,6 @@ var SkipRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
-        this.rateName = null;
         this.awaitName = null;
         this.config = null;
         this.duplicationAvoider = null;
@@ -72,17 +71,6 @@ var SkipRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
-    SkipRequest.prototype.getRateName = function () {
-        return this.rateName;
-    };
-    SkipRequest.prototype.setRateName = function (rateName) {
-        this.rateName = rateName;
-        return this;
-    };
-    SkipRequest.prototype.withRateName = function (rateName) {
-        this.rateName = rateName;
-        return this;
-    };
     SkipRequest.prototype.getAwaitName = function () {
         return this.awaitName;
     };
@@ -120,7 +108,6 @@ var SkipRequest = /** @class */ (function () {
         return new SkipRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withRateName(data["rateName"])
             .withAwaitName(data["awaitName"])
             .withConfig(data.config ?
             data.config.map(function (item) {
@@ -131,7 +118,6 @@ var SkipRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "rateName": this.getRateName(),
             "awaitName": this.getAwaitName(),
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {

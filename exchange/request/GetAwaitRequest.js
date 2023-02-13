@@ -21,7 +21,6 @@ var GetAwaitRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
-        this.rateName = null;
         this.awaitName = null;
     }
     GetAwaitRequest.prototype.getRequestId = function () {
@@ -68,17 +67,6 @@ var GetAwaitRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
-    GetAwaitRequest.prototype.getRateName = function () {
-        return this.rateName;
-    };
-    GetAwaitRequest.prototype.setRateName = function (rateName) {
-        this.rateName = rateName;
-        return this;
-    };
-    GetAwaitRequest.prototype.withRateName = function (rateName) {
-        this.rateName = rateName;
-        return this;
-    };
     GetAwaitRequest.prototype.getAwaitName = function () {
         return this.awaitName;
     };
@@ -94,14 +82,12 @@ var GetAwaitRequest = /** @class */ (function () {
         return new GetAwaitRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withRateName(data["rateName"])
             .withAwaitName(data["awaitName"]);
     };
     GetAwaitRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "rateName": this.getRateName(),
             "awaitName": this.getAwaitName(),
         };
     };

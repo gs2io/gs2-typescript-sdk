@@ -24,7 +24,6 @@ export default class SkipRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private accessToken: string|null = null;
-    private rateName: string|null = null;
     private awaitName: string|null = null;
     private config: Gs2Exchange.Config[]|null = null;
     private duplicationAvoider: string|null = null;
@@ -78,17 +77,6 @@ export default class SkipRequest implements IRequest {
         this.accessToken = accessToken;
         return this;
     }
-    public getRateName(): string|null {
-        return this.rateName;
-    }
-    public setRateName(rateName: string|null) {
-        this.rateName = rateName;
-        return this;
-    }
-    public withRateName(rateName: string|null): this {
-        this.rateName = rateName;
-        return this;
-    }
     public getAwaitName(): string|null {
         return this.awaitName;
     }
@@ -130,7 +118,6 @@ export default class SkipRequest implements IRequest {
         return new SkipRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withRateName(data["rateName"])
             .withAwaitName(data["awaitName"])
             .withConfig(data.config ?
                 data.config.map((item: {[key: string]: any}) => {
@@ -143,7 +130,6 @@ export default class SkipRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "rateName": this.getRateName(),
             "awaitName": this.getAwaitName(),
             "config": this.getConfig() ?
                 this.getConfig()!.map((item: Gs2Exchange.Config) => {

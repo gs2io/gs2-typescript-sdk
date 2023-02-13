@@ -23,7 +23,6 @@ var SkipByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
-        this.rateName = null;
         this.awaitName = null;
         this.config = null;
         this.duplicationAvoider = null;
@@ -72,17 +71,6 @@ var SkipByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
-    SkipByUserIdRequest.prototype.getRateName = function () {
-        return this.rateName;
-    };
-    SkipByUserIdRequest.prototype.setRateName = function (rateName) {
-        this.rateName = rateName;
-        return this;
-    };
-    SkipByUserIdRequest.prototype.withRateName = function (rateName) {
-        this.rateName = rateName;
-        return this;
-    };
     SkipByUserIdRequest.prototype.getAwaitName = function () {
         return this.awaitName;
     };
@@ -120,7 +108,6 @@ var SkipByUserIdRequest = /** @class */ (function () {
         return new SkipByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withRateName(data["rateName"])
             .withAwaitName(data["awaitName"])
             .withConfig(data.config ?
             data.config.map(function (item) {
@@ -131,7 +118,6 @@ var SkipByUserIdRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "rateName": this.getRateName(),
             "awaitName": this.getAwaitName(),
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {

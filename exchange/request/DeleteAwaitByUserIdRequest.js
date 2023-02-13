@@ -21,7 +21,6 @@ var DeleteAwaitByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
-        this.rateName = null;
         this.awaitName = null;
         this.duplicationAvoider = null;
     }
@@ -69,17 +68,6 @@ var DeleteAwaitByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
-    DeleteAwaitByUserIdRequest.prototype.getRateName = function () {
-        return this.rateName;
-    };
-    DeleteAwaitByUserIdRequest.prototype.setRateName = function (rateName) {
-        this.rateName = rateName;
-        return this;
-    };
-    DeleteAwaitByUserIdRequest.prototype.withRateName = function (rateName) {
-        this.rateName = rateName;
-        return this;
-    };
     DeleteAwaitByUserIdRequest.prototype.getAwaitName = function () {
         return this.awaitName;
     };
@@ -106,14 +94,12 @@ var DeleteAwaitByUserIdRequest = /** @class */ (function () {
         return new DeleteAwaitByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withRateName(data["rateName"])
             .withAwaitName(data["awaitName"]);
     };
     DeleteAwaitByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "rateName": this.getRateName(),
             "awaitName": this.getAwaitName(),
         };
     };

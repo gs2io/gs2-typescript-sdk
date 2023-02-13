@@ -15,11 +15,153 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:ranking:{namespaceName}:user:{userId}:subscribe:category:{categoryName}:{targetUserId}";
 
 export default class SubscribeUser implements IModel {
+    private subscribeUserId: string|null = null;
     private categoryName: string|null = null;
     private userId: string|null = null;
     private targetUserId: string|null = null;
+
+    public static getRegion(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '.*')
+            .replace('{targetUserId}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getOwnerId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '.*')
+            .replace('{targetUserId}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getNamespaceName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '.*')
+            .replace('{targetUserId}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getUserId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '(.*)')
+            .replace('{categoryName}', '.*')
+            .replace('{targetUserId}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getCategoryName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '(.*)')
+            .replace('{targetUserId}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getTargetUserId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{categoryName}', '.*')
+            .replace('{targetUserId}', '(.*)')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static isValid(grn: string): boolean {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
+            return false;
+        }
+        if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
+            return false;
+        }
+        if (this.getCategoryName(grn) == null || this.getCategoryName(grn) === '') {
+            return false;
+        }
+        if (this.getTargetUserId(grn) == null || this.getTargetUserId(grn) === '') {
+            return false;
+        }
+        return true;
+    }
+
+    public static createGrn(
+        region: string|null,
+        ownerId: string|null,
+        namespaceName: string|null,
+        userId: string|null,
+        categoryName: string|null,
+        targetUserId: string|null,
+    ): string|null {
+        return grnFormat
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{namespaceName}', namespaceName ?? '')
+            .replace('{userId}', userId ?? '')
+            .replace('{categoryName}', categoryName ?? '')
+            .replace('{targetUserId}', targetUserId ?? '');
+    }
+    public getSubscribeUserId(): string|null {
+        return this.subscribeUserId;
+    }
+    public setSubscribeUserId(subscribeUserId: string|null) {
+        this.subscribeUserId = subscribeUserId;
+        return this;
+    }
+    public withSubscribeUserId(subscribeUserId: string|null): this {
+        this.subscribeUserId = subscribeUserId;
+        return this;
+    }
     public getCategoryName(): string|null {
         return this.categoryName;
     }
@@ -59,6 +201,7 @@ export default class SubscribeUser implements IModel {
             return null;
         }
         return new SubscribeUser()
+            .withSubscribeUserId(data["subscribeUserId"])
             .withCategoryName(data["categoryName"])
             .withUserId(data["userId"])
             .withTargetUserId(data["targetUserId"]);
@@ -66,6 +209,7 @@ export default class SubscribeUser implements IModel {
 
     public toDict(): {[key: string]: any} {
         return {
+            "subscribeUserId": this.getSubscribeUserId(),
             "categoryName": this.getCategoryName(),
             "userId": this.getUserId(),
             "targetUserId": this.getTargetUserId(),

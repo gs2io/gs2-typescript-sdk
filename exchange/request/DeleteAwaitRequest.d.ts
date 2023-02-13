@@ -4,7 +4,6 @@ export default class DeleteAwaitRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private accessToken;
-    private rateName;
     private awaitName;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -19,9 +18,6 @@ export default class DeleteAwaitRequest implements IRequest {
     getAccessToken(): string | null;
     setAccessToken(accessToken: string | null): this;
     withAccessToken(accessToken: string | null): this;
-    getRateName(): string | null;
-    setRateName(rateName: string | null): this;
-    withRateName(rateName: string | null): this;
     getAwaitName(): string | null;
     setAwaitName(awaitName: string | null): this;
     withAwaitName(awaitName: string | null): this;

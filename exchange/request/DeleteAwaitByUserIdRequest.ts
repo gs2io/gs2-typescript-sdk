@@ -24,7 +24,6 @@ export default class DeleteAwaitByUserIdRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private userId: string|null = null;
-    private rateName: string|null = null;
     private awaitName: string|null = null;
     private duplicationAvoider: string|null = null;
 
@@ -77,17 +76,6 @@ export default class DeleteAwaitByUserIdRequest implements IRequest {
         this.userId = userId;
         return this;
     }
-    public getRateName(): string|null {
-        return this.rateName;
-    }
-    public setRateName(rateName: string|null) {
-        this.rateName = rateName;
-        return this;
-    }
-    public withRateName(rateName: string|null): this {
-        this.rateName = rateName;
-        return this;
-    }
     public getAwaitName(): string|null {
         return this.awaitName;
     }
@@ -118,7 +106,6 @@ export default class DeleteAwaitByUserIdRequest implements IRequest {
         return new DeleteAwaitByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withRateName(data["rateName"])
             .withAwaitName(data["awaitName"]);
     }
 
@@ -126,7 +113,6 @@ export default class DeleteAwaitByUserIdRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "rateName": this.getRateName(),
             "awaitName": this.getAwaitName(),
         };
     }

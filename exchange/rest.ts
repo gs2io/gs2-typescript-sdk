@@ -741,11 +741,10 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public getAwait(request: Request.GetAwaitRequest): Promise<Result.GetAwaitResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/exchange/{rateName}/await/{awaitName}')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/exchange/await/{awaitName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{rateName}', String(request.getRateName() ?? 'null') === "" ? "null" : String(request.getRateName() ?? 'null'))
             .replace('{awaitName}', String(request.getAwaitName() ?? 'null') === "" ? "null" : String(request.getAwaitName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
@@ -772,12 +771,11 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public getAwaitByUserId(request: Request.GetAwaitByUserIdRequest): Promise<Result.GetAwaitByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/{rateName}/await/{awaitName}')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/await/{awaitName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
-            .replace('{rateName}', String(request.getRateName() ?? 'null') === "" ? "null" : String(request.getRateName() ?? 'null'))
             .replace('{awaitName}', String(request.getAwaitName() ?? 'null') === "" ? "null" : String(request.getAwaitName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
@@ -801,11 +799,10 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public acquire(request: Request.AcquireRequest): Promise<Result.AcquireResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/exchange/{rateName}/await/{awaitName}')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/exchange/await/{awaitName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{rateName}', String(request.getRateName() ?? 'null') === "" ? "null" : String(request.getRateName() ?? 'null'))
             .replace('{awaitName}', String(request.getAwaitName() ?? 'null') === "" ? "null" : String(request.getAwaitName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
@@ -840,12 +837,11 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public acquireByUserId(request: Request.AcquireByUserIdRequest): Promise<Result.AcquireByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/{rateName}/await/{awaitName}')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/await/{awaitName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
-            .replace('{rateName}', String(request.getRateName() ?? 'null') === "" ? "null" : String(request.getRateName() ?? 'null'))
             .replace('{awaitName}', String(request.getAwaitName() ?? 'null') === "" ? "null" : String(request.getAwaitName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
@@ -877,12 +873,11 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public acquireForceByUserId(request: Request.AcquireForceByUserIdRequest): Promise<Result.AcquireForceByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/{rateName}/await/{awaitName}/force')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/await/{awaitName}/force')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
-            .replace('{rateName}', String(request.getRateName() ?? 'null') === "" ? "null" : String(request.getRateName() ?? 'null'))
             .replace('{awaitName}', String(request.getAwaitName() ?? 'null') === "" ? "null" : String(request.getAwaitName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
@@ -914,11 +909,10 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public skip(request: Request.SkipRequest): Promise<Result.SkipResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/exchange/{rateName}/await/{awaitName}/skip')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/exchange/await/{awaitName}/skip')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{rateName}', String(request.getRateName() ?? 'null') === "" ? "null" : String(request.getRateName() ?? 'null'))
             .replace('{awaitName}', String(request.getAwaitName() ?? 'null') === "" ? "null" : String(request.getAwaitName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
@@ -953,12 +947,11 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public skipByUserId(request: Request.SkipByUserIdRequest): Promise<Result.SkipByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/{rateName}/await/{awaitName}/skip')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/await/{awaitName}/skip')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
-            .replace('{rateName}', String(request.getRateName() ?? 'null') === "" ? "null" : String(request.getRateName() ?? 'null'))
             .replace('{awaitName}', String(request.getAwaitName() ?? 'null') === "" ? "null" : String(request.getAwaitName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
@@ -990,11 +983,10 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public deleteAwait(request: Request.DeleteAwaitRequest): Promise<Result.DeleteAwaitResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/exchange/{rateName}/await/{awaitName}')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/exchange/await/{awaitName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{rateName}', String(request.getRateName() ?? 'null') === "" ? "null" : String(request.getRateName() ?? 'null'))
             .replace('{awaitName}', String(request.getAwaitName() ?? 'null') === "" ? "null" : String(request.getAwaitName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
@@ -1024,12 +1016,11 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     }
 
     public deleteAwaitByUserId(request: Request.DeleteAwaitByUserIdRequest): Promise<Result.DeleteAwaitByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/{rateName}/await/{awaitName}')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/await/{awaitName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
             .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
-            .replace('{rateName}', String(request.getRateName() ?? 'null') === "" ? "null" : String(request.getRateName() ?? 'null'))
             .replace('{awaitName}', String(request.getAwaitName() ?? 'null') === "" ? "null" : String(request.getAwaitName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();

@@ -4,7 +4,6 @@ export default class GetAwaitByUserIdRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private userId;
-    private rateName;
     private awaitName;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -18,9 +17,6 @@ export default class GetAwaitByUserIdRequest implements IRequest {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
-    getRateName(): string | null;
-    setRateName(rateName: string | null): this;
-    withRateName(rateName: string | null): this;
     getAwaitName(): string | null;
     setAwaitName(awaitName: string | null): this;
     withAwaitName(awaitName: string | null): this;

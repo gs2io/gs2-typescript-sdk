@@ -5,7 +5,6 @@ export default class SkipRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private accessToken;
-    private rateName;
     private awaitName;
     private config;
     private duplicationAvoider;
@@ -21,9 +20,6 @@ export default class SkipRequest implements IRequest {
     getAccessToken(): string | null;
     setAccessToken(accessToken: string | null): this;
     withAccessToken(accessToken: string | null): this;
-    getRateName(): string | null;
-    setRateName(rateName: string | null): this;
-    withRateName(rateName: string | null): this;
     getAwaitName(): string | null;
     setAwaitName(awaitName: string | null): this;
     withAwaitName(awaitName: string | null): this;
