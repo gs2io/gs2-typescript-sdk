@@ -34,6 +34,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.joinNotification = null;
         this.leaveNotification = null;
         this.completeNotification = null;
+        this.changeRatingNotification = null;
         this.logSetting = null;
     }
     CreateNamespaceRequest.prototype.getRequestId = function () {
@@ -201,6 +202,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.completeNotification = completeNotification;
         return this;
     };
+    CreateNamespaceRequest.prototype.getChangeRatingNotification = function () {
+        return this.changeRatingNotification;
+    };
+    CreateNamespaceRequest.prototype.setChangeRatingNotification = function (changeRatingNotification) {
+        this.changeRatingNotification = changeRatingNotification;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withChangeRatingNotification = function (changeRatingNotification) {
+        this.changeRatingNotification = changeRatingNotification;
+        return this;
+    };
     CreateNamespaceRequest.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -227,10 +239,11 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withJoinNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["joinNotification"]))
             .withLeaveNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["leaveNotification"]))
             .withCompleteNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["completeNotification"]))
+            .withChangeRatingNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["changeRatingNotification"]))
             .withLogSetting(Gs2Matchmaking.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
@@ -245,7 +258,8 @@ var CreateNamespaceRequest = /** @class */ (function () {
             "joinNotification": (_b = this.getJoinNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "leaveNotification": (_c = this.getLeaveNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "completeNotification": (_d = this.getCompleteNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "changeRatingNotification": (_e = this.getChangeRatingNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
         };
     };
     return CreateNamespaceRequest;

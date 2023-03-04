@@ -78,6 +78,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
             'joinNotification': request.getJoinNotification()?.toDict() ?? null,
             'leaveNotification': request.getLeaveNotification()?.toDict() ?? null,
             'completeNotification': request.getCompleteNotification()?.toDict() ?? null,
+            'changeRatingNotification': request.getChangeRatingNotification()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.post(
@@ -173,6 +174,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
             'joinNotification': request.getJoinNotification()?.toDict() ?? null,
             'leaveNotification': request.getLeaveNotification()?.toDict() ?? null,
             'completeNotification': request.getCompleteNotification()?.toDict() ?? null,
+            'changeRatingNotification': request.getChangeRatingNotification()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.put(

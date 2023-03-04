@@ -36,6 +36,7 @@ var Namespace = /** @class */ (function () {
         this.joinNotification = null;
         this.leaveNotification = null;
         this.completeNotification = null;
+        this.changeRatingNotification = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -242,6 +243,17 @@ var Namespace = /** @class */ (function () {
         this.completeNotification = completeNotification;
         return this;
     };
+    Namespace.prototype.getChangeRatingNotification = function () {
+        return this.changeRatingNotification;
+    };
+    Namespace.prototype.setChangeRatingNotification = function (changeRatingNotification) {
+        this.changeRatingNotification = changeRatingNotification;
+        return this;
+    };
+    Namespace.prototype.withChangeRatingNotification = function (changeRatingNotification) {
+        this.changeRatingNotification = changeRatingNotification;
+        return this;
+    };
     Namespace.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -294,12 +306,13 @@ var Namespace = /** @class */ (function () {
             .withJoinNotification(NotificationSetting_1.default.fromDict(data["joinNotification"]))
             .withLeaveNotification(NotificationSetting_1.default.fromDict(data["leaveNotification"]))
             .withCompleteNotification(NotificationSetting_1.default.fromDict(data["completeNotification"]))
+            .withChangeRatingNotification(NotificationSetting_1.default.fromDict(data["changeRatingNotification"]))
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
@@ -315,7 +328,8 @@ var Namespace = /** @class */ (function () {
             "joinNotification": (_b = this.getJoinNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "leaveNotification": (_c = this.getLeaveNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "completeNotification": (_d = this.getCompleteNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "changeRatingNotification": (_e = this.getChangeRatingNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

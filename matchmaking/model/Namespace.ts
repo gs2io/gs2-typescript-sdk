@@ -35,6 +35,7 @@ export default class Namespace implements IModel {
     private joinNotification: NotificationSetting|null = null;
     private leaveNotification: NotificationSetting|null = null;
     private completeNotification: NotificationSetting|null = null;
+    private changeRatingNotification: NotificationSetting|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -252,6 +253,17 @@ export default class Namespace implements IModel {
         this.completeNotification = completeNotification;
         return this;
     }
+    public getChangeRatingNotification(): NotificationSetting|null {
+        return this.changeRatingNotification;
+    }
+    public setChangeRatingNotification(changeRatingNotification: NotificationSetting|null) {
+        this.changeRatingNotification = changeRatingNotification;
+        return this;
+    }
+    public withChangeRatingNotification(changeRatingNotification: NotificationSetting|null): this {
+        this.changeRatingNotification = changeRatingNotification;
+        return this;
+    }
     public getLogSetting(): LogSetting|null {
         return this.logSetting;
     }
@@ -305,6 +317,7 @@ export default class Namespace implements IModel {
             .withJoinNotification(NotificationSetting.fromDict(data["joinNotification"]))
             .withLeaveNotification(NotificationSetting.fromDict(data["leaveNotification"]))
             .withCompleteNotification(NotificationSetting.fromDict(data["completeNotification"]))
+            .withChangeRatingNotification(NotificationSetting.fromDict(data["changeRatingNotification"]))
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
@@ -326,6 +339,7 @@ export default class Namespace implements IModel {
             "joinNotification": this.getJoinNotification()?.toDict(),
             "leaveNotification": this.getLeaveNotification()?.toDict(),
             "completeNotification": this.getCompleteNotification()?.toDict(),
+            "changeRatingNotification": this.getChangeRatingNotification()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

@@ -16,6 +16,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private joinNotification;
     private leaveNotification;
     private completeNotification;
+    private changeRatingNotification;
     private logSetting;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -62,6 +63,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getCompleteNotification(): Gs2Matchmaking.NotificationSetting | null;
     setCompleteNotification(completeNotification: Gs2Matchmaking.NotificationSetting | null): this;
     withCompleteNotification(completeNotification: Gs2Matchmaking.NotificationSetting | null): this;
+    getChangeRatingNotification(): Gs2Matchmaking.NotificationSetting | null;
+    setChangeRatingNotification(changeRatingNotification: Gs2Matchmaking.NotificationSetting | null): this;
+    withChangeRatingNotification(changeRatingNotification: Gs2Matchmaking.NotificationSetting | null): this;
     getLogSetting(): Gs2Matchmaking.LogSetting | null;
     setLogSetting(logSetting: Gs2Matchmaking.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Matchmaking.LogSetting | null): this;

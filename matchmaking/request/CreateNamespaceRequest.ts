@@ -35,6 +35,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private joinNotification: Gs2Matchmaking.NotificationSetting|null = null;
     private leaveNotification: Gs2Matchmaking.NotificationSetting|null = null;
     private completeNotification: Gs2Matchmaking.NotificationSetting|null = null;
+    private changeRatingNotification: Gs2Matchmaking.NotificationSetting|null = null;
     private logSetting: Gs2Matchmaking.LogSetting|null = null;
 
     public getRequestId(): string|null {
@@ -207,6 +208,17 @@ export default class CreateNamespaceRequest implements IRequest {
         this.completeNotification = completeNotification;
         return this;
     }
+    public getChangeRatingNotification(): Gs2Matchmaking.NotificationSetting|null {
+        return this.changeRatingNotification;
+    }
+    public setChangeRatingNotification(changeRatingNotification: Gs2Matchmaking.NotificationSetting|null) {
+        this.changeRatingNotification = changeRatingNotification;
+        return this;
+    }
+    public withChangeRatingNotification(changeRatingNotification: Gs2Matchmaking.NotificationSetting|null): this {
+        this.changeRatingNotification = changeRatingNotification;
+        return this;
+    }
     public getLogSetting(): Gs2Matchmaking.LogSetting|null {
         return this.logSetting;
     }
@@ -234,6 +246,7 @@ export default class CreateNamespaceRequest implements IRequest {
             .withJoinNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["joinNotification"]))
             .withLeaveNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["leaveNotification"]))
             .withCompleteNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["completeNotification"]))
+            .withChangeRatingNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["changeRatingNotification"]))
             .withLogSetting(Gs2Matchmaking.LogSetting.fromDict(data["logSetting"]));
     }
 
@@ -252,6 +265,7 @@ export default class CreateNamespaceRequest implements IRequest {
             "joinNotification": this.getJoinNotification()?.toDict(),
             "leaveNotification": this.getLeaveNotification()?.toDict(),
             "completeNotification": this.getCompleteNotification()?.toDict(),
+            "changeRatingNotification": this.getChangeRatingNotification()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
         };
     }

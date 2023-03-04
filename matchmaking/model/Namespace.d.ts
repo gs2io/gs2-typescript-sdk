@@ -17,6 +17,7 @@ export default class Namespace implements IModel {
     private joinNotification;
     private leaveNotification;
     private completeNotification;
+    private changeRatingNotification;
     private logSetting;
     private createdAt;
     private updatedAt;
@@ -67,6 +68,9 @@ export default class Namespace implements IModel {
     getCompleteNotification(): NotificationSetting | null;
     setCompleteNotification(completeNotification: NotificationSetting | null): this;
     withCompleteNotification(completeNotification: NotificationSetting | null): this;
+    getChangeRatingNotification(): NotificationSetting | null;
+    setChangeRatingNotification(changeRatingNotification: NotificationSetting | null): this;
+    withChangeRatingNotification(changeRatingNotification: NotificationSetting | null): this;
     getLogSetting(): LogSetting | null;
     setLogSetting(logSetting: LogSetting | null): this;
     withLogSetting(logSetting: LogSetting | null): this;
