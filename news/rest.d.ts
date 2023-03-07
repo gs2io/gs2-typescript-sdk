@@ -10,6 +10,10 @@ export default class Gs2NewsRestClient extends AbstractGs2RestClient {
     getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
     updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
     deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    describeProgresses(request: Request.DescribeProgressesRequest): Promise<Result.DescribeProgressesResult>;
+    getProgress(request: Request.GetProgressRequest): Promise<Result.GetProgressResult>;
+    describeOutputs(request: Request.DescribeOutputsRequest): Promise<Result.DescribeOutputsResult>;
+    getOutput(request: Request.GetOutputRequest): Promise<Result.GetOutputResult>;
     prepareUpdateCurrentNewsMaster(request: Request.PrepareUpdateCurrentNewsMasterRequest): Promise<Result.PrepareUpdateCurrentNewsMasterResult>;
     updateCurrentNewsMaster(request: Request.UpdateCurrentNewsMasterRequest): Promise<Result.UpdateCurrentNewsMasterResult>;
     prepareUpdateCurrentNewsMasterFromGitHub(request: Request.PrepareUpdateCurrentNewsMasterFromGitHubRequest): Promise<Result.PrepareUpdateCurrentNewsMasterFromGitHubResult>;

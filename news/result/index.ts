@@ -19,6 +19,10 @@ import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
 import GetNamespaceResult from "./GetNamespaceResult"
 import UpdateNamespaceResult from "./UpdateNamespaceResult"
 import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DescribeProgressesResult from "./DescribeProgressesResult"
+import GetProgressResult from "./GetProgressResult"
+import DescribeOutputsResult from "./DescribeOutputsResult"
+import GetOutputResult from "./GetOutputResult"
 import PrepareUpdateCurrentNewsMasterResult from "./PrepareUpdateCurrentNewsMasterResult"
 import UpdateCurrentNewsMasterResult from "./UpdateCurrentNewsMasterResult"
 import PrepareUpdateCurrentNewsMasterFromGitHubResult from "./PrepareUpdateCurrentNewsMasterFromGitHubResult"
@@ -34,6 +38,10 @@ export {
     GetNamespaceResult,
     UpdateNamespaceResult,
     DeleteNamespaceResult,
+    DescribeProgressesResult,
+    GetProgressResult,
+    DescribeOutputsResult,
+    GetOutputResult,
     PrepareUpdateCurrentNewsMasterResult,
     UpdateCurrentNewsMasterResult,
     PrepareUpdateCurrentNewsMasterFromGitHubResult,

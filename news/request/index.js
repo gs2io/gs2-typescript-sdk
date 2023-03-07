@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WantGrantByUserIdRequest = exports.WantGrantRequest = exports.DescribeNewsByUserIdRequest = exports.DescribeNewsRequest = exports.PrepareUpdateCurrentNewsMasterFromGitHubRequest = exports.UpdateCurrentNewsMasterRequest = exports.PrepareUpdateCurrentNewsMasterRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.WantGrantByUserIdRequest = exports.WantGrantRequest = exports.DescribeNewsByUserIdRequest = exports.DescribeNewsRequest = exports.PrepareUpdateCurrentNewsMasterFromGitHubRequest = exports.UpdateCurrentNewsMasterRequest = exports.PrepareUpdateCurrentNewsMasterRequest = exports.GetOutputRequest = exports.DescribeOutputsRequest = exports.GetProgressRequest = exports.DescribeProgressesRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,6 +29,14 @@ var UpdateNamespaceRequest_1 = tslib_1.__importDefault(require("./UpdateNamespac
 exports.UpdateNamespaceRequest = UpdateNamespaceRequest_1.default;
 var DeleteNamespaceRequest_1 = tslib_1.__importDefault(require("./DeleteNamespaceRequest"));
 exports.DeleteNamespaceRequest = DeleteNamespaceRequest_1.default;
+var DescribeProgressesRequest_1 = tslib_1.__importDefault(require("./DescribeProgressesRequest"));
+exports.DescribeProgressesRequest = DescribeProgressesRequest_1.default;
+var GetProgressRequest_1 = tslib_1.__importDefault(require("./GetProgressRequest"));
+exports.GetProgressRequest = GetProgressRequest_1.default;
+var DescribeOutputsRequest_1 = tslib_1.__importDefault(require("./DescribeOutputsRequest"));
+exports.DescribeOutputsRequest = DescribeOutputsRequest_1.default;
+var GetOutputRequest_1 = tslib_1.__importDefault(require("./GetOutputRequest"));
+exports.GetOutputRequest = GetOutputRequest_1.default;
 var PrepareUpdateCurrentNewsMasterRequest_1 = tslib_1.__importDefault(require("./PrepareUpdateCurrentNewsMasterRequest"));
 exports.PrepareUpdateCurrentNewsMasterRequest = PrepareUpdateCurrentNewsMasterRequest_1.default;
 var UpdateCurrentNewsMasterRequest_1 = tslib_1.__importDefault(require("./UpdateCurrentNewsMasterRequest"));

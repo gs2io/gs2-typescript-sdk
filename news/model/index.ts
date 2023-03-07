@@ -14,6 +14,10 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 import Namespace from "./Namespace"
+import Progress from "./Progress"
+import Output from "./Output"
+import View from "./View"
+import Content from "./Content"
 import News from "./News"
 import SetCookieRequestEntry from "./SetCookieRequestEntry"
 import LogSetting from "./LogSetting"
@@ -21,6 +25,10 @@ import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 
 export {
     Namespace,
+    Progress,
+    Output,
+    View,
+    Content,
     News,
     SetCookieRequestEntry,
     LogSetting,

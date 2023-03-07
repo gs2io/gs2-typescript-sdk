@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GitHubCheckoutSetting = exports.LogSetting = exports.SetCookieRequestEntry = exports.News = exports.Namespace = void 0;
+exports.GitHubCheckoutSetting = exports.LogSetting = exports.SetCookieRequestEntry = exports.News = exports.Content = exports.View = exports.Output = exports.Progress = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -19,6 +19,14 @@ permissions and limitations under the License.
  */
 var Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
+var Progress_1 = tslib_1.__importDefault(require("./Progress"));
+exports.Progress = Progress_1.default;
+var Output_1 = tslib_1.__importDefault(require("./Output"));
+exports.Output = Output_1.default;
+var View_1 = tslib_1.__importDefault(require("./View"));
+exports.View = View_1.default;
+var Content_1 = tslib_1.__importDefault(require("./Content"));
+exports.Content = Content_1.default;
 var News_1 = tslib_1.__importDefault(require("./News"));
 exports.News = News_1.default;
 var SetCookieRequestEntry_1 = tslib_1.__importDefault(require("./SetCookieRequestEntry"));
