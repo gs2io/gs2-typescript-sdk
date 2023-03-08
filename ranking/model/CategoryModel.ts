@@ -26,6 +26,7 @@ export default class CategoryModel implements IModel {
     private orderDirection: string|null = null;
     private scope: string|null = null;
     private uniqueByUserId: boolean|null = null;
+    private sum: boolean|null = null;
     private calculateFixedTimingHour: number|null = null;
     private calculateFixedTimingMinute: number|null = null;
     private calculateIntervalMinutes: number|null = null;
@@ -201,6 +202,17 @@ export default class CategoryModel implements IModel {
         this.uniqueByUserId = uniqueByUserId;
         return this;
     }
+    public getSum(): boolean|null {
+        return this.sum;
+    }
+    public setSum(sum: boolean|null) {
+        this.sum = sum;
+        return this;
+    }
+    public withSum(sum: boolean|null): this {
+        this.sum = sum;
+        return this;
+    }
     public getCalculateFixedTimingHour(): number|null {
         return this.calculateFixedTimingHour;
     }
@@ -281,6 +293,7 @@ export default class CategoryModel implements IModel {
             .withOrderDirection(data["orderDirection"])
             .withScope(data["scope"])
             .withUniqueByUserId(data["uniqueByUserId"])
+            .withSum(data["sum"])
             .withCalculateFixedTimingHour(data["calculateFixedTimingHour"])
             .withCalculateFixedTimingMinute(data["calculateFixedTimingMinute"])
             .withCalculateIntervalMinutes(data["calculateIntervalMinutes"])
@@ -299,6 +312,7 @@ export default class CategoryModel implements IModel {
             "orderDirection": this.getOrderDirection(),
             "scope": this.getScope(),
             "uniqueByUserId": this.getUniqueByUserId(),
+            "sum": this.getSum(),
             "calculateFixedTimingHour": this.getCalculateFixedTimingHour(),
             "calculateFixedTimingMinute": this.getCalculateFixedTimingMinute(),
             "calculateIntervalMinutes": this.getCalculateIntervalMinutes(),

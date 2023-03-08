@@ -8,6 +8,7 @@ export default class CategoryModel implements IModel {
     private orderDirection;
     private scope;
     private uniqueByUserId;
+    private sum;
     private calculateFixedTimingHour;
     private calculateFixedTimingMinute;
     private calculateIntervalMinutes;
@@ -44,6 +45,9 @@ export default class CategoryModel implements IModel {
     getUniqueByUserId(): boolean | null;
     setUniqueByUserId(uniqueByUserId: boolean | null): this;
     withUniqueByUserId(uniqueByUserId: boolean | null): this;
+    getSum(): boolean | null;
+    setSum(sum: boolean | null): this;
+    withSum(sum: boolean | null): this;
     getCalculateFixedTimingHour(): number | null;
     setCalculateFixedTimingHour(calculateFixedTimingHour: number | null): this;
     withCalculateFixedTimingHour(calculateFixedTimingHour: number | null): this;

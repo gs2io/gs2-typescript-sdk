@@ -11,6 +11,7 @@ export default class UpdateCategoryModelMasterRequest implements IRequest {
     private orderDirection;
     private scope;
     private uniqueByUserId;
+    private sum;
     private calculateFixedTimingHour;
     private calculateFixedTimingMinute;
     private calculateIntervalMinutes;
@@ -50,6 +51,9 @@ export default class UpdateCategoryModelMasterRequest implements IRequest {
     getUniqueByUserId(): boolean | null;
     setUniqueByUserId(uniqueByUserId: boolean | null): this;
     withUniqueByUserId(uniqueByUserId: boolean | null): this;
+    getSum(): boolean | null;
+    setSum(sum: boolean | null): this;
+    withSum(sum: boolean | null): this;
     getCalculateFixedTimingHour(): number | null;
     setCalculateFixedTimingHour(calculateFixedTimingHour: number | null): this;
     withCalculateFixedTimingHour(calculateFixedTimingHour: number | null): this;

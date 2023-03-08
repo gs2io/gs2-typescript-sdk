@@ -27,6 +27,7 @@ var CategoryModelMaster = /** @class */ (function () {
         this.orderDirection = null;
         this.scope = null;
         this.uniqueByUserId = null;
+        this.sum = null;
         this.calculateFixedTimingHour = null;
         this.calculateFixedTimingMinute = null;
         this.calculateIntervalMinutes = null;
@@ -201,6 +202,17 @@ var CategoryModelMaster = /** @class */ (function () {
         this.uniqueByUserId = uniqueByUserId;
         return this;
     };
+    CategoryModelMaster.prototype.getSum = function () {
+        return this.sum;
+    };
+    CategoryModelMaster.prototype.setSum = function (sum) {
+        this.sum = sum;
+        return this;
+    };
+    CategoryModelMaster.prototype.withSum = function (sum) {
+        this.sum = sum;
+        return this;
+    };
     CategoryModelMaster.prototype.getCalculateFixedTimingHour = function () {
         return this.calculateFixedTimingHour;
     };
@@ -303,6 +315,7 @@ var CategoryModelMaster = /** @class */ (function () {
             .withOrderDirection(data["orderDirection"])
             .withScope(data["scope"])
             .withUniqueByUserId(data["uniqueByUserId"])
+            .withSum(data["sum"])
             .withCalculateFixedTimingHour(data["calculateFixedTimingHour"])
             .withCalculateFixedTimingMinute(data["calculateFixedTimingMinute"])
             .withCalculateIntervalMinutes(data["calculateIntervalMinutes"])
@@ -323,6 +336,7 @@ var CategoryModelMaster = /** @class */ (function () {
             "orderDirection": this.getOrderDirection(),
             "scope": this.getScope(),
             "uniqueByUserId": this.getUniqueByUserId(),
+            "sum": this.getSum(),
             "calculateFixedTimingHour": this.getCalculateFixedTimingHour(),
             "calculateFixedTimingMinute": this.getCalculateFixedTimingMinute(),
             "calculateIntervalMinutes": this.getCalculateIntervalMinutes(),
