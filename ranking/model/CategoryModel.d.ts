@@ -14,6 +14,7 @@ export default class CategoryModel implements IModel {
     private calculateIntervalMinutes;
     private entryPeriodEventId;
     private accessPeriodEventId;
+    private ignoreUserIds;
     private generation;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
@@ -63,6 +64,9 @@ export default class CategoryModel implements IModel {
     getAccessPeriodEventId(): string | null;
     setAccessPeriodEventId(accessPeriodEventId: string | null): this;
     withAccessPeriodEventId(accessPeriodEventId: string | null): this;
+    getIgnoreUserIds(): string[] | null;
+    setIgnoreUserIds(ignoreUserIds: string[] | null): this;
+    withIgnoreUserIds(ignoreUserIds: string[] | null): this;
     getGeneration(): string | null;
     setGeneration(generation: string | null): this;
     withGeneration(generation: string | null): this;

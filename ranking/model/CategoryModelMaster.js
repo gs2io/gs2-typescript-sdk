@@ -33,6 +33,7 @@ var CategoryModelMaster = /** @class */ (function () {
         this.calculateIntervalMinutes = null;
         this.entryPeriodEventId = null;
         this.accessPeriodEventId = null;
+        this.ignoreUserIds = null;
         this.generation = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -268,6 +269,17 @@ var CategoryModelMaster = /** @class */ (function () {
         this.accessPeriodEventId = accessPeriodEventId;
         return this;
     };
+    CategoryModelMaster.prototype.getIgnoreUserIds = function () {
+        return this.ignoreUserIds;
+    };
+    CategoryModelMaster.prototype.setIgnoreUserIds = function (ignoreUserIds) {
+        this.ignoreUserIds = ignoreUserIds;
+        return this;
+    };
+    CategoryModelMaster.prototype.withIgnoreUserIds = function (ignoreUserIds) {
+        this.ignoreUserIds = ignoreUserIds;
+        return this;
+    };
     CategoryModelMaster.prototype.getGeneration = function () {
         return this.generation;
     };
@@ -321,6 +333,10 @@ var CategoryModelMaster = /** @class */ (function () {
             .withCalculateIntervalMinutes(data["calculateIntervalMinutes"])
             .withEntryPeriodEventId(data["entryPeriodEventId"])
             .withAccessPeriodEventId(data["accessPeriodEventId"])
+            .withIgnoreUserIds(data.ignoreUserIds ?
+            data.ignoreUserIds.map(function (item) {
+                return item;
+            }) : [])
             .withGeneration(data["generation"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
@@ -342,6 +358,10 @@ var CategoryModelMaster = /** @class */ (function () {
             "calculateIntervalMinutes": this.getCalculateIntervalMinutes(),
             "entryPeriodEventId": this.getEntryPeriodEventId(),
             "accessPeriodEventId": this.getAccessPeriodEventId(),
+            "ignoreUserIds": this.getIgnoreUserIds() ?
+                this.getIgnoreUserIds().map(function (item) {
+                    return item;
+                }) : [],
             "generation": this.getGeneration(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

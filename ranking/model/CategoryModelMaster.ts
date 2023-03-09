@@ -33,6 +33,7 @@ export default class CategoryModelMaster implements IModel {
     private calculateIntervalMinutes: number|null = null;
     private entryPeriodEventId: string|null = null;
     private accessPeriodEventId: string|null = null;
+    private ignoreUserIds: string[]|null = null;
     private generation: string|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -282,6 +283,17 @@ export default class CategoryModelMaster implements IModel {
         this.accessPeriodEventId = accessPeriodEventId;
         return this;
     }
+    public getIgnoreUserIds(): string[]|null {
+        return this.ignoreUserIds;
+    }
+    public setIgnoreUserIds(ignoreUserIds: string[]|null) {
+        this.ignoreUserIds = ignoreUserIds;
+        return this;
+    }
+    public withIgnoreUserIds(ignoreUserIds: string[]|null): this {
+        this.ignoreUserIds = ignoreUserIds;
+        return this;
+    }
     public getGeneration(): string|null {
         return this.generation;
     }
@@ -336,6 +348,11 @@ export default class CategoryModelMaster implements IModel {
             .withCalculateIntervalMinutes(data["calculateIntervalMinutes"])
             .withEntryPeriodEventId(data["entryPeriodEventId"])
             .withAccessPeriodEventId(data["accessPeriodEventId"])
+            .withIgnoreUserIds(data.ignoreUserIds ?
+                data.ignoreUserIds.map((item: {[key: string]: any}) => {
+                    return item;
+                }
+            ) : [])
             .withGeneration(data["generation"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
@@ -358,6 +375,11 @@ export default class CategoryModelMaster implements IModel {
             "calculateIntervalMinutes": this.getCalculateIntervalMinutes(),
             "entryPeriodEventId": this.getEntryPeriodEventId(),
             "accessPeriodEventId": this.getAccessPeriodEventId(),
+            "ignoreUserIds": this.getIgnoreUserIds() ?
+                this.getIgnoreUserIds()!.map((item: string) => {
+                    return item;
+                }
+            ) : [],
             "generation": this.getGeneration(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

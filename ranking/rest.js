@@ -240,7 +240,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2RankingRestClient.prototype.createCategoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/category')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
@@ -265,7 +265,8 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'calculateIntervalMinutes': (_q = request.getCalculateIntervalMinutes()) !== null && _q !== void 0 ? _q : null,
             'entryPeriodEventId': (_r = request.getEntryPeriodEventId()) !== null && _r !== void 0 ? _r : null,
             'accessPeriodEventId': (_s = request.getAccessPeriodEventId()) !== null && _s !== void 0 ? _s : null,
-            'generation': (_t = request.getGeneration()) !== null && _t !== void 0 ? _t : null,
+            'ignoreUserIds': (_t = request.getIgnoreUserIds()) !== null && _t !== void 0 ? _t : null,
+            'generation': (_u = request.getGeneration()) !== null && _u !== void 0 ? _u : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -304,7 +305,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2RankingRestClient.prototype.updateCategoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/category/{categoryName}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
@@ -329,7 +330,8 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'calculateIntervalMinutes': (_r = request.getCalculateIntervalMinutes()) !== null && _r !== void 0 ? _r : null,
             'entryPeriodEventId': (_s = request.getEntryPeriodEventId()) !== null && _s !== void 0 ? _s : null,
             'accessPeriodEventId': (_t = request.getAccessPeriodEventId()) !== null && _t !== void 0 ? _t : null,
-            'generation': (_u = request.getGeneration()) !== null && _u !== void 0 ? _u : null,
+            'ignoreUserIds': (_u = request.getIgnoreUserIds()) !== null && _u !== void 0 ? _u : null,
+            'generation': (_v = request.getGeneration()) !== null && _v !== void 0 ? _v : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

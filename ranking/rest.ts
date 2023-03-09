@@ -303,6 +303,7 @@ export default class Gs2RankingRestClient extends AbstractGs2RestClient {
             'calculateIntervalMinutes': request.getCalculateIntervalMinutes() ?? null,
             'entryPeriodEventId': request.getEntryPeriodEventId() ?? null,
             'accessPeriodEventId': request.getAccessPeriodEventId() ?? null,
+            'ignoreUserIds': request.getIgnoreUserIds() ?? null,
             'generation': request.getGeneration() ?? null,
         };
         return axios.post(
@@ -375,6 +376,7 @@ export default class Gs2RankingRestClient extends AbstractGs2RestClient {
             'calculateIntervalMinutes': request.getCalculateIntervalMinutes() ?? null,
             'entryPeriodEventId': request.getEntryPeriodEventId() ?? null,
             'accessPeriodEventId': request.getAccessPeriodEventId() ?? null,
+            'ignoreUserIds': request.getIgnoreUserIds() ?? null,
             'generation': request.getGeneration() ?? null,
         };
         return axios.put(

@@ -32,6 +32,7 @@ var CategoryModel = /** @class */ (function () {
         this.calculateIntervalMinutes = null;
         this.entryPeriodEventId = null;
         this.accessPeriodEventId = null;
+        this.ignoreUserIds = null;
         this.generation = null;
     }
     CategoryModel.getRegion = function (grn) {
@@ -254,6 +255,17 @@ var CategoryModel = /** @class */ (function () {
         this.accessPeriodEventId = accessPeriodEventId;
         return this;
     };
+    CategoryModel.prototype.getIgnoreUserIds = function () {
+        return this.ignoreUserIds;
+    };
+    CategoryModel.prototype.setIgnoreUserIds = function (ignoreUserIds) {
+        this.ignoreUserIds = ignoreUserIds;
+        return this;
+    };
+    CategoryModel.prototype.withIgnoreUserIds = function (ignoreUserIds) {
+        this.ignoreUserIds = ignoreUserIds;
+        return this;
+    };
     CategoryModel.prototype.getGeneration = function () {
         return this.generation;
     };
@@ -284,6 +296,10 @@ var CategoryModel = /** @class */ (function () {
             .withCalculateIntervalMinutes(data["calculateIntervalMinutes"])
             .withEntryPeriodEventId(data["entryPeriodEventId"])
             .withAccessPeriodEventId(data["accessPeriodEventId"])
+            .withIgnoreUserIds(data.ignoreUserIds ?
+            data.ignoreUserIds.map(function (item) {
+                return item;
+            }) : [])
             .withGeneration(data["generation"]);
     };
     CategoryModel.prototype.toDict = function () {
@@ -302,6 +318,10 @@ var CategoryModel = /** @class */ (function () {
             "calculateIntervalMinutes": this.getCalculateIntervalMinutes(),
             "entryPeriodEventId": this.getEntryPeriodEventId(),
             "accessPeriodEventId": this.getAccessPeriodEventId(),
+            "ignoreUserIds": this.getIgnoreUserIds() ?
+                this.getIgnoreUserIds().map(function (item) {
+                    return item;
+                }) : [],
             "generation": this.getGeneration(),
         };
     };

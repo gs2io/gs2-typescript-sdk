@@ -17,6 +17,7 @@ export default class UpdateCategoryModelMasterRequest implements IRequest {
     private calculateIntervalMinutes;
     private entryPeriodEventId;
     private accessPeriodEventId;
+    private ignoreUserIds;
     private generation;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -69,6 +70,9 @@ export default class UpdateCategoryModelMasterRequest implements IRequest {
     getAccessPeriodEventId(): string | null;
     setAccessPeriodEventId(accessPeriodEventId: string | null): this;
     withAccessPeriodEventId(accessPeriodEventId: string | null): this;
+    getIgnoreUserIds(): string[] | null;
+    setIgnoreUserIds(ignoreUserIds: string[] | null): this;
+    withIgnoreUserIds(ignoreUserIds: string[] | null): this;
     getGeneration(): string | null;
     setGeneration(generation: string | null): this;
     withGeneration(generation: string | null): this;

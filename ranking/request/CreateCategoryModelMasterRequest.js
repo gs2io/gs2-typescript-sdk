@@ -34,6 +34,7 @@ var CreateCategoryModelMasterRequest = /** @class */ (function () {
         this.calculateIntervalMinutes = null;
         this.entryPeriodEventId = null;
         this.accessPeriodEventId = null;
+        this.ignoreUserIds = null;
         this.generation = null;
     }
     CreateCategoryModelMasterRequest.prototype.getRequestId = function () {
@@ -223,6 +224,17 @@ var CreateCategoryModelMasterRequest = /** @class */ (function () {
         this.accessPeriodEventId = accessPeriodEventId;
         return this;
     };
+    CreateCategoryModelMasterRequest.prototype.getIgnoreUserIds = function () {
+        return this.ignoreUserIds;
+    };
+    CreateCategoryModelMasterRequest.prototype.setIgnoreUserIds = function (ignoreUserIds) {
+        this.ignoreUserIds = ignoreUserIds;
+        return this;
+    };
+    CreateCategoryModelMasterRequest.prototype.withIgnoreUserIds = function (ignoreUserIds) {
+        this.ignoreUserIds = ignoreUserIds;
+        return this;
+    };
     CreateCategoryModelMasterRequest.prototype.getGeneration = function () {
         return this.generation;
     };
@@ -251,6 +263,10 @@ var CreateCategoryModelMasterRequest = /** @class */ (function () {
             .withCalculateIntervalMinutes(data["calculateIntervalMinutes"])
             .withEntryPeriodEventId(data["entryPeriodEventId"])
             .withAccessPeriodEventId(data["accessPeriodEventId"])
+            .withIgnoreUserIds(data.ignoreUserIds ?
+            data.ignoreUserIds.map(function (item) {
+                return item;
+            }) : [])
             .withGeneration(data["generation"]);
     };
     CreateCategoryModelMasterRequest.prototype.toDict = function () {
@@ -270,6 +286,10 @@ var CreateCategoryModelMasterRequest = /** @class */ (function () {
             "calculateIntervalMinutes": this.getCalculateIntervalMinutes(),
             "entryPeriodEventId": this.getEntryPeriodEventId(),
             "accessPeriodEventId": this.getAccessPeriodEventId(),
+            "ignoreUserIds": this.getIgnoreUserIds() ?
+                this.getIgnoreUserIds().map(function (item) {
+                    return item;
+                }) : [],
             "generation": this.getGeneration(),
         };
     };
