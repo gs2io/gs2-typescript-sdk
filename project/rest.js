@@ -263,7 +263,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ProjectRestClient.prototype.createProject = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
@@ -277,10 +277,12 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'name': (_c = request.getName()) !== null && _c !== void 0 ? _c : null,
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
             'plan': (_e = request.getPlan()) !== null && _e !== void 0 ? _e : null,
-            'billingMethodName': (_f = request.getBillingMethodName()) !== null && _f !== void 0 ? _f : null,
-            'enableEventBridge': (_g = request.getEnableEventBridge()) !== null && _g !== void 0 ? _g : null,
-            'eventBridgeAwsAccountId': (_h = request.getEventBridgeAwsAccountId()) !== null && _h !== void 0 ? _h : null,
-            'eventBridgeAwsRegion': (_j = request.getEventBridgeAwsRegion()) !== null && _j !== void 0 ? _j : null,
+            'currency': (_f = request.getCurrency()) !== null && _f !== void 0 ? _f : null,
+            'activateRegionName': (_g = request.getActivateRegionName()) !== null && _g !== void 0 ? _g : null,
+            'billingMethodName': (_h = request.getBillingMethodName()) !== null && _h !== void 0 ? _h : null,
+            'enableEventBridge': (_j = request.getEnableEventBridge()) !== null && _j !== void 0 ? _j : null,
+            'eventBridgeAwsAccountId': (_k = request.getEventBridgeAwsAccountId()) !== null && _k !== void 0 ? _k : null,
+            'eventBridgeAwsRegion': (_l = request.getEventBridgeAwsRegion()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -398,6 +400,34 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateProjectResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2ProjectRestClient.prototype.activateRegion = function (request) {
+        var _a, _b, _c, _d, _e, _f;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}/region/{regionName}/activate')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region)
+            .replace('{projectName}', String((_a = request.getProjectName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getProjectName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{regionName}', String((_c = request.getRegionName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getRegionName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'accountToken': (_f = request.getAccountToken()) !== null && _f !== void 0 ? _f : null,
+        };
+        return axios_1.default.put(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.ActivateRegionResult.fromDict(response.data);
         }).catch(function (error) {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

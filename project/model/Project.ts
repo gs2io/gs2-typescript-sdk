@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import Gs2Region from './Gs2Region';
 const grnFormat: string = "grn:gs2:::gs2:account:{accountName}:project:{projectName}";
 
 export default class Project implements IModel {
@@ -23,8 +24,10 @@ export default class Project implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private plan: string|null = null;
+    private regions: Gs2Region[]|null = null;
     private billingMethodName: string|null = null;
     private enableEventBridge: string|null = null;
+    private currency: string|null = null;
     private eventBridgeAwsAccountId: string|null = null;
     private eventBridgeAwsRegion: string|null = null;
     private createdAt: number|null = null;
@@ -125,6 +128,17 @@ export default class Project implements IModel {
         this.plan = plan;
         return this;
     }
+    public getRegions(): Gs2Region[]|null {
+        return this.regions;
+    }
+    public setRegions(regions: Gs2Region[]|null) {
+        this.regions = regions;
+        return this;
+    }
+    public withRegions(regions: Gs2Region[]|null): this {
+        this.regions = regions;
+        return this;
+    }
     public getBillingMethodName(): string|null {
         return this.billingMethodName;
     }
@@ -145,6 +159,17 @@ export default class Project implements IModel {
     }
     public withEnableEventBridge(enableEventBridge: string|null): this {
         this.enableEventBridge = enableEventBridge;
+        return this;
+    }
+    public getCurrency(): string|null {
+        return this.currency;
+    }
+    public setCurrency(currency: string|null) {
+        this.currency = currency;
+        return this;
+    }
+    public withCurrency(currency: string|null): this {
+        this.currency = currency;
         return this;
     }
     public getEventBridgeAwsAccountId(): string|null {
@@ -202,8 +227,14 @@ export default class Project implements IModel {
             .withName(data["name"])
             .withDescription(data["description"])
             .withPlan(data["plan"])
+            .withRegions(data.regions ?
+                data.regions.map((item: {[key: string]: any}) => {
+                    return Gs2Region.fromDict(item);
+                }
+            ) : [])
             .withBillingMethodName(data["billingMethodName"])
             .withEnableEventBridge(data["enableEventBridge"])
+            .withCurrency(data["currency"])
             .withEventBridgeAwsAccountId(data["eventBridgeAwsAccountId"])
             .withEventBridgeAwsRegion(data["eventBridgeAwsRegion"])
             .withCreatedAt(data["createdAt"])
@@ -217,8 +248,14 @@ export default class Project implements IModel {
             "name": this.getName(),
             "description": this.getDescription(),
             "plan": this.getPlan(),
+            "regions": this.getRegions() ?
+                this.getRegions()!.map((item: Gs2Region) => {
+                    return item.toDict();
+                }
+            ) : [],
             "billingMethodName": this.getBillingMethodName(),
             "enableEventBridge": this.getEnableEventBridge(),
+            "currency": this.getCurrency(),
             "eventBridgeAwsAccountId": this.getEventBridgeAwsAccountId(),
             "eventBridgeAwsRegion": this.getEventBridgeAwsRegion(),
             "createdAt": this.getCreatedAt(),

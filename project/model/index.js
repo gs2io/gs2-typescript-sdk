@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Billing = exports.Receipt = exports.BillingMethod = exports.Project = exports.Account = void 0;
+exports.Billing = exports.Receipt = exports.BillingMethod = exports.Gs2Region = exports.Project = exports.Account = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -21,6 +21,8 @@ var Account_1 = tslib_1.__importDefault(require("./Account"));
 exports.Account = Account_1.default;
 var Project_1 = tslib_1.__importDefault(require("./Project"));
 exports.Project = Project_1.default;
+var Gs2Region_1 = tslib_1.__importDefault(require("./Gs2Region"));
+exports.Gs2Region = Gs2Region_1.default;
 var BillingMethod_1 = tslib_1.__importDefault(require("./BillingMethod"));
 exports.BillingMethod = BillingMethod_1.default;
 var Receipt_1 = tslib_1.__importDefault(require("./Receipt"));

@@ -1,12 +1,15 @@
 import IModel from '../../core/interface/IModel';
+import Gs2Region from './Gs2Region';
 export default class Project implements IModel {
     private projectId;
     private accountName;
     private name;
     private description;
     private plan;
+    private regions;
     private billingMethodName;
     private enableEventBridge;
+    private currency;
     private eventBridgeAwsAccountId;
     private eventBridgeAwsRegion;
     private createdAt;
@@ -30,12 +33,18 @@ export default class Project implements IModel {
     getPlan(): string | null;
     setPlan(plan: string | null): this;
     withPlan(plan: string | null): this;
+    getRegions(): Gs2Region[] | null;
+    setRegions(regions: Gs2Region[] | null): this;
+    withRegions(regions: Gs2Region[] | null): this;
     getBillingMethodName(): string | null;
     setBillingMethodName(billingMethodName: string | null): this;
     withBillingMethodName(billingMethodName: string | null): this;
     getEnableEventBridge(): string | null;
     setEnableEventBridge(enableEventBridge: string | null): this;
     withEnableEventBridge(enableEventBridge: string | null): this;
+    getCurrency(): string | null;
+    setCurrency(currency: string | null): this;
+    withCurrency(currency: string | null): this;
     getEventBridgeAwsAccountId(): string | null;
     setEventBridgeAwsAccountId(eventBridgeAwsAccountId: string | null): this;
     withEventBridgeAwsAccountId(eventBridgeAwsAccountId: string | null): this;

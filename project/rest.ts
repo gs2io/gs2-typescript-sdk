@@ -315,6 +315,8 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
             'plan': request.getPlan() ?? null,
+            'currency': request.getCurrency() ?? null,
+            'activateRegionName': request.getActivateRegionName() ?? null,
             'billingMethodName': request.getBillingMethodName() ?? null,
             'enableEventBridge': request.getEnableEventBridge() ?? null,
             'eventBridgeAwsAccountId': request.getEventBridgeAwsAccountId() ?? null,
@@ -456,6 +458,38 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.UpdateProjectResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public activateRegion(request: Request.ActivateRegionRequest): Promise<Result.ActivateRegionResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}/region/{regionName}/activate')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region)
+            .replace('{projectName}', String(request.getProjectName() ?? 'null') === "" ? "null" : String(request.getProjectName() ?? 'null'))
+            .replace('{regionName}', String(request.getRegionName() ?? 'null') === "" ? "null" : String(request.getRegionName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'accountToken': request.getAccountToken() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ActivateRegionResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

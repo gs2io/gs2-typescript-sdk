@@ -23,6 +23,8 @@ var CreateProjectRequest = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.plan = null;
+        this.currency = null;
+        this.activateRegionName = null;
         this.billingMethodName = null;
         this.enableEventBridge = null;
         this.eventBridgeAwsAccountId = null;
@@ -94,6 +96,28 @@ var CreateProjectRequest = /** @class */ (function () {
         this.plan = plan;
         return this;
     };
+    CreateProjectRequest.prototype.getCurrency = function () {
+        return this.currency;
+    };
+    CreateProjectRequest.prototype.setCurrency = function (currency) {
+        this.currency = currency;
+        return this;
+    };
+    CreateProjectRequest.prototype.withCurrency = function (currency) {
+        this.currency = currency;
+        return this;
+    };
+    CreateProjectRequest.prototype.getActivateRegionName = function () {
+        return this.activateRegionName;
+    };
+    CreateProjectRequest.prototype.setActivateRegionName = function (activateRegionName) {
+        this.activateRegionName = activateRegionName;
+        return this;
+    };
+    CreateProjectRequest.prototype.withActivateRegionName = function (activateRegionName) {
+        this.activateRegionName = activateRegionName;
+        return this;
+    };
     CreateProjectRequest.prototype.getBillingMethodName = function () {
         return this.billingMethodName;
     };
@@ -144,6 +168,8 @@ var CreateProjectRequest = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withPlan(data["plan"])
+            .withCurrency(data["currency"])
+            .withActivateRegionName(data["activateRegionName"])
             .withBillingMethodName(data["billingMethodName"])
             .withEnableEventBridge(data["enableEventBridge"])
             .withEventBridgeAwsAccountId(data["eventBridgeAwsAccountId"])
@@ -155,6 +181,8 @@ var CreateProjectRequest = /** @class */ (function () {
             "name": this.getName(),
             "description": this.getDescription(),
             "plan": this.getPlan(),
+            "currency": this.getCurrency(),
+            "activateRegionName": this.getActivateRegionName(),
             "billingMethodName": this.getBillingMethodName(),
             "enableEventBridge": this.getEnableEventBridge(),
             "eventBridgeAwsAccountId": this.getEventBridgeAwsAccountId(),

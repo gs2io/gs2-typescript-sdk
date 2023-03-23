@@ -15,6 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Region_1 = tslib_1.__importDefault(require("./Gs2Region"));
 var grnFormat = "grn:gs2:::gs2:account:{accountName}:project:{projectName}";
 var Project = /** @class */ (function () {
     function Project() {
@@ -23,8 +25,10 @@ var Project = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.plan = null;
+        this.regions = null;
         this.billingMethodName = null;
         this.enableEventBridge = null;
+        this.currency = null;
         this.eventBridgeAwsAccountId = null;
         this.eventBridgeAwsRegion = null;
         this.createdAt = null;
@@ -117,6 +121,17 @@ var Project = /** @class */ (function () {
         this.plan = plan;
         return this;
     };
+    Project.prototype.getRegions = function () {
+        return this.regions;
+    };
+    Project.prototype.setRegions = function (regions) {
+        this.regions = regions;
+        return this;
+    };
+    Project.prototype.withRegions = function (regions) {
+        this.regions = regions;
+        return this;
+    };
     Project.prototype.getBillingMethodName = function () {
         return this.billingMethodName;
     };
@@ -137,6 +152,17 @@ var Project = /** @class */ (function () {
     };
     Project.prototype.withEnableEventBridge = function (enableEventBridge) {
         this.enableEventBridge = enableEventBridge;
+        return this;
+    };
+    Project.prototype.getCurrency = function () {
+        return this.currency;
+    };
+    Project.prototype.setCurrency = function (currency) {
+        this.currency = currency;
+        return this;
+    };
+    Project.prototype.withCurrency = function (currency) {
+        this.currency = currency;
         return this;
     };
     Project.prototype.getEventBridgeAwsAccountId = function () {
@@ -193,8 +219,13 @@ var Project = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withPlan(data["plan"])
+            .withRegions(data.regions ?
+            data.regions.map(function (item) {
+                return Gs2Region_1.default.fromDict(item);
+            }) : [])
             .withBillingMethodName(data["billingMethodName"])
             .withEnableEventBridge(data["enableEventBridge"])
+            .withCurrency(data["currency"])
             .withEventBridgeAwsAccountId(data["eventBridgeAwsAccountId"])
             .withEventBridgeAwsRegion(data["eventBridgeAwsRegion"])
             .withCreatedAt(data["createdAt"])
@@ -207,8 +238,13 @@ var Project = /** @class */ (function () {
             "name": this.getName(),
             "description": this.getDescription(),
             "plan": this.getPlan(),
+            "regions": this.getRegions() ?
+                this.getRegions().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "billingMethodName": this.getBillingMethodName(),
             "enableEventBridge": this.getEnableEventBridge(),
+            "currency": this.getCurrency(),
             "eventBridgeAwsAccountId": this.getEventBridgeAwsAccountId(),
             "eventBridgeAwsRegion": this.getEventBridgeAwsRegion(),
             "createdAt": this.getCreatedAt(),

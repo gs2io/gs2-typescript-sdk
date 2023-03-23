@@ -26,6 +26,8 @@ export default class CreateProjectRequest implements IRequest {
     private name: string|null = null;
     private description: string|null = null;
     private plan: string|null = null;
+    private currency: string|null = null;
+    private activateRegionName: string|null = null;
     private billingMethodName: string|null = null;
     private enableEventBridge: string|null = null;
     private eventBridgeAwsAccountId: string|null = null;
@@ -102,6 +104,28 @@ export default class CreateProjectRequest implements IRequest {
         this.plan = plan;
         return this;
     }
+    public getCurrency(): string|null {
+        return this.currency;
+    }
+    public setCurrency(currency: string|null) {
+        this.currency = currency;
+        return this;
+    }
+    public withCurrency(currency: string|null): this {
+        this.currency = currency;
+        return this;
+    }
+    public getActivateRegionName(): string|null {
+        return this.activateRegionName;
+    }
+    public setActivateRegionName(activateRegionName: string|null) {
+        this.activateRegionName = activateRegionName;
+        return this;
+    }
+    public withActivateRegionName(activateRegionName: string|null): this {
+        this.activateRegionName = activateRegionName;
+        return this;
+    }
     public getBillingMethodName(): string|null {
         return this.billingMethodName;
     }
@@ -153,6 +177,8 @@ export default class CreateProjectRequest implements IRequest {
             .withName(data["name"])
             .withDescription(data["description"])
             .withPlan(data["plan"])
+            .withCurrency(data["currency"])
+            .withActivateRegionName(data["activateRegionName"])
             .withBillingMethodName(data["billingMethodName"])
             .withEnableEventBridge(data["enableEventBridge"])
             .withEventBridgeAwsAccountId(data["eventBridgeAwsAccountId"])
@@ -165,6 +191,8 @@ export default class CreateProjectRequest implements IRequest {
             "name": this.getName(),
             "description": this.getDescription(),
             "plan": this.getPlan(),
+            "currency": this.getCurrency(),
+            "activateRegionName": this.getActivateRegionName(),
             "billingMethodName": this.getBillingMethodName(),
             "enableEventBridge": this.getEnableEventBridge(),
             "eventBridgeAwsAccountId": this.getEventBridgeAwsAccountId(),

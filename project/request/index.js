@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DescribeBillingsRequest = exports.DescribeReceiptsRequest = exports.DeleteBillingMethodRequest = exports.UpdateBillingMethodRequest = exports.GetBillingMethodRequest = exports.CreateBillingMethodRequest = exports.DescribeBillingMethodsRequest = exports.DeleteProjectRequest = exports.UpdateProjectRequest = exports.GetProjectTokenByIdentifierRequest = exports.GetProjectTokenRequest = exports.GetProjectRequest = exports.CreateProjectRequest = exports.DescribeProjectsRequest = exports.DeleteAccountRequest = exports.UpdateAccountRequest = exports.IssuePasswordRequest = exports.ForgetRequest = exports.IssueAccountTokenRequest = exports.SignInRequest = exports.VerifyRequest = exports.CreateAccountRequest = void 0;
+exports.DescribeBillingsRequest = exports.DescribeReceiptsRequest = exports.DeleteBillingMethodRequest = exports.UpdateBillingMethodRequest = exports.GetBillingMethodRequest = exports.CreateBillingMethodRequest = exports.DescribeBillingMethodsRequest = exports.DeleteProjectRequest = exports.ActivateRegionRequest = exports.UpdateProjectRequest = exports.GetProjectTokenByIdentifierRequest = exports.GetProjectTokenRequest = exports.GetProjectRequest = exports.CreateProjectRequest = exports.DescribeProjectsRequest = exports.DeleteAccountRequest = exports.UpdateAccountRequest = exports.IssuePasswordRequest = exports.ForgetRequest = exports.IssueAccountTokenRequest = exports.SignInRequest = exports.VerifyRequest = exports.CreateAccountRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -45,6 +45,8 @@ var GetProjectTokenByIdentifierRequest_1 = tslib_1.__importDefault(require("./Ge
 exports.GetProjectTokenByIdentifierRequest = GetProjectTokenByIdentifierRequest_1.default;
 var UpdateProjectRequest_1 = tslib_1.__importDefault(require("./UpdateProjectRequest"));
 exports.UpdateProjectRequest = UpdateProjectRequest_1.default;
+var ActivateRegionRequest_1 = tslib_1.__importDefault(require("./ActivateRegionRequest"));
+exports.ActivateRegionRequest = ActivateRegionRequest_1.default;
 var DeleteProjectRequest_1 = tslib_1.__importDefault(require("./DeleteProjectRequest"));
 exports.DeleteProjectRequest = DeleteProjectRequest_1.default;
 var DescribeBillingMethodsRequest_1 = tslib_1.__importDefault(require("./DescribeBillingMethodsRequest"));

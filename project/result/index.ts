@@ -27,6 +27,7 @@ import GetProjectResult from "./GetProjectResult"
 import GetProjectTokenResult from "./GetProjectTokenResult"
 import GetProjectTokenByIdentifierResult from "./GetProjectTokenByIdentifierResult"
 import UpdateProjectResult from "./UpdateProjectResult"
+import ActivateRegionResult from "./ActivateRegionResult"
 import DeleteProjectResult from "./DeleteProjectResult"
 import DescribeBillingMethodsResult from "./DescribeBillingMethodsResult"
 import CreateBillingMethodResult from "./CreateBillingMethodResult"
@@ -51,6 +52,7 @@ export {
     GetProjectTokenResult,
     GetProjectTokenByIdentifierResult,
     UpdateProjectResult,
+    ActivateRegionResult,
     DeleteProjectResult,
     DescribeBillingMethodsResult,
     CreateBillingMethodResult,

@@ -27,6 +27,7 @@ import GetProjectRequest from "./GetProjectRequest"
 import GetProjectTokenRequest from "./GetProjectTokenRequest"
 import GetProjectTokenByIdentifierRequest from "./GetProjectTokenByIdentifierRequest"
 import UpdateProjectRequest from "./UpdateProjectRequest"
+import ActivateRegionRequest from "./ActivateRegionRequest"
 import DeleteProjectRequest from "./DeleteProjectRequest"
 import DescribeBillingMethodsRequest from "./DescribeBillingMethodsRequest"
 import CreateBillingMethodRequest from "./CreateBillingMethodRequest"
@@ -51,6 +52,7 @@ export {
     GetProjectTokenRequest,
     GetProjectTokenByIdentifierRequest,
     UpdateProjectRequest,
+    ActivateRegionRequest,
     DeleteProjectRequest,
     DescribeBillingMethodsRequest,
     CreateBillingMethodRequest,

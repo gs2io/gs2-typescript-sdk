@@ -6,6 +6,8 @@ export default class CreateProjectRequest implements IRequest {
     private name;
     private description;
     private plan;
+    private currency;
+    private activateRegionName;
     private billingMethodName;
     private enableEventBridge;
     private eventBridgeAwsAccountId;
@@ -28,6 +30,12 @@ export default class CreateProjectRequest implements IRequest {
     getPlan(): string | null;
     setPlan(plan: string | null): this;
     withPlan(plan: string | null): this;
+    getCurrency(): string | null;
+    setCurrency(currency: string | null): this;
+    withCurrency(currency: string | null): this;
+    getActivateRegionName(): string | null;
+    setActivateRegionName(activateRegionName: string | null): this;
+    withActivateRegionName(activateRegionName: string | null): this;
     getBillingMethodName(): string | null;
     setBillingMethodName(billingMethodName: string | null): this;
     withBillingMethodName(billingMethodName: string | null): this;
