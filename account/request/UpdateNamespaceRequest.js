@@ -24,7 +24,6 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.description = null;
         this.changePasswordIfTakeOver = null;
-        this.differentUserIdForLoginAndDataRetention = null;
         this.createAccountScript = null;
         this.authenticationScript = null;
         this.createTakeOverScript = null;
@@ -84,17 +83,6 @@ var UpdateNamespaceRequest = /** @class */ (function () {
     };
     UpdateNamespaceRequest.prototype.withChangePasswordIfTakeOver = function (changePasswordIfTakeOver) {
         this.changePasswordIfTakeOver = changePasswordIfTakeOver;
-        return this;
-    };
-    UpdateNamespaceRequest.prototype.getDifferentUserIdForLoginAndDataRetention = function () {
-        return this.differentUserIdForLoginAndDataRetention;
-    };
-    UpdateNamespaceRequest.prototype.setDifferentUserIdForLoginAndDataRetention = function (differentUserIdForLoginAndDataRetention) {
-        this.differentUserIdForLoginAndDataRetention = differentUserIdForLoginAndDataRetention;
-        return this;
-    };
-    UpdateNamespaceRequest.prototype.withDifferentUserIdForLoginAndDataRetention = function (differentUserIdForLoginAndDataRetention) {
-        this.differentUserIdForLoginAndDataRetention = differentUserIdForLoginAndDataRetention;
         return this;
     };
     UpdateNamespaceRequest.prototype.getCreateAccountScript = function () {
@@ -157,7 +145,6 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
             .withChangePasswordIfTakeOver(data["changePasswordIfTakeOver"])
-            .withDifferentUserIdForLoginAndDataRetention(data["differentUserIdForLoginAndDataRetention"])
             .withCreateAccountScript(Gs2Account.ScriptSetting.fromDict(data["createAccountScript"]))
             .withAuthenticationScript(Gs2Account.ScriptSetting.fromDict(data["authenticationScript"]))
             .withCreateTakeOverScript(Gs2Account.ScriptSetting.fromDict(data["createTakeOverScript"]))
@@ -170,7 +157,6 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
             "changePasswordIfTakeOver": this.getChangePasswordIfTakeOver(),
-            "differentUserIdForLoginAndDataRetention": this.getDifferentUserIdForLoginAndDataRetention(),
             "createAccountScript": (_a = this.getCreateAccountScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "authenticationScript": (_b = this.getAuthenticationScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "createTakeOverScript": (_c = this.getCreateTakeOverScript()) === null || _c === void 0 ? void 0 : _c.toDict(),

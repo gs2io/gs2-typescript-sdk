@@ -1,7 +1,6 @@
 import IModel from '../../core/interface/IModel';
 export default class Account implements IModel {
     private accountId;
-    private ownerId;
     private name;
     private email;
     private fullName;
@@ -15,9 +14,6 @@ export default class Account implements IModel {
     getAccountId(): string | null;
     setAccountId(accountId: string | null): this;
     withAccountId(accountId: string | null): this;
-    getOwnerId(): string | null;
-    setOwnerId(ownerId: string | null): this;
-    withOwnerId(ownerId: string | null): this;
     getName(): string | null;
     setName(name: string | null): this;
     withName(name: string | null): this;

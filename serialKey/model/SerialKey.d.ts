@@ -12,9 +12,9 @@ export default class SerialKey implements IModel {
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
-    static getCode(grn: string): string | null;
+    static getSerialKeyCode(grn: string): string | null;
     static isValid(grn: string): boolean;
-    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, code: string | null): string | null;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, serialKeyCode: string | null): string | null;
     getSerialKeyId(): string | null;
     setSerialKeyId(serialKeyId: string | null): this;
     withSerialKeyId(serialKeyId: string | null): this;

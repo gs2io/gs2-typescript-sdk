@@ -23,7 +23,6 @@ var EndRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
-        this.transactionId = null;
         this.rewards = null;
         this.isComplete = null;
         this.config = null;
@@ -71,17 +70,6 @@ var EndRequest = /** @class */ (function () {
     };
     EndRequest.prototype.withAccessToken = function (accessToken) {
         this.accessToken = accessToken;
-        return this;
-    };
-    EndRequest.prototype.getTransactionId = function () {
-        return this.transactionId;
-    };
-    EndRequest.prototype.setTransactionId = function (transactionId) {
-        this.transactionId = transactionId;
-        return this;
-    };
-    EndRequest.prototype.withTransactionId = function (transactionId) {
-        this.transactionId = transactionId;
         return this;
     };
     EndRequest.prototype.getRewards = function () {
@@ -132,7 +120,6 @@ var EndRequest = /** @class */ (function () {
         return new EndRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withTransactionId(data["transactionId"])
             .withRewards(data.rewards ?
             data.rewards.map(function (item) {
                 return Gs2Quest.Reward.fromDict(item);
@@ -147,7 +134,6 @@ var EndRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "transactionId": this.getTransactionId(),
             "rewards": this.getRewards() ?
                 this.getRewards().map(function (item) {
                     return item.toDict();

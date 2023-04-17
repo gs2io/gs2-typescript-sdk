@@ -19,7 +19,6 @@ const grnFormat: string = "grn:gs2:::gs2:account:{accountName}";
 
 export default class Account implements IModel {
     private accountId: string|null = null;
-    private ownerId: string|null = null;
     private name: string|null = null;
     private email: string|null = null;
     private fullName: string|null = null;
@@ -60,17 +59,6 @@ export default class Account implements IModel {
     }
     public withAccountId(accountId: string|null): this {
         this.accountId = accountId;
-        return this;
-    }
-    public getOwnerId(): string|null {
-        return this.ownerId;
-    }
-    public setOwnerId(ownerId: string|null) {
-        this.ownerId = ownerId;
-        return this;
-    }
-    public withOwnerId(ownerId: string|null): this {
-        this.ownerId = ownerId;
         return this;
     }
     public getName(): string|null {
@@ -157,7 +145,6 @@ export default class Account implements IModel {
         }
         return new Account()
             .withAccountId(data["accountId"])
-            .withOwnerId(data["ownerId"])
             .withName(data["name"])
             .withEmail(data["email"])
             .withFullName(data["fullName"])
@@ -170,7 +157,6 @@ export default class Account implements IModel {
     public toDict(): {[key: string]: any} {
         return {
             "accountId": this.getAccountId(),
-            "ownerId": this.getOwnerId(),
             "name": this.getName(),
             "email": this.getEmail(),
             "fullName": this.getFullName(),

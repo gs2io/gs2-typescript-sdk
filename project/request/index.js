@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DescribeBillingsRequest = exports.DescribeReceiptsRequest = exports.DeleteBillingMethodRequest = exports.UpdateBillingMethodRequest = exports.GetBillingMethodRequest = exports.CreateBillingMethodRequest = exports.DescribeBillingMethodsRequest = exports.DeleteProjectRequest = exports.ActivateRegionRequest = exports.UpdateProjectRequest = exports.GetProjectTokenByIdentifierRequest = exports.GetProjectTokenRequest = exports.GetProjectRequest = exports.CreateProjectRequest = exports.DescribeProjectsRequest = exports.DeleteAccountRequest = exports.UpdateAccountRequest = exports.IssuePasswordRequest = exports.ForgetRequest = exports.IssueAccountTokenRequest = exports.SignInRequest = exports.VerifyRequest = exports.CreateAccountRequest = void 0;
+exports.DescribeBillingsRequest = exports.DescribeReceiptsRequest = exports.DeleteBillingMethodRequest = exports.UpdateBillingMethodRequest = exports.GetBillingMethodRequest = exports.CreateBillingMethodRequest = exports.DescribeBillingMethodsRequest = exports.DeleteProjectRequest = exports.ActivateRegionRequest = exports.UpdateProjectRequest = exports.GetProjectTokenByIdentifierRequest = exports.GetProjectTokenRequest = exports.GetProjectRequest = exports.CreateProjectRequest = exports.DescribeProjectsRequest = exports.DeleteAccountRequest = exports.UpdateAccountRequest = exports.IssuePasswordRequest = exports.ForgetRequest = exports.SignInRequest = exports.VerifyRequest = exports.CreateAccountRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -23,8 +23,6 @@ var VerifyRequest_1 = tslib_1.__importDefault(require("./VerifyRequest"));
 exports.VerifyRequest = VerifyRequest_1.default;
 var SignInRequest_1 = tslib_1.__importDefault(require("./SignInRequest"));
 exports.SignInRequest = SignInRequest_1.default;
-var IssueAccountTokenRequest_1 = tslib_1.__importDefault(require("./IssueAccountTokenRequest"));
-exports.IssueAccountTokenRequest = IssueAccountTokenRequest_1.default;
 var ForgetRequest_1 = tslib_1.__importDefault(require("./ForgetRequest"));
 exports.ForgetRequest = ForgetRequest_1.default;
 var IssuePasswordRequest_1 = tslib_1.__importDefault(require("./IssuePasswordRequest"));

@@ -19,7 +19,6 @@ var grnFormat = "grn:gs2:::gs2:account:{accountName}";
 var Account = /** @class */ (function () {
     function Account() {
         this.accountId = null;
-        this.ownerId = null;
         this.name = null;
         this.email = null;
         this.fullName = null;
@@ -55,17 +54,6 @@ var Account = /** @class */ (function () {
     };
     Account.prototype.withAccountId = function (accountId) {
         this.accountId = accountId;
-        return this;
-    };
-    Account.prototype.getOwnerId = function () {
-        return this.ownerId;
-    };
-    Account.prototype.setOwnerId = function (ownerId) {
-        this.ownerId = ownerId;
-        return this;
-    };
-    Account.prototype.withOwnerId = function (ownerId) {
-        this.ownerId = ownerId;
         return this;
     };
     Account.prototype.getName = function () {
@@ -151,7 +139,6 @@ var Account = /** @class */ (function () {
         }
         return new Account()
             .withAccountId(data["accountId"])
-            .withOwnerId(data["ownerId"])
             .withName(data["name"])
             .withEmail(data["email"])
             .withFullName(data["fullName"])
@@ -163,7 +150,6 @@ var Account = /** @class */ (function () {
     Account.prototype.toDict = function () {
         return {
             "accountId": this.getAccountId(),
-            "ownerId": this.getOwnerId(),
             "name": this.getName(),
             "email": this.getEmail(),
             "fullName": this.getFullName(),

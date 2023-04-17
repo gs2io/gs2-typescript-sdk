@@ -7,7 +7,6 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     createAccount(request: Request.CreateAccountRequest): Promise<Result.CreateAccountResult>;
     verify(request: Request.VerifyRequest): Promise<Result.VerifyResult>;
     signIn(request: Request.SignInRequest): Promise<Result.SignInResult>;
-    issueAccountToken(request: Request.IssueAccountTokenRequest): Promise<Result.IssueAccountTokenResult>;
     forget(request: Request.ForgetRequest): Promise<Result.ForgetResult>;
     issuePassword(request: Request.IssuePasswordRequest): Promise<Result.IssuePasswordResult>;
     updateAccount(request: Request.UpdateAccountRequest): Promise<Result.UpdateAccountResult>;

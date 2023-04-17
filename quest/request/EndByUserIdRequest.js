@@ -23,7 +23,6 @@ var EndByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
-        this.transactionId = null;
         this.rewards = null;
         this.isComplete = null;
         this.config = null;
@@ -71,17 +70,6 @@ var EndByUserIdRequest = /** @class */ (function () {
     };
     EndByUserIdRequest.prototype.withUserId = function (userId) {
         this.userId = userId;
-        return this;
-    };
-    EndByUserIdRequest.prototype.getTransactionId = function () {
-        return this.transactionId;
-    };
-    EndByUserIdRequest.prototype.setTransactionId = function (transactionId) {
-        this.transactionId = transactionId;
-        return this;
-    };
-    EndByUserIdRequest.prototype.withTransactionId = function (transactionId) {
-        this.transactionId = transactionId;
         return this;
     };
     EndByUserIdRequest.prototype.getRewards = function () {
@@ -132,7 +120,6 @@ var EndByUserIdRequest = /** @class */ (function () {
         return new EndByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withTransactionId(data["transactionId"])
             .withRewards(data.rewards ?
             data.rewards.map(function (item) {
                 return Gs2Quest.Reward.fromDict(item);
@@ -147,7 +134,6 @@ var EndByUserIdRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "transactionId": this.getTransactionId(),
             "rewards": this.getRewards() ?
                 this.getRewards().map(function (item) {
                     return item.toDict();

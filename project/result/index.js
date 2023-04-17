@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DescribeBillingsResult = exports.DescribeReceiptsResult = exports.DeleteBillingMethodResult = exports.UpdateBillingMethodResult = exports.GetBillingMethodResult = exports.CreateBillingMethodResult = exports.DescribeBillingMethodsResult = exports.DeleteProjectResult = exports.ActivateRegionResult = exports.UpdateProjectResult = exports.GetProjectTokenByIdentifierResult = exports.GetProjectTokenResult = exports.GetProjectResult = exports.CreateProjectResult = exports.DescribeProjectsResult = exports.DeleteAccountResult = exports.UpdateAccountResult = exports.IssuePasswordResult = exports.ForgetResult = exports.IssueAccountTokenResult = exports.SignInResult = exports.VerifyResult = exports.CreateAccountResult = void 0;
+exports.DescribeBillingsResult = exports.DescribeReceiptsResult = exports.DeleteBillingMethodResult = exports.UpdateBillingMethodResult = exports.GetBillingMethodResult = exports.CreateBillingMethodResult = exports.DescribeBillingMethodsResult = exports.DeleteProjectResult = exports.ActivateRegionResult = exports.UpdateProjectResult = exports.GetProjectTokenByIdentifierResult = exports.GetProjectTokenResult = exports.GetProjectResult = exports.CreateProjectResult = exports.DescribeProjectsResult = exports.DeleteAccountResult = exports.UpdateAccountResult = exports.IssuePasswordResult = exports.ForgetResult = exports.SignInResult = exports.VerifyResult = exports.CreateAccountResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -23,8 +23,6 @@ var VerifyResult_1 = tslib_1.__importDefault(require("./VerifyResult"));
 exports.VerifyResult = VerifyResult_1.default;
 var SignInResult_1 = tslib_1.__importDefault(require("./SignInResult"));
 exports.SignInResult = SignInResult_1.default;
-var IssueAccountTokenResult_1 = tslib_1.__importDefault(require("./IssueAccountTokenResult"));
-exports.IssueAccountTokenResult = IssueAccountTokenResult_1.default;
 var ForgetResult_1 = tslib_1.__importDefault(require("./ForgetResult"));
 exports.ForgetResult = ForgetResult_1.default;
 var IssuePasswordResult_1 = tslib_1.__importDefault(require("./IssuePasswordResult"));

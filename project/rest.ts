@@ -122,36 +122,6 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
         });
     }
 
-    public issueAccountToken(request: Request.IssueAccountTokenRequest): Promise<Result.IssueAccountTokenResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/account/accountToken')
-            .replace('{service}', 'project')
-            .replace('{region}', this.session.region);
-    
-        const headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        const body: {[key: string]: any} = {
-            'contextStack': request.getContextStack() ?? null,
-            'accountName': request.getAccountName() ?? null,
-        };
-        return axios.post(
-            url,
-            body,
-            {
-                headers,
-            },
-        ).then((response: any) => {
-            return Result.IssueAccountTokenResult.fromDict(response.data);
-        }).catch((error: any) => {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            } else {
-                throw [];
-            }
-        });
-    }
-
     public forget(request: Request.ForgetRequest): Promise<Result.ForgetResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/account/forget')
             .replace('{service}', 'project')

@@ -5,7 +5,6 @@ export default class EndRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private accessToken;
-    private transactionId;
     private rewards;
     private isComplete;
     private config;
@@ -22,9 +21,6 @@ export default class EndRequest implements IRequest {
     getAccessToken(): string | null;
     setAccessToken(accessToken: string | null): this;
     withAccessToken(accessToken: string | null): this;
-    getTransactionId(): string | null;
-    setTransactionId(transactionId: string | null): this;
-    withTransactionId(transactionId: string | null): this;
     getRewards(): Gs2Quest.Reward[] | null;
     setRewards(rewards: Gs2Quest.Reward[] | null): this;
     withRewards(rewards: Gs2Quest.Reward[] | null): this;

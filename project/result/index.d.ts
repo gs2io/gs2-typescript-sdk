@@ -1,7 +1,6 @@
 import CreateAccountResult from "./CreateAccountResult";
 import VerifyResult from "./VerifyResult";
 import SignInResult from "./SignInResult";
-import IssueAccountTokenResult from "./IssueAccountTokenResult";
 import ForgetResult from "./ForgetResult";
 import IssuePasswordResult from "./IssuePasswordResult";
 import UpdateAccountResult from "./UpdateAccountResult";
@@ -21,4 +20,4 @@ import UpdateBillingMethodResult from "./UpdateBillingMethodResult";
 import DeleteBillingMethodResult from "./DeleteBillingMethodResult";
 import DescribeReceiptsResult from "./DescribeReceiptsResult";
 import DescribeBillingsResult from "./DescribeBillingsResult";
-export { CreateAccountResult, VerifyResult, SignInResult, IssueAccountTokenResult, ForgetResult, IssuePasswordResult, UpdateAccountResult, DeleteAccountResult, DescribeProjectsResult, CreateProjectResult, GetProjectResult, GetProjectTokenResult, GetProjectTokenByIdentifierResult, UpdateProjectResult, ActivateRegionResult, DeleteProjectResult, DescribeBillingMethodsResult, CreateBillingMethodResult, GetBillingMethodResult, UpdateBillingMethodResult, DeleteBillingMethodResult, DescribeReceiptsResult, DescribeBillingsResult, };
+export { CreateAccountResult, VerifyResult, SignInResult, ForgetResult, IssuePasswordResult, UpdateAccountResult, DeleteAccountResult, DescribeProjectsResult, CreateProjectResult, GetProjectResult, GetProjectTokenResult, GetProjectTokenByIdentifierResult, UpdateProjectResult, ActivateRegionResult, DeleteProjectResult, DescribeBillingMethodsResult, CreateBillingMethodResult, GetBillingMethodResult, UpdateBillingMethodResult, DeleteBillingMethodResult, DescribeReceiptsResult, DescribeBillingsResult, };

@@ -25,7 +25,6 @@ export default class UpdateNamespaceRequest implements IRequest {
     private namespaceName: string|null = null;
     private description: string|null = null;
     private changePasswordIfTakeOver: boolean|null = null;
-    private differentUserIdForLoginAndDataRetention: boolean|null = null;
     private createAccountScript: Gs2Account.ScriptSetting|null = null;
     private authenticationScript: Gs2Account.ScriptSetting|null = null;
     private createTakeOverScript: Gs2Account.ScriptSetting|null = null;
@@ -92,17 +91,6 @@ export default class UpdateNamespaceRequest implements IRequest {
         this.changePasswordIfTakeOver = changePasswordIfTakeOver;
         return this;
     }
-    public getDifferentUserIdForLoginAndDataRetention(): boolean|null {
-        return this.differentUserIdForLoginAndDataRetention;
-    }
-    public setDifferentUserIdForLoginAndDataRetention(differentUserIdForLoginAndDataRetention: boolean|null) {
-        this.differentUserIdForLoginAndDataRetention = differentUserIdForLoginAndDataRetention;
-        return this;
-    }
-    public withDifferentUserIdForLoginAndDataRetention(differentUserIdForLoginAndDataRetention: boolean|null): this {
-        this.differentUserIdForLoginAndDataRetention = differentUserIdForLoginAndDataRetention;
-        return this;
-    }
     public getCreateAccountScript(): Gs2Account.ScriptSetting|null {
         return this.createAccountScript;
     }
@@ -164,7 +152,6 @@ export default class UpdateNamespaceRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
             .withChangePasswordIfTakeOver(data["changePasswordIfTakeOver"])
-            .withDifferentUserIdForLoginAndDataRetention(data["differentUserIdForLoginAndDataRetention"])
             .withCreateAccountScript(Gs2Account.ScriptSetting.fromDict(data["createAccountScript"]))
             .withAuthenticationScript(Gs2Account.ScriptSetting.fromDict(data["authenticationScript"]))
             .withCreateTakeOverScript(Gs2Account.ScriptSetting.fromDict(data["createTakeOverScript"]))
@@ -177,7 +164,6 @@ export default class UpdateNamespaceRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
             "changePasswordIfTakeOver": this.getChangePasswordIfTakeOver(),
-            "differentUserIdForLoginAndDataRetention": this.getDifferentUserIdForLoginAndDataRetention(),
             "createAccountScript": this.getCreateAccountScript()?.toDict(),
             "authenticationScript": this.getAuthenticationScript()?.toDict(),
             "createTakeOverScript": this.getCreateTakeOverScript()?.toDict(),

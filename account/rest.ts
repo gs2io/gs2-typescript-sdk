@@ -158,7 +158,6 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
             'changePasswordIfTakeOver': request.getChangePasswordIfTakeOver() ?? null,
-            'differentUserIdForLoginAndDataRetention': request.getDifferentUserIdForLoginAndDataRetention() ?? null,
             'createAccountScript': request.getCreateAccountScript()?.toDict() ?? null,
             'authenticationScript': request.getAuthenticationScript()?.toDict() ?? null,
             'createTakeOverScript': request.getCreateTakeOverScript()?.toDict() ?? null,
@@ -374,6 +373,9 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
         };
@@ -400,6 +402,9 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
@@ -828,6 +833,9 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,

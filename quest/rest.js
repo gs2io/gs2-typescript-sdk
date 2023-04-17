@@ -732,7 +732,7 @@ var Gs2QuestRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2QuestRestClient.prototype.end = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/progress/end')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
@@ -749,10 +749,9 @@ var Gs2QuestRestClient = /** @class */ (function (_super) {
         }
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'transactionId': (_f = request.getTransactionId()) !== null && _f !== void 0 ? _f : null,
-            'rewards': (_h = (_g = request.getRewards()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
-            'isComplete': (_j = request.getIsComplete()) !== null && _j !== void 0 ? _j : null,
-            'config': (_l = (_k = request.getConfig()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
+            'rewards': (_g = (_f = request.getRewards()) === null || _f === void 0 ? void 0 : _f.map(function (item) { return item.toDict(); })) !== null && _g !== void 0 ? _g : null,
+            'isComplete': (_h = request.getIsComplete()) !== null && _h !== void 0 ? _h : null,
+            'config': (_k = (_j = request.getConfig()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -768,7 +767,7 @@ var Gs2QuestRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2QuestRestClient.prototype.endByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/progress/end')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
@@ -783,10 +782,9 @@ var Gs2QuestRestClient = /** @class */ (function (_super) {
         }
         var body = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'transactionId': (_g = request.getTransactionId()) !== null && _g !== void 0 ? _g : null,
-            'rewards': (_j = (_h = request.getRewards()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
-            'isComplete': (_k = request.getIsComplete()) !== null && _k !== void 0 ? _k : null,
-            'config': (_m = (_l = request.getConfig()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
+            'rewards': (_h = (_g = request.getRewards()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
+            'isComplete': (_j = request.getIsComplete()) !== null && _j !== void 0 ? _j : null,
+            'config': (_l = (_k = request.getConfig()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

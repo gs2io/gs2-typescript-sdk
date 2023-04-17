@@ -16,7 +16,6 @@ permissions and limitations under the License.
 import CreateAccountResult from "./CreateAccountResult"
 import VerifyResult from "./VerifyResult"
 import SignInResult from "./SignInResult"
-import IssueAccountTokenResult from "./IssueAccountTokenResult"
 import ForgetResult from "./ForgetResult"
 import IssuePasswordResult from "./IssuePasswordResult"
 import UpdateAccountResult from "./UpdateAccountResult"
@@ -41,7 +40,6 @@ export {
     CreateAccountResult,
     VerifyResult,
     SignInResult,
-    IssueAccountTokenResult,
     ForgetResult,
     IssuePasswordResult,
     UpdateAccountResult,

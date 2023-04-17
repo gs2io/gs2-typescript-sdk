@@ -1,7 +1,6 @@
 import CreateAccountRequest from "./CreateAccountRequest";
 import VerifyRequest from "./VerifyRequest";
 import SignInRequest from "./SignInRequest";
-import IssueAccountTokenRequest from "./IssueAccountTokenRequest";
 import ForgetRequest from "./ForgetRequest";
 import IssuePasswordRequest from "./IssuePasswordRequest";
 import UpdateAccountRequest from "./UpdateAccountRequest";
@@ -21,4 +20,4 @@ import UpdateBillingMethodRequest from "./UpdateBillingMethodRequest";
 import DeleteBillingMethodRequest from "./DeleteBillingMethodRequest";
 import DescribeReceiptsRequest from "./DescribeReceiptsRequest";
 import DescribeBillingsRequest from "./DescribeBillingsRequest";
-export { CreateAccountRequest, VerifyRequest, SignInRequest, IssueAccountTokenRequest, ForgetRequest, IssuePasswordRequest, UpdateAccountRequest, DeleteAccountRequest, DescribeProjectsRequest, CreateProjectRequest, GetProjectRequest, GetProjectTokenRequest, GetProjectTokenByIdentifierRequest, UpdateProjectRequest, ActivateRegionRequest, DeleteProjectRequest, DescribeBillingMethodsRequest, CreateBillingMethodRequest, GetBillingMethodRequest, UpdateBillingMethodRequest, DeleteBillingMethodRequest, DescribeReceiptsRequest, DescribeBillingsRequest, };
+export { CreateAccountRequest, VerifyRequest, SignInRequest, ForgetRequest, IssuePasswordRequest, UpdateAccountRequest, DeleteAccountRequest, DescribeProjectsRequest, CreateProjectRequest, GetProjectRequest, GetProjectTokenRequest, GetProjectTokenByIdentifierRequest, UpdateProjectRequest, ActivateRegionRequest, DeleteProjectRequest, DescribeBillingMethodsRequest, CreateBillingMethodRequest, GetBillingMethodRequest, UpdateBillingMethodRequest, DeleteBillingMethodRequest, DescribeReceiptsRequest, DescribeBillingsRequest, };

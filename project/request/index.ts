@@ -16,7 +16,6 @@ permissions and limitations under the License.
 import CreateAccountRequest from "./CreateAccountRequest"
 import VerifyRequest from "./VerifyRequest"
 import SignInRequest from "./SignInRequest"
-import IssueAccountTokenRequest from "./IssueAccountTokenRequest"
 import ForgetRequest from "./ForgetRequest"
 import IssuePasswordRequest from "./IssuePasswordRequest"
 import UpdateAccountRequest from "./UpdateAccountRequest"
@@ -41,7 +40,6 @@ export {
     CreateAccountRequest,
     VerifyRequest,
     SignInRequest,
-    IssueAccountTokenRequest,
     ForgetRequest,
     IssuePasswordRequest,
     UpdateAccountRequest,

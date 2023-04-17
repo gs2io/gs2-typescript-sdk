@@ -855,7 +855,6 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
-            'transactionId': request.getTransactionId() ?? null,
             'rewards': request.getRewards()?.map((item) => item.toDict()) ?? null,
             'isComplete': request.getIsComplete() ?? null,
             'config': request.getConfig()?.map((item) => item.toDict()) ?? null,
@@ -893,7 +892,6 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
-            'transactionId': request.getTransactionId() ?? null,
             'rewards': request.getRewards()?.map((item) => item.toDict()) ?? null,
             'isComplete': request.getIsComplete() ?? null,
             'config': request.getConfig()?.map((item) => item.toDict()) ?? null,

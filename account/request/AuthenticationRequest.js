@@ -23,6 +23,7 @@ var AuthenticationRequest = /** @class */ (function () {
         this.userId = null;
         this.keyId = null;
         this.password = null;
+        this.duplicationAvoider = null;
     }
     AuthenticationRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -88,6 +89,17 @@ var AuthenticationRequest = /** @class */ (function () {
     };
     AuthenticationRequest.prototype.withPassword = function (password) {
         this.password = password;
+        return this;
+    };
+    AuthenticationRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    AuthenticationRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    AuthenticationRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     AuthenticationRequest.fromDict = function (data) {

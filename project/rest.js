@@ -108,32 +108,6 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             }
         });
     };
-    Gs2ProjectRestClient.prototype.issueAccountToken = function (request) {
-        var _a, _b;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/accountToken')
-            .replace('{service}', 'project')
-            .replace('{region}', this.session.region);
-        var headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'accountName': (_b = request.getAccountName()) !== null && _b !== void 0 ? _b : null,
-        };
-        return axios_1.default.post(url, body, {
-            headers: headers,
-        }).then(function (response) {
-            return Result.IssueAccountTokenResult.fromDict(response.data);
-        }).catch(function (error) {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            }
-            else {
-                throw [];
-            }
-        });
-    };
     Gs2ProjectRestClient.prototype.forget = function (request) {
         var _a, _b, _c;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/forget')

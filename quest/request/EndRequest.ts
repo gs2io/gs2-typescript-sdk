@@ -24,7 +24,6 @@ export default class EndRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private accessToken: string|null = null;
-    private transactionId: string|null = null;
     private rewards: Gs2Quest.Reward[]|null = null;
     private isComplete: boolean|null = null;
     private config: Gs2Quest.Config[]|null = null;
@@ -79,17 +78,6 @@ export default class EndRequest implements IRequest {
         this.accessToken = accessToken;
         return this;
     }
-    public getTransactionId(): string|null {
-        return this.transactionId;
-    }
-    public setTransactionId(transactionId: string|null) {
-        this.transactionId = transactionId;
-        return this;
-    }
-    public withTransactionId(transactionId: string|null): this {
-        this.transactionId = transactionId;
-        return this;
-    }
     public getRewards(): Gs2Quest.Reward[]|null {
         return this.rewards;
     }
@@ -142,7 +130,6 @@ export default class EndRequest implements IRequest {
         return new EndRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withTransactionId(data["transactionId"])
             .withRewards(data.rewards ?
                 data.rewards.map((item: {[key: string]: any}) => {
                     return Gs2Quest.Reward.fromDict(item);
@@ -160,7 +147,6 @@ export default class EndRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "transactionId": this.getTransactionId(),
             "rewards": this.getRewards() ?
                 this.getRewards()!.map((item: Gs2Quest.Reward) => {
                     return item.toDict();

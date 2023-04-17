@@ -15,7 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:serialKey:{namespaceName}:serialKey:{code}";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:serialKey:{namespaceName}:serialKey:{serialKeyCode}";
 
 export default class SerialKey implements IModel {
     private serialKeyId: string|null = null;
@@ -33,7 +33,7 @@ export default class SerialKey implements IModel {
             .replace('{region}', '(.*)')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{code}', '.*')
+            .replace('{serialKeyCode}', '.*')
         );
         if (match) {
             return match[1];
@@ -46,7 +46,7 @@ export default class SerialKey implements IModel {
             .replace('{region}', '.*')
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
-            .replace('{code}', '.*')
+            .replace('{serialKeyCode}', '.*')
         );
         if (match) {
             return match[1];
@@ -59,7 +59,7 @@ export default class SerialKey implements IModel {
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
-            .replace('{code}', '.*')
+            .replace('{serialKeyCode}', '.*')
         );
         if (match) {
             return match[1];
@@ -67,12 +67,12 @@ export default class SerialKey implements IModel {
         return null;
     }
 
-    public static getCode(grn: string): string|null {
+    public static getSerialKeyCode(grn: string): string|null {
         const match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{code}', '(.*)')
+            .replace('{serialKeyCode}', '(.*)')
         );
         if (match) {
             return match[1];
@@ -90,7 +90,7 @@ export default class SerialKey implements IModel {
         if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getCode(grn) == null || this.getCode(grn) === '') {
+        if (this.getSerialKeyCode(grn) == null || this.getSerialKeyCode(grn) === '') {
             return false;
         }
         return true;
@@ -100,13 +100,13 @@ export default class SerialKey implements IModel {
         region: string|null,
         ownerId: string|null,
         namespaceName: string|null,
-        code: string|null,
+        serialKeyCode: string|null,
     ): string|null {
         return grnFormat
             .replace('{region}', region ?? '')
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '')
-            .replace('{code}', code ?? '');
+            .replace('{serialKeyCode}', serialKeyCode ?? '');
     }
     public getSerialKeyId(): string|null {
         return this.serialKeyId;
