@@ -22,6 +22,7 @@ var RatingModelMaster = /** @class */ (function () {
         this.name = null;
         this.metadata = null;
         this.description = null;
+        this.initialValue = null;
         this.volatility = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -136,6 +137,17 @@ var RatingModelMaster = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    RatingModelMaster.prototype.getInitialValue = function () {
+        return this.initialValue;
+    };
+    RatingModelMaster.prototype.setInitialValue = function (initialValue) {
+        this.initialValue = initialValue;
+        return this;
+    };
+    RatingModelMaster.prototype.withInitialValue = function (initialValue) {
+        this.initialValue = initialValue;
+        return this;
+    };
     RatingModelMaster.prototype.getVolatility = function () {
         return this.volatility;
     };
@@ -178,6 +190,7 @@ var RatingModelMaster = /** @class */ (function () {
             .withName(data["name"])
             .withMetadata(data["metadata"])
             .withDescription(data["description"])
+            .withInitialValue(data["initialValue"])
             .withVolatility(data["volatility"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
@@ -188,6 +201,7 @@ var RatingModelMaster = /** @class */ (function () {
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "description": this.getDescription(),
+            "initialValue": this.getInitialValue(),
             "volatility": this.getVolatility(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

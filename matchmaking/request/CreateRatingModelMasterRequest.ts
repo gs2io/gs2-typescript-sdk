@@ -26,6 +26,7 @@ export default class CreateRatingModelMasterRequest implements IRequest {
     private name: string|null = null;
     private description: string|null = null;
     private metadata: string|null = null;
+    private initialValue: number|null = null;
     private volatility: number|null = null;
 
     public getRequestId(): string|null {
@@ -99,6 +100,17 @@ export default class CreateRatingModelMasterRequest implements IRequest {
         this.metadata = metadata;
         return this;
     }
+    public getInitialValue(): number|null {
+        return this.initialValue;
+    }
+    public setInitialValue(initialValue: number|null) {
+        this.initialValue = initialValue;
+        return this;
+    }
+    public withInitialValue(initialValue: number|null): this {
+        this.initialValue = initialValue;
+        return this;
+    }
     public getVolatility(): number|null {
         return this.volatility;
     }
@@ -117,6 +129,7 @@ export default class CreateRatingModelMasterRequest implements IRequest {
             .withName(data["name"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
+            .withInitialValue(data["initialValue"])
             .withVolatility(data["volatility"]);
     }
 
@@ -126,6 +139,7 @@ export default class CreateRatingModelMasterRequest implements IRequest {
             "name": this.getName(),
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
+            "initialValue": this.getInitialValue(),
             "volatility": this.getVolatility(),
         };
     }

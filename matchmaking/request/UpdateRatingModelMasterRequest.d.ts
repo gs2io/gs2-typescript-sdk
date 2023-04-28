@@ -6,6 +6,7 @@ export default class UpdateRatingModelMasterRequest implements IRequest {
     private ratingName;
     private description;
     private metadata;
+    private initialValue;
     private volatility;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -25,6 +26,9 @@ export default class UpdateRatingModelMasterRequest implements IRequest {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
+    getInitialValue(): number | null;
+    setInitialValue(initialValue: number | null): this;
+    withInitialValue(initialValue: number | null): this;
     getVolatility(): number | null;
     setVolatility(volatility: number | null): this;
     withVolatility(volatility: number | null): this;

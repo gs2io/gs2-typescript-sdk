@@ -579,7 +579,7 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MatchmakingRestClient.prototype.createRatingModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
@@ -593,7 +593,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'name': (_d = request.getName()) !== null && _d !== void 0 ? _d : null,
             'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
             'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
-            'volatility': (_g = request.getVolatility()) !== null && _g !== void 0 ? _g : null,
+            'initialValue': (_g = request.getInitialValue()) !== null && _g !== void 0 ? _g : null,
+            'volatility': (_h = request.getVolatility()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -632,7 +633,7 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MatchmakingRestClient.prototype.updateRatingModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating/{ratingName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
@@ -646,7 +647,8 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
-            'volatility': (_h = request.getVolatility()) !== null && _h !== void 0 ? _h : null,
+            'initialValue': (_h = request.getInitialValue()) !== null && _h !== void 0 ? _h : null,
+            'volatility': (_j = request.getVolatility()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

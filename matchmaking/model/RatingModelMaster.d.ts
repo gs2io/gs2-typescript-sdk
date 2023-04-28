@@ -4,6 +4,7 @@ export default class RatingModelMaster implements IModel {
     private name;
     private metadata;
     private description;
+    private initialValue;
     private volatility;
     private createdAt;
     private updatedAt;
@@ -25,6 +26,9 @@ export default class RatingModelMaster implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getInitialValue(): number | null;
+    setInitialValue(initialValue: number | null): this;
+    withInitialValue(initialValue: number | null): this;
     getVolatility(): number | null;
     setVolatility(volatility: number | null): this;
     withVolatility(volatility: number | null): this;

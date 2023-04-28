@@ -22,6 +22,7 @@ export default class RatingModelMaster implements IModel {
     private name: string|null = null;
     private metadata: string|null = null;
     private description: string|null = null;
+    private initialValue: number|null = null;
     private volatility: number|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -150,6 +151,17 @@ export default class RatingModelMaster implements IModel {
         this.description = description;
         return this;
     }
+    public getInitialValue(): number|null {
+        return this.initialValue;
+    }
+    public setInitialValue(initialValue: number|null) {
+        this.initialValue = initialValue;
+        return this;
+    }
+    public withInitialValue(initialValue: number|null): this {
+        this.initialValue = initialValue;
+        return this;
+    }
     public getVolatility(): number|null {
         return this.volatility;
     }
@@ -193,6 +205,7 @@ export default class RatingModelMaster implements IModel {
             .withName(data["name"])
             .withMetadata(data["metadata"])
             .withDescription(data["description"])
+            .withInitialValue(data["initialValue"])
             .withVolatility(data["volatility"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
@@ -204,6 +217,7 @@ export default class RatingModelMaster implements IModel {
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "description": this.getDescription(),
+            "initialValue": this.getInitialValue(),
             "volatility": this.getVolatility(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

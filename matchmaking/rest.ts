@@ -671,6 +671,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
             'metadata': request.getMetadata() ?? null,
+            'initialValue': request.getInitialValue() ?? null,
             'volatility': request.getVolatility() ?? null,
         };
         return axios.post(
@@ -732,6 +733,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
             'metadata': request.getMetadata() ?? null,
+            'initialValue': request.getInitialValue() ?? null,
             'volatility': request.getVolatility() ?? null,
         };
         return axios.put(

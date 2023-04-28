@@ -21,6 +21,7 @@ var RatingModel = /** @class */ (function () {
         this.ratingModelId = null;
         this.name = null;
         this.metadata = null;
+        this.initialValue = null;
         this.volatility = null;
     }
     RatingModel.getRegion = function (grn) {
@@ -122,6 +123,17 @@ var RatingModel = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
+    RatingModel.prototype.getInitialValue = function () {
+        return this.initialValue;
+    };
+    RatingModel.prototype.setInitialValue = function (initialValue) {
+        this.initialValue = initialValue;
+        return this;
+    };
+    RatingModel.prototype.withInitialValue = function (initialValue) {
+        this.initialValue = initialValue;
+        return this;
+    };
     RatingModel.prototype.getVolatility = function () {
         return this.volatility;
     };
@@ -141,6 +153,7 @@ var RatingModel = /** @class */ (function () {
             .withRatingModelId(data["ratingModelId"])
             .withName(data["name"])
             .withMetadata(data["metadata"])
+            .withInitialValue(data["initialValue"])
             .withVolatility(data["volatility"]);
     };
     RatingModel.prototype.toDict = function () {
@@ -148,6 +161,7 @@ var RatingModel = /** @class */ (function () {
             "ratingModelId": this.getRatingModelId(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
+            "initialValue": this.getInitialValue(),
             "volatility": this.getVolatility(),
         };
     };

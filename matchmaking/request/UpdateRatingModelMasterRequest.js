@@ -23,6 +23,7 @@ var UpdateRatingModelMasterRequest = /** @class */ (function () {
         this.ratingName = null;
         this.description = null;
         this.metadata = null;
+        this.initialValue = null;
         this.volatility = null;
     }
     UpdateRatingModelMasterRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var UpdateRatingModelMasterRequest = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
+    UpdateRatingModelMasterRequest.prototype.getInitialValue = function () {
+        return this.initialValue;
+    };
+    UpdateRatingModelMasterRequest.prototype.setInitialValue = function (initialValue) {
+        this.initialValue = initialValue;
+        return this;
+    };
+    UpdateRatingModelMasterRequest.prototype.withInitialValue = function (initialValue) {
+        this.initialValue = initialValue;
+        return this;
+    };
     UpdateRatingModelMasterRequest.prototype.getVolatility = function () {
         return this.volatility;
     };
@@ -108,6 +120,7 @@ var UpdateRatingModelMasterRequest = /** @class */ (function () {
             .withRatingName(data["ratingName"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
+            .withInitialValue(data["initialValue"])
             .withVolatility(data["volatility"]);
     };
     UpdateRatingModelMasterRequest.prototype.toDict = function () {
@@ -116,6 +129,7 @@ var UpdateRatingModelMasterRequest = /** @class */ (function () {
             "ratingName": this.getRatingName(),
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
+            "initialValue": this.getInitialValue(),
             "volatility": this.getVolatility(),
         };
     };
