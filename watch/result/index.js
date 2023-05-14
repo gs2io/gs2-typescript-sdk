@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetBillingActivityResult = exports.DescribeBillingActivitiesResult = exports.GetCumulativeResult = exports.GetDistributionResult = exports.GetChartResult = void 0;
+exports.GetShowcaseMetricsResult = exports.GetRankingMetricsResult = exports.GetQuestMetricsResult = exports.GetMoneyMetricsResult = exports.GetMatchmakingMetricsResult = exports.GetLimitMetricsResult = exports.GetInventoryMetricsResult = exports.GetInboxMetricsResult = exports.GetExperienceMetricsResult = exports.GetExchangeMetricsResult = exports.GetAccountMetricsResult = exports.GetGeneralMetricsResult = exports.GetBillingActivityResult = exports.DescribeBillingActivitiesResult = exports.GetCumulativeResult = exports.GetDistributionResult = exports.GetChartResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -27,4 +27,28 @@ var DescribeBillingActivitiesResult_1 = tslib_1.__importDefault(require("./Descr
 exports.DescribeBillingActivitiesResult = DescribeBillingActivitiesResult_1.default;
 var GetBillingActivityResult_1 = tslib_1.__importDefault(require("./GetBillingActivityResult"));
 exports.GetBillingActivityResult = GetBillingActivityResult_1.default;
+var GetGeneralMetricsResult_1 = tslib_1.__importDefault(require("./GetGeneralMetricsResult"));
+exports.GetGeneralMetricsResult = GetGeneralMetricsResult_1.default;
+var GetAccountMetricsResult_1 = tslib_1.__importDefault(require("./GetAccountMetricsResult"));
+exports.GetAccountMetricsResult = GetAccountMetricsResult_1.default;
+var GetExchangeMetricsResult_1 = tslib_1.__importDefault(require("./GetExchangeMetricsResult"));
+exports.GetExchangeMetricsResult = GetExchangeMetricsResult_1.default;
+var GetExperienceMetricsResult_1 = tslib_1.__importDefault(require("./GetExperienceMetricsResult"));
+exports.GetExperienceMetricsResult = GetExperienceMetricsResult_1.default;
+var GetInboxMetricsResult_1 = tslib_1.__importDefault(require("./GetInboxMetricsResult"));
+exports.GetInboxMetricsResult = GetInboxMetricsResult_1.default;
+var GetInventoryMetricsResult_1 = tslib_1.__importDefault(require("./GetInventoryMetricsResult"));
+exports.GetInventoryMetricsResult = GetInventoryMetricsResult_1.default;
+var GetLimitMetricsResult_1 = tslib_1.__importDefault(require("./GetLimitMetricsResult"));
+exports.GetLimitMetricsResult = GetLimitMetricsResult_1.default;
+var GetMatchmakingMetricsResult_1 = tslib_1.__importDefault(require("./GetMatchmakingMetricsResult"));
+exports.GetMatchmakingMetricsResult = GetMatchmakingMetricsResult_1.default;
+var GetMoneyMetricsResult_1 = tslib_1.__importDefault(require("./GetMoneyMetricsResult"));
+exports.GetMoneyMetricsResult = GetMoneyMetricsResult_1.default;
+var GetQuestMetricsResult_1 = tslib_1.__importDefault(require("./GetQuestMetricsResult"));
+exports.GetQuestMetricsResult = GetQuestMetricsResult_1.default;
+var GetRankingMetricsResult_1 = tslib_1.__importDefault(require("./GetRankingMetricsResult"));
+exports.GetRankingMetricsResult = GetRankingMetricsResult_1.default;
+var GetShowcaseMetricsResult_1 = tslib_1.__importDefault(require("./GetShowcaseMetricsResult"));
+exports.GetShowcaseMetricsResult = GetShowcaseMetricsResult_1.default;
 //# sourceMappingURL=index.js.map

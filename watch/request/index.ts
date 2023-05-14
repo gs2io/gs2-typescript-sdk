@@ -18,6 +18,18 @@ import GetDistributionRequest from "./GetDistributionRequest"
 import GetCumulativeRequest from "./GetCumulativeRequest"
 import DescribeBillingActivitiesRequest from "./DescribeBillingActivitiesRequest"
 import GetBillingActivityRequest from "./GetBillingActivityRequest"
+import GetGeneralMetricsRequest from "./GetGeneralMetricsRequest"
+import GetAccountMetricsRequest from "./GetAccountMetricsRequest"
+import GetExchangeMetricsRequest from "./GetExchangeMetricsRequest"
+import GetExperienceMetricsRequest from "./GetExperienceMetricsRequest"
+import GetInboxMetricsRequest from "./GetInboxMetricsRequest"
+import GetInventoryMetricsRequest from "./GetInventoryMetricsRequest"
+import GetLimitMetricsRequest from "./GetLimitMetricsRequest"
+import GetMatchmakingMetricsRequest from "./GetMatchmakingMetricsRequest"
+import GetMoneyMetricsRequest from "./GetMoneyMetricsRequest"
+import GetQuestMetricsRequest from "./GetQuestMetricsRequest"
+import GetRankingMetricsRequest from "./GetRankingMetricsRequest"
+import GetShowcaseMetricsRequest from "./GetShowcaseMetricsRequest"
 
 export {
     GetChartRequest,
@@ -25,4 +37,16 @@ export {
     GetCumulativeRequest,
     DescribeBillingActivitiesRequest,
     GetBillingActivityRequest,
+    GetGeneralMetricsRequest,
+    GetAccountMetricsRequest,
+    GetExchangeMetricsRequest,
+    GetExperienceMetricsRequest,
+    GetInboxMetricsRequest,
+    GetInventoryMetricsRequest,
+    GetLimitMetricsRequest,
+    GetMatchmakingMetricsRequest,
+    GetMoneyMetricsRequest,
+    GetQuestMetricsRequest,
+    GetRankingMetricsRequest,
+    GetShowcaseMetricsRequest,
 };
