@@ -177,7 +177,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
     };
     Gs2WatchRestClient.prototype.getGeneralMetrics = function (request) {
         var _a;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/account')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/general')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();

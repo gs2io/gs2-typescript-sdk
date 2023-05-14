@@ -198,7 +198,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getGeneralMetrics(request: Request.GetGeneralMetricsRequest): Promise<Result.GetGeneralMetricsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/metrics/account')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/metrics/general')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region);
     
