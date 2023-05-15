@@ -15,10 +15,11 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import InventoryInventoryStatisticsDistribution from './InventoryInventoryStatisticsDistribution';
 
 export default class InventoryInventoryStatistics implements IModel {
     private currentInventoryMaxCapacity: number|null = null;
-    private count: number|null = null;
+    private distribution: InventoryInventoryStatisticsDistribution[]|null = null;
     public getCurrentInventoryMaxCapacity(): number|null {
         return this.currentInventoryMaxCapacity;
     }
@@ -30,15 +31,15 @@ export default class InventoryInventoryStatistics implements IModel {
         this.currentInventoryMaxCapacity = currentInventoryMaxCapacity;
         return this;
     }
-    public getCount(): number|null {
-        return this.count;
+    public getDistribution(): InventoryInventoryStatisticsDistribution[]|null {
+        return this.distribution;
     }
-    public setCount(count: number|null) {
-        this.count = count;
+    public setDistribution(distribution: InventoryInventoryStatisticsDistribution[]|null) {
+        this.distribution = distribution;
         return this;
     }
-    public withCount(count: number|null): this {
-        this.count = count;
+    public withDistribution(distribution: InventoryInventoryStatisticsDistribution[]|null): this {
+        this.distribution = distribution;
         return this;
     }
 
@@ -48,13 +49,21 @@ export default class InventoryInventoryStatistics implements IModel {
         }
         return new InventoryInventoryStatistics()
             .withCurrentInventoryMaxCapacity(data["currentInventoryMaxCapacity"])
-            .withCount(data["count"]);
+            .withDistribution(data.distribution ?
+                data.distribution.map((item: {[key: string]: any}) => {
+                    return InventoryInventoryStatisticsDistribution.fromDict(item);
+                }
+            ) : []);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "currentInventoryMaxCapacity": this.getCurrentInventoryMaxCapacity(),
-            "count": this.getCount(),
+            "distribution": this.getDistribution() ?
+                this.getDistribution()!.map((item: InventoryInventoryStatisticsDistribution) => {
+                    return item.toDict();
+                }
+            ) : [],
         };
     }
 }

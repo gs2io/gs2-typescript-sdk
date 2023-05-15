@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import InventoryInventoryStatisticsDistribution from './InventoryInventoryStatisticsDistribution';
 import InventoryInventoryStatistics from './InventoryInventoryStatistics';
 import InventoryItemStatistics from './InventoryItemStatistics';
 import InventoryItemDistribution from './InventoryItemDistribution';

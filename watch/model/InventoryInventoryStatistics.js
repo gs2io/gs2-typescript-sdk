@@ -15,10 +15,12 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var InventoryInventoryStatisticsDistribution_1 = tslib_1.__importDefault(require("./InventoryInventoryStatisticsDistribution"));
 var InventoryInventoryStatistics = /** @class */ (function () {
     function InventoryInventoryStatistics() {
         this.currentInventoryMaxCapacity = null;
-        this.count = null;
+        this.distribution = null;
     }
     InventoryInventoryStatistics.prototype.getCurrentInventoryMaxCapacity = function () {
         return this.currentInventoryMaxCapacity;
@@ -31,15 +33,15 @@ var InventoryInventoryStatistics = /** @class */ (function () {
         this.currentInventoryMaxCapacity = currentInventoryMaxCapacity;
         return this;
     };
-    InventoryInventoryStatistics.prototype.getCount = function () {
-        return this.count;
+    InventoryInventoryStatistics.prototype.getDistribution = function () {
+        return this.distribution;
     };
-    InventoryInventoryStatistics.prototype.setCount = function (count) {
-        this.count = count;
+    InventoryInventoryStatistics.prototype.setDistribution = function (distribution) {
+        this.distribution = distribution;
         return this;
     };
-    InventoryInventoryStatistics.prototype.withCount = function (count) {
-        this.count = count;
+    InventoryInventoryStatistics.prototype.withDistribution = function (distribution) {
+        this.distribution = distribution;
         return this;
     };
     InventoryInventoryStatistics.fromDict = function (data) {
@@ -48,12 +50,18 @@ var InventoryInventoryStatistics = /** @class */ (function () {
         }
         return new InventoryInventoryStatistics()
             .withCurrentInventoryMaxCapacity(data["currentInventoryMaxCapacity"])
-            .withCount(data["count"]);
+            .withDistribution(data.distribution ?
+            data.distribution.map(function (item) {
+                return InventoryInventoryStatisticsDistribution_1.default.fromDict(item);
+            }) : []);
     };
     InventoryInventoryStatistics.prototype.toDict = function () {
         return {
             "currentInventoryMaxCapacity": this.getCurrentInventoryMaxCapacity(),
-            "count": this.getCount(),
+            "distribution": this.getDistribution() ?
+                this.getDistribution().map(function (item) {
+                    return item.toDict();
+                }) : [],
         };
     };
     return InventoryInventoryStatistics;
