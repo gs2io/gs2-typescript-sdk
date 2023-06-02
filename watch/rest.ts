@@ -1023,7 +1023,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeLimitCounterMetrics(request: Request.DescribeLimitCounterMetricsRequest): Promise<Result.DescribeLimitCounterMetricsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/metrics/limit/namespace/{namespaceName}/counter')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/metrics/limit/namespace/{namespaceName}/limitModel/{limitName}/counter')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
