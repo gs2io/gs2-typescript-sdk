@@ -1,11 +1,15 @@
 import IModel from '../../core/interface/IModel';
 export default class GeneralDauWauMauHistory implements IModel {
+    private date;
     private dau;
     private wauLast7Days;
     private wauTargetWeekSunday;
     private wauTargetWeekMonday;
     private mauLast30Days;
     private mauTargetMonth;
+    getDate(): string | null;
+    setDate(date: string | null): this;
+    withDate(date: string | null): this;
     getDau(): number | null;
     setDau(dau: number | null): this;
     withDau(dau: number | null): this;

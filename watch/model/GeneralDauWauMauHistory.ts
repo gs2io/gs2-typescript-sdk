@@ -17,12 +17,24 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 export default class GeneralDauWauMauHistory implements IModel {
+    private date: string|null = null;
     private dau: number|null = null;
     private wauLast7Days: number|null = null;
     private wauTargetWeekSunday: number|null = null;
     private wauTargetWeekMonday: number|null = null;
     private mauLast30Days: number|null = null;
     private mauTargetMonth: number|null = null;
+    public getDate(): string|null {
+        return this.date;
+    }
+    public setDate(date: string|null) {
+        this.date = date;
+        return this;
+    }
+    public withDate(date: string|null): this {
+        this.date = date;
+        return this;
+    }
     public getDau(): number|null {
         return this.dau;
     }
@@ -95,6 +107,7 @@ export default class GeneralDauWauMauHistory implements IModel {
             return null;
         }
         return new GeneralDauWauMauHistory()
+            .withDate(data["date"])
             .withDau(data["dau"])
             .withWauLast7Days(data["wauLast7Days"])
             .withWauTargetWeekSunday(data["wauTargetWeekSunday"])
@@ -105,6 +118,7 @@ export default class GeneralDauWauMauHistory implements IModel {
 
     public toDict(): {[key: string]: any} {
         return {
+            "date": this.getDate(),
             "dau": this.getDau(),
             "wauLast7Days": this.getWauLast7Days(),
             "wauTargetWeekSunday": this.getWauTargetWeekSunday(),

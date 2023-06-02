@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var GeneralDauWauMauHistory = /** @class */ (function () {
     function GeneralDauWauMauHistory() {
+        this.date = null;
         this.dau = null;
         this.wauLast7Days = null;
         this.wauTargetWeekSunday = null;
@@ -24,6 +25,17 @@ var GeneralDauWauMauHistory = /** @class */ (function () {
         this.mauLast30Days = null;
         this.mauTargetMonth = null;
     }
+    GeneralDauWauMauHistory.prototype.getDate = function () {
+        return this.date;
+    };
+    GeneralDauWauMauHistory.prototype.setDate = function (date) {
+        this.date = date;
+        return this;
+    };
+    GeneralDauWauMauHistory.prototype.withDate = function (date) {
+        this.date = date;
+        return this;
+    };
     GeneralDauWauMauHistory.prototype.getDau = function () {
         return this.dau;
     };
@@ -95,6 +107,7 @@ var GeneralDauWauMauHistory = /** @class */ (function () {
             return null;
         }
         return new GeneralDauWauMauHistory()
+            .withDate(data["date"])
             .withDau(data["dau"])
             .withWauLast7Days(data["wauLast7Days"])
             .withWauTargetWeekSunday(data["wauTargetWeekSunday"])
@@ -104,6 +117,7 @@ var GeneralDauWauMauHistory = /** @class */ (function () {
     };
     GeneralDauWauMauHistory.prototype.toDict = function () {
         return {
+            "date": this.getDate(),
             "dau": this.getDau(),
             "wauLast7Days": this.getWauLast7Days(),
             "wauTargetWeekSunday": this.getWauTargetWeekSunday(),
