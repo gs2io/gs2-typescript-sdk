@@ -1805,7 +1805,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeShowcaseDisplayItemMetrics(request: Request.DescribeShowcaseDisplayItemMetricsRequest): Promise<Result.DescribeShowcaseDisplayItemMetricsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/displayItem')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace/{namespaceName}/showcase/{showcaseName}/displayItem')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -1832,7 +1832,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public getShowcaseDisplayItemMetrics(request: Request.GetShowcaseDisplayItemMetricsRequest): Promise<Result.GetShowcaseDisplayItemMetricsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace/{namespaceName}/showcase/{showcaseName}/displayItem/{displayItemId}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

@@ -1536,7 +1536,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
     };
     Gs2WatchRestClient.prototype.describeShowcaseDisplayItemMetrics = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/displayItem')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace/{namespaceName}/showcase/{showcaseName}/displayItem')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
@@ -1559,7 +1559,7 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
     };
     Gs2WatchRestClient.prototype.getShowcaseDisplayItemMetrics = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/showcase/namespace/{namespaceName}/showcase/{showcaseName}/displayItem/{displayItemId}')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
