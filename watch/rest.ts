@@ -531,7 +531,7 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeExperienceStatusMetrics(request: Request.DescribeExperienceStatusMetricsRequest): Promise<Result.DescribeExperienceStatusMetricsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/metrics/experience/namespace/{namespaceName}/status')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/metrics/experience/namespace/{namespaceName}/experienceModel/{experienceName}/status')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
