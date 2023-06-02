@@ -12,6 +12,7 @@ export default class UseServices implements IModel {
     private inventory;
     private key;
     private limit;
+    private lottery;
     private matchmaking;
     private mission;
     private money;
@@ -55,6 +56,9 @@ export default class UseServices implements IModel {
     getLimit(): boolean | null;
     setLimit(limit: boolean | null): this;
     withLimit(limit: boolean | null): this;
+    getLottery(): boolean | null;
+    setLottery(lottery: boolean | null): this;
+    withLottery(lottery: boolean | null): this;
     getMatchmaking(): boolean | null;
     setMatchmaking(matchmaking: boolean | null): this;
     withMatchmaking(matchmaking: boolean | null): this;

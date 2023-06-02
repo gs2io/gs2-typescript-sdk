@@ -16,6 +16,8 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     getChatNamespaceMetrics(request: Request.GetChatNamespaceMetricsRequest): Promise<Result.GetChatNamespaceMetricsResult>;
     describeDatastoreNamespaceMetrics(request: Request.DescribeDatastoreNamespaceMetricsRequest): Promise<Result.DescribeDatastoreNamespaceMetricsResult>;
     getDatastoreNamespaceMetrics(request: Request.GetDatastoreNamespaceMetricsRequest): Promise<Result.GetDatastoreNamespaceMetricsResult>;
+    describeDictionaryNamespaceMetrics(request: Request.DescribeDictionaryNamespaceMetricsRequest): Promise<Result.DescribeDictionaryNamespaceMetricsResult>;
+    getDictionaryNamespaceMetrics(request: Request.GetDictionaryNamespaceMetricsRequest): Promise<Result.GetDictionaryNamespaceMetricsResult>;
     describeExchangeRateModelMetrics(request: Request.DescribeExchangeRateModelMetricsRequest): Promise<Result.DescribeExchangeRateModelMetricsResult>;
     getExchangeRateModelMetrics(request: Request.GetExchangeRateModelMetricsRequest): Promise<Result.GetExchangeRateModelMetricsResult>;
     describeExchangeNamespaceMetrics(request: Request.DescribeExchangeNamespaceMetricsRequest): Promise<Result.DescribeExchangeNamespaceMetricsResult>;

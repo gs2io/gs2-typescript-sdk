@@ -375,6 +375,57 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public describeDictionaryNamespaceMetrics(request: Request.DescribeDictionaryNamespaceMetricsRequest): Promise<Result.DescribeDictionaryNamespaceMetricsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/metrics/dictionary/namespace')
+            .replace('{service}', 'watch')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeDictionaryNamespaceMetricsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getDictionaryNamespaceMetrics(request: Request.GetDictionaryNamespaceMetricsRequest): Promise<Result.GetDictionaryNamespaceMetricsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/metrics/dictionary/namespace/{namespaceName}')
+            .replace('{service}', 'watch')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetDictionaryNamespaceMetricsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
     public describeExchangeRateModelMetrics(request: Request.DescribeExchangeRateModelMetricsRequest): Promise<Result.DescribeExchangeRateModelMetricsResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/metrics/exchange/namespace/{namespaceName}/rateModel')
             .replace('{service}', 'watch')

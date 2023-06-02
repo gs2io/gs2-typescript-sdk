@@ -29,6 +29,7 @@ var UseServices = /** @class */ (function () {
         this.inventory = null;
         this.key = null;
         this.limit = null;
+        this.lottery = null;
         this.matchmaking = null;
         this.mission = null;
         this.money = null;
@@ -169,6 +170,17 @@ var UseServices = /** @class */ (function () {
         this.limit = limit;
         return this;
     };
+    UseServices.prototype.getLottery = function () {
+        return this.lottery;
+    };
+    UseServices.prototype.setLottery = function (lottery) {
+        this.lottery = lottery;
+        return this;
+    };
+    UseServices.prototype.withLottery = function (lottery) {
+        this.lottery = lottery;
+        return this;
+    };
     UseServices.prototype.getMatchmaking = function () {
         return this.matchmaking;
     };
@@ -263,6 +275,7 @@ var UseServices = /** @class */ (function () {
             .withInventory(data["inventory"])
             .withKey(data["key"])
             .withLimit(data["limit"])
+            .withLottery(data["lottery"])
             .withMatchmaking(data["matchmaking"])
             .withMission(data["mission"])
             .withMoney(data["money"])
@@ -285,6 +298,7 @@ var UseServices = /** @class */ (function () {
             "inventory": this.getInventory(),
             "key": this.getKey(),
             "limit": this.getLimit(),
+            "lottery": this.getLottery(),
             "matchmaking": this.getMatchmaking(),
             "mission": this.getMission(),
             "money": this.getMoney(),

@@ -25,6 +25,8 @@ import DescribeChatNamespaceMetricsRequest from "./DescribeChatNamespaceMetricsR
 import GetChatNamespaceMetricsRequest from "./GetChatNamespaceMetricsRequest"
 import DescribeDatastoreNamespaceMetricsRequest from "./DescribeDatastoreNamespaceMetricsRequest"
 import GetDatastoreNamespaceMetricsRequest from "./GetDatastoreNamespaceMetricsRequest"
+import DescribeDictionaryNamespaceMetricsRequest from "./DescribeDictionaryNamespaceMetricsRequest"
+import GetDictionaryNamespaceMetricsRequest from "./GetDictionaryNamespaceMetricsRequest"
 import DescribeExchangeRateModelMetricsRequest from "./DescribeExchangeRateModelMetricsRequest"
 import GetExchangeRateModelMetricsRequest from "./GetExchangeRateModelMetricsRequest"
 import DescribeExchangeNamespaceMetricsRequest from "./DescribeExchangeNamespaceMetricsRequest"
@@ -102,6 +104,8 @@ export {
     GetChatNamespaceMetricsRequest,
     DescribeDatastoreNamespaceMetricsRequest,
     GetDatastoreNamespaceMetricsRequest,
+    DescribeDictionaryNamespaceMetricsRequest,
+    GetDictionaryNamespaceMetricsRequest,
     DescribeExchangeRateModelMetricsRequest,
     GetExchangeRateModelMetricsRequest,
     DescribeExchangeNamespaceMetricsRequest,

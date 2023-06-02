@@ -29,6 +29,7 @@ export default class UseServices implements IModel {
     private inventory: boolean|null = null;
     private key: boolean|null = null;
     private limit: boolean|null = null;
+    private lottery: boolean|null = null;
     private matchmaking: boolean|null = null;
     private mission: boolean|null = null;
     private money: boolean|null = null;
@@ -168,6 +169,17 @@ export default class UseServices implements IModel {
         this.limit = limit;
         return this;
     }
+    public getLottery(): boolean|null {
+        return this.lottery;
+    }
+    public setLottery(lottery: boolean|null) {
+        this.lottery = lottery;
+        return this;
+    }
+    public withLottery(lottery: boolean|null): this {
+        this.lottery = lottery;
+        return this;
+    }
     public getMatchmaking(): boolean|null {
         return this.matchmaking;
     }
@@ -263,6 +275,7 @@ export default class UseServices implements IModel {
             .withInventory(data["inventory"])
             .withKey(data["key"])
             .withLimit(data["limit"])
+            .withLottery(data["lottery"])
             .withMatchmaking(data["matchmaking"])
             .withMission(data["mission"])
             .withMoney(data["money"])
@@ -286,6 +299,7 @@ export default class UseServices implements IModel {
             "inventory": this.getInventory(),
             "key": this.getKey(),
             "limit": this.getLimit(),
+            "lottery": this.getLottery(),
             "matchmaking": this.getMatchmaking(),
             "mission": this.getMission(),
             "money": this.getMoney(),
