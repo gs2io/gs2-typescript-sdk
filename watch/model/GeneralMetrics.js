@@ -16,85 +16,30 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var WeeklyActiveUsers_1 = tslib_1.__importDefault(require("./WeeklyActiveUsers"));
-var MonthlyActiveUsers_1 = tslib_1.__importDefault(require("./MonthlyActiveUsers"));
-var ReturningUserRatio_1 = tslib_1.__importDefault(require("./ReturningUserRatio"));
-var FirstWeekLoginDays_1 = tslib_1.__importDefault(require("./FirstWeekLoginDays"));
+var GeneralDauWauMau_1 = tslib_1.__importDefault(require("./GeneralDauWauMau"));
 var SessionDuration_1 = tslib_1.__importDefault(require("./SessionDuration"));
+var FirstEngagement_1 = tslib_1.__importDefault(require("./FirstEngagement"));
+var Engagements_1 = tslib_1.__importDefault(require("./Engagements"));
+var ChurnRateAggregate_1 = tslib_1.__importDefault(require("./ChurnRateAggregate"));
+var UseServices_1 = tslib_1.__importDefault(require("./UseServices"));
 var GeneralMetrics = /** @class */ (function () {
     function GeneralMetrics() {
-        this.dau = null;
-        this.wau = null;
-        this.mau = null;
-        this.churnRate = null;
-        this.returningUserRatio = null;
-        this.firstWeekLoginDays = null;
+        this.dauWauMau = null;
         this.sessionDuration = null;
+        this.firstEngagement = null;
+        this.engagements = null;
+        this.churnRates = null;
+        this.useServices = null;
     }
-    GeneralMetrics.prototype.getDau = function () {
-        return this.dau;
+    GeneralMetrics.prototype.getDauWauMau = function () {
+        return this.dauWauMau;
     };
-    GeneralMetrics.prototype.setDau = function (dau) {
-        this.dau = dau;
+    GeneralMetrics.prototype.setDauWauMau = function (dauWauMau) {
+        this.dauWauMau = dauWauMau;
         return this;
     };
-    GeneralMetrics.prototype.withDau = function (dau) {
-        this.dau = dau;
-        return this;
-    };
-    GeneralMetrics.prototype.getWau = function () {
-        return this.wau;
-    };
-    GeneralMetrics.prototype.setWau = function (wau) {
-        this.wau = wau;
-        return this;
-    };
-    GeneralMetrics.prototype.withWau = function (wau) {
-        this.wau = wau;
-        return this;
-    };
-    GeneralMetrics.prototype.getMau = function () {
-        return this.mau;
-    };
-    GeneralMetrics.prototype.setMau = function (mau) {
-        this.mau = mau;
-        return this;
-    };
-    GeneralMetrics.prototype.withMau = function (mau) {
-        this.mau = mau;
-        return this;
-    };
-    GeneralMetrics.prototype.getChurnRate = function () {
-        return this.churnRate;
-    };
-    GeneralMetrics.prototype.setChurnRate = function (churnRate) {
-        this.churnRate = churnRate;
-        return this;
-    };
-    GeneralMetrics.prototype.withChurnRate = function (churnRate) {
-        this.churnRate = churnRate;
-        return this;
-    };
-    GeneralMetrics.prototype.getReturningUserRatio = function () {
-        return this.returningUserRatio;
-    };
-    GeneralMetrics.prototype.setReturningUserRatio = function (returningUserRatio) {
-        this.returningUserRatio = returningUserRatio;
-        return this;
-    };
-    GeneralMetrics.prototype.withReturningUserRatio = function (returningUserRatio) {
-        this.returningUserRatio = returningUserRatio;
-        return this;
-    };
-    GeneralMetrics.prototype.getFirstWeekLoginDays = function () {
-        return this.firstWeekLoginDays;
-    };
-    GeneralMetrics.prototype.setFirstWeekLoginDays = function (firstWeekLoginDays) {
-        this.firstWeekLoginDays = firstWeekLoginDays;
-        return this;
-    };
-    GeneralMetrics.prototype.withFirstWeekLoginDays = function (firstWeekLoginDays) {
-        this.firstWeekLoginDays = firstWeekLoginDays;
+    GeneralMetrics.prototype.withDauWauMau = function (dauWauMau) {
+        this.dauWauMau = dauWauMau;
         return this;
     };
     GeneralMetrics.prototype.getSessionDuration = function () {
@@ -108,29 +53,71 @@ var GeneralMetrics = /** @class */ (function () {
         this.sessionDuration = sessionDuration;
         return this;
     };
+    GeneralMetrics.prototype.getFirstEngagement = function () {
+        return this.firstEngagement;
+    };
+    GeneralMetrics.prototype.setFirstEngagement = function (firstEngagement) {
+        this.firstEngagement = firstEngagement;
+        return this;
+    };
+    GeneralMetrics.prototype.withFirstEngagement = function (firstEngagement) {
+        this.firstEngagement = firstEngagement;
+        return this;
+    };
+    GeneralMetrics.prototype.getEngagements = function () {
+        return this.engagements;
+    };
+    GeneralMetrics.prototype.setEngagements = function (engagements) {
+        this.engagements = engagements;
+        return this;
+    };
+    GeneralMetrics.prototype.withEngagements = function (engagements) {
+        this.engagements = engagements;
+        return this;
+    };
+    GeneralMetrics.prototype.getChurnRates = function () {
+        return this.churnRates;
+    };
+    GeneralMetrics.prototype.setChurnRates = function (churnRates) {
+        this.churnRates = churnRates;
+        return this;
+    };
+    GeneralMetrics.prototype.withChurnRates = function (churnRates) {
+        this.churnRates = churnRates;
+        return this;
+    };
+    GeneralMetrics.prototype.getUseServices = function () {
+        return this.useServices;
+    };
+    GeneralMetrics.prototype.setUseServices = function (useServices) {
+        this.useServices = useServices;
+        return this;
+    };
+    GeneralMetrics.prototype.withUseServices = function (useServices) {
+        this.useServices = useServices;
+        return this;
+    };
     GeneralMetrics.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
         }
         return new GeneralMetrics()
-            .withDau(data["dau"])
-            .withWau(WeeklyActiveUsers_1.default.fromDict(data["wau"]))
-            .withMau(MonthlyActiveUsers_1.default.fromDict(data["mau"]))
-            .withChurnRate(data["churnRate"])
-            .withReturningUserRatio(ReturningUserRatio_1.default.fromDict(data["returningUserRatio"]))
-            .withFirstWeekLoginDays(FirstWeekLoginDays_1.default.fromDict(data["firstWeekLoginDays"]))
-            .withSessionDuration(SessionDuration_1.default.fromDict(data["sessionDuration"]));
+            .withDauWauMau(GeneralDauWauMau_1.default.fromDict(data["dauWauMau"]))
+            .withSessionDuration(SessionDuration_1.default.fromDict(data["sessionDuration"]))
+            .withFirstEngagement(FirstEngagement_1.default.fromDict(data["firstEngagement"]))
+            .withEngagements(Engagements_1.default.fromDict(data["engagements"]))
+            .withChurnRates(ChurnRateAggregate_1.default.fromDict(data["churnRates"]))
+            .withUseServices(UseServices_1.default.fromDict(data["useServices"]));
     };
     GeneralMetrics.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         return {
-            "dau": this.getDau(),
-            "wau": (_a = this.getWau()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "mau": (_b = this.getMau()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "churnRate": this.getChurnRate(),
-            "returningUserRatio": (_c = this.getReturningUserRatio()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "firstWeekLoginDays": (_d = this.getFirstWeekLoginDays()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "sessionDuration": (_e = this.getSessionDuration()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "dauWauMau": (_a = this.getDauWauMau()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "sessionDuration": (_b = this.getSessionDuration()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "firstEngagement": (_c = this.getFirstEngagement()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "engagements": (_d = this.getEngagements()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "churnRates": (_e = this.getChurnRates()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "useServices": (_f = this.getUseServices()) === null || _f === void 0 ? void 0 : _f.toDict(),
         };
     };
     return GeneralMetrics;

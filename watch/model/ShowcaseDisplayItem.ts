@@ -15,11 +15,26 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import ShowcaseBuyQuantityDistribution from './ShowcaseBuyQuantityDistribution';
+import ShowcaseDisplayItemStatistics from './ShowcaseDisplayItemStatistics';
+import ShowcaseDisplayItemQuantityDistributionStatistics from './ShowcaseDisplayItemQuantityDistributionStatistics';
+import ShowcaseDisplayItemQuantityDistributionSegment from './ShowcaseDisplayItemQuantityDistributionSegment';
+import ShowcaseDisplayItemQuantityDistribution from './ShowcaseDisplayItemQuantityDistribution';
+import ShowcaseDisplayItemDistributions from './ShowcaseDisplayItemDistributions';
+const grnFormat: string = "";
 
 export default class ShowcaseDisplayItem implements IModel {
     private displayItemId: string|null = null;
-    private quantityDistribution: ShowcaseBuyQuantityDistribution[]|null = null;
+    private statistics: ShowcaseDisplayItemStatistics|null = null;
+    private distributions: ShowcaseDisplayItemDistributions|null = null;
+
+    public static isValid(grn: string): boolean {
+        return true;
+    }
+
+    public static createGrn(
+    ): string|null {
+        return grnFormat;
+    }
     public getDisplayItemId(): string|null {
         return this.displayItemId;
     }
@@ -31,15 +46,26 @@ export default class ShowcaseDisplayItem implements IModel {
         this.displayItemId = displayItemId;
         return this;
     }
-    public getQuantityDistribution(): ShowcaseBuyQuantityDistribution[]|null {
-        return this.quantityDistribution;
+    public getStatistics(): ShowcaseDisplayItemStatistics|null {
+        return this.statistics;
     }
-    public setQuantityDistribution(quantityDistribution: ShowcaseBuyQuantityDistribution[]|null) {
-        this.quantityDistribution = quantityDistribution;
+    public setStatistics(statistics: ShowcaseDisplayItemStatistics|null) {
+        this.statistics = statistics;
         return this;
     }
-    public withQuantityDistribution(quantityDistribution: ShowcaseBuyQuantityDistribution[]|null): this {
-        this.quantityDistribution = quantityDistribution;
+    public withStatistics(statistics: ShowcaseDisplayItemStatistics|null): this {
+        this.statistics = statistics;
+        return this;
+    }
+    public getDistributions(): ShowcaseDisplayItemDistributions|null {
+        return this.distributions;
+    }
+    public setDistributions(distributions: ShowcaseDisplayItemDistributions|null) {
+        this.distributions = distributions;
+        return this;
+    }
+    public withDistributions(distributions: ShowcaseDisplayItemDistributions|null): this {
+        this.distributions = distributions;
         return this;
     }
 
@@ -49,21 +75,15 @@ export default class ShowcaseDisplayItem implements IModel {
         }
         return new ShowcaseDisplayItem()
             .withDisplayItemId(data["displayItemId"])
-            .withQuantityDistribution(data.quantityDistribution ?
-                data.quantityDistribution.map((item: {[key: string]: any}) => {
-                    return ShowcaseBuyQuantityDistribution.fromDict(item);
-                }
-            ) : []);
+            .withStatistics(ShowcaseDisplayItemStatistics.fromDict(data["statistics"]))
+            .withDistributions(ShowcaseDisplayItemDistributions.fromDict(data["distributions"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "displayItemId": this.getDisplayItemId(),
-            "quantityDistribution": this.getQuantityDistribution() ?
-                this.getQuantityDistribution()!.map((item: ShowcaseBuyQuantityDistribution) => {
-                    return item.toDict();
-                }
-            ) : [],
+            "statistics": this.getStatistics()?.toDict(),
+            "distributions": this.getDistributions()?.toDict(),
         };
     }
 }

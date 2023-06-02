@@ -1,14 +1,21 @@
 import IModel from '../../core/interface/IModel';
-import InventoryInventoryStatisticsDistribution from './InventoryInventoryStatisticsDistribution';
 export default class InventoryInventoryStatistics implements IModel {
-    private currentInventoryMaxCapacity;
-    private distribution;
-    getCurrentInventoryMaxCapacity(): number | null;
-    setCurrentInventoryMaxCapacity(currentInventoryMaxCapacity: number | null): this;
-    withCurrentInventoryMaxCapacity(currentInventoryMaxCapacity: number | null): this;
-    getDistribution(): InventoryInventoryStatisticsDistribution[] | null;
-    setDistribution(distribution: InventoryInventoryStatisticsDistribution[] | null): this;
-    withDistribution(distribution: InventoryInventoryStatisticsDistribution[] | null): this;
+    private acquired;
+    private consume;
+    private increaseCapacity;
+    private increaseCapacityAmount;
+    getAcquired(): number | null;
+    setAcquired(acquired: number | null): this;
+    withAcquired(acquired: number | null): this;
+    getConsume(): number | null;
+    setConsume(consume: number | null): this;
+    withConsume(consume: number | null): this;
+    getIncreaseCapacity(): number | null;
+    setIncreaseCapacity(increaseCapacity: number | null): this;
+    withIncreaseCapacity(increaseCapacity: number | null): this;
+    getIncreaseCapacityAmount(): number | null;
+    setIncreaseCapacityAmount(increaseCapacityAmount: number | null): this;
+    withIncreaseCapacityAmount(increaseCapacityAmount: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): InventoryInventoryStatistics | null;

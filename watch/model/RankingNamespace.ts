@@ -15,12 +15,201 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import RankingCategoryScoreDistribution from './RankingCategoryScoreDistribution';
-import RankingCategory from './RankingCategory';
+import RankingNamespaceStatistics from './RankingNamespaceStatistics';
+import RankingNamespacePutDistributionStatistics from './RankingNamespacePutDistributionStatistics';
+import RankingNamespacePutDistributionSegment from './RankingNamespacePutDistributionSegment';
+import RankingNamespacePutDistribution from './RankingNamespacePutDistribution';
+import RankingNamespaceDistributions from './RankingNamespaceDistributions';
+import RankingCategoryModelStatistics from './RankingCategoryModelStatistics';
+import RankingCategoryModelScoreDistributionStatistics from './RankingCategoryModelScoreDistributionStatistics';
+import RankingCategoryModelScoreDistributionSegment from './RankingCategoryModelScoreDistributionSegment';
+import RankingCategoryModelScoreDistribution from './RankingCategoryModelScoreDistribution';
+import RankingCategoryModelDistributions from './RankingCategoryModelDistributions';
+import RankingCategoryModel from './RankingCategoryModel';
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:ranking:namespace:{namespaceName}";
 
 export default class RankingNamespace implements IModel {
+    private namespaceId: string|null = null;
+    private year: number|null = null;
+    private month: number|null = null;
+    private day: number|null = null;
     private namespaceName: string|null = null;
-    private category: RankingCategory[]|null = null;
+    private statistics: RankingNamespaceStatistics|null = null;
+    private distributions: RankingNamespaceDistributions|null = null;
+    private categoryModels: RankingCategoryModel[]|null = null;
+
+    public static getRegion(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{day}', '.*')
+            .replace('{namespaceName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getOwnerId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{day}', '.*')
+            .replace('{namespaceName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getYear(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '(.*)')
+            .replace('{month}', '.*')
+            .replace('{day}', '.*')
+            .replace('{namespaceName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getMonth(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '(.*)')
+            .replace('{day}', '.*')
+            .replace('{namespaceName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getDay(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{day}', '(.*)')
+            .replace('{namespaceName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getNamespaceName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{day}', '.*')
+            .replace('{namespaceName}', '(.*)')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static isValid(grn: string): boolean {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
+            return false;
+        }
+        if (this.getYear(grn) == null || this.getYear(grn) === '') {
+            return false;
+        }
+        if (this.getMonth(grn) == null || this.getMonth(grn) === '') {
+            return false;
+        }
+        if (this.getDay(grn) == null || this.getDay(grn) === '') {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
+            return false;
+        }
+        return true;
+    }
+
+    public static createGrn(
+        region: string|null,
+        ownerId: string|null,
+        year: string|null,
+        month: string|null,
+        day: string|null,
+        namespaceName: string|null,
+    ): string|null {
+        return grnFormat
+            .replace('{region}', region ?? '')
+            .replace('{ownerId}', ownerId ?? '')
+            .replace('{year}', year ?? '')
+            .replace('{month}', month ?? '')
+            .replace('{day}', day ?? '')
+            .replace('{namespaceName}', namespaceName ?? '');
+    }
+    public getNamespaceId(): string|null {
+        return this.namespaceId;
+    }
+    public setNamespaceId(namespaceId: string|null) {
+        this.namespaceId = namespaceId;
+        return this;
+    }
+    public withNamespaceId(namespaceId: string|null): this {
+        this.namespaceId = namespaceId;
+        return this;
+    }
+    public getYear(): number|null {
+        return this.year;
+    }
+    public setYear(year: number|null) {
+        this.year = year;
+        return this;
+    }
+    public withYear(year: number|null): this {
+        this.year = year;
+        return this;
+    }
+    public getMonth(): number|null {
+        return this.month;
+    }
+    public setMonth(month: number|null) {
+        this.month = month;
+        return this;
+    }
+    public withMonth(month: number|null): this {
+        this.month = month;
+        return this;
+    }
+    public getDay(): number|null {
+        return this.day;
+    }
+    public setDay(day: number|null) {
+        this.day = day;
+        return this;
+    }
+    public withDay(day: number|null): this {
+        this.day = day;
+        return this;
+    }
     public getNamespaceName(): string|null {
         return this.namespaceName;
     }
@@ -32,15 +221,37 @@ export default class RankingNamespace implements IModel {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getCategory(): RankingCategory[]|null {
-        return this.category;
+    public getStatistics(): RankingNamespaceStatistics|null {
+        return this.statistics;
     }
-    public setCategory(category: RankingCategory[]|null) {
-        this.category = category;
+    public setStatistics(statistics: RankingNamespaceStatistics|null) {
+        this.statistics = statistics;
         return this;
     }
-    public withCategory(category: RankingCategory[]|null): this {
-        this.category = category;
+    public withStatistics(statistics: RankingNamespaceStatistics|null): this {
+        this.statistics = statistics;
+        return this;
+    }
+    public getDistributions(): RankingNamespaceDistributions|null {
+        return this.distributions;
+    }
+    public setDistributions(distributions: RankingNamespaceDistributions|null) {
+        this.distributions = distributions;
+        return this;
+    }
+    public withDistributions(distributions: RankingNamespaceDistributions|null): this {
+        this.distributions = distributions;
+        return this;
+    }
+    public getCategoryModels(): RankingCategoryModel[]|null {
+        return this.categoryModels;
+    }
+    public setCategoryModels(categoryModels: RankingCategoryModel[]|null) {
+        this.categoryModels = categoryModels;
+        return this;
+    }
+    public withCategoryModels(categoryModels: RankingCategoryModel[]|null): this {
+        this.categoryModels = categoryModels;
         return this;
     }
 
@@ -49,19 +260,31 @@ export default class RankingNamespace implements IModel {
             return null;
         }
         return new RankingNamespace()
+            .withNamespaceId(data["namespaceId"])
+            .withYear(data["year"])
+            .withMonth(data["month"])
+            .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withCategory(data.category ?
-                data.category.map((item: {[key: string]: any}) => {
-                    return RankingCategory.fromDict(item);
+            .withStatistics(RankingNamespaceStatistics.fromDict(data["statistics"]))
+            .withDistributions(RankingNamespaceDistributions.fromDict(data["distributions"]))
+            .withCategoryModels(data.categoryModels ?
+                data.categoryModels.map((item: {[key: string]: any}) => {
+                    return RankingCategoryModel.fromDict(item);
                 }
             ) : []);
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "namespaceId": this.getNamespaceId(),
+            "year": this.getYear(),
+            "month": this.getMonth(),
+            "day": this.getDay(),
             "namespaceName": this.getNamespaceName(),
-            "category": this.getCategory() ?
-                this.getCategory()!.map((item: RankingCategory) => {
+            "statistics": this.getStatistics()?.toDict(),
+            "distributions": this.getDistributions()?.toDict(),
+            "categoryModels": this.getCategoryModels() ?
+                this.getCategoryModels()!.map((item: RankingCategoryModel) => {
                     return item.toDict();
                 }
             ) : [],

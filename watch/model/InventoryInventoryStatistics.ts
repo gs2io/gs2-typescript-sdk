@@ -15,31 +15,54 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import InventoryInventoryStatisticsDistribution from './InventoryInventoryStatisticsDistribution';
 
 export default class InventoryInventoryStatistics implements IModel {
-    private currentInventoryMaxCapacity: number|null = null;
-    private distribution: InventoryInventoryStatisticsDistribution[]|null = null;
-    public getCurrentInventoryMaxCapacity(): number|null {
-        return this.currentInventoryMaxCapacity;
+    private acquired: number|null = null;
+    private consume: number|null = null;
+    private increaseCapacity: number|null = null;
+    private increaseCapacityAmount: number|null = null;
+    public getAcquired(): number|null {
+        return this.acquired;
     }
-    public setCurrentInventoryMaxCapacity(currentInventoryMaxCapacity: number|null) {
-        this.currentInventoryMaxCapacity = currentInventoryMaxCapacity;
+    public setAcquired(acquired: number|null) {
+        this.acquired = acquired;
         return this;
     }
-    public withCurrentInventoryMaxCapacity(currentInventoryMaxCapacity: number|null): this {
-        this.currentInventoryMaxCapacity = currentInventoryMaxCapacity;
+    public withAcquired(acquired: number|null): this {
+        this.acquired = acquired;
         return this;
     }
-    public getDistribution(): InventoryInventoryStatisticsDistribution[]|null {
-        return this.distribution;
+    public getConsume(): number|null {
+        return this.consume;
     }
-    public setDistribution(distribution: InventoryInventoryStatisticsDistribution[]|null) {
-        this.distribution = distribution;
+    public setConsume(consume: number|null) {
+        this.consume = consume;
         return this;
     }
-    public withDistribution(distribution: InventoryInventoryStatisticsDistribution[]|null): this {
-        this.distribution = distribution;
+    public withConsume(consume: number|null): this {
+        this.consume = consume;
+        return this;
+    }
+    public getIncreaseCapacity(): number|null {
+        return this.increaseCapacity;
+    }
+    public setIncreaseCapacity(increaseCapacity: number|null) {
+        this.increaseCapacity = increaseCapacity;
+        return this;
+    }
+    public withIncreaseCapacity(increaseCapacity: number|null): this {
+        this.increaseCapacity = increaseCapacity;
+        return this;
+    }
+    public getIncreaseCapacityAmount(): number|null {
+        return this.increaseCapacityAmount;
+    }
+    public setIncreaseCapacityAmount(increaseCapacityAmount: number|null) {
+        this.increaseCapacityAmount = increaseCapacityAmount;
+        return this;
+    }
+    public withIncreaseCapacityAmount(increaseCapacityAmount: number|null): this {
+        this.increaseCapacityAmount = increaseCapacityAmount;
         return this;
     }
 
@@ -48,22 +71,18 @@ export default class InventoryInventoryStatistics implements IModel {
             return null;
         }
         return new InventoryInventoryStatistics()
-            .withCurrentInventoryMaxCapacity(data["currentInventoryMaxCapacity"])
-            .withDistribution(data.distribution ?
-                data.distribution.map((item: {[key: string]: any}) => {
-                    return InventoryInventoryStatisticsDistribution.fromDict(item);
-                }
-            ) : []);
+            .withAcquired(data["acquired"])
+            .withConsume(data["consume"])
+            .withIncreaseCapacity(data["increaseCapacity"])
+            .withIncreaseCapacityAmount(data["increaseCapacityAmount"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
-            "currentInventoryMaxCapacity": this.getCurrentInventoryMaxCapacity(),
-            "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: InventoryInventoryStatisticsDistribution) => {
-                    return item.toDict();
-                }
-            ) : [],
+            "acquired": this.getAcquired(),
+            "consume": this.getConsume(),
+            "increaseCapacity": this.getIncreaseCapacity(),
+            "increaseCapacityAmount": this.getIncreaseCapacityAmount(),
         };
     }
 }

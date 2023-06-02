@@ -1,0 +1,51 @@
+"use strict";
+/*
+Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License").
+You may not use this file except in compliance with the License.
+A copy of the License is located at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+or in the "license" file accompanying this file. This file is distributed
+on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+express or implied. See the License for the specific language governing
+permissions and limitations under the License.
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var LimitNamespaceIncreaseDistribution_1 = tslib_1.__importDefault(require("./LimitNamespaceIncreaseDistribution"));
+var LimitNamespaceDistributions = /** @class */ (function () {
+    function LimitNamespaceDistributions() {
+        this.increase = null;
+    }
+    LimitNamespaceDistributions.prototype.getIncrease = function () {
+        return this.increase;
+    };
+    LimitNamespaceDistributions.prototype.setIncrease = function (increase) {
+        this.increase = increase;
+        return this;
+    };
+    LimitNamespaceDistributions.prototype.withIncrease = function (increase) {
+        this.increase = increase;
+        return this;
+    };
+    LimitNamespaceDistributions.fromDict = function (data) {
+        if (data == undefined || data == null) {
+            return null;
+        }
+        return new LimitNamespaceDistributions()
+            .withIncrease(LimitNamespaceIncreaseDistribution_1.default.fromDict(data["increase"]));
+    };
+    LimitNamespaceDistributions.prototype.toDict = function () {
+        var _a;
+        return {
+            "increase": (_a = this.getIncrease()) === null || _a === void 0 ? void 0 : _a.toDict(),
+        };
+    };
+    return LimitNamespaceDistributions;
+}());
+exports.default = LimitNamespaceDistributions;
+//# sourceMappingURL=LimitNamespaceDistributions.js.map

@@ -15,86 +15,40 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import WeeklyActiveUsers from './WeeklyActiveUsers';
-import MonthlyActiveUsers from './MonthlyActiveUsers';
-import ReturningUserRatio from './ReturningUserRatio';
-import FirstWeekLoginDays from './FirstWeekLoginDays';
+import GeneralDauWauMauHistory from './GeneralDauWauMauHistory';
+import GeneralDauWauMauAverage from './GeneralDauWauMauAverage';
+import GeneralDauWauMau from './GeneralDauWauMau';
 import SessionDurationStatistics from './SessionDurationStatistics';
-import SessionDurationDistribution from './SessionDurationDistribution';
+import SessionDurationDistributionSegment from './SessionDurationDistributionSegment';
 import SessionDuration from './SessionDuration';
+import FirstEngagementStatisticsLoginDays from './FirstEngagementStatisticsLoginDays';
+import FirstEngagementStatistics from './FirstEngagementStatistics';
+import FirstEngagementDistributionSegment from './FirstEngagementDistributionSegment';
+import FirstEngagement from './FirstEngagement';
+import EngagementHistory from './EngagementHistory';
+import EngagementAverage from './EngagementAverage';
+import Engagements from './Engagements';
+import ChurnRateHistory from './ChurnRateHistory';
+import ChurnRateAverage from './ChurnRateAverage';
+import ChurnRateAggregate from './ChurnRateAggregate';
+import UseServices from './UseServices';
 
 export default class GeneralMetrics implements IModel {
-    private dau: number|null = null;
-    private wau: WeeklyActiveUsers|null = null;
-    private mau: MonthlyActiveUsers|null = null;
-    private churnRate: number|null = null;
-    private returningUserRatio: ReturningUserRatio|null = null;
-    private firstWeekLoginDays: FirstWeekLoginDays|null = null;
+    private dauWauMau: GeneralDauWauMau|null = null;
     private sessionDuration: SessionDuration|null = null;
-    public getDau(): number|null {
-        return this.dau;
+    private firstEngagement: FirstEngagement|null = null;
+    private engagements: Engagements|null = null;
+    private churnRates: ChurnRateAggregate|null = null;
+    private useServices: UseServices|null = null;
+    public getDauWauMau(): GeneralDauWauMau|null {
+        return this.dauWauMau;
     }
-    public setDau(dau: number|null) {
-        this.dau = dau;
+    public setDauWauMau(dauWauMau: GeneralDauWauMau|null) {
+        this.dauWauMau = dauWauMau;
         return this;
     }
-    public withDau(dau: number|null): this {
-        this.dau = dau;
-        return this;
-    }
-    public getWau(): WeeklyActiveUsers|null {
-        return this.wau;
-    }
-    public setWau(wau: WeeklyActiveUsers|null) {
-        this.wau = wau;
-        return this;
-    }
-    public withWau(wau: WeeklyActiveUsers|null): this {
-        this.wau = wau;
-        return this;
-    }
-    public getMau(): MonthlyActiveUsers|null {
-        return this.mau;
-    }
-    public setMau(mau: MonthlyActiveUsers|null) {
-        this.mau = mau;
-        return this;
-    }
-    public withMau(mau: MonthlyActiveUsers|null): this {
-        this.mau = mau;
-        return this;
-    }
-    public getChurnRate(): number|null {
-        return this.churnRate;
-    }
-    public setChurnRate(churnRate: number|null) {
-        this.churnRate = churnRate;
-        return this;
-    }
-    public withChurnRate(churnRate: number|null): this {
-        this.churnRate = churnRate;
-        return this;
-    }
-    public getReturningUserRatio(): ReturningUserRatio|null {
-        return this.returningUserRatio;
-    }
-    public setReturningUserRatio(returningUserRatio: ReturningUserRatio|null) {
-        this.returningUserRatio = returningUserRatio;
-        return this;
-    }
-    public withReturningUserRatio(returningUserRatio: ReturningUserRatio|null): this {
-        this.returningUserRatio = returningUserRatio;
-        return this;
-    }
-    public getFirstWeekLoginDays(): FirstWeekLoginDays|null {
-        return this.firstWeekLoginDays;
-    }
-    public setFirstWeekLoginDays(firstWeekLoginDays: FirstWeekLoginDays|null) {
-        this.firstWeekLoginDays = firstWeekLoginDays;
-        return this;
-    }
-    public withFirstWeekLoginDays(firstWeekLoginDays: FirstWeekLoginDays|null): this {
-        this.firstWeekLoginDays = firstWeekLoginDays;
+    public withDauWauMau(dauWauMau: GeneralDauWauMau|null): this {
+        this.dauWauMau = dauWauMau;
         return this;
     }
     public getSessionDuration(): SessionDuration|null {
@@ -108,30 +62,72 @@ export default class GeneralMetrics implements IModel {
         this.sessionDuration = sessionDuration;
         return this;
     }
+    public getFirstEngagement(): FirstEngagement|null {
+        return this.firstEngagement;
+    }
+    public setFirstEngagement(firstEngagement: FirstEngagement|null) {
+        this.firstEngagement = firstEngagement;
+        return this;
+    }
+    public withFirstEngagement(firstEngagement: FirstEngagement|null): this {
+        this.firstEngagement = firstEngagement;
+        return this;
+    }
+    public getEngagements(): Engagements|null {
+        return this.engagements;
+    }
+    public setEngagements(engagements: Engagements|null) {
+        this.engagements = engagements;
+        return this;
+    }
+    public withEngagements(engagements: Engagements|null): this {
+        this.engagements = engagements;
+        return this;
+    }
+    public getChurnRates(): ChurnRateAggregate|null {
+        return this.churnRates;
+    }
+    public setChurnRates(churnRates: ChurnRateAggregate|null) {
+        this.churnRates = churnRates;
+        return this;
+    }
+    public withChurnRates(churnRates: ChurnRateAggregate|null): this {
+        this.churnRates = churnRates;
+        return this;
+    }
+    public getUseServices(): UseServices|null {
+        return this.useServices;
+    }
+    public setUseServices(useServices: UseServices|null) {
+        this.useServices = useServices;
+        return this;
+    }
+    public withUseServices(useServices: UseServices|null): this {
+        this.useServices = useServices;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GeneralMetrics|null {
         if (data == undefined || data == null) {
             return null;
         }
         return new GeneralMetrics()
-            .withDau(data["dau"])
-            .withWau(WeeklyActiveUsers.fromDict(data["wau"]))
-            .withMau(MonthlyActiveUsers.fromDict(data["mau"]))
-            .withChurnRate(data["churnRate"])
-            .withReturningUserRatio(ReturningUserRatio.fromDict(data["returningUserRatio"]))
-            .withFirstWeekLoginDays(FirstWeekLoginDays.fromDict(data["firstWeekLoginDays"]))
-            .withSessionDuration(SessionDuration.fromDict(data["sessionDuration"]));
+            .withDauWauMau(GeneralDauWauMau.fromDict(data["dauWauMau"]))
+            .withSessionDuration(SessionDuration.fromDict(data["sessionDuration"]))
+            .withFirstEngagement(FirstEngagement.fromDict(data["firstEngagement"]))
+            .withEngagements(Engagements.fromDict(data["engagements"]))
+            .withChurnRates(ChurnRateAggregate.fromDict(data["churnRates"]))
+            .withUseServices(UseServices.fromDict(data["useServices"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
-            "dau": this.getDau(),
-            "wau": this.getWau()?.toDict(),
-            "mau": this.getMau()?.toDict(),
-            "churnRate": this.getChurnRate(),
-            "returningUserRatio": this.getReturningUserRatio()?.toDict(),
-            "firstWeekLoginDays": this.getFirstWeekLoginDays()?.toDict(),
+            "dauWauMau": this.getDauWauMau()?.toDict(),
             "sessionDuration": this.getSessionDuration()?.toDict(),
+            "firstEngagement": this.getFirstEngagement()?.toDict(),
+            "engagements": this.getEngagements()?.toDict(),
+            "churnRates": this.getChurnRates()?.toDict(),
+            "useServices": this.getUseServices()?.toDict(),
         };
     }
 }

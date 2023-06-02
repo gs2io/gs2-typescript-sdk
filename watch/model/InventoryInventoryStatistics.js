@@ -15,33 +15,55 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = require("tslib");
-var InventoryInventoryStatisticsDistribution_1 = tslib_1.__importDefault(require("./InventoryInventoryStatisticsDistribution"));
 var InventoryInventoryStatistics = /** @class */ (function () {
     function InventoryInventoryStatistics() {
-        this.currentInventoryMaxCapacity = null;
-        this.distribution = null;
+        this.acquired = null;
+        this.consume = null;
+        this.increaseCapacity = null;
+        this.increaseCapacityAmount = null;
     }
-    InventoryInventoryStatistics.prototype.getCurrentInventoryMaxCapacity = function () {
-        return this.currentInventoryMaxCapacity;
+    InventoryInventoryStatistics.prototype.getAcquired = function () {
+        return this.acquired;
     };
-    InventoryInventoryStatistics.prototype.setCurrentInventoryMaxCapacity = function (currentInventoryMaxCapacity) {
-        this.currentInventoryMaxCapacity = currentInventoryMaxCapacity;
+    InventoryInventoryStatistics.prototype.setAcquired = function (acquired) {
+        this.acquired = acquired;
         return this;
     };
-    InventoryInventoryStatistics.prototype.withCurrentInventoryMaxCapacity = function (currentInventoryMaxCapacity) {
-        this.currentInventoryMaxCapacity = currentInventoryMaxCapacity;
+    InventoryInventoryStatistics.prototype.withAcquired = function (acquired) {
+        this.acquired = acquired;
         return this;
     };
-    InventoryInventoryStatistics.prototype.getDistribution = function () {
-        return this.distribution;
+    InventoryInventoryStatistics.prototype.getConsume = function () {
+        return this.consume;
     };
-    InventoryInventoryStatistics.prototype.setDistribution = function (distribution) {
-        this.distribution = distribution;
+    InventoryInventoryStatistics.prototype.setConsume = function (consume) {
+        this.consume = consume;
         return this;
     };
-    InventoryInventoryStatistics.prototype.withDistribution = function (distribution) {
-        this.distribution = distribution;
+    InventoryInventoryStatistics.prototype.withConsume = function (consume) {
+        this.consume = consume;
+        return this;
+    };
+    InventoryInventoryStatistics.prototype.getIncreaseCapacity = function () {
+        return this.increaseCapacity;
+    };
+    InventoryInventoryStatistics.prototype.setIncreaseCapacity = function (increaseCapacity) {
+        this.increaseCapacity = increaseCapacity;
+        return this;
+    };
+    InventoryInventoryStatistics.prototype.withIncreaseCapacity = function (increaseCapacity) {
+        this.increaseCapacity = increaseCapacity;
+        return this;
+    };
+    InventoryInventoryStatistics.prototype.getIncreaseCapacityAmount = function () {
+        return this.increaseCapacityAmount;
+    };
+    InventoryInventoryStatistics.prototype.setIncreaseCapacityAmount = function (increaseCapacityAmount) {
+        this.increaseCapacityAmount = increaseCapacityAmount;
+        return this;
+    };
+    InventoryInventoryStatistics.prototype.withIncreaseCapacityAmount = function (increaseCapacityAmount) {
+        this.increaseCapacityAmount = increaseCapacityAmount;
         return this;
     };
     InventoryInventoryStatistics.fromDict = function (data) {
@@ -49,19 +71,17 @@ var InventoryInventoryStatistics = /** @class */ (function () {
             return null;
         }
         return new InventoryInventoryStatistics()
-            .withCurrentInventoryMaxCapacity(data["currentInventoryMaxCapacity"])
-            .withDistribution(data.distribution ?
-            data.distribution.map(function (item) {
-                return InventoryInventoryStatisticsDistribution_1.default.fromDict(item);
-            }) : []);
+            .withAcquired(data["acquired"])
+            .withConsume(data["consume"])
+            .withIncreaseCapacity(data["increaseCapacity"])
+            .withIncreaseCapacityAmount(data["increaseCapacityAmount"]);
     };
     InventoryInventoryStatistics.prototype.toDict = function () {
         return {
-            "currentInventoryMaxCapacity": this.getCurrentInventoryMaxCapacity(),
-            "distribution": this.getDistribution() ?
-                this.getDistribution().map(function (item) {
-                    return item.toDict();
-                }) : [],
+            "acquired": this.getAcquired(),
+            "consume": this.getConsume(),
+            "increaseCapacity": this.getIncreaseCapacity(),
+            "increaseCapacityAmount": this.getIncreaseCapacityAmount(),
         };
     };
     return InventoryInventoryStatistics;

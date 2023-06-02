@@ -16,12 +16,21 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ShowcaseBuyQuantityDistribution_1 = tslib_1.__importDefault(require("./ShowcaseBuyQuantityDistribution"));
+var ShowcaseDisplayItemStatistics_1 = tslib_1.__importDefault(require("./ShowcaseDisplayItemStatistics"));
+var ShowcaseDisplayItemDistributions_1 = tslib_1.__importDefault(require("./ShowcaseDisplayItemDistributions"));
+var grnFormat = "";
 var ShowcaseDisplayItem = /** @class */ (function () {
     function ShowcaseDisplayItem() {
         this.displayItemId = null;
-        this.quantityDistribution = null;
+        this.statistics = null;
+        this.distributions = null;
     }
+    ShowcaseDisplayItem.isValid = function (grn) {
+        return true;
+    };
+    ShowcaseDisplayItem.createGrn = function () {
+        return grnFormat;
+    };
     ShowcaseDisplayItem.prototype.getDisplayItemId = function () {
         return this.displayItemId;
     };
@@ -33,15 +42,26 @@ var ShowcaseDisplayItem = /** @class */ (function () {
         this.displayItemId = displayItemId;
         return this;
     };
-    ShowcaseDisplayItem.prototype.getQuantityDistribution = function () {
-        return this.quantityDistribution;
+    ShowcaseDisplayItem.prototype.getStatistics = function () {
+        return this.statistics;
     };
-    ShowcaseDisplayItem.prototype.setQuantityDistribution = function (quantityDistribution) {
-        this.quantityDistribution = quantityDistribution;
+    ShowcaseDisplayItem.prototype.setStatistics = function (statistics) {
+        this.statistics = statistics;
         return this;
     };
-    ShowcaseDisplayItem.prototype.withQuantityDistribution = function (quantityDistribution) {
-        this.quantityDistribution = quantityDistribution;
+    ShowcaseDisplayItem.prototype.withStatistics = function (statistics) {
+        this.statistics = statistics;
+        return this;
+    };
+    ShowcaseDisplayItem.prototype.getDistributions = function () {
+        return this.distributions;
+    };
+    ShowcaseDisplayItem.prototype.setDistributions = function (distributions) {
+        this.distributions = distributions;
+        return this;
+    };
+    ShowcaseDisplayItem.prototype.withDistributions = function (distributions) {
+        this.distributions = distributions;
         return this;
     };
     ShowcaseDisplayItem.fromDict = function (data) {
@@ -50,18 +70,15 @@ var ShowcaseDisplayItem = /** @class */ (function () {
         }
         return new ShowcaseDisplayItem()
             .withDisplayItemId(data["displayItemId"])
-            .withQuantityDistribution(data.quantityDistribution ?
-            data.quantityDistribution.map(function (item) {
-                return ShowcaseBuyQuantityDistribution_1.default.fromDict(item);
-            }) : []);
+            .withStatistics(ShowcaseDisplayItemStatistics_1.default.fromDict(data["statistics"]))
+            .withDistributions(ShowcaseDisplayItemDistributions_1.default.fromDict(data["distributions"]));
     };
     ShowcaseDisplayItem.prototype.toDict = function () {
+        var _a, _b;
         return {
             "displayItemId": this.getDisplayItemId(),
-            "quantityDistribution": this.getQuantityDistribution() ?
-                this.getQuantityDistribution().map(function (item) {
-                    return item.toDict();
-                }) : [],
+            "statistics": (_a = this.getStatistics()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "distributions": (_b = this.getDistributions()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return ShowcaseDisplayItem;

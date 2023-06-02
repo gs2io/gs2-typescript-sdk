@@ -16,16 +16,175 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MoneyStatistics_1 = tslib_1.__importDefault(require("./MoneyStatistics"));
-var MoneyBalanceDistribution_1 = tslib_1.__importDefault(require("./MoneyBalanceDistribution"));
-var MoneyBillingDistribution_1 = tslib_1.__importDefault(require("./MoneyBillingDistribution"));
+var MoneyNamespaceStatistics_1 = tslib_1.__importDefault(require("./MoneyNamespaceStatistics"));
+var MoneyNamespaceDistributions_1 = tslib_1.__importDefault(require("./MoneyNamespaceDistributions"));
+var MoneyWallet_1 = tslib_1.__importDefault(require("./MoneyWallet"));
+var MoneyReceipt_1 = tslib_1.__importDefault(require("./MoneyReceipt"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:money:namespace:{namespaceName}";
 var MoneyNamespace = /** @class */ (function () {
     function MoneyNamespace() {
+        this.namespaceId = null;
+        this.year = null;
+        this.month = null;
+        this.day = null;
         this.namespaceName = null;
         this.statistics = null;
-        this.balanceDistribution = null;
-        this.billingDistribution = null;
+        this.distributions = null;
+        this.wallets = null;
+        this.receipts = null;
     }
+    MoneyNamespace.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{day}', '.*')
+            .replace('{namespaceName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MoneyNamespace.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{day}', '.*')
+            .replace('{namespaceName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MoneyNamespace.getYear = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '(.*)')
+            .replace('{month}', '.*')
+            .replace('{day}', '.*')
+            .replace('{namespaceName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MoneyNamespace.getMonth = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '(.*)')
+            .replace('{day}', '.*')
+            .replace('{namespaceName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MoneyNamespace.getDay = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{day}', '(.*)')
+            .replace('{namespaceName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MoneyNamespace.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{day}', '.*')
+            .replace('{namespaceName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    MoneyNamespace.isValid = function (grn) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
+            return false;
+        }
+        if (this.getYear(grn) == null || this.getYear(grn) === '') {
+            return false;
+        }
+        if (this.getMonth(grn) == null || this.getMonth(grn) === '') {
+            return false;
+        }
+        if (this.getDay(grn) == null || this.getDay(grn) === '') {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
+            return false;
+        }
+        return true;
+    };
+    MoneyNamespace.createGrn = function (region, ownerId, year, month, day, namespaceName) {
+        return grnFormat
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{year}', year !== null && year !== void 0 ? year : '')
+            .replace('{month}', month !== null && month !== void 0 ? month : '')
+            .replace('{day}', day !== null && day !== void 0 ? day : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '');
+    };
+    MoneyNamespace.prototype.getNamespaceId = function () {
+        return this.namespaceId;
+    };
+    MoneyNamespace.prototype.setNamespaceId = function (namespaceId) {
+        this.namespaceId = namespaceId;
+        return this;
+    };
+    MoneyNamespace.prototype.withNamespaceId = function (namespaceId) {
+        this.namespaceId = namespaceId;
+        return this;
+    };
+    MoneyNamespace.prototype.getYear = function () {
+        return this.year;
+    };
+    MoneyNamespace.prototype.setYear = function (year) {
+        this.year = year;
+        return this;
+    };
+    MoneyNamespace.prototype.withYear = function (year) {
+        this.year = year;
+        return this;
+    };
+    MoneyNamespace.prototype.getMonth = function () {
+        return this.month;
+    };
+    MoneyNamespace.prototype.setMonth = function (month) {
+        this.month = month;
+        return this;
+    };
+    MoneyNamespace.prototype.withMonth = function (month) {
+        this.month = month;
+        return this;
+    };
+    MoneyNamespace.prototype.getDay = function () {
+        return this.day;
+    };
+    MoneyNamespace.prototype.setDay = function (day) {
+        this.day = day;
+        return this;
+    };
+    MoneyNamespace.prototype.withDay = function (day) {
+        this.day = day;
+        return this;
+    };
     MoneyNamespace.prototype.getNamespaceName = function () {
         return this.namespaceName;
     };
@@ -48,26 +207,37 @@ var MoneyNamespace = /** @class */ (function () {
         this.statistics = statistics;
         return this;
     };
-    MoneyNamespace.prototype.getBalanceDistribution = function () {
-        return this.balanceDistribution;
+    MoneyNamespace.prototype.getDistributions = function () {
+        return this.distributions;
     };
-    MoneyNamespace.prototype.setBalanceDistribution = function (balanceDistribution) {
-        this.balanceDistribution = balanceDistribution;
+    MoneyNamespace.prototype.setDistributions = function (distributions) {
+        this.distributions = distributions;
         return this;
     };
-    MoneyNamespace.prototype.withBalanceDistribution = function (balanceDistribution) {
-        this.balanceDistribution = balanceDistribution;
+    MoneyNamespace.prototype.withDistributions = function (distributions) {
+        this.distributions = distributions;
         return this;
     };
-    MoneyNamespace.prototype.getBillingDistribution = function () {
-        return this.billingDistribution;
+    MoneyNamespace.prototype.getWallets = function () {
+        return this.wallets;
     };
-    MoneyNamespace.prototype.setBillingDistribution = function (billingDistribution) {
-        this.billingDistribution = billingDistribution;
+    MoneyNamespace.prototype.setWallets = function (wallets) {
+        this.wallets = wallets;
         return this;
     };
-    MoneyNamespace.prototype.withBillingDistribution = function (billingDistribution) {
-        this.billingDistribution = billingDistribution;
+    MoneyNamespace.prototype.withWallets = function (wallets) {
+        this.wallets = wallets;
+        return this;
+    };
+    MoneyNamespace.prototype.getReceipts = function () {
+        return this.receipts;
+    };
+    MoneyNamespace.prototype.setReceipts = function (receipts) {
+        this.receipts = receipts;
+        return this;
+    };
+    MoneyNamespace.prototype.withReceipts = function (receipts) {
+        this.receipts = receipts;
         return this;
     };
     MoneyNamespace.fromDict = function (data) {
@@ -75,28 +245,38 @@ var MoneyNamespace = /** @class */ (function () {
             return null;
         }
         return new MoneyNamespace()
+            .withNamespaceId(data["namespaceId"])
+            .withYear(data["year"])
+            .withMonth(data["month"])
+            .withDay(data["day"])
             .withNamespaceName(data["namespaceName"])
-            .withStatistics(MoneyStatistics_1.default.fromDict(data["statistics"]))
-            .withBalanceDistribution(data.balanceDistribution ?
-            data.balanceDistribution.map(function (item) {
-                return MoneyBalanceDistribution_1.default.fromDict(item);
+            .withStatistics(MoneyNamespaceStatistics_1.default.fromDict(data["statistics"]))
+            .withDistributions(MoneyNamespaceDistributions_1.default.fromDict(data["distributions"]))
+            .withWallets(data.wallets ?
+            data.wallets.map(function (item) {
+                return MoneyWallet_1.default.fromDict(item);
             }) : [])
-            .withBillingDistribution(data.billingDistribution ?
-            data.billingDistribution.map(function (item) {
-                return MoneyBillingDistribution_1.default.fromDict(item);
+            .withReceipts(data.receipts ?
+            data.receipts.map(function (item) {
+                return MoneyReceipt_1.default.fromDict(item);
             }) : []);
     };
     MoneyNamespace.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
+            "namespaceId": this.getNamespaceId(),
+            "year": this.getYear(),
+            "month": this.getMonth(),
+            "day": this.getDay(),
             "namespaceName": this.getNamespaceName(),
             "statistics": (_a = this.getStatistics()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "balanceDistribution": this.getBalanceDistribution() ?
-                this.getBalanceDistribution().map(function (item) {
+            "distributions": (_b = this.getDistributions()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "wallets": this.getWallets() ?
+                this.getWallets().map(function (item) {
                     return item.toDict();
                 }) : [],
-            "billingDistribution": this.getBillingDistribution() ?
-                this.getBillingDistribution().map(function (item) {
+            "receipts": this.getReceipts() ?
+                this.getReceipts().map(function (item) {
                     return item.toDict();
                 }) : [],
         };

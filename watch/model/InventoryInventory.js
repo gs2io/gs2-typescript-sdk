@@ -17,13 +17,160 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var InventoryInventoryStatistics_1 = tslib_1.__importDefault(require("./InventoryInventoryStatistics"));
-var InventoryItem_1 = tslib_1.__importDefault(require("./InventoryItem"));
+var InventoryInventoryDistributions_1 = tslib_1.__importDefault(require("./InventoryInventoryDistributions"));
+var InventoryItemSet_1 = tslib_1.__importDefault(require("./InventoryItemSet"));
+var grnFormat = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:inventory:namespace:{namespaceName}:inventory:{inventoryName}";
 var InventoryInventory = /** @class */ (function () {
     function InventoryInventory() {
+        this.inventoryId = null;
         this.inventoryName = null;
         this.statistics = null;
-        this.item = null;
+        this.distributions = null;
+        this.itemSets = null;
     }
+    InventoryInventory.getRegion = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '(.*)')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{day}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{inventoryName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    InventoryInventory.getOwnerId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '(.*)')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{day}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{inventoryName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    InventoryInventory.getYear = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '(.*)')
+            .replace('{month}', '.*')
+            .replace('{day}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{inventoryName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    InventoryInventory.getMonth = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '(.*)')
+            .replace('{day}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{inventoryName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    InventoryInventory.getDay = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{day}', '(.*)')
+            .replace('{namespaceName}', '.*')
+            .replace('{inventoryName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    InventoryInventory.getNamespaceName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{day}', '.*')
+            .replace('{namespaceName}', '(.*)')
+            .replace('{inventoryName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    InventoryInventory.getInventoryName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{year}', '.*')
+            .replace('{month}', '.*')
+            .replace('{day}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{inventoryName}', '(.*)'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    InventoryInventory.isValid = function (grn) {
+        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
+            return false;
+        }
+        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
+            return false;
+        }
+        if (this.getYear(grn) == null || this.getYear(grn) === '') {
+            return false;
+        }
+        if (this.getMonth(grn) == null || this.getMonth(grn) === '') {
+            return false;
+        }
+        if (this.getDay(grn) == null || this.getDay(grn) === '') {
+            return false;
+        }
+        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
+            return false;
+        }
+        if (this.getInventoryName(grn) == null || this.getInventoryName(grn) === '') {
+            return false;
+        }
+        return true;
+    };
+    InventoryInventory.createGrn = function (region, ownerId, year, month, day, namespaceName, inventoryName) {
+        return grnFormat
+            .replace('{region}', region !== null && region !== void 0 ? region : '')
+            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
+            .replace('{year}', year !== null && year !== void 0 ? year : '')
+            .replace('{month}', month !== null && month !== void 0 ? month : '')
+            .replace('{day}', day !== null && day !== void 0 ? day : '')
+            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{inventoryName}', inventoryName !== null && inventoryName !== void 0 ? inventoryName : '');
+    };
+    InventoryInventory.prototype.getInventoryId = function () {
+        return this.inventoryId;
+    };
+    InventoryInventory.prototype.setInventoryId = function (inventoryId) {
+        this.inventoryId = inventoryId;
+        return this;
+    };
+    InventoryInventory.prototype.withInventoryId = function (inventoryId) {
+        this.inventoryId = inventoryId;
+        return this;
+    };
     InventoryInventory.prototype.getInventoryName = function () {
         return this.inventoryName;
     };
@@ -46,15 +193,26 @@ var InventoryInventory = /** @class */ (function () {
         this.statistics = statistics;
         return this;
     };
-    InventoryInventory.prototype.getItem = function () {
-        return this.item;
+    InventoryInventory.prototype.getDistributions = function () {
+        return this.distributions;
     };
-    InventoryInventory.prototype.setItem = function (item) {
-        this.item = item;
+    InventoryInventory.prototype.setDistributions = function (distributions) {
+        this.distributions = distributions;
         return this;
     };
-    InventoryInventory.prototype.withItem = function (item) {
-        this.item = item;
+    InventoryInventory.prototype.withDistributions = function (distributions) {
+        this.distributions = distributions;
+        return this;
+    };
+    InventoryInventory.prototype.getItemSets = function () {
+        return this.itemSets;
+    };
+    InventoryInventory.prototype.setItemSets = function (itemSets) {
+        this.itemSets = itemSets;
+        return this;
+    };
+    InventoryInventory.prototype.withItemSets = function (itemSets) {
+        this.itemSets = itemSets;
         return this;
     };
     InventoryInventory.fromDict = function (data) {
@@ -62,25 +220,24 @@ var InventoryInventory = /** @class */ (function () {
             return null;
         }
         return new InventoryInventory()
+            .withInventoryId(data["inventoryId"])
             .withInventoryName(data["inventoryName"])
-            .withStatistics(data.statistics ?
-            data.statistics.map(function (item) {
-                return InventoryInventoryStatistics_1.default.fromDict(item);
-            }) : [])
-            .withItem(data.item ?
-            data.item.map(function (item) {
-                return InventoryItem_1.default.fromDict(item);
+            .withStatistics(InventoryInventoryStatistics_1.default.fromDict(data["statistics"]))
+            .withDistributions(InventoryInventoryDistributions_1.default.fromDict(data["distributions"]))
+            .withItemSets(data.itemSets ?
+            data.itemSets.map(function (item) {
+                return InventoryItemSet_1.default.fromDict(item);
             }) : []);
     };
     InventoryInventory.prototype.toDict = function () {
+        var _a, _b;
         return {
+            "inventoryId": this.getInventoryId(),
             "inventoryName": this.getInventoryName(),
-            "statistics": this.getStatistics() ?
-                this.getStatistics().map(function (item) {
-                    return item.toDict();
-                }) : [],
-            "item": this.getItem() ?
-                this.getItem().map(function (item) {
+            "statistics": (_a = this.getStatistics()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "distributions": (_b = this.getDistributions()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "itemSets": this.getItemSets() ?
+                this.getItemSets().map(function (item) {
                     return item.toDict();
                 }) : [],
         };

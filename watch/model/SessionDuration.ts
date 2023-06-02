@@ -16,11 +16,11 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 import SessionDurationStatistics from './SessionDurationStatistics';
-import SessionDurationDistribution from './SessionDurationDistribution';
+import SessionDurationDistributionSegment from './SessionDurationDistributionSegment';
 
 export default class SessionDuration implements IModel {
     private statistics: SessionDurationStatistics|null = null;
-    private distribution: SessionDurationDistribution[]|null = null;
+    private distribution: SessionDurationDistributionSegment[]|null = null;
     public getStatistics(): SessionDurationStatistics|null {
         return this.statistics;
     }
@@ -32,14 +32,14 @@ export default class SessionDuration implements IModel {
         this.statistics = statistics;
         return this;
     }
-    public getDistribution(): SessionDurationDistribution[]|null {
+    public getDistribution(): SessionDurationDistributionSegment[]|null {
         return this.distribution;
     }
-    public setDistribution(distribution: SessionDurationDistribution[]|null) {
+    public setDistribution(distribution: SessionDurationDistributionSegment[]|null) {
         this.distribution = distribution;
         return this;
     }
-    public withDistribution(distribution: SessionDurationDistribution[]|null): this {
+    public withDistribution(distribution: SessionDurationDistributionSegment[]|null): this {
         this.distribution = distribution;
         return this;
     }
@@ -52,7 +52,7 @@ export default class SessionDuration implements IModel {
             .withStatistics(SessionDurationStatistics.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
                 data.distribution.map((item: {[key: string]: any}) => {
-                    return SessionDurationDistribution.fromDict(item);
+                    return SessionDurationDistributionSegment.fromDict(item);
                 }
             ) : []);
     }
@@ -61,7 +61,7 @@ export default class SessionDuration implements IModel {
         return {
             "statistics": this.getStatistics()?.toDict(),
             "distribution": this.getDistribution() ?
-                this.getDistribution()!.map((item: SessionDurationDistribution) => {
+                this.getDistribution()!.map((item: SessionDurationDistributionSegment) => {
                     return item.toDict();
                 }
             ) : [],

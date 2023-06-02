@@ -1,0 +1,57 @@
+import IModel from '../../core/interface/IModel';
+import MissionNamespaceStatistics from './MissionNamespaceStatistics';
+import MissionNamespaceDistributions from './MissionNamespaceDistributions';
+import MissionMissionGroupModel from './MissionMissionGroupModel';
+import MissionCounter from './MissionCounter';
+export default class MissionNamespace implements IModel {
+    private namespaceId;
+    private year;
+    private month;
+    private day;
+    private namespaceName;
+    private statistics;
+    private distributions;
+    private missionGroupModels;
+    private counters;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getYear(grn: string): string | null;
+    static getMonth(grn: string): string | null;
+    static getDay(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, year: string | null, month: string | null, day: string | null, namespaceName: string | null): string | null;
+    getNamespaceId(): string | null;
+    setNamespaceId(namespaceId: string | null): this;
+    withNamespaceId(namespaceId: string | null): this;
+    getYear(): number | null;
+    setYear(year: number | null): this;
+    withYear(year: number | null): this;
+    getMonth(): number | null;
+    setMonth(month: number | null): this;
+    withMonth(month: number | null): this;
+    getDay(): number | null;
+    setDay(day: number | null): this;
+    withDay(day: number | null): this;
+    getNamespaceName(): string | null;
+    setNamespaceName(namespaceName: string | null): this;
+    withNamespaceName(namespaceName: string | null): this;
+    getStatistics(): MissionNamespaceStatistics | null;
+    setStatistics(statistics: MissionNamespaceStatistics | null): this;
+    withStatistics(statistics: MissionNamespaceStatistics | null): this;
+    getDistributions(): MissionNamespaceDistributions | null;
+    setDistributions(distributions: MissionNamespaceDistributions | null): this;
+    withDistributions(distributions: MissionNamespaceDistributions | null): this;
+    getMissionGroupModels(): MissionMissionGroupModel[] | null;
+    setMissionGroupModels(missionGroupModels: MissionMissionGroupModel[] | null): this;
+    withMissionGroupModels(missionGroupModels: MissionMissionGroupModel[] | null): this;
+    getCounters(): MissionCounter[] | null;
+    setCounters(counters: MissionCounter[] | null): this;
+    withCounters(counters: MissionCounter[] | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): MissionNamespace | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}
