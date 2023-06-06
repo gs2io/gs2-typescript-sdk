@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ResetBoxByUserIdRequest = exports.ResetBoxRequest = exports.GetBoxByUserIdRequest = exports.GetBoxRequest = exports.DescribeBoxesByUserIdRequest = exports.DescribeBoxesRequest = exports.ResetPrizeLimitRequest = exports.GetPrizeLimitRequest = exports.DescribePrizeLimitsRequest = exports.UpdateCurrentLotteryMasterFromGitHubRequest = exports.UpdateCurrentLotteryMasterRequest = exports.GetCurrentLotteryMasterRequest = exports.ExportMasterRequest = exports.DescribeProbabilitiesByUserIdRequest = exports.DescribeProbabilitiesRequest = exports.DrawByStampSheetRequest = exports.DrawByUserIdRequest = exports.GetPrizeTableRequest = exports.DescribePrizeTablesRequest = exports.GetLotteryModelRequest = exports.DescribeLotteryModelsRequest = exports.DeletePrizeTableMasterRequest = exports.UpdatePrizeTableMasterRequest = exports.GetPrizeTableMasterRequest = exports.CreatePrizeTableMasterRequest = exports.DescribePrizeTableMastersRequest = exports.DeleteLotteryModelMasterRequest = exports.UpdateLotteryModelMasterRequest = exports.GetLotteryModelMasterRequest = exports.CreateLotteryModelMasterRequest = exports.DescribeLotteryModelMastersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.ResetBoxByUserIdRequest = exports.ResetBoxRequest = exports.GetBoxByUserIdRequest = exports.GetBoxRequest = exports.DescribeBoxesByUserIdRequest = exports.DescribeBoxesRequest = exports.ResetPrizeLimitRequest = exports.GetPrizeLimitRequest = exports.DescribePrizeLimitsRequest = exports.UpdateCurrentLotteryMasterFromGitHubRequest = exports.UpdateCurrentLotteryMasterRequest = exports.GetCurrentLotteryMasterRequest = exports.ExportMasterRequest = exports.DescribeProbabilitiesByUserIdRequest = exports.DescribeProbabilitiesRequest = exports.DrawByStampSheetRequest = exports.DrawWithRandomSeedByUserIdRequest = exports.PredictionByUserIdRequest = exports.PredictionRequest = exports.DrawByUserIdRequest = exports.GetPrizeTableRequest = exports.DescribePrizeTablesRequest = exports.GetLotteryModelRequest = exports.DescribeLotteryModelsRequest = exports.DeletePrizeTableMasterRequest = exports.UpdatePrizeTableMasterRequest = exports.GetPrizeTableMasterRequest = exports.CreatePrizeTableMasterRequest = exports.DescribePrizeTableMastersRequest = exports.DeleteLotteryModelMasterRequest = exports.UpdateLotteryModelMasterRequest = exports.GetLotteryModelMasterRequest = exports.CreateLotteryModelMasterRequest = exports.DescribeLotteryModelMastersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -59,6 +59,12 @@ var GetPrizeTableRequest_1 = tslib_1.__importDefault(require("./GetPrizeTableReq
 exports.GetPrizeTableRequest = GetPrizeTableRequest_1.default;
 var DrawByUserIdRequest_1 = tslib_1.__importDefault(require("./DrawByUserIdRequest"));
 exports.DrawByUserIdRequest = DrawByUserIdRequest_1.default;
+var PredictionRequest_1 = tslib_1.__importDefault(require("./PredictionRequest"));
+exports.PredictionRequest = PredictionRequest_1.default;
+var PredictionByUserIdRequest_1 = tslib_1.__importDefault(require("./PredictionByUserIdRequest"));
+exports.PredictionByUserIdRequest = PredictionByUserIdRequest_1.default;
+var DrawWithRandomSeedByUserIdRequest_1 = tslib_1.__importDefault(require("./DrawWithRandomSeedByUserIdRequest"));
+exports.DrawWithRandomSeedByUserIdRequest = DrawWithRandomSeedByUserIdRequest_1.default;
 var DrawByStampSheetRequest_1 = tslib_1.__importDefault(require("./DrawByStampSheetRequest"));
 exports.DrawByStampSheetRequest = DrawByStampSheetRequest_1.default;
 var DescribeProbabilitiesRequest_1 = tslib_1.__importDefault(require("./DescribeProbabilitiesRequest"));

@@ -34,6 +34,9 @@ import GetLotteryModelRequest from "./GetLotteryModelRequest"
 import DescribePrizeTablesRequest from "./DescribePrizeTablesRequest"
 import GetPrizeTableRequest from "./GetPrizeTableRequest"
 import DrawByUserIdRequest from "./DrawByUserIdRequest"
+import PredictionRequest from "./PredictionRequest"
+import PredictionByUserIdRequest from "./PredictionByUserIdRequest"
+import DrawWithRandomSeedByUserIdRequest from "./DrawWithRandomSeedByUserIdRequest"
 import DrawByStampSheetRequest from "./DrawByStampSheetRequest"
 import DescribeProbabilitiesRequest from "./DescribeProbabilitiesRequest"
 import DescribeProbabilitiesByUserIdRequest from "./DescribeProbabilitiesByUserIdRequest"
@@ -73,6 +76,9 @@ export {
     DescribePrizeTablesRequest,
     GetPrizeTableRequest,
     DrawByUserIdRequest,
+    PredictionRequest,
+    PredictionByUserIdRequest,
+    DrawWithRandomSeedByUserIdRequest,
     DrawByStampSheetRequest,
     DescribeProbabilitiesRequest,
     DescribeProbabilitiesByUserIdRequest,

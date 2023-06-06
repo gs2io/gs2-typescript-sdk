@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ResetBoxByUserIdResult = exports.ResetBoxResult = exports.GetBoxByUserIdResult = exports.GetBoxResult = exports.DescribeBoxesByUserIdResult = exports.DescribeBoxesResult = exports.ResetPrizeLimitResult = exports.GetPrizeLimitResult = exports.DescribePrizeLimitsResult = exports.UpdateCurrentLotteryMasterFromGitHubResult = exports.UpdateCurrentLotteryMasterResult = exports.GetCurrentLotteryMasterResult = exports.ExportMasterResult = exports.DescribeProbabilitiesByUserIdResult = exports.DescribeProbabilitiesResult = exports.DrawByStampSheetResult = exports.DrawByUserIdResult = exports.GetPrizeTableResult = exports.DescribePrizeTablesResult = exports.GetLotteryModelResult = exports.DescribeLotteryModelsResult = exports.DeletePrizeTableMasterResult = exports.UpdatePrizeTableMasterResult = exports.GetPrizeTableMasterResult = exports.CreatePrizeTableMasterResult = exports.DescribePrizeTableMastersResult = exports.DeleteLotteryModelMasterResult = exports.UpdateLotteryModelMasterResult = exports.GetLotteryModelMasterResult = exports.CreateLotteryModelMasterResult = exports.DescribeLotteryModelMastersResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.ResetBoxByUserIdResult = exports.ResetBoxResult = exports.GetBoxByUserIdResult = exports.GetBoxResult = exports.DescribeBoxesByUserIdResult = exports.DescribeBoxesResult = exports.ResetPrizeLimitResult = exports.GetPrizeLimitResult = exports.DescribePrizeLimitsResult = exports.UpdateCurrentLotteryMasterFromGitHubResult = exports.UpdateCurrentLotteryMasterResult = exports.GetCurrentLotteryMasterResult = exports.ExportMasterResult = exports.DescribeProbabilitiesByUserIdResult = exports.DescribeProbabilitiesResult = exports.DrawByStampSheetResult = exports.DrawWithRandomSeedByUserIdResult = exports.PredictionByUserIdResult = exports.PredictionResult = exports.DrawByUserIdResult = exports.GetPrizeTableResult = exports.DescribePrizeTablesResult = exports.GetLotteryModelResult = exports.DescribeLotteryModelsResult = exports.DeletePrizeTableMasterResult = exports.UpdatePrizeTableMasterResult = exports.GetPrizeTableMasterResult = exports.CreatePrizeTableMasterResult = exports.DescribePrizeTableMastersResult = exports.DeleteLotteryModelMasterResult = exports.UpdateLotteryModelMasterResult = exports.GetLotteryModelMasterResult = exports.CreateLotteryModelMasterResult = exports.DescribeLotteryModelMastersResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -59,6 +59,12 @@ var GetPrizeTableResult_1 = tslib_1.__importDefault(require("./GetPrizeTableResu
 exports.GetPrizeTableResult = GetPrizeTableResult_1.default;
 var DrawByUserIdResult_1 = tslib_1.__importDefault(require("./DrawByUserIdResult"));
 exports.DrawByUserIdResult = DrawByUserIdResult_1.default;
+var PredictionResult_1 = tslib_1.__importDefault(require("./PredictionResult"));
+exports.PredictionResult = PredictionResult_1.default;
+var PredictionByUserIdResult_1 = tslib_1.__importDefault(require("./PredictionByUserIdResult"));
+exports.PredictionByUserIdResult = PredictionByUserIdResult_1.default;
+var DrawWithRandomSeedByUserIdResult_1 = tslib_1.__importDefault(require("./DrawWithRandomSeedByUserIdResult"));
+exports.DrawWithRandomSeedByUserIdResult = DrawWithRandomSeedByUserIdResult_1.default;
 var DrawByStampSheetResult_1 = tslib_1.__importDefault(require("./DrawByStampSheetResult"));
 exports.DrawByStampSheetResult = DrawByStampSheetResult_1.default;
 var DescribeProbabilitiesResult_1 = tslib_1.__importDefault(require("./DescribeProbabilitiesResult"));

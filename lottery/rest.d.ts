@@ -25,6 +25,9 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     describePrizeTables(request: Request.DescribePrizeTablesRequest): Promise<Result.DescribePrizeTablesResult>;
     getPrizeTable(request: Request.GetPrizeTableRequest): Promise<Result.GetPrizeTableResult>;
     drawByUserId(request: Request.DrawByUserIdRequest): Promise<Result.DrawByUserIdResult>;
+    prediction(request: Request.PredictionRequest): Promise<Result.PredictionResult>;
+    predictionByUserId(request: Request.PredictionByUserIdRequest): Promise<Result.PredictionByUserIdResult>;
+    drawWithRandomSeedByUserId(request: Request.DrawWithRandomSeedByUserIdRequest): Promise<Result.DrawWithRandomSeedByUserIdResult>;
     drawByStampSheet(request: Request.DrawByStampSheetRequest): Promise<Result.DrawByStampSheetResult>;
     describeProbabilities(request: Request.DescribeProbabilitiesRequest): Promise<Result.DescribeProbabilitiesResult>;
     describeProbabilitiesByUserId(request: Request.DescribeProbabilitiesByUserIdRequest): Promise<Result.DescribeProbabilitiesByUserIdResult>;
