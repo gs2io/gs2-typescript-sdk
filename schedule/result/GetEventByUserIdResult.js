@@ -20,6 +20,7 @@ var Gs2Schedule = tslib_1.__importStar(require("../model"));
 var GetEventByUserIdResult = /** @class */ (function () {
     function GetEventByUserIdResult() {
         this.item = null;
+        this.repeatCount = null;
     }
     GetEventByUserIdResult.prototype.getItem = function () {
         return this.item;
@@ -32,14 +33,27 @@ var GetEventByUserIdResult = /** @class */ (function () {
         this.item = item;
         return this;
     };
+    GetEventByUserIdResult.prototype.getRepeatCount = function () {
+        return this.repeatCount;
+    };
+    GetEventByUserIdResult.prototype.setRepeatCount = function (repeatCount) {
+        this.repeatCount = repeatCount;
+        return this;
+    };
+    GetEventByUserIdResult.prototype.withRepeatCount = function (repeatCount) {
+        this.repeatCount = repeatCount;
+        return this;
+    };
     GetEventByUserIdResult.fromDict = function (data) {
         return new GetEventByUserIdResult()
-            .withItem(Gs2Schedule.Event.fromDict(data["item"]));
+            .withItem(Gs2Schedule.Event.fromDict(data["item"]))
+            .withRepeatCount(data["repeatCount"]);
     };
     GetEventByUserIdResult.prototype.toDict = function () {
         var _a;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "repeatCount": this.getRepeatCount(),
         };
     };
     return GetEventByUserIdResult;

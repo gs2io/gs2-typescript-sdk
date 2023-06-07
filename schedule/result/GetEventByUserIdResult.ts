@@ -20,6 +20,7 @@ import * as Gs2Schedule from '../model'
 
 export default class GetEventByUserIdResult implements IResult {
     private item: Gs2Schedule.Event|null = null;
+    private repeatCount: number|null = null;
 
     public getItem(): Gs2Schedule.Event|null {
         return this.item;
@@ -35,14 +36,30 @@ export default class GetEventByUserIdResult implements IResult {
         return this;
     }
 
+    public getRepeatCount(): number|null {
+        return this.repeatCount;
+    }
+
+    public setRepeatCount(repeatCount: number|null) {
+        this.repeatCount = repeatCount;
+        return this;
+    }
+
+    public withRepeatCount(repeatCount: number|null): this {
+        this.repeatCount = repeatCount;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): GetEventByUserIdResult {
         return new GetEventByUserIdResult()
-            .withItem(Gs2Schedule.Event.fromDict(data["item"]));
+            .withItem(Gs2Schedule.Event.fromDict(data["item"]))
+            .withRepeatCount(data["repeatCount"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
+            "repeatCount": this.getRepeatCount(),
         };
     }
 }
