@@ -20,8 +20,9 @@ import * as Gs2Schedule from '../model'
 
 export default class GetEventByUserIdResult implements IResult {
     private item: Gs2Schedule.Event|null = null;
-    private repeatCount: number|null = null;
     private inSchedule: boolean|null = null;
+    private scheduleStartAt: number|null = null;
+    private scheduleEndAt: number|null = null;
     private repeatSchedule: Gs2Schedule.RepeatSchedule|null = null;
 
     public getItem(): Gs2Schedule.Event|null {
@@ -38,20 +39,6 @@ export default class GetEventByUserIdResult implements IResult {
         return this;
     }
 
-    public getRepeatCount(): number|null {
-        return this.repeatCount;
-    }
-
-    public setRepeatCount(repeatCount: number|null) {
-        this.repeatCount = repeatCount;
-        return this;
-    }
-
-    public withRepeatCount(repeatCount: number|null): this {
-        this.repeatCount = repeatCount;
-        return this;
-    }
-
     public getInSchedule(): boolean|null {
         return this.inSchedule;
     }
@@ -63,6 +50,34 @@ export default class GetEventByUserIdResult implements IResult {
 
     public withInSchedule(inSchedule: boolean|null): this {
         this.inSchedule = inSchedule;
+        return this;
+    }
+
+    public getScheduleStartAt(): number|null {
+        return this.scheduleStartAt;
+    }
+
+    public setScheduleStartAt(scheduleStartAt: number|null) {
+        this.scheduleStartAt = scheduleStartAt;
+        return this;
+    }
+
+    public withScheduleStartAt(scheduleStartAt: number|null): this {
+        this.scheduleStartAt = scheduleStartAt;
+        return this;
+    }
+
+    public getScheduleEndAt(): number|null {
+        return this.scheduleEndAt;
+    }
+
+    public setScheduleEndAt(scheduleEndAt: number|null) {
+        this.scheduleEndAt = scheduleEndAt;
+        return this;
+    }
+
+    public withScheduleEndAt(scheduleEndAt: number|null): this {
+        this.scheduleEndAt = scheduleEndAt;
         return this;
     }
 
@@ -83,16 +98,18 @@ export default class GetEventByUserIdResult implements IResult {
     public static fromDict(data: {[key: string]: any}): GetEventByUserIdResult {
         return new GetEventByUserIdResult()
             .withItem(Gs2Schedule.Event.fromDict(data["item"]))
-            .withRepeatCount(data["repeatCount"])
             .withInSchedule(data["inSchedule"])
+            .withScheduleStartAt(data["scheduleStartAt"])
+            .withScheduleEndAt(data["scheduleEndAt"])
             .withRepeatSchedule(Gs2Schedule.RepeatSchedule.fromDict(data["repeatSchedule"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
-            "repeatCount": this.getRepeatCount(),
             "inSchedule": this.getInSchedule(),
+            "scheduleStartAt": this.getScheduleStartAt(),
+            "scheduleEndAt": this.getScheduleEndAt(),
             "repeatSchedule": this.getRepeatSchedule()?.toDict(),
         };
     }

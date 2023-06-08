@@ -20,8 +20,9 @@ var Gs2Schedule = tslib_1.__importStar(require("../model"));
 var GetEventResult = /** @class */ (function () {
     function GetEventResult() {
         this.item = null;
-        this.repeatCount = null;
         this.inSchedule = null;
+        this.scheduleStartAt = null;
+        this.scheduleEndAt = null;
         this.repeatSchedule = null;
     }
     GetEventResult.prototype.getItem = function () {
@@ -35,17 +36,6 @@ var GetEventResult = /** @class */ (function () {
         this.item = item;
         return this;
     };
-    GetEventResult.prototype.getRepeatCount = function () {
-        return this.repeatCount;
-    };
-    GetEventResult.prototype.setRepeatCount = function (repeatCount) {
-        this.repeatCount = repeatCount;
-        return this;
-    };
-    GetEventResult.prototype.withRepeatCount = function (repeatCount) {
-        this.repeatCount = repeatCount;
-        return this;
-    };
     GetEventResult.prototype.getInSchedule = function () {
         return this.inSchedule;
     };
@@ -55,6 +45,28 @@ var GetEventResult = /** @class */ (function () {
     };
     GetEventResult.prototype.withInSchedule = function (inSchedule) {
         this.inSchedule = inSchedule;
+        return this;
+    };
+    GetEventResult.prototype.getScheduleStartAt = function () {
+        return this.scheduleStartAt;
+    };
+    GetEventResult.prototype.setScheduleStartAt = function (scheduleStartAt) {
+        this.scheduleStartAt = scheduleStartAt;
+        return this;
+    };
+    GetEventResult.prototype.withScheduleStartAt = function (scheduleStartAt) {
+        this.scheduleStartAt = scheduleStartAt;
+        return this;
+    };
+    GetEventResult.prototype.getScheduleEndAt = function () {
+        return this.scheduleEndAt;
+    };
+    GetEventResult.prototype.setScheduleEndAt = function (scheduleEndAt) {
+        this.scheduleEndAt = scheduleEndAt;
+        return this;
+    };
+    GetEventResult.prototype.withScheduleEndAt = function (scheduleEndAt) {
+        this.scheduleEndAt = scheduleEndAt;
         return this;
     };
     GetEventResult.prototype.getRepeatSchedule = function () {
@@ -71,16 +83,18 @@ var GetEventResult = /** @class */ (function () {
     GetEventResult.fromDict = function (data) {
         return new GetEventResult()
             .withItem(Gs2Schedule.Event.fromDict(data["item"]))
-            .withRepeatCount(data["repeatCount"])
             .withInSchedule(data["inSchedule"])
+            .withScheduleStartAt(data["scheduleStartAt"])
+            .withScheduleEndAt(data["scheduleEndAt"])
             .withRepeatSchedule(Gs2Schedule.RepeatSchedule.fromDict(data["repeatSchedule"]));
     };
     GetEventResult.prototype.toDict = function () {
         var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "repeatCount": this.getRepeatCount(),
             "inSchedule": this.getInSchedule(),
+            "scheduleStartAt": this.getScheduleStartAt(),
+            "scheduleEndAt": this.getScheduleEndAt(),
             "repeatSchedule": (_b = this.getRepeatSchedule()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
