@@ -195,7 +195,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ScheduleRestClient.prototype.createEventMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/event')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
@@ -220,7 +220,6 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
             'repeatBeginHour': (_q = request.getRepeatBeginHour()) !== null && _q !== void 0 ? _q : null,
             'repeatEndHour': (_r = request.getRepeatEndHour()) !== null && _r !== void 0 ? _r : null,
             'relativeTriggerName': (_s = request.getRelativeTriggerName()) !== null && _s !== void 0 ? _s : null,
-            'relativeDuration': (_t = request.getRelativeDuration()) !== null && _t !== void 0 ? _t : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -259,7 +258,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ScheduleRestClient.prototype.updateEventMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/event/{eventName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
@@ -284,7 +283,6 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
             'repeatBeginHour': (_r = request.getRepeatBeginHour()) !== null && _r !== void 0 ? _r : null,
             'repeatEndHour': (_s = request.getRepeatEndHour()) !== null && _s !== void 0 ? _s : null,
             'relativeTriggerName': (_t = request.getRelativeTriggerName()) !== null && _t !== void 0 ? _t : null,
-            'relativeDuration': (_u = request.getRelativeDuration()) !== null && _u !== void 0 ? _u : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

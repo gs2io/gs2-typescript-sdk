@@ -20,6 +20,7 @@ import Event from "./Event"
 import CurrentEventMaster from "./CurrentEventMaster"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import LogSetting from "./LogSetting"
+import RepeatSchedule from "./RepeatSchedule"
 
 export {
     Namespace,
@@ -29,4 +30,5 @@ export {
     CurrentEventMaster,
     GitHubCheckoutSetting,
     LogSetting,
+    RepeatSchedule,
 };

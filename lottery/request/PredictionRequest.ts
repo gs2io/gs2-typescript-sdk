@@ -24,7 +24,7 @@ export default class PredictionRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private lotteryName: string|null = null;
-    private userId: string|null = null;
+    private accessToken: string|null = null;
     private randomSeed: number|null = null;
     private count: number|null = null;
     private duplicationAvoider: string|null = null;
@@ -78,15 +78,15 @@ export default class PredictionRequest implements IRequest {
         this.lotteryName = lotteryName;
         return this;
     }
-    public getUserId(): string|null {
-        return this.userId;
+    public getAccessToken(): string|null {
+        return this.accessToken;
     }
-    public setUserId(userId: string|null) {
-        this.userId = userId;
+    public setAccessToken(accessToken: string|null) {
+        this.accessToken = accessToken;
         return this;
     }
-    public withUserId(userId: string|null): this {
-        this.userId = userId;
+    public withAccessToken(accessToken: string|null): this {
+        this.accessToken = accessToken;
         return this;
     }
     public getRandomSeed(): number|null {
@@ -130,7 +130,7 @@ export default class PredictionRequest implements IRequest {
         return new PredictionRequest()
             .withNamespaceName(data["namespaceName"])
             .withLotteryName(data["lotteryName"])
-            .withUserId(data["userId"])
+            .withAccessToken(data["accessToken"])
             .withRandomSeed(data["randomSeed"])
             .withCount(data["count"]);
     }
@@ -139,7 +139,7 @@ export default class PredictionRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "lotteryName": this.getLotteryName(),
-            "userId": this.getUserId(),
+            "accessToken": this.getAccessToken(),
             "randomSeed": this.getRandomSeed(),
             "count": this.getCount(),
         };

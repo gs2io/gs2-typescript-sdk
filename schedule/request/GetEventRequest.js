@@ -22,6 +22,7 @@ var GetEventRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.eventName = null;
         this.accessToken = null;
+        this.isInSchedule = null;
     }
     GetEventRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetEventRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
+    GetEventRequest.prototype.getIsInSchedule = function () {
+        return this.isInSchedule;
+    };
+    GetEventRequest.prototype.setIsInSchedule = function (isInSchedule) {
+        this.isInSchedule = isInSchedule;
+        return this;
+    };
+    GetEventRequest.prototype.withIsInSchedule = function (isInSchedule) {
+        this.isInSchedule = isInSchedule;
+        return this;
+    };
     GetEventRequest.fromDict = function (data) {
         return new GetEventRequest()
             .withNamespaceName(data["namespaceName"])
             .withEventName(data["eventName"])
-            .withAccessToken(data["accessToken"]);
+            .withAccessToken(data["accessToken"])
+            .withIsInSchedule(data["isInSchedule"]);
     };
     GetEventRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "eventName": this.getEventName(),
             "accessToken": this.getAccessToken(),
+            "isInSchedule": this.getIsInSchedule(),
         };
     };
     return GetEventRequest;

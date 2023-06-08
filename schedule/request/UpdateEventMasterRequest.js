@@ -34,7 +34,6 @@ var UpdateEventMasterRequest = /** @class */ (function () {
         this.repeatBeginHour = null;
         this.repeatEndHour = null;
         this.relativeTriggerName = null;
-        this.relativeDuration = null;
     }
     UpdateEventMasterRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -223,17 +222,6 @@ var UpdateEventMasterRequest = /** @class */ (function () {
         this.relativeTriggerName = relativeTriggerName;
         return this;
     };
-    UpdateEventMasterRequest.prototype.getRelativeDuration = function () {
-        return this.relativeDuration;
-    };
-    UpdateEventMasterRequest.prototype.setRelativeDuration = function (relativeDuration) {
-        this.relativeDuration = relativeDuration;
-        return this;
-    };
-    UpdateEventMasterRequest.prototype.withRelativeDuration = function (relativeDuration) {
-        this.relativeDuration = relativeDuration;
-        return this;
-    };
     UpdateEventMasterRequest.fromDict = function (data) {
         return new UpdateEventMasterRequest()
             .withNamespaceName(data["namespaceName"])
@@ -250,8 +238,7 @@ var UpdateEventMasterRequest = /** @class */ (function () {
             .withRepeatEndDayOfWeek(data["repeatEndDayOfWeek"])
             .withRepeatBeginHour(data["repeatBeginHour"])
             .withRepeatEndHour(data["repeatEndHour"])
-            .withRelativeTriggerName(data["relativeTriggerName"])
-            .withRelativeDuration(data["relativeDuration"]);
+            .withRelativeTriggerName(data["relativeTriggerName"]);
     };
     UpdateEventMasterRequest.prototype.toDict = function () {
         return {
@@ -270,7 +257,6 @@ var UpdateEventMasterRequest = /** @class */ (function () {
             "repeatBeginHour": this.getRepeatBeginHour(),
             "repeatEndHour": this.getRepeatEndHour(),
             "relativeTriggerName": this.getRelativeTriggerName(),
-            "relativeDuration": this.getRelativeDuration(),
         };
     };
     return UpdateEventMasterRequest;

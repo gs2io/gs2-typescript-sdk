@@ -660,12 +660,14 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
             .replace('{service}', 'lottery')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{lotteryName}', String(request.getLotteryName() ?? 'null') === "" ? "null" : String(request.getLotteryName() ?? 'null'))
-            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+            .replace('{lotteryName}', String(request.getLotteryName() ?? 'null') === "" ? "null" : String(request.getLotteryName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
         }
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;

@@ -32,7 +32,6 @@ var Event = /** @class */ (function () {
         this.repeatBeginHour = null;
         this.repeatEndHour = null;
         this.relativeTriggerName = null;
-        this.relativeDuration = null;
     }
     Event.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -254,17 +253,6 @@ var Event = /** @class */ (function () {
         this.relativeTriggerName = relativeTriggerName;
         return this;
     };
-    Event.prototype.getRelativeDuration = function () {
-        return this.relativeDuration;
-    };
-    Event.prototype.setRelativeDuration = function (relativeDuration) {
-        this.relativeDuration = relativeDuration;
-        return this;
-    };
-    Event.prototype.withRelativeDuration = function (relativeDuration) {
-        this.relativeDuration = relativeDuration;
-        return this;
-    };
     Event.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -283,8 +271,7 @@ var Event = /** @class */ (function () {
             .withRepeatEndDayOfWeek(data["repeatEndDayOfWeek"])
             .withRepeatBeginHour(data["repeatBeginHour"])
             .withRepeatEndHour(data["repeatEndHour"])
-            .withRelativeTriggerName(data["relativeTriggerName"])
-            .withRelativeDuration(data["relativeDuration"]);
+            .withRelativeTriggerName(data["relativeTriggerName"]);
     };
     Event.prototype.toDict = function () {
         return {
@@ -302,7 +289,6 @@ var Event = /** @class */ (function () {
             "repeatBeginHour": this.getRepeatBeginHour(),
             "repeatEndHour": this.getRepeatEndHour(),
             "relativeTriggerName": this.getRelativeTriggerName(),
-            "relativeDuration": this.getRelativeDuration(),
         };
     };
     return Event;

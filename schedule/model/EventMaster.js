@@ -33,7 +33,6 @@ var EventMaster = /** @class */ (function () {
         this.repeatBeginHour = null;
         this.repeatEndHour = null;
         this.relativeTriggerName = null;
-        this.relativeDuration = null;
         this.createdAt = null;
         this.updatedAt = null;
     }
@@ -268,17 +267,6 @@ var EventMaster = /** @class */ (function () {
         this.relativeTriggerName = relativeTriggerName;
         return this;
     };
-    EventMaster.prototype.getRelativeDuration = function () {
-        return this.relativeDuration;
-    };
-    EventMaster.prototype.setRelativeDuration = function (relativeDuration) {
-        this.relativeDuration = relativeDuration;
-        return this;
-    };
-    EventMaster.prototype.withRelativeDuration = function (relativeDuration) {
-        this.relativeDuration = relativeDuration;
-        return this;
-    };
     EventMaster.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -321,7 +309,6 @@ var EventMaster = /** @class */ (function () {
             .withRepeatBeginHour(data["repeatBeginHour"])
             .withRepeatEndHour(data["repeatEndHour"])
             .withRelativeTriggerName(data["relativeTriggerName"])
-            .withRelativeDuration(data["relativeDuration"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     };
@@ -342,7 +329,6 @@ var EventMaster = /** @class */ (function () {
             "repeatBeginHour": this.getRepeatBeginHour(),
             "repeatEndHour": this.getRepeatEndHour(),
             "relativeTriggerName": this.getRelativeTriggerName(),
-            "relativeDuration": this.getRelativeDuration(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

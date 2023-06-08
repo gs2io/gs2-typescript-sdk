@@ -25,6 +25,7 @@ export default class GetEventByUserIdRequest implements IRequest {
     private namespaceName: string|null = null;
     private eventName: string|null = null;
     private userId: string|null = null;
+    private isInSchedule: boolean|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -86,12 +87,24 @@ export default class GetEventByUserIdRequest implements IRequest {
         this.userId = userId;
         return this;
     }
+    public getIsInSchedule(): boolean|null {
+        return this.isInSchedule;
+    }
+    public setIsInSchedule(isInSchedule: boolean|null) {
+        this.isInSchedule = isInSchedule;
+        return this;
+    }
+    public withIsInSchedule(isInSchedule: boolean|null): this {
+        this.isInSchedule = isInSchedule;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetEventByUserIdRequest {
         return new GetEventByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withEventName(data["eventName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withIsInSchedule(data["isInSchedule"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -99,6 +112,7 @@ export default class GetEventByUserIdRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "eventName": this.getEventName(),
             "userId": this.getUserId(),
+            "isInSchedule": this.getIsInSchedule(),
         };
     }
 }

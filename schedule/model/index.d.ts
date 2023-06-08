@@ -5,4 +5,5 @@ import Event from "./Event";
 import CurrentEventMaster from "./CurrentEventMaster";
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting";
 import LogSetting from "./LogSetting";
-export { Namespace, EventMaster, Trigger, Event, CurrentEventMaster, GitHubCheckoutSetting, LogSetting, };
+import RepeatSchedule from "./RepeatSchedule";
+export { Namespace, EventMaster, Trigger, Event, CurrentEventMaster, GitHubCheckoutSetting, LogSetting, RepeatSchedule, };

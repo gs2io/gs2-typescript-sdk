@@ -33,7 +33,6 @@ export default class EventMaster implements IModel {
     private repeatBeginHour: number|null = null;
     private repeatEndHour: number|null = null;
     private relativeTriggerName: string|null = null;
-    private relativeDuration: number|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
 
@@ -282,17 +281,6 @@ export default class EventMaster implements IModel {
         this.relativeTriggerName = relativeTriggerName;
         return this;
     }
-    public getRelativeDuration(): number|null {
-        return this.relativeDuration;
-    }
-    public setRelativeDuration(relativeDuration: number|null) {
-        this.relativeDuration = relativeDuration;
-        return this;
-    }
-    public withRelativeDuration(relativeDuration: number|null): this {
-        this.relativeDuration = relativeDuration;
-        return this;
-    }
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -336,7 +324,6 @@ export default class EventMaster implements IModel {
             .withRepeatBeginHour(data["repeatBeginHour"])
             .withRepeatEndHour(data["repeatEndHour"])
             .withRelativeTriggerName(data["relativeTriggerName"])
-            .withRelativeDuration(data["relativeDuration"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     }
@@ -358,7 +345,6 @@ export default class EventMaster implements IModel {
             "repeatBeginHour": this.getRepeatBeginHour(),
             "repeatEndHour": this.getRepeatEndHour(),
             "relativeTriggerName": this.getRelativeTriggerName(),
-            "relativeDuration": this.getRelativeDuration(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

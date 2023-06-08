@@ -37,7 +37,6 @@ export default class CreateEventMasterRequest implements IRequest {
     private repeatBeginHour: number|null = null;
     private repeatEndHour: number|null = null;
     private relativeTriggerName: string|null = null;
-    private relativeDuration: number|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -231,17 +230,6 @@ export default class CreateEventMasterRequest implements IRequest {
         this.relativeTriggerName = relativeTriggerName;
         return this;
     }
-    public getRelativeDuration(): number|null {
-        return this.relativeDuration;
-    }
-    public setRelativeDuration(relativeDuration: number|null) {
-        this.relativeDuration = relativeDuration;
-        return this;
-    }
-    public withRelativeDuration(relativeDuration: number|null): this {
-        this.relativeDuration = relativeDuration;
-        return this;
-    }
 
     public static fromDict(data: {[key: string]: any}): CreateEventMasterRequest {
         return new CreateEventMasterRequest()
@@ -259,8 +247,7 @@ export default class CreateEventMasterRequest implements IRequest {
             .withRepeatEndDayOfWeek(data["repeatEndDayOfWeek"])
             .withRepeatBeginHour(data["repeatBeginHour"])
             .withRepeatEndHour(data["repeatEndHour"])
-            .withRelativeTriggerName(data["relativeTriggerName"])
-            .withRelativeDuration(data["relativeDuration"]);
+            .withRelativeTriggerName(data["relativeTriggerName"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -280,7 +267,6 @@ export default class CreateEventMasterRequest implements IRequest {
             "repeatBeginHour": this.getRepeatBeginHour(),
             "repeatEndHour": this.getRepeatEndHour(),
             "relativeTriggerName": this.getRelativeTriggerName(),
-            "relativeDuration": this.getRelativeDuration(),
         };
     }
 }

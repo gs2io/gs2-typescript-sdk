@@ -21,6 +21,8 @@ import * as Gs2Schedule from '../model'
 export default class GetEventResult implements IResult {
     private item: Gs2Schedule.Event|null = null;
     private repeatCount: number|null = null;
+    private inSchedule: boolean|null = null;
+    private repeatSchedule: Gs2Schedule.RepeatSchedule|null = null;
 
     public getItem(): Gs2Schedule.Event|null {
         return this.item;
@@ -50,16 +52,48 @@ export default class GetEventResult implements IResult {
         return this;
     }
 
+    public getInSchedule(): boolean|null {
+        return this.inSchedule;
+    }
+
+    public setInSchedule(inSchedule: boolean|null) {
+        this.inSchedule = inSchedule;
+        return this;
+    }
+
+    public withInSchedule(inSchedule: boolean|null): this {
+        this.inSchedule = inSchedule;
+        return this;
+    }
+
+    public getRepeatSchedule(): Gs2Schedule.RepeatSchedule|null {
+        return this.repeatSchedule;
+    }
+
+    public setRepeatSchedule(repeatSchedule: Gs2Schedule.RepeatSchedule|null) {
+        this.repeatSchedule = repeatSchedule;
+        return this;
+    }
+
+    public withRepeatSchedule(repeatSchedule: Gs2Schedule.RepeatSchedule|null): this {
+        this.repeatSchedule = repeatSchedule;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): GetEventResult {
         return new GetEventResult()
             .withItem(Gs2Schedule.Event.fromDict(data["item"]))
-            .withRepeatCount(data["repeatCount"]);
+            .withRepeatCount(data["repeatCount"])
+            .withInSchedule(data["inSchedule"])
+            .withRepeatSchedule(Gs2Schedule.RepeatSchedule.fromDict(data["repeatSchedule"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
             "repeatCount": this.getRepeatCount(),
+            "inSchedule": this.getInSchedule(),
+            "repeatSchedule": this.getRepeatSchedule()?.toDict(),
         };
     }
 }

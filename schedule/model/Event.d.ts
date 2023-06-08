@@ -14,7 +14,6 @@ export default class Event implements IModel {
     private repeatBeginHour;
     private repeatEndHour;
     private relativeTriggerName;
-    private relativeDuration;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -63,9 +62,6 @@ export default class Event implements IModel {
     getRelativeTriggerName(): string | null;
     setRelativeTriggerName(relativeTriggerName: string | null): this;
     withRelativeTriggerName(relativeTriggerName: string | null): this;
-    getRelativeDuration(): number | null;
-    setRelativeDuration(relativeDuration: number | null): this;
-    withRelativeDuration(relativeDuration: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): Event | null;

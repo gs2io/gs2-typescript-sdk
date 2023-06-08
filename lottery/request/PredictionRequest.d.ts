@@ -4,7 +4,7 @@ export default class PredictionRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private lotteryName;
-    private userId;
+    private accessToken;
     private randomSeed;
     private count;
     private duplicationAvoider;
@@ -20,9 +20,9 @@ export default class PredictionRequest implements IRequest {
     getLotteryName(): string | null;
     setLotteryName(lotteryName: string | null): this;
     withLotteryName(lotteryName: string | null): this;
-    getUserId(): string | null;
-    setUserId(userId: string | null): this;
-    withUserId(userId: string | null): this;
+    getAccessToken(): string | null;
+    setAccessToken(accessToken: string | null): this;
+    withAccessToken(accessToken: string | null): this;
     getRandomSeed(): number | null;
     setRandomSeed(randomSeed: number | null): this;
     withRandomSeed(randomSeed: number | null): this;

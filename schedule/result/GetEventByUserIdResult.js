@@ -21,6 +21,8 @@ var GetEventByUserIdResult = /** @class */ (function () {
     function GetEventByUserIdResult() {
         this.item = null;
         this.repeatCount = null;
+        this.inSchedule = null;
+        this.repeatSchedule = null;
     }
     GetEventByUserIdResult.prototype.getItem = function () {
         return this.item;
@@ -44,16 +46,42 @@ var GetEventByUserIdResult = /** @class */ (function () {
         this.repeatCount = repeatCount;
         return this;
     };
+    GetEventByUserIdResult.prototype.getInSchedule = function () {
+        return this.inSchedule;
+    };
+    GetEventByUserIdResult.prototype.setInSchedule = function (inSchedule) {
+        this.inSchedule = inSchedule;
+        return this;
+    };
+    GetEventByUserIdResult.prototype.withInSchedule = function (inSchedule) {
+        this.inSchedule = inSchedule;
+        return this;
+    };
+    GetEventByUserIdResult.prototype.getRepeatSchedule = function () {
+        return this.repeatSchedule;
+    };
+    GetEventByUserIdResult.prototype.setRepeatSchedule = function (repeatSchedule) {
+        this.repeatSchedule = repeatSchedule;
+        return this;
+    };
+    GetEventByUserIdResult.prototype.withRepeatSchedule = function (repeatSchedule) {
+        this.repeatSchedule = repeatSchedule;
+        return this;
+    };
     GetEventByUserIdResult.fromDict = function (data) {
         return new GetEventByUserIdResult()
             .withItem(Gs2Schedule.Event.fromDict(data["item"]))
-            .withRepeatCount(data["repeatCount"]);
+            .withRepeatCount(data["repeatCount"])
+            .withInSchedule(data["inSchedule"])
+            .withRepeatSchedule(Gs2Schedule.RepeatSchedule.fromDict(data["repeatSchedule"]));
     };
     GetEventByUserIdResult.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "repeatCount": this.getRepeatCount(),
+            "inSchedule": this.getInSchedule(),
+            "repeatSchedule": (_b = this.getRepeatSchedule()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return GetEventByUserIdResult;

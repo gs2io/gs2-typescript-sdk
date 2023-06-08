@@ -17,7 +17,6 @@ export default class CreateEventMasterRequest implements IRequest {
     private repeatBeginHour;
     private repeatEndHour;
     private relativeTriggerName;
-    private relativeDuration;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -69,9 +68,6 @@ export default class CreateEventMasterRequest implements IRequest {
     getRelativeTriggerName(): string | null;
     setRelativeTriggerName(relativeTriggerName: string | null): this;
     withRelativeTriggerName(relativeTriggerName: string | null): this;
-    getRelativeDuration(): number | null;
-    setRelativeDuration(relativeDuration: number | null): this;
-    withRelativeDuration(relativeDuration: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CreateEventMasterRequest;

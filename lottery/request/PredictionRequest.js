@@ -21,7 +21,7 @@ var PredictionRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.lotteryName = null;
-        this.userId = null;
+        this.accessToken = null;
         this.randomSeed = null;
         this.count = null;
         this.duplicationAvoider = null;
@@ -70,15 +70,15 @@ var PredictionRequest = /** @class */ (function () {
         this.lotteryName = lotteryName;
         return this;
     };
-    PredictionRequest.prototype.getUserId = function () {
-        return this.userId;
+    PredictionRequest.prototype.getAccessToken = function () {
+        return this.accessToken;
     };
-    PredictionRequest.prototype.setUserId = function (userId) {
-        this.userId = userId;
+    PredictionRequest.prototype.setAccessToken = function (accessToken) {
+        this.accessToken = accessToken;
         return this;
     };
-    PredictionRequest.prototype.withUserId = function (userId) {
-        this.userId = userId;
+    PredictionRequest.prototype.withAccessToken = function (accessToken) {
+        this.accessToken = accessToken;
         return this;
     };
     PredictionRequest.prototype.getRandomSeed = function () {
@@ -118,7 +118,7 @@ var PredictionRequest = /** @class */ (function () {
         return new PredictionRequest()
             .withNamespaceName(data["namespaceName"])
             .withLotteryName(data["lotteryName"])
-            .withUserId(data["userId"])
+            .withAccessToken(data["accessToken"])
             .withRandomSeed(data["randomSeed"])
             .withCount(data["count"]);
     };
@@ -126,7 +126,7 @@ var PredictionRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "lotteryName": this.getLotteryName(),
-            "userId": this.getUserId(),
+            "accessToken": this.getAccessToken(),
             "randomSeed": this.getRandomSeed(),
             "count": this.getCount(),
         };

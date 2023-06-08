@@ -15,7 +15,6 @@ export default class EventMaster implements IModel {
     private repeatBeginHour;
     private repeatEndHour;
     private relativeTriggerName;
-    private relativeDuration;
     private createdAt;
     private updatedAt;
     static getRegion(grn: string): string | null;
@@ -69,9 +68,6 @@ export default class EventMaster implements IModel {
     getRelativeTriggerName(): string | null;
     setRelativeTriggerName(relativeTriggerName: string | null): this;
     withRelativeTriggerName(relativeTriggerName: string | null): this;
-    getRelativeDuration(): number | null;
-    setRelativeDuration(relativeDuration: number | null): this;
-    withRelativeDuration(relativeDuration: number | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

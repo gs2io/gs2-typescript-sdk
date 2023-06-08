@@ -5,6 +5,7 @@ export default class GetEventRequest implements IRequest {
     private namespaceName;
     private eventName;
     private accessToken;
+    private isInSchedule;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -20,6 +21,9 @@ export default class GetEventRequest implements IRequest {
     getAccessToken(): string | null;
     setAccessToken(accessToken: string | null): this;
     withAccessToken(accessToken: string | null): this;
+    getIsInSchedule(): boolean | null;
+    setIsInSchedule(isInSchedule: boolean | null): this;
+    withIsInSchedule(isInSchedule: boolean | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetEventRequest;
