@@ -1,0 +1,34 @@
+import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
+import { Gs2RestSession } from '../core/model';
+import * as Request from './request';
+import * as Result from './result';
+export default class Gs2IdleRestClient extends AbstractGs2RestClient {
+    constructor(session: Gs2RestSession);
+    describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult>;
+    createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult>;
+    getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult>;
+    getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
+    updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
+    deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    describeCategoryModelMasters(request: Request.DescribeCategoryModelMastersRequest): Promise<Result.DescribeCategoryModelMastersResult>;
+    createCategoryModelMaster(request: Request.CreateCategoryModelMasterRequest): Promise<Result.CreateCategoryModelMasterResult>;
+    getCategoryModelMaster(request: Request.GetCategoryModelMasterRequest): Promise<Result.GetCategoryModelMasterResult>;
+    updateCategoryModelMaster(request: Request.UpdateCategoryModelMasterRequest): Promise<Result.UpdateCategoryModelMasterResult>;
+    deleteCategoryModelMaster(request: Request.DeleteCategoryModelMasterRequest): Promise<Result.DeleteCategoryModelMasterResult>;
+    describeCategoryModels(request: Request.DescribeCategoryModelsRequest): Promise<Result.DescribeCategoryModelsResult>;
+    getCategoryModel(request: Request.GetCategoryModelRequest): Promise<Result.GetCategoryModelResult>;
+    describeStatuses(request: Request.DescribeStatusesRequest): Promise<Result.DescribeStatusesResult>;
+    describeStatusesByUserId(request: Request.DescribeStatusesByUserIdRequest): Promise<Result.DescribeStatusesByUserIdResult>;
+    getStatus(request: Request.GetStatusRequest): Promise<Result.GetStatusResult>;
+    getStatusByUserId(request: Request.GetStatusByUserIdRequest): Promise<Result.GetStatusByUserIdResult>;
+    prediction(request: Request.PredictionRequest): Promise<Result.PredictionResult>;
+    predictionByUserId(request: Request.PredictionByUserIdRequest): Promise<Result.PredictionByUserIdResult>;
+    receive(request: Request.ReceiveRequest): Promise<Result.ReceiveResult>;
+    receiveByUserId(request: Request.ReceiveByUserIdRequest): Promise<Result.ReceiveByUserIdResult>;
+    increaseMaximumIdleMinutesByUserId(request: Request.IncreaseMaximumIdleMinutesByUserIdRequest): Promise<Result.IncreaseMaximumIdleMinutesByUserIdResult>;
+    increaseMaximumIdleMinutesByStampSheet(request: Request.IncreaseMaximumIdleMinutesByStampSheetRequest): Promise<Result.IncreaseMaximumIdleMinutesByStampSheetResult>;
+    exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
+    getCurrentIdleMaster(request: Request.GetCurrentIdleMasterRequest): Promise<Result.GetCurrentIdleMasterResult>;
+    updateCurrentIdleMaster(request: Request.UpdateCurrentIdleMasterRequest): Promise<Result.UpdateCurrentIdleMasterResult>;
+    updateCurrentIdleMasterFromGitHub(request: Request.UpdateCurrentIdleMasterFromGitHubRequest): Promise<Result.UpdateCurrentIdleMasterFromGitHubResult>;
+}

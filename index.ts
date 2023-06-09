@@ -29,6 +29,7 @@ import * as formation from './formation';
 import * as friend from './friend';
 import * as gateway from './gateway';
 import * as identifier from './identifier';
+import * as idle from './idle';
 import * as inbox from './inbox';
 import * as inventory from './inventory';
 import * as jobQueue from './jobQueue';
@@ -70,6 +71,7 @@ export {
   friend,
   gateway,
   identifier,
+  idle,
   inbox,
   inventory,
   jobQueue,

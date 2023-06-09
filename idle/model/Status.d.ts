@@ -1,0 +1,48 @@
+import IModel from '../../core/interface/IModel';
+export default class Status implements IModel {
+    private statusId;
+    private categoryName;
+    private userId;
+    private randomSeed;
+    private idleMinutes;
+    private maximumIdleMinutes;
+    private createdAt;
+    private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getCategoryName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, categoryName: string | null): string | null;
+    getStatusId(): string | null;
+    setStatusId(statusId: string | null): this;
+    withStatusId(statusId: string | null): this;
+    getCategoryName(): string | null;
+    setCategoryName(categoryName: string | null): this;
+    withCategoryName(categoryName: string | null): this;
+    getUserId(): string | null;
+    setUserId(userId: string | null): this;
+    withUserId(userId: string | null): this;
+    getRandomSeed(): number | null;
+    setRandomSeed(randomSeed: number | null): this;
+    withRandomSeed(randomSeed: number | null): this;
+    getIdleMinutes(): number | null;
+    setIdleMinutes(idleMinutes: number | null): this;
+    withIdleMinutes(idleMinutes: number | null): this;
+    getMaximumIdleMinutes(): number | null;
+    setMaximumIdleMinutes(maximumIdleMinutes: number | null): this;
+    withMaximumIdleMinutes(maximumIdleMinutes: number | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    getUpdatedAt(): number | null;
+    setUpdatedAt(updatedAt: number | null): this;
+    withUpdatedAt(updatedAt: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): Status | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}
