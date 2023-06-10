@@ -358,7 +358,7 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdleRestClient.prototype.describeStatuses = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status')
             .replace('{service}', 'idle')
             .replace('{region}', this.session.region)
@@ -372,9 +372,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'categoryName': String((_e = request.getCategoryName()) !== null && _e !== void 0 ? _e : null),
-            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
-            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
+            'pageToken': String((_e = request.getPageToken()) !== null && _e !== void 0 ? _e : null),
+            'limit': String((_f = request.getLimit()) !== null && _f !== void 0 ? _f : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -386,7 +385,7 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2IdleRestClient.prototype.describeStatusesByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status')
             .replace('{service}', 'idle')
             .replace('{region}', this.session.region)
@@ -398,9 +397,8 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'categoryName': String((_f = request.getCategoryName()) !== null && _f !== void 0 ? _f : null),
-            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
-            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
+            'pageToken': String((_f = request.getPageToken()) !== null && _f !== void 0 ? _f : null),
+            'limit': String((_g = request.getLimit()) !== null && _g !== void 0 ? _g : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -672,7 +670,7 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             throw JSON.parse(error.response.data.message);
         });
     };
-    Gs2IdleRestClient.prototype.getCurrentIdleMaster = function (request) {
+    Gs2IdleRestClient.prototype.getCurrentCategoryMaster = function (request) {
         var _a, _b, _c;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'idle')
@@ -689,12 +687,12 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             params: params,
             headers: headers,
         }).then(function (response) {
-            return Result.GetCurrentIdleMasterResult.fromDict(response.data);
+            return Result.GetCurrentCategoryMasterResult.fromDict(response.data);
         }).catch(function (error) {
             throw JSON.parse(error.response.data.message);
         });
     };
-    Gs2IdleRestClient.prototype.updateCurrentIdleMaster = function (request) {
+    Gs2IdleRestClient.prototype.updateCurrentCategoryMaster = function (request) {
         var _a, _b, _c, _d;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'idle')
@@ -711,7 +709,7 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
-            return Result.UpdateCurrentIdleMasterResult.fromDict(response.data);
+            return Result.UpdateCurrentCategoryMasterResult.fromDict(response.data);
         }).catch(function (error) {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);
@@ -721,7 +719,7 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
             }
         });
     };
-    Gs2IdleRestClient.prototype.updateCurrentIdleMasterFromGitHub = function (request) {
+    Gs2IdleRestClient.prototype.updateCurrentCategoryMasterFromGitHub = function (request) {
         var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'idle')
@@ -738,7 +736,7 @@ var Gs2IdleRestClient = /** @class */ (function (_super) {
         return axios_1.default.put(url, body, {
             headers: headers,
         }).then(function (response) {
-            return Result.UpdateCurrentIdleMasterFromGitHubResult.fromDict(response.data);
+            return Result.UpdateCurrentCategoryMasterFromGitHubResult.fromDict(response.data);
         }).catch(function (error) {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

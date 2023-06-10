@@ -20,7 +20,6 @@ var DescribeStatusesByUserIdRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
-        this.categoryName = null;
         this.userId = null;
         this.pageToken = null;
         this.limit = null;
@@ -56,17 +55,6 @@ var DescribeStatusesByUserIdRequest = /** @class */ (function () {
     };
     DescribeStatusesByUserIdRequest.prototype.withNamespaceName = function (namespaceName) {
         this.namespaceName = namespaceName;
-        return this;
-    };
-    DescribeStatusesByUserIdRequest.prototype.getCategoryName = function () {
-        return this.categoryName;
-    };
-    DescribeStatusesByUserIdRequest.prototype.setCategoryName = function (categoryName) {
-        this.categoryName = categoryName;
-        return this;
-    };
-    DescribeStatusesByUserIdRequest.prototype.withCategoryName = function (categoryName) {
-        this.categoryName = categoryName;
         return this;
     };
     DescribeStatusesByUserIdRequest.prototype.getUserId = function () {
@@ -105,7 +93,6 @@ var DescribeStatusesByUserIdRequest = /** @class */ (function () {
     DescribeStatusesByUserIdRequest.fromDict = function (data) {
         return new DescribeStatusesByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
-            .withCategoryName(data["categoryName"])
             .withUserId(data["userId"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
@@ -113,7 +100,6 @@ var DescribeStatusesByUserIdRequest = /** @class */ (function () {
     DescribeStatusesByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
-            "categoryName": this.getCategoryName(),
             "userId": this.getUserId(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),

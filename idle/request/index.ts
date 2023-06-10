@@ -37,9 +37,9 @@ import ReceiveByUserIdRequest from "./ReceiveByUserIdRequest"
 import IncreaseMaximumIdleMinutesByUserIdRequest from "./IncreaseMaximumIdleMinutesByUserIdRequest"
 import IncreaseMaximumIdleMinutesByStampSheetRequest from "./IncreaseMaximumIdleMinutesByStampSheetRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
-import GetCurrentIdleMasterRequest from "./GetCurrentIdleMasterRequest"
-import UpdateCurrentIdleMasterRequest from "./UpdateCurrentIdleMasterRequest"
-import UpdateCurrentIdleMasterFromGitHubRequest from "./UpdateCurrentIdleMasterFromGitHubRequest"
+import GetCurrentCategoryMasterRequest from "./GetCurrentCategoryMasterRequest"
+import UpdateCurrentCategoryMasterRequest from "./UpdateCurrentCategoryMasterRequest"
+import UpdateCurrentCategoryMasterFromGitHubRequest from "./UpdateCurrentCategoryMasterFromGitHubRequest"
 
 export {
     DescribeNamespacesRequest,
@@ -66,7 +66,7 @@ export {
     IncreaseMaximumIdleMinutesByUserIdRequest,
     IncreaseMaximumIdleMinutesByStampSheetRequest,
     ExportMasterRequest,
-    GetCurrentIdleMasterRequest,
-    UpdateCurrentIdleMasterRequest,
-    UpdateCurrentIdleMasterFromGitHubRequest,
+    GetCurrentCategoryMasterRequest,
+    UpdateCurrentCategoryMasterRequest,
+    UpdateCurrentCategoryMasterFromGitHubRequest,
 };

@@ -20,7 +20,6 @@ var DescribeStatusesRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
-        this.categoryName = null;
         this.accessToken = null;
         this.pageToken = null;
         this.limit = null;
@@ -56,17 +55,6 @@ var DescribeStatusesRequest = /** @class */ (function () {
     };
     DescribeStatusesRequest.prototype.withNamespaceName = function (namespaceName) {
         this.namespaceName = namespaceName;
-        return this;
-    };
-    DescribeStatusesRequest.prototype.getCategoryName = function () {
-        return this.categoryName;
-    };
-    DescribeStatusesRequest.prototype.setCategoryName = function (categoryName) {
-        this.categoryName = categoryName;
-        return this;
-    };
-    DescribeStatusesRequest.prototype.withCategoryName = function (categoryName) {
-        this.categoryName = categoryName;
         return this;
     };
     DescribeStatusesRequest.prototype.getAccessToken = function () {
@@ -105,7 +93,6 @@ var DescribeStatusesRequest = /** @class */ (function () {
     DescribeStatusesRequest.fromDict = function (data) {
         return new DescribeStatusesRequest()
             .withNamespaceName(data["namespaceName"])
-            .withCategoryName(data["categoryName"])
             .withAccessToken(data["accessToken"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
@@ -113,7 +100,6 @@ var DescribeStatusesRequest = /** @class */ (function () {
     DescribeStatusesRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
-            "categoryName": this.getCategoryName(),
             "accessToken": this.getAccessToken(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),

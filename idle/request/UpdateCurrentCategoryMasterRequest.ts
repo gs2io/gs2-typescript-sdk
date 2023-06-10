@@ -18,14 +18,12 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Idle from '../model'
 
-export default class DescribeStatusesRequest implements IRequest {
+export default class UpdateCurrentCategoryMasterRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
-    private accessToken: string|null = null;
-    private pageToken: string|null = null;
-    private limit: number|null = null;
+    private settings: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -65,54 +63,28 @@ export default class DescribeStatusesRequest implements IRequest {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getAccessToken(): string|null {
-        return this.accessToken;
+    public getSettings(): string|null {
+        return this.settings;
     }
-    public setAccessToken(accessToken: string|null) {
-        this.accessToken = accessToken;
+    public setSettings(settings: string|null) {
+        this.settings = settings;
         return this;
     }
-    public withAccessToken(accessToken: string|null): this {
-        this.accessToken = accessToken;
-        return this;
-    }
-    public getPageToken(): string|null {
-        return this.pageToken;
-    }
-    public setPageToken(pageToken: string|null) {
-        this.pageToken = pageToken;
-        return this;
-    }
-    public withPageToken(pageToken: string|null): this {
-        this.pageToken = pageToken;
-        return this;
-    }
-    public getLimit(): number|null {
-        return this.limit;
-    }
-    public setLimit(limit: number|null) {
-        this.limit = limit;
-        return this;
-    }
-    public withLimit(limit: number|null): this {
-        this.limit = limit;
+    public withSettings(settings: string|null): this {
+        this.settings = settings;
         return this;
     }
 
-    public static fromDict(data: {[key: string]: any}): DescribeStatusesRequest {
-        return new DescribeStatusesRequest()
+    public static fromDict(data: {[key: string]: any}): UpdateCurrentCategoryMasterRequest {
+        return new UpdateCurrentCategoryMasterRequest()
             .withNamespaceName(data["namespaceName"])
-            .withAccessToken(data["accessToken"])
-            .withPageToken(data["pageToken"])
-            .withLimit(data["limit"]);
+            .withSettings(data["settings"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
-            "accessToken": this.getAccessToken(),
-            "pageToken": this.getPageToken(),
-            "limit": this.getLimit(),
+            "settings": this.getSettings(),
         };
     }
 }

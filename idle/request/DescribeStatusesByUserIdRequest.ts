@@ -23,7 +23,6 @@ export default class DescribeStatusesByUserIdRequest implements IRequest {
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
-    private categoryName: string|null = null;
     private userId: string|null = null;
     private pageToken: string|null = null;
     private limit: number|null = null;
@@ -66,17 +65,6 @@ export default class DescribeStatusesByUserIdRequest implements IRequest {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getCategoryName(): string|null {
-        return this.categoryName;
-    }
-    public setCategoryName(categoryName: string|null) {
-        this.categoryName = categoryName;
-        return this;
-    }
-    public withCategoryName(categoryName: string|null): this {
-        this.categoryName = categoryName;
-        return this;
-    }
     public getUserId(): string|null {
         return this.userId;
     }
@@ -114,7 +102,6 @@ export default class DescribeStatusesByUserIdRequest implements IRequest {
     public static fromDict(data: {[key: string]: any}): DescribeStatusesByUserIdRequest {
         return new DescribeStatusesByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
-            .withCategoryName(data["categoryName"])
             .withUserId(data["userId"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
@@ -123,7 +110,6 @@ export default class DescribeStatusesByUserIdRequest implements IRequest {
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
-            "categoryName": this.getCategoryName(),
             "userId": this.getUserId(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),

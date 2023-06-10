@@ -426,7 +426,6 @@ export default class Gs2IdleRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
-            'categoryName': String(request.getCategoryName() ?? null),
             'pageToken': String(request.getPageToken() ?? null),
             'limit': String(request.getLimit() ?? null),
         };
@@ -456,7 +455,6 @@ export default class Gs2IdleRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
-            'categoryName': String(request.getCategoryName() ?? null),
             'pageToken': String(request.getPageToken() ?? null),
             'limit': String(request.getLimit() ?? null),
         };
@@ -770,7 +768,7 @@ export default class Gs2IdleRestClient extends AbstractGs2RestClient {
         });
     }
 
-    public getCurrentIdleMaster(request: Request.GetCurrentIdleMasterRequest): Promise<Result.GetCurrentIdleMasterResult> {
+    public getCurrentCategoryMaster(request: Request.GetCurrentCategoryMasterRequest): Promise<Result.GetCurrentCategoryMasterResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'idle')
             .replace('{region}', this.session.region)
@@ -790,13 +788,13 @@ export default class Gs2IdleRestClient extends AbstractGs2RestClient {
                 headers,
             },
         ).then((response: any) => {
-            return Result.GetCurrentIdleMasterResult.fromDict(response.data);
+            return Result.GetCurrentCategoryMasterResult.fromDict(response.data);
         }).catch((error: any) => {
             throw JSON.parse(error.response.data.message);
         });
     }
 
-    public updateCurrentIdleMaster(request: Request.UpdateCurrentIdleMasterRequest): Promise<Result.UpdateCurrentIdleMasterResult> {
+    public updateCurrentCategoryMaster(request: Request.UpdateCurrentCategoryMasterRequest): Promise<Result.UpdateCurrentCategoryMasterResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'idle')
             .replace('{region}', this.session.region)
@@ -817,7 +815,7 @@ export default class Gs2IdleRestClient extends AbstractGs2RestClient {
                 headers,
             },
         ).then((response: any) => {
-            return Result.UpdateCurrentIdleMasterResult.fromDict(response.data);
+            return Result.UpdateCurrentCategoryMasterResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);
@@ -827,7 +825,7 @@ export default class Gs2IdleRestClient extends AbstractGs2RestClient {
         });
     }
 
-    public updateCurrentIdleMasterFromGitHub(request: Request.UpdateCurrentIdleMasterFromGitHubRequest): Promise<Result.UpdateCurrentIdleMasterFromGitHubResult> {
+    public updateCurrentCategoryMasterFromGitHub(request: Request.UpdateCurrentCategoryMasterFromGitHubRequest): Promise<Result.UpdateCurrentCategoryMasterFromGitHubResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'idle')
             .replace('{region}', this.session.region)
@@ -848,7 +846,7 @@ export default class Gs2IdleRestClient extends AbstractGs2RestClient {
                 headers,
             },
         ).then((response: any) => {
-            return Result.UpdateCurrentIdleMasterFromGitHubResult.fromDict(response.data);
+            return Result.UpdateCurrentCategoryMasterFromGitHubResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentIdleMasterFromGitHubRequest = exports.UpdateCurrentIdleMasterRequest = exports.GetCurrentIdleMasterRequest = exports.ExportMasterRequest = exports.IncreaseMaximumIdleMinutesByStampSheetRequest = exports.IncreaseMaximumIdleMinutesByUserIdRequest = exports.ReceiveByUserIdRequest = exports.ReceiveRequest = exports.PredictionByUserIdRequest = exports.PredictionRequest = exports.GetStatusByUserIdRequest = exports.GetStatusRequest = exports.DescribeStatusesByUserIdRequest = exports.DescribeStatusesRequest = exports.GetCategoryModelRequest = exports.DescribeCategoryModelsRequest = exports.DeleteCategoryModelMasterRequest = exports.UpdateCategoryModelMasterRequest = exports.GetCategoryModelMasterRequest = exports.CreateCategoryModelMasterRequest = exports.DescribeCategoryModelMastersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.UpdateCurrentCategoryMasterFromGitHubRequest = exports.UpdateCurrentCategoryMasterRequest = exports.GetCurrentCategoryMasterRequest = exports.ExportMasterRequest = exports.IncreaseMaximumIdleMinutesByStampSheetRequest = exports.IncreaseMaximumIdleMinutesByUserIdRequest = exports.ReceiveByUserIdRequest = exports.ReceiveRequest = exports.PredictionByUserIdRequest = exports.PredictionRequest = exports.GetStatusByUserIdRequest = exports.GetStatusRequest = exports.DescribeStatusesByUserIdRequest = exports.DescribeStatusesRequest = exports.GetCategoryModelRequest = exports.DescribeCategoryModelsRequest = exports.DeleteCategoryModelMasterRequest = exports.UpdateCategoryModelMasterRequest = exports.GetCategoryModelMasterRequest = exports.CreateCategoryModelMasterRequest = exports.DescribeCategoryModelMastersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -65,10 +65,10 @@ var IncreaseMaximumIdleMinutesByStampSheetRequest_1 = tslib_1.__importDefault(re
 exports.IncreaseMaximumIdleMinutesByStampSheetRequest = IncreaseMaximumIdleMinutesByStampSheetRequest_1.default;
 var ExportMasterRequest_1 = tslib_1.__importDefault(require("./ExportMasterRequest"));
 exports.ExportMasterRequest = ExportMasterRequest_1.default;
-var GetCurrentIdleMasterRequest_1 = tslib_1.__importDefault(require("./GetCurrentIdleMasterRequest"));
-exports.GetCurrentIdleMasterRequest = GetCurrentIdleMasterRequest_1.default;
-var UpdateCurrentIdleMasterRequest_1 = tslib_1.__importDefault(require("./UpdateCurrentIdleMasterRequest"));
-exports.UpdateCurrentIdleMasterRequest = UpdateCurrentIdleMasterRequest_1.default;
-var UpdateCurrentIdleMasterFromGitHubRequest_1 = tslib_1.__importDefault(require("./UpdateCurrentIdleMasterFromGitHubRequest"));
-exports.UpdateCurrentIdleMasterFromGitHubRequest = UpdateCurrentIdleMasterFromGitHubRequest_1.default;
+var GetCurrentCategoryMasterRequest_1 = tslib_1.__importDefault(require("./GetCurrentCategoryMasterRequest"));
+exports.GetCurrentCategoryMasterRequest = GetCurrentCategoryMasterRequest_1.default;
+var UpdateCurrentCategoryMasterRequest_1 = tslib_1.__importDefault(require("./UpdateCurrentCategoryMasterRequest"));
+exports.UpdateCurrentCategoryMasterRequest = UpdateCurrentCategoryMasterRequest_1.default;
+var UpdateCurrentCategoryMasterFromGitHubRequest_1 = tslib_1.__importDefault(require("./UpdateCurrentCategoryMasterFromGitHubRequest"));
+exports.UpdateCurrentCategoryMasterFromGitHubRequest = UpdateCurrentCategoryMasterFromGitHubRequest_1.default;
 //# sourceMappingURL=index.js.map

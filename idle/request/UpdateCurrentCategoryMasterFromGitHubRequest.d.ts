@@ -1,11 +1,10 @@
 import IRequest from '../../core/interface/IRequest';
-export default class DescribeStatusesByUserIdRequest implements IRequest {
+import * as Gs2Idle from '../model';
+export default class UpdateCurrentCategoryMasterFromGitHubRequest implements IRequest {
     private requestId;
     private contextStack;
     private namespaceName;
-    private userId;
-    private pageToken;
-    private limit;
+    private checkoutSetting;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -15,18 +14,12 @@ export default class DescribeStatusesByUserIdRequest implements IRequest {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getUserId(): string | null;
-    setUserId(userId: string | null): this;
-    withUserId(userId: string | null): this;
-    getPageToken(): string | null;
-    setPageToken(pageToken: string | null): this;
-    withPageToken(pageToken: string | null): this;
-    getLimit(): number | null;
-    setLimit(limit: number | null): this;
-    withLimit(limit: number | null): this;
+    getCheckoutSetting(): Gs2Idle.GitHubCheckoutSetting | null;
+    setCheckoutSetting(checkoutSetting: Gs2Idle.GitHubCheckoutSetting | null): this;
+    withCheckoutSetting(checkoutSetting: Gs2Idle.GitHubCheckoutSetting | null): this;
     static fromDict(data: {
         [key: string]: any;
-    }): DescribeStatusesByUserIdRequest;
+    }): UpdateCurrentCategoryMasterFromGitHubRequest;
     toDict(): {
         [key: string]: any;
     };

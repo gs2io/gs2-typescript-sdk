@@ -3,7 +3,6 @@ export default class DescribeStatusesRequest implements IRequest {
     private requestId;
     private contextStack;
     private namespaceName;
-    private categoryName;
     private accessToken;
     private pageToken;
     private limit;
@@ -16,9 +15,6 @@ export default class DescribeStatusesRequest implements IRequest {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getCategoryName(): string | null;
-    setCategoryName(categoryName: string | null): this;
-    withCategoryName(categoryName: string | null): this;
     getAccessToken(): string | null;
     setAccessToken(accessToken: string | null): this;
     withAccessToken(accessToken: string | null): this;

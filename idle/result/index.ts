@@ -37,9 +37,9 @@ import ReceiveByUserIdResult from "./ReceiveByUserIdResult"
 import IncreaseMaximumIdleMinutesByUserIdResult from "./IncreaseMaximumIdleMinutesByUserIdResult"
 import IncreaseMaximumIdleMinutesByStampSheetResult from "./IncreaseMaximumIdleMinutesByStampSheetResult"
 import ExportMasterResult from "./ExportMasterResult"
-import GetCurrentIdleMasterResult from "./GetCurrentIdleMasterResult"
-import UpdateCurrentIdleMasterResult from "./UpdateCurrentIdleMasterResult"
-import UpdateCurrentIdleMasterFromGitHubResult from "./UpdateCurrentIdleMasterFromGitHubResult"
+import GetCurrentCategoryMasterResult from "./GetCurrentCategoryMasterResult"
+import UpdateCurrentCategoryMasterResult from "./UpdateCurrentCategoryMasterResult"
+import UpdateCurrentCategoryMasterFromGitHubResult from "./UpdateCurrentCategoryMasterFromGitHubResult"
 
 export {
     DescribeNamespacesResult,
@@ -66,7 +66,7 @@ export {
     IncreaseMaximumIdleMinutesByUserIdResult,
     IncreaseMaximumIdleMinutesByStampSheetResult,
     ExportMasterResult,
-    GetCurrentIdleMasterResult,
-    UpdateCurrentIdleMasterResult,
-    UpdateCurrentIdleMasterFromGitHubResult,
+    GetCurrentCategoryMasterResult,
+    UpdateCurrentCategoryMasterResult,
+    UpdateCurrentCategoryMasterFromGitHubResult,
 };

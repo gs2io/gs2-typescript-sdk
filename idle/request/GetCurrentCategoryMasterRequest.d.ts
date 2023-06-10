@@ -1,11 +1,8 @@
 import IRequest from '../../core/interface/IRequest';
-export default class DescribeStatusesByUserIdRequest implements IRequest {
+export default class GetCurrentCategoryMasterRequest implements IRequest {
     private requestId;
     private contextStack;
     private namespaceName;
-    private userId;
-    private pageToken;
-    private limit;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -15,18 +12,9 @@ export default class DescribeStatusesByUserIdRequest implements IRequest {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getUserId(): string | null;
-    setUserId(userId: string | null): this;
-    withUserId(userId: string | null): this;
-    getPageToken(): string | null;
-    setPageToken(pageToken: string | null): this;
-    withPageToken(pageToken: string | null): this;
-    getLimit(): number | null;
-    setLimit(limit: number | null): this;
-    withLimit(limit: number | null): this;
     static fromDict(data: {
         [key: string]: any;
-    }): DescribeStatusesByUserIdRequest;
+    }): GetCurrentCategoryMasterRequest;
     toDict(): {
         [key: string]: any;
     };
