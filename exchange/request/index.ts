@@ -26,9 +26,21 @@ import CreateRateModelMasterRequest from "./CreateRateModelMasterRequest"
 import GetRateModelMasterRequest from "./GetRateModelMasterRequest"
 import UpdateRateModelMasterRequest from "./UpdateRateModelMasterRequest"
 import DeleteRateModelMasterRequest from "./DeleteRateModelMasterRequest"
+import DescribeIncrementalRateModelsRequest from "./DescribeIncrementalRateModelsRequest"
+import GetIncrementalRateModelRequest from "./GetIncrementalRateModelRequest"
+import DescribeIncrementalRateModelMastersRequest from "./DescribeIncrementalRateModelMastersRequest"
+import CreateIncrementalRateModelMasterRequest from "./CreateIncrementalRateModelMasterRequest"
+import GetIncrementalRateModelMasterRequest from "./GetIncrementalRateModelMasterRequest"
+import UpdateIncrementalRateModelMasterRequest from "./UpdateIncrementalRateModelMasterRequest"
+import DeleteIncrementalRateModelMasterRequest from "./DeleteIncrementalRateModelMasterRequest"
 import ExchangeRequest from "./ExchangeRequest"
 import ExchangeByUserIdRequest from "./ExchangeByUserIdRequest"
 import ExchangeByStampSheetRequest from "./ExchangeByStampSheetRequest"
+import IncrementalExchangeRequest from "./IncrementalExchangeRequest"
+import IncrementalExchangeByUserIdRequest from "./IncrementalExchangeByUserIdRequest"
+import IncrementalExchangeByStampSheetRequest from "./IncrementalExchangeByStampSheetRequest"
+import UnlockIncrementalExchangeByUserIdRequest from "./UnlockIncrementalExchangeByUserIdRequest"
+import UnlockIncrementalExchangeByStampSheetRequest from "./UnlockIncrementalExchangeByStampSheetRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentRateMasterRequest from "./GetCurrentRateMasterRequest"
 import UpdateCurrentRateMasterRequest from "./UpdateCurrentRateMasterRequest"
@@ -62,9 +74,21 @@ export {
     GetRateModelMasterRequest,
     UpdateRateModelMasterRequest,
     DeleteRateModelMasterRequest,
+    DescribeIncrementalRateModelsRequest,
+    GetIncrementalRateModelRequest,
+    DescribeIncrementalRateModelMastersRequest,
+    CreateIncrementalRateModelMasterRequest,
+    GetIncrementalRateModelMasterRequest,
+    UpdateIncrementalRateModelMasterRequest,
+    DeleteIncrementalRateModelMasterRequest,
     ExchangeRequest,
     ExchangeByUserIdRequest,
     ExchangeByStampSheetRequest,
+    IncrementalExchangeRequest,
+    IncrementalExchangeByUserIdRequest,
+    IncrementalExchangeByStampSheetRequest,
+    UnlockIncrementalExchangeByUserIdRequest,
+    UnlockIncrementalExchangeByStampSheetRequest,
     ExportMasterRequest,
     GetCurrentRateMasterRequest,
     UpdateCurrentRateMasterRequest,

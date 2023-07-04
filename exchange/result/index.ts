@@ -26,9 +26,21 @@ import CreateRateModelMasterResult from "./CreateRateModelMasterResult"
 import GetRateModelMasterResult from "./GetRateModelMasterResult"
 import UpdateRateModelMasterResult from "./UpdateRateModelMasterResult"
 import DeleteRateModelMasterResult from "./DeleteRateModelMasterResult"
+import DescribeIncrementalRateModelsResult from "./DescribeIncrementalRateModelsResult"
+import GetIncrementalRateModelResult from "./GetIncrementalRateModelResult"
+import DescribeIncrementalRateModelMastersResult from "./DescribeIncrementalRateModelMastersResult"
+import CreateIncrementalRateModelMasterResult from "./CreateIncrementalRateModelMasterResult"
+import GetIncrementalRateModelMasterResult from "./GetIncrementalRateModelMasterResult"
+import UpdateIncrementalRateModelMasterResult from "./UpdateIncrementalRateModelMasterResult"
+import DeleteIncrementalRateModelMasterResult from "./DeleteIncrementalRateModelMasterResult"
 import ExchangeResult from "./ExchangeResult"
 import ExchangeByUserIdResult from "./ExchangeByUserIdResult"
 import ExchangeByStampSheetResult from "./ExchangeByStampSheetResult"
+import IncrementalExchangeResult from "./IncrementalExchangeResult"
+import IncrementalExchangeByUserIdResult from "./IncrementalExchangeByUserIdResult"
+import IncrementalExchangeByStampSheetResult from "./IncrementalExchangeByStampSheetResult"
+import UnlockIncrementalExchangeByUserIdResult from "./UnlockIncrementalExchangeByUserIdResult"
+import UnlockIncrementalExchangeByStampSheetResult from "./UnlockIncrementalExchangeByStampSheetResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentRateMasterResult from "./GetCurrentRateMasterResult"
 import UpdateCurrentRateMasterResult from "./UpdateCurrentRateMasterResult"
@@ -62,9 +74,21 @@ export {
     GetRateModelMasterResult,
     UpdateRateModelMasterResult,
     DeleteRateModelMasterResult,
+    DescribeIncrementalRateModelsResult,
+    GetIncrementalRateModelResult,
+    DescribeIncrementalRateModelMastersResult,
+    CreateIncrementalRateModelMasterResult,
+    GetIncrementalRateModelMasterResult,
+    UpdateIncrementalRateModelMasterResult,
+    DeleteIncrementalRateModelMasterResult,
     ExchangeResult,
     ExchangeByUserIdResult,
     ExchangeByStampSheetResult,
+    IncrementalExchangeResult,
+    IncrementalExchangeByUserIdResult,
+    IncrementalExchangeByStampSheetResult,
+    UnlockIncrementalExchangeByUserIdResult,
+    UnlockIncrementalExchangeByStampSheetResult,
     ExportMasterResult,
     GetCurrentRateMasterResult,
     UpdateCurrentRateMasterResult,

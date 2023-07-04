@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionSetting = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.ConsumeAction = exports.AcquireAction = exports.Await = exports.CurrentRateMaster = exports.RateModelMaster = exports.RateModel = exports.Namespace = void 0;
+exports.TransactionSetting = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.ConsumeAction = exports.AcquireAction = exports.Await = exports.CurrentRateMaster = exports.IncrementalRateModelMaster = exports.IncrementalRateModel = exports.RateModelMaster = exports.RateModel = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -23,6 +23,10 @@ var RateModel_1 = tslib_1.__importDefault(require("./RateModel"));
 exports.RateModel = RateModel_1.default;
 var RateModelMaster_1 = tslib_1.__importDefault(require("./RateModelMaster"));
 exports.RateModelMaster = RateModelMaster_1.default;
+var IncrementalRateModel_1 = tslib_1.__importDefault(require("./IncrementalRateModel"));
+exports.IncrementalRateModel = IncrementalRateModel_1.default;
+var IncrementalRateModelMaster_1 = tslib_1.__importDefault(require("./IncrementalRateModelMaster"));
+exports.IncrementalRateModelMaster = IncrementalRateModelMaster_1.default;
 var CurrentRateMaster_1 = tslib_1.__importDefault(require("./CurrentRateMaster"));
 exports.CurrentRateMaster = CurrentRateMaster_1.default;
 var Await_1 = tslib_1.__importDefault(require("./Await"));

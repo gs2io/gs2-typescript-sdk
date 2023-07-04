@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteAwaitByStampTaskRequest = exports.CreateAwaitByStampSheetRequest = exports.DeleteAwaitByUserIdRequest = exports.DeleteAwaitRequest = exports.SkipByUserIdRequest = exports.SkipRequest = exports.AcquireForceByUserIdRequest = exports.AcquireByUserIdRequest = exports.AcquireRequest = exports.GetAwaitByUserIdRequest = exports.GetAwaitRequest = exports.DescribeAwaitsByUserIdRequest = exports.DescribeAwaitsRequest = exports.CreateAwaitByUserIdRequest = exports.UpdateCurrentRateMasterFromGitHubRequest = exports.UpdateCurrentRateMasterRequest = exports.GetCurrentRateMasterRequest = exports.ExportMasterRequest = exports.ExchangeByStampSheetRequest = exports.ExchangeByUserIdRequest = exports.ExchangeRequest = exports.DeleteRateModelMasterRequest = exports.UpdateRateModelMasterRequest = exports.GetRateModelMasterRequest = exports.CreateRateModelMasterRequest = exports.DescribeRateModelMastersRequest = exports.GetRateModelRequest = exports.DescribeRateModelsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.DeleteAwaitByStampTaskRequest = exports.CreateAwaitByStampSheetRequest = exports.DeleteAwaitByUserIdRequest = exports.DeleteAwaitRequest = exports.SkipByUserIdRequest = exports.SkipRequest = exports.AcquireForceByUserIdRequest = exports.AcquireByUserIdRequest = exports.AcquireRequest = exports.GetAwaitByUserIdRequest = exports.GetAwaitRequest = exports.DescribeAwaitsByUserIdRequest = exports.DescribeAwaitsRequest = exports.CreateAwaitByUserIdRequest = exports.UpdateCurrentRateMasterFromGitHubRequest = exports.UpdateCurrentRateMasterRequest = exports.GetCurrentRateMasterRequest = exports.ExportMasterRequest = exports.UnlockIncrementalExchangeByStampSheetRequest = exports.UnlockIncrementalExchangeByUserIdRequest = exports.IncrementalExchangeByStampSheetRequest = exports.IncrementalExchangeByUserIdRequest = exports.IncrementalExchangeRequest = exports.ExchangeByStampSheetRequest = exports.ExchangeByUserIdRequest = exports.ExchangeRequest = exports.DeleteIncrementalRateModelMasterRequest = exports.UpdateIncrementalRateModelMasterRequest = exports.GetIncrementalRateModelMasterRequest = exports.CreateIncrementalRateModelMasterRequest = exports.DescribeIncrementalRateModelMastersRequest = exports.GetIncrementalRateModelRequest = exports.DescribeIncrementalRateModelsRequest = exports.DeleteRateModelMasterRequest = exports.UpdateRateModelMasterRequest = exports.GetRateModelMasterRequest = exports.CreateRateModelMasterRequest = exports.DescribeRateModelMastersRequest = exports.GetRateModelRequest = exports.DescribeRateModelsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -43,12 +43,36 @@ var UpdateRateModelMasterRequest_1 = tslib_1.__importDefault(require("./UpdateRa
 exports.UpdateRateModelMasterRequest = UpdateRateModelMasterRequest_1.default;
 var DeleteRateModelMasterRequest_1 = tslib_1.__importDefault(require("./DeleteRateModelMasterRequest"));
 exports.DeleteRateModelMasterRequest = DeleteRateModelMasterRequest_1.default;
+var DescribeIncrementalRateModelsRequest_1 = tslib_1.__importDefault(require("./DescribeIncrementalRateModelsRequest"));
+exports.DescribeIncrementalRateModelsRequest = DescribeIncrementalRateModelsRequest_1.default;
+var GetIncrementalRateModelRequest_1 = tslib_1.__importDefault(require("./GetIncrementalRateModelRequest"));
+exports.GetIncrementalRateModelRequest = GetIncrementalRateModelRequest_1.default;
+var DescribeIncrementalRateModelMastersRequest_1 = tslib_1.__importDefault(require("./DescribeIncrementalRateModelMastersRequest"));
+exports.DescribeIncrementalRateModelMastersRequest = DescribeIncrementalRateModelMastersRequest_1.default;
+var CreateIncrementalRateModelMasterRequest_1 = tslib_1.__importDefault(require("./CreateIncrementalRateModelMasterRequest"));
+exports.CreateIncrementalRateModelMasterRequest = CreateIncrementalRateModelMasterRequest_1.default;
+var GetIncrementalRateModelMasterRequest_1 = tslib_1.__importDefault(require("./GetIncrementalRateModelMasterRequest"));
+exports.GetIncrementalRateModelMasterRequest = GetIncrementalRateModelMasterRequest_1.default;
+var UpdateIncrementalRateModelMasterRequest_1 = tslib_1.__importDefault(require("./UpdateIncrementalRateModelMasterRequest"));
+exports.UpdateIncrementalRateModelMasterRequest = UpdateIncrementalRateModelMasterRequest_1.default;
+var DeleteIncrementalRateModelMasterRequest_1 = tslib_1.__importDefault(require("./DeleteIncrementalRateModelMasterRequest"));
+exports.DeleteIncrementalRateModelMasterRequest = DeleteIncrementalRateModelMasterRequest_1.default;
 var ExchangeRequest_1 = tslib_1.__importDefault(require("./ExchangeRequest"));
 exports.ExchangeRequest = ExchangeRequest_1.default;
 var ExchangeByUserIdRequest_1 = tslib_1.__importDefault(require("./ExchangeByUserIdRequest"));
 exports.ExchangeByUserIdRequest = ExchangeByUserIdRequest_1.default;
 var ExchangeByStampSheetRequest_1 = tslib_1.__importDefault(require("./ExchangeByStampSheetRequest"));
 exports.ExchangeByStampSheetRequest = ExchangeByStampSheetRequest_1.default;
+var IncrementalExchangeRequest_1 = tslib_1.__importDefault(require("./IncrementalExchangeRequest"));
+exports.IncrementalExchangeRequest = IncrementalExchangeRequest_1.default;
+var IncrementalExchangeByUserIdRequest_1 = tslib_1.__importDefault(require("./IncrementalExchangeByUserIdRequest"));
+exports.IncrementalExchangeByUserIdRequest = IncrementalExchangeByUserIdRequest_1.default;
+var IncrementalExchangeByStampSheetRequest_1 = tslib_1.__importDefault(require("./IncrementalExchangeByStampSheetRequest"));
+exports.IncrementalExchangeByStampSheetRequest = IncrementalExchangeByStampSheetRequest_1.default;
+var UnlockIncrementalExchangeByUserIdRequest_1 = tslib_1.__importDefault(require("./UnlockIncrementalExchangeByUserIdRequest"));
+exports.UnlockIncrementalExchangeByUserIdRequest = UnlockIncrementalExchangeByUserIdRequest_1.default;
+var UnlockIncrementalExchangeByStampSheetRequest_1 = tslib_1.__importDefault(require("./UnlockIncrementalExchangeByStampSheetRequest"));
+exports.UnlockIncrementalExchangeByStampSheetRequest = UnlockIncrementalExchangeByStampSheetRequest_1.default;
 var ExportMasterRequest_1 = tslib_1.__importDefault(require("./ExportMasterRequest"));
 exports.ExportMasterRequest = ExportMasterRequest_1.default;
 var GetCurrentRateMasterRequest_1 = tslib_1.__importDefault(require("./GetCurrentRateMasterRequest"));

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteAwaitByStampTaskResult = exports.CreateAwaitByStampSheetResult = exports.DeleteAwaitByUserIdResult = exports.DeleteAwaitResult = exports.SkipByUserIdResult = exports.SkipResult = exports.AcquireForceByUserIdResult = exports.AcquireByUserIdResult = exports.AcquireResult = exports.GetAwaitByUserIdResult = exports.GetAwaitResult = exports.DescribeAwaitsByUserIdResult = exports.DescribeAwaitsResult = exports.CreateAwaitByUserIdResult = exports.UpdateCurrentRateMasterFromGitHubResult = exports.UpdateCurrentRateMasterResult = exports.GetCurrentRateMasterResult = exports.ExportMasterResult = exports.ExchangeByStampSheetResult = exports.ExchangeByUserIdResult = exports.ExchangeResult = exports.DeleteRateModelMasterResult = exports.UpdateRateModelMasterResult = exports.GetRateModelMasterResult = exports.CreateRateModelMasterResult = exports.DescribeRateModelMastersResult = exports.GetRateModelResult = exports.DescribeRateModelsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.DeleteAwaitByStampTaskResult = exports.CreateAwaitByStampSheetResult = exports.DeleteAwaitByUserIdResult = exports.DeleteAwaitResult = exports.SkipByUserIdResult = exports.SkipResult = exports.AcquireForceByUserIdResult = exports.AcquireByUserIdResult = exports.AcquireResult = exports.GetAwaitByUserIdResult = exports.GetAwaitResult = exports.DescribeAwaitsByUserIdResult = exports.DescribeAwaitsResult = exports.CreateAwaitByUserIdResult = exports.UpdateCurrentRateMasterFromGitHubResult = exports.UpdateCurrentRateMasterResult = exports.GetCurrentRateMasterResult = exports.ExportMasterResult = exports.UnlockIncrementalExchangeByStampSheetResult = exports.UnlockIncrementalExchangeByUserIdResult = exports.IncrementalExchangeByStampSheetResult = exports.IncrementalExchangeByUserIdResult = exports.IncrementalExchangeResult = exports.ExchangeByStampSheetResult = exports.ExchangeByUserIdResult = exports.ExchangeResult = exports.DeleteIncrementalRateModelMasterResult = exports.UpdateIncrementalRateModelMasterResult = exports.GetIncrementalRateModelMasterResult = exports.CreateIncrementalRateModelMasterResult = exports.DescribeIncrementalRateModelMastersResult = exports.GetIncrementalRateModelResult = exports.DescribeIncrementalRateModelsResult = exports.DeleteRateModelMasterResult = exports.UpdateRateModelMasterResult = exports.GetRateModelMasterResult = exports.CreateRateModelMasterResult = exports.DescribeRateModelMastersResult = exports.GetRateModelResult = exports.DescribeRateModelsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -43,12 +43,36 @@ var UpdateRateModelMasterResult_1 = tslib_1.__importDefault(require("./UpdateRat
 exports.UpdateRateModelMasterResult = UpdateRateModelMasterResult_1.default;
 var DeleteRateModelMasterResult_1 = tslib_1.__importDefault(require("./DeleteRateModelMasterResult"));
 exports.DeleteRateModelMasterResult = DeleteRateModelMasterResult_1.default;
+var DescribeIncrementalRateModelsResult_1 = tslib_1.__importDefault(require("./DescribeIncrementalRateModelsResult"));
+exports.DescribeIncrementalRateModelsResult = DescribeIncrementalRateModelsResult_1.default;
+var GetIncrementalRateModelResult_1 = tslib_1.__importDefault(require("./GetIncrementalRateModelResult"));
+exports.GetIncrementalRateModelResult = GetIncrementalRateModelResult_1.default;
+var DescribeIncrementalRateModelMastersResult_1 = tslib_1.__importDefault(require("./DescribeIncrementalRateModelMastersResult"));
+exports.DescribeIncrementalRateModelMastersResult = DescribeIncrementalRateModelMastersResult_1.default;
+var CreateIncrementalRateModelMasterResult_1 = tslib_1.__importDefault(require("./CreateIncrementalRateModelMasterResult"));
+exports.CreateIncrementalRateModelMasterResult = CreateIncrementalRateModelMasterResult_1.default;
+var GetIncrementalRateModelMasterResult_1 = tslib_1.__importDefault(require("./GetIncrementalRateModelMasterResult"));
+exports.GetIncrementalRateModelMasterResult = GetIncrementalRateModelMasterResult_1.default;
+var UpdateIncrementalRateModelMasterResult_1 = tslib_1.__importDefault(require("./UpdateIncrementalRateModelMasterResult"));
+exports.UpdateIncrementalRateModelMasterResult = UpdateIncrementalRateModelMasterResult_1.default;
+var DeleteIncrementalRateModelMasterResult_1 = tslib_1.__importDefault(require("./DeleteIncrementalRateModelMasterResult"));
+exports.DeleteIncrementalRateModelMasterResult = DeleteIncrementalRateModelMasterResult_1.default;
 var ExchangeResult_1 = tslib_1.__importDefault(require("./ExchangeResult"));
 exports.ExchangeResult = ExchangeResult_1.default;
 var ExchangeByUserIdResult_1 = tslib_1.__importDefault(require("./ExchangeByUserIdResult"));
 exports.ExchangeByUserIdResult = ExchangeByUserIdResult_1.default;
 var ExchangeByStampSheetResult_1 = tslib_1.__importDefault(require("./ExchangeByStampSheetResult"));
 exports.ExchangeByStampSheetResult = ExchangeByStampSheetResult_1.default;
+var IncrementalExchangeResult_1 = tslib_1.__importDefault(require("./IncrementalExchangeResult"));
+exports.IncrementalExchangeResult = IncrementalExchangeResult_1.default;
+var IncrementalExchangeByUserIdResult_1 = tslib_1.__importDefault(require("./IncrementalExchangeByUserIdResult"));
+exports.IncrementalExchangeByUserIdResult = IncrementalExchangeByUserIdResult_1.default;
+var IncrementalExchangeByStampSheetResult_1 = tslib_1.__importDefault(require("./IncrementalExchangeByStampSheetResult"));
+exports.IncrementalExchangeByStampSheetResult = IncrementalExchangeByStampSheetResult_1.default;
+var UnlockIncrementalExchangeByUserIdResult_1 = tslib_1.__importDefault(require("./UnlockIncrementalExchangeByUserIdResult"));
+exports.UnlockIncrementalExchangeByUserIdResult = UnlockIncrementalExchangeByUserIdResult_1.default;
+var UnlockIncrementalExchangeByStampSheetResult_1 = tslib_1.__importDefault(require("./UnlockIncrementalExchangeByStampSheetResult"));
+exports.UnlockIncrementalExchangeByStampSheetResult = UnlockIncrementalExchangeByStampSheetResult_1.default;
 var ExportMasterResult_1 = tslib_1.__importDefault(require("./ExportMasterResult"));
 exports.ExportMasterResult = ExportMasterResult_1.default;
 var GetCurrentRateMasterResult_1 = tslib_1.__importDefault(require("./GetCurrentRateMasterResult"));

@@ -16,6 +16,8 @@ permissions and limitations under the License.
 import Namespace from "./Namespace"
 import RateModel from "./RateModel"
 import RateModelMaster from "./RateModelMaster"
+import IncrementalRateModel from "./IncrementalRateModel"
+import IncrementalRateModelMaster from "./IncrementalRateModelMaster"
 import CurrentRateMaster from "./CurrentRateMaster"
 import Await from "./Await"
 import AcquireAction from "./AcquireAction"
@@ -30,6 +32,8 @@ export {
     Namespace,
     RateModel,
     RateModelMaster,
+    IncrementalRateModel,
+    IncrementalRateModelMaster,
     CurrentRateMaster,
     Await,
     AcquireAction,
