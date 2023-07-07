@@ -33,6 +33,20 @@ import UpdateItemModelMasterRequest from "./UpdateItemModelMasterRequest"
 import DeleteItemModelMasterRequest from "./DeleteItemModelMasterRequest"
 import DescribeItemModelsRequest from "./DescribeItemModelsRequest"
 import GetItemModelRequest from "./GetItemModelRequest"
+import DescribeSimpleInventoryModelMastersRequest from "./DescribeSimpleInventoryModelMastersRequest"
+import CreateSimpleInventoryModelMasterRequest from "./CreateSimpleInventoryModelMasterRequest"
+import GetSimpleInventoryModelMasterRequest from "./GetSimpleInventoryModelMasterRequest"
+import UpdateSimpleInventoryModelMasterRequest from "./UpdateSimpleInventoryModelMasterRequest"
+import DeleteSimpleInventoryModelMasterRequest from "./DeleteSimpleInventoryModelMasterRequest"
+import DescribeSimpleInventoryModelsRequest from "./DescribeSimpleInventoryModelsRequest"
+import GetSimpleInventoryModelRequest from "./GetSimpleInventoryModelRequest"
+import DescribeSimpleItemModelMastersRequest from "./DescribeSimpleItemModelMastersRequest"
+import CreateSimpleItemModelMasterRequest from "./CreateSimpleItemModelMasterRequest"
+import GetSimpleItemModelMasterRequest from "./GetSimpleItemModelMasterRequest"
+import UpdateSimpleItemModelMasterRequest from "./UpdateSimpleItemModelMasterRequest"
+import DeleteSimpleItemModelMasterRequest from "./DeleteSimpleItemModelMasterRequest"
+import DescribeSimpleItemModelsRequest from "./DescribeSimpleItemModelsRequest"
+import GetSimpleItemModelRequest from "./GetSimpleItemModelRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentItemModelMasterRequest from "./GetCurrentItemModelMasterRequest"
 import UpdateCurrentItemModelMasterRequest from "./UpdateCurrentItemModelMasterRequest"
@@ -71,6 +85,18 @@ import DeleteReferenceOfByUserIdRequest from "./DeleteReferenceOfByUserIdRequest
 import AddReferenceOfItemSetByStampSheetRequest from "./AddReferenceOfItemSetByStampSheetRequest"
 import DeleteReferenceOfItemSetByStampSheetRequest from "./DeleteReferenceOfItemSetByStampSheetRequest"
 import VerifyReferenceOfByStampTaskRequest from "./VerifyReferenceOfByStampTaskRequest"
+import DescribeSimpleItemsRequest from "./DescribeSimpleItemsRequest"
+import DescribeSimpleItemsByUserIdRequest from "./DescribeSimpleItemsByUserIdRequest"
+import GetSimpleItemRequest from "./GetSimpleItemRequest"
+import GetSimpleItemByUserIdRequest from "./GetSimpleItemByUserIdRequest"
+import GetSimpleItemWithSignatureRequest from "./GetSimpleItemWithSignatureRequest"
+import GetSimpleItemWithSignatureByUserIdRequest from "./GetSimpleItemWithSignatureByUserIdRequest"
+import AcquireSimpleItemsByUserIdRequest from "./AcquireSimpleItemsByUserIdRequest"
+import ConsumeSimpleItemsRequest from "./ConsumeSimpleItemsRequest"
+import ConsumeSimpleItemsByUserIdRequest from "./ConsumeSimpleItemsByUserIdRequest"
+import DeleteSimpleItemsByUserIdRequest from "./DeleteSimpleItemsByUserIdRequest"
+import AcquireSimpleItemsByStampSheetRequest from "./AcquireSimpleItemsByStampSheetRequest"
+import ConsumeSimpleItemsByStampTaskRequest from "./ConsumeSimpleItemsByStampTaskRequest"
 
 export {
     DescribeNamespacesRequest,
@@ -93,6 +119,20 @@ export {
     DeleteItemModelMasterRequest,
     DescribeItemModelsRequest,
     GetItemModelRequest,
+    DescribeSimpleInventoryModelMastersRequest,
+    CreateSimpleInventoryModelMasterRequest,
+    GetSimpleInventoryModelMasterRequest,
+    UpdateSimpleInventoryModelMasterRequest,
+    DeleteSimpleInventoryModelMasterRequest,
+    DescribeSimpleInventoryModelsRequest,
+    GetSimpleInventoryModelRequest,
+    DescribeSimpleItemModelMastersRequest,
+    CreateSimpleItemModelMasterRequest,
+    GetSimpleItemModelMasterRequest,
+    UpdateSimpleItemModelMasterRequest,
+    DeleteSimpleItemModelMasterRequest,
+    DescribeSimpleItemModelsRequest,
+    GetSimpleItemModelRequest,
     ExportMasterRequest,
     GetCurrentItemModelMasterRequest,
     UpdateCurrentItemModelMasterRequest,
@@ -131,4 +171,16 @@ export {
     AddReferenceOfItemSetByStampSheetRequest,
     DeleteReferenceOfItemSetByStampSheetRequest,
     VerifyReferenceOfByStampTaskRequest,
+    DescribeSimpleItemsRequest,
+    DescribeSimpleItemsByUserIdRequest,
+    GetSimpleItemRequest,
+    GetSimpleItemByUserIdRequest,
+    GetSimpleItemWithSignatureRequest,
+    GetSimpleItemWithSignatureByUserIdRequest,
+    AcquireSimpleItemsByUserIdRequest,
+    ConsumeSimpleItemsRequest,
+    ConsumeSimpleItemsByUserIdRequest,
+    DeleteSimpleItemsByUserIdRequest,
+    AcquireSimpleItemsByStampSheetRequest,
+    ConsumeSimpleItemsByStampTaskRequest,
 };

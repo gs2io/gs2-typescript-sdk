@@ -1,0 +1,33 @@
+import IModel from '../../core/interface/IModel';
+export default class SimpleItem implements IModel {
+    private itemId;
+    private userId;
+    private itemName;
+    private count;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getInventoryName(grn: string): string | null;
+    static getItemName(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, inventoryName: string | null, itemName: string | null): string | null;
+    getItemId(): string | null;
+    setItemId(itemId: string | null): this;
+    withItemId(itemId: string | null): this;
+    getUserId(): string | null;
+    setUserId(userId: string | null): this;
+    withUserId(userId: string | null): this;
+    getItemName(): string | null;
+    setItemName(itemName: string | null): this;
+    withItemName(itemName: string | null): this;
+    getCount(): number | null;
+    setCount(count: number | null): this;
+    withCount(count: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): SimpleItem | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

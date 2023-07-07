@@ -33,6 +33,20 @@ import UpdateItemModelMasterResult from "./UpdateItemModelMasterResult"
 import DeleteItemModelMasterResult from "./DeleteItemModelMasterResult"
 import DescribeItemModelsResult from "./DescribeItemModelsResult"
 import GetItemModelResult from "./GetItemModelResult"
+import DescribeSimpleInventoryModelMastersResult from "./DescribeSimpleInventoryModelMastersResult"
+import CreateSimpleInventoryModelMasterResult from "./CreateSimpleInventoryModelMasterResult"
+import GetSimpleInventoryModelMasterResult from "./GetSimpleInventoryModelMasterResult"
+import UpdateSimpleInventoryModelMasterResult from "./UpdateSimpleInventoryModelMasterResult"
+import DeleteSimpleInventoryModelMasterResult from "./DeleteSimpleInventoryModelMasterResult"
+import DescribeSimpleInventoryModelsResult from "./DescribeSimpleInventoryModelsResult"
+import GetSimpleInventoryModelResult from "./GetSimpleInventoryModelResult"
+import DescribeSimpleItemModelMastersResult from "./DescribeSimpleItemModelMastersResult"
+import CreateSimpleItemModelMasterResult from "./CreateSimpleItemModelMasterResult"
+import GetSimpleItemModelMasterResult from "./GetSimpleItemModelMasterResult"
+import UpdateSimpleItemModelMasterResult from "./UpdateSimpleItemModelMasterResult"
+import DeleteSimpleItemModelMasterResult from "./DeleteSimpleItemModelMasterResult"
+import DescribeSimpleItemModelsResult from "./DescribeSimpleItemModelsResult"
+import GetSimpleItemModelResult from "./GetSimpleItemModelResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentItemModelMasterResult from "./GetCurrentItemModelMasterResult"
 import UpdateCurrentItemModelMasterResult from "./UpdateCurrentItemModelMasterResult"
@@ -71,6 +85,18 @@ import DeleteReferenceOfByUserIdResult from "./DeleteReferenceOfByUserIdResult"
 import AddReferenceOfItemSetByStampSheetResult from "./AddReferenceOfItemSetByStampSheetResult"
 import DeleteReferenceOfItemSetByStampSheetResult from "./DeleteReferenceOfItemSetByStampSheetResult"
 import VerifyReferenceOfByStampTaskResult from "./VerifyReferenceOfByStampTaskResult"
+import DescribeSimpleItemsResult from "./DescribeSimpleItemsResult"
+import DescribeSimpleItemsByUserIdResult from "./DescribeSimpleItemsByUserIdResult"
+import GetSimpleItemResult from "./GetSimpleItemResult"
+import GetSimpleItemByUserIdResult from "./GetSimpleItemByUserIdResult"
+import GetSimpleItemWithSignatureResult from "./GetSimpleItemWithSignatureResult"
+import GetSimpleItemWithSignatureByUserIdResult from "./GetSimpleItemWithSignatureByUserIdResult"
+import AcquireSimpleItemsByUserIdResult from "./AcquireSimpleItemsByUserIdResult"
+import ConsumeSimpleItemsResult from "./ConsumeSimpleItemsResult"
+import ConsumeSimpleItemsByUserIdResult from "./ConsumeSimpleItemsByUserIdResult"
+import DeleteSimpleItemsByUserIdResult from "./DeleteSimpleItemsByUserIdResult"
+import AcquireSimpleItemsByStampSheetResult from "./AcquireSimpleItemsByStampSheetResult"
+import ConsumeSimpleItemsByStampTaskResult from "./ConsumeSimpleItemsByStampTaskResult"
 
 export {
     DescribeNamespacesResult,
@@ -93,6 +119,20 @@ export {
     DeleteItemModelMasterResult,
     DescribeItemModelsResult,
     GetItemModelResult,
+    DescribeSimpleInventoryModelMastersResult,
+    CreateSimpleInventoryModelMasterResult,
+    GetSimpleInventoryModelMasterResult,
+    UpdateSimpleInventoryModelMasterResult,
+    DeleteSimpleInventoryModelMasterResult,
+    DescribeSimpleInventoryModelsResult,
+    GetSimpleInventoryModelResult,
+    DescribeSimpleItemModelMastersResult,
+    CreateSimpleItemModelMasterResult,
+    GetSimpleItemModelMasterResult,
+    UpdateSimpleItemModelMasterResult,
+    DeleteSimpleItemModelMasterResult,
+    DescribeSimpleItemModelsResult,
+    GetSimpleItemModelResult,
     ExportMasterResult,
     GetCurrentItemModelMasterResult,
     UpdateCurrentItemModelMasterResult,
@@ -131,4 +171,16 @@ export {
     AddReferenceOfItemSetByStampSheetResult,
     DeleteReferenceOfItemSetByStampSheetResult,
     VerifyReferenceOfByStampTaskResult,
+    DescribeSimpleItemsResult,
+    DescribeSimpleItemsByUserIdResult,
+    GetSimpleItemResult,
+    GetSimpleItemByUserIdResult,
+    GetSimpleItemWithSignatureResult,
+    GetSimpleItemWithSignatureByUserIdResult,
+    AcquireSimpleItemsByUserIdResult,
+    ConsumeSimpleItemsResult,
+    ConsumeSimpleItemsByUserIdResult,
+    DeleteSimpleItemsByUserIdResult,
+    AcquireSimpleItemsByStampSheetResult,
+    ConsumeSimpleItemsByStampTaskResult,
 };

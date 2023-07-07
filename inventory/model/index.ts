@@ -18,13 +18,21 @@ import InventoryModelMaster from "./InventoryModelMaster"
 import InventoryModel from "./InventoryModel"
 import ItemModelMaster from "./ItemModelMaster"
 import ItemModel from "./ItemModel"
+import SimpleInventoryModelMaster from "./SimpleInventoryModelMaster"
+import SimpleInventoryModel from "./SimpleInventoryModel"
+import SimpleItemModelMaster from "./SimpleItemModelMaster"
+import SimpleItemModel from "./SimpleItemModel"
 import CurrentItemModelMaster from "./CurrentItemModelMaster"
 import Inventory from "./Inventory"
 import ItemSet from "./ItemSet"
 import ReferenceOf from "./ReferenceOf"
+import SimpleInventory from "./SimpleInventory"
+import SimpleItem from "./SimpleItem"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import ScriptSetting from "./ScriptSetting"
 import LogSetting from "./LogSetting"
+import AcquireCount from "./AcquireCount"
+import ConsumeCount from "./ConsumeCount"
 
 export {
     Namespace,
@@ -32,11 +40,19 @@ export {
     InventoryModel,
     ItemModelMaster,
     ItemModel,
+    SimpleInventoryModelMaster,
+    SimpleInventoryModel,
+    SimpleItemModelMaster,
+    SimpleItemModel,
     CurrentItemModelMaster,
     Inventory,
     ItemSet,
     ReferenceOf,
+    SimpleInventory,
+    SimpleItem,
     GitHubCheckoutSetting,
     ScriptSetting,
     LogSetting,
+    AcquireCount,
+    ConsumeCount,
 };

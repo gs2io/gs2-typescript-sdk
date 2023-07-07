@@ -24,6 +24,20 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
     deleteItemModelMaster(request: Request.DeleteItemModelMasterRequest): Promise<Result.DeleteItemModelMasterResult>;
     describeItemModels(request: Request.DescribeItemModelsRequest): Promise<Result.DescribeItemModelsResult>;
     getItemModel(request: Request.GetItemModelRequest): Promise<Result.GetItemModelResult>;
+    describeSimpleInventoryModelMasters(request: Request.DescribeSimpleInventoryModelMastersRequest): Promise<Result.DescribeSimpleInventoryModelMastersResult>;
+    createSimpleInventoryModelMaster(request: Request.CreateSimpleInventoryModelMasterRequest): Promise<Result.CreateSimpleInventoryModelMasterResult>;
+    getSimpleInventoryModelMaster(request: Request.GetSimpleInventoryModelMasterRequest): Promise<Result.GetSimpleInventoryModelMasterResult>;
+    updateSimpleInventoryModelMaster(request: Request.UpdateSimpleInventoryModelMasterRequest): Promise<Result.UpdateSimpleInventoryModelMasterResult>;
+    deleteSimpleInventoryModelMaster(request: Request.DeleteSimpleInventoryModelMasterRequest): Promise<Result.DeleteSimpleInventoryModelMasterResult>;
+    describeSimpleInventoryModels(request: Request.DescribeSimpleInventoryModelsRequest): Promise<Result.DescribeSimpleInventoryModelsResult>;
+    getSimpleInventoryModel(request: Request.GetSimpleInventoryModelRequest): Promise<Result.GetSimpleInventoryModelResult>;
+    describeSimpleItemModelMasters(request: Request.DescribeSimpleItemModelMastersRequest): Promise<Result.DescribeSimpleItemModelMastersResult>;
+    createSimpleItemModelMaster(request: Request.CreateSimpleItemModelMasterRequest): Promise<Result.CreateSimpleItemModelMasterResult>;
+    getSimpleItemModelMaster(request: Request.GetSimpleItemModelMasterRequest): Promise<Result.GetSimpleItemModelMasterResult>;
+    updateSimpleItemModelMaster(request: Request.UpdateSimpleItemModelMasterRequest): Promise<Result.UpdateSimpleItemModelMasterResult>;
+    deleteSimpleItemModelMaster(request: Request.DeleteSimpleItemModelMasterRequest): Promise<Result.DeleteSimpleItemModelMasterResult>;
+    describeSimpleItemModels(request: Request.DescribeSimpleItemModelsRequest): Promise<Result.DescribeSimpleItemModelsResult>;
+    getSimpleItemModel(request: Request.GetSimpleItemModelRequest): Promise<Result.GetSimpleItemModelResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentItemModelMaster(request: Request.GetCurrentItemModelMasterRequest): Promise<Result.GetCurrentItemModelMasterResult>;
     updateCurrentItemModelMaster(request: Request.UpdateCurrentItemModelMasterRequest): Promise<Result.UpdateCurrentItemModelMasterResult>;
@@ -62,4 +76,16 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
     addReferenceOfItemSetByStampSheet(request: Request.AddReferenceOfItemSetByStampSheetRequest): Promise<Result.AddReferenceOfItemSetByStampSheetResult>;
     deleteReferenceOfItemSetByStampSheet(request: Request.DeleteReferenceOfItemSetByStampSheetRequest): Promise<Result.DeleteReferenceOfItemSetByStampSheetResult>;
     verifyReferenceOfByStampTask(request: Request.VerifyReferenceOfByStampTaskRequest): Promise<Result.VerifyReferenceOfByStampTaskResult>;
+    describeSimpleItems(request: Request.DescribeSimpleItemsRequest): Promise<Result.DescribeSimpleItemsResult>;
+    describeSimpleItemsByUserId(request: Request.DescribeSimpleItemsByUserIdRequest): Promise<Result.DescribeSimpleItemsByUserIdResult>;
+    getSimpleItem(request: Request.GetSimpleItemRequest): Promise<Result.GetSimpleItemResult>;
+    getSimpleItemByUserId(request: Request.GetSimpleItemByUserIdRequest): Promise<Result.GetSimpleItemByUserIdResult>;
+    getSimpleItemWithSignature(request: Request.GetSimpleItemWithSignatureRequest): Promise<Result.GetSimpleItemWithSignatureResult>;
+    getSimpleItemWithSignatureByUserId(request: Request.GetSimpleItemWithSignatureByUserIdRequest): Promise<Result.GetSimpleItemWithSignatureByUserIdResult>;
+    acquireSimpleItemsByUserId(request: Request.AcquireSimpleItemsByUserIdRequest): Promise<Result.AcquireSimpleItemsByUserIdResult>;
+    consumeSimpleItems(request: Request.ConsumeSimpleItemsRequest): Promise<Result.ConsumeSimpleItemsResult>;
+    consumeSimpleItemsByUserId(request: Request.ConsumeSimpleItemsByUserIdRequest): Promise<Result.ConsumeSimpleItemsByUserIdResult>;
+    deleteSimpleItemsByUserId(request: Request.DeleteSimpleItemsByUserIdRequest): Promise<Result.DeleteSimpleItemsByUserIdResult>;
+    acquireSimpleItemsByStampSheet(request: Request.AcquireSimpleItemsByStampSheetRequest): Promise<Result.AcquireSimpleItemsByStampSheetResult>;
+    consumeSimpleItemsByStampTask(request: Request.ConsumeSimpleItemsByStampTaskRequest): Promise<Result.ConsumeSimpleItemsByStampTaskResult>;
 }
