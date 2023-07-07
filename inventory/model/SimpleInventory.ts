@@ -15,14 +15,12 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import SimpleItem from './SimpleItem';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:user:{userId}:simple:inventory:{inventoryName}";
 
 export default class SimpleInventory implements IModel {
     private inventoryId: string|null = null;
     private inventoryName: string|null = null;
     private userId: string|null = null;
-    private simpleItems: SimpleItem[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
 
@@ -162,17 +160,6 @@ export default class SimpleInventory implements IModel {
         this.userId = userId;
         return this;
     }
-    public getSimpleItems(): SimpleItem[]|null {
-        return this.simpleItems;
-    }
-    public setSimpleItems(simpleItems: SimpleItem[]|null) {
-        this.simpleItems = simpleItems;
-        return this;
-    }
-    public withSimpleItems(simpleItems: SimpleItem[]|null): this {
-        this.simpleItems = simpleItems;
-        return this;
-    }
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -204,11 +191,6 @@ export default class SimpleInventory implements IModel {
             .withInventoryId(data["inventoryId"])
             .withInventoryName(data["inventoryName"])
             .withUserId(data["userId"])
-            .withSimpleItems(data.simpleItems ?
-                data.simpleItems.map((item: {[key: string]: any}) => {
-                    return SimpleItem.fromDict(item);
-                }
-            ) : [])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     }
@@ -218,11 +200,6 @@ export default class SimpleInventory implements IModel {
             "inventoryId": this.getInventoryId(),
             "inventoryName": this.getInventoryName(),
             "userId": this.getUserId(),
-            "simpleItems": this.getSimpleItems() ?
-                this.getSimpleItems()!.map((item: SimpleItem) => {
-                    return item.toDict();
-                }
-            ) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };
