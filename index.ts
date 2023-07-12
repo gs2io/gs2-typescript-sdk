@@ -35,6 +35,7 @@ import * as inventory from './inventory';
 import * as jobQueue from './jobQueue';
 import * as key from './key';
 import * as limit from './limit';
+import * as loginReward from './loginReward';
 import * as lock from './lock';
 import * as log from './log';
 import * as lottery from './lottery';
@@ -77,6 +78,7 @@ export {
   jobQueue,
   key,
   limit,
+  loginReward,
   lock,
   log,
   lottery,
