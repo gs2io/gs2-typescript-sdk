@@ -21,7 +21,6 @@ var GetBonusModelRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.bonusModelName = null;
-        this.accessToken = null;
     }
     GetBonusModelRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -67,28 +66,15 @@ var GetBonusModelRequest = /** @class */ (function () {
         this.bonusModelName = bonusModelName;
         return this;
     };
-    GetBonusModelRequest.prototype.getAccessToken = function () {
-        return this.accessToken;
-    };
-    GetBonusModelRequest.prototype.setAccessToken = function (accessToken) {
-        this.accessToken = accessToken;
-        return this;
-    };
-    GetBonusModelRequest.prototype.withAccessToken = function (accessToken) {
-        this.accessToken = accessToken;
-        return this;
-    };
     GetBonusModelRequest.fromDict = function (data) {
         return new GetBonusModelRequest()
             .withNamespaceName(data["namespaceName"])
-            .withBonusModelName(data["bonusModelName"])
-            .withAccessToken(data["accessToken"]);
+            .withBonusModelName(data["bonusModelName"]);
     };
     GetBonusModelRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "bonusModelName": this.getBonusModelName(),
-            "accessToken": this.getAccessToken(),
         };
     };
     return GetBonusModelRequest;

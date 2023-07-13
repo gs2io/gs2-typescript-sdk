@@ -29,9 +29,7 @@ import GetCurrentBonusMasterRequest from "./GetCurrentBonusMasterRequest"
 import UpdateCurrentBonusMasterRequest from "./UpdateCurrentBonusMasterRequest"
 import UpdateCurrentBonusMasterFromGitHubRequest from "./UpdateCurrentBonusMasterFromGitHubRequest"
 import DescribeBonusModelsRequest from "./DescribeBonusModelsRequest"
-import DescribeBonusModelsByUserIdRequest from "./DescribeBonusModelsByUserIdRequest"
 import GetBonusModelRequest from "./GetBonusModelRequest"
-import GetBonusModelByUserIdRequest from "./GetBonusModelByUserIdRequest"
 import ReceiveRequest from "./ReceiveRequest"
 import ReceiveByUserIdRequest from "./ReceiveByUserIdRequest"
 import MissedReceiveRequest from "./MissedReceiveRequest"
@@ -63,9 +61,7 @@ export {
     UpdateCurrentBonusMasterRequest,
     UpdateCurrentBonusMasterFromGitHubRequest,
     DescribeBonusModelsRequest,
-    DescribeBonusModelsByUserIdRequest,
     GetBonusModelRequest,
-    GetBonusModelByUserIdRequest,
     ReceiveRequest,
     ReceiveByUserIdRequest,
     MissedReceiveRequest,

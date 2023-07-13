@@ -24,7 +24,6 @@ export default class GetBonusModelRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private bonusModelName: string|null = null;
-    private accessToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -75,30 +74,17 @@ export default class GetBonusModelRequest implements IRequest {
         this.bonusModelName = bonusModelName;
         return this;
     }
-    public getAccessToken(): string|null {
-        return this.accessToken;
-    }
-    public setAccessToken(accessToken: string|null) {
-        this.accessToken = accessToken;
-        return this;
-    }
-    public withAccessToken(accessToken: string|null): this {
-        this.accessToken = accessToken;
-        return this;
-    }
 
     public static fromDict(data: {[key: string]: any}): GetBonusModelRequest {
         return new GetBonusModelRequest()
             .withNamespaceName(data["namespaceName"])
-            .withBonusModelName(data["bonusModelName"])
-            .withAccessToken(data["accessToken"]);
+            .withBonusModelName(data["bonusModelName"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
             "bonusModelName": this.getBonusModelName(),
-            "accessToken": this.getAccessToken(),
         };
     }
 }

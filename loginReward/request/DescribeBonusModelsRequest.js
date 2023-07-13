@@ -20,7 +20,6 @@ var DescribeBonusModelsRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
-        this.accessToken = null;
     }
     DescribeBonusModelsRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -55,26 +54,13 @@ var DescribeBonusModelsRequest = /** @class */ (function () {
         this.namespaceName = namespaceName;
         return this;
     };
-    DescribeBonusModelsRequest.prototype.getAccessToken = function () {
-        return this.accessToken;
-    };
-    DescribeBonusModelsRequest.prototype.setAccessToken = function (accessToken) {
-        this.accessToken = accessToken;
-        return this;
-    };
-    DescribeBonusModelsRequest.prototype.withAccessToken = function (accessToken) {
-        this.accessToken = accessToken;
-        return this;
-    };
     DescribeBonusModelsRequest.fromDict = function (data) {
         return new DescribeBonusModelsRequest()
-            .withNamespaceName(data["namespaceName"])
-            .withAccessToken(data["accessToken"]);
+            .withNamespaceName(data["namespaceName"]);
     };
     DescribeBonusModelsRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
-            "accessToken": this.getAccessToken(),
         };
     };
     return DescribeBonusModelsRequest;

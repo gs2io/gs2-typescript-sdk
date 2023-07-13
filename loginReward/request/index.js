@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MarkReceivedByStampTaskRequest = exports.MarkReceivedByUserIdRequest = exports.MarkReceivedRequest = exports.DeleteReceiveStatusByStampSheetRequest = exports.DeleteReceiveStatusByUserIdRequest = exports.GetReceiveStatusByUserIdRequest = exports.GetReceiveStatusRequest = exports.DescribeReceiveStatusesByUserIdRequest = exports.DescribeReceiveStatusesRequest = exports.MissedReceiveByUserIdRequest = exports.MissedReceiveRequest = exports.ReceiveByUserIdRequest = exports.ReceiveRequest = exports.GetBonusModelByUserIdRequest = exports.GetBonusModelRequest = exports.DescribeBonusModelsByUserIdRequest = exports.DescribeBonusModelsRequest = exports.UpdateCurrentBonusMasterFromGitHubRequest = exports.UpdateCurrentBonusMasterRequest = exports.GetCurrentBonusMasterRequest = exports.ExportMasterRequest = exports.DeleteBonusModelMasterRequest = exports.UpdateBonusModelMasterRequest = exports.GetBonusModelMasterRequest = exports.CreateBonusModelMasterRequest = exports.DescribeBonusModelMastersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.MarkReceivedByStampTaskRequest = exports.MarkReceivedByUserIdRequest = exports.MarkReceivedRequest = exports.DeleteReceiveStatusByStampSheetRequest = exports.DeleteReceiveStatusByUserIdRequest = exports.GetReceiveStatusByUserIdRequest = exports.GetReceiveStatusRequest = exports.DescribeReceiveStatusesByUserIdRequest = exports.DescribeReceiveStatusesRequest = exports.MissedReceiveByUserIdRequest = exports.MissedReceiveRequest = exports.ReceiveByUserIdRequest = exports.ReceiveRequest = exports.GetBonusModelRequest = exports.DescribeBonusModelsRequest = exports.UpdateCurrentBonusMasterFromGitHubRequest = exports.UpdateCurrentBonusMasterRequest = exports.GetCurrentBonusMasterRequest = exports.ExportMasterRequest = exports.DeleteBonusModelMasterRequest = exports.UpdateBonusModelMasterRequest = exports.GetBonusModelMasterRequest = exports.CreateBonusModelMasterRequest = exports.DescribeBonusModelMastersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -49,12 +49,8 @@ var UpdateCurrentBonusMasterFromGitHubRequest_1 = tslib_1.__importDefault(requir
 exports.UpdateCurrentBonusMasterFromGitHubRequest = UpdateCurrentBonusMasterFromGitHubRequest_1.default;
 var DescribeBonusModelsRequest_1 = tslib_1.__importDefault(require("./DescribeBonusModelsRequest"));
 exports.DescribeBonusModelsRequest = DescribeBonusModelsRequest_1.default;
-var DescribeBonusModelsByUserIdRequest_1 = tslib_1.__importDefault(require("./DescribeBonusModelsByUserIdRequest"));
-exports.DescribeBonusModelsByUserIdRequest = DescribeBonusModelsByUserIdRequest_1.default;
 var GetBonusModelRequest_1 = tslib_1.__importDefault(require("./GetBonusModelRequest"));
 exports.GetBonusModelRequest = GetBonusModelRequest_1.default;
-var GetBonusModelByUserIdRequest_1 = tslib_1.__importDefault(require("./GetBonusModelByUserIdRequest"));
-exports.GetBonusModelByUserIdRequest = GetBonusModelByUserIdRequest_1.default;
 var ReceiveRequest_1 = tslib_1.__importDefault(require("./ReceiveRequest"));
 exports.ReceiveRequest = ReceiveRequest_1.default;
 var ReceiveByUserIdRequest_1 = tslib_1.__importDefault(require("./ReceiveByUserIdRequest"));

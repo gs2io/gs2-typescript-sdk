@@ -415,8 +415,8 @@ var Gs2LoginRewardRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LoginRewardRestClient.prototype.describeBonusModels = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/bonusModel')
+        var _a, _b, _c;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/bonusModel')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
@@ -424,11 +424,8 @@ var Gs2LoginRewardRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-        if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
-        }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -439,13 +436,13 @@ var Gs2LoginRewardRestClient = /** @class */ (function (_super) {
             throw JSON.parse(error.response.data.message);
         });
     };
-    Gs2LoginRewardRestClient.prototype.describeBonusModelsByUserId = function (request) {
+    Gs2LoginRewardRestClient.prototype.getBonusModel = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/bonusModel')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/bonusModel/{bonusModelName}')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{bonusModelName}', String((_c = request.getBonusModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getBonusModelName()) !== null && _d !== void 0 ? _d : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
@@ -457,57 +454,7 @@ var Gs2LoginRewardRestClient = /** @class */ (function (_super) {
             params: params,
             headers: headers,
         }).then(function (response) {
-            return Result.DescribeBonusModelsByUserIdResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
-        });
-    };
-    Gs2LoginRewardRestClient.prototype.getBonusModel = function (request) {
-        var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/bonusModel/{bonusModelName}')
-            .replace('{service}', 'login-reward')
-            .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{bonusModelName}', String((_c = request.getBonusModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getBonusModelName()) !== null && _d !== void 0 ? _d : 'null'));
-        var headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
-        }
-        var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-        };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
             return Result.GetBonusModelResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
-        });
-    };
-    Gs2LoginRewardRestClient.prototype.getBonusModelByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/bonusModel/{bonusModelName}')
-            .replace('{service}', 'login-reward')
-            .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{bonusModelName}', String((_c = request.getBonusModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getBonusModelName()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
-        var headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-        };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.GetBonusModelByUserIdResult.fromDict(response.data);
         }).catch(function (error) {
             throw JSON.parse(error.response.data.message);
         });
@@ -807,7 +754,7 @@ var Gs2LoginRewardRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LoginRewardRestClient.prototype.markReceived = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/receiveStatus/{bonusModelName}/mark')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
@@ -823,20 +770,25 @@ var Gs2LoginRewardRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
         }
-        var params = {
+        var body = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'stepNumber': (_h = request.getStepNumber()) !== null && _h !== void 0 ? _h : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.MarkReceivedResult.fromDict(response.data);
         }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
         });
     };
     Gs2LoginRewardRestClient.prototype.markReceivedByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/receiveStatus/{bonusModelName}/mark')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
@@ -850,16 +802,21 @@ var Gs2LoginRewardRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
         }
-        var params = {
+        var body = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'stepNumber': (_j = request.getStepNumber()) !== null && _j !== void 0 ? _j : null,
         };
-        return axios_1.default.get(url, {
-            params: params,
+        return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
             return Result.MarkReceivedByUserIdResult.fromDict(response.data);
         }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
         });
     };
     Gs2LoginRewardRestClient.prototype.markReceivedByStampTask = function (request) {

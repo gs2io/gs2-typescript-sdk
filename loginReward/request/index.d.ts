@@ -14,9 +14,7 @@ import GetCurrentBonusMasterRequest from "./GetCurrentBonusMasterRequest";
 import UpdateCurrentBonusMasterRequest from "./UpdateCurrentBonusMasterRequest";
 import UpdateCurrentBonusMasterFromGitHubRequest from "./UpdateCurrentBonusMasterFromGitHubRequest";
 import DescribeBonusModelsRequest from "./DescribeBonusModelsRequest";
-import DescribeBonusModelsByUserIdRequest from "./DescribeBonusModelsByUserIdRequest";
 import GetBonusModelRequest from "./GetBonusModelRequest";
-import GetBonusModelByUserIdRequest from "./GetBonusModelByUserIdRequest";
 import ReceiveRequest from "./ReceiveRequest";
 import ReceiveByUserIdRequest from "./ReceiveByUserIdRequest";
 import MissedReceiveRequest from "./MissedReceiveRequest";
@@ -30,4 +28,4 @@ import DeleteReceiveStatusByStampSheetRequest from "./DeleteReceiveStatusByStamp
 import MarkReceivedRequest from "./MarkReceivedRequest";
 import MarkReceivedByUserIdRequest from "./MarkReceivedByUserIdRequest";
 import MarkReceivedByStampTaskRequest from "./MarkReceivedByStampTaskRequest";
-export { DescribeNamespacesRequest, CreateNamespaceRequest, GetNamespaceStatusRequest, GetNamespaceRequest, UpdateNamespaceRequest, DeleteNamespaceRequest, DescribeBonusModelMastersRequest, CreateBonusModelMasterRequest, GetBonusModelMasterRequest, UpdateBonusModelMasterRequest, DeleteBonusModelMasterRequest, ExportMasterRequest, GetCurrentBonusMasterRequest, UpdateCurrentBonusMasterRequest, UpdateCurrentBonusMasterFromGitHubRequest, DescribeBonusModelsRequest, DescribeBonusModelsByUserIdRequest, GetBonusModelRequest, GetBonusModelByUserIdRequest, ReceiveRequest, ReceiveByUserIdRequest, MissedReceiveRequest, MissedReceiveByUserIdRequest, DescribeReceiveStatusesRequest, DescribeReceiveStatusesByUserIdRequest, GetReceiveStatusRequest, GetReceiveStatusByUserIdRequest, DeleteReceiveStatusByUserIdRequest, DeleteReceiveStatusByStampSheetRequest, MarkReceivedRequest, MarkReceivedByUserIdRequest, MarkReceivedByStampTaskRequest, };
+export { DescribeNamespacesRequest, CreateNamespaceRequest, GetNamespaceStatusRequest, GetNamespaceRequest, UpdateNamespaceRequest, DeleteNamespaceRequest, DescribeBonusModelMastersRequest, CreateBonusModelMasterRequest, GetBonusModelMasterRequest, UpdateBonusModelMasterRequest, DeleteBonusModelMasterRequest, ExportMasterRequest, GetCurrentBonusMasterRequest, UpdateCurrentBonusMasterRequest, UpdateCurrentBonusMasterFromGitHubRequest, DescribeBonusModelsRequest, GetBonusModelRequest, ReceiveRequest, ReceiveByUserIdRequest, MissedReceiveRequest, MissedReceiveByUserIdRequest, DescribeReceiveStatusesRequest, DescribeReceiveStatusesByUserIdRequest, GetReceiveStatusRequest, GetReceiveStatusByUserIdRequest, DeleteReceiveStatusByUserIdRequest, DeleteReceiveStatusByStampSheetRequest, MarkReceivedRequest, MarkReceivedByUserIdRequest, MarkReceivedByStampTaskRequest, };
