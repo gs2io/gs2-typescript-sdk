@@ -838,6 +838,324 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
             }
         });
     };
+    Gs2ShowcaseRestClient.prototype.describeRandomShowcaseMasters = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
+            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DescribeRandomShowcaseMastersResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2ShowcaseRestClient.prototype.createRandomShowcaseMaster = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'name': (_d = request.getName()) !== null && _d !== void 0 ? _d : null,
+            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
+            'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
+            'maximumNumberOfChoice': (_g = request.getMaximumNumberOfChoice()) !== null && _g !== void 0 ? _g : null,
+            'displayItems': (_j = (_h = request.getDisplayItems()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
+            'baseTimestamp': (_k = request.getBaseTimestamp()) !== null && _k !== void 0 ? _k : null,
+            'resetIntervalHours': (_l = request.getResetIntervalHours()) !== null && _l !== void 0 ? _l : null,
+            'salesPeriodEventId': (_m = request.getSalesPeriodEventId()) !== null && _m !== void 0 ? _m : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.CreateRandomShowcaseMasterResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2ShowcaseRestClient.prototype.getRandomShowcaseMaster = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase/{showcaseName}')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{showcaseName}', String((_c = request.getShowcaseName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getShowcaseName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetRandomShowcaseMasterResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2ShowcaseRestClient.prototype.updateRandomShowcaseMaster = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase/{showcaseName}')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{showcaseName}', String((_c = request.getShowcaseName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getShowcaseName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
+            'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
+            'maximumNumberOfChoice': (_h = request.getMaximumNumberOfChoice()) !== null && _h !== void 0 ? _h : null,
+            'displayItems': (_k = (_j = request.getDisplayItems()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
+            'baseTimestamp': (_l = request.getBaseTimestamp()) !== null && _l !== void 0 ? _l : null,
+            'resetIntervalHours': (_m = request.getResetIntervalHours()) !== null && _m !== void 0 ? _m : null,
+            'salesPeriodEventId': (_o = request.getSalesPeriodEventId()) !== null && _o !== void 0 ? _o : null,
+        };
+        return axios_1.default.put(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.UpdateRandomShowcaseMasterResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2ShowcaseRestClient.prototype.deleteRandomShowcaseMaster = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase/{showcaseName}')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{showcaseName}', String((_c = request.getShowcaseName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getShowcaseName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+        };
+        return axios_1.default.delete(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DeleteRandomShowcaseMasterResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2ShowcaseRestClient.prototype.describeRandomShowcaseSalesItems = function (request) {
+        var _a, _b, _c, _d, _e, _f;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/random/showcase/{showcaseName}')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{showcaseName}', String((_c = request.getShowcaseName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getShowcaseName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+        }
+        var params = {
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DescribeRandomShowcaseSalesItemsResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2ShowcaseRestClient.prototype.describeRandomShowcaseSalesItemsByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/random/showcase/{showcaseName}')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{showcaseName}', String((_c = request.getShowcaseName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getShowcaseName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DescribeRandomShowcaseSalesItemsByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2ShowcaseRestClient.prototype.randomShowcaseBuy = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/random/showcase/{showcaseName}/{displayItemName}')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{showcaseName}', String((_c = request.getShowcaseName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getShowcaseName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{displayItemName}', String((_e = request.getDisplayItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getDisplayItemName()) !== null && _f !== void 0 ? _f : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+        }
+        var body = {
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'quantity': (_k = request.getQuantity()) !== null && _k !== void 0 ? _k : null,
+            'config': (_m = (_l = request.getConfig()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.RandomShowcaseBuyResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2ShowcaseRestClient.prototype.randomShowcaseBuyByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/random/showcase/{showcaseName}/{displayItemName}')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{showcaseName}', String((_c = request.getShowcaseName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getShowcaseName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{displayItemName}', String((_e = request.getDisplayItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getDisplayItemName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{userId}', String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+        }
+        var body = {
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'quantity': (_l = request.getQuantity()) !== null && _l !== void 0 ? _l : null,
+            'config': (_o = (_m = request.getConfig()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.RandomShowcaseBuyByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2ShowcaseRestClient.prototype.incrementPurchaseCountByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/random/showcase/user/{userId}/status/{showcaseName}/{displayItemName}/purchase/count')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{showcaseName}', String((_c = request.getShowcaseName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getShowcaseName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{displayItemName}', String((_e = request.getDisplayItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getDisplayItemName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{userId}', String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+        }
+        var body = {
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'count': (_l = request.getCount()) !== null && _l !== void 0 ? _l : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.IncrementPurchaseCountByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2ShowcaseRestClient.prototype.incrementPurchaseCountByStampTask = function (request) {
+        var _a, _b, _c;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/random/showcase/status/purchase/count')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
+            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.IncrementPurchaseCountByStampTaskResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
     return Gs2ShowcaseRestClient;
 }(AbstractGs2RestClient_1.default));
 exports.default = Gs2ShowcaseRestClient;

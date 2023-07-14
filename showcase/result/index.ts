@@ -44,6 +44,17 @@ import GetShowcaseResult from "./GetShowcaseResult"
 import GetShowcaseByUserIdResult from "./GetShowcaseByUserIdResult"
 import BuyResult from "./BuyResult"
 import BuyByUserIdResult from "./BuyByUserIdResult"
+import DescribeRandomShowcaseMastersResult from "./DescribeRandomShowcaseMastersResult"
+import CreateRandomShowcaseMasterResult from "./CreateRandomShowcaseMasterResult"
+import GetRandomShowcaseMasterResult from "./GetRandomShowcaseMasterResult"
+import UpdateRandomShowcaseMasterResult from "./UpdateRandomShowcaseMasterResult"
+import DeleteRandomShowcaseMasterResult from "./DeleteRandomShowcaseMasterResult"
+import DescribeRandomShowcaseSalesItemsResult from "./DescribeRandomShowcaseSalesItemsResult"
+import DescribeRandomShowcaseSalesItemsByUserIdResult from "./DescribeRandomShowcaseSalesItemsByUserIdResult"
+import RandomShowcaseBuyResult from "./RandomShowcaseBuyResult"
+import RandomShowcaseBuyByUserIdResult from "./RandomShowcaseBuyByUserIdResult"
+import IncrementPurchaseCountByUserIdResult from "./IncrementPurchaseCountByUserIdResult"
+import IncrementPurchaseCountByStampTaskResult from "./IncrementPurchaseCountByStampTaskResult"
 
 export {
     DescribeNamespacesResult,
@@ -77,4 +88,15 @@ export {
     GetShowcaseByUserIdResult,
     BuyResult,
     BuyByUserIdResult,
+    DescribeRandomShowcaseMastersResult,
+    CreateRandomShowcaseMasterResult,
+    GetRandomShowcaseMasterResult,
+    UpdateRandomShowcaseMasterResult,
+    DeleteRandomShowcaseMasterResult,
+    DescribeRandomShowcaseSalesItemsResult,
+    DescribeRandomShowcaseSalesItemsByUserIdResult,
+    RandomShowcaseBuyResult,
+    RandomShowcaseBuyByUserIdResult,
+    IncrementPurchaseCountByUserIdResult,
+    IncrementPurchaseCountByStampTaskResult,
 };

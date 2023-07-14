@@ -35,4 +35,15 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     getShowcaseByUserId(request: Request.GetShowcaseByUserIdRequest): Promise<Result.GetShowcaseByUserIdResult>;
     buy(request: Request.BuyRequest): Promise<Result.BuyResult>;
     buyByUserId(request: Request.BuyByUserIdRequest): Promise<Result.BuyByUserIdResult>;
+    describeRandomShowcaseMasters(request: Request.DescribeRandomShowcaseMastersRequest): Promise<Result.DescribeRandomShowcaseMastersResult>;
+    createRandomShowcaseMaster(request: Request.CreateRandomShowcaseMasterRequest): Promise<Result.CreateRandomShowcaseMasterResult>;
+    getRandomShowcaseMaster(request: Request.GetRandomShowcaseMasterRequest): Promise<Result.GetRandomShowcaseMasterResult>;
+    updateRandomShowcaseMaster(request: Request.UpdateRandomShowcaseMasterRequest): Promise<Result.UpdateRandomShowcaseMasterResult>;
+    deleteRandomShowcaseMaster(request: Request.DeleteRandomShowcaseMasterRequest): Promise<Result.DeleteRandomShowcaseMasterResult>;
+    describeRandomShowcaseSalesItems(request: Request.DescribeRandomShowcaseSalesItemsRequest): Promise<Result.DescribeRandomShowcaseSalesItemsResult>;
+    describeRandomShowcaseSalesItemsByUserId(request: Request.DescribeRandomShowcaseSalesItemsByUserIdRequest): Promise<Result.DescribeRandomShowcaseSalesItemsByUserIdResult>;
+    randomShowcaseBuy(request: Request.RandomShowcaseBuyRequest): Promise<Result.RandomShowcaseBuyResult>;
+    randomShowcaseBuyByUserId(request: Request.RandomShowcaseBuyByUserIdRequest): Promise<Result.RandomShowcaseBuyByUserIdResult>;
+    incrementPurchaseCountByUserId(request: Request.IncrementPurchaseCountByUserIdRequest): Promise<Result.IncrementPurchaseCountByUserIdResult>;
+    incrementPurchaseCountByStampTask(request: Request.IncrementPurchaseCountByStampTaskRequest): Promise<Result.IncrementPurchaseCountByStampTaskResult>;
 }

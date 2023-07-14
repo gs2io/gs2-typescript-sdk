@@ -23,6 +23,11 @@ import SalesItemGroup from "./SalesItemGroup"
 import Showcase from "./Showcase"
 import DisplayItem from "./DisplayItem"
 import DisplayItemMaster from "./DisplayItemMaster"
+import RandomShowcaseMaster from "./RandomShowcaseMaster"
+import RandomShowcase from "./RandomShowcase"
+import PurchaseCount from "./PurchaseCount"
+import RandomDisplayItem from "./RandomDisplayItem"
+import RandomDisplayItemModel from "./RandomDisplayItemModel"
 import ConsumeAction from "./ConsumeAction"
 import AcquireAction from "./AcquireAction"
 import Config from "./Config"
@@ -42,6 +47,11 @@ export {
     Showcase,
     DisplayItem,
     DisplayItemMaster,
+    RandomShowcaseMaster,
+    RandomShowcase,
+    PurchaseCount,
+    RandomDisplayItem,
+    RandomDisplayItemModel,
     ConsumeAction,
     AcquireAction,
     Config,

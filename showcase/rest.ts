@@ -963,4 +963,366 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
             }
         });
     }
+
+    public describeRandomShowcaseMasters(request: Request.DescribeRandomShowcaseMastersRequest): Promise<Result.DescribeRandomShowcaseMastersResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeRandomShowcaseMastersResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public createRandomShowcaseMaster(request: Request.CreateRandomShowcaseMasterRequest): Promise<Result.CreateRandomShowcaseMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'name': request.getName() ?? null,
+            'description': request.getDescription() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'maximumNumberOfChoice': request.getMaximumNumberOfChoice() ?? null,
+            'displayItems': request.getDisplayItems()?.map((item) => item.toDict()) ?? null,
+            'baseTimestamp': request.getBaseTimestamp() ?? null,
+            'resetIntervalHours': request.getResetIntervalHours() ?? null,
+            'salesPeriodEventId': request.getSalesPeriodEventId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateRandomShowcaseMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public getRandomShowcaseMaster(request: Request.GetRandomShowcaseMasterRequest): Promise<Result.GetRandomShowcaseMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase/{showcaseName}')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{showcaseName}', String(request.getShowcaseName() ?? 'null') === "" ? "null" : String(request.getShowcaseName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetRandomShowcaseMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public updateRandomShowcaseMaster(request: Request.UpdateRandomShowcaseMasterRequest): Promise<Result.UpdateRandomShowcaseMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase/{showcaseName}')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{showcaseName}', String(request.getShowcaseName() ?? 'null') === "" ? "null" : String(request.getShowcaseName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'description': request.getDescription() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'maximumNumberOfChoice': request.getMaximumNumberOfChoice() ?? null,
+            'displayItems': request.getDisplayItems()?.map((item) => item.toDict()) ?? null,
+            'baseTimestamp': request.getBaseTimestamp() ?? null,
+            'resetIntervalHours': request.getResetIntervalHours() ?? null,
+            'salesPeriodEventId': request.getSalesPeriodEventId() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateRandomShowcaseMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public deleteRandomShowcaseMaster(request: Request.DeleteRandomShowcaseMasterRequest): Promise<Result.DeleteRandomShowcaseMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/random/showcase/{showcaseName}')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{showcaseName}', String(request.getShowcaseName() ?? 'null') === "" ? "null" : String(request.getShowcaseName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteRandomShowcaseMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeRandomShowcaseSalesItems(request: Request.DescribeRandomShowcaseSalesItemsRequest): Promise<Result.DescribeRandomShowcaseSalesItemsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/random/showcase/{showcaseName}')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{showcaseName}', String(request.getShowcaseName() ?? 'null') === "" ? "null" : String(request.getShowcaseName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeRandomShowcaseSalesItemsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeRandomShowcaseSalesItemsByUserId(request: Request.DescribeRandomShowcaseSalesItemsByUserIdRequest): Promise<Result.DescribeRandomShowcaseSalesItemsByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/random/showcase/{showcaseName}')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{showcaseName}', String(request.getShowcaseName() ?? 'null') === "" ? "null" : String(request.getShowcaseName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeRandomShowcaseSalesItemsByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public randomShowcaseBuy(request: Request.RandomShowcaseBuyRequest): Promise<Result.RandomShowcaseBuyResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/random/showcase/{showcaseName}/{displayItemName}')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{showcaseName}', String(request.getShowcaseName() ?? 'null') === "" ? "null" : String(request.getShowcaseName() ?? 'null'))
+            .replace('{displayItemName}', String(request.getDisplayItemName() ?? 'null') === "" ? "null" : String(request.getDisplayItemName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'quantity': request.getQuantity() ?? null,
+            'config': request.getConfig()?.map((item) => item.toDict()) ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.RandomShowcaseBuyResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public randomShowcaseBuyByUserId(request: Request.RandomShowcaseBuyByUserIdRequest): Promise<Result.RandomShowcaseBuyByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/random/showcase/{showcaseName}/{displayItemName}')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{showcaseName}', String(request.getShowcaseName() ?? 'null') === "" ? "null" : String(request.getShowcaseName() ?? 'null'))
+            .replace('{displayItemName}', String(request.getDisplayItemName() ?? 'null') === "" ? "null" : String(request.getDisplayItemName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'quantity': request.getQuantity() ?? null,
+            'config': request.getConfig()?.map((item) => item.toDict()) ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.RandomShowcaseBuyByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public incrementPurchaseCountByUserId(request: Request.IncrementPurchaseCountByUserIdRequest): Promise<Result.IncrementPurchaseCountByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/random/showcase/user/{userId}/status/{showcaseName}/{displayItemName}/purchase/count')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{showcaseName}', String(request.getShowcaseName() ?? 'null') === "" ? "null" : String(request.getShowcaseName() ?? 'null'))
+            .replace('{displayItemName}', String(request.getDisplayItemName() ?? 'null') === "" ? "null" : String(request.getDisplayItemName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'count': request.getCount() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.IncrementPurchaseCountByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public incrementPurchaseCountByStampTask(request: Request.IncrementPurchaseCountByStampTaskRequest): Promise<Result.IncrementPurchaseCountByStampTaskResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/random/showcase/status/purchase/count')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampTask': request.getStampTask() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.IncrementPurchaseCountByStampTaskResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
 }
