@@ -20,6 +20,7 @@ var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
 var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 var RandomDisplayItem = /** @class */ (function () {
     function RandomDisplayItem() {
+        this.showcaseName = null;
         this.name = null;
         this.metadata = null;
         this.consumeActions = null;
@@ -27,6 +28,17 @@ var RandomDisplayItem = /** @class */ (function () {
         this.currentPurchaseCount = null;
         this.maximumPurchaseCount = null;
     }
+    RandomDisplayItem.prototype.getShowcaseName = function () {
+        return this.showcaseName;
+    };
+    RandomDisplayItem.prototype.setShowcaseName = function (showcaseName) {
+        this.showcaseName = showcaseName;
+        return this;
+    };
+    RandomDisplayItem.prototype.withShowcaseName = function (showcaseName) {
+        this.showcaseName = showcaseName;
+        return this;
+    };
     RandomDisplayItem.prototype.getName = function () {
         return this.name;
     };
@@ -98,6 +110,7 @@ var RandomDisplayItem = /** @class */ (function () {
             return null;
         }
         return new RandomDisplayItem()
+            .withShowcaseName(data["showcaseName"])
             .withName(data["name"])
             .withMetadata(data["metadata"])
             .withConsumeActions(data.consumeActions ?
@@ -113,6 +126,7 @@ var RandomDisplayItem = /** @class */ (function () {
     };
     RandomDisplayItem.prototype.toDict = function () {
         return {
+            "showcaseName": this.getShowcaseName(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "consumeActions": this.getConsumeActions() ?

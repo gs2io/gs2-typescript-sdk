@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IncrementPurchaseCountByStampTaskRequest = exports.IncrementPurchaseCountByUserIdRequest = exports.RandomShowcaseBuyByUserIdRequest = exports.RandomShowcaseBuyRequest = exports.DescribeRandomShowcaseSalesItemsByUserIdRequest = exports.DescribeRandomShowcaseSalesItemsRequest = exports.DeleteRandomShowcaseMasterRequest = exports.UpdateRandomShowcaseMasterRequest = exports.GetRandomShowcaseMasterRequest = exports.CreateRandomShowcaseMasterRequest = exports.DescribeRandomShowcaseMastersRequest = exports.BuyByUserIdRequest = exports.BuyRequest = exports.GetShowcaseByUserIdRequest = exports.GetShowcaseRequest = exports.DescribeShowcasesByUserIdRequest = exports.DescribeShowcasesRequest = exports.UpdateCurrentShowcaseMasterFromGitHubRequest = exports.UpdateCurrentShowcaseMasterRequest = exports.GetCurrentShowcaseMasterRequest = exports.ExportMasterRequest = exports.DeleteShowcaseMasterRequest = exports.UpdateShowcaseMasterRequest = exports.GetShowcaseMasterRequest = exports.CreateShowcaseMasterRequest = exports.DescribeShowcaseMastersRequest = exports.DeleteSalesItemGroupMasterRequest = exports.UpdateSalesItemGroupMasterRequest = exports.GetSalesItemGroupMasterRequest = exports.CreateSalesItemGroupMasterRequest = exports.DescribeSalesItemGroupMastersRequest = exports.DeleteSalesItemMasterRequest = exports.UpdateSalesItemMasterRequest = exports.GetSalesItemMasterRequest = exports.CreateSalesItemMasterRequest = exports.DescribeSalesItemMastersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.RandomShowcaseBuyByUserIdRequest = exports.RandomShowcaseBuyRequest = exports.ForceReDrawByUserIdByStampSheetRequest = exports.ForceReDrawByUserIdRequest = exports.IncrementPurchaseCountByStampTaskRequest = exports.IncrementPurchaseCountByUserIdRequest = exports.GetRandomShowcaseSalesItemByUserIdRequest = exports.GetRandomShowcaseSalesItemRequest = exports.DescribeRandomShowcaseSalesItemsByUserIdRequest = exports.DescribeRandomShowcaseSalesItemsRequest = exports.DeleteRandomShowcaseMasterRequest = exports.UpdateRandomShowcaseMasterRequest = exports.GetRandomShowcaseMasterRequest = exports.CreateRandomShowcaseMasterRequest = exports.DescribeRandomShowcaseMastersRequest = exports.BuyByUserIdRequest = exports.BuyRequest = exports.GetShowcaseByUserIdRequest = exports.GetShowcaseRequest = exports.DescribeShowcasesByUserIdRequest = exports.DescribeShowcasesRequest = exports.UpdateCurrentShowcaseMasterFromGitHubRequest = exports.UpdateCurrentShowcaseMasterRequest = exports.GetCurrentShowcaseMasterRequest = exports.ExportMasterRequest = exports.DeleteShowcaseMasterRequest = exports.UpdateShowcaseMasterRequest = exports.GetShowcaseMasterRequest = exports.CreateShowcaseMasterRequest = exports.DescribeShowcaseMastersRequest = exports.DeleteSalesItemGroupMasterRequest = exports.UpdateSalesItemGroupMasterRequest = exports.GetSalesItemGroupMasterRequest = exports.CreateSalesItemGroupMasterRequest = exports.DescribeSalesItemGroupMastersRequest = exports.DeleteSalesItemMasterRequest = exports.UpdateSalesItemMasterRequest = exports.GetSalesItemMasterRequest = exports.CreateSalesItemMasterRequest = exports.DescribeSalesItemMastersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -93,12 +93,20 @@ var DescribeRandomShowcaseSalesItemsRequest_1 = tslib_1.__importDefault(require(
 exports.DescribeRandomShowcaseSalesItemsRequest = DescribeRandomShowcaseSalesItemsRequest_1.default;
 var DescribeRandomShowcaseSalesItemsByUserIdRequest_1 = tslib_1.__importDefault(require("./DescribeRandomShowcaseSalesItemsByUserIdRequest"));
 exports.DescribeRandomShowcaseSalesItemsByUserIdRequest = DescribeRandomShowcaseSalesItemsByUserIdRequest_1.default;
-var RandomShowcaseBuyRequest_1 = tslib_1.__importDefault(require("./RandomShowcaseBuyRequest"));
-exports.RandomShowcaseBuyRequest = RandomShowcaseBuyRequest_1.default;
-var RandomShowcaseBuyByUserIdRequest_1 = tslib_1.__importDefault(require("./RandomShowcaseBuyByUserIdRequest"));
-exports.RandomShowcaseBuyByUserIdRequest = RandomShowcaseBuyByUserIdRequest_1.default;
+var GetRandomShowcaseSalesItemRequest_1 = tslib_1.__importDefault(require("./GetRandomShowcaseSalesItemRequest"));
+exports.GetRandomShowcaseSalesItemRequest = GetRandomShowcaseSalesItemRequest_1.default;
+var GetRandomShowcaseSalesItemByUserIdRequest_1 = tslib_1.__importDefault(require("./GetRandomShowcaseSalesItemByUserIdRequest"));
+exports.GetRandomShowcaseSalesItemByUserIdRequest = GetRandomShowcaseSalesItemByUserIdRequest_1.default;
 var IncrementPurchaseCountByUserIdRequest_1 = tslib_1.__importDefault(require("./IncrementPurchaseCountByUserIdRequest"));
 exports.IncrementPurchaseCountByUserIdRequest = IncrementPurchaseCountByUserIdRequest_1.default;
 var IncrementPurchaseCountByStampTaskRequest_1 = tslib_1.__importDefault(require("./IncrementPurchaseCountByStampTaskRequest"));
 exports.IncrementPurchaseCountByStampTaskRequest = IncrementPurchaseCountByStampTaskRequest_1.default;
+var ForceReDrawByUserIdRequest_1 = tslib_1.__importDefault(require("./ForceReDrawByUserIdRequest"));
+exports.ForceReDrawByUserIdRequest = ForceReDrawByUserIdRequest_1.default;
+var ForceReDrawByUserIdByStampSheetRequest_1 = tslib_1.__importDefault(require("./ForceReDrawByUserIdByStampSheetRequest"));
+exports.ForceReDrawByUserIdByStampSheetRequest = ForceReDrawByUserIdByStampSheetRequest_1.default;
+var RandomShowcaseBuyRequest_1 = tslib_1.__importDefault(require("./RandomShowcaseBuyRequest"));
+exports.RandomShowcaseBuyRequest = RandomShowcaseBuyRequest_1.default;
+var RandomShowcaseBuyByUserIdRequest_1 = tslib_1.__importDefault(require("./RandomShowcaseBuyByUserIdRequest"));
+exports.RandomShowcaseBuyByUserIdRequest = RandomShowcaseBuyByUserIdRequest_1.default;
 //# sourceMappingURL=index.js.map

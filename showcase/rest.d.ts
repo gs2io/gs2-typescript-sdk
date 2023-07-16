@@ -42,8 +42,12 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     deleteRandomShowcaseMaster(request: Request.DeleteRandomShowcaseMasterRequest): Promise<Result.DeleteRandomShowcaseMasterResult>;
     describeRandomShowcaseSalesItems(request: Request.DescribeRandomShowcaseSalesItemsRequest): Promise<Result.DescribeRandomShowcaseSalesItemsResult>;
     describeRandomShowcaseSalesItemsByUserId(request: Request.DescribeRandomShowcaseSalesItemsByUserIdRequest): Promise<Result.DescribeRandomShowcaseSalesItemsByUserIdResult>;
-    randomShowcaseBuy(request: Request.RandomShowcaseBuyRequest): Promise<Result.RandomShowcaseBuyResult>;
-    randomShowcaseBuyByUserId(request: Request.RandomShowcaseBuyByUserIdRequest): Promise<Result.RandomShowcaseBuyByUserIdResult>;
+    getRandomShowcaseSalesItem(request: Request.GetRandomShowcaseSalesItemRequest): Promise<Result.GetRandomShowcaseSalesItemResult>;
+    getRandomShowcaseSalesItemByUserId(request: Request.GetRandomShowcaseSalesItemByUserIdRequest): Promise<Result.GetRandomShowcaseSalesItemByUserIdResult>;
     incrementPurchaseCountByUserId(request: Request.IncrementPurchaseCountByUserIdRequest): Promise<Result.IncrementPurchaseCountByUserIdResult>;
     incrementPurchaseCountByStampTask(request: Request.IncrementPurchaseCountByStampTaskRequest): Promise<Result.IncrementPurchaseCountByStampTaskResult>;
+    forceReDrawByUserId(request: Request.ForceReDrawByUserIdRequest): Promise<Result.ForceReDrawByUserIdResult>;
+    forceReDrawByUserIdByStampSheet(request: Request.ForceReDrawByUserIdByStampSheetRequest): Promise<Result.ForceReDrawByUserIdByStampSheetResult>;
+    randomShowcaseBuy(request: Request.RandomShowcaseBuyRequest): Promise<Result.RandomShowcaseBuyResult>;
+    randomShowcaseBuyByUserId(request: Request.RandomShowcaseBuyByUserIdRequest): Promise<Result.RandomShowcaseBuyByUserIdResult>;
 }

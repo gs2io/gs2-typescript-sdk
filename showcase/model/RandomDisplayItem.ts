@@ -19,12 +19,24 @@ import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
 
 export default class RandomDisplayItem implements IModel {
+    private showcaseName: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;
     private consumeActions: ConsumeAction[]|null = null;
     private acquireActions: AcquireAction[]|null = null;
     private currentPurchaseCount: number|null = null;
     private maximumPurchaseCount: number|null = null;
+    public getShowcaseName(): string|null {
+        return this.showcaseName;
+    }
+    public setShowcaseName(showcaseName: string|null) {
+        this.showcaseName = showcaseName;
+        return this;
+    }
+    public withShowcaseName(showcaseName: string|null): this {
+        this.showcaseName = showcaseName;
+        return this;
+    }
     public getName(): string|null {
         return this.name;
     }
@@ -97,6 +109,7 @@ export default class RandomDisplayItem implements IModel {
             return null;
         }
         return new RandomDisplayItem()
+            .withShowcaseName(data["showcaseName"])
             .withName(data["name"])
             .withMetadata(data["metadata"])
             .withConsumeActions(data.consumeActions ?
@@ -115,6 +128,7 @@ export default class RandomDisplayItem implements IModel {
 
     public toDict(): {[key: string]: any} {
         return {
+            "showcaseName": this.getShowcaseName(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "consumeActions": this.getConsumeActions() ?

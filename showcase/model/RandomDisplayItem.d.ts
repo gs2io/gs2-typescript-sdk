@@ -2,12 +2,16 @@ import IModel from '../../core/interface/IModel';
 import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
 export default class RandomDisplayItem implements IModel {
+    private showcaseName;
     private name;
     private metadata;
     private consumeActions;
     private acquireActions;
     private currentPurchaseCount;
     private maximumPurchaseCount;
+    getShowcaseName(): string | null;
+    setShowcaseName(showcaseName: string | null): this;
+    withShowcaseName(showcaseName: string | null): this;
     getName(): string | null;
     setName(name: string | null): this;
     withName(name: string | null): this;
