@@ -49,14 +49,14 @@ import CreateRandomShowcaseMasterRequest from "./CreateRandomShowcaseMasterReque
 import GetRandomShowcaseMasterRequest from "./GetRandomShowcaseMasterRequest"
 import UpdateRandomShowcaseMasterRequest from "./UpdateRandomShowcaseMasterRequest"
 import DeleteRandomShowcaseMasterRequest from "./DeleteRandomShowcaseMasterRequest"
-import DescribeRandomShowcaseSalesItemsRequest from "./DescribeRandomShowcaseSalesItemsRequest"
-import DescribeRandomShowcaseSalesItemsByUserIdRequest from "./DescribeRandomShowcaseSalesItemsByUserIdRequest"
-import GetRandomShowcaseSalesItemRequest from "./GetRandomShowcaseSalesItemRequest"
-import GetRandomShowcaseSalesItemByUserIdRequest from "./GetRandomShowcaseSalesItemByUserIdRequest"
 import IncrementPurchaseCountByUserIdRequest from "./IncrementPurchaseCountByUserIdRequest"
 import IncrementPurchaseCountByStampTaskRequest from "./IncrementPurchaseCountByStampTaskRequest"
 import ForceReDrawByUserIdRequest from "./ForceReDrawByUserIdRequest"
 import ForceReDrawByUserIdByStampSheetRequest from "./ForceReDrawByUserIdByStampSheetRequest"
+import DescribeRandomDisplayItemsRequest from "./DescribeRandomDisplayItemsRequest"
+import DescribeRandomDisplayItemsByUserIdRequest from "./DescribeRandomDisplayItemsByUserIdRequest"
+import GetRandomDisplayItemRequest from "./GetRandomDisplayItemRequest"
+import GetRandomDisplayItemByUserIdRequest from "./GetRandomDisplayItemByUserIdRequest"
 import RandomShowcaseBuyRequest from "./RandomShowcaseBuyRequest"
 import RandomShowcaseBuyByUserIdRequest from "./RandomShowcaseBuyByUserIdRequest"
 
@@ -97,14 +97,14 @@ export {
     GetRandomShowcaseMasterRequest,
     UpdateRandomShowcaseMasterRequest,
     DeleteRandomShowcaseMasterRequest,
-    DescribeRandomShowcaseSalesItemsRequest,
-    DescribeRandomShowcaseSalesItemsByUserIdRequest,
-    GetRandomShowcaseSalesItemRequest,
-    GetRandomShowcaseSalesItemByUserIdRequest,
     IncrementPurchaseCountByUserIdRequest,
     IncrementPurchaseCountByStampTaskRequest,
     ForceReDrawByUserIdRequest,
     ForceReDrawByUserIdByStampSheetRequest,
+    DescribeRandomDisplayItemsRequest,
+    DescribeRandomDisplayItemsByUserIdRequest,
+    GetRandomDisplayItemRequest,
+    GetRandomDisplayItemByUserIdRequest,
     RandomShowcaseBuyRequest,
     RandomShowcaseBuyByUserIdRequest,
 };

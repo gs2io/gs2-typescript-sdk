@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RandomShowcaseBuyByUserIdResult = exports.RandomShowcaseBuyResult = exports.ForceReDrawByUserIdByStampSheetResult = exports.ForceReDrawByUserIdResult = exports.IncrementPurchaseCountByStampTaskResult = exports.IncrementPurchaseCountByUserIdResult = exports.GetRandomShowcaseSalesItemByUserIdResult = exports.GetRandomShowcaseSalesItemResult = exports.DescribeRandomShowcaseSalesItemsByUserIdResult = exports.DescribeRandomShowcaseSalesItemsResult = exports.DeleteRandomShowcaseMasterResult = exports.UpdateRandomShowcaseMasterResult = exports.GetRandomShowcaseMasterResult = exports.CreateRandomShowcaseMasterResult = exports.DescribeRandomShowcaseMastersResult = exports.BuyByUserIdResult = exports.BuyResult = exports.GetShowcaseByUserIdResult = exports.GetShowcaseResult = exports.DescribeShowcasesByUserIdResult = exports.DescribeShowcasesResult = exports.UpdateCurrentShowcaseMasterFromGitHubResult = exports.UpdateCurrentShowcaseMasterResult = exports.GetCurrentShowcaseMasterResult = exports.ExportMasterResult = exports.DeleteShowcaseMasterResult = exports.UpdateShowcaseMasterResult = exports.GetShowcaseMasterResult = exports.CreateShowcaseMasterResult = exports.DescribeShowcaseMastersResult = exports.DeleteSalesItemGroupMasterResult = exports.UpdateSalesItemGroupMasterResult = exports.GetSalesItemGroupMasterResult = exports.CreateSalesItemGroupMasterResult = exports.DescribeSalesItemGroupMastersResult = exports.DeleteSalesItemMasterResult = exports.UpdateSalesItemMasterResult = exports.GetSalesItemMasterResult = exports.CreateSalesItemMasterResult = exports.DescribeSalesItemMastersResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.RandomShowcaseBuyByUserIdResult = exports.RandomShowcaseBuyResult = exports.GetRandomDisplayItemByUserIdResult = exports.GetRandomDisplayItemResult = exports.DescribeRandomDisplayItemsByUserIdResult = exports.DescribeRandomDisplayItemsResult = exports.ForceReDrawByUserIdByStampSheetResult = exports.ForceReDrawByUserIdResult = exports.IncrementPurchaseCountByStampTaskResult = exports.IncrementPurchaseCountByUserIdResult = exports.DeleteRandomShowcaseMasterResult = exports.UpdateRandomShowcaseMasterResult = exports.GetRandomShowcaseMasterResult = exports.CreateRandomShowcaseMasterResult = exports.DescribeRandomShowcaseMastersResult = exports.BuyByUserIdResult = exports.BuyResult = exports.GetShowcaseByUserIdResult = exports.GetShowcaseResult = exports.DescribeShowcasesByUserIdResult = exports.DescribeShowcasesResult = exports.UpdateCurrentShowcaseMasterFromGitHubResult = exports.UpdateCurrentShowcaseMasterResult = exports.GetCurrentShowcaseMasterResult = exports.ExportMasterResult = exports.DeleteShowcaseMasterResult = exports.UpdateShowcaseMasterResult = exports.GetShowcaseMasterResult = exports.CreateShowcaseMasterResult = exports.DescribeShowcaseMastersResult = exports.DeleteSalesItemGroupMasterResult = exports.UpdateSalesItemGroupMasterResult = exports.GetSalesItemGroupMasterResult = exports.CreateSalesItemGroupMasterResult = exports.DescribeSalesItemGroupMastersResult = exports.DeleteSalesItemMasterResult = exports.UpdateSalesItemMasterResult = exports.GetSalesItemMasterResult = exports.CreateSalesItemMasterResult = exports.DescribeSalesItemMastersResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -89,14 +89,6 @@ var UpdateRandomShowcaseMasterResult_1 = tslib_1.__importDefault(require("./Upda
 exports.UpdateRandomShowcaseMasterResult = UpdateRandomShowcaseMasterResult_1.default;
 var DeleteRandomShowcaseMasterResult_1 = tslib_1.__importDefault(require("./DeleteRandomShowcaseMasterResult"));
 exports.DeleteRandomShowcaseMasterResult = DeleteRandomShowcaseMasterResult_1.default;
-var DescribeRandomShowcaseSalesItemsResult_1 = tslib_1.__importDefault(require("./DescribeRandomShowcaseSalesItemsResult"));
-exports.DescribeRandomShowcaseSalesItemsResult = DescribeRandomShowcaseSalesItemsResult_1.default;
-var DescribeRandomShowcaseSalesItemsByUserIdResult_1 = tslib_1.__importDefault(require("./DescribeRandomShowcaseSalesItemsByUserIdResult"));
-exports.DescribeRandomShowcaseSalesItemsByUserIdResult = DescribeRandomShowcaseSalesItemsByUserIdResult_1.default;
-var GetRandomShowcaseSalesItemResult_1 = tslib_1.__importDefault(require("./GetRandomShowcaseSalesItemResult"));
-exports.GetRandomShowcaseSalesItemResult = GetRandomShowcaseSalesItemResult_1.default;
-var GetRandomShowcaseSalesItemByUserIdResult_1 = tslib_1.__importDefault(require("./GetRandomShowcaseSalesItemByUserIdResult"));
-exports.GetRandomShowcaseSalesItemByUserIdResult = GetRandomShowcaseSalesItemByUserIdResult_1.default;
 var IncrementPurchaseCountByUserIdResult_1 = tslib_1.__importDefault(require("./IncrementPurchaseCountByUserIdResult"));
 exports.IncrementPurchaseCountByUserIdResult = IncrementPurchaseCountByUserIdResult_1.default;
 var IncrementPurchaseCountByStampTaskResult_1 = tslib_1.__importDefault(require("./IncrementPurchaseCountByStampTaskResult"));
@@ -105,6 +97,14 @@ var ForceReDrawByUserIdResult_1 = tslib_1.__importDefault(require("./ForceReDraw
 exports.ForceReDrawByUserIdResult = ForceReDrawByUserIdResult_1.default;
 var ForceReDrawByUserIdByStampSheetResult_1 = tslib_1.__importDefault(require("./ForceReDrawByUserIdByStampSheetResult"));
 exports.ForceReDrawByUserIdByStampSheetResult = ForceReDrawByUserIdByStampSheetResult_1.default;
+var DescribeRandomDisplayItemsResult_1 = tslib_1.__importDefault(require("./DescribeRandomDisplayItemsResult"));
+exports.DescribeRandomDisplayItemsResult = DescribeRandomDisplayItemsResult_1.default;
+var DescribeRandomDisplayItemsByUserIdResult_1 = tslib_1.__importDefault(require("./DescribeRandomDisplayItemsByUserIdResult"));
+exports.DescribeRandomDisplayItemsByUserIdResult = DescribeRandomDisplayItemsByUserIdResult_1.default;
+var GetRandomDisplayItemResult_1 = tslib_1.__importDefault(require("./GetRandomDisplayItemResult"));
+exports.GetRandomDisplayItemResult = GetRandomDisplayItemResult_1.default;
+var GetRandomDisplayItemByUserIdResult_1 = tslib_1.__importDefault(require("./GetRandomDisplayItemByUserIdResult"));
+exports.GetRandomDisplayItemByUserIdResult = GetRandomDisplayItemByUserIdResult_1.default;
 var RandomShowcaseBuyResult_1 = tslib_1.__importDefault(require("./RandomShowcaseBuyResult"));
 exports.RandomShowcaseBuyResult = RandomShowcaseBuyResult_1.default;
 var RandomShowcaseBuyByUserIdResult_1 = tslib_1.__importDefault(require("./RandomShowcaseBuyByUserIdResult"));

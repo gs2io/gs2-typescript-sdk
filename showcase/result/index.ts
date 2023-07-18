@@ -49,14 +49,14 @@ import CreateRandomShowcaseMasterResult from "./CreateRandomShowcaseMasterResult
 import GetRandomShowcaseMasterResult from "./GetRandomShowcaseMasterResult"
 import UpdateRandomShowcaseMasterResult from "./UpdateRandomShowcaseMasterResult"
 import DeleteRandomShowcaseMasterResult from "./DeleteRandomShowcaseMasterResult"
-import DescribeRandomShowcaseSalesItemsResult from "./DescribeRandomShowcaseSalesItemsResult"
-import DescribeRandomShowcaseSalesItemsByUserIdResult from "./DescribeRandomShowcaseSalesItemsByUserIdResult"
-import GetRandomShowcaseSalesItemResult from "./GetRandomShowcaseSalesItemResult"
-import GetRandomShowcaseSalesItemByUserIdResult from "./GetRandomShowcaseSalesItemByUserIdResult"
 import IncrementPurchaseCountByUserIdResult from "./IncrementPurchaseCountByUserIdResult"
 import IncrementPurchaseCountByStampTaskResult from "./IncrementPurchaseCountByStampTaskResult"
 import ForceReDrawByUserIdResult from "./ForceReDrawByUserIdResult"
 import ForceReDrawByUserIdByStampSheetResult from "./ForceReDrawByUserIdByStampSheetResult"
+import DescribeRandomDisplayItemsResult from "./DescribeRandomDisplayItemsResult"
+import DescribeRandomDisplayItemsByUserIdResult from "./DescribeRandomDisplayItemsByUserIdResult"
+import GetRandomDisplayItemResult from "./GetRandomDisplayItemResult"
+import GetRandomDisplayItemByUserIdResult from "./GetRandomDisplayItemByUserIdResult"
 import RandomShowcaseBuyResult from "./RandomShowcaseBuyResult"
 import RandomShowcaseBuyByUserIdResult from "./RandomShowcaseBuyByUserIdResult"
 
@@ -97,14 +97,14 @@ export {
     GetRandomShowcaseMasterResult,
     UpdateRandomShowcaseMasterResult,
     DeleteRandomShowcaseMasterResult,
-    DescribeRandomShowcaseSalesItemsResult,
-    DescribeRandomShowcaseSalesItemsByUserIdResult,
-    GetRandomShowcaseSalesItemResult,
-    GetRandomShowcaseSalesItemByUserIdResult,
     IncrementPurchaseCountByUserIdResult,
     IncrementPurchaseCountByStampTaskResult,
     ForceReDrawByUserIdResult,
     ForceReDrawByUserIdByStampSheetResult,
+    DescribeRandomDisplayItemsResult,
+    DescribeRandomDisplayItemsByUserIdResult,
+    GetRandomDisplayItemResult,
+    GetRandomDisplayItemByUserIdResult,
     RandomShowcaseBuyResult,
     RandomShowcaseBuyByUserIdResult,
 };
