@@ -1,0 +1,46 @@
+import IModel from '../../core/interface/IModel';
+import BalanceParameterValue from './BalanceParameterValue';
+export default class BalanceParameterStatus implements IModel {
+    private balanceParameterStatusId;
+    private userId;
+    private parameterName;
+    private propertyId;
+    private parameterValues;
+    private createdAt;
+    private updatedAt;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getUserId(grn: string): string | null;
+    static getParameterName(grn: string): string | null;
+    static getPropertyId(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, parameterName: string | null, propertyId: string | null): string | null;
+    getBalanceParameterStatusId(): string | null;
+    setBalanceParameterStatusId(balanceParameterStatusId: string | null): this;
+    withBalanceParameterStatusId(balanceParameterStatusId: string | null): this;
+    getUserId(): string | null;
+    setUserId(userId: string | null): this;
+    withUserId(userId: string | null): this;
+    getParameterName(): string | null;
+    setParameterName(parameterName: string | null): this;
+    withParameterName(parameterName: string | null): this;
+    getPropertyId(): string | null;
+    setPropertyId(propertyId: string | null): this;
+    withPropertyId(propertyId: string | null): this;
+    getParameterValues(): BalanceParameterValue[] | null;
+    setParameterValues(parameterValues: BalanceParameterValue[] | null): this;
+    withParameterValues(parameterValues: BalanceParameterValue[] | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    getUpdatedAt(): number | null;
+    setUpdatedAt(updatedAt: number | null): this;
+    withUpdatedAt(updatedAt: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): BalanceParameterStatus | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}

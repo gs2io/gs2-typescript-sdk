@@ -22,6 +22,7 @@ import * as datastore from './datastore';;
 import * as deploy from './deploy';
 import * as dictionary from './dictionary';
 import * as distributor from './distributor';
+import * as enchant from './enchant';
 import * as enhance from './enhance';
 import * as exchange from './exchange';
 import * as experience from './experience';
@@ -65,6 +66,7 @@ export {
   deploy,
   dictionary,
   distributor,
+  enchant,
   enhance,
   exchange,
   experience,
