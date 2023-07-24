@@ -17,32 +17,32 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Gs2StateMachine = tslib_1.__importStar(require("../model"));
-var StartStateMachineByStampTaskResult = /** @class */ (function () {
-    function StartStateMachineByStampTaskResult() {
+var StartStateMachineByStampSheetResult = /** @class */ (function () {
+    function StartStateMachineByStampSheetResult() {
         this.item = null;
     }
-    StartStateMachineByStampTaskResult.prototype.getItem = function () {
+    StartStateMachineByStampSheetResult.prototype.getItem = function () {
         return this.item;
     };
-    StartStateMachineByStampTaskResult.prototype.setItem = function (item) {
+    StartStateMachineByStampSheetResult.prototype.setItem = function (item) {
         this.item = item;
         return this;
     };
-    StartStateMachineByStampTaskResult.prototype.withItem = function (item) {
+    StartStateMachineByStampSheetResult.prototype.withItem = function (item) {
         this.item = item;
         return this;
     };
-    StartStateMachineByStampTaskResult.fromDict = function (data) {
-        return new StartStateMachineByStampTaskResult()
+    StartStateMachineByStampSheetResult.fromDict = function (data) {
+        return new StartStateMachineByStampSheetResult()
             .withItem(Gs2StateMachine.Status.fromDict(data["item"]));
     };
-    StartStateMachineByStampTaskResult.prototype.toDict = function () {
+    StartStateMachineByStampSheetResult.prototype.toDict = function () {
         var _a;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
         };
     };
-    return StartStateMachineByStampTaskResult;
+    return StartStateMachineByStampSheetResult;
 }());
-exports.default = StartStateMachineByStampTaskResult;
-//# sourceMappingURL=StartStateMachineByStampTaskResult.js.map
+exports.default = StartStateMachineByStampSheetResult;
+//# sourceMappingURL=StartStateMachineByStampSheetResult.js.map

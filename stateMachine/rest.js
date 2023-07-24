@@ -412,7 +412,7 @@ var Gs2StateMachineRestClient = /** @class */ (function (_super) {
             }
         });
     };
-    Gs2StateMachineRestClient.prototype.startStateMachineByStampTask = function (request) {
+    Gs2StateMachineRestClient.prototype.startStateMachineByStampSheet = function (request) {
         var _a, _b, _c;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/stateMachine/start')
             .replace('{service}', 'state-machine')
@@ -429,7 +429,7 @@ var Gs2StateMachineRestClient = /** @class */ (function (_super) {
         return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
-            return Result.StartStateMachineByStampTaskResult.fromDict(response.data);
+            return Result.StartStateMachineByStampSheetResult.fromDict(response.data);
         }).catch(function (error) {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

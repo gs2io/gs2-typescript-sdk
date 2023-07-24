@@ -28,7 +28,7 @@ import DescribeStatusesByUserIdResult from "./DescribeStatusesByUserIdResult"
 import GetStatusResult from "./GetStatusResult"
 import GetStatusByUserIdResult from "./GetStatusByUserIdResult"
 import StartStateMachineByUserIdResult from "./StartStateMachineByUserIdResult"
-import StartStateMachineByStampTaskResult from "./StartStateMachineByStampTaskResult"
+import StartStateMachineByStampSheetResult from "./StartStateMachineByStampSheetResult"
 import EmitResult from "./EmitResult"
 import EmitByUserIdResult from "./EmitByUserIdResult"
 import DeleteStatusByUserIdResult from "./DeleteStatusByUserIdResult"
@@ -51,7 +51,7 @@ export {
     GetStatusResult,
     GetStatusByUserIdResult,
     StartStateMachineByUserIdResult,
-    StartStateMachineByStampTaskResult,
+    StartStateMachineByStampSheetResult,
     EmitResult,
     EmitByUserIdResult,
     DeleteStatusByUserIdResult,

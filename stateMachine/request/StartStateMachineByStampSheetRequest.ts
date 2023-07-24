@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2StateMachine from '../model'
 
-export default class StartStateMachineByStampTaskRequest implements IRequest {
+export default class StartStateMachineByStampSheetRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
@@ -75,8 +75,8 @@ export default class StartStateMachineByStampTaskRequest implements IRequest {
         return this;
     }
 
-    public static fromDict(data: {[key: string]: any}): StartStateMachineByStampTaskRequest {
-        return new StartStateMachineByStampTaskRequest()
+    public static fromDict(data: {[key: string]: any}): StartStateMachineByStampSheetRequest {
+        return new StartStateMachineByStampSheetRequest()
             .withStampSheet(data["stampSheet"])
             .withKeyId(data["keyId"]);
     }

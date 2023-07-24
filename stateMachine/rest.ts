@@ -474,7 +474,7 @@ export default class Gs2StateMachineRestClient extends AbstractGs2RestClient {
         });
     }
 
-    public startStateMachineByStampTask(request: Request.StartStateMachineByStampTaskRequest): Promise<Result.StartStateMachineByStampTaskResult> {
+    public startStateMachineByStampSheet(request: Request.StartStateMachineByStampSheetRequest): Promise<Result.StartStateMachineByStampSheetResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/stateMachine/start')
             .replace('{service}', 'state-machine')
             .replace('{region}', this.session.region);
@@ -495,7 +495,7 @@ export default class Gs2StateMachineRestClient extends AbstractGs2RestClient {
                 headers,
             },
         ).then((response: any) => {
-            return Result.StartStateMachineByStampTaskResult.fromDict(response.data);
+            return Result.StartStateMachineByStampSheetResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

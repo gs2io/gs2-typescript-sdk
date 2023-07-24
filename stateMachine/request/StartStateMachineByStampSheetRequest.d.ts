@@ -1,5 +1,5 @@
 import IRequest from '../../core/interface/IRequest';
-export default class StartStateMachineByStampTaskRequest implements IRequest {
+export default class StartStateMachineByStampSheetRequest implements IRequest {
     private requestId;
     private contextStack;
     private stampSheet;
@@ -18,7 +18,7 @@ export default class StartStateMachineByStampTaskRequest implements IRequest {
     withKeyId(keyId: string | null): this;
     static fromDict(data: {
         [key: string]: any;
-    }): StartStateMachineByStampTaskRequest;
+    }): StartStateMachineByStampSheetRequest;
     toDict(): {
         [key: string]: any;
     };

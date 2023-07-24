@@ -15,69 +15,69 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var StartStateMachineByStampTaskRequest = /** @class */ (function () {
-    function StartStateMachineByStampTaskRequest() {
+var StartStateMachineByStampSheetRequest = /** @class */ (function () {
+    function StartStateMachineByStampSheetRequest() {
         this.requestId = null;
         this.contextStack = null;
         this.stampSheet = null;
         this.keyId = null;
     }
-    StartStateMachineByStampTaskRequest.prototype.getRequestId = function () {
+    StartStateMachineByStampSheetRequest.prototype.getRequestId = function () {
         return this.requestId;
     };
-    StartStateMachineByStampTaskRequest.prototype.setRequestId = function (requestId) {
+    StartStateMachineByStampSheetRequest.prototype.setRequestId = function (requestId) {
         this.requestId = requestId;
         return this;
     };
-    StartStateMachineByStampTaskRequest.prototype.withRequestId = function (requestId) {
+    StartStateMachineByStampSheetRequest.prototype.withRequestId = function (requestId) {
         this.requestId = requestId;
         return this;
     };
-    StartStateMachineByStampTaskRequest.prototype.getContextStack = function () {
+    StartStateMachineByStampSheetRequest.prototype.getContextStack = function () {
         return this.contextStack;
     };
-    StartStateMachineByStampTaskRequest.prototype.setContextStack = function (contextStack) {
+    StartStateMachineByStampSheetRequest.prototype.setContextStack = function (contextStack) {
         this.contextStack = contextStack;
         return this;
     };
-    StartStateMachineByStampTaskRequest.prototype.withContextStack = function (contextStack) {
+    StartStateMachineByStampSheetRequest.prototype.withContextStack = function (contextStack) {
         this.contextStack = contextStack;
         return this;
     };
-    StartStateMachineByStampTaskRequest.prototype.getStampSheet = function () {
+    StartStateMachineByStampSheetRequest.prototype.getStampSheet = function () {
         return this.stampSheet;
     };
-    StartStateMachineByStampTaskRequest.prototype.setStampSheet = function (stampSheet) {
+    StartStateMachineByStampSheetRequest.prototype.setStampSheet = function (stampSheet) {
         this.stampSheet = stampSheet;
         return this;
     };
-    StartStateMachineByStampTaskRequest.prototype.withStampSheet = function (stampSheet) {
+    StartStateMachineByStampSheetRequest.prototype.withStampSheet = function (stampSheet) {
         this.stampSheet = stampSheet;
         return this;
     };
-    StartStateMachineByStampTaskRequest.prototype.getKeyId = function () {
+    StartStateMachineByStampSheetRequest.prototype.getKeyId = function () {
         return this.keyId;
     };
-    StartStateMachineByStampTaskRequest.prototype.setKeyId = function (keyId) {
+    StartStateMachineByStampSheetRequest.prototype.setKeyId = function (keyId) {
         this.keyId = keyId;
         return this;
     };
-    StartStateMachineByStampTaskRequest.prototype.withKeyId = function (keyId) {
+    StartStateMachineByStampSheetRequest.prototype.withKeyId = function (keyId) {
         this.keyId = keyId;
         return this;
     };
-    StartStateMachineByStampTaskRequest.fromDict = function (data) {
-        return new StartStateMachineByStampTaskRequest()
+    StartStateMachineByStampSheetRequest.fromDict = function (data) {
+        return new StartStateMachineByStampSheetRequest()
             .withStampSheet(data["stampSheet"])
             .withKeyId(data["keyId"]);
     };
-    StartStateMachineByStampTaskRequest.prototype.toDict = function () {
+    StartStateMachineByStampSheetRequest.prototype.toDict = function () {
         return {
             "stampSheet": this.getStampSheet(),
             "keyId": this.getKeyId(),
         };
     };
-    return StartStateMachineByStampTaskRequest;
+    return StartStateMachineByStampSheetRequest;
 }());
-exports.default = StartStateMachineByStampTaskRequest;
-//# sourceMappingURL=StartStateMachineByStampTaskRequest.js.map
+exports.default = StartStateMachineByStampSheetRequest;
+//# sourceMappingURL=StartStateMachineByStampSheetRequest.js.map

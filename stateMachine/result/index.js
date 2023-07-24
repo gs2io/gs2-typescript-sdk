@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExitStateMachineByUserIdResult = exports.ExitStateMachineResult = exports.DeleteStatusByUserIdResult = exports.EmitByUserIdResult = exports.EmitResult = exports.StartStateMachineByStampTaskResult = exports.StartStateMachineByUserIdResult = exports.GetStatusByUserIdResult = exports.GetStatusResult = exports.DescribeStatusesByUserIdResult = exports.DescribeStatusesResult = exports.DeleteStateMachineMasterResult = exports.GetStateMachineMasterResult = exports.UpdateStateMachineMasterResult = exports.DescribeStateMachineMastersResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.ExitStateMachineByUserIdResult = exports.ExitStateMachineResult = exports.DeleteStatusByUserIdResult = exports.EmitByUserIdResult = exports.EmitResult = exports.StartStateMachineByStampSheetResult = exports.StartStateMachineByUserIdResult = exports.GetStatusByUserIdResult = exports.GetStatusResult = exports.DescribeStatusesByUserIdResult = exports.DescribeStatusesResult = exports.DeleteStateMachineMasterResult = exports.GetStateMachineMasterResult = exports.UpdateStateMachineMasterResult = exports.DescribeStateMachineMastersResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -47,8 +47,8 @@ var GetStatusByUserIdResult_1 = tslib_1.__importDefault(require("./GetStatusByUs
 exports.GetStatusByUserIdResult = GetStatusByUserIdResult_1.default;
 var StartStateMachineByUserIdResult_1 = tslib_1.__importDefault(require("./StartStateMachineByUserIdResult"));
 exports.StartStateMachineByUserIdResult = StartStateMachineByUserIdResult_1.default;
-var StartStateMachineByStampTaskResult_1 = tslib_1.__importDefault(require("./StartStateMachineByStampTaskResult"));
-exports.StartStateMachineByStampTaskResult = StartStateMachineByStampTaskResult_1.default;
+var StartStateMachineByStampSheetResult_1 = tslib_1.__importDefault(require("./StartStateMachineByStampSheetResult"));
+exports.StartStateMachineByStampSheetResult = StartStateMachineByStampSheetResult_1.default;
 var EmitResult_1 = tslib_1.__importDefault(require("./EmitResult"));
 exports.EmitResult = EmitResult_1.default;
 var EmitByUserIdResult_1 = tslib_1.__importDefault(require("./EmitByUserIdResult"));

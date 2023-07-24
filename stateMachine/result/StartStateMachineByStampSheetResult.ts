@@ -18,7 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 import * as Gs2StateMachine from '../model'
 
-export default class StartStateMachineByStampTaskResult implements IResult {
+export default class StartStateMachineByStampSheetResult implements IResult {
     private item: Gs2StateMachine.Status|null = null;
 
     public getItem(): Gs2StateMachine.Status|null {
@@ -35,8 +35,8 @@ export default class StartStateMachineByStampTaskResult implements IResult {
         return this;
     }
 
-    public static fromDict(data: {[key: string]: any}): StartStateMachineByStampTaskResult {
-        return new StartStateMachineByStampTaskResult()
+    public static fromDict(data: {[key: string]: any}): StartStateMachineByStampSheetResult {
+        return new StartStateMachineByStampSheetResult()
             .withItem(Gs2StateMachine.Status.fromDict(data["item"]));
     }
 

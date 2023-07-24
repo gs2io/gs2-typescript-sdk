@@ -28,7 +28,7 @@ import DescribeStatusesByUserIdRequest from "./DescribeStatusesByUserIdRequest"
 import GetStatusRequest from "./GetStatusRequest"
 import GetStatusByUserIdRequest from "./GetStatusByUserIdRequest"
 import StartStateMachineByUserIdRequest from "./StartStateMachineByUserIdRequest"
-import StartStateMachineByStampTaskRequest from "./StartStateMachineByStampTaskRequest"
+import StartStateMachineByStampSheetRequest from "./StartStateMachineByStampSheetRequest"
 import EmitRequest from "./EmitRequest"
 import EmitByUserIdRequest from "./EmitByUserIdRequest"
 import DeleteStatusByUserIdRequest from "./DeleteStatusByUserIdRequest"
@@ -51,7 +51,7 @@ export {
     GetStatusRequest,
     GetStatusByUserIdRequest,
     StartStateMachineByUserIdRequest,
-    StartStateMachineByStampTaskRequest,
+    StartStateMachineByStampSheetRequest,
     EmitRequest,
     EmitByUserIdRequest,
     DeleteStatusByUserIdRequest,

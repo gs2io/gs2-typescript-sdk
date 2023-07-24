@@ -19,7 +19,7 @@ export default class Gs2StateMachineRestClient extends AbstractGs2RestClient {
     getStatus(request: Request.GetStatusRequest): Promise<Result.GetStatusResult>;
     getStatusByUserId(request: Request.GetStatusByUserIdRequest): Promise<Result.GetStatusByUserIdResult>;
     startStateMachineByUserId(request: Request.StartStateMachineByUserIdRequest): Promise<Result.StartStateMachineByUserIdResult>;
-    startStateMachineByStampTask(request: Request.StartStateMachineByStampTaskRequest): Promise<Result.StartStateMachineByStampTaskResult>;
+    startStateMachineByStampSheet(request: Request.StartStateMachineByStampSheetRequest): Promise<Result.StartStateMachineByStampSheetResult>;
     emit(request: Request.EmitRequest): Promise<Result.EmitResult>;
     emitByUserId(request: Request.EmitByUserIdRequest): Promise<Result.EmitByUserIdResult>;
     deleteStatusByUserId(request: Request.DeleteStatusByUserIdRequest): Promise<Result.DeleteStatusByUserIdResult>;

@@ -53,6 +53,7 @@ import * as schedule from './schedule';
 import * as script from './script';
 import * as serialKey from './serialKey';
 import * as showcase from './showcase';
+import * as stateMachine from './stateMachine';
 import * as stamina from './stamina';
 import * as version from './version';
 import * as watch from './watch';
@@ -97,6 +98,7 @@ export {
   script,
   serialKey,
   showcase,
+  stateMachine,
   stamina,
   version,
   watch,
