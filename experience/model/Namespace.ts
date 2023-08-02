@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:experience:{namespaceName}";
@@ -23,6 +24,7 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: TransactionSetting|null = null;
     private experienceCapScriptId: string|null = null;
     private changeExperienceScript: ScriptSetting|null = null;
     private changeRankScript: ScriptSetting|null = null;
@@ -124,6 +126,17 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
+    public getTransactionSetting(): TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
     public getExperienceCapScriptId(): string|null {
         return this.experienceCapScriptId;
     }
@@ -221,6 +234,7 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
             .withExperienceCapScriptId(data["experienceCapScriptId"])
             .withChangeExperienceScript(ScriptSetting.fromDict(data["changeExperienceScript"]))
             .withChangeRankScript(ScriptSetting.fromDict(data["changeRankScript"]))
@@ -236,6 +250,7 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "experienceCapScriptId": this.getExperienceCapScriptId(),
             "changeExperienceScript": this.getChangeExperienceScript()?.toDict(),
             "changeRankScript": this.getChangeRankScript()?.toDict(),

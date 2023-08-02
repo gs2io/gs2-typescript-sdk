@@ -16,6 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
+var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
 var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:experience:{namespaceName}";
@@ -24,6 +25,7 @@ var Namespace = /** @class */ (function () {
         this.namespaceId = null;
         this.name = null;
         this.description = null;
+        this.transactionSetting = null;
         this.experienceCapScriptId = null;
         this.changeExperienceScript = null;
         this.changeRankScript = null;
@@ -112,6 +114,17 @@ var Namespace = /** @class */ (function () {
     };
     Namespace.prototype.withDescription = function (description) {
         this.description = description;
+        return this;
+    };
+    Namespace.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    Namespace.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    Namespace.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
     Namespace.prototype.getExperienceCapScriptId = function () {
@@ -210,6 +223,7 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
             .withExperienceCapScriptId(data["experienceCapScriptId"])
             .withChangeExperienceScript(ScriptSetting_1.default.fromDict(data["changeExperienceScript"]))
             .withChangeRankScript(ScriptSetting_1.default.fromDict(data["changeRankScript"]))
@@ -220,17 +234,18 @@ var Namespace = /** @class */ (function () {
             .withUpdatedAt(data["updatedAt"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "experienceCapScriptId": this.getExperienceCapScriptId(),
-            "changeExperienceScript": (_a = this.getChangeExperienceScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "changeRankScript": (_b = this.getChangeRankScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "changeRankCapScript": (_c = this.getChangeRankCapScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "overflowExperienceScript": (_d = this.getOverflowExperienceScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "changeExperienceScript": (_b = this.getChangeExperienceScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "changeRankScript": (_c = this.getChangeRankScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "changeRankCapScript": (_d = this.getChangeRankCapScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "overflowExperienceScript": (_e = this.getOverflowExperienceScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

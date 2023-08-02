@@ -30,6 +30,7 @@ export default class CreateExperienceModelMasterRequest implements IRequest {
     private defaultRankCap: number|null = null;
     private maxRankCap: number|null = null;
     private rankThresholdName: string|null = null;
+    private acquireActionRates: Gs2Experience.AcquireActionRate[]|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -146,6 +147,17 @@ export default class CreateExperienceModelMasterRequest implements IRequest {
         this.rankThresholdName = rankThresholdName;
         return this;
     }
+    public getAcquireActionRates(): Gs2Experience.AcquireActionRate[]|null {
+        return this.acquireActionRates;
+    }
+    public setAcquireActionRates(acquireActionRates: Gs2Experience.AcquireActionRate[]|null) {
+        this.acquireActionRates = acquireActionRates;
+        return this;
+    }
+    public withAcquireActionRates(acquireActionRates: Gs2Experience.AcquireActionRate[]|null): this {
+        this.acquireActionRates = acquireActionRates;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): CreateExperienceModelMasterRequest {
         return new CreateExperienceModelMasterRequest()
@@ -156,7 +168,12 @@ export default class CreateExperienceModelMasterRequest implements IRequest {
             .withDefaultExperience(data["defaultExperience"])
             .withDefaultRankCap(data["defaultRankCap"])
             .withMaxRankCap(data["maxRankCap"])
-            .withRankThresholdName(data["rankThresholdName"]);
+            .withRankThresholdName(data["rankThresholdName"])
+            .withAcquireActionRates(data.acquireActionRates ?
+                data.acquireActionRates.map((item: {[key: string]: any}) => {
+                    return Gs2Experience.AcquireActionRate.fromDict(item);
+                }
+            ) : []);
     }
 
     public toDict(): {[key: string]: any} {
@@ -169,6 +186,11 @@ export default class CreateExperienceModelMasterRequest implements IRequest {
             "defaultRankCap": this.getDefaultRankCap(),
             "maxRankCap": this.getMaxRankCap(),
             "rankThresholdName": this.getRankThresholdName(),
+            "acquireActionRates": this.getAcquireActionRates() ?
+                this.getAcquireActionRates()!.map((item: Gs2Experience.AcquireActionRate) => {
+                    return item.toDict();
+                }
+            ) : [],
         };
     }
 }

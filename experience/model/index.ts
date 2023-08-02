@@ -18,11 +18,14 @@ import ExperienceModelMaster from "./ExperienceModelMaster"
 import ExperienceModel from "./ExperienceModel"
 import ThresholdMaster from "./ThresholdMaster"
 import Threshold from "./Threshold"
+import AcquireActionRate from "./AcquireActionRate"
 import CurrentExperienceMaster from "./CurrentExperienceMaster"
 import Status from "./Status"
+import AcquireAction from "./AcquireAction"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import ScriptSetting from "./ScriptSetting"
 import LogSetting from "./LogSetting"
+import TransactionSetting from "./TransactionSetting"
 
 export {
     Namespace,
@@ -30,9 +33,12 @@ export {
     ExperienceModel,
     ThresholdMaster,
     Threshold,
+    AcquireActionRate,
     CurrentExperienceMaster,
     Status,
+    AcquireAction,
     GitHubCheckoutSetting,
     ScriptSetting,
     LogSetting,
+    TransactionSetting,
 };

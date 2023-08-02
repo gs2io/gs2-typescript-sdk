@@ -1,5 +1,6 @@
 import IModel from '../../core/interface/IModel';
 import Threshold from './Threshold';
+import AcquireActionRate from './AcquireActionRate';
 export default class ExperienceModel implements IModel {
     private experienceModelId;
     private name;
@@ -8,6 +9,7 @@ export default class ExperienceModel implements IModel {
     private defaultRankCap;
     private maxRankCap;
     private rankThreshold;
+    private acquireActionRates;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -35,6 +37,9 @@ export default class ExperienceModel implements IModel {
     getRankThreshold(): Threshold | null;
     setRankThreshold(rankThreshold: Threshold | null): this;
     withRankThreshold(rankThreshold: Threshold | null): this;
+    getAcquireActionRates(): AcquireActionRate[] | null;
+    setAcquireActionRates(acquireActionRates: AcquireActionRate[] | null): this;
+    withAcquireActionRates(acquireActionRates: AcquireActionRate[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ExperienceModel | null;

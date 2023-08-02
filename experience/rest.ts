@@ -67,6 +67,7 @@ export default class Gs2ExperienceRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'experienceCapScriptId': request.getExperienceCapScriptId() ?? null,
             'changeExperienceScript': request.getChangeExperienceScript()?.toDict() ?? null,
             'changeRankScript': request.getChangeRankScript()?.toDict() ?? null,
@@ -156,6 +157,7 @@ export default class Gs2ExperienceRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'experienceCapScriptId': request.getExperienceCapScriptId() ?? null,
             'changeExperienceScript': request.getChangeExperienceScript()?.toDict() ?? null,
             'changeRankScript': request.getChangeRankScript()?.toDict() ?? null,
@@ -253,6 +255,7 @@ export default class Gs2ExperienceRestClient extends AbstractGs2RestClient {
             'defaultRankCap': request.getDefaultRankCap() ?? null,
             'maxRankCap': request.getMaxRankCap() ?? null,
             'rankThresholdName': request.getRankThresholdName() ?? null,
+            'acquireActionRates': request.getAcquireActionRates()?.map((item) => item.toDict()) ?? null,
         };
         return axios.post(
             url,
@@ -317,6 +320,7 @@ export default class Gs2ExperienceRestClient extends AbstractGs2RestClient {
             'defaultRankCap': request.getDefaultRankCap() ?? null,
             'maxRankCap': request.getMaxRankCap() ?? null,
             'rankThresholdName': request.getRankThresholdName() ?? null,
+            'acquireActionRates': request.getAcquireActionRates()?.map((item) => item.toDict()) ?? null,
         };
         return axios.put(
             url,
@@ -1127,6 +1131,75 @@ export default class Gs2ExperienceRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.SetRankCapByStampSheetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public multiplyAcquireActionsByUserId(request: Request.MultiplyAcquireActionsByUserIdRequest): Promise<Result.MultiplyAcquireActionsByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}/acquire/rate/{rateName}/multiply')
+            .replace('{service}', 'experience')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{experienceName}', String(request.getExperienceName() ?? 'null') === "" ? "null" : String(request.getExperienceName() ?? 'null'))
+            .replace('{propertyId}', String(request.getPropertyId() ?? 'null') === "" ? "null" : String(request.getPropertyId() ?? 'null'))
+            .replace('{rateName}', String(request.getRateName() ?? 'null') === "" ? "null" : String(request.getRateName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'acquireActions': request.getAcquireActions()?.map((item) => item.toDict()) ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.MultiplyAcquireActionsByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public multiplyAcquireActionsByStampSheet(request: Request.MultiplyAcquireActionsByStampSheetRequest): Promise<Result.MultiplyAcquireActionsByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/form/acquire')
+            .replace('{service}', 'experience')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.MultiplyAcquireActionsByStampSheetResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

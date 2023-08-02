@@ -5,6 +5,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private description;
+    private transactionSetting;
     private experienceCapScriptId;
     private changeExperienceScript;
     private changeRankScript;
@@ -23,6 +24,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): Gs2Experience.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Experience.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Experience.TransactionSetting | null): this;
     getExperienceCapScriptId(): string | null;
     setExperienceCapScriptId(experienceCapScriptId: string | null): this;
     withExperienceCapScriptId(experienceCapScriptId: string | null): this;

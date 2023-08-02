@@ -23,6 +23,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.contextStack = null;
         this.name = null;
         this.description = null;
+        this.transactionSetting = null;
         this.experienceCapScriptId = null;
         this.changeExperienceScript = null;
         this.changeRankScript = null;
@@ -72,6 +73,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
     };
     CreateNamespaceRequest.prototype.withDescription = function (description) {
         this.description = description;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    CreateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
     CreateNamespaceRequest.prototype.getExperienceCapScriptId = function () {
@@ -144,6 +156,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Experience.TransactionSetting.fromDict(data["transactionSetting"]))
             .withExperienceCapScriptId(data["experienceCapScriptId"])
             .withChangeExperienceScript(Gs2Experience.ScriptSetting.fromDict(data["changeExperienceScript"]))
             .withChangeRankScript(Gs2Experience.ScriptSetting.fromDict(data["changeRankScript"]))
@@ -152,16 +165,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withLogSetting(Gs2Experience.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "experienceCapScriptId": this.getExperienceCapScriptId(),
-            "changeExperienceScript": (_a = this.getChangeExperienceScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "changeRankScript": (_b = this.getChangeRankScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "changeRankCapScript": (_c = this.getChangeRankCapScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "overflowExperienceScript": (_d = this.getOverflowExperienceScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "changeExperienceScript": (_b = this.getChangeExperienceScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "changeRankScript": (_c = this.getChangeRankScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "changeRankCapScript": (_d = this.getChangeRankCapScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "overflowExperienceScript": (_e = this.getOverflowExperienceScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
         };
     };
     return CreateNamespaceRequest;

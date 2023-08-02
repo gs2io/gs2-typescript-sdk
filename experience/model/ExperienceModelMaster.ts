@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import AcquireActionRate from './AcquireActionRate';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:experience:{namespaceName}:model:{experienceName}";
 
 export default class ExperienceModelMaster implements IModel {
@@ -26,6 +27,7 @@ export default class ExperienceModelMaster implements IModel {
     private defaultRankCap: number|null = null;
     private maxRankCap: number|null = null;
     private rankThresholdName: string|null = null;
+    private acquireActionRates: AcquireActionRate[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
 
@@ -197,6 +199,17 @@ export default class ExperienceModelMaster implements IModel {
         this.rankThresholdName = rankThresholdName;
         return this;
     }
+    public getAcquireActionRates(): AcquireActionRate[]|null {
+        return this.acquireActionRates;
+    }
+    public setAcquireActionRates(acquireActionRates: AcquireActionRate[]|null) {
+        this.acquireActionRates = acquireActionRates;
+        return this;
+    }
+    public withAcquireActionRates(acquireActionRates: AcquireActionRate[]|null): this {
+        this.acquireActionRates = acquireActionRates;
+        return this;
+    }
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -233,6 +246,11 @@ export default class ExperienceModelMaster implements IModel {
             .withDefaultRankCap(data["defaultRankCap"])
             .withMaxRankCap(data["maxRankCap"])
             .withRankThresholdName(data["rankThresholdName"])
+            .withAcquireActionRates(data.acquireActionRates ?
+                data.acquireActionRates.map((item: {[key: string]: any}) => {
+                    return AcquireActionRate.fromDict(item);
+                }
+            ) : [])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     }
@@ -247,6 +265,11 @@ export default class ExperienceModelMaster implements IModel {
             "defaultRankCap": this.getDefaultRankCap(),
             "maxRankCap": this.getMaxRankCap(),
             "rankThresholdName": this.getRankThresholdName(),
+            "acquireActionRates": this.getAcquireActionRates() ?
+                this.getAcquireActionRates()!.map((item: AcquireActionRate) => {
+                    return item.toDict();
+                }
+            ) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

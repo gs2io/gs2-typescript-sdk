@@ -15,6 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Experience = tslib_1.__importStar(require("../model"));
 var CreateExperienceModelMasterRequest = /** @class */ (function () {
     function CreateExperienceModelMasterRequest() {
         this.requestId = null;
@@ -27,6 +29,7 @@ var CreateExperienceModelMasterRequest = /** @class */ (function () {
         this.defaultRankCap = null;
         this.maxRankCap = null;
         this.rankThresholdName = null;
+        this.acquireActionRates = null;
     }
     CreateExperienceModelMasterRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -138,6 +141,17 @@ var CreateExperienceModelMasterRequest = /** @class */ (function () {
         this.rankThresholdName = rankThresholdName;
         return this;
     };
+    CreateExperienceModelMasterRequest.prototype.getAcquireActionRates = function () {
+        return this.acquireActionRates;
+    };
+    CreateExperienceModelMasterRequest.prototype.setAcquireActionRates = function (acquireActionRates) {
+        this.acquireActionRates = acquireActionRates;
+        return this;
+    };
+    CreateExperienceModelMasterRequest.prototype.withAcquireActionRates = function (acquireActionRates) {
+        this.acquireActionRates = acquireActionRates;
+        return this;
+    };
     CreateExperienceModelMasterRequest.fromDict = function (data) {
         return new CreateExperienceModelMasterRequest()
             .withNamespaceName(data["namespaceName"])
@@ -147,7 +161,11 @@ var CreateExperienceModelMasterRequest = /** @class */ (function () {
             .withDefaultExperience(data["defaultExperience"])
             .withDefaultRankCap(data["defaultRankCap"])
             .withMaxRankCap(data["maxRankCap"])
-            .withRankThresholdName(data["rankThresholdName"]);
+            .withRankThresholdName(data["rankThresholdName"])
+            .withAcquireActionRates(data.acquireActionRates ?
+            data.acquireActionRates.map(function (item) {
+                return Gs2Experience.AcquireActionRate.fromDict(item);
+            }) : []);
     };
     CreateExperienceModelMasterRequest.prototype.toDict = function () {
         return {
@@ -159,6 +177,10 @@ var CreateExperienceModelMasterRequest = /** @class */ (function () {
             "defaultRankCap": this.getDefaultRankCap(),
             "maxRankCap": this.getMaxRankCap(),
             "rankThresholdName": this.getRankThresholdName(),
+            "acquireActionRates": this.getAcquireActionRates() ?
+                this.getAcquireActionRates().map(function (item) {
+                    return item.toDict();
+                }) : [],
         };
     };
     return CreateExperienceModelMasterRequest;

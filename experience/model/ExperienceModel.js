@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Threshold_1 = tslib_1.__importDefault(require("./Threshold"));
+var AcquireActionRate_1 = tslib_1.__importDefault(require("./AcquireActionRate"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:experience:{namespaceName}:model:{experienceName}";
 var ExperienceModel = /** @class */ (function () {
     function ExperienceModel() {
@@ -27,6 +28,7 @@ var ExperienceModel = /** @class */ (function () {
         this.defaultRankCap = null;
         this.maxRankCap = null;
         this.rankThreshold = null;
+        this.acquireActionRates = null;
     }
     ExperienceModel.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -171,6 +173,17 @@ var ExperienceModel = /** @class */ (function () {
         this.rankThreshold = rankThreshold;
         return this;
     };
+    ExperienceModel.prototype.getAcquireActionRates = function () {
+        return this.acquireActionRates;
+    };
+    ExperienceModel.prototype.setAcquireActionRates = function (acquireActionRates) {
+        this.acquireActionRates = acquireActionRates;
+        return this;
+    };
+    ExperienceModel.prototype.withAcquireActionRates = function (acquireActionRates) {
+        this.acquireActionRates = acquireActionRates;
+        return this;
+    };
     ExperienceModel.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -182,7 +195,11 @@ var ExperienceModel = /** @class */ (function () {
             .withDefaultExperience(data["defaultExperience"])
             .withDefaultRankCap(data["defaultRankCap"])
             .withMaxRankCap(data["maxRankCap"])
-            .withRankThreshold(Threshold_1.default.fromDict(data["rankThreshold"]));
+            .withRankThreshold(Threshold_1.default.fromDict(data["rankThreshold"]))
+            .withAcquireActionRates(data.acquireActionRates ?
+            data.acquireActionRates.map(function (item) {
+                return AcquireActionRate_1.default.fromDict(item);
+            }) : []);
     };
     ExperienceModel.prototype.toDict = function () {
         var _a;
@@ -194,6 +211,10 @@ var ExperienceModel = /** @class */ (function () {
             "defaultRankCap": this.getDefaultRankCap(),
             "maxRankCap": this.getMaxRankCap(),
             "rankThreshold": (_a = this.getRankThreshold()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "acquireActionRates": this.getAcquireActionRates() ?
+                this.getAcquireActionRates().map(function (item) {
+                    return item.toDict();
+                }) : [],
         };
     };
     return ExperienceModel;

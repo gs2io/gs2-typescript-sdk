@@ -24,6 +24,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private transactionSetting: Gs2Experience.TransactionSetting|null = null;
     private experienceCapScriptId: string|null = null;
     private changeExperienceScript: Gs2Experience.ScriptSetting|null = null;
     private changeRankScript: Gs2Experience.ScriptSetting|null = null;
@@ -78,6 +79,17 @@ export default class CreateNamespaceRequest implements IRequest {
     }
     public withDescription(description: string|null): this {
         this.description = description;
+        return this;
+    }
+    public getTransactionSetting(): Gs2Experience.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2Experience.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2Experience.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
         return this;
     }
     public getExperienceCapScriptId(): string|null {
@@ -151,6 +163,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withTransactionSetting(Gs2Experience.TransactionSetting.fromDict(data["transactionSetting"]))
             .withExperienceCapScriptId(data["experienceCapScriptId"])
             .withChangeExperienceScript(Gs2Experience.ScriptSetting.fromDict(data["changeExperienceScript"]))
             .withChangeRankScript(Gs2Experience.ScriptSetting.fromDict(data["changeRankScript"]))
@@ -163,6 +176,7 @@ export default class CreateNamespaceRequest implements IRequest {
         return {
             "name": this.getName(),
             "description": this.getDescription(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "experienceCapScriptId": this.getExperienceCapScriptId(),
             "changeExperienceScript": this.getChangeExperienceScript()?.toDict(),
             "changeRankScript": this.getChangeRankScript()?.toDict(),

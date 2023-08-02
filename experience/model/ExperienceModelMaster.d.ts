@@ -1,4 +1,5 @@
 import IModel from '../../core/interface/IModel';
+import AcquireActionRate from './AcquireActionRate';
 export default class ExperienceModelMaster implements IModel {
     private experienceModelId;
     private name;
@@ -8,6 +9,7 @@ export default class ExperienceModelMaster implements IModel {
     private defaultRankCap;
     private maxRankCap;
     private rankThresholdName;
+    private acquireActionRates;
     private createdAt;
     private updatedAt;
     static getRegion(grn: string): string | null;
@@ -40,6 +42,9 @@ export default class ExperienceModelMaster implements IModel {
     getRankThresholdName(): string | null;
     setRankThresholdName(rankThresholdName: string | null): this;
     withRankThresholdName(rankThresholdName: string | null): this;
+    getAcquireActionRates(): AcquireActionRate[] | null;
+    setAcquireActionRates(acquireActionRates: AcquireActionRate[] | null): this;
+    withAcquireActionRates(acquireActionRates: AcquireActionRate[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

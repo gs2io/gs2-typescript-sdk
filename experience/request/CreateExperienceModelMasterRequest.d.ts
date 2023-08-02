@@ -1,4 +1,5 @@
 import IRequest from '../../core/interface/IRequest';
+import * as Gs2Experience from '../model';
 export default class CreateExperienceModelMasterRequest implements IRequest {
     private requestId;
     private contextStack;
@@ -10,6 +11,7 @@ export default class CreateExperienceModelMasterRequest implements IRequest {
     private defaultRankCap;
     private maxRankCap;
     private rankThresholdName;
+    private acquireActionRates;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -40,6 +42,9 @@ export default class CreateExperienceModelMasterRequest implements IRequest {
     getRankThresholdName(): string | null;
     setRankThresholdName(rankThresholdName: string | null): this;
     withRankThresholdName(rankThresholdName: string | null): this;
+    getAcquireActionRates(): Gs2Experience.AcquireActionRate[] | null;
+    setAcquireActionRates(acquireActionRates: Gs2Experience.AcquireActionRate[] | null): this;
+    withAcquireActionRates(acquireActionRates: Gs2Experience.AcquireActionRate[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CreateExperienceModelMasterRequest;

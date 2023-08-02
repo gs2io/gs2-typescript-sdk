@@ -49,6 +49,8 @@ import DeleteStatusByUserIdRequest from "./DeleteStatusByUserIdRequest"
 import AddExperienceByStampSheetRequest from "./AddExperienceByStampSheetRequest"
 import AddRankCapByStampSheetRequest from "./AddRankCapByStampSheetRequest"
 import SetRankCapByStampSheetRequest from "./SetRankCapByStampSheetRequest"
+import MultiplyAcquireActionsByUserIdRequest from "./MultiplyAcquireActionsByUserIdRequest"
+import MultiplyAcquireActionsByStampSheetRequest from "./MultiplyAcquireActionsByStampSheetRequest"
 
 export {
     DescribeNamespacesRequest,
@@ -87,4 +89,6 @@ export {
     AddExperienceByStampSheetRequest,
     AddRankCapByStampSheetRequest,
     SetRankCapByStampSheetRequest,
+    MultiplyAcquireActionsByUserIdRequest,
+    MultiplyAcquireActionsByStampSheetRequest,
 };

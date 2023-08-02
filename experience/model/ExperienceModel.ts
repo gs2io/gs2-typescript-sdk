@@ -16,6 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 import Threshold from './Threshold';
+import AcquireActionRate from './AcquireActionRate';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:experience:{namespaceName}:model:{experienceName}";
 
 export default class ExperienceModel implements IModel {
@@ -26,6 +27,7 @@ export default class ExperienceModel implements IModel {
     private defaultRankCap: number|null = null;
     private maxRankCap: number|null = null;
     private rankThreshold: Threshold|null = null;
+    private acquireActionRates: AcquireActionRate[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -184,6 +186,17 @@ export default class ExperienceModel implements IModel {
         this.rankThreshold = rankThreshold;
         return this;
     }
+    public getAcquireActionRates(): AcquireActionRate[]|null {
+        return this.acquireActionRates;
+    }
+    public setAcquireActionRates(acquireActionRates: AcquireActionRate[]|null) {
+        this.acquireActionRates = acquireActionRates;
+        return this;
+    }
+    public withAcquireActionRates(acquireActionRates: AcquireActionRate[]|null): this {
+        this.acquireActionRates = acquireActionRates;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): ExperienceModel|null {
         if (data == undefined || data == null) {
@@ -196,7 +209,12 @@ export default class ExperienceModel implements IModel {
             .withDefaultExperience(data["defaultExperience"])
             .withDefaultRankCap(data["defaultRankCap"])
             .withMaxRankCap(data["maxRankCap"])
-            .withRankThreshold(Threshold.fromDict(data["rankThreshold"]));
+            .withRankThreshold(Threshold.fromDict(data["rankThreshold"]))
+            .withAcquireActionRates(data.acquireActionRates ?
+                data.acquireActionRates.map((item: {[key: string]: any}) => {
+                    return AcquireActionRate.fromDict(item);
+                }
+            ) : []);
     }
 
     public toDict(): {[key: string]: any} {
@@ -208,6 +226,11 @@ export default class ExperienceModel implements IModel {
             "defaultRankCap": this.getDefaultRankCap(),
             "maxRankCap": this.getMaxRankCap(),
             "rankThreshold": this.getRankThreshold()?.toDict(),
+            "acquireActionRates": this.getAcquireActionRates() ?
+                this.getAcquireActionRates()!.map((item: AcquireActionRate) => {
+                    return item.toDict();
+                }
+            ) : [],
         };
     }
 }

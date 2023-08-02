@@ -1,10 +1,12 @@
 import IModel from '../../core/interface/IModel';
+import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
+    private transactionSetting;
     private experienceCapScriptId;
     private changeExperienceScript;
     private changeRankScript;
@@ -27,6 +29,9 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getTransactionSetting(): TransactionSetting | null;
+    setTransactionSetting(transactionSetting: TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: TransactionSetting | null): this;
     getExperienceCapScriptId(): string | null;
     setExperienceCapScriptId(experienceCapScriptId: string | null): this;
     withExperienceCapScriptId(experienceCapScriptId: string | null): this;
