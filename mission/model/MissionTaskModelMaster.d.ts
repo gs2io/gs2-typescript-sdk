@@ -6,6 +6,7 @@ export default class MissionTaskModelMaster implements IModel {
     private metadata;
     private description;
     private counterName;
+    private targetResetType;
     private targetValue;
     private completeAcquireActions;
     private challengePeriodEventId;
@@ -34,6 +35,9 @@ export default class MissionTaskModelMaster implements IModel {
     getCounterName(): string | null;
     setCounterName(counterName: string | null): this;
     withCounterName(counterName: string | null): this;
+    getTargetResetType(): string | null;
+    setTargetResetType(targetResetType: string | null): this;
+    withTargetResetType(targetResetType: string | null): this;
     getTargetValue(): number | null;
     setTargetValue(targetValue: number | null): this;
     withTargetValue(targetValue: number | null): this;

@@ -1159,7 +1159,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MissionRestClient.prototype.createMissionTaskModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
@@ -1175,10 +1175,11 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
             'description': (_h = request.getDescription()) !== null && _h !== void 0 ? _h : null,
             'counterName': (_j = request.getCounterName()) !== null && _j !== void 0 ? _j : null,
-            'targetValue': (_k = request.getTargetValue()) !== null && _k !== void 0 ? _k : null,
-            'completeAcquireActions': (_m = (_l = request.getCompleteAcquireActions()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
-            'challengePeriodEventId': (_o = request.getChallengePeriodEventId()) !== null && _o !== void 0 ? _o : null,
-            'premiseMissionTaskName': (_p = request.getPremiseMissionTaskName()) !== null && _p !== void 0 ? _p : null,
+            'targetResetType': (_k = request.getTargetResetType()) !== null && _k !== void 0 ? _k : null,
+            'targetValue': (_l = request.getTargetValue()) !== null && _l !== void 0 ? _l : null,
+            'completeAcquireActions': (_o = (_m = request.getCompleteAcquireActions()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
+            'challengePeriodEventId': (_p = request.getChallengePeriodEventId()) !== null && _p !== void 0 ? _p : null,
+            'premiseMissionTaskName': (_q = request.getPremiseMissionTaskName()) !== null && _q !== void 0 ? _q : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1218,7 +1219,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MissionRestClient.prototype.updateMissionTaskModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task/{missionTaskName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
@@ -1234,10 +1235,11 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
             'description': (_j = request.getDescription()) !== null && _j !== void 0 ? _j : null,
             'counterName': (_k = request.getCounterName()) !== null && _k !== void 0 ? _k : null,
-            'targetValue': (_l = request.getTargetValue()) !== null && _l !== void 0 ? _l : null,
-            'completeAcquireActions': (_o = (_m = request.getCompleteAcquireActions()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
-            'challengePeriodEventId': (_p = request.getChallengePeriodEventId()) !== null && _p !== void 0 ? _p : null,
-            'premiseMissionTaskName': (_q = request.getPremiseMissionTaskName()) !== null && _q !== void 0 ? _q : null,
+            'targetResetType': (_l = request.getTargetResetType()) !== null && _l !== void 0 ? _l : null,
+            'targetValue': (_m = request.getTargetValue()) !== null && _m !== void 0 ? _m : null,
+            'completeAcquireActions': (_p = (_o = request.getCompleteAcquireActions()) === null || _o === void 0 ? void 0 : _o.map(function (item) { return item.toDict(); })) !== null && _p !== void 0 ? _p : null,
+            'challengePeriodEventId': (_q = request.getChallengePeriodEventId()) !== null && _q !== void 0 ? _q : null,
+            'premiseMissionTaskName': (_r = request.getPremiseMissionTaskName()) !== null && _r !== void 0 ? _r : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

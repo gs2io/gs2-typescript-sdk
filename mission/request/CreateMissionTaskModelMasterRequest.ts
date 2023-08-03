@@ -28,6 +28,7 @@ export default class CreateMissionTaskModelMasterRequest implements IRequest {
     private metadata: string|null = null;
     private description: string|null = null;
     private counterName: string|null = null;
+    private targetResetType: string|null = null;
     private targetValue: number|null = null;
     private completeAcquireActions: Gs2Mission.AcquireAction[]|null = null;
     private challengePeriodEventId: string|null = null;
@@ -126,6 +127,17 @@ export default class CreateMissionTaskModelMasterRequest implements IRequest {
         this.counterName = counterName;
         return this;
     }
+    public getTargetResetType(): string|null {
+        return this.targetResetType;
+    }
+    public setTargetResetType(targetResetType: string|null) {
+        this.targetResetType = targetResetType;
+        return this;
+    }
+    public withTargetResetType(targetResetType: string|null): this {
+        this.targetResetType = targetResetType;
+        return this;
+    }
     public getTargetValue(): number|null {
         return this.targetValue;
     }
@@ -179,6 +191,7 @@ export default class CreateMissionTaskModelMasterRequest implements IRequest {
             .withMetadata(data["metadata"])
             .withDescription(data["description"])
             .withCounterName(data["counterName"])
+            .withTargetResetType(data["targetResetType"])
             .withTargetValue(data["targetValue"])
             .withCompleteAcquireActions(data.completeAcquireActions ?
                 data.completeAcquireActions.map((item: {[key: string]: any}) => {
@@ -197,6 +210,7 @@ export default class CreateMissionTaskModelMasterRequest implements IRequest {
             "metadata": this.getMetadata(),
             "description": this.getDescription(),
             "counterName": this.getCounterName(),
+            "targetResetType": this.getTargetResetType(),
             "targetValue": this.getTargetValue(),
             "completeAcquireActions": this.getCompleteAcquireActions() ?
                 this.getCompleteAcquireActions()!.map((item: Gs2Mission.AcquireAction) => {

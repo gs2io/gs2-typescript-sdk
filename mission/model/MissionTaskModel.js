@@ -24,6 +24,7 @@ var MissionTaskModel = /** @class */ (function () {
         this.name = null;
         this.metadata = null;
         this.counterName = null;
+        this.targetResetType = null;
         this.targetValue = null;
         this.completeAcquireActions = null;
         this.challengePeriodEventId = null;
@@ -159,6 +160,17 @@ var MissionTaskModel = /** @class */ (function () {
         this.counterName = counterName;
         return this;
     };
+    MissionTaskModel.prototype.getTargetResetType = function () {
+        return this.targetResetType;
+    };
+    MissionTaskModel.prototype.setTargetResetType = function (targetResetType) {
+        this.targetResetType = targetResetType;
+        return this;
+    };
+    MissionTaskModel.prototype.withTargetResetType = function (targetResetType) {
+        this.targetResetType = targetResetType;
+        return this;
+    };
     MissionTaskModel.prototype.getTargetValue = function () {
         return this.targetValue;
     };
@@ -212,6 +224,7 @@ var MissionTaskModel = /** @class */ (function () {
             .withName(data["name"])
             .withMetadata(data["metadata"])
             .withCounterName(data["counterName"])
+            .withTargetResetType(data["targetResetType"])
             .withTargetValue(data["targetValue"])
             .withCompleteAcquireActions(data.completeAcquireActions ?
             data.completeAcquireActions.map(function (item) {
@@ -226,6 +239,7 @@ var MissionTaskModel = /** @class */ (function () {
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "counterName": this.getCounterName(),
+            "targetResetType": this.getTargetResetType(),
             "targetValue": this.getTargetValue(),
             "completeAcquireActions": this.getCompleteAcquireActions() ?
                 this.getCompleteAcquireActions().map(function (item) {

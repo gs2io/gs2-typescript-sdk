@@ -27,6 +27,7 @@ var CreateMissionTaskModelMasterRequest = /** @class */ (function () {
         this.metadata = null;
         this.description = null;
         this.counterName = null;
+        this.targetResetType = null;
         this.targetValue = null;
         this.completeAcquireActions = null;
         this.challengePeriodEventId = null;
@@ -120,6 +121,17 @@ var CreateMissionTaskModelMasterRequest = /** @class */ (function () {
         this.counterName = counterName;
         return this;
     };
+    CreateMissionTaskModelMasterRequest.prototype.getTargetResetType = function () {
+        return this.targetResetType;
+    };
+    CreateMissionTaskModelMasterRequest.prototype.setTargetResetType = function (targetResetType) {
+        this.targetResetType = targetResetType;
+        return this;
+    };
+    CreateMissionTaskModelMasterRequest.prototype.withTargetResetType = function (targetResetType) {
+        this.targetResetType = targetResetType;
+        return this;
+    };
     CreateMissionTaskModelMasterRequest.prototype.getTargetValue = function () {
         return this.targetValue;
     };
@@ -172,6 +184,7 @@ var CreateMissionTaskModelMasterRequest = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withDescription(data["description"])
             .withCounterName(data["counterName"])
+            .withTargetResetType(data["targetResetType"])
             .withTargetValue(data["targetValue"])
             .withCompleteAcquireActions(data.completeAcquireActions ?
             data.completeAcquireActions.map(function (item) {
@@ -188,6 +201,7 @@ var CreateMissionTaskModelMasterRequest = /** @class */ (function () {
             "metadata": this.getMetadata(),
             "description": this.getDescription(),
             "counterName": this.getCounterName(),
+            "targetResetType": this.getTargetResetType(),
             "targetValue": this.getTargetValue(),
             "completeAcquireActions": this.getCompleteAcquireActions() ?
                 this.getCompleteAcquireActions().map(function (item) {

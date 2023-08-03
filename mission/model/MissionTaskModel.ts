@@ -23,6 +23,7 @@ export default class MissionTaskModel implements IModel {
     private name: string|null = null;
     private metadata: string|null = null;
     private counterName: string|null = null;
+    private targetResetType: string|null = null;
     private targetValue: number|null = null;
     private completeAcquireActions: AcquireAction[]|null = null;
     private challengePeriodEventId: string|null = null;
@@ -175,6 +176,17 @@ export default class MissionTaskModel implements IModel {
         this.counterName = counterName;
         return this;
     }
+    public getTargetResetType(): string|null {
+        return this.targetResetType;
+    }
+    public setTargetResetType(targetResetType: string|null) {
+        this.targetResetType = targetResetType;
+        return this;
+    }
+    public withTargetResetType(targetResetType: string|null): this {
+        this.targetResetType = targetResetType;
+        return this;
+    }
     public getTargetValue(): number|null {
         return this.targetValue;
     }
@@ -229,6 +241,7 @@ export default class MissionTaskModel implements IModel {
             .withName(data["name"])
             .withMetadata(data["metadata"])
             .withCounterName(data["counterName"])
+            .withTargetResetType(data["targetResetType"])
             .withTargetValue(data["targetValue"])
             .withCompleteAcquireActions(data.completeAcquireActions ?
                 data.completeAcquireActions.map((item: {[key: string]: any}) => {
@@ -245,6 +258,7 @@ export default class MissionTaskModel implements IModel {
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "counterName": this.getCounterName(),
+            "targetResetType": this.getTargetResetType(),
             "targetValue": this.getTargetValue(),
             "completeAcquireActions": this.getCompleteAcquireActions() ?
                 this.getCompleteAcquireActions()!.map((item: AcquireAction) => {
