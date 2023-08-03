@@ -44,6 +44,8 @@ import GetBalanceParameterStatusByUserIdRequest from "./GetBalanceParameterStatu
 import DeleteBalanceParameterStatusByUserIdRequest from "./DeleteBalanceParameterStatusByUserIdRequest"
 import ReDrawBalanceParameterStatusByUserIdRequest from "./ReDrawBalanceParameterStatusByUserIdRequest"
 import ReDrawBalanceParameterStatusByStampSheetRequest from "./ReDrawBalanceParameterStatusByStampSheetRequest"
+import SetBalanceParameterStatusByUserIdRequest from "./SetBalanceParameterStatusByUserIdRequest"
+import SetBalanceParameterStatusByStampSheetRequest from "./SetBalanceParameterStatusByStampSheetRequest"
 import DescribeRarityParameterStatusesRequest from "./DescribeRarityParameterStatusesRequest"
 import DescribeRarityParameterStatusesByUserIdRequest from "./DescribeRarityParameterStatusesByUserIdRequest"
 import GetRarityParameterStatusRequest from "./GetRarityParameterStatusRequest"
@@ -56,6 +58,8 @@ import AddRarityParameterStatusByStampSheetRequest from "./AddRarityParameterSta
 import VerifyRarityParameterStatusRequest from "./VerifyRarityParameterStatusRequest"
 import VerifyRarityParameterStatusByUserIdRequest from "./VerifyRarityParameterStatusByUserIdRequest"
 import VerifyRarityParameterStatusByStampTaskRequest from "./VerifyRarityParameterStatusByStampTaskRequest"
+import SetRarityParameterStatusByUserIdRequest from "./SetRarityParameterStatusByUserIdRequest"
+import SetRarityParameterStatusByStampSheetRequest from "./SetRarityParameterStatusByStampSheetRequest"
 
 export {
     DescribeNamespacesRequest,
@@ -89,6 +93,8 @@ export {
     DeleteBalanceParameterStatusByUserIdRequest,
     ReDrawBalanceParameterStatusByUserIdRequest,
     ReDrawBalanceParameterStatusByStampSheetRequest,
+    SetBalanceParameterStatusByUserIdRequest,
+    SetBalanceParameterStatusByStampSheetRequest,
     DescribeRarityParameterStatusesRequest,
     DescribeRarityParameterStatusesByUserIdRequest,
     GetRarityParameterStatusRequest,
@@ -101,4 +107,6 @@ export {
     VerifyRarityParameterStatusRequest,
     VerifyRarityParameterStatusByUserIdRequest,
     VerifyRarityParameterStatusByStampTaskRequest,
+    SetRarityParameterStatusByUserIdRequest,
+    SetRarityParameterStatusByStampSheetRequest,
 };

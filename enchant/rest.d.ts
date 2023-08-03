@@ -35,6 +35,8 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     deleteBalanceParameterStatusByUserId(request: Request.DeleteBalanceParameterStatusByUserIdRequest): Promise<Result.DeleteBalanceParameterStatusByUserIdResult>;
     reDrawBalanceParameterStatusByUserId(request: Request.ReDrawBalanceParameterStatusByUserIdRequest): Promise<Result.ReDrawBalanceParameterStatusByUserIdResult>;
     reDrawBalanceParameterStatusByStampSheet(request: Request.ReDrawBalanceParameterStatusByStampSheetRequest): Promise<Result.ReDrawBalanceParameterStatusByStampSheetResult>;
+    setBalanceParameterStatusByUserId(request: Request.SetBalanceParameterStatusByUserIdRequest): Promise<Result.SetBalanceParameterStatusByUserIdResult>;
+    setBalanceParameterStatusByStampSheet(request: Request.SetBalanceParameterStatusByStampSheetRequest): Promise<Result.SetBalanceParameterStatusByStampSheetResult>;
     describeRarityParameterStatuses(request: Request.DescribeRarityParameterStatusesRequest): Promise<Result.DescribeRarityParameterStatusesResult>;
     describeRarityParameterStatusesByUserId(request: Request.DescribeRarityParameterStatusesByUserIdRequest): Promise<Result.DescribeRarityParameterStatusesByUserIdResult>;
     getRarityParameterStatus(request: Request.GetRarityParameterStatusRequest): Promise<Result.GetRarityParameterStatusResult>;
@@ -47,4 +49,6 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     verifyRarityParameterStatus(request: Request.VerifyRarityParameterStatusRequest): Promise<Result.VerifyRarityParameterStatusResult>;
     verifyRarityParameterStatusByUserId(request: Request.VerifyRarityParameterStatusByUserIdRequest): Promise<Result.VerifyRarityParameterStatusByUserIdResult>;
     verifyRarityParameterStatusByStampTask(request: Request.VerifyRarityParameterStatusByStampTaskRequest): Promise<Result.VerifyRarityParameterStatusByStampTaskResult>;
+    setRarityParameterStatusByUserId(request: Request.SetRarityParameterStatusByUserIdRequest): Promise<Result.SetRarityParameterStatusByUserIdResult>;
+    setRarityParameterStatusByStampSheet(request: Request.SetRarityParameterStatusByStampSheetRequest): Promise<Result.SetRarityParameterStatusByStampSheetResult>;
 }

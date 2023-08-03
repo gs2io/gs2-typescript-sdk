@@ -948,6 +948,74 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public setBalanceParameterStatusByUserId(request: Request.SetBalanceParameterStatusByUserIdRequest): Promise<Result.SetBalanceParameterStatusByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}')
+            .replace('{service}', 'enchant')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{parameterName}', String(request.getParameterName() ?? 'null') === "" ? "null" : String(request.getParameterName() ?? 'null'))
+            .replace('{propertyId}', String(request.getPropertyId() ?? 'null') === "" ? "null" : String(request.getPropertyId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'parameterValues': request.getParameterValues()?.map((item) => item.toDict()) ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SetBalanceParameterStatusByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public setBalanceParameterStatusByStampSheet(request: Request.SetBalanceParameterStatusByStampSheetRequest): Promise<Result.SetBalanceParameterStatusByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/balance/set')
+            .replace('{service}', 'enchant')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SetBalanceParameterStatusByStampSheetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public describeRarityParameterStatuses(request: Request.DescribeRarityParameterStatusesRequest): Promise<Result.DescribeRarityParameterStatusesResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/rarity')
             .replace('{service}', 'enchant')
@@ -1340,6 +1408,74 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.VerifyRarityParameterStatusByStampTaskResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public setRarityParameterStatusByUserId(request: Request.SetRarityParameterStatusByUserIdRequest): Promise<Result.SetRarityParameterStatusByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}')
+            .replace('{service}', 'enchant')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{parameterName}', String(request.getParameterName() ?? 'null') === "" ? "null" : String(request.getParameterName() ?? 'null'))
+            .replace('{propertyId}', String(request.getPropertyId() ?? 'null') === "" ? "null" : String(request.getPropertyId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'parameterValues': request.getParameterValues()?.map((item) => item.toDict()) ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SetRarityParameterStatusByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public setRarityParameterStatusByStampSheet(request: Request.SetRarityParameterStatusByStampSheetRequest): Promise<Result.SetRarityParameterStatusByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/rarity/parameter/set')
+            .replace('{service}', 'enchant')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SetRarityParameterStatusByStampSheetResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

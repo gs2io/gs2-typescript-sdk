@@ -822,6 +822,66 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
             }
         });
     };
+    Gs2EnchantRestClient.prototype.setBalanceParameterStatusByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/balance/{parameterName}/{propertyId}')
+            .replace('{service}', 'enchant')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{parameterName}', String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{propertyId}', String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+        }
+        var body = {
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'parameterValues': (_m = (_l = request.getParameterValues()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
+        };
+        return axios_1.default.put(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.SetBalanceParameterStatusByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2EnchantRestClient.prototype.setBalanceParameterStatusByStampSheet = function (request) {
+        var _a, _b, _c;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/balance/set')
+            .replace('{service}', 'enchant')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
+            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.SetBalanceParameterStatusByStampSheetResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
     Gs2EnchantRestClient.prototype.describeRarityParameterStatuses = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/rarity')
@@ -1166,6 +1226,66 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
             headers: headers,
         }).then(function (response) {
             return Result.VerifyRarityParameterStatusByStampTaskResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2EnchantRestClient.prototype.setRarityParameterStatusByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}')
+            .replace('{service}', 'enchant')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{parameterName}', String((_e = request.getParameterName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getParameterName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{propertyId}', String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+        }
+        var body = {
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'parameterValues': (_m = (_l = request.getParameterValues()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
+        };
+        return axios_1.default.put(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.SetRarityParameterStatusByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2EnchantRestClient.prototype.setRarityParameterStatusByStampSheet = function (request) {
+        var _a, _b, _c;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/rarity/parameter/set')
+            .replace('{service}', 'enchant')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
+            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.SetRarityParameterStatusByStampSheetResult.fromDict(response.data);
         }).catch(function (error) {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);
