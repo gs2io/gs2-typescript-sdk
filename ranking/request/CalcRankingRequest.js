@@ -21,6 +21,7 @@ var CalcRankingRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.categoryName = null;
+        this.additionalScopeName = null;
     }
     CalcRankingRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -66,15 +67,28 @@ var CalcRankingRequest = /** @class */ (function () {
         this.categoryName = categoryName;
         return this;
     };
+    CalcRankingRequest.prototype.getAdditionalScopeName = function () {
+        return this.additionalScopeName;
+    };
+    CalcRankingRequest.prototype.setAdditionalScopeName = function (additionalScopeName) {
+        this.additionalScopeName = additionalScopeName;
+        return this;
+    };
+    CalcRankingRequest.prototype.withAdditionalScopeName = function (additionalScopeName) {
+        this.additionalScopeName = additionalScopeName;
+        return this;
+    };
     CalcRankingRequest.fromDict = function (data) {
         return new CalcRankingRequest()
             .withNamespaceName(data["namespaceName"])
-            .withCategoryName(data["categoryName"]);
+            .withCategoryName(data["categoryName"])
+            .withAdditionalScopeName(data["additionalScopeName"]);
     };
     CalcRankingRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "categoryName": this.getCategoryName(),
+            "additionalScopeName": this.getAdditionalScopeName(),
         };
     };
     return CalcRankingRequest;

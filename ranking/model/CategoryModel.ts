@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import Scope from './Scope';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:ranking:{namespaceName}:categoryModel:{categoryName}";
 
 export default class CategoryModel implements IModel {
@@ -30,6 +31,7 @@ export default class CategoryModel implements IModel {
     private calculateFixedTimingHour: number|null = null;
     private calculateFixedTimingMinute: number|null = null;
     private calculateIntervalMinutes: number|null = null;
+    private additionalScopes: Scope[]|null = null;
     private entryPeriodEventId: string|null = null;
     private accessPeriodEventId: string|null = null;
     private ignoreUserIds: string[]|null = null;
@@ -247,6 +249,17 @@ export default class CategoryModel implements IModel {
         this.calculateIntervalMinutes = calculateIntervalMinutes;
         return this;
     }
+    public getAdditionalScopes(): Scope[]|null {
+        return this.additionalScopes;
+    }
+    public setAdditionalScopes(additionalScopes: Scope[]|null) {
+        this.additionalScopes = additionalScopes;
+        return this;
+    }
+    public withAdditionalScopes(additionalScopes: Scope[]|null): this {
+        this.additionalScopes = additionalScopes;
+        return this;
+    }
     public getEntryPeriodEventId(): string|null {
         return this.entryPeriodEventId;
     }
@@ -309,6 +322,11 @@ export default class CategoryModel implements IModel {
             .withCalculateFixedTimingHour(data["calculateFixedTimingHour"])
             .withCalculateFixedTimingMinute(data["calculateFixedTimingMinute"])
             .withCalculateIntervalMinutes(data["calculateIntervalMinutes"])
+            .withAdditionalScopes(data.additionalScopes ?
+                data.additionalScopes.map((item: {[key: string]: any}) => {
+                    return Scope.fromDict(item);
+                }
+            ) : [])
             .withEntryPeriodEventId(data["entryPeriodEventId"])
             .withAccessPeriodEventId(data["accessPeriodEventId"])
             .withIgnoreUserIds(data.ignoreUserIds ?
@@ -333,6 +351,11 @@ export default class CategoryModel implements IModel {
             "calculateFixedTimingHour": this.getCalculateFixedTimingHour(),
             "calculateFixedTimingMinute": this.getCalculateFixedTimingMinute(),
             "calculateIntervalMinutes": this.getCalculateIntervalMinutes(),
+            "additionalScopes": this.getAdditionalScopes() ?
+                this.getAdditionalScopes()!.map((item: Scope) => {
+                    return item.toDict();
+                }
+            ) : [],
             "entryPeriodEventId": this.getEntryPeriodEventId(),
             "accessPeriodEventId": this.getAccessPeriodEventId(),
             "ignoreUserIds": this.getIgnoreUserIds() ?

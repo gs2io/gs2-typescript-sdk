@@ -1,4 +1,5 @@
 import IModel from '../../core/interface/IModel';
+import Scope from './Scope';
 export default class CategoryModelMaster implements IModel {
     private categoryModelId;
     private name;
@@ -13,6 +14,7 @@ export default class CategoryModelMaster implements IModel {
     private calculateFixedTimingHour;
     private calculateFixedTimingMinute;
     private calculateIntervalMinutes;
+    private additionalScopes;
     private entryPeriodEventId;
     private accessPeriodEventId;
     private ignoreUserIds;
@@ -64,6 +66,9 @@ export default class CategoryModelMaster implements IModel {
     getCalculateIntervalMinutes(): number | null;
     setCalculateIntervalMinutes(calculateIntervalMinutes: number | null): this;
     withCalculateIntervalMinutes(calculateIntervalMinutes: number | null): this;
+    getAdditionalScopes(): Scope[] | null;
+    setAdditionalScopes(additionalScopes: Scope[] | null): this;
+    withAdditionalScopes(additionalScopes: Scope[] | null): this;
     getEntryPeriodEventId(): string | null;
     setEntryPeriodEventId(entryPeriodEventId: string | null): this;
     withEntryPeriodEventId(entryPeriodEventId: string | null): this;

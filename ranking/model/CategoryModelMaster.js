@@ -15,6 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Scope_1 = tslib_1.__importDefault(require("./Scope"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:ranking:{namespaceName}:categoryModelMaster:{categoryName}";
 var CategoryModelMaster = /** @class */ (function () {
     function CategoryModelMaster() {
@@ -31,6 +33,7 @@ var CategoryModelMaster = /** @class */ (function () {
         this.calculateFixedTimingHour = null;
         this.calculateFixedTimingMinute = null;
         this.calculateIntervalMinutes = null;
+        this.additionalScopes = null;
         this.entryPeriodEventId = null;
         this.accessPeriodEventId = null;
         this.ignoreUserIds = null;
@@ -247,6 +250,17 @@ var CategoryModelMaster = /** @class */ (function () {
         this.calculateIntervalMinutes = calculateIntervalMinutes;
         return this;
     };
+    CategoryModelMaster.prototype.getAdditionalScopes = function () {
+        return this.additionalScopes;
+    };
+    CategoryModelMaster.prototype.setAdditionalScopes = function (additionalScopes) {
+        this.additionalScopes = additionalScopes;
+        return this;
+    };
+    CategoryModelMaster.prototype.withAdditionalScopes = function (additionalScopes) {
+        this.additionalScopes = additionalScopes;
+        return this;
+    };
     CategoryModelMaster.prototype.getEntryPeriodEventId = function () {
         return this.entryPeriodEventId;
     };
@@ -331,6 +345,10 @@ var CategoryModelMaster = /** @class */ (function () {
             .withCalculateFixedTimingHour(data["calculateFixedTimingHour"])
             .withCalculateFixedTimingMinute(data["calculateFixedTimingMinute"])
             .withCalculateIntervalMinutes(data["calculateIntervalMinutes"])
+            .withAdditionalScopes(data.additionalScopes ?
+            data.additionalScopes.map(function (item) {
+                return Scope_1.default.fromDict(item);
+            }) : [])
             .withEntryPeriodEventId(data["entryPeriodEventId"])
             .withAccessPeriodEventId(data["accessPeriodEventId"])
             .withIgnoreUserIds(data.ignoreUserIds ?
@@ -356,6 +374,10 @@ var CategoryModelMaster = /** @class */ (function () {
             "calculateFixedTimingHour": this.getCalculateFixedTimingHour(),
             "calculateFixedTimingMinute": this.getCalculateFixedTimingMinute(),
             "calculateIntervalMinutes": this.getCalculateIntervalMinutes(),
+            "additionalScopes": this.getAdditionalScopes() ?
+                this.getAdditionalScopes().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "entryPeriodEventId": this.getEntryPeriodEventId(),
             "accessPeriodEventId": this.getAccessPeriodEventId(),
             "ignoreUserIds": this.getIgnoreUserIds() ?

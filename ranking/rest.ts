@@ -301,6 +301,7 @@ export default class Gs2RankingRestClient extends AbstractGs2RestClient {
             'calculateFixedTimingHour': request.getCalculateFixedTimingHour() ?? null,
             'calculateFixedTimingMinute': request.getCalculateFixedTimingMinute() ?? null,
             'calculateIntervalMinutes': request.getCalculateIntervalMinutes() ?? null,
+            'additionalScopes': request.getAdditionalScopes()?.map((item) => item.toDict()) ?? null,
             'entryPeriodEventId': request.getEntryPeriodEventId() ?? null,
             'accessPeriodEventId': request.getAccessPeriodEventId() ?? null,
             'ignoreUserIds': request.getIgnoreUserIds() ?? null,
@@ -374,6 +375,7 @@ export default class Gs2RankingRestClient extends AbstractGs2RestClient {
             'calculateFixedTimingHour': request.getCalculateFixedTimingHour() ?? null,
             'calculateFixedTimingMinute': request.getCalculateFixedTimingMinute() ?? null,
             'calculateIntervalMinutes': request.getCalculateIntervalMinutes() ?? null,
+            'additionalScopes': request.getAdditionalScopes()?.map((item) => item.toDict()) ?? null,
             'entryPeriodEventId': request.getEntryPeriodEventId() ?? null,
             'accessPeriodEventId': request.getAccessPeriodEventId() ?? null,
             'ignoreUserIds': request.getIgnoreUserIds() ?? null,
@@ -639,6 +641,7 @@ export default class Gs2RankingRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'additionalScopeName': String(request.getAdditionalScopeName() ?? null),
             'startIndex': String(request.getStartIndex() ?? null),
             'pageToken': String(request.getPageToken() ?? null),
             'limit': String(request.getLimit() ?? null),
@@ -670,6 +673,7 @@ export default class Gs2RankingRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'additionalScopeName': String(request.getAdditionalScopeName() ?? null),
             'startIndex': String(request.getStartIndex() ?? null),
             'pageToken': String(request.getPageToken() ?? null),
             'limit': String(request.getLimit() ?? null),
@@ -700,6 +704,7 @@ export default class Gs2RankingRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'additionalScopeName': String(request.getAdditionalScopeName() ?? null),
             'score': String(request.getScore() ?? null),
         };
         return axios.get(
@@ -733,6 +738,7 @@ export default class Gs2RankingRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'additionalScopeName': String(request.getAdditionalScopeName() ?? null),
         };
         return axios.get(
             url,
@@ -763,6 +769,7 @@ export default class Gs2RankingRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'additionalScopeName': String(request.getAdditionalScopeName() ?? null),
         };
         return axios.get(
             url,
@@ -866,6 +873,7 @@ export default class Gs2RankingRestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'additionalScopeName': request.getAdditionalScopeName() ?? null,
         };
         return axios.post(
             url,

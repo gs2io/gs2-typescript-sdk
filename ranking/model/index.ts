@@ -19,6 +19,7 @@ import CategoryModelMaster from "./CategoryModelMaster"
 import Subscribe from "./Subscribe"
 import Score from "./Score"
 import Ranking from "./Ranking"
+import Scope from "./Scope"
 import CurrentRankingMaster from "./CurrentRankingMaster"
 import CalculatedAt from "./CalculatedAt"
 import SubscribeUser from "./SubscribeUser"
@@ -32,6 +33,7 @@ export {
     Subscribe,
     Score,
     Ranking,
+    Scope,
     CurrentRankingMaster,
     CalculatedAt,
     SubscribeUser,

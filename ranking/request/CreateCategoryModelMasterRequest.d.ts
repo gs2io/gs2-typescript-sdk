@@ -1,4 +1,5 @@
 import IRequest from '../../core/interface/IRequest';
+import * as Gs2Ranking from '../model';
 export default class CreateCategoryModelMasterRequest implements IRequest {
     private requestId;
     private contextStack;
@@ -15,6 +16,7 @@ export default class CreateCategoryModelMasterRequest implements IRequest {
     private calculateFixedTimingHour;
     private calculateFixedTimingMinute;
     private calculateIntervalMinutes;
+    private additionalScopes;
     private entryPeriodEventId;
     private accessPeriodEventId;
     private ignoreUserIds;
@@ -64,6 +66,9 @@ export default class CreateCategoryModelMasterRequest implements IRequest {
     getCalculateIntervalMinutes(): number | null;
     setCalculateIntervalMinutes(calculateIntervalMinutes: number | null): this;
     withCalculateIntervalMinutes(calculateIntervalMinutes: number | null): this;
+    getAdditionalScopes(): Gs2Ranking.Scope[] | null;
+    setAdditionalScopes(additionalScopes: Gs2Ranking.Scope[] | null): this;
+    withAdditionalScopes(additionalScopes: Gs2Ranking.Scope[] | null): this;
     getEntryPeriodEventId(): string | null;
     setEntryPeriodEventId(entryPeriodEventId: string | null): this;
     withEntryPeriodEventId(entryPeriodEventId: string | null): this;

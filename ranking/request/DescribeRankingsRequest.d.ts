@@ -5,6 +5,7 @@ export default class DescribeRankingsRequest implements IRequest {
     private namespaceName;
     private categoryName;
     private accessToken;
+    private additionalScopeName;
     private startIndex;
     private pageToken;
     private limit;
@@ -23,6 +24,9 @@ export default class DescribeRankingsRequest implements IRequest {
     getAccessToken(): string | null;
     setAccessToken(accessToken: string | null): this;
     withAccessToken(accessToken: string | null): this;
+    getAdditionalScopeName(): string | null;
+    setAdditionalScopeName(additionalScopeName: string | null): this;
+    withAdditionalScopeName(additionalScopeName: string | null): this;
     getStartIndex(): number | null;
     setStartIndex(startIndex: number | null): this;
     withStartIndex(startIndex: number | null): this;

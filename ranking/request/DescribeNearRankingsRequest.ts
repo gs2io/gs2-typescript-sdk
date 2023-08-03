@@ -24,6 +24,7 @@ export default class DescribeNearRankingsRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private categoryName: string|null = null;
+    private additionalScopeName: string|null = null;
     private score: number|null = null;
 
     public getRequestId(): string|null {
@@ -75,6 +76,17 @@ export default class DescribeNearRankingsRequest implements IRequest {
         this.categoryName = categoryName;
         return this;
     }
+    public getAdditionalScopeName(): string|null {
+        return this.additionalScopeName;
+    }
+    public setAdditionalScopeName(additionalScopeName: string|null) {
+        this.additionalScopeName = additionalScopeName;
+        return this;
+    }
+    public withAdditionalScopeName(additionalScopeName: string|null): this {
+        this.additionalScopeName = additionalScopeName;
+        return this;
+    }
     public getScore(): number|null {
         return this.score;
     }
@@ -91,6 +103,7 @@ export default class DescribeNearRankingsRequest implements IRequest {
         return new DescribeNearRankingsRequest()
             .withNamespaceName(data["namespaceName"])
             .withCategoryName(data["categoryName"])
+            .withAdditionalScopeName(data["additionalScopeName"])
             .withScore(data["score"]);
     }
 
@@ -98,6 +111,7 @@ export default class DescribeNearRankingsRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "categoryName": this.getCategoryName(),
+            "additionalScopeName": this.getAdditionalScopeName(),
             "score": this.getScore(),
         };
     }

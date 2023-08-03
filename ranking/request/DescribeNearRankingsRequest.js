@@ -21,6 +21,7 @@ var DescribeNearRankingsRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.categoryName = null;
+        this.additionalScopeName = null;
         this.score = null;
     }
     DescribeNearRankingsRequest.prototype.getRequestId = function () {
@@ -67,6 +68,17 @@ var DescribeNearRankingsRequest = /** @class */ (function () {
         this.categoryName = categoryName;
         return this;
     };
+    DescribeNearRankingsRequest.prototype.getAdditionalScopeName = function () {
+        return this.additionalScopeName;
+    };
+    DescribeNearRankingsRequest.prototype.setAdditionalScopeName = function (additionalScopeName) {
+        this.additionalScopeName = additionalScopeName;
+        return this;
+    };
+    DescribeNearRankingsRequest.prototype.withAdditionalScopeName = function (additionalScopeName) {
+        this.additionalScopeName = additionalScopeName;
+        return this;
+    };
     DescribeNearRankingsRequest.prototype.getScore = function () {
         return this.score;
     };
@@ -82,12 +94,14 @@ var DescribeNearRankingsRequest = /** @class */ (function () {
         return new DescribeNearRankingsRequest()
             .withNamespaceName(data["namespaceName"])
             .withCategoryName(data["categoryName"])
+            .withAdditionalScopeName(data["additionalScopeName"])
             .withScore(data["score"]);
     };
     DescribeNearRankingsRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "categoryName": this.getCategoryName(),
+            "additionalScopeName": this.getAdditionalScopeName(),
             "score": this.getScore(),
         };
     };

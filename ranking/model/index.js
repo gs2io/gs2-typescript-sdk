@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LogSetting = exports.GitHubCheckoutSetting = exports.SubscribeUser = exports.CalculatedAt = exports.CurrentRankingMaster = exports.Ranking = exports.Score = exports.Subscribe = exports.CategoryModelMaster = exports.CategoryModel = exports.Namespace = void 0;
+exports.LogSetting = exports.GitHubCheckoutSetting = exports.SubscribeUser = exports.CalculatedAt = exports.CurrentRankingMaster = exports.Scope = exports.Ranking = exports.Score = exports.Subscribe = exports.CategoryModelMaster = exports.CategoryModel = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,6 +29,8 @@ var Score_1 = tslib_1.__importDefault(require("./Score"));
 exports.Score = Score_1.default;
 var Ranking_1 = tslib_1.__importDefault(require("./Ranking"));
 exports.Ranking = Ranking_1.default;
+var Scope_1 = tslib_1.__importDefault(require("./Scope"));
+exports.Scope = Scope_1.default;
 var CurrentRankingMaster_1 = tslib_1.__importDefault(require("./CurrentRankingMaster"));
 exports.CurrentRankingMaster = CurrentRankingMaster_1.default;
 var CalculatedAt_1 = tslib_1.__importDefault(require("./CalculatedAt"));

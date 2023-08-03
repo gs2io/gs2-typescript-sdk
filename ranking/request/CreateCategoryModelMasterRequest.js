@@ -15,6 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Ranking = tslib_1.__importStar(require("../model"));
 var CreateCategoryModelMasterRequest = /** @class */ (function () {
     function CreateCategoryModelMasterRequest() {
         this.requestId = null;
@@ -32,6 +34,7 @@ var CreateCategoryModelMasterRequest = /** @class */ (function () {
         this.calculateFixedTimingHour = null;
         this.calculateFixedTimingMinute = null;
         this.calculateIntervalMinutes = null;
+        this.additionalScopes = null;
         this.entryPeriodEventId = null;
         this.accessPeriodEventId = null;
         this.ignoreUserIds = null;
@@ -202,6 +205,17 @@ var CreateCategoryModelMasterRequest = /** @class */ (function () {
         this.calculateIntervalMinutes = calculateIntervalMinutes;
         return this;
     };
+    CreateCategoryModelMasterRequest.prototype.getAdditionalScopes = function () {
+        return this.additionalScopes;
+    };
+    CreateCategoryModelMasterRequest.prototype.setAdditionalScopes = function (additionalScopes) {
+        this.additionalScopes = additionalScopes;
+        return this;
+    };
+    CreateCategoryModelMasterRequest.prototype.withAdditionalScopes = function (additionalScopes) {
+        this.additionalScopes = additionalScopes;
+        return this;
+    };
     CreateCategoryModelMasterRequest.prototype.getEntryPeriodEventId = function () {
         return this.entryPeriodEventId;
     };
@@ -261,6 +275,10 @@ var CreateCategoryModelMasterRequest = /** @class */ (function () {
             .withCalculateFixedTimingHour(data["calculateFixedTimingHour"])
             .withCalculateFixedTimingMinute(data["calculateFixedTimingMinute"])
             .withCalculateIntervalMinutes(data["calculateIntervalMinutes"])
+            .withAdditionalScopes(data.additionalScopes ?
+            data.additionalScopes.map(function (item) {
+                return Gs2Ranking.Scope.fromDict(item);
+            }) : [])
             .withEntryPeriodEventId(data["entryPeriodEventId"])
             .withAccessPeriodEventId(data["accessPeriodEventId"])
             .withIgnoreUserIds(data.ignoreUserIds ?
@@ -284,6 +302,10 @@ var CreateCategoryModelMasterRequest = /** @class */ (function () {
             "calculateFixedTimingHour": this.getCalculateFixedTimingHour(),
             "calculateFixedTimingMinute": this.getCalculateFixedTimingMinute(),
             "calculateIntervalMinutes": this.getCalculateIntervalMinutes(),
+            "additionalScopes": this.getAdditionalScopes() ?
+                this.getAdditionalScopes().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "entryPeriodEventId": this.getEntryPeriodEventId(),
             "accessPeriodEventId": this.getAccessPeriodEventId(),
             "ignoreUserIds": this.getIgnoreUserIds() ?

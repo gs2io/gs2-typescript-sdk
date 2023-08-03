@@ -4,6 +4,7 @@ export default class CalcRankingRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private categoryName;
+    private additionalScopeName;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -16,6 +17,9 @@ export default class CalcRankingRequest implements IRequest {
     getCategoryName(): string | null;
     setCategoryName(categoryName: string | null): this;
     withCategoryName(categoryName: string | null): this;
+    getAdditionalScopeName(): string | null;
+    setAdditionalScopeName(additionalScopeName: string | null): this;
+    withAdditionalScopeName(additionalScopeName: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CalcRankingRequest;

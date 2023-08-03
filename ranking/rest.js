@@ -240,7 +240,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2RankingRestClient.prototype.createCategoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/category')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
@@ -263,10 +263,11 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'calculateFixedTimingHour': (_o = request.getCalculateFixedTimingHour()) !== null && _o !== void 0 ? _o : null,
             'calculateFixedTimingMinute': (_p = request.getCalculateFixedTimingMinute()) !== null && _p !== void 0 ? _p : null,
             'calculateIntervalMinutes': (_q = request.getCalculateIntervalMinutes()) !== null && _q !== void 0 ? _q : null,
-            'entryPeriodEventId': (_r = request.getEntryPeriodEventId()) !== null && _r !== void 0 ? _r : null,
-            'accessPeriodEventId': (_s = request.getAccessPeriodEventId()) !== null && _s !== void 0 ? _s : null,
-            'ignoreUserIds': (_t = request.getIgnoreUserIds()) !== null && _t !== void 0 ? _t : null,
-            'generation': (_u = request.getGeneration()) !== null && _u !== void 0 ? _u : null,
+            'additionalScopes': (_s = (_r = request.getAdditionalScopes()) === null || _r === void 0 ? void 0 : _r.map(function (item) { return item.toDict(); })) !== null && _s !== void 0 ? _s : null,
+            'entryPeriodEventId': (_t = request.getEntryPeriodEventId()) !== null && _t !== void 0 ? _t : null,
+            'accessPeriodEventId': (_u = request.getAccessPeriodEventId()) !== null && _u !== void 0 ? _u : null,
+            'ignoreUserIds': (_v = request.getIgnoreUserIds()) !== null && _v !== void 0 ? _v : null,
+            'generation': (_w = request.getGeneration()) !== null && _w !== void 0 ? _w : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -305,7 +306,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2RankingRestClient.prototype.updateCategoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/category/{categoryName}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
@@ -328,10 +329,11 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'calculateFixedTimingHour': (_p = request.getCalculateFixedTimingHour()) !== null && _p !== void 0 ? _p : null,
             'calculateFixedTimingMinute': (_q = request.getCalculateFixedTimingMinute()) !== null && _q !== void 0 ? _q : null,
             'calculateIntervalMinutes': (_r = request.getCalculateIntervalMinutes()) !== null && _r !== void 0 ? _r : null,
-            'entryPeriodEventId': (_s = request.getEntryPeriodEventId()) !== null && _s !== void 0 ? _s : null,
-            'accessPeriodEventId': (_t = request.getAccessPeriodEventId()) !== null && _t !== void 0 ? _t : null,
-            'ignoreUserIds': (_u = request.getIgnoreUserIds()) !== null && _u !== void 0 ? _u : null,
-            'generation': (_v = request.getGeneration()) !== null && _v !== void 0 ? _v : null,
+            'additionalScopes': (_t = (_s = request.getAdditionalScopes()) === null || _s === void 0 ? void 0 : _s.map(function (item) { return item.toDict(); })) !== null && _t !== void 0 ? _t : null,
+            'entryPeriodEventId': (_u = request.getEntryPeriodEventId()) !== null && _u !== void 0 ? _u : null,
+            'accessPeriodEventId': (_v = request.getAccessPeriodEventId()) !== null && _v !== void 0 ? _v : null,
+            'ignoreUserIds': (_w = request.getIgnoreUserIds()) !== null && _w !== void 0 ? _w : null,
+            'generation': (_x = request.getGeneration()) !== null && _x !== void 0 ? _x : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -546,7 +548,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2RankingRestClient.prototype.describeRankings = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/category/{categoryName}/ranking')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
@@ -561,9 +563,10 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
-            'startIndex': String((_g = request.getStartIndex()) !== null && _g !== void 0 ? _g : null),
-            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
-            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
+            'additionalScopeName': String((_g = request.getAdditionalScopeName()) !== null && _g !== void 0 ? _g : null),
+            'startIndex': String((_h = request.getStartIndex()) !== null && _h !== void 0 ? _h : null),
+            'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
+            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -575,7 +578,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2RankingRestClient.prototype.describeRankingssByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/category/{categoryName}/ranking')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
@@ -588,9 +591,10 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'startIndex': String((_h = request.getStartIndex()) !== null && _h !== void 0 ? _h : null),
-            'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
-            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
+            'additionalScopeName': String((_h = request.getAdditionalScopeName()) !== null && _h !== void 0 ? _h : null),
+            'startIndex': String((_j = request.getStartIndex()) !== null && _j !== void 0 ? _j : null),
+            'pageToken': String((_k = request.getPageToken()) !== null && _k !== void 0 ? _k : null),
+            'limit': String((_l = request.getLimit()) !== null && _l !== void 0 ? _l : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -602,7 +606,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2RankingRestClient.prototype.describeNearRankings = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/category/{categoryName}/ranking/near')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
@@ -614,7 +618,8 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'score': String((_f = request.getScore()) !== null && _f !== void 0 ? _f : null),
+            'additionalScopeName': String((_f = request.getAdditionalScopeName()) !== null && _f !== void 0 ? _f : null),
+            'score': String((_g = request.getScore()) !== null && _g !== void 0 ? _g : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -626,7 +631,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2RankingRestClient.prototype.getRanking = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/category/{categoryName}/ranking/scorer/{scorerUserId}/score/{uniqueId}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
@@ -643,6 +648,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'additionalScopeName': String((_l = request.getAdditionalScopeName()) !== null && _l !== void 0 ? _l : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -654,7 +660,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2RankingRestClient.prototype.getRankingByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/category/{categoryName}/ranking/scorer/{scorerUserId}/score/{uniqueId}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
@@ -669,6 +675,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'additionalScopeName': String((_m = request.getAdditionalScopeName()) !== null && _m !== void 0 ? _m : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -748,7 +755,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2RankingRestClient.prototype.calcRanking = function (request) {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/category/{categoryName}/calc/ranking')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
@@ -760,6 +767,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         }
         var body = {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'additionalScopeName': (_f = request.getAdditionalScopeName()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

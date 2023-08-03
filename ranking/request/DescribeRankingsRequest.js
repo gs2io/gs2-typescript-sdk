@@ -22,6 +22,7 @@ var DescribeRankingsRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.categoryName = null;
         this.accessToken = null;
+        this.additionalScopeName = null;
         this.startIndex = null;
         this.pageToken = null;
         this.limit = null;
@@ -81,6 +82,17 @@ var DescribeRankingsRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
+    DescribeRankingsRequest.prototype.getAdditionalScopeName = function () {
+        return this.additionalScopeName;
+    };
+    DescribeRankingsRequest.prototype.setAdditionalScopeName = function (additionalScopeName) {
+        this.additionalScopeName = additionalScopeName;
+        return this;
+    };
+    DescribeRankingsRequest.prototype.withAdditionalScopeName = function (additionalScopeName) {
+        this.additionalScopeName = additionalScopeName;
+        return this;
+    };
     DescribeRankingsRequest.prototype.getStartIndex = function () {
         return this.startIndex;
     };
@@ -119,6 +131,7 @@ var DescribeRankingsRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withCategoryName(data["categoryName"])
             .withAccessToken(data["accessToken"])
+            .withAdditionalScopeName(data["additionalScopeName"])
             .withStartIndex(data["startIndex"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
@@ -128,6 +141,7 @@ var DescribeRankingsRequest = /** @class */ (function () {
             "namespaceName": this.getNamespaceName(),
             "categoryName": this.getCategoryName(),
             "accessToken": this.getAccessToken(),
+            "additionalScopeName": this.getAdditionalScopeName(),
             "startIndex": this.getStartIndex(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),

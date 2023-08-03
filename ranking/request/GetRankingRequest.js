@@ -24,6 +24,7 @@ var GetRankingRequest = /** @class */ (function () {
         this.accessToken = null;
         this.scorerUserId = null;
         this.uniqueId = null;
+        this.additionalScopeName = null;
     }
     GetRankingRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -102,13 +103,25 @@ var GetRankingRequest = /** @class */ (function () {
         this.uniqueId = uniqueId;
         return this;
     };
+    GetRankingRequest.prototype.getAdditionalScopeName = function () {
+        return this.additionalScopeName;
+    };
+    GetRankingRequest.prototype.setAdditionalScopeName = function (additionalScopeName) {
+        this.additionalScopeName = additionalScopeName;
+        return this;
+    };
+    GetRankingRequest.prototype.withAdditionalScopeName = function (additionalScopeName) {
+        this.additionalScopeName = additionalScopeName;
+        return this;
+    };
     GetRankingRequest.fromDict = function (data) {
         return new GetRankingRequest()
             .withNamespaceName(data["namespaceName"])
             .withCategoryName(data["categoryName"])
             .withAccessToken(data["accessToken"])
             .withScorerUserId(data["scorerUserId"])
-            .withUniqueId(data["uniqueId"]);
+            .withUniqueId(data["uniqueId"])
+            .withAdditionalScopeName(data["additionalScopeName"]);
     };
     GetRankingRequest.prototype.toDict = function () {
         return {
@@ -117,6 +130,7 @@ var GetRankingRequest = /** @class */ (function () {
             "accessToken": this.getAccessToken(),
             "scorerUserId": this.getScorerUserId(),
             "uniqueId": this.getUniqueId(),
+            "additionalScopeName": this.getAdditionalScopeName(),
         };
     };
     return GetRankingRequest;

@@ -24,6 +24,7 @@ export default class CalcRankingRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private categoryName: string|null = null;
+    private additionalScopeName: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -74,17 +75,30 @@ export default class CalcRankingRequest implements IRequest {
         this.categoryName = categoryName;
         return this;
     }
+    public getAdditionalScopeName(): string|null {
+        return this.additionalScopeName;
+    }
+    public setAdditionalScopeName(additionalScopeName: string|null) {
+        this.additionalScopeName = additionalScopeName;
+        return this;
+    }
+    public withAdditionalScopeName(additionalScopeName: string|null): this {
+        this.additionalScopeName = additionalScopeName;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): CalcRankingRequest {
         return new CalcRankingRequest()
             .withNamespaceName(data["namespaceName"])
-            .withCategoryName(data["categoryName"]);
+            .withCategoryName(data["categoryName"])
+            .withAdditionalScopeName(data["additionalScopeName"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
             "categoryName": this.getCategoryName(),
+            "additionalScopeName": this.getAdditionalScopeName(),
         };
     }
 }

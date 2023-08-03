@@ -27,6 +27,7 @@ export default class GetRankingRequest implements IRequest {
     private accessToken: string|null = null;
     private scorerUserId: string|null = null;
     private uniqueId: string|null = null;
+    private additionalScopeName: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -110,6 +111,17 @@ export default class GetRankingRequest implements IRequest {
         this.uniqueId = uniqueId;
         return this;
     }
+    public getAdditionalScopeName(): string|null {
+        return this.additionalScopeName;
+    }
+    public setAdditionalScopeName(additionalScopeName: string|null) {
+        this.additionalScopeName = additionalScopeName;
+        return this;
+    }
+    public withAdditionalScopeName(additionalScopeName: string|null): this {
+        this.additionalScopeName = additionalScopeName;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetRankingRequest {
         return new GetRankingRequest()
@@ -117,7 +129,8 @@ export default class GetRankingRequest implements IRequest {
             .withCategoryName(data["categoryName"])
             .withAccessToken(data["accessToken"])
             .withScorerUserId(data["scorerUserId"])
-            .withUniqueId(data["uniqueId"]);
+            .withUniqueId(data["uniqueId"])
+            .withAdditionalScopeName(data["additionalScopeName"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -127,6 +140,7 @@ export default class GetRankingRequest implements IRequest {
             "accessToken": this.getAccessToken(),
             "scorerUserId": this.getScorerUserId(),
             "uniqueId": this.getUniqueId(),
+            "additionalScopeName": this.getAdditionalScopeName(),
         };
     }
 }

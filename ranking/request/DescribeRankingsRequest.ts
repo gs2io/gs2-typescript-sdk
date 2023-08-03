@@ -25,6 +25,7 @@ export default class DescribeRankingsRequest implements IRequest {
     private namespaceName: string|null = null;
     private categoryName: string|null = null;
     private accessToken: string|null = null;
+    private additionalScopeName: string|null = null;
     private startIndex: number|null = null;
     private pageToken: string|null = null;
     private limit: number|null = null;
@@ -89,6 +90,17 @@ export default class DescribeRankingsRequest implements IRequest {
         this.accessToken = accessToken;
         return this;
     }
+    public getAdditionalScopeName(): string|null {
+        return this.additionalScopeName;
+    }
+    public setAdditionalScopeName(additionalScopeName: string|null) {
+        this.additionalScopeName = additionalScopeName;
+        return this;
+    }
+    public withAdditionalScopeName(additionalScopeName: string|null): this {
+        this.additionalScopeName = additionalScopeName;
+        return this;
+    }
     public getStartIndex(): number|null {
         return this.startIndex;
     }
@@ -128,6 +140,7 @@ export default class DescribeRankingsRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withCategoryName(data["categoryName"])
             .withAccessToken(data["accessToken"])
+            .withAdditionalScopeName(data["additionalScopeName"])
             .withStartIndex(data["startIndex"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
@@ -138,6 +151,7 @@ export default class DescribeRankingsRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "categoryName": this.getCategoryName(),
             "accessToken": this.getAccessToken(),
+            "additionalScopeName": this.getAdditionalScopeName(),
             "startIndex": this.getStartIndex(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),

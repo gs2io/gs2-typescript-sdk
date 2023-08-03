@@ -4,6 +4,7 @@ export default class DescribeNearRankingsRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private categoryName;
+    private additionalScopeName;
     private score;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -17,6 +18,9 @@ export default class DescribeNearRankingsRequest implements IRequest {
     getCategoryName(): string | null;
     setCategoryName(categoryName: string | null): this;
     withCategoryName(categoryName: string | null): this;
+    getAdditionalScopeName(): string | null;
+    setAdditionalScopeName(additionalScopeName: string | null): this;
+    withAdditionalScopeName(additionalScopeName: string | null): this;
     getScore(): number | null;
     setScore(score: number | null): this;
     withScore(score: number | null): this;
