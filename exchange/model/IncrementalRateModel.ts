@@ -29,6 +29,7 @@ export default class IncrementalRateModel implements IModel {
     private coefficientValue: number|null = null;
     private calculateScriptId: string|null = null;
     private exchangeCountId: string|null = null;
+    private maximumExchangeCount: number|null = null;
     private acquireActions: AcquireAction[]|null = null;
 
     public static getRegion(grn: string): string|null {
@@ -210,6 +211,17 @@ export default class IncrementalRateModel implements IModel {
         this.exchangeCountId = exchangeCountId;
         return this;
     }
+    public getMaximumExchangeCount(): number|null {
+        return this.maximumExchangeCount;
+    }
+    public setMaximumExchangeCount(maximumExchangeCount: number|null) {
+        this.maximumExchangeCount = maximumExchangeCount;
+        return this;
+    }
+    public withMaximumExchangeCount(maximumExchangeCount: number|null): this {
+        this.maximumExchangeCount = maximumExchangeCount;
+        return this;
+    }
     public getAcquireActions(): AcquireAction[]|null {
         return this.acquireActions;
     }
@@ -236,6 +248,7 @@ export default class IncrementalRateModel implements IModel {
             .withCoefficientValue(data["coefficientValue"])
             .withCalculateScriptId(data["calculateScriptId"])
             .withExchangeCountId(data["exchangeCountId"])
+            .withMaximumExchangeCount(data["maximumExchangeCount"])
             .withAcquireActions(data.acquireActions ?
                 data.acquireActions.map((item: {[key: string]: any}) => {
                     return AcquireAction.fromDict(item);
@@ -254,6 +267,7 @@ export default class IncrementalRateModel implements IModel {
             "coefficientValue": this.getCoefficientValue(),
             "calculateScriptId": this.getCalculateScriptId(),
             "exchangeCountId": this.getExchangeCountId(),
+            "maximumExchangeCount": this.getMaximumExchangeCount(),
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions()!.map((item: AcquireAction) => {
                     return item.toDict();

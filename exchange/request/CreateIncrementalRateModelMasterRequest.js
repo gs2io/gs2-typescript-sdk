@@ -31,6 +31,7 @@ var CreateIncrementalRateModelMasterRequest = /** @class */ (function () {
         this.coefficientValue = null;
         this.calculateScriptId = null;
         this.exchangeCountId = null;
+        this.maximumExchangeCount = null;
         this.acquireActions = null;
     }
     CreateIncrementalRateModelMasterRequest.prototype.getRequestId = function () {
@@ -165,6 +166,17 @@ var CreateIncrementalRateModelMasterRequest = /** @class */ (function () {
         this.exchangeCountId = exchangeCountId;
         return this;
     };
+    CreateIncrementalRateModelMasterRequest.prototype.getMaximumExchangeCount = function () {
+        return this.maximumExchangeCount;
+    };
+    CreateIncrementalRateModelMasterRequest.prototype.setMaximumExchangeCount = function (maximumExchangeCount) {
+        this.maximumExchangeCount = maximumExchangeCount;
+        return this;
+    };
+    CreateIncrementalRateModelMasterRequest.prototype.withMaximumExchangeCount = function (maximumExchangeCount) {
+        this.maximumExchangeCount = maximumExchangeCount;
+        return this;
+    };
     CreateIncrementalRateModelMasterRequest.prototype.getAcquireActions = function () {
         return this.acquireActions;
     };
@@ -188,6 +200,7 @@ var CreateIncrementalRateModelMasterRequest = /** @class */ (function () {
             .withCoefficientValue(data["coefficientValue"])
             .withCalculateScriptId(data["calculateScriptId"])
             .withExchangeCountId(data["exchangeCountId"])
+            .withMaximumExchangeCount(data["maximumExchangeCount"])
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
                 return Gs2Exchange.AcquireAction.fromDict(item);
@@ -206,6 +219,7 @@ var CreateIncrementalRateModelMasterRequest = /** @class */ (function () {
             "coefficientValue": this.getCoefficientValue(),
             "calculateScriptId": this.getCalculateScriptId(),
             "exchangeCountId": this.getExchangeCountId(),
+            "maximumExchangeCount": this.getMaximumExchangeCount(),
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();

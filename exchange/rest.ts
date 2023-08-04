@@ -523,6 +523,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
             'coefficientValue': request.getCoefficientValue() ?? null,
             'calculateScriptId': request.getCalculateScriptId() ?? null,
             'exchangeCountId': request.getExchangeCountId() ?? null,
+            'maximumExchangeCount': request.getMaximumExchangeCount() ?? null,
             'acquireActions': request.getAcquireActions()?.map((item) => item.toDict()) ?? null,
         };
         return axios.post(
@@ -590,6 +591,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
             'coefficientValue': request.getCoefficientValue() ?? null,
             'calculateScriptId': request.getCalculateScriptId() ?? null,
             'exchangeCountId': request.getExchangeCountId() ?? null,
+            'maximumExchangeCount': request.getMaximumExchangeCount() ?? null,
             'acquireActions': request.getAcquireActions()?.map((item) => item.toDict()) ?? null,
         };
         return axios.put(

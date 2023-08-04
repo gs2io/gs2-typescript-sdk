@@ -31,6 +31,7 @@ var IncrementalRateModelMaster = /** @class */ (function () {
         this.coefficientValue = null;
         this.calculateScriptId = null;
         this.exchangeCountId = null;
+        this.maximumExchangeCount = null;
         this.acquireActions = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -211,6 +212,17 @@ var IncrementalRateModelMaster = /** @class */ (function () {
         this.exchangeCountId = exchangeCountId;
         return this;
     };
+    IncrementalRateModelMaster.prototype.getMaximumExchangeCount = function () {
+        return this.maximumExchangeCount;
+    };
+    IncrementalRateModelMaster.prototype.setMaximumExchangeCount = function (maximumExchangeCount) {
+        this.maximumExchangeCount = maximumExchangeCount;
+        return this;
+    };
+    IncrementalRateModelMaster.prototype.withMaximumExchangeCount = function (maximumExchangeCount) {
+        this.maximumExchangeCount = maximumExchangeCount;
+        return this;
+    };
     IncrementalRateModelMaster.prototype.getAcquireActions = function () {
         return this.acquireActions;
     };
@@ -259,6 +271,7 @@ var IncrementalRateModelMaster = /** @class */ (function () {
             .withCoefficientValue(data["coefficientValue"])
             .withCalculateScriptId(data["calculateScriptId"])
             .withExchangeCountId(data["exchangeCountId"])
+            .withMaximumExchangeCount(data["maximumExchangeCount"])
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
                 return AcquireAction_1.default.fromDict(item);
@@ -279,6 +292,7 @@ var IncrementalRateModelMaster = /** @class */ (function () {
             "coefficientValue": this.getCoefficientValue(),
             "calculateScriptId": this.getCalculateScriptId(),
             "exchangeCountId": this.getExchangeCountId(),
+            "maximumExchangeCount": this.getMaximumExchangeCount(),
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();

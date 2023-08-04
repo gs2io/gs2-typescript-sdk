@@ -11,6 +11,7 @@ export default class IncrementalRateModel implements IModel {
     private coefficientValue;
     private calculateScriptId;
     private exchangeCountId;
+    private maximumExchangeCount;
     private acquireActions;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
@@ -45,6 +46,9 @@ export default class IncrementalRateModel implements IModel {
     getExchangeCountId(): string | null;
     setExchangeCountId(exchangeCountId: string | null): this;
     withExchangeCountId(exchangeCountId: string | null): this;
+    getMaximumExchangeCount(): number | null;
+    setMaximumExchangeCount(maximumExchangeCount: number | null): this;
+    withMaximumExchangeCount(maximumExchangeCount: number | null): this;
     getAcquireActions(): AcquireAction[] | null;
     setAcquireActions(acquireActions: AcquireAction[] | null): this;
     withAcquireActions(acquireActions: AcquireAction[] | null): this;

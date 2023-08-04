@@ -13,6 +13,7 @@ export default class CreateIncrementalRateModelMasterRequest implements IRequest
     private coefficientValue;
     private calculateScriptId;
     private exchangeCountId;
+    private maximumExchangeCount;
     private acquireActions;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -50,6 +51,9 @@ export default class CreateIncrementalRateModelMasterRequest implements IRequest
     getExchangeCountId(): string | null;
     setExchangeCountId(exchangeCountId: string | null): this;
     withExchangeCountId(exchangeCountId: string | null): this;
+    getMaximumExchangeCount(): number | null;
+    setMaximumExchangeCount(maximumExchangeCount: number | null): this;
+    withMaximumExchangeCount(maximumExchangeCount: number | null): this;
     getAcquireActions(): Gs2Exchange.AcquireAction[] | null;
     setAcquireActions(acquireActions: Gs2Exchange.AcquireAction[] | null): this;
     withAcquireActions(acquireActions: Gs2Exchange.AcquireAction[] | null): this;

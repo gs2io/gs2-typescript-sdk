@@ -32,6 +32,7 @@ export default class UpdateIncrementalRateModelMasterRequest implements IRequest
     private coefficientValue: number|null = null;
     private calculateScriptId: string|null = null;
     private exchangeCountId: string|null = null;
+    private maximumExchangeCount: number|null = null;
     private acquireActions: Gs2Exchange.AcquireAction[]|null = null;
 
     public getRequestId(): string|null {
@@ -171,6 +172,17 @@ export default class UpdateIncrementalRateModelMasterRequest implements IRequest
         this.exchangeCountId = exchangeCountId;
         return this;
     }
+    public getMaximumExchangeCount(): number|null {
+        return this.maximumExchangeCount;
+    }
+    public setMaximumExchangeCount(maximumExchangeCount: number|null) {
+        this.maximumExchangeCount = maximumExchangeCount;
+        return this;
+    }
+    public withMaximumExchangeCount(maximumExchangeCount: number|null): this {
+        this.maximumExchangeCount = maximumExchangeCount;
+        return this;
+    }
     public getAcquireActions(): Gs2Exchange.AcquireAction[]|null {
         return this.acquireActions;
     }
@@ -195,6 +207,7 @@ export default class UpdateIncrementalRateModelMasterRequest implements IRequest
             .withCoefficientValue(data["coefficientValue"])
             .withCalculateScriptId(data["calculateScriptId"])
             .withExchangeCountId(data["exchangeCountId"])
+            .withMaximumExchangeCount(data["maximumExchangeCount"])
             .withAcquireActions(data.acquireActions ?
                 data.acquireActions.map((item: {[key: string]: any}) => {
                     return Gs2Exchange.AcquireAction.fromDict(item);
@@ -214,6 +227,7 @@ export default class UpdateIncrementalRateModelMasterRequest implements IRequest
             "coefficientValue": this.getCoefficientValue(),
             "calculateScriptId": this.getCalculateScriptId(),
             "exchangeCountId": this.getExchangeCountId(),
+            "maximumExchangeCount": this.getMaximumExchangeCount(),
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions()!.map((item: Gs2Exchange.AcquireAction) => {
                     return item.toDict();

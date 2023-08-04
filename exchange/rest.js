@@ -437,7 +437,7 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExchangeRestClient.prototype.createIncrementalRateModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/incremental/master/model')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
@@ -457,7 +457,8 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
             'coefficientValue': (_l = request.getCoefficientValue()) !== null && _l !== void 0 ? _l : null,
             'calculateScriptId': (_m = request.getCalculateScriptId()) !== null && _m !== void 0 ? _m : null,
             'exchangeCountId': (_o = request.getExchangeCountId()) !== null && _o !== void 0 ? _o : null,
-            'acquireActions': (_q = (_p = request.getAcquireActions()) === null || _p === void 0 ? void 0 : _p.map(function (item) { return item.toDict(); })) !== null && _q !== void 0 ? _q : null,
+            'maximumExchangeCount': (_p = request.getMaximumExchangeCount()) !== null && _p !== void 0 ? _p : null,
+            'acquireActions': (_r = (_q = request.getAcquireActions()) === null || _q === void 0 ? void 0 : _q.map(function (item) { return item.toDict(); })) !== null && _r !== void 0 ? _r : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -496,7 +497,7 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExchangeRestClient.prototype.updateIncrementalRateModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/incremental/master/model/{rateName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
@@ -516,7 +517,8 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
             'coefficientValue': (_m = request.getCoefficientValue()) !== null && _m !== void 0 ? _m : null,
             'calculateScriptId': (_o = request.getCalculateScriptId()) !== null && _o !== void 0 ? _o : null,
             'exchangeCountId': (_p = request.getExchangeCountId()) !== null && _p !== void 0 ? _p : null,
-            'acquireActions': (_r = (_q = request.getAcquireActions()) === null || _q === void 0 ? void 0 : _q.map(function (item) { return item.toDict(); })) !== null && _r !== void 0 ? _r : null,
+            'maximumExchangeCount': (_q = request.getMaximumExchangeCount()) !== null && _q !== void 0 ? _q : null,
+            'acquireActions': (_s = (_r = request.getAcquireActions()) === null || _r === void 0 ? void 0 : _r.map(function (item) { return item.toDict(); })) !== null && _s !== void 0 ? _s : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
