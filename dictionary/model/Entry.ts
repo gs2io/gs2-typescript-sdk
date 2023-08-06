@@ -15,7 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:dictionary:{namespaceName}:user:{userId}:entry:{entryModelName}";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:dictionary:{namespaceName}:user:{userId}:entry:{entryName}";
 
 export default class Entry implements IModel {
     private entryId: string|null = null;
@@ -29,7 +29,7 @@ export default class Entry implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{entryModelName}', '.*')
+            .replace('{entryName}', '.*')
         );
         if (match) {
             return match[1];
@@ -43,7 +43,7 @@ export default class Entry implements IModel {
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{entryModelName}', '.*')
+            .replace('{entryName}', '.*')
         );
         if (match) {
             return match[1];
@@ -57,7 +57,7 @@ export default class Entry implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
             .replace('{userId}', '.*')
-            .replace('{entryModelName}', '.*')
+            .replace('{entryName}', '.*')
         );
         if (match) {
             return match[1];
@@ -71,7 +71,7 @@ export default class Entry implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '(.*)')
-            .replace('{entryModelName}', '.*')
+            .replace('{entryName}', '.*')
         );
         if (match) {
             return match[1];
@@ -79,13 +79,13 @@ export default class Entry implements IModel {
         return null;
     }
 
-    public static getEntryModelName(grn: string): string|null {
+    public static getEntryName(grn: string): string|null {
         const match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{entryModelName}', '(.*)')
+            .replace('{entryName}', '(.*)')
         );
         if (match) {
             return match[1];
@@ -106,7 +106,7 @@ export default class Entry implements IModel {
         if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
             return false;
         }
-        if (this.getEntryModelName(grn) == null || this.getEntryModelName(grn) === '') {
+        if (this.getEntryName(grn) == null || this.getEntryName(grn) === '') {
             return false;
         }
         return true;
@@ -117,14 +117,14 @@ export default class Entry implements IModel {
         ownerId: string|null,
         namespaceName: string|null,
         userId: string|null,
-        entryModelName: string|null,
+        entryName: string|null,
     ): string|null {
         return grnFormat
             .replace('{region}', region ?? '')
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{userId}', userId ?? '')
-            .replace('{entryModelName}', entryModelName ?? '');
+            .replace('{entryName}', entryName ?? '');
     }
     public getEntryId(): string|null {
         return this.entryId;
