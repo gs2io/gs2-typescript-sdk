@@ -15,92 +15,13 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var grnFormat = "grn:gs2:{region}:{ownerId}:stamina:{namespaceName}:maxStaminaTable:{maxStaminaTableName}";
 var MaxStaminaTable = /** @class */ (function () {
     function MaxStaminaTable() {
-        this.maxStaminaTableId = null;
         this.name = null;
         this.metadata = null;
         this.experienceModelId = null;
         this.values = null;
     }
-    MaxStaminaTable.getRegion = function (grn) {
-        var match = grn.match(grnFormat
-            .replace('{region}', '(.*)')
-            .replace('{ownerId}', '.*')
-            .replace('{namespaceName}', '.*')
-            .replace('{maxStaminaTableName}', '.*'));
-        if (match) {
-            return match[1];
-        }
-        return null;
-    };
-    MaxStaminaTable.getOwnerId = function (grn) {
-        var match = grn.match(grnFormat
-            .replace('{region}', '.*')
-            .replace('{ownerId}', '(.*)')
-            .replace('{namespaceName}', '.*')
-            .replace('{maxStaminaTableName}', '.*'));
-        if (match) {
-            return match[1];
-        }
-        return null;
-    };
-    MaxStaminaTable.getNamespaceName = function (grn) {
-        var match = grn.match(grnFormat
-            .replace('{region}', '.*')
-            .replace('{ownerId}', '.*')
-            .replace('{namespaceName}', '(.*)')
-            .replace('{maxStaminaTableName}', '.*'));
-        if (match) {
-            return match[1];
-        }
-        return null;
-    };
-    MaxStaminaTable.getMaxStaminaTableName = function (grn) {
-        var match = grn.match(grnFormat
-            .replace('{region}', '.*')
-            .replace('{ownerId}', '.*')
-            .replace('{namespaceName}', '.*')
-            .replace('{maxStaminaTableName}', '(.*)'));
-        if (match) {
-            return match[1];
-        }
-        return null;
-    };
-    MaxStaminaTable.isValid = function (grn) {
-        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
-            return false;
-        }
-        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
-            return false;
-        }
-        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
-            return false;
-        }
-        if (this.getMaxStaminaTableName(grn) == null || this.getMaxStaminaTableName(grn) === '') {
-            return false;
-        }
-        return true;
-    };
-    MaxStaminaTable.createGrn = function (region, ownerId, namespaceName, maxStaminaTableName) {
-        return grnFormat
-            .replace('{region}', region !== null && region !== void 0 ? region : '')
-            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
-            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
-            .replace('{maxStaminaTableName}', maxStaminaTableName !== null && maxStaminaTableName !== void 0 ? maxStaminaTableName : '');
-    };
-    MaxStaminaTable.prototype.getMaxStaminaTableId = function () {
-        return this.maxStaminaTableId;
-    };
-    MaxStaminaTable.prototype.setMaxStaminaTableId = function (maxStaminaTableId) {
-        this.maxStaminaTableId = maxStaminaTableId;
-        return this;
-    };
-    MaxStaminaTable.prototype.withMaxStaminaTableId = function (maxStaminaTableId) {
-        this.maxStaminaTableId = maxStaminaTableId;
-        return this;
-    };
     MaxStaminaTable.prototype.getName = function () {
         return this.name;
     };
@@ -150,7 +71,6 @@ var MaxStaminaTable = /** @class */ (function () {
             return null;
         }
         return new MaxStaminaTable()
-            .withMaxStaminaTableId(data["maxStaminaTableId"])
             .withName(data["name"])
             .withMetadata(data["metadata"])
             .withExperienceModelId(data["experienceModelId"])
@@ -161,7 +81,6 @@ var MaxStaminaTable = /** @class */ (function () {
     };
     MaxStaminaTable.prototype.toDict = function () {
         return {
-            "maxStaminaTableId": this.getMaxStaminaTableId(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "experienceModelId": this.getExperienceModelId(),

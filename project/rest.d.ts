@@ -18,6 +18,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     getProjectTokenByIdentifier(request: Request.GetProjectTokenByIdentifierRequest): Promise<Result.GetProjectTokenByIdentifierResult>;
     updateProject(request: Request.UpdateProjectRequest): Promise<Result.UpdateProjectResult>;
     activateRegion(request: Request.ActivateRegionRequest): Promise<Result.ActivateRegionResult>;
+    waitActivateRegion(request: Request.WaitActivateRegionRequest): Promise<Result.WaitActivateRegionResult>;
     deleteProject(request: Request.DeleteProjectRequest): Promise<Result.DeleteProjectResult>;
     describeBillingMethods(request: Request.DescribeBillingMethodsRequest): Promise<Result.DescribeBillingMethodsResult>;
     createBillingMethod(request: Request.CreateBillingMethodRequest): Promise<Result.CreateBillingMethodResult>;

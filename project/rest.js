@@ -411,6 +411,33 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             }
         });
     };
+    Gs2ProjectRestClient.prototype.waitActivateRegion = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}/region/{regionName}/activate/wait')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region)
+            .replace('{projectName}', String((_a = request.getProjectName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getProjectName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{regionName}', String((_c = request.getRegionName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getRegionName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+        };
+        return axios_1.default.put(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.WaitActivateRegionResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
     Gs2ProjectRestClient.prototype.deleteProject = function (request) {
         var _a, _b, _c, _d;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}')

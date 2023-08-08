@@ -15,92 +15,13 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var grnFormat = "grn:gs2:{region}:{ownerId}:stamina:{namespaceName}:recoverValueTable:{recoverValueTableName}";
 var RecoverValueTable = /** @class */ (function () {
     function RecoverValueTable() {
-        this.recoverValueTableId = null;
         this.name = null;
         this.metadata = null;
         this.experienceModelId = null;
         this.values = null;
     }
-    RecoverValueTable.getRegion = function (grn) {
-        var match = grn.match(grnFormat
-            .replace('{region}', '(.*)')
-            .replace('{ownerId}', '.*')
-            .replace('{namespaceName}', '.*')
-            .replace('{recoverValueTableName}', '.*'));
-        if (match) {
-            return match[1];
-        }
-        return null;
-    };
-    RecoverValueTable.getOwnerId = function (grn) {
-        var match = grn.match(grnFormat
-            .replace('{region}', '.*')
-            .replace('{ownerId}', '(.*)')
-            .replace('{namespaceName}', '.*')
-            .replace('{recoverValueTableName}', '.*'));
-        if (match) {
-            return match[1];
-        }
-        return null;
-    };
-    RecoverValueTable.getNamespaceName = function (grn) {
-        var match = grn.match(grnFormat
-            .replace('{region}', '.*')
-            .replace('{ownerId}', '.*')
-            .replace('{namespaceName}', '(.*)')
-            .replace('{recoverValueTableName}', '.*'));
-        if (match) {
-            return match[1];
-        }
-        return null;
-    };
-    RecoverValueTable.getRecoverValueTableName = function (grn) {
-        var match = grn.match(grnFormat
-            .replace('{region}', '.*')
-            .replace('{ownerId}', '.*')
-            .replace('{namespaceName}', '.*')
-            .replace('{recoverValueTableName}', '(.*)'));
-        if (match) {
-            return match[1];
-        }
-        return null;
-    };
-    RecoverValueTable.isValid = function (grn) {
-        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
-            return false;
-        }
-        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
-            return false;
-        }
-        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
-            return false;
-        }
-        if (this.getRecoverValueTableName(grn) == null || this.getRecoverValueTableName(grn) === '') {
-            return false;
-        }
-        return true;
-    };
-    RecoverValueTable.createGrn = function (region, ownerId, namespaceName, recoverValueTableName) {
-        return grnFormat
-            .replace('{region}', region !== null && region !== void 0 ? region : '')
-            .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
-            .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
-            .replace('{recoverValueTableName}', recoverValueTableName !== null && recoverValueTableName !== void 0 ? recoverValueTableName : '');
-    };
-    RecoverValueTable.prototype.getRecoverValueTableId = function () {
-        return this.recoverValueTableId;
-    };
-    RecoverValueTable.prototype.setRecoverValueTableId = function (recoverValueTableId) {
-        this.recoverValueTableId = recoverValueTableId;
-        return this;
-    };
-    RecoverValueTable.prototype.withRecoverValueTableId = function (recoverValueTableId) {
-        this.recoverValueTableId = recoverValueTableId;
-        return this;
-    };
     RecoverValueTable.prototype.getName = function () {
         return this.name;
     };
@@ -150,7 +71,6 @@ var RecoverValueTable = /** @class */ (function () {
             return null;
         }
         return new RecoverValueTable()
-            .withRecoverValueTableId(data["recoverValueTableId"])
             .withName(data["name"])
             .withMetadata(data["metadata"])
             .withExperienceModelId(data["experienceModelId"])
@@ -161,7 +81,6 @@ var RecoverValueTable = /** @class */ (function () {
     };
     RecoverValueTable.prototype.toDict = function () {
         return {
-            "recoverValueTableId": this.getRecoverValueTableId(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "experienceModelId": this.getExperienceModelId(),

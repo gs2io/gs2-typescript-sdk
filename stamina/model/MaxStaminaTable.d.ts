@@ -1,19 +1,9 @@
 import IModel from '../../core/interface/IModel';
 export default class MaxStaminaTable implements IModel {
-    private maxStaminaTableId;
     private name;
     private metadata;
     private experienceModelId;
     private values;
-    static getRegion(grn: string): string | null;
-    static getOwnerId(grn: string): string | null;
-    static getNamespaceName(grn: string): string | null;
-    static getMaxStaminaTableName(grn: string): string | null;
-    static isValid(grn: string): boolean;
-    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, maxStaminaTableName: string | null): string | null;
-    getMaxStaminaTableId(): string | null;
-    setMaxStaminaTableId(maxStaminaTableId: string | null): this;
-    withMaxStaminaTableId(maxStaminaTableId: string | null): this;
     getName(): string | null;
     setName(name: string | null): this;
     withName(name: string | null): this;

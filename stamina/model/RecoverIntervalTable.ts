@@ -15,106 +15,12 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:stamina:{namespaceName}:recoverIntervalTable:{recoverIntervalTableName}";
 
 export default class RecoverIntervalTable implements IModel {
-    private recoverIntervalTableId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;
     private experienceModelId: string|null = null;
     private values: number[]|null = null;
-
-    public static getRegion(grn: string): string|null {
-        const match = grn.match(grnFormat
-            .replace('{region}', '(.*)')
-            .replace('{ownerId}', '.*')
-            .replace('{namespaceName}', '.*')
-            .replace('{recoverIntervalTableName}', '.*')
-        );
-        if (match) {
-            return match[1];
-        }
-        return null;
-    }
-
-    public static getOwnerId(grn: string): string|null {
-        const match = grn.match(grnFormat
-            .replace('{region}', '.*')
-            .replace('{ownerId}', '(.*)')
-            .replace('{namespaceName}', '.*')
-            .replace('{recoverIntervalTableName}', '.*')
-        );
-        if (match) {
-            return match[1];
-        }
-        return null;
-    }
-
-    public static getNamespaceName(grn: string): string|null {
-        const match = grn.match(grnFormat
-            .replace('{region}', '.*')
-            .replace('{ownerId}', '.*')
-            .replace('{namespaceName}', '(.*)')
-            .replace('{recoverIntervalTableName}', '.*')
-        );
-        if (match) {
-            return match[1];
-        }
-        return null;
-    }
-
-    public static getRecoverIntervalTableName(grn: string): string|null {
-        const match = grn.match(grnFormat
-            .replace('{region}', '.*')
-            .replace('{ownerId}', '.*')
-            .replace('{namespaceName}', '.*')
-            .replace('{recoverIntervalTableName}', '(.*)')
-        );
-        if (match) {
-            return match[1];
-        }
-        return null;
-    }
-
-    public static isValid(grn: string): boolean {
-        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
-            return false;
-        }
-        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
-            return false;
-        }
-        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
-            return false;
-        }
-        if (this.getRecoverIntervalTableName(grn) == null || this.getRecoverIntervalTableName(grn) === '') {
-            return false;
-        }
-        return true;
-    }
-
-    public static createGrn(
-        region: string|null,
-        ownerId: string|null,
-        namespaceName: string|null,
-        recoverIntervalTableName: string|null,
-    ): string|null {
-        return grnFormat
-            .replace('{region}', region ?? '')
-            .replace('{ownerId}', ownerId ?? '')
-            .replace('{namespaceName}', namespaceName ?? '')
-            .replace('{recoverIntervalTableName}', recoverIntervalTableName ?? '');
-    }
-    public getRecoverIntervalTableId(): string|null {
-        return this.recoverIntervalTableId;
-    }
-    public setRecoverIntervalTableId(recoverIntervalTableId: string|null) {
-        this.recoverIntervalTableId = recoverIntervalTableId;
-        return this;
-    }
-    public withRecoverIntervalTableId(recoverIntervalTableId: string|null): this {
-        this.recoverIntervalTableId = recoverIntervalTableId;
-        return this;
-    }
     public getName(): string|null {
         return this.name;
     }
@@ -165,7 +71,6 @@ export default class RecoverIntervalTable implements IModel {
             return null;
         }
         return new RecoverIntervalTable()
-            .withRecoverIntervalTableId(data["recoverIntervalTableId"])
             .withName(data["name"])
             .withMetadata(data["metadata"])
             .withExperienceModelId(data["experienceModelId"])
@@ -178,7 +83,6 @@ export default class RecoverIntervalTable implements IModel {
 
     public toDict(): {[key: string]: any} {
         return {
-            "recoverIntervalTableId": this.getRecoverIntervalTableId(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "experienceModelId": this.getExperienceModelId(),

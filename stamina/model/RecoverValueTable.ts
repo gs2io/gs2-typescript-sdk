@@ -15,106 +15,12 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:stamina:{namespaceName}:recoverValueTable:{recoverValueTableName}";
 
 export default class RecoverValueTable implements IModel {
-    private recoverValueTableId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;
     private experienceModelId: string|null = null;
     private values: number[]|null = null;
-
-    public static getRegion(grn: string): string|null {
-        const match = grn.match(grnFormat
-            .replace('{region}', '(.*)')
-            .replace('{ownerId}', '.*')
-            .replace('{namespaceName}', '.*')
-            .replace('{recoverValueTableName}', '.*')
-        );
-        if (match) {
-            return match[1];
-        }
-        return null;
-    }
-
-    public static getOwnerId(grn: string): string|null {
-        const match = grn.match(grnFormat
-            .replace('{region}', '.*')
-            .replace('{ownerId}', '(.*)')
-            .replace('{namespaceName}', '.*')
-            .replace('{recoverValueTableName}', '.*')
-        );
-        if (match) {
-            return match[1];
-        }
-        return null;
-    }
-
-    public static getNamespaceName(grn: string): string|null {
-        const match = grn.match(grnFormat
-            .replace('{region}', '.*')
-            .replace('{ownerId}', '.*')
-            .replace('{namespaceName}', '(.*)')
-            .replace('{recoverValueTableName}', '.*')
-        );
-        if (match) {
-            return match[1];
-        }
-        return null;
-    }
-
-    public static getRecoverValueTableName(grn: string): string|null {
-        const match = grn.match(grnFormat
-            .replace('{region}', '.*')
-            .replace('{ownerId}', '.*')
-            .replace('{namespaceName}', '.*')
-            .replace('{recoverValueTableName}', '(.*)')
-        );
-        if (match) {
-            return match[1];
-        }
-        return null;
-    }
-
-    public static isValid(grn: string): boolean {
-        if (this.getRegion(grn) == null || this.getRegion(grn) === '') {
-            return false;
-        }
-        if (this.getOwnerId(grn) == null || this.getOwnerId(grn) === '') {
-            return false;
-        }
-        if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
-            return false;
-        }
-        if (this.getRecoverValueTableName(grn) == null || this.getRecoverValueTableName(grn) === '') {
-            return false;
-        }
-        return true;
-    }
-
-    public static createGrn(
-        region: string|null,
-        ownerId: string|null,
-        namespaceName: string|null,
-        recoverValueTableName: string|null,
-    ): string|null {
-        return grnFormat
-            .replace('{region}', region ?? '')
-            .replace('{ownerId}', ownerId ?? '')
-            .replace('{namespaceName}', namespaceName ?? '')
-            .replace('{recoverValueTableName}', recoverValueTableName ?? '');
-    }
-    public getRecoverValueTableId(): string|null {
-        return this.recoverValueTableId;
-    }
-    public setRecoverValueTableId(recoverValueTableId: string|null) {
-        this.recoverValueTableId = recoverValueTableId;
-        return this;
-    }
-    public withRecoverValueTableId(recoverValueTableId: string|null): this {
-        this.recoverValueTableId = recoverValueTableId;
-        return this;
-    }
     public getName(): string|null {
         return this.name;
     }
@@ -165,7 +71,6 @@ export default class RecoverValueTable implements IModel {
             return null;
         }
         return new RecoverValueTable()
-            .withRecoverValueTableId(data["recoverValueTableId"])
             .withName(data["name"])
             .withMetadata(data["metadata"])
             .withExperienceModelId(data["experienceModelId"])
@@ -178,7 +83,6 @@ export default class RecoverValueTable implements IModel {
 
     public toDict(): {[key: string]: any} {
         return {
-            "recoverValueTableId": this.getRecoverValueTableId(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "experienceModelId": this.getExperienceModelId(),

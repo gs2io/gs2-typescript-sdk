@@ -469,6 +469,37 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public waitActivateRegion(request: Request.WaitActivateRegionRequest): Promise<Result.WaitActivateRegionResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}/region/{regionName}/activate/wait')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region)
+            .replace('{projectName}', String(request.getProjectName() ?? 'null') === "" ? "null" : String(request.getProjectName() ?? 'null'))
+            .replace('{regionName}', String(request.getRegionName() ?? 'null') === "" ? "null" : String(request.getRegionName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.WaitActivateRegionResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public deleteProject(request: Request.DeleteProjectRequest): Promise<Result.DeleteProjectResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/{projectName}')
             .replace('{service}', 'project')

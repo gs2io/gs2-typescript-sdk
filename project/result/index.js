@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DescribeBillingsResult = exports.DescribeReceiptsResult = exports.DeleteBillingMethodResult = exports.UpdateBillingMethodResult = exports.GetBillingMethodResult = exports.CreateBillingMethodResult = exports.DescribeBillingMethodsResult = exports.DeleteProjectResult = exports.ActivateRegionResult = exports.UpdateProjectResult = exports.GetProjectTokenByIdentifierResult = exports.GetProjectTokenResult = exports.GetProjectResult = exports.CreateProjectResult = exports.DescribeProjectsResult = exports.DeleteAccountResult = exports.UpdateAccountResult = exports.IssuePasswordResult = exports.ForgetResult = exports.SignInResult = exports.VerifyResult = exports.CreateAccountResult = void 0;
+exports.DescribeBillingsResult = exports.DescribeReceiptsResult = exports.DeleteBillingMethodResult = exports.UpdateBillingMethodResult = exports.GetBillingMethodResult = exports.CreateBillingMethodResult = exports.DescribeBillingMethodsResult = exports.DeleteProjectResult = exports.WaitActivateRegionResult = exports.ActivateRegionResult = exports.UpdateProjectResult = exports.GetProjectTokenByIdentifierResult = exports.GetProjectTokenResult = exports.GetProjectResult = exports.CreateProjectResult = exports.DescribeProjectsResult = exports.DeleteAccountResult = exports.UpdateAccountResult = exports.IssuePasswordResult = exports.ForgetResult = exports.SignInResult = exports.VerifyResult = exports.CreateAccountResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -45,6 +45,8 @@ var UpdateProjectResult_1 = tslib_1.__importDefault(require("./UpdateProjectResu
 exports.UpdateProjectResult = UpdateProjectResult_1.default;
 var ActivateRegionResult_1 = tslib_1.__importDefault(require("./ActivateRegionResult"));
 exports.ActivateRegionResult = ActivateRegionResult_1.default;
+var WaitActivateRegionResult_1 = tslib_1.__importDefault(require("./WaitActivateRegionResult"));
+exports.WaitActivateRegionResult = WaitActivateRegionResult_1.default;
 var DeleteProjectResult_1 = tslib_1.__importDefault(require("./DeleteProjectResult"));
 exports.DeleteProjectResult = DeleteProjectResult_1.default;
 var DescribeBillingMethodsResult_1 = tslib_1.__importDefault(require("./DescribeBillingMethodsResult"));
