@@ -22,12 +22,18 @@ import SimpleInventoryModelMaster from "./SimpleInventoryModelMaster"
 import SimpleInventoryModel from "./SimpleInventoryModel"
 import SimpleItemModelMaster from "./SimpleItemModelMaster"
 import SimpleItemModel from "./SimpleItemModel"
+import BigInventoryModelMaster from "./BigInventoryModelMaster"
+import BigInventoryModel from "./BigInventoryModel"
+import BigItemModelMaster from "./BigItemModelMaster"
+import BigItemModel from "./BigItemModel"
 import CurrentItemModelMaster from "./CurrentItemModelMaster"
 import Inventory from "./Inventory"
 import ItemSet from "./ItemSet"
 import ReferenceOf from "./ReferenceOf"
 import SimpleInventory from "./SimpleInventory"
 import SimpleItem from "./SimpleItem"
+import BigInventory from "./BigInventory"
+import BigItem from "./BigItem"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import ScriptSetting from "./ScriptSetting"
 import LogSetting from "./LogSetting"
@@ -44,12 +50,18 @@ export {
     SimpleInventoryModel,
     SimpleItemModelMaster,
     SimpleItemModel,
+    BigInventoryModelMaster,
+    BigInventoryModel,
+    BigItemModelMaster,
+    BigItemModel,
     CurrentItemModelMaster,
     Inventory,
     ItemSet,
     ReferenceOf,
     SimpleInventory,
     SimpleItem,
+    BigInventory,
+    BigItem,
     GitHubCheckoutSetting,
     ScriptSetting,
     LogSetting,

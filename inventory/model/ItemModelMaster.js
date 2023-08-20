@@ -28,6 +28,7 @@ var ItemModelMaster = /** @class */ (function () {
         this.sortValue = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     ItemModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -225,6 +226,17 @@ var ItemModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    ItemModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    ItemModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    ItemModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     ItemModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -239,7 +251,8 @@ var ItemModelMaster = /** @class */ (function () {
             .withAllowMultipleStacks(data["allowMultipleStacks"])
             .withSortValue(data["sortValue"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     ItemModelMaster.prototype.toDict = function () {
         return {
@@ -253,6 +266,7 @@ var ItemModelMaster = /** @class */ (function () {
             "sortValue": this.getSortValue(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return ItemModelMaster;

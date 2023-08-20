@@ -22,6 +22,7 @@ export default class SimpleItem implements IModel {
     private userId: string|null = null;
     private itemName: string|null = null;
     private count: number|null = null;
+    private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -195,6 +196,17 @@ export default class SimpleItem implements IModel {
         this.count = count;
         return this;
     }
+    public getRevision(): number|null {
+        return this.revision;
+    }
+    public setRevision(revision: number|null) {
+        this.revision = revision;
+        return this;
+    }
+    public withRevision(revision: number|null): this {
+        this.revision = revision;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): SimpleItem|null {
         if (data == undefined || data == null) {
@@ -204,7 +216,8 @@ export default class SimpleItem implements IModel {
             .withItemId(data["itemId"])
             .withUserId(data["userId"])
             .withItemName(data["itemName"])
-            .withCount(data["count"]);
+            .withCount(data["count"])
+            .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -213,6 +226,7 @@ export default class SimpleItem implements IModel {
             "userId": this.getUserId(),
             "itemName": this.getItemName(),
             "count": this.getCount(),
+            "revision": this.getRevision(),
         };
     }
 }

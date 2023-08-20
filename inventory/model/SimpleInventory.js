@@ -15,14 +15,18 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var SimpleItem_1 = tslib_1.__importDefault(require("./SimpleItem"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:user:{userId}:simple:inventory:{inventoryName}";
 var SimpleInventory = /** @class */ (function () {
     function SimpleInventory() {
         this.inventoryId = null;
         this.inventoryName = null;
         this.userId = null;
+        this.simpleItems = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     SimpleInventory.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -143,6 +147,17 @@ var SimpleInventory = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    SimpleInventory.prototype.getSimpleItems = function () {
+        return this.simpleItems;
+    };
+    SimpleInventory.prototype.setSimpleItems = function (simpleItems) {
+        this.simpleItems = simpleItems;
+        return this;
+    };
+    SimpleInventory.prototype.withSimpleItems = function (simpleItems) {
+        this.simpleItems = simpleItems;
+        return this;
+    };
     SimpleInventory.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -165,6 +180,17 @@ var SimpleInventory = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    SimpleInventory.prototype.getRevision = function () {
+        return this.revision;
+    };
+    SimpleInventory.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    SimpleInventory.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     SimpleInventory.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -173,16 +199,26 @@ var SimpleInventory = /** @class */ (function () {
             .withInventoryId(data["inventoryId"])
             .withInventoryName(data["inventoryName"])
             .withUserId(data["userId"])
+            .withSimpleItems(data.simpleItems ?
+            data.simpleItems.map(function (item) {
+                return SimpleItem_1.default.fromDict(item);
+            }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     SimpleInventory.prototype.toDict = function () {
         return {
             "inventoryId": this.getInventoryId(),
             "inventoryName": this.getInventoryName(),
             "userId": this.getUserId(),
+            "simpleItems": this.getSimpleItems() ?
+                this.getSimpleItems().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return SimpleInventory;

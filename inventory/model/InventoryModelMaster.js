@@ -27,6 +27,7 @@ var InventoryModelMaster = /** @class */ (function () {
         this.protectReferencedItem = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     InventoryModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -193,6 +194,17 @@ var InventoryModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    InventoryModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    InventoryModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    InventoryModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     InventoryModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -206,7 +218,8 @@ var InventoryModelMaster = /** @class */ (function () {
             .withMaxCapacity(data["maxCapacity"])
             .withProtectReferencedItem(data["protectReferencedItem"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     InventoryModelMaster.prototype.toDict = function () {
         return {
@@ -219,6 +232,7 @@ var InventoryModelMaster = /** @class */ (function () {
             "protectReferencedItem": this.getProtectReferencedItem(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return InventoryModelMaster;

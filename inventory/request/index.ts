@@ -47,6 +47,20 @@ import UpdateSimpleItemModelMasterRequest from "./UpdateSimpleItemModelMasterReq
 import DeleteSimpleItemModelMasterRequest from "./DeleteSimpleItemModelMasterRequest"
 import DescribeSimpleItemModelsRequest from "./DescribeSimpleItemModelsRequest"
 import GetSimpleItemModelRequest from "./GetSimpleItemModelRequest"
+import DescribeBigInventoryModelMastersRequest from "./DescribeBigInventoryModelMastersRequest"
+import CreateBigInventoryModelMasterRequest from "./CreateBigInventoryModelMasterRequest"
+import GetBigInventoryModelMasterRequest from "./GetBigInventoryModelMasterRequest"
+import UpdateBigInventoryModelMasterRequest from "./UpdateBigInventoryModelMasterRequest"
+import DeleteBigInventoryModelMasterRequest from "./DeleteBigInventoryModelMasterRequest"
+import DescribeBigInventoryModelsRequest from "./DescribeBigInventoryModelsRequest"
+import GetBigInventoryModelRequest from "./GetBigInventoryModelRequest"
+import DescribeBigItemModelMastersRequest from "./DescribeBigItemModelMastersRequest"
+import CreateBigItemModelMasterRequest from "./CreateBigItemModelMasterRequest"
+import GetBigItemModelMasterRequest from "./GetBigItemModelMasterRequest"
+import UpdateBigItemModelMasterRequest from "./UpdateBigItemModelMasterRequest"
+import DeleteBigItemModelMasterRequest from "./DeleteBigItemModelMasterRequest"
+import DescribeBigItemModelsRequest from "./DescribeBigItemModelsRequest"
+import GetBigItemModelRequest from "./GetBigItemModelRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentItemModelMasterRequest from "./GetCurrentItemModelMasterRequest"
 import UpdateCurrentItemModelMasterRequest from "./UpdateCurrentItemModelMasterRequest"
@@ -97,6 +111,16 @@ import ConsumeSimpleItemsByUserIdRequest from "./ConsumeSimpleItemsByUserIdReque
 import DeleteSimpleItemsByUserIdRequest from "./DeleteSimpleItemsByUserIdRequest"
 import AcquireSimpleItemsByStampSheetRequest from "./AcquireSimpleItemsByStampSheetRequest"
 import ConsumeSimpleItemsByStampTaskRequest from "./ConsumeSimpleItemsByStampTaskRequest"
+import DescribeBigItemsRequest from "./DescribeBigItemsRequest"
+import DescribeBigItemsByUserIdRequest from "./DescribeBigItemsByUserIdRequest"
+import GetBigItemRequest from "./GetBigItemRequest"
+import GetBigItemByUserIdRequest from "./GetBigItemByUserIdRequest"
+import AcquireBigItemByUserIdRequest from "./AcquireBigItemByUserIdRequest"
+import ConsumeBigItemRequest from "./ConsumeBigItemRequest"
+import ConsumeBigItemByUserIdRequest from "./ConsumeBigItemByUserIdRequest"
+import DeleteBigItemByUserIdRequest from "./DeleteBigItemByUserIdRequest"
+import AcquireBigItemByStampSheetRequest from "./AcquireBigItemByStampSheetRequest"
+import ConsumeBigItemByStampTaskRequest from "./ConsumeBigItemByStampTaskRequest"
 
 export {
     DescribeNamespacesRequest,
@@ -133,6 +157,20 @@ export {
     DeleteSimpleItemModelMasterRequest,
     DescribeSimpleItemModelsRequest,
     GetSimpleItemModelRequest,
+    DescribeBigInventoryModelMastersRequest,
+    CreateBigInventoryModelMasterRequest,
+    GetBigInventoryModelMasterRequest,
+    UpdateBigInventoryModelMasterRequest,
+    DeleteBigInventoryModelMasterRequest,
+    DescribeBigInventoryModelsRequest,
+    GetBigInventoryModelRequest,
+    DescribeBigItemModelMastersRequest,
+    CreateBigItemModelMasterRequest,
+    GetBigItemModelMasterRequest,
+    UpdateBigItemModelMasterRequest,
+    DeleteBigItemModelMasterRequest,
+    DescribeBigItemModelsRequest,
+    GetBigItemModelRequest,
     ExportMasterRequest,
     GetCurrentItemModelMasterRequest,
     UpdateCurrentItemModelMasterRequest,
@@ -183,4 +221,14 @@ export {
     DeleteSimpleItemsByUserIdRequest,
     AcquireSimpleItemsByStampSheetRequest,
     ConsumeSimpleItemsByStampTaskRequest,
+    DescribeBigItemsRequest,
+    DescribeBigItemsByUserIdRequest,
+    GetBigItemRequest,
+    GetBigItemByUserIdRequest,
+    AcquireBigItemByUserIdRequest,
+    ConsumeBigItemRequest,
+    ConsumeBigItemByUserIdRequest,
+    DeleteBigItemByUserIdRequest,
+    AcquireBigItemByStampSheetRequest,
+    ConsumeBigItemByStampTaskRequest,
 };

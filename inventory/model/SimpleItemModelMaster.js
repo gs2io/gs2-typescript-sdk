@@ -24,6 +24,7 @@ var SimpleItemModelMaster = /** @class */ (function () {
         this.metadata = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     SimpleItemModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -177,6 +178,17 @@ var SimpleItemModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    SimpleItemModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    SimpleItemModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    SimpleItemModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     SimpleItemModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -187,7 +199,8 @@ var SimpleItemModelMaster = /** @class */ (function () {
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     SimpleItemModelMaster.prototype.toDict = function () {
         return {
@@ -197,6 +210,7 @@ var SimpleItemModelMaster = /** @class */ (function () {
             "metadata": this.getMetadata(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return SimpleItemModelMaster;

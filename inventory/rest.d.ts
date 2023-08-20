@@ -38,6 +38,20 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
     deleteSimpleItemModelMaster(request: Request.DeleteSimpleItemModelMasterRequest): Promise<Result.DeleteSimpleItemModelMasterResult>;
     describeSimpleItemModels(request: Request.DescribeSimpleItemModelsRequest): Promise<Result.DescribeSimpleItemModelsResult>;
     getSimpleItemModel(request: Request.GetSimpleItemModelRequest): Promise<Result.GetSimpleItemModelResult>;
+    describeBigInventoryModelMasters(request: Request.DescribeBigInventoryModelMastersRequest): Promise<Result.DescribeBigInventoryModelMastersResult>;
+    createBigInventoryModelMaster(request: Request.CreateBigInventoryModelMasterRequest): Promise<Result.CreateBigInventoryModelMasterResult>;
+    getBigInventoryModelMaster(request: Request.GetBigInventoryModelMasterRequest): Promise<Result.GetBigInventoryModelMasterResult>;
+    updateBigInventoryModelMaster(request: Request.UpdateBigInventoryModelMasterRequest): Promise<Result.UpdateBigInventoryModelMasterResult>;
+    deleteBigInventoryModelMaster(request: Request.DeleteBigInventoryModelMasterRequest): Promise<Result.DeleteBigInventoryModelMasterResult>;
+    describeBigInventoryModels(request: Request.DescribeBigInventoryModelsRequest): Promise<Result.DescribeBigInventoryModelsResult>;
+    getBigInventoryModel(request: Request.GetBigInventoryModelRequest): Promise<Result.GetBigInventoryModelResult>;
+    describeBigItemModelMasters(request: Request.DescribeBigItemModelMastersRequest): Promise<Result.DescribeBigItemModelMastersResult>;
+    createBigItemModelMaster(request: Request.CreateBigItemModelMasterRequest): Promise<Result.CreateBigItemModelMasterResult>;
+    getBigItemModelMaster(request: Request.GetBigItemModelMasterRequest): Promise<Result.GetBigItemModelMasterResult>;
+    updateBigItemModelMaster(request: Request.UpdateBigItemModelMasterRequest): Promise<Result.UpdateBigItemModelMasterResult>;
+    deleteBigItemModelMaster(request: Request.DeleteBigItemModelMasterRequest): Promise<Result.DeleteBigItemModelMasterResult>;
+    describeBigItemModels(request: Request.DescribeBigItemModelsRequest): Promise<Result.DescribeBigItemModelsResult>;
+    getBigItemModel(request: Request.GetBigItemModelRequest): Promise<Result.GetBigItemModelResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentItemModelMaster(request: Request.GetCurrentItemModelMasterRequest): Promise<Result.GetCurrentItemModelMasterResult>;
     updateCurrentItemModelMaster(request: Request.UpdateCurrentItemModelMasterRequest): Promise<Result.UpdateCurrentItemModelMasterResult>;
@@ -88,4 +102,14 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
     deleteSimpleItemsByUserId(request: Request.DeleteSimpleItemsByUserIdRequest): Promise<Result.DeleteSimpleItemsByUserIdResult>;
     acquireSimpleItemsByStampSheet(request: Request.AcquireSimpleItemsByStampSheetRequest): Promise<Result.AcquireSimpleItemsByStampSheetResult>;
     consumeSimpleItemsByStampTask(request: Request.ConsumeSimpleItemsByStampTaskRequest): Promise<Result.ConsumeSimpleItemsByStampTaskResult>;
+    describeBigItems(request: Request.DescribeBigItemsRequest): Promise<Result.DescribeBigItemsResult>;
+    describeBigItemsByUserId(request: Request.DescribeBigItemsByUserIdRequest): Promise<Result.DescribeBigItemsByUserIdResult>;
+    getBigItem(request: Request.GetBigItemRequest): Promise<Result.GetBigItemResult>;
+    getBigItemByUserId(request: Request.GetBigItemByUserIdRequest): Promise<Result.GetBigItemByUserIdResult>;
+    acquireBigItemByUserId(request: Request.AcquireBigItemByUserIdRequest): Promise<Result.AcquireBigItemByUserIdResult>;
+    consumeBigItem(request: Request.ConsumeBigItemRequest): Promise<Result.ConsumeBigItemResult>;
+    consumeBigItemByUserId(request: Request.ConsumeBigItemByUserIdRequest): Promise<Result.ConsumeBigItemByUserIdResult>;
+    deleteBigItemByUserId(request: Request.DeleteBigItemByUserIdRequest): Promise<Result.DeleteBigItemByUserIdResult>;
+    acquireBigItemByStampSheet(request: Request.AcquireBigItemByStampSheetRequest): Promise<Result.AcquireBigItemByStampSheetResult>;
+    consumeBigItemByStampTask(request: Request.ConsumeBigItemByStampTaskRequest): Promise<Result.ConsumeBigItemByStampTaskResult>;
 }

@@ -22,6 +22,7 @@ var SimpleItem = /** @class */ (function () {
         this.userId = null;
         this.itemName = null;
         this.count = null;
+        this.revision = null;
     }
     SimpleItem.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -175,6 +176,17 @@ var SimpleItem = /** @class */ (function () {
         this.count = count;
         return this;
     };
+    SimpleItem.prototype.getRevision = function () {
+        return this.revision;
+    };
+    SimpleItem.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    SimpleItem.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     SimpleItem.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -183,7 +195,8 @@ var SimpleItem = /** @class */ (function () {
             .withItemId(data["itemId"])
             .withUserId(data["userId"])
             .withItemName(data["itemName"])
-            .withCount(data["count"]);
+            .withCount(data["count"])
+            .withRevision(data["revision"]);
     };
     SimpleItem.prototype.toDict = function () {
         return {
@@ -191,6 +204,7 @@ var SimpleItem = /** @class */ (function () {
             "userId": this.getUserId(),
             "itemName": this.getItemName(),
             "count": this.getCount(),
+            "revision": this.getRevision(),
         };
     };
     return SimpleItem;

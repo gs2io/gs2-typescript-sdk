@@ -4,6 +4,7 @@ export default class SimpleItem implements IModel {
     private userId;
     private itemName;
     private count;
+    private revision;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -24,6 +25,9 @@ export default class SimpleItem implements IModel {
     getCount(): number | null;
     setCount(count: number | null): this;
     withCount(count: number | null): this;
+    getRevision(): number | null;
+    setRevision(revision: number | null): this;
+    withRevision(revision: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): SimpleItem | null;

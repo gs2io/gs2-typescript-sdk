@@ -1,10 +1,13 @@
 import IModel from '../../core/interface/IModel';
+import SimpleItem from './SimpleItem';
 export default class SimpleInventory implements IModel {
     private inventoryId;
     private inventoryName;
     private userId;
+    private simpleItems;
     private createdAt;
     private updatedAt;
+    private revision;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -21,12 +24,18 @@ export default class SimpleInventory implements IModel {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
+    getSimpleItems(): SimpleItem[] | null;
+    setSimpleItems(simpleItems: SimpleItem[] | null): this;
+    withSimpleItems(simpleItems: SimpleItem[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;
     getUpdatedAt(): number | null;
     setUpdatedAt(updatedAt: number | null): this;
     withUpdatedAt(updatedAt: number | null): this;
+    getRevision(): number | null;
+    setRevision(revision: number | null): this;
+    withRevision(revision: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): SimpleInventory | null;

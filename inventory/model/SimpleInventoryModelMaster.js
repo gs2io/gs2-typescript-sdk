@@ -24,6 +24,7 @@ var SimpleInventoryModelMaster = /** @class */ (function () {
         this.description = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     SimpleInventoryModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -157,6 +158,17 @@ var SimpleInventoryModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    SimpleInventoryModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    SimpleInventoryModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    SimpleInventoryModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     SimpleInventoryModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -167,7 +179,8 @@ var SimpleInventoryModelMaster = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withDescription(data["description"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     SimpleInventoryModelMaster.prototype.toDict = function () {
         return {
@@ -177,6 +190,7 @@ var SimpleInventoryModelMaster = /** @class */ (function () {
             "description": this.getDescription(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return SimpleInventoryModelMaster;

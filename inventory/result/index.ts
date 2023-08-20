@@ -47,6 +47,20 @@ import UpdateSimpleItemModelMasterResult from "./UpdateSimpleItemModelMasterResu
 import DeleteSimpleItemModelMasterResult from "./DeleteSimpleItemModelMasterResult"
 import DescribeSimpleItemModelsResult from "./DescribeSimpleItemModelsResult"
 import GetSimpleItemModelResult from "./GetSimpleItemModelResult"
+import DescribeBigInventoryModelMastersResult from "./DescribeBigInventoryModelMastersResult"
+import CreateBigInventoryModelMasterResult from "./CreateBigInventoryModelMasterResult"
+import GetBigInventoryModelMasterResult from "./GetBigInventoryModelMasterResult"
+import UpdateBigInventoryModelMasterResult from "./UpdateBigInventoryModelMasterResult"
+import DeleteBigInventoryModelMasterResult from "./DeleteBigInventoryModelMasterResult"
+import DescribeBigInventoryModelsResult from "./DescribeBigInventoryModelsResult"
+import GetBigInventoryModelResult from "./GetBigInventoryModelResult"
+import DescribeBigItemModelMastersResult from "./DescribeBigItemModelMastersResult"
+import CreateBigItemModelMasterResult from "./CreateBigItemModelMasterResult"
+import GetBigItemModelMasterResult from "./GetBigItemModelMasterResult"
+import UpdateBigItemModelMasterResult from "./UpdateBigItemModelMasterResult"
+import DeleteBigItemModelMasterResult from "./DeleteBigItemModelMasterResult"
+import DescribeBigItemModelsResult from "./DescribeBigItemModelsResult"
+import GetBigItemModelResult from "./GetBigItemModelResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentItemModelMasterResult from "./GetCurrentItemModelMasterResult"
 import UpdateCurrentItemModelMasterResult from "./UpdateCurrentItemModelMasterResult"
@@ -97,6 +111,16 @@ import ConsumeSimpleItemsByUserIdResult from "./ConsumeSimpleItemsByUserIdResult
 import DeleteSimpleItemsByUserIdResult from "./DeleteSimpleItemsByUserIdResult"
 import AcquireSimpleItemsByStampSheetResult from "./AcquireSimpleItemsByStampSheetResult"
 import ConsumeSimpleItemsByStampTaskResult from "./ConsumeSimpleItemsByStampTaskResult"
+import DescribeBigItemsResult from "./DescribeBigItemsResult"
+import DescribeBigItemsByUserIdResult from "./DescribeBigItemsByUserIdResult"
+import GetBigItemResult from "./GetBigItemResult"
+import GetBigItemByUserIdResult from "./GetBigItemByUserIdResult"
+import AcquireBigItemByUserIdResult from "./AcquireBigItemByUserIdResult"
+import ConsumeBigItemResult from "./ConsumeBigItemResult"
+import ConsumeBigItemByUserIdResult from "./ConsumeBigItemByUserIdResult"
+import DeleteBigItemByUserIdResult from "./DeleteBigItemByUserIdResult"
+import AcquireBigItemByStampSheetResult from "./AcquireBigItemByStampSheetResult"
+import ConsumeBigItemByStampTaskResult from "./ConsumeBigItemByStampTaskResult"
 
 export {
     DescribeNamespacesResult,
@@ -133,6 +157,20 @@ export {
     DeleteSimpleItemModelMasterResult,
     DescribeSimpleItemModelsResult,
     GetSimpleItemModelResult,
+    DescribeBigInventoryModelMastersResult,
+    CreateBigInventoryModelMasterResult,
+    GetBigInventoryModelMasterResult,
+    UpdateBigInventoryModelMasterResult,
+    DeleteBigInventoryModelMasterResult,
+    DescribeBigInventoryModelsResult,
+    GetBigInventoryModelResult,
+    DescribeBigItemModelMastersResult,
+    CreateBigItemModelMasterResult,
+    GetBigItemModelMasterResult,
+    UpdateBigItemModelMasterResult,
+    DeleteBigItemModelMasterResult,
+    DescribeBigItemModelsResult,
+    GetBigItemModelResult,
     ExportMasterResult,
     GetCurrentItemModelMasterResult,
     UpdateCurrentItemModelMasterResult,
@@ -183,4 +221,14 @@ export {
     DeleteSimpleItemsByUserIdResult,
     AcquireSimpleItemsByStampSheetResult,
     ConsumeSimpleItemsByStampTaskResult,
+    DescribeBigItemsResult,
+    DescribeBigItemsByUserIdResult,
+    GetBigItemResult,
+    GetBigItemByUserIdResult,
+    AcquireBigItemByUserIdResult,
+    ConsumeBigItemResult,
+    ConsumeBigItemByUserIdResult,
+    DeleteBigItemByUserIdResult,
+    AcquireBigItemByStampSheetResult,
+    ConsumeBigItemByStampTaskResult,
 };
