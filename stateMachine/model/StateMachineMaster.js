@@ -24,6 +24,7 @@ var StateMachineMaster = /** @class */ (function () {
         this.version = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     StateMachineMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -157,6 +158,17 @@ var StateMachineMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    StateMachineMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    StateMachineMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    StateMachineMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     StateMachineMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -167,7 +179,8 @@ var StateMachineMaster = /** @class */ (function () {
             .withPayload(data["payload"])
             .withVersion(data["version"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     StateMachineMaster.prototype.toDict = function () {
         return {
@@ -177,6 +190,7 @@ var StateMachineMaster = /** @class */ (function () {
             "version": this.getVersion(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return StateMachineMaster;

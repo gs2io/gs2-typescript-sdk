@@ -23,6 +23,7 @@ var Mutex = /** @class */ (function () {
         this.propertyId = null;
         this.transactionId = null;
         this.createdAt = null;
+        this.revision = null;
     }
     Mutex.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -165,6 +166,17 @@ var Mutex = /** @class */ (function () {
         this.createdAt = createdAt;
         return this;
     };
+    Mutex.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Mutex.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Mutex.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Mutex.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -174,7 +186,8 @@ var Mutex = /** @class */ (function () {
             .withUserId(data["userId"])
             .withPropertyId(data["propertyId"])
             .withTransactionId(data["transactionId"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     };
     Mutex.prototype.toDict = function () {
         return {
@@ -183,6 +196,7 @@ var Mutex = /** @class */ (function () {
             "propertyId": this.getPropertyId(),
             "transactionId": this.getTransactionId(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Mutex;

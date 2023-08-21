@@ -33,6 +33,7 @@ export default class Namespace implements IModel {
     private updatedAt: number|null = null;
     private queueNamespaceId: string|null = null;
     private keyId: string|null = null;
+    private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -231,6 +232,17 @@ export default class Namespace implements IModel {
         this.keyId = keyId;
         return this;
     }
+    public getRevision(): number|null {
+        return this.revision;
+    }
+    public setRevision(revision: number|null) {
+        this.revision = revision;
+        return this;
+    }
+    public withRevision(revision: number|null): this {
+        this.revision = revision;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): Namespace|null {
         if (data == undefined || data == null) {
@@ -248,7 +260,8 @@ export default class Namespace implements IModel {
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"]);
+            .withKeyId(data["keyId"])
+            .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -265,6 +278,7 @@ export default class Namespace implements IModel {
             "updatedAt": this.getUpdatedAt(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
+            "revision": this.getRevision(),
         };
     }
 }

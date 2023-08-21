@@ -23,6 +23,7 @@ var Follow = /** @class */ (function () {
         this.targetUserIds = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Follow.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -145,6 +146,17 @@ var Follow = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Follow.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Follow.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Follow.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Follow.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -157,7 +169,8 @@ var Follow = /** @class */ (function () {
                 return item;
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Follow.prototype.toDict = function () {
         return {
@@ -169,6 +182,7 @@ var Follow = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Follow;

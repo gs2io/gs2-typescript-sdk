@@ -23,6 +23,7 @@ var Key = /** @class */ (function () {
         this.description = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Key.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -145,6 +146,17 @@ var Key = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Key.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Key.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Key.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Key.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -154,7 +166,8 @@ var Key = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Key.prototype.toDict = function () {
         return {
@@ -163,6 +176,7 @@ var Key = /** @class */ (function () {
             "description": this.getDescription(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Key;

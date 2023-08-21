@@ -30,6 +30,7 @@ export default class Receipt implements IModel {
     private total: number|null = null;
     private contentsId: string|null = null;
     private createdAt: number|null = null;
+    private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -266,6 +267,17 @@ export default class Receipt implements IModel {
         this.createdAt = createdAt;
         return this;
     }
+    public getRevision(): number|null {
+        return this.revision;
+    }
+    public setRevision(revision: number|null) {
+        this.revision = revision;
+        return this;
+    }
+    public withRevision(revision: number|null): this {
+        this.revision = revision;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): Receipt|null {
         if (data == undefined || data == null) {
@@ -283,7 +295,8 @@ export default class Receipt implements IModel {
             .withFree(data["free"])
             .withTotal(data["total"])
             .withContentsId(data["contentsId"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -300,6 +313,7 @@ export default class Receipt implements IModel {
             "total": this.getTotal(),
             "contentsId": this.getContentsId(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     }
 }

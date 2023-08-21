@@ -23,6 +23,7 @@ var Trigger = /** @class */ (function () {
         this.userId = null;
         this.createdAt = null;
         this.expiresAt = null;
+        this.revision = null;
     }
     Trigger.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -165,6 +166,17 @@ var Trigger = /** @class */ (function () {
         this.expiresAt = expiresAt;
         return this;
     };
+    Trigger.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Trigger.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Trigger.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Trigger.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -174,7 +186,8 @@ var Trigger = /** @class */ (function () {
             .withName(data["name"])
             .withUserId(data["userId"])
             .withCreatedAt(data["createdAt"])
-            .withExpiresAt(data["expiresAt"]);
+            .withExpiresAt(data["expiresAt"])
+            .withRevision(data["revision"]);
     };
     Trigger.prototype.toDict = function () {
         return {
@@ -183,6 +196,7 @@ var Trigger = /** @class */ (function () {
             "userId": this.getUserId(),
             "createdAt": this.getCreatedAt(),
             "expiresAt": this.getExpiresAt(),
+            "revision": this.getRevision(),
         };
     };
     return Trigger;

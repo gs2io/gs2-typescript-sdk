@@ -24,6 +24,7 @@ var Await = /** @class */ (function () {
         this.name = null;
         this.count = null;
         this.exchangedAt = null;
+        this.revision = null;
     }
     Await.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -177,6 +178,17 @@ var Await = /** @class */ (function () {
         this.exchangedAt = exchangedAt;
         return this;
     };
+    Await.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Await.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Await.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Await.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -187,7 +199,8 @@ var Await = /** @class */ (function () {
             .withRateName(data["rateName"])
             .withName(data["name"])
             .withCount(data["count"])
-            .withExchangedAt(data["exchangedAt"]);
+            .withExchangedAt(data["exchangedAt"])
+            .withRevision(data["revision"]);
     };
     Await.prototype.toDict = function () {
         return {
@@ -197,6 +210,7 @@ var Await = /** @class */ (function () {
             "name": this.getName(),
             "count": this.getCount(),
             "exchangedAt": this.getExchangedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Await;

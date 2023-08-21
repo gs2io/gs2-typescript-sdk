@@ -3196,7 +3196,7 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
     }
 
     public acquireBigItemByUserId(request: Request.AcquireBigItemByUserIdRequest): Promise<Result.AcquireBigItemByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/{itemName}/acquire')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}/acquire')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3233,7 +3233,7 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
     }
 
     public consumeBigItem(request: Request.ConsumeBigItemRequest): Promise<Result.ConsumeBigItemResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/big/inventory/{inventoryName}/{itemName}/consume')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/big/inventory/{inventoryName}/item/{itemName}/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3272,7 +3272,7 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
     }
 
     public consumeBigItemByUserId(request: Request.ConsumeBigItemByUserIdRequest): Promise<Result.ConsumeBigItemByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/{itemName}/consume')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}/consume')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -3309,7 +3309,7 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
     }
 
     public deleteBigItemByUserId(request: Request.DeleteBigItemByUserIdRequest): Promise<Result.DeleteBigItemByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))

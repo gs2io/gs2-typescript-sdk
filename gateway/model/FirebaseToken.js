@@ -23,6 +23,7 @@ var FirebaseToken = /** @class */ (function () {
         this.token = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     FirebaseToken.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -145,6 +146,17 @@ var FirebaseToken = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    FirebaseToken.prototype.getRevision = function () {
+        return this.revision;
+    };
+    FirebaseToken.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    FirebaseToken.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     FirebaseToken.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -154,7 +166,8 @@ var FirebaseToken = /** @class */ (function () {
             .withUserId(data["userId"])
             .withToken(data["token"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     FirebaseToken.prototype.toDict = function () {
         return {
@@ -163,6 +176,7 @@ var FirebaseToken = /** @class */ (function () {
             "token": this.getToken(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return FirebaseToken;

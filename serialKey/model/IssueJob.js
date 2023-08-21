@@ -25,6 +25,7 @@ var IssueJob = /** @class */ (function () {
         this.issueRequestCount = null;
         this.status = null;
         this.createdAt = null;
+        this.revision = null;
     }
     IssueJob.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -189,6 +190,17 @@ var IssueJob = /** @class */ (function () {
         this.createdAt = createdAt;
         return this;
     };
+    IssueJob.prototype.getRevision = function () {
+        return this.revision;
+    };
+    IssueJob.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    IssueJob.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     IssueJob.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -200,7 +212,8 @@ var IssueJob = /** @class */ (function () {
             .withIssuedCount(data["issuedCount"])
             .withIssueRequestCount(data["issueRequestCount"])
             .withStatus(data["status"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     };
     IssueJob.prototype.toDict = function () {
         return {
@@ -211,6 +224,7 @@ var IssueJob = /** @class */ (function () {
             "issueRequestCount": this.getIssueRequestCount(),
             "status": this.getStatus(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return IssueJob;

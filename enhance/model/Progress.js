@@ -27,6 +27,7 @@ var Progress = /** @class */ (function () {
         this.rate = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Progress.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -193,6 +194,17 @@ var Progress = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Progress.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Progress.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Progress.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Progress.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -206,7 +218,8 @@ var Progress = /** @class */ (function () {
             .withExperienceValue(data["experienceValue"])
             .withRate(data["rate"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Progress.prototype.toDict = function () {
         return {
@@ -219,6 +232,7 @@ var Progress = /** @class */ (function () {
             "rate": this.getRate(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Progress;

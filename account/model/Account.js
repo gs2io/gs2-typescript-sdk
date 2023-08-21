@@ -24,6 +24,7 @@ var Account = /** @class */ (function () {
         this.timeOffset = null;
         this.banned = null;
         this.createdAt = null;
+        this.revision = null;
     }
     Account.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -157,6 +158,17 @@ var Account = /** @class */ (function () {
         this.createdAt = createdAt;
         return this;
     };
+    Account.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Account.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Account.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Account.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -167,7 +179,8 @@ var Account = /** @class */ (function () {
             .withPassword(data["password"])
             .withTimeOffset(data["timeOffset"])
             .withBanned(data["banned"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     };
     Account.prototype.toDict = function () {
         return {
@@ -177,6 +190,7 @@ var Account = /** @class */ (function () {
             "timeOffset": this.getTimeOffset(),
             "banned": this.getBanned(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Account;

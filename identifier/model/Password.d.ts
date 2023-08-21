@@ -4,6 +4,7 @@ export default class Password implements IModel {
     private userId;
     private userName;
     private createdAt;
+    private revision;
     static getOwnerId(grn: string): string | null;
     static getUserName(grn: string): string | null;
     static isValid(grn: string): boolean;
@@ -20,6 +21,9 @@ export default class Password implements IModel {
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;
+    getRevision(): number | null;
+    setRevision(revision: number | null): this;
+    withRevision(revision: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): Password | null;

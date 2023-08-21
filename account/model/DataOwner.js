@@ -22,6 +22,7 @@ var DataOwner = /** @class */ (function () {
         this.userId = null;
         this.name = null;
         this.createdAt = null;
+        this.revision = null;
     }
     DataOwner.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -153,6 +154,17 @@ var DataOwner = /** @class */ (function () {
         this.createdAt = createdAt;
         return this;
     };
+    DataOwner.prototype.getRevision = function () {
+        return this.revision;
+    };
+    DataOwner.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    DataOwner.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     DataOwner.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -161,7 +173,8 @@ var DataOwner = /** @class */ (function () {
             .withDataOwnerId(data["dataOwnerId"])
             .withUserId(data["userId"])
             .withName(data["name"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     };
     DataOwner.prototype.toDict = function () {
         return {
@@ -169,6 +182,7 @@ var DataOwner = /** @class */ (function () {
             "userId": this.getUserId(),
             "name": this.getName(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return DataOwner;

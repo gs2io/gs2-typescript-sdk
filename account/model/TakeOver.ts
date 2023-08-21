@@ -24,6 +24,7 @@ export default class TakeOver implements IModel {
     private userIdentifier: string|null = null;
     private password: string|null = null;
     private createdAt: number|null = null;
+    private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -194,6 +195,17 @@ export default class TakeOver implements IModel {
         this.createdAt = createdAt;
         return this;
     }
+    public getRevision(): number|null {
+        return this.revision;
+    }
+    public setRevision(revision: number|null) {
+        this.revision = revision;
+        return this;
+    }
+    public withRevision(revision: number|null): this {
+        this.revision = revision;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): TakeOver|null {
         if (data == undefined || data == null) {
@@ -205,7 +217,8 @@ export default class TakeOver implements IModel {
             .withType(data["type"])
             .withUserIdentifier(data["userIdentifier"])
             .withPassword(data["password"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -216,6 +229,7 @@ export default class TakeOver implements IModel {
             "userIdentifier": this.getUserIdentifier(),
             "password": this.getPassword(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     }
 }

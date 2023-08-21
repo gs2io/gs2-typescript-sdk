@@ -26,6 +26,7 @@ var AcceptVersion = /** @class */ (function () {
         this.version = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     AcceptVersion.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -179,6 +180,17 @@ var AcceptVersion = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    AcceptVersion.prototype.getRevision = function () {
+        return this.revision;
+    };
+    AcceptVersion.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    AcceptVersion.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     AcceptVersion.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -189,7 +201,8 @@ var AcceptVersion = /** @class */ (function () {
             .withUserId(data["userId"])
             .withVersion(Version_1.default.fromDict(data["version"]))
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     AcceptVersion.prototype.toDict = function () {
         var _a;
@@ -200,6 +213,7 @@ var AcceptVersion = /** @class */ (function () {
             "version": (_a = this.getVersion()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return AcceptVersion;

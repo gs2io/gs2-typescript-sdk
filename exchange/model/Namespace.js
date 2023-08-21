@@ -34,6 +34,7 @@ var Namespace = /** @class */ (function () {
         this.updatedAt = null;
         this.queueNamespaceId = null;
         this.keyId = null;
+        this.revision = null;
     }
     Namespace.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -221,6 +222,17 @@ var Namespace = /** @class */ (function () {
         this.keyId = keyId;
         return this;
     };
+    Namespace.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Namespace.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Namespace.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Namespace.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -237,7 +249,8 @@ var Namespace = /** @class */ (function () {
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withQueueNamespaceId(data["queueNamespaceId"])
-            .withKeyId(data["keyId"]);
+            .withKeyId(data["keyId"])
+            .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
         var _a, _b, _c;
@@ -254,6 +267,7 @@ var Namespace = /** @class */ (function () {
             "updatedAt": this.getUpdatedAt(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
+            "revision": this.getRevision(),
         };
     };
     return Namespace;

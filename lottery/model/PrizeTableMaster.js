@@ -27,6 +27,7 @@ var PrizeTableMaster = /** @class */ (function () {
         this.prizes = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     PrizeTableMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -171,6 +172,17 @@ var PrizeTableMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    PrizeTableMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    PrizeTableMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    PrizeTableMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     PrizeTableMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -185,7 +197,8 @@ var PrizeTableMaster = /** @class */ (function () {
                 return Prize_1.default.fromDict(item);
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     PrizeTableMaster.prototype.toDict = function () {
         return {
@@ -199,6 +212,7 @@ var PrizeTableMaster = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return PrizeTableMaster;

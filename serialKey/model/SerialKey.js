@@ -27,6 +27,7 @@ var SerialKey = /** @class */ (function () {
         this.createdAt = null;
         this.usedAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     SerialKey.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -193,6 +194,17 @@ var SerialKey = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    SerialKey.prototype.getRevision = function () {
+        return this.revision;
+    };
+    SerialKey.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    SerialKey.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     SerialKey.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -206,7 +218,8 @@ var SerialKey = /** @class */ (function () {
             .withUsedUserId(data["usedUserId"])
             .withCreatedAt(data["createdAt"])
             .withUsedAt(data["usedAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     SerialKey.prototype.toDict = function () {
         return {
@@ -219,6 +232,7 @@ var SerialKey = /** @class */ (function () {
             "createdAt": this.getCreatedAt(),
             "usedAt": this.getUsedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return SerialKey;

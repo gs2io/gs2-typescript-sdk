@@ -35,6 +35,7 @@ var EventMaster = /** @class */ (function () {
         this.relativeTriggerName = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     EventMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -289,6 +290,17 @@ var EventMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    EventMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    EventMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    EventMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     EventMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -310,7 +322,8 @@ var EventMaster = /** @class */ (function () {
             .withRepeatEndHour(data["repeatEndHour"])
             .withRelativeTriggerName(data["relativeTriggerName"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     EventMaster.prototype.toDict = function () {
         return {
@@ -331,6 +344,7 @@ var EventMaster = /** @class */ (function () {
             "relativeTriggerName": this.getRelativeTriggerName(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return EventMaster;

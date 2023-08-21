@@ -22,6 +22,7 @@ export default class DisplayItemMaster implements IModel {
     private salesItemName: string|null = null;
     private salesItemGroupName: string|null = null;
     private salesPeriodEventId: string|null = null;
+    private revision: number|null = null;
     public getDisplayItemId(): string|null {
         return this.displayItemId;
     }
@@ -77,6 +78,17 @@ export default class DisplayItemMaster implements IModel {
         this.salesPeriodEventId = salesPeriodEventId;
         return this;
     }
+    public getRevision(): number|null {
+        return this.revision;
+    }
+    public setRevision(revision: number|null) {
+        this.revision = revision;
+        return this;
+    }
+    public withRevision(revision: number|null): this {
+        this.revision = revision;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DisplayItemMaster|null {
         if (data == undefined || data == null) {
@@ -87,7 +99,8 @@ export default class DisplayItemMaster implements IModel {
             .withType(data["type"])
             .withSalesItemName(data["salesItemName"])
             .withSalesItemGroupName(data["salesItemGroupName"])
-            .withSalesPeriodEventId(data["salesPeriodEventId"]);
+            .withSalesPeriodEventId(data["salesPeriodEventId"])
+            .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -97,6 +110,7 @@ export default class DisplayItemMaster implements IModel {
             "salesItemName": this.getSalesItemName(),
             "salesItemGroupName": this.getSalesItemGroupName(),
             "salesPeriodEventId": this.getSalesPeriodEventId(),
+            "revision": this.getRevision(),
         };
     }
 }

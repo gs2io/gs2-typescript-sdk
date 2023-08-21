@@ -23,6 +23,7 @@ export default class DataObjectHistory implements IModel {
     private generation: string|null = null;
     private contentLength: number|null = null;
     private createdAt: number|null = null;
+    private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -207,6 +208,17 @@ export default class DataObjectHistory implements IModel {
         this.createdAt = createdAt;
         return this;
     }
+    public getRevision(): number|null {
+        return this.revision;
+    }
+    public setRevision(revision: number|null) {
+        this.revision = revision;
+        return this;
+    }
+    public withRevision(revision: number|null): this {
+        this.revision = revision;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DataObjectHistory|null {
         if (data == undefined || data == null) {
@@ -217,7 +229,8 @@ export default class DataObjectHistory implements IModel {
             .withDataObjectName(data["dataObjectName"])
             .withGeneration(data["generation"])
             .withContentLength(data["contentLength"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -227,6 +240,7 @@ export default class DataObjectHistory implements IModel {
             "generation": this.getGeneration(),
             "contentLength": this.getContentLength(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     }
 }

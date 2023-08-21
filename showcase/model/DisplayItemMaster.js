@@ -22,6 +22,7 @@ var DisplayItemMaster = /** @class */ (function () {
         this.salesItemName = null;
         this.salesItemGroupName = null;
         this.salesPeriodEventId = null;
+        this.revision = null;
     }
     DisplayItemMaster.prototype.getDisplayItemId = function () {
         return this.displayItemId;
@@ -78,6 +79,17 @@ var DisplayItemMaster = /** @class */ (function () {
         this.salesPeriodEventId = salesPeriodEventId;
         return this;
     };
+    DisplayItemMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    DisplayItemMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    DisplayItemMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     DisplayItemMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -87,7 +99,8 @@ var DisplayItemMaster = /** @class */ (function () {
             .withType(data["type"])
             .withSalesItemName(data["salesItemName"])
             .withSalesItemGroupName(data["salesItemGroupName"])
-            .withSalesPeriodEventId(data["salesPeriodEventId"]);
+            .withSalesPeriodEventId(data["salesPeriodEventId"])
+            .withRevision(data["revision"]);
     };
     DisplayItemMaster.prototype.toDict = function () {
         return {
@@ -96,6 +109,7 @@ var DisplayItemMaster = /** @class */ (function () {
             "salesItemName": this.getSalesItemName(),
             "salesItemGroupName": this.getSalesItemGroupName(),
             "salesPeriodEventId": this.getSalesPeriodEventId(),
+            "revision": this.getRevision(),
         };
     };
     return DisplayItemMaster;

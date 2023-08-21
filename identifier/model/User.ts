@@ -23,6 +23,7 @@ export default class User implements IModel {
     private description: string|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
+    private revision: number|null = null;
 
     public static getOwnerId(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -119,6 +120,17 @@ export default class User implements IModel {
         this.updatedAt = updatedAt;
         return this;
     }
+    public getRevision(): number|null {
+        return this.revision;
+    }
+    public setRevision(revision: number|null) {
+        this.revision = revision;
+        return this;
+    }
+    public withRevision(revision: number|null): this {
+        this.revision = revision;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): User|null {
         if (data == undefined || data == null) {
@@ -129,7 +141,8 @@ export default class User implements IModel {
             .withName(data["name"])
             .withDescription(data["description"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -139,6 +152,7 @@ export default class User implements IModel {
             "description": this.getDescription(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     }
 }

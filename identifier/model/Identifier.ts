@@ -22,6 +22,7 @@ export default class Identifier implements IModel {
     private userName: string|null = null;
     private clientSecret: string|null = null;
     private createdAt: number|null = null;
+    private revision: number|null = null;
 
     public static isValid(grn: string): boolean {
         return true;
@@ -75,6 +76,17 @@ export default class Identifier implements IModel {
         this.createdAt = createdAt;
         return this;
     }
+    public getRevision(): number|null {
+        return this.revision;
+    }
+    public setRevision(revision: number|null) {
+        this.revision = revision;
+        return this;
+    }
+    public withRevision(revision: number|null): this {
+        this.revision = revision;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): Identifier|null {
         if (data == undefined || data == null) {
@@ -84,7 +96,8 @@ export default class Identifier implements IModel {
             .withClientId(data["clientId"])
             .withUserName(data["userName"])
             .withClientSecret(data["clientSecret"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -93,6 +106,7 @@ export default class Identifier implements IModel {
             "userName": this.getUserName(),
             "clientSecret": this.getClientSecret(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     }
 }

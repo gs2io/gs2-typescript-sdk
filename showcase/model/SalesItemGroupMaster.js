@@ -25,6 +25,7 @@ var SalesItemGroupMaster = /** @class */ (function () {
         this.salesItemNames = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     SalesItemGroupMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -169,6 +170,17 @@ var SalesItemGroupMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    SalesItemGroupMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    SalesItemGroupMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    SalesItemGroupMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     SalesItemGroupMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -183,7 +195,8 @@ var SalesItemGroupMaster = /** @class */ (function () {
                 return item;
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     SalesItemGroupMaster.prototype.toDict = function () {
         return {
@@ -197,6 +210,7 @@ var SalesItemGroupMaster = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return SalesItemGroupMaster;

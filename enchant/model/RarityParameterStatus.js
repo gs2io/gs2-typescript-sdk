@@ -27,6 +27,7 @@ var RarityParameterStatus = /** @class */ (function () {
         this.parameterValues = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     RarityParameterStatus.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -213,6 +214,17 @@ var RarityParameterStatus = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    RarityParameterStatus.prototype.getRevision = function () {
+        return this.revision;
+    };
+    RarityParameterStatus.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    RarityParameterStatus.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     RarityParameterStatus.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -227,7 +239,8 @@ var RarityParameterStatus = /** @class */ (function () {
                 return RarityParameterValue_1.default.fromDict(item);
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     RarityParameterStatus.prototype.toDict = function () {
         return {
@@ -241,6 +254,7 @@ var RarityParameterStatus = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return RarityParameterStatus;

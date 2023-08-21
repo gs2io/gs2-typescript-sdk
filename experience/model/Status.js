@@ -28,6 +28,7 @@ var Status = /** @class */ (function () {
         this.nextRankUpExperienceValue = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Status.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -247,6 +248,17 @@ var Status = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Status.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Status.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Status.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Status.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -261,7 +273,8 @@ var Status = /** @class */ (function () {
             .withRankCapValue(data["rankCapValue"])
             .withNextRankUpExperienceValue(data["nextRankUpExperienceValue"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Status.prototype.toDict = function () {
         return {
@@ -275,6 +288,7 @@ var Status = /** @class */ (function () {
             "nextRankUpExperienceValue": this.getNextRankUpExperienceValue(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Status;

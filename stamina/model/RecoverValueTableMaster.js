@@ -26,6 +26,7 @@ var RecoverValueTableMaster = /** @class */ (function () {
         this.values = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     RecoverValueTableMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -181,6 +182,17 @@ var RecoverValueTableMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    RecoverValueTableMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    RecoverValueTableMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    RecoverValueTableMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     RecoverValueTableMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -196,7 +208,8 @@ var RecoverValueTableMaster = /** @class */ (function () {
                 return item;
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     RecoverValueTableMaster.prototype.toDict = function () {
         return {
@@ -211,6 +224,7 @@ var RecoverValueTableMaster = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return RecoverValueTableMaster;

@@ -24,6 +24,7 @@ var GitHubApiKey = /** @class */ (function () {
         this.encryptionKeyName = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     GitHubApiKey.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -157,6 +158,17 @@ var GitHubApiKey = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    GitHubApiKey.prototype.getRevision = function () {
+        return this.revision;
+    };
+    GitHubApiKey.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    GitHubApiKey.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     GitHubApiKey.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -167,7 +179,8 @@ var GitHubApiKey = /** @class */ (function () {
             .withDescription(data["description"])
             .withEncryptionKeyName(data["encryptionKeyName"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     GitHubApiKey.prototype.toDict = function () {
         return {
@@ -177,6 +190,7 @@ var GitHubApiKey = /** @class */ (function () {
             "encryptionKeyName": this.getEncryptionKeyName(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return GitHubApiKey;

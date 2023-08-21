@@ -7,6 +7,7 @@ export default class Stack implements IModel {
     private status;
     private createdAt;
     private updatedAt;
+    private revision;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getStackName(grn: string): string | null;
@@ -33,6 +34,9 @@ export default class Stack implements IModel {
     getUpdatedAt(): number | null;
     setUpdatedAt(updatedAt: number | null): this;
     withUpdatedAt(updatedAt: number | null): this;
+    getRevision(): number | null;
+    setRevision(revision: number | null): this;
+    withRevision(revision: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): Stack | null;

@@ -32,6 +32,7 @@ var VersionModelMaster = /** @class */ (function () {
         this.signatureKeyId = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     VersionModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -231,6 +232,17 @@ var VersionModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    VersionModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    VersionModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    VersionModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     VersionModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -247,7 +259,8 @@ var VersionModelMaster = /** @class */ (function () {
             .withNeedSignature(data["needSignature"])
             .withSignatureKeyId(data["signatureKeyId"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     VersionModelMaster.prototype.toDict = function () {
         var _a, _b, _c;
@@ -264,6 +277,7 @@ var VersionModelMaster = /** @class */ (function () {
             "signatureKeyId": this.getSignatureKeyId(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return VersionModelMaster;

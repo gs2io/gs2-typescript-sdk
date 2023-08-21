@@ -26,6 +26,7 @@ var MaxStaminaTableMaster = /** @class */ (function () {
         this.values = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     MaxStaminaTableMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -181,6 +182,17 @@ var MaxStaminaTableMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    MaxStaminaTableMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    MaxStaminaTableMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    MaxStaminaTableMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     MaxStaminaTableMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -196,7 +208,8 @@ var MaxStaminaTableMaster = /** @class */ (function () {
                 return item;
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     MaxStaminaTableMaster.prototype.toDict = function () {
         return {
@@ -211,6 +224,7 @@ var MaxStaminaTableMaster = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return MaxStaminaTableMaster;

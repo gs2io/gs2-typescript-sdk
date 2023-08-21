@@ -28,6 +28,7 @@ export default class Message implements IModel {
     private receivedAt: number|null = null;
     private readAt: number|null = null;
     private expiresAt: number|null = null;
+    private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -231,6 +232,17 @@ export default class Message implements IModel {
         this.expiresAt = expiresAt;
         return this;
     }
+    public getRevision(): number|null {
+        return this.revision;
+    }
+    public setRevision(revision: number|null) {
+        this.revision = revision;
+        return this;
+    }
+    public withRevision(revision: number|null): this {
+        this.revision = revision;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): Message|null {
         if (data == undefined || data == null) {
@@ -249,7 +261,8 @@ export default class Message implements IModel {
             ) : [])
             .withReceivedAt(data["receivedAt"])
             .withReadAt(data["readAt"])
-            .withExpiresAt(data["expiresAt"]);
+            .withExpiresAt(data["expiresAt"])
+            .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -267,6 +280,7 @@ export default class Message implements IModel {
             "receivedAt": this.getReceivedAt(),
             "readAt": this.getReadAt(),
             "expiresAt": this.getExpiresAt(),
+            "revision": this.getRevision(),
         };
     }
 }

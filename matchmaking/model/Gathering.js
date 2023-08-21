@@ -30,6 +30,7 @@ var Gathering = /** @class */ (function () {
         this.expiresAt = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Gathering.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -196,6 +197,17 @@ var Gathering = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Gathering.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Gathering.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Gathering.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Gathering.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -218,7 +230,8 @@ var Gathering = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withExpiresAt(data["expiresAt"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Gathering.prototype.toDict = function () {
         return {
@@ -240,6 +253,7 @@ var Gathering = /** @class */ (function () {
             "expiresAt": this.getExpiresAt(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Gathering;

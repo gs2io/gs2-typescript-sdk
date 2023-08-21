@@ -6,6 +6,7 @@ export default class Await implements IModel {
     private name;
     private count;
     private exchangedAt;
+    private revision;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -31,6 +32,9 @@ export default class Await implements IModel {
     getExchangedAt(): number | null;
     setExchangedAt(exchangedAt: number | null): this;
     withExchangedAt(exchangedAt: number | null): this;
+    getRevision(): number | null;
+    setRevision(revision: number | null): this;
+    withRevision(revision: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): Await | null;

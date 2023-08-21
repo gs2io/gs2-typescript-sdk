@@ -23,6 +23,7 @@ var User = /** @class */ (function () {
         this.description = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     User.getOwnerId = function (grn) {
         var match = grn.match(grnFormat
@@ -111,6 +112,17 @@ var User = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    User.prototype.getRevision = function () {
+        return this.revision;
+    };
+    User.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    User.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     User.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -120,7 +132,8 @@ var User = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     User.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var User = /** @class */ (function () {
             "description": this.getDescription(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return User;

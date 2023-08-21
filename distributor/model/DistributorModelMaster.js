@@ -26,6 +26,7 @@ var DistributorModelMaster = /** @class */ (function () {
         this.whiteListTargetIds = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     DistributorModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -181,6 +182,17 @@ var DistributorModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    DistributorModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    DistributorModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    DistributorModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     DistributorModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -196,7 +208,8 @@ var DistributorModelMaster = /** @class */ (function () {
                 return item;
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     DistributorModelMaster.prototype.toDict = function () {
         return {
@@ -211,6 +224,7 @@ var DistributorModelMaster = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return DistributorModelMaster;

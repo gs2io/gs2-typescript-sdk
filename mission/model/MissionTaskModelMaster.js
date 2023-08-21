@@ -32,6 +32,7 @@ var MissionTaskModelMaster = /** @class */ (function () {
         this.premiseMissionTaskName = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     MissionTaskModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -251,6 +252,17 @@ var MissionTaskModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    MissionTaskModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    MissionTaskModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    MissionTaskModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     MissionTaskModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -270,7 +282,8 @@ var MissionTaskModelMaster = /** @class */ (function () {
             .withChallengePeriodEventId(data["challengePeriodEventId"])
             .withPremiseMissionTaskName(data["premiseMissionTaskName"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     MissionTaskModelMaster.prototype.toDict = function () {
         return {
@@ -289,6 +302,7 @@ var MissionTaskModelMaster = /** @class */ (function () {
             "premiseMissionTaskName": this.getPremiseMissionTaskName(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return MissionTaskModelMaster;

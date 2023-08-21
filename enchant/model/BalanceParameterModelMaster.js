@@ -29,6 +29,7 @@ var BalanceParameterModelMaster = /** @class */ (function () {
         this.parameters = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     BalanceParameterModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -195,6 +196,17 @@ var BalanceParameterModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    BalanceParameterModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    BalanceParameterModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    BalanceParameterModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     BalanceParameterModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -211,7 +223,8 @@ var BalanceParameterModelMaster = /** @class */ (function () {
                 return BalanceParameterValueModel_1.default.fromDict(item);
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     BalanceParameterModelMaster.prototype.toDict = function () {
         return {
@@ -227,6 +240,7 @@ var BalanceParameterModelMaster = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return BalanceParameterModelMaster;

@@ -29,6 +29,7 @@ var Message = /** @class */ (function () {
         this.receivedAt = null;
         this.readAt = null;
         this.expiresAt = null;
+        this.revision = null;
     }
     Message.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -215,6 +216,17 @@ var Message = /** @class */ (function () {
         this.expiresAt = expiresAt;
         return this;
     };
+    Message.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Message.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Message.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Message.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -231,7 +243,8 @@ var Message = /** @class */ (function () {
             }) : [])
             .withReceivedAt(data["receivedAt"])
             .withReadAt(data["readAt"])
-            .withExpiresAt(data["expiresAt"]);
+            .withExpiresAt(data["expiresAt"])
+            .withRevision(data["revision"]);
     };
     Message.prototype.toDict = function () {
         return {
@@ -247,6 +260,7 @@ var Message = /** @class */ (function () {
             "receivedAt": this.getReceivedAt(),
             "readAt": this.getReadAt(),
             "expiresAt": this.getExpiresAt(),
+            "revision": this.getRevision(),
         };
     };
     return Message;

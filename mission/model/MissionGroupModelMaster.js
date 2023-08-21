@@ -29,6 +29,7 @@ var MissionGroupModelMaster = /** @class */ (function () {
         this.completeNotificationNamespaceId = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     MissionGroupModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -217,6 +218,17 @@ var MissionGroupModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    MissionGroupModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    MissionGroupModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    MissionGroupModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     MissionGroupModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -232,7 +244,8 @@ var MissionGroupModelMaster = /** @class */ (function () {
             .withResetHour(data["resetHour"])
             .withCompleteNotificationNamespaceId(data["completeNotificationNamespaceId"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     MissionGroupModelMaster.prototype.toDict = function () {
         return {
@@ -247,6 +260,7 @@ var MissionGroupModelMaster = /** @class */ (function () {
             "completeNotificationNamespaceId": this.getCompleteNotificationNamespaceId(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return MissionGroupModelMaster;

@@ -24,6 +24,7 @@ var CompletedQuestList = /** @class */ (function () {
         this.completeQuestNames = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     CompletedQuestList.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -177,6 +178,17 @@ var CompletedQuestList = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    CompletedQuestList.prototype.getRevision = function () {
+        return this.revision;
+    };
+    CompletedQuestList.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    CompletedQuestList.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     CompletedQuestList.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -190,7 +202,8 @@ var CompletedQuestList = /** @class */ (function () {
                 return item;
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     CompletedQuestList.prototype.toDict = function () {
         return {
@@ -203,6 +216,7 @@ var CompletedQuestList = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return CompletedQuestList;

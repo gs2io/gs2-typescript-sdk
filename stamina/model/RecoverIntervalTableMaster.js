@@ -26,6 +26,7 @@ var RecoverIntervalTableMaster = /** @class */ (function () {
         this.values = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     RecoverIntervalTableMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -181,6 +182,17 @@ var RecoverIntervalTableMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    RecoverIntervalTableMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    RecoverIntervalTableMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    RecoverIntervalTableMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     RecoverIntervalTableMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -196,7 +208,8 @@ var RecoverIntervalTableMaster = /** @class */ (function () {
                 return item;
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     RecoverIntervalTableMaster.prototype.toDict = function () {
         return {
@@ -211,6 +224,7 @@ var RecoverIntervalTableMaster = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return RecoverIntervalTableMaster;

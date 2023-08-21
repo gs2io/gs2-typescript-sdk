@@ -28,6 +28,7 @@ var LotteryModelMaster = /** @class */ (function () {
         this.choicePrizeTableScriptId = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     LotteryModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -205,6 +206,17 @@ var LotteryModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    LotteryModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    LotteryModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    LotteryModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     LotteryModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -219,7 +231,8 @@ var LotteryModelMaster = /** @class */ (function () {
             .withPrizeTableName(data["prizeTableName"])
             .withChoicePrizeTableScriptId(data["choicePrizeTableScriptId"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     LotteryModelMaster.prototype.toDict = function () {
         return {
@@ -233,6 +246,7 @@ var LotteryModelMaster = /** @class */ (function () {
             "choicePrizeTableScriptId": this.getChoicePrizeTableScriptId(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return LotteryModelMaster;

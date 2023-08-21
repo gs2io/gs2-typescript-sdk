@@ -23,6 +23,7 @@ var PrizeLimit = /** @class */ (function () {
         this.drawnCount = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     PrizeLimit.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -165,6 +166,17 @@ var PrizeLimit = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    PrizeLimit.prototype.getRevision = function () {
+        return this.revision;
+    };
+    PrizeLimit.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    PrizeLimit.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     PrizeLimit.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -174,7 +186,8 @@ var PrizeLimit = /** @class */ (function () {
             .withPrizeId(data["prizeId"])
             .withDrawnCount(data["drawnCount"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     PrizeLimit.prototype.toDict = function () {
         return {
@@ -183,6 +196,7 @@ var PrizeLimit = /** @class */ (function () {
             "drawnCount": this.getDrawnCount(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return PrizeLimit;

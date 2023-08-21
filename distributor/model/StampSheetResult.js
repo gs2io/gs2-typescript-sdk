@@ -30,6 +30,7 @@ var StampSheetResult = /** @class */ (function () {
         this.sheetResult = null;
         this.nextTransactionId = null;
         this.createdAt = null;
+        this.revision = null;
     }
     StampSheetResult.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -216,6 +217,17 @@ var StampSheetResult = /** @class */ (function () {
         this.createdAt = createdAt;
         return this;
     };
+    StampSheetResult.prototype.getRevision = function () {
+        return this.revision;
+    };
+    StampSheetResult.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    StampSheetResult.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     StampSheetResult.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -235,7 +247,8 @@ var StampSheetResult = /** @class */ (function () {
             }) : [])
             .withSheetResult(data["sheetResult"])
             .withNextTransactionId(data["nextTransactionId"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     };
     StampSheetResult.prototype.toDict = function () {
         var _a;
@@ -255,6 +268,7 @@ var StampSheetResult = /** @class */ (function () {
             "sheetResult": this.getSheetResult(),
             "nextTransactionId": this.getNextTransactionId(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return StampSheetResult;

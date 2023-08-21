@@ -31,6 +31,7 @@ export default class Gathering implements IModel {
     private expiresAt: number|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
+    private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -211,6 +212,17 @@ export default class Gathering implements IModel {
         this.updatedAt = updatedAt;
         return this;
     }
+    public getRevision(): number|null {
+        return this.revision;
+    }
+    public setRevision(revision: number|null) {
+        this.revision = revision;
+        return this;
+    }
+    public withRevision(revision: number|null): this {
+        this.revision = revision;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): Gathering|null {
         if (data == undefined || data == null) {
@@ -237,7 +249,8 @@ export default class Gathering implements IModel {
             .withMetadata(data["metadata"])
             .withExpiresAt(data["expiresAt"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -263,6 +276,7 @@ export default class Gathering implements IModel {
             "expiresAt": this.getExpiresAt(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     }
 }

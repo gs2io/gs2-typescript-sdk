@@ -23,6 +23,7 @@ var Inbox = /** @class */ (function () {
         this.fromUserIds = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Inbox.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -145,6 +146,17 @@ var Inbox = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Inbox.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Inbox.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Inbox.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Inbox.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -157,7 +169,8 @@ var Inbox = /** @class */ (function () {
                 return item;
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Inbox.prototype.toDict = function () {
         return {
@@ -169,6 +182,7 @@ var Inbox = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Inbox;

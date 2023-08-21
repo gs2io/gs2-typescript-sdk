@@ -24,6 +24,7 @@ export default class Await implements IModel {
     private name: string|null = null;
     private count: number|null = null;
     private exchangedAt: number|null = null;
+    private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -194,6 +195,17 @@ export default class Await implements IModel {
         this.exchangedAt = exchangedAt;
         return this;
     }
+    public getRevision(): number|null {
+        return this.revision;
+    }
+    public setRevision(revision: number|null) {
+        this.revision = revision;
+        return this;
+    }
+    public withRevision(revision: number|null): this {
+        this.revision = revision;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): Await|null {
         if (data == undefined || data == null) {
@@ -205,7 +217,8 @@ export default class Await implements IModel {
             .withRateName(data["rateName"])
             .withName(data["name"])
             .withCount(data["count"])
-            .withExchangedAt(data["exchangedAt"]);
+            .withExchangedAt(data["exchangedAt"])
+            .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -216,6 +229,7 @@ export default class Await implements IModel {
             "name": this.getName(),
             "count": this.getCount(),
             "exchangedAt": this.getExchangedAt(),
+            "revision": this.getRevision(),
         };
     }
 }

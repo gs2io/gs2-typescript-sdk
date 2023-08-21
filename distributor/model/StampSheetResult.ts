@@ -29,6 +29,7 @@ export default class StampSheetResult implements IModel {
     private sheetResult: string|null = null;
     private nextTransactionId: string|null = null;
     private createdAt: number|null = null;
+    private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -232,6 +233,17 @@ export default class StampSheetResult implements IModel {
         this.createdAt = createdAt;
         return this;
     }
+    public getRevision(): number|null {
+        return this.revision;
+    }
+    public setRevision(revision: number|null) {
+        this.revision = revision;
+        return this;
+    }
+    public withRevision(revision: number|null): this {
+        this.revision = revision;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): StampSheetResult|null {
         if (data == undefined || data == null) {
@@ -254,7 +266,8 @@ export default class StampSheetResult implements IModel {
             ) : [])
             .withSheetResult(data["sheetResult"])
             .withNextTransactionId(data["nextTransactionId"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -276,6 +289,7 @@ export default class StampSheetResult implements IModel {
             "sheetResult": this.getSheetResult(),
             "nextTransactionId": this.getNextTransactionId(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     }
 }

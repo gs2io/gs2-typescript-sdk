@@ -28,6 +28,7 @@ var Wallet = /** @class */ (function () {
         this.detail = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Wallet.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -203,6 +204,17 @@ var Wallet = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Wallet.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Wallet.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Wallet.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Wallet.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -218,7 +230,8 @@ var Wallet = /** @class */ (function () {
                 return WalletDetail_1.default.fromDict(item);
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Wallet.prototype.toDict = function () {
         return {
@@ -233,6 +246,7 @@ var Wallet = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Wallet;

@@ -34,6 +34,7 @@ var BonusModelMaster = /** @class */ (function () {
         this.missedReceiveReliefConsumeActions = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     BonusModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -244,6 +245,17 @@ var BonusModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    BonusModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    BonusModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    BonusModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     BonusModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -267,7 +279,8 @@ var BonusModelMaster = /** @class */ (function () {
                 return ConsumeAction_1.default.fromDict(item);
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     BonusModelMaster.prototype.toDict = function () {
         return {
@@ -290,6 +303,7 @@ var BonusModelMaster = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return BonusModelMaster;

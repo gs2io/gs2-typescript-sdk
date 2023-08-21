@@ -24,6 +24,7 @@ var EntryModelMaster = /** @class */ (function () {
         this.metadata = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     EntryModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -157,6 +158,17 @@ var EntryModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    EntryModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    EntryModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    EntryModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     EntryModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -167,7 +179,8 @@ var EntryModelMaster = /** @class */ (function () {
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     EntryModelMaster.prototype.toDict = function () {
         return {
@@ -177,6 +190,7 @@ var EntryModelMaster = /** @class */ (function () {
             "metadata": this.getMetadata(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return EntryModelMaster;

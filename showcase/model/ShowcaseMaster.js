@@ -28,6 +28,7 @@ var ShowcaseMaster = /** @class */ (function () {
         this.displayItems = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     ShowcaseMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -183,6 +184,17 @@ var ShowcaseMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    ShowcaseMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    ShowcaseMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    ShowcaseMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     ShowcaseMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -198,7 +210,8 @@ var ShowcaseMaster = /** @class */ (function () {
                 return DisplayItemMaster_1.default.fromDict(item);
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     ShowcaseMaster.prototype.toDict = function () {
         return {
@@ -213,6 +226,7 @@ var ShowcaseMaster = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return ShowcaseMaster;

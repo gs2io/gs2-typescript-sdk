@@ -24,6 +24,7 @@ var Subscribe = /** @class */ (function () {
         this.targetUserIds = null;
         this.subscribedUserIds = null;
         this.createdAt = null;
+        this.revision = null;
     }
     Subscribe.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -177,6 +178,17 @@ var Subscribe = /** @class */ (function () {
         this.createdAt = createdAt;
         return this;
     };
+    Subscribe.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Subscribe.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Subscribe.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Subscribe.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -193,7 +205,8 @@ var Subscribe = /** @class */ (function () {
             data.subscribedUserIds.map(function (item) {
                 return item;
             }) : [])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     };
     Subscribe.prototype.toDict = function () {
         return {
@@ -209,6 +222,7 @@ var Subscribe = /** @class */ (function () {
                     return item;
                 }) : [],
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Subscribe;

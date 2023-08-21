@@ -27,6 +27,7 @@ var MoldModelMaster = /** @class */ (function () {
         this.formModelName = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     MoldModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -193,6 +194,17 @@ var MoldModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    MoldModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    MoldModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    MoldModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     MoldModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -206,7 +218,8 @@ var MoldModelMaster = /** @class */ (function () {
             .withMaxCapacity(data["maxCapacity"])
             .withFormModelName(data["formModelName"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     MoldModelMaster.prototype.toDict = function () {
         return {
@@ -219,6 +232,7 @@ var MoldModelMaster = /** @class */ (function () {
             "formModelName": this.getFormModelName(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return MoldModelMaster;

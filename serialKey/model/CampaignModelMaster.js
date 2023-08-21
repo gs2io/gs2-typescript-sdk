@@ -25,6 +25,7 @@ var CampaignModelMaster = /** @class */ (function () {
         this.enableCampaignCode = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     CampaignModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -169,6 +170,17 @@ var CampaignModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    CampaignModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    CampaignModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    CampaignModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     CampaignModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -180,7 +192,8 @@ var CampaignModelMaster = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withEnableCampaignCode(data["enableCampaignCode"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     CampaignModelMaster.prototype.toDict = function () {
         return {
@@ -191,6 +204,7 @@ var CampaignModelMaster = /** @class */ (function () {
             "enableCampaignCode": this.getEnableCampaignCode(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return CampaignModelMaster;

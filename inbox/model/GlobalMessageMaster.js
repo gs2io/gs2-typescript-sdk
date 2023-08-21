@@ -28,6 +28,7 @@ var GlobalMessageMaster = /** @class */ (function () {
         this.expiresTimeSpan = null;
         this.createdAt = null;
         this.expiresAt = null;
+        this.revision = null;
     }
     GlobalMessageMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -172,6 +173,17 @@ var GlobalMessageMaster = /** @class */ (function () {
         this.expiresAt = expiresAt;
         return this;
     };
+    GlobalMessageMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    GlobalMessageMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    GlobalMessageMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     GlobalMessageMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -186,7 +198,8 @@ var GlobalMessageMaster = /** @class */ (function () {
             }) : [])
             .withExpiresTimeSpan(TimeSpan_1.default.fromDict(data["expiresTimeSpan"]))
             .withCreatedAt(data["createdAt"])
-            .withExpiresAt(data["expiresAt"]);
+            .withExpiresAt(data["expiresAt"])
+            .withRevision(data["revision"]);
     };
     GlobalMessageMaster.prototype.toDict = function () {
         var _a;
@@ -201,6 +214,7 @@ var GlobalMessageMaster = /** @class */ (function () {
             "expiresTimeSpan": (_a = this.getExpiresTimeSpan()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "createdAt": this.getCreatedAt(),
             "expiresAt": this.getExpiresAt(),
+            "revision": this.getRevision(),
         };
     };
     return GlobalMessageMaster;

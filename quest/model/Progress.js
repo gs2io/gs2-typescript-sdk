@@ -29,6 +29,7 @@ var Progress = /** @class */ (function () {
         this.metadata = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Progress.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -195,6 +196,17 @@ var Progress = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Progress.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Progress.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Progress.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Progress.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -211,7 +223,8 @@ var Progress = /** @class */ (function () {
             }) : [])
             .withMetadata(data["metadata"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Progress.prototype.toDict = function () {
         return {
@@ -227,6 +240,7 @@ var Progress = /** @class */ (function () {
             "metadata": this.getMetadata(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Progress;

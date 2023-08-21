@@ -4,6 +4,7 @@ export default class Identifier implements IModel {
     private userName;
     private clientSecret;
     private createdAt;
+    private revision;
     static isValid(grn: string): boolean;
     static createGrn(): string | null;
     getClientId(): string | null;
@@ -18,6 +19,9 @@ export default class Identifier implements IModel {
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;
+    getRevision(): number | null;
+    setRevision(revision: number | null): this;
+    withRevision(revision: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): Identifier | null;

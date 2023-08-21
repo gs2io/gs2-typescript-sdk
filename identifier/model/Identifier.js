@@ -22,6 +22,7 @@ var Identifier = /** @class */ (function () {
         this.userName = null;
         this.clientSecret = null;
         this.createdAt = null;
+        this.revision = null;
     }
     Identifier.isValid = function (grn) {
         return true;
@@ -73,6 +74,17 @@ var Identifier = /** @class */ (function () {
         this.createdAt = createdAt;
         return this;
     };
+    Identifier.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Identifier.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Identifier.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Identifier.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -81,7 +93,8 @@ var Identifier = /** @class */ (function () {
             .withClientId(data["clientId"])
             .withUserName(data["userName"])
             .withClientSecret(data["clientSecret"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     };
     Identifier.prototype.toDict = function () {
         return {
@@ -89,6 +102,7 @@ var Identifier = /** @class */ (function () {
             "userName": this.getUserName(),
             "clientSecret": this.getClientSecret(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Identifier;

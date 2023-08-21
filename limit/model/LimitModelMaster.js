@@ -28,6 +28,7 @@ var LimitModelMaster = /** @class */ (function () {
         this.resetHour = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     LimitModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -205,6 +206,17 @@ var LimitModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    LimitModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    LimitModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    LimitModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     LimitModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -219,7 +231,8 @@ var LimitModelMaster = /** @class */ (function () {
             .withResetDayOfWeek(data["resetDayOfWeek"])
             .withResetHour(data["resetHour"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     LimitModelMaster.prototype.toDict = function () {
         return {
@@ -233,6 +246,7 @@ var LimitModelMaster = /** @class */ (function () {
             "resetHour": this.getResetHour(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return LimitModelMaster;

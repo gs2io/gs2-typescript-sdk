@@ -26,6 +26,7 @@ var Vote = /** @class */ (function () {
         this.writtenBallots = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Vote.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -179,6 +180,17 @@ var Vote = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Vote.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Vote.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Vote.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Vote.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -192,7 +204,8 @@ var Vote = /** @class */ (function () {
                 return WrittenBallot_1.default.fromDict(item);
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Vote.prototype.toDict = function () {
         return {
@@ -205,6 +218,7 @@ var Vote = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Vote;

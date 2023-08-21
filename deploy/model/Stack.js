@@ -25,6 +25,7 @@ var Stack = /** @class */ (function () {
         this.status = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Stack.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -151,6 +152,17 @@ var Stack = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Stack.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Stack.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Stack.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Stack.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -162,7 +174,8 @@ var Stack = /** @class */ (function () {
             .withTemplate(data["template"])
             .withStatus(data["status"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Stack.prototype.toDict = function () {
         return {
@@ -173,6 +186,7 @@ var Stack = /** @class */ (function () {
             "status": this.getStatus(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Stack;

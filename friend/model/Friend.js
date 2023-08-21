@@ -23,6 +23,7 @@ var Friend = /** @class */ (function () {
         this.targetUserIds = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Friend.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -145,6 +146,17 @@ var Friend = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Friend.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Friend.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Friend.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Friend.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -157,7 +169,8 @@ var Friend = /** @class */ (function () {
                 return item;
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Friend.prototype.toDict = function () {
         return {
@@ -169,6 +182,7 @@ var Friend = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Friend;

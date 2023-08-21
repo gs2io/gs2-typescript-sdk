@@ -5,6 +5,7 @@ export default class DisplayItemMaster implements IModel {
     private salesItemName;
     private salesItemGroupName;
     private salesPeriodEventId;
+    private revision;
     getDisplayItemId(): string | null;
     setDisplayItemId(displayItemId: string | null): this;
     withDisplayItemId(displayItemId: string | null): this;
@@ -20,6 +21,9 @@ export default class DisplayItemMaster implements IModel {
     getSalesPeriodEventId(): string | null;
     setSalesPeriodEventId(salesPeriodEventId: string | null): this;
     withSalesPeriodEventId(salesPeriodEventId: string | null): this;
+    getRevision(): number | null;
+    setRevision(revision: number | null): this;
+    withRevision(revision: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): DisplayItemMaster | null;

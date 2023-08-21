@@ -35,6 +35,7 @@ var IncrementalRateModelMaster = /** @class */ (function () {
         this.acquireActions = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     IncrementalRateModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -256,6 +257,17 @@ var IncrementalRateModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    IncrementalRateModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    IncrementalRateModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    IncrementalRateModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     IncrementalRateModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -277,7 +289,8 @@ var IncrementalRateModelMaster = /** @class */ (function () {
                 return AcquireAction_1.default.fromDict(item);
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     IncrementalRateModelMaster.prototype.toDict = function () {
         var _a;
@@ -299,6 +312,7 @@ var IncrementalRateModelMaster = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return IncrementalRateModelMaster;

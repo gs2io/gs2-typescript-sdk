@@ -26,6 +26,7 @@ var Complete = /** @class */ (function () {
         this.nextResetAt = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Complete.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -201,6 +202,17 @@ var Complete = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Complete.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Complete.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Complete.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Complete.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -219,7 +231,8 @@ var Complete = /** @class */ (function () {
             }) : [])
             .withNextResetAt(data["nextResetAt"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Complete.prototype.toDict = function () {
         return {
@@ -237,6 +250,7 @@ var Complete = /** @class */ (function () {
             "nextResetAt": this.getNextResetAt(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Complete;

@@ -24,6 +24,7 @@ var Event = /** @class */ (function () {
         this.type = null;
         this.message = null;
         this.eventAt = null;
+        this.revision = null;
     }
     Event.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -157,6 +158,17 @@ var Event = /** @class */ (function () {
         this.eventAt = eventAt;
         return this;
     };
+    Event.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Event.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Event.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Event.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -167,7 +179,8 @@ var Event = /** @class */ (function () {
             .withResourceName(data["resourceName"])
             .withType(data["type"])
             .withMessage(data["message"])
-            .withEventAt(data["eventAt"]);
+            .withEventAt(data["eventAt"])
+            .withRevision(data["revision"]);
     };
     Event.prototype.toDict = function () {
         return {
@@ -177,6 +190,7 @@ var Event = /** @class */ (function () {
             "type": this.getType(),
             "message": this.getMessage(),
             "eventAt": this.getEventAt(),
+            "revision": this.getRevision(),
         };
     };
     return Event;

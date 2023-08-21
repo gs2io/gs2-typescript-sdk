@@ -24,6 +24,7 @@ var LayerModelMaster = /** @class */ (function () {
         this.metadata = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     LayerModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -177,6 +178,17 @@ var LayerModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    LayerModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    LayerModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    LayerModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     LayerModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -187,7 +199,8 @@ var LayerModelMaster = /** @class */ (function () {
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     LayerModelMaster.prototype.toDict = function () {
         return {
@@ -197,6 +210,7 @@ var LayerModelMaster = /** @class */ (function () {
             "metadata": this.getMetadata(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return LayerModelMaster;

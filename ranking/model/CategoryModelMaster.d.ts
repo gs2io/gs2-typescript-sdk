@@ -21,6 +21,7 @@ export default class CategoryModelMaster implements IModel {
     private generation;
     private createdAt;
     private updatedAt;
+    private revision;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -87,6 +88,9 @@ export default class CategoryModelMaster implements IModel {
     getUpdatedAt(): number | null;
     setUpdatedAt(updatedAt: number | null): this;
     withUpdatedAt(updatedAt: number | null): this;
+    getRevision(): number | null;
+    setRevision(revision: number | null): this;
+    withRevision(revision: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CategoryModelMaster | null;

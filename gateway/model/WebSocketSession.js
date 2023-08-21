@@ -24,6 +24,7 @@ var WebSocketSession = /** @class */ (function () {
         this.userId = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     WebSocketSession.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -177,6 +178,17 @@ var WebSocketSession = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    WebSocketSession.prototype.getRevision = function () {
+        return this.revision;
+    };
+    WebSocketSession.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    WebSocketSession.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     WebSocketSession.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -187,7 +199,8 @@ var WebSocketSession = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     WebSocketSession.prototype.toDict = function () {
         return {
@@ -197,6 +210,7 @@ var WebSocketSession = /** @class */ (function () {
             "userId": this.getUserId(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return WebSocketSession;

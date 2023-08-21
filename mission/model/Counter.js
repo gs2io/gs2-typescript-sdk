@@ -26,6 +26,7 @@ var Counter = /** @class */ (function () {
         this.values = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Counter.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -179,6 +180,17 @@ var Counter = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Counter.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Counter.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Counter.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Counter.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -192,7 +204,8 @@ var Counter = /** @class */ (function () {
                 return ScopedValue_1.default.fromDict(item);
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Counter.prototype.toDict = function () {
         return {
@@ -205,6 +218,7 @@ var Counter = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Counter;

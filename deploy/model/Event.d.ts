@@ -6,6 +6,7 @@ export default class Event implements IModel {
     private type;
     private message;
     private eventAt;
+    private revision;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getStackName(grn: string): string | null;
@@ -30,6 +31,9 @@ export default class Event implements IModel {
     getEventAt(): number | null;
     setEventAt(eventAt: number | null): this;
     withEventAt(eventAt: number | null): this;
+    getRevision(): number | null;
+    setRevision(revision: number | null): this;
+    withRevision(revision: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): Event | null;

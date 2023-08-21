@@ -24,6 +24,7 @@ export default class Event implements IModel {
     private type: string|null = null;
     private message: string|null = null;
     private eventAt: number|null = null;
+    private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -171,6 +172,17 @@ export default class Event implements IModel {
         this.eventAt = eventAt;
         return this;
     }
+    public getRevision(): number|null {
+        return this.revision;
+    }
+    public setRevision(revision: number|null) {
+        this.revision = revision;
+        return this;
+    }
+    public withRevision(revision: number|null): this {
+        this.revision = revision;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): Event|null {
         if (data == undefined || data == null) {
@@ -182,7 +194,8 @@ export default class Event implements IModel {
             .withResourceName(data["resourceName"])
             .withType(data["type"])
             .withMessage(data["message"])
-            .withEventAt(data["eventAt"]);
+            .withEventAt(data["eventAt"])
+            .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -193,6 +206,7 @@ export default class Event implements IModel {
             "type": this.getType(),
             "message": this.getMessage(),
             "eventAt": this.getEventAt(),
+            "revision": this.getRevision(),
         };
     }
 }

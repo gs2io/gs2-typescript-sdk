@@ -25,6 +25,7 @@ var ThresholdMaster = /** @class */ (function () {
         this.values = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     ThresholdMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -169,6 +170,17 @@ var ThresholdMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    ThresholdMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    ThresholdMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    ThresholdMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     ThresholdMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -183,7 +195,8 @@ var ThresholdMaster = /** @class */ (function () {
                 return item;
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     ThresholdMaster.prototype.toDict = function () {
         return {
@@ -197,6 +210,7 @@ var ThresholdMaster = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return ThresholdMaster;

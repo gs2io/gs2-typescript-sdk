@@ -22,6 +22,7 @@ export default class DataOwner implements IModel {
     private userId: string|null = null;
     private name: string|null = null;
     private createdAt: number|null = null;
+    private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -170,6 +171,17 @@ export default class DataOwner implements IModel {
         this.createdAt = createdAt;
         return this;
     }
+    public getRevision(): number|null {
+        return this.revision;
+    }
+    public setRevision(revision: number|null) {
+        this.revision = revision;
+        return this;
+    }
+    public withRevision(revision: number|null): this {
+        this.revision = revision;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DataOwner|null {
         if (data == undefined || data == null) {
@@ -179,7 +191,8 @@ export default class DataOwner implements IModel {
             .withDataOwnerId(data["dataOwnerId"])
             .withUserId(data["userId"])
             .withName(data["name"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -188,6 +201,7 @@ export default class DataOwner implements IModel {
             "userId": this.getUserId(),
             "name": this.getName(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     }
 }

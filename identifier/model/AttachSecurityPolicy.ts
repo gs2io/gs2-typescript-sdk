@@ -21,6 +21,7 @@ export default class AttachSecurityPolicy implements IModel {
     private userId: string|null = null;
     private securityPolicyIds: string[]|null = null;
     private attachedAt: number|null = null;
+    private revision: number|null = null;
 
     public static getOwnerId(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -95,6 +96,17 @@ export default class AttachSecurityPolicy implements IModel {
         this.attachedAt = attachedAt;
         return this;
     }
+    public getRevision(): number|null {
+        return this.revision;
+    }
+    public setRevision(revision: number|null) {
+        this.revision = revision;
+        return this;
+    }
+    public withRevision(revision: number|null): this {
+        this.revision = revision;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): AttachSecurityPolicy|null {
         if (data == undefined || data == null) {
@@ -107,7 +119,8 @@ export default class AttachSecurityPolicy implements IModel {
                     return item;
                 }
             ) : [])
-            .withAttachedAt(data["attachedAt"]);
+            .withAttachedAt(data["attachedAt"])
+            .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -119,6 +132,7 @@ export default class AttachSecurityPolicy implements IModel {
                 }
             ) : [],
             "attachedAt": this.getAttachedAt(),
+            "revision": this.getRevision(),
         };
     }
 }

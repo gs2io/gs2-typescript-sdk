@@ -32,6 +32,7 @@ var StaminaModelMaster = /** @class */ (function () {
         this.recoverValueTableName = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     StaminaModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -253,6 +254,17 @@ var StaminaModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    StaminaModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    StaminaModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    StaminaModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     StaminaModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -271,7 +283,8 @@ var StaminaModelMaster = /** @class */ (function () {
             .withRecoverIntervalTableName(data["recoverIntervalTableName"])
             .withRecoverValueTableName(data["recoverValueTableName"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     StaminaModelMaster.prototype.toDict = function () {
         return {
@@ -289,6 +302,7 @@ var StaminaModelMaster = /** @class */ (function () {
             "recoverValueTableName": this.getRecoverValueTableName(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return StaminaModelMaster;

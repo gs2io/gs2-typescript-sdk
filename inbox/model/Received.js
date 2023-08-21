@@ -23,6 +23,7 @@ var Received = /** @class */ (function () {
         this.receivedGlobalMessageNames = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Received.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -145,6 +146,17 @@ var Received = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Received.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Received.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Received.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Received.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -157,7 +169,8 @@ var Received = /** @class */ (function () {
                 return item;
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Received.prototype.toDict = function () {
         return {
@@ -169,6 +182,7 @@ var Received = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Received;

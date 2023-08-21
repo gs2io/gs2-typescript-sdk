@@ -25,6 +25,7 @@ var Subscribe = /** @class */ (function () {
         this.roomName = null;
         this.notificationTypes = null;
         this.createdAt = null;
+        this.revision = null;
     }
     Subscribe.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -167,6 +168,17 @@ var Subscribe = /** @class */ (function () {
         this.createdAt = createdAt;
         return this;
     };
+    Subscribe.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Subscribe.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Subscribe.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Subscribe.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -179,7 +191,8 @@ var Subscribe = /** @class */ (function () {
             data.notificationTypes.map(function (item) {
                 return NotificationType_1.default.fromDict(item);
             }) : [])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     };
     Subscribe.prototype.toDict = function () {
         return {
@@ -191,6 +204,7 @@ var Subscribe = /** @class */ (function () {
                     return item.toDict();
                 }) : [],
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Subscribe;

@@ -25,6 +25,7 @@ var ReceiveStatus = /** @class */ (function () {
         this.lastReceivedAt = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     ReceiveStatus.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -189,6 +190,17 @@ var ReceiveStatus = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    ReceiveStatus.prototype.getRevision = function () {
+        return this.revision;
+    };
+    ReceiveStatus.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    ReceiveStatus.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     ReceiveStatus.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -203,7 +215,8 @@ var ReceiveStatus = /** @class */ (function () {
             }) : [])
             .withLastReceivedAt(data["lastReceivedAt"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     ReceiveStatus.prototype.toDict = function () {
         return {
@@ -217,6 +230,7 @@ var ReceiveStatus = /** @class */ (function () {
             "lastReceivedAt": this.getLastReceivedAt(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return ReceiveStatus;

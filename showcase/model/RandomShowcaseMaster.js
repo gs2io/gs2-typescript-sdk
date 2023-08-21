@@ -31,6 +31,7 @@ var RandomShowcaseMaster = /** @class */ (function () {
         this.salesPeriodEventId = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     RandomShowcaseMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -219,6 +220,17 @@ var RandomShowcaseMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    RandomShowcaseMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    RandomShowcaseMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    RandomShowcaseMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     RandomShowcaseMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -237,7 +249,8 @@ var RandomShowcaseMaster = /** @class */ (function () {
             .withResetIntervalHours(data["resetIntervalHours"])
             .withSalesPeriodEventId(data["salesPeriodEventId"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     RandomShowcaseMaster.prototype.toDict = function () {
         return {
@@ -255,6 +268,7 @@ var RandomShowcaseMaster = /** @class */ (function () {
             "salesPeriodEventId": this.getSalesPeriodEventId(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return RandomShowcaseMaster;

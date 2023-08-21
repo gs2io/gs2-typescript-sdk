@@ -3,6 +3,7 @@ export default class AttachSecurityPolicy implements IModel {
     private userId;
     private securityPolicyIds;
     private attachedAt;
+    private revision;
     static getOwnerId(grn: string): string | null;
     static getUserName(grn: string): string | null;
     static isValid(grn: string): boolean;
@@ -16,6 +17,9 @@ export default class AttachSecurityPolicy implements IModel {
     getAttachedAt(): number | null;
     setAttachedAt(attachedAt: number | null): this;
     withAttachedAt(attachedAt: number | null): this;
+    getRevision(): number | null;
+    setRevision(revision: number | null): this;
+    withRevision(revision: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): AttachSecurityPolicy | null;

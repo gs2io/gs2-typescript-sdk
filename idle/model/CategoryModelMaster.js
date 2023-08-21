@@ -31,6 +31,7 @@ var CategoryModelMaster = /** @class */ (function () {
         this.receivePeriodScheduleId = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     CategoryModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -219,6 +220,17 @@ var CategoryModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    CategoryModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    CategoryModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    CategoryModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     CategoryModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -237,7 +249,8 @@ var CategoryModelMaster = /** @class */ (function () {
             .withIdlePeriodScheduleId(data["idlePeriodScheduleId"])
             .withReceivePeriodScheduleId(data["receivePeriodScheduleId"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     CategoryModelMaster.prototype.toDict = function () {
         return {
@@ -255,6 +268,7 @@ var CategoryModelMaster = /** @class */ (function () {
             "receivePeriodScheduleId": this.getReceivePeriodScheduleId(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return CategoryModelMaster;

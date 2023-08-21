@@ -30,6 +30,7 @@ var Receipt = /** @class */ (function () {
         this.total = null;
         this.contentsId = null;
         this.createdAt = null;
+        this.revision = null;
     }
     Receipt.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -249,6 +250,17 @@ var Receipt = /** @class */ (function () {
         this.createdAt = createdAt;
         return this;
     };
+    Receipt.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Receipt.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Receipt.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Receipt.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -265,7 +277,8 @@ var Receipt = /** @class */ (function () {
             .withFree(data["free"])
             .withTotal(data["total"])
             .withContentsId(data["contentsId"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     };
     Receipt.prototype.toDict = function () {
         return {
@@ -281,6 +294,7 @@ var Receipt = /** @class */ (function () {
             "total": this.getTotal(),
             "contentsId": this.getContentsId(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Receipt;

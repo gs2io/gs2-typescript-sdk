@@ -28,6 +28,7 @@ var DataObject = /** @class */ (function () {
         this.previousGeneration = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     DataObject.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -225,6 +226,17 @@ var DataObject = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    DataObject.prototype.getRevision = function () {
+        return this.revision;
+    };
+    DataObject.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    DataObject.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     DataObject.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -242,7 +254,8 @@ var DataObject = /** @class */ (function () {
             .withGeneration(data["generation"])
             .withPreviousGeneration(data["previousGeneration"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     DataObject.prototype.toDict = function () {
         return {
@@ -259,6 +272,7 @@ var DataObject = /** @class */ (function () {
             "previousGeneration": this.getPreviousGeneration(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return DataObject;

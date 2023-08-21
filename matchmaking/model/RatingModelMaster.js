@@ -26,6 +26,7 @@ var RatingModelMaster = /** @class */ (function () {
         this.volatility = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     RatingModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -181,6 +182,17 @@ var RatingModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    RatingModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    RatingModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    RatingModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     RatingModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -193,7 +205,8 @@ var RatingModelMaster = /** @class */ (function () {
             .withInitialValue(data["initialValue"])
             .withVolatility(data["volatility"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     RatingModelMaster.prototype.toDict = function () {
         return {
@@ -205,6 +218,7 @@ var RatingModelMaster = /** @class */ (function () {
             "volatility": this.getVolatility(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return RatingModelMaster;

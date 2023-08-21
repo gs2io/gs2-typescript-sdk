@@ -24,6 +24,7 @@ var Script = /** @class */ (function () {
         this.script = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Script.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -157,6 +158,17 @@ var Script = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Script.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Script.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Script.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Script.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -167,7 +179,8 @@ var Script = /** @class */ (function () {
             .withDescription(data["description"])
             .withScript(data["script"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Script.prototype.toDict = function () {
         return {
@@ -177,6 +190,7 @@ var Script = /** @class */ (function () {
             "script": this.getScript(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Script;

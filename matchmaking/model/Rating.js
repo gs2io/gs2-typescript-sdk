@@ -24,6 +24,7 @@ var Rating = /** @class */ (function () {
         this.rateValue = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Rating.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -177,6 +178,17 @@ var Rating = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Rating.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Rating.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Rating.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Rating.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -187,7 +199,8 @@ var Rating = /** @class */ (function () {
             .withUserId(data["userId"])
             .withRateValue(data["rateValue"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Rating.prototype.toDict = function () {
         return {
@@ -197,6 +210,7 @@ var Rating = /** @class */ (function () {
             "rateValue": this.getRateValue(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Rating;

@@ -25,6 +25,7 @@ var QuestGroupModelMaster = /** @class */ (function () {
         this.challengePeriodEventId = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     QuestGroupModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -169,6 +170,17 @@ var QuestGroupModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    QuestGroupModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    QuestGroupModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    QuestGroupModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     QuestGroupModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -180,7 +192,8 @@ var QuestGroupModelMaster = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withChallengePeriodEventId(data["challengePeriodEventId"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     QuestGroupModelMaster.prototype.toDict = function () {
         return {
@@ -191,6 +204,7 @@ var QuestGroupModelMaster = /** @class */ (function () {
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return QuestGroupModelMaster;

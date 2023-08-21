@@ -25,6 +25,7 @@ var Message = /** @class */ (function () {
         this.category = null;
         this.metadata = null;
         this.createdAt = null;
+        this.revision = null;
     }
     Message.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -189,6 +190,17 @@ var Message = /** @class */ (function () {
         this.createdAt = createdAt;
         return this;
     };
+    Message.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Message.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Message.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Message.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -200,7 +212,8 @@ var Message = /** @class */ (function () {
             .withUserId(data["userId"])
             .withCategory(data["category"])
             .withMetadata(data["metadata"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     };
     Message.prototype.toDict = function () {
         return {
@@ -211,6 +224,7 @@ var Message = /** @class */ (function () {
             "category": this.getCategory(),
             "metadata": this.getMetadata(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Message;

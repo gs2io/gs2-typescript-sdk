@@ -27,6 +27,7 @@ var FormModelMaster = /** @class */ (function () {
         this.slots = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     FormModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -171,6 +172,17 @@ var FormModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    FormModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    FormModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    FormModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     FormModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -185,7 +197,8 @@ var FormModelMaster = /** @class */ (function () {
                 return SlotModel_1.default.fromDict(item);
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     FormModelMaster.prototype.toDict = function () {
         return {
@@ -199,6 +212,7 @@ var FormModelMaster = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return FormModelMaster;

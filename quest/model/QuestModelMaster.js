@@ -35,6 +35,7 @@ var QuestModelMaster = /** @class */ (function () {
         this.premiseQuestNames = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     QuestModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -265,6 +266,17 @@ var QuestModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    QuestModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    QuestModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    QuestModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     QuestModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -297,7 +309,8 @@ var QuestModelMaster = /** @class */ (function () {
                 return item;
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     QuestModelMaster.prototype.toDict = function () {
         return {
@@ -329,6 +342,7 @@ var QuestModelMaster = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return QuestModelMaster;

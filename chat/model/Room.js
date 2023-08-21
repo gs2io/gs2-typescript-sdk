@@ -26,6 +26,7 @@ var Room = /** @class */ (function () {
         this.whiteListUserIds = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Room.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -181,6 +182,17 @@ var Room = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Room.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Room.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Room.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Room.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -196,7 +208,8 @@ var Room = /** @class */ (function () {
                 return item;
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Room.prototype.toDict = function () {
         return {
@@ -211,6 +224,7 @@ var Room = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Room;

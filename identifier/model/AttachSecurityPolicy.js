@@ -21,6 +21,7 @@ var AttachSecurityPolicy = /** @class */ (function () {
         this.userId = null;
         this.securityPolicyIds = null;
         this.attachedAt = null;
+        this.revision = null;
     }
     AttachSecurityPolicy.getOwnerId = function (grn) {
         var match = grn.match(grnFormat
@@ -87,6 +88,17 @@ var AttachSecurityPolicy = /** @class */ (function () {
         this.attachedAt = attachedAt;
         return this;
     };
+    AttachSecurityPolicy.prototype.getRevision = function () {
+        return this.revision;
+    };
+    AttachSecurityPolicy.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    AttachSecurityPolicy.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     AttachSecurityPolicy.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -97,7 +109,8 @@ var AttachSecurityPolicy = /** @class */ (function () {
             data.securityPolicyIds.map(function (item) {
                 return item;
             }) : [])
-            .withAttachedAt(data["attachedAt"]);
+            .withAttachedAt(data["attachedAt"])
+            .withRevision(data["revision"]);
     };
     AttachSecurityPolicy.prototype.toDict = function () {
         return {
@@ -107,6 +120,7 @@ var AttachSecurityPolicy = /** @class */ (function () {
                     return item;
                 }) : [],
             "attachedAt": this.getAttachedAt(),
+            "revision": this.getRevision(),
         };
     };
     return AttachSecurityPolicy;

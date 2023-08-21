@@ -32,6 +32,7 @@ var RateModelMaster = /** @class */ (function () {
         this.bonusRates = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     RateModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -231,6 +232,17 @@ var RateModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    RateModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    RateModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    RateModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     RateModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -253,7 +265,8 @@ var RateModelMaster = /** @class */ (function () {
                 return BonusRate_1.default.fromDict(item);
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     RateModelMaster.prototype.toDict = function () {
         return {
@@ -275,6 +288,7 @@ var RateModelMaster = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return RateModelMaster;

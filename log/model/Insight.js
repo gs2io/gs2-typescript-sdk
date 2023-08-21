@@ -25,6 +25,7 @@ var Insight = /** @class */ (function () {
         this.password = null;
         this.status = null;
         this.createdAt = null;
+        this.revision = null;
     }
     Insight.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -169,6 +170,17 @@ var Insight = /** @class */ (function () {
         this.createdAt = createdAt;
         return this;
     };
+    Insight.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Insight.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Insight.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Insight.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -180,7 +192,8 @@ var Insight = /** @class */ (function () {
             .withHost(data["host"])
             .withPassword(data["password"])
             .withStatus(data["status"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     };
     Insight.prototype.toDict = function () {
         return {
@@ -191,6 +204,7 @@ var Insight = /** @class */ (function () {
             "password": this.getPassword(),
             "status": this.getStatus(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Insight;

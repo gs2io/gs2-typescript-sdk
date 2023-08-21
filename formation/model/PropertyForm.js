@@ -27,6 +27,7 @@ var PropertyForm = /** @class */ (function () {
         this.slots = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     PropertyForm.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -213,6 +214,17 @@ var PropertyForm = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    PropertyForm.prototype.getRevision = function () {
+        return this.revision;
+    };
+    PropertyForm.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    PropertyForm.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     PropertyForm.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -227,7 +239,8 @@ var PropertyForm = /** @class */ (function () {
                 return Slot_1.default.fromDict(item);
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     PropertyForm.prototype.toDict = function () {
         return {
@@ -241,6 +254,7 @@ var PropertyForm = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return PropertyForm;

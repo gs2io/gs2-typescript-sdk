@@ -31,6 +31,7 @@ var ExperienceModelMaster = /** @class */ (function () {
         this.acquireActionRates = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     ExperienceModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -219,6 +220,17 @@ var ExperienceModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    ExperienceModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    ExperienceModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    ExperienceModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     ExperienceModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -237,7 +249,8 @@ var ExperienceModelMaster = /** @class */ (function () {
                 return AcquireActionRate_1.default.fromDict(item);
             }) : [])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     ExperienceModelMaster.prototype.toDict = function () {
         return {
@@ -255,6 +268,7 @@ var ExperienceModelMaster = /** @class */ (function () {
                 }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return ExperienceModelMaster;

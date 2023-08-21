@@ -30,6 +30,7 @@ var Stamina = /** @class */ (function () {
         this.lastRecoveredAt = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Stamina.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -249,6 +250,17 @@ var Stamina = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Stamina.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Stamina.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Stamina.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Stamina.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -265,7 +277,8 @@ var Stamina = /** @class */ (function () {
             .withNextRecoverAt(data["nextRecoverAt"])
             .withLastRecoveredAt(data["lastRecoveredAt"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Stamina.prototype.toDict = function () {
         return {
@@ -281,6 +294,7 @@ var Stamina = /** @class */ (function () {
             "lastRecoveredAt": this.getLastRecoveredAt(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Stamina;

@@ -23,6 +23,7 @@ export default class Trigger implements IModel {
     private userId: string|null = null;
     private createdAt: number|null = null;
     private expiresAt: number|null = null;
+    private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -182,6 +183,17 @@ export default class Trigger implements IModel {
         this.expiresAt = expiresAt;
         return this;
     }
+    public getRevision(): number|null {
+        return this.revision;
+    }
+    public setRevision(revision: number|null) {
+        this.revision = revision;
+        return this;
+    }
+    public withRevision(revision: number|null): this {
+        this.revision = revision;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): Trigger|null {
         if (data == undefined || data == null) {
@@ -192,7 +204,8 @@ export default class Trigger implements IModel {
             .withName(data["name"])
             .withUserId(data["userId"])
             .withCreatedAt(data["createdAt"])
-            .withExpiresAt(data["expiresAt"]);
+            .withExpiresAt(data["expiresAt"])
+            .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -202,6 +215,7 @@ export default class Trigger implements IModel {
             "userId": this.getUserId(),
             "createdAt": this.getCreatedAt(),
             "expiresAt": this.getExpiresAt(),
+            "revision": this.getRevision(),
         };
     }
 }

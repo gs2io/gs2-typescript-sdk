@@ -24,6 +24,7 @@ var Mold = /** @class */ (function () {
         this.capacity = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Mold.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -177,6 +178,17 @@ var Mold = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Mold.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Mold.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Mold.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Mold.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -187,7 +199,8 @@ var Mold = /** @class */ (function () {
             .withUserId(data["userId"])
             .withCapacity(data["capacity"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Mold.prototype.toDict = function () {
         return {
@@ -197,6 +210,7 @@ var Mold = /** @class */ (function () {
             "capacity": this.getCapacity(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Mold;

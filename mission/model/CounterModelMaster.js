@@ -28,6 +28,7 @@ var CounterModelMaster = /** @class */ (function () {
         this.challengePeriodEventId = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     CounterModelMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -183,6 +184,17 @@ var CounterModelMaster = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    CounterModelMaster.prototype.getRevision = function () {
+        return this.revision;
+    };
+    CounterModelMaster.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    CounterModelMaster.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     CounterModelMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -198,7 +210,8 @@ var CounterModelMaster = /** @class */ (function () {
             }) : [])
             .withChallengePeriodEventId(data["challengePeriodEventId"])
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     CounterModelMaster.prototype.toDict = function () {
         return {
@@ -213,6 +226,7 @@ var CounterModelMaster = /** @class */ (function () {
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return CounterModelMaster;

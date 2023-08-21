@@ -24,6 +24,7 @@ var TakeOver = /** @class */ (function () {
         this.userIdentifier = null;
         this.password = null;
         this.createdAt = null;
+        this.revision = null;
     }
     TakeOver.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -177,6 +178,17 @@ var TakeOver = /** @class */ (function () {
         this.createdAt = createdAt;
         return this;
     };
+    TakeOver.prototype.getRevision = function () {
+        return this.revision;
+    };
+    TakeOver.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    TakeOver.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     TakeOver.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -187,7 +199,8 @@ var TakeOver = /** @class */ (function () {
             .withType(data["type"])
             .withUserIdentifier(data["userIdentifier"])
             .withPassword(data["password"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     };
     TakeOver.prototype.toDict = function () {
         return {
@@ -197,6 +210,7 @@ var TakeOver = /** @class */ (function () {
             "userIdentifier": this.getUserIdentifier(),
             "password": this.getPassword(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return TakeOver;

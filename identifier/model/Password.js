@@ -22,6 +22,7 @@ var Password = /** @class */ (function () {
         this.userId = null;
         this.userName = null;
         this.createdAt = null;
+        this.revision = null;
     }
     Password.getOwnerId = function (grn) {
         var match = grn.match(grnFormat
@@ -99,6 +100,17 @@ var Password = /** @class */ (function () {
         this.createdAt = createdAt;
         return this;
     };
+    Password.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Password.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Password.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Password.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -107,7 +119,8 @@ var Password = /** @class */ (function () {
             .withPasswordId(data["passwordId"])
             .withUserId(data["userId"])
             .withUserName(data["userName"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     };
     Password.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var Password = /** @class */ (function () {
             "userId": this.getUserId(),
             "userName": this.getUserName(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Password;

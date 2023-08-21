@@ -40,6 +40,7 @@ var Namespace = /** @class */ (function () {
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Namespace.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -287,6 +288,17 @@ var Namespace = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Namespace.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Namespace.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Namespace.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Namespace.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -309,7 +321,8 @@ var Namespace = /** @class */ (function () {
             .withChangeRatingNotification(NotificationSetting_1.default.fromDict(data["changeRatingNotification"]))
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
         var _a, _b, _c, _d, _e, _f;
@@ -332,6 +345,7 @@ var Namespace = /** @class */ (function () {
             "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Namespace;
