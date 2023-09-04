@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentEventMasterFromGitHubRequest = exports.UpdateCurrentEventMasterRequest = exports.GetCurrentEventMasterRequest = exports.ExportMasterRequest = exports.GetRawEventRequest = exports.GetEventByUserIdRequest = exports.GetEventRequest = exports.DescribeRawEventsRequest = exports.DescribeEventsByUserIdRequest = exports.DescribeEventsRequest = exports.DeleteTriggerByUserIdRequest = exports.DeleteTriggerRequest = exports.TriggerByUserIdRequest = exports.GetTriggerByUserIdRequest = exports.GetTriggerRequest = exports.DescribeTriggersByUserIdRequest = exports.DescribeTriggersRequest = exports.DeleteEventMasterRequest = exports.UpdateEventMasterRequest = exports.GetEventMasterRequest = exports.CreateEventMasterRequest = exports.DescribeEventMastersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.UpdateCurrentEventMasterFromGitHubRequest = exports.UpdateCurrentEventMasterRequest = exports.GetCurrentEventMasterRequest = exports.ExportMasterRequest = exports.GetRawEventRequest = exports.GetEventByUserIdRequest = exports.GetEventRequest = exports.DescribeRawEventsRequest = exports.DescribeEventsByUserIdRequest = exports.DescribeEventsRequest = exports.DeleteTriggerByUserIdRequest = exports.DeleteTriggerRequest = exports.TriggerByStampSheetRequest = exports.TriggerByUserIdRequest = exports.GetTriggerByUserIdRequest = exports.GetTriggerRequest = exports.DescribeTriggersByUserIdRequest = exports.DescribeTriggersRequest = exports.DeleteEventMasterRequest = exports.UpdateEventMasterRequest = exports.GetEventMasterRequest = exports.CreateEventMasterRequest = exports.DescribeEventMastersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -49,6 +49,8 @@ var GetTriggerByUserIdRequest_1 = tslib_1.__importDefault(require("./GetTriggerB
 exports.GetTriggerByUserIdRequest = GetTriggerByUserIdRequest_1.default;
 var TriggerByUserIdRequest_1 = tslib_1.__importDefault(require("./TriggerByUserIdRequest"));
 exports.TriggerByUserIdRequest = TriggerByUserIdRequest_1.default;
+var TriggerByStampSheetRequest_1 = tslib_1.__importDefault(require("./TriggerByStampSheetRequest"));
+exports.TriggerByStampSheetRequest = TriggerByStampSheetRequest_1.default;
 var DeleteTriggerRequest_1 = tslib_1.__importDefault(require("./DeleteTriggerRequest"));
 exports.DeleteTriggerRequest = DeleteTriggerRequest_1.default;
 var DeleteTriggerByUserIdRequest_1 = tslib_1.__importDefault(require("./DeleteTriggerByUserIdRequest"));

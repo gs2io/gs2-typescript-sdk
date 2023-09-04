@@ -29,6 +29,7 @@ import DescribeTriggersByUserIdRequest from "./DescribeTriggersByUserIdRequest"
 import GetTriggerRequest from "./GetTriggerRequest"
 import GetTriggerByUserIdRequest from "./GetTriggerByUserIdRequest"
 import TriggerByUserIdRequest from "./TriggerByUserIdRequest"
+import TriggerByStampSheetRequest from "./TriggerByStampSheetRequest"
 import DeleteTriggerRequest from "./DeleteTriggerRequest"
 import DeleteTriggerByUserIdRequest from "./DeleteTriggerByUserIdRequest"
 import DescribeEventsRequest from "./DescribeEventsRequest"
@@ -59,6 +60,7 @@ export {
     GetTriggerRequest,
     GetTriggerByUserIdRequest,
     TriggerByUserIdRequest,
+    TriggerByStampSheetRequest,
     DeleteTriggerRequest,
     DeleteTriggerByUserIdRequest,
     DescribeEventsRequest,
