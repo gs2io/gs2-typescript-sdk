@@ -33,5 +33,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     deleteReceiveStatusByStampSheet(request: Request.DeleteReceiveStatusByStampSheetRequest): Promise<Result.DeleteReceiveStatusByStampSheetResult>;
     markReceived(request: Request.MarkReceivedRequest): Promise<Result.MarkReceivedResult>;
     markReceivedByUserId(request: Request.MarkReceivedByUserIdRequest): Promise<Result.MarkReceivedByUserIdResult>;
+    unmarkReceivedByUserId(request: Request.UnmarkReceivedByUserIdRequest): Promise<Result.UnmarkReceivedByUserIdResult>;
     markReceivedByStampTask(request: Request.MarkReceivedByStampTaskRequest): Promise<Result.MarkReceivedByStampTaskResult>;
+    unmarkReceivedByStampSheet(request: Request.UnmarkReceivedByStampSheetRequest): Promise<Result.UnmarkReceivedByStampSheetResult>;
 }

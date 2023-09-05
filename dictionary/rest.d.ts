@@ -25,7 +25,9 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     getEntryWithSignature(request: Request.GetEntryWithSignatureRequest): Promise<Result.GetEntryWithSignatureResult>;
     getEntryWithSignatureByUserId(request: Request.GetEntryWithSignatureByUserIdRequest): Promise<Result.GetEntryWithSignatureByUserIdResult>;
     resetByUserId(request: Request.ResetByUserIdRequest): Promise<Result.ResetByUserIdResult>;
+    deleteEntriesByUserId(request: Request.DeleteEntriesByUserIdRequest): Promise<Result.DeleteEntriesByUserIdResult>;
     addEntriesByStampSheet(request: Request.AddEntriesByStampSheetRequest): Promise<Result.AddEntriesByStampSheetResult>;
+    deleteEntriesByStampTask(request: Request.DeleteEntriesByStampTaskRequest): Promise<Result.DeleteEntriesByStampTaskResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentEntryMaster(request: Request.GetCurrentEntryMasterRequest): Promise<Result.GetCurrentEntryMasterResult>;
     updateCurrentEntryMaster(request: Request.UpdateCurrentEntryMasterRequest): Promise<Result.UpdateCurrentEntryMasterResult>;

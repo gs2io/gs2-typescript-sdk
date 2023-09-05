@@ -20,6 +20,7 @@ var Gs2Enchant = tslib_1.__importStar(require("../model"));
 var SetRarityParameterStatusByUserIdResult = /** @class */ (function () {
     function SetRarityParameterStatusByUserIdResult() {
         this.item = null;
+        this.old = null;
     }
     SetRarityParameterStatusByUserIdResult.prototype.getItem = function () {
         return this.item;
@@ -32,14 +33,27 @@ var SetRarityParameterStatusByUserIdResult = /** @class */ (function () {
         this.item = item;
         return this;
     };
+    SetRarityParameterStatusByUserIdResult.prototype.getOld = function () {
+        return this.old;
+    };
+    SetRarityParameterStatusByUserIdResult.prototype.setOld = function (old) {
+        this.old = old;
+        return this;
+    };
+    SetRarityParameterStatusByUserIdResult.prototype.withOld = function (old) {
+        this.old = old;
+        return this;
+    };
     SetRarityParameterStatusByUserIdResult.fromDict = function (data) {
         return new SetRarityParameterStatusByUserIdResult()
-            .withItem(Gs2Enchant.RarityParameterStatus.fromDict(data["item"]));
+            .withItem(Gs2Enchant.RarityParameterStatus.fromDict(data["item"]))
+            .withOld(Gs2Enchant.RarityParameterStatus.fromDict(data["old"]));
     };
     SetRarityParameterStatusByUserIdResult.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "old": (_b = this.getOld()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return SetRarityParameterStatusByUserIdResult;

@@ -601,6 +601,41 @@ export default class Gs2MoneyRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public revertRecordReceipt(request: Request.RevertRecordReceiptRequest): Promise<Result.RevertRecordReceiptResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/receipt/revert')
+            .replace('{service}', 'money')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'receipt': request.getReceipt() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.RevertRecordReceiptResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public recordReceiptByStampTask(request: Request.RecordReceiptByStampTaskRequest): Promise<Result.RecordReceiptByStampTaskResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/receipt/record')
             .replace('{service}', 'money')
@@ -623,6 +658,37 @@ export default class Gs2MoneyRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.RecordReceiptByStampTaskResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public revertRecordReceiptByStampSheet(request: Request.RevertRecordReceiptByStampSheetRequest): Promise<Result.RevertRecordReceiptByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/receipt/record/revert')
+            .replace('{service}', 'money')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.RevertRecordReceiptByStampSheetResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

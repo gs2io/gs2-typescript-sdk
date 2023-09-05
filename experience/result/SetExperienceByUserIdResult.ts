@@ -20,6 +20,7 @@ import * as Gs2Experience from '../model'
 
 export default class SetExperienceByUserIdResult implements IResult {
     private item: Gs2Experience.Status|null = null;
+    private old: Gs2Experience.Status|null = null;
 
     public getItem(): Gs2Experience.Status|null {
         return this.item;
@@ -35,14 +36,30 @@ export default class SetExperienceByUserIdResult implements IResult {
         return this;
     }
 
+    public getOld(): Gs2Experience.Status|null {
+        return this.old;
+    }
+
+    public setOld(old: Gs2Experience.Status|null) {
+        this.old = old;
+        return this;
+    }
+
+    public withOld(old: Gs2Experience.Status|null): this {
+        this.old = old;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): SetExperienceByUserIdResult {
         return new SetExperienceByUserIdResult()
-            .withItem(Gs2Experience.Status.fromDict(data["item"]));
+            .withItem(Gs2Experience.Status.fromDict(data["item"]))
+            .withOld(Gs2Experience.Status.fromDict(data["old"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
+            "old": this.getOld()?.toDict(),
         };
     }
 }

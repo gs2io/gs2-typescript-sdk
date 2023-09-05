@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteMissionTaskModelMasterRequest = exports.UpdateMissionTaskModelMasterRequest = exports.GetMissionTaskModelMasterRequest = exports.CreateMissionTaskModelMasterRequest = exports.DescribeMissionTaskModelMastersRequest = exports.GetMissionTaskModelRequest = exports.DescribeMissionTaskModelsRequest = exports.GetMissionGroupModelRequest = exports.DescribeMissionGroupModelsRequest = exports.GetCounterModelRequest = exports.DescribeCounterModelsRequest = exports.UpdateCurrentMissionMasterFromGitHubRequest = exports.UpdateCurrentMissionMasterRequest = exports.GetCurrentMissionMasterRequest = exports.ExportMasterRequest = exports.IncreaseByStampSheetRequest = exports.DeleteCounterByUserIdRequest = exports.GetCounterByUserIdRequest = exports.GetCounterRequest = exports.IncreaseCounterByUserIdRequest = exports.DescribeCountersByUserIdRequest = exports.DescribeCountersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = exports.DeleteMissionGroupModelMasterRequest = exports.UpdateMissionGroupModelMasterRequest = exports.GetMissionGroupModelMasterRequest = exports.CreateMissionGroupModelMasterRequest = exports.DescribeMissionGroupModelMastersRequest = exports.DeleteCounterModelMasterRequest = exports.UpdateCounterModelMasterRequest = exports.GetCounterModelMasterRequest = exports.CreateCounterModelMasterRequest = exports.DescribeCounterModelMastersRequest = exports.ReceiveByStampTaskRequest = exports.DeleteCompleteByUserIdRequest = exports.GetCompleteByUserIdRequest = exports.GetCompleteRequest = exports.ReceiveByUserIdRequest = exports.CompleteByUserIdRequest = exports.CompleteRequest = exports.DescribeCompletesByUserIdRequest = exports.DescribeCompletesRequest = void 0;
+exports.UpdateMissionTaskModelMasterRequest = exports.GetMissionTaskModelMasterRequest = exports.CreateMissionTaskModelMasterRequest = exports.DescribeMissionTaskModelMastersRequest = exports.GetMissionTaskModelRequest = exports.DescribeMissionTaskModelsRequest = exports.GetMissionGroupModelRequest = exports.DescribeMissionGroupModelsRequest = exports.GetCounterModelRequest = exports.DescribeCounterModelsRequest = exports.UpdateCurrentMissionMasterFromGitHubRequest = exports.UpdateCurrentMissionMasterRequest = exports.GetCurrentMissionMasterRequest = exports.ExportMasterRequest = exports.DecreaseByStampTaskRequest = exports.IncreaseByStampSheetRequest = exports.DeleteCounterByUserIdRequest = exports.GetCounterByUserIdRequest = exports.GetCounterRequest = exports.DecreaseCounterByUserIdRequest = exports.IncreaseCounterByUserIdRequest = exports.DescribeCountersByUserIdRequest = exports.DescribeCountersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = exports.DeleteMissionGroupModelMasterRequest = exports.UpdateMissionGroupModelMasterRequest = exports.GetMissionGroupModelMasterRequest = exports.CreateMissionGroupModelMasterRequest = exports.DescribeMissionGroupModelMastersRequest = exports.DeleteCounterModelMasterRequest = exports.UpdateCounterModelMasterRequest = exports.GetCounterModelMasterRequest = exports.CreateCounterModelMasterRequest = exports.DescribeCounterModelMastersRequest = exports.RevertReceiveByStampSheetRequest = exports.ReceiveByStampTaskRequest = exports.DeleteCompleteByUserIdRequest = exports.GetCompleteByUserIdRequest = exports.GetCompleteRequest = exports.RevertReceiveByUserIdRequest = exports.ReceiveByUserIdRequest = exports.CompleteByUserIdRequest = exports.CompleteRequest = exports.DescribeCompletesByUserIdRequest = exports.DescribeCompletesRequest = void 0;
+exports.DeleteMissionTaskModelMasterRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -27,6 +28,8 @@ var CompleteByUserIdRequest_1 = tslib_1.__importDefault(require("./CompleteByUse
 exports.CompleteByUserIdRequest = CompleteByUserIdRequest_1.default;
 var ReceiveByUserIdRequest_1 = tslib_1.__importDefault(require("./ReceiveByUserIdRequest"));
 exports.ReceiveByUserIdRequest = ReceiveByUserIdRequest_1.default;
+var RevertReceiveByUserIdRequest_1 = tslib_1.__importDefault(require("./RevertReceiveByUserIdRequest"));
+exports.RevertReceiveByUserIdRequest = RevertReceiveByUserIdRequest_1.default;
 var GetCompleteRequest_1 = tslib_1.__importDefault(require("./GetCompleteRequest"));
 exports.GetCompleteRequest = GetCompleteRequest_1.default;
 var GetCompleteByUserIdRequest_1 = tslib_1.__importDefault(require("./GetCompleteByUserIdRequest"));
@@ -35,6 +38,8 @@ var DeleteCompleteByUserIdRequest_1 = tslib_1.__importDefault(require("./DeleteC
 exports.DeleteCompleteByUserIdRequest = DeleteCompleteByUserIdRequest_1.default;
 var ReceiveByStampTaskRequest_1 = tslib_1.__importDefault(require("./ReceiveByStampTaskRequest"));
 exports.ReceiveByStampTaskRequest = ReceiveByStampTaskRequest_1.default;
+var RevertReceiveByStampSheetRequest_1 = tslib_1.__importDefault(require("./RevertReceiveByStampSheetRequest"));
+exports.RevertReceiveByStampSheetRequest = RevertReceiveByStampSheetRequest_1.default;
 var DescribeCounterModelMastersRequest_1 = tslib_1.__importDefault(require("./DescribeCounterModelMastersRequest"));
 exports.DescribeCounterModelMastersRequest = DescribeCounterModelMastersRequest_1.default;
 var CreateCounterModelMasterRequest_1 = tslib_1.__importDefault(require("./CreateCounterModelMasterRequest"));
@@ -73,6 +78,8 @@ var DescribeCountersByUserIdRequest_1 = tslib_1.__importDefault(require("./Descr
 exports.DescribeCountersByUserIdRequest = DescribeCountersByUserIdRequest_1.default;
 var IncreaseCounterByUserIdRequest_1 = tslib_1.__importDefault(require("./IncreaseCounterByUserIdRequest"));
 exports.IncreaseCounterByUserIdRequest = IncreaseCounterByUserIdRequest_1.default;
+var DecreaseCounterByUserIdRequest_1 = tslib_1.__importDefault(require("./DecreaseCounterByUserIdRequest"));
+exports.DecreaseCounterByUserIdRequest = DecreaseCounterByUserIdRequest_1.default;
 var GetCounterRequest_1 = tslib_1.__importDefault(require("./GetCounterRequest"));
 exports.GetCounterRequest = GetCounterRequest_1.default;
 var GetCounterByUserIdRequest_1 = tslib_1.__importDefault(require("./GetCounterByUserIdRequest"));
@@ -81,6 +88,8 @@ var DeleteCounterByUserIdRequest_1 = tslib_1.__importDefault(require("./DeleteCo
 exports.DeleteCounterByUserIdRequest = DeleteCounterByUserIdRequest_1.default;
 var IncreaseByStampSheetRequest_1 = tslib_1.__importDefault(require("./IncreaseByStampSheetRequest"));
 exports.IncreaseByStampSheetRequest = IncreaseByStampSheetRequest_1.default;
+var DecreaseByStampTaskRequest_1 = tslib_1.__importDefault(require("./DecreaseByStampTaskRequest"));
+exports.DecreaseByStampTaskRequest = DecreaseByStampTaskRequest_1.default;
 var ExportMasterRequest_1 = tslib_1.__importDefault(require("./ExportMasterRequest"));
 exports.ExportMasterRequest = ExportMasterRequest_1.default;
 var GetCurrentMissionMasterRequest_1 = tslib_1.__importDefault(require("./GetCurrentMissionMasterRequest"));

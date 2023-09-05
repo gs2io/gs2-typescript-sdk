@@ -50,7 +50,9 @@ import GetRandomShowcaseMasterResult from "./GetRandomShowcaseMasterResult"
 import UpdateRandomShowcaseMasterResult from "./UpdateRandomShowcaseMasterResult"
 import DeleteRandomShowcaseMasterResult from "./DeleteRandomShowcaseMasterResult"
 import IncrementPurchaseCountByUserIdResult from "./IncrementPurchaseCountByUserIdResult"
+import DecrementPurchaseCountByUserIdResult from "./DecrementPurchaseCountByUserIdResult"
 import IncrementPurchaseCountByStampTaskResult from "./IncrementPurchaseCountByStampTaskResult"
+import DecrementPurchaseCountByStampSheetResult from "./DecrementPurchaseCountByStampSheetResult"
 import ForceReDrawByUserIdResult from "./ForceReDrawByUserIdResult"
 import ForceReDrawByUserIdByStampSheetResult from "./ForceReDrawByUserIdByStampSheetResult"
 import DescribeRandomDisplayItemsResult from "./DescribeRandomDisplayItemsResult"
@@ -98,7 +100,9 @@ export {
     UpdateRandomShowcaseMasterResult,
     DeleteRandomShowcaseMasterResult,
     IncrementPurchaseCountByUserIdResult,
+    DecrementPurchaseCountByUserIdResult,
     IncrementPurchaseCountByStampTaskResult,
+    DecrementPurchaseCountByStampSheetResult,
     ForceReDrawByUserIdResult,
     ForceReDrawByUserIdByStampSheetResult,
     DescribeRandomDisplayItemsResult,

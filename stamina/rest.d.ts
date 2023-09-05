@@ -45,6 +45,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     consumeStaminaByUserId(request: Request.ConsumeStaminaByUserIdRequest): Promise<Result.ConsumeStaminaByUserIdResult>;
     recoverStaminaByUserId(request: Request.RecoverStaminaByUserIdRequest): Promise<Result.RecoverStaminaByUserIdResult>;
     raiseMaxValueByUserId(request: Request.RaiseMaxValueByUserIdRequest): Promise<Result.RaiseMaxValueByUserIdResult>;
+    decreaseMaxValueByUserId(request: Request.DecreaseMaxValueByUserIdRequest): Promise<Result.DecreaseMaxValueByUserIdResult>;
     setMaxValueByUserId(request: Request.SetMaxValueByUserIdRequest): Promise<Result.SetMaxValueByUserIdResult>;
     setRecoverIntervalByUserId(request: Request.SetRecoverIntervalByUserIdRequest): Promise<Result.SetRecoverIntervalByUserIdResult>;
     setRecoverValueByUserId(request: Request.SetRecoverValueByUserIdRequest): Promise<Result.SetRecoverValueByUserIdResult>;
@@ -54,6 +55,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     deleteStaminaByUserId(request: Request.DeleteStaminaByUserIdRequest): Promise<Result.DeleteStaminaByUserIdResult>;
     recoverStaminaByStampSheet(request: Request.RecoverStaminaByStampSheetRequest): Promise<Result.RecoverStaminaByStampSheetResult>;
     raiseMaxValueByStampSheet(request: Request.RaiseMaxValueByStampSheetRequest): Promise<Result.RaiseMaxValueByStampSheetResult>;
+    decreaseMaxValueByStampTask(request: Request.DecreaseMaxValueByStampTaskRequest): Promise<Result.DecreaseMaxValueByStampTaskResult>;
     setMaxValueByStampSheet(request: Request.SetMaxValueByStampSheetRequest): Promise<Result.SetMaxValueByStampSheetResult>;
     setRecoverIntervalByStampSheet(request: Request.SetRecoverIntervalByStampSheetRequest): Promise<Result.SetRecoverIntervalByStampSheetResult>;
     setRecoverValueByStampSheet(request: Request.SetRecoverValueByStampSheetRequest): Promise<Result.SetRecoverValueByStampSheetResult>;

@@ -43,9 +43,11 @@ import GetMoldResult from "./GetMoldResult"
 import GetMoldByUserIdResult from "./GetMoldByUserIdResult"
 import SetMoldCapacityByUserIdResult from "./SetMoldCapacityByUserIdResult"
 import AddMoldCapacityByUserIdResult from "./AddMoldCapacityByUserIdResult"
+import SubMoldCapacityByUserIdResult from "./SubMoldCapacityByUserIdResult"
 import DeleteMoldResult from "./DeleteMoldResult"
 import DeleteMoldByUserIdResult from "./DeleteMoldByUserIdResult"
 import AddCapacityByStampSheetResult from "./AddCapacityByStampSheetResult"
+import SubCapacityByStampTaskResult from "./SubCapacityByStampTaskResult"
 import SetCapacityByStampSheetResult from "./SetCapacityByStampSheetResult"
 import DescribeFormsResult from "./DescribeFormsResult"
 import DescribeFormsByUserIdResult from "./DescribeFormsByUserIdResult"
@@ -103,9 +105,11 @@ export {
     GetMoldByUserIdResult,
     SetMoldCapacityByUserIdResult,
     AddMoldCapacityByUserIdResult,
+    SubMoldCapacityByUserIdResult,
     DeleteMoldResult,
     DeleteMoldByUserIdResult,
     AddCapacityByStampSheetResult,
+    SubCapacityByStampTaskResult,
     SetCapacityByStampSheetResult,
     DescribeFormsResult,
     DescribeFormsByUserIdResult,

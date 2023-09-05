@@ -20,6 +20,7 @@ import * as Gs2Enchant from '../model'
 
 export default class ReDrawBalanceParameterStatusByUserIdResult implements IResult {
     private item: Gs2Enchant.BalanceParameterStatus|null = null;
+    private old: Gs2Enchant.BalanceParameterStatus|null = null;
 
     public getItem(): Gs2Enchant.BalanceParameterStatus|null {
         return this.item;
@@ -35,14 +36,30 @@ export default class ReDrawBalanceParameterStatusByUserIdResult implements IResu
         return this;
     }
 
+    public getOld(): Gs2Enchant.BalanceParameterStatus|null {
+        return this.old;
+    }
+
+    public setOld(old: Gs2Enchant.BalanceParameterStatus|null) {
+        this.old = old;
+        return this;
+    }
+
+    public withOld(old: Gs2Enchant.BalanceParameterStatus|null): this {
+        this.old = old;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): ReDrawBalanceParameterStatusByUserIdResult {
         return new ReDrawBalanceParameterStatusByUserIdResult()
-            .withItem(Gs2Enchant.BalanceParameterStatus.fromDict(data["item"]));
+            .withItem(Gs2Enchant.BalanceParameterStatus.fromDict(data["item"]))
+            .withOld(Gs2Enchant.BalanceParameterStatus.fromDict(data["old"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
+            "old": this.getOld()?.toDict(),
         };
     }
 }

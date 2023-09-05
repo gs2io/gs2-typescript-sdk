@@ -26,7 +26,9 @@ export default class Gs2IdleRestClient extends AbstractGs2RestClient {
     receive(request: Request.ReceiveRequest): Promise<Result.ReceiveResult>;
     receiveByUserId(request: Request.ReceiveByUserIdRequest): Promise<Result.ReceiveByUserIdResult>;
     increaseMaximumIdleMinutesByUserId(request: Request.IncreaseMaximumIdleMinutesByUserIdRequest): Promise<Result.IncreaseMaximumIdleMinutesByUserIdResult>;
+    decreaseMaximumIdleMinutesByUserId(request: Request.DecreaseMaximumIdleMinutesByUserIdRequest): Promise<Result.DecreaseMaximumIdleMinutesByUserIdResult>;
     increaseMaximumIdleMinutesByStampSheet(request: Request.IncreaseMaximumIdleMinutesByStampSheetRequest): Promise<Result.IncreaseMaximumIdleMinutesByStampSheetResult>;
+    decreaseMaximumIdleMinutesByStampTask(request: Request.DecreaseMaximumIdleMinutesByStampTaskRequest): Promise<Result.DecreaseMaximumIdleMinutesByStampTaskResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentCategoryMaster(request: Request.GetCurrentCategoryMasterRequest): Promise<Result.GetCurrentCategoryMasterResult>;
     updateCurrentCategoryMaster(request: Request.UpdateCurrentCategoryMasterRequest): Promise<Result.UpdateCurrentCategoryMasterResult>;

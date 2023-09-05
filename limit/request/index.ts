@@ -25,8 +25,10 @@ import GetCounterRequest from "./GetCounterRequest"
 import GetCounterByUserIdRequest from "./GetCounterByUserIdRequest"
 import CountUpRequest from "./CountUpRequest"
 import CountUpByUserIdRequest from "./CountUpByUserIdRequest"
+import CountDownByUserIdRequest from "./CountDownByUserIdRequest"
 import DeleteCounterByUserIdRequest from "./DeleteCounterByUserIdRequest"
 import CountUpByStampTaskRequest from "./CountUpByStampTaskRequest"
+import CountDownByStampSheetRequest from "./CountDownByStampSheetRequest"
 import DeleteByStampSheetRequest from "./DeleteByStampSheetRequest"
 import DescribeLimitModelMastersRequest from "./DescribeLimitModelMastersRequest"
 import CreateLimitModelMasterRequest from "./CreateLimitModelMasterRequest"
@@ -53,8 +55,10 @@ export {
     GetCounterByUserIdRequest,
     CountUpRequest,
     CountUpByUserIdRequest,
+    CountDownByUserIdRequest,
     DeleteCounterByUserIdRequest,
     CountUpByStampTaskRequest,
+    CountDownByStampSheetRequest,
     DeleteByStampSheetRequest,
     DescribeLimitModelMastersRequest,
     CreateLimitModelMasterRequest,

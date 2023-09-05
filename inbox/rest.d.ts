@@ -25,6 +25,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     deleteMessageByUserId(request: Request.DeleteMessageByUserIdRequest): Promise<Result.DeleteMessageByUserIdResult>;
     sendByStampSheet(request: Request.SendByStampSheetRequest): Promise<Result.SendByStampSheetResult>;
     openByStampTask(request: Request.OpenByStampTaskRequest): Promise<Result.OpenByStampTaskResult>;
+    deleteMessageByStampTask(request: Request.DeleteMessageByStampTaskRequest): Promise<Result.DeleteMessageByStampTaskResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentMessageMaster(request: Request.GetCurrentMessageMasterRequest): Promise<Result.GetCurrentMessageMasterResult>;
     updateCurrentMessageMaster(request: Request.UpdateCurrentMessageMasterRequest): Promise<Result.UpdateCurrentMessageMasterResult>;

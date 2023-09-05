@@ -41,7 +41,9 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     updateRandomShowcaseMaster(request: Request.UpdateRandomShowcaseMasterRequest): Promise<Result.UpdateRandomShowcaseMasterResult>;
     deleteRandomShowcaseMaster(request: Request.DeleteRandomShowcaseMasterRequest): Promise<Result.DeleteRandomShowcaseMasterResult>;
     incrementPurchaseCountByUserId(request: Request.IncrementPurchaseCountByUserIdRequest): Promise<Result.IncrementPurchaseCountByUserIdResult>;
+    decrementPurchaseCountByUserId(request: Request.DecrementPurchaseCountByUserIdRequest): Promise<Result.DecrementPurchaseCountByUserIdResult>;
     incrementPurchaseCountByStampTask(request: Request.IncrementPurchaseCountByStampTaskRequest): Promise<Result.IncrementPurchaseCountByStampTaskResult>;
+    decrementPurchaseCountByStampSheet(request: Request.DecrementPurchaseCountByStampSheetRequest): Promise<Result.DecrementPurchaseCountByStampSheetResult>;
     forceReDrawByUserId(request: Request.ForceReDrawByUserIdRequest): Promise<Result.ForceReDrawByUserIdResult>;
     forceReDrawByUserIdByStampSheet(request: Request.ForceReDrawByUserIdByStampSheetRequest): Promise<Result.ForceReDrawByUserIdByStampSheetResult>;
     describeRandomDisplayItems(request: Request.DescribeRandomDisplayItemsRequest): Promise<Result.DescribeRandomDisplayItemsResult>;

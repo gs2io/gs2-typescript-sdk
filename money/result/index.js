@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RecordReceiptByStampTaskResult = exports.RecordReceiptResult = exports.GetByUserIdAndTransactionIdResult = exports.DescribeReceiptsResult = exports.WithdrawByStampTaskResult = exports.DepositByStampSheetResult = exports.WithdrawByUserIdResult = exports.WithdrawResult = exports.DepositByUserIdResult = exports.GetWalletByUserIdResult = exports.GetWalletResult = exports.DescribeWalletsByUserIdResult = exports.DescribeWalletsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.RevertRecordReceiptByStampSheetResult = exports.RecordReceiptByStampTaskResult = exports.RevertRecordReceiptResult = exports.RecordReceiptResult = exports.GetByUserIdAndTransactionIdResult = exports.DescribeReceiptsResult = exports.WithdrawByStampTaskResult = exports.DepositByStampSheetResult = exports.WithdrawByUserIdResult = exports.WithdrawResult = exports.DepositByUserIdResult = exports.GetWalletByUserIdResult = exports.GetWalletResult = exports.DescribeWalletsByUserIdResult = exports.DescribeWalletsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -53,6 +53,10 @@ var GetByUserIdAndTransactionIdResult_1 = tslib_1.__importDefault(require("./Get
 exports.GetByUserIdAndTransactionIdResult = GetByUserIdAndTransactionIdResult_1.default;
 var RecordReceiptResult_1 = tslib_1.__importDefault(require("./RecordReceiptResult"));
 exports.RecordReceiptResult = RecordReceiptResult_1.default;
+var RevertRecordReceiptResult_1 = tslib_1.__importDefault(require("./RevertRecordReceiptResult"));
+exports.RevertRecordReceiptResult = RevertRecordReceiptResult_1.default;
 var RecordReceiptByStampTaskResult_1 = tslib_1.__importDefault(require("./RecordReceiptByStampTaskResult"));
 exports.RecordReceiptByStampTaskResult = RecordReceiptByStampTaskResult_1.default;
+var RevertRecordReceiptByStampSheetResult_1 = tslib_1.__importDefault(require("./RevertRecordReceiptByStampSheetResult"));
+exports.RevertRecordReceiptByStampSheetResult = RevertRecordReceiptByStampSheetResult_1.default;
 //# sourceMappingURL=index.js.map

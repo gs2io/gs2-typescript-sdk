@@ -20,6 +20,7 @@ var Gs2Formation = tslib_1.__importStar(require("../model"));
 var SetCapacityByStampSheetResult = /** @class */ (function () {
     function SetCapacityByStampSheetResult() {
         this.item = null;
+        this.old = null;
         this.moldModel = null;
     }
     SetCapacityByStampSheetResult.prototype.getItem = function () {
@@ -31,6 +32,17 @@ var SetCapacityByStampSheetResult = /** @class */ (function () {
     };
     SetCapacityByStampSheetResult.prototype.withItem = function (item) {
         this.item = item;
+        return this;
+    };
+    SetCapacityByStampSheetResult.prototype.getOld = function () {
+        return this.old;
+    };
+    SetCapacityByStampSheetResult.prototype.setOld = function (old) {
+        this.old = old;
+        return this;
+    };
+    SetCapacityByStampSheetResult.prototype.withOld = function (old) {
+        this.old = old;
         return this;
     };
     SetCapacityByStampSheetResult.prototype.getMoldModel = function () {
@@ -47,13 +59,15 @@ var SetCapacityByStampSheetResult = /** @class */ (function () {
     SetCapacityByStampSheetResult.fromDict = function (data) {
         return new SetCapacityByStampSheetResult()
             .withItem(Gs2Formation.Mold.fromDict(data["item"]))
+            .withOld(Gs2Formation.Mold.fromDict(data["old"]))
             .withMoldModel(Gs2Formation.MoldModel.fromDict(data["moldModel"]));
     };
     SetCapacityByStampSheetResult.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "moldModel": (_b = this.getMoldModel()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "old": (_b = this.getOld()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "moldModel": (_c = this.getMoldModel()) === null || _c === void 0 ? void 0 : _c.toDict(),
         };
     };
     return SetCapacityByStampSheetResult;

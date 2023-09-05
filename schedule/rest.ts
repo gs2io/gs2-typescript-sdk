@@ -616,6 +616,37 @@ export default class Gs2ScheduleRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public deleteTriggerByStampTask(request: Request.DeleteTriggerByStampTaskRequest): Promise<Result.DeleteTriggerByStampTaskResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/trigger/delete')
+            .replace('{service}', 'schedule')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampTask': request.getStampTask() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteTriggerByStampTaskResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public describeEvents(request: Request.DescribeEventsRequest): Promise<Result.DescribeEventsResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/event')
             .replace('{service}', 'schedule')

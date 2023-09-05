@@ -20,6 +20,7 @@ var Gs2Stamina = tslib_1.__importStar(require("../model"));
 var SetRecoverValueByStatusResult = /** @class */ (function () {
     function SetRecoverValueByStatusResult() {
         this.item = null;
+        this.old = null;
         this.staminaModel = null;
     }
     SetRecoverValueByStatusResult.prototype.getItem = function () {
@@ -31,6 +32,17 @@ var SetRecoverValueByStatusResult = /** @class */ (function () {
     };
     SetRecoverValueByStatusResult.prototype.withItem = function (item) {
         this.item = item;
+        return this;
+    };
+    SetRecoverValueByStatusResult.prototype.getOld = function () {
+        return this.old;
+    };
+    SetRecoverValueByStatusResult.prototype.setOld = function (old) {
+        this.old = old;
+        return this;
+    };
+    SetRecoverValueByStatusResult.prototype.withOld = function (old) {
+        this.old = old;
         return this;
     };
     SetRecoverValueByStatusResult.prototype.getStaminaModel = function () {
@@ -47,13 +59,15 @@ var SetRecoverValueByStatusResult = /** @class */ (function () {
     SetRecoverValueByStatusResult.fromDict = function (data) {
         return new SetRecoverValueByStatusResult()
             .withItem(Gs2Stamina.Stamina.fromDict(data["item"]))
+            .withOld(Gs2Stamina.Stamina.fromDict(data["old"]))
             .withStaminaModel(Gs2Stamina.StaminaModel.fromDict(data["staminaModel"]));
     };
     SetRecoverValueByStatusResult.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "staminaModel": (_b = this.getStaminaModel()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "old": (_b = this.getOld()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "staminaModel": (_c = this.getStaminaModel()) === null || _c === void 0 ? void 0 : _c.toDict(),
         };
     };
     return SetRecoverValueByStatusResult;

@@ -34,9 +34,11 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     getMoldByUserId(request: Request.GetMoldByUserIdRequest): Promise<Result.GetMoldByUserIdResult>;
     setMoldCapacityByUserId(request: Request.SetMoldCapacityByUserIdRequest): Promise<Result.SetMoldCapacityByUserIdResult>;
     addMoldCapacityByUserId(request: Request.AddMoldCapacityByUserIdRequest): Promise<Result.AddMoldCapacityByUserIdResult>;
+    subMoldCapacityByUserId(request: Request.SubMoldCapacityByUserIdRequest): Promise<Result.SubMoldCapacityByUserIdResult>;
     deleteMold(request: Request.DeleteMoldRequest): Promise<Result.DeleteMoldResult>;
     deleteMoldByUserId(request: Request.DeleteMoldByUserIdRequest): Promise<Result.DeleteMoldByUserIdResult>;
     addCapacityByStampSheet(request: Request.AddCapacityByStampSheetRequest): Promise<Result.AddCapacityByStampSheetResult>;
+    subCapacityByStampTask(request: Request.SubCapacityByStampTaskRequest): Promise<Result.SubCapacityByStampTaskResult>;
     setCapacityByStampSheet(request: Request.SetCapacityByStampSheetRequest): Promise<Result.SetCapacityByStampSheetResult>;
     describeForms(request: Request.DescribeFormsRequest): Promise<Result.DescribeFormsResult>;
     describeFormsByUserId(request: Request.DescribeFormsByUserIdRequest): Promise<Result.DescribeFormsByUserIdResult>;

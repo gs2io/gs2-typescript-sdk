@@ -16,8 +16,10 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     getCounterByUserId(request: Request.GetCounterByUserIdRequest): Promise<Result.GetCounterByUserIdResult>;
     countUp(request: Request.CountUpRequest): Promise<Result.CountUpResult>;
     countUpByUserId(request: Request.CountUpByUserIdRequest): Promise<Result.CountUpByUserIdResult>;
+    countDownByUserId(request: Request.CountDownByUserIdRequest): Promise<Result.CountDownByUserIdResult>;
     deleteCounterByUserId(request: Request.DeleteCounterByUserIdRequest): Promise<Result.DeleteCounterByUserIdResult>;
     countUpByStampTask(request: Request.CountUpByStampTaskRequest): Promise<Result.CountUpByStampTaskResult>;
+    countDownByStampSheet(request: Request.CountDownByStampSheetRequest): Promise<Result.CountDownByStampSheetResult>;
     deleteByStampSheet(request: Request.DeleteByStampSheetRequest): Promise<Result.DeleteByStampSheetResult>;
     describeLimitModelMasters(request: Request.DescribeLimitModelMastersRequest): Promise<Result.DescribeLimitModelMastersResult>;
     createLimitModelMaster(request: Request.CreateLimitModelMasterRequest): Promise<Result.CreateLimitModelMasterResult>;

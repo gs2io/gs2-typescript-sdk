@@ -1159,6 +1159,43 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public decrementPurchaseCountByUserId(request: Request.DecrementPurchaseCountByUserIdRequest): Promise<Result.DecrementPurchaseCountByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/random/showcase/user/{userId}/status/{showcaseName}/{displayItemName}/purchase/count/decrease')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{showcaseName}', String(request.getShowcaseName() ?? 'null') === "" ? "null" : String(request.getShowcaseName() ?? 'null'))
+            .replace('{displayItemName}', String(request.getDisplayItemName() ?? 'null') === "" ? "null" : String(request.getDisplayItemName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'count': request.getCount() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DecrementPurchaseCountByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public incrementPurchaseCountByStampTask(request: Request.IncrementPurchaseCountByStampTaskRequest): Promise<Result.IncrementPurchaseCountByStampTaskResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/random/showcase/status/purchase/count')
             .replace('{service}', 'showcase')
@@ -1181,6 +1218,37 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.IncrementPurchaseCountByStampTaskResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public decrementPurchaseCountByStampSheet(request: Request.DecrementPurchaseCountByStampSheetRequest): Promise<Result.DecrementPurchaseCountByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/random/showcase/status/purchase/count/decrease')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DecrementPurchaseCountByStampSheetResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

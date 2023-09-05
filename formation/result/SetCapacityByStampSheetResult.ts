@@ -20,6 +20,7 @@ import * as Gs2Formation from '../model'
 
 export default class SetCapacityByStampSheetResult implements IResult {
     private item: Gs2Formation.Mold|null = null;
+    private old: Gs2Formation.Mold|null = null;
     private moldModel: Gs2Formation.MoldModel|null = null;
 
     public getItem(): Gs2Formation.Mold|null {
@@ -33,6 +34,20 @@ export default class SetCapacityByStampSheetResult implements IResult {
 
     public withItem(item: Gs2Formation.Mold|null): this {
         this.item = item;
+        return this;
+    }
+
+    public getOld(): Gs2Formation.Mold|null {
+        return this.old;
+    }
+
+    public setOld(old: Gs2Formation.Mold|null) {
+        this.old = old;
+        return this;
+    }
+
+    public withOld(old: Gs2Formation.Mold|null): this {
+        this.old = old;
         return this;
     }
 
@@ -53,12 +68,14 @@ export default class SetCapacityByStampSheetResult implements IResult {
     public static fromDict(data: {[key: string]: any}): SetCapacityByStampSheetResult {
         return new SetCapacityByStampSheetResult()
             .withItem(Gs2Formation.Mold.fromDict(data["item"]))
+            .withOld(Gs2Formation.Mold.fromDict(data["old"]))
             .withMoldModel(Gs2Formation.MoldModel.fromDict(data["moldModel"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
+            "old": this.getOld()?.toDict(),
             "moldModel": this.getMoldModel()?.toDict(),
         };
     }

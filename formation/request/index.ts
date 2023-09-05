@@ -43,9 +43,11 @@ import GetMoldRequest from "./GetMoldRequest"
 import GetMoldByUserIdRequest from "./GetMoldByUserIdRequest"
 import SetMoldCapacityByUserIdRequest from "./SetMoldCapacityByUserIdRequest"
 import AddMoldCapacityByUserIdRequest from "./AddMoldCapacityByUserIdRequest"
+import SubMoldCapacityByUserIdRequest from "./SubMoldCapacityByUserIdRequest"
 import DeleteMoldRequest from "./DeleteMoldRequest"
 import DeleteMoldByUserIdRequest from "./DeleteMoldByUserIdRequest"
 import AddCapacityByStampSheetRequest from "./AddCapacityByStampSheetRequest"
+import SubCapacityByStampTaskRequest from "./SubCapacityByStampTaskRequest"
 import SetCapacityByStampSheetRequest from "./SetCapacityByStampSheetRequest"
 import DescribeFormsRequest from "./DescribeFormsRequest"
 import DescribeFormsByUserIdRequest from "./DescribeFormsByUserIdRequest"
@@ -103,9 +105,11 @@ export {
     GetMoldByUserIdRequest,
     SetMoldCapacityByUserIdRequest,
     AddMoldCapacityByUserIdRequest,
+    SubMoldCapacityByUserIdRequest,
     DeleteMoldRequest,
     DeleteMoldByUserIdRequest,
     AddCapacityByStampSheetRequest,
+    SubCapacityByStampTaskRequest,
     SetCapacityByStampSheetRequest,
     DescribeFormsRequest,
     DescribeFormsByUserIdRequest,

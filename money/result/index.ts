@@ -31,7 +31,9 @@ import WithdrawByStampTaskResult from "./WithdrawByStampTaskResult"
 import DescribeReceiptsResult from "./DescribeReceiptsResult"
 import GetByUserIdAndTransactionIdResult from "./GetByUserIdAndTransactionIdResult"
 import RecordReceiptResult from "./RecordReceiptResult"
+import RevertRecordReceiptResult from "./RevertRecordReceiptResult"
 import RecordReceiptByStampTaskResult from "./RecordReceiptByStampTaskResult"
+import RevertRecordReceiptByStampSheetResult from "./RevertRecordReceiptByStampSheetResult"
 
 export {
     DescribeNamespacesResult,
@@ -52,5 +54,7 @@ export {
     DescribeReceiptsResult,
     GetByUserIdAndTransactionIdResult,
     RecordReceiptResult,
+    RevertRecordReceiptResult,
     RecordReceiptByStampTaskResult,
+    RevertRecordReceiptByStampSheetResult,
 };

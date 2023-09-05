@@ -1009,6 +1009,39 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
             }
         });
     };
+    Gs2ShowcaseRestClient.prototype.decrementPurchaseCountByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/random/showcase/user/{userId}/status/{showcaseName}/{displayItemName}/purchase/count/decrease')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{showcaseName}', String((_c = request.getShowcaseName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getShowcaseName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{displayItemName}', String((_e = request.getDisplayItemName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getDisplayItemName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{userId}', String((_g = request.getUserId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getUserId()) !== null && _h !== void 0 ? _h : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+        }
+        var body = {
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'count': (_l = request.getCount()) !== null && _l !== void 0 ? _l : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.DecrementPurchaseCountByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
     Gs2ShowcaseRestClient.prototype.incrementPurchaseCountByStampTask = function (request) {
         var _a, _b, _c;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/random/showcase/status/purchase/count')
@@ -1027,6 +1060,33 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
             headers: headers,
         }).then(function (response) {
             return Result.IncrementPurchaseCountByStampTaskResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2ShowcaseRestClient.prototype.decrementPurchaseCountByStampSheet = function (request) {
+        var _a, _b, _c;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/random/showcase/status/purchase/count/decrease')
+            .replace('{service}', 'showcase')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'stampSheet': (_b = request.getStampSheet()) !== null && _b !== void 0 ? _b : null,
+            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.DecrementPurchaseCountByStampSheetResult.fromDict(response.data);
         }).catch(function (error) {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

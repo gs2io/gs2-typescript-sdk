@@ -20,6 +20,7 @@ import * as Gs2Inventory from '../model'
 
 export default class SetCapacityByUserIdResult implements IResult {
     private item: Gs2Inventory.Inventory|null = null;
+    private old: Gs2Inventory.Inventory|null = null;
 
     public getItem(): Gs2Inventory.Inventory|null {
         return this.item;
@@ -35,14 +36,30 @@ export default class SetCapacityByUserIdResult implements IResult {
         return this;
     }
 
+    public getOld(): Gs2Inventory.Inventory|null {
+        return this.old;
+    }
+
+    public setOld(old: Gs2Inventory.Inventory|null) {
+        this.old = old;
+        return this;
+    }
+
+    public withOld(old: Gs2Inventory.Inventory|null): this {
+        this.old = old;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): SetCapacityByUserIdResult {
         return new SetCapacityByUserIdResult()
-            .withItem(Gs2Inventory.Inventory.fromDict(data["item"]));
+            .withItem(Gs2Inventory.Inventory.fromDict(data["item"]))
+            .withOld(Gs2Inventory.Inventory.fromDict(data["old"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
+            "old": this.getOld()?.toDict(),
         };
     }
 }

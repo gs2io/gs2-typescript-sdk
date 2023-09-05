@@ -26,6 +26,7 @@ import RunResult from "./RunResult"
 import RunByUserIdResult from "./RunByUserIdResult"
 import DeleteJobByUserIdResult from "./DeleteJobByUserIdResult"
 import PushByStampSheetResult from "./PushByStampSheetResult"
+import DeleteByStampTaskResult from "./DeleteByStampTaskResult"
 import GetJobResultResult from "./GetJobResultResult"
 import GetJobResultByUserIdResult from "./GetJobResultByUserIdResult"
 import DescribeDeadLetterJobsByUserIdResult from "./DescribeDeadLetterJobsByUserIdResult"
@@ -46,6 +47,7 @@ export {
     RunByUserIdResult,
     DeleteJobByUserIdResult,
     PushByStampSheetResult,
+    DeleteByStampTaskResult,
     GetJobResultResult,
     GetJobResultByUserIdResult,
     DescribeDeadLetterJobsByUserIdResult,

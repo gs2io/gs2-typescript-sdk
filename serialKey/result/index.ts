@@ -27,7 +27,9 @@ import DownloadSerialCodesResult from "./DownloadSerialCodesResult"
 import GetSerialKeyResult from "./GetSerialKeyResult"
 import UseResult from "./UseResult"
 import UseByUserIdResult from "./UseByUserIdResult"
+import RevertUseByUserIdResult from "./RevertUseByUserIdResult"
 import UseByStampTaskResult from "./UseByStampTaskResult"
+import RevertUseByStampSheetResult from "./RevertUseByStampSheetResult"
 import DescribeCampaignModelsResult from "./DescribeCampaignModelsResult"
 import GetCampaignModelResult from "./GetCampaignModelResult"
 import DescribeCampaignModelMastersResult from "./DescribeCampaignModelMastersResult"
@@ -55,7 +57,9 @@ export {
     GetSerialKeyResult,
     UseResult,
     UseByUserIdResult,
+    RevertUseByUserIdResult,
     UseByStampTaskResult,
+    RevertUseByStampSheetResult,
     DescribeCampaignModelsResult,
     GetCampaignModelResult,
     DescribeCampaignModelMastersResult,

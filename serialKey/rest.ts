@@ -443,6 +443,41 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public revertUseByUserId(request: Request.RevertUseByUserIdRequest): Promise<Result.RevertUseByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/serialKey/revert')
+            .replace('{service}', 'serial-key')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'code': request.getCode() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.RevertUseByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public useByStampTask(request: Request.UseByStampTaskRequest): Promise<Result.UseByStampTaskResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/serialKey/use')
             .replace('{service}', 'serial-key')
@@ -465,6 +500,37 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.UseByStampTaskResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public revertUseByStampSheet(request: Request.RevertUseByStampSheetRequest): Promise<Result.RevertUseByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/serialKey/use')
+            .replace('{service}', 'serial-key')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.RevertUseByStampSheetResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

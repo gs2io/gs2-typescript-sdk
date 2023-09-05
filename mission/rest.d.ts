@@ -9,10 +9,12 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     complete(request: Request.CompleteRequest): Promise<Result.CompleteResult>;
     completeByUserId(request: Request.CompleteByUserIdRequest): Promise<Result.CompleteByUserIdResult>;
     receiveByUserId(request: Request.ReceiveByUserIdRequest): Promise<Result.ReceiveByUserIdResult>;
+    revertReceiveByUserId(request: Request.RevertReceiveByUserIdRequest): Promise<Result.RevertReceiveByUserIdResult>;
     getComplete(request: Request.GetCompleteRequest): Promise<Result.GetCompleteResult>;
     getCompleteByUserId(request: Request.GetCompleteByUserIdRequest): Promise<Result.GetCompleteByUserIdResult>;
     deleteCompleteByUserId(request: Request.DeleteCompleteByUserIdRequest): Promise<Result.DeleteCompleteByUserIdResult>;
     receiveByStampTask(request: Request.ReceiveByStampTaskRequest): Promise<Result.ReceiveByStampTaskResult>;
+    revertReceiveByStampSheet(request: Request.RevertReceiveByStampSheetRequest): Promise<Result.RevertReceiveByStampSheetResult>;
     describeCounterModelMasters(request: Request.DescribeCounterModelMastersRequest): Promise<Result.DescribeCounterModelMastersResult>;
     createCounterModelMaster(request: Request.CreateCounterModelMasterRequest): Promise<Result.CreateCounterModelMasterResult>;
     getCounterModelMaster(request: Request.GetCounterModelMasterRequest): Promise<Result.GetCounterModelMasterResult>;
@@ -32,10 +34,12 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     describeCounters(request: Request.DescribeCountersRequest): Promise<Result.DescribeCountersResult>;
     describeCountersByUserId(request: Request.DescribeCountersByUserIdRequest): Promise<Result.DescribeCountersByUserIdResult>;
     increaseCounterByUserId(request: Request.IncreaseCounterByUserIdRequest): Promise<Result.IncreaseCounterByUserIdResult>;
+    decreaseCounterByUserId(request: Request.DecreaseCounterByUserIdRequest): Promise<Result.DecreaseCounterByUserIdResult>;
     getCounter(request: Request.GetCounterRequest): Promise<Result.GetCounterResult>;
     getCounterByUserId(request: Request.GetCounterByUserIdRequest): Promise<Result.GetCounterByUserIdResult>;
     deleteCounterByUserId(request: Request.DeleteCounterByUserIdRequest): Promise<Result.DeleteCounterByUserIdResult>;
     increaseByStampSheet(request: Request.IncreaseByStampSheetRequest): Promise<Result.IncreaseByStampSheetResult>;
+    decreaseByStampTask(request: Request.DecreaseByStampTaskRequest): Promise<Result.DecreaseByStampTaskResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentMissionMaster(request: Request.GetCurrentMissionMasterRequest): Promise<Result.GetCurrentMissionMasterResult>;
     updateCurrentMissionMaster(request: Request.UpdateCurrentMissionMasterRequest): Promise<Result.UpdateCurrentMissionMasterResult>;

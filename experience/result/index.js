@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MultiplyAcquireActionsByStampSheetResult = exports.MultiplyAcquireActionsByUserIdResult = exports.SetRankCapByStampSheetResult = exports.AddRankCapByStampSheetResult = exports.AddExperienceByStampSheetResult = exports.DeleteStatusByUserIdResult = exports.SetRankCapByUserIdResult = exports.AddRankCapByUserIdResult = exports.SetExperienceByUserIdResult = exports.AddExperienceByUserIdResult = exports.GetStatusWithSignatureByUserIdResult = exports.GetStatusWithSignatureResult = exports.GetStatusByUserIdResult = exports.GetStatusResult = exports.DescribeStatusesByUserIdResult = exports.DescribeStatusesResult = exports.UpdateCurrentExperienceMasterFromGitHubResult = exports.UpdateCurrentExperienceMasterResult = exports.GetCurrentExperienceMasterResult = exports.ExportMasterResult = exports.DeleteThresholdMasterResult = exports.UpdateThresholdMasterResult = exports.GetThresholdMasterResult = exports.CreateThresholdMasterResult = exports.DescribeThresholdMastersResult = exports.GetExperienceModelResult = exports.DescribeExperienceModelsResult = exports.DeleteExperienceModelMasterResult = exports.UpdateExperienceModelMasterResult = exports.GetExperienceModelMasterResult = exports.CreateExperienceModelMasterResult = exports.DescribeExperienceModelMastersResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.MultiplyAcquireActionsByStampSheetResult = exports.MultiplyAcquireActionsByUserIdResult = exports.SetRankCapByStampSheetResult = exports.SubRankCapByStampTaskResult = exports.AddRankCapByStampSheetResult = exports.SubExperienceByStampTaskResult = exports.AddExperienceByStampSheetResult = exports.DeleteStatusByUserIdResult = exports.SetRankCapByUserIdResult = exports.SubRankCapByUserIdResult = exports.AddRankCapByUserIdResult = exports.SetExperienceByUserIdResult = exports.SubExperienceByUserIdResult = exports.AddExperienceByUserIdResult = exports.GetStatusWithSignatureByUserIdResult = exports.GetStatusWithSignatureResult = exports.GetStatusByUserIdResult = exports.GetStatusResult = exports.DescribeStatusesByUserIdResult = exports.DescribeStatusesResult = exports.UpdateCurrentExperienceMasterFromGitHubResult = exports.UpdateCurrentExperienceMasterResult = exports.GetCurrentExperienceMasterResult = exports.ExportMasterResult = exports.DeleteThresholdMasterResult = exports.UpdateThresholdMasterResult = exports.GetThresholdMasterResult = exports.CreateThresholdMasterResult = exports.DescribeThresholdMastersResult = exports.GetExperienceModelResult = exports.DescribeExperienceModelsResult = exports.DeleteExperienceModelMasterResult = exports.UpdateExperienceModelMasterResult = exports.GetExperienceModelMasterResult = exports.CreateExperienceModelMasterResult = exports.DescribeExperienceModelMastersResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -75,18 +75,26 @@ var GetStatusWithSignatureByUserIdResult_1 = tslib_1.__importDefault(require("./
 exports.GetStatusWithSignatureByUserIdResult = GetStatusWithSignatureByUserIdResult_1.default;
 var AddExperienceByUserIdResult_1 = tslib_1.__importDefault(require("./AddExperienceByUserIdResult"));
 exports.AddExperienceByUserIdResult = AddExperienceByUserIdResult_1.default;
+var SubExperienceByUserIdResult_1 = tslib_1.__importDefault(require("./SubExperienceByUserIdResult"));
+exports.SubExperienceByUserIdResult = SubExperienceByUserIdResult_1.default;
 var SetExperienceByUserIdResult_1 = tslib_1.__importDefault(require("./SetExperienceByUserIdResult"));
 exports.SetExperienceByUserIdResult = SetExperienceByUserIdResult_1.default;
 var AddRankCapByUserIdResult_1 = tslib_1.__importDefault(require("./AddRankCapByUserIdResult"));
 exports.AddRankCapByUserIdResult = AddRankCapByUserIdResult_1.default;
+var SubRankCapByUserIdResult_1 = tslib_1.__importDefault(require("./SubRankCapByUserIdResult"));
+exports.SubRankCapByUserIdResult = SubRankCapByUserIdResult_1.default;
 var SetRankCapByUserIdResult_1 = tslib_1.__importDefault(require("./SetRankCapByUserIdResult"));
 exports.SetRankCapByUserIdResult = SetRankCapByUserIdResult_1.default;
 var DeleteStatusByUserIdResult_1 = tslib_1.__importDefault(require("./DeleteStatusByUserIdResult"));
 exports.DeleteStatusByUserIdResult = DeleteStatusByUserIdResult_1.default;
 var AddExperienceByStampSheetResult_1 = tslib_1.__importDefault(require("./AddExperienceByStampSheetResult"));
 exports.AddExperienceByStampSheetResult = AddExperienceByStampSheetResult_1.default;
+var SubExperienceByStampTaskResult_1 = tslib_1.__importDefault(require("./SubExperienceByStampTaskResult"));
+exports.SubExperienceByStampTaskResult = SubExperienceByStampTaskResult_1.default;
 var AddRankCapByStampSheetResult_1 = tslib_1.__importDefault(require("./AddRankCapByStampSheetResult"));
 exports.AddRankCapByStampSheetResult = AddRankCapByStampSheetResult_1.default;
+var SubRankCapByStampTaskResult_1 = tslib_1.__importDefault(require("./SubRankCapByStampTaskResult"));
+exports.SubRankCapByStampTaskResult = SubRankCapByStampTaskResult_1.default;
 var SetRankCapByStampSheetResult_1 = tslib_1.__importDefault(require("./SetRankCapByStampSheetResult"));
 exports.SetRankCapByStampSheetResult = SetRankCapByStampSheetResult_1.default;
 var MultiplyAcquireActionsByUserIdResult_1 = tslib_1.__importDefault(require("./MultiplyAcquireActionsByUserIdResult"));

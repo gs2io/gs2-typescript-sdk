@@ -54,6 +54,7 @@ import ConsumeStaminaResult from "./ConsumeStaminaResult"
 import ConsumeStaminaByUserIdResult from "./ConsumeStaminaByUserIdResult"
 import RecoverStaminaByUserIdResult from "./RecoverStaminaByUserIdResult"
 import RaiseMaxValueByUserIdResult from "./RaiseMaxValueByUserIdResult"
+import DecreaseMaxValueByUserIdResult from "./DecreaseMaxValueByUserIdResult"
 import SetMaxValueByUserIdResult from "./SetMaxValueByUserIdResult"
 import SetRecoverIntervalByUserIdResult from "./SetRecoverIntervalByUserIdResult"
 import SetRecoverValueByUserIdResult from "./SetRecoverValueByUserIdResult"
@@ -63,6 +64,7 @@ import SetRecoverValueByStatusResult from "./SetRecoverValueByStatusResult"
 import DeleteStaminaByUserIdResult from "./DeleteStaminaByUserIdResult"
 import RecoverStaminaByStampSheetResult from "./RecoverStaminaByStampSheetResult"
 import RaiseMaxValueByStampSheetResult from "./RaiseMaxValueByStampSheetResult"
+import DecreaseMaxValueByStampTaskResult from "./DecreaseMaxValueByStampTaskResult"
 import SetMaxValueByStampSheetResult from "./SetMaxValueByStampSheetResult"
 import SetRecoverIntervalByStampSheetResult from "./SetRecoverIntervalByStampSheetResult"
 import SetRecoverValueByStampSheetResult from "./SetRecoverValueByStampSheetResult"
@@ -110,6 +112,7 @@ export {
     ConsumeStaminaByUserIdResult,
     RecoverStaminaByUserIdResult,
     RaiseMaxValueByUserIdResult,
+    DecreaseMaxValueByUserIdResult,
     SetMaxValueByUserIdResult,
     SetRecoverIntervalByUserIdResult,
     SetRecoverValueByUserIdResult,
@@ -119,6 +122,7 @@ export {
     DeleteStaminaByUserIdResult,
     RecoverStaminaByStampSheetResult,
     RaiseMaxValueByStampSheetResult,
+    DecreaseMaxValueByStampTaskResult,
     SetMaxValueByStampSheetResult,
     SetRecoverIntervalByStampSheetResult,
     SetRecoverValueByStampSheetResult,

@@ -20,6 +20,7 @@ var Gs2Experience = tslib_1.__importStar(require("../model"));
 var SetRankCapByStampSheetResult = /** @class */ (function () {
     function SetRankCapByStampSheetResult() {
         this.item = null;
+        this.old = null;
     }
     SetRankCapByStampSheetResult.prototype.getItem = function () {
         return this.item;
@@ -32,14 +33,27 @@ var SetRankCapByStampSheetResult = /** @class */ (function () {
         this.item = item;
         return this;
     };
+    SetRankCapByStampSheetResult.prototype.getOld = function () {
+        return this.old;
+    };
+    SetRankCapByStampSheetResult.prototype.setOld = function (old) {
+        this.old = old;
+        return this;
+    };
+    SetRankCapByStampSheetResult.prototype.withOld = function (old) {
+        this.old = old;
+        return this;
+    };
     SetRankCapByStampSheetResult.fromDict = function (data) {
         return new SetRankCapByStampSheetResult()
-            .withItem(Gs2Experience.Status.fromDict(data["item"]));
+            .withItem(Gs2Experience.Status.fromDict(data["item"]))
+            .withOld(Gs2Experience.Status.fromDict(data["old"]));
     };
     SetRankCapByStampSheetResult.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "old": (_b = this.getOld()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return SetRankCapByStampSheetResult;

@@ -426,6 +426,37 @@ export default class Gs2JobQueueRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public deleteByStampTask(request: Request.DeleteByStampTaskRequest): Promise<Result.DeleteByStampTaskResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/job/delete')
+            .replace('{service}', 'job-queue')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampTask': request.getStampTask() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteByStampTaskResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public getJobResult(request: Request.GetJobResultRequest): Promise<Result.GetJobResultResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/job/{jobName}/result')
             .replace('{service}', 'job-queue')

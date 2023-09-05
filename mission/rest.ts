@@ -199,6 +199,42 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public revertReceiveByUserId(request: Request.RevertReceiveByUserIdRequest): Promise<Result.RevertReceiveByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/task/{missionTaskName}/revert')
+            .replace('{service}', 'mission')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{missionGroupName}', String(request.getMissionGroupName() ?? 'null') === "" ? "null" : String(request.getMissionGroupName() ?? 'null'))
+            .replace('{missionTaskName}', String(request.getMissionTaskName() ?? 'null') === "" ? "null" : String(request.getMissionTaskName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.RevertReceiveByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public getComplete(request: Request.GetCompleteRequest): Promise<Result.GetCompleteResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/complete/group/{missionGroupName}')
             .replace('{service}', 'mission')
@@ -310,6 +346,37 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.ReceiveByStampTaskResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public revertReceiveByStampSheet(request: Request.RevertReceiveByStampSheetRequest): Promise<Result.RevertReceiveByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/revert')
+            .replace('{service}', 'mission')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.RevertReceiveByStampSheetResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);
@@ -908,6 +975,42 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public decreaseCounterByUserId(request: Request.DecreaseCounterByUserIdRequest): Promise<Result.DecreaseCounterByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}/decrease')
+            .replace('{service}', 'mission')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{counterName}', String(request.getCounterName() ?? 'null') === "" ? "null" : String(request.getCounterName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'value': request.getValue() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DecreaseCounterByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public getCounter(request: Request.GetCounterRequest): Promise<Result.GetCounterResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{counterName}')
             .replace('{service}', 'mission')
@@ -1019,6 +1122,37 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.IncreaseByStampSheetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public decreaseByStampTask(request: Request.DecreaseByStampTaskRequest): Promise<Result.DecreaseByStampTaskResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/decrease')
+            .replace('{service}', 'mission')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampTask': request.getStampTask() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DecreaseByStampTaskResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

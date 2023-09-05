@@ -42,7 +42,9 @@ import DeleteReceiveStatusByUserIdResult from "./DeleteReceiveStatusByUserIdResu
 import DeleteReceiveStatusByStampSheetResult from "./DeleteReceiveStatusByStampSheetResult"
 import MarkReceivedResult from "./MarkReceivedResult"
 import MarkReceivedByUserIdResult from "./MarkReceivedByUserIdResult"
+import UnmarkReceivedByUserIdResult from "./UnmarkReceivedByUserIdResult"
 import MarkReceivedByStampTaskResult from "./MarkReceivedByStampTaskResult"
+import UnmarkReceivedByStampSheetResult from "./UnmarkReceivedByStampSheetResult"
 
 export {
     DescribeNamespacesResult,
@@ -74,5 +76,7 @@ export {
     DeleteReceiveStatusByStampSheetResult,
     MarkReceivedResult,
     MarkReceivedByUserIdResult,
+    UnmarkReceivedByUserIdResult,
     MarkReceivedByStampTaskResult,
+    UnmarkReceivedByStampSheetResult,
 };

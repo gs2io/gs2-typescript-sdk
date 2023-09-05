@@ -22,5 +22,7 @@ export default class Gs2MoneyRestClient extends AbstractGs2RestClient {
     describeReceipts(request: Request.DescribeReceiptsRequest): Promise<Result.DescribeReceiptsResult>;
     getByUserIdAndTransactionId(request: Request.GetByUserIdAndTransactionIdRequest): Promise<Result.GetByUserIdAndTransactionIdResult>;
     recordReceipt(request: Request.RecordReceiptRequest): Promise<Result.RecordReceiptResult>;
+    revertRecordReceipt(request: Request.RevertRecordReceiptRequest): Promise<Result.RevertRecordReceiptResult>;
     recordReceiptByStampTask(request: Request.RecordReceiptByStampTaskRequest): Promise<Result.RecordReceiptByStampTaskResult>;
+    revertRecordReceiptByStampSheet(request: Request.RevertRecordReceiptByStampSheetRequest): Promise<Result.RevertRecordReceiptByStampSheetResult>;
 }

@@ -20,6 +20,7 @@ import * as Gs2Enchant from '../model'
 
 export default class SetRarityParameterStatusByStampSheetResult implements IResult {
     private item: Gs2Enchant.RarityParameterStatus|null = null;
+    private old: Gs2Enchant.RarityParameterStatus|null = null;
 
     public getItem(): Gs2Enchant.RarityParameterStatus|null {
         return this.item;
@@ -35,14 +36,30 @@ export default class SetRarityParameterStatusByStampSheetResult implements IResu
         return this;
     }
 
+    public getOld(): Gs2Enchant.RarityParameterStatus|null {
+        return this.old;
+    }
+
+    public setOld(old: Gs2Enchant.RarityParameterStatus|null) {
+        this.old = old;
+        return this;
+    }
+
+    public withOld(old: Gs2Enchant.RarityParameterStatus|null): this {
+        this.old = old;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): SetRarityParameterStatusByStampSheetResult {
         return new SetRarityParameterStatusByStampSheetResult()
-            .withItem(Gs2Enchant.RarityParameterStatus.fromDict(data["item"]));
+            .withItem(Gs2Enchant.RarityParameterStatus.fromDict(data["item"]))
+            .withOld(Gs2Enchant.RarityParameterStatus.fromDict(data["old"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
+            "old": this.getOld()?.toDict(),
         };
     }
 }

@@ -710,6 +710,37 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public deleteMessageByStampTask(request: Request.DeleteMessageByStampTaskRequest): Promise<Result.DeleteMessageByStampTaskResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/delete')
+            .replace('{service}', 'inbox')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampTask': request.getStampTask() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteMessageByStampTaskResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
             .replace('{service}', 'inbox')

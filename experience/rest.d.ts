@@ -33,12 +33,16 @@ export default class Gs2ExperienceRestClient extends AbstractGs2RestClient {
     getStatusWithSignature(request: Request.GetStatusWithSignatureRequest): Promise<Result.GetStatusWithSignatureResult>;
     getStatusWithSignatureByUserId(request: Request.GetStatusWithSignatureByUserIdRequest): Promise<Result.GetStatusWithSignatureByUserIdResult>;
     addExperienceByUserId(request: Request.AddExperienceByUserIdRequest): Promise<Result.AddExperienceByUserIdResult>;
+    subExperienceByUserId(request: Request.SubExperienceByUserIdRequest): Promise<Result.SubExperienceByUserIdResult>;
     setExperienceByUserId(request: Request.SetExperienceByUserIdRequest): Promise<Result.SetExperienceByUserIdResult>;
     addRankCapByUserId(request: Request.AddRankCapByUserIdRequest): Promise<Result.AddRankCapByUserIdResult>;
+    subRankCapByUserId(request: Request.SubRankCapByUserIdRequest): Promise<Result.SubRankCapByUserIdResult>;
     setRankCapByUserId(request: Request.SetRankCapByUserIdRequest): Promise<Result.SetRankCapByUserIdResult>;
     deleteStatusByUserId(request: Request.DeleteStatusByUserIdRequest): Promise<Result.DeleteStatusByUserIdResult>;
     addExperienceByStampSheet(request: Request.AddExperienceByStampSheetRequest): Promise<Result.AddExperienceByStampSheetResult>;
+    subExperienceByStampTask(request: Request.SubExperienceByStampTaskRequest): Promise<Result.SubExperienceByStampTaskResult>;
     addRankCapByStampSheet(request: Request.AddRankCapByStampSheetRequest): Promise<Result.AddRankCapByStampSheetResult>;
+    subRankCapByStampTask(request: Request.SubRankCapByStampTaskRequest): Promise<Result.SubRankCapByStampTaskResult>;
     setRankCapByStampSheet(request: Request.SetRankCapByStampSheetRequest): Promise<Result.SetRankCapByStampSheetResult>;
     multiplyAcquireActionsByUserId(request: Request.MultiplyAcquireActionsByUserIdRequest): Promise<Result.MultiplyAcquireActionsByUserIdResult>;
     multiplyAcquireActionsByStampSheet(request: Request.MultiplyAcquireActionsByStampSheetRequest): Promise<Result.MultiplyAcquireActionsByStampSheetResult>;

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RecordReceiptByStampTaskRequest = exports.RecordReceiptRequest = exports.GetByUserIdAndTransactionIdRequest = exports.DescribeReceiptsRequest = exports.WithdrawByStampTaskRequest = exports.DepositByStampSheetRequest = exports.WithdrawByUserIdRequest = exports.WithdrawRequest = exports.DepositByUserIdRequest = exports.GetWalletByUserIdRequest = exports.GetWalletRequest = exports.DescribeWalletsByUserIdRequest = exports.DescribeWalletsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.RevertRecordReceiptByStampSheetRequest = exports.RecordReceiptByStampTaskRequest = exports.RevertRecordReceiptRequest = exports.RecordReceiptRequest = exports.GetByUserIdAndTransactionIdRequest = exports.DescribeReceiptsRequest = exports.WithdrawByStampTaskRequest = exports.DepositByStampSheetRequest = exports.WithdrawByUserIdRequest = exports.WithdrawRequest = exports.DepositByUserIdRequest = exports.GetWalletByUserIdRequest = exports.GetWalletRequest = exports.DescribeWalletsByUserIdRequest = exports.DescribeWalletsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -53,6 +53,10 @@ var GetByUserIdAndTransactionIdRequest_1 = tslib_1.__importDefault(require("./Ge
 exports.GetByUserIdAndTransactionIdRequest = GetByUserIdAndTransactionIdRequest_1.default;
 var RecordReceiptRequest_1 = tslib_1.__importDefault(require("./RecordReceiptRequest"));
 exports.RecordReceiptRequest = RecordReceiptRequest_1.default;
+var RevertRecordReceiptRequest_1 = tslib_1.__importDefault(require("./RevertRecordReceiptRequest"));
+exports.RevertRecordReceiptRequest = RevertRecordReceiptRequest_1.default;
 var RecordReceiptByStampTaskRequest_1 = tslib_1.__importDefault(require("./RecordReceiptByStampTaskRequest"));
 exports.RecordReceiptByStampTaskRequest = RecordReceiptByStampTaskRequest_1.default;
+var RevertRecordReceiptByStampSheetRequest_1 = tslib_1.__importDefault(require("./RevertRecordReceiptByStampSheetRequest"));
+exports.RevertRecordReceiptByStampSheetRequest = RevertRecordReceiptByStampSheetRequest_1.default;
 //# sourceMappingURL=index.js.map

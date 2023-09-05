@@ -18,10 +18,12 @@ import DescribeCompletesByUserIdRequest from "./DescribeCompletesByUserIdRequest
 import CompleteRequest from "./CompleteRequest"
 import CompleteByUserIdRequest from "./CompleteByUserIdRequest"
 import ReceiveByUserIdRequest from "./ReceiveByUserIdRequest"
+import RevertReceiveByUserIdRequest from "./RevertReceiveByUserIdRequest"
 import GetCompleteRequest from "./GetCompleteRequest"
 import GetCompleteByUserIdRequest from "./GetCompleteByUserIdRequest"
 import DeleteCompleteByUserIdRequest from "./DeleteCompleteByUserIdRequest"
 import ReceiveByStampTaskRequest from "./ReceiveByStampTaskRequest"
+import RevertReceiveByStampSheetRequest from "./RevertReceiveByStampSheetRequest"
 import DescribeCounterModelMastersRequest from "./DescribeCounterModelMastersRequest"
 import CreateCounterModelMasterRequest from "./CreateCounterModelMasterRequest"
 import GetCounterModelMasterRequest from "./GetCounterModelMasterRequest"
@@ -41,10 +43,12 @@ import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
 import DescribeCountersRequest from "./DescribeCountersRequest"
 import DescribeCountersByUserIdRequest from "./DescribeCountersByUserIdRequest"
 import IncreaseCounterByUserIdRequest from "./IncreaseCounterByUserIdRequest"
+import DecreaseCounterByUserIdRequest from "./DecreaseCounterByUserIdRequest"
 import GetCounterRequest from "./GetCounterRequest"
 import GetCounterByUserIdRequest from "./GetCounterByUserIdRequest"
 import DeleteCounterByUserIdRequest from "./DeleteCounterByUserIdRequest"
 import IncreaseByStampSheetRequest from "./IncreaseByStampSheetRequest"
+import DecreaseByStampTaskRequest from "./DecreaseByStampTaskRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentMissionMasterRequest from "./GetCurrentMissionMasterRequest"
 import UpdateCurrentMissionMasterRequest from "./UpdateCurrentMissionMasterRequest"
@@ -67,10 +71,12 @@ export {
     CompleteRequest,
     CompleteByUserIdRequest,
     ReceiveByUserIdRequest,
+    RevertReceiveByUserIdRequest,
     GetCompleteRequest,
     GetCompleteByUserIdRequest,
     DeleteCompleteByUserIdRequest,
     ReceiveByStampTaskRequest,
+    RevertReceiveByStampSheetRequest,
     DescribeCounterModelMastersRequest,
     CreateCounterModelMasterRequest,
     GetCounterModelMasterRequest,
@@ -90,10 +96,12 @@ export {
     DescribeCountersRequest,
     DescribeCountersByUserIdRequest,
     IncreaseCounterByUserIdRequest,
+    DecreaseCounterByUserIdRequest,
     GetCounterRequest,
     GetCounterByUserIdRequest,
     DeleteCounterByUserIdRequest,
     IncreaseByStampSheetRequest,
+    DecreaseByStampTaskRequest,
     ExportMasterRequest,
     GetCurrentMissionMasterRequest,
     UpdateCurrentMissionMasterRequest,

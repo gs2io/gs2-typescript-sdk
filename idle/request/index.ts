@@ -35,7 +35,9 @@ import PredictionByUserIdRequest from "./PredictionByUserIdRequest"
 import ReceiveRequest from "./ReceiveRequest"
 import ReceiveByUserIdRequest from "./ReceiveByUserIdRequest"
 import IncreaseMaximumIdleMinutesByUserIdRequest from "./IncreaseMaximumIdleMinutesByUserIdRequest"
+import DecreaseMaximumIdleMinutesByUserIdRequest from "./DecreaseMaximumIdleMinutesByUserIdRequest"
 import IncreaseMaximumIdleMinutesByStampSheetRequest from "./IncreaseMaximumIdleMinutesByStampSheetRequest"
+import DecreaseMaximumIdleMinutesByStampTaskRequest from "./DecreaseMaximumIdleMinutesByStampTaskRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentCategoryMasterRequest from "./GetCurrentCategoryMasterRequest"
 import UpdateCurrentCategoryMasterRequest from "./UpdateCurrentCategoryMasterRequest"
@@ -64,7 +66,9 @@ export {
     ReceiveRequest,
     ReceiveByUserIdRequest,
     IncreaseMaximumIdleMinutesByUserIdRequest,
+    DecreaseMaximumIdleMinutesByUserIdRequest,
     IncreaseMaximumIdleMinutesByStampSheetRequest,
+    DecreaseMaximumIdleMinutesByStampTaskRequest,
     ExportMasterRequest,
     GetCurrentCategoryMasterRequest,
     UpdateCurrentCategoryMasterRequest,

@@ -42,12 +42,16 @@ import GetStatusByUserIdResult from "./GetStatusByUserIdResult"
 import GetStatusWithSignatureResult from "./GetStatusWithSignatureResult"
 import GetStatusWithSignatureByUserIdResult from "./GetStatusWithSignatureByUserIdResult"
 import AddExperienceByUserIdResult from "./AddExperienceByUserIdResult"
+import SubExperienceByUserIdResult from "./SubExperienceByUserIdResult"
 import SetExperienceByUserIdResult from "./SetExperienceByUserIdResult"
 import AddRankCapByUserIdResult from "./AddRankCapByUserIdResult"
+import SubRankCapByUserIdResult from "./SubRankCapByUserIdResult"
 import SetRankCapByUserIdResult from "./SetRankCapByUserIdResult"
 import DeleteStatusByUserIdResult from "./DeleteStatusByUserIdResult"
 import AddExperienceByStampSheetResult from "./AddExperienceByStampSheetResult"
+import SubExperienceByStampTaskResult from "./SubExperienceByStampTaskResult"
 import AddRankCapByStampSheetResult from "./AddRankCapByStampSheetResult"
+import SubRankCapByStampTaskResult from "./SubRankCapByStampTaskResult"
 import SetRankCapByStampSheetResult from "./SetRankCapByStampSheetResult"
 import MultiplyAcquireActionsByUserIdResult from "./MultiplyAcquireActionsByUserIdResult"
 import MultiplyAcquireActionsByStampSheetResult from "./MultiplyAcquireActionsByStampSheetResult"
@@ -82,12 +86,16 @@ export {
     GetStatusWithSignatureResult,
     GetStatusWithSignatureByUserIdResult,
     AddExperienceByUserIdResult,
+    SubExperienceByUserIdResult,
     SetExperienceByUserIdResult,
     AddRankCapByUserIdResult,
+    SubRankCapByUserIdResult,
     SetRankCapByUserIdResult,
     DeleteStatusByUserIdResult,
     AddExperienceByStampSheetResult,
+    SubExperienceByStampTaskResult,
     AddRankCapByStampSheetResult,
+    SubRankCapByStampTaskResult,
     SetRankCapByStampSheetResult,
     MultiplyAcquireActionsByUserIdResult,
     MultiplyAcquireActionsByStampSheetResult,

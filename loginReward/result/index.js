@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MarkReceivedByStampTaskResult = exports.MarkReceivedByUserIdResult = exports.MarkReceivedResult = exports.DeleteReceiveStatusByStampSheetResult = exports.DeleteReceiveStatusByUserIdResult = exports.GetReceiveStatusByUserIdResult = exports.GetReceiveStatusResult = exports.DescribeReceiveStatusesByUserIdResult = exports.DescribeReceiveStatusesResult = exports.MissedReceiveByUserIdResult = exports.MissedReceiveResult = exports.ReceiveByUserIdResult = exports.ReceiveResult = exports.GetBonusModelResult = exports.DescribeBonusModelsResult = exports.UpdateCurrentBonusMasterFromGitHubResult = exports.UpdateCurrentBonusMasterResult = exports.GetCurrentBonusMasterResult = exports.ExportMasterResult = exports.DeleteBonusModelMasterResult = exports.UpdateBonusModelMasterResult = exports.GetBonusModelMasterResult = exports.CreateBonusModelMasterResult = exports.DescribeBonusModelMastersResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.UnmarkReceivedByStampSheetResult = exports.MarkReceivedByStampTaskResult = exports.UnmarkReceivedByUserIdResult = exports.MarkReceivedByUserIdResult = exports.MarkReceivedResult = exports.DeleteReceiveStatusByStampSheetResult = exports.DeleteReceiveStatusByUserIdResult = exports.GetReceiveStatusByUserIdResult = exports.GetReceiveStatusResult = exports.DescribeReceiveStatusesByUserIdResult = exports.DescribeReceiveStatusesResult = exports.MissedReceiveByUserIdResult = exports.MissedReceiveResult = exports.ReceiveByUserIdResult = exports.ReceiveResult = exports.GetBonusModelResult = exports.DescribeBonusModelsResult = exports.UpdateCurrentBonusMasterFromGitHubResult = exports.UpdateCurrentBonusMasterResult = exports.GetCurrentBonusMasterResult = exports.ExportMasterResult = exports.DeleteBonusModelMasterResult = exports.UpdateBonusModelMasterResult = exports.GetBonusModelMasterResult = exports.CreateBonusModelMasterResult = exports.DescribeBonusModelMastersResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -75,6 +75,10 @@ var MarkReceivedResult_1 = tslib_1.__importDefault(require("./MarkReceivedResult
 exports.MarkReceivedResult = MarkReceivedResult_1.default;
 var MarkReceivedByUserIdResult_1 = tslib_1.__importDefault(require("./MarkReceivedByUserIdResult"));
 exports.MarkReceivedByUserIdResult = MarkReceivedByUserIdResult_1.default;
+var UnmarkReceivedByUserIdResult_1 = tslib_1.__importDefault(require("./UnmarkReceivedByUserIdResult"));
+exports.UnmarkReceivedByUserIdResult = UnmarkReceivedByUserIdResult_1.default;
 var MarkReceivedByStampTaskResult_1 = tslib_1.__importDefault(require("./MarkReceivedByStampTaskResult"));
 exports.MarkReceivedByStampTaskResult = MarkReceivedByStampTaskResult_1.default;
+var UnmarkReceivedByStampSheetResult_1 = tslib_1.__importDefault(require("./UnmarkReceivedByStampSheetResult"));
+exports.UnmarkReceivedByStampSheetResult = UnmarkReceivedByStampSheetResult_1.default;
 //# sourceMappingURL=index.js.map

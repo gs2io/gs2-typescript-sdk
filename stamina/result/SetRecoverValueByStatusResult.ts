@@ -20,6 +20,7 @@ import * as Gs2Stamina from '../model'
 
 export default class SetRecoverValueByStatusResult implements IResult {
     private item: Gs2Stamina.Stamina|null = null;
+    private old: Gs2Stamina.Stamina|null = null;
     private staminaModel: Gs2Stamina.StaminaModel|null = null;
 
     public getItem(): Gs2Stamina.Stamina|null {
@@ -33,6 +34,20 @@ export default class SetRecoverValueByStatusResult implements IResult {
 
     public withItem(item: Gs2Stamina.Stamina|null): this {
         this.item = item;
+        return this;
+    }
+
+    public getOld(): Gs2Stamina.Stamina|null {
+        return this.old;
+    }
+
+    public setOld(old: Gs2Stamina.Stamina|null) {
+        this.old = old;
+        return this;
+    }
+
+    public withOld(old: Gs2Stamina.Stamina|null): this {
+        this.old = old;
         return this;
     }
 
@@ -53,12 +68,14 @@ export default class SetRecoverValueByStatusResult implements IResult {
     public static fromDict(data: {[key: string]: any}): SetRecoverValueByStatusResult {
         return new SetRecoverValueByStatusResult()
             .withItem(Gs2Stamina.Stamina.fromDict(data["item"]))
+            .withOld(Gs2Stamina.Stamina.fromDict(data["old"]))
             .withStaminaModel(Gs2Stamina.StaminaModel.fromDict(data["staminaModel"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
+            "old": this.getOld()?.toDict(),
             "staminaModel": this.getStaminaModel()?.toDict(),
         };
     }

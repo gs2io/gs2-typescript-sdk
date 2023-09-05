@@ -34,6 +34,7 @@ import DeleteMessageResult from "./DeleteMessageResult"
 import DeleteMessageByUserIdResult from "./DeleteMessageByUserIdResult"
 import SendByStampSheetResult from "./SendByStampSheetResult"
 import OpenByStampTaskResult from "./OpenByStampTaskResult"
+import DeleteMessageByStampTaskResult from "./DeleteMessageByStampTaskResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentMessageMasterResult from "./GetCurrentMessageMasterResult"
 import UpdateCurrentMessageMasterResult from "./UpdateCurrentMessageMasterResult"
@@ -71,6 +72,7 @@ export {
     DeleteMessageByUserIdResult,
     SendByStampSheetResult,
     OpenByStampTaskResult,
+    DeleteMessageByStampTaskResult,
     ExportMasterResult,
     GetCurrentMessageMasterResult,
     UpdateCurrentMessageMasterResult,

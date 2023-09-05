@@ -20,6 +20,7 @@ var Gs2Experience = tslib_1.__importStar(require("../model"));
 var SetRankCapByUserIdResult = /** @class */ (function () {
     function SetRankCapByUserIdResult() {
         this.item = null;
+        this.old = null;
     }
     SetRankCapByUserIdResult.prototype.getItem = function () {
         return this.item;
@@ -32,14 +33,27 @@ var SetRankCapByUserIdResult = /** @class */ (function () {
         this.item = item;
         return this;
     };
+    SetRankCapByUserIdResult.prototype.getOld = function () {
+        return this.old;
+    };
+    SetRankCapByUserIdResult.prototype.setOld = function (old) {
+        this.old = old;
+        return this;
+    };
+    SetRankCapByUserIdResult.prototype.withOld = function (old) {
+        this.old = old;
+        return this;
+    };
     SetRankCapByUserIdResult.fromDict = function (data) {
         return new SetRankCapByUserIdResult()
-            .withItem(Gs2Experience.Status.fromDict(data["item"]));
+            .withItem(Gs2Experience.Status.fromDict(data["item"]))
+            .withOld(Gs2Experience.Status.fromDict(data["old"]));
     };
     SetRankCapByUserIdResult.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "old": (_b = this.getOld()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return SetRankCapByUserIdResult;

@@ -34,7 +34,9 @@ import GetEntryByUserIdResult from "./GetEntryByUserIdResult"
 import GetEntryWithSignatureResult from "./GetEntryWithSignatureResult"
 import GetEntryWithSignatureByUserIdResult from "./GetEntryWithSignatureByUserIdResult"
 import ResetByUserIdResult from "./ResetByUserIdResult"
+import DeleteEntriesByUserIdResult from "./DeleteEntriesByUserIdResult"
 import AddEntriesByStampSheetResult from "./AddEntriesByStampSheetResult"
+import DeleteEntriesByStampTaskResult from "./DeleteEntriesByStampTaskResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentEntryMasterResult from "./GetCurrentEntryMasterResult"
 import UpdateCurrentEntryMasterResult from "./UpdateCurrentEntryMasterResult"
@@ -62,7 +64,9 @@ export {
     GetEntryWithSignatureResult,
     GetEntryWithSignatureByUserIdResult,
     ResetByUserIdResult,
+    DeleteEntriesByUserIdResult,
     AddEntriesByStampSheetResult,
+    DeleteEntriesByStampTaskResult,
     ExportMasterResult,
     GetCurrentEntryMasterResult,
     UpdateCurrentEntryMasterResult,

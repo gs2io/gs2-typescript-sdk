@@ -32,6 +32,7 @@ import TriggerByUserIdResult from "./TriggerByUserIdResult"
 import TriggerByStampSheetResult from "./TriggerByStampSheetResult"
 import DeleteTriggerResult from "./DeleteTriggerResult"
 import DeleteTriggerByUserIdResult from "./DeleteTriggerByUserIdResult"
+import DeleteTriggerByStampTaskResult from "./DeleteTriggerByStampTaskResult"
 import DescribeEventsResult from "./DescribeEventsResult"
 import DescribeEventsByUserIdResult from "./DescribeEventsByUserIdResult"
 import DescribeRawEventsResult from "./DescribeRawEventsResult"
@@ -63,6 +64,7 @@ export {
     TriggerByStampSheetResult,
     DeleteTriggerResult,
     DeleteTriggerByUserIdResult,
+    DeleteTriggerByStampTaskResult,
     DescribeEventsResult,
     DescribeEventsByUserIdResult,
     DescribeRawEventsResult,

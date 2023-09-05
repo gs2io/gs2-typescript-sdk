@@ -20,6 +20,7 @@ var Gs2Enchant = tslib_1.__importStar(require("../model"));
 var SetBalanceParameterStatusByUserIdResult = /** @class */ (function () {
     function SetBalanceParameterStatusByUserIdResult() {
         this.item = null;
+        this.old = null;
     }
     SetBalanceParameterStatusByUserIdResult.prototype.getItem = function () {
         return this.item;
@@ -32,14 +33,27 @@ var SetBalanceParameterStatusByUserIdResult = /** @class */ (function () {
         this.item = item;
         return this;
     };
+    SetBalanceParameterStatusByUserIdResult.prototype.getOld = function () {
+        return this.old;
+    };
+    SetBalanceParameterStatusByUserIdResult.prototype.setOld = function (old) {
+        this.old = old;
+        return this;
+    };
+    SetBalanceParameterStatusByUserIdResult.prototype.withOld = function (old) {
+        this.old = old;
+        return this;
+    };
     SetBalanceParameterStatusByUserIdResult.fromDict = function (data) {
         return new SetBalanceParameterStatusByUserIdResult()
-            .withItem(Gs2Enchant.BalanceParameterStatus.fromDict(data["item"]));
+            .withItem(Gs2Enchant.BalanceParameterStatus.fromDict(data["item"]))
+            .withOld(Gs2Enchant.BalanceParameterStatus.fromDict(data["old"]));
     };
     SetBalanceParameterStatusByUserIdResult.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "old": (_b = this.getOld()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return SetBalanceParameterStatusByUserIdResult;

@@ -34,6 +34,7 @@ import DeleteMessageRequest from "./DeleteMessageRequest"
 import DeleteMessageByUserIdRequest from "./DeleteMessageByUserIdRequest"
 import SendByStampSheetRequest from "./SendByStampSheetRequest"
 import OpenByStampTaskRequest from "./OpenByStampTaskRequest"
+import DeleteMessageByStampTaskRequest from "./DeleteMessageByStampTaskRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentMessageMasterRequest from "./GetCurrentMessageMasterRequest"
 import UpdateCurrentMessageMasterRequest from "./UpdateCurrentMessageMasterRequest"
@@ -71,6 +72,7 @@ export {
     DeleteMessageByUserIdRequest,
     SendByStampSheetRequest,
     OpenByStampTaskRequest,
+    DeleteMessageByStampTaskRequest,
     ExportMasterRequest,
     GetCurrentMessageMasterRequest,
     UpdateCurrentMessageMasterRequest,

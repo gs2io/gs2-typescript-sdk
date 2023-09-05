@@ -31,7 +31,9 @@ import WithdrawByStampTaskRequest from "./WithdrawByStampTaskRequest"
 import DescribeReceiptsRequest from "./DescribeReceiptsRequest"
 import GetByUserIdAndTransactionIdRequest from "./GetByUserIdAndTransactionIdRequest"
 import RecordReceiptRequest from "./RecordReceiptRequest"
+import RevertRecordReceiptRequest from "./RevertRecordReceiptRequest"
 import RecordReceiptByStampTaskRequest from "./RecordReceiptByStampTaskRequest"
+import RevertRecordReceiptByStampSheetRequest from "./RevertRecordReceiptByStampSheetRequest"
 
 export {
     DescribeNamespacesRequest,
@@ -52,5 +54,7 @@ export {
     DescribeReceiptsRequest,
     GetByUserIdAndTransactionIdRequest,
     RecordReceiptRequest,
+    RevertRecordReceiptRequest,
     RecordReceiptByStampTaskRequest,
+    RevertRecordReceiptByStampSheetRequest,
 };

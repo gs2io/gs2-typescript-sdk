@@ -20,6 +20,7 @@ var Gs2Inventory = tslib_1.__importStar(require("../model"));
 var SetCapacityByUserIdResult = /** @class */ (function () {
     function SetCapacityByUserIdResult() {
         this.item = null;
+        this.old = null;
     }
     SetCapacityByUserIdResult.prototype.getItem = function () {
         return this.item;
@@ -32,14 +33,27 @@ var SetCapacityByUserIdResult = /** @class */ (function () {
         this.item = item;
         return this;
     };
+    SetCapacityByUserIdResult.prototype.getOld = function () {
+        return this.old;
+    };
+    SetCapacityByUserIdResult.prototype.setOld = function (old) {
+        this.old = old;
+        return this;
+    };
+    SetCapacityByUserIdResult.prototype.withOld = function (old) {
+        this.old = old;
+        return this;
+    };
     SetCapacityByUserIdResult.fromDict = function (data) {
         return new SetCapacityByUserIdResult()
-            .withItem(Gs2Inventory.Inventory.fromDict(data["item"]));
+            .withItem(Gs2Inventory.Inventory.fromDict(data["item"]))
+            .withOld(Gs2Inventory.Inventory.fromDict(data["old"]));
     };
     SetCapacityByUserIdResult.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "old": (_b = this.getOld()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return SetCapacityByUserIdResult;

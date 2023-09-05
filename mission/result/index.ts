@@ -18,10 +18,12 @@ import DescribeCompletesByUserIdResult from "./DescribeCompletesByUserIdResult"
 import CompleteResult from "./CompleteResult"
 import CompleteByUserIdResult from "./CompleteByUserIdResult"
 import ReceiveByUserIdResult from "./ReceiveByUserIdResult"
+import RevertReceiveByUserIdResult from "./RevertReceiveByUserIdResult"
 import GetCompleteResult from "./GetCompleteResult"
 import GetCompleteByUserIdResult from "./GetCompleteByUserIdResult"
 import DeleteCompleteByUserIdResult from "./DeleteCompleteByUserIdResult"
 import ReceiveByStampTaskResult from "./ReceiveByStampTaskResult"
+import RevertReceiveByStampSheetResult from "./RevertReceiveByStampSheetResult"
 import DescribeCounterModelMastersResult from "./DescribeCounterModelMastersResult"
 import CreateCounterModelMasterResult from "./CreateCounterModelMasterResult"
 import GetCounterModelMasterResult from "./GetCounterModelMasterResult"
@@ -41,10 +43,12 @@ import DeleteNamespaceResult from "./DeleteNamespaceResult"
 import DescribeCountersResult from "./DescribeCountersResult"
 import DescribeCountersByUserIdResult from "./DescribeCountersByUserIdResult"
 import IncreaseCounterByUserIdResult from "./IncreaseCounterByUserIdResult"
+import DecreaseCounterByUserIdResult from "./DecreaseCounterByUserIdResult"
 import GetCounterResult from "./GetCounterResult"
 import GetCounterByUserIdResult from "./GetCounterByUserIdResult"
 import DeleteCounterByUserIdResult from "./DeleteCounterByUserIdResult"
 import IncreaseByStampSheetResult from "./IncreaseByStampSheetResult"
+import DecreaseByStampTaskResult from "./DecreaseByStampTaskResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentMissionMasterResult from "./GetCurrentMissionMasterResult"
 import UpdateCurrentMissionMasterResult from "./UpdateCurrentMissionMasterResult"
@@ -67,10 +71,12 @@ export {
     CompleteResult,
     CompleteByUserIdResult,
     ReceiveByUserIdResult,
+    RevertReceiveByUserIdResult,
     GetCompleteResult,
     GetCompleteByUserIdResult,
     DeleteCompleteByUserIdResult,
     ReceiveByStampTaskResult,
+    RevertReceiveByStampSheetResult,
     DescribeCounterModelMastersResult,
     CreateCounterModelMasterResult,
     GetCounterModelMasterResult,
@@ -90,10 +96,12 @@ export {
     DescribeCountersResult,
     DescribeCountersByUserIdResult,
     IncreaseCounterByUserIdResult,
+    DecreaseCounterByUserIdResult,
     GetCounterResult,
     GetCounterByUserIdResult,
     DeleteCounterByUserIdResult,
     IncreaseByStampSheetResult,
+    DecreaseByStampTaskResult,
     ExportMasterResult,
     GetCurrentMissionMasterResult,
     UpdateCurrentMissionMasterResult,

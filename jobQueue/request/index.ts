@@ -26,6 +26,7 @@ import RunRequest from "./RunRequest"
 import RunByUserIdRequest from "./RunByUserIdRequest"
 import DeleteJobByUserIdRequest from "./DeleteJobByUserIdRequest"
 import PushByStampSheetRequest from "./PushByStampSheetRequest"
+import DeleteByStampTaskRequest from "./DeleteByStampTaskRequest"
 import GetJobResultRequest from "./GetJobResultRequest"
 import GetJobResultByUserIdRequest from "./GetJobResultByUserIdRequest"
 import DescribeDeadLetterJobsByUserIdRequest from "./DescribeDeadLetterJobsByUserIdRequest"
@@ -46,6 +47,7 @@ export {
     RunByUserIdRequest,
     DeleteJobByUserIdRequest,
     PushByStampSheetRequest,
+    DeleteByStampTaskRequest,
     GetJobResultRequest,
     GetJobResultByUserIdRequest,
     DescribeDeadLetterJobsByUserIdRequest,

@@ -54,6 +54,7 @@ import ConsumeStaminaRequest from "./ConsumeStaminaRequest"
 import ConsumeStaminaByUserIdRequest from "./ConsumeStaminaByUserIdRequest"
 import RecoverStaminaByUserIdRequest from "./RecoverStaminaByUserIdRequest"
 import RaiseMaxValueByUserIdRequest from "./RaiseMaxValueByUserIdRequest"
+import DecreaseMaxValueByUserIdRequest from "./DecreaseMaxValueByUserIdRequest"
 import SetMaxValueByUserIdRequest from "./SetMaxValueByUserIdRequest"
 import SetRecoverIntervalByUserIdRequest from "./SetRecoverIntervalByUserIdRequest"
 import SetRecoverValueByUserIdRequest from "./SetRecoverValueByUserIdRequest"
@@ -63,6 +64,7 @@ import SetRecoverValueByStatusRequest from "./SetRecoverValueByStatusRequest"
 import DeleteStaminaByUserIdRequest from "./DeleteStaminaByUserIdRequest"
 import RecoverStaminaByStampSheetRequest from "./RecoverStaminaByStampSheetRequest"
 import RaiseMaxValueByStampSheetRequest from "./RaiseMaxValueByStampSheetRequest"
+import DecreaseMaxValueByStampTaskRequest from "./DecreaseMaxValueByStampTaskRequest"
 import SetMaxValueByStampSheetRequest from "./SetMaxValueByStampSheetRequest"
 import SetRecoverIntervalByStampSheetRequest from "./SetRecoverIntervalByStampSheetRequest"
 import SetRecoverValueByStampSheetRequest from "./SetRecoverValueByStampSheetRequest"
@@ -110,6 +112,7 @@ export {
     ConsumeStaminaByUserIdRequest,
     RecoverStaminaByUserIdRequest,
     RaiseMaxValueByUserIdRequest,
+    DecreaseMaxValueByUserIdRequest,
     SetMaxValueByUserIdRequest,
     SetRecoverIntervalByUserIdRequest,
     SetRecoverValueByUserIdRequest,
@@ -119,6 +122,7 @@ export {
     DeleteStaminaByUserIdRequest,
     RecoverStaminaByStampSheetRequest,
     RaiseMaxValueByStampSheetRequest,
+    DecreaseMaxValueByStampTaskRequest,
     SetMaxValueByStampSheetRequest,
     SetRecoverIntervalByStampSheetRequest,
     SetRecoverValueByStampSheetRequest,

@@ -20,6 +20,7 @@ var Gs2Enchant = tslib_1.__importStar(require("../model"));
 var ReDrawRarityParameterStatusByStampSheetResult = /** @class */ (function () {
     function ReDrawRarityParameterStatusByStampSheetResult() {
         this.item = null;
+        this.old = null;
     }
     ReDrawRarityParameterStatusByStampSheetResult.prototype.getItem = function () {
         return this.item;
@@ -32,14 +33,27 @@ var ReDrawRarityParameterStatusByStampSheetResult = /** @class */ (function () {
         this.item = item;
         return this;
     };
+    ReDrawRarityParameterStatusByStampSheetResult.prototype.getOld = function () {
+        return this.old;
+    };
+    ReDrawRarityParameterStatusByStampSheetResult.prototype.setOld = function (old) {
+        this.old = old;
+        return this;
+    };
+    ReDrawRarityParameterStatusByStampSheetResult.prototype.withOld = function (old) {
+        this.old = old;
+        return this;
+    };
     ReDrawRarityParameterStatusByStampSheetResult.fromDict = function (data) {
         return new ReDrawRarityParameterStatusByStampSheetResult()
-            .withItem(Gs2Enchant.RarityParameterStatus.fromDict(data["item"]));
+            .withItem(Gs2Enchant.RarityParameterStatus.fromDict(data["item"]))
+            .withOld(Gs2Enchant.RarityParameterStatus.fromDict(data["old"]));
     };
     ReDrawRarityParameterStatusByStampSheetResult.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "old": (_b = this.getOld()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return ReDrawRarityParameterStatusByStampSheetResult;

@@ -16,5 +16,7 @@ import WithdrawByStampTaskResult from "./WithdrawByStampTaskResult";
 import DescribeReceiptsResult from "./DescribeReceiptsResult";
 import GetByUserIdAndTransactionIdResult from "./GetByUserIdAndTransactionIdResult";
 import RecordReceiptResult from "./RecordReceiptResult";
+import RevertRecordReceiptResult from "./RevertRecordReceiptResult";
 import RecordReceiptByStampTaskResult from "./RecordReceiptByStampTaskResult";
-export { DescribeNamespacesResult, CreateNamespaceResult, GetNamespaceStatusResult, GetNamespaceResult, UpdateNamespaceResult, DeleteNamespaceResult, DescribeWalletsResult, DescribeWalletsByUserIdResult, GetWalletResult, GetWalletByUserIdResult, DepositByUserIdResult, WithdrawResult, WithdrawByUserIdResult, DepositByStampSheetResult, WithdrawByStampTaskResult, DescribeReceiptsResult, GetByUserIdAndTransactionIdResult, RecordReceiptResult, RecordReceiptByStampTaskResult, };
+import RevertRecordReceiptByStampSheetResult from "./RevertRecordReceiptByStampSheetResult";
+export { DescribeNamespacesResult, CreateNamespaceResult, GetNamespaceStatusResult, GetNamespaceResult, UpdateNamespaceResult, DeleteNamespaceResult, DescribeWalletsResult, DescribeWalletsByUserIdResult, GetWalletResult, GetWalletByUserIdResult, DepositByUserIdResult, WithdrawResult, WithdrawByUserIdResult, DepositByStampSheetResult, WithdrawByStampTaskResult, DescribeReceiptsResult, GetByUserIdAndTransactionIdResult, RecordReceiptResult, RevertRecordReceiptResult, RecordReceiptByStampTaskResult, RevertRecordReceiptByStampSheetResult, };

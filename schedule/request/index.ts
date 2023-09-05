@@ -32,6 +32,7 @@ import TriggerByUserIdRequest from "./TriggerByUserIdRequest"
 import TriggerByStampSheetRequest from "./TriggerByStampSheetRequest"
 import DeleteTriggerRequest from "./DeleteTriggerRequest"
 import DeleteTriggerByUserIdRequest from "./DeleteTriggerByUserIdRequest"
+import DeleteTriggerByStampTaskRequest from "./DeleteTriggerByStampTaskRequest"
 import DescribeEventsRequest from "./DescribeEventsRequest"
 import DescribeEventsByUserIdRequest from "./DescribeEventsByUserIdRequest"
 import DescribeRawEventsRequest from "./DescribeRawEventsRequest"
@@ -63,6 +64,7 @@ export {
     TriggerByStampSheetRequest,
     DeleteTriggerRequest,
     DeleteTriggerByUserIdRequest,
+    DeleteTriggerByStampTaskRequest,
     DescribeEventsRequest,
     DescribeEventsByUserIdRequest,
     DescribeRawEventsRequest,
