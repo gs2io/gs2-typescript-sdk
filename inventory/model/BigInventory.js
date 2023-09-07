@@ -15,12 +15,15 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var BigItem_1 = tslib_1.__importDefault(require("./BigItem"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:user:{userId}:big:inventory:{inventoryName}";
 var BigInventory = /** @class */ (function () {
     function BigInventory() {
         this.inventoryId = null;
         this.inventoryName = null;
         this.userId = null;
+        this.bigItems = null;
         this.createdAt = null;
         this.updatedAt = null;
     }
@@ -143,6 +146,17 @@ var BigInventory = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    BigInventory.prototype.getBigItems = function () {
+        return this.bigItems;
+    };
+    BigInventory.prototype.setBigItems = function (bigItems) {
+        this.bigItems = bigItems;
+        return this;
+    };
+    BigInventory.prototype.withBigItems = function (bigItems) {
+        this.bigItems = bigItems;
+        return this;
+    };
     BigInventory.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -173,6 +187,10 @@ var BigInventory = /** @class */ (function () {
             .withInventoryId(data["inventoryId"])
             .withInventoryName(data["inventoryName"])
             .withUserId(data["userId"])
+            .withBigItems(data.bigItems ?
+            data.bigItems.map(function (item) {
+                return BigItem_1.default.fromDict(item);
+            }) : [])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     };
@@ -181,6 +199,10 @@ var BigInventory = /** @class */ (function () {
             "inventoryId": this.getInventoryId(),
             "inventoryName": this.getInventoryName(),
             "userId": this.getUserId(),
+            "bigItems": this.getBigItems() ?
+                this.getBigItems().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

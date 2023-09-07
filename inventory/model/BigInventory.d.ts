@@ -1,8 +1,10 @@
 import IModel from '../../core/interface/IModel';
+import BigItem from './BigItem';
 export default class BigInventory implements IModel {
     private inventoryId;
     private inventoryName;
     private userId;
+    private bigItems;
     private createdAt;
     private updatedAt;
     static getRegion(grn: string): string | null;
@@ -21,6 +23,9 @@ export default class BigInventory implements IModel {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
+    getBigItems(): BigItem[] | null;
+    setBigItems(bigItems: BigItem[] | null): this;
+    withBigItems(bigItems: BigItem[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

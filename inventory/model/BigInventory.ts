@@ -15,12 +15,14 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import BigItem from './BigItem';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:user:{userId}:big:inventory:{inventoryName}";
 
 export default class BigInventory implements IModel {
     private inventoryId: string|null = null;
     private inventoryName: string|null = null;
     private userId: string|null = null;
+    private bigItems: BigItem[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
 
@@ -160,6 +162,17 @@ export default class BigInventory implements IModel {
         this.userId = userId;
         return this;
     }
+    public getBigItems(): BigItem[]|null {
+        return this.bigItems;
+    }
+    public setBigItems(bigItems: BigItem[]|null) {
+        this.bigItems = bigItems;
+        return this;
+    }
+    public withBigItems(bigItems: BigItem[]|null): this {
+        this.bigItems = bigItems;
+        return this;
+    }
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -191,6 +204,11 @@ export default class BigInventory implements IModel {
             .withInventoryId(data["inventoryId"])
             .withInventoryName(data["inventoryName"])
             .withUserId(data["userId"])
+            .withBigItems(data.bigItems ?
+                data.bigItems.map((item: {[key: string]: any}) => {
+                    return BigItem.fromDict(item);
+                }
+            ) : [])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     }
@@ -200,6 +218,11 @@ export default class BigInventory implements IModel {
             "inventoryId": this.getInventoryId(),
             "inventoryName": this.getInventoryName(),
             "userId": this.getUserId(),
+            "bigItems": this.getBigItems() ?
+                this.getBigItems()!.map((item: BigItem) => {
+                    return item.toDict();
+                }
+            ) : [],
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };
