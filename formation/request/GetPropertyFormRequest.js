@@ -21,7 +21,7 @@ var GetPropertyFormRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
-        this.formModelName = null;
+        this.propertyFormModelName = null;
         this.propertyId = null;
     }
     GetPropertyFormRequest.prototype.getRequestId = function () {
@@ -68,15 +68,15 @@ var GetPropertyFormRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
-    GetPropertyFormRequest.prototype.getFormModelName = function () {
-        return this.formModelName;
+    GetPropertyFormRequest.prototype.getPropertyFormModelName = function () {
+        return this.propertyFormModelName;
     };
-    GetPropertyFormRequest.prototype.setFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
+    GetPropertyFormRequest.prototype.setPropertyFormModelName = function (propertyFormModelName) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     };
-    GetPropertyFormRequest.prototype.withFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
+    GetPropertyFormRequest.prototype.withPropertyFormModelName = function (propertyFormModelName) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     };
     GetPropertyFormRequest.prototype.getPropertyId = function () {
@@ -94,14 +94,14 @@ var GetPropertyFormRequest = /** @class */ (function () {
         return new GetPropertyFormRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withFormModelName(data["formModelName"])
+            .withPropertyFormModelName(data["propertyFormModelName"])
             .withPropertyId(data["propertyId"]);
     };
     GetPropertyFormRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "formModelName": this.getFormModelName(),
+            "propertyFormModelName": this.getPropertyFormModelName(),
             "propertyId": this.getPropertyId(),
         };
     };

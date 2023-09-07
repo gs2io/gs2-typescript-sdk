@@ -24,7 +24,7 @@ export default class AcquireActionsToPropertyFormPropertiesRequest implements IR
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private userId: string|null = null;
-    private formModelName: string|null = null;
+    private propertyFormModelName: string|null = null;
     private propertyId: string|null = null;
     private acquireAction: Gs2Formation.AcquireAction|null = null;
     private config: Gs2Formation.AcquireActionConfig[]|null = null;
@@ -79,15 +79,15 @@ export default class AcquireActionsToPropertyFormPropertiesRequest implements IR
         this.userId = userId;
         return this;
     }
-    public getFormModelName(): string|null {
-        return this.formModelName;
+    public getPropertyFormModelName(): string|null {
+        return this.propertyFormModelName;
     }
-    public setFormModelName(formModelName: string|null) {
-        this.formModelName = formModelName;
+    public setPropertyFormModelName(propertyFormModelName: string|null) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     }
-    public withFormModelName(formModelName: string|null): this {
-        this.formModelName = formModelName;
+    public withPropertyFormModelName(propertyFormModelName: string|null): this {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     }
     public getPropertyId(): string|null {
@@ -142,7 +142,7 @@ export default class AcquireActionsToPropertyFormPropertiesRequest implements IR
         return new AcquireActionsToPropertyFormPropertiesRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withFormModelName(data["formModelName"])
+            .withPropertyFormModelName(data["propertyFormModelName"])
             .withPropertyId(data["propertyId"])
             .withAcquireAction(Gs2Formation.AcquireAction.fromDict(data["acquireAction"]))
             .withConfig(data.config ?
@@ -156,7 +156,7 @@ export default class AcquireActionsToPropertyFormPropertiesRequest implements IR
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "formModelName": this.getFormModelName(),
+            "propertyFormModelName": this.getPropertyFormModelName(),
             "propertyId": this.getPropertyId(),
             "acquireAction": this.getAcquireAction()?.toDict(),
             "config": this.getConfig() ?

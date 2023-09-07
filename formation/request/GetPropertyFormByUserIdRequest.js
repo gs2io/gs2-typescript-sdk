@@ -21,7 +21,7 @@ var GetPropertyFormByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
-        this.formModelName = null;
+        this.propertyFormModelName = null;
         this.propertyId = null;
     }
     GetPropertyFormByUserIdRequest.prototype.getRequestId = function () {
@@ -68,15 +68,15 @@ var GetPropertyFormByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
-    GetPropertyFormByUserIdRequest.prototype.getFormModelName = function () {
-        return this.formModelName;
+    GetPropertyFormByUserIdRequest.prototype.getPropertyFormModelName = function () {
+        return this.propertyFormModelName;
     };
-    GetPropertyFormByUserIdRequest.prototype.setFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
+    GetPropertyFormByUserIdRequest.prototype.setPropertyFormModelName = function (propertyFormModelName) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     };
-    GetPropertyFormByUserIdRequest.prototype.withFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
+    GetPropertyFormByUserIdRequest.prototype.withPropertyFormModelName = function (propertyFormModelName) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     };
     GetPropertyFormByUserIdRequest.prototype.getPropertyId = function () {
@@ -94,14 +94,14 @@ var GetPropertyFormByUserIdRequest = /** @class */ (function () {
         return new GetPropertyFormByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withFormModelName(data["formModelName"])
+            .withPropertyFormModelName(data["propertyFormModelName"])
             .withPropertyId(data["propertyId"]);
     };
     GetPropertyFormByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "formModelName": this.getFormModelName(),
+            "propertyFormModelName": this.getPropertyFormModelName(),
             "propertyId": this.getPropertyId(),
         };
     };

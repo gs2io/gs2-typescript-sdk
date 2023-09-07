@@ -20,7 +20,7 @@ var DescribeFormsRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
-        this.moldName = null;
+        this.moldModelName = null;
         this.accessToken = null;
         this.pageToken = null;
         this.limit = null;
@@ -58,15 +58,15 @@ var DescribeFormsRequest = /** @class */ (function () {
         this.namespaceName = namespaceName;
         return this;
     };
-    DescribeFormsRequest.prototype.getMoldName = function () {
-        return this.moldName;
+    DescribeFormsRequest.prototype.getMoldModelName = function () {
+        return this.moldModelName;
     };
-    DescribeFormsRequest.prototype.setMoldName = function (moldName) {
-        this.moldName = moldName;
+    DescribeFormsRequest.prototype.setMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
-    DescribeFormsRequest.prototype.withMoldName = function (moldName) {
-        this.moldName = moldName;
+    DescribeFormsRequest.prototype.withMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
     DescribeFormsRequest.prototype.getAccessToken = function () {
@@ -105,7 +105,7 @@ var DescribeFormsRequest = /** @class */ (function () {
     DescribeFormsRequest.fromDict = function (data) {
         return new DescribeFormsRequest()
             .withNamespaceName(data["namespaceName"])
-            .withMoldName(data["moldName"])
+            .withMoldModelName(data["moldModelName"])
             .withAccessToken(data["accessToken"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
@@ -113,7 +113,7 @@ var DescribeFormsRequest = /** @class */ (function () {
     DescribeFormsRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
             "accessToken": this.getAccessToken(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),

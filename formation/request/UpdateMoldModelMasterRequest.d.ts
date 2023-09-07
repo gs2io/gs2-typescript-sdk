@@ -3,7 +3,7 @@ export default class UpdateMoldModelMasterRequest implements IRequest {
     private requestId;
     private contextStack;
     private namespaceName;
-    private moldName;
+    private moldModelName;
     private description;
     private metadata;
     private formModelName;
@@ -18,9 +18,9 @@ export default class UpdateMoldModelMasterRequest implements IRequest {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getMoldName(): string | null;
-    setMoldName(moldName: string | null): this;
-    withMoldName(moldName: string | null): this;
+    getMoldModelName(): string | null;
+    setMoldModelName(moldModelName: string | null): this;
+    withMoldModelName(moldModelName: string | null): this;
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;

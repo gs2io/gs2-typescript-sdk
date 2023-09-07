@@ -17,7 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Slot_1 = tslib_1.__importDefault(require("./Slot"));
-var grnFormat = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:user:{userId}:mold:{moldName}:form:{index}";
+var grnFormat = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:user:{userId}:mold:{moldModelName}:form:{index}";
 var Form = /** @class */ (function () {
     function Form() {
         this.formId = null;
@@ -34,7 +34,7 @@ var Form = /** @class */ (function () {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{index}', '.*'));
         if (match) {
             return match[1];
@@ -47,7 +47,7 @@ var Form = /** @class */ (function () {
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{index}', '.*'));
         if (match) {
             return match[1];
@@ -60,7 +60,7 @@ var Form = /** @class */ (function () {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
             .replace('{userId}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{index}', '.*'));
         if (match) {
             return match[1];
@@ -73,20 +73,20 @@ var Form = /** @class */ (function () {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '(.*)')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{index}', '.*'));
         if (match) {
             return match[1];
         }
         return null;
     };
-    Form.getMoldName = function (grn) {
+    Form.getMoldModelName = function (grn) {
         var match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{moldName}', '(.*)')
+            .replace('{moldModelName}', '(.*)')
             .replace('{index}', '.*'));
         if (match) {
             return match[1];
@@ -99,7 +99,7 @@ var Form = /** @class */ (function () {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{index}', '(.*)'));
         if (match) {
             return match[1];
@@ -119,7 +119,7 @@ var Form = /** @class */ (function () {
         if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
             return false;
         }
-        if (this.getMoldName(grn) == null || this.getMoldName(grn) === '') {
+        if (this.getMoldModelName(grn) == null || this.getMoldModelName(grn) === '') {
             return false;
         }
         if (this.getIndex(grn) == null || this.getIndex(grn) === '') {
@@ -127,13 +127,13 @@ var Form = /** @class */ (function () {
         }
         return true;
     };
-    Form.createGrn = function (region, ownerId, namespaceName, userId, moldName, index) {
+    Form.createGrn = function (region, ownerId, namespaceName, userId, moldModelName, index) {
         return grnFormat
             .replace('{region}', region !== null && region !== void 0 ? region : '')
             .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
             .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
             .replace('{userId}', userId !== null && userId !== void 0 ? userId : '')
-            .replace('{moldName}', moldName !== null && moldName !== void 0 ? moldName : '')
+            .replace('{moldModelName}', moldModelName !== null && moldModelName !== void 0 ? moldModelName : '')
             .replace('{index}', index !== null && index !== void 0 ? index : '');
     };
     Form.prototype.getFormId = function () {

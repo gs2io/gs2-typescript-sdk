@@ -3,7 +3,7 @@ export default class DescribeFormsByUserIdRequest implements IRequest {
     private requestId;
     private contextStack;
     private namespaceName;
-    private moldName;
+    private moldModelName;
     private userId;
     private pageToken;
     private limit;
@@ -16,9 +16,9 @@ export default class DescribeFormsByUserIdRequest implements IRequest {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
-    getMoldName(): string | null;
-    setMoldName(moldName: string | null): this;
-    withMoldName(moldName: string | null): this;
+    getMoldModelName(): string | null;
+    setMoldModelName(moldModelName: string | null): this;
+    withMoldModelName(moldModelName: string | null): this;
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;

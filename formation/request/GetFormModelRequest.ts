@@ -23,6 +23,7 @@ export default class GetFormModelRequest implements IRequest {
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
+    private moldModelName: string|null = null;
     private formModelName: string|null = null;
 
     public getRequestId(): string|null {
@@ -63,6 +64,17 @@ export default class GetFormModelRequest implements IRequest {
         this.namespaceName = namespaceName;
         return this;
     }
+    public getMoldModelName(): string|null {
+        return this.moldModelName;
+    }
+    public setMoldModelName(moldModelName: string|null) {
+        this.moldModelName = moldModelName;
+        return this;
+    }
+    public withMoldModelName(moldModelName: string|null): this {
+        this.moldModelName = moldModelName;
+        return this;
+    }
     public getFormModelName(): string|null {
         return this.formModelName;
     }
@@ -78,12 +90,14 @@ export default class GetFormModelRequest implements IRequest {
     public static fromDict(data: {[key: string]: any}): GetFormModelRequest {
         return new GetFormModelRequest()
             .withNamespaceName(data["namespaceName"])
+            .withMoldModelName(data["moldModelName"])
             .withFormModelName(data["formModelName"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
+            "moldModelName": this.getMoldModelName(),
             "formModelName": this.getFormModelName(),
         };
     }

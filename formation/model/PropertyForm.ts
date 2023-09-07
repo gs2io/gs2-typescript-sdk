@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 import Slot from './Slot';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:user:{userId}:propertyForm:{formModelName}:{propertyId}";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:user:{userId}:propertyForm:{propertyFormModelName}:{propertyId}";
 
 export default class PropertyForm implements IModel {
     private formId: string|null = null;
@@ -34,7 +34,7 @@ export default class PropertyForm implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{formModelName}', '.*')
+            .replace('{propertyFormModelName}', '.*')
             .replace('{propertyId}', '.*')
         );
         if (match) {
@@ -49,7 +49,7 @@ export default class PropertyForm implements IModel {
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{formModelName}', '.*')
+            .replace('{propertyFormModelName}', '.*')
             .replace('{propertyId}', '.*')
         );
         if (match) {
@@ -64,7 +64,7 @@ export default class PropertyForm implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
             .replace('{userId}', '.*')
-            .replace('{formModelName}', '.*')
+            .replace('{propertyFormModelName}', '.*')
             .replace('{propertyId}', '.*')
         );
         if (match) {
@@ -79,7 +79,7 @@ export default class PropertyForm implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '(.*)')
-            .replace('{formModelName}', '.*')
+            .replace('{propertyFormModelName}', '.*')
             .replace('{propertyId}', '.*')
         );
         if (match) {
@@ -88,13 +88,13 @@ export default class PropertyForm implements IModel {
         return null;
     }
 
-    public static getFormModelName(grn: string): string|null {
+    public static getPropertyFormModelName(grn: string): string|null {
         const match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{formModelName}', '(.*)')
+            .replace('{propertyFormModelName}', '(.*)')
             .replace('{propertyId}', '.*')
         );
         if (match) {
@@ -109,7 +109,7 @@ export default class PropertyForm implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{formModelName}', '.*')
+            .replace('{propertyFormModelName}', '.*')
             .replace('{propertyId}', '(.*)')
         );
         if (match) {
@@ -131,7 +131,7 @@ export default class PropertyForm implements IModel {
         if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
             return false;
         }
-        if (this.getFormModelName(grn) == null || this.getFormModelName(grn) === '') {
+        if (this.getPropertyFormModelName(grn) == null || this.getPropertyFormModelName(grn) === '') {
             return false;
         }
         if (this.getPropertyId(grn) == null || this.getPropertyId(grn) === '') {
@@ -145,7 +145,7 @@ export default class PropertyForm implements IModel {
         ownerId: string|null,
         namespaceName: string|null,
         userId: string|null,
-        formModelName: string|null,
+        propertyFormModelName: string|null,
         propertyId: string|null,
     ): string|null {
         return grnFormat
@@ -153,7 +153,7 @@ export default class PropertyForm implements IModel {
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{userId}', userId ?? '')
-            .replace('{formModelName}', formModelName ?? '')
+            .replace('{propertyFormModelName}', propertyFormModelName ?? '')
             .replace('{propertyId}', propertyId ?? '');
     }
     public getFormId(): string|null {

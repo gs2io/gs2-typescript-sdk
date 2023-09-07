@@ -5,7 +5,7 @@ export default class SetFormByUserIdRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private userId;
-    private moldName;
+    private moldModelName;
     private index;
     private slots;
     private duplicationAvoider;
@@ -21,9 +21,9 @@ export default class SetFormByUserIdRequest implements IRequest {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
-    getMoldName(): string | null;
-    setMoldName(moldName: string | null): this;
-    withMoldName(moldName: string | null): this;
+    getMoldModelName(): string | null;
+    setMoldModelName(moldModelName: string | null): this;
+    withMoldModelName(moldModelName: string | null): this;
     getIndex(): number | null;
     setIndex(index: number | null): this;
     withIndex(index: number | null): this;

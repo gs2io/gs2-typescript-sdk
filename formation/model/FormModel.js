@@ -17,7 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var SlotModel_1 = tslib_1.__importDefault(require("./SlotModel"));
-var grnFormat = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:model:form:{formModelName}";
+var grnFormat = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:model:mold:{moldModelName}:model:form:{formModelName}";
 var FormModel = /** @class */ (function () {
     function FormModel() {
         this.formModelId = null;
@@ -30,6 +30,7 @@ var FormModel = /** @class */ (function () {
             .replace('{region}', '(.*)')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{formModelName}', '.*'));
         if (match) {
             return match[1];
@@ -41,6 +42,7 @@ var FormModel = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{formModelName}', '.*'));
         if (match) {
             return match[1];
@@ -52,6 +54,19 @@ var FormModel = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
+            .replace('{moldModelName}', '.*')
+            .replace('{formModelName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    FormModel.getMoldModelName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{moldModelName}', '(.*)')
             .replace('{formModelName}', '.*'));
         if (match) {
             return match[1];
@@ -63,6 +78,7 @@ var FormModel = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{formModelName}', '(.*)'));
         if (match) {
             return match[1];
@@ -79,16 +95,20 @@ var FormModel = /** @class */ (function () {
         if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
+        if (this.getMoldModelName(grn) == null || this.getMoldModelName(grn) === '') {
+            return false;
+        }
         if (this.getFormModelName(grn) == null || this.getFormModelName(grn) === '') {
             return false;
         }
         return true;
     };
-    FormModel.createGrn = function (region, ownerId, namespaceName, formModelName) {
+    FormModel.createGrn = function (region, ownerId, namespaceName, moldModelName, formModelName) {
         return grnFormat
             .replace('{region}', region !== null && region !== void 0 ? region : '')
             .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
             .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
+            .replace('{moldModelName}', moldModelName !== null && moldModelName !== void 0 ? moldModelName : '')
             .replace('{formModelName}', formModelName !== null && formModelName !== void 0 ? formModelName : '');
     };
     FormModel.prototype.getFormModelId = function () {

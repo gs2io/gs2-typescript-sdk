@@ -4,7 +4,7 @@ export default class GetMoldByUserIdRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private userId;
-    private moldName;
+    private moldModelName;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -17,9 +17,9 @@ export default class GetMoldByUserIdRequest implements IRequest {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
-    getMoldName(): string | null;
-    setMoldName(moldName: string | null): this;
-    withMoldName(moldName: string | null): this;
+    getMoldModelName(): string | null;
+    setMoldModelName(moldModelName: string | null): this;
+    withMoldModelName(moldModelName: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetMoldByUserIdRequest;

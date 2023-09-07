@@ -24,7 +24,7 @@ export default class GetPropertyFormWithSignatureRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private accessToken: string|null = null;
-    private formModelName: string|null = null;
+    private propertyFormModelName: string|null = null;
     private propertyId: string|null = null;
     private keyId: string|null = null;
 
@@ -77,15 +77,15 @@ export default class GetPropertyFormWithSignatureRequest implements IRequest {
         this.accessToken = accessToken;
         return this;
     }
-    public getFormModelName(): string|null {
-        return this.formModelName;
+    public getPropertyFormModelName(): string|null {
+        return this.propertyFormModelName;
     }
-    public setFormModelName(formModelName: string|null) {
-        this.formModelName = formModelName;
+    public setPropertyFormModelName(propertyFormModelName: string|null) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     }
-    public withFormModelName(formModelName: string|null): this {
-        this.formModelName = formModelName;
+    public withPropertyFormModelName(propertyFormModelName: string|null): this {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     }
     public getPropertyId(): string|null {
@@ -115,7 +115,7 @@ export default class GetPropertyFormWithSignatureRequest implements IRequest {
         return new GetPropertyFormWithSignatureRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withFormModelName(data["formModelName"])
+            .withPropertyFormModelName(data["propertyFormModelName"])
             .withPropertyId(data["propertyId"])
             .withKeyId(data["keyId"]);
     }
@@ -124,7 +124,7 @@ export default class GetPropertyFormWithSignatureRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "formModelName": this.getFormModelName(),
+            "propertyFormModelName": this.getPropertyFormModelName(),
             "propertyId": this.getPropertyId(),
             "keyId": this.getKeyId(),
         };

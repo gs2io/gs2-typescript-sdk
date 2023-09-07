@@ -24,7 +24,7 @@ export default class GetPropertyFormByUserIdRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private userId: string|null = null;
-    private formModelName: string|null = null;
+    private propertyFormModelName: string|null = null;
     private propertyId: string|null = null;
 
     public getRequestId(): string|null {
@@ -76,15 +76,15 @@ export default class GetPropertyFormByUserIdRequest implements IRequest {
         this.userId = userId;
         return this;
     }
-    public getFormModelName(): string|null {
-        return this.formModelName;
+    public getPropertyFormModelName(): string|null {
+        return this.propertyFormModelName;
     }
-    public setFormModelName(formModelName: string|null) {
-        this.formModelName = formModelName;
+    public setPropertyFormModelName(propertyFormModelName: string|null) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     }
-    public withFormModelName(formModelName: string|null): this {
-        this.formModelName = formModelName;
+    public withPropertyFormModelName(propertyFormModelName: string|null): this {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     }
     public getPropertyId(): string|null {
@@ -103,7 +103,7 @@ export default class GetPropertyFormByUserIdRequest implements IRequest {
         return new GetPropertyFormByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withFormModelName(data["formModelName"])
+            .withPropertyFormModelName(data["propertyFormModelName"])
             .withPropertyId(data["propertyId"]);
     }
 
@@ -111,7 +111,7 @@ export default class GetPropertyFormByUserIdRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "formModelName": this.getFormModelName(),
+            "propertyFormModelName": this.getPropertyFormModelName(),
             "propertyId": this.getPropertyId(),
         };
     }

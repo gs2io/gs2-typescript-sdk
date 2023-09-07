@@ -23,7 +23,7 @@ var SetFormWithSignatureRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
-        this.moldName = null;
+        this.moldModelName = null;
         this.index = null;
         this.slots = null;
         this.keyId = null;
@@ -73,15 +73,15 @@ var SetFormWithSignatureRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
-    SetFormWithSignatureRequest.prototype.getMoldName = function () {
-        return this.moldName;
+    SetFormWithSignatureRequest.prototype.getMoldModelName = function () {
+        return this.moldModelName;
     };
-    SetFormWithSignatureRequest.prototype.setMoldName = function (moldName) {
-        this.moldName = moldName;
+    SetFormWithSignatureRequest.prototype.setMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
-    SetFormWithSignatureRequest.prototype.withMoldName = function (moldName) {
-        this.moldName = moldName;
+    SetFormWithSignatureRequest.prototype.withMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
     SetFormWithSignatureRequest.prototype.getIndex = function () {
@@ -132,7 +132,7 @@ var SetFormWithSignatureRequest = /** @class */ (function () {
         return new SetFormWithSignatureRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withMoldName(data["moldName"])
+            .withMoldModelName(data["moldModelName"])
             .withIndex(data["index"])
             .withSlots(data.slots ?
             data.slots.map(function (item) {
@@ -144,7 +144,7 @@ var SetFormWithSignatureRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
             "index": this.getIndex(),
             "slots": this.getSlots() ?
                 this.getSlots().map(function (item) {

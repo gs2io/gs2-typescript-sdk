@@ -15,7 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:model:mold:{moldName}";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:model:mold:{moldModelName}";
 
 export default class MoldModelMaster implements IModel {
     private moldModelId: string|null = null;
@@ -34,7 +34,7 @@ export default class MoldModelMaster implements IModel {
             .replace('{region}', '(.*)')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
         );
         if (match) {
             return match[1];
@@ -47,7 +47,7 @@ export default class MoldModelMaster implements IModel {
             .replace('{region}', '.*')
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
         );
         if (match) {
             return match[1];
@@ -60,7 +60,7 @@ export default class MoldModelMaster implements IModel {
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
         );
         if (match) {
             return match[1];
@@ -68,12 +68,12 @@ export default class MoldModelMaster implements IModel {
         return null;
     }
 
-    public static getMoldName(grn: string): string|null {
+    public static getMoldModelName(grn: string): string|null {
         const match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{moldName}', '(.*)')
+            .replace('{moldModelName}', '(.*)')
         );
         if (match) {
             return match[1];
@@ -91,7 +91,7 @@ export default class MoldModelMaster implements IModel {
         if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getMoldName(grn) == null || this.getMoldName(grn) === '') {
+        if (this.getMoldModelName(grn) == null || this.getMoldModelName(grn) === '') {
             return false;
         }
         return true;
@@ -101,13 +101,13 @@ export default class MoldModelMaster implements IModel {
         region: string|null,
         ownerId: string|null,
         namespaceName: string|null,
-        moldName: string|null,
+        moldModelName: string|null,
     ): string|null {
         return grnFormat
             .replace('{region}', region ?? '')
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '')
-            .replace('{moldName}', moldName ?? '');
+            .replace('{moldModelName}', moldModelName ?? '');
     }
     public getMoldModelId(): string|null {
         return this.moldModelId;

@@ -22,7 +22,7 @@ var GetPropertyFormWithSignatureResult = /** @class */ (function () {
         this.item = null;
         this.body = null;
         this.signature = null;
-        this.formModel = null;
+        this.propertyFormModel = null;
     }
     GetPropertyFormWithSignatureResult.prototype.getItem = function () {
         return this.item;
@@ -57,15 +57,15 @@ var GetPropertyFormWithSignatureResult = /** @class */ (function () {
         this.signature = signature;
         return this;
     };
-    GetPropertyFormWithSignatureResult.prototype.getFormModel = function () {
-        return this.formModel;
+    GetPropertyFormWithSignatureResult.prototype.getPropertyFormModel = function () {
+        return this.propertyFormModel;
     };
-    GetPropertyFormWithSignatureResult.prototype.setFormModel = function (formModel) {
-        this.formModel = formModel;
+    GetPropertyFormWithSignatureResult.prototype.setPropertyFormModel = function (propertyFormModel) {
+        this.propertyFormModel = propertyFormModel;
         return this;
     };
-    GetPropertyFormWithSignatureResult.prototype.withFormModel = function (formModel) {
-        this.formModel = formModel;
+    GetPropertyFormWithSignatureResult.prototype.withPropertyFormModel = function (propertyFormModel) {
+        this.propertyFormModel = propertyFormModel;
         return this;
     };
     GetPropertyFormWithSignatureResult.fromDict = function (data) {
@@ -73,7 +73,7 @@ var GetPropertyFormWithSignatureResult = /** @class */ (function () {
             .withItem(Gs2Formation.PropertyForm.fromDict(data["item"]))
             .withBody(data["body"])
             .withSignature(data["signature"])
-            .withFormModel(Gs2Formation.FormModel.fromDict(data["formModel"]));
+            .withPropertyFormModel(Gs2Formation.PropertyFormModel.fromDict(data["propertyFormModel"]));
     };
     GetPropertyFormWithSignatureResult.prototype.toDict = function () {
         var _a, _b;
@@ -81,7 +81,7 @@ var GetPropertyFormWithSignatureResult = /** @class */ (function () {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "body": this.getBody(),
             "signature": this.getSignature(),
-            "formModel": (_b = this.getFormModel()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "propertyFormModel": (_b = this.getPropertyFormModel()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return GetPropertyFormWithSignatureResult;

@@ -20,7 +20,7 @@ var Gs2Formation = tslib_1.__importStar(require("../model"));
 var SetPropertyFormWithSignatureResult = /** @class */ (function () {
     function SetPropertyFormWithSignatureResult() {
         this.item = null;
-        this.formModel = null;
+        this.proeprtyFormModel = null;
     }
     SetPropertyFormWithSignatureResult.prototype.getItem = function () {
         return this.item;
@@ -33,27 +33,27 @@ var SetPropertyFormWithSignatureResult = /** @class */ (function () {
         this.item = item;
         return this;
     };
-    SetPropertyFormWithSignatureResult.prototype.getFormModel = function () {
-        return this.formModel;
+    SetPropertyFormWithSignatureResult.prototype.getProeprtyFormModel = function () {
+        return this.proeprtyFormModel;
     };
-    SetPropertyFormWithSignatureResult.prototype.setFormModel = function (formModel) {
-        this.formModel = formModel;
+    SetPropertyFormWithSignatureResult.prototype.setProeprtyFormModel = function (proeprtyFormModel) {
+        this.proeprtyFormModel = proeprtyFormModel;
         return this;
     };
-    SetPropertyFormWithSignatureResult.prototype.withFormModel = function (formModel) {
-        this.formModel = formModel;
+    SetPropertyFormWithSignatureResult.prototype.withProeprtyFormModel = function (proeprtyFormModel) {
+        this.proeprtyFormModel = proeprtyFormModel;
         return this;
     };
     SetPropertyFormWithSignatureResult.fromDict = function (data) {
         return new SetPropertyFormWithSignatureResult()
             .withItem(Gs2Formation.PropertyForm.fromDict(data["item"]))
-            .withFormModel(Gs2Formation.FormModel.fromDict(data["formModel"]));
+            .withProeprtyFormModel(Gs2Formation.PropertyFormModel.fromDict(data["proeprtyFormModel"]));
     };
     SetPropertyFormWithSignatureResult.prototype.toDict = function () {
         var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "formModel": (_b = this.getFormModel()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "proeprtyFormModel": (_b = this.getProeprtyFormModel()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return SetPropertyFormWithSignatureResult;

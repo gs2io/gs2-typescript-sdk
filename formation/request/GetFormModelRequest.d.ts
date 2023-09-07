@@ -3,6 +3,7 @@ export default class GetFormModelRequest implements IRequest {
     private requestId;
     private contextStack;
     private namespaceName;
+    private moldModelName;
     private formModelName;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -13,6 +14,9 @@ export default class GetFormModelRequest implements IRequest {
     getNamespaceName(): string | null;
     setNamespaceName(namespaceName: string | null): this;
     withNamespaceName(namespaceName: string | null): this;
+    getMoldModelName(): string | null;
+    setMoldModelName(moldModelName: string | null): this;
+    withMoldModelName(moldModelName: string | null): this;
     getFormModelName(): string | null;
     setFormModelName(formModelName: string | null): this;
     withFormModelName(formModelName: string | null): this;

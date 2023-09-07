@@ -21,7 +21,7 @@ var DescribePropertyFormsRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
-        this.formModelName = null;
+        this.propertyFormModelName = null;
         this.pageToken = null;
         this.limit = null;
     }
@@ -69,15 +69,15 @@ var DescribePropertyFormsRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
-    DescribePropertyFormsRequest.prototype.getFormModelName = function () {
-        return this.formModelName;
+    DescribePropertyFormsRequest.prototype.getPropertyFormModelName = function () {
+        return this.propertyFormModelName;
     };
-    DescribePropertyFormsRequest.prototype.setFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
+    DescribePropertyFormsRequest.prototype.setPropertyFormModelName = function (propertyFormModelName) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     };
-    DescribePropertyFormsRequest.prototype.withFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
+    DescribePropertyFormsRequest.prototype.withPropertyFormModelName = function (propertyFormModelName) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     };
     DescribePropertyFormsRequest.prototype.getPageToken = function () {
@@ -106,7 +106,7 @@ var DescribePropertyFormsRequest = /** @class */ (function () {
         return new DescribePropertyFormsRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withFormModelName(data["formModelName"])
+            .withPropertyFormModelName(data["propertyFormModelName"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
     };
@@ -114,7 +114,7 @@ var DescribePropertyFormsRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "formModelName": this.getFormModelName(),
+            "propertyFormModelName": this.getPropertyFormModelName(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
         };

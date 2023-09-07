@@ -20,7 +20,7 @@ import * as Gs2Formation from '../model'
 
 export default class SetPropertyFormWithSignatureResult implements IResult {
     private item: Gs2Formation.PropertyForm|null = null;
-    private formModel: Gs2Formation.FormModel|null = null;
+    private proeprtyFormModel: Gs2Formation.PropertyFormModel|null = null;
 
     public getItem(): Gs2Formation.PropertyForm|null {
         return this.item;
@@ -36,30 +36,30 @@ export default class SetPropertyFormWithSignatureResult implements IResult {
         return this;
     }
 
-    public getFormModel(): Gs2Formation.FormModel|null {
-        return this.formModel;
+    public getProeprtyFormModel(): Gs2Formation.PropertyFormModel|null {
+        return this.proeprtyFormModel;
     }
 
-    public setFormModel(formModel: Gs2Formation.FormModel|null) {
-        this.formModel = formModel;
+    public setProeprtyFormModel(proeprtyFormModel: Gs2Formation.PropertyFormModel|null) {
+        this.proeprtyFormModel = proeprtyFormModel;
         return this;
     }
 
-    public withFormModel(formModel: Gs2Formation.FormModel|null): this {
-        this.formModel = formModel;
+    public withProeprtyFormModel(proeprtyFormModel: Gs2Formation.PropertyFormModel|null): this {
+        this.proeprtyFormModel = proeprtyFormModel;
         return this;
     }
 
     public static fromDict(data: {[key: string]: any}): SetPropertyFormWithSignatureResult {
         return new SetPropertyFormWithSignatureResult()
             .withItem(Gs2Formation.PropertyForm.fromDict(data["item"]))
-            .withFormModel(Gs2Formation.FormModel.fromDict(data["formModel"]));
+            .withProeprtyFormModel(Gs2Formation.PropertyFormModel.fromDict(data["proeprtyFormModel"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
-            "formModel": this.getFormModel()?.toDict(),
+            "proeprtyFormModel": this.getProeprtyFormModel()?.toDict(),
         };
     }
 }

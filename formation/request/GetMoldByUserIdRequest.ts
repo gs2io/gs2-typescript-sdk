@@ -24,7 +24,7 @@ export default class GetMoldByUserIdRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private userId: string|null = null;
-    private moldName: string|null = null;
+    private moldModelName: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -75,15 +75,15 @@ export default class GetMoldByUserIdRequest implements IRequest {
         this.userId = userId;
         return this;
     }
-    public getMoldName(): string|null {
-        return this.moldName;
+    public getMoldModelName(): string|null {
+        return this.moldModelName;
     }
-    public setMoldName(moldName: string|null) {
-        this.moldName = moldName;
+    public setMoldModelName(moldModelName: string|null) {
+        this.moldModelName = moldModelName;
         return this;
     }
-    public withMoldName(moldName: string|null): this {
-        this.moldName = moldName;
+    public withMoldModelName(moldModelName: string|null): this {
+        this.moldModelName = moldModelName;
         return this;
     }
 
@@ -91,14 +91,14 @@ export default class GetMoldByUserIdRequest implements IRequest {
         return new GetMoldByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withMoldName(data["moldName"]);
+            .withMoldModelName(data["moldModelName"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
         };
     }
 }

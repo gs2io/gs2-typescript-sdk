@@ -176,41 +176,20 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             throw JSON.parse(error.response.data.message);
         });
     };
-    Gs2FormationRestClient.prototype.describeFormModels = function (request) {
-        var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/form')
-            .replace('{service}', 'formation')
-            .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
-        var headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-        };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribeFormModelsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
-        });
-    };
     Gs2FormationRestClient.prototype.getFormModel = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/form/{formModelName}')
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{moldModelName}/form/{formModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{formModelName}', String((_c = request.getFormModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getFormModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{moldModelName}', String((_c = request.getMoldModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldModelName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{formModelName}', String((_e = request.getFormModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getFormModelName()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -375,11 +354,11 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getMoldModel = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{moldName}', String((_c = request.getMoldName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{moldModelName}', String((_c = request.getMoldModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldModelName()) !== null && _d !== void 0 ? _d : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
@@ -454,11 +433,11 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getMoldModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{moldName}', String((_c = request.getMoldName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{moldModelName}', String((_c = request.getMoldModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldModelName()) !== null && _d !== void 0 ? _d : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
@@ -477,11 +456,11 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.updateMoldModelMaster = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{moldName}', String((_c = request.getMoldName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{moldModelName}', String((_c = request.getMoldModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldModelName()) !== null && _d !== void 0 ? _d : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
@@ -509,11 +488,11 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.deleteMoldModelMaster = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{moldName}', String((_c = request.getMoldName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{moldModelName}', String((_c = request.getMoldModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldModelName()) !== null && _d !== void 0 ? _d : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
@@ -526,6 +505,181 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             headers: headers,
         }).then(function (response) {
             return Result.DeleteMoldModelMasterResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2FormationRestClient.prototype.describePropertyFormModels = function (request) {
+        var _a, _b, _c;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/propertyForm')
+            .replace('{service}', 'formation')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DescribePropertyFormModelsResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2FormationRestClient.prototype.getPropertyFormModel = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/propertyForm/{propertyFormModelName}')
+            .replace('{service}', 'formation')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{propertyFormModelName}', String((_c = request.getPropertyFormModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getPropertyFormModelName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetPropertyFormModelResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2FormationRestClient.prototype.describePropertyFormModelMasters = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/propertyForm')
+            .replace('{service}', 'formation')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
+            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DescribePropertyFormModelMastersResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2FormationRestClient.prototype.createPropertyFormModelMaster = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/propertyForm')
+            .replace('{service}', 'formation')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'name': (_d = request.getName()) !== null && _d !== void 0 ? _d : null,
+            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
+            'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
+            'slots': (_h = (_g = request.getSlots()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.CreatePropertyFormModelMasterResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2FormationRestClient.prototype.getPropertyFormModelMaster = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/propertyForm/{propertyFormModelName}')
+            .replace('{service}', 'formation')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{propertyFormModelName}', String((_c = request.getPropertyFormModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getPropertyFormModelName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetPropertyFormModelMasterResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2FormationRestClient.prototype.updatePropertyFormModelMaster = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/propertyForm/{propertyFormModelName}')
+            .replace('{service}', 'formation')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{propertyFormModelName}', String((_c = request.getPropertyFormModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getPropertyFormModelName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
+            'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
+            'slots': (_j = (_h = request.getSlots()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
+        };
+        return axios_1.default.put(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.UpdatePropertyFormModelMasterResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2FormationRestClient.prototype.deletePropertyFormModelMaster = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/propertyForm/{propertyFormModelName}')
+            .replace('{service}', 'formation')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{propertyFormModelName}', String((_c = request.getPropertyFormModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getPropertyFormModelName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+        };
+        return axios_1.default.delete(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DeletePropertyFormModelMasterResult.fromDict(response.data);
         }).catch(function (error) {
             throw JSON.parse(error.response.data.message);
         });
@@ -682,11 +836,11 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getMold = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{moldName}', String((_c = request.getMoldName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{moldModelName}', String((_c = request.getMoldModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldModelName()) !== null && _d !== void 0 ? _d : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
@@ -708,12 +862,12 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getMoldByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
             .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{moldName}', String((_e = request.getMoldName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{moldModelName}', String((_e = request.getMoldModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldModelName()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
@@ -732,12 +886,12 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.setMoldCapacityByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
             .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{moldName}', String((_e = request.getMoldName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{moldModelName}', String((_e = request.getMoldModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldModelName()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
@@ -764,12 +918,12 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.addMoldCapacityByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
             .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{moldName}', String((_e = request.getMoldName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{moldModelName}', String((_e = request.getMoldModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldModelName()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
@@ -796,12 +950,12 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.subMoldCapacityByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/sub')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}/sub')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
             .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{moldName}', String((_e = request.getMoldName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{moldModelName}', String((_e = request.getMoldModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldModelName()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
@@ -828,11 +982,11 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.deleteMold = function (request) {
         var _a, _b, _c, _d, _e, _f, _g;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{moldName}', String((_c = request.getMoldName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{moldModelName}', String((_c = request.getMoldModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldModelName()) !== null && _d !== void 0 ? _d : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
@@ -857,12 +1011,12 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.deleteMoldByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
             .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{moldName}', String((_e = request.getMoldName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{moldModelName}', String((_e = request.getMoldModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldModelName()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
@@ -965,11 +1119,11 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.describeForms = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}/form')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}/form')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{moldName}', String((_c = request.getMoldName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{moldModelName}', String((_c = request.getMoldModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldModelName()) !== null && _d !== void 0 ? _d : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
@@ -993,11 +1147,11 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.describeFormsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}/form')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{moldName}', String((_c = request.getMoldName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{moldModelName}', String((_c = request.getMoldModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldModelName()) !== null && _d !== void 0 ? _d : 'null'))
             .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -1019,11 +1173,11 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getForm = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}/form/{index}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{moldName}', String((_c = request.getMoldName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{moldModelName}', String((_c = request.getMoldModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldModelName()) !== null && _d !== void 0 ? _d : 'null'))
             .replace('{index}', String((_e = request.getIndex()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getIndex()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -1046,12 +1200,12 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getFormByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form/{index}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
             .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{moldName}', String((_e = request.getMoldName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{moldModelName}', String((_e = request.getMoldModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldModelName()) !== null && _f !== void 0 ? _f : 'null'))
             .replace('{index}', String((_g = request.getIndex()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getIndex()) !== null && _h !== void 0 ? _h : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -1071,11 +1225,11 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getFormWithSignature = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}/form/{index}/signature')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}/form/{index}/signature')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{moldName}', String((_c = request.getMoldName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{moldModelName}', String((_c = request.getMoldModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldModelName()) !== null && _d !== void 0 ? _d : 'null'))
             .replace('{index}', String((_e = request.getIndex()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getIndex()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -1099,12 +1253,12 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getFormWithSignatureByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form/{index}/signature')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}/form/{index}/signature')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
             .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{moldName}', String((_e = request.getMoldName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{moldModelName}', String((_e = request.getMoldModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldModelName()) !== null && _f !== void 0 ? _f : 'null'))
             .replace('{index}', String((_g = request.getIndex()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getIndex()) !== null && _h !== void 0 ? _h : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -1125,12 +1279,12 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.setFormByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form/{index}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
             .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{moldName}', String((_e = request.getMoldName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{moldModelName}', String((_e = request.getMoldModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldModelName()) !== null && _f !== void 0 ? _f : 'null'))
             .replace('{index}', String((_g = request.getIndex()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getIndex()) !== null && _h !== void 0 ? _h : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -1158,11 +1312,11 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.setFormWithSignature = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}/form/{index}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{moldName}', String((_c = request.getMoldName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{moldModelName}', String((_c = request.getMoldModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldModelName()) !== null && _d !== void 0 ? _d : 'null'))
             .replace('{index}', String((_e = request.getIndex()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getIndex()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -1194,12 +1348,12 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.acquireActionsToFormProperties = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form/{index}/stamp/delegate')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}/form/{index}/stamp/delegate')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
             .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{moldName}', String((_e = request.getMoldName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{moldModelName}', String((_e = request.getMoldModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldModelName()) !== null && _f !== void 0 ? _f : 'null'))
             .replace('{index}', String((_g = request.getIndex()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getIndex()) !== null && _h !== void 0 ? _h : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -1228,11 +1382,11 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.deleteForm = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldName}/form/{index}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/mold/{moldModelName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{moldName}', String((_c = request.getMoldName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{moldModelName}', String((_c = request.getMoldModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldModelName()) !== null && _d !== void 0 ? _d : 'null'))
             .replace('{index}', String((_e = request.getIndex()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getIndex()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -1258,12 +1412,12 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.deleteFormByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldName}/form/{index}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/mold/{moldModelName}/form/{index}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
             .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{moldName}', String((_e = request.getMoldName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{moldModelName}', String((_e = request.getMoldModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMoldModelName()) !== null && _f !== void 0 ? _f : 'null'))
             .replace('{index}', String((_g = request.getIndex()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getIndex()) !== null && _h !== void 0 ? _h : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -1313,11 +1467,11 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.describePropertyForms = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{formModelName}/form')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{propertyFormModelName}/form')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{formModelName}', String((_c = request.getFormModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getFormModelName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{propertyFormModelName}', String((_c = request.getPropertyFormModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getPropertyFormModelName()) !== null && _d !== void 0 ? _d : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
@@ -1341,12 +1495,12 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.describePropertyFormsByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/property/{formModelName}/form')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/property/{propertyFormModelName}/form')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
             .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{formModelName}', String((_e = request.getFormModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getFormModelName()) !== null && _f !== void 0 ? _f : 'null'));
+            .replace('{propertyFormModelName}', String((_e = request.getPropertyFormModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getPropertyFormModelName()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
@@ -1367,11 +1521,11 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getPropertyForm = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{formModelName}/form/{propertyId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{propertyFormModelName}/form/{propertyId}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{formModelName}', String((_c = request.getFormModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getFormModelName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{propertyFormModelName}', String((_c = request.getPropertyFormModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getPropertyFormModelName()) !== null && _d !== void 0 ? _d : 'null'))
             .replace('{propertyId}', String((_e = request.getPropertyId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getPropertyId()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -1394,12 +1548,12 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getPropertyFormByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/property/{formModelName}/form/{propertyId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/property/{propertyFormModelName}/form/{propertyId}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
             .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{formModelName}', String((_e = request.getFormModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getFormModelName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{propertyFormModelName}', String((_e = request.getPropertyFormModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getPropertyFormModelName()) !== null && _f !== void 0 ? _f : 'null'))
             .replace('{propertyId}', String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -1419,11 +1573,11 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getPropertyFormWithSignature = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{formModelName}/form/{propertyId}/signature')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{propertyFormModelName}/form/{propertyId}/signature')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{formModelName}', String((_c = request.getFormModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getFormModelName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{propertyFormModelName}', String((_c = request.getPropertyFormModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getPropertyFormModelName()) !== null && _d !== void 0 ? _d : 'null'))
             .replace('{propertyId}', String((_e = request.getPropertyId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getPropertyId()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -1447,12 +1601,12 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.getPropertyFormWithSignatureByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/property/{formModelName}/form/{propertyId}/signature')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/property/{propertyFormModelName}/form/{propertyId}/signature')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
             .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{formModelName}', String((_e = request.getFormModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getFormModelName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{propertyFormModelName}', String((_e = request.getPropertyFormModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getPropertyFormModelName()) !== null && _f !== void 0 ? _f : 'null'))
             .replace('{propertyId}', String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -1473,12 +1627,12 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.setPropertyFormByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/property/{formModelName}/form/{propertyId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/property/{propertyFormModelName}/form/{propertyId}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
             .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{formModelName}', String((_e = request.getFormModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getFormModelName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{propertyFormModelName}', String((_e = request.getPropertyFormModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getPropertyFormModelName()) !== null && _f !== void 0 ? _f : 'null'))
             .replace('{propertyId}', String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -1506,11 +1660,11 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.setPropertyFormWithSignature = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{formModelName}/form/{propertyId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{propertyFormModelName}/form/{propertyId}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{formModelName}', String((_c = request.getFormModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getFormModelName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{propertyFormModelName}', String((_c = request.getPropertyFormModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getPropertyFormModelName()) !== null && _d !== void 0 ? _d : 'null'))
             .replace('{propertyId}', String((_e = request.getPropertyId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getPropertyId()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -1542,12 +1696,12 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.acquireActionsToPropertyFormProperties = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/property/{formModelName}/form/{propertyId}/stamp/delegate')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/property/{propertyFormModelName}/form/{propertyId}/stamp/delegate')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
             .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{formModelName}', String((_e = request.getFormModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getFormModelName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{propertyFormModelName}', String((_e = request.getPropertyFormModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getPropertyFormModelName()) !== null && _f !== void 0 ? _f : 'null'))
             .replace('{propertyId}', String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -1576,11 +1730,11 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.deletePropertyForm = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{formModelName}/form/{propertyId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{propertyFormModelName}/form/{propertyId}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{formModelName}', String((_c = request.getFormModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getFormModelName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{propertyFormModelName}', String((_c = request.getPropertyFormModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getPropertyFormModelName()) !== null && _d !== void 0 ? _d : 'null'))
             .replace('{propertyId}', String((_e = request.getPropertyId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getPropertyId()) !== null && _f !== void 0 ? _f : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -1606,12 +1760,12 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
     };
     Gs2FormationRestClient.prototype.deletePropertyFormByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/property/{formModelName}/form/{propertyId}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/property/{propertyFormModelName}/form/{propertyId}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
             .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
-            .replace('{formModelName}', String((_e = request.getFormModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getFormModelName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{propertyFormModelName}', String((_e = request.getPropertyFormModelName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getPropertyFormModelName()) !== null && _f !== void 0 ? _f : 'null'))
             .replace('{propertyId}', String((_g = request.getPropertyId()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getPropertyId()) !== null && _h !== void 0 ? _h : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {

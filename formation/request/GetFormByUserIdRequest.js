@@ -21,7 +21,7 @@ var GetFormByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
-        this.moldName = null;
+        this.moldModelName = null;
         this.index = null;
     }
     GetFormByUserIdRequest.prototype.getRequestId = function () {
@@ -68,15 +68,15 @@ var GetFormByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
-    GetFormByUserIdRequest.prototype.getMoldName = function () {
-        return this.moldName;
+    GetFormByUserIdRequest.prototype.getMoldModelName = function () {
+        return this.moldModelName;
     };
-    GetFormByUserIdRequest.prototype.setMoldName = function (moldName) {
-        this.moldName = moldName;
+    GetFormByUserIdRequest.prototype.setMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
-    GetFormByUserIdRequest.prototype.withMoldName = function (moldName) {
-        this.moldName = moldName;
+    GetFormByUserIdRequest.prototype.withMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
     GetFormByUserIdRequest.prototype.getIndex = function () {
@@ -94,14 +94,14 @@ var GetFormByUserIdRequest = /** @class */ (function () {
         return new GetFormByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withMoldName(data["moldName"])
+            .withMoldModelName(data["moldModelName"])
             .withIndex(data["index"]);
     };
     GetFormByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
             "index": this.getIndex(),
         };
     };

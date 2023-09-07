@@ -20,7 +20,7 @@ var GetMoldModelMasterRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
-        this.moldName = null;
+        this.moldModelName = null;
     }
     GetMoldModelMasterRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -55,26 +55,26 @@ var GetMoldModelMasterRequest = /** @class */ (function () {
         this.namespaceName = namespaceName;
         return this;
     };
-    GetMoldModelMasterRequest.prototype.getMoldName = function () {
-        return this.moldName;
+    GetMoldModelMasterRequest.prototype.getMoldModelName = function () {
+        return this.moldModelName;
     };
-    GetMoldModelMasterRequest.prototype.setMoldName = function (moldName) {
-        this.moldName = moldName;
+    GetMoldModelMasterRequest.prototype.setMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
-    GetMoldModelMasterRequest.prototype.withMoldName = function (moldName) {
-        this.moldName = moldName;
+    GetMoldModelMasterRequest.prototype.withMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
     GetMoldModelMasterRequest.fromDict = function (data) {
         return new GetMoldModelMasterRequest()
             .withNamespaceName(data["namespaceName"])
-            .withMoldName(data["moldName"]);
+            .withMoldModelName(data["moldModelName"]);
     };
     GetMoldModelMasterRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
         };
     };
     return GetMoldModelMasterRequest;

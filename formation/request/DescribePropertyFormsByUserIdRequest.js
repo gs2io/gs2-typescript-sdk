@@ -21,7 +21,7 @@ var DescribePropertyFormsByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
-        this.formModelName = null;
+        this.propertyFormModelName = null;
         this.pageToken = null;
         this.limit = null;
     }
@@ -69,15 +69,15 @@ var DescribePropertyFormsByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
-    DescribePropertyFormsByUserIdRequest.prototype.getFormModelName = function () {
-        return this.formModelName;
+    DescribePropertyFormsByUserIdRequest.prototype.getPropertyFormModelName = function () {
+        return this.propertyFormModelName;
     };
-    DescribePropertyFormsByUserIdRequest.prototype.setFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
+    DescribePropertyFormsByUserIdRequest.prototype.setPropertyFormModelName = function (propertyFormModelName) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     };
-    DescribePropertyFormsByUserIdRequest.prototype.withFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
+    DescribePropertyFormsByUserIdRequest.prototype.withPropertyFormModelName = function (propertyFormModelName) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     };
     DescribePropertyFormsByUserIdRequest.prototype.getPageToken = function () {
@@ -106,7 +106,7 @@ var DescribePropertyFormsByUserIdRequest = /** @class */ (function () {
         return new DescribePropertyFormsByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withFormModelName(data["formModelName"])
+            .withPropertyFormModelName(data["propertyFormModelName"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
     };
@@ -114,7 +114,7 @@ var DescribePropertyFormsByUserIdRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "formModelName": this.getFormModelName(),
+            "propertyFormModelName": this.getPropertyFormModelName(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
         };

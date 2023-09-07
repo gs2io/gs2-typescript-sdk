@@ -15,7 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var grnFormat = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:user:{userId}:mold:{moldName}";
+var grnFormat = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:user:{userId}:mold:{moldModelName}";
 var Mold = /** @class */ (function () {
     function Mold() {
         this.moldId = null;
@@ -32,7 +32,7 @@ var Mold = /** @class */ (function () {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{moldName}', '.*'));
+            .replace('{moldModelName}', '.*'));
         if (match) {
             return match[1];
         }
@@ -44,7 +44,7 @@ var Mold = /** @class */ (function () {
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{moldName}', '.*'));
+            .replace('{moldModelName}', '.*'));
         if (match) {
             return match[1];
         }
@@ -56,7 +56,7 @@ var Mold = /** @class */ (function () {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
             .replace('{userId}', '.*')
-            .replace('{moldName}', '.*'));
+            .replace('{moldModelName}', '.*'));
         if (match) {
             return match[1];
         }
@@ -68,19 +68,19 @@ var Mold = /** @class */ (function () {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '(.*)')
-            .replace('{moldName}', '.*'));
+            .replace('{moldModelName}', '.*'));
         if (match) {
             return match[1];
         }
         return null;
     };
-    Mold.getMoldName = function (grn) {
+    Mold.getMoldModelName = function (grn) {
         var match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{moldName}', '(.*)'));
+            .replace('{moldModelName}', '(.*)'));
         if (match) {
             return match[1];
         }
@@ -99,18 +99,18 @@ var Mold = /** @class */ (function () {
         if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
             return false;
         }
-        if (this.getMoldName(grn) == null || this.getMoldName(grn) === '') {
+        if (this.getMoldModelName(grn) == null || this.getMoldModelName(grn) === '') {
             return false;
         }
         return true;
     };
-    Mold.createGrn = function (region, ownerId, namespaceName, userId, moldName) {
+    Mold.createGrn = function (region, ownerId, namespaceName, userId, moldModelName) {
         return grnFormat
             .replace('{region}', region !== null && region !== void 0 ? region : '')
             .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
             .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
             .replace('{userId}', userId !== null && userId !== void 0 ? userId : '')
-            .replace('{moldName}', moldName !== null && moldName !== void 0 ? moldName : '');
+            .replace('{moldModelName}', moldModelName !== null && moldModelName !== void 0 ? moldModelName : '');
     };
     Mold.prototype.getMoldId = function () {
         return this.moldId;

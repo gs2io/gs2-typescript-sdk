@@ -23,7 +23,7 @@ var SetFormByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
-        this.moldName = null;
+        this.moldModelName = null;
         this.index = null;
         this.slots = null;
         this.duplicationAvoider = null;
@@ -72,15 +72,15 @@ var SetFormByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
-    SetFormByUserIdRequest.prototype.getMoldName = function () {
-        return this.moldName;
+    SetFormByUserIdRequest.prototype.getMoldModelName = function () {
+        return this.moldModelName;
     };
-    SetFormByUserIdRequest.prototype.setMoldName = function (moldName) {
-        this.moldName = moldName;
+    SetFormByUserIdRequest.prototype.setMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
-    SetFormByUserIdRequest.prototype.withMoldName = function (moldName) {
-        this.moldName = moldName;
+    SetFormByUserIdRequest.prototype.withMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
     SetFormByUserIdRequest.prototype.getIndex = function () {
@@ -120,7 +120,7 @@ var SetFormByUserIdRequest = /** @class */ (function () {
         return new SetFormByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withMoldName(data["moldName"])
+            .withMoldModelName(data["moldModelName"])
             .withIndex(data["index"])
             .withSlots(data.slots ?
             data.slots.map(function (item) {
@@ -131,7 +131,7 @@ var SetFormByUserIdRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
             "index": this.getIndex(),
             "slots": this.getSlots() ?
                 this.getSlots().map(function (item) {

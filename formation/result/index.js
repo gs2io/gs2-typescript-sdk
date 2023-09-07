@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DescribePropertyFormsByUserIdResult = exports.DescribePropertyFormsResult = exports.AcquireActionToFormPropertiesByStampSheetResult = exports.DeleteFormByUserIdResult = exports.DeleteFormResult = exports.AcquireActionsToFormPropertiesResult = exports.SetFormWithSignatureResult = exports.SetFormByUserIdResult = exports.GetFormWithSignatureByUserIdResult = exports.GetFormWithSignatureResult = exports.GetFormByUserIdResult = exports.GetFormResult = exports.DescribeFormsByUserIdResult = exports.DescribeFormsResult = exports.SetCapacityByStampSheetResult = exports.SubCapacityByStampTaskResult = exports.AddCapacityByStampSheetResult = exports.DeleteMoldByUserIdResult = exports.DeleteMoldResult = exports.SubMoldCapacityByUserIdResult = exports.AddMoldCapacityByUserIdResult = exports.SetMoldCapacityByUserIdResult = exports.GetMoldByUserIdResult = exports.GetMoldResult = exports.DescribeMoldsByUserIdResult = exports.DescribeMoldsResult = exports.UpdateCurrentFormMasterFromGitHubResult = exports.UpdateCurrentFormMasterResult = exports.GetCurrentFormMasterResult = exports.ExportMasterResult = exports.DeleteMoldModelMasterResult = exports.UpdateMoldModelMasterResult = exports.GetMoldModelMasterResult = exports.CreateMoldModelMasterResult = exports.DescribeMoldModelMastersResult = exports.GetMoldModelResult = exports.DescribeMoldModelsResult = exports.DeleteFormModelMasterResult = exports.UpdateFormModelMasterResult = exports.GetFormModelMasterResult = exports.CreateFormModelMasterResult = exports.DescribeFormModelMastersResult = exports.GetFormModelResult = exports.DescribeFormModelsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
-exports.AcquireActionToPropertyFormPropertiesByStampSheetResult = exports.DeletePropertyFormByUserIdResult = exports.DeletePropertyFormResult = exports.AcquireActionsToPropertyFormPropertiesResult = exports.SetPropertyFormWithSignatureResult = exports.SetPropertyFormByUserIdResult = exports.GetPropertyFormWithSignatureByUserIdResult = exports.GetPropertyFormWithSignatureResult = exports.GetPropertyFormByUserIdResult = exports.GetPropertyFormResult = void 0;
+exports.SetFormWithSignatureResult = exports.SetFormByUserIdResult = exports.GetFormWithSignatureByUserIdResult = exports.GetFormWithSignatureResult = exports.GetFormByUserIdResult = exports.GetFormResult = exports.DescribeFormsByUserIdResult = exports.DescribeFormsResult = exports.SetCapacityByStampSheetResult = exports.SubCapacityByStampTaskResult = exports.AddCapacityByStampSheetResult = exports.DeleteMoldByUserIdResult = exports.DeleteMoldResult = exports.SubMoldCapacityByUserIdResult = exports.AddMoldCapacityByUserIdResult = exports.SetMoldCapacityByUserIdResult = exports.GetMoldByUserIdResult = exports.GetMoldResult = exports.DescribeMoldsByUserIdResult = exports.DescribeMoldsResult = exports.UpdateCurrentFormMasterFromGitHubResult = exports.UpdateCurrentFormMasterResult = exports.GetCurrentFormMasterResult = exports.ExportMasterResult = exports.DeletePropertyFormModelMasterResult = exports.UpdatePropertyFormModelMasterResult = exports.GetPropertyFormModelMasterResult = exports.CreatePropertyFormModelMasterResult = exports.DescribePropertyFormModelMastersResult = exports.GetPropertyFormModelResult = exports.DescribePropertyFormModelsResult = exports.DeleteMoldModelMasterResult = exports.UpdateMoldModelMasterResult = exports.GetMoldModelMasterResult = exports.CreateMoldModelMasterResult = exports.DescribeMoldModelMastersResult = exports.GetMoldModelResult = exports.DescribeMoldModelsResult = exports.DeleteFormModelMasterResult = exports.UpdateFormModelMasterResult = exports.GetFormModelMasterResult = exports.CreateFormModelMasterResult = exports.DescribeFormModelMastersResult = exports.GetFormModelResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.AcquireActionToPropertyFormPropertiesByStampSheetResult = exports.DeletePropertyFormByUserIdResult = exports.DeletePropertyFormResult = exports.AcquireActionsToPropertyFormPropertiesResult = exports.SetPropertyFormWithSignatureResult = exports.SetPropertyFormByUserIdResult = exports.GetPropertyFormWithSignatureByUserIdResult = exports.GetPropertyFormWithSignatureResult = exports.GetPropertyFormByUserIdResult = exports.GetPropertyFormResult = exports.DescribePropertyFormsByUserIdResult = exports.DescribePropertyFormsResult = exports.AcquireActionToFormPropertiesByStampSheetResult = exports.DeleteFormByUserIdResult = exports.DeleteFormResult = exports.AcquireActionsToFormPropertiesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -30,8 +30,6 @@ var UpdateNamespaceResult_1 = tslib_1.__importDefault(require("./UpdateNamespace
 exports.UpdateNamespaceResult = UpdateNamespaceResult_1.default;
 var DeleteNamespaceResult_1 = tslib_1.__importDefault(require("./DeleteNamespaceResult"));
 exports.DeleteNamespaceResult = DeleteNamespaceResult_1.default;
-var DescribeFormModelsResult_1 = tslib_1.__importDefault(require("./DescribeFormModelsResult"));
-exports.DescribeFormModelsResult = DescribeFormModelsResult_1.default;
 var GetFormModelResult_1 = tslib_1.__importDefault(require("./GetFormModelResult"));
 exports.GetFormModelResult = GetFormModelResult_1.default;
 var DescribeFormModelMastersResult_1 = tslib_1.__importDefault(require("./DescribeFormModelMastersResult"));
@@ -58,6 +56,20 @@ var UpdateMoldModelMasterResult_1 = tslib_1.__importDefault(require("./UpdateMol
 exports.UpdateMoldModelMasterResult = UpdateMoldModelMasterResult_1.default;
 var DeleteMoldModelMasterResult_1 = tslib_1.__importDefault(require("./DeleteMoldModelMasterResult"));
 exports.DeleteMoldModelMasterResult = DeleteMoldModelMasterResult_1.default;
+var DescribePropertyFormModelsResult_1 = tslib_1.__importDefault(require("./DescribePropertyFormModelsResult"));
+exports.DescribePropertyFormModelsResult = DescribePropertyFormModelsResult_1.default;
+var GetPropertyFormModelResult_1 = tslib_1.__importDefault(require("./GetPropertyFormModelResult"));
+exports.GetPropertyFormModelResult = GetPropertyFormModelResult_1.default;
+var DescribePropertyFormModelMastersResult_1 = tslib_1.__importDefault(require("./DescribePropertyFormModelMastersResult"));
+exports.DescribePropertyFormModelMastersResult = DescribePropertyFormModelMastersResult_1.default;
+var CreatePropertyFormModelMasterResult_1 = tslib_1.__importDefault(require("./CreatePropertyFormModelMasterResult"));
+exports.CreatePropertyFormModelMasterResult = CreatePropertyFormModelMasterResult_1.default;
+var GetPropertyFormModelMasterResult_1 = tslib_1.__importDefault(require("./GetPropertyFormModelMasterResult"));
+exports.GetPropertyFormModelMasterResult = GetPropertyFormModelMasterResult_1.default;
+var UpdatePropertyFormModelMasterResult_1 = tslib_1.__importDefault(require("./UpdatePropertyFormModelMasterResult"));
+exports.UpdatePropertyFormModelMasterResult = UpdatePropertyFormModelMasterResult_1.default;
+var DeletePropertyFormModelMasterResult_1 = tslib_1.__importDefault(require("./DeletePropertyFormModelMasterResult"));
+exports.DeletePropertyFormModelMasterResult = DeletePropertyFormModelMasterResult_1.default;
 var ExportMasterResult_1 = tslib_1.__importDefault(require("./ExportMasterResult"));
 exports.ExportMasterResult = ExportMasterResult_1.default;
 var GetCurrentFormMasterResult_1 = tslib_1.__importDefault(require("./GetCurrentFormMasterResult"));

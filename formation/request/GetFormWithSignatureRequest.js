@@ -21,7 +21,7 @@ var GetFormWithSignatureRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
-        this.moldName = null;
+        this.moldModelName = null;
         this.index = null;
         this.keyId = null;
     }
@@ -69,15 +69,15 @@ var GetFormWithSignatureRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
-    GetFormWithSignatureRequest.prototype.getMoldName = function () {
-        return this.moldName;
+    GetFormWithSignatureRequest.prototype.getMoldModelName = function () {
+        return this.moldModelName;
     };
-    GetFormWithSignatureRequest.prototype.setMoldName = function (moldName) {
-        this.moldName = moldName;
+    GetFormWithSignatureRequest.prototype.setMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
-    GetFormWithSignatureRequest.prototype.withMoldName = function (moldName) {
-        this.moldName = moldName;
+    GetFormWithSignatureRequest.prototype.withMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
     GetFormWithSignatureRequest.prototype.getIndex = function () {
@@ -106,7 +106,7 @@ var GetFormWithSignatureRequest = /** @class */ (function () {
         return new GetFormWithSignatureRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withMoldName(data["moldName"])
+            .withMoldModelName(data["moldModelName"])
             .withIndex(data["index"])
             .withKeyId(data["keyId"]);
     };
@@ -114,7 +114,7 @@ var GetFormWithSignatureRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
             "index": this.getIndex(),
             "keyId": this.getKeyId(),
         };

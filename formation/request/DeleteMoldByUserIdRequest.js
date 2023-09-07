@@ -21,7 +21,7 @@ var DeleteMoldByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
-        this.moldName = null;
+        this.moldModelName = null;
         this.duplicationAvoider = null;
     }
     DeleteMoldByUserIdRequest.prototype.getRequestId = function () {
@@ -68,15 +68,15 @@ var DeleteMoldByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
-    DeleteMoldByUserIdRequest.prototype.getMoldName = function () {
-        return this.moldName;
+    DeleteMoldByUserIdRequest.prototype.getMoldModelName = function () {
+        return this.moldModelName;
     };
-    DeleteMoldByUserIdRequest.prototype.setMoldName = function (moldName) {
-        this.moldName = moldName;
+    DeleteMoldByUserIdRequest.prototype.setMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
-    DeleteMoldByUserIdRequest.prototype.withMoldName = function (moldName) {
-        this.moldName = moldName;
+    DeleteMoldByUserIdRequest.prototype.withMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
     DeleteMoldByUserIdRequest.prototype.getDuplicationAvoider = function () {
@@ -94,13 +94,13 @@ var DeleteMoldByUserIdRequest = /** @class */ (function () {
         return new DeleteMoldByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withMoldName(data["moldName"]);
+            .withMoldModelName(data["moldModelName"]);
     };
     DeleteMoldByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
         };
     };
     return DeleteMoldByUserIdRequest;

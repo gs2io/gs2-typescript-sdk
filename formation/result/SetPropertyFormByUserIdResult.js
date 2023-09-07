@@ -20,7 +20,7 @@ var Gs2Formation = tslib_1.__importStar(require("../model"));
 var SetPropertyFormByUserIdResult = /** @class */ (function () {
     function SetPropertyFormByUserIdResult() {
         this.item = null;
-        this.formModel = null;
+        this.propertyFormModel = null;
     }
     SetPropertyFormByUserIdResult.prototype.getItem = function () {
         return this.item;
@@ -33,27 +33,27 @@ var SetPropertyFormByUserIdResult = /** @class */ (function () {
         this.item = item;
         return this;
     };
-    SetPropertyFormByUserIdResult.prototype.getFormModel = function () {
-        return this.formModel;
+    SetPropertyFormByUserIdResult.prototype.getPropertyFormModel = function () {
+        return this.propertyFormModel;
     };
-    SetPropertyFormByUserIdResult.prototype.setFormModel = function (formModel) {
-        this.formModel = formModel;
+    SetPropertyFormByUserIdResult.prototype.setPropertyFormModel = function (propertyFormModel) {
+        this.propertyFormModel = propertyFormModel;
         return this;
     };
-    SetPropertyFormByUserIdResult.prototype.withFormModel = function (formModel) {
-        this.formModel = formModel;
+    SetPropertyFormByUserIdResult.prototype.withPropertyFormModel = function (propertyFormModel) {
+        this.propertyFormModel = propertyFormModel;
         return this;
     };
     SetPropertyFormByUserIdResult.fromDict = function (data) {
         return new SetPropertyFormByUserIdResult()
             .withItem(Gs2Formation.PropertyForm.fromDict(data["item"]))
-            .withFormModel(Gs2Formation.FormModel.fromDict(data["formModel"]));
+            .withPropertyFormModel(Gs2Formation.PropertyFormModel.fromDict(data["propertyFormModel"]));
     };
     SetPropertyFormByUserIdResult.prototype.toDict = function () {
         var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "formModel": (_b = this.getFormModel()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "propertyFormModel": (_b = this.getPropertyFormModel()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return SetPropertyFormByUserIdResult;

@@ -21,7 +21,7 @@ var GetFormWithSignatureByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
-        this.moldName = null;
+        this.moldModelName = null;
         this.index = null;
         this.keyId = null;
     }
@@ -69,15 +69,15 @@ var GetFormWithSignatureByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
-    GetFormWithSignatureByUserIdRequest.prototype.getMoldName = function () {
-        return this.moldName;
+    GetFormWithSignatureByUserIdRequest.prototype.getMoldModelName = function () {
+        return this.moldModelName;
     };
-    GetFormWithSignatureByUserIdRequest.prototype.setMoldName = function (moldName) {
-        this.moldName = moldName;
+    GetFormWithSignatureByUserIdRequest.prototype.setMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
-    GetFormWithSignatureByUserIdRequest.prototype.withMoldName = function (moldName) {
-        this.moldName = moldName;
+    GetFormWithSignatureByUserIdRequest.prototype.withMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
     GetFormWithSignatureByUserIdRequest.prototype.getIndex = function () {
@@ -106,7 +106,7 @@ var GetFormWithSignatureByUserIdRequest = /** @class */ (function () {
         return new GetFormWithSignatureByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withMoldName(data["moldName"])
+            .withMoldModelName(data["moldModelName"])
             .withIndex(data["index"])
             .withKeyId(data["keyId"]);
     };
@@ -114,7 +114,7 @@ var GetFormWithSignatureByUserIdRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
             "index": this.getIndex(),
             "keyId": this.getKeyId(),
         };

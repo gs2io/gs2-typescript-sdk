@@ -4,7 +4,7 @@ export default class GetFormRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private accessToken;
-    private moldName;
+    private moldModelName;
     private index;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -18,9 +18,9 @@ export default class GetFormRequest implements IRequest {
     getAccessToken(): string | null;
     setAccessToken(accessToken: string | null): this;
     withAccessToken(accessToken: string | null): this;
-    getMoldName(): string | null;
-    setMoldName(moldName: string | null): this;
-    withMoldName(moldName: string | null): this;
+    getMoldModelName(): string | null;
+    setMoldModelName(moldModelName: string | null): this;
+    withMoldModelName(moldModelName: string | null): this;
     getIndex(): number | null;
     setIndex(index: number | null): this;
     withIndex(index: number | null): this;

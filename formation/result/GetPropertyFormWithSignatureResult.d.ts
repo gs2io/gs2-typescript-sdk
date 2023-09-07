@@ -4,7 +4,7 @@ export default class GetPropertyFormWithSignatureResult implements IResult {
     private item;
     private body;
     private signature;
-    private formModel;
+    private propertyFormModel;
     getItem(): Gs2Formation.PropertyForm | null;
     setItem(item: Gs2Formation.PropertyForm | null): this;
     withItem(item: Gs2Formation.PropertyForm | null): this;
@@ -14,9 +14,9 @@ export default class GetPropertyFormWithSignatureResult implements IResult {
     getSignature(): string | null;
     setSignature(signature: string | null): this;
     withSignature(signature: string | null): this;
-    getFormModel(): Gs2Formation.FormModel | null;
-    setFormModel(formModel: Gs2Formation.FormModel | null): this;
-    withFormModel(formModel: Gs2Formation.FormModel | null): this;
+    getPropertyFormModel(): Gs2Formation.PropertyFormModel | null;
+    setPropertyFormModel(propertyFormModel: Gs2Formation.PropertyFormModel | null): this;
+    withPropertyFormModel(propertyFormModel: Gs2Formation.PropertyFormModel | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetPropertyFormWithSignatureResult;

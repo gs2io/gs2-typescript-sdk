@@ -23,7 +23,7 @@ export default class UpdateMoldModelMasterRequest implements IRequest {
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
-    private moldName: string|null = null;
+    private moldModelName: string|null = null;
     private description: string|null = null;
     private metadata: string|null = null;
     private formModelName: string|null = null;
@@ -68,15 +68,15 @@ export default class UpdateMoldModelMasterRequest implements IRequest {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getMoldName(): string|null {
-        return this.moldName;
+    public getMoldModelName(): string|null {
+        return this.moldModelName;
     }
-    public setMoldName(moldName: string|null) {
-        this.moldName = moldName;
+    public setMoldModelName(moldModelName: string|null) {
+        this.moldModelName = moldModelName;
         return this;
     }
-    public withMoldName(moldName: string|null): this {
-        this.moldName = moldName;
+    public withMoldModelName(moldModelName: string|null): this {
+        this.moldModelName = moldModelName;
         return this;
     }
     public getDescription(): string|null {
@@ -138,7 +138,7 @@ export default class UpdateMoldModelMasterRequest implements IRequest {
     public static fromDict(data: {[key: string]: any}): UpdateMoldModelMasterRequest {
         return new UpdateMoldModelMasterRequest()
             .withNamespaceName(data["namespaceName"])
-            .withMoldName(data["moldName"])
+            .withMoldModelName(data["moldModelName"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
             .withFormModelName(data["formModelName"])
@@ -149,7 +149,7 @@ export default class UpdateMoldModelMasterRequest implements IRequest {
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
             "formModelName": this.getFormModelName(),

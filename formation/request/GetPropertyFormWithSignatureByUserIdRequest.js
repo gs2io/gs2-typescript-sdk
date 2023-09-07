@@ -21,7 +21,7 @@ var GetPropertyFormWithSignatureByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
-        this.formModelName = null;
+        this.propertyFormModelName = null;
         this.propertyId = null;
         this.keyId = null;
     }
@@ -69,15 +69,15 @@ var GetPropertyFormWithSignatureByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
-    GetPropertyFormWithSignatureByUserIdRequest.prototype.getFormModelName = function () {
-        return this.formModelName;
+    GetPropertyFormWithSignatureByUserIdRequest.prototype.getPropertyFormModelName = function () {
+        return this.propertyFormModelName;
     };
-    GetPropertyFormWithSignatureByUserIdRequest.prototype.setFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
+    GetPropertyFormWithSignatureByUserIdRequest.prototype.setPropertyFormModelName = function (propertyFormModelName) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     };
-    GetPropertyFormWithSignatureByUserIdRequest.prototype.withFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
+    GetPropertyFormWithSignatureByUserIdRequest.prototype.withPropertyFormModelName = function (propertyFormModelName) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     };
     GetPropertyFormWithSignatureByUserIdRequest.prototype.getPropertyId = function () {
@@ -106,7 +106,7 @@ var GetPropertyFormWithSignatureByUserIdRequest = /** @class */ (function () {
         return new GetPropertyFormWithSignatureByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withFormModelName(data["formModelName"])
+            .withPropertyFormModelName(data["propertyFormModelName"])
             .withPropertyId(data["propertyId"])
             .withKeyId(data["keyId"]);
     };
@@ -114,7 +114,7 @@ var GetPropertyFormWithSignatureByUserIdRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "formModelName": this.getFormModelName(),
+            "propertyFormModelName": this.getPropertyFormModelName(),
             "propertyId": this.getPropertyId(),
             "keyId": this.getKeyId(),
         };

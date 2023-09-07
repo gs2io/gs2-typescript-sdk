@@ -21,7 +21,7 @@ var GetPropertyFormWithSignatureRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
-        this.formModelName = null;
+        this.propertyFormModelName = null;
         this.propertyId = null;
         this.keyId = null;
     }
@@ -69,15 +69,15 @@ var GetPropertyFormWithSignatureRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
-    GetPropertyFormWithSignatureRequest.prototype.getFormModelName = function () {
-        return this.formModelName;
+    GetPropertyFormWithSignatureRequest.prototype.getPropertyFormModelName = function () {
+        return this.propertyFormModelName;
     };
-    GetPropertyFormWithSignatureRequest.prototype.setFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
+    GetPropertyFormWithSignatureRequest.prototype.setPropertyFormModelName = function (propertyFormModelName) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     };
-    GetPropertyFormWithSignatureRequest.prototype.withFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
+    GetPropertyFormWithSignatureRequest.prototype.withPropertyFormModelName = function (propertyFormModelName) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     };
     GetPropertyFormWithSignatureRequest.prototype.getPropertyId = function () {
@@ -106,7 +106,7 @@ var GetPropertyFormWithSignatureRequest = /** @class */ (function () {
         return new GetPropertyFormWithSignatureRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withFormModelName(data["formModelName"])
+            .withPropertyFormModelName(data["propertyFormModelName"])
             .withPropertyId(data["propertyId"])
             .withKeyId(data["keyId"]);
     };
@@ -114,7 +114,7 @@ var GetPropertyFormWithSignatureRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "formModelName": this.getFormModelName(),
+            "propertyFormModelName": this.getPropertyFormModelName(),
             "propertyId": this.getPropertyId(),
             "keyId": this.getKeyId(),
         };

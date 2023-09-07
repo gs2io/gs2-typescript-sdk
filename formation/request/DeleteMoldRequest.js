@@ -21,7 +21,7 @@ var DeleteMoldRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
-        this.moldName = null;
+        this.moldModelName = null;
         this.duplicationAvoider = null;
     }
     DeleteMoldRequest.prototype.getRequestId = function () {
@@ -68,15 +68,15 @@ var DeleteMoldRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
-    DeleteMoldRequest.prototype.getMoldName = function () {
-        return this.moldName;
+    DeleteMoldRequest.prototype.getMoldModelName = function () {
+        return this.moldModelName;
     };
-    DeleteMoldRequest.prototype.setMoldName = function (moldName) {
-        this.moldName = moldName;
+    DeleteMoldRequest.prototype.setMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
-    DeleteMoldRequest.prototype.withMoldName = function (moldName) {
-        this.moldName = moldName;
+    DeleteMoldRequest.prototype.withMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
     DeleteMoldRequest.prototype.getDuplicationAvoider = function () {
@@ -94,13 +94,13 @@ var DeleteMoldRequest = /** @class */ (function () {
         return new DeleteMoldRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withMoldName(data["moldName"]);
+            .withMoldModelName(data["moldModelName"]);
     };
     DeleteMoldRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
         };
     };
     return DeleteMoldRequest;

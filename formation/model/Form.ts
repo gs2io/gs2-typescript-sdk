@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 import Slot from './Slot';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:user:{userId}:mold:{moldName}:form:{index}";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:user:{userId}:mold:{moldModelName}:form:{index}";
 
 export default class Form implements IModel {
     private formId: string|null = null;
@@ -33,7 +33,7 @@ export default class Form implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{index}', '.*')
         );
         if (match) {
@@ -48,7 +48,7 @@ export default class Form implements IModel {
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{index}', '.*')
         );
         if (match) {
@@ -63,7 +63,7 @@ export default class Form implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
             .replace('{userId}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{index}', '.*')
         );
         if (match) {
@@ -78,7 +78,7 @@ export default class Form implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '(.*)')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{index}', '.*')
         );
         if (match) {
@@ -87,13 +87,13 @@ export default class Form implements IModel {
         return null;
     }
 
-    public static getMoldName(grn: string): string|null {
+    public static getMoldModelName(grn: string): string|null {
         const match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{moldName}', '(.*)')
+            .replace('{moldModelName}', '(.*)')
             .replace('{index}', '.*')
         );
         if (match) {
@@ -108,7 +108,7 @@ export default class Form implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{index}', '(.*)')
         );
         if (match) {
@@ -130,7 +130,7 @@ export default class Form implements IModel {
         if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
             return false;
         }
-        if (this.getMoldName(grn) == null || this.getMoldName(grn) === '') {
+        if (this.getMoldModelName(grn) == null || this.getMoldModelName(grn) === '') {
             return false;
         }
         if (this.getIndex(grn) == null || this.getIndex(grn) === '') {
@@ -144,7 +144,7 @@ export default class Form implements IModel {
         ownerId: string|null,
         namespaceName: string|null,
         userId: string|null,
-        moldName: string|null,
+        moldModelName: string|null,
         index: string|null,
     ): string|null {
         return grnFormat
@@ -152,7 +152,7 @@ export default class Form implements IModel {
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '')
             .replace('{userId}', userId ?? '')
-            .replace('{moldName}', moldName ?? '')
+            .replace('{moldModelName}', moldModelName ?? '')
             .replace('{index}', index ?? '');
     }
     public getFormId(): string|null {

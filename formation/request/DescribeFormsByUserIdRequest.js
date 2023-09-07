@@ -20,7 +20,7 @@ var DescribeFormsByUserIdRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
-        this.moldName = null;
+        this.moldModelName = null;
         this.userId = null;
         this.pageToken = null;
         this.limit = null;
@@ -58,15 +58,15 @@ var DescribeFormsByUserIdRequest = /** @class */ (function () {
         this.namespaceName = namespaceName;
         return this;
     };
-    DescribeFormsByUserIdRequest.prototype.getMoldName = function () {
-        return this.moldName;
+    DescribeFormsByUserIdRequest.prototype.getMoldModelName = function () {
+        return this.moldModelName;
     };
-    DescribeFormsByUserIdRequest.prototype.setMoldName = function (moldName) {
-        this.moldName = moldName;
+    DescribeFormsByUserIdRequest.prototype.setMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
-    DescribeFormsByUserIdRequest.prototype.withMoldName = function (moldName) {
-        this.moldName = moldName;
+    DescribeFormsByUserIdRequest.prototype.withMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
     DescribeFormsByUserIdRequest.prototype.getUserId = function () {
@@ -105,7 +105,7 @@ var DescribeFormsByUserIdRequest = /** @class */ (function () {
     DescribeFormsByUserIdRequest.fromDict = function (data) {
         return new DescribeFormsByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
-            .withMoldName(data["moldName"])
+            .withMoldModelName(data["moldModelName"])
             .withUserId(data["userId"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
@@ -113,7 +113,7 @@ var DescribeFormsByUserIdRequest = /** @class */ (function () {
     DescribeFormsByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
             "userId": this.getUserId(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),

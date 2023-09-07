@@ -17,7 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Slot_1 = tslib_1.__importDefault(require("./Slot"));
-var grnFormat = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:user:{userId}:propertyForm:{formModelName}:{propertyId}";
+var grnFormat = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:user:{userId}:propertyForm:{propertyFormModelName}:{propertyId}";
 var PropertyForm = /** @class */ (function () {
     function PropertyForm() {
         this.formId = null;
@@ -35,7 +35,7 @@ var PropertyForm = /** @class */ (function () {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{formModelName}', '.*')
+            .replace('{propertyFormModelName}', '.*')
             .replace('{propertyId}', '.*'));
         if (match) {
             return match[1];
@@ -48,7 +48,7 @@ var PropertyForm = /** @class */ (function () {
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{formModelName}', '.*')
+            .replace('{propertyFormModelName}', '.*')
             .replace('{propertyId}', '.*'));
         if (match) {
             return match[1];
@@ -61,7 +61,7 @@ var PropertyForm = /** @class */ (function () {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
             .replace('{userId}', '.*')
-            .replace('{formModelName}', '.*')
+            .replace('{propertyFormModelName}', '.*')
             .replace('{propertyId}', '.*'));
         if (match) {
             return match[1];
@@ -74,20 +74,20 @@ var PropertyForm = /** @class */ (function () {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '(.*)')
-            .replace('{formModelName}', '.*')
+            .replace('{propertyFormModelName}', '.*')
             .replace('{propertyId}', '.*'));
         if (match) {
             return match[1];
         }
         return null;
     };
-    PropertyForm.getFormModelName = function (grn) {
+    PropertyForm.getPropertyFormModelName = function (grn) {
         var match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{formModelName}', '(.*)')
+            .replace('{propertyFormModelName}', '(.*)')
             .replace('{propertyId}', '.*'));
         if (match) {
             return match[1];
@@ -100,7 +100,7 @@ var PropertyForm = /** @class */ (function () {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{formModelName}', '.*')
+            .replace('{propertyFormModelName}', '.*')
             .replace('{propertyId}', '(.*)'));
         if (match) {
             return match[1];
@@ -120,7 +120,7 @@ var PropertyForm = /** @class */ (function () {
         if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
             return false;
         }
-        if (this.getFormModelName(grn) == null || this.getFormModelName(grn) === '') {
+        if (this.getPropertyFormModelName(grn) == null || this.getPropertyFormModelName(grn) === '') {
             return false;
         }
         if (this.getPropertyId(grn) == null || this.getPropertyId(grn) === '') {
@@ -128,13 +128,13 @@ var PropertyForm = /** @class */ (function () {
         }
         return true;
     };
-    PropertyForm.createGrn = function (region, ownerId, namespaceName, userId, formModelName, propertyId) {
+    PropertyForm.createGrn = function (region, ownerId, namespaceName, userId, propertyFormModelName, propertyId) {
         return grnFormat
             .replace('{region}', region !== null && region !== void 0 ? region : '')
             .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
             .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
             .replace('{userId}', userId !== null && userId !== void 0 ? userId : '')
-            .replace('{formModelName}', formModelName !== null && formModelName !== void 0 ? formModelName : '')
+            .replace('{propertyFormModelName}', propertyFormModelName !== null && propertyFormModelName !== void 0 ? propertyFormModelName : '')
             .replace('{propertyId}', propertyId !== null && propertyId !== void 0 ? propertyId : '');
     };
     PropertyForm.prototype.getFormId = function () {

@@ -10,9 +10,9 @@ export default class MoldModel implements IModel {
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
-    static getMoldName(grn: string): string | null;
+    static getMoldModelName(grn: string): string | null;
     static isValid(grn: string): boolean;
-    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, moldName: string | null): string | null;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, moldModelName: string | null): string | null;
     getMoldModelId(): string | null;
     setMoldModelId(moldModelId: string | null): this;
     withMoldModelId(moldModelId: string | null): this;

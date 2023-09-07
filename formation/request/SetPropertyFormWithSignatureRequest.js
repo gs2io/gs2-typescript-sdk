@@ -23,7 +23,7 @@ var SetPropertyFormWithSignatureRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
-        this.formModelName = null;
+        this.propertyFormModelName = null;
         this.propertyId = null;
         this.slots = null;
         this.keyId = null;
@@ -73,15 +73,15 @@ var SetPropertyFormWithSignatureRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
-    SetPropertyFormWithSignatureRequest.prototype.getFormModelName = function () {
-        return this.formModelName;
+    SetPropertyFormWithSignatureRequest.prototype.getPropertyFormModelName = function () {
+        return this.propertyFormModelName;
     };
-    SetPropertyFormWithSignatureRequest.prototype.setFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
+    SetPropertyFormWithSignatureRequest.prototype.setPropertyFormModelName = function (propertyFormModelName) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     };
-    SetPropertyFormWithSignatureRequest.prototype.withFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
+    SetPropertyFormWithSignatureRequest.prototype.withPropertyFormModelName = function (propertyFormModelName) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     };
     SetPropertyFormWithSignatureRequest.prototype.getPropertyId = function () {
@@ -132,7 +132,7 @@ var SetPropertyFormWithSignatureRequest = /** @class */ (function () {
         return new SetPropertyFormWithSignatureRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withFormModelName(data["formModelName"])
+            .withPropertyFormModelName(data["propertyFormModelName"])
             .withPropertyId(data["propertyId"])
             .withSlots(data.slots ?
             data.slots.map(function (item) {
@@ -144,7 +144,7 @@ var SetPropertyFormWithSignatureRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "formModelName": this.getFormModelName(),
+            "propertyFormModelName": this.getPropertyFormModelName(),
             "propertyId": this.getPropertyId(),
             "slots": this.getSlots() ?
                 this.getSlots().map(function (item) {

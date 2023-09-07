@@ -23,7 +23,7 @@ export default class DeleteMoldModelMasterRequest implements IRequest {
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
-    private moldName: string|null = null;
+    private moldModelName: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -63,28 +63,28 @@ export default class DeleteMoldModelMasterRequest implements IRequest {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getMoldName(): string|null {
-        return this.moldName;
+    public getMoldModelName(): string|null {
+        return this.moldModelName;
     }
-    public setMoldName(moldName: string|null) {
-        this.moldName = moldName;
+    public setMoldModelName(moldModelName: string|null) {
+        this.moldModelName = moldModelName;
         return this;
     }
-    public withMoldName(moldName: string|null): this {
-        this.moldName = moldName;
+    public withMoldModelName(moldModelName: string|null): this {
+        this.moldModelName = moldModelName;
         return this;
     }
 
     public static fromDict(data: {[key: string]: any}): DeleteMoldModelMasterRequest {
         return new DeleteMoldModelMasterRequest()
             .withNamespaceName(data["namespaceName"])
-            .withMoldName(data["moldName"]);
+            .withMoldModelName(data["moldModelName"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
         };
     }
 }

@@ -21,7 +21,7 @@ var DeleteFormRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
-        this.moldName = null;
+        this.moldModelName = null;
         this.index = null;
         this.duplicationAvoider = null;
     }
@@ -69,15 +69,15 @@ var DeleteFormRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
-    DeleteFormRequest.prototype.getMoldName = function () {
-        return this.moldName;
+    DeleteFormRequest.prototype.getMoldModelName = function () {
+        return this.moldModelName;
     };
-    DeleteFormRequest.prototype.setMoldName = function (moldName) {
-        this.moldName = moldName;
+    DeleteFormRequest.prototype.setMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
-    DeleteFormRequest.prototype.withMoldName = function (moldName) {
-        this.moldName = moldName;
+    DeleteFormRequest.prototype.withMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
     DeleteFormRequest.prototype.getIndex = function () {
@@ -106,14 +106,14 @@ var DeleteFormRequest = /** @class */ (function () {
         return new DeleteFormRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withMoldName(data["moldName"])
+            .withMoldModelName(data["moldModelName"])
             .withIndex(data["index"]);
     };
     DeleteFormRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
             "index": this.getIndex(),
         };
     };

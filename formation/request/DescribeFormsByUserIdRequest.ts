@@ -23,7 +23,7 @@ export default class DescribeFormsByUserIdRequest implements IRequest {
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
-    private moldName: string|null = null;
+    private moldModelName: string|null = null;
     private userId: string|null = null;
     private pageToken: string|null = null;
     private limit: number|null = null;
@@ -66,15 +66,15 @@ export default class DescribeFormsByUserIdRequest implements IRequest {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getMoldName(): string|null {
-        return this.moldName;
+    public getMoldModelName(): string|null {
+        return this.moldModelName;
     }
-    public setMoldName(moldName: string|null) {
-        this.moldName = moldName;
+    public setMoldModelName(moldModelName: string|null) {
+        this.moldModelName = moldModelName;
         return this;
     }
-    public withMoldName(moldName: string|null): this {
-        this.moldName = moldName;
+    public withMoldModelName(moldModelName: string|null): this {
+        this.moldModelName = moldModelName;
         return this;
     }
     public getUserId(): string|null {
@@ -114,7 +114,7 @@ export default class DescribeFormsByUserIdRequest implements IRequest {
     public static fromDict(data: {[key: string]: any}): DescribeFormsByUserIdRequest {
         return new DescribeFormsByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
-            .withMoldName(data["moldName"])
+            .withMoldModelName(data["moldModelName"])
             .withUserId(data["userId"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
@@ -123,7 +123,7 @@ export default class DescribeFormsByUserIdRequest implements IRequest {
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
             "userId": this.getUserId(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),

@@ -8,9 +8,10 @@ export default class FormModel implements IModel {
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
+    static getMoldModelName(grn: string): string | null;
     static getFormModelName(grn: string): string | null;
     static isValid(grn: string): boolean;
-    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, formModelName: string | null): string | null;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, moldModelName: string | null, formModelName: string | null): string | null;
     getFormModelId(): string | null;
     setFormModelId(formModelId: string | null): this;
     withFormModelId(formModelId: string | null): this;

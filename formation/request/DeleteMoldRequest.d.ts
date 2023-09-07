@@ -4,7 +4,7 @@ export default class DeleteMoldRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private accessToken;
-    private moldName;
+    private moldModelName;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -18,9 +18,9 @@ export default class DeleteMoldRequest implements IRequest {
     getAccessToken(): string | null;
     setAccessToken(accessToken: string | null): this;
     withAccessToken(accessToken: string | null): this;
-    getMoldName(): string | null;
-    setMoldName(moldName: string | null): this;
-    withMoldName(moldName: string | null): this;
+    getMoldModelName(): string | null;
+    setMoldModelName(moldModelName: string | null): this;
+    withMoldModelName(moldModelName: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

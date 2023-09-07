@@ -19,7 +19,6 @@ import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
 import GetNamespaceRequest from "./GetNamespaceRequest"
 import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
 import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
-import DescribeFormModelsRequest from "./DescribeFormModelsRequest"
 import GetFormModelRequest from "./GetFormModelRequest"
 import DescribeFormModelMastersRequest from "./DescribeFormModelMastersRequest"
 import CreateFormModelMasterRequest from "./CreateFormModelMasterRequest"
@@ -33,6 +32,13 @@ import CreateMoldModelMasterRequest from "./CreateMoldModelMasterRequest"
 import GetMoldModelMasterRequest from "./GetMoldModelMasterRequest"
 import UpdateMoldModelMasterRequest from "./UpdateMoldModelMasterRequest"
 import DeleteMoldModelMasterRequest from "./DeleteMoldModelMasterRequest"
+import DescribePropertyFormModelsRequest from "./DescribePropertyFormModelsRequest"
+import GetPropertyFormModelRequest from "./GetPropertyFormModelRequest"
+import DescribePropertyFormModelMastersRequest from "./DescribePropertyFormModelMastersRequest"
+import CreatePropertyFormModelMasterRequest from "./CreatePropertyFormModelMasterRequest"
+import GetPropertyFormModelMasterRequest from "./GetPropertyFormModelMasterRequest"
+import UpdatePropertyFormModelMasterRequest from "./UpdatePropertyFormModelMasterRequest"
+import DeletePropertyFormModelMasterRequest from "./DeletePropertyFormModelMasterRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentFormMasterRequest from "./GetCurrentFormMasterRequest"
 import UpdateCurrentFormMasterRequest from "./UpdateCurrentFormMasterRequest"
@@ -81,7 +87,6 @@ export {
     GetNamespaceRequest,
     UpdateNamespaceRequest,
     DeleteNamespaceRequest,
-    DescribeFormModelsRequest,
     GetFormModelRequest,
     DescribeFormModelMastersRequest,
     CreateFormModelMasterRequest,
@@ -95,6 +100,13 @@ export {
     GetMoldModelMasterRequest,
     UpdateMoldModelMasterRequest,
     DeleteMoldModelMasterRequest,
+    DescribePropertyFormModelsRequest,
+    GetPropertyFormModelRequest,
+    DescribePropertyFormModelMastersRequest,
+    CreatePropertyFormModelMasterRequest,
+    GetPropertyFormModelMasterRequest,
+    UpdatePropertyFormModelMasterRequest,
+    DeletePropertyFormModelMasterRequest,
     ExportMasterRequest,
     GetCurrentFormMasterRequest,
     UpdateCurrentFormMasterRequest,

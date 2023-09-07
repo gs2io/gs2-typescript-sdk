@@ -4,7 +4,7 @@ export default class AddMoldCapacityByUserIdRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private userId;
-    private moldName;
+    private moldModelName;
     private capacity;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -19,9 +19,9 @@ export default class AddMoldCapacityByUserIdRequest implements IRequest {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
-    getMoldName(): string | null;
-    setMoldName(moldName: string | null): this;
-    withMoldName(moldName: string | null): this;
+    getMoldModelName(): string | null;
+    setMoldModelName(moldModelName: string | null): this;
+    withMoldModelName(moldModelName: string | null): this;
     getCapacity(): number | null;
     setCapacity(capacity: number | null): this;
     withCapacity(capacity: number | null): this;

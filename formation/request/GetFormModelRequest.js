@@ -20,6 +20,7 @@ var GetFormModelRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
+        this.moldModelName = null;
         this.formModelName = null;
     }
     GetFormModelRequest.prototype.getRequestId = function () {
@@ -55,6 +56,17 @@ var GetFormModelRequest = /** @class */ (function () {
         this.namespaceName = namespaceName;
         return this;
     };
+    GetFormModelRequest.prototype.getMoldModelName = function () {
+        return this.moldModelName;
+    };
+    GetFormModelRequest.prototype.setMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
+        return this;
+    };
+    GetFormModelRequest.prototype.withMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
+        return this;
+    };
     GetFormModelRequest.prototype.getFormModelName = function () {
         return this.formModelName;
     };
@@ -69,11 +81,13 @@ var GetFormModelRequest = /** @class */ (function () {
     GetFormModelRequest.fromDict = function (data) {
         return new GetFormModelRequest()
             .withNamespaceName(data["namespaceName"])
+            .withMoldModelName(data["moldModelName"])
             .withFormModelName(data["formModelName"]);
     };
     GetFormModelRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
+            "moldModelName": this.getMoldModelName(),
             "formModelName": this.getFormModelName(),
         };
     };

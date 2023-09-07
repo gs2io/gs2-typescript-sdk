@@ -5,7 +5,7 @@ export default class AcquireActionsToPropertyFormPropertiesRequest implements IR
     private contextStack;
     private namespaceName;
     private userId;
-    private formModelName;
+    private propertyFormModelName;
     private propertyId;
     private acquireAction;
     private config;
@@ -22,9 +22,9 @@ export default class AcquireActionsToPropertyFormPropertiesRequest implements IR
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
-    getFormModelName(): string | null;
-    setFormModelName(formModelName: string | null): this;
-    withFormModelName(formModelName: string | null): this;
+    getPropertyFormModelName(): string | null;
+    setPropertyFormModelName(propertyFormModelName: string | null): this;
+    withPropertyFormModelName(propertyFormModelName: string | null): this;
     getPropertyId(): string | null;
     setPropertyId(propertyId: string | null): this;
     withPropertyId(propertyId: string | null): this;

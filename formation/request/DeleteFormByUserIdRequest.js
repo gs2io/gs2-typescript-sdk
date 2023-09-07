@@ -21,7 +21,7 @@ var DeleteFormByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
-        this.moldName = null;
+        this.moldModelName = null;
         this.index = null;
         this.duplicationAvoider = null;
     }
@@ -69,15 +69,15 @@ var DeleteFormByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
-    DeleteFormByUserIdRequest.prototype.getMoldName = function () {
-        return this.moldName;
+    DeleteFormByUserIdRequest.prototype.getMoldModelName = function () {
+        return this.moldModelName;
     };
-    DeleteFormByUserIdRequest.prototype.setMoldName = function (moldName) {
-        this.moldName = moldName;
+    DeleteFormByUserIdRequest.prototype.setMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
-    DeleteFormByUserIdRequest.prototype.withMoldName = function (moldName) {
-        this.moldName = moldName;
+    DeleteFormByUserIdRequest.prototype.withMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
     DeleteFormByUserIdRequest.prototype.getIndex = function () {
@@ -106,14 +106,14 @@ var DeleteFormByUserIdRequest = /** @class */ (function () {
         return new DeleteFormByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withMoldName(data["moldName"])
+            .withMoldModelName(data["moldModelName"])
             .withIndex(data["index"]);
     };
     DeleteFormByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
             "index": this.getIndex(),
         };
     };

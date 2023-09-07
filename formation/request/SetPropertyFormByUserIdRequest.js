@@ -23,7 +23,7 @@ var SetPropertyFormByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
-        this.formModelName = null;
+        this.propertyFormModelName = null;
         this.propertyId = null;
         this.slots = null;
         this.duplicationAvoider = null;
@@ -72,15 +72,15 @@ var SetPropertyFormByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
-    SetPropertyFormByUserIdRequest.prototype.getFormModelName = function () {
-        return this.formModelName;
+    SetPropertyFormByUserIdRequest.prototype.getPropertyFormModelName = function () {
+        return this.propertyFormModelName;
     };
-    SetPropertyFormByUserIdRequest.prototype.setFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
+    SetPropertyFormByUserIdRequest.prototype.setPropertyFormModelName = function (propertyFormModelName) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     };
-    SetPropertyFormByUserIdRequest.prototype.withFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
+    SetPropertyFormByUserIdRequest.prototype.withPropertyFormModelName = function (propertyFormModelName) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     };
     SetPropertyFormByUserIdRequest.prototype.getPropertyId = function () {
@@ -120,7 +120,7 @@ var SetPropertyFormByUserIdRequest = /** @class */ (function () {
         return new SetPropertyFormByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withFormModelName(data["formModelName"])
+            .withPropertyFormModelName(data["propertyFormModelName"])
             .withPropertyId(data["propertyId"])
             .withSlots(data.slots ?
             data.slots.map(function (item) {
@@ -131,7 +131,7 @@ var SetPropertyFormByUserIdRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "formModelName": this.getFormModelName(),
+            "propertyFormModelName": this.getPropertyFormModelName(),
             "propertyId": this.getPropertyId(),
             "slots": this.getSlots() ?
                 this.getSlots().map(function (item) {

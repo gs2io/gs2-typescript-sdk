@@ -10,7 +10,6 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
     updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
     deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
-    describeFormModels(request: Request.DescribeFormModelsRequest): Promise<Result.DescribeFormModelsResult>;
     getFormModel(request: Request.GetFormModelRequest): Promise<Result.GetFormModelResult>;
     describeFormModelMasters(request: Request.DescribeFormModelMastersRequest): Promise<Result.DescribeFormModelMastersResult>;
     createFormModelMaster(request: Request.CreateFormModelMasterRequest): Promise<Result.CreateFormModelMasterResult>;
@@ -24,6 +23,13 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     getMoldModelMaster(request: Request.GetMoldModelMasterRequest): Promise<Result.GetMoldModelMasterResult>;
     updateMoldModelMaster(request: Request.UpdateMoldModelMasterRequest): Promise<Result.UpdateMoldModelMasterResult>;
     deleteMoldModelMaster(request: Request.DeleteMoldModelMasterRequest): Promise<Result.DeleteMoldModelMasterResult>;
+    describePropertyFormModels(request: Request.DescribePropertyFormModelsRequest): Promise<Result.DescribePropertyFormModelsResult>;
+    getPropertyFormModel(request: Request.GetPropertyFormModelRequest): Promise<Result.GetPropertyFormModelResult>;
+    describePropertyFormModelMasters(request: Request.DescribePropertyFormModelMastersRequest): Promise<Result.DescribePropertyFormModelMastersResult>;
+    createPropertyFormModelMaster(request: Request.CreatePropertyFormModelMasterRequest): Promise<Result.CreatePropertyFormModelMasterResult>;
+    getPropertyFormModelMaster(request: Request.GetPropertyFormModelMasterRequest): Promise<Result.GetPropertyFormModelMasterResult>;
+    updatePropertyFormModelMaster(request: Request.UpdatePropertyFormModelMasterRequest): Promise<Result.UpdatePropertyFormModelMasterResult>;
+    deletePropertyFormModelMaster(request: Request.DeletePropertyFormModelMasterRequest): Promise<Result.DeletePropertyFormModelMasterResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentFormMaster(request: Request.GetCurrentFormMasterRequest): Promise<Result.GetCurrentFormMasterResult>;
     updateCurrentFormMaster(request: Request.UpdateCurrentFormMasterRequest): Promise<Result.UpdateCurrentFormMasterResult>;

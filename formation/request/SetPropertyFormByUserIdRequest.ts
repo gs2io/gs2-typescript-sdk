@@ -24,7 +24,7 @@ export default class SetPropertyFormByUserIdRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private userId: string|null = null;
-    private formModelName: string|null = null;
+    private propertyFormModelName: string|null = null;
     private propertyId: string|null = null;
     private slots: Gs2Formation.Slot[]|null = null;
     private duplicationAvoider: string|null = null;
@@ -78,15 +78,15 @@ export default class SetPropertyFormByUserIdRequest implements IRequest {
         this.userId = userId;
         return this;
     }
-    public getFormModelName(): string|null {
-        return this.formModelName;
+    public getPropertyFormModelName(): string|null {
+        return this.propertyFormModelName;
     }
-    public setFormModelName(formModelName: string|null) {
-        this.formModelName = formModelName;
+    public setPropertyFormModelName(propertyFormModelName: string|null) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     }
-    public withFormModelName(formModelName: string|null): this {
-        this.formModelName = formModelName;
+    public withPropertyFormModelName(propertyFormModelName: string|null): this {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     }
     public getPropertyId(): string|null {
@@ -130,7 +130,7 @@ export default class SetPropertyFormByUserIdRequest implements IRequest {
         return new SetPropertyFormByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withFormModelName(data["formModelName"])
+            .withPropertyFormModelName(data["propertyFormModelName"])
             .withPropertyId(data["propertyId"])
             .withSlots(data.slots ?
                 data.slots.map((item: {[key: string]: any}) => {
@@ -143,7 +143,7 @@ export default class SetPropertyFormByUserIdRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "formModelName": this.getFormModelName(),
+            "propertyFormModelName": this.getPropertyFormModelName(),
             "propertyId": this.getPropertyId(),
             "slots": this.getSlots() ?
                 this.getSlots()!.map((item: Gs2Formation.Slot) => {

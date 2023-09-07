@@ -23,7 +23,7 @@ var AcquireActionsToFormPropertiesRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
-        this.moldName = null;
+        this.moldModelName = null;
         this.index = null;
         this.acquireAction = null;
         this.config = null;
@@ -73,15 +73,15 @@ var AcquireActionsToFormPropertiesRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
-    AcquireActionsToFormPropertiesRequest.prototype.getMoldName = function () {
-        return this.moldName;
+    AcquireActionsToFormPropertiesRequest.prototype.getMoldModelName = function () {
+        return this.moldModelName;
     };
-    AcquireActionsToFormPropertiesRequest.prototype.setMoldName = function (moldName) {
-        this.moldName = moldName;
+    AcquireActionsToFormPropertiesRequest.prototype.setMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
-    AcquireActionsToFormPropertiesRequest.prototype.withMoldName = function (moldName) {
-        this.moldName = moldName;
+    AcquireActionsToFormPropertiesRequest.prototype.withMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
     AcquireActionsToFormPropertiesRequest.prototype.getIndex = function () {
@@ -132,7 +132,7 @@ var AcquireActionsToFormPropertiesRequest = /** @class */ (function () {
         return new AcquireActionsToFormPropertiesRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withMoldName(data["moldName"])
+            .withMoldModelName(data["moldModelName"])
             .withIndex(data["index"])
             .withAcquireAction(Gs2Formation.AcquireAction.fromDict(data["acquireAction"]))
             .withConfig(data.config ?
@@ -145,7 +145,7 @@ var AcquireActionsToFormPropertiesRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
             "index": this.getIndex(),
             "acquireAction": (_a = this.getAcquireAction()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "config": this.getConfig() ?

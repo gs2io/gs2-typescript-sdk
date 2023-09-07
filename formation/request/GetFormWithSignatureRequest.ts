@@ -24,7 +24,7 @@ export default class GetFormWithSignatureRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private accessToken: string|null = null;
-    private moldName: string|null = null;
+    private moldModelName: string|null = null;
     private index: number|null = null;
     private keyId: string|null = null;
 
@@ -77,15 +77,15 @@ export default class GetFormWithSignatureRequest implements IRequest {
         this.accessToken = accessToken;
         return this;
     }
-    public getMoldName(): string|null {
-        return this.moldName;
+    public getMoldModelName(): string|null {
+        return this.moldModelName;
     }
-    public setMoldName(moldName: string|null) {
-        this.moldName = moldName;
+    public setMoldModelName(moldModelName: string|null) {
+        this.moldModelName = moldModelName;
         return this;
     }
-    public withMoldName(moldName: string|null): this {
-        this.moldName = moldName;
+    public withMoldModelName(moldModelName: string|null): this {
+        this.moldModelName = moldModelName;
         return this;
     }
     public getIndex(): number|null {
@@ -115,7 +115,7 @@ export default class GetFormWithSignatureRequest implements IRequest {
         return new GetFormWithSignatureRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withMoldName(data["moldName"])
+            .withMoldModelName(data["moldModelName"])
             .withIndex(data["index"])
             .withKeyId(data["keyId"]);
     }
@@ -124,7 +124,7 @@ export default class GetFormWithSignatureRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
             "index": this.getIndex(),
             "keyId": this.getKeyId(),
         };

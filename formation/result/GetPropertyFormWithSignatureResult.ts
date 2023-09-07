@@ -22,7 +22,7 @@ export default class GetPropertyFormWithSignatureResult implements IResult {
     private item: Gs2Formation.PropertyForm|null = null;
     private body: string|null = null;
     private signature: string|null = null;
-    private formModel: Gs2Formation.FormModel|null = null;
+    private propertyFormModel: Gs2Formation.PropertyFormModel|null = null;
 
     public getItem(): Gs2Formation.PropertyForm|null {
         return this.item;
@@ -66,17 +66,17 @@ export default class GetPropertyFormWithSignatureResult implements IResult {
         return this;
     }
 
-    public getFormModel(): Gs2Formation.FormModel|null {
-        return this.formModel;
+    public getPropertyFormModel(): Gs2Formation.PropertyFormModel|null {
+        return this.propertyFormModel;
     }
 
-    public setFormModel(formModel: Gs2Formation.FormModel|null) {
-        this.formModel = formModel;
+    public setPropertyFormModel(propertyFormModel: Gs2Formation.PropertyFormModel|null) {
+        this.propertyFormModel = propertyFormModel;
         return this;
     }
 
-    public withFormModel(formModel: Gs2Formation.FormModel|null): this {
-        this.formModel = formModel;
+    public withPropertyFormModel(propertyFormModel: Gs2Formation.PropertyFormModel|null): this {
+        this.propertyFormModel = propertyFormModel;
         return this;
     }
 
@@ -85,7 +85,7 @@ export default class GetPropertyFormWithSignatureResult implements IResult {
             .withItem(Gs2Formation.PropertyForm.fromDict(data["item"]))
             .withBody(data["body"])
             .withSignature(data["signature"])
-            .withFormModel(Gs2Formation.FormModel.fromDict(data["formModel"]));
+            .withPropertyFormModel(Gs2Formation.PropertyFormModel.fromDict(data["propertyFormModel"]));
     }
 
     public toDict(): {[key: string]: any} {
@@ -93,7 +93,7 @@ export default class GetPropertyFormWithSignatureResult implements IResult {
             "item": this.getItem()?.toDict(),
             "body": this.getBody(),
             "signature": this.getSignature(),
-            "formModel": this.getFormModel()?.toDict(),
+            "propertyFormModel": this.getPropertyFormModel()?.toDict(),
         };
     }
 }

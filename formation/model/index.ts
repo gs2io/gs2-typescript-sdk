@@ -18,6 +18,8 @@ import FormModel from "./FormModel"
 import FormModelMaster from "./FormModelMaster"
 import MoldModel from "./MoldModel"
 import MoldModelMaster from "./MoldModelMaster"
+import PropertyFormModel from "./PropertyFormModel"
+import PropertyFormModelMaster from "./PropertyFormModelMaster"
 import CurrentFormMaster from "./CurrentFormMaster"
 import Mold from "./Mold"
 import Form from "./Form"
@@ -39,6 +41,8 @@ export {
     FormModelMaster,
     MoldModel,
     MoldModelMaster,
+    PropertyFormModel,
+    PropertyFormModelMaster,
     CurrentFormMaster,
     Mold,
     Form,

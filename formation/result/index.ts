@@ -19,7 +19,6 @@ import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
 import GetNamespaceResult from "./GetNamespaceResult"
 import UpdateNamespaceResult from "./UpdateNamespaceResult"
 import DeleteNamespaceResult from "./DeleteNamespaceResult"
-import DescribeFormModelsResult from "./DescribeFormModelsResult"
 import GetFormModelResult from "./GetFormModelResult"
 import DescribeFormModelMastersResult from "./DescribeFormModelMastersResult"
 import CreateFormModelMasterResult from "./CreateFormModelMasterResult"
@@ -33,6 +32,13 @@ import CreateMoldModelMasterResult from "./CreateMoldModelMasterResult"
 import GetMoldModelMasterResult from "./GetMoldModelMasterResult"
 import UpdateMoldModelMasterResult from "./UpdateMoldModelMasterResult"
 import DeleteMoldModelMasterResult from "./DeleteMoldModelMasterResult"
+import DescribePropertyFormModelsResult from "./DescribePropertyFormModelsResult"
+import GetPropertyFormModelResult from "./GetPropertyFormModelResult"
+import DescribePropertyFormModelMastersResult from "./DescribePropertyFormModelMastersResult"
+import CreatePropertyFormModelMasterResult from "./CreatePropertyFormModelMasterResult"
+import GetPropertyFormModelMasterResult from "./GetPropertyFormModelMasterResult"
+import UpdatePropertyFormModelMasterResult from "./UpdatePropertyFormModelMasterResult"
+import DeletePropertyFormModelMasterResult from "./DeletePropertyFormModelMasterResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentFormMasterResult from "./GetCurrentFormMasterResult"
 import UpdateCurrentFormMasterResult from "./UpdateCurrentFormMasterResult"
@@ -81,7 +87,6 @@ export {
     GetNamespaceResult,
     UpdateNamespaceResult,
     DeleteNamespaceResult,
-    DescribeFormModelsResult,
     GetFormModelResult,
     DescribeFormModelMastersResult,
     CreateFormModelMasterResult,
@@ -95,6 +100,13 @@ export {
     GetMoldModelMasterResult,
     UpdateMoldModelMasterResult,
     DeleteMoldModelMasterResult,
+    DescribePropertyFormModelsResult,
+    GetPropertyFormModelResult,
+    DescribePropertyFormModelMastersResult,
+    CreatePropertyFormModelMasterResult,
+    GetPropertyFormModelMasterResult,
+    UpdatePropertyFormModelMasterResult,
+    DeletePropertyFormModelMasterResult,
     ExportMasterResult,
     GetCurrentFormMasterResult,
     UpdateCurrentFormMasterResult,

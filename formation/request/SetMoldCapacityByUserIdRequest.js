@@ -21,7 +21,7 @@ var SetMoldCapacityByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
-        this.moldName = null;
+        this.moldModelName = null;
         this.capacity = null;
         this.duplicationAvoider = null;
     }
@@ -69,15 +69,15 @@ var SetMoldCapacityByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
-    SetMoldCapacityByUserIdRequest.prototype.getMoldName = function () {
-        return this.moldName;
+    SetMoldCapacityByUserIdRequest.prototype.getMoldModelName = function () {
+        return this.moldModelName;
     };
-    SetMoldCapacityByUserIdRequest.prototype.setMoldName = function (moldName) {
-        this.moldName = moldName;
+    SetMoldCapacityByUserIdRequest.prototype.setMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
-    SetMoldCapacityByUserIdRequest.prototype.withMoldName = function (moldName) {
-        this.moldName = moldName;
+    SetMoldCapacityByUserIdRequest.prototype.withMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
     SetMoldCapacityByUserIdRequest.prototype.getCapacity = function () {
@@ -106,14 +106,14 @@ var SetMoldCapacityByUserIdRequest = /** @class */ (function () {
         return new SetMoldCapacityByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withMoldName(data["moldName"])
+            .withMoldModelName(data["moldModelName"])
             .withCapacity(data["capacity"]);
     };
     SetMoldCapacityByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
             "capacity": this.getCapacity(),
         };
     };

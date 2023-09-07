@@ -17,7 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var FormModel_1 = tslib_1.__importDefault(require("./FormModel"));
-var grnFormat = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:model:mold:{moldName}";
+var grnFormat = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:model:mold:{moldModelName}";
 var MoldModel = /** @class */ (function () {
     function MoldModel() {
         this.moldModelId = null;
@@ -32,7 +32,7 @@ var MoldModel = /** @class */ (function () {
             .replace('{region}', '(.*)')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{moldName}', '.*'));
+            .replace('{moldModelName}', '.*'));
         if (match) {
             return match[1];
         }
@@ -43,7 +43,7 @@ var MoldModel = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
-            .replace('{moldName}', '.*'));
+            .replace('{moldModelName}', '.*'));
         if (match) {
             return match[1];
         }
@@ -54,18 +54,18 @@ var MoldModel = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
-            .replace('{moldName}', '.*'));
+            .replace('{moldModelName}', '.*'));
         if (match) {
             return match[1];
         }
         return null;
     };
-    MoldModel.getMoldName = function (grn) {
+    MoldModel.getMoldModelName = function (grn) {
         var match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{moldName}', '(.*)'));
+            .replace('{moldModelName}', '(.*)'));
         if (match) {
             return match[1];
         }
@@ -81,17 +81,17 @@ var MoldModel = /** @class */ (function () {
         if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getMoldName(grn) == null || this.getMoldName(grn) === '') {
+        if (this.getMoldModelName(grn) == null || this.getMoldModelName(grn) === '') {
             return false;
         }
         return true;
     };
-    MoldModel.createGrn = function (region, ownerId, namespaceName, moldName) {
+    MoldModel.createGrn = function (region, ownerId, namespaceName, moldModelName) {
         return grnFormat
             .replace('{region}', region !== null && region !== void 0 ? region : '')
             .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
             .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
-            .replace('{moldName}', moldName !== null && moldName !== void 0 ? moldName : '');
+            .replace('{moldModelName}', moldModelName !== null && moldModelName !== void 0 ? moldModelName : '');
     };
     MoldModel.prototype.getMoldModelId = function () {
         return this.moldModelId;

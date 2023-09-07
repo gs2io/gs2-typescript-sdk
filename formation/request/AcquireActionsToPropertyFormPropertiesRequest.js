@@ -23,7 +23,7 @@ var AcquireActionsToPropertyFormPropertiesRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
-        this.formModelName = null;
+        this.propertyFormModelName = null;
         this.propertyId = null;
         this.acquireAction = null;
         this.config = null;
@@ -73,15 +73,15 @@ var AcquireActionsToPropertyFormPropertiesRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
-    AcquireActionsToPropertyFormPropertiesRequest.prototype.getFormModelName = function () {
-        return this.formModelName;
+    AcquireActionsToPropertyFormPropertiesRequest.prototype.getPropertyFormModelName = function () {
+        return this.propertyFormModelName;
     };
-    AcquireActionsToPropertyFormPropertiesRequest.prototype.setFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
+    AcquireActionsToPropertyFormPropertiesRequest.prototype.setPropertyFormModelName = function (propertyFormModelName) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     };
-    AcquireActionsToPropertyFormPropertiesRequest.prototype.withFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
+    AcquireActionsToPropertyFormPropertiesRequest.prototype.withPropertyFormModelName = function (propertyFormModelName) {
+        this.propertyFormModelName = propertyFormModelName;
         return this;
     };
     AcquireActionsToPropertyFormPropertiesRequest.prototype.getPropertyId = function () {
@@ -132,7 +132,7 @@ var AcquireActionsToPropertyFormPropertiesRequest = /** @class */ (function () {
         return new AcquireActionsToPropertyFormPropertiesRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withFormModelName(data["formModelName"])
+            .withPropertyFormModelName(data["propertyFormModelName"])
             .withPropertyId(data["propertyId"])
             .withAcquireAction(Gs2Formation.AcquireAction.fromDict(data["acquireAction"]))
             .withConfig(data.config ?
@@ -145,7 +145,7 @@ var AcquireActionsToPropertyFormPropertiesRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
-            "formModelName": this.getFormModelName(),
+            "propertyFormModelName": this.getPropertyFormModelName(),
             "propertyId": this.getPropertyId(),
             "acquireAction": (_a = this.getAcquireAction()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "config": this.getConfig() ?

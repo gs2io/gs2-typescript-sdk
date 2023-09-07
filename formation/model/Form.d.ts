@@ -12,10 +12,10 @@ export default class Form implements IModel {
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
     static getUserId(grn: string): string | null;
-    static getMoldName(grn: string): string | null;
+    static getMoldModelName(grn: string): string | null;
     static getIndex(grn: string): string | null;
     static isValid(grn: string): boolean;
-    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, moldName: string | null, index: string | null): string | null;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, moldModelName: string | null, index: string | null): string | null;
     getFormId(): string | null;
     setFormId(formId: string | null): this;
     withFormId(formId: string | null): this;
