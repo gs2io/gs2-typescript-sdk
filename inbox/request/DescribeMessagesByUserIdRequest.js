@@ -21,6 +21,7 @@ var DescribeMessagesByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
+        this.isRead = null;
         this.pageToken = null;
         this.limit = null;
     }
@@ -68,6 +69,17 @@ var DescribeMessagesByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    DescribeMessagesByUserIdRequest.prototype.getIsRead = function () {
+        return this.isRead;
+    };
+    DescribeMessagesByUserIdRequest.prototype.setIsRead = function (isRead) {
+        this.isRead = isRead;
+        return this;
+    };
+    DescribeMessagesByUserIdRequest.prototype.withIsRead = function (isRead) {
+        this.isRead = isRead;
+        return this;
+    };
     DescribeMessagesByUserIdRequest.prototype.getPageToken = function () {
         return this.pageToken;
     };
@@ -94,6 +106,7 @@ var DescribeMessagesByUserIdRequest = /** @class */ (function () {
         return new DescribeMessagesByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
+            .withIsRead(data["isRead"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
     };
@@ -101,6 +114,7 @@ var DescribeMessagesByUserIdRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "isRead": this.getIsRead(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
         };

@@ -4,6 +4,7 @@ export default class DescribeMessagesByUserIdRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private userId;
+    private isRead;
     private pageToken;
     private limit;
     getRequestId(): string | null;
@@ -18,6 +19,9 @@ export default class DescribeMessagesByUserIdRequest implements IRequest {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
+    getIsRead(): boolean | null;
+    setIsRead(isRead: boolean | null): this;
+    withIsRead(isRead: boolean | null): this;
     getPageToken(): string | null;
     setPageToken(pageToken: string | null): this;
     withPageToken(pageToken: string | null): this;

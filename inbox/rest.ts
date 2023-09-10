@@ -227,6 +227,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'isRead': String(request.getIsRead() ?? null),
             'pageToken': String(request.getPageToken() ?? null),
             'limit': String(request.getLimit() ?? null),
         };
@@ -256,6 +257,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'userId': String(request.getUserId() ?? null),
+            'isRead': String(request.getIsRead() ?? null),
             'pageToken': String(request.getPageToken() ?? null),
             'limit': String(request.getLimit() ?? null),
         };

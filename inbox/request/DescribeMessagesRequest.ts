@@ -24,6 +24,7 @@ export default class DescribeMessagesRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private accessToken: string|null = null;
+    private isRead: boolean|null = null;
     private pageToken: string|null = null;
     private limit: number|null = null;
 
@@ -76,6 +77,17 @@ export default class DescribeMessagesRequest implements IRequest {
         this.accessToken = accessToken;
         return this;
     }
+    public getIsRead(): boolean|null {
+        return this.isRead;
+    }
+    public setIsRead(isRead: boolean|null) {
+        this.isRead = isRead;
+        return this;
+    }
+    public withIsRead(isRead: boolean|null): this {
+        this.isRead = isRead;
+        return this;
+    }
     public getPageToken(): string|null {
         return this.pageToken;
     }
@@ -103,6 +115,7 @@ export default class DescribeMessagesRequest implements IRequest {
         return new DescribeMessagesRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
+            .withIsRead(data["isRead"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
     }
@@ -111,6 +124,7 @@ export default class DescribeMessagesRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
+            "isRead": this.getIsRead(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
         };
