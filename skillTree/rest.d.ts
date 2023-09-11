@@ -1,0 +1,36 @@
+import AbstractGs2RestClient from '../core/AbstractGs2RestClient';
+import { Gs2RestSession } from '../core/model';
+import * as Request from './request';
+import * as Result from './result';
+export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
+    constructor(session: Gs2RestSession);
+    describeNamespaces(request: Request.DescribeNamespacesRequest): Promise<Result.DescribeNamespacesResult>;
+    createNamespace(request: Request.CreateNamespaceRequest): Promise<Result.CreateNamespaceResult>;
+    getNamespaceStatus(request: Request.GetNamespaceStatusRequest): Promise<Result.GetNamespaceStatusResult>;
+    getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
+    updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
+    deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    describeNodeModels(request: Request.DescribeNodeModelsRequest): Promise<Result.DescribeNodeModelsResult>;
+    getNodeModel(request: Request.GetNodeModelRequest): Promise<Result.GetNodeModelResult>;
+    describeNodeModelMasters(request: Request.DescribeNodeModelMastersRequest): Promise<Result.DescribeNodeModelMastersResult>;
+    createNodeModelMaster(request: Request.CreateNodeModelMasterRequest): Promise<Result.CreateNodeModelMasterResult>;
+    getNodeModelMaster(request: Request.GetNodeModelMasterRequest): Promise<Result.GetNodeModelMasterResult>;
+    updateNodeModelMaster(request: Request.UpdateNodeModelMasterRequest): Promise<Result.UpdateNodeModelMasterResult>;
+    deleteNodeModelMaster(request: Request.DeleteNodeModelMasterRequest): Promise<Result.DeleteNodeModelMasterResult>;
+    markReleaseByUserId(request: Request.MarkReleaseByUserIdRequest): Promise<Result.MarkReleaseByUserIdResult>;
+    release(request: Request.ReleaseRequest): Promise<Result.ReleaseResult>;
+    releaseByUserId(request: Request.ReleaseByUserIdRequest): Promise<Result.ReleaseByUserIdResult>;
+    markRestrainByUserId(request: Request.MarkRestrainByUserIdRequest): Promise<Result.MarkRestrainByUserIdResult>;
+    restrain(request: Request.RestrainRequest): Promise<Result.RestrainResult>;
+    restrainByUserId(request: Request.RestrainByUserIdRequest): Promise<Result.RestrainByUserIdResult>;
+    getStatus(request: Request.GetStatusRequest): Promise<Result.GetStatusResult>;
+    getStatusByUserId(request: Request.GetStatusByUserIdRequest): Promise<Result.GetStatusByUserIdResult>;
+    reset(request: Request.ResetRequest): Promise<Result.ResetResult>;
+    resetByUserId(request: Request.ResetByUserIdRequest): Promise<Result.ResetByUserIdResult>;
+    markReleaseByStampSheet(request: Request.MarkReleaseByStampSheetRequest): Promise<Result.MarkReleaseByStampSheetResult>;
+    markRestrainByStampTask(request: Request.MarkRestrainByStampTaskRequest): Promise<Result.MarkRestrainByStampTaskResult>;
+    exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
+    getCurrentTreeMaster(request: Request.GetCurrentTreeMasterRequest): Promise<Result.GetCurrentTreeMasterResult>;
+    updateCurrentTreeMaster(request: Request.UpdateCurrentTreeMasterRequest): Promise<Result.UpdateCurrentTreeMasterResult>;
+    updateCurrentTreeMasterFromGitHub(request: Request.UpdateCurrentTreeMasterFromGitHubRequest): Promise<Result.UpdateCurrentTreeMasterFromGitHubResult>;
+}
