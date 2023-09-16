@@ -1,0 +1,15 @@
+import DescribeNamespacesResult from "./DescribeNamespacesResult";
+import CreateNamespaceResult from "./CreateNamespaceResult";
+import GetNamespaceStatusResult from "./GetNamespaceStatusResult";
+import GetNamespaceResult from "./GetNamespaceResult";
+import UpdateNamespaceResult from "./UpdateNamespaceResult";
+import DeleteNamespaceResult from "./DeleteNamespaceResult";
+import GetPointResult from "./GetPointResult";
+import GetPointByUserIdResult from "./GetPointByUserIdResult";
+import AcquirePointByUserIdResult from "./AcquirePointByUserIdResult";
+import ConsumePointResult from "./ConsumePointResult";
+import ConsumePointByUserIdResult from "./ConsumePointByUserIdResult";
+import DeletePointByUserIdResult from "./DeletePointByUserIdResult";
+import ConsumePointByStampTaskResult from "./ConsumePointByStampTaskResult";
+import AcquirePointByStampSheetResult from "./AcquirePointByStampSheetResult";
+export { DescribeNamespacesResult, CreateNamespaceResult, GetNamespaceStatusResult, GetNamespaceResult, UpdateNamespaceResult, DeleteNamespaceResult, GetPointResult, GetPointByUserIdResult, AcquirePointByUserIdResult, ConsumePointResult, ConsumePointByUserIdResult, DeletePointByUserIdResult, ConsumePointByStampTaskResult, AcquirePointByStampSheetResult, };

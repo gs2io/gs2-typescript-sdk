@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import * as account from './account';
+import * as adReward from './adReward';
 import * as auth from './auth';
 import core from './core';
 import * as chat from './chat';
@@ -61,6 +62,7 @@ import * as watch from './watch';
 
 export {
   account,
+  adReward,
   auth,
   core,
   chat,

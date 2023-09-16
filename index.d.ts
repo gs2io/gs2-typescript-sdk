@@ -1,4 +1,5 @@
 import * as account from './account';
+import * as adReward from './adReward';
 import * as auth from './auth';
 import core from './core';
 import * as chat from './chat';
@@ -42,4 +43,4 @@ import * as stateMachine from './stateMachine';
 import * as stamina from './stamina';
 import * as version from './version';
 import * as watch from './watch';
-export { account, auth, core, chat, datastore, deploy, dictionary, distributor, enchant, enhance, exchange, experience, formation, friend, gateway, identifier, idle, inbox, inventory, jobQueue, key, limit, loginReward, lock, log, lottery, matchmaking, megaField, mission, money, news, project, quest, ranking, realtime, schedule, script, serialKey, showcase, skillTree, stateMachine, stamina, version, watch, };
+export { account, adReward, auth, core, chat, datastore, deploy, dictionary, distributor, enchant, enhance, exchange, experience, formation, friend, gateway, identifier, idle, inbox, inventory, jobQueue, key, limit, loginReward, lock, log, lottery, matchmaking, megaField, mission, money, news, project, quest, ranking, realtime, schedule, script, serialKey, showcase, skillTree, stateMachine, stamina, version, watch, };

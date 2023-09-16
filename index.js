@@ -15,10 +15,12 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.watch = exports.version = exports.stamina = exports.stateMachine = exports.skillTree = exports.showcase = exports.serialKey = exports.script = exports.schedule = exports.realtime = exports.ranking = exports.quest = exports.project = exports.news = exports.money = exports.mission = exports.megaField = exports.matchmaking = exports.lottery = exports.log = exports.lock = exports.loginReward = exports.limit = exports.key = exports.jobQueue = exports.inventory = exports.inbox = exports.idle = exports.identifier = exports.gateway = exports.friend = exports.formation = exports.experience = exports.exchange = exports.enhance = exports.enchant = exports.distributor = exports.dictionary = exports.deploy = exports.datastore = exports.chat = exports.core = exports.auth = exports.account = void 0;
+exports.watch = exports.version = exports.stamina = exports.stateMachine = exports.skillTree = exports.showcase = exports.serialKey = exports.script = exports.schedule = exports.realtime = exports.ranking = exports.quest = exports.project = exports.news = exports.money = exports.mission = exports.megaField = exports.matchmaking = exports.lottery = exports.log = exports.lock = exports.loginReward = exports.limit = exports.key = exports.jobQueue = exports.inventory = exports.inbox = exports.idle = exports.identifier = exports.gateway = exports.friend = exports.formation = exports.experience = exports.exchange = exports.enhance = exports.enchant = exports.distributor = exports.dictionary = exports.deploy = exports.datastore = exports.chat = exports.core = exports.auth = exports.adReward = exports.account = void 0;
 var tslib_1 = require("tslib");
 var account = tslib_1.__importStar(require("./account"));
 exports.account = account;
+var adReward = tslib_1.__importStar(require("./adReward"));
+exports.adReward = adReward;
 var auth = tslib_1.__importStar(require("./auth"));
 exports.auth = auth;
 var core_1 = tslib_1.__importDefault(require("./core"));
