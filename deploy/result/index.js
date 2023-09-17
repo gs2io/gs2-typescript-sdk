@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetOutputResult = exports.DescribeOutputsResult = exports.GetEventResult = exports.DescribeEventsResult = exports.GetResourceResult = exports.DescribeResourcesResult = exports.DeleteStackEntityResult = exports.DeleteStackResourcesResult = exports.ForceDeleteStackResult = exports.DeleteStackResult = exports.UpdateStackFromGitHubResult = exports.UpdateStackResult = exports.GetStackResult = exports.GetStackStatusResult = exports.ValidateResult = exports.CreateStackFromGitHubResult = exports.CreateStackResult = exports.DescribeStacksResult = void 0;
+exports.GetOutputResult = exports.DescribeOutputsResult = exports.GetEventResult = exports.DescribeEventsResult = exports.GetResourceResult = exports.DescribeResourcesResult = exports.DeleteStackEntityResult = exports.DeleteStackResourcesResult = exports.ForceDeleteStackResult = exports.DeleteStackResult = exports.UpdateStackFromGitHubResult = exports.ChangeSetResult = exports.UpdateStackResult = exports.GetStackResult = exports.GetStackStatusResult = exports.ValidateResult = exports.CreateStackFromGitHubResult = exports.CreateStackResult = exports.DescribeStacksResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -31,6 +31,8 @@ var GetStackResult_1 = tslib_1.__importDefault(require("./GetStackResult"));
 exports.GetStackResult = GetStackResult_1.default;
 var UpdateStackResult_1 = tslib_1.__importDefault(require("./UpdateStackResult"));
 exports.UpdateStackResult = UpdateStackResult_1.default;
+var ChangeSetResult_1 = tslib_1.__importDefault(require("./ChangeSetResult"));
+exports.ChangeSetResult = ChangeSetResult_1.default;
 var UpdateStackFromGitHubResult_1 = tslib_1.__importDefault(require("./UpdateStackFromGitHubResult"));
 exports.UpdateStackFromGitHubResult = UpdateStackFromGitHubResult_1.default;
 var DeleteStackResult_1 = tslib_1.__importDefault(require("./DeleteStackResult"));

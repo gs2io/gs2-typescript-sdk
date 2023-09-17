@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetOutputRequest = exports.DescribeOutputsRequest = exports.GetEventRequest = exports.DescribeEventsRequest = exports.GetResourceRequest = exports.DescribeResourcesRequest = exports.DeleteStackEntityRequest = exports.DeleteStackResourcesRequest = exports.ForceDeleteStackRequest = exports.DeleteStackRequest = exports.UpdateStackFromGitHubRequest = exports.UpdateStackRequest = exports.GetStackRequest = exports.GetStackStatusRequest = exports.ValidateRequest = exports.CreateStackFromGitHubRequest = exports.CreateStackRequest = exports.DescribeStacksRequest = void 0;
+exports.GetOutputRequest = exports.DescribeOutputsRequest = exports.GetEventRequest = exports.DescribeEventsRequest = exports.GetResourceRequest = exports.DescribeResourcesRequest = exports.DeleteStackEntityRequest = exports.DeleteStackResourcesRequest = exports.ForceDeleteStackRequest = exports.DeleteStackRequest = exports.UpdateStackFromGitHubRequest = exports.ChangeSetRequest = exports.UpdateStackRequest = exports.GetStackRequest = exports.GetStackStatusRequest = exports.ValidateRequest = exports.CreateStackFromGitHubRequest = exports.CreateStackRequest = exports.DescribeStacksRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -31,6 +31,8 @@ var GetStackRequest_1 = tslib_1.__importDefault(require("./GetStackRequest"));
 exports.GetStackRequest = GetStackRequest_1.default;
 var UpdateStackRequest_1 = tslib_1.__importDefault(require("./UpdateStackRequest"));
 exports.UpdateStackRequest = UpdateStackRequest_1.default;
+var ChangeSetRequest_1 = tslib_1.__importDefault(require("./ChangeSetRequest"));
+exports.ChangeSetRequest = ChangeSetRequest_1.default;
 var UpdateStackFromGitHubRequest_1 = tslib_1.__importDefault(require("./UpdateStackFromGitHubRequest"));
 exports.UpdateStackFromGitHubRequest = UpdateStackFromGitHubRequest_1.default;
 var DeleteStackRequest_1 = tslib_1.__importDefault(require("./DeleteStackRequest"));

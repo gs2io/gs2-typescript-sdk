@@ -202,6 +202,33 @@ var Gs2DeployRestClient = /** @class */ (function (_super) {
             }
         });
     };
+    Gs2DeployRestClient.prototype.changeSet = function (request) {
+        var _a, _b, _c, _d;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region)
+            .replace('{stackName}', String((_a = request.getStackName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getStackName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'template': (_d = request.getTemplate()) !== null && _d !== void 0 ? _d : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.ChangeSetResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
     Gs2DeployRestClient.prototype.updateStackFromGitHub = function (request) {
         var _a, _b, _c, _d, _e, _f;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/from_git_hub')

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OutputField = exports.GitHubCheckoutSetting = exports.Output = exports.Event = exports.Resource = exports.Stack = void 0;
+exports.GitHubCheckoutSetting = exports.ChangeSet = exports.OutputField = exports.Output = exports.Event = exports.Resource = exports.Stack = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -25,8 +25,10 @@ var Event_1 = tslib_1.__importDefault(require("./Event"));
 exports.Event = Event_1.default;
 var Output_1 = tslib_1.__importDefault(require("./Output"));
 exports.Output = Output_1.default;
-var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
-exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
 var OutputField_1 = tslib_1.__importDefault(require("./OutputField"));
 exports.OutputField = OutputField_1.default;
+var ChangeSet_1 = tslib_1.__importDefault(require("./ChangeSet"));
+exports.ChangeSet = ChangeSet_1.default;
+var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
+exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
 //# sourceMappingURL=index.js.map

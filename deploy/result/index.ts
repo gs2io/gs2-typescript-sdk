@@ -20,6 +20,7 @@ import ValidateResult from "./ValidateResult"
 import GetStackStatusResult from "./GetStackStatusResult"
 import GetStackResult from "./GetStackResult"
 import UpdateStackResult from "./UpdateStackResult"
+import ChangeSetResult from "./ChangeSetResult"
 import UpdateStackFromGitHubResult from "./UpdateStackFromGitHubResult"
 import DeleteStackResult from "./DeleteStackResult"
 import ForceDeleteStackResult from "./ForceDeleteStackResult"
@@ -40,6 +41,7 @@ export {
     GetStackStatusResult,
     GetStackResult,
     UpdateStackResult,
+    ChangeSetResult,
     UpdateStackFromGitHubResult,
     DeleteStackResult,
     ForceDeleteStackResult,

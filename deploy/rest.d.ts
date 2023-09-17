@@ -11,6 +11,7 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
     getStackStatus(request: Request.GetStackStatusRequest): Promise<Result.GetStackStatusResult>;
     getStack(request: Request.GetStackRequest): Promise<Result.GetStackResult>;
     updateStack(request: Request.UpdateStackRequest): Promise<Result.UpdateStackResult>;
+    changeSet(request: Request.ChangeSetRequest): Promise<Result.ChangeSetResult>;
     updateStackFromGitHub(request: Request.UpdateStackFromGitHubRequest): Promise<Result.UpdateStackFromGitHubResult>;
     deleteStack(request: Request.DeleteStackRequest): Promise<Result.DeleteStackResult>;
     forceDeleteStack(request: Request.ForceDeleteStackRequest): Promise<Result.ForceDeleteStackResult>;

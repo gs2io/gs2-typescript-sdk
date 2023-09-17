@@ -232,6 +232,37 @@ export default class Gs2DeployRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public changeSet(request: Request.ChangeSetRequest): Promise<Result.ChangeSetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}')
+            .replace('{service}', 'deploy')
+            .replace('{region}', this.session.region)
+            .replace('{stackName}', String(request.getStackName() ?? 'null') === "" ? "null" : String(request.getStackName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'template': request.getTemplate() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ChangeSetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public updateStackFromGitHub(request: Request.UpdateStackFromGitHubRequest): Promise<Result.UpdateStackFromGitHubResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stack/{stackName}/from_git_hub')
             .replace('{service}', 'deploy')

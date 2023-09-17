@@ -20,6 +20,7 @@ import ValidateRequest from "./ValidateRequest"
 import GetStackStatusRequest from "./GetStackStatusRequest"
 import GetStackRequest from "./GetStackRequest"
 import UpdateStackRequest from "./UpdateStackRequest"
+import ChangeSetRequest from "./ChangeSetRequest"
 import UpdateStackFromGitHubRequest from "./UpdateStackFromGitHubRequest"
 import DeleteStackRequest from "./DeleteStackRequest"
 import ForceDeleteStackRequest from "./ForceDeleteStackRequest"
@@ -40,6 +41,7 @@ export {
     GetStackStatusRequest,
     GetStackRequest,
     UpdateStackRequest,
+    ChangeSetRequest,
     UpdateStackFromGitHubRequest,
     DeleteStackRequest,
     ForceDeleteStackRequest,
