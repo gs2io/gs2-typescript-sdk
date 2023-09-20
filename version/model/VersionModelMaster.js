@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Version_1 = tslib_1.__importDefault(require("./Version"));
+var ScheduleVersion_1 = tslib_1.__importDefault(require("./ScheduleVersion"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:version:{namespaceName}:model:version:{versionName}";
 var VersionModelMaster = /** @class */ (function () {
     function VersionModelMaster() {
@@ -24,10 +25,12 @@ var VersionModelMaster = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.metadata = null;
+        this.scope = null;
+        this.type = null;
+        this.currentVersion = null;
         this.warningVersion = null;
         this.errorVersion = null;
-        this.scope = null;
-        this.currentVersion = null;
+        this.scheduleVersions = null;
         this.needSignature = null;
         this.signatureKeyId = null;
         this.createdAt = null;
@@ -144,6 +147,39 @@ var VersionModelMaster = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
+    VersionModelMaster.prototype.getScope = function () {
+        return this.scope;
+    };
+    VersionModelMaster.prototype.setScope = function (scope) {
+        this.scope = scope;
+        return this;
+    };
+    VersionModelMaster.prototype.withScope = function (scope) {
+        this.scope = scope;
+        return this;
+    };
+    VersionModelMaster.prototype.getType = function () {
+        return this.type;
+    };
+    VersionModelMaster.prototype.setType = function (type) {
+        this.type = type;
+        return this;
+    };
+    VersionModelMaster.prototype.withType = function (type) {
+        this.type = type;
+        return this;
+    };
+    VersionModelMaster.prototype.getCurrentVersion = function () {
+        return this.currentVersion;
+    };
+    VersionModelMaster.prototype.setCurrentVersion = function (currentVersion) {
+        this.currentVersion = currentVersion;
+        return this;
+    };
+    VersionModelMaster.prototype.withCurrentVersion = function (currentVersion) {
+        this.currentVersion = currentVersion;
+        return this;
+    };
     VersionModelMaster.prototype.getWarningVersion = function () {
         return this.warningVersion;
     };
@@ -166,26 +202,15 @@ var VersionModelMaster = /** @class */ (function () {
         this.errorVersion = errorVersion;
         return this;
     };
-    VersionModelMaster.prototype.getScope = function () {
-        return this.scope;
+    VersionModelMaster.prototype.getScheduleVersions = function () {
+        return this.scheduleVersions;
     };
-    VersionModelMaster.prototype.setScope = function (scope) {
-        this.scope = scope;
+    VersionModelMaster.prototype.setScheduleVersions = function (scheduleVersions) {
+        this.scheduleVersions = scheduleVersions;
         return this;
     };
-    VersionModelMaster.prototype.withScope = function (scope) {
-        this.scope = scope;
-        return this;
-    };
-    VersionModelMaster.prototype.getCurrentVersion = function () {
-        return this.currentVersion;
-    };
-    VersionModelMaster.prototype.setCurrentVersion = function (currentVersion) {
-        this.currentVersion = currentVersion;
-        return this;
-    };
-    VersionModelMaster.prototype.withCurrentVersion = function (currentVersion) {
-        this.currentVersion = currentVersion;
+    VersionModelMaster.prototype.withScheduleVersions = function (scheduleVersions) {
+        this.scheduleVersions = scheduleVersions;
         return this;
     };
     VersionModelMaster.prototype.getNeedSignature = function () {
@@ -252,10 +277,15 @@ var VersionModelMaster = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
+            .withScope(data["scope"])
+            .withType(data["type"])
+            .withCurrentVersion(Version_1.default.fromDict(data["currentVersion"]))
             .withWarningVersion(Version_1.default.fromDict(data["warningVersion"]))
             .withErrorVersion(Version_1.default.fromDict(data["errorVersion"]))
-            .withScope(data["scope"])
-            .withCurrentVersion(Version_1.default.fromDict(data["currentVersion"]))
+            .withScheduleVersions(data.scheduleVersions ?
+            data.scheduleVersions.map(function (item) {
+                return ScheduleVersion_1.default.fromDict(item);
+            }) : [])
             .withNeedSignature(data["needSignature"])
             .withSignatureKeyId(data["signatureKeyId"])
             .withCreatedAt(data["createdAt"])
@@ -269,10 +299,15 @@ var VersionModelMaster = /** @class */ (function () {
             "name": this.getName(),
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
-            "warningVersion": (_a = this.getWarningVersion()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "errorVersion": (_b = this.getErrorVersion()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "scope": this.getScope(),
-            "currentVersion": (_c = this.getCurrentVersion()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "type": this.getType(),
+            "currentVersion": (_a = this.getCurrentVersion()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "warningVersion": (_b = this.getWarningVersion()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "errorVersion": (_c = this.getErrorVersion()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "scheduleVersions": this.getScheduleVersions() ?
+                this.getScheduleVersions().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "needSignature": this.getNeedSignature(),
             "signatureKeyId": this.getSignatureKeyId(),
             "createdAt": this.getCreatedAt(),

@@ -26,10 +26,12 @@ export default class CreateVersionModelMasterRequest implements IRequest {
     private name: string|null = null;
     private description: string|null = null;
     private metadata: string|null = null;
+    private scope: string|null = null;
+    private type: string|null = null;
+    private currentVersion: Gs2Version.Version|null = null;
     private warningVersion: Gs2Version.Version|null = null;
     private errorVersion: Gs2Version.Version|null = null;
-    private scope: string|null = null;
-    private currentVersion: Gs2Version.Version|null = null;
+    private scheduleVersions: Gs2Version.ScheduleVersion[]|null = null;
     private needSignature: boolean|null = null;
     private signatureKeyId: string|null = null;
 
@@ -104,6 +106,39 @@ export default class CreateVersionModelMasterRequest implements IRequest {
         this.metadata = metadata;
         return this;
     }
+    public getScope(): string|null {
+        return this.scope;
+    }
+    public setScope(scope: string|null) {
+        this.scope = scope;
+        return this;
+    }
+    public withScope(scope: string|null): this {
+        this.scope = scope;
+        return this;
+    }
+    public getType(): string|null {
+        return this.type;
+    }
+    public setType(type: string|null) {
+        this.type = type;
+        return this;
+    }
+    public withType(type: string|null): this {
+        this.type = type;
+        return this;
+    }
+    public getCurrentVersion(): Gs2Version.Version|null {
+        return this.currentVersion;
+    }
+    public setCurrentVersion(currentVersion: Gs2Version.Version|null) {
+        this.currentVersion = currentVersion;
+        return this;
+    }
+    public withCurrentVersion(currentVersion: Gs2Version.Version|null): this {
+        this.currentVersion = currentVersion;
+        return this;
+    }
     public getWarningVersion(): Gs2Version.Version|null {
         return this.warningVersion;
     }
@@ -126,26 +161,15 @@ export default class CreateVersionModelMasterRequest implements IRequest {
         this.errorVersion = errorVersion;
         return this;
     }
-    public getScope(): string|null {
-        return this.scope;
+    public getScheduleVersions(): Gs2Version.ScheduleVersion[]|null {
+        return this.scheduleVersions;
     }
-    public setScope(scope: string|null) {
-        this.scope = scope;
+    public setScheduleVersions(scheduleVersions: Gs2Version.ScheduleVersion[]|null) {
+        this.scheduleVersions = scheduleVersions;
         return this;
     }
-    public withScope(scope: string|null): this {
-        this.scope = scope;
-        return this;
-    }
-    public getCurrentVersion(): Gs2Version.Version|null {
-        return this.currentVersion;
-    }
-    public setCurrentVersion(currentVersion: Gs2Version.Version|null) {
-        this.currentVersion = currentVersion;
-        return this;
-    }
-    public withCurrentVersion(currentVersion: Gs2Version.Version|null): this {
-        this.currentVersion = currentVersion;
+    public withScheduleVersions(scheduleVersions: Gs2Version.ScheduleVersion[]|null): this {
+        this.scheduleVersions = scheduleVersions;
         return this;
     }
     public getNeedSignature(): boolean|null {
@@ -177,10 +201,16 @@ export default class CreateVersionModelMasterRequest implements IRequest {
             .withName(data["name"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
+            .withScope(data["scope"])
+            .withType(data["type"])
+            .withCurrentVersion(Gs2Version.Version.fromDict(data["currentVersion"]))
             .withWarningVersion(Gs2Version.Version.fromDict(data["warningVersion"]))
             .withErrorVersion(Gs2Version.Version.fromDict(data["errorVersion"]))
-            .withScope(data["scope"])
-            .withCurrentVersion(Gs2Version.Version.fromDict(data["currentVersion"]))
+            .withScheduleVersions(data.scheduleVersions ?
+                data.scheduleVersions.map((item: {[key: string]: any}) => {
+                    return Gs2Version.ScheduleVersion.fromDict(item);
+                }
+            ) : [])
             .withNeedSignature(data["needSignature"])
             .withSignatureKeyId(data["signatureKeyId"]);
     }
@@ -191,10 +221,16 @@ export default class CreateVersionModelMasterRequest implements IRequest {
             "name": this.getName(),
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
+            "scope": this.getScope(),
+            "type": this.getType(),
+            "currentVersion": this.getCurrentVersion()?.toDict(),
             "warningVersion": this.getWarningVersion()?.toDict(),
             "errorVersion": this.getErrorVersion()?.toDict(),
-            "scope": this.getScope(),
-            "currentVersion": this.getCurrentVersion()?.toDict(),
+            "scheduleVersions": this.getScheduleVersions() ?
+                this.getScheduleVersions()!.map((item: Gs2Version.ScheduleVersion) => {
+                    return item.toDict();
+                }
+            ) : [],
             "needSignature": this.getNeedSignature(),
             "signatureKeyId": this.getSignatureKeyId(),
         };

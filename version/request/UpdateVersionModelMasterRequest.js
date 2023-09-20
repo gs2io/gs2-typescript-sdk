@@ -25,10 +25,12 @@ var UpdateVersionModelMasterRequest = /** @class */ (function () {
         this.versionName = null;
         this.description = null;
         this.metadata = null;
+        this.scope = null;
+        this.type = null;
+        this.currentVersion = null;
         this.warningVersion = null;
         this.errorVersion = null;
-        this.scope = null;
-        this.currentVersion = null;
+        this.scheduleVersions = null;
         this.needSignature = null;
         this.signatureKeyId = null;
     }
@@ -98,6 +100,39 @@ var UpdateVersionModelMasterRequest = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
+    UpdateVersionModelMasterRequest.prototype.getScope = function () {
+        return this.scope;
+    };
+    UpdateVersionModelMasterRequest.prototype.setScope = function (scope) {
+        this.scope = scope;
+        return this;
+    };
+    UpdateVersionModelMasterRequest.prototype.withScope = function (scope) {
+        this.scope = scope;
+        return this;
+    };
+    UpdateVersionModelMasterRequest.prototype.getType = function () {
+        return this.type;
+    };
+    UpdateVersionModelMasterRequest.prototype.setType = function (type) {
+        this.type = type;
+        return this;
+    };
+    UpdateVersionModelMasterRequest.prototype.withType = function (type) {
+        this.type = type;
+        return this;
+    };
+    UpdateVersionModelMasterRequest.prototype.getCurrentVersion = function () {
+        return this.currentVersion;
+    };
+    UpdateVersionModelMasterRequest.prototype.setCurrentVersion = function (currentVersion) {
+        this.currentVersion = currentVersion;
+        return this;
+    };
+    UpdateVersionModelMasterRequest.prototype.withCurrentVersion = function (currentVersion) {
+        this.currentVersion = currentVersion;
+        return this;
+    };
     UpdateVersionModelMasterRequest.prototype.getWarningVersion = function () {
         return this.warningVersion;
     };
@@ -120,26 +155,15 @@ var UpdateVersionModelMasterRequest = /** @class */ (function () {
         this.errorVersion = errorVersion;
         return this;
     };
-    UpdateVersionModelMasterRequest.prototype.getScope = function () {
-        return this.scope;
+    UpdateVersionModelMasterRequest.prototype.getScheduleVersions = function () {
+        return this.scheduleVersions;
     };
-    UpdateVersionModelMasterRequest.prototype.setScope = function (scope) {
-        this.scope = scope;
+    UpdateVersionModelMasterRequest.prototype.setScheduleVersions = function (scheduleVersions) {
+        this.scheduleVersions = scheduleVersions;
         return this;
     };
-    UpdateVersionModelMasterRequest.prototype.withScope = function (scope) {
-        this.scope = scope;
-        return this;
-    };
-    UpdateVersionModelMasterRequest.prototype.getCurrentVersion = function () {
-        return this.currentVersion;
-    };
-    UpdateVersionModelMasterRequest.prototype.setCurrentVersion = function (currentVersion) {
-        this.currentVersion = currentVersion;
-        return this;
-    };
-    UpdateVersionModelMasterRequest.prototype.withCurrentVersion = function (currentVersion) {
-        this.currentVersion = currentVersion;
+    UpdateVersionModelMasterRequest.prototype.withScheduleVersions = function (scheduleVersions) {
+        this.scheduleVersions = scheduleVersions;
         return this;
     };
     UpdateVersionModelMasterRequest.prototype.getNeedSignature = function () {
@@ -170,10 +194,15 @@ var UpdateVersionModelMasterRequest = /** @class */ (function () {
             .withVersionName(data["versionName"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
+            .withScope(data["scope"])
+            .withType(data["type"])
+            .withCurrentVersion(Gs2Version.Version.fromDict(data["currentVersion"]))
             .withWarningVersion(Gs2Version.Version.fromDict(data["warningVersion"]))
             .withErrorVersion(Gs2Version.Version.fromDict(data["errorVersion"]))
-            .withScope(data["scope"])
-            .withCurrentVersion(Gs2Version.Version.fromDict(data["currentVersion"]))
+            .withScheduleVersions(data.scheduleVersions ?
+            data.scheduleVersions.map(function (item) {
+                return Gs2Version.ScheduleVersion.fromDict(item);
+            }) : [])
             .withNeedSignature(data["needSignature"])
             .withSignatureKeyId(data["signatureKeyId"]);
     };
@@ -184,10 +213,15 @@ var UpdateVersionModelMasterRequest = /** @class */ (function () {
             "versionName": this.getVersionName(),
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
-            "warningVersion": (_a = this.getWarningVersion()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "errorVersion": (_b = this.getErrorVersion()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "scope": this.getScope(),
-            "currentVersion": (_c = this.getCurrentVersion()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "type": this.getType(),
+            "currentVersion": (_a = this.getCurrentVersion()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "warningVersion": (_b = this.getWarningVersion()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "errorVersion": (_c = this.getErrorVersion()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "scheduleVersions": this.getScheduleVersions() ?
+                this.getScheduleVersions().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "needSignature": this.getNeedSignature(),
             "signatureKeyId": this.getSignatureKeyId(),
         };

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LogSetting = exports.GitHubCheckoutSetting = exports.ScriptSetting = exports.CurrentVersionMaster = exports.SignTargetVersion = exports.TargetVersion = exports.Status = exports.AcceptVersion = exports.VersionModel = exports.Version = exports.VersionModelMaster = exports.Namespace = void 0;
+exports.ScheduleVersion = exports.Version = exports.LogSetting = exports.GitHubCheckoutSetting = exports.ScriptSetting = exports.CurrentVersionMaster = exports.SignTargetVersion = exports.TargetVersion = exports.Status = exports.AcceptVersion = exports.VersionModel = exports.VersionModelMaster = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -21,8 +21,6 @@ var Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
 var VersionModelMaster_1 = tslib_1.__importDefault(require("./VersionModelMaster"));
 exports.VersionModelMaster = VersionModelMaster_1.default;
-var Version_1 = tslib_1.__importDefault(require("./Version"));
-exports.Version = Version_1.default;
 var VersionModel_1 = tslib_1.__importDefault(require("./VersionModel"));
 exports.VersionModel = VersionModel_1.default;
 var AcceptVersion_1 = tslib_1.__importDefault(require("./AcceptVersion"));
@@ -41,4 +39,8 @@ var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutS
 exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
+var Version_1 = tslib_1.__importDefault(require("./Version"));
+exports.Version = Version_1.default;
+var ScheduleVersion_1 = tslib_1.__importDefault(require("./ScheduleVersion"));
+exports.ScheduleVersion = ScheduleVersion_1.default;
 //# sourceMappingURL=index.js.map

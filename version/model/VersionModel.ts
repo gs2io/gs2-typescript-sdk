@@ -16,16 +16,19 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 import Version from './Version';
+import ScheduleVersion from './ScheduleVersion';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:version:{namespaceName}:model:version:{versionName}";
 
 export default class VersionModel implements IModel {
     private versionModelId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;
+    private scope: string|null = null;
+    private type: string|null = null;
+    private currentVersion: Version|null = null;
     private warningVersion: Version|null = null;
     private errorVersion: Version|null = null;
-    private scope: string|null = null;
-    private currentVersion: Version|null = null;
+    private scheduleVersions: ScheduleVersion[]|null = null;
     private needSignature: boolean|null = null;
     private signatureKeyId: string|null = null;
 
@@ -142,6 +145,39 @@ export default class VersionModel implements IModel {
         this.metadata = metadata;
         return this;
     }
+    public getScope(): string|null {
+        return this.scope;
+    }
+    public setScope(scope: string|null) {
+        this.scope = scope;
+        return this;
+    }
+    public withScope(scope: string|null): this {
+        this.scope = scope;
+        return this;
+    }
+    public getType(): string|null {
+        return this.type;
+    }
+    public setType(type: string|null) {
+        this.type = type;
+        return this;
+    }
+    public withType(type: string|null): this {
+        this.type = type;
+        return this;
+    }
+    public getCurrentVersion(): Version|null {
+        return this.currentVersion;
+    }
+    public setCurrentVersion(currentVersion: Version|null) {
+        this.currentVersion = currentVersion;
+        return this;
+    }
+    public withCurrentVersion(currentVersion: Version|null): this {
+        this.currentVersion = currentVersion;
+        return this;
+    }
     public getWarningVersion(): Version|null {
         return this.warningVersion;
     }
@@ -164,26 +200,15 @@ export default class VersionModel implements IModel {
         this.errorVersion = errorVersion;
         return this;
     }
-    public getScope(): string|null {
-        return this.scope;
+    public getScheduleVersions(): ScheduleVersion[]|null {
+        return this.scheduleVersions;
     }
-    public setScope(scope: string|null) {
-        this.scope = scope;
+    public setScheduleVersions(scheduleVersions: ScheduleVersion[]|null) {
+        this.scheduleVersions = scheduleVersions;
         return this;
     }
-    public withScope(scope: string|null): this {
-        this.scope = scope;
-        return this;
-    }
-    public getCurrentVersion(): Version|null {
-        return this.currentVersion;
-    }
-    public setCurrentVersion(currentVersion: Version|null) {
-        this.currentVersion = currentVersion;
-        return this;
-    }
-    public withCurrentVersion(currentVersion: Version|null): this {
-        this.currentVersion = currentVersion;
+    public withScheduleVersions(scheduleVersions: ScheduleVersion[]|null): this {
+        this.scheduleVersions = scheduleVersions;
         return this;
     }
     public getNeedSignature(): boolean|null {
@@ -217,10 +242,16 @@ export default class VersionModel implements IModel {
             .withVersionModelId(data["versionModelId"])
             .withName(data["name"])
             .withMetadata(data["metadata"])
+            .withScope(data["scope"])
+            .withType(data["type"])
+            .withCurrentVersion(Version.fromDict(data["currentVersion"]))
             .withWarningVersion(Version.fromDict(data["warningVersion"]))
             .withErrorVersion(Version.fromDict(data["errorVersion"]))
-            .withScope(data["scope"])
-            .withCurrentVersion(Version.fromDict(data["currentVersion"]))
+            .withScheduleVersions(data.scheduleVersions ?
+                data.scheduleVersions.map((item: {[key: string]: any}) => {
+                    return ScheduleVersion.fromDict(item);
+                }
+            ) : [])
             .withNeedSignature(data["needSignature"])
             .withSignatureKeyId(data["signatureKeyId"]);
     }
@@ -230,10 +261,16 @@ export default class VersionModel implements IModel {
             "versionModelId": this.getVersionModelId(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
+            "scope": this.getScope(),
+            "type": this.getType(),
+            "currentVersion": this.getCurrentVersion()?.toDict(),
             "warningVersion": this.getWarningVersion()?.toDict(),
             "errorVersion": this.getErrorVersion()?.toDict(),
-            "scope": this.getScope(),
-            "currentVersion": this.getCurrentVersion()?.toDict(),
+            "scheduleVersions": this.getScheduleVersions() ?
+                this.getScheduleVersions()!.map((item: ScheduleVersion) => {
+                    return item.toDict();
+                }
+            ) : [],
             "needSignature": this.getNeedSignature(),
             "signatureKeyId": this.getSignatureKeyId(),
         };

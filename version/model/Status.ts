@@ -16,6 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 import Version from './Version';
+import ScheduleVersion from './ScheduleVersion';
 import VersionModel from './VersionModel';
 
 export default class Status implements IModel {

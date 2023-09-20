@@ -201,7 +201,7 @@ var Gs2VersionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2VersionRestClient.prototype.createVersionModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/version')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
@@ -215,12 +215,14 @@ var Gs2VersionRestClient = /** @class */ (function (_super) {
             'name': (_d = request.getName()) !== null && _d !== void 0 ? _d : null,
             'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
             'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
-            'warningVersion': (_h = (_g = request.getWarningVersion()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
-            'errorVersion': (_k = (_j = request.getErrorVersion()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'scope': (_l = request.getScope()) !== null && _l !== void 0 ? _l : null,
-            'currentVersion': (_o = (_m = request.getCurrentVersion()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'needSignature': (_p = request.getNeedSignature()) !== null && _p !== void 0 ? _p : null,
-            'signatureKeyId': (_q = request.getSignatureKeyId()) !== null && _q !== void 0 ? _q : null,
+            'scope': (_g = request.getScope()) !== null && _g !== void 0 ? _g : null,
+            'type': (_h = request.getType()) !== null && _h !== void 0 ? _h : null,
+            'currentVersion': (_k = (_j = request.getCurrentVersion()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
+            'warningVersion': (_m = (_l = request.getWarningVersion()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'errorVersion': (_p = (_o = request.getErrorVersion()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'scheduleVersions': (_r = (_q = request.getScheduleVersions()) === null || _q === void 0 ? void 0 : _q.map(function (item) { return item.toDict(); })) !== null && _r !== void 0 ? _r : null,
+            'needSignature': (_s = request.getNeedSignature()) !== null && _s !== void 0 ? _s : null,
+            'signatureKeyId': (_t = request.getSignatureKeyId()) !== null && _t !== void 0 ? _t : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -259,7 +261,7 @@ var Gs2VersionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2VersionRestClient.prototype.updateVersionModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/version/{versionName}')
             .replace('{service}', 'version')
             .replace('{region}', this.session.region)
@@ -273,12 +275,14 @@ var Gs2VersionRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
-            'warningVersion': (_j = (_h = request.getWarningVersion()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
-            'errorVersion': (_l = (_k = request.getErrorVersion()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'scope': (_m = request.getScope()) !== null && _m !== void 0 ? _m : null,
-            'currentVersion': (_p = (_o = request.getCurrentVersion()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
-            'needSignature': (_q = request.getNeedSignature()) !== null && _q !== void 0 ? _q : null,
-            'signatureKeyId': (_r = request.getSignatureKeyId()) !== null && _r !== void 0 ? _r : null,
+            'scope': (_h = request.getScope()) !== null && _h !== void 0 ? _h : null,
+            'type': (_j = request.getType()) !== null && _j !== void 0 ? _j : null,
+            'currentVersion': (_l = (_k = request.getCurrentVersion()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'warningVersion': (_o = (_m = request.getWarningVersion()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'errorVersion': (_q = (_p = request.getErrorVersion()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'scheduleVersions': (_s = (_r = request.getScheduleVersions()) === null || _r === void 0 ? void 0 : _r.map(function (item) { return item.toDict(); })) !== null && _s !== void 0 ? _s : null,
+            'needSignature': (_t = request.getNeedSignature()) !== null && _t !== void 0 ? _t : null,
+            'signatureKeyId': (_u = request.getSignatureKeyId()) !== null && _u !== void 0 ? _u : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

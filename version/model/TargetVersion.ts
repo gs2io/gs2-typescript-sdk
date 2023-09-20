@@ -19,9 +19,9 @@ import Version from './Version';
 
 export default class TargetVersion implements IModel {
     private versionName: string|null = null;
-    private version: Version|null = null;
     private body: string|null = null;
     private signature: string|null = null;
+    private version: Version|null = null;
     public getVersionName(): string|null {
         return this.versionName;
     }
@@ -31,17 +31,6 @@ export default class TargetVersion implements IModel {
     }
     public withVersionName(versionName: string|null): this {
         this.versionName = versionName;
-        return this;
-    }
-    public getVersion(): Version|null {
-        return this.version;
-    }
-    public setVersion(version: Version|null) {
-        this.version = version;
-        return this;
-    }
-    public withVersion(version: Version|null): this {
-        this.version = version;
         return this;
     }
     public getBody(): string|null {
@@ -66,6 +55,17 @@ export default class TargetVersion implements IModel {
         this.signature = signature;
         return this;
     }
+    public getVersion(): Version|null {
+        return this.version;
+    }
+    public setVersion(version: Version|null) {
+        this.version = version;
+        return this;
+    }
+    public withVersion(version: Version|null): this {
+        this.version = version;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): TargetVersion|null {
         if (data == undefined || data == null) {
@@ -73,17 +73,17 @@ export default class TargetVersion implements IModel {
         }
         return new TargetVersion()
             .withVersionName(data["versionName"])
-            .withVersion(Version.fromDict(data["version"]))
             .withBody(data["body"])
-            .withSignature(data["signature"]);
+            .withSignature(data["signature"])
+            .withVersion(Version.fromDict(data["version"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "versionName": this.getVersionName(),
-            "version": this.getVersion()?.toDict(),
             "body": this.getBody(),
             "signature": this.getSignature(),
+            "version": this.getVersion()?.toDict(),
         };
     }
 }

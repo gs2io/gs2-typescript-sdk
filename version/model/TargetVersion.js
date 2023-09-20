@@ -20,9 +20,9 @@ var Version_1 = tslib_1.__importDefault(require("./Version"));
 var TargetVersion = /** @class */ (function () {
     function TargetVersion() {
         this.versionName = null;
-        this.version = null;
         this.body = null;
         this.signature = null;
+        this.version = null;
     }
     TargetVersion.prototype.getVersionName = function () {
         return this.versionName;
@@ -33,17 +33,6 @@ var TargetVersion = /** @class */ (function () {
     };
     TargetVersion.prototype.withVersionName = function (versionName) {
         this.versionName = versionName;
-        return this;
-    };
-    TargetVersion.prototype.getVersion = function () {
-        return this.version;
-    };
-    TargetVersion.prototype.setVersion = function (version) {
-        this.version = version;
-        return this;
-    };
-    TargetVersion.prototype.withVersion = function (version) {
-        this.version = version;
         return this;
     };
     TargetVersion.prototype.getBody = function () {
@@ -68,23 +57,34 @@ var TargetVersion = /** @class */ (function () {
         this.signature = signature;
         return this;
     };
+    TargetVersion.prototype.getVersion = function () {
+        return this.version;
+    };
+    TargetVersion.prototype.setVersion = function (version) {
+        this.version = version;
+        return this;
+    };
+    TargetVersion.prototype.withVersion = function (version) {
+        this.version = version;
+        return this;
+    };
     TargetVersion.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
         }
         return new TargetVersion()
             .withVersionName(data["versionName"])
-            .withVersion(Version_1.default.fromDict(data["version"]))
             .withBody(data["body"])
-            .withSignature(data["signature"]);
+            .withSignature(data["signature"])
+            .withVersion(Version_1.default.fromDict(data["version"]));
     };
     TargetVersion.prototype.toDict = function () {
         var _a;
         return {
             "versionName": this.getVersionName(),
-            "version": (_a = this.getVersion()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "body": this.getBody(),
             "signature": this.getSignature(),
+            "version": (_a = this.getVersion()) === null || _a === void 0 ? void 0 : _a.toDict(),
         };
     };
     return TargetVersion;

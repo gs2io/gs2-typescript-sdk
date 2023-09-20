@@ -25,10 +25,12 @@ var CreateVersionModelMasterRequest = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.metadata = null;
+        this.scope = null;
+        this.type = null;
+        this.currentVersion = null;
         this.warningVersion = null;
         this.errorVersion = null;
-        this.scope = null;
-        this.currentVersion = null;
+        this.scheduleVersions = null;
         this.needSignature = null;
         this.signatureKeyId = null;
     }
@@ -98,6 +100,39 @@ var CreateVersionModelMasterRequest = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
+    CreateVersionModelMasterRequest.prototype.getScope = function () {
+        return this.scope;
+    };
+    CreateVersionModelMasterRequest.prototype.setScope = function (scope) {
+        this.scope = scope;
+        return this;
+    };
+    CreateVersionModelMasterRequest.prototype.withScope = function (scope) {
+        this.scope = scope;
+        return this;
+    };
+    CreateVersionModelMasterRequest.prototype.getType = function () {
+        return this.type;
+    };
+    CreateVersionModelMasterRequest.prototype.setType = function (type) {
+        this.type = type;
+        return this;
+    };
+    CreateVersionModelMasterRequest.prototype.withType = function (type) {
+        this.type = type;
+        return this;
+    };
+    CreateVersionModelMasterRequest.prototype.getCurrentVersion = function () {
+        return this.currentVersion;
+    };
+    CreateVersionModelMasterRequest.prototype.setCurrentVersion = function (currentVersion) {
+        this.currentVersion = currentVersion;
+        return this;
+    };
+    CreateVersionModelMasterRequest.prototype.withCurrentVersion = function (currentVersion) {
+        this.currentVersion = currentVersion;
+        return this;
+    };
     CreateVersionModelMasterRequest.prototype.getWarningVersion = function () {
         return this.warningVersion;
     };
@@ -120,26 +155,15 @@ var CreateVersionModelMasterRequest = /** @class */ (function () {
         this.errorVersion = errorVersion;
         return this;
     };
-    CreateVersionModelMasterRequest.prototype.getScope = function () {
-        return this.scope;
+    CreateVersionModelMasterRequest.prototype.getScheduleVersions = function () {
+        return this.scheduleVersions;
     };
-    CreateVersionModelMasterRequest.prototype.setScope = function (scope) {
-        this.scope = scope;
+    CreateVersionModelMasterRequest.prototype.setScheduleVersions = function (scheduleVersions) {
+        this.scheduleVersions = scheduleVersions;
         return this;
     };
-    CreateVersionModelMasterRequest.prototype.withScope = function (scope) {
-        this.scope = scope;
-        return this;
-    };
-    CreateVersionModelMasterRequest.prototype.getCurrentVersion = function () {
-        return this.currentVersion;
-    };
-    CreateVersionModelMasterRequest.prototype.setCurrentVersion = function (currentVersion) {
-        this.currentVersion = currentVersion;
-        return this;
-    };
-    CreateVersionModelMasterRequest.prototype.withCurrentVersion = function (currentVersion) {
-        this.currentVersion = currentVersion;
+    CreateVersionModelMasterRequest.prototype.withScheduleVersions = function (scheduleVersions) {
+        this.scheduleVersions = scheduleVersions;
         return this;
     };
     CreateVersionModelMasterRequest.prototype.getNeedSignature = function () {
@@ -170,10 +194,15 @@ var CreateVersionModelMasterRequest = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
+            .withScope(data["scope"])
+            .withType(data["type"])
+            .withCurrentVersion(Gs2Version.Version.fromDict(data["currentVersion"]))
             .withWarningVersion(Gs2Version.Version.fromDict(data["warningVersion"]))
             .withErrorVersion(Gs2Version.Version.fromDict(data["errorVersion"]))
-            .withScope(data["scope"])
-            .withCurrentVersion(Gs2Version.Version.fromDict(data["currentVersion"]))
+            .withScheduleVersions(data.scheduleVersions ?
+            data.scheduleVersions.map(function (item) {
+                return Gs2Version.ScheduleVersion.fromDict(item);
+            }) : [])
             .withNeedSignature(data["needSignature"])
             .withSignatureKeyId(data["signatureKeyId"]);
     };
@@ -184,10 +213,15 @@ var CreateVersionModelMasterRequest = /** @class */ (function () {
             "name": this.getName(),
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
-            "warningVersion": (_a = this.getWarningVersion()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "errorVersion": (_b = this.getErrorVersion()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "scope": this.getScope(),
-            "currentVersion": (_c = this.getCurrentVersion()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "type": this.getType(),
+            "currentVersion": (_a = this.getCurrentVersion()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "warningVersion": (_b = this.getWarningVersion()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "errorVersion": (_c = this.getErrorVersion()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "scheduleVersions": this.getScheduleVersions() ?
+                this.getScheduleVersions().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "needSignature": this.getNeedSignature(),
             "signatureKeyId": this.getSignatureKeyId(),
         };

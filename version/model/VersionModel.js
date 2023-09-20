@@ -17,16 +17,19 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Version_1 = tslib_1.__importDefault(require("./Version"));
+var ScheduleVersion_1 = tslib_1.__importDefault(require("./ScheduleVersion"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:version:{namespaceName}:model:version:{versionName}";
 var VersionModel = /** @class */ (function () {
     function VersionModel() {
         this.versionModelId = null;
         this.name = null;
         this.metadata = null;
+        this.scope = null;
+        this.type = null;
+        this.currentVersion = null;
         this.warningVersion = null;
         this.errorVersion = null;
-        this.scope = null;
-        this.currentVersion = null;
+        this.scheduleVersions = null;
         this.needSignature = null;
         this.signatureKeyId = null;
     }
@@ -129,6 +132,39 @@ var VersionModel = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
+    VersionModel.prototype.getScope = function () {
+        return this.scope;
+    };
+    VersionModel.prototype.setScope = function (scope) {
+        this.scope = scope;
+        return this;
+    };
+    VersionModel.prototype.withScope = function (scope) {
+        this.scope = scope;
+        return this;
+    };
+    VersionModel.prototype.getType = function () {
+        return this.type;
+    };
+    VersionModel.prototype.setType = function (type) {
+        this.type = type;
+        return this;
+    };
+    VersionModel.prototype.withType = function (type) {
+        this.type = type;
+        return this;
+    };
+    VersionModel.prototype.getCurrentVersion = function () {
+        return this.currentVersion;
+    };
+    VersionModel.prototype.setCurrentVersion = function (currentVersion) {
+        this.currentVersion = currentVersion;
+        return this;
+    };
+    VersionModel.prototype.withCurrentVersion = function (currentVersion) {
+        this.currentVersion = currentVersion;
+        return this;
+    };
     VersionModel.prototype.getWarningVersion = function () {
         return this.warningVersion;
     };
@@ -151,26 +187,15 @@ var VersionModel = /** @class */ (function () {
         this.errorVersion = errorVersion;
         return this;
     };
-    VersionModel.prototype.getScope = function () {
-        return this.scope;
+    VersionModel.prototype.getScheduleVersions = function () {
+        return this.scheduleVersions;
     };
-    VersionModel.prototype.setScope = function (scope) {
-        this.scope = scope;
+    VersionModel.prototype.setScheduleVersions = function (scheduleVersions) {
+        this.scheduleVersions = scheduleVersions;
         return this;
     };
-    VersionModel.prototype.withScope = function (scope) {
-        this.scope = scope;
-        return this;
-    };
-    VersionModel.prototype.getCurrentVersion = function () {
-        return this.currentVersion;
-    };
-    VersionModel.prototype.setCurrentVersion = function (currentVersion) {
-        this.currentVersion = currentVersion;
-        return this;
-    };
-    VersionModel.prototype.withCurrentVersion = function (currentVersion) {
-        this.currentVersion = currentVersion;
+    VersionModel.prototype.withScheduleVersions = function (scheduleVersions) {
+        this.scheduleVersions = scheduleVersions;
         return this;
     };
     VersionModel.prototype.getNeedSignature = function () {
@@ -203,10 +228,15 @@ var VersionModel = /** @class */ (function () {
             .withVersionModelId(data["versionModelId"])
             .withName(data["name"])
             .withMetadata(data["metadata"])
+            .withScope(data["scope"])
+            .withType(data["type"])
+            .withCurrentVersion(Version_1.default.fromDict(data["currentVersion"]))
             .withWarningVersion(Version_1.default.fromDict(data["warningVersion"]))
             .withErrorVersion(Version_1.default.fromDict(data["errorVersion"]))
-            .withScope(data["scope"])
-            .withCurrentVersion(Version_1.default.fromDict(data["currentVersion"]))
+            .withScheduleVersions(data.scheduleVersions ?
+            data.scheduleVersions.map(function (item) {
+                return ScheduleVersion_1.default.fromDict(item);
+            }) : [])
             .withNeedSignature(data["needSignature"])
             .withSignatureKeyId(data["signatureKeyId"]);
     };
@@ -216,10 +246,15 @@ var VersionModel = /** @class */ (function () {
             "versionModelId": this.getVersionModelId(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
-            "warningVersion": (_a = this.getWarningVersion()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "errorVersion": (_b = this.getErrorVersion()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "scope": this.getScope(),
-            "currentVersion": (_c = this.getCurrentVersion()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "type": this.getType(),
+            "currentVersion": (_a = this.getCurrentVersion()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "warningVersion": (_b = this.getWarningVersion()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "errorVersion": (_c = this.getErrorVersion()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "scheduleVersions": this.getScheduleVersions() ?
+                this.getScheduleVersions().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "needSignature": this.getNeedSignature(),
             "signatureKeyId": this.getSignatureKeyId(),
         };
