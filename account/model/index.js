@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LogSetting = exports.ScriptSetting = exports.DataOwner = exports.TakeOver = exports.Account = exports.Namespace = void 0;
+exports.LogSetting = exports.ScriptSetting = exports.BanStatus = exports.DataOwner = exports.TakeOver = exports.Account = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -25,6 +25,8 @@ var TakeOver_1 = tslib_1.__importDefault(require("./TakeOver"));
 exports.TakeOver = TakeOver_1.default;
 var DataOwner_1 = tslib_1.__importDefault(require("./DataOwner"));
 exports.DataOwner = DataOwner_1.default;
+var BanStatus_1 = tslib_1.__importDefault(require("./BanStatus"));
+exports.BanStatus = BanStatus_1.default;
 var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 exports.ScriptSetting = ScriptSetting_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));

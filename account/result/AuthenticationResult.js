@@ -20,6 +20,7 @@ var Gs2Account = tslib_1.__importStar(require("../model"));
 var AuthenticationResult = /** @class */ (function () {
     function AuthenticationResult() {
         this.item = null;
+        this.banStatuses = null;
         this.body = null;
         this.signature = null;
     }
@@ -32,6 +33,17 @@ var AuthenticationResult = /** @class */ (function () {
     };
     AuthenticationResult.prototype.withItem = function (item) {
         this.item = item;
+        return this;
+    };
+    AuthenticationResult.prototype.getBanStatuses = function () {
+        return this.banStatuses;
+    };
+    AuthenticationResult.prototype.setBanStatuses = function (banStatuses) {
+        this.banStatuses = banStatuses;
+        return this;
+    };
+    AuthenticationResult.prototype.withBanStatuses = function (banStatuses) {
+        this.banStatuses = banStatuses;
         return this;
     };
     AuthenticationResult.prototype.getBody = function () {
@@ -59,6 +71,10 @@ var AuthenticationResult = /** @class */ (function () {
     AuthenticationResult.fromDict = function (data) {
         return new AuthenticationResult()
             .withItem(Gs2Account.Account.fromDict(data["item"]))
+            .withBanStatuses(data.banStatuses ?
+            data.banStatuses.map(function (item) {
+                return Gs2Account.BanStatus.fromDict(item);
+            }) : [])
             .withBody(data["body"])
             .withSignature(data["signature"]);
     };
@@ -66,6 +82,10 @@ var AuthenticationResult = /** @class */ (function () {
         var _a;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "banStatuses": this.getBanStatuses() ?
+                this.getBanStatuses().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "body": this.getBody(),
             "signature": this.getSignature(),
         };

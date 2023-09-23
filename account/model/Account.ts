@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import BanStatus from './BanStatus';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:account:{namespaceName}:account:{userId}";
 
 export default class Account implements IModel {
@@ -22,6 +23,7 @@ export default class Account implements IModel {
     private userId: string|null = null;
     private password: string|null = null;
     private timeOffset: number|null = null;
+    private banStatuses: BanStatus[]|null = null;
     private banned: boolean|null = null;
     private createdAt: number|null = null;
     private revision: number|null = null;
@@ -150,6 +152,17 @@ export default class Account implements IModel {
         this.timeOffset = timeOffset;
         return this;
     }
+    public getBanStatuses(): BanStatus[]|null {
+        return this.banStatuses;
+    }
+    public setBanStatuses(banStatuses: BanStatus[]|null) {
+        this.banStatuses = banStatuses;
+        return this;
+    }
+    public withBanStatuses(banStatuses: BanStatus[]|null): this {
+        this.banStatuses = banStatuses;
+        return this;
+    }
     public getBanned(): boolean|null {
         return this.banned;
     }
@@ -193,6 +206,11 @@ export default class Account implements IModel {
             .withUserId(data["userId"])
             .withPassword(data["password"])
             .withTimeOffset(data["timeOffset"])
+            .withBanStatuses(data.banStatuses ?
+                data.banStatuses.map((item: {[key: string]: any}) => {
+                    return BanStatus.fromDict(item);
+                }
+            ) : [])
             .withBanned(data["banned"])
             .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
@@ -204,6 +222,11 @@ export default class Account implements IModel {
             "userId": this.getUserId(),
             "password": this.getPassword(),
             "timeOffset": this.getTimeOffset(),
+            "banStatuses": this.getBanStatuses() ?
+                this.getBanStatuses()!.map((item: BanStatus) => {
+                    return item.toDict();
+                }
+            ) : [],
             "banned": this.getBanned(),
             "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),

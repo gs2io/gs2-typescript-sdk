@@ -23,6 +23,8 @@ import DescribeAccountsRequest from "./DescribeAccountsRequest"
 import CreateAccountRequest from "./CreateAccountRequest"
 import UpdateTimeOffsetRequest from "./UpdateTimeOffsetRequest"
 import UpdateBannedRequest from "./UpdateBannedRequest"
+import AddBanRequest from "./AddBanRequest"
+import RemoveBanRequest from "./RemoveBanRequest"
 import GetAccountRequest from "./GetAccountRequest"
 import DeleteAccountRequest from "./DeleteAccountRequest"
 import AuthenticationRequest from "./AuthenticationRequest"
@@ -51,6 +53,8 @@ export {
     CreateAccountRequest,
     UpdateTimeOffsetRequest,
     UpdateBannedRequest,
+    AddBanRequest,
+    RemoveBanRequest,
     GetAccountRequest,
     DeleteAccountRequest,
     AuthenticationRequest,

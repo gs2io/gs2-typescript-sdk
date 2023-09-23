@@ -8,6 +8,8 @@ import DescribeAccountsRequest from "./DescribeAccountsRequest";
 import CreateAccountRequest from "./CreateAccountRequest";
 import UpdateTimeOffsetRequest from "./UpdateTimeOffsetRequest";
 import UpdateBannedRequest from "./UpdateBannedRequest";
+import AddBanRequest from "./AddBanRequest";
+import RemoveBanRequest from "./RemoveBanRequest";
 import GetAccountRequest from "./GetAccountRequest";
 import DeleteAccountRequest from "./DeleteAccountRequest";
 import AuthenticationRequest from "./AuthenticationRequest";
@@ -24,4 +26,4 @@ import DeleteTakeOverByUserIdentifierRequest from "./DeleteTakeOverByUserIdentif
 import DoTakeOverRequest from "./DoTakeOverRequest";
 import GetDataOwnerByUserIdRequest from "./GetDataOwnerByUserIdRequest";
 import DeleteDataOwnerByUserIdRequest from "./DeleteDataOwnerByUserIdRequest";
-export { DescribeNamespacesRequest, CreateNamespaceRequest, GetNamespaceStatusRequest, GetNamespaceRequest, UpdateNamespaceRequest, DeleteNamespaceRequest, DescribeAccountsRequest, CreateAccountRequest, UpdateTimeOffsetRequest, UpdateBannedRequest, GetAccountRequest, DeleteAccountRequest, AuthenticationRequest, DescribeTakeOversRequest, DescribeTakeOversByUserIdRequest, CreateTakeOverRequest, CreateTakeOverByUserIdRequest, GetTakeOverRequest, GetTakeOverByUserIdRequest, UpdateTakeOverRequest, UpdateTakeOverByUserIdRequest, DeleteTakeOverRequest, DeleteTakeOverByUserIdentifierRequest, DoTakeOverRequest, GetDataOwnerByUserIdRequest, DeleteDataOwnerByUserIdRequest, };
+export { DescribeNamespacesRequest, CreateNamespaceRequest, GetNamespaceStatusRequest, GetNamespaceRequest, UpdateNamespaceRequest, DeleteNamespaceRequest, DescribeAccountsRequest, CreateAccountRequest, UpdateTimeOffsetRequest, UpdateBannedRequest, AddBanRequest, RemoveBanRequest, GetAccountRequest, DeleteAccountRequest, AuthenticationRequest, DescribeTakeOversRequest, DescribeTakeOversByUserIdRequest, CreateTakeOverRequest, CreateTakeOverByUserIdRequest, GetTakeOverRequest, GetTakeOverByUserIdRequest, UpdateTakeOverRequest, UpdateTakeOverByUserIdRequest, DeleteTakeOverRequest, DeleteTakeOverByUserIdentifierRequest, DoTakeOverRequest, GetDataOwnerByUserIdRequest, DeleteDataOwnerByUserIdRequest, };

@@ -14,6 +14,8 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
     createAccount(request: Request.CreateAccountRequest): Promise<Result.CreateAccountResult>;
     updateTimeOffset(request: Request.UpdateTimeOffsetRequest): Promise<Result.UpdateTimeOffsetResult>;
     updateBanned(request: Request.UpdateBannedRequest): Promise<Result.UpdateBannedResult>;
+    addBan(request: Request.AddBanRequest): Promise<Result.AddBanResult>;
+    removeBan(request: Request.RemoveBanRequest): Promise<Result.RemoveBanResult>;
     getAccount(request: Request.GetAccountRequest): Promise<Result.GetAccountResult>;
     deleteAccount(request: Request.DeleteAccountRequest): Promise<Result.DeleteAccountResult>;
     authentication(request: Request.AuthenticationRequest): Promise<Result.AuthenticationResult>;

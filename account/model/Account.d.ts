@@ -1,9 +1,11 @@
 import IModel from '../../core/interface/IModel';
+import BanStatus from './BanStatus';
 export default class Account implements IModel {
     private accountId;
     private userId;
     private password;
     private timeOffset;
+    private banStatuses;
     private banned;
     private createdAt;
     private revision;
@@ -25,6 +27,9 @@ export default class Account implements IModel {
     getTimeOffset(): number | null;
     setTimeOffset(timeOffset: number | null): this;
     withTimeOffset(timeOffset: number | null): this;
+    getBanStatuses(): BanStatus[] | null;
+    setBanStatuses(banStatuses: BanStatus[] | null): this;
+    withBanStatuses(banStatuses: BanStatus[] | null): this;
     getBanned(): boolean | null;
     setBanned(banned: boolean | null): this;
     withBanned(banned: boolean | null): this;

@@ -15,6 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var BanStatus_1 = tslib_1.__importDefault(require("./BanStatus"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:account:{namespaceName}:account:{userId}";
 var Account = /** @class */ (function () {
     function Account() {
@@ -22,6 +24,7 @@ var Account = /** @class */ (function () {
         this.userId = null;
         this.password = null;
         this.timeOffset = null;
+        this.banStatuses = null;
         this.banned = null;
         this.createdAt = null;
         this.revision = null;
@@ -136,6 +139,17 @@ var Account = /** @class */ (function () {
         this.timeOffset = timeOffset;
         return this;
     };
+    Account.prototype.getBanStatuses = function () {
+        return this.banStatuses;
+    };
+    Account.prototype.setBanStatuses = function (banStatuses) {
+        this.banStatuses = banStatuses;
+        return this;
+    };
+    Account.prototype.withBanStatuses = function (banStatuses) {
+        this.banStatuses = banStatuses;
+        return this;
+    };
     Account.prototype.getBanned = function () {
         return this.banned;
     };
@@ -178,6 +192,10 @@ var Account = /** @class */ (function () {
             .withUserId(data["userId"])
             .withPassword(data["password"])
             .withTimeOffset(data["timeOffset"])
+            .withBanStatuses(data.banStatuses ?
+            data.banStatuses.map(function (item) {
+                return BanStatus_1.default.fromDict(item);
+            }) : [])
             .withBanned(data["banned"])
             .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
@@ -188,6 +206,10 @@ var Account = /** @class */ (function () {
             "userId": this.getUserId(),
             "password": this.getPassword(),
             "timeOffset": this.getTimeOffset(),
+            "banStatuses": this.getBanStatuses() ?
+                this.getBanStatuses().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "banned": this.getBanned(),
             "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),

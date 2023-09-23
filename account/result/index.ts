@@ -23,6 +23,8 @@ import DescribeAccountsResult from "./DescribeAccountsResult"
 import CreateAccountResult from "./CreateAccountResult"
 import UpdateTimeOffsetResult from "./UpdateTimeOffsetResult"
 import UpdateBannedResult from "./UpdateBannedResult"
+import AddBanResult from "./AddBanResult"
+import RemoveBanResult from "./RemoveBanResult"
 import GetAccountResult from "./GetAccountResult"
 import DeleteAccountResult from "./DeleteAccountResult"
 import AuthenticationResult from "./AuthenticationResult"
@@ -51,6 +53,8 @@ export {
     CreateAccountResult,
     UpdateTimeOffsetResult,
     UpdateBannedResult,
+    AddBanResult,
+    RemoveBanResult,
     GetAccountResult,
     DeleteAccountResult,
     AuthenticationResult,

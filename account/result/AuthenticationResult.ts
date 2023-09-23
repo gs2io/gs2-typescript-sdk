@@ -20,6 +20,7 @@ import * as Gs2Account from '../model'
 
 export default class AuthenticationResult implements IResult {
     private item: Gs2Account.Account|null = null;
+    private banStatuses: Gs2Account.BanStatus[]|null = null;
     private body: string|null = null;
     private signature: string|null = null;
 
@@ -34,6 +35,20 @@ export default class AuthenticationResult implements IResult {
 
     public withItem(item: Gs2Account.Account|null): this {
         this.item = item;
+        return this;
+    }
+
+    public getBanStatuses(): Gs2Account.BanStatus[]|null {
+        return this.banStatuses;
+    }
+
+    public setBanStatuses(banStatuses: Gs2Account.BanStatus[]|null) {
+        this.banStatuses = banStatuses;
+        return this;
+    }
+
+    public withBanStatuses(banStatuses: Gs2Account.BanStatus[]|null): this {
+        this.banStatuses = banStatuses;
         return this;
     }
 
@@ -68,6 +83,11 @@ export default class AuthenticationResult implements IResult {
     public static fromDict(data: {[key: string]: any}): AuthenticationResult {
         return new AuthenticationResult()
             .withItem(Gs2Account.Account.fromDict(data["item"]))
+            .withBanStatuses(data.banStatuses ?
+                data.banStatuses.map((item: {[key: string]: any}) => {
+                    return Gs2Account.BanStatus.fromDict(item);
+                }
+            ) : [])
             .withBody(data["body"])
             .withSignature(data["signature"]);
     }
@@ -75,6 +95,11 @@ export default class AuthenticationResult implements IResult {
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
+            "banStatuses": this.getBanStatuses() ?
+                this.getBanStatuses()!.map((item: Gs2Account.BanStatus) => {
+                    return item.toDict();
+                }
+            ) : [],
             "body": this.getBody(),
             "signature": this.getSignature(),
         };

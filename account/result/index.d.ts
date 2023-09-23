@@ -8,6 +8,8 @@ import DescribeAccountsResult from "./DescribeAccountsResult";
 import CreateAccountResult from "./CreateAccountResult";
 import UpdateTimeOffsetResult from "./UpdateTimeOffsetResult";
 import UpdateBannedResult from "./UpdateBannedResult";
+import AddBanResult from "./AddBanResult";
+import RemoveBanResult from "./RemoveBanResult";
 import GetAccountResult from "./GetAccountResult";
 import DeleteAccountResult from "./DeleteAccountResult";
 import AuthenticationResult from "./AuthenticationResult";
@@ -24,4 +26,4 @@ import DeleteTakeOverByUserIdentifierResult from "./DeleteTakeOverByUserIdentifi
 import DoTakeOverResult from "./DoTakeOverResult";
 import GetDataOwnerByUserIdResult from "./GetDataOwnerByUserIdResult";
 import DeleteDataOwnerByUserIdResult from "./DeleteDataOwnerByUserIdResult";
-export { DescribeNamespacesResult, CreateNamespaceResult, GetNamespaceStatusResult, GetNamespaceResult, UpdateNamespaceResult, DeleteNamespaceResult, DescribeAccountsResult, CreateAccountResult, UpdateTimeOffsetResult, UpdateBannedResult, GetAccountResult, DeleteAccountResult, AuthenticationResult, DescribeTakeOversResult, DescribeTakeOversByUserIdResult, CreateTakeOverResult, CreateTakeOverByUserIdResult, GetTakeOverResult, GetTakeOverByUserIdResult, UpdateTakeOverResult, UpdateTakeOverByUserIdResult, DeleteTakeOverResult, DeleteTakeOverByUserIdentifierResult, DoTakeOverResult, GetDataOwnerByUserIdResult, DeleteDataOwnerByUserIdResult, };
+export { DescribeNamespacesResult, CreateNamespaceResult, GetNamespaceStatusResult, GetNamespaceResult, UpdateNamespaceResult, DeleteNamespaceResult, DescribeAccountsResult, CreateAccountResult, UpdateTimeOffsetResult, UpdateBannedResult, AddBanResult, RemoveBanResult, GetAccountResult, DeleteAccountResult, AuthenticationResult, DescribeTakeOversResult, DescribeTakeOversByUserIdResult, CreateTakeOverResult, CreateTakeOverByUserIdResult, GetTakeOverResult, GetTakeOverByUserIdResult, UpdateTakeOverResult, UpdateTakeOverByUserIdResult, DeleteTakeOverResult, DeleteTakeOverByUserIdentifierResult, DoTakeOverResult, GetDataOwnerByUserIdResult, DeleteDataOwnerByUserIdResult, };
