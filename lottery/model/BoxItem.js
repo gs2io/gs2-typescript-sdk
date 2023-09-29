@@ -19,10 +19,22 @@ var tslib_1 = require("tslib");
 var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 var BoxItem = /** @class */ (function () {
     function BoxItem() {
+        this.prizeId = null;
         this.acquireActions = null;
         this.remaining = null;
         this.initial = null;
     }
+    BoxItem.prototype.getPrizeId = function () {
+        return this.prizeId;
+    };
+    BoxItem.prototype.setPrizeId = function (prizeId) {
+        this.prizeId = prizeId;
+        return this;
+    };
+    BoxItem.prototype.withPrizeId = function (prizeId) {
+        this.prizeId = prizeId;
+        return this;
+    };
     BoxItem.prototype.getAcquireActions = function () {
         return this.acquireActions;
     };
@@ -61,6 +73,7 @@ var BoxItem = /** @class */ (function () {
             return null;
         }
         return new BoxItem()
+            .withPrizeId(data["prizeId"])
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
                 return AcquireAction_1.default.fromDict(item);
@@ -70,6 +83,7 @@ var BoxItem = /** @class */ (function () {
     };
     BoxItem.prototype.toDict = function () {
         return {
+            "prizeId": this.getPrizeId(),
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();
