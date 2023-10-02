@@ -203,12 +203,11 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     }
 
     public getFormModel(request: Request.GetFormModelRequest): Promise<Result.GetFormModelResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{moldModelName}/form/{formModelName}')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{moldModelName}/form')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{moldModelName}', String(request.getMoldModelName() ?? 'null') === "" ? "null" : String(request.getMoldModelName() ?? 'null'))
-            .replace('{formModelName}', String(request.getFormModelName() ?? 'null') === "" ? "null" : String(request.getFormModelName() ?? 'null'));
+            .replace('{moldModelName}', String(request.getMoldModelName() ?? 'null') === "" ? "null" : String(request.getMoldModelName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {

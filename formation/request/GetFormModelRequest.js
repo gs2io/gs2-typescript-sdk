@@ -21,7 +21,6 @@ var GetFormModelRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.moldModelName = null;
-        this.formModelName = null;
     }
     GetFormModelRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -67,28 +66,15 @@ var GetFormModelRequest = /** @class */ (function () {
         this.moldModelName = moldModelName;
         return this;
     };
-    GetFormModelRequest.prototype.getFormModelName = function () {
-        return this.formModelName;
-    };
-    GetFormModelRequest.prototype.setFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
-        return this;
-    };
-    GetFormModelRequest.prototype.withFormModelName = function (formModelName) {
-        this.formModelName = formModelName;
-        return this;
-    };
     GetFormModelRequest.fromDict = function (data) {
         return new GetFormModelRequest()
             .withNamespaceName(data["namespaceName"])
-            .withMoldModelName(data["moldModelName"])
-            .withFormModelName(data["formModelName"]);
+            .withMoldModelName(data["moldModelName"]);
     };
     GetFormModelRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "moldModelName": this.getMoldModelName(),
-            "formModelName": this.getFormModelName(),
         };
     };
     return GetFormModelRequest;
