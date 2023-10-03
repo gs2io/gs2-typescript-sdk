@@ -84,8 +84,11 @@ import AcquireItemSetByUserIdResult from "./AcquireItemSetByUserIdResult"
 import ConsumeItemSetResult from "./ConsumeItemSetResult"
 import ConsumeItemSetByUserIdResult from "./ConsumeItemSetByUserIdResult"
 import DeleteItemSetByUserIdResult from "./DeleteItemSetByUserIdResult"
+import VerifyItemSetResult from "./VerifyItemSetResult"
+import VerifyItemSetByUserIdResult from "./VerifyItemSetByUserIdResult"
 import AcquireItemSetByStampSheetResult from "./AcquireItemSetByStampSheetResult"
 import ConsumeItemSetByStampTaskResult from "./ConsumeItemSetByStampTaskResult"
+import VerifyItemSetByStampTaskResult from "./VerifyItemSetByStampTaskResult"
 import DescribeReferenceOfResult from "./DescribeReferenceOfResult"
 import DescribeReferenceOfByUserIdResult from "./DescribeReferenceOfByUserIdResult"
 import GetReferenceOfResult from "./GetReferenceOfResult"
@@ -109,8 +112,11 @@ import AcquireSimpleItemsByUserIdResult from "./AcquireSimpleItemsByUserIdResult
 import ConsumeSimpleItemsResult from "./ConsumeSimpleItemsResult"
 import ConsumeSimpleItemsByUserIdResult from "./ConsumeSimpleItemsByUserIdResult"
 import DeleteSimpleItemsByUserIdResult from "./DeleteSimpleItemsByUserIdResult"
+import VerifySimpleItemResult from "./VerifySimpleItemResult"
+import VerifySimpleItemByUserIdResult from "./VerifySimpleItemByUserIdResult"
 import AcquireSimpleItemsByStampSheetResult from "./AcquireSimpleItemsByStampSheetResult"
 import ConsumeSimpleItemsByStampTaskResult from "./ConsumeSimpleItemsByStampTaskResult"
+import VerifySimpleItemByStampTaskResult from "./VerifySimpleItemByStampTaskResult"
 import DescribeBigItemsResult from "./DescribeBigItemsResult"
 import DescribeBigItemsByUserIdResult from "./DescribeBigItemsByUserIdResult"
 import GetBigItemResult from "./GetBigItemResult"
@@ -119,8 +125,11 @@ import AcquireBigItemByUserIdResult from "./AcquireBigItemByUserIdResult"
 import ConsumeBigItemResult from "./ConsumeBigItemResult"
 import ConsumeBigItemByUserIdResult from "./ConsumeBigItemByUserIdResult"
 import DeleteBigItemByUserIdResult from "./DeleteBigItemByUserIdResult"
+import VerifyBigItemResult from "./VerifyBigItemResult"
+import VerifyBigItemByUserIdResult from "./VerifyBigItemByUserIdResult"
 import AcquireBigItemByStampSheetResult from "./AcquireBigItemByStampSheetResult"
 import ConsumeBigItemByStampTaskResult from "./ConsumeBigItemByStampTaskResult"
+import VerifyBigItemByStampTaskResult from "./VerifyBigItemByStampTaskResult"
 
 export {
     DescribeNamespacesResult,
@@ -194,8 +203,11 @@ export {
     ConsumeItemSetResult,
     ConsumeItemSetByUserIdResult,
     DeleteItemSetByUserIdResult,
+    VerifyItemSetResult,
+    VerifyItemSetByUserIdResult,
     AcquireItemSetByStampSheetResult,
     ConsumeItemSetByStampTaskResult,
+    VerifyItemSetByStampTaskResult,
     DescribeReferenceOfResult,
     DescribeReferenceOfByUserIdResult,
     GetReferenceOfResult,
@@ -219,8 +231,11 @@ export {
     ConsumeSimpleItemsResult,
     ConsumeSimpleItemsByUserIdResult,
     DeleteSimpleItemsByUserIdResult,
+    VerifySimpleItemResult,
+    VerifySimpleItemByUserIdResult,
     AcquireSimpleItemsByStampSheetResult,
     ConsumeSimpleItemsByStampTaskResult,
+    VerifySimpleItemByStampTaskResult,
     DescribeBigItemsResult,
     DescribeBigItemsByUserIdResult,
     GetBigItemResult,
@@ -229,6 +244,9 @@ export {
     ConsumeBigItemResult,
     ConsumeBigItemByUserIdResult,
     DeleteBigItemByUserIdResult,
+    VerifyBigItemResult,
+    VerifyBigItemByUserIdResult,
     AcquireBigItemByStampSheetResult,
     ConsumeBigItemByStampTaskResult,
+    VerifyBigItemByStampTaskResult,
 };

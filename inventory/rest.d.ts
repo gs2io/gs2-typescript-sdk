@@ -75,8 +75,11 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
     consumeItemSet(request: Request.ConsumeItemSetRequest): Promise<Result.ConsumeItemSetResult>;
     consumeItemSetByUserId(request: Request.ConsumeItemSetByUserIdRequest): Promise<Result.ConsumeItemSetByUserIdResult>;
     deleteItemSetByUserId(request: Request.DeleteItemSetByUserIdRequest): Promise<Result.DeleteItemSetByUserIdResult>;
+    verifyItemSet(request: Request.VerifyItemSetRequest): Promise<Result.VerifyItemSetResult>;
+    verifyItemSetByUserId(request: Request.VerifyItemSetByUserIdRequest): Promise<Result.VerifyItemSetByUserIdResult>;
     acquireItemSetByStampSheet(request: Request.AcquireItemSetByStampSheetRequest): Promise<Result.AcquireItemSetByStampSheetResult>;
     consumeItemSetByStampTask(request: Request.ConsumeItemSetByStampTaskRequest): Promise<Result.ConsumeItemSetByStampTaskResult>;
+    verifyItemSetByStampTask(request: Request.VerifyItemSetByStampTaskRequest): Promise<Result.VerifyItemSetByStampTaskResult>;
     describeReferenceOf(request: Request.DescribeReferenceOfRequest): Promise<Result.DescribeReferenceOfResult>;
     describeReferenceOfByUserId(request: Request.DescribeReferenceOfByUserIdRequest): Promise<Result.DescribeReferenceOfByUserIdResult>;
     getReferenceOf(request: Request.GetReferenceOfRequest): Promise<Result.GetReferenceOfResult>;
@@ -100,8 +103,11 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
     consumeSimpleItems(request: Request.ConsumeSimpleItemsRequest): Promise<Result.ConsumeSimpleItemsResult>;
     consumeSimpleItemsByUserId(request: Request.ConsumeSimpleItemsByUserIdRequest): Promise<Result.ConsumeSimpleItemsByUserIdResult>;
     deleteSimpleItemsByUserId(request: Request.DeleteSimpleItemsByUserIdRequest): Promise<Result.DeleteSimpleItemsByUserIdResult>;
+    verifySimpleItem(request: Request.VerifySimpleItemRequest): Promise<Result.VerifySimpleItemResult>;
+    verifySimpleItemByUserId(request: Request.VerifySimpleItemByUserIdRequest): Promise<Result.VerifySimpleItemByUserIdResult>;
     acquireSimpleItemsByStampSheet(request: Request.AcquireSimpleItemsByStampSheetRequest): Promise<Result.AcquireSimpleItemsByStampSheetResult>;
     consumeSimpleItemsByStampTask(request: Request.ConsumeSimpleItemsByStampTaskRequest): Promise<Result.ConsumeSimpleItemsByStampTaskResult>;
+    verifySimpleItemByStampTask(request: Request.VerifySimpleItemByStampTaskRequest): Promise<Result.VerifySimpleItemByStampTaskResult>;
     describeBigItems(request: Request.DescribeBigItemsRequest): Promise<Result.DescribeBigItemsResult>;
     describeBigItemsByUserId(request: Request.DescribeBigItemsByUserIdRequest): Promise<Result.DescribeBigItemsByUserIdResult>;
     getBigItem(request: Request.GetBigItemRequest): Promise<Result.GetBigItemResult>;
@@ -110,6 +116,9 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
     consumeBigItem(request: Request.ConsumeBigItemRequest): Promise<Result.ConsumeBigItemResult>;
     consumeBigItemByUserId(request: Request.ConsumeBigItemByUserIdRequest): Promise<Result.ConsumeBigItemByUserIdResult>;
     deleteBigItemByUserId(request: Request.DeleteBigItemByUserIdRequest): Promise<Result.DeleteBigItemByUserIdResult>;
+    verifyBigItem(request: Request.VerifyBigItemRequest): Promise<Result.VerifyBigItemResult>;
+    verifyBigItemByUserId(request: Request.VerifyBigItemByUserIdRequest): Promise<Result.VerifyBigItemByUserIdResult>;
     acquireBigItemByStampSheet(request: Request.AcquireBigItemByStampSheetRequest): Promise<Result.AcquireBigItemByStampSheetResult>;
     consumeBigItemByStampTask(request: Request.ConsumeBigItemByStampTaskRequest): Promise<Result.ConsumeBigItemByStampTaskResult>;
+    verifyBigItemByStampTask(request: Request.VerifyBigItemByStampTaskRequest): Promise<Result.VerifyBigItemByStampTaskResult>;
 }

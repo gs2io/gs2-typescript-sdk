@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetLimitModelResult = exports.DescribeLimitModelsResult = exports.UpdateCurrentLimitMasterFromGitHubResult = exports.UpdateCurrentLimitMasterResult = exports.GetCurrentLimitMasterResult = exports.ExportMasterResult = exports.DeleteLimitModelMasterResult = exports.UpdateLimitModelMasterResult = exports.GetLimitModelMasterResult = exports.CreateLimitModelMasterResult = exports.DescribeLimitModelMastersResult = exports.DeleteByStampSheetResult = exports.CountDownByStampSheetResult = exports.CountUpByStampTaskResult = exports.DeleteCounterByUserIdResult = exports.CountDownByUserIdResult = exports.CountUpByUserIdResult = exports.CountUpResult = exports.GetCounterByUserIdResult = exports.GetCounterResult = exports.DescribeCountersByUserIdResult = exports.DescribeCountersResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.GetLimitModelResult = exports.DescribeLimitModelsResult = exports.UpdateCurrentLimitMasterFromGitHubResult = exports.UpdateCurrentLimitMasterResult = exports.GetCurrentLimitMasterResult = exports.ExportMasterResult = exports.DeleteLimitModelMasterResult = exports.UpdateLimitModelMasterResult = exports.GetLimitModelMasterResult = exports.CreateLimitModelMasterResult = exports.DescribeLimitModelMastersResult = exports.VerifyCounterByStampTaskResult = exports.DeleteByStampSheetResult = exports.CountDownByStampSheetResult = exports.CountUpByStampTaskResult = exports.VerifyCounterByUserIdResult = exports.VerifyCounterResult = exports.DeleteCounterByUserIdResult = exports.CountDownByUserIdResult = exports.CountUpByUserIdResult = exports.CountUpResult = exports.GetCounterByUserIdResult = exports.GetCounterResult = exports.DescribeCountersByUserIdResult = exports.DescribeCountersResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -45,12 +45,18 @@ var CountDownByUserIdResult_1 = tslib_1.__importDefault(require("./CountDownByUs
 exports.CountDownByUserIdResult = CountDownByUserIdResult_1.default;
 var DeleteCounterByUserIdResult_1 = tslib_1.__importDefault(require("./DeleteCounterByUserIdResult"));
 exports.DeleteCounterByUserIdResult = DeleteCounterByUserIdResult_1.default;
+var VerifyCounterResult_1 = tslib_1.__importDefault(require("./VerifyCounterResult"));
+exports.VerifyCounterResult = VerifyCounterResult_1.default;
+var VerifyCounterByUserIdResult_1 = tslib_1.__importDefault(require("./VerifyCounterByUserIdResult"));
+exports.VerifyCounterByUserIdResult = VerifyCounterByUserIdResult_1.default;
 var CountUpByStampTaskResult_1 = tslib_1.__importDefault(require("./CountUpByStampTaskResult"));
 exports.CountUpByStampTaskResult = CountUpByStampTaskResult_1.default;
 var CountDownByStampSheetResult_1 = tslib_1.__importDefault(require("./CountDownByStampSheetResult"));
 exports.CountDownByStampSheetResult = CountDownByStampSheetResult_1.default;
 var DeleteByStampSheetResult_1 = tslib_1.__importDefault(require("./DeleteByStampSheetResult"));
 exports.DeleteByStampSheetResult = DeleteByStampSheetResult_1.default;
+var VerifyCounterByStampTaskResult_1 = tslib_1.__importDefault(require("./VerifyCounterByStampTaskResult"));
+exports.VerifyCounterByStampTaskResult = VerifyCounterByStampTaskResult_1.default;
 var DescribeLimitModelMastersResult_1 = tslib_1.__importDefault(require("./DescribeLimitModelMastersResult"));
 exports.DescribeLimitModelMastersResult = DescribeLimitModelMastersResult_1.default;
 var CreateLimitModelMasterResult_1 = tslib_1.__importDefault(require("./CreateLimitModelMasterResult"));

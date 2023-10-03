@@ -27,9 +27,12 @@ import CountUpResult from "./CountUpResult"
 import CountUpByUserIdResult from "./CountUpByUserIdResult"
 import CountDownByUserIdResult from "./CountDownByUserIdResult"
 import DeleteCounterByUserIdResult from "./DeleteCounterByUserIdResult"
+import VerifyCounterResult from "./VerifyCounterResult"
+import VerifyCounterByUserIdResult from "./VerifyCounterByUserIdResult"
 import CountUpByStampTaskResult from "./CountUpByStampTaskResult"
 import CountDownByStampSheetResult from "./CountDownByStampSheetResult"
 import DeleteByStampSheetResult from "./DeleteByStampSheetResult"
+import VerifyCounterByStampTaskResult from "./VerifyCounterByStampTaskResult"
 import DescribeLimitModelMastersResult from "./DescribeLimitModelMastersResult"
 import CreateLimitModelMasterResult from "./CreateLimitModelMasterResult"
 import GetLimitModelMasterResult from "./GetLimitModelMasterResult"
@@ -57,9 +60,12 @@ export {
     CountUpByUserIdResult,
     CountDownByUserIdResult,
     DeleteCounterByUserIdResult,
+    VerifyCounterResult,
+    VerifyCounterByUserIdResult,
     CountUpByStampTaskResult,
     CountDownByStampSheetResult,
     DeleteByStampSheetResult,
+    VerifyCounterByStampTaskResult,
     DescribeLimitModelMastersResult,
     CreateLimitModelMasterResult,
     GetLimitModelMasterResult,

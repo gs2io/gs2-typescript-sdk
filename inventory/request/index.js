@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GetCurrentItemModelMasterRequest = exports.ExportMasterRequest = exports.GetBigItemModelRequest = exports.DescribeBigItemModelsRequest = exports.DeleteBigItemModelMasterRequest = exports.UpdateBigItemModelMasterRequest = exports.GetBigItemModelMasterRequest = exports.CreateBigItemModelMasterRequest = exports.DescribeBigItemModelMastersRequest = exports.GetBigInventoryModelRequest = exports.DescribeBigInventoryModelsRequest = exports.DeleteBigInventoryModelMasterRequest = exports.UpdateBigInventoryModelMasterRequest = exports.GetBigInventoryModelMasterRequest = exports.CreateBigInventoryModelMasterRequest = exports.DescribeBigInventoryModelMastersRequest = exports.GetSimpleItemModelRequest = exports.DescribeSimpleItemModelsRequest = exports.DeleteSimpleItemModelMasterRequest = exports.UpdateSimpleItemModelMasterRequest = exports.GetSimpleItemModelMasterRequest = exports.CreateSimpleItemModelMasterRequest = exports.DescribeSimpleItemModelMastersRequest = exports.GetSimpleInventoryModelRequest = exports.DescribeSimpleInventoryModelsRequest = exports.DeleteSimpleInventoryModelMasterRequest = exports.UpdateSimpleInventoryModelMasterRequest = exports.GetSimpleInventoryModelMasterRequest = exports.CreateSimpleInventoryModelMasterRequest = exports.DescribeSimpleInventoryModelMastersRequest = exports.GetItemModelRequest = exports.DescribeItemModelsRequest = exports.DeleteItemModelMasterRequest = exports.UpdateItemModelMasterRequest = exports.GetItemModelMasterRequest = exports.CreateItemModelMasterRequest = exports.DescribeItemModelMastersRequest = exports.GetInventoryModelRequest = exports.DescribeInventoryModelsRequest = exports.DeleteInventoryModelMasterRequest = exports.UpdateInventoryModelMasterRequest = exports.GetInventoryModelMasterRequest = exports.CreateInventoryModelMasterRequest = exports.DescribeInventoryModelMastersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
-exports.DescribeBigItemsByUserIdRequest = exports.DescribeBigItemsRequest = exports.ConsumeSimpleItemsByStampTaskRequest = exports.AcquireSimpleItemsByStampSheetRequest = exports.DeleteSimpleItemsByUserIdRequest = exports.ConsumeSimpleItemsByUserIdRequest = exports.ConsumeSimpleItemsRequest = exports.AcquireSimpleItemsByUserIdRequest = exports.GetSimpleItemWithSignatureByUserIdRequest = exports.GetSimpleItemWithSignatureRequest = exports.GetSimpleItemByUserIdRequest = exports.GetSimpleItemRequest = exports.DescribeSimpleItemsByUserIdRequest = exports.DescribeSimpleItemsRequest = exports.VerifyReferenceOfByStampTaskRequest = exports.DeleteReferenceOfItemSetByStampSheetRequest = exports.AddReferenceOfItemSetByStampSheetRequest = exports.DeleteReferenceOfByUserIdRequest = exports.DeleteReferenceOfRequest = exports.AddReferenceOfByUserIdRequest = exports.AddReferenceOfRequest = exports.VerifyReferenceOfByUserIdRequest = exports.VerifyReferenceOfRequest = exports.GetReferenceOfByUserIdRequest = exports.GetReferenceOfRequest = exports.DescribeReferenceOfByUserIdRequest = exports.DescribeReferenceOfRequest = exports.ConsumeItemSetByStampTaskRequest = exports.AcquireItemSetByStampSheetRequest = exports.DeleteItemSetByUserIdRequest = exports.ConsumeItemSetByUserIdRequest = exports.ConsumeItemSetRequest = exports.AcquireItemSetByUserIdRequest = exports.GetItemWithSignatureByUserIdRequest = exports.GetItemWithSignatureRequest = exports.GetItemSetByUserIdRequest = exports.GetItemSetRequest = exports.DescribeItemSetsByUserIdRequest = exports.DescribeItemSetsRequest = exports.SetCapacityByStampSheetRequest = exports.AddCapacityByStampSheetRequest = exports.DeleteInventoryByUserIdRequest = exports.SetCapacityByUserIdRequest = exports.AddCapacityByUserIdRequest = exports.GetInventoryByUserIdRequest = exports.GetInventoryRequest = exports.DescribeInventoriesByUserIdRequest = exports.DescribeInventoriesRequest = exports.UpdateCurrentItemModelMasterFromGitHubRequest = exports.UpdateCurrentItemModelMasterRequest = void 0;
-exports.ConsumeBigItemByStampTaskRequest = exports.AcquireBigItemByStampSheetRequest = exports.DeleteBigItemByUserIdRequest = exports.ConsumeBigItemByUserIdRequest = exports.ConsumeBigItemRequest = exports.AcquireBigItemByUserIdRequest = exports.GetBigItemByUserIdRequest = exports.GetBigItemRequest = void 0;
+exports.VerifySimpleItemRequest = exports.DeleteSimpleItemsByUserIdRequest = exports.ConsumeSimpleItemsByUserIdRequest = exports.ConsumeSimpleItemsRequest = exports.AcquireSimpleItemsByUserIdRequest = exports.GetSimpleItemWithSignatureByUserIdRequest = exports.GetSimpleItemWithSignatureRequest = exports.GetSimpleItemByUserIdRequest = exports.GetSimpleItemRequest = exports.DescribeSimpleItemsByUserIdRequest = exports.DescribeSimpleItemsRequest = exports.VerifyReferenceOfByStampTaskRequest = exports.DeleteReferenceOfItemSetByStampSheetRequest = exports.AddReferenceOfItemSetByStampSheetRequest = exports.DeleteReferenceOfByUserIdRequest = exports.DeleteReferenceOfRequest = exports.AddReferenceOfByUserIdRequest = exports.AddReferenceOfRequest = exports.VerifyReferenceOfByUserIdRequest = exports.VerifyReferenceOfRequest = exports.GetReferenceOfByUserIdRequest = exports.GetReferenceOfRequest = exports.DescribeReferenceOfByUserIdRequest = exports.DescribeReferenceOfRequest = exports.VerifyItemSetByStampTaskRequest = exports.ConsumeItemSetByStampTaskRequest = exports.AcquireItemSetByStampSheetRequest = exports.VerifyItemSetByUserIdRequest = exports.VerifyItemSetRequest = exports.DeleteItemSetByUserIdRequest = exports.ConsumeItemSetByUserIdRequest = exports.ConsumeItemSetRequest = exports.AcquireItemSetByUserIdRequest = exports.GetItemWithSignatureByUserIdRequest = exports.GetItemWithSignatureRequest = exports.GetItemSetByUserIdRequest = exports.GetItemSetRequest = exports.DescribeItemSetsByUserIdRequest = exports.DescribeItemSetsRequest = exports.SetCapacityByStampSheetRequest = exports.AddCapacityByStampSheetRequest = exports.DeleteInventoryByUserIdRequest = exports.SetCapacityByUserIdRequest = exports.AddCapacityByUserIdRequest = exports.GetInventoryByUserIdRequest = exports.GetInventoryRequest = exports.DescribeInventoriesByUserIdRequest = exports.DescribeInventoriesRequest = exports.UpdateCurrentItemModelMasterFromGitHubRequest = exports.UpdateCurrentItemModelMasterRequest = void 0;
+exports.VerifyBigItemByStampTaskRequest = exports.ConsumeBigItemByStampTaskRequest = exports.AcquireBigItemByStampSheetRequest = exports.VerifyBigItemByUserIdRequest = exports.VerifyBigItemRequest = exports.DeleteBigItemByUserIdRequest = exports.ConsumeBigItemByUserIdRequest = exports.ConsumeBigItemRequest = exports.AcquireBigItemByUserIdRequest = exports.GetBigItemByUserIdRequest = exports.GetBigItemRequest = exports.DescribeBigItemsByUserIdRequest = exports.DescribeBigItemsRequest = exports.VerifySimpleItemByStampTaskRequest = exports.ConsumeSimpleItemsByStampTaskRequest = exports.AcquireSimpleItemsByStampSheetRequest = exports.VerifySimpleItemByUserIdRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -161,10 +161,16 @@ var ConsumeItemSetByUserIdRequest_1 = tslib_1.__importDefault(require("./Consume
 exports.ConsumeItemSetByUserIdRequest = ConsumeItemSetByUserIdRequest_1.default;
 var DeleteItemSetByUserIdRequest_1 = tslib_1.__importDefault(require("./DeleteItemSetByUserIdRequest"));
 exports.DeleteItemSetByUserIdRequest = DeleteItemSetByUserIdRequest_1.default;
+var VerifyItemSetRequest_1 = tslib_1.__importDefault(require("./VerifyItemSetRequest"));
+exports.VerifyItemSetRequest = VerifyItemSetRequest_1.default;
+var VerifyItemSetByUserIdRequest_1 = tslib_1.__importDefault(require("./VerifyItemSetByUserIdRequest"));
+exports.VerifyItemSetByUserIdRequest = VerifyItemSetByUserIdRequest_1.default;
 var AcquireItemSetByStampSheetRequest_1 = tslib_1.__importDefault(require("./AcquireItemSetByStampSheetRequest"));
 exports.AcquireItemSetByStampSheetRequest = AcquireItemSetByStampSheetRequest_1.default;
 var ConsumeItemSetByStampTaskRequest_1 = tslib_1.__importDefault(require("./ConsumeItemSetByStampTaskRequest"));
 exports.ConsumeItemSetByStampTaskRequest = ConsumeItemSetByStampTaskRequest_1.default;
+var VerifyItemSetByStampTaskRequest_1 = tslib_1.__importDefault(require("./VerifyItemSetByStampTaskRequest"));
+exports.VerifyItemSetByStampTaskRequest = VerifyItemSetByStampTaskRequest_1.default;
 var DescribeReferenceOfRequest_1 = tslib_1.__importDefault(require("./DescribeReferenceOfRequest"));
 exports.DescribeReferenceOfRequest = DescribeReferenceOfRequest_1.default;
 var DescribeReferenceOfByUserIdRequest_1 = tslib_1.__importDefault(require("./DescribeReferenceOfByUserIdRequest"));
@@ -211,10 +217,16 @@ var ConsumeSimpleItemsByUserIdRequest_1 = tslib_1.__importDefault(require("./Con
 exports.ConsumeSimpleItemsByUserIdRequest = ConsumeSimpleItemsByUserIdRequest_1.default;
 var DeleteSimpleItemsByUserIdRequest_1 = tslib_1.__importDefault(require("./DeleteSimpleItemsByUserIdRequest"));
 exports.DeleteSimpleItemsByUserIdRequest = DeleteSimpleItemsByUserIdRequest_1.default;
+var VerifySimpleItemRequest_1 = tslib_1.__importDefault(require("./VerifySimpleItemRequest"));
+exports.VerifySimpleItemRequest = VerifySimpleItemRequest_1.default;
+var VerifySimpleItemByUserIdRequest_1 = tslib_1.__importDefault(require("./VerifySimpleItemByUserIdRequest"));
+exports.VerifySimpleItemByUserIdRequest = VerifySimpleItemByUserIdRequest_1.default;
 var AcquireSimpleItemsByStampSheetRequest_1 = tslib_1.__importDefault(require("./AcquireSimpleItemsByStampSheetRequest"));
 exports.AcquireSimpleItemsByStampSheetRequest = AcquireSimpleItemsByStampSheetRequest_1.default;
 var ConsumeSimpleItemsByStampTaskRequest_1 = tslib_1.__importDefault(require("./ConsumeSimpleItemsByStampTaskRequest"));
 exports.ConsumeSimpleItemsByStampTaskRequest = ConsumeSimpleItemsByStampTaskRequest_1.default;
+var VerifySimpleItemByStampTaskRequest_1 = tslib_1.__importDefault(require("./VerifySimpleItemByStampTaskRequest"));
+exports.VerifySimpleItemByStampTaskRequest = VerifySimpleItemByStampTaskRequest_1.default;
 var DescribeBigItemsRequest_1 = tslib_1.__importDefault(require("./DescribeBigItemsRequest"));
 exports.DescribeBigItemsRequest = DescribeBigItemsRequest_1.default;
 var DescribeBigItemsByUserIdRequest_1 = tslib_1.__importDefault(require("./DescribeBigItemsByUserIdRequest"));
@@ -231,8 +243,14 @@ var ConsumeBigItemByUserIdRequest_1 = tslib_1.__importDefault(require("./Consume
 exports.ConsumeBigItemByUserIdRequest = ConsumeBigItemByUserIdRequest_1.default;
 var DeleteBigItemByUserIdRequest_1 = tslib_1.__importDefault(require("./DeleteBigItemByUserIdRequest"));
 exports.DeleteBigItemByUserIdRequest = DeleteBigItemByUserIdRequest_1.default;
+var VerifyBigItemRequest_1 = tslib_1.__importDefault(require("./VerifyBigItemRequest"));
+exports.VerifyBigItemRequest = VerifyBigItemRequest_1.default;
+var VerifyBigItemByUserIdRequest_1 = tslib_1.__importDefault(require("./VerifyBigItemByUserIdRequest"));
+exports.VerifyBigItemByUserIdRequest = VerifyBigItemByUserIdRequest_1.default;
 var AcquireBigItemByStampSheetRequest_1 = tslib_1.__importDefault(require("./AcquireBigItemByStampSheetRequest"));
 exports.AcquireBigItemByStampSheetRequest = AcquireBigItemByStampSheetRequest_1.default;
 var ConsumeBigItemByStampTaskRequest_1 = tslib_1.__importDefault(require("./ConsumeBigItemByStampTaskRequest"));
 exports.ConsumeBigItemByStampTaskRequest = ConsumeBigItemByStampTaskRequest_1.default;
+var VerifyBigItemByStampTaskRequest_1 = tslib_1.__importDefault(require("./VerifyBigItemByStampTaskRequest"));
+exports.VerifyBigItemByStampTaskRequest = VerifyBigItemByStampTaskRequest_1.default;
 //# sourceMappingURL=index.js.map

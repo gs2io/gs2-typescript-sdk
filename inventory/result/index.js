@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GetCurrentItemModelMasterResult = exports.ExportMasterResult = exports.GetBigItemModelResult = exports.DescribeBigItemModelsResult = exports.DeleteBigItemModelMasterResult = exports.UpdateBigItemModelMasterResult = exports.GetBigItemModelMasterResult = exports.CreateBigItemModelMasterResult = exports.DescribeBigItemModelMastersResult = exports.GetBigInventoryModelResult = exports.DescribeBigInventoryModelsResult = exports.DeleteBigInventoryModelMasterResult = exports.UpdateBigInventoryModelMasterResult = exports.GetBigInventoryModelMasterResult = exports.CreateBigInventoryModelMasterResult = exports.DescribeBigInventoryModelMastersResult = exports.GetSimpleItemModelResult = exports.DescribeSimpleItemModelsResult = exports.DeleteSimpleItemModelMasterResult = exports.UpdateSimpleItemModelMasterResult = exports.GetSimpleItemModelMasterResult = exports.CreateSimpleItemModelMasterResult = exports.DescribeSimpleItemModelMastersResult = exports.GetSimpleInventoryModelResult = exports.DescribeSimpleInventoryModelsResult = exports.DeleteSimpleInventoryModelMasterResult = exports.UpdateSimpleInventoryModelMasterResult = exports.GetSimpleInventoryModelMasterResult = exports.CreateSimpleInventoryModelMasterResult = exports.DescribeSimpleInventoryModelMastersResult = exports.GetItemModelResult = exports.DescribeItemModelsResult = exports.DeleteItemModelMasterResult = exports.UpdateItemModelMasterResult = exports.GetItemModelMasterResult = exports.CreateItemModelMasterResult = exports.DescribeItemModelMastersResult = exports.GetInventoryModelResult = exports.DescribeInventoryModelsResult = exports.DeleteInventoryModelMasterResult = exports.UpdateInventoryModelMasterResult = exports.GetInventoryModelMasterResult = exports.CreateInventoryModelMasterResult = exports.DescribeInventoryModelMastersResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
-exports.DescribeBigItemsByUserIdResult = exports.DescribeBigItemsResult = exports.ConsumeSimpleItemsByStampTaskResult = exports.AcquireSimpleItemsByStampSheetResult = exports.DeleteSimpleItemsByUserIdResult = exports.ConsumeSimpleItemsByUserIdResult = exports.ConsumeSimpleItemsResult = exports.AcquireSimpleItemsByUserIdResult = exports.GetSimpleItemWithSignatureByUserIdResult = exports.GetSimpleItemWithSignatureResult = exports.GetSimpleItemByUserIdResult = exports.GetSimpleItemResult = exports.DescribeSimpleItemsByUserIdResult = exports.DescribeSimpleItemsResult = exports.VerifyReferenceOfByStampTaskResult = exports.DeleteReferenceOfItemSetByStampSheetResult = exports.AddReferenceOfItemSetByStampSheetResult = exports.DeleteReferenceOfByUserIdResult = exports.DeleteReferenceOfResult = exports.AddReferenceOfByUserIdResult = exports.AddReferenceOfResult = exports.VerifyReferenceOfByUserIdResult = exports.VerifyReferenceOfResult = exports.GetReferenceOfByUserIdResult = exports.GetReferenceOfResult = exports.DescribeReferenceOfByUserIdResult = exports.DescribeReferenceOfResult = exports.ConsumeItemSetByStampTaskResult = exports.AcquireItemSetByStampSheetResult = exports.DeleteItemSetByUserIdResult = exports.ConsumeItemSetByUserIdResult = exports.ConsumeItemSetResult = exports.AcquireItemSetByUserIdResult = exports.GetItemWithSignatureByUserIdResult = exports.GetItemWithSignatureResult = exports.GetItemSetByUserIdResult = exports.GetItemSetResult = exports.DescribeItemSetsByUserIdResult = exports.DescribeItemSetsResult = exports.SetCapacityByStampSheetResult = exports.AddCapacityByStampSheetResult = exports.DeleteInventoryByUserIdResult = exports.SetCapacityByUserIdResult = exports.AddCapacityByUserIdResult = exports.GetInventoryByUserIdResult = exports.GetInventoryResult = exports.DescribeInventoriesByUserIdResult = exports.DescribeInventoriesResult = exports.UpdateCurrentItemModelMasterFromGitHubResult = exports.UpdateCurrentItemModelMasterResult = void 0;
-exports.ConsumeBigItemByStampTaskResult = exports.AcquireBigItemByStampSheetResult = exports.DeleteBigItemByUserIdResult = exports.ConsumeBigItemByUserIdResult = exports.ConsumeBigItemResult = exports.AcquireBigItemByUserIdResult = exports.GetBigItemByUserIdResult = exports.GetBigItemResult = void 0;
+exports.VerifySimpleItemResult = exports.DeleteSimpleItemsByUserIdResult = exports.ConsumeSimpleItemsByUserIdResult = exports.ConsumeSimpleItemsResult = exports.AcquireSimpleItemsByUserIdResult = exports.GetSimpleItemWithSignatureByUserIdResult = exports.GetSimpleItemWithSignatureResult = exports.GetSimpleItemByUserIdResult = exports.GetSimpleItemResult = exports.DescribeSimpleItemsByUserIdResult = exports.DescribeSimpleItemsResult = exports.VerifyReferenceOfByStampTaskResult = exports.DeleteReferenceOfItemSetByStampSheetResult = exports.AddReferenceOfItemSetByStampSheetResult = exports.DeleteReferenceOfByUserIdResult = exports.DeleteReferenceOfResult = exports.AddReferenceOfByUserIdResult = exports.AddReferenceOfResult = exports.VerifyReferenceOfByUserIdResult = exports.VerifyReferenceOfResult = exports.GetReferenceOfByUserIdResult = exports.GetReferenceOfResult = exports.DescribeReferenceOfByUserIdResult = exports.DescribeReferenceOfResult = exports.VerifyItemSetByStampTaskResult = exports.ConsumeItemSetByStampTaskResult = exports.AcquireItemSetByStampSheetResult = exports.VerifyItemSetByUserIdResult = exports.VerifyItemSetResult = exports.DeleteItemSetByUserIdResult = exports.ConsumeItemSetByUserIdResult = exports.ConsumeItemSetResult = exports.AcquireItemSetByUserIdResult = exports.GetItemWithSignatureByUserIdResult = exports.GetItemWithSignatureResult = exports.GetItemSetByUserIdResult = exports.GetItemSetResult = exports.DescribeItemSetsByUserIdResult = exports.DescribeItemSetsResult = exports.SetCapacityByStampSheetResult = exports.AddCapacityByStampSheetResult = exports.DeleteInventoryByUserIdResult = exports.SetCapacityByUserIdResult = exports.AddCapacityByUserIdResult = exports.GetInventoryByUserIdResult = exports.GetInventoryResult = exports.DescribeInventoriesByUserIdResult = exports.DescribeInventoriesResult = exports.UpdateCurrentItemModelMasterFromGitHubResult = exports.UpdateCurrentItemModelMasterResult = void 0;
+exports.VerifyBigItemByStampTaskResult = exports.ConsumeBigItemByStampTaskResult = exports.AcquireBigItemByStampSheetResult = exports.VerifyBigItemByUserIdResult = exports.VerifyBigItemResult = exports.DeleteBigItemByUserIdResult = exports.ConsumeBigItemByUserIdResult = exports.ConsumeBigItemResult = exports.AcquireBigItemByUserIdResult = exports.GetBigItemByUserIdResult = exports.GetBigItemResult = exports.DescribeBigItemsByUserIdResult = exports.DescribeBigItemsResult = exports.VerifySimpleItemByStampTaskResult = exports.ConsumeSimpleItemsByStampTaskResult = exports.AcquireSimpleItemsByStampSheetResult = exports.VerifySimpleItemByUserIdResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -161,10 +161,16 @@ var ConsumeItemSetByUserIdResult_1 = tslib_1.__importDefault(require("./ConsumeI
 exports.ConsumeItemSetByUserIdResult = ConsumeItemSetByUserIdResult_1.default;
 var DeleteItemSetByUserIdResult_1 = tslib_1.__importDefault(require("./DeleteItemSetByUserIdResult"));
 exports.DeleteItemSetByUserIdResult = DeleteItemSetByUserIdResult_1.default;
+var VerifyItemSetResult_1 = tslib_1.__importDefault(require("./VerifyItemSetResult"));
+exports.VerifyItemSetResult = VerifyItemSetResult_1.default;
+var VerifyItemSetByUserIdResult_1 = tslib_1.__importDefault(require("./VerifyItemSetByUserIdResult"));
+exports.VerifyItemSetByUserIdResult = VerifyItemSetByUserIdResult_1.default;
 var AcquireItemSetByStampSheetResult_1 = tslib_1.__importDefault(require("./AcquireItemSetByStampSheetResult"));
 exports.AcquireItemSetByStampSheetResult = AcquireItemSetByStampSheetResult_1.default;
 var ConsumeItemSetByStampTaskResult_1 = tslib_1.__importDefault(require("./ConsumeItemSetByStampTaskResult"));
 exports.ConsumeItemSetByStampTaskResult = ConsumeItemSetByStampTaskResult_1.default;
+var VerifyItemSetByStampTaskResult_1 = tslib_1.__importDefault(require("./VerifyItemSetByStampTaskResult"));
+exports.VerifyItemSetByStampTaskResult = VerifyItemSetByStampTaskResult_1.default;
 var DescribeReferenceOfResult_1 = tslib_1.__importDefault(require("./DescribeReferenceOfResult"));
 exports.DescribeReferenceOfResult = DescribeReferenceOfResult_1.default;
 var DescribeReferenceOfByUserIdResult_1 = tslib_1.__importDefault(require("./DescribeReferenceOfByUserIdResult"));
@@ -211,10 +217,16 @@ var ConsumeSimpleItemsByUserIdResult_1 = tslib_1.__importDefault(require("./Cons
 exports.ConsumeSimpleItemsByUserIdResult = ConsumeSimpleItemsByUserIdResult_1.default;
 var DeleteSimpleItemsByUserIdResult_1 = tslib_1.__importDefault(require("./DeleteSimpleItemsByUserIdResult"));
 exports.DeleteSimpleItemsByUserIdResult = DeleteSimpleItemsByUserIdResult_1.default;
+var VerifySimpleItemResult_1 = tslib_1.__importDefault(require("./VerifySimpleItemResult"));
+exports.VerifySimpleItemResult = VerifySimpleItemResult_1.default;
+var VerifySimpleItemByUserIdResult_1 = tslib_1.__importDefault(require("./VerifySimpleItemByUserIdResult"));
+exports.VerifySimpleItemByUserIdResult = VerifySimpleItemByUserIdResult_1.default;
 var AcquireSimpleItemsByStampSheetResult_1 = tslib_1.__importDefault(require("./AcquireSimpleItemsByStampSheetResult"));
 exports.AcquireSimpleItemsByStampSheetResult = AcquireSimpleItemsByStampSheetResult_1.default;
 var ConsumeSimpleItemsByStampTaskResult_1 = tslib_1.__importDefault(require("./ConsumeSimpleItemsByStampTaskResult"));
 exports.ConsumeSimpleItemsByStampTaskResult = ConsumeSimpleItemsByStampTaskResult_1.default;
+var VerifySimpleItemByStampTaskResult_1 = tslib_1.__importDefault(require("./VerifySimpleItemByStampTaskResult"));
+exports.VerifySimpleItemByStampTaskResult = VerifySimpleItemByStampTaskResult_1.default;
 var DescribeBigItemsResult_1 = tslib_1.__importDefault(require("./DescribeBigItemsResult"));
 exports.DescribeBigItemsResult = DescribeBigItemsResult_1.default;
 var DescribeBigItemsByUserIdResult_1 = tslib_1.__importDefault(require("./DescribeBigItemsByUserIdResult"));
@@ -231,8 +243,14 @@ var ConsumeBigItemByUserIdResult_1 = tslib_1.__importDefault(require("./ConsumeB
 exports.ConsumeBigItemByUserIdResult = ConsumeBigItemByUserIdResult_1.default;
 var DeleteBigItemByUserIdResult_1 = tslib_1.__importDefault(require("./DeleteBigItemByUserIdResult"));
 exports.DeleteBigItemByUserIdResult = DeleteBigItemByUserIdResult_1.default;
+var VerifyBigItemResult_1 = tslib_1.__importDefault(require("./VerifyBigItemResult"));
+exports.VerifyBigItemResult = VerifyBigItemResult_1.default;
+var VerifyBigItemByUserIdResult_1 = tslib_1.__importDefault(require("./VerifyBigItemByUserIdResult"));
+exports.VerifyBigItemByUserIdResult = VerifyBigItemByUserIdResult_1.default;
 var AcquireBigItemByStampSheetResult_1 = tslib_1.__importDefault(require("./AcquireBigItemByStampSheetResult"));
 exports.AcquireBigItemByStampSheetResult = AcquireBigItemByStampSheetResult_1.default;
 var ConsumeBigItemByStampTaskResult_1 = tslib_1.__importDefault(require("./ConsumeBigItemByStampTaskResult"));
 exports.ConsumeBigItemByStampTaskResult = ConsumeBigItemByStampTaskResult_1.default;
+var VerifyBigItemByStampTaskResult_1 = tslib_1.__importDefault(require("./VerifyBigItemByStampTaskResult"));
+exports.VerifyBigItemByStampTaskResult = VerifyBigItemByStampTaskResult_1.default;
 //# sourceMappingURL=index.js.map

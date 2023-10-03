@@ -84,8 +84,11 @@ import AcquireItemSetByUserIdRequest from "./AcquireItemSetByUserIdRequest"
 import ConsumeItemSetRequest from "./ConsumeItemSetRequest"
 import ConsumeItemSetByUserIdRequest from "./ConsumeItemSetByUserIdRequest"
 import DeleteItemSetByUserIdRequest from "./DeleteItemSetByUserIdRequest"
+import VerifyItemSetRequest from "./VerifyItemSetRequest"
+import VerifyItemSetByUserIdRequest from "./VerifyItemSetByUserIdRequest"
 import AcquireItemSetByStampSheetRequest from "./AcquireItemSetByStampSheetRequest"
 import ConsumeItemSetByStampTaskRequest from "./ConsumeItemSetByStampTaskRequest"
+import VerifyItemSetByStampTaskRequest from "./VerifyItemSetByStampTaskRequest"
 import DescribeReferenceOfRequest from "./DescribeReferenceOfRequest"
 import DescribeReferenceOfByUserIdRequest from "./DescribeReferenceOfByUserIdRequest"
 import GetReferenceOfRequest from "./GetReferenceOfRequest"
@@ -109,8 +112,11 @@ import AcquireSimpleItemsByUserIdRequest from "./AcquireSimpleItemsByUserIdReque
 import ConsumeSimpleItemsRequest from "./ConsumeSimpleItemsRequest"
 import ConsumeSimpleItemsByUserIdRequest from "./ConsumeSimpleItemsByUserIdRequest"
 import DeleteSimpleItemsByUserIdRequest from "./DeleteSimpleItemsByUserIdRequest"
+import VerifySimpleItemRequest from "./VerifySimpleItemRequest"
+import VerifySimpleItemByUserIdRequest from "./VerifySimpleItemByUserIdRequest"
 import AcquireSimpleItemsByStampSheetRequest from "./AcquireSimpleItemsByStampSheetRequest"
 import ConsumeSimpleItemsByStampTaskRequest from "./ConsumeSimpleItemsByStampTaskRequest"
+import VerifySimpleItemByStampTaskRequest from "./VerifySimpleItemByStampTaskRequest"
 import DescribeBigItemsRequest from "./DescribeBigItemsRequest"
 import DescribeBigItemsByUserIdRequest from "./DescribeBigItemsByUserIdRequest"
 import GetBigItemRequest from "./GetBigItemRequest"
@@ -119,8 +125,11 @@ import AcquireBigItemByUserIdRequest from "./AcquireBigItemByUserIdRequest"
 import ConsumeBigItemRequest from "./ConsumeBigItemRequest"
 import ConsumeBigItemByUserIdRequest from "./ConsumeBigItemByUserIdRequest"
 import DeleteBigItemByUserIdRequest from "./DeleteBigItemByUserIdRequest"
+import VerifyBigItemRequest from "./VerifyBigItemRequest"
+import VerifyBigItemByUserIdRequest from "./VerifyBigItemByUserIdRequest"
 import AcquireBigItemByStampSheetRequest from "./AcquireBigItemByStampSheetRequest"
 import ConsumeBigItemByStampTaskRequest from "./ConsumeBigItemByStampTaskRequest"
+import VerifyBigItemByStampTaskRequest from "./VerifyBigItemByStampTaskRequest"
 
 export {
     DescribeNamespacesRequest,
@@ -194,8 +203,11 @@ export {
     ConsumeItemSetRequest,
     ConsumeItemSetByUserIdRequest,
     DeleteItemSetByUserIdRequest,
+    VerifyItemSetRequest,
+    VerifyItemSetByUserIdRequest,
     AcquireItemSetByStampSheetRequest,
     ConsumeItemSetByStampTaskRequest,
+    VerifyItemSetByStampTaskRequest,
     DescribeReferenceOfRequest,
     DescribeReferenceOfByUserIdRequest,
     GetReferenceOfRequest,
@@ -219,8 +231,11 @@ export {
     ConsumeSimpleItemsRequest,
     ConsumeSimpleItemsByUserIdRequest,
     DeleteSimpleItemsByUserIdRequest,
+    VerifySimpleItemRequest,
+    VerifySimpleItemByUserIdRequest,
     AcquireSimpleItemsByStampSheetRequest,
     ConsumeSimpleItemsByStampTaskRequest,
+    VerifySimpleItemByStampTaskRequest,
     DescribeBigItemsRequest,
     DescribeBigItemsByUserIdRequest,
     GetBigItemRequest,
@@ -229,6 +244,9 @@ export {
     ConsumeBigItemRequest,
     ConsumeBigItemByUserIdRequest,
     DeleteBigItemByUserIdRequest,
+    VerifyBigItemRequest,
+    VerifyBigItemByUserIdRequest,
     AcquireBigItemByStampSheetRequest,
     ConsumeBigItemByStampTaskRequest,
+    VerifyBigItemByStampTaskRequest,
 };

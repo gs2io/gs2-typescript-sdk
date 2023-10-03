@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetLimitModelRequest = exports.DescribeLimitModelsRequest = exports.UpdateCurrentLimitMasterFromGitHubRequest = exports.UpdateCurrentLimitMasterRequest = exports.GetCurrentLimitMasterRequest = exports.ExportMasterRequest = exports.DeleteLimitModelMasterRequest = exports.UpdateLimitModelMasterRequest = exports.GetLimitModelMasterRequest = exports.CreateLimitModelMasterRequest = exports.DescribeLimitModelMastersRequest = exports.DeleteByStampSheetRequest = exports.CountDownByStampSheetRequest = exports.CountUpByStampTaskRequest = exports.DeleteCounterByUserIdRequest = exports.CountDownByUserIdRequest = exports.CountUpByUserIdRequest = exports.CountUpRequest = exports.GetCounterByUserIdRequest = exports.GetCounterRequest = exports.DescribeCountersByUserIdRequest = exports.DescribeCountersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.GetLimitModelRequest = exports.DescribeLimitModelsRequest = exports.UpdateCurrentLimitMasterFromGitHubRequest = exports.UpdateCurrentLimitMasterRequest = exports.GetCurrentLimitMasterRequest = exports.ExportMasterRequest = exports.DeleteLimitModelMasterRequest = exports.UpdateLimitModelMasterRequest = exports.GetLimitModelMasterRequest = exports.CreateLimitModelMasterRequest = exports.DescribeLimitModelMastersRequest = exports.VerifyCounterByStampTaskRequest = exports.DeleteByStampSheetRequest = exports.CountDownByStampSheetRequest = exports.CountUpByStampTaskRequest = exports.VerifyCounterByUserIdRequest = exports.VerifyCounterRequest = exports.DeleteCounterByUserIdRequest = exports.CountDownByUserIdRequest = exports.CountUpByUserIdRequest = exports.CountUpRequest = exports.GetCounterByUserIdRequest = exports.GetCounterRequest = exports.DescribeCountersByUserIdRequest = exports.DescribeCountersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -45,12 +45,18 @@ var CountDownByUserIdRequest_1 = tslib_1.__importDefault(require("./CountDownByU
 exports.CountDownByUserIdRequest = CountDownByUserIdRequest_1.default;
 var DeleteCounterByUserIdRequest_1 = tslib_1.__importDefault(require("./DeleteCounterByUserIdRequest"));
 exports.DeleteCounterByUserIdRequest = DeleteCounterByUserIdRequest_1.default;
+var VerifyCounterRequest_1 = tslib_1.__importDefault(require("./VerifyCounterRequest"));
+exports.VerifyCounterRequest = VerifyCounterRequest_1.default;
+var VerifyCounterByUserIdRequest_1 = tslib_1.__importDefault(require("./VerifyCounterByUserIdRequest"));
+exports.VerifyCounterByUserIdRequest = VerifyCounterByUserIdRequest_1.default;
 var CountUpByStampTaskRequest_1 = tslib_1.__importDefault(require("./CountUpByStampTaskRequest"));
 exports.CountUpByStampTaskRequest = CountUpByStampTaskRequest_1.default;
 var CountDownByStampSheetRequest_1 = tslib_1.__importDefault(require("./CountDownByStampSheetRequest"));
 exports.CountDownByStampSheetRequest = CountDownByStampSheetRequest_1.default;
 var DeleteByStampSheetRequest_1 = tslib_1.__importDefault(require("./DeleteByStampSheetRequest"));
 exports.DeleteByStampSheetRequest = DeleteByStampSheetRequest_1.default;
+var VerifyCounterByStampTaskRequest_1 = tslib_1.__importDefault(require("./VerifyCounterByStampTaskRequest"));
+exports.VerifyCounterByStampTaskRequest = VerifyCounterByStampTaskRequest_1.default;
 var DescribeLimitModelMastersRequest_1 = tslib_1.__importDefault(require("./DescribeLimitModelMastersRequest"));
 exports.DescribeLimitModelMastersRequest = DescribeLimitModelMastersRequest_1.default;
 var CreateLimitModelMasterRequest_1 = tslib_1.__importDefault(require("./CreateLimitModelMasterRequest"));

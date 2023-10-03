@@ -18,9 +18,12 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
     countUpByUserId(request: Request.CountUpByUserIdRequest): Promise<Result.CountUpByUserIdResult>;
     countDownByUserId(request: Request.CountDownByUserIdRequest): Promise<Result.CountDownByUserIdResult>;
     deleteCounterByUserId(request: Request.DeleteCounterByUserIdRequest): Promise<Result.DeleteCounterByUserIdResult>;
+    verifyCounter(request: Request.VerifyCounterRequest): Promise<Result.VerifyCounterResult>;
+    verifyCounterByUserId(request: Request.VerifyCounterByUserIdRequest): Promise<Result.VerifyCounterByUserIdResult>;
     countUpByStampTask(request: Request.CountUpByStampTaskRequest): Promise<Result.CountUpByStampTaskResult>;
     countDownByStampSheet(request: Request.CountDownByStampSheetRequest): Promise<Result.CountDownByStampSheetResult>;
     deleteByStampSheet(request: Request.DeleteByStampSheetRequest): Promise<Result.DeleteByStampSheetResult>;
+    verifyCounterByStampTask(request: Request.VerifyCounterByStampTaskRequest): Promise<Result.VerifyCounterByStampTaskResult>;
     describeLimitModelMasters(request: Request.DescribeLimitModelMastersRequest): Promise<Result.DescribeLimitModelMastersResult>;
     createLimitModelMaster(request: Request.CreateLimitModelMasterRequest): Promise<Result.CreateLimitModelMasterResult>;
     getLimitModelMaster(request: Request.GetLimitModelMasterRequest): Promise<Result.GetLimitModelMasterResult>;

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentEntryMasterFromGitHubResult = exports.UpdateCurrentEntryMasterResult = exports.GetCurrentEntryMasterResult = exports.ExportMasterResult = exports.DeleteEntriesByStampTaskResult = exports.AddEntriesByStampSheetResult = exports.DeleteEntriesByUserIdResult = exports.ResetByUserIdResult = exports.GetEntryWithSignatureByUserIdResult = exports.GetEntryWithSignatureResult = exports.GetEntryByUserIdResult = exports.GetEntryResult = exports.AddEntriesByUserIdResult = exports.DescribeEntriesByUserIdResult = exports.DescribeEntriesResult = exports.DeleteEntryModelMasterResult = exports.UpdateEntryModelMasterResult = exports.GetEntryModelMasterResult = exports.CreateEntryModelMasterResult = exports.DescribeEntryModelMastersResult = exports.GetEntryModelResult = exports.DescribeEntryModelsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.UpdateCurrentEntryMasterFromGitHubResult = exports.UpdateCurrentEntryMasterResult = exports.GetCurrentEntryMasterResult = exports.ExportMasterResult = exports.VerifyEntryByStampTaskResult = exports.DeleteEntriesByStampTaskResult = exports.AddEntriesByStampSheetResult = exports.DeleteEntriesByUserIdResult = exports.VerifyEntryByUserIdResult = exports.VerifyEntryResult = exports.ResetByUserIdResult = exports.GetEntryWithSignatureByUserIdResult = exports.GetEntryWithSignatureResult = exports.GetEntryByUserIdResult = exports.GetEntryResult = exports.AddEntriesByUserIdResult = exports.DescribeEntriesByUserIdResult = exports.DescribeEntriesResult = exports.DeleteEntryModelMasterResult = exports.UpdateEntryModelMasterResult = exports.GetEntryModelMasterResult = exports.CreateEntryModelMasterResult = exports.DescribeEntryModelMastersResult = exports.GetEntryModelResult = exports.DescribeEntryModelsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -59,12 +59,18 @@ var GetEntryWithSignatureByUserIdResult_1 = tslib_1.__importDefault(require("./G
 exports.GetEntryWithSignatureByUserIdResult = GetEntryWithSignatureByUserIdResult_1.default;
 var ResetByUserIdResult_1 = tslib_1.__importDefault(require("./ResetByUserIdResult"));
 exports.ResetByUserIdResult = ResetByUserIdResult_1.default;
+var VerifyEntryResult_1 = tslib_1.__importDefault(require("./VerifyEntryResult"));
+exports.VerifyEntryResult = VerifyEntryResult_1.default;
+var VerifyEntryByUserIdResult_1 = tslib_1.__importDefault(require("./VerifyEntryByUserIdResult"));
+exports.VerifyEntryByUserIdResult = VerifyEntryByUserIdResult_1.default;
 var DeleteEntriesByUserIdResult_1 = tslib_1.__importDefault(require("./DeleteEntriesByUserIdResult"));
 exports.DeleteEntriesByUserIdResult = DeleteEntriesByUserIdResult_1.default;
 var AddEntriesByStampSheetResult_1 = tslib_1.__importDefault(require("./AddEntriesByStampSheetResult"));
 exports.AddEntriesByStampSheetResult = AddEntriesByStampSheetResult_1.default;
 var DeleteEntriesByStampTaskResult_1 = tslib_1.__importDefault(require("./DeleteEntriesByStampTaskResult"));
 exports.DeleteEntriesByStampTaskResult = DeleteEntriesByStampTaskResult_1.default;
+var VerifyEntryByStampTaskResult_1 = tslib_1.__importDefault(require("./VerifyEntryByStampTaskResult"));
+exports.VerifyEntryByStampTaskResult = VerifyEntryByStampTaskResult_1.default;
 var ExportMasterResult_1 = tslib_1.__importDefault(require("./ExportMasterResult"));
 exports.ExportMasterResult = ExportMasterResult_1.default;
 var GetCurrentEntryMasterResult_1 = tslib_1.__importDefault(require("./GetCurrentEntryMasterResult"));

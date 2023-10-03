@@ -34,9 +34,12 @@ import GetEntryByUserIdRequest from "./GetEntryByUserIdRequest"
 import GetEntryWithSignatureRequest from "./GetEntryWithSignatureRequest"
 import GetEntryWithSignatureByUserIdRequest from "./GetEntryWithSignatureByUserIdRequest"
 import ResetByUserIdRequest from "./ResetByUserIdRequest"
+import VerifyEntryRequest from "./VerifyEntryRequest"
+import VerifyEntryByUserIdRequest from "./VerifyEntryByUserIdRequest"
 import DeleteEntriesByUserIdRequest from "./DeleteEntriesByUserIdRequest"
 import AddEntriesByStampSheetRequest from "./AddEntriesByStampSheetRequest"
 import DeleteEntriesByStampTaskRequest from "./DeleteEntriesByStampTaskRequest"
+import VerifyEntryByStampTaskRequest from "./VerifyEntryByStampTaskRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentEntryMasterRequest from "./GetCurrentEntryMasterRequest"
 import UpdateCurrentEntryMasterRequest from "./UpdateCurrentEntryMasterRequest"
@@ -64,9 +67,12 @@ export {
     GetEntryWithSignatureRequest,
     GetEntryWithSignatureByUserIdRequest,
     ResetByUserIdRequest,
+    VerifyEntryRequest,
+    VerifyEntryByUserIdRequest,
     DeleteEntriesByUserIdRequest,
     AddEntriesByStampSheetRequest,
     DeleteEntriesByStampTaskRequest,
+    VerifyEntryByStampTaskRequest,
     ExportMasterRequest,
     GetCurrentEntryMasterRequest,
     UpdateCurrentEntryMasterRequest,

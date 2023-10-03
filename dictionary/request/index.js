@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentEntryMasterFromGitHubRequest = exports.UpdateCurrentEntryMasterRequest = exports.GetCurrentEntryMasterRequest = exports.ExportMasterRequest = exports.DeleteEntriesByStampTaskRequest = exports.AddEntriesByStampSheetRequest = exports.DeleteEntriesByUserIdRequest = exports.ResetByUserIdRequest = exports.GetEntryWithSignatureByUserIdRequest = exports.GetEntryWithSignatureRequest = exports.GetEntryByUserIdRequest = exports.GetEntryRequest = exports.AddEntriesByUserIdRequest = exports.DescribeEntriesByUserIdRequest = exports.DescribeEntriesRequest = exports.DeleteEntryModelMasterRequest = exports.UpdateEntryModelMasterRequest = exports.GetEntryModelMasterRequest = exports.CreateEntryModelMasterRequest = exports.DescribeEntryModelMastersRequest = exports.GetEntryModelRequest = exports.DescribeEntryModelsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.UpdateCurrentEntryMasterFromGitHubRequest = exports.UpdateCurrentEntryMasterRequest = exports.GetCurrentEntryMasterRequest = exports.ExportMasterRequest = exports.VerifyEntryByStampTaskRequest = exports.DeleteEntriesByStampTaskRequest = exports.AddEntriesByStampSheetRequest = exports.DeleteEntriesByUserIdRequest = exports.VerifyEntryByUserIdRequest = exports.VerifyEntryRequest = exports.ResetByUserIdRequest = exports.GetEntryWithSignatureByUserIdRequest = exports.GetEntryWithSignatureRequest = exports.GetEntryByUserIdRequest = exports.GetEntryRequest = exports.AddEntriesByUserIdRequest = exports.DescribeEntriesByUserIdRequest = exports.DescribeEntriesRequest = exports.DeleteEntryModelMasterRequest = exports.UpdateEntryModelMasterRequest = exports.GetEntryModelMasterRequest = exports.CreateEntryModelMasterRequest = exports.DescribeEntryModelMastersRequest = exports.GetEntryModelRequest = exports.DescribeEntryModelsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -59,12 +59,18 @@ var GetEntryWithSignatureByUserIdRequest_1 = tslib_1.__importDefault(require("./
 exports.GetEntryWithSignatureByUserIdRequest = GetEntryWithSignatureByUserIdRequest_1.default;
 var ResetByUserIdRequest_1 = tslib_1.__importDefault(require("./ResetByUserIdRequest"));
 exports.ResetByUserIdRequest = ResetByUserIdRequest_1.default;
+var VerifyEntryRequest_1 = tslib_1.__importDefault(require("./VerifyEntryRequest"));
+exports.VerifyEntryRequest = VerifyEntryRequest_1.default;
+var VerifyEntryByUserIdRequest_1 = tslib_1.__importDefault(require("./VerifyEntryByUserIdRequest"));
+exports.VerifyEntryByUserIdRequest = VerifyEntryByUserIdRequest_1.default;
 var DeleteEntriesByUserIdRequest_1 = tslib_1.__importDefault(require("./DeleteEntriesByUserIdRequest"));
 exports.DeleteEntriesByUserIdRequest = DeleteEntriesByUserIdRequest_1.default;
 var AddEntriesByStampSheetRequest_1 = tslib_1.__importDefault(require("./AddEntriesByStampSheetRequest"));
 exports.AddEntriesByStampSheetRequest = AddEntriesByStampSheetRequest_1.default;
 var DeleteEntriesByStampTaskRequest_1 = tslib_1.__importDefault(require("./DeleteEntriesByStampTaskRequest"));
 exports.DeleteEntriesByStampTaskRequest = DeleteEntriesByStampTaskRequest_1.default;
+var VerifyEntryByStampTaskRequest_1 = tslib_1.__importDefault(require("./VerifyEntryByStampTaskRequest"));
+exports.VerifyEntryByStampTaskRequest = VerifyEntryByStampTaskRequest_1.default;
 var ExportMasterRequest_1 = tslib_1.__importDefault(require("./ExportMasterRequest"));
 exports.ExportMasterRequest = ExportMasterRequest_1.default;
 var GetCurrentEntryMasterRequest_1 = tslib_1.__importDefault(require("./GetCurrentEntryMasterRequest"));

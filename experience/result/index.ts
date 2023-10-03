@@ -48,6 +48,10 @@ import AddRankCapByUserIdResult from "./AddRankCapByUserIdResult"
 import SubRankCapByUserIdResult from "./SubRankCapByUserIdResult"
 import SetRankCapByUserIdResult from "./SetRankCapByUserIdResult"
 import DeleteStatusByUserIdResult from "./DeleteStatusByUserIdResult"
+import VerifyRankResult from "./VerifyRankResult"
+import VerifyRankByUserIdResult from "./VerifyRankByUserIdResult"
+import VerifyRankCapResult from "./VerifyRankCapResult"
+import VerifyRankCapByUserIdResult from "./VerifyRankCapByUserIdResult"
 import AddExperienceByStampSheetResult from "./AddExperienceByStampSheetResult"
 import SubExperienceByStampTaskResult from "./SubExperienceByStampTaskResult"
 import AddRankCapByStampSheetResult from "./AddRankCapByStampSheetResult"
@@ -55,6 +59,8 @@ import SubRankCapByStampTaskResult from "./SubRankCapByStampTaskResult"
 import SetRankCapByStampSheetResult from "./SetRankCapByStampSheetResult"
 import MultiplyAcquireActionsByUserIdResult from "./MultiplyAcquireActionsByUserIdResult"
 import MultiplyAcquireActionsByStampSheetResult from "./MultiplyAcquireActionsByStampSheetResult"
+import VerifyRankByStampTaskResult from "./VerifyRankByStampTaskResult"
+import VerifyRankCapByStampTaskResult from "./VerifyRankCapByStampTaskResult"
 
 export {
     DescribeNamespacesResult,
@@ -92,6 +98,10 @@ export {
     SubRankCapByUserIdResult,
     SetRankCapByUserIdResult,
     DeleteStatusByUserIdResult,
+    VerifyRankResult,
+    VerifyRankByUserIdResult,
+    VerifyRankCapResult,
+    VerifyRankCapByUserIdResult,
     AddExperienceByStampSheetResult,
     SubExperienceByStampTaskResult,
     AddRankCapByStampSheetResult,
@@ -99,4 +109,6 @@ export {
     SetRankCapByStampSheetResult,
     MultiplyAcquireActionsByUserIdResult,
     MultiplyAcquireActionsByStampSheetResult,
+    VerifyRankByStampTaskResult,
+    VerifyRankCapByStampTaskResult,
 };
