@@ -371,7 +371,7 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
     }
 
     public removeBan(request: Request.RemoveBanRequest): Promise<Result.RemoveBanResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}/ban/{banName}')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}/ban/{banStatusName}')
             .replace('{service}', 'account')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
@@ -824,6 +824,37 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.DeleteTakeOverByUserIdentifierResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public deleteTakeOverByUserId(request: Request.DeleteTakeOverByUserIdRequest): Promise<Result.DeleteTakeOverByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}/takeover/type/{type}/takeover')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{type}', String(request.getType() ?? 'null') === "" ? "null" : String(request.getType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteTakeOverByUserIdResult.fromDict(response.data);
         }).catch((error: any) => {
             throw JSON.parse(error.response.data.message);
         });

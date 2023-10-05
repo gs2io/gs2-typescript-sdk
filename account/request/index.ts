@@ -38,6 +38,7 @@ import UpdateTakeOverRequest from "./UpdateTakeOverRequest"
 import UpdateTakeOverByUserIdRequest from "./UpdateTakeOverByUserIdRequest"
 import DeleteTakeOverRequest from "./DeleteTakeOverRequest"
 import DeleteTakeOverByUserIdentifierRequest from "./DeleteTakeOverByUserIdentifierRequest"
+import DeleteTakeOverByUserIdRequest from "./DeleteTakeOverByUserIdRequest"
 import DoTakeOverRequest from "./DoTakeOverRequest"
 import GetDataOwnerByUserIdRequest from "./GetDataOwnerByUserIdRequest"
 import DeleteDataOwnerByUserIdRequest from "./DeleteDataOwnerByUserIdRequest"
@@ -68,6 +69,7 @@ export {
     UpdateTakeOverByUserIdRequest,
     DeleteTakeOverRequest,
     DeleteTakeOverByUserIdentifierRequest,
+    DeleteTakeOverByUserIdRequest,
     DoTakeOverRequest,
     GetDataOwnerByUserIdRequest,
     DeleteDataOwnerByUserIdRequest,

@@ -38,6 +38,7 @@ import UpdateTakeOverResult from "./UpdateTakeOverResult"
 import UpdateTakeOverByUserIdResult from "./UpdateTakeOverByUserIdResult"
 import DeleteTakeOverResult from "./DeleteTakeOverResult"
 import DeleteTakeOverByUserIdentifierResult from "./DeleteTakeOverByUserIdentifierResult"
+import DeleteTakeOverByUserIdResult from "./DeleteTakeOverByUserIdResult"
 import DoTakeOverResult from "./DoTakeOverResult"
 import GetDataOwnerByUserIdResult from "./GetDataOwnerByUserIdResult"
 import DeleteDataOwnerByUserIdResult from "./DeleteDataOwnerByUserIdResult"
@@ -68,6 +69,7 @@ export {
     UpdateTakeOverByUserIdResult,
     DeleteTakeOverResult,
     DeleteTakeOverByUserIdentifierResult,
+    DeleteTakeOverByUserIdResult,
     DoTakeOverResult,
     GetDataOwnerByUserIdResult,
     DeleteDataOwnerByUserIdResult,

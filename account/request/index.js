@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteDataOwnerByUserIdRequest = exports.GetDataOwnerByUserIdRequest = exports.DoTakeOverRequest = exports.DeleteTakeOverByUserIdentifierRequest = exports.DeleteTakeOverRequest = exports.UpdateTakeOverByUserIdRequest = exports.UpdateTakeOverRequest = exports.GetTakeOverByUserIdRequest = exports.GetTakeOverRequest = exports.CreateTakeOverByUserIdRequest = exports.CreateTakeOverRequest = exports.DescribeTakeOversByUserIdRequest = exports.DescribeTakeOversRequest = exports.AuthenticationRequest = exports.DeleteAccountRequest = exports.GetAccountRequest = exports.RemoveBanRequest = exports.AddBanRequest = exports.UpdateBannedRequest = exports.UpdateTimeOffsetRequest = exports.CreateAccountRequest = exports.DescribeAccountsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.DeleteDataOwnerByUserIdRequest = exports.GetDataOwnerByUserIdRequest = exports.DoTakeOverRequest = exports.DeleteTakeOverByUserIdRequest = exports.DeleteTakeOverByUserIdentifierRequest = exports.DeleteTakeOverRequest = exports.UpdateTakeOverByUserIdRequest = exports.UpdateTakeOverRequest = exports.GetTakeOverByUserIdRequest = exports.GetTakeOverRequest = exports.CreateTakeOverByUserIdRequest = exports.CreateTakeOverRequest = exports.DescribeTakeOversByUserIdRequest = exports.DescribeTakeOversRequest = exports.AuthenticationRequest = exports.DeleteAccountRequest = exports.GetAccountRequest = exports.RemoveBanRequest = exports.AddBanRequest = exports.UpdateBannedRequest = exports.UpdateTimeOffsetRequest = exports.CreateAccountRequest = exports.DescribeAccountsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -67,6 +67,8 @@ var DeleteTakeOverRequest_1 = tslib_1.__importDefault(require("./DeleteTakeOverR
 exports.DeleteTakeOverRequest = DeleteTakeOverRequest_1.default;
 var DeleteTakeOverByUserIdentifierRequest_1 = tslib_1.__importDefault(require("./DeleteTakeOverByUserIdentifierRequest"));
 exports.DeleteTakeOverByUserIdentifierRequest = DeleteTakeOverByUserIdentifierRequest_1.default;
+var DeleteTakeOverByUserIdRequest_1 = tslib_1.__importDefault(require("./DeleteTakeOverByUserIdRequest"));
+exports.DeleteTakeOverByUserIdRequest = DeleteTakeOverByUserIdRequest_1.default;
 var DoTakeOverRequest_1 = tslib_1.__importDefault(require("./DoTakeOverRequest"));
 exports.DoTakeOverRequest = DoTakeOverRequest_1.default;
 var GetDataOwnerByUserIdRequest_1 = tslib_1.__importDefault(require("./GetDataOwnerByUserIdRequest"));

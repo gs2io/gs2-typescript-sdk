@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteDataOwnerByUserIdResult = exports.GetDataOwnerByUserIdResult = exports.DoTakeOverResult = exports.DeleteTakeOverByUserIdentifierResult = exports.DeleteTakeOverResult = exports.UpdateTakeOverByUserIdResult = exports.UpdateTakeOverResult = exports.GetTakeOverByUserIdResult = exports.GetTakeOverResult = exports.CreateTakeOverByUserIdResult = exports.CreateTakeOverResult = exports.DescribeTakeOversByUserIdResult = exports.DescribeTakeOversResult = exports.AuthenticationResult = exports.DeleteAccountResult = exports.GetAccountResult = exports.RemoveBanResult = exports.AddBanResult = exports.UpdateBannedResult = exports.UpdateTimeOffsetResult = exports.CreateAccountResult = exports.DescribeAccountsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.DeleteDataOwnerByUserIdResult = exports.GetDataOwnerByUserIdResult = exports.DoTakeOverResult = exports.DeleteTakeOverByUserIdResult = exports.DeleteTakeOverByUserIdentifierResult = exports.DeleteTakeOverResult = exports.UpdateTakeOverByUserIdResult = exports.UpdateTakeOverResult = exports.GetTakeOverByUserIdResult = exports.GetTakeOverResult = exports.CreateTakeOverByUserIdResult = exports.CreateTakeOverResult = exports.DescribeTakeOversByUserIdResult = exports.DescribeTakeOversResult = exports.AuthenticationResult = exports.DeleteAccountResult = exports.GetAccountResult = exports.RemoveBanResult = exports.AddBanResult = exports.UpdateBannedResult = exports.UpdateTimeOffsetResult = exports.CreateAccountResult = exports.DescribeAccountsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -67,6 +67,8 @@ var DeleteTakeOverResult_1 = tslib_1.__importDefault(require("./DeleteTakeOverRe
 exports.DeleteTakeOverResult = DeleteTakeOverResult_1.default;
 var DeleteTakeOverByUserIdentifierResult_1 = tslib_1.__importDefault(require("./DeleteTakeOverByUserIdentifierResult"));
 exports.DeleteTakeOverByUserIdentifierResult = DeleteTakeOverByUserIdentifierResult_1.default;
+var DeleteTakeOverByUserIdResult_1 = tslib_1.__importDefault(require("./DeleteTakeOverByUserIdResult"));
+exports.DeleteTakeOverByUserIdResult = DeleteTakeOverByUserIdResult_1.default;
 var DoTakeOverResult_1 = tslib_1.__importDefault(require("./DoTakeOverResult"));
 exports.DoTakeOverResult = DoTakeOverResult_1.default;
 var GetDataOwnerByUserIdResult_1 = tslib_1.__importDefault(require("./GetDataOwnerByUserIdResult"));
