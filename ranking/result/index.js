@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DescribeSubscribesByCategoryNameAndUserIdResult = exports.DescribeSubscribesByCategoryNameResult = exports.UnsubscribeByUserIdResult = exports.UnsubscribeResult = exports.GetSubscribeByUserIdResult = exports.GetSubscribeResult = exports.UpdateCurrentRankingMasterFromGitHubResult = exports.UpdateCurrentRankingMasterResult = exports.GetCurrentRankingMasterResult = exports.ExportMasterResult = exports.CalcRankingResult = exports.PutScoreByUserIdResult = exports.PutScoreResult = exports.GetRankingByUserIdResult = exports.GetRankingResult = exports.DescribeNearRankingsResult = exports.DescribeRankingssByUserIdResult = exports.DescribeRankingsResult = exports.GetScoreByUserIdResult = exports.GetScoreResult = exports.DescribeScoresByUserIdResult = exports.DescribeScoresResult = exports.SubscribeByUserIdResult = exports.SubscribeResult = exports.DeleteCategoryModelMasterResult = exports.UpdateCategoryModelMasterResult = exports.GetCategoryModelMasterResult = exports.CreateCategoryModelMasterResult = exports.DescribeCategoryModelMastersResult = exports.GetCategoryModelResult = exports.DescribeCategoryModelsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.DescribeSubscribesByCategoryNameAndUserIdResult = exports.DescribeSubscribesByCategoryNameResult = exports.UnsubscribeByUserIdResult = exports.UnsubscribeResult = exports.GetSubscribeByUserIdResult = exports.GetSubscribeResult = exports.UpdateCurrentRankingMasterFromGitHubResult = exports.UpdateCurrentRankingMasterResult = exports.GetCurrentRankingMasterResult = exports.ExportMasterResult = exports.CalcRankingResult = exports.PutScoreByUserIdResult = exports.PutScoreResult = exports.GetRankingByUserIdResult = exports.GetRankingResult = exports.DescribeNearRankingsResult = exports.DescribeRankingssByUserIdResult = exports.DescribeRankingsResult = exports.GetScoreByUserIdResult = exports.GetScoreResult = exports.DescribeScoresByUserIdResult = exports.DescribeScoresResult = exports.SubscribeByUserIdResult = exports.SubscribeResult = exports.DeleteCategoryModelMasterResult = exports.UpdateCategoryModelMasterResult = exports.GetCategoryModelMasterResult = exports.CreateCategoryModelMasterResult = exports.DescribeCategoryModelMastersResult = exports.GetCategoryModelResult = exports.DescribeCategoryModelsResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,6 +29,14 @@ var UpdateNamespaceResult_1 = tslib_1.__importDefault(require("./UpdateNamespace
 exports.UpdateNamespaceResult = UpdateNamespaceResult_1.default;
 var DeleteNamespaceResult_1 = tslib_1.__importDefault(require("./DeleteNamespaceResult"));
 exports.DeleteNamespaceResult = DeleteNamespaceResult_1.default;
+var DumpUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./DumpUserDataByUserIdResult"));
+exports.DumpUserDataByUserIdResult = DumpUserDataByUserIdResult_1.default;
+var CheckDumpUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CheckDumpUserDataByUserIdResult"));
+exports.CheckDumpUserDataByUserIdResult = CheckDumpUserDataByUserIdResult_1.default;
+var CleanUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CleanUserDataByUserIdResult"));
+exports.CleanUserDataByUserIdResult = CleanUserDataByUserIdResult_1.default;
+var CheckCleanUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CheckCleanUserDataByUserIdResult"));
+exports.CheckCleanUserDataByUserIdResult = CheckCleanUserDataByUserIdResult_1.default;
 var DescribeCategoryModelsResult_1 = tslib_1.__importDefault(require("./DescribeCategoryModelsResult"));
 exports.DescribeCategoryModelsResult = DescribeCategoryModelsResult_1.default;
 var GetCategoryModelResult_1 = tslib_1.__importDefault(require("./GetCategoryModelResult"));

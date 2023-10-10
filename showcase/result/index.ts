@@ -19,6 +19,10 @@ import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
 import GetNamespaceResult from "./GetNamespaceResult"
 import UpdateNamespaceResult from "./UpdateNamespaceResult"
 import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DumpUserDataByUserIdResult from "./DumpUserDataByUserIdResult"
+import CheckDumpUserDataByUserIdResult from "./CheckDumpUserDataByUserIdResult"
+import CleanUserDataByUserIdResult from "./CleanUserDataByUserIdResult"
+import CheckCleanUserDataByUserIdResult from "./CheckCleanUserDataByUserIdResult"
 import DescribeSalesItemMastersResult from "./DescribeSalesItemMastersResult"
 import CreateSalesItemMasterResult from "./CreateSalesItemMasterResult"
 import GetSalesItemMasterResult from "./GetSalesItemMasterResult"
@@ -69,6 +73,10 @@ export {
     GetNamespaceResult,
     UpdateNamespaceResult,
     DeleteNamespaceResult,
+    DumpUserDataByUserIdResult,
+    CheckDumpUserDataByUserIdResult,
+    CleanUserDataByUserIdResult,
+    CheckCleanUserDataByUserIdResult,
     DescribeSalesItemMastersResult,
     CreateSalesItemMasterResult,
     GetSalesItemMasterResult,

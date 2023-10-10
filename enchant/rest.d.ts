@@ -10,6 +10,10 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
     getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
     updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
     deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult>;
+    checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult>;
+    cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult>;
+    checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult>;
     describeBalanceParameterModels(request: Request.DescribeBalanceParameterModelsRequest): Promise<Result.DescribeBalanceParameterModelsResult>;
     getBalanceParameterModel(request: Request.GetBalanceParameterModelRequest): Promise<Result.GetBalanceParameterModelResult>;
     describeBalanceParameterModelMasters(request: Request.DescribeBalanceParameterModelMastersRequest): Promise<Result.DescribeBalanceParameterModelMastersResult>;

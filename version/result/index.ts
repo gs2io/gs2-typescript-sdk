@@ -19,6 +19,10 @@ import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
 import GetNamespaceResult from "./GetNamespaceResult"
 import UpdateNamespaceResult from "./UpdateNamespaceResult"
 import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DumpUserDataByUserIdResult from "./DumpUserDataByUserIdResult"
+import CheckDumpUserDataByUserIdResult from "./CheckDumpUserDataByUserIdResult"
+import CleanUserDataByUserIdResult from "./CleanUserDataByUserIdResult"
+import CheckCleanUserDataByUserIdResult from "./CheckCleanUserDataByUserIdResult"
 import DescribeVersionModelMastersResult from "./DescribeVersionModelMastersResult"
 import CreateVersionModelMasterResult from "./CreateVersionModelMasterResult"
 import GetVersionModelMasterResult from "./GetVersionModelMasterResult"
@@ -49,6 +53,10 @@ export {
     GetNamespaceResult,
     UpdateNamespaceResult,
     DeleteNamespaceResult,
+    DumpUserDataByUserIdResult,
+    CheckDumpUserDataByUserIdResult,
+    CleanUserDataByUserIdResult,
+    CheckCleanUserDataByUserIdResult,
     DescribeVersionModelMastersResult,
     CreateVersionModelMasterResult,
     GetVersionModelMasterResult,

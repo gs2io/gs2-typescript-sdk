@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DescribeSubscribesByCategoryNameAndUserIdRequest = exports.DescribeSubscribesByCategoryNameRequest = exports.UnsubscribeByUserIdRequest = exports.UnsubscribeRequest = exports.GetSubscribeByUserIdRequest = exports.GetSubscribeRequest = exports.UpdateCurrentRankingMasterFromGitHubRequest = exports.UpdateCurrentRankingMasterRequest = exports.GetCurrentRankingMasterRequest = exports.ExportMasterRequest = exports.CalcRankingRequest = exports.PutScoreByUserIdRequest = exports.PutScoreRequest = exports.GetRankingByUserIdRequest = exports.GetRankingRequest = exports.DescribeNearRankingsRequest = exports.DescribeRankingssByUserIdRequest = exports.DescribeRankingsRequest = exports.GetScoreByUserIdRequest = exports.GetScoreRequest = exports.DescribeScoresByUserIdRequest = exports.DescribeScoresRequest = exports.SubscribeByUserIdRequest = exports.SubscribeRequest = exports.DeleteCategoryModelMasterRequest = exports.UpdateCategoryModelMasterRequest = exports.GetCategoryModelMasterRequest = exports.CreateCategoryModelMasterRequest = exports.DescribeCategoryModelMastersRequest = exports.GetCategoryModelRequest = exports.DescribeCategoryModelsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.DescribeSubscribesByCategoryNameAndUserIdRequest = exports.DescribeSubscribesByCategoryNameRequest = exports.UnsubscribeByUserIdRequest = exports.UnsubscribeRequest = exports.GetSubscribeByUserIdRequest = exports.GetSubscribeRequest = exports.UpdateCurrentRankingMasterFromGitHubRequest = exports.UpdateCurrentRankingMasterRequest = exports.GetCurrentRankingMasterRequest = exports.ExportMasterRequest = exports.CalcRankingRequest = exports.PutScoreByUserIdRequest = exports.PutScoreRequest = exports.GetRankingByUserIdRequest = exports.GetRankingRequest = exports.DescribeNearRankingsRequest = exports.DescribeRankingssByUserIdRequest = exports.DescribeRankingsRequest = exports.GetScoreByUserIdRequest = exports.GetScoreRequest = exports.DescribeScoresByUserIdRequest = exports.DescribeScoresRequest = exports.SubscribeByUserIdRequest = exports.SubscribeRequest = exports.DeleteCategoryModelMasterRequest = exports.UpdateCategoryModelMasterRequest = exports.GetCategoryModelMasterRequest = exports.CreateCategoryModelMasterRequest = exports.DescribeCategoryModelMastersRequest = exports.GetCategoryModelRequest = exports.DescribeCategoryModelsRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,6 +29,14 @@ var UpdateNamespaceRequest_1 = tslib_1.__importDefault(require("./UpdateNamespac
 exports.UpdateNamespaceRequest = UpdateNamespaceRequest_1.default;
 var DeleteNamespaceRequest_1 = tslib_1.__importDefault(require("./DeleteNamespaceRequest"));
 exports.DeleteNamespaceRequest = DeleteNamespaceRequest_1.default;
+var DumpUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./DumpUserDataByUserIdRequest"));
+exports.DumpUserDataByUserIdRequest = DumpUserDataByUserIdRequest_1.default;
+var CheckDumpUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CheckDumpUserDataByUserIdRequest"));
+exports.CheckDumpUserDataByUserIdRequest = CheckDumpUserDataByUserIdRequest_1.default;
+var CleanUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CleanUserDataByUserIdRequest"));
+exports.CleanUserDataByUserIdRequest = CleanUserDataByUserIdRequest_1.default;
+var CheckCleanUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CheckCleanUserDataByUserIdRequest"));
+exports.CheckCleanUserDataByUserIdRequest = CheckCleanUserDataByUserIdRequest_1.default;
 var DescribeCategoryModelsRequest_1 = tslib_1.__importDefault(require("./DescribeCategoryModelsRequest"));
 exports.DescribeCategoryModelsRequest = DescribeCategoryModelsRequest_1.default;
 var GetCategoryModelRequest_1 = tslib_1.__importDefault(require("./GetCategoryModelRequest"));

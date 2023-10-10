@@ -19,6 +19,10 @@ import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
 import GetNamespaceResult from "./GetNamespaceResult"
 import UpdateNamespaceResult from "./UpdateNamespaceResult"
 import DeleteNamespaceResult from "./DeleteNamespaceResult"
+import DumpUserDataByUserIdResult from "./DumpUserDataByUserIdResult"
+import CheckDumpUserDataByUserIdResult from "./CheckDumpUserDataByUserIdResult"
+import CleanUserDataByUserIdResult from "./CleanUserDataByUserIdResult"
+import CheckCleanUserDataByUserIdResult from "./CheckCleanUserDataByUserIdResult"
 import DescribeRoomsResult from "./DescribeRoomsResult"
 import CreateRoomResult from "./CreateRoomResult"
 import CreateRoomFromBackendResult from "./CreateRoomFromBackendResult"
@@ -53,6 +57,10 @@ export {
     GetNamespaceResult,
     UpdateNamespaceResult,
     DeleteNamespaceResult,
+    DumpUserDataByUserIdResult,
+    CheckDumpUserDataByUserIdResult,
+    CleanUserDataByUserIdResult,
+    CheckCleanUserDataByUserIdResult,
     DescribeRoomsResult,
     CreateRoomResult,
     CreateRoomFromBackendResult,

@@ -19,6 +19,10 @@ import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
 import GetNamespaceRequest from "./GetNamespaceRequest"
 import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
 import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DumpUserDataByUserIdRequest from "./DumpUserDataByUserIdRequest"
+import CheckDumpUserDataByUserIdRequest from "./CheckDumpUserDataByUserIdRequest"
+import CleanUserDataByUserIdRequest from "./CleanUserDataByUserIdRequest"
+import CheckCleanUserDataByUserIdRequest from "./CheckCleanUserDataByUserIdRequest"
 import DescribeGatheringsRequest from "./DescribeGatheringsRequest"
 import CreateGatheringRequest from "./CreateGatheringRequest"
 import CreateGatheringByUserIdRequest from "./CreateGatheringByUserIdRequest"
@@ -61,6 +65,10 @@ export {
     GetNamespaceRequest,
     UpdateNamespaceRequest,
     DeleteNamespaceRequest,
+    DumpUserDataByUserIdRequest,
+    CheckDumpUserDataByUserIdRequest,
+    CleanUserDataByUserIdRequest,
+    CheckCleanUserDataByUserIdRequest,
     DescribeGatheringsRequest,
     CreateGatheringRequest,
     CreateGatheringByUserIdRequest,

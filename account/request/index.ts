@@ -19,6 +19,10 @@ import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
 import GetNamespaceRequest from "./GetNamespaceRequest"
 import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
 import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DumpUserDataByUserIdRequest from "./DumpUserDataByUserIdRequest"
+import CheckDumpUserDataByUserIdRequest from "./CheckDumpUserDataByUserIdRequest"
+import CleanUserDataByUserIdRequest from "./CleanUserDataByUserIdRequest"
+import CheckCleanUserDataByUserIdRequest from "./CheckCleanUserDataByUserIdRequest"
 import DescribeAccountsRequest from "./DescribeAccountsRequest"
 import CreateAccountRequest from "./CreateAccountRequest"
 import UpdateTimeOffsetRequest from "./UpdateTimeOffsetRequest"
@@ -50,6 +54,10 @@ export {
     GetNamespaceRequest,
     UpdateNamespaceRequest,
     DeleteNamespaceRequest,
+    DumpUserDataByUserIdRequest,
+    CheckDumpUserDataByUserIdRequest,
+    CleanUserDataByUserIdRequest,
+    CheckCleanUserDataByUserIdRequest,
     DescribeAccountsRequest,
     CreateAccountRequest,
     UpdateTimeOffsetRequest,

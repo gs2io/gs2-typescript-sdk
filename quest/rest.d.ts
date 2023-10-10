@@ -10,6 +10,10 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
     updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
     deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult>;
+    checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult>;
+    cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult>;
+    checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult>;
     describeQuestGroupModelMasters(request: Request.DescribeQuestGroupModelMastersRequest): Promise<Result.DescribeQuestGroupModelMastersResult>;
     createQuestGroupModelMaster(request: Request.CreateQuestGroupModelMasterRequest): Promise<Result.CreateQuestGroupModelMasterResult>;
     getQuestGroupModelMaster(request: Request.GetQuestGroupModelMasterRequest): Promise<Result.GetQuestGroupModelMasterResult>;

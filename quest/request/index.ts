@@ -19,6 +19,10 @@ import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
 import GetNamespaceRequest from "./GetNamespaceRequest"
 import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
 import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DumpUserDataByUserIdRequest from "./DumpUserDataByUserIdRequest"
+import CheckDumpUserDataByUserIdRequest from "./CheckDumpUserDataByUserIdRequest"
+import CleanUserDataByUserIdRequest from "./CleanUserDataByUserIdRequest"
+import CheckCleanUserDataByUserIdRequest from "./CheckCleanUserDataByUserIdRequest"
 import DescribeQuestGroupModelMastersRequest from "./DescribeQuestGroupModelMastersRequest"
 import CreateQuestGroupModelMasterRequest from "./CreateQuestGroupModelMasterRequest"
 import GetQuestGroupModelMasterRequest from "./GetQuestGroupModelMasterRequest"
@@ -62,6 +66,10 @@ export {
     GetNamespaceRequest,
     UpdateNamespaceRequest,
     DeleteNamespaceRequest,
+    DumpUserDataByUserIdRequest,
+    CheckDumpUserDataByUserIdRequest,
+    CleanUserDataByUserIdRequest,
+    CheckCleanUserDataByUserIdRequest,
     DescribeQuestGroupModelMastersRequest,
     CreateQuestGroupModelMasterRequest,
     GetQuestGroupModelMasterRequest,

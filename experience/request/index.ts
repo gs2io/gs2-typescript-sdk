@@ -19,6 +19,10 @@ import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
 import GetNamespaceRequest from "./GetNamespaceRequest"
 import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
 import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DumpUserDataByUserIdRequest from "./DumpUserDataByUserIdRequest"
+import CheckDumpUserDataByUserIdRequest from "./CheckDumpUserDataByUserIdRequest"
+import CleanUserDataByUserIdRequest from "./CleanUserDataByUserIdRequest"
+import CheckCleanUserDataByUserIdRequest from "./CheckCleanUserDataByUserIdRequest"
 import DescribeExperienceModelMastersRequest from "./DescribeExperienceModelMastersRequest"
 import CreateExperienceModelMasterRequest from "./CreateExperienceModelMasterRequest"
 import GetExperienceModelMasterRequest from "./GetExperienceModelMasterRequest"
@@ -69,6 +73,10 @@ export {
     GetNamespaceRequest,
     UpdateNamespaceRequest,
     DeleteNamespaceRequest,
+    DumpUserDataByUserIdRequest,
+    CheckDumpUserDataByUserIdRequest,
+    CleanUserDataByUserIdRequest,
+    CheckCleanUserDataByUserIdRequest,
     DescribeExperienceModelMastersRequest,
     CreateExperienceModelMasterRequest,
     GetExperienceModelMasterRequest,

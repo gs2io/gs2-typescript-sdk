@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnmarkReceivedByStampSheetRequest = exports.MarkReceivedByStampTaskRequest = exports.UnmarkReceivedByUserIdRequest = exports.MarkReceivedByUserIdRequest = exports.MarkReceivedRequest = exports.DeleteReceiveStatusByStampSheetRequest = exports.DeleteReceiveStatusByUserIdRequest = exports.GetReceiveStatusByUserIdRequest = exports.GetReceiveStatusRequest = exports.DescribeReceiveStatusesByUserIdRequest = exports.DescribeReceiveStatusesRequest = exports.MissedReceiveByUserIdRequest = exports.MissedReceiveRequest = exports.ReceiveByUserIdRequest = exports.ReceiveRequest = exports.GetBonusModelRequest = exports.DescribeBonusModelsRequest = exports.UpdateCurrentBonusMasterFromGitHubRequest = exports.UpdateCurrentBonusMasterRequest = exports.GetCurrentBonusMasterRequest = exports.ExportMasterRequest = exports.DeleteBonusModelMasterRequest = exports.UpdateBonusModelMasterRequest = exports.GetBonusModelMasterRequest = exports.CreateBonusModelMasterRequest = exports.DescribeBonusModelMastersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.UnmarkReceivedByStampSheetRequest = exports.MarkReceivedByStampTaskRequest = exports.UnmarkReceivedByUserIdRequest = exports.MarkReceivedByUserIdRequest = exports.MarkReceivedRequest = exports.DeleteReceiveStatusByStampSheetRequest = exports.DeleteReceiveStatusByUserIdRequest = exports.GetReceiveStatusByUserIdRequest = exports.GetReceiveStatusRequest = exports.DescribeReceiveStatusesByUserIdRequest = exports.DescribeReceiveStatusesRequest = exports.MissedReceiveByUserIdRequest = exports.MissedReceiveRequest = exports.ReceiveByUserIdRequest = exports.ReceiveRequest = exports.GetBonusModelRequest = exports.DescribeBonusModelsRequest = exports.UpdateCurrentBonusMasterFromGitHubRequest = exports.UpdateCurrentBonusMasterRequest = exports.GetCurrentBonusMasterRequest = exports.ExportMasterRequest = exports.DeleteBonusModelMasterRequest = exports.UpdateBonusModelMasterRequest = exports.GetBonusModelMasterRequest = exports.CreateBonusModelMasterRequest = exports.DescribeBonusModelMastersRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,6 +29,14 @@ var UpdateNamespaceRequest_1 = tslib_1.__importDefault(require("./UpdateNamespac
 exports.UpdateNamespaceRequest = UpdateNamespaceRequest_1.default;
 var DeleteNamespaceRequest_1 = tslib_1.__importDefault(require("./DeleteNamespaceRequest"));
 exports.DeleteNamespaceRequest = DeleteNamespaceRequest_1.default;
+var DumpUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./DumpUserDataByUserIdRequest"));
+exports.DumpUserDataByUserIdRequest = DumpUserDataByUserIdRequest_1.default;
+var CheckDumpUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CheckDumpUserDataByUserIdRequest"));
+exports.CheckDumpUserDataByUserIdRequest = CheckDumpUserDataByUserIdRequest_1.default;
+var CleanUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CleanUserDataByUserIdRequest"));
+exports.CleanUserDataByUserIdRequest = CleanUserDataByUserIdRequest_1.default;
+var CheckCleanUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CheckCleanUserDataByUserIdRequest"));
+exports.CheckCleanUserDataByUserIdRequest = CheckCleanUserDataByUserIdRequest_1.default;
 var DescribeBonusModelMastersRequest_1 = tslib_1.__importDefault(require("./DescribeBonusModelMastersRequest"));
 exports.DescribeBonusModelMastersRequest = DescribeBonusModelMastersRequest_1.default;
 var CreateBonusModelMasterRequest_1 = tslib_1.__importDefault(require("./CreateBonusModelMasterRequest"));

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteReceivedByUserIdRequest = exports.UpdateReceivedByUserIdRequest = exports.GetReceivedByUserIdRequest = exports.GetGlobalMessageRequest = exports.DescribeGlobalMessagesRequest = exports.DeleteGlobalMessageMasterRequest = exports.UpdateGlobalMessageMasterRequest = exports.GetGlobalMessageMasterRequest = exports.CreateGlobalMessageMasterRequest = exports.DescribeGlobalMessageMastersRequest = exports.UpdateCurrentMessageMasterFromGitHubRequest = exports.UpdateCurrentMessageMasterRequest = exports.GetCurrentMessageMasterRequest = exports.ExportMasterRequest = exports.DeleteMessageByStampTaskRequest = exports.OpenByStampTaskRequest = exports.SendByStampSheetRequest = exports.DeleteMessageByUserIdRequest = exports.DeleteMessageRequest = exports.ReadMessageByUserIdRequest = exports.ReadMessageRequest = exports.OpenMessageByUserIdRequest = exports.OpenMessageRequest = exports.ReceiveGlobalMessageByUserIdRequest = exports.ReceiveGlobalMessageRequest = exports.GetMessageByUserIdRequest = exports.GetMessageRequest = exports.SendMessageByUserIdRequest = exports.DescribeMessagesByUserIdRequest = exports.DescribeMessagesRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.DeleteReceivedByUserIdRequest = exports.UpdateReceivedByUserIdRequest = exports.GetReceivedByUserIdRequest = exports.GetGlobalMessageRequest = exports.DescribeGlobalMessagesRequest = exports.DeleteGlobalMessageMasterRequest = exports.UpdateGlobalMessageMasterRequest = exports.GetGlobalMessageMasterRequest = exports.CreateGlobalMessageMasterRequest = exports.DescribeGlobalMessageMastersRequest = exports.UpdateCurrentMessageMasterFromGitHubRequest = exports.UpdateCurrentMessageMasterRequest = exports.GetCurrentMessageMasterRequest = exports.ExportMasterRequest = exports.DeleteMessageByStampTaskRequest = exports.OpenByStampTaskRequest = exports.SendByStampSheetRequest = exports.DeleteMessageByUserIdRequest = exports.DeleteMessageRequest = exports.ReadMessageByUserIdRequest = exports.ReadMessageRequest = exports.OpenMessageByUserIdRequest = exports.OpenMessageRequest = exports.ReceiveGlobalMessageByUserIdRequest = exports.ReceiveGlobalMessageRequest = exports.GetMessageByUserIdRequest = exports.GetMessageRequest = exports.SendMessageByUserIdRequest = exports.DescribeMessagesByUserIdRequest = exports.DescribeMessagesRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,6 +29,14 @@ var UpdateNamespaceRequest_1 = tslib_1.__importDefault(require("./UpdateNamespac
 exports.UpdateNamespaceRequest = UpdateNamespaceRequest_1.default;
 var DeleteNamespaceRequest_1 = tslib_1.__importDefault(require("./DeleteNamespaceRequest"));
 exports.DeleteNamespaceRequest = DeleteNamespaceRequest_1.default;
+var DumpUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./DumpUserDataByUserIdRequest"));
+exports.DumpUserDataByUserIdRequest = DumpUserDataByUserIdRequest_1.default;
+var CheckDumpUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CheckDumpUserDataByUserIdRequest"));
+exports.CheckDumpUserDataByUserIdRequest = CheckDumpUserDataByUserIdRequest_1.default;
+var CleanUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CleanUserDataByUserIdRequest"));
+exports.CleanUserDataByUserIdRequest = CleanUserDataByUserIdRequest_1.default;
+var CheckCleanUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CheckCleanUserDataByUserIdRequest"));
+exports.CheckCleanUserDataByUserIdRequest = CheckCleanUserDataByUserIdRequest_1.default;
 var DescribeMessagesRequest_1 = tslib_1.__importDefault(require("./DescribeMessagesRequest"));
 exports.DescribeMessagesRequest = DescribeMessagesRequest_1.default;
 var DescribeMessagesByUserIdRequest_1 = tslib_1.__importDefault(require("./DescribeMessagesByUserIdRequest"));

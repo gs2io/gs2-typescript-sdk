@@ -19,6 +19,10 @@ import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
 import GetNamespaceRequest from "./GetNamespaceRequest"
 import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
 import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DumpUserDataByUserIdRequest from "./DumpUserDataByUserIdRequest"
+import CheckDumpUserDataByUserIdRequest from "./CheckDumpUserDataByUserIdRequest"
+import CleanUserDataByUserIdRequest from "./CleanUserDataByUserIdRequest"
+import CheckCleanUserDataByUserIdRequest from "./CheckCleanUserDataByUserIdRequest"
 import DescribeBalanceParameterModelsRequest from "./DescribeBalanceParameterModelsRequest"
 import GetBalanceParameterModelRequest from "./GetBalanceParameterModelRequest"
 import DescribeBalanceParameterModelMastersRequest from "./DescribeBalanceParameterModelMastersRequest"
@@ -68,6 +72,10 @@ export {
     GetNamespaceRequest,
     UpdateNamespaceRequest,
     DeleteNamespaceRequest,
+    DumpUserDataByUserIdRequest,
+    CheckDumpUserDataByUserIdRequest,
+    CleanUserDataByUserIdRequest,
+    CheckCleanUserDataByUserIdRequest,
     DescribeBalanceParameterModelsRequest,
     GetBalanceParameterModelRequest,
     DescribeBalanceParameterModelMastersRequest,

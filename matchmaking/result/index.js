@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CommitVoteResult = exports.VoteMultipleResult = exports.VoteResult = exports.GetBallotByUserIdResult = exports.GetBallotResult = exports.DeleteRatingResult = exports.PutResultResult = exports.GetRatingByUserIdResult = exports.GetRatingResult = exports.DescribeRatingsByUserIdResult = exports.DescribeRatingsResult = exports.UpdateCurrentRatingModelMasterFromGitHubResult = exports.UpdateCurrentRatingModelMasterResult = exports.GetCurrentRatingModelMasterResult = exports.ExportMasterResult = exports.GetRatingModelResult = exports.DescribeRatingModelsResult = exports.DeleteRatingModelMasterResult = exports.UpdateRatingModelMasterResult = exports.GetRatingModelMasterResult = exports.CreateRatingModelMasterResult = exports.DescribeRatingModelMastersResult = exports.DeleteGatheringResult = exports.CancelMatchmakingByUserIdResult = exports.CancelMatchmakingResult = exports.GetGatheringResult = exports.DoMatchmakingByUserIdResult = exports.DoMatchmakingResult = exports.DoMatchmakingByPlayerResult = exports.UpdateGatheringByUserIdResult = exports.UpdateGatheringResult = exports.CreateGatheringByUserIdResult = exports.CreateGatheringResult = exports.DescribeGatheringsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.CommitVoteResult = exports.VoteMultipleResult = exports.VoteResult = exports.GetBallotByUserIdResult = exports.GetBallotResult = exports.DeleteRatingResult = exports.PutResultResult = exports.GetRatingByUserIdResult = exports.GetRatingResult = exports.DescribeRatingsByUserIdResult = exports.DescribeRatingsResult = exports.UpdateCurrentRatingModelMasterFromGitHubResult = exports.UpdateCurrentRatingModelMasterResult = exports.GetCurrentRatingModelMasterResult = exports.ExportMasterResult = exports.GetRatingModelResult = exports.DescribeRatingModelsResult = exports.DeleteRatingModelMasterResult = exports.UpdateRatingModelMasterResult = exports.GetRatingModelMasterResult = exports.CreateRatingModelMasterResult = exports.DescribeRatingModelMastersResult = exports.DeleteGatheringResult = exports.CancelMatchmakingByUserIdResult = exports.CancelMatchmakingResult = exports.GetGatheringResult = exports.DoMatchmakingByUserIdResult = exports.DoMatchmakingResult = exports.DoMatchmakingByPlayerResult = exports.UpdateGatheringByUserIdResult = exports.UpdateGatheringResult = exports.CreateGatheringByUserIdResult = exports.CreateGatheringResult = exports.DescribeGatheringsResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,6 +29,14 @@ var UpdateNamespaceResult_1 = tslib_1.__importDefault(require("./UpdateNamespace
 exports.UpdateNamespaceResult = UpdateNamespaceResult_1.default;
 var DeleteNamespaceResult_1 = tslib_1.__importDefault(require("./DeleteNamespaceResult"));
 exports.DeleteNamespaceResult = DeleteNamespaceResult_1.default;
+var DumpUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./DumpUserDataByUserIdResult"));
+exports.DumpUserDataByUserIdResult = DumpUserDataByUserIdResult_1.default;
+var CheckDumpUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CheckDumpUserDataByUserIdResult"));
+exports.CheckDumpUserDataByUserIdResult = CheckDumpUserDataByUserIdResult_1.default;
+var CleanUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CleanUserDataByUserIdResult"));
+exports.CleanUserDataByUserIdResult = CleanUserDataByUserIdResult_1.default;
+var CheckCleanUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CheckCleanUserDataByUserIdResult"));
+exports.CheckCleanUserDataByUserIdResult = CheckCleanUserDataByUserIdResult_1.default;
 var DescribeGatheringsResult_1 = tslib_1.__importDefault(require("./DescribeGatheringsResult"));
 exports.DescribeGatheringsResult = DescribeGatheringsResult_1.default;
 var CreateGatheringResult_1 = tslib_1.__importDefault(require("./CreateGatheringResult"));

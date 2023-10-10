@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentEventMasterFromGitHubRequest = exports.UpdateCurrentEventMasterRequest = exports.GetCurrentEventMasterRequest = exports.ExportMasterRequest = exports.GetRawEventRequest = exports.GetEventByUserIdRequest = exports.GetEventRequest = exports.DescribeRawEventsRequest = exports.DescribeEventsByUserIdRequest = exports.DescribeEventsRequest = exports.DeleteTriggerByStampTaskRequest = exports.DeleteTriggerByUserIdRequest = exports.DeleteTriggerRequest = exports.TriggerByStampSheetRequest = exports.TriggerByUserIdRequest = exports.GetTriggerByUserIdRequest = exports.GetTriggerRequest = exports.DescribeTriggersByUserIdRequest = exports.DescribeTriggersRequest = exports.DeleteEventMasterRequest = exports.UpdateEventMasterRequest = exports.GetEventMasterRequest = exports.CreateEventMasterRequest = exports.DescribeEventMastersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.UpdateCurrentEventMasterFromGitHubRequest = exports.UpdateCurrentEventMasterRequest = exports.GetCurrentEventMasterRequest = exports.ExportMasterRequest = exports.GetRawEventRequest = exports.GetEventByUserIdRequest = exports.GetEventRequest = exports.DescribeRawEventsRequest = exports.DescribeEventsByUserIdRequest = exports.DescribeEventsRequest = exports.DeleteTriggerByStampTaskRequest = exports.DeleteTriggerByUserIdRequest = exports.DeleteTriggerRequest = exports.TriggerByStampSheetRequest = exports.TriggerByUserIdRequest = exports.GetTriggerByUserIdRequest = exports.GetTriggerRequest = exports.DescribeTriggersByUserIdRequest = exports.DescribeTriggersRequest = exports.DeleteEventMasterRequest = exports.UpdateEventMasterRequest = exports.GetEventMasterRequest = exports.CreateEventMasterRequest = exports.DescribeEventMastersRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,6 +29,14 @@ var UpdateNamespaceRequest_1 = tslib_1.__importDefault(require("./UpdateNamespac
 exports.UpdateNamespaceRequest = UpdateNamespaceRequest_1.default;
 var DeleteNamespaceRequest_1 = tslib_1.__importDefault(require("./DeleteNamespaceRequest"));
 exports.DeleteNamespaceRequest = DeleteNamespaceRequest_1.default;
+var DumpUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./DumpUserDataByUserIdRequest"));
+exports.DumpUserDataByUserIdRequest = DumpUserDataByUserIdRequest_1.default;
+var CheckDumpUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CheckDumpUserDataByUserIdRequest"));
+exports.CheckDumpUserDataByUserIdRequest = CheckDumpUserDataByUserIdRequest_1.default;
+var CleanUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CleanUserDataByUserIdRequest"));
+exports.CleanUserDataByUserIdRequest = CleanUserDataByUserIdRequest_1.default;
+var CheckCleanUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CheckCleanUserDataByUserIdRequest"));
+exports.CheckCleanUserDataByUserIdRequest = CheckCleanUserDataByUserIdRequest_1.default;
 var DescribeEventMastersRequest_1 = tslib_1.__importDefault(require("./DescribeEventMastersRequest"));
 exports.DescribeEventMastersRequest = DescribeEventMastersRequest_1.default;
 var CreateEventMasterRequest_1 = tslib_1.__importDefault(require("./CreateEventMasterRequest"));

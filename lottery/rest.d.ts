@@ -10,6 +10,10 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
     updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
     deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
+    dumpUserDataByUserId(request: Request.DumpUserDataByUserIdRequest): Promise<Result.DumpUserDataByUserIdResult>;
+    checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult>;
+    cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult>;
+    checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult>;
     describeLotteryModelMasters(request: Request.DescribeLotteryModelMastersRequest): Promise<Result.DescribeLotteryModelMastersResult>;
     createLotteryModelMaster(request: Request.CreateLotteryModelMasterRequest): Promise<Result.CreateLotteryModelMasterResult>;
     getLotteryModelMaster(request: Request.GetLotteryModelMasterRequest): Promise<Result.GetLotteryModelMasterResult>;
