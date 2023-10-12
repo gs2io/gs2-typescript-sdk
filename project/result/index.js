@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DescribeBillingsResult = exports.DescribeReceiptsResult = exports.DeleteBillingMethodResult = exports.UpdateBillingMethodResult = exports.GetBillingMethodResult = exports.CreateBillingMethodResult = exports.DescribeBillingMethodsResult = exports.DeleteProjectResult = exports.WaitActivateRegionResult = exports.ActivateRegionResult = exports.UpdateProjectResult = exports.GetProjectTokenByIdentifierResult = exports.GetProjectTokenResult = exports.GetProjectResult = exports.CreateProjectResult = exports.DescribeProjectsResult = exports.DeleteAccountResult = exports.UpdateAccountResult = exports.IssuePasswordResult = exports.ForgetResult = exports.SignInResult = exports.VerifyResult = exports.CreateAccountResult = void 0;
+exports.CleanUserDataResult = exports.WaitCleanUserDataResult = exports.GetCleanProgressResult = exports.DescribeCleanProgressesResult = exports.GetDumpUserDataResult = exports.DumpUserDataResult = exports.ArchiveDumpUserDataResult = exports.WaitDumpUserDataResult = exports.GetDumpProgressResult = exports.DescribeDumpProgressesResult = exports.DescribeBillingsResult = exports.DescribeReceiptsResult = exports.DeleteBillingMethodResult = exports.UpdateBillingMethodResult = exports.GetBillingMethodResult = exports.CreateBillingMethodResult = exports.DescribeBillingMethodsResult = exports.DeleteProjectResult = exports.WaitActivateRegionResult = exports.ActivateRegionResult = exports.UpdateProjectResult = exports.GetProjectTokenByIdentifierResult = exports.GetProjectTokenResult = exports.GetProjectResult = exports.CreateProjectResult = exports.DescribeProjectsResult = exports.DeleteAccountResult = exports.UpdateAccountResult = exports.IssuePasswordResult = exports.ForgetResult = exports.SignInResult = exports.VerifyResult = exports.CreateAccountResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -63,4 +63,24 @@ var DescribeReceiptsResult_1 = tslib_1.__importDefault(require("./DescribeReceip
 exports.DescribeReceiptsResult = DescribeReceiptsResult_1.default;
 var DescribeBillingsResult_1 = tslib_1.__importDefault(require("./DescribeBillingsResult"));
 exports.DescribeBillingsResult = DescribeBillingsResult_1.default;
+var DescribeDumpProgressesResult_1 = tslib_1.__importDefault(require("./DescribeDumpProgressesResult"));
+exports.DescribeDumpProgressesResult = DescribeDumpProgressesResult_1.default;
+var GetDumpProgressResult_1 = tslib_1.__importDefault(require("./GetDumpProgressResult"));
+exports.GetDumpProgressResult = GetDumpProgressResult_1.default;
+var WaitDumpUserDataResult_1 = tslib_1.__importDefault(require("./WaitDumpUserDataResult"));
+exports.WaitDumpUserDataResult = WaitDumpUserDataResult_1.default;
+var ArchiveDumpUserDataResult_1 = tslib_1.__importDefault(require("./ArchiveDumpUserDataResult"));
+exports.ArchiveDumpUserDataResult = ArchiveDumpUserDataResult_1.default;
+var DumpUserDataResult_1 = tslib_1.__importDefault(require("./DumpUserDataResult"));
+exports.DumpUserDataResult = DumpUserDataResult_1.default;
+var GetDumpUserDataResult_1 = tslib_1.__importDefault(require("./GetDumpUserDataResult"));
+exports.GetDumpUserDataResult = GetDumpUserDataResult_1.default;
+var DescribeCleanProgressesResult_1 = tslib_1.__importDefault(require("./DescribeCleanProgressesResult"));
+exports.DescribeCleanProgressesResult = DescribeCleanProgressesResult_1.default;
+var GetCleanProgressResult_1 = tslib_1.__importDefault(require("./GetCleanProgressResult"));
+exports.GetCleanProgressResult = GetCleanProgressResult_1.default;
+var WaitCleanUserDataResult_1 = tslib_1.__importDefault(require("./WaitCleanUserDataResult"));
+exports.WaitCleanUserDataResult = WaitCleanUserDataResult_1.default;
+var CleanUserDataResult_1 = tslib_1.__importDefault(require("./CleanUserDataResult"));
+exports.CleanUserDataResult = CleanUserDataResult_1.default;
 //# sourceMappingURL=index.js.map

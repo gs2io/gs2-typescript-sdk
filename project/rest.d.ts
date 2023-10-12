@@ -27,4 +27,14 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     deleteBillingMethod(request: Request.DeleteBillingMethodRequest): Promise<Result.DeleteBillingMethodResult>;
     describeReceipts(request: Request.DescribeReceiptsRequest): Promise<Result.DescribeReceiptsResult>;
     describeBillings(request: Request.DescribeBillingsRequest): Promise<Result.DescribeBillingsResult>;
+    describeDumpProgresses(request: Request.DescribeDumpProgressesRequest): Promise<Result.DescribeDumpProgressesResult>;
+    getDumpProgress(request: Request.GetDumpProgressRequest): Promise<Result.GetDumpProgressResult>;
+    waitDumpUserData(request: Request.WaitDumpUserDataRequest): Promise<Result.WaitDumpUserDataResult>;
+    archiveDumpUserData(request: Request.ArchiveDumpUserDataRequest): Promise<Result.ArchiveDumpUserDataResult>;
+    dumpUserData(request: Request.DumpUserDataRequest): Promise<Result.DumpUserDataResult>;
+    getDumpUserData(request: Request.GetDumpUserDataRequest): Promise<Result.GetDumpUserDataResult>;
+    describeCleanProgresses(request: Request.DescribeCleanProgressesRequest): Promise<Result.DescribeCleanProgressesResult>;
+    getCleanProgress(request: Request.GetCleanProgressRequest): Promise<Result.GetCleanProgressResult>;
+    waitCleanUserData(request: Request.WaitCleanUserDataRequest): Promise<Result.WaitCleanUserDataResult>;
+    cleanUserData(request: Request.CleanUserDataRequest): Promise<Result.CleanUserDataResult>;
 }

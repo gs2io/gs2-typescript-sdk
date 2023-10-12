@@ -19,6 +19,8 @@ import Gs2Region from "./Gs2Region"
 import BillingMethod from "./BillingMethod"
 import Receipt from "./Receipt"
 import Billing from "./Billing"
+import DumpProgress from "./DumpProgress"
+import CleanProgress from "./CleanProgress"
 
 export {
     Account,
@@ -27,4 +29,6 @@ export {
     BillingMethod,
     Receipt,
     Billing,
+    DumpProgress,
+    CleanProgress,
 };

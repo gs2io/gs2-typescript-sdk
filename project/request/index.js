@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DescribeBillingsRequest = exports.DescribeReceiptsRequest = exports.DeleteBillingMethodRequest = exports.UpdateBillingMethodRequest = exports.GetBillingMethodRequest = exports.CreateBillingMethodRequest = exports.DescribeBillingMethodsRequest = exports.DeleteProjectRequest = exports.WaitActivateRegionRequest = exports.ActivateRegionRequest = exports.UpdateProjectRequest = exports.GetProjectTokenByIdentifierRequest = exports.GetProjectTokenRequest = exports.GetProjectRequest = exports.CreateProjectRequest = exports.DescribeProjectsRequest = exports.DeleteAccountRequest = exports.UpdateAccountRequest = exports.IssuePasswordRequest = exports.ForgetRequest = exports.SignInRequest = exports.VerifyRequest = exports.CreateAccountRequest = void 0;
+exports.CleanUserDataRequest = exports.WaitCleanUserDataRequest = exports.GetCleanProgressRequest = exports.DescribeCleanProgressesRequest = exports.GetDumpUserDataRequest = exports.DumpUserDataRequest = exports.ArchiveDumpUserDataRequest = exports.WaitDumpUserDataRequest = exports.GetDumpProgressRequest = exports.DescribeDumpProgressesRequest = exports.DescribeBillingsRequest = exports.DescribeReceiptsRequest = exports.DeleteBillingMethodRequest = exports.UpdateBillingMethodRequest = exports.GetBillingMethodRequest = exports.CreateBillingMethodRequest = exports.DescribeBillingMethodsRequest = exports.DeleteProjectRequest = exports.WaitActivateRegionRequest = exports.ActivateRegionRequest = exports.UpdateProjectRequest = exports.GetProjectTokenByIdentifierRequest = exports.GetProjectTokenRequest = exports.GetProjectRequest = exports.CreateProjectRequest = exports.DescribeProjectsRequest = exports.DeleteAccountRequest = exports.UpdateAccountRequest = exports.IssuePasswordRequest = exports.ForgetRequest = exports.SignInRequest = exports.VerifyRequest = exports.CreateAccountRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -63,4 +63,24 @@ var DescribeReceiptsRequest_1 = tslib_1.__importDefault(require("./DescribeRecei
 exports.DescribeReceiptsRequest = DescribeReceiptsRequest_1.default;
 var DescribeBillingsRequest_1 = tslib_1.__importDefault(require("./DescribeBillingsRequest"));
 exports.DescribeBillingsRequest = DescribeBillingsRequest_1.default;
+var DescribeDumpProgressesRequest_1 = tslib_1.__importDefault(require("./DescribeDumpProgressesRequest"));
+exports.DescribeDumpProgressesRequest = DescribeDumpProgressesRequest_1.default;
+var GetDumpProgressRequest_1 = tslib_1.__importDefault(require("./GetDumpProgressRequest"));
+exports.GetDumpProgressRequest = GetDumpProgressRequest_1.default;
+var WaitDumpUserDataRequest_1 = tslib_1.__importDefault(require("./WaitDumpUserDataRequest"));
+exports.WaitDumpUserDataRequest = WaitDumpUserDataRequest_1.default;
+var ArchiveDumpUserDataRequest_1 = tslib_1.__importDefault(require("./ArchiveDumpUserDataRequest"));
+exports.ArchiveDumpUserDataRequest = ArchiveDumpUserDataRequest_1.default;
+var DumpUserDataRequest_1 = tslib_1.__importDefault(require("./DumpUserDataRequest"));
+exports.DumpUserDataRequest = DumpUserDataRequest_1.default;
+var GetDumpUserDataRequest_1 = tslib_1.__importDefault(require("./GetDumpUserDataRequest"));
+exports.GetDumpUserDataRequest = GetDumpUserDataRequest_1.default;
+var DescribeCleanProgressesRequest_1 = tslib_1.__importDefault(require("./DescribeCleanProgressesRequest"));
+exports.DescribeCleanProgressesRequest = DescribeCleanProgressesRequest_1.default;
+var GetCleanProgressRequest_1 = tslib_1.__importDefault(require("./GetCleanProgressRequest"));
+exports.GetCleanProgressRequest = GetCleanProgressRequest_1.default;
+var WaitCleanUserDataRequest_1 = tslib_1.__importDefault(require("./WaitCleanUserDataRequest"));
+exports.WaitCleanUserDataRequest = WaitCleanUserDataRequest_1.default;
+var CleanUserDataRequest_1 = tslib_1.__importDefault(require("./CleanUserDataRequest"));
+exports.CleanUserDataRequest = CleanUserDataRequest_1.default;
 //# sourceMappingURL=index.js.map

@@ -76,6 +76,9 @@ import GetInventoryByUserIdRequest from "./GetInventoryByUserIdRequest"
 import AddCapacityByUserIdRequest from "./AddCapacityByUserIdRequest"
 import SetCapacityByUserIdRequest from "./SetCapacityByUserIdRequest"
 import DeleteInventoryByUserIdRequest from "./DeleteInventoryByUserIdRequest"
+import VerifyInventoryCurrentMaxCapacityRequest from "./VerifyInventoryCurrentMaxCapacityRequest"
+import VerifyInventoryCurrentMaxCapacityByUserIdRequest from "./VerifyInventoryCurrentMaxCapacityByUserIdRequest"
+import VerifyInventoryCurrentMaxCapacityByStampTaskRequest from "./VerifyInventoryCurrentMaxCapacityByStampTaskRequest"
 import AddCapacityByStampSheetRequest from "./AddCapacityByStampSheetRequest"
 import SetCapacityByStampSheetRequest from "./SetCapacityByStampSheetRequest"
 import DescribeItemSetsRequest from "./DescribeItemSetsRequest"
@@ -199,6 +202,9 @@ export {
     AddCapacityByUserIdRequest,
     SetCapacityByUserIdRequest,
     DeleteInventoryByUserIdRequest,
+    VerifyInventoryCurrentMaxCapacityRequest,
+    VerifyInventoryCurrentMaxCapacityByUserIdRequest,
+    VerifyInventoryCurrentMaxCapacityByStampTaskRequest,
     AddCapacityByStampSheetRequest,
     SetCapacityByStampSheetRequest,
     DescribeItemSetsRequest,

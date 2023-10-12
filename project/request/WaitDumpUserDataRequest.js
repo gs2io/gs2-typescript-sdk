@@ -1,0 +1,109 @@
+"use strict";
+/*
+Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License").
+You may not use this file except in compliance with the License.
+A copy of the License is located at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+or in the "license" file accompanying this file. This file is distributed
+on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+express or implied. See the License for the specific language governing
+permissions and limitations under the License.
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+var WaitDumpUserDataRequest = /** @class */ (function () {
+    function WaitDumpUserDataRequest() {
+        this.requestId = null;
+        this.contextStack = null;
+        this.transactionId = null;
+        this.userId = null;
+        this.microserviceName = null;
+        this.duplicationAvoider = null;
+    }
+    WaitDumpUserDataRequest.prototype.getRequestId = function () {
+        return this.requestId;
+    };
+    WaitDumpUserDataRequest.prototype.setRequestId = function (requestId) {
+        this.requestId = requestId;
+        return this;
+    };
+    WaitDumpUserDataRequest.prototype.withRequestId = function (requestId) {
+        this.requestId = requestId;
+        return this;
+    };
+    WaitDumpUserDataRequest.prototype.getContextStack = function () {
+        return this.contextStack;
+    };
+    WaitDumpUserDataRequest.prototype.setContextStack = function (contextStack) {
+        this.contextStack = contextStack;
+        return this;
+    };
+    WaitDumpUserDataRequest.prototype.withContextStack = function (contextStack) {
+        this.contextStack = contextStack;
+        return this;
+    };
+    WaitDumpUserDataRequest.prototype.getTransactionId = function () {
+        return this.transactionId;
+    };
+    WaitDumpUserDataRequest.prototype.setTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    };
+    WaitDumpUserDataRequest.prototype.withTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    };
+    WaitDumpUserDataRequest.prototype.getUserId = function () {
+        return this.userId;
+    };
+    WaitDumpUserDataRequest.prototype.setUserId = function (userId) {
+        this.userId = userId;
+        return this;
+    };
+    WaitDumpUserDataRequest.prototype.withUserId = function (userId) {
+        this.userId = userId;
+        return this;
+    };
+    WaitDumpUserDataRequest.prototype.getMicroserviceName = function () {
+        return this.microserviceName;
+    };
+    WaitDumpUserDataRequest.prototype.setMicroserviceName = function (microserviceName) {
+        this.microserviceName = microserviceName;
+        return this;
+    };
+    WaitDumpUserDataRequest.prototype.withMicroserviceName = function (microserviceName) {
+        this.microserviceName = microserviceName;
+        return this;
+    };
+    WaitDumpUserDataRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    WaitDumpUserDataRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    WaitDumpUserDataRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    WaitDumpUserDataRequest.fromDict = function (data) {
+        return new WaitDumpUserDataRequest()
+            .withTransactionId(data["transactionId"])
+            .withUserId(data["userId"])
+            .withMicroserviceName(data["microserviceName"]);
+    };
+    WaitDumpUserDataRequest.prototype.toDict = function () {
+        return {
+            "transactionId": this.getTransactionId(),
+            "userId": this.getUserId(),
+            "microserviceName": this.getMicroserviceName(),
+        };
+    };
+    return WaitDumpUserDataRequest;
+}());
+exports.default = WaitDumpUserDataRequest;
+//# sourceMappingURL=WaitDumpUserDataRequest.js.map

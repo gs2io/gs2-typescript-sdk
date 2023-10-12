@@ -36,6 +36,16 @@ import UpdateBillingMethodRequest from "./UpdateBillingMethodRequest"
 import DeleteBillingMethodRequest from "./DeleteBillingMethodRequest"
 import DescribeReceiptsRequest from "./DescribeReceiptsRequest"
 import DescribeBillingsRequest from "./DescribeBillingsRequest"
+import DescribeDumpProgressesRequest from "./DescribeDumpProgressesRequest"
+import GetDumpProgressRequest from "./GetDumpProgressRequest"
+import WaitDumpUserDataRequest from "./WaitDumpUserDataRequest"
+import ArchiveDumpUserDataRequest from "./ArchiveDumpUserDataRequest"
+import DumpUserDataRequest from "./DumpUserDataRequest"
+import GetDumpUserDataRequest from "./GetDumpUserDataRequest"
+import DescribeCleanProgressesRequest from "./DescribeCleanProgressesRequest"
+import GetCleanProgressRequest from "./GetCleanProgressRequest"
+import WaitCleanUserDataRequest from "./WaitCleanUserDataRequest"
+import CleanUserDataRequest from "./CleanUserDataRequest"
 
 export {
     CreateAccountRequest,
@@ -61,4 +71,14 @@ export {
     DeleteBillingMethodRequest,
     DescribeReceiptsRequest,
     DescribeBillingsRequest,
+    DescribeDumpProgressesRequest,
+    GetDumpProgressRequest,
+    WaitDumpUserDataRequest,
+    ArchiveDumpUserDataRequest,
+    DumpUserDataRequest,
+    GetDumpUserDataRequest,
+    DescribeCleanProgressesRequest,
+    GetCleanProgressRequest,
+    WaitCleanUserDataRequest,
+    CleanUserDataRequest,
 };

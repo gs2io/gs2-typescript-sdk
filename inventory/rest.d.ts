@@ -67,6 +67,9 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
     addCapacityByUserId(request: Request.AddCapacityByUserIdRequest): Promise<Result.AddCapacityByUserIdResult>;
     setCapacityByUserId(request: Request.SetCapacityByUserIdRequest): Promise<Result.SetCapacityByUserIdResult>;
     deleteInventoryByUserId(request: Request.DeleteInventoryByUserIdRequest): Promise<Result.DeleteInventoryByUserIdResult>;
+    verifyInventoryCurrentMaxCapacity(request: Request.VerifyInventoryCurrentMaxCapacityRequest): Promise<Result.VerifyInventoryCurrentMaxCapacityResult>;
+    verifyInventoryCurrentMaxCapacityByUserId(request: Request.VerifyInventoryCurrentMaxCapacityByUserIdRequest): Promise<Result.VerifyInventoryCurrentMaxCapacityByUserIdResult>;
+    verifyInventoryCurrentMaxCapacityByStampTask(request: Request.VerifyInventoryCurrentMaxCapacityByStampTaskRequest): Promise<Result.VerifyInventoryCurrentMaxCapacityByStampTaskResult>;
     addCapacityByStampSheet(request: Request.AddCapacityByStampSheetRequest): Promise<Result.AddCapacityByStampSheetResult>;
     setCapacityByStampSheet(request: Request.SetCapacityByStampSheetRequest): Promise<Result.SetCapacityByStampSheetResult>;
     describeItemSets(request: Request.DescribeItemSetsRequest): Promise<Result.DescribeItemSetsResult>;
