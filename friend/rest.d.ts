@@ -14,6 +14,9 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult>;
     cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult>;
     checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult>;
+    prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult>;
+    importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult>;
+    checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult>;
     getProfile(request: Request.GetProfileRequest): Promise<Result.GetProfileResult>;
     getProfileByUserId(request: Request.GetProfileByUserIdRequest): Promise<Result.GetProfileByUserIdResult>;
     updateProfile(request: Request.UpdateProfileRequest): Promise<Result.UpdateProfileResult>;

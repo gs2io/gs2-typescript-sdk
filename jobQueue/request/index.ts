@@ -23,6 +23,9 @@ import DumpUserDataByUserIdRequest from "./DumpUserDataByUserIdRequest"
 import CheckDumpUserDataByUserIdRequest from "./CheckDumpUserDataByUserIdRequest"
 import CleanUserDataByUserIdRequest from "./CleanUserDataByUserIdRequest"
 import CheckCleanUserDataByUserIdRequest from "./CheckCleanUserDataByUserIdRequest"
+import PrepareImportUserDataByUserIdRequest from "./PrepareImportUserDataByUserIdRequest"
+import ImportUserDataByUserIdRequest from "./ImportUserDataByUserIdRequest"
+import CheckImportUserDataByUserIdRequest from "./CheckImportUserDataByUserIdRequest"
 import DescribeJobsByUserIdRequest from "./DescribeJobsByUserIdRequest"
 import GetJobByUserIdRequest from "./GetJobByUserIdRequest"
 import PushByUserIdRequest from "./PushByUserIdRequest"
@@ -48,6 +51,9 @@ export {
     CheckDumpUserDataByUserIdRequest,
     CleanUserDataByUserIdRequest,
     CheckCleanUserDataByUserIdRequest,
+    PrepareImportUserDataByUserIdRequest,
+    ImportUserDataByUserIdRequest,
+    CheckImportUserDataByUserIdRequest,
     DescribeJobsByUserIdRequest,
     GetJobByUserIdRequest,
     PushByUserIdRequest,

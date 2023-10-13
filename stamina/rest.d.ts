@@ -14,6 +14,9 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult>;
     cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult>;
     checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult>;
+    prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult>;
+    importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult>;
+    checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult>;
     describeStaminaModelMasters(request: Request.DescribeStaminaModelMastersRequest): Promise<Result.DescribeStaminaModelMastersResult>;
     createStaminaModelMaster(request: Request.CreateStaminaModelMasterRequest): Promise<Result.CreateStaminaModelMasterResult>;
     getStaminaModelMaster(request: Request.GetStaminaModelMasterRequest): Promise<Result.GetStaminaModelMasterResult>;

@@ -14,6 +14,9 @@ export default class Gs2MoneyRestClient extends AbstractGs2RestClient {
     checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult>;
     cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult>;
     checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult>;
+    prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult>;
+    importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult>;
+    checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult>;
     describeWallets(request: Request.DescribeWalletsRequest): Promise<Result.DescribeWalletsResult>;
     describeWalletsByUserId(request: Request.DescribeWalletsByUserIdRequest): Promise<Result.DescribeWalletsByUserIdResult>;
     getWallet(request: Request.GetWalletRequest): Promise<Result.GetWalletResult>;

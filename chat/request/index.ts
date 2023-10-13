@@ -23,6 +23,9 @@ import DumpUserDataByUserIdRequest from "./DumpUserDataByUserIdRequest"
 import CheckDumpUserDataByUserIdRequest from "./CheckDumpUserDataByUserIdRequest"
 import CleanUserDataByUserIdRequest from "./CleanUserDataByUserIdRequest"
 import CheckCleanUserDataByUserIdRequest from "./CheckCleanUserDataByUserIdRequest"
+import PrepareImportUserDataByUserIdRequest from "./PrepareImportUserDataByUserIdRequest"
+import ImportUserDataByUserIdRequest from "./ImportUserDataByUserIdRequest"
+import CheckImportUserDataByUserIdRequest from "./CheckImportUserDataByUserIdRequest"
 import DescribeRoomsRequest from "./DescribeRoomsRequest"
 import CreateRoomRequest from "./CreateRoomRequest"
 import CreateRoomFromBackendRequest from "./CreateRoomFromBackendRequest"
@@ -61,6 +64,9 @@ export {
     CheckDumpUserDataByUserIdRequest,
     CleanUserDataByUserIdRequest,
     CheckCleanUserDataByUserIdRequest,
+    PrepareImportUserDataByUserIdRequest,
+    ImportUserDataByUserIdRequest,
+    CheckImportUserDataByUserIdRequest,
     DescribeRoomsRequest,
     CreateRoomRequest,
     CreateRoomFromBackendRequest,

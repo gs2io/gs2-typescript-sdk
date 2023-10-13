@@ -14,6 +14,9 @@ export default class Gs2RankingRestClient extends AbstractGs2RestClient {
     checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult>;
     cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult>;
     checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult>;
+    prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult>;
+    importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult>;
+    checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult>;
     describeCategoryModels(request: Request.DescribeCategoryModelsRequest): Promise<Result.DescribeCategoryModelsResult>;
     getCategoryModel(request: Request.GetCategoryModelRequest): Promise<Result.GetCategoryModelResult>;
     describeCategoryModelMasters(request: Request.DescribeCategoryModelMastersRequest): Promise<Result.DescribeCategoryModelMastersResult>;

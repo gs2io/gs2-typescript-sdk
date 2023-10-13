@@ -23,6 +23,9 @@ import DumpUserDataByUserIdResult from "./DumpUserDataByUserIdResult"
 import CheckDumpUserDataByUserIdResult from "./CheckDumpUserDataByUserIdResult"
 import CleanUserDataByUserIdResult from "./CleanUserDataByUserIdResult"
 import CheckCleanUserDataByUserIdResult from "./CheckCleanUserDataByUserIdResult"
+import PrepareImportUserDataByUserIdResult from "./PrepareImportUserDataByUserIdResult"
+import ImportUserDataByUserIdResult from "./ImportUserDataByUserIdResult"
+import CheckImportUserDataByUserIdResult from "./CheckImportUserDataByUserIdResult"
 import DescribeLotteryModelMastersResult from "./DescribeLotteryModelMastersResult"
 import CreateLotteryModelMasterResult from "./CreateLotteryModelMasterResult"
 import GetLotteryModelMasterResult from "./GetLotteryModelMasterResult"
@@ -69,6 +72,9 @@ export {
     CheckDumpUserDataByUserIdResult,
     CleanUserDataByUserIdResult,
     CheckCleanUserDataByUserIdResult,
+    PrepareImportUserDataByUserIdResult,
+    ImportUserDataByUserIdResult,
+    CheckImportUserDataByUserIdResult,
     DescribeLotteryModelMastersResult,
     CreateLotteryModelMasterResult,
     GetLotteryModelMasterResult,

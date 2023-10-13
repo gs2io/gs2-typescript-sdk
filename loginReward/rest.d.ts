@@ -14,6 +14,9 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
     checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult>;
     cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult>;
     checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult>;
+    prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult>;
+    importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult>;
+    checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult>;
     describeBonusModelMasters(request: Request.DescribeBonusModelMastersRequest): Promise<Result.DescribeBonusModelMastersResult>;
     createBonusModelMaster(request: Request.CreateBonusModelMasterRequest): Promise<Result.CreateBonusModelMasterResult>;
     getBonusModelMaster(request: Request.GetBonusModelMasterRequest): Promise<Result.GetBonusModelMasterResult>;

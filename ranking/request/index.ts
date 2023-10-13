@@ -23,6 +23,9 @@ import DumpUserDataByUserIdRequest from "./DumpUserDataByUserIdRequest"
 import CheckDumpUserDataByUserIdRequest from "./CheckDumpUserDataByUserIdRequest"
 import CleanUserDataByUserIdRequest from "./CleanUserDataByUserIdRequest"
 import CheckCleanUserDataByUserIdRequest from "./CheckCleanUserDataByUserIdRequest"
+import PrepareImportUserDataByUserIdRequest from "./PrepareImportUserDataByUserIdRequest"
+import ImportUserDataByUserIdRequest from "./ImportUserDataByUserIdRequest"
+import CheckImportUserDataByUserIdRequest from "./CheckImportUserDataByUserIdRequest"
 import DescribeCategoryModelsRequest from "./DescribeCategoryModelsRequest"
 import GetCategoryModelRequest from "./GetCategoryModelRequest"
 import DescribeCategoryModelMastersRequest from "./DescribeCategoryModelMastersRequest"
@@ -66,6 +69,9 @@ export {
     CheckDumpUserDataByUserIdRequest,
     CleanUserDataByUserIdRequest,
     CheckCleanUserDataByUserIdRequest,
+    PrepareImportUserDataByUserIdRequest,
+    ImportUserDataByUserIdRequest,
+    CheckImportUserDataByUserIdRequest,
     DescribeCategoryModelsRequest,
     GetCategoryModelRequest,
     DescribeCategoryModelMastersRequest,

@@ -23,6 +23,9 @@ import DumpUserDataByUserIdRequest from "./DumpUserDataByUserIdRequest"
 import CheckDumpUserDataByUserIdRequest from "./CheckDumpUserDataByUserIdRequest"
 import CleanUserDataByUserIdRequest from "./CleanUserDataByUserIdRequest"
 import CheckCleanUserDataByUserIdRequest from "./CheckCleanUserDataByUserIdRequest"
+import PrepareImportUserDataByUserIdRequest from "./PrepareImportUserDataByUserIdRequest"
+import ImportUserDataByUserIdRequest from "./ImportUserDataByUserIdRequest"
+import CheckImportUserDataByUserIdRequest from "./CheckImportUserDataByUserIdRequest"
 import DescribeCountersRequest from "./DescribeCountersRequest"
 import DescribeCountersByUserIdRequest from "./DescribeCountersByUserIdRequest"
 import GetCounterRequest from "./GetCounterRequest"
@@ -60,6 +63,9 @@ export {
     CheckDumpUserDataByUserIdRequest,
     CleanUserDataByUserIdRequest,
     CheckCleanUserDataByUserIdRequest,
+    PrepareImportUserDataByUserIdRequest,
+    ImportUserDataByUserIdRequest,
+    CheckImportUserDataByUserIdRequest,
     DescribeCountersRequest,
     DescribeCountersByUserIdRequest,
     GetCounterRequest,

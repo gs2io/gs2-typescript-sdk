@@ -23,6 +23,9 @@ import DumpUserDataByUserIdResult from "./DumpUserDataByUserIdResult"
 import CheckDumpUserDataByUserIdResult from "./CheckDumpUserDataByUserIdResult"
 import CleanUserDataByUserIdResult from "./CleanUserDataByUserIdResult"
 import CheckCleanUserDataByUserIdResult from "./CheckCleanUserDataByUserIdResult"
+import PrepareImportUserDataByUserIdResult from "./PrepareImportUserDataByUserIdResult"
+import ImportUserDataByUserIdResult from "./ImportUserDataByUserIdResult"
+import CheckImportUserDataByUserIdResult from "./CheckImportUserDataByUserIdResult"
 import DescribeSalesItemMastersResult from "./DescribeSalesItemMastersResult"
 import CreateSalesItemMasterResult from "./CreateSalesItemMasterResult"
 import GetSalesItemMasterResult from "./GetSalesItemMasterResult"
@@ -77,6 +80,9 @@ export {
     CheckDumpUserDataByUserIdResult,
     CleanUserDataByUserIdResult,
     CheckCleanUserDataByUserIdResult,
+    PrepareImportUserDataByUserIdResult,
+    ImportUserDataByUserIdResult,
+    CheckImportUserDataByUserIdResult,
     DescribeSalesItemMastersResult,
     CreateSalesItemMasterResult,
     GetSalesItemMasterResult,

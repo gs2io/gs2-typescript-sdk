@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentVersionMasterFromGitHubResult = exports.UpdateCurrentVersionMasterResult = exports.GetCurrentVersionMasterResult = exports.ExportMasterResult = exports.CalculateSignatureResult = exports.CheckVersionByUserIdResult = exports.CheckVersionResult = exports.DeleteAcceptVersionByUserIdResult = exports.DeleteAcceptVersionResult = exports.GetAcceptVersionByUserIdResult = exports.GetAcceptVersionResult = exports.AcceptByUserIdResult = exports.AcceptResult = exports.DescribeAcceptVersionsByUserIdResult = exports.DescribeAcceptVersionsResult = exports.GetVersionModelResult = exports.DescribeVersionModelsResult = exports.DeleteVersionModelMasterResult = exports.UpdateVersionModelMasterResult = exports.GetVersionModelMasterResult = exports.CreateVersionModelMasterResult = exports.DescribeVersionModelMastersResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.UpdateCurrentVersionMasterFromGitHubResult = exports.UpdateCurrentVersionMasterResult = exports.GetCurrentVersionMasterResult = exports.ExportMasterResult = exports.CalculateSignatureResult = exports.CheckVersionByUserIdResult = exports.CheckVersionResult = exports.DeleteAcceptVersionByUserIdResult = exports.DeleteAcceptVersionResult = exports.GetAcceptVersionByUserIdResult = exports.GetAcceptVersionResult = exports.AcceptByUserIdResult = exports.AcceptResult = exports.DescribeAcceptVersionsByUserIdResult = exports.DescribeAcceptVersionsResult = exports.GetVersionModelResult = exports.DescribeVersionModelsResult = exports.DeleteVersionModelMasterResult = exports.UpdateVersionModelMasterResult = exports.GetVersionModelMasterResult = exports.CreateVersionModelMasterResult = exports.DescribeVersionModelMastersResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -37,6 +37,12 @@ var CleanUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CleanUser
 exports.CleanUserDataByUserIdResult = CleanUserDataByUserIdResult_1.default;
 var CheckCleanUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CheckCleanUserDataByUserIdResult"));
 exports.CheckCleanUserDataByUserIdResult = CheckCleanUserDataByUserIdResult_1.default;
+var PrepareImportUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./PrepareImportUserDataByUserIdResult"));
+exports.PrepareImportUserDataByUserIdResult = PrepareImportUserDataByUserIdResult_1.default;
+var ImportUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./ImportUserDataByUserIdResult"));
+exports.ImportUserDataByUserIdResult = ImportUserDataByUserIdResult_1.default;
+var CheckImportUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CheckImportUserDataByUserIdResult"));
+exports.CheckImportUserDataByUserIdResult = CheckImportUserDataByUserIdResult_1.default;
 var DescribeVersionModelMastersResult_1 = tslib_1.__importDefault(require("./DescribeVersionModelMastersResult"));
 exports.DescribeVersionModelMastersResult = DescribeVersionModelMastersResult_1.default;
 var CreateVersionModelMasterResult_1 = tslib_1.__importDefault(require("./CreateVersionModelMasterResult"));

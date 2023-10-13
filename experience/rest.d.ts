@@ -14,6 +14,9 @@ export default class Gs2ExperienceRestClient extends AbstractGs2RestClient {
     checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult>;
     cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult>;
     checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult>;
+    prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult>;
+    importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult>;
+    checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult>;
     describeExperienceModelMasters(request: Request.DescribeExperienceModelMastersRequest): Promise<Result.DescribeExperienceModelMastersResult>;
     createExperienceModelMaster(request: Request.CreateExperienceModelMasterRequest): Promise<Result.CreateExperienceModelMasterResult>;
     getExperienceModelMaster(request: Request.GetExperienceModelMasterRequest): Promise<Result.GetExperienceModelMasterResult>;

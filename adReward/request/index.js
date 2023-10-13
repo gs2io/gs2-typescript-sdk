@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AcquirePointByStampSheetRequest = exports.ConsumePointByStampTaskRequest = exports.DeletePointByUserIdRequest = exports.ConsumePointByUserIdRequest = exports.ConsumePointRequest = exports.AcquirePointByUserIdRequest = exports.GetPointByUserIdRequest = exports.GetPointRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.AcquirePointByStampSheetRequest = exports.ConsumePointByStampTaskRequest = exports.DeletePointByUserIdRequest = exports.ConsumePointByUserIdRequest = exports.ConsumePointRequest = exports.AcquirePointByUserIdRequest = exports.GetPointByUserIdRequest = exports.GetPointRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -37,6 +37,12 @@ var CleanUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CleanUse
 exports.CleanUserDataByUserIdRequest = CleanUserDataByUserIdRequest_1.default;
 var CheckCleanUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CheckCleanUserDataByUserIdRequest"));
 exports.CheckCleanUserDataByUserIdRequest = CheckCleanUserDataByUserIdRequest_1.default;
+var PrepareImportUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./PrepareImportUserDataByUserIdRequest"));
+exports.PrepareImportUserDataByUserIdRequest = PrepareImportUserDataByUserIdRequest_1.default;
+var ImportUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./ImportUserDataByUserIdRequest"));
+exports.ImportUserDataByUserIdRequest = ImportUserDataByUserIdRequest_1.default;
+var CheckImportUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CheckImportUserDataByUserIdRequest"));
+exports.CheckImportUserDataByUserIdRequest = CheckImportUserDataByUserIdRequest_1.default;
 var GetPointRequest_1 = tslib_1.__importDefault(require("./GetPointRequest"));
 exports.GetPointRequest = GetPointRequest_1.default;
 var GetPointByUserIdRequest_1 = tslib_1.__importDefault(require("./GetPointByUserIdRequest"));

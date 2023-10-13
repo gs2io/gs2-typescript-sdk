@@ -23,6 +23,9 @@ import DumpUserDataByUserIdResult from "./DumpUserDataByUserIdResult"
 import CheckDumpUserDataByUserIdResult from "./CheckDumpUserDataByUserIdResult"
 import CleanUserDataByUserIdResult from "./CleanUserDataByUserIdResult"
 import CheckCleanUserDataByUserIdResult from "./CheckCleanUserDataByUserIdResult"
+import PrepareImportUserDataByUserIdResult from "./PrepareImportUserDataByUserIdResult"
+import ImportUserDataByUserIdResult from "./ImportUserDataByUserIdResult"
+import CheckImportUserDataByUserIdResult from "./CheckImportUserDataByUserIdResult"
 import GetPointResult from "./GetPointResult"
 import GetPointByUserIdResult from "./GetPointByUserIdResult"
 import AcquirePointByUserIdResult from "./AcquirePointByUserIdResult"
@@ -43,6 +46,9 @@ export {
     CheckDumpUserDataByUserIdResult,
     CleanUserDataByUserIdResult,
     CheckCleanUserDataByUserIdResult,
+    PrepareImportUserDataByUserIdResult,
+    ImportUserDataByUserIdResult,
+    CheckImportUserDataByUserIdResult,
     GetPointResult,
     GetPointByUserIdResult,
     AcquirePointByUserIdResult,

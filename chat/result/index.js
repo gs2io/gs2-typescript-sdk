@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnsubscribeByUserIdResult = exports.UnsubscribeResult = exports.UpdateNotificationTypeByUserIdResult = exports.UpdateNotificationTypeResult = exports.GetSubscribeByUserIdResult = exports.GetSubscribeResult = exports.SubscribeByUserIdResult = exports.SubscribeResult = exports.DescribeSubscribesByRoomNameResult = exports.DescribeSubscribesByUserIdResult = exports.DescribeSubscribesResult = exports.DeleteMessageResult = exports.GetMessageByUserIdResult = exports.GetMessageResult = exports.PostByUserIdResult = exports.PostResult = exports.DescribeMessagesByUserIdResult = exports.DescribeMessagesResult = exports.DeleteRoomFromBackendResult = exports.DeleteRoomResult = exports.UpdateRoomFromBackendResult = exports.UpdateRoomResult = exports.GetRoomResult = exports.CreateRoomFromBackendResult = exports.CreateRoomResult = exports.DescribeRoomsResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.UnsubscribeByUserIdResult = exports.UnsubscribeResult = exports.UpdateNotificationTypeByUserIdResult = exports.UpdateNotificationTypeResult = exports.GetSubscribeByUserIdResult = exports.GetSubscribeResult = exports.SubscribeByUserIdResult = exports.SubscribeResult = exports.DescribeSubscribesByRoomNameResult = exports.DescribeSubscribesByUserIdResult = exports.DescribeSubscribesResult = exports.DeleteMessageResult = exports.GetMessageByUserIdResult = exports.GetMessageResult = exports.PostByUserIdResult = exports.PostResult = exports.DescribeMessagesByUserIdResult = exports.DescribeMessagesResult = exports.DeleteRoomFromBackendResult = exports.DeleteRoomResult = exports.UpdateRoomFromBackendResult = exports.UpdateRoomResult = exports.GetRoomResult = exports.CreateRoomFromBackendResult = exports.CreateRoomResult = exports.DescribeRoomsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -37,6 +37,12 @@ var CleanUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CleanUser
 exports.CleanUserDataByUserIdResult = CleanUserDataByUserIdResult_1.default;
 var CheckCleanUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CheckCleanUserDataByUserIdResult"));
 exports.CheckCleanUserDataByUserIdResult = CheckCleanUserDataByUserIdResult_1.default;
+var PrepareImportUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./PrepareImportUserDataByUserIdResult"));
+exports.PrepareImportUserDataByUserIdResult = PrepareImportUserDataByUserIdResult_1.default;
+var ImportUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./ImportUserDataByUserIdResult"));
+exports.ImportUserDataByUserIdResult = ImportUserDataByUserIdResult_1.default;
+var CheckImportUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CheckImportUserDataByUserIdResult"));
+exports.CheckImportUserDataByUserIdResult = CheckImportUserDataByUserIdResult_1.default;
 var DescribeRoomsResult_1 = tslib_1.__importDefault(require("./DescribeRoomsResult"));
 exports.DescribeRoomsResult = DescribeRoomsResult_1.default;
 var CreateRoomResult_1 = tslib_1.__importDefault(require("./CreateRoomResult"));

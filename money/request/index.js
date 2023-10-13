@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RevertRecordReceiptByStampSheetRequest = exports.RecordReceiptByStampTaskRequest = exports.RevertRecordReceiptRequest = exports.RecordReceiptRequest = exports.GetByUserIdAndTransactionIdRequest = exports.DescribeReceiptsRequest = exports.WithdrawByStampTaskRequest = exports.DepositByStampSheetRequest = exports.WithdrawByUserIdRequest = exports.WithdrawRequest = exports.DepositByUserIdRequest = exports.GetWalletByUserIdRequest = exports.GetWalletRequest = exports.DescribeWalletsByUserIdRequest = exports.DescribeWalletsRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.RevertRecordReceiptByStampSheetRequest = exports.RecordReceiptByStampTaskRequest = exports.RevertRecordReceiptRequest = exports.RecordReceiptRequest = exports.GetByUserIdAndTransactionIdRequest = exports.DescribeReceiptsRequest = exports.WithdrawByStampTaskRequest = exports.DepositByStampSheetRequest = exports.WithdrawByUserIdRequest = exports.WithdrawRequest = exports.DepositByUserIdRequest = exports.GetWalletByUserIdRequest = exports.GetWalletRequest = exports.DescribeWalletsByUserIdRequest = exports.DescribeWalletsRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -37,6 +37,12 @@ var CleanUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CleanUse
 exports.CleanUserDataByUserIdRequest = CleanUserDataByUserIdRequest_1.default;
 var CheckCleanUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CheckCleanUserDataByUserIdRequest"));
 exports.CheckCleanUserDataByUserIdRequest = CheckCleanUserDataByUserIdRequest_1.default;
+var PrepareImportUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./PrepareImportUserDataByUserIdRequest"));
+exports.PrepareImportUserDataByUserIdRequest = PrepareImportUserDataByUserIdRequest_1.default;
+var ImportUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./ImportUserDataByUserIdRequest"));
+exports.ImportUserDataByUserIdRequest = ImportUserDataByUserIdRequest_1.default;
+var CheckImportUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CheckImportUserDataByUserIdRequest"));
+exports.CheckImportUserDataByUserIdRequest = CheckImportUserDataByUserIdRequest_1.default;
 var DescribeWalletsRequest_1 = tslib_1.__importDefault(require("./DescribeWalletsRequest"));
 exports.DescribeWalletsRequest = DescribeWalletsRequest_1.default;
 var DescribeWalletsByUserIdRequest_1 = tslib_1.__importDefault(require("./DescribeWalletsByUserIdRequest"));

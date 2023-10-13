@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentRateMasterFromGitHubResult = exports.UpdateCurrentRateMasterResult = exports.GetCurrentRateMasterResult = exports.ExportMasterResult = exports.DeleteProgressByStampTaskResult = exports.CreateProgressByStampSheetResult = exports.DeleteProgressByUserIdResult = exports.DeleteProgressResult = exports.EndByUserIdResult = exports.EndResult = exports.StartByUserIdResult = exports.StartResult = exports.GetProgressByUserIdResult = exports.GetProgressResult = exports.CreateProgressByUserIdResult = exports.DirectEnhanceByStampSheetResult = exports.DirectEnhanceByUserIdResult = exports.DirectEnhanceResult = exports.DeleteRateModelMasterResult = exports.UpdateRateModelMasterResult = exports.GetRateModelMasterResult = exports.CreateRateModelMasterResult = exports.DescribeRateModelMastersResult = exports.GetRateModelResult = exports.DescribeRateModelsResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.UpdateCurrentRateMasterFromGitHubResult = exports.UpdateCurrentRateMasterResult = exports.GetCurrentRateMasterResult = exports.ExportMasterResult = exports.DeleteProgressByStampTaskResult = exports.CreateProgressByStampSheetResult = exports.DeleteProgressByUserIdResult = exports.DeleteProgressResult = exports.EndByUserIdResult = exports.EndResult = exports.StartByUserIdResult = exports.StartResult = exports.GetProgressByUserIdResult = exports.GetProgressResult = exports.CreateProgressByUserIdResult = exports.DirectEnhanceByStampSheetResult = exports.DirectEnhanceByUserIdResult = exports.DirectEnhanceResult = exports.DeleteRateModelMasterResult = exports.UpdateRateModelMasterResult = exports.GetRateModelMasterResult = exports.CreateRateModelMasterResult = exports.DescribeRateModelMastersResult = exports.GetRateModelResult = exports.DescribeRateModelsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -37,6 +37,12 @@ var CleanUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CleanUser
 exports.CleanUserDataByUserIdResult = CleanUserDataByUserIdResult_1.default;
 var CheckCleanUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CheckCleanUserDataByUserIdResult"));
 exports.CheckCleanUserDataByUserIdResult = CheckCleanUserDataByUserIdResult_1.default;
+var PrepareImportUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./PrepareImportUserDataByUserIdResult"));
+exports.PrepareImportUserDataByUserIdResult = PrepareImportUserDataByUserIdResult_1.default;
+var ImportUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./ImportUserDataByUserIdResult"));
+exports.ImportUserDataByUserIdResult = ImportUserDataByUserIdResult_1.default;
+var CheckImportUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CheckImportUserDataByUserIdResult"));
+exports.CheckImportUserDataByUserIdResult = CheckImportUserDataByUserIdResult_1.default;
 var DescribeRateModelsResult_1 = tslib_1.__importDefault(require("./DescribeRateModelsResult"));
 exports.DescribeRateModelsResult = DescribeRateModelsResult_1.default;
 var GetRateModelResult_1 = tslib_1.__importDefault(require("./GetRateModelResult"));

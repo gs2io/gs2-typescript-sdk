@@ -23,6 +23,9 @@ import DumpUserDataByUserIdResult from "./DumpUserDataByUserIdResult"
 import CheckDumpUserDataByUserIdResult from "./CheckDumpUserDataByUserIdResult"
 import CleanUserDataByUserIdResult from "./CleanUserDataByUserIdResult"
 import CheckCleanUserDataByUserIdResult from "./CheckCleanUserDataByUserIdResult"
+import PrepareImportUserDataByUserIdResult from "./PrepareImportUserDataByUserIdResult"
+import ImportUserDataByUserIdResult from "./ImportUserDataByUserIdResult"
+import CheckImportUserDataByUserIdResult from "./CheckImportUserDataByUserIdResult"
 import DescribeExperienceModelMastersResult from "./DescribeExperienceModelMastersResult"
 import CreateExperienceModelMasterResult from "./CreateExperienceModelMasterResult"
 import GetExperienceModelMasterResult from "./GetExperienceModelMasterResult"
@@ -77,6 +80,9 @@ export {
     CheckDumpUserDataByUserIdResult,
     CleanUserDataByUserIdResult,
     CheckCleanUserDataByUserIdResult,
+    PrepareImportUserDataByUserIdResult,
+    ImportUserDataByUserIdResult,
+    CheckImportUserDataByUserIdResult,
     DescribeExperienceModelMastersResult,
     CreateExperienceModelMasterResult,
     GetExperienceModelMasterResult,

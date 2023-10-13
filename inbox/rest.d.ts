@@ -14,6 +14,9 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
     checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult>;
     cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult>;
     checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult>;
+    prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult>;
+    importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult>;
+    checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult>;
     describeMessages(request: Request.DescribeMessagesRequest): Promise<Result.DescribeMessagesResult>;
     describeMessagesByUserId(request: Request.DescribeMessagesByUserIdRequest): Promise<Result.DescribeMessagesByUserIdResult>;
     sendMessageByUserId(request: Request.SendMessageByUserIdRequest): Promise<Result.SendMessageByUserIdResult>;

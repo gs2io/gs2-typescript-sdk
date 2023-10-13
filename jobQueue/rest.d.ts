@@ -14,6 +14,9 @@ export default class Gs2JobQueueRestClient extends AbstractGs2RestClient {
     checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult>;
     cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult>;
     checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult>;
+    prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult>;
+    importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult>;
+    checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult>;
     describeJobsByUserId(request: Request.DescribeJobsByUserIdRequest): Promise<Result.DescribeJobsByUserIdResult>;
     getJobByUserId(request: Request.GetJobByUserIdRequest): Promise<Result.GetJobByUserIdResult>;
     pushByUserId(request: Request.PushByUserIdRequest): Promise<Result.PushByUserIdResult>;

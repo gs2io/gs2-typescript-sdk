@@ -14,6 +14,9 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
     checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult>;
     cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult>;
     checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult>;
+    prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult>;
+    importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult>;
+    checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult>;
     describeVersionModelMasters(request: Request.DescribeVersionModelMastersRequest): Promise<Result.DescribeVersionModelMastersResult>;
     createVersionModelMaster(request: Request.CreateVersionModelMasterRequest): Promise<Result.CreateVersionModelMasterResult>;
     getVersionModelMaster(request: Request.GetVersionModelMasterRequest): Promise<Result.GetVersionModelMasterResult>;

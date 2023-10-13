@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExitStateMachineByUserIdResult = exports.ExitStateMachineResult = exports.DeleteStatusByUserIdResult = exports.EmitByUserIdResult = exports.EmitResult = exports.StartStateMachineByStampSheetResult = exports.StartStateMachineByUserIdResult = exports.GetStatusByUserIdResult = exports.GetStatusResult = exports.DescribeStatusesByUserIdResult = exports.DescribeStatusesResult = exports.DeleteStateMachineMasterResult = exports.GetStateMachineMasterResult = exports.UpdateStateMachineMasterResult = exports.DescribeStateMachineMastersResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.ExitStateMachineByUserIdResult = exports.ExitStateMachineResult = exports.DeleteStatusByUserIdResult = exports.EmitByUserIdResult = exports.EmitResult = exports.StartStateMachineByStampSheetResult = exports.StartStateMachineByUserIdResult = exports.GetStatusByUserIdResult = exports.GetStatusResult = exports.DescribeStatusesByUserIdResult = exports.DescribeStatusesResult = exports.DeleteStateMachineMasterResult = exports.GetStateMachineMasterResult = exports.UpdateStateMachineMasterResult = exports.DescribeStateMachineMastersResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -37,6 +37,12 @@ var CleanUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CleanUser
 exports.CleanUserDataByUserIdResult = CleanUserDataByUserIdResult_1.default;
 var CheckCleanUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CheckCleanUserDataByUserIdResult"));
 exports.CheckCleanUserDataByUserIdResult = CheckCleanUserDataByUserIdResult_1.default;
+var PrepareImportUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./PrepareImportUserDataByUserIdResult"));
+exports.PrepareImportUserDataByUserIdResult = PrepareImportUserDataByUserIdResult_1.default;
+var ImportUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./ImportUserDataByUserIdResult"));
+exports.ImportUserDataByUserIdResult = ImportUserDataByUserIdResult_1.default;
+var CheckImportUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CheckImportUserDataByUserIdResult"));
+exports.CheckImportUserDataByUserIdResult = CheckImportUserDataByUserIdResult_1.default;
 var DescribeStateMachineMastersResult_1 = tslib_1.__importDefault(require("./DescribeStateMachineMastersResult"));
 exports.DescribeStateMachineMastersResult = DescribeStateMachineMastersResult_1.default;
 var UpdateStateMachineMasterResult_1 = tslib_1.__importDefault(require("./UpdateStateMachineMasterResult"));

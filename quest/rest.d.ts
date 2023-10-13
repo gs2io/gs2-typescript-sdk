@@ -14,6 +14,9 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
     checkDumpUserDataByUserId(request: Request.CheckDumpUserDataByUserIdRequest): Promise<Result.CheckDumpUserDataByUserIdResult>;
     cleanUserDataByUserId(request: Request.CleanUserDataByUserIdRequest): Promise<Result.CleanUserDataByUserIdResult>;
     checkCleanUserDataByUserId(request: Request.CheckCleanUserDataByUserIdRequest): Promise<Result.CheckCleanUserDataByUserIdResult>;
+    prepareImportUserDataByUserId(request: Request.PrepareImportUserDataByUserIdRequest): Promise<Result.PrepareImportUserDataByUserIdResult>;
+    importUserDataByUserId(request: Request.ImportUserDataByUserIdRequest): Promise<Result.ImportUserDataByUserIdResult>;
+    checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult>;
     describeQuestGroupModelMasters(request: Request.DescribeQuestGroupModelMastersRequest): Promise<Result.DescribeQuestGroupModelMastersResult>;
     createQuestGroupModelMaster(request: Request.CreateQuestGroupModelMasterRequest): Promise<Result.CreateQuestGroupModelMasterResult>;
     getQuestGroupModelMaster(request: Request.GetQuestGroupModelMasterRequest): Promise<Result.GetQuestGroupModelMasterResult>;

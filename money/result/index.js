@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RevertRecordReceiptByStampSheetResult = exports.RecordReceiptByStampTaskResult = exports.RevertRecordReceiptResult = exports.RecordReceiptResult = exports.GetByUserIdAndTransactionIdResult = exports.DescribeReceiptsResult = exports.WithdrawByStampTaskResult = exports.DepositByStampSheetResult = exports.WithdrawByUserIdResult = exports.WithdrawResult = exports.DepositByUserIdResult = exports.GetWalletByUserIdResult = exports.GetWalletResult = exports.DescribeWalletsByUserIdResult = exports.DescribeWalletsResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.RevertRecordReceiptByStampSheetResult = exports.RecordReceiptByStampTaskResult = exports.RevertRecordReceiptResult = exports.RecordReceiptResult = exports.GetByUserIdAndTransactionIdResult = exports.DescribeReceiptsResult = exports.WithdrawByStampTaskResult = exports.DepositByStampSheetResult = exports.WithdrawByUserIdResult = exports.WithdrawResult = exports.DepositByUserIdResult = exports.GetWalletByUserIdResult = exports.GetWalletResult = exports.DescribeWalletsByUserIdResult = exports.DescribeWalletsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -37,6 +37,12 @@ var CleanUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CleanUser
 exports.CleanUserDataByUserIdResult = CleanUserDataByUserIdResult_1.default;
 var CheckCleanUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CheckCleanUserDataByUserIdResult"));
 exports.CheckCleanUserDataByUserIdResult = CheckCleanUserDataByUserIdResult_1.default;
+var PrepareImportUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./PrepareImportUserDataByUserIdResult"));
+exports.PrepareImportUserDataByUserIdResult = PrepareImportUserDataByUserIdResult_1.default;
+var ImportUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./ImportUserDataByUserIdResult"));
+exports.ImportUserDataByUserIdResult = ImportUserDataByUserIdResult_1.default;
+var CheckImportUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CheckImportUserDataByUserIdResult"));
+exports.CheckImportUserDataByUserIdResult = CheckImportUserDataByUserIdResult_1.default;
 var DescribeWalletsResult_1 = tslib_1.__importDefault(require("./DescribeWalletsResult"));
 exports.DescribeWalletsResult = DescribeWalletsResult_1.default;
 var DescribeWalletsByUserIdResult_1 = tslib_1.__importDefault(require("./DescribeWalletsByUserIdResult"));

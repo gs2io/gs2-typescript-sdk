@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentEntryMasterFromGitHubResult = exports.UpdateCurrentEntryMasterResult = exports.GetCurrentEntryMasterResult = exports.ExportMasterResult = exports.VerifyEntryByStampTaskResult = exports.DeleteEntriesByStampTaskResult = exports.AddEntriesByStampSheetResult = exports.DeleteEntriesByUserIdResult = exports.VerifyEntryByUserIdResult = exports.VerifyEntryResult = exports.ResetByUserIdResult = exports.GetEntryWithSignatureByUserIdResult = exports.GetEntryWithSignatureResult = exports.GetEntryByUserIdResult = exports.GetEntryResult = exports.AddEntriesByUserIdResult = exports.DescribeEntriesByUserIdResult = exports.DescribeEntriesResult = exports.DeleteEntryModelMasterResult = exports.UpdateEntryModelMasterResult = exports.GetEntryModelMasterResult = exports.CreateEntryModelMasterResult = exports.DescribeEntryModelMastersResult = exports.GetEntryModelResult = exports.DescribeEntryModelsResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.UpdateCurrentEntryMasterFromGitHubResult = exports.UpdateCurrentEntryMasterResult = exports.GetCurrentEntryMasterResult = exports.ExportMasterResult = exports.VerifyEntryByStampTaskResult = exports.DeleteEntriesByStampTaskResult = exports.AddEntriesByStampSheetResult = exports.DeleteEntriesByUserIdResult = exports.VerifyEntryByUserIdResult = exports.VerifyEntryResult = exports.ResetByUserIdResult = exports.GetEntryWithSignatureByUserIdResult = exports.GetEntryWithSignatureResult = exports.GetEntryByUserIdResult = exports.GetEntryResult = exports.AddEntriesByUserIdResult = exports.DescribeEntriesByUserIdResult = exports.DescribeEntriesResult = exports.DeleteEntryModelMasterResult = exports.UpdateEntryModelMasterResult = exports.GetEntryModelMasterResult = exports.CreateEntryModelMasterResult = exports.DescribeEntryModelMastersResult = exports.GetEntryModelResult = exports.DescribeEntryModelsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -37,6 +37,12 @@ var CleanUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CleanUser
 exports.CleanUserDataByUserIdResult = CleanUserDataByUserIdResult_1.default;
 var CheckCleanUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CheckCleanUserDataByUserIdResult"));
 exports.CheckCleanUserDataByUserIdResult = CheckCleanUserDataByUserIdResult_1.default;
+var PrepareImportUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./PrepareImportUserDataByUserIdResult"));
+exports.PrepareImportUserDataByUserIdResult = PrepareImportUserDataByUserIdResult_1.default;
+var ImportUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./ImportUserDataByUserIdResult"));
+exports.ImportUserDataByUserIdResult = ImportUserDataByUserIdResult_1.default;
+var CheckImportUserDataByUserIdResult_1 = tslib_1.__importDefault(require("./CheckImportUserDataByUserIdResult"));
+exports.CheckImportUserDataByUserIdResult = CheckImportUserDataByUserIdResult_1.default;
 var DescribeEntryModelsResult_1 = tslib_1.__importDefault(require("./DescribeEntryModelsResult"));
 exports.DescribeEntryModelsResult = DescribeEntryModelsResult_1.default;
 var GetEntryModelResult_1 = tslib_1.__importDefault(require("./GetEntryModelResult"));
