@@ -37,4 +37,11 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
     getCleanProgress(request: Request.GetCleanProgressRequest): Promise<Result.GetCleanProgressResult>;
     waitCleanUserData(request: Request.WaitCleanUserDataRequest): Promise<Result.WaitCleanUserDataResult>;
     cleanUserData(request: Request.CleanUserDataRequest): Promise<Result.CleanUserDataResult>;
+    describeImportProgresses(request: Request.DescribeImportProgressesRequest): Promise<Result.DescribeImportProgressesResult>;
+    getImportProgress(request: Request.GetImportProgressRequest): Promise<Result.GetImportProgressResult>;
+    waitImportUserData(request: Request.WaitImportUserDataRequest): Promise<Result.WaitImportUserDataResult>;
+    prepareImportUserData(request: Request.PrepareImportUserDataRequest): Promise<Result.PrepareImportUserDataResult>;
+    importUserData(request: Request.ImportUserDataRequest): Promise<Result.ImportUserDataResult>;
+    describeImportErrorLogs(request: Request.DescribeImportErrorLogsRequest): Promise<Result.DescribeImportErrorLogsResult>;
+    getImportErrorLog(request: Request.GetImportErrorLogRequest): Promise<Result.GetImportErrorLogResult>;
 }

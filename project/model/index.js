@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CleanProgress = exports.DumpProgress = exports.Billing = exports.Receipt = exports.BillingMethod = exports.Gs2Region = exports.Project = exports.Account = void 0;
+exports.ImportErrorLog = exports.ImportProgress = exports.CleanProgress = exports.DumpProgress = exports.Billing = exports.Receipt = exports.BillingMethod = exports.Gs2Region = exports.Project = exports.Account = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -33,4 +33,8 @@ var DumpProgress_1 = tslib_1.__importDefault(require("./DumpProgress"));
 exports.DumpProgress = DumpProgress_1.default;
 var CleanProgress_1 = tslib_1.__importDefault(require("./CleanProgress"));
 exports.CleanProgress = CleanProgress_1.default;
+var ImportProgress_1 = tslib_1.__importDefault(require("./ImportProgress"));
+exports.ImportProgress = ImportProgress_1.default;
+var ImportErrorLog_1 = tslib_1.__importDefault(require("./ImportErrorLog"));
+exports.ImportErrorLog = ImportErrorLog_1.default;
 //# sourceMappingURL=index.js.map

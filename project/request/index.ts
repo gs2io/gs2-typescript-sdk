@@ -46,6 +46,13 @@ import DescribeCleanProgressesRequest from "./DescribeCleanProgressesRequest"
 import GetCleanProgressRequest from "./GetCleanProgressRequest"
 import WaitCleanUserDataRequest from "./WaitCleanUserDataRequest"
 import CleanUserDataRequest from "./CleanUserDataRequest"
+import DescribeImportProgressesRequest from "./DescribeImportProgressesRequest"
+import GetImportProgressRequest from "./GetImportProgressRequest"
+import WaitImportUserDataRequest from "./WaitImportUserDataRequest"
+import PrepareImportUserDataRequest from "./PrepareImportUserDataRequest"
+import ImportUserDataRequest from "./ImportUserDataRequest"
+import DescribeImportErrorLogsRequest from "./DescribeImportErrorLogsRequest"
+import GetImportErrorLogRequest from "./GetImportErrorLogRequest"
 
 export {
     CreateAccountRequest,
@@ -81,4 +88,11 @@ export {
     GetCleanProgressRequest,
     WaitCleanUserDataRequest,
     CleanUserDataRequest,
+    DescribeImportProgressesRequest,
+    GetImportProgressRequest,
+    WaitImportUserDataRequest,
+    PrepareImportUserDataRequest,
+    ImportUserDataRequest,
+    DescribeImportErrorLogsRequest,
+    GetImportErrorLogRequest,
 };

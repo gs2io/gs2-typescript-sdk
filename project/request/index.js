@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CleanUserDataRequest = exports.WaitCleanUserDataRequest = exports.GetCleanProgressRequest = exports.DescribeCleanProgressesRequest = exports.GetDumpUserDataRequest = exports.DumpUserDataRequest = exports.ArchiveDumpUserDataRequest = exports.WaitDumpUserDataRequest = exports.GetDumpProgressRequest = exports.DescribeDumpProgressesRequest = exports.DescribeBillingsRequest = exports.DescribeReceiptsRequest = exports.DeleteBillingMethodRequest = exports.UpdateBillingMethodRequest = exports.GetBillingMethodRequest = exports.CreateBillingMethodRequest = exports.DescribeBillingMethodsRequest = exports.DeleteProjectRequest = exports.WaitActivateRegionRequest = exports.ActivateRegionRequest = exports.UpdateProjectRequest = exports.GetProjectTokenByIdentifierRequest = exports.GetProjectTokenRequest = exports.GetProjectRequest = exports.CreateProjectRequest = exports.DescribeProjectsRequest = exports.DeleteAccountRequest = exports.UpdateAccountRequest = exports.IssuePasswordRequest = exports.ForgetRequest = exports.SignInRequest = exports.VerifyRequest = exports.CreateAccountRequest = void 0;
+exports.GetImportErrorLogRequest = exports.DescribeImportErrorLogsRequest = exports.ImportUserDataRequest = exports.PrepareImportUserDataRequest = exports.WaitImportUserDataRequest = exports.GetImportProgressRequest = exports.DescribeImportProgressesRequest = exports.CleanUserDataRequest = exports.WaitCleanUserDataRequest = exports.GetCleanProgressRequest = exports.DescribeCleanProgressesRequest = exports.GetDumpUserDataRequest = exports.DumpUserDataRequest = exports.ArchiveDumpUserDataRequest = exports.WaitDumpUserDataRequest = exports.GetDumpProgressRequest = exports.DescribeDumpProgressesRequest = exports.DescribeBillingsRequest = exports.DescribeReceiptsRequest = exports.DeleteBillingMethodRequest = exports.UpdateBillingMethodRequest = exports.GetBillingMethodRequest = exports.CreateBillingMethodRequest = exports.DescribeBillingMethodsRequest = exports.DeleteProjectRequest = exports.WaitActivateRegionRequest = exports.ActivateRegionRequest = exports.UpdateProjectRequest = exports.GetProjectTokenByIdentifierRequest = exports.GetProjectTokenRequest = exports.GetProjectRequest = exports.CreateProjectRequest = exports.DescribeProjectsRequest = exports.DeleteAccountRequest = exports.UpdateAccountRequest = exports.IssuePasswordRequest = exports.ForgetRequest = exports.SignInRequest = exports.VerifyRequest = exports.CreateAccountRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -83,4 +83,18 @@ var WaitCleanUserDataRequest_1 = tslib_1.__importDefault(require("./WaitCleanUse
 exports.WaitCleanUserDataRequest = WaitCleanUserDataRequest_1.default;
 var CleanUserDataRequest_1 = tslib_1.__importDefault(require("./CleanUserDataRequest"));
 exports.CleanUserDataRequest = CleanUserDataRequest_1.default;
+var DescribeImportProgressesRequest_1 = tslib_1.__importDefault(require("./DescribeImportProgressesRequest"));
+exports.DescribeImportProgressesRequest = DescribeImportProgressesRequest_1.default;
+var GetImportProgressRequest_1 = tslib_1.__importDefault(require("./GetImportProgressRequest"));
+exports.GetImportProgressRequest = GetImportProgressRequest_1.default;
+var WaitImportUserDataRequest_1 = tslib_1.__importDefault(require("./WaitImportUserDataRequest"));
+exports.WaitImportUserDataRequest = WaitImportUserDataRequest_1.default;
+var PrepareImportUserDataRequest_1 = tslib_1.__importDefault(require("./PrepareImportUserDataRequest"));
+exports.PrepareImportUserDataRequest = PrepareImportUserDataRequest_1.default;
+var ImportUserDataRequest_1 = tslib_1.__importDefault(require("./ImportUserDataRequest"));
+exports.ImportUserDataRequest = ImportUserDataRequest_1.default;
+var DescribeImportErrorLogsRequest_1 = tslib_1.__importDefault(require("./DescribeImportErrorLogsRequest"));
+exports.DescribeImportErrorLogsRequest = DescribeImportErrorLogsRequest_1.default;
+var GetImportErrorLogRequest_1 = tslib_1.__importDefault(require("./GetImportErrorLogRequest"));
+exports.GetImportErrorLogRequest = GetImportErrorLogRequest_1.default;
 //# sourceMappingURL=index.js.map

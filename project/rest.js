@@ -898,6 +898,188 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             }
         });
     };
+    Gs2ProjectRestClient.prototype.describeImportProgresses = function (request) {
+        var _a, _b, _c;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'pageToken': String((_b = request.getPageToken()) !== null && _b !== void 0 ? _b : null),
+            'limit': String((_c = request.getLimit()) !== null && _c !== void 0 ? _c : null),
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DescribeImportProgressesResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2ProjectRestClient.prototype.getImportProgress = function (request) {
+        var _a, _b, _c;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress/{transactionId}')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region)
+            .replace('{transactionId}', String((_a = request.getTransactionId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getTransactionId()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetImportProgressResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2ProjectRestClient.prototype.waitImportUserData = function (request) {
+        var _a, _b, _c, _d, _e, _f;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress/{transactionId}/wait')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region)
+            .replace('{transactionId}', String((_a = request.getTransactionId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getTransactionId()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
+        }
+        var body = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'userId': (_e = request.getUserId()) !== null && _e !== void 0 ? _e : null,
+            'microserviceName': (_f = request.getMicroserviceName()) !== null && _f !== void 0 ? _f : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.WaitImportUserDataResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2ProjectRestClient.prototype.prepareImportUserData = function (request) {
+        var _a, _b, _c, _d;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/{userId}/prepare')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region)
+            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
+        }
+        var body = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.PrepareImportUserDataResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2ProjectRestClient.prototype.importUserData = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/{userId}')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region)
+            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
+        }
+        var body = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'uploadToken': (_e = request.getUploadToken()) !== null && _e !== void 0 ? _e : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.ImportUserDataResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2ProjectRestClient.prototype.describeImportErrorLogs = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress/{transactionId}/log')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region)
+            .replace('{transactionId}', String((_a = request.getTransactionId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getTransactionId()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
+            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DescribeImportErrorLogsResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2ProjectRestClient.prototype.getImportErrorLog = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress/{transactionId}/log/{errorLogName}')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region)
+            .replace('{transactionId}', String((_a = request.getTransactionId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getTransactionId()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{errorLogName}', String((_c = request.getErrorLogName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getErrorLogName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetImportErrorLogResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
     return Gs2ProjectRestClient;
 }(AbstractGs2RestClient_1.default));
 exports.default = Gs2ProjectRestClient;

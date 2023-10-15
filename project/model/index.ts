@@ -21,6 +21,8 @@ import Receipt from "./Receipt"
 import Billing from "./Billing"
 import DumpProgress from "./DumpProgress"
 import CleanProgress from "./CleanProgress"
+import ImportProgress from "./ImportProgress"
+import ImportErrorLog from "./ImportErrorLog"
 
 export {
     Account,
@@ -31,4 +33,6 @@ export {
     Billing,
     DumpProgress,
     CleanProgress,
+    ImportProgress,
+    ImportErrorLog,
 };

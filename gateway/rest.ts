@@ -390,10 +390,11 @@ export default class Gs2GatewayRestClient extends AbstractGs2RestClient {
     }
 
     public checkImportUserDataByUserId(request: Request.CheckImportUserDataByUserIdRequest): Promise<Result.CheckImportUserDataByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/system/user/{userId}/import')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/system/user/{userId}/import/{uploadToken}')
             .replace('{service}', 'gateway')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{uploadToken}', String(request.getUploadToken() ?? 'null') === "" ? "null" : String(request.getUploadToken() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {

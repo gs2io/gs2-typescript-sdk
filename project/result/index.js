@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CleanUserDataResult = exports.WaitCleanUserDataResult = exports.GetCleanProgressResult = exports.DescribeCleanProgressesResult = exports.GetDumpUserDataResult = exports.DumpUserDataResult = exports.ArchiveDumpUserDataResult = exports.WaitDumpUserDataResult = exports.GetDumpProgressResult = exports.DescribeDumpProgressesResult = exports.DescribeBillingsResult = exports.DescribeReceiptsResult = exports.DeleteBillingMethodResult = exports.UpdateBillingMethodResult = exports.GetBillingMethodResult = exports.CreateBillingMethodResult = exports.DescribeBillingMethodsResult = exports.DeleteProjectResult = exports.WaitActivateRegionResult = exports.ActivateRegionResult = exports.UpdateProjectResult = exports.GetProjectTokenByIdentifierResult = exports.GetProjectTokenResult = exports.GetProjectResult = exports.CreateProjectResult = exports.DescribeProjectsResult = exports.DeleteAccountResult = exports.UpdateAccountResult = exports.IssuePasswordResult = exports.ForgetResult = exports.SignInResult = exports.VerifyResult = exports.CreateAccountResult = void 0;
+exports.GetImportErrorLogResult = exports.DescribeImportErrorLogsResult = exports.ImportUserDataResult = exports.PrepareImportUserDataResult = exports.WaitImportUserDataResult = exports.GetImportProgressResult = exports.DescribeImportProgressesResult = exports.CleanUserDataResult = exports.WaitCleanUserDataResult = exports.GetCleanProgressResult = exports.DescribeCleanProgressesResult = exports.GetDumpUserDataResult = exports.DumpUserDataResult = exports.ArchiveDumpUserDataResult = exports.WaitDumpUserDataResult = exports.GetDumpProgressResult = exports.DescribeDumpProgressesResult = exports.DescribeBillingsResult = exports.DescribeReceiptsResult = exports.DeleteBillingMethodResult = exports.UpdateBillingMethodResult = exports.GetBillingMethodResult = exports.CreateBillingMethodResult = exports.DescribeBillingMethodsResult = exports.DeleteProjectResult = exports.WaitActivateRegionResult = exports.ActivateRegionResult = exports.UpdateProjectResult = exports.GetProjectTokenByIdentifierResult = exports.GetProjectTokenResult = exports.GetProjectResult = exports.CreateProjectResult = exports.DescribeProjectsResult = exports.DeleteAccountResult = exports.UpdateAccountResult = exports.IssuePasswordResult = exports.ForgetResult = exports.SignInResult = exports.VerifyResult = exports.CreateAccountResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -83,4 +83,18 @@ var WaitCleanUserDataResult_1 = tslib_1.__importDefault(require("./WaitCleanUser
 exports.WaitCleanUserDataResult = WaitCleanUserDataResult_1.default;
 var CleanUserDataResult_1 = tslib_1.__importDefault(require("./CleanUserDataResult"));
 exports.CleanUserDataResult = CleanUserDataResult_1.default;
+var DescribeImportProgressesResult_1 = tslib_1.__importDefault(require("./DescribeImportProgressesResult"));
+exports.DescribeImportProgressesResult = DescribeImportProgressesResult_1.default;
+var GetImportProgressResult_1 = tslib_1.__importDefault(require("./GetImportProgressResult"));
+exports.GetImportProgressResult = GetImportProgressResult_1.default;
+var WaitImportUserDataResult_1 = tslib_1.__importDefault(require("./WaitImportUserDataResult"));
+exports.WaitImportUserDataResult = WaitImportUserDataResult_1.default;
+var PrepareImportUserDataResult_1 = tslib_1.__importDefault(require("./PrepareImportUserDataResult"));
+exports.PrepareImportUserDataResult = PrepareImportUserDataResult_1.default;
+var ImportUserDataResult_1 = tslib_1.__importDefault(require("./ImportUserDataResult"));
+exports.ImportUserDataResult = ImportUserDataResult_1.default;
+var DescribeImportErrorLogsResult_1 = tslib_1.__importDefault(require("./DescribeImportErrorLogsResult"));
+exports.DescribeImportErrorLogsResult = DescribeImportErrorLogsResult_1.default;
+var GetImportErrorLogResult_1 = tslib_1.__importDefault(require("./GetImportErrorLogResult"));
+exports.GetImportErrorLogResult = GetImportErrorLogResult_1.default;
 //# sourceMappingURL=index.js.map

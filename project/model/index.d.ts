@@ -6,4 +6,6 @@ import Receipt from "./Receipt";
 import Billing from "./Billing";
 import DumpProgress from "./DumpProgress";
 import CleanProgress from "./CleanProgress";
-export { Account, Project, Gs2Region, BillingMethod, Receipt, Billing, DumpProgress, CleanProgress, };
+import ImportProgress from "./ImportProgress";
+import ImportErrorLog from "./ImportErrorLog";
+export { Account, Project, Gs2Region, BillingMethod, Receipt, Billing, DumpProgress, CleanProgress, ImportProgress, ImportErrorLog, };

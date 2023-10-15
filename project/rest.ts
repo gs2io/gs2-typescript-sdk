@@ -1031,4 +1031,214 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
             }
         });
     }
+
+    public describeImportProgresses(request: Request.DescribeImportProgressesRequest): Promise<Result.DescribeImportProgressesResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeImportProgressesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getImportProgress(request: Request.GetImportProgressRequest): Promise<Result.GetImportProgressResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress/{transactionId}')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region)
+            .replace('{transactionId}', String(request.getTransactionId() ?? 'null') === "" ? "null" : String(request.getTransactionId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetImportProgressResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public waitImportUserData(request: Request.WaitImportUserDataRequest): Promise<Result.WaitImportUserDataResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress/{transactionId}/wait')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region)
+            .replace('{transactionId}', String(request.getTransactionId() ?? 'null') === "" ? "null" : String(request.getTransactionId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'userId': request.getUserId() ?? null,
+            'microserviceName': request.getMicroserviceName() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.WaitImportUserDataResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public prepareImportUserData(request: Request.PrepareImportUserDataRequest): Promise<Result.PrepareImportUserDataResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/{userId}/prepare')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region)
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.PrepareImportUserDataResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public importUserData(request: Request.ImportUserDataRequest): Promise<Result.ImportUserDataResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/{userId}')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region)
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'uploadToken': request.getUploadToken() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ImportUserDataResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public describeImportErrorLogs(request: Request.DescribeImportErrorLogsRequest): Promise<Result.DescribeImportErrorLogsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress/{transactionId}/log')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region)
+            .replace('{transactionId}', String(request.getTransactionId() ?? 'null') === "" ? "null" : String(request.getTransactionId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeImportErrorLogsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getImportErrorLog(request: Request.GetImportErrorLogRequest): Promise<Result.GetImportErrorLogResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/account/me/project/import/progress/{transactionId}/log/{errorLogName}')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region)
+            .replace('{transactionId}', String(request.getTransactionId() ?? 'null') === "" ? "null" : String(request.getTransactionId() ?? 'null'))
+            .replace('{errorLogName}', String(request.getErrorLogName() ?? 'null') === "" ? "null" : String(request.getErrorLogName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetImportErrorLogResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
 }

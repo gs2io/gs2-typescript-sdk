@@ -338,20 +338,21 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ScheduleRestClient.prototype.checkImportUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/user/{userId}/import')
+        var _a, _b, _c, _d, _e, _f;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/user/{userId}/import/{uploadToken}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
-            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{uploadToken}', String((_c = request.getUploadToken()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUploadToken()) !== null && _d !== void 0 ? _d : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
         if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
         }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.get(url, {
             params: params,
