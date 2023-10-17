@@ -188,7 +188,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.dumpUserDataByUserId = function (request) {
         var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/user/{userId}/dump')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
@@ -217,7 +217,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.checkDumpUserDataByUserId = function (request) {
         var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/user/{userId}/dump')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
@@ -242,7 +242,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.cleanUserDataByUserId = function (request) {
         var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/user/{userId}/clean')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
@@ -271,7 +271,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.checkCleanUserDataByUserId = function (request) {
         var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/user/{userId}/clean')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
@@ -296,7 +296,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.prepareImportUserDataByUserId = function (request) {
         var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/user/{userId}/import/prepare')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
@@ -325,7 +325,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.importUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/user/{userId}/import')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
@@ -355,7 +355,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
     };
     Gs2InboxRestClient.prototype.checkImportUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/user/{userId}/import/{uploadToken}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'))

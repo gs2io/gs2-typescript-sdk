@@ -178,7 +178,7 @@ var Gs2JobQueueRestClient = /** @class */ (function (_super) {
     };
     Gs2JobQueueRestClient.prototype.dumpUserDataByUserId = function (request) {
         var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/user/{userId}/dump')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'job-queue')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
@@ -207,7 +207,7 @@ var Gs2JobQueueRestClient = /** @class */ (function (_super) {
     };
     Gs2JobQueueRestClient.prototype.checkDumpUserDataByUserId = function (request) {
         var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/user/{userId}/dump')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'job-queue')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
@@ -232,7 +232,7 @@ var Gs2JobQueueRestClient = /** @class */ (function (_super) {
     };
     Gs2JobQueueRestClient.prototype.cleanUserDataByUserId = function (request) {
         var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/user/{userId}/clean')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'job-queue')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
@@ -261,7 +261,7 @@ var Gs2JobQueueRestClient = /** @class */ (function (_super) {
     };
     Gs2JobQueueRestClient.prototype.checkCleanUserDataByUserId = function (request) {
         var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/user/{userId}/clean')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'job-queue')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
@@ -286,7 +286,7 @@ var Gs2JobQueueRestClient = /** @class */ (function (_super) {
     };
     Gs2JobQueueRestClient.prototype.prepareImportUserDataByUserId = function (request) {
         var _a, _b, _c, _d;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/user/{userId}/import/prepare')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'job-queue')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
@@ -315,7 +315,7 @@ var Gs2JobQueueRestClient = /** @class */ (function (_super) {
     };
     Gs2JobQueueRestClient.prototype.importUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/user/{userId}/import')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'job-queue')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
@@ -345,7 +345,7 @@ var Gs2JobQueueRestClient = /** @class */ (function (_super) {
     };
     Gs2JobQueueRestClient.prototype.checkImportUserDataByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/user/{userId}/import/{uploadToken}')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'job-queue')
             .replace('{region}', this.session.region)
             .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'))
