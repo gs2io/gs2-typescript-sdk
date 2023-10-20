@@ -26,7 +26,7 @@ var Namespace = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.transactionSetting = null;
-        this.experienceCapScriptId = null;
+        this.rankCapScriptId = null;
         this.changeExperienceScript = null;
         this.changeRankScript = null;
         this.changeRankCapScript = null;
@@ -128,15 +128,15 @@ var Namespace = /** @class */ (function () {
         this.transactionSetting = transactionSetting;
         return this;
     };
-    Namespace.prototype.getExperienceCapScriptId = function () {
-        return this.experienceCapScriptId;
+    Namespace.prototype.getRankCapScriptId = function () {
+        return this.rankCapScriptId;
     };
-    Namespace.prototype.setExperienceCapScriptId = function (experienceCapScriptId) {
-        this.experienceCapScriptId = experienceCapScriptId;
+    Namespace.prototype.setRankCapScriptId = function (rankCapScriptId) {
+        this.rankCapScriptId = rankCapScriptId;
         return this;
     };
-    Namespace.prototype.withExperienceCapScriptId = function (experienceCapScriptId) {
-        this.experienceCapScriptId = experienceCapScriptId;
+    Namespace.prototype.withRankCapScriptId = function (rankCapScriptId) {
+        this.rankCapScriptId = rankCapScriptId;
         return this;
     };
     Namespace.prototype.getChangeExperienceScript = function () {
@@ -236,7 +236,7 @@ var Namespace = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
-            .withExperienceCapScriptId(data["experienceCapScriptId"])
+            .withRankCapScriptId(data["rankCapScriptId"])
             .withChangeExperienceScript(ScriptSetting_1.default.fromDict(data["changeExperienceScript"]))
             .withChangeRankScript(ScriptSetting_1.default.fromDict(data["changeRankScript"]))
             .withChangeRankCapScript(ScriptSetting_1.default.fromDict(data["changeRankCapScript"]))
@@ -253,7 +253,7 @@ var Namespace = /** @class */ (function () {
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "experienceCapScriptId": this.getExperienceCapScriptId(),
+            "rankCapScriptId": this.getRankCapScriptId(),
             "changeExperienceScript": (_b = this.getChangeExperienceScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "changeRankScript": (_c = this.getChangeRankScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "changeRankCapScript": (_d = this.getChangeRankCapScript()) === null || _d === void 0 ? void 0 : _d.toDict(),

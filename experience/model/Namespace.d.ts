@@ -7,7 +7,7 @@ export default class Namespace implements IModel {
     private name;
     private description;
     private transactionSetting;
-    private experienceCapScriptId;
+    private rankCapScriptId;
     private changeExperienceScript;
     private changeRankScript;
     private changeRankCapScript;
@@ -33,9 +33,9 @@ export default class Namespace implements IModel {
     getTransactionSetting(): TransactionSetting | null;
     setTransactionSetting(transactionSetting: TransactionSetting | null): this;
     withTransactionSetting(transactionSetting: TransactionSetting | null): this;
-    getExperienceCapScriptId(): string | null;
-    setExperienceCapScriptId(experienceCapScriptId: string | null): this;
-    withExperienceCapScriptId(experienceCapScriptId: string | null): this;
+    getRankCapScriptId(): string | null;
+    setRankCapScriptId(rankCapScriptId: string | null): this;
+    withRankCapScriptId(rankCapScriptId: string | null): this;
     getChangeExperienceScript(): ScriptSetting | null;
     setChangeExperienceScript(changeExperienceScript: ScriptSetting | null): this;
     withChangeExperienceScript(changeExperienceScript: ScriptSetting | null): this;

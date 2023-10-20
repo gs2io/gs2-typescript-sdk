@@ -25,7 +25,7 @@ export default class Namespace implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private transactionSetting: TransactionSetting|null = null;
-    private experienceCapScriptId: string|null = null;
+    private rankCapScriptId: string|null = null;
     private changeExperienceScript: ScriptSetting|null = null;
     private changeRankScript: ScriptSetting|null = null;
     private changeRankCapScript: ScriptSetting|null = null;
@@ -138,15 +138,15 @@ export default class Namespace implements IModel {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public getExperienceCapScriptId(): string|null {
-        return this.experienceCapScriptId;
+    public getRankCapScriptId(): string|null {
+        return this.rankCapScriptId;
     }
-    public setExperienceCapScriptId(experienceCapScriptId: string|null) {
-        this.experienceCapScriptId = experienceCapScriptId;
+    public setRankCapScriptId(rankCapScriptId: string|null) {
+        this.rankCapScriptId = rankCapScriptId;
         return this;
     }
-    public withExperienceCapScriptId(experienceCapScriptId: string|null): this {
-        this.experienceCapScriptId = experienceCapScriptId;
+    public withRankCapScriptId(rankCapScriptId: string|null): this {
+        this.rankCapScriptId = rankCapScriptId;
         return this;
     }
     public getChangeExperienceScript(): ScriptSetting|null {
@@ -247,7 +247,7 @@ export default class Namespace implements IModel {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
-            .withExperienceCapScriptId(data["experienceCapScriptId"])
+            .withRankCapScriptId(data["rankCapScriptId"])
             .withChangeExperienceScript(ScriptSetting.fromDict(data["changeExperienceScript"]))
             .withChangeRankScript(ScriptSetting.fromDict(data["changeRankScript"]))
             .withChangeRankCapScript(ScriptSetting.fromDict(data["changeRankCapScript"]))
@@ -264,7 +264,7 @@ export default class Namespace implements IModel {
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": this.getTransactionSetting()?.toDict(),
-            "experienceCapScriptId": this.getExperienceCapScriptId(),
+            "rankCapScriptId": this.getRankCapScriptId(),
             "changeExperienceScript": this.getChangeExperienceScript()?.toDict(),
             "changeRankScript": this.getChangeRankScript()?.toDict(),
             "changeRankCapScript": this.getChangeRankCapScript()?.toDict(),

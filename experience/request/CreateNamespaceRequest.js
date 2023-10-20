@@ -24,7 +24,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.transactionSetting = null;
-        this.experienceCapScriptId = null;
+        this.rankCapScriptId = null;
         this.changeExperienceScript = null;
         this.changeRankScript = null;
         this.changeRankCapScript = null;
@@ -86,15 +86,15 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.transactionSetting = transactionSetting;
         return this;
     };
-    CreateNamespaceRequest.prototype.getExperienceCapScriptId = function () {
-        return this.experienceCapScriptId;
+    CreateNamespaceRequest.prototype.getRankCapScriptId = function () {
+        return this.rankCapScriptId;
     };
-    CreateNamespaceRequest.prototype.setExperienceCapScriptId = function (experienceCapScriptId) {
-        this.experienceCapScriptId = experienceCapScriptId;
+    CreateNamespaceRequest.prototype.setRankCapScriptId = function (rankCapScriptId) {
+        this.rankCapScriptId = rankCapScriptId;
         return this;
     };
-    CreateNamespaceRequest.prototype.withExperienceCapScriptId = function (experienceCapScriptId) {
-        this.experienceCapScriptId = experienceCapScriptId;
+    CreateNamespaceRequest.prototype.withRankCapScriptId = function (rankCapScriptId) {
+        this.rankCapScriptId = rankCapScriptId;
         return this;
     };
     CreateNamespaceRequest.prototype.getChangeExperienceScript = function () {
@@ -157,7 +157,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Experience.TransactionSetting.fromDict(data["transactionSetting"]))
-            .withExperienceCapScriptId(data["experienceCapScriptId"])
+            .withRankCapScriptId(data["rankCapScriptId"])
             .withChangeExperienceScript(Gs2Experience.ScriptSetting.fromDict(data["changeExperienceScript"]))
             .withChangeRankScript(Gs2Experience.ScriptSetting.fromDict(data["changeRankScript"]))
             .withChangeRankCapScript(Gs2Experience.ScriptSetting.fromDict(data["changeRankCapScript"]))
@@ -170,7 +170,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
             "name": this.getName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "experienceCapScriptId": this.getExperienceCapScriptId(),
+            "rankCapScriptId": this.getRankCapScriptId(),
             "changeExperienceScript": (_b = this.getChangeExperienceScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "changeRankScript": (_c = this.getChangeRankScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "changeRankCapScript": (_d = this.getChangeRankCapScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
