@@ -45,9 +45,9 @@ export default class Namespace implements IModel {
     getChangeRankCapScript(): ScriptSetting | null;
     setChangeRankCapScript(changeRankCapScript: ScriptSetting | null): this;
     withChangeRankCapScript(changeRankCapScript: ScriptSetting | null): this;
-    getOverflowExperienceScript(): ScriptSetting | null;
-    setOverflowExperienceScript(overflowExperienceScript: ScriptSetting | null): this;
-    withOverflowExperienceScript(overflowExperienceScript: ScriptSetting | null): this;
+    getOverflowExperienceScript(): string | null;
+    setOverflowExperienceScript(overflowExperienceScript: string | null): this;
+    withOverflowExperienceScript(overflowExperienceScript: string | null): this;
     getLogSetting(): LogSetting | null;
     setLogSetting(logSetting: LogSetting | null): this;
     withLogSetting(logSetting: LogSetting | null): this;

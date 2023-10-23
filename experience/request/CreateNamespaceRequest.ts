@@ -29,7 +29,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private changeExperienceScript: Gs2Experience.ScriptSetting|null = null;
     private changeRankScript: Gs2Experience.ScriptSetting|null = null;
     private changeRankCapScript: Gs2Experience.ScriptSetting|null = null;
-    private overflowExperienceScript: Gs2Experience.ScriptSetting|null = null;
+    private overflowExperienceScript: string|null = null;
     private logSetting: Gs2Experience.LogSetting|null = null;
 
     public getRequestId(): string|null {
@@ -136,14 +136,14 @@ export default class CreateNamespaceRequest implements IRequest {
         this.changeRankCapScript = changeRankCapScript;
         return this;
     }
-    public getOverflowExperienceScript(): Gs2Experience.ScriptSetting|null {
+    public getOverflowExperienceScript(): string|null {
         return this.overflowExperienceScript;
     }
-    public setOverflowExperienceScript(overflowExperienceScript: Gs2Experience.ScriptSetting|null) {
+    public setOverflowExperienceScript(overflowExperienceScript: string|null) {
         this.overflowExperienceScript = overflowExperienceScript;
         return this;
     }
-    public withOverflowExperienceScript(overflowExperienceScript: Gs2Experience.ScriptSetting|null): this {
+    public withOverflowExperienceScript(overflowExperienceScript: string|null): this {
         this.overflowExperienceScript = overflowExperienceScript;
         return this;
     }
@@ -168,7 +168,7 @@ export default class CreateNamespaceRequest implements IRequest {
             .withChangeExperienceScript(Gs2Experience.ScriptSetting.fromDict(data["changeExperienceScript"]))
             .withChangeRankScript(Gs2Experience.ScriptSetting.fromDict(data["changeRankScript"]))
             .withChangeRankCapScript(Gs2Experience.ScriptSetting.fromDict(data["changeRankCapScript"]))
-            .withOverflowExperienceScript(Gs2Experience.ScriptSetting.fromDict(data["overflowExperienceScript"]))
+            .withOverflowExperienceScript(data["overflowExperienceScript"])
             .withLogSetting(Gs2Experience.LogSetting.fromDict(data["logSetting"]));
     }
 
@@ -181,7 +181,7 @@ export default class CreateNamespaceRequest implements IRequest {
             "changeExperienceScript": this.getChangeExperienceScript()?.toDict(),
             "changeRankScript": this.getChangeRankScript()?.toDict(),
             "changeRankCapScript": this.getChangeRankCapScript()?.toDict(),
-            "overflowExperienceScript": this.getOverflowExperienceScript()?.toDict(),
+            "overflowExperienceScript": this.getOverflowExperienceScript(),
             "logSetting": this.getLogSetting()?.toDict(),
         };
     }

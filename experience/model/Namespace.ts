@@ -29,7 +29,7 @@ export default class Namespace implements IModel {
     private changeExperienceScript: ScriptSetting|null = null;
     private changeRankScript: ScriptSetting|null = null;
     private changeRankCapScript: ScriptSetting|null = null;
-    private overflowExperienceScript: ScriptSetting|null = null;
+    private overflowExperienceScript: string|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -182,14 +182,14 @@ export default class Namespace implements IModel {
         this.changeRankCapScript = changeRankCapScript;
         return this;
     }
-    public getOverflowExperienceScript(): ScriptSetting|null {
+    public getOverflowExperienceScript(): string|null {
         return this.overflowExperienceScript;
     }
-    public setOverflowExperienceScript(overflowExperienceScript: ScriptSetting|null) {
+    public setOverflowExperienceScript(overflowExperienceScript: string|null) {
         this.overflowExperienceScript = overflowExperienceScript;
         return this;
     }
-    public withOverflowExperienceScript(overflowExperienceScript: ScriptSetting|null): this {
+    public withOverflowExperienceScript(overflowExperienceScript: string|null): this {
         this.overflowExperienceScript = overflowExperienceScript;
         return this;
     }
@@ -251,7 +251,7 @@ export default class Namespace implements IModel {
             .withChangeExperienceScript(ScriptSetting.fromDict(data["changeExperienceScript"]))
             .withChangeRankScript(ScriptSetting.fromDict(data["changeRankScript"]))
             .withChangeRankCapScript(ScriptSetting.fromDict(data["changeRankCapScript"]))
-            .withOverflowExperienceScript(ScriptSetting.fromDict(data["overflowExperienceScript"]))
+            .withOverflowExperienceScript(data["overflowExperienceScript"])
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -268,7 +268,7 @@ export default class Namespace implements IModel {
             "changeExperienceScript": this.getChangeExperienceScript()?.toDict(),
             "changeRankScript": this.getChangeRankScript()?.toDict(),
             "changeRankCapScript": this.getChangeRankCapScript()?.toDict(),
-            "overflowExperienceScript": this.getOverflowExperienceScript()?.toDict(),
+            "overflowExperienceScript": this.getOverflowExperienceScript(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

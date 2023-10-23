@@ -72,7 +72,7 @@ export default class Gs2ExperienceRestClient extends AbstractGs2RestClient {
             'changeExperienceScript': request.getChangeExperienceScript()?.toDict() ?? null,
             'changeRankScript': request.getChangeRankScript()?.toDict() ?? null,
             'changeRankCapScript': request.getChangeRankCapScript()?.toDict() ?? null,
-            'overflowExperienceScript': request.getOverflowExperienceScript()?.toDict() ?? null,
+            'overflowExperienceScript': request.getOverflowExperienceScript() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.post(
@@ -162,7 +162,7 @@ export default class Gs2ExperienceRestClient extends AbstractGs2RestClient {
             'changeExperienceScript': request.getChangeExperienceScript()?.toDict() ?? null,
             'changeRankScript': request.getChangeRankScript()?.toDict() ?? null,
             'changeRankCapScript': request.getChangeRankCapScript()?.toDict() ?? null,
-            'overflowExperienceScript': request.getOverflowExperienceScript()?.toDict() ?? null,
+            'overflowExperienceScript': request.getOverflowExperienceScript() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.put(

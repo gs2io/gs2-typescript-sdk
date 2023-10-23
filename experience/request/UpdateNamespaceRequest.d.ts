@@ -39,9 +39,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getChangeRankCapScript(): Gs2Experience.ScriptSetting | null;
     setChangeRankCapScript(changeRankCapScript: Gs2Experience.ScriptSetting | null): this;
     withChangeRankCapScript(changeRankCapScript: Gs2Experience.ScriptSetting | null): this;
-    getOverflowExperienceScript(): Gs2Experience.ScriptSetting | null;
-    setOverflowExperienceScript(overflowExperienceScript: Gs2Experience.ScriptSetting | null): this;
-    withOverflowExperienceScript(overflowExperienceScript: Gs2Experience.ScriptSetting | null): this;
+    getOverflowExperienceScript(): string | null;
+    setOverflowExperienceScript(overflowExperienceScript: string | null): this;
+    withOverflowExperienceScript(overflowExperienceScript: string | null): this;
     getLogSetting(): Gs2Experience.LogSetting | null;
     setLogSetting(logSetting: Gs2Experience.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Experience.LogSetting | null): this;

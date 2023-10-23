@@ -240,14 +240,14 @@ var Namespace = /** @class */ (function () {
             .withChangeExperienceScript(ScriptSetting_1.default.fromDict(data["changeExperienceScript"]))
             .withChangeRankScript(ScriptSetting_1.default.fromDict(data["changeRankScript"]))
             .withChangeRankCapScript(ScriptSetting_1.default.fromDict(data["changeRankCapScript"]))
-            .withOverflowExperienceScript(ScriptSetting_1.default.fromDict(data["overflowExperienceScript"]))
+            .withOverflowExperienceScript(data["overflowExperienceScript"])
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
@@ -257,8 +257,8 @@ var Namespace = /** @class */ (function () {
             "changeExperienceScript": (_b = this.getChangeExperienceScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "changeRankScript": (_c = this.getChangeRankScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "changeRankCapScript": (_d = this.getChangeRankCapScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "overflowExperienceScript": (_e = this.getOverflowExperienceScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "overflowExperienceScript": this.getOverflowExperienceScript(),
+            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),
