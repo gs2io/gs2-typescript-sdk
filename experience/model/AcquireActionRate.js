@@ -18,7 +18,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var AcquireActionRate = /** @class */ (function () {
     function AcquireActionRate() {
         this.name = null;
+        this.mode = null;
         this.rates = null;
+        this.bigRates = null;
     }
     AcquireActionRate.prototype.getName = function () {
         return this.name;
@@ -29,6 +31,17 @@ var AcquireActionRate = /** @class */ (function () {
     };
     AcquireActionRate.prototype.withName = function (name) {
         this.name = name;
+        return this;
+    };
+    AcquireActionRate.prototype.getMode = function () {
+        return this.mode;
+    };
+    AcquireActionRate.prototype.setMode = function (mode) {
+        this.mode = mode;
+        return this;
+    };
+    AcquireActionRate.prototype.withMode = function (mode) {
+        this.mode = mode;
         return this;
     };
     AcquireActionRate.prototype.getRates = function () {
@@ -42,22 +55,43 @@ var AcquireActionRate = /** @class */ (function () {
         this.rates = rates;
         return this;
     };
+    AcquireActionRate.prototype.getBigRates = function () {
+        return this.bigRates;
+    };
+    AcquireActionRate.prototype.setBigRates = function (bigRates) {
+        this.bigRates = bigRates;
+        return this;
+    };
+    AcquireActionRate.prototype.withBigRates = function (bigRates) {
+        this.bigRates = bigRates;
+        return this;
+    };
     AcquireActionRate.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
         }
         return new AcquireActionRate()
             .withName(data["name"])
+            .withMode(data["mode"])
             .withRates(data.rates ?
             data.rates.map(function (item) {
+                return item;
+            }) : [])
+            .withBigRates(data.bigRates ?
+            data.bigRates.map(function (item) {
                 return item;
             }) : []);
     };
     AcquireActionRate.prototype.toDict = function () {
         return {
             "name": this.getName(),
+            "mode": this.getMode(),
             "rates": this.getRates() ?
                 this.getRates().map(function (item) {
+                    return item;
+                }) : [],
+            "bigRates": this.getBigRates() ?
+                this.getBigRates().map(function (item) {
                     return item;
                 }) : [],
         };

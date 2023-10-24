@@ -18,7 +18,9 @@ import IModel from '../../core/interface/IModel';
 
 export default class AcquireActionRate implements IModel {
     private name: string|null = null;
+    private mode: string|null = null;
     private rates: number[]|null = null;
+    private bigRates: string[]|null = null;
     public getName(): string|null {
         return this.name;
     }
@@ -28,6 +30,17 @@ export default class AcquireActionRate implements IModel {
     }
     public withName(name: string|null): this {
         this.name = name;
+        return this;
+    }
+    public getMode(): string|null {
+        return this.mode;
+    }
+    public setMode(mode: string|null) {
+        this.mode = mode;
+        return this;
+    }
+    public withMode(mode: string|null): this {
+        this.mode = mode;
         return this;
     }
     public getRates(): number[]|null {
@@ -41,6 +54,17 @@ export default class AcquireActionRate implements IModel {
         this.rates = rates;
         return this;
     }
+    public getBigRates(): string[]|null {
+        return this.bigRates;
+    }
+    public setBigRates(bigRates: string[]|null) {
+        this.bigRates = bigRates;
+        return this;
+    }
+    public withBigRates(bigRates: string[]|null): this {
+        this.bigRates = bigRates;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): AcquireActionRate|null {
         if (data == undefined || data == null) {
@@ -48,8 +72,14 @@ export default class AcquireActionRate implements IModel {
         }
         return new AcquireActionRate()
             .withName(data["name"])
+            .withMode(data["mode"])
             .withRates(data.rates ?
                 data.rates.map((item: {[key: string]: any}) => {
+                    return item;
+                }
+            ) : [])
+            .withBigRates(data.bigRates ?
+                data.bigRates.map((item: {[key: string]: any}) => {
                     return item;
                 }
             ) : []);
@@ -58,8 +88,14 @@ export default class AcquireActionRate implements IModel {
     public toDict(): {[key: string]: any} {
         return {
             "name": this.getName(),
+            "mode": this.getMode(),
             "rates": this.getRates() ?
                 this.getRates()!.map((item: number) => {
+                    return item;
+                }
+            ) : [],
+            "bigRates": this.getBigRates() ?
+                this.getBigRates()!.map((item: string) => {
                     return item;
                 }
             ) : [],
