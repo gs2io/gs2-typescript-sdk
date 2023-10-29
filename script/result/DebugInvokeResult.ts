@@ -21,6 +21,7 @@ import * as Gs2Script from '../model'
 export default class DebugInvokeResult implements IResult {
     private code: number|null = null;
     private result: string|null = null;
+    private transaction: string|null = null;
     private executeTime: number|null = null;
     private charged: number|null = null;
     private output: string[]|null = null;
@@ -50,6 +51,20 @@ export default class DebugInvokeResult implements IResult {
 
     public withResult(result: string|null): this {
         this.result = result;
+        return this;
+    }
+
+    public getTransaction(): string|null {
+        return this.transaction;
+    }
+
+    public setTransaction(transaction: string|null) {
+        this.transaction = transaction;
+        return this;
+    }
+
+    public withTransaction(transaction: string|null): this {
+        this.transaction = transaction;
         return this;
     }
 
@@ -99,6 +114,7 @@ export default class DebugInvokeResult implements IResult {
         return new DebugInvokeResult()
             .withCode(data["code"])
             .withResult(data["result"])
+            .withTransaction(data["transaction"])
             .withExecuteTime(data["executeTime"])
             .withCharged(data["charged"])
             .withOutput(data.output ?
@@ -112,6 +128,7 @@ export default class DebugInvokeResult implements IResult {
         return {
             "code": this.getCode(),
             "result": this.getResult(),
+            "transaction": this.getTransaction(),
             "executeTime": this.getExecuteTime(),
             "charged": this.getCharged(),
             "output": this.getOutput() ?

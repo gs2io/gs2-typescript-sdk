@@ -2,6 +2,7 @@ import IResult from '../../core/interface/IResult';
 export default class InvokeScriptResult implements IResult {
     private code;
     private result;
+    private transaction;
     private executeTime;
     private charged;
     private output;
@@ -11,6 +12,9 @@ export default class InvokeScriptResult implements IResult {
     getResult(): string | null;
     setResult(result: string | null): this;
     withResult(result: string | null): this;
+    getTransaction(): string | null;
+    setTransaction(transaction: string | null): this;
+    withTransaction(transaction: string | null): this;
     getExecuteTime(): number | null;
     setExecuteTime(executeTime: number | null): this;
     withExecuteTime(executeTime: number | null): this;

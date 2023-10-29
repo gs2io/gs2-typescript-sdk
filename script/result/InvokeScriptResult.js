@@ -19,6 +19,7 @@ var InvokeScriptResult = /** @class */ (function () {
     function InvokeScriptResult() {
         this.code = null;
         this.result = null;
+        this.transaction = null;
         this.executeTime = null;
         this.charged = null;
         this.output = null;
@@ -43,6 +44,17 @@ var InvokeScriptResult = /** @class */ (function () {
     };
     InvokeScriptResult.prototype.withResult = function (result) {
         this.result = result;
+        return this;
+    };
+    InvokeScriptResult.prototype.getTransaction = function () {
+        return this.transaction;
+    };
+    InvokeScriptResult.prototype.setTransaction = function (transaction) {
+        this.transaction = transaction;
+        return this;
+    };
+    InvokeScriptResult.prototype.withTransaction = function (transaction) {
+        this.transaction = transaction;
         return this;
     };
     InvokeScriptResult.prototype.getExecuteTime = function () {
@@ -82,6 +94,7 @@ var InvokeScriptResult = /** @class */ (function () {
         return new InvokeScriptResult()
             .withCode(data["code"])
             .withResult(data["result"])
+            .withTransaction(data["transaction"])
             .withExecuteTime(data["executeTime"])
             .withCharged(data["charged"])
             .withOutput(data.output ?
@@ -93,6 +106,7 @@ var InvokeScriptResult = /** @class */ (function () {
         return {
             "code": this.getCode(),
             "result": this.getResult(),
+            "transaction": this.getTransaction(),
             "executeTime": this.getExecuteTime(),
             "charged": this.getCharged(),
             "output": this.getOutput() ?
