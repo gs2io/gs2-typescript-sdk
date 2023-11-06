@@ -1,8 +1,10 @@
 import IResult from '../../core/interface/IResult';
+import * as Gs2Script from '../model';
 export default class InvokeScriptResult implements IResult {
     private code;
     private result;
     private transaction;
+    private randomStatus;
     private executeTime;
     private charged;
     private output;
@@ -15,6 +17,9 @@ export default class InvokeScriptResult implements IResult {
     getTransaction(): string | null;
     setTransaction(transaction: string | null): this;
     withTransaction(transaction: string | null): this;
+    getRandomStatus(): Gs2Script.RandomStatus | null;
+    setRandomStatus(randomStatus: Gs2Script.RandomStatus | null): this;
+    withRandomStatus(randomStatus: Gs2Script.RandomStatus | null): this;
     getExecuteTime(): number | null;
     setExecuteTime(executeTime: number | null): this;
     withExecuteTime(executeTime: number | null): this;

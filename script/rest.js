@@ -357,7 +357,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ScriptRestClient.prototype.invokeScript = function (request) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e, _f;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/invoke')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region);
@@ -370,6 +370,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
             'scriptId': (_b = request.getScriptId()) !== null && _b !== void 0 ? _b : null,
             'userId': (_c = request.getUserId()) !== null && _c !== void 0 ? _c : null,
             'args': (_d = request.getArgs()) !== null && _d !== void 0 ? _d : null,
+            'randomStatus': (_f = (_e = request.getRandomStatus()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -385,7 +386,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ScriptRestClient.prototype.debugInvoke = function (request) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/debug/invoke')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region);
@@ -397,6 +398,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
             'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
             'script': (_b = request.getScript()) !== null && _b !== void 0 ? _b : null,
             'args': (_c = request.getArgs()) !== null && _c !== void 0 ? _c : null,
+            'randomStatus': (_e = (_d = request.getRandomStatus()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

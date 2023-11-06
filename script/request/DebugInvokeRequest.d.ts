@@ -1,9 +1,11 @@
 import IRequest from '../../core/interface/IRequest';
+import * as Gs2Script from '../model';
 export default class DebugInvokeRequest implements IRequest {
     private requestId;
     private contextStack;
     private script;
     private args;
+    private randomStatus;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -16,6 +18,9 @@ export default class DebugInvokeRequest implements IRequest {
     getArgs(): string | null;
     setArgs(args: string | null): this;
     withArgs(args: string | null): this;
+    getRandomStatus(): Gs2Script.RandomStatus | null;
+    setRandomStatus(randomStatus: Gs2Script.RandomStatus | null): this;
+    withRandomStatus(randomStatus: Gs2Script.RandomStatus | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): DebugInvokeRequest;

@@ -15,11 +15,14 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Script = tslib_1.__importStar(require("../model"));
 var DebugInvokeResult = /** @class */ (function () {
     function DebugInvokeResult() {
         this.code = null;
         this.result = null;
         this.transaction = null;
+        this.randomStatus = null;
         this.executeTime = null;
         this.charged = null;
         this.output = null;
@@ -55,6 +58,17 @@ var DebugInvokeResult = /** @class */ (function () {
     };
     DebugInvokeResult.prototype.withTransaction = function (transaction) {
         this.transaction = transaction;
+        return this;
+    };
+    DebugInvokeResult.prototype.getRandomStatus = function () {
+        return this.randomStatus;
+    };
+    DebugInvokeResult.prototype.setRandomStatus = function (randomStatus) {
+        this.randomStatus = randomStatus;
+        return this;
+    };
+    DebugInvokeResult.prototype.withRandomStatus = function (randomStatus) {
+        this.randomStatus = randomStatus;
         return this;
     };
     DebugInvokeResult.prototype.getExecuteTime = function () {
@@ -95,6 +109,7 @@ var DebugInvokeResult = /** @class */ (function () {
             .withCode(data["code"])
             .withResult(data["result"])
             .withTransaction(data["transaction"])
+            .withRandomStatus(Gs2Script.RandomStatus.fromDict(data["randomStatus"]))
             .withExecuteTime(data["executeTime"])
             .withCharged(data["charged"])
             .withOutput(data.output ?
@@ -103,10 +118,12 @@ var DebugInvokeResult = /** @class */ (function () {
             }) : []);
     };
     DebugInvokeResult.prototype.toDict = function () {
+        var _a;
         return {
             "code": this.getCode(),
             "result": this.getResult(),
             "transaction": this.getTransaction(),
+            "randomStatus": (_a = this.getRandomStatus()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "executeTime": this.getExecuteTime(),
             "charged": this.getCharged(),
             "output": this.getOutput() ?

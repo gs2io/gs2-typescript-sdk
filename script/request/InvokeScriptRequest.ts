@@ -25,6 +25,7 @@ export default class InvokeScriptRequest implements IRequest {
     private scriptId: string|null = null;
     private userId: string|null = null;
     private args: string|null = null;
+    private randomStatus: Gs2Script.RandomStatus|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -86,12 +87,24 @@ export default class InvokeScriptRequest implements IRequest {
         this.args = args;
         return this;
     }
+    public getRandomStatus(): Gs2Script.RandomStatus|null {
+        return this.randomStatus;
+    }
+    public setRandomStatus(randomStatus: Gs2Script.RandomStatus|null) {
+        this.randomStatus = randomStatus;
+        return this;
+    }
+    public withRandomStatus(randomStatus: Gs2Script.RandomStatus|null): this {
+        this.randomStatus = randomStatus;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): InvokeScriptRequest {
         return new InvokeScriptRequest()
             .withScriptId(data["scriptId"])
             .withUserId(data["userId"])
-            .withArgs(data["args"]);
+            .withArgs(data["args"])
+            .withRandomStatus(Gs2Script.RandomStatus.fromDict(data["randomStatus"]));
     }
 
     public toDict(): {[key: string]: any} {
@@ -99,6 +112,7 @@ export default class InvokeScriptRequest implements IRequest {
             "scriptId": this.getScriptId(),
             "userId": this.getUserId(),
             "args": this.getArgs(),
+            "randomStatus": this.getRandomStatus()?.toDict(),
         };
     }
 }

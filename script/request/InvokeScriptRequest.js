@@ -15,6 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Script = tslib_1.__importStar(require("../model"));
 var InvokeScriptRequest = /** @class */ (function () {
     function InvokeScriptRequest() {
         this.requestId = null;
@@ -22,6 +24,7 @@ var InvokeScriptRequest = /** @class */ (function () {
         this.scriptId = null;
         this.userId = null;
         this.args = null;
+        this.randomStatus = null;
     }
     InvokeScriptRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +81,31 @@ var InvokeScriptRequest = /** @class */ (function () {
         this.args = args;
         return this;
     };
+    InvokeScriptRequest.prototype.getRandomStatus = function () {
+        return this.randomStatus;
+    };
+    InvokeScriptRequest.prototype.setRandomStatus = function (randomStatus) {
+        this.randomStatus = randomStatus;
+        return this;
+    };
+    InvokeScriptRequest.prototype.withRandomStatus = function (randomStatus) {
+        this.randomStatus = randomStatus;
+        return this;
+    };
     InvokeScriptRequest.fromDict = function (data) {
         return new InvokeScriptRequest()
             .withScriptId(data["scriptId"])
             .withUserId(data["userId"])
-            .withArgs(data["args"]);
+            .withArgs(data["args"])
+            .withRandomStatus(Gs2Script.RandomStatus.fromDict(data["randomStatus"]));
     };
     InvokeScriptRequest.prototype.toDict = function () {
+        var _a;
         return {
             "scriptId": this.getScriptId(),
             "userId": this.getUserId(),
             "args": this.getArgs(),
+            "randomStatus": (_a = this.getRandomStatus()) === null || _a === void 0 ? void 0 : _a.toDict(),
         };
     };
     return InvokeScriptRequest;

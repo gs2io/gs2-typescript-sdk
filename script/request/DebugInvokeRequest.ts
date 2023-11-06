@@ -24,6 +24,7 @@ export default class DebugInvokeRequest implements IRequest {
     private contextStack: string|null = null;
     private script: string|null = null;
     private args: string|null = null;
+    private randomStatus: Gs2Script.RandomStatus|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -74,17 +75,30 @@ export default class DebugInvokeRequest implements IRequest {
         this.args = args;
         return this;
     }
+    public getRandomStatus(): Gs2Script.RandomStatus|null {
+        return this.randomStatus;
+    }
+    public setRandomStatus(randomStatus: Gs2Script.RandomStatus|null) {
+        this.randomStatus = randomStatus;
+        return this;
+    }
+    public withRandomStatus(randomStatus: Gs2Script.RandomStatus|null): this {
+        this.randomStatus = randomStatus;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DebugInvokeRequest {
         return new DebugInvokeRequest()
             .withScript(data["script"])
-            .withArgs(data["args"]);
+            .withArgs(data["args"])
+            .withRandomStatus(Gs2Script.RandomStatus.fromDict(data["randomStatus"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "script": this.getScript(),
             "args": this.getArgs(),
+            "randomStatus": this.getRandomStatus()?.toDict(),
         };
     }
 }

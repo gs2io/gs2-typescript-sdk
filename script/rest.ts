@@ -424,6 +424,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
             'scriptId': request.getScriptId() ?? null,
             'userId': request.getUserId() ?? null,
             'args': request.getArgs() ?? null,
+            'randomStatus': request.getRandomStatus()?.toDict() ?? null,
         };
         return axios.post(
             url,
@@ -455,6 +456,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'script': request.getScript() ?? null,
             'args': request.getArgs() ?? null,
+            'randomStatus': request.getRandomStatus()?.toDict() ?? null,
         };
         return axios.post(
             url,

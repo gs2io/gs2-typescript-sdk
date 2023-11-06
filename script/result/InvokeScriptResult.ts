@@ -22,6 +22,7 @@ export default class InvokeScriptResult implements IResult {
     private code: number|null = null;
     private result: string|null = null;
     private transaction: string|null = null;
+    private randomStatus: Gs2Script.RandomStatus|null = null;
     private executeTime: number|null = null;
     private charged: number|null = null;
     private output: string[]|null = null;
@@ -65,6 +66,20 @@ export default class InvokeScriptResult implements IResult {
 
     public withTransaction(transaction: string|null): this {
         this.transaction = transaction;
+        return this;
+    }
+
+    public getRandomStatus(): Gs2Script.RandomStatus|null {
+        return this.randomStatus;
+    }
+
+    public setRandomStatus(randomStatus: Gs2Script.RandomStatus|null) {
+        this.randomStatus = randomStatus;
+        return this;
+    }
+
+    public withRandomStatus(randomStatus: Gs2Script.RandomStatus|null): this {
+        this.randomStatus = randomStatus;
         return this;
     }
 
@@ -115,6 +130,7 @@ export default class InvokeScriptResult implements IResult {
             .withCode(data["code"])
             .withResult(data["result"])
             .withTransaction(data["transaction"])
+            .withRandomStatus(Gs2Script.RandomStatus.fromDict(data["randomStatus"]))
             .withExecuteTime(data["executeTime"])
             .withCharged(data["charged"])
             .withOutput(data.output ?
@@ -129,6 +145,7 @@ export default class InvokeScriptResult implements IResult {
             "code": this.getCode(),
             "result": this.getResult(),
             "transaction": this.getTransaction(),
+            "randomStatus": this.getRandomStatus()?.toDict(),
             "executeTime": this.getExecuteTime(),
             "charged": this.getCharged(),
             "output": this.getOutput() ?
