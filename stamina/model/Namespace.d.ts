@@ -1,5 +1,4 @@
 import IModel from '../../core/interface/IModel';
-import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 export default class Namespace implements IModel {
     private namespaceId;
@@ -24,9 +23,9 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
-    getOverflowTriggerScript(): ScriptSetting | null;
-    setOverflowTriggerScript(overflowTriggerScript: ScriptSetting | null): this;
-    withOverflowTriggerScript(overflowTriggerScript: ScriptSetting | null): this;
+    getOverflowTriggerScript(): string | null;
+    setOverflowTriggerScript(overflowTriggerScript: string | null): this;
+    withOverflowTriggerScript(overflowTriggerScript: string | null): this;
     getLogSetting(): LogSetting | null;
     setLogSetting(logSetting: LogSetting | null): this;
     withLogSetting(logSetting: LogSetting | null): this;

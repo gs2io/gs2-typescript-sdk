@@ -23,9 +23,9 @@ export default class CreateNamespaceRequest implements IRequest {
     getEntryScript(): Gs2Dictionary.ScriptSetting | null;
     setEntryScript(entryScript: Gs2Dictionary.ScriptSetting | null): this;
     withEntryScript(entryScript: Gs2Dictionary.ScriptSetting | null): this;
-    getDuplicateEntryScript(): Gs2Dictionary.ScriptSetting | null;
-    setDuplicateEntryScript(duplicateEntryScript: Gs2Dictionary.ScriptSetting | null): this;
-    withDuplicateEntryScript(duplicateEntryScript: Gs2Dictionary.ScriptSetting | null): this;
+    getDuplicateEntryScript(): string | null;
+    setDuplicateEntryScript(duplicateEntryScript: string | null): this;
+    withDuplicateEntryScript(duplicateEntryScript: string | null): this;
     getLogSetting(): Gs2Dictionary.LogSetting | null;
     setLogSetting(logSetting: Gs2Dictionary.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Dictionary.LogSetting | null): this;

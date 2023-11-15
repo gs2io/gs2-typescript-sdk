@@ -19,9 +19,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
-    getOverflowTriggerScript(): Gs2Stamina.ScriptSetting | null;
-    setOverflowTriggerScript(overflowTriggerScript: Gs2Stamina.ScriptSetting | null): this;
-    withOverflowTriggerScript(overflowTriggerScript: Gs2Stamina.ScriptSetting | null): this;
+    getOverflowTriggerScript(): string | null;
+    setOverflowTriggerScript(overflowTriggerScript: string | null): this;
+    withOverflowTriggerScript(overflowTriggerScript: string | null): this;
     getLogSetting(): Gs2Stamina.LogSetting | null;
     setLogSetting(logSetting: Gs2Stamina.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Stamina.LogSetting | null): this;

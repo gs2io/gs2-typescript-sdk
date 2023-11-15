@@ -24,7 +24,7 @@ export default class Namespace implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private entryScript: ScriptSetting|null = null;
-    private duplicateEntryScript: ScriptSetting|null = null;
+    private duplicateEntryScript: string|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -133,14 +133,14 @@ export default class Namespace implements IModel {
         this.entryScript = entryScript;
         return this;
     }
-    public getDuplicateEntryScript(): ScriptSetting|null {
+    public getDuplicateEntryScript(): string|null {
         return this.duplicateEntryScript;
     }
-    public setDuplicateEntryScript(duplicateEntryScript: ScriptSetting|null) {
+    public setDuplicateEntryScript(duplicateEntryScript: string|null) {
         this.duplicateEntryScript = duplicateEntryScript;
         return this;
     }
-    public withDuplicateEntryScript(duplicateEntryScript: ScriptSetting|null): this {
+    public withDuplicateEntryScript(duplicateEntryScript: string|null): this {
         this.duplicateEntryScript = duplicateEntryScript;
         return this;
     }
@@ -198,7 +198,7 @@ export default class Namespace implements IModel {
             .withName(data["name"])
             .withDescription(data["description"])
             .withEntryScript(ScriptSetting.fromDict(data["entryScript"]))
-            .withDuplicateEntryScript(ScriptSetting.fromDict(data["duplicateEntryScript"]))
+            .withDuplicateEntryScript(data["duplicateEntryScript"])
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -211,7 +211,7 @@ export default class Namespace implements IModel {
             "name": this.getName(),
             "description": this.getDescription(),
             "entryScript": this.getEntryScript()?.toDict(),
-            "duplicateEntryScript": this.getDuplicateEntryScript()?.toDict(),
+            "duplicateEntryScript": this.getDuplicateEntryScript(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

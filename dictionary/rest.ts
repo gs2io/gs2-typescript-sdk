@@ -68,7 +68,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
             'entryScript': request.getEntryScript()?.toDict() ?? null,
-            'duplicateEntryScript': request.getDuplicateEntryScript()?.toDict() ?? null,
+            'duplicateEntryScript': request.getDuplicateEntryScript() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.post(
@@ -154,7 +154,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
             'entryScript': request.getEntryScript()?.toDict() ?? null,
-            'duplicateEntryScript': request.getDuplicateEntryScript()?.toDict() ?? null,
+            'duplicateEntryScript': request.getDuplicateEntryScript() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.put(

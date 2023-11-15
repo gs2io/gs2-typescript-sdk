@@ -24,7 +24,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private description: string|null = null;
-    private overflowTriggerScript: Gs2Stamina.ScriptSetting|null = null;
+    private overflowTriggerScript: string|null = null;
     private logSetting: Gs2Stamina.LogSetting|null = null;
 
     public getRequestId(): string|null {
@@ -76,14 +76,14 @@ export default class UpdateNamespaceRequest implements IRequest {
         this.description = description;
         return this;
     }
-    public getOverflowTriggerScript(): Gs2Stamina.ScriptSetting|null {
+    public getOverflowTriggerScript(): string|null {
         return this.overflowTriggerScript;
     }
-    public setOverflowTriggerScript(overflowTriggerScript: Gs2Stamina.ScriptSetting|null) {
+    public setOverflowTriggerScript(overflowTriggerScript: string|null) {
         this.overflowTriggerScript = overflowTriggerScript;
         return this;
     }
-    public withOverflowTriggerScript(overflowTriggerScript: Gs2Stamina.ScriptSetting|null): this {
+    public withOverflowTriggerScript(overflowTriggerScript: string|null): this {
         this.overflowTriggerScript = overflowTriggerScript;
         return this;
     }
@@ -103,7 +103,7 @@ export default class UpdateNamespaceRequest implements IRequest {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
-            .withOverflowTriggerScript(Gs2Stamina.ScriptSetting.fromDict(data["overflowTriggerScript"]))
+            .withOverflowTriggerScript(data["overflowTriggerScript"])
             .withLogSetting(Gs2Stamina.LogSetting.fromDict(data["logSetting"]));
     }
 
@@ -111,7 +111,7 @@ export default class UpdateNamespaceRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
-            "overflowTriggerScript": this.getOverflowTriggerScript()?.toDict(),
+            "overflowTriggerScript": this.getOverflowTriggerScript(),
             "logSetting": this.getLogSetting()?.toDict(),
         };
     }

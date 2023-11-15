@@ -28,9 +28,9 @@ export default class Namespace implements IModel {
     getEntryScript(): ScriptSetting | null;
     setEntryScript(entryScript: ScriptSetting | null): this;
     withEntryScript(entryScript: ScriptSetting | null): this;
-    getDuplicateEntryScript(): ScriptSetting | null;
-    setDuplicateEntryScript(duplicateEntryScript: ScriptSetting | null): this;
-    withDuplicateEntryScript(duplicateEntryScript: ScriptSetting | null): this;
+    getDuplicateEntryScript(): string | null;
+    setDuplicateEntryScript(duplicateEntryScript: string | null): this;
+    withDuplicateEntryScript(duplicateEntryScript: string | null): this;
     getLogSetting(): LogSetting | null;
     setLogSetting(logSetting: LogSetting | null): this;
     withLogSetting(logSetting: LogSetting | null): this;

@@ -96,16 +96,16 @@ var CreateNamespaceRequest = /** @class */ (function () {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
-            .withOverflowTriggerScript(Gs2Stamina.ScriptSetting.fromDict(data["overflowTriggerScript"]))
+            .withOverflowTriggerScript(data["overflowTriggerScript"])
             .withLogSetting(Gs2Stamina.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b;
+        var _a;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
-            "overflowTriggerScript": (_a = this.getOverflowTriggerScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "overflowTriggerScript": this.getOverflowTriggerScript(),
+            "logSetting": (_a = this.getLogSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
         };
     };
     return CreateNamespaceRequest;

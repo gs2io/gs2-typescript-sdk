@@ -15,7 +15,6 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:stamina:{namespaceName}";
 
@@ -23,7 +22,7 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
-    private overflowTriggerScript: ScriptSetting|null = null;
+    private overflowTriggerScript: string|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -121,14 +120,14 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
-    public getOverflowTriggerScript(): ScriptSetting|null {
+    public getOverflowTriggerScript(): string|null {
         return this.overflowTriggerScript;
     }
-    public setOverflowTriggerScript(overflowTriggerScript: ScriptSetting|null) {
+    public setOverflowTriggerScript(overflowTriggerScript: string|null) {
         this.overflowTriggerScript = overflowTriggerScript;
         return this;
     }
-    public withOverflowTriggerScript(overflowTriggerScript: ScriptSetting|null): this {
+    public withOverflowTriggerScript(overflowTriggerScript: string|null): this {
         this.overflowTriggerScript = overflowTriggerScript;
         return this;
     }
@@ -185,7 +184,7 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withOverflowTriggerScript(ScriptSetting.fromDict(data["overflowTriggerScript"]))
+            .withOverflowTriggerScript(data["overflowTriggerScript"])
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -197,7 +196,7 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
-            "overflowTriggerScript": this.getOverflowTriggerScript()?.toDict(),
+            "overflowTriggerScript": this.getOverflowTriggerScript(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

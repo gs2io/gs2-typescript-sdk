@@ -109,17 +109,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withEntryScript(Gs2Dictionary.ScriptSetting.fromDict(data["entryScript"]))
-            .withDuplicateEntryScript(Gs2Dictionary.ScriptSetting.fromDict(data["duplicateEntryScript"]))
+            .withDuplicateEntryScript(data["duplicateEntryScript"])
             .withLogSetting(Gs2Dictionary.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c;
+        var _a, _b;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
             "entryScript": (_a = this.getEntryScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "duplicateEntryScript": (_b = this.getDuplicateEntryScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "duplicateEntryScript": this.getDuplicateEntryScript(),
+            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return CreateNamespaceRequest;
