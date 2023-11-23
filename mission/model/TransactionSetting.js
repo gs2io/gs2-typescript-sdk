@@ -44,13 +44,16 @@ var TransactionSetting = /** @class */ (function () {
         this.distributorNamespaceId = distributorNamespaceId;
         return this;
     };
+    /** @deprecated */
     TransactionSetting.prototype.getKeyId = function () {
         return this.keyId;
     };
+    /** @deprecated */
     TransactionSetting.prototype.setKeyId = function (keyId) {
         this.keyId = keyId;
         return this;
     };
+    /** @deprecated */
     TransactionSetting.prototype.withKeyId = function (keyId) {
         this.keyId = keyId;
         return this;

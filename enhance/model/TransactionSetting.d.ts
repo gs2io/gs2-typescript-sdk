@@ -10,8 +10,11 @@ export default class TransactionSetting implements IModel {
     getDistributorNamespaceId(): string | null;
     setDistributorNamespaceId(distributorNamespaceId: string | null): this;
     withDistributorNamespaceId(distributorNamespaceId: string | null): this;
+    /** @deprecated */
     getKeyId(): string | null;
+    /** @deprecated */
     setKeyId(keyId: string | null): this;
+    /** @deprecated */
     withKeyId(keyId: string | null): this;
     getQueueNamespaceId(): string | null;
     setQueueNamespaceId(queueNamespaceId: string | null): this;

@@ -22,7 +22,6 @@ export default class Entry implements IModel {
     private userId: string|null = null;
     private name: string|null = null;
     private acquiredAt: number|null = null;
-    private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -171,17 +170,6 @@ export default class Entry implements IModel {
         this.acquiredAt = acquiredAt;
         return this;
     }
-    public getRevision(): number|null {
-        return this.revision;
-    }
-    public setRevision(revision: number|null) {
-        this.revision = revision;
-        return this;
-    }
-    public withRevision(revision: number|null): this {
-        this.revision = revision;
-        return this;
-    }
 
     public static fromDict(data: {[key: string]: any}): Entry|null {
         if (data == undefined || data == null) {
@@ -191,8 +179,7 @@ export default class Entry implements IModel {
             .withEntryId(data["entryId"])
             .withUserId(data["userId"])
             .withName(data["name"])
-            .withAcquiredAt(data["acquiredAt"])
-            .withRevision(data["revision"]);
+            .withAcquiredAt(data["acquiredAt"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -201,7 +188,6 @@ export default class Entry implements IModel {
             "userId": this.getUserId(),
             "name": this.getName(),
             "acquiredAt": this.getAcquiredAt(),
-            "revision": this.getRevision(),
         };
     }
 }

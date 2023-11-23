@@ -4,7 +4,6 @@ export default class Entry implements IModel {
     private userId;
     private name;
     private acquiredAt;
-    private revision;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -24,9 +23,6 @@ export default class Entry implements IModel {
     getAcquiredAt(): number | null;
     setAcquiredAt(acquiredAt: number | null): this;
     withAcquiredAt(acquiredAt: number | null): this;
-    getRevision(): number | null;
-    setRevision(revision: number | null): this;
-    withRevision(revision: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): Entry | null;

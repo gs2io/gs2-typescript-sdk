@@ -22,7 +22,6 @@ var Entry = /** @class */ (function () {
         this.userId = null;
         this.name = null;
         this.acquiredAt = null;
-        this.revision = null;
     }
     Entry.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -154,17 +153,6 @@ var Entry = /** @class */ (function () {
         this.acquiredAt = acquiredAt;
         return this;
     };
-    Entry.prototype.getRevision = function () {
-        return this.revision;
-    };
-    Entry.prototype.setRevision = function (revision) {
-        this.revision = revision;
-        return this;
-    };
-    Entry.prototype.withRevision = function (revision) {
-        this.revision = revision;
-        return this;
-    };
     Entry.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -173,8 +161,7 @@ var Entry = /** @class */ (function () {
             .withEntryId(data["entryId"])
             .withUserId(data["userId"])
             .withName(data["name"])
-            .withAcquiredAt(data["acquiredAt"])
-            .withRevision(data["revision"]);
+            .withAcquiredAt(data["acquiredAt"]);
     };
     Entry.prototype.toDict = function () {
         return {
@@ -182,7 +169,6 @@ var Entry = /** @class */ (function () {
             "userId": this.getUserId(),
             "name": this.getName(),
             "acquiredAt": this.getAcquiredAt(),
-            "revision": this.getRevision(),
         };
     };
     return Entry;

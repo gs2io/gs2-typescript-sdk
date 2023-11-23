@@ -43,13 +43,16 @@ export default class TransactionSetting implements IModel {
         this.distributorNamespaceId = distributorNamespaceId;
         return this;
     }
+    /** @deprecated */
     public getKeyId(): string|null {
         return this.keyId;
     }
+    /** @deprecated */
     public setKeyId(keyId: string|null) {
         this.keyId = keyId;
         return this;
     }
+    /** @deprecated */
     public withKeyId(keyId: string|null): this {
         this.keyId = keyId;
         return this;
