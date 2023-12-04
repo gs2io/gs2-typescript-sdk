@@ -694,6 +694,7 @@ export default class Gs2JobQueueRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'tryNumber': String(request.getTryNumber() ?? null),
         };
         return axios.get(
             url,
@@ -722,6 +723,7 @@ export default class Gs2JobQueueRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'tryNumber': String(request.getTryNumber() ?? null),
         };
         return axios.get(
             url,

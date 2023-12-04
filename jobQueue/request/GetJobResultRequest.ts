@@ -25,6 +25,7 @@ export default class GetJobResultRequest implements IRequest {
     private namespaceName: string|null = null;
     private accessToken: string|null = null;
     private jobName: string|null = null;
+    private tryNumber: number|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -86,12 +87,24 @@ export default class GetJobResultRequest implements IRequest {
         this.jobName = jobName;
         return this;
     }
+    public getTryNumber(): number|null {
+        return this.tryNumber;
+    }
+    public setTryNumber(tryNumber: number|null) {
+        this.tryNumber = tryNumber;
+        return this;
+    }
+    public withTryNumber(tryNumber: number|null): this {
+        this.tryNumber = tryNumber;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetJobResultRequest {
         return new GetJobResultRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withJobName(data["jobName"]);
+            .withJobName(data["jobName"])
+            .withTryNumber(data["tryNumber"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -99,6 +112,7 @@ export default class GetJobResultRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
             "jobName": this.getJobName(),
+            "tryNumber": this.getTryNumber(),
         };
     }
 }

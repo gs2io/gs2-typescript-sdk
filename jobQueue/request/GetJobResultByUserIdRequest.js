@@ -22,6 +22,7 @@ var GetJobResultByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.jobName = null;
+        this.tryNumber = null;
     }
     GetJobResultByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetJobResultByUserIdRequest = /** @class */ (function () {
         this.jobName = jobName;
         return this;
     };
+    GetJobResultByUserIdRequest.prototype.getTryNumber = function () {
+        return this.tryNumber;
+    };
+    GetJobResultByUserIdRequest.prototype.setTryNumber = function (tryNumber) {
+        this.tryNumber = tryNumber;
+        return this;
+    };
+    GetJobResultByUserIdRequest.prototype.withTryNumber = function (tryNumber) {
+        this.tryNumber = tryNumber;
+        return this;
+    };
     GetJobResultByUserIdRequest.fromDict = function (data) {
         return new GetJobResultByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withJobName(data["jobName"]);
+            .withJobName(data["jobName"])
+            .withTryNumber(data["tryNumber"]);
     };
     GetJobResultByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "jobName": this.getJobName(),
+            "tryNumber": this.getTryNumber(),
         };
     };
     return GetJobResultByUserIdRequest;

@@ -593,7 +593,7 @@ var Gs2JobQueueRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2JobQueueRestClient.prototype.getJobResult = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/job/{jobName}/result')
             .replace('{service}', 'job-queue')
             .replace('{region}', this.session.region)
@@ -608,6 +608,7 @@ var Gs2JobQueueRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'tryNumber': String((_g = request.getTryNumber()) !== null && _g !== void 0 ? _g : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -619,7 +620,7 @@ var Gs2JobQueueRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2JobQueueRestClient.prototype.getJobResultByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/job/{jobName}/result')
             .replace('{service}', 'job-queue')
             .replace('{region}', this.session.region)
@@ -632,6 +633,7 @@ var Gs2JobQueueRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'tryNumber': String((_h = request.getTryNumber()) !== null && _h !== void 0 ? _h : null),
         };
         return axios_1.default.get(url, {
             params: params,

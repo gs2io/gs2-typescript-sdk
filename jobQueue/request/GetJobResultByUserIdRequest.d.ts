@@ -5,6 +5,7 @@ export default class GetJobResultByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private jobName;
+    private tryNumber;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -20,6 +21,9 @@ export default class GetJobResultByUserIdRequest implements IRequest {
     getJobName(): string | null;
     setJobName(jobName: string | null): this;
     withJobName(jobName: string | null): this;
+    getTryNumber(): number | null;
+    setTryNumber(tryNumber: number | null): this;
+    withTryNumber(tryNumber: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetJobResultByUserIdRequest;
