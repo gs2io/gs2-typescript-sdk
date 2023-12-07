@@ -121,11 +121,13 @@ import GetSimpleItemWithSignatureByUserIdRequest from "./GetSimpleItemWithSignat
 import AcquireSimpleItemsByUserIdRequest from "./AcquireSimpleItemsByUserIdRequest"
 import ConsumeSimpleItemsRequest from "./ConsumeSimpleItemsRequest"
 import ConsumeSimpleItemsByUserIdRequest from "./ConsumeSimpleItemsByUserIdRequest"
+import SetSimpleItemsByUserIdRequest from "./SetSimpleItemsByUserIdRequest"
 import DeleteSimpleItemsByUserIdRequest from "./DeleteSimpleItemsByUserIdRequest"
 import VerifySimpleItemRequest from "./VerifySimpleItemRequest"
 import VerifySimpleItemByUserIdRequest from "./VerifySimpleItemByUserIdRequest"
 import AcquireSimpleItemsByStampSheetRequest from "./AcquireSimpleItemsByStampSheetRequest"
 import ConsumeSimpleItemsByStampTaskRequest from "./ConsumeSimpleItemsByStampTaskRequest"
+import SetSimpleItemsByStampSheetRequest from "./SetSimpleItemsByStampSheetRequest"
 import VerifySimpleItemByStampTaskRequest from "./VerifySimpleItemByStampTaskRequest"
 import DescribeBigItemsRequest from "./DescribeBigItemsRequest"
 import DescribeBigItemsByUserIdRequest from "./DescribeBigItemsByUserIdRequest"
@@ -134,11 +136,13 @@ import GetBigItemByUserIdRequest from "./GetBigItemByUserIdRequest"
 import AcquireBigItemByUserIdRequest from "./AcquireBigItemByUserIdRequest"
 import ConsumeBigItemRequest from "./ConsumeBigItemRequest"
 import ConsumeBigItemByUserIdRequest from "./ConsumeBigItemByUserIdRequest"
+import SetBigItemByUserIdRequest from "./SetBigItemByUserIdRequest"
 import DeleteBigItemByUserIdRequest from "./DeleteBigItemByUserIdRequest"
 import VerifyBigItemRequest from "./VerifyBigItemRequest"
 import VerifyBigItemByUserIdRequest from "./VerifyBigItemByUserIdRequest"
 import AcquireBigItemByStampSheetRequest from "./AcquireBigItemByStampSheetRequest"
 import ConsumeBigItemByStampTaskRequest from "./ConsumeBigItemByStampTaskRequest"
+import SetBigItemByStampSheetRequest from "./SetBigItemByStampSheetRequest"
 import VerifyBigItemByStampTaskRequest from "./VerifyBigItemByStampTaskRequest"
 
 export {
@@ -250,11 +254,13 @@ export {
     AcquireSimpleItemsByUserIdRequest,
     ConsumeSimpleItemsRequest,
     ConsumeSimpleItemsByUserIdRequest,
+    SetSimpleItemsByUserIdRequest,
     DeleteSimpleItemsByUserIdRequest,
     VerifySimpleItemRequest,
     VerifySimpleItemByUserIdRequest,
     AcquireSimpleItemsByStampSheetRequest,
     ConsumeSimpleItemsByStampTaskRequest,
+    SetSimpleItemsByStampSheetRequest,
     VerifySimpleItemByStampTaskRequest,
     DescribeBigItemsRequest,
     DescribeBigItemsByUserIdRequest,
@@ -263,10 +269,12 @@ export {
     AcquireBigItemByUserIdRequest,
     ConsumeBigItemRequest,
     ConsumeBigItemByUserIdRequest,
+    SetBigItemByUserIdRequest,
     DeleteBigItemByUserIdRequest,
     VerifyBigItemRequest,
     VerifyBigItemByUserIdRequest,
     AcquireBigItemByStampSheetRequest,
     ConsumeBigItemByStampTaskRequest,
+    SetBigItemByStampSheetRequest,
     VerifyBigItemByStampTaskRequest,
 };

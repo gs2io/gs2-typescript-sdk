@@ -112,11 +112,13 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
     acquireSimpleItemsByUserId(request: Request.AcquireSimpleItemsByUserIdRequest): Promise<Result.AcquireSimpleItemsByUserIdResult>;
     consumeSimpleItems(request: Request.ConsumeSimpleItemsRequest): Promise<Result.ConsumeSimpleItemsResult>;
     consumeSimpleItemsByUserId(request: Request.ConsumeSimpleItemsByUserIdRequest): Promise<Result.ConsumeSimpleItemsByUserIdResult>;
+    setSimpleItemsByUserId(request: Request.SetSimpleItemsByUserIdRequest): Promise<Result.SetSimpleItemsByUserIdResult>;
     deleteSimpleItemsByUserId(request: Request.DeleteSimpleItemsByUserIdRequest): Promise<Result.DeleteSimpleItemsByUserIdResult>;
     verifySimpleItem(request: Request.VerifySimpleItemRequest): Promise<Result.VerifySimpleItemResult>;
     verifySimpleItemByUserId(request: Request.VerifySimpleItemByUserIdRequest): Promise<Result.VerifySimpleItemByUserIdResult>;
     acquireSimpleItemsByStampSheet(request: Request.AcquireSimpleItemsByStampSheetRequest): Promise<Result.AcquireSimpleItemsByStampSheetResult>;
     consumeSimpleItemsByStampTask(request: Request.ConsumeSimpleItemsByStampTaskRequest): Promise<Result.ConsumeSimpleItemsByStampTaskResult>;
+    setSimpleItemsByStampSheet(request: Request.SetSimpleItemsByStampSheetRequest): Promise<Result.SetSimpleItemsByStampSheetResult>;
     verifySimpleItemByStampTask(request: Request.VerifySimpleItemByStampTaskRequest): Promise<Result.VerifySimpleItemByStampTaskResult>;
     describeBigItems(request: Request.DescribeBigItemsRequest): Promise<Result.DescribeBigItemsResult>;
     describeBigItemsByUserId(request: Request.DescribeBigItemsByUserIdRequest): Promise<Result.DescribeBigItemsByUserIdResult>;
@@ -125,10 +127,12 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
     acquireBigItemByUserId(request: Request.AcquireBigItemByUserIdRequest): Promise<Result.AcquireBigItemByUserIdResult>;
     consumeBigItem(request: Request.ConsumeBigItemRequest): Promise<Result.ConsumeBigItemResult>;
     consumeBigItemByUserId(request: Request.ConsumeBigItemByUserIdRequest): Promise<Result.ConsumeBigItemByUserIdResult>;
+    setBigItemByUserId(request: Request.SetBigItemByUserIdRequest): Promise<Result.SetBigItemByUserIdResult>;
     deleteBigItemByUserId(request: Request.DeleteBigItemByUserIdRequest): Promise<Result.DeleteBigItemByUserIdResult>;
     verifyBigItem(request: Request.VerifyBigItemRequest): Promise<Result.VerifyBigItemResult>;
     verifyBigItemByUserId(request: Request.VerifyBigItemByUserIdRequest): Promise<Result.VerifyBigItemByUserIdResult>;
     acquireBigItemByStampSheet(request: Request.AcquireBigItemByStampSheetRequest): Promise<Result.AcquireBigItemByStampSheetResult>;
     consumeBigItemByStampTask(request: Request.ConsumeBigItemByStampTaskRequest): Promise<Result.ConsumeBigItemByStampTaskResult>;
+    setBigItemByStampSheet(request: Request.SetBigItemByStampSheetRequest): Promise<Result.SetBigItemByStampSheetResult>;
     verifyBigItemByStampTask(request: Request.VerifyBigItemByStampTaskRequest): Promise<Result.VerifyBigItemByStampTaskResult>;
 }

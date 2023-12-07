@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConsumeCount = exports.AcquireCount = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.BigItem = exports.BigInventory = exports.SimpleItem = exports.SimpleInventory = exports.ReferenceOf = exports.ItemSet = exports.Inventory = exports.CurrentItemModelMaster = exports.BigItemModel = exports.BigItemModelMaster = exports.BigInventoryModel = exports.BigInventoryModelMaster = exports.SimpleItemModel = exports.SimpleItemModelMaster = exports.SimpleInventoryModel = exports.SimpleInventoryModelMaster = exports.ItemModel = exports.ItemModelMaster = exports.InventoryModel = exports.InventoryModelMaster = exports.Namespace = void 0;
+exports.HeldCount = exports.ConsumeCount = exports.AcquireCount = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.BigItem = exports.BigInventory = exports.SimpleItem = exports.SimpleInventory = exports.ReferenceOf = exports.ItemSet = exports.Inventory = exports.CurrentItemModelMaster = exports.BigItemModel = exports.BigItemModelMaster = exports.BigInventoryModel = exports.BigInventoryModelMaster = exports.SimpleItemModel = exports.SimpleItemModelMaster = exports.SimpleInventoryModel = exports.SimpleInventoryModelMaster = exports.ItemModel = exports.ItemModelMaster = exports.InventoryModel = exports.InventoryModelMaster = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -69,4 +69,6 @@ var AcquireCount_1 = tslib_1.__importDefault(require("./AcquireCount"));
 exports.AcquireCount = AcquireCount_1.default;
 var ConsumeCount_1 = tslib_1.__importDefault(require("./ConsumeCount"));
 exports.ConsumeCount = ConsumeCount_1.default;
+var HeldCount_1 = tslib_1.__importDefault(require("./HeldCount"));
+exports.HeldCount = HeldCount_1.default;
 //# sourceMappingURL=index.js.map

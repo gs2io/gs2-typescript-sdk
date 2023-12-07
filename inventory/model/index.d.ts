@@ -24,4 +24,5 @@ import ScriptSetting from "./ScriptSetting";
 import LogSetting from "./LogSetting";
 import AcquireCount from "./AcquireCount";
 import ConsumeCount from "./ConsumeCount";
-export { Namespace, InventoryModelMaster, InventoryModel, ItemModelMaster, ItemModel, SimpleInventoryModelMaster, SimpleInventoryModel, SimpleItemModelMaster, SimpleItemModel, BigInventoryModelMaster, BigInventoryModel, BigItemModelMaster, BigItemModel, CurrentItemModelMaster, Inventory, ItemSet, ReferenceOf, SimpleInventory, SimpleItem, BigInventory, BigItem, GitHubCheckoutSetting, ScriptSetting, LogSetting, AcquireCount, ConsumeCount, };
+import HeldCount from "./HeldCount";
+export { Namespace, InventoryModelMaster, InventoryModel, ItemModelMaster, ItemModel, SimpleInventoryModelMaster, SimpleInventoryModel, SimpleItemModelMaster, SimpleItemModel, BigInventoryModelMaster, BigInventoryModel, BigItemModelMaster, BigItemModel, CurrentItemModelMaster, Inventory, ItemSet, ReferenceOf, SimpleInventory, SimpleItem, BigInventory, BigItem, GitHubCheckoutSetting, ScriptSetting, LogSetting, AcquireCount, ConsumeCount, HeldCount, };

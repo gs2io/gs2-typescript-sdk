@@ -121,11 +121,13 @@ import GetSimpleItemWithSignatureByUserIdResult from "./GetSimpleItemWithSignatu
 import AcquireSimpleItemsByUserIdResult from "./AcquireSimpleItemsByUserIdResult"
 import ConsumeSimpleItemsResult from "./ConsumeSimpleItemsResult"
 import ConsumeSimpleItemsByUserIdResult from "./ConsumeSimpleItemsByUserIdResult"
+import SetSimpleItemsByUserIdResult from "./SetSimpleItemsByUserIdResult"
 import DeleteSimpleItemsByUserIdResult from "./DeleteSimpleItemsByUserIdResult"
 import VerifySimpleItemResult from "./VerifySimpleItemResult"
 import VerifySimpleItemByUserIdResult from "./VerifySimpleItemByUserIdResult"
 import AcquireSimpleItemsByStampSheetResult from "./AcquireSimpleItemsByStampSheetResult"
 import ConsumeSimpleItemsByStampTaskResult from "./ConsumeSimpleItemsByStampTaskResult"
+import SetSimpleItemsByStampSheetResult from "./SetSimpleItemsByStampSheetResult"
 import VerifySimpleItemByStampTaskResult from "./VerifySimpleItemByStampTaskResult"
 import DescribeBigItemsResult from "./DescribeBigItemsResult"
 import DescribeBigItemsByUserIdResult from "./DescribeBigItemsByUserIdResult"
@@ -134,11 +136,13 @@ import GetBigItemByUserIdResult from "./GetBigItemByUserIdResult"
 import AcquireBigItemByUserIdResult from "./AcquireBigItemByUserIdResult"
 import ConsumeBigItemResult from "./ConsumeBigItemResult"
 import ConsumeBigItemByUserIdResult from "./ConsumeBigItemByUserIdResult"
+import SetBigItemByUserIdResult from "./SetBigItemByUserIdResult"
 import DeleteBigItemByUserIdResult from "./DeleteBigItemByUserIdResult"
 import VerifyBigItemResult from "./VerifyBigItemResult"
 import VerifyBigItemByUserIdResult from "./VerifyBigItemByUserIdResult"
 import AcquireBigItemByStampSheetResult from "./AcquireBigItemByStampSheetResult"
 import ConsumeBigItemByStampTaskResult from "./ConsumeBigItemByStampTaskResult"
+import SetBigItemByStampSheetResult from "./SetBigItemByStampSheetResult"
 import VerifyBigItemByStampTaskResult from "./VerifyBigItemByStampTaskResult"
 
 export {
@@ -250,11 +254,13 @@ export {
     AcquireSimpleItemsByUserIdResult,
     ConsumeSimpleItemsResult,
     ConsumeSimpleItemsByUserIdResult,
+    SetSimpleItemsByUserIdResult,
     DeleteSimpleItemsByUserIdResult,
     VerifySimpleItemResult,
     VerifySimpleItemByUserIdResult,
     AcquireSimpleItemsByStampSheetResult,
     ConsumeSimpleItemsByStampTaskResult,
+    SetSimpleItemsByStampSheetResult,
     VerifySimpleItemByStampTaskResult,
     DescribeBigItemsResult,
     DescribeBigItemsByUserIdResult,
@@ -263,10 +269,12 @@ export {
     AcquireBigItemByUserIdResult,
     ConsumeBigItemResult,
     ConsumeBigItemByUserIdResult,
+    SetBigItemByUserIdResult,
     DeleteBigItemByUserIdResult,
     VerifyBigItemResult,
     VerifyBigItemByUserIdResult,
     AcquireBigItemByStampSheetResult,
     ConsumeBigItemByStampTaskResult,
+    SetBigItemByStampSheetResult,
     VerifyBigItemByStampTaskResult,
 };

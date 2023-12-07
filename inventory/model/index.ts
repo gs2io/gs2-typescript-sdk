@@ -39,6 +39,7 @@ import ScriptSetting from "./ScriptSetting"
 import LogSetting from "./LogSetting"
 import AcquireCount from "./AcquireCount"
 import ConsumeCount from "./ConsumeCount"
+import HeldCount from "./HeldCount"
 
 export {
     Namespace,
@@ -67,4 +68,5 @@ export {
     LogSetting,
     AcquireCount,
     ConsumeCount,
+    HeldCount,
 };
