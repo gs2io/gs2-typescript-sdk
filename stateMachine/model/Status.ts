@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import RandomUsed from './RandomUsed';
+import RandomStatus from './RandomStatus';
 import StackEntry from './StackEntry';
 import Variable from './Variable';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:stateMachine:{namespaceName}:user:{userId}:status:{statusName}";
@@ -24,6 +26,9 @@ export default class Status implements IModel {
     private userId: string|null = null;
     private name: string|null = null;
     private stateMachineVersion: number|null = null;
+    private enableSpeculativeExecution: string|null = null;
+    private stateMachineDefinition: string|null = null;
+    private randomStatus: RandomStatus|null = null;
     private stacks: StackEntry[]|null = null;
     private variables: Variable[]|null = null;
     private status: string|null = null;
@@ -179,6 +184,39 @@ export default class Status implements IModel {
         this.stateMachineVersion = stateMachineVersion;
         return this;
     }
+    public getEnableSpeculativeExecution(): string|null {
+        return this.enableSpeculativeExecution;
+    }
+    public setEnableSpeculativeExecution(enableSpeculativeExecution: string|null) {
+        this.enableSpeculativeExecution = enableSpeculativeExecution;
+        return this;
+    }
+    public withEnableSpeculativeExecution(enableSpeculativeExecution: string|null): this {
+        this.enableSpeculativeExecution = enableSpeculativeExecution;
+        return this;
+    }
+    public getStateMachineDefinition(): string|null {
+        return this.stateMachineDefinition;
+    }
+    public setStateMachineDefinition(stateMachineDefinition: string|null) {
+        this.stateMachineDefinition = stateMachineDefinition;
+        return this;
+    }
+    public withStateMachineDefinition(stateMachineDefinition: string|null): this {
+        this.stateMachineDefinition = stateMachineDefinition;
+        return this;
+    }
+    public getRandomStatus(): RandomStatus|null {
+        return this.randomStatus;
+    }
+    public setRandomStatus(randomStatus: RandomStatus|null) {
+        this.randomStatus = randomStatus;
+        return this;
+    }
+    public withRandomStatus(randomStatus: RandomStatus|null): this {
+        this.randomStatus = randomStatus;
+        return this;
+    }
     public getStacks(): StackEntry[]|null {
         return this.stacks;
     }
@@ -266,6 +304,9 @@ export default class Status implements IModel {
             .withUserId(data["userId"])
             .withName(data["name"])
             .withStateMachineVersion(data["stateMachineVersion"])
+            .withEnableSpeculativeExecution(data["enableSpeculativeExecution"])
+            .withStateMachineDefinition(data["stateMachineDefinition"])
+            .withRandomStatus(RandomStatus.fromDict(data["randomStatus"]))
             .withStacks(data.stacks ?
                 data.stacks.map((item: {[key: string]: any}) => {
                     return StackEntry.fromDict(item);
@@ -289,6 +330,9 @@ export default class Status implements IModel {
             "userId": this.getUserId(),
             "name": this.getName(),
             "stateMachineVersion": this.getStateMachineVersion(),
+            "enableSpeculativeExecution": this.getEnableSpeculativeExecution(),
+            "stateMachineDefinition": this.getStateMachineDefinition(),
+            "randomStatus": this.getRandomStatus()?.toDict(),
             "stacks": this.getStacks() ?
                 this.getStacks()!.map((item: StackEntry) => {
                     return item.toDict();

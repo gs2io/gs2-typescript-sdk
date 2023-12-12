@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExitStateMachineByUserIdRequest = exports.ExitStateMachineRequest = exports.DeleteStatusByUserIdRequest = exports.EmitByUserIdRequest = exports.EmitRequest = exports.StartStateMachineByStampSheetRequest = exports.StartStateMachineByUserIdRequest = exports.GetStatusByUserIdRequest = exports.GetStatusRequest = exports.DescribeStatusesByUserIdRequest = exports.DescribeStatusesRequest = exports.DeleteStateMachineMasterRequest = exports.GetStateMachineMasterRequest = exports.UpdateStateMachineMasterRequest = exports.DescribeStateMachineMastersRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.ExitStateMachineByUserIdRequest = exports.ExitStateMachineRequest = exports.DeleteStatusByUserIdRequest = exports.ReportByUserIdRequest = exports.ReportRequest = exports.EmitByUserIdRequest = exports.EmitRequest = exports.StartStateMachineByStampSheetRequest = exports.StartStateMachineByUserIdRequest = exports.GetStatusByUserIdRequest = exports.GetStatusRequest = exports.DescribeStatusesByUserIdRequest = exports.DescribeStatusesRequest = exports.DeleteStateMachineMasterRequest = exports.GetStateMachineMasterRequest = exports.UpdateStateMachineMasterRequest = exports.DescribeStateMachineMastersRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -67,6 +67,10 @@ var EmitRequest_1 = tslib_1.__importDefault(require("./EmitRequest"));
 exports.EmitRequest = EmitRequest_1.default;
 var EmitByUserIdRequest_1 = tslib_1.__importDefault(require("./EmitByUserIdRequest"));
 exports.EmitByUserIdRequest = EmitByUserIdRequest_1.default;
+var ReportRequest_1 = tslib_1.__importDefault(require("./ReportRequest"));
+exports.ReportRequest = ReportRequest_1.default;
+var ReportByUserIdRequest_1 = tslib_1.__importDefault(require("./ReportByUserIdRequest"));
+exports.ReportByUserIdRequest = ReportByUserIdRequest_1.default;
 var DeleteStatusByUserIdRequest_1 = tslib_1.__importDefault(require("./DeleteStatusByUserIdRequest"));
 exports.DeleteStatusByUserIdRequest = DeleteStatusByUserIdRequest_1.default;
 var ExitStateMachineRequest_1 = tslib_1.__importDefault(require("./ExitStateMachineRequest"));

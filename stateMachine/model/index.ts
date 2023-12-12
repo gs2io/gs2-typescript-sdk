@@ -18,6 +18,12 @@ import StateMachineMaster from "./StateMachineMaster"
 import Status from "./Status"
 import StackEntry from "./StackEntry"
 import Variable from "./Variable"
+import TransactionSetting from "./TransactionSetting"
+import Event from "./Event"
+import ChangeStateEvent from "./ChangeStateEvent"
+import EmitEvent from "./EmitEvent"
+import RandomStatus from "./RandomStatus"
+import RandomUsed from "./RandomUsed"
 import LogSetting from "./LogSetting"
 import ScriptSetting from "./ScriptSetting"
 
@@ -27,6 +33,12 @@ export {
     Status,
     StackEntry,
     Variable,
+    TransactionSetting,
+    Event,
+    ChangeStateEvent,
+    EmitEvent,
+    RandomStatus,
+    RandomUsed,
     LogSetting,
     ScriptSetting,
 };

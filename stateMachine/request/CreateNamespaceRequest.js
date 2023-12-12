@@ -23,6 +23,8 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.contextStack = null;
         this.name = null;
         this.description = null;
+        this.supportSpeculativeExecution = null;
+        this.transactionSetting = null;
         this.startScript = null;
         this.passScript = null;
         this.errorScript = null;
@@ -71,6 +73,28 @@ var CreateNamespaceRequest = /** @class */ (function () {
     };
     CreateNamespaceRequest.prototype.withDescription = function (description) {
         this.description = description;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getSupportSpeculativeExecution = function () {
+        return this.supportSpeculativeExecution;
+    };
+    CreateNamespaceRequest.prototype.setSupportSpeculativeExecution = function (supportSpeculativeExecution) {
+        this.supportSpeculativeExecution = supportSpeculativeExecution;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withSupportSpeculativeExecution = function (supportSpeculativeExecution) {
+        this.supportSpeculativeExecution = supportSpeculativeExecution;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    CreateNamespaceRequest.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
     CreateNamespaceRequest.prototype.getStartScript = function () {
@@ -132,6 +156,8 @@ var CreateNamespaceRequest = /** @class */ (function () {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
+            .withSupportSpeculativeExecution(data["supportSpeculativeExecution"])
+            .withTransactionSetting(Gs2StateMachine.TransactionSetting.fromDict(data["transactionSetting"]))
             .withStartScript(Gs2StateMachine.ScriptSetting.fromDict(data["startScript"]))
             .withPassScript(Gs2StateMachine.ScriptSetting.fromDict(data["passScript"]))
             .withErrorScript(Gs2StateMachine.ScriptSetting.fromDict(data["errorScript"]))
@@ -139,15 +165,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withLogSetting(Gs2StateMachine.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
-            "startScript": (_a = this.getStartScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "passScript": (_b = this.getPassScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "errorScript": (_c = this.getErrorScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "supportSpeculativeExecution": this.getSupportSpeculativeExecution(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "startScript": (_b = this.getStartScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "passScript": (_c = this.getPassScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "errorScript": (_d = this.getErrorScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "lowestStateMachineVersion": this.getLowestStateMachineVersion(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
         };
     };
     return CreateNamespaceRequest;

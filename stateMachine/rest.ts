@@ -67,6 +67,8 @@ export default class Gs2StateMachineRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
+            'supportSpeculativeExecution': request.getSupportSpeculativeExecution() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'startScript': request.getStartScript()?.toDict() ?? null,
             'passScript': request.getPassScript()?.toDict() ?? null,
             'errorScript': request.getErrorScript()?.toDict() ?? null,
@@ -155,6 +157,8 @@ export default class Gs2StateMachineRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
+            'supportSpeculativeExecution': request.getSupportSpeculativeExecution() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'startScript': request.getStartScript()?.toDict() ?? null,
             'passScript': request.getPassScript()?.toDict() ?? null,
             'errorScript': request.getErrorScript()?.toDict() ?? null,
@@ -676,6 +680,7 @@ export default class Gs2StateMachineRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'args': request.getArgs() ?? null,
+            'enableSpeculativeExecution': request.getEnableSpeculativeExecution() ?? null,
             'ttl': request.getTtl() ?? null,
         };
         return axios.post(
@@ -793,6 +798,80 @@ export default class Gs2StateMachineRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.EmitByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public report(request: Request.ReportRequest): Promise<Result.ReportResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{statusName}/report')
+            .replace('{service}', 'state-machine')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{statusName}', String(request.getStatusName() ?? 'null') === "" ? "null" : String(request.getStatusName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'events': request.getEvents()?.map((item) => item.toDict()) ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ReportResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public reportByUserId(request: Request.ReportByUserIdRequest): Promise<Result.ReportByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{statusName}/report')
+            .replace('{service}', 'state-machine')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{statusName}', String(request.getStatusName() ?? 'null') === "" ? "null" : String(request.getStatusName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'events': request.getEvents()?.map((item) => item.toDict()) ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ReportByUserIdResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

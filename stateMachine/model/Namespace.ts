@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:stateMachine:{namespaceName}";
@@ -23,6 +24,8 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private supportSpeculativeExecution: string|null = null;
+    private transactionSetting: TransactionSetting|null = null;
     private startScript: ScriptSetting|null = null;
     private passScript: ScriptSetting|null = null;
     private errorScript: ScriptSetting|null = null;
@@ -124,6 +127,28 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
+    public getSupportSpeculativeExecution(): string|null {
+        return this.supportSpeculativeExecution;
+    }
+    public setSupportSpeculativeExecution(supportSpeculativeExecution: string|null) {
+        this.supportSpeculativeExecution = supportSpeculativeExecution;
+        return this;
+    }
+    public withSupportSpeculativeExecution(supportSpeculativeExecution: string|null): this {
+        this.supportSpeculativeExecution = supportSpeculativeExecution;
+        return this;
+    }
+    public getTransactionSetting(): TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
     public getStartScript(): ScriptSetting|null {
         return this.startScript;
     }
@@ -221,6 +246,8 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withSupportSpeculativeExecution(data["supportSpeculativeExecution"])
+            .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
             .withStartScript(ScriptSetting.fromDict(data["startScript"]))
             .withPassScript(ScriptSetting.fromDict(data["passScript"]))
             .withErrorScript(ScriptSetting.fromDict(data["errorScript"]))
@@ -236,6 +263,8 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "supportSpeculativeExecution": this.getSupportSpeculativeExecution(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "startScript": this.getStartScript()?.toDict(),
             "passScript": this.getPassScript()?.toDict(),
             "errorScript": this.getErrorScript()?.toDict(),

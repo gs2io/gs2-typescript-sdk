@@ -24,6 +24,8 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private description: string|null = null;
+    private supportSpeculativeExecution: string|null = null;
+    private transactionSetting: Gs2StateMachine.TransactionSetting|null = null;
     private startScript: Gs2StateMachine.ScriptSetting|null = null;
     private passScript: Gs2StateMachine.ScriptSetting|null = null;
     private errorScript: Gs2StateMachine.ScriptSetting|null = null;
@@ -77,6 +79,28 @@ export default class UpdateNamespaceRequest implements IRequest {
     }
     public withDescription(description: string|null): this {
         this.description = description;
+        return this;
+    }
+    public getSupportSpeculativeExecution(): string|null {
+        return this.supportSpeculativeExecution;
+    }
+    public setSupportSpeculativeExecution(supportSpeculativeExecution: string|null) {
+        this.supportSpeculativeExecution = supportSpeculativeExecution;
+        return this;
+    }
+    public withSupportSpeculativeExecution(supportSpeculativeExecution: string|null): this {
+        this.supportSpeculativeExecution = supportSpeculativeExecution;
+        return this;
+    }
+    public getTransactionSetting(): Gs2StateMachine.TransactionSetting|null {
+        return this.transactionSetting;
+    }
+    public setTransactionSetting(transactionSetting: Gs2StateMachine.TransactionSetting|null) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    }
+    public withTransactionSetting(transactionSetting: Gs2StateMachine.TransactionSetting|null): this {
+        this.transactionSetting = transactionSetting;
         return this;
     }
     public getStartScript(): Gs2StateMachine.ScriptSetting|null {
@@ -139,6 +163,8 @@ export default class UpdateNamespaceRequest implements IRequest {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
+            .withSupportSpeculativeExecution(data["supportSpeculativeExecution"])
+            .withTransactionSetting(Gs2StateMachine.TransactionSetting.fromDict(data["transactionSetting"]))
             .withStartScript(Gs2StateMachine.ScriptSetting.fromDict(data["startScript"]))
             .withPassScript(Gs2StateMachine.ScriptSetting.fromDict(data["passScript"]))
             .withErrorScript(Gs2StateMachine.ScriptSetting.fromDict(data["errorScript"]))
@@ -150,6 +176,8 @@ export default class UpdateNamespaceRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
+            "supportSpeculativeExecution": this.getSupportSpeculativeExecution(),
+            "transactionSetting": this.getTransactionSetting()?.toDict(),
             "startScript": this.getStartScript()?.toDict(),
             "passScript": this.getPassScript()?.toDict(),
             "errorScript": this.getErrorScript()?.toDict(),

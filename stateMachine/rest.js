@@ -49,7 +49,7 @@ var Gs2StateMachineRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2StateMachineRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'state-machine')
             .replace('{region}', this.session.region);
@@ -61,11 +61,13 @@ var Gs2StateMachineRestClient = /** @class */ (function (_super) {
             'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
             'name': (_b = request.getName()) !== null && _b !== void 0 ? _b : null,
             'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
-            'startScript': (_e = (_d = request.getStartScript()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
-            'passScript': (_g = (_f = request.getPassScript()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'errorScript': (_j = (_h = request.getErrorScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
-            'lowestStateMachineVersion': (_k = request.getLowestStateMachineVersion()) !== null && _k !== void 0 ? _k : null,
-            'logSetting': (_m = (_l = request.getLogSetting()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'supportSpeculativeExecution': (_d = request.getSupportSpeculativeExecution()) !== null && _d !== void 0 ? _d : null,
+            'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
+            'startScript': (_h = (_g = request.getStartScript()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'passScript': (_k = (_j = request.getPassScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
+            'errorScript': (_m = (_l = request.getErrorScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'lowestStateMachineVersion': (_o = request.getLowestStateMachineVersion()) !== null && _o !== void 0 ? _o : null,
+            'logSetting': (_q = (_p = request.getLogSetting()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -125,7 +127,7 @@ var Gs2StateMachineRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2StateMachineRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'state-machine')
             .replace('{region}', this.session.region)
@@ -137,11 +139,13 @@ var Gs2StateMachineRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
-            'startScript': (_f = (_e = request.getStartScript()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
-            'passScript': (_h = (_g = request.getPassScript()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
-            'errorScript': (_k = (_j = request.getErrorScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'lowestStateMachineVersion': (_l = request.getLowestStateMachineVersion()) !== null && _l !== void 0 ? _l : null,
-            'logSetting': (_o = (_m = request.getLogSetting()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'supportSpeculativeExecution': (_e = request.getSupportSpeculativeExecution()) !== null && _e !== void 0 ? _e : null,
+            'transactionSetting': (_g = (_f = request.getTransactionSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
+            'startScript': (_j = (_h = request.getStartScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'passScript': (_l = (_k = request.getPassScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'errorScript': (_o = (_m = request.getErrorScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'lowestStateMachineVersion': (_p = request.getLowestStateMachineVersion()) !== null && _p !== void 0 ? _p : null,
+            'logSetting': (_r = (_q = request.getLogSetting()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -574,7 +578,7 @@ var Gs2StateMachineRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2StateMachineRestClient.prototype.startStateMachineByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status')
             .replace('{service}', 'state-machine')
             .replace('{region}', this.session.region)
@@ -590,7 +594,8 @@ var Gs2StateMachineRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'args': (_g = request.getArgs()) !== null && _g !== void 0 ? _g : null,
-            'ttl': (_h = request.getTtl()) !== null && _h !== void 0 ? _h : null,
+            'enableSpeculativeExecution': (_h = request.getEnableSpeculativeExecution()) !== null && _h !== void 0 ? _h : null,
+            'ttl': (_j = request.getTtl()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -691,6 +696,72 @@ var Gs2StateMachineRestClient = /** @class */ (function (_super) {
             headers: headers,
         }).then(function (response) {
             return Result.EmitByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2StateMachineRestClient.prototype.report = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{statusName}/report')
+            .replace('{service}', 'state-machine')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{statusName}', String((_c = request.getStatusName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getStatusName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+        }
+        var body = {
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'events': (_j = (_h = request.getEvents()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.ReportResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2StateMachineRestClient.prototype.reportByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{statusName}/report')
+            .replace('{service}', 'state-machine')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{statusName}', String((_e = request.getStatusName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getStatusName()) !== null && _f !== void 0 ? _f : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
+        var body = {
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'events': (_k = (_j = request.getEvents()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.ReportByUserIdResult.fromDict(response.data);
         }).catch(function (error) {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

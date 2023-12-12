@@ -1,10 +1,13 @@
 import IModel from '../../core/interface/IModel';
+import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
+    private supportSpeculativeExecution;
+    private transactionSetting;
     private startScript;
     private passScript;
     private errorScript;
@@ -27,6 +30,12 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getSupportSpeculativeExecution(): string | null;
+    setSupportSpeculativeExecution(supportSpeculativeExecution: string | null): this;
+    withSupportSpeculativeExecution(supportSpeculativeExecution: string | null): this;
+    getTransactionSetting(): TransactionSetting | null;
+    setTransactionSetting(transactionSetting: TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: TransactionSetting | null): this;
     getStartScript(): ScriptSetting | null;
     setStartScript(startScript: ScriptSetting | null): this;
     withStartScript(startScript: ScriptSetting | null): this;

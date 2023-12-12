@@ -25,6 +25,7 @@ export default class StartStateMachineByUserIdRequest implements IRequest {
     private namespaceName: string|null = null;
     private userId: string|null = null;
     private args: string|null = null;
+    private enableSpeculativeExecution: string|null = null;
     private ttl: number|null = null;
     private duplicationAvoider: string|null = null;
 
@@ -88,6 +89,17 @@ export default class StartStateMachineByUserIdRequest implements IRequest {
         this.args = args;
         return this;
     }
+    public getEnableSpeculativeExecution(): string|null {
+        return this.enableSpeculativeExecution;
+    }
+    public setEnableSpeculativeExecution(enableSpeculativeExecution: string|null) {
+        this.enableSpeculativeExecution = enableSpeculativeExecution;
+        return this;
+    }
+    public withEnableSpeculativeExecution(enableSpeculativeExecution: string|null): this {
+        this.enableSpeculativeExecution = enableSpeculativeExecution;
+        return this;
+    }
     public getTtl(): number|null {
         return this.ttl;
     }
@@ -119,6 +131,7 @@ export default class StartStateMachineByUserIdRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withArgs(data["args"])
+            .withEnableSpeculativeExecution(data["enableSpeculativeExecution"])
             .withTtl(data["ttl"]);
     }
 
@@ -127,6 +140,7 @@ export default class StartStateMachineByUserIdRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "args": this.getArgs(),
+            "enableSpeculativeExecution": this.getEnableSpeculativeExecution(),
             "ttl": this.getTtl(),
         };
     }

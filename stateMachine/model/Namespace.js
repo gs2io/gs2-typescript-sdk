@@ -16,6 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
+var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
 var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:stateMachine:{namespaceName}";
@@ -24,6 +25,8 @@ var Namespace = /** @class */ (function () {
         this.namespaceId = null;
         this.name = null;
         this.description = null;
+        this.supportSpeculativeExecution = null;
+        this.transactionSetting = null;
         this.startScript = null;
         this.passScript = null;
         this.errorScript = null;
@@ -112,6 +115,28 @@ var Namespace = /** @class */ (function () {
     };
     Namespace.prototype.withDescription = function (description) {
         this.description = description;
+        return this;
+    };
+    Namespace.prototype.getSupportSpeculativeExecution = function () {
+        return this.supportSpeculativeExecution;
+    };
+    Namespace.prototype.setSupportSpeculativeExecution = function (supportSpeculativeExecution) {
+        this.supportSpeculativeExecution = supportSpeculativeExecution;
+        return this;
+    };
+    Namespace.prototype.withSupportSpeculativeExecution = function (supportSpeculativeExecution) {
+        this.supportSpeculativeExecution = supportSpeculativeExecution;
+        return this;
+    };
+    Namespace.prototype.getTransactionSetting = function () {
+        return this.transactionSetting;
+    };
+    Namespace.prototype.setTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
+        return this;
+    };
+    Namespace.prototype.withTransactionSetting = function (transactionSetting) {
+        this.transactionSetting = transactionSetting;
         return this;
     };
     Namespace.prototype.getStartScript = function () {
@@ -210,6 +235,8 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withSupportSpeculativeExecution(data["supportSpeculativeExecution"])
+            .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
             .withStartScript(ScriptSetting_1.default.fromDict(data["startScript"]))
             .withPassScript(ScriptSetting_1.default.fromDict(data["passScript"]))
             .withErrorScript(ScriptSetting_1.default.fromDict(data["errorScript"]))
@@ -220,16 +247,18 @@ var Namespace = /** @class */ (function () {
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
-            "startScript": (_a = this.getStartScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "passScript": (_b = this.getPassScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "errorScript": (_c = this.getErrorScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "supportSpeculativeExecution": this.getSupportSpeculativeExecution(),
+            "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "startScript": (_b = this.getStartScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "passScript": (_c = this.getPassScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "errorScript": (_d = this.getErrorScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "lowestStateMachineVersion": this.getLowestStateMachineVersion(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

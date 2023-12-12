@@ -16,6 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
+var RandomStatus_1 = tslib_1.__importDefault(require("./RandomStatus"));
 var StackEntry_1 = tslib_1.__importDefault(require("./StackEntry"));
 var Variable_1 = tslib_1.__importDefault(require("./Variable"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:stateMachine:{namespaceName}:user:{userId}:status:{statusName}";
@@ -25,6 +26,9 @@ var Status = /** @class */ (function () {
         this.userId = null;
         this.name = null;
         this.stateMachineVersion = null;
+        this.enableSpeculativeExecution = null;
+        this.stateMachineDefinition = null;
+        this.randomStatus = null;
         this.stacks = null;
         this.variables = null;
         this.status = null;
@@ -163,6 +167,39 @@ var Status = /** @class */ (function () {
         this.stateMachineVersion = stateMachineVersion;
         return this;
     };
+    Status.prototype.getEnableSpeculativeExecution = function () {
+        return this.enableSpeculativeExecution;
+    };
+    Status.prototype.setEnableSpeculativeExecution = function (enableSpeculativeExecution) {
+        this.enableSpeculativeExecution = enableSpeculativeExecution;
+        return this;
+    };
+    Status.prototype.withEnableSpeculativeExecution = function (enableSpeculativeExecution) {
+        this.enableSpeculativeExecution = enableSpeculativeExecution;
+        return this;
+    };
+    Status.prototype.getStateMachineDefinition = function () {
+        return this.stateMachineDefinition;
+    };
+    Status.prototype.setStateMachineDefinition = function (stateMachineDefinition) {
+        this.stateMachineDefinition = stateMachineDefinition;
+        return this;
+    };
+    Status.prototype.withStateMachineDefinition = function (stateMachineDefinition) {
+        this.stateMachineDefinition = stateMachineDefinition;
+        return this;
+    };
+    Status.prototype.getRandomStatus = function () {
+        return this.randomStatus;
+    };
+    Status.prototype.setRandomStatus = function (randomStatus) {
+        this.randomStatus = randomStatus;
+        return this;
+    };
+    Status.prototype.withRandomStatus = function (randomStatus) {
+        this.randomStatus = randomStatus;
+        return this;
+    };
     Status.prototype.getStacks = function () {
         return this.stacks;
     };
@@ -249,6 +286,9 @@ var Status = /** @class */ (function () {
             .withUserId(data["userId"])
             .withName(data["name"])
             .withStateMachineVersion(data["stateMachineVersion"])
+            .withEnableSpeculativeExecution(data["enableSpeculativeExecution"])
+            .withStateMachineDefinition(data["stateMachineDefinition"])
+            .withRandomStatus(RandomStatus_1.default.fromDict(data["randomStatus"]))
             .withStacks(data.stacks ?
             data.stacks.map(function (item) {
                 return StackEntry_1.default.fromDict(item);
@@ -264,11 +304,15 @@ var Status = /** @class */ (function () {
             .withUpdatedAt(data["updatedAt"]);
     };
     Status.prototype.toDict = function () {
+        var _a;
         return {
             "statusId": this.getStatusId(),
             "userId": this.getUserId(),
             "name": this.getName(),
             "stateMachineVersion": this.getStateMachineVersion(),
+            "enableSpeculativeExecution": this.getEnableSpeculativeExecution(),
+            "stateMachineDefinition": this.getStateMachineDefinition(),
+            "randomStatus": (_a = this.getRandomStatus()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "stacks": this.getStacks() ?
                 this.getStacks().map(function (item) {
                     return item.toDict();

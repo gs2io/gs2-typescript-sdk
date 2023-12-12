@@ -1,4 +1,5 @@
 import IModel from '../../core/interface/IModel';
+import RandomStatus from './RandomStatus';
 import StackEntry from './StackEntry';
 import Variable from './Variable';
 export default class Status implements IModel {
@@ -6,6 +7,9 @@ export default class Status implements IModel {
     private userId;
     private name;
     private stateMachineVersion;
+    private enableSpeculativeExecution;
+    private stateMachineDefinition;
+    private randomStatus;
     private stacks;
     private variables;
     private status;
@@ -32,6 +36,15 @@ export default class Status implements IModel {
     getStateMachineVersion(): number | null;
     setStateMachineVersion(stateMachineVersion: number | null): this;
     withStateMachineVersion(stateMachineVersion: number | null): this;
+    getEnableSpeculativeExecution(): string | null;
+    setEnableSpeculativeExecution(enableSpeculativeExecution: string | null): this;
+    withEnableSpeculativeExecution(enableSpeculativeExecution: string | null): this;
+    getStateMachineDefinition(): string | null;
+    setStateMachineDefinition(stateMachineDefinition: string | null): this;
+    withStateMachineDefinition(stateMachineDefinition: string | null): this;
+    getRandomStatus(): RandomStatus | null;
+    setRandomStatus(randomStatus: RandomStatus | null): this;
+    withRandomStatus(randomStatus: RandomStatus | null): this;
     getStacks(): StackEntry[] | null;
     setStacks(stacks: StackEntry[] | null): this;
     withStacks(stacks: StackEntry[] | null): this;

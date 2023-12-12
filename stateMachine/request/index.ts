@@ -38,6 +38,8 @@ import StartStateMachineByUserIdRequest from "./StartStateMachineByUserIdRequest
 import StartStateMachineByStampSheetRequest from "./StartStateMachineByStampSheetRequest"
 import EmitRequest from "./EmitRequest"
 import EmitByUserIdRequest from "./EmitByUserIdRequest"
+import ReportRequest from "./ReportRequest"
+import ReportByUserIdRequest from "./ReportByUserIdRequest"
 import DeleteStatusByUserIdRequest from "./DeleteStatusByUserIdRequest"
 import ExitStateMachineRequest from "./ExitStateMachineRequest"
 import ExitStateMachineByUserIdRequest from "./ExitStateMachineByUserIdRequest"
@@ -68,6 +70,8 @@ export {
     StartStateMachineByStampSheetRequest,
     EmitRequest,
     EmitByUserIdRequest,
+    ReportRequest,
+    ReportByUserIdRequest,
     DeleteStatusByUserIdRequest,
     ExitStateMachineRequest,
     ExitStateMachineByUserIdRequest,
