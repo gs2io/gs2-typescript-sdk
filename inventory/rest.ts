@@ -3095,7 +3095,7 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
     }
 
     public verifyReferenceOfByStampTask(request: Request.VerifyReferenceOfByStampTaskRequest): Promise<Result.VerifyReferenceOfByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/item/verify')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/item/reference/verify')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
     

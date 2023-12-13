@@ -578,7 +578,7 @@ var Gs2StateMachineRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2StateMachineRestClient.prototype.startStateMachineByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status')
             .replace('{service}', 'state-machine')
             .replace('{region}', this.session.region)
@@ -594,8 +594,7 @@ var Gs2StateMachineRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
             'args': (_g = request.getArgs()) !== null && _g !== void 0 ? _g : null,
-            'enableSpeculativeExecution': (_h = request.getEnableSpeculativeExecution()) !== null && _h !== void 0 ? _h : null,
-            'ttl': (_j = request.getTtl()) !== null && _j !== void 0 ? _j : null,
+            'ttl': (_h = request.getTtl()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

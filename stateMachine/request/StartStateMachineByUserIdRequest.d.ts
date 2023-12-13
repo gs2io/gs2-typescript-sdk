@@ -5,7 +5,6 @@ export default class StartStateMachineByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private args;
-    private enableSpeculativeExecution;
     private ttl;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -23,9 +22,6 @@ export default class StartStateMachineByUserIdRequest implements IRequest {
     getArgs(): string | null;
     setArgs(args: string | null): this;
     withArgs(args: string | null): this;
-    getEnableSpeculativeExecution(): string | null;
-    setEnableSpeculativeExecution(enableSpeculativeExecution: string | null): this;
-    withEnableSpeculativeExecution(enableSpeculativeExecution: string | null): this;
     getTtl(): number | null;
     setTtl(ttl: number | null): this;
     withTtl(ttl: number | null): this;

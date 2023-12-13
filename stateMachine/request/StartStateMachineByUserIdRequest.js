@@ -22,7 +22,6 @@ var StartStateMachineByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.args = null;
-        this.enableSpeculativeExecution = null;
         this.ttl = null;
         this.duplicationAvoider = null;
     }
@@ -81,17 +80,6 @@ var StartStateMachineByUserIdRequest = /** @class */ (function () {
         this.args = args;
         return this;
     };
-    StartStateMachineByUserIdRequest.prototype.getEnableSpeculativeExecution = function () {
-        return this.enableSpeculativeExecution;
-    };
-    StartStateMachineByUserIdRequest.prototype.setEnableSpeculativeExecution = function (enableSpeculativeExecution) {
-        this.enableSpeculativeExecution = enableSpeculativeExecution;
-        return this;
-    };
-    StartStateMachineByUserIdRequest.prototype.withEnableSpeculativeExecution = function (enableSpeculativeExecution) {
-        this.enableSpeculativeExecution = enableSpeculativeExecution;
-        return this;
-    };
     StartStateMachineByUserIdRequest.prototype.getTtl = function () {
         return this.ttl;
     };
@@ -119,7 +107,6 @@ var StartStateMachineByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withArgs(data["args"])
-            .withEnableSpeculativeExecution(data["enableSpeculativeExecution"])
             .withTtl(data["ttl"]);
     };
     StartStateMachineByUserIdRequest.prototype.toDict = function () {
@@ -127,7 +114,6 @@ var StartStateMachineByUserIdRequest = /** @class */ (function () {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "args": this.getArgs(),
-            "enableSpeculativeExecution": this.getEnableSpeculativeExecution(),
             "ttl": this.getTtl(),
         };
     };

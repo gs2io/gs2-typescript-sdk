@@ -680,7 +680,6 @@ export default class Gs2StateMachineRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'args': request.getArgs() ?? null,
-            'enableSpeculativeExecution': request.getEnableSpeculativeExecution() ?? null,
             'ttl': request.getTtl() ?? null,
         };
         return axios.post(
