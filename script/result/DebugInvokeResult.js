@@ -108,7 +108,7 @@ var DebugInvokeResult = /** @class */ (function () {
         return new DebugInvokeResult()
             .withCode(data["code"])
             .withResult(data["result"])
-            .withTransaction(data["transaction"])
+            .withTransaction(Gs2Script.Transaction.fromDict(data["transaction"]))
             .withRandomStatus(Gs2Script.RandomStatus.fromDict(data["randomStatus"]))
             .withExecuteTime(data["executeTime"])
             .withCharged(data["charged"])
@@ -118,12 +118,12 @@ var DebugInvokeResult = /** @class */ (function () {
             }) : []);
     };
     DebugInvokeResult.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "code": this.getCode(),
             "result": this.getResult(),
-            "transaction": this.getTransaction(),
-            "randomStatus": (_a = this.getRandomStatus()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "transaction": (_a = this.getTransaction()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "randomStatus": (_b = this.getRandomStatus()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "executeTime": this.getExecuteTime(),
             "charged": this.getCharged(),
             "output": this.getOutput() ?

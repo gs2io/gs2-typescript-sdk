@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RandomUsed = exports.RandomStatus = exports.LogSetting = exports.GitHubCheckoutSetting = exports.Script = exports.Namespace = void 0;
+exports.LogSetting = exports.GitHubCheckoutSetting = exports.Transaction = exports.ConsumeAction = exports.AcquireAction = exports.RandomUsed = exports.RandomStatus = exports.Script = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -21,12 +21,18 @@ var Namespace_1 = tslib_1.__importDefault(require("./Namespace"));
 exports.Namespace = Namespace_1.default;
 var Script_1 = tslib_1.__importDefault(require("./Script"));
 exports.Script = Script_1.default;
-var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
-exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
-exports.LogSetting = LogSetting_1.default;
 var RandomStatus_1 = tslib_1.__importDefault(require("./RandomStatus"));
 exports.RandomStatus = RandomStatus_1.default;
 var RandomUsed_1 = tslib_1.__importDefault(require("./RandomUsed"));
 exports.RandomUsed = RandomUsed_1.default;
+var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
+exports.AcquireAction = AcquireAction_1.default;
+var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
+exports.ConsumeAction = ConsumeAction_1.default;
+var Transaction_1 = tslib_1.__importDefault(require("./Transaction"));
+exports.Transaction = Transaction_1.default;
+var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
+exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
+var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+exports.LogSetting = LogSetting_1.default;
 //# sourceMappingURL=index.js.map

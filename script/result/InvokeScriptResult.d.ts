@@ -14,9 +14,9 @@ export default class InvokeScriptResult implements IResult {
     getResult(): string | null;
     setResult(result: string | null): this;
     withResult(result: string | null): this;
-    getTransaction(): string | null;
-    setTransaction(transaction: string | null): this;
-    withTransaction(transaction: string | null): this;
+    getTransaction(): Gs2Script.Transaction | null;
+    setTransaction(transaction: Gs2Script.Transaction | null): this;
+    withTransaction(transaction: Gs2Script.Transaction | null): this;
     getRandomStatus(): Gs2Script.RandomStatus | null;
     setRandomStatus(randomStatus: Gs2Script.RandomStatus | null): this;
     withRandomStatus(randomStatus: Gs2Script.RandomStatus | null): this;

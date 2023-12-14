@@ -21,7 +21,7 @@ import * as Gs2Script from '../model'
 export default class DebugInvokeResult implements IResult {
     private code: number|null = null;
     private result: string|null = null;
-    private transaction: string|null = null;
+    private transaction: Gs2Script.Transaction|null = null;
     private randomStatus: Gs2Script.RandomStatus|null = null;
     private executeTime: number|null = null;
     private charged: number|null = null;
@@ -55,16 +55,16 @@ export default class DebugInvokeResult implements IResult {
         return this;
     }
 
-    public getTransaction(): string|null {
+    public getTransaction(): Gs2Script.Transaction|null {
         return this.transaction;
     }
 
-    public setTransaction(transaction: string|null) {
+    public setTransaction(transaction: Gs2Script.Transaction|null) {
         this.transaction = transaction;
         return this;
     }
 
-    public withTransaction(transaction: string|null): this {
+    public withTransaction(transaction: Gs2Script.Transaction|null): this {
         this.transaction = transaction;
         return this;
     }
@@ -129,7 +129,7 @@ export default class DebugInvokeResult implements IResult {
         return new DebugInvokeResult()
             .withCode(data["code"])
             .withResult(data["result"])
-            .withTransaction(data["transaction"])
+            .withTransaction(Gs2Script.Transaction.fromDict(data["transaction"]))
             .withRandomStatus(Gs2Script.RandomStatus.fromDict(data["randomStatus"]))
             .withExecuteTime(data["executeTime"])
             .withCharged(data["charged"])
@@ -144,7 +144,7 @@ export default class DebugInvokeResult implements IResult {
         return {
             "code": this.getCode(),
             "result": this.getResult(),
-            "transaction": this.getTransaction(),
+            "transaction": this.getTransaction()?.toDict(),
             "randomStatus": this.getRandomStatus()?.toDict(),
             "executeTime": this.getExecuteTime(),
             "charged": this.getCharged(),
