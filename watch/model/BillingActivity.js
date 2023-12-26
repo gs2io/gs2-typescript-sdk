@@ -24,6 +24,7 @@ var BillingActivity = /** @class */ (function () {
         this.service = null;
         this.activityType = null;
         this.value = null;
+        this.revision = null;
     }
     BillingActivity.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -199,6 +200,17 @@ var BillingActivity = /** @class */ (function () {
         this.value = value;
         return this;
     };
+    BillingActivity.prototype.getRevision = function () {
+        return this.revision;
+    };
+    BillingActivity.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    BillingActivity.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     BillingActivity.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -209,7 +221,8 @@ var BillingActivity = /** @class */ (function () {
             .withMonth(data["month"])
             .withService(data["service"])
             .withActivityType(data["activityType"])
-            .withValue(data["value"]);
+            .withValue(data["value"])
+            .withRevision(data["revision"]);
     };
     BillingActivity.prototype.toDict = function () {
         return {
@@ -219,6 +232,7 @@ var BillingActivity = /** @class */ (function () {
             "service": this.getService(),
             "activityType": this.getActivityType(),
             "value": this.getValue(),
+            "revision": this.getRevision(),
         };
     };
     return BillingActivity;

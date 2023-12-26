@@ -23,6 +23,7 @@ var Cumulative = /** @class */ (function () {
         this.name = null;
         this.value = null;
         this.updatedAt = null;
+        this.revision = null;
     }
     Cumulative.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -145,6 +146,17 @@ var Cumulative = /** @class */ (function () {
         this.updatedAt = updatedAt;
         return this;
     };
+    Cumulative.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Cumulative.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Cumulative.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Cumulative.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -154,7 +166,8 @@ var Cumulative = /** @class */ (function () {
             .withResourceGrn(data["resourceGrn"])
             .withName(data["name"])
             .withValue(data["value"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     };
     Cumulative.prototype.toDict = function () {
         return {
@@ -163,6 +176,7 @@ var Cumulative = /** @class */ (function () {
             "name": this.getName(),
             "value": this.getValue(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Cumulative;

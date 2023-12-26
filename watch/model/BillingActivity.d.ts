@@ -6,6 +6,7 @@ export default class BillingActivity implements IModel {
     private service;
     private activityType;
     private value;
+    private revision;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getYear(grn: string): string | null;
@@ -32,6 +33,9 @@ export default class BillingActivity implements IModel {
     getValue(): number | null;
     setValue(value: number | null): this;
     withValue(value: number | null): this;
+    getRevision(): number | null;
+    setRevision(revision: number | null): this;
+    withRevision(revision: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): BillingActivity | null;

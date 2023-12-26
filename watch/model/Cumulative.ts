@@ -23,6 +23,7 @@ export default class Cumulative implements IModel {
     private name: string|null = null;
     private value: number|null = null;
     private updatedAt: number|null = null;
+    private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -159,6 +160,17 @@ export default class Cumulative implements IModel {
         this.updatedAt = updatedAt;
         return this;
     }
+    public getRevision(): number|null {
+        return this.revision;
+    }
+    public setRevision(revision: number|null) {
+        this.revision = revision;
+        return this;
+    }
+    public withRevision(revision: number|null): this {
+        this.revision = revision;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): Cumulative|null {
         if (data == undefined || data == null) {
@@ -169,7 +181,8 @@ export default class Cumulative implements IModel {
             .withResourceGrn(data["resourceGrn"])
             .withName(data["name"])
             .withValue(data["value"])
-            .withUpdatedAt(data["updatedAt"]);
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -179,6 +192,7 @@ export default class Cumulative implements IModel {
             "name": this.getName(),
             "value": this.getValue(),
             "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
         };
     }
 }

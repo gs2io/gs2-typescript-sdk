@@ -24,6 +24,7 @@ export default class BillingActivity implements IModel {
     private service: string|null = null;
     private activityType: string|null = null;
     private value: number|null = null;
+    private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -219,6 +220,17 @@ export default class BillingActivity implements IModel {
         this.value = value;
         return this;
     }
+    public getRevision(): number|null {
+        return this.revision;
+    }
+    public setRevision(revision: number|null) {
+        this.revision = revision;
+        return this;
+    }
+    public withRevision(revision: number|null): this {
+        this.revision = revision;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): BillingActivity|null {
         if (data == undefined || data == null) {
@@ -230,7 +242,8 @@ export default class BillingActivity implements IModel {
             .withMonth(data["month"])
             .withService(data["service"])
             .withActivityType(data["activityType"])
-            .withValue(data["value"]);
+            .withValue(data["value"])
+            .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -241,6 +254,7 @@ export default class BillingActivity implements IModel {
             "service": this.getService(),
             "activityType": this.getActivityType(),
             "value": this.getValue(),
+            "revision": this.getRevision(),
         };
     }
 }

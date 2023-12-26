@@ -30,6 +30,7 @@ import * as experience from './experience';
 import * as formation from './formation';
 import * as friend from './friend';
 import * as gateway from './gateway';
+import * as grade from './grade';
 import * as identifier from './identifier';
 import * as idle from './idle';
 import * as inbox from './inbox';
@@ -77,6 +78,7 @@ export {
   formation,
   friend,
   gateway,
+  grade,
   identifier,
   idle,
   inbox,
