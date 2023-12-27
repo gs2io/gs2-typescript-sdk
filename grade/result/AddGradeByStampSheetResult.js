@@ -20,6 +20,8 @@ var Gs2Grade = tslib_1.__importStar(require("../model"));
 var AddGradeByStampSheetResult = /** @class */ (function () {
     function AddGradeByStampSheetResult() {
         this.item = null;
+        this.experienceNamespaceName = null;
+        this.experienceStatus = null;
     }
     AddGradeByStampSheetResult.prototype.getItem = function () {
         return this.item;
@@ -32,14 +34,40 @@ var AddGradeByStampSheetResult = /** @class */ (function () {
         this.item = item;
         return this;
     };
+    AddGradeByStampSheetResult.prototype.getExperienceNamespaceName = function () {
+        return this.experienceNamespaceName;
+    };
+    AddGradeByStampSheetResult.prototype.setExperienceNamespaceName = function (experienceNamespaceName) {
+        this.experienceNamespaceName = experienceNamespaceName;
+        return this;
+    };
+    AddGradeByStampSheetResult.prototype.withExperienceNamespaceName = function (experienceNamespaceName) {
+        this.experienceNamespaceName = experienceNamespaceName;
+        return this;
+    };
+    AddGradeByStampSheetResult.prototype.getExperienceStatus = function () {
+        return this.experienceStatus;
+    };
+    AddGradeByStampSheetResult.prototype.setExperienceStatus = function (experienceStatus) {
+        this.experienceStatus = experienceStatus;
+        return this;
+    };
+    AddGradeByStampSheetResult.prototype.withExperienceStatus = function (experienceStatus) {
+        this.experienceStatus = experienceStatus;
+        return this;
+    };
     AddGradeByStampSheetResult.fromDict = function (data) {
         return new AddGradeByStampSheetResult()
-            .withItem(Gs2Grade.Status.fromDict(data["item"]));
+            .withItem(Gs2Grade.Status.fromDict(data["item"]))
+            .withExperienceNamespaceName(data["experienceNamespaceName"])
+            .withExperienceStatus(Gs2Grade.Status.fromDict(data["experienceStatus"]));
     };
     AddGradeByStampSheetResult.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "experienceNamespaceName": this.getExperienceNamespaceName(),
+            "experienceStatus": (_b = this.getExperienceStatus()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return AddGradeByStampSheetResult;

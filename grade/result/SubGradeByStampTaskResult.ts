@@ -21,6 +21,8 @@ import * as Gs2Grade from '../model'
 export default class SubGradeByStampTaskResult implements IResult {
     private item: Gs2Grade.Status|null = null;
     private newContextStack: string|null = null;
+    private experienceNamespaceName: string|null = null;
+    private experienceStatus: Gs2Grade.Status|null = null;
 
     public getItem(): Gs2Grade.Status|null {
         return this.item;
@@ -50,16 +52,48 @@ export default class SubGradeByStampTaskResult implements IResult {
         return this;
     }
 
+    public getExperienceNamespaceName(): string|null {
+        return this.experienceNamespaceName;
+    }
+
+    public setExperienceNamespaceName(experienceNamespaceName: string|null) {
+        this.experienceNamespaceName = experienceNamespaceName;
+        return this;
+    }
+
+    public withExperienceNamespaceName(experienceNamespaceName: string|null): this {
+        this.experienceNamespaceName = experienceNamespaceName;
+        return this;
+    }
+
+    public getExperienceStatus(): Gs2Grade.Status|null {
+        return this.experienceStatus;
+    }
+
+    public setExperienceStatus(experienceStatus: Gs2Grade.Status|null) {
+        this.experienceStatus = experienceStatus;
+        return this;
+    }
+
+    public withExperienceStatus(experienceStatus: Gs2Grade.Status|null): this {
+        this.experienceStatus = experienceStatus;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): SubGradeByStampTaskResult {
         return new SubGradeByStampTaskResult()
             .withItem(Gs2Grade.Status.fromDict(data["item"]))
-            .withNewContextStack(data["newContextStack"]);
+            .withNewContextStack(data["newContextStack"])
+            .withExperienceNamespaceName(data["experienceNamespaceName"])
+            .withExperienceStatus(Gs2Grade.Status.fromDict(data["experienceStatus"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
             "newContextStack": this.getNewContextStack(),
+            "experienceNamespaceName": this.getExperienceNamespaceName(),
+            "experienceStatus": this.getExperienceStatus()?.toDict(),
         };
     }
 }

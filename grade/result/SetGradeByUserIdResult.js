@@ -21,6 +21,8 @@ var SetGradeByUserIdResult = /** @class */ (function () {
     function SetGradeByUserIdResult() {
         this.item = null;
         this.old = null;
+        this.experienceNamespaceName = null;
+        this.experienceStatus = null;
     }
     SetGradeByUserIdResult.prototype.getItem = function () {
         return this.item;
@@ -44,16 +46,42 @@ var SetGradeByUserIdResult = /** @class */ (function () {
         this.old = old;
         return this;
     };
+    SetGradeByUserIdResult.prototype.getExperienceNamespaceName = function () {
+        return this.experienceNamespaceName;
+    };
+    SetGradeByUserIdResult.prototype.setExperienceNamespaceName = function (experienceNamespaceName) {
+        this.experienceNamespaceName = experienceNamespaceName;
+        return this;
+    };
+    SetGradeByUserIdResult.prototype.withExperienceNamespaceName = function (experienceNamespaceName) {
+        this.experienceNamespaceName = experienceNamespaceName;
+        return this;
+    };
+    SetGradeByUserIdResult.prototype.getExperienceStatus = function () {
+        return this.experienceStatus;
+    };
+    SetGradeByUserIdResult.prototype.setExperienceStatus = function (experienceStatus) {
+        this.experienceStatus = experienceStatus;
+        return this;
+    };
+    SetGradeByUserIdResult.prototype.withExperienceStatus = function (experienceStatus) {
+        this.experienceStatus = experienceStatus;
+        return this;
+    };
     SetGradeByUserIdResult.fromDict = function (data) {
         return new SetGradeByUserIdResult()
             .withItem(Gs2Grade.Status.fromDict(data["item"]))
-            .withOld(Gs2Grade.Status.fromDict(data["old"]));
+            .withOld(Gs2Grade.Status.fromDict(data["old"]))
+            .withExperienceNamespaceName(data["experienceNamespaceName"])
+            .withExperienceStatus(Gs2Grade.Status.fromDict(data["experienceStatus"]));
     };
     SetGradeByUserIdResult.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "old": (_b = this.getOld()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "experienceNamespaceName": this.getExperienceNamespaceName(),
+            "experienceStatus": (_c = this.getExperienceStatus()) === null || _c === void 0 ? void 0 : _c.toDict(),
         };
     };
     return SetGradeByUserIdResult;

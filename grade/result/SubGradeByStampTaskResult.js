@@ -21,6 +21,8 @@ var SubGradeByStampTaskResult = /** @class */ (function () {
     function SubGradeByStampTaskResult() {
         this.item = null;
         this.newContextStack = null;
+        this.experienceNamespaceName = null;
+        this.experienceStatus = null;
     }
     SubGradeByStampTaskResult.prototype.getItem = function () {
         return this.item;
@@ -44,16 +46,42 @@ var SubGradeByStampTaskResult = /** @class */ (function () {
         this.newContextStack = newContextStack;
         return this;
     };
+    SubGradeByStampTaskResult.prototype.getExperienceNamespaceName = function () {
+        return this.experienceNamespaceName;
+    };
+    SubGradeByStampTaskResult.prototype.setExperienceNamespaceName = function (experienceNamespaceName) {
+        this.experienceNamespaceName = experienceNamespaceName;
+        return this;
+    };
+    SubGradeByStampTaskResult.prototype.withExperienceNamespaceName = function (experienceNamespaceName) {
+        this.experienceNamespaceName = experienceNamespaceName;
+        return this;
+    };
+    SubGradeByStampTaskResult.prototype.getExperienceStatus = function () {
+        return this.experienceStatus;
+    };
+    SubGradeByStampTaskResult.prototype.setExperienceStatus = function (experienceStatus) {
+        this.experienceStatus = experienceStatus;
+        return this;
+    };
+    SubGradeByStampTaskResult.prototype.withExperienceStatus = function (experienceStatus) {
+        this.experienceStatus = experienceStatus;
+        return this;
+    };
     SubGradeByStampTaskResult.fromDict = function (data) {
         return new SubGradeByStampTaskResult()
             .withItem(Gs2Grade.Status.fromDict(data["item"]))
-            .withNewContextStack(data["newContextStack"]);
+            .withNewContextStack(data["newContextStack"])
+            .withExperienceNamespaceName(data["experienceNamespaceName"])
+            .withExperienceStatus(Gs2Grade.Status.fromDict(data["experienceStatus"]));
     };
     SubGradeByStampTaskResult.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "newContextStack": this.getNewContextStack(),
+            "experienceNamespaceName": this.getExperienceNamespaceName(),
+            "experienceStatus": (_b = this.getExperienceStatus()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return SubGradeByStampTaskResult;

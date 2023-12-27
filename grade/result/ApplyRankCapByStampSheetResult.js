@@ -20,6 +20,8 @@ var Gs2Grade = tslib_1.__importStar(require("../model"));
 var ApplyRankCapByStampSheetResult = /** @class */ (function () {
     function ApplyRankCapByStampSheetResult() {
         this.item = null;
+        this.experienceNamespaceName = null;
+        this.experienceStatus = null;
     }
     ApplyRankCapByStampSheetResult.prototype.getItem = function () {
         return this.item;
@@ -32,14 +34,40 @@ var ApplyRankCapByStampSheetResult = /** @class */ (function () {
         this.item = item;
         return this;
     };
+    ApplyRankCapByStampSheetResult.prototype.getExperienceNamespaceName = function () {
+        return this.experienceNamespaceName;
+    };
+    ApplyRankCapByStampSheetResult.prototype.setExperienceNamespaceName = function (experienceNamespaceName) {
+        this.experienceNamespaceName = experienceNamespaceName;
+        return this;
+    };
+    ApplyRankCapByStampSheetResult.prototype.withExperienceNamespaceName = function (experienceNamespaceName) {
+        this.experienceNamespaceName = experienceNamespaceName;
+        return this;
+    };
+    ApplyRankCapByStampSheetResult.prototype.getExperienceStatus = function () {
+        return this.experienceStatus;
+    };
+    ApplyRankCapByStampSheetResult.prototype.setExperienceStatus = function (experienceStatus) {
+        this.experienceStatus = experienceStatus;
+        return this;
+    };
+    ApplyRankCapByStampSheetResult.prototype.withExperienceStatus = function (experienceStatus) {
+        this.experienceStatus = experienceStatus;
+        return this;
+    };
     ApplyRankCapByStampSheetResult.fromDict = function (data) {
         return new ApplyRankCapByStampSheetResult()
-            .withItem(Gs2Grade.Status.fromDict(data["item"]));
+            .withItem(Gs2Grade.Status.fromDict(data["item"]))
+            .withExperienceNamespaceName(data["experienceNamespaceName"])
+            .withExperienceStatus(Gs2Grade.Status.fromDict(data["experienceStatus"]));
     };
     ApplyRankCapByStampSheetResult.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "experienceNamespaceName": this.getExperienceNamespaceName(),
+            "experienceStatus": (_b = this.getExperienceStatus()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return ApplyRankCapByStampSheetResult;

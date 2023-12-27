@@ -20,6 +20,8 @@ var Gs2Grade = tslib_1.__importStar(require("../model"));
 var ApplyRankCapByUserIdResult = /** @class */ (function () {
     function ApplyRankCapByUserIdResult() {
         this.item = null;
+        this.experienceNamespaceName = null;
+        this.experienceStatus = null;
     }
     ApplyRankCapByUserIdResult.prototype.getItem = function () {
         return this.item;
@@ -32,14 +34,40 @@ var ApplyRankCapByUserIdResult = /** @class */ (function () {
         this.item = item;
         return this;
     };
+    ApplyRankCapByUserIdResult.prototype.getExperienceNamespaceName = function () {
+        return this.experienceNamespaceName;
+    };
+    ApplyRankCapByUserIdResult.prototype.setExperienceNamespaceName = function (experienceNamespaceName) {
+        this.experienceNamespaceName = experienceNamespaceName;
+        return this;
+    };
+    ApplyRankCapByUserIdResult.prototype.withExperienceNamespaceName = function (experienceNamespaceName) {
+        this.experienceNamespaceName = experienceNamespaceName;
+        return this;
+    };
+    ApplyRankCapByUserIdResult.prototype.getExperienceStatus = function () {
+        return this.experienceStatus;
+    };
+    ApplyRankCapByUserIdResult.prototype.setExperienceStatus = function (experienceStatus) {
+        this.experienceStatus = experienceStatus;
+        return this;
+    };
+    ApplyRankCapByUserIdResult.prototype.withExperienceStatus = function (experienceStatus) {
+        this.experienceStatus = experienceStatus;
+        return this;
+    };
     ApplyRankCapByUserIdResult.fromDict = function (data) {
         return new ApplyRankCapByUserIdResult()
-            .withItem(Gs2Grade.Status.fromDict(data["item"]));
+            .withItem(Gs2Grade.Status.fromDict(data["item"]))
+            .withExperienceNamespaceName(data["experienceNamespaceName"])
+            .withExperienceStatus(Gs2Grade.Status.fromDict(data["experienceStatus"]));
     };
     ApplyRankCapByUserIdResult.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "experienceNamespaceName": this.getExperienceNamespaceName(),
+            "experienceStatus": (_b = this.getExperienceStatus()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return ApplyRankCapByUserIdResult;
