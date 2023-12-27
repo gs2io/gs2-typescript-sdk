@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentRateMasterFromGitHubRequest = exports.UpdateCurrentRateMasterRequest = exports.GetCurrentRateMasterRequest = exports.ExportMasterRequest = exports.DeleteProgressByStampTaskRequest = exports.CreateProgressByStampSheetRequest = exports.DeleteProgressByUserIdRequest = exports.DeleteProgressRequest = exports.EndByUserIdRequest = exports.EndRequest = exports.StartByUserIdRequest = exports.StartRequest = exports.GetProgressByUserIdRequest = exports.GetProgressRequest = exports.CreateProgressByUserIdRequest = exports.DirectEnhanceByStampSheetRequest = exports.DirectEnhanceByUserIdRequest = exports.DirectEnhanceRequest = exports.DeleteRateModelMasterRequest = exports.UpdateRateModelMasterRequest = exports.GetRateModelMasterRequest = exports.CreateRateModelMasterRequest = exports.DescribeRateModelMastersRequest = exports.GetRateModelRequest = exports.DescribeRateModelsRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.UpdateCurrentRateMasterFromGitHubRequest = exports.UpdateCurrentRateMasterRequest = exports.GetCurrentRateMasterRequest = exports.ExportMasterRequest = exports.DeleteProgressByStampTaskRequest = exports.CreateProgressByStampSheetRequest = exports.DeleteProgressByUserIdRequest = exports.DeleteProgressRequest = exports.EndByUserIdRequest = exports.EndRequest = exports.StartByUserIdRequest = exports.StartRequest = exports.GetProgressByUserIdRequest = exports.GetProgressRequest = exports.CreateProgressByUserIdRequest = exports.UnleashByStampSheetRequest = exports.UnleashByUserIdRequest = exports.UnleashRequest = exports.DirectEnhanceByStampSheetRequest = exports.DirectEnhanceByUserIdRequest = exports.DirectEnhanceRequest = exports.DeleteUnleashRateModelMasterRequest = exports.UpdateUnleashRateModelMasterRequest = exports.GetUnleashRateModelMasterRequest = exports.CreateUnleashRateModelMasterRequest = exports.DescribeUnleashRateModelMastersRequest = exports.GetUnleashRateModelRequest = exports.DescribeUnleashRateModelsRequest = exports.DeleteRateModelMasterRequest = exports.UpdateRateModelMasterRequest = exports.GetRateModelMasterRequest = exports.CreateRateModelMasterRequest = exports.DescribeRateModelMastersRequest = exports.GetRateModelRequest = exports.DescribeRateModelsRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -57,12 +57,32 @@ var UpdateRateModelMasterRequest_1 = tslib_1.__importDefault(require("./UpdateRa
 exports.UpdateRateModelMasterRequest = UpdateRateModelMasterRequest_1.default;
 var DeleteRateModelMasterRequest_1 = tslib_1.__importDefault(require("./DeleteRateModelMasterRequest"));
 exports.DeleteRateModelMasterRequest = DeleteRateModelMasterRequest_1.default;
+var DescribeUnleashRateModelsRequest_1 = tslib_1.__importDefault(require("./DescribeUnleashRateModelsRequest"));
+exports.DescribeUnleashRateModelsRequest = DescribeUnleashRateModelsRequest_1.default;
+var GetUnleashRateModelRequest_1 = tslib_1.__importDefault(require("./GetUnleashRateModelRequest"));
+exports.GetUnleashRateModelRequest = GetUnleashRateModelRequest_1.default;
+var DescribeUnleashRateModelMastersRequest_1 = tslib_1.__importDefault(require("./DescribeUnleashRateModelMastersRequest"));
+exports.DescribeUnleashRateModelMastersRequest = DescribeUnleashRateModelMastersRequest_1.default;
+var CreateUnleashRateModelMasterRequest_1 = tslib_1.__importDefault(require("./CreateUnleashRateModelMasterRequest"));
+exports.CreateUnleashRateModelMasterRequest = CreateUnleashRateModelMasterRequest_1.default;
+var GetUnleashRateModelMasterRequest_1 = tslib_1.__importDefault(require("./GetUnleashRateModelMasterRequest"));
+exports.GetUnleashRateModelMasterRequest = GetUnleashRateModelMasterRequest_1.default;
+var UpdateUnleashRateModelMasterRequest_1 = tslib_1.__importDefault(require("./UpdateUnleashRateModelMasterRequest"));
+exports.UpdateUnleashRateModelMasterRequest = UpdateUnleashRateModelMasterRequest_1.default;
+var DeleteUnleashRateModelMasterRequest_1 = tslib_1.__importDefault(require("./DeleteUnleashRateModelMasterRequest"));
+exports.DeleteUnleashRateModelMasterRequest = DeleteUnleashRateModelMasterRequest_1.default;
 var DirectEnhanceRequest_1 = tslib_1.__importDefault(require("./DirectEnhanceRequest"));
 exports.DirectEnhanceRequest = DirectEnhanceRequest_1.default;
 var DirectEnhanceByUserIdRequest_1 = tslib_1.__importDefault(require("./DirectEnhanceByUserIdRequest"));
 exports.DirectEnhanceByUserIdRequest = DirectEnhanceByUserIdRequest_1.default;
 var DirectEnhanceByStampSheetRequest_1 = tslib_1.__importDefault(require("./DirectEnhanceByStampSheetRequest"));
 exports.DirectEnhanceByStampSheetRequest = DirectEnhanceByStampSheetRequest_1.default;
+var UnleashRequest_1 = tslib_1.__importDefault(require("./UnleashRequest"));
+exports.UnleashRequest = UnleashRequest_1.default;
+var UnleashByUserIdRequest_1 = tslib_1.__importDefault(require("./UnleashByUserIdRequest"));
+exports.UnleashByUserIdRequest = UnleashByUserIdRequest_1.default;
+var UnleashByStampSheetRequest_1 = tslib_1.__importDefault(require("./UnleashByStampSheetRequest"));
+exports.UnleashByStampSheetRequest = UnleashByStampSheetRequest_1.default;
 var CreateProgressByUserIdRequest_1 = tslib_1.__importDefault(require("./CreateProgressByUserIdRequest"));
 exports.CreateProgressByUserIdRequest = CreateProgressByUserIdRequest_1.default;
 var GetProgressRequest_1 = tslib_1.__importDefault(require("./GetProgressRequest"));

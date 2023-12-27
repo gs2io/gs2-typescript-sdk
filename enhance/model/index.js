@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionSetting = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.Material = exports.BonusRate = exports.CurrentRateMaster = exports.Progress = exports.RateModelMaster = exports.RateModel = exports.Namespace = void 0;
+exports.TransactionSetting = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.UnleashRateEntryModel = exports.Material = exports.BonusRate = exports.CurrentRateMaster = exports.Progress = exports.UnleashRateModelMaster = exports.UnleashRateModel = exports.RateModelMaster = exports.RateModel = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -23,6 +23,10 @@ var RateModel_1 = tslib_1.__importDefault(require("./RateModel"));
 exports.RateModel = RateModel_1.default;
 var RateModelMaster_1 = tslib_1.__importDefault(require("./RateModelMaster"));
 exports.RateModelMaster = RateModelMaster_1.default;
+var UnleashRateModel_1 = tslib_1.__importDefault(require("./UnleashRateModel"));
+exports.UnleashRateModel = UnleashRateModel_1.default;
+var UnleashRateModelMaster_1 = tslib_1.__importDefault(require("./UnleashRateModelMaster"));
+exports.UnleashRateModelMaster = UnleashRateModelMaster_1.default;
 var Progress_1 = tslib_1.__importDefault(require("./Progress"));
 exports.Progress = Progress_1.default;
 var CurrentRateMaster_1 = tslib_1.__importDefault(require("./CurrentRateMaster"));
@@ -31,6 +35,8 @@ var BonusRate_1 = tslib_1.__importDefault(require("./BonusRate"));
 exports.BonusRate = BonusRate_1.default;
 var Material_1 = tslib_1.__importDefault(require("./Material"));
 exports.Material = Material_1.default;
+var UnleashRateEntryModel_1 = tslib_1.__importDefault(require("./UnleashRateEntryModel"));
+exports.UnleashRateEntryModel = UnleashRateEntryModel_1.default;
 var Config_1 = tslib_1.__importDefault(require("./Config"));
 exports.Config = Config_1.default;
 var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));

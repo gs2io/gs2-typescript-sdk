@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentRateMasterFromGitHubResult = exports.UpdateCurrentRateMasterResult = exports.GetCurrentRateMasterResult = exports.ExportMasterResult = exports.DeleteProgressByStampTaskResult = exports.CreateProgressByStampSheetResult = exports.DeleteProgressByUserIdResult = exports.DeleteProgressResult = exports.EndByUserIdResult = exports.EndResult = exports.StartByUserIdResult = exports.StartResult = exports.GetProgressByUserIdResult = exports.GetProgressResult = exports.CreateProgressByUserIdResult = exports.DirectEnhanceByStampSheetResult = exports.DirectEnhanceByUserIdResult = exports.DirectEnhanceResult = exports.DeleteRateModelMasterResult = exports.UpdateRateModelMasterResult = exports.GetRateModelMasterResult = exports.CreateRateModelMasterResult = exports.DescribeRateModelMastersResult = exports.GetRateModelResult = exports.DescribeRateModelsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.UpdateCurrentRateMasterFromGitHubResult = exports.UpdateCurrentRateMasterResult = exports.GetCurrentRateMasterResult = exports.ExportMasterResult = exports.DeleteProgressByStampTaskResult = exports.CreateProgressByStampSheetResult = exports.DeleteProgressByUserIdResult = exports.DeleteProgressResult = exports.EndByUserIdResult = exports.EndResult = exports.StartByUserIdResult = exports.StartResult = exports.GetProgressByUserIdResult = exports.GetProgressResult = exports.CreateProgressByUserIdResult = exports.UnleashByStampSheetResult = exports.UnleashByUserIdResult = exports.UnleashResult = exports.DirectEnhanceByStampSheetResult = exports.DirectEnhanceByUserIdResult = exports.DirectEnhanceResult = exports.DeleteUnleashRateModelMasterResult = exports.UpdateUnleashRateModelMasterResult = exports.GetUnleashRateModelMasterResult = exports.CreateUnleashRateModelMasterResult = exports.DescribeUnleashRateModelMastersResult = exports.GetUnleashRateModelResult = exports.DescribeUnleashRateModelsResult = exports.DeleteRateModelMasterResult = exports.UpdateRateModelMasterResult = exports.GetRateModelMasterResult = exports.CreateRateModelMasterResult = exports.DescribeRateModelMastersResult = exports.GetRateModelResult = exports.DescribeRateModelsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -57,12 +57,32 @@ var UpdateRateModelMasterResult_1 = tslib_1.__importDefault(require("./UpdateRat
 exports.UpdateRateModelMasterResult = UpdateRateModelMasterResult_1.default;
 var DeleteRateModelMasterResult_1 = tslib_1.__importDefault(require("./DeleteRateModelMasterResult"));
 exports.DeleteRateModelMasterResult = DeleteRateModelMasterResult_1.default;
+var DescribeUnleashRateModelsResult_1 = tslib_1.__importDefault(require("./DescribeUnleashRateModelsResult"));
+exports.DescribeUnleashRateModelsResult = DescribeUnleashRateModelsResult_1.default;
+var GetUnleashRateModelResult_1 = tslib_1.__importDefault(require("./GetUnleashRateModelResult"));
+exports.GetUnleashRateModelResult = GetUnleashRateModelResult_1.default;
+var DescribeUnleashRateModelMastersResult_1 = tslib_1.__importDefault(require("./DescribeUnleashRateModelMastersResult"));
+exports.DescribeUnleashRateModelMastersResult = DescribeUnleashRateModelMastersResult_1.default;
+var CreateUnleashRateModelMasterResult_1 = tslib_1.__importDefault(require("./CreateUnleashRateModelMasterResult"));
+exports.CreateUnleashRateModelMasterResult = CreateUnleashRateModelMasterResult_1.default;
+var GetUnleashRateModelMasterResult_1 = tslib_1.__importDefault(require("./GetUnleashRateModelMasterResult"));
+exports.GetUnleashRateModelMasterResult = GetUnleashRateModelMasterResult_1.default;
+var UpdateUnleashRateModelMasterResult_1 = tslib_1.__importDefault(require("./UpdateUnleashRateModelMasterResult"));
+exports.UpdateUnleashRateModelMasterResult = UpdateUnleashRateModelMasterResult_1.default;
+var DeleteUnleashRateModelMasterResult_1 = tslib_1.__importDefault(require("./DeleteUnleashRateModelMasterResult"));
+exports.DeleteUnleashRateModelMasterResult = DeleteUnleashRateModelMasterResult_1.default;
 var DirectEnhanceResult_1 = tslib_1.__importDefault(require("./DirectEnhanceResult"));
 exports.DirectEnhanceResult = DirectEnhanceResult_1.default;
 var DirectEnhanceByUserIdResult_1 = tslib_1.__importDefault(require("./DirectEnhanceByUserIdResult"));
 exports.DirectEnhanceByUserIdResult = DirectEnhanceByUserIdResult_1.default;
 var DirectEnhanceByStampSheetResult_1 = tslib_1.__importDefault(require("./DirectEnhanceByStampSheetResult"));
 exports.DirectEnhanceByStampSheetResult = DirectEnhanceByStampSheetResult_1.default;
+var UnleashResult_1 = tslib_1.__importDefault(require("./UnleashResult"));
+exports.UnleashResult = UnleashResult_1.default;
+var UnleashByUserIdResult_1 = tslib_1.__importDefault(require("./UnleashByUserIdResult"));
+exports.UnleashByUserIdResult = UnleashByUserIdResult_1.default;
+var UnleashByStampSheetResult_1 = tslib_1.__importDefault(require("./UnleashByStampSheetResult"));
+exports.UnleashByStampSheetResult = UnleashByStampSheetResult_1.default;
 var CreateProgressByUserIdResult_1 = tslib_1.__importDefault(require("./CreateProgressByUserIdResult"));
 exports.CreateProgressByUserIdResult = CreateProgressByUserIdResult_1.default;
 var GetProgressResult_1 = tslib_1.__importDefault(require("./GetProgressResult"));

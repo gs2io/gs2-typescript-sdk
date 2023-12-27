@@ -33,9 +33,19 @@ import CreateRateModelMasterRequest from "./CreateRateModelMasterRequest"
 import GetRateModelMasterRequest from "./GetRateModelMasterRequest"
 import UpdateRateModelMasterRequest from "./UpdateRateModelMasterRequest"
 import DeleteRateModelMasterRequest from "./DeleteRateModelMasterRequest"
+import DescribeUnleashRateModelsRequest from "./DescribeUnleashRateModelsRequest"
+import GetUnleashRateModelRequest from "./GetUnleashRateModelRequest"
+import DescribeUnleashRateModelMastersRequest from "./DescribeUnleashRateModelMastersRequest"
+import CreateUnleashRateModelMasterRequest from "./CreateUnleashRateModelMasterRequest"
+import GetUnleashRateModelMasterRequest from "./GetUnleashRateModelMasterRequest"
+import UpdateUnleashRateModelMasterRequest from "./UpdateUnleashRateModelMasterRequest"
+import DeleteUnleashRateModelMasterRequest from "./DeleteUnleashRateModelMasterRequest"
 import DirectEnhanceRequest from "./DirectEnhanceRequest"
 import DirectEnhanceByUserIdRequest from "./DirectEnhanceByUserIdRequest"
 import DirectEnhanceByStampSheetRequest from "./DirectEnhanceByStampSheetRequest"
+import UnleashRequest from "./UnleashRequest"
+import UnleashByUserIdRequest from "./UnleashByUserIdRequest"
+import UnleashByStampSheetRequest from "./UnleashByStampSheetRequest"
 import CreateProgressByUserIdRequest from "./CreateProgressByUserIdRequest"
 import GetProgressRequest from "./GetProgressRequest"
 import GetProgressByUserIdRequest from "./GetProgressByUserIdRequest"
@@ -73,9 +83,19 @@ export {
     GetRateModelMasterRequest,
     UpdateRateModelMasterRequest,
     DeleteRateModelMasterRequest,
+    DescribeUnleashRateModelsRequest,
+    GetUnleashRateModelRequest,
+    DescribeUnleashRateModelMastersRequest,
+    CreateUnleashRateModelMasterRequest,
+    GetUnleashRateModelMasterRequest,
+    UpdateUnleashRateModelMasterRequest,
+    DeleteUnleashRateModelMasterRequest,
     DirectEnhanceRequest,
     DirectEnhanceByUserIdRequest,
     DirectEnhanceByStampSheetRequest,
+    UnleashRequest,
+    UnleashByUserIdRequest,
+    UnleashByStampSheetRequest,
     CreateProgressByUserIdRequest,
     GetProgressRequest,
     GetProgressByUserIdRequest,

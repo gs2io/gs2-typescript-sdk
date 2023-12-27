@@ -16,10 +16,13 @@ permissions and limitations under the License.
 import Namespace from "./Namespace"
 import RateModel from "./RateModel"
 import RateModelMaster from "./RateModelMaster"
+import UnleashRateModel from "./UnleashRateModel"
+import UnleashRateModelMaster from "./UnleashRateModelMaster"
 import Progress from "./Progress"
 import CurrentRateMaster from "./CurrentRateMaster"
 import BonusRate from "./BonusRate"
 import Material from "./Material"
+import UnleashRateEntryModel from "./UnleashRateEntryModel"
 import Config from "./Config"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import ScriptSetting from "./ScriptSetting"
@@ -30,10 +33,13 @@ export {
     Namespace,
     RateModel,
     RateModelMaster,
+    UnleashRateModel,
+    UnleashRateModelMaster,
     Progress,
     CurrentRateMaster,
     BonusRate,
     Material,
+    UnleashRateEntryModel,
     Config,
     GitHubCheckoutSetting,
     ScriptSetting,

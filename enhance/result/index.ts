@@ -33,9 +33,19 @@ import CreateRateModelMasterResult from "./CreateRateModelMasterResult"
 import GetRateModelMasterResult from "./GetRateModelMasterResult"
 import UpdateRateModelMasterResult from "./UpdateRateModelMasterResult"
 import DeleteRateModelMasterResult from "./DeleteRateModelMasterResult"
+import DescribeUnleashRateModelsResult from "./DescribeUnleashRateModelsResult"
+import GetUnleashRateModelResult from "./GetUnleashRateModelResult"
+import DescribeUnleashRateModelMastersResult from "./DescribeUnleashRateModelMastersResult"
+import CreateUnleashRateModelMasterResult from "./CreateUnleashRateModelMasterResult"
+import GetUnleashRateModelMasterResult from "./GetUnleashRateModelMasterResult"
+import UpdateUnleashRateModelMasterResult from "./UpdateUnleashRateModelMasterResult"
+import DeleteUnleashRateModelMasterResult from "./DeleteUnleashRateModelMasterResult"
 import DirectEnhanceResult from "./DirectEnhanceResult"
 import DirectEnhanceByUserIdResult from "./DirectEnhanceByUserIdResult"
 import DirectEnhanceByStampSheetResult from "./DirectEnhanceByStampSheetResult"
+import UnleashResult from "./UnleashResult"
+import UnleashByUserIdResult from "./UnleashByUserIdResult"
+import UnleashByStampSheetResult from "./UnleashByStampSheetResult"
 import CreateProgressByUserIdResult from "./CreateProgressByUserIdResult"
 import GetProgressResult from "./GetProgressResult"
 import GetProgressByUserIdResult from "./GetProgressByUserIdResult"
@@ -73,9 +83,19 @@ export {
     GetRateModelMasterResult,
     UpdateRateModelMasterResult,
     DeleteRateModelMasterResult,
+    DescribeUnleashRateModelsResult,
+    GetUnleashRateModelResult,
+    DescribeUnleashRateModelMastersResult,
+    CreateUnleashRateModelMasterResult,
+    GetUnleashRateModelMasterResult,
+    UpdateUnleashRateModelMasterResult,
+    DeleteUnleashRateModelMasterResult,
     DirectEnhanceResult,
     DirectEnhanceByUserIdResult,
     DirectEnhanceByStampSheetResult,
+    UnleashResult,
+    UnleashByUserIdResult,
+    UnleashByStampSheetResult,
     CreateProgressByUserIdResult,
     GetProgressResult,
     GetProgressByUserIdResult,
