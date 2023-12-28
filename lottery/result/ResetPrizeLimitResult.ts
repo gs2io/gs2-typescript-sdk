@@ -16,8 +16,6 @@ permissions and limitations under the License.
 
 import IResult from '../../core/interface/IResult';
 
-import * as Gs2Lottery from '../model'
-
 export default class ResetPrizeLimitResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): ResetPrizeLimitResult {

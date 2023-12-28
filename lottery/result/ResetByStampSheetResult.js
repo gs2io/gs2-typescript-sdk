@@ -1,3 +1,4 @@
+"use strict";
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
 Reserved.
@@ -13,17 +14,17 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
-
-import IResult from '../../core/interface/IResult';
-
-export default class CleanUserDataByUserIdResult implements IResult {
-
-    public static fromDict(data: {[key: string]: any}): CleanUserDataByUserIdResult {
-        return new CleanUserDataByUserIdResult();
+Object.defineProperty(exports, "__esModule", { value: true });
+var ResetByStampSheetResult = /** @class */ (function () {
+    function ResetByStampSheetResult() {
     }
-
-    public toDict(): {[key: string]: any} {
-        return {
-        };
-    }
-}
+    ResetByStampSheetResult.fromDict = function (data) {
+        return new ResetByStampSheetResult();
+    };
+    ResetByStampSheetResult.prototype.toDict = function () {
+        return {};
+    };
+    return ResetByStampSheetResult;
+}());
+exports.default = ResetByStampSheetResult;
+//# sourceMappingURL=ResetByStampSheetResult.js.map

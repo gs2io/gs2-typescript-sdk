@@ -51,4 +51,5 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
     getBoxByUserId(request: Request.GetBoxByUserIdRequest): Promise<Result.GetBoxByUserIdResult>;
     resetBox(request: Request.ResetBoxRequest): Promise<Result.ResetBoxResult>;
     resetBoxByUserId(request: Request.ResetBoxByUserIdRequest): Promise<Result.ResetBoxByUserIdResult>;
+    resetByStampSheet(request: Request.ResetByStampSheetRequest): Promise<Result.ResetByStampSheetResult>;
 }

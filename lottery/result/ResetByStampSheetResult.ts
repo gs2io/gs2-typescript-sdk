@@ -15,33 +15,15 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
-import * as Gs2Lottery from '../model'
 
-export default class GetNamespaceResult implements IResult {
-    private item: Gs2Lottery.Namespace|null = null;
+export default class ResetByStampSheetResult implements IResult {
 
-    public getItem(): Gs2Lottery.Namespace|null {
-        return this.item;
-    }
-
-    public setItem(item: Gs2Lottery.Namespace|null) {
-        this.item = item;
-        return this;
-    }
-
-    public withItem(item: Gs2Lottery.Namespace|null): this {
-        this.item = item;
-        return this;
-    }
-
-    public static fromDict(data: {[key: string]: any}): GetNamespaceResult {
-        return new GetNamespaceResult()
-            .withItem(Gs2Lottery.Namespace.fromDict(data["item"]));
+    public static fromDict(data: {[key: string]: any}): ResetByStampSheetResult {
+        return new ResetByStampSheetResult();
     }
 
     public toDict(): {[key: string]: any} {
         return {
-            "item": this.getItem()?.toDict(),
         };
     }
 }

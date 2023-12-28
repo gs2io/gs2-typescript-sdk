@@ -60,6 +60,7 @@ import GetBoxRequest from "./GetBoxRequest"
 import GetBoxByUserIdRequest from "./GetBoxByUserIdRequest"
 import ResetBoxRequest from "./ResetBoxRequest"
 import ResetBoxByUserIdRequest from "./ResetBoxByUserIdRequest"
+import ResetByStampSheetRequest from "./ResetByStampSheetRequest"
 
 export {
     DescribeNamespacesRequest,
@@ -109,4 +110,5 @@ export {
     GetBoxByUserIdRequest,
     ResetBoxRequest,
     ResetBoxByUserIdRequest,
+    ResetByStampSheetRequest,
 };

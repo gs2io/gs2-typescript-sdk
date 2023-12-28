@@ -1459,4 +1459,35 @@ export default class Gs2LotteryRestClient extends AbstractGs2RestClient {
             throw JSON.parse(error.response.data.message);
         });
     }
+
+    public resetByStampSheet(request: Request.ResetByStampSheetRequest): Promise<Result.ResetByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/box/reset')
+            .replace('{service}', 'lottery')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ResetByStampSheetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
 }

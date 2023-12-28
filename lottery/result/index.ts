@@ -60,6 +60,7 @@ import GetBoxResult from "./GetBoxResult"
 import GetBoxByUserIdResult from "./GetBoxByUserIdResult"
 import ResetBoxResult from "./ResetBoxResult"
 import ResetBoxByUserIdResult from "./ResetBoxByUserIdResult"
+import ResetByStampSheetResult from "./ResetByStampSheetResult"
 
 export {
     DescribeNamespacesResult,
@@ -109,4 +110,5 @@ export {
     GetBoxByUserIdResult,
     ResetBoxResult,
     ResetBoxByUserIdResult,
+    ResetByStampSheetResult,
 };
