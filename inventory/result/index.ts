@@ -91,12 +91,14 @@ import GetItemSetByUserIdResult from "./GetItemSetByUserIdResult"
 import GetItemWithSignatureResult from "./GetItemWithSignatureResult"
 import GetItemWithSignatureByUserIdResult from "./GetItemWithSignatureByUserIdResult"
 import AcquireItemSetByUserIdResult from "./AcquireItemSetByUserIdResult"
+import AcquireItemSetWithGradeByUserIdResult from "./AcquireItemSetWithGradeByUserIdResult"
 import ConsumeItemSetResult from "./ConsumeItemSetResult"
 import ConsumeItemSetByUserIdResult from "./ConsumeItemSetByUserIdResult"
 import DeleteItemSetByUserIdResult from "./DeleteItemSetByUserIdResult"
 import VerifyItemSetResult from "./VerifyItemSetResult"
 import VerifyItemSetByUserIdResult from "./VerifyItemSetByUserIdResult"
 import AcquireItemSetByStampSheetResult from "./AcquireItemSetByStampSheetResult"
+import AcquireItemSetWithGradeByStampSheetResult from "./AcquireItemSetWithGradeByStampSheetResult"
 import ConsumeItemSetByStampTaskResult from "./ConsumeItemSetByStampTaskResult"
 import VerifyItemSetByStampTaskResult from "./VerifyItemSetByStampTaskResult"
 import DescribeReferenceOfResult from "./DescribeReferenceOfResult"
@@ -224,12 +226,14 @@ export {
     GetItemWithSignatureResult,
     GetItemWithSignatureByUserIdResult,
     AcquireItemSetByUserIdResult,
+    AcquireItemSetWithGradeByUserIdResult,
     ConsumeItemSetResult,
     ConsumeItemSetByUserIdResult,
     DeleteItemSetByUserIdResult,
     VerifyItemSetResult,
     VerifyItemSetByUserIdResult,
     AcquireItemSetByStampSheetResult,
+    AcquireItemSetWithGradeByStampSheetResult,
     ConsumeItemSetByStampTaskResult,
     VerifyItemSetByStampTaskResult,
     DescribeReferenceOfResult,

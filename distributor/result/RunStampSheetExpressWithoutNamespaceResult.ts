@@ -16,8 +16,6 @@ permissions and limitations under the License.
 
 import IResult from '../../core/interface/IResult';
 
-import * as Gs2Distributor from '../model'
-
 export default class RunStampSheetExpressWithoutNamespaceResult implements IResult {
     private taskResults: string[]|null = null;
     private sheetResult: string|null = null;

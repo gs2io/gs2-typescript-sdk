@@ -16,8 +16,6 @@ permissions and limitations under the License.
 
 import IResult from '../../core/interface/IResult';
 
-import * as Gs2Enhance from '../model'
-
 export default class StartResult implements IResult {
     private transactionId: string|null = null;
     private stampSheet: string|null = null;

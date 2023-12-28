@@ -82,12 +82,14 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
     getItemWithSignature(request: Request.GetItemWithSignatureRequest): Promise<Result.GetItemWithSignatureResult>;
     getItemWithSignatureByUserId(request: Request.GetItemWithSignatureByUserIdRequest): Promise<Result.GetItemWithSignatureByUserIdResult>;
     acquireItemSetByUserId(request: Request.AcquireItemSetByUserIdRequest): Promise<Result.AcquireItemSetByUserIdResult>;
+    acquireItemSetWithGradeByUserId(request: Request.AcquireItemSetWithGradeByUserIdRequest): Promise<Result.AcquireItemSetWithGradeByUserIdResult>;
     consumeItemSet(request: Request.ConsumeItemSetRequest): Promise<Result.ConsumeItemSetResult>;
     consumeItemSetByUserId(request: Request.ConsumeItemSetByUserIdRequest): Promise<Result.ConsumeItemSetByUserIdResult>;
     deleteItemSetByUserId(request: Request.DeleteItemSetByUserIdRequest): Promise<Result.DeleteItemSetByUserIdResult>;
     verifyItemSet(request: Request.VerifyItemSetRequest): Promise<Result.VerifyItemSetResult>;
     verifyItemSetByUserId(request: Request.VerifyItemSetByUserIdRequest): Promise<Result.VerifyItemSetByUserIdResult>;
     acquireItemSetByStampSheet(request: Request.AcquireItemSetByStampSheetRequest): Promise<Result.AcquireItemSetByStampSheetResult>;
+    acquireItemSetWithGradeByStampSheet(request: Request.AcquireItemSetWithGradeByStampSheetRequest): Promise<Result.AcquireItemSetWithGradeByStampSheetResult>;
     consumeItemSetByStampTask(request: Request.ConsumeItemSetByStampTaskRequest): Promise<Result.ConsumeItemSetByStampTaskResult>;
     verifyItemSetByStampTask(request: Request.VerifyItemSetByStampTaskRequest): Promise<Result.VerifyItemSetByStampTaskResult>;
     describeReferenceOf(request: Request.DescribeReferenceOfRequest): Promise<Result.DescribeReferenceOfResult>;

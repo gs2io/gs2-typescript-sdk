@@ -16,8 +16,6 @@ permissions and limitations under the License.
 
 import IResult from '../../core/interface/IResult';
 
-import * as Gs2Auth from '../model'
-
 export default class LoginBySignatureResult implements IResult {
     private token: string|null = null;
     private userId: string|null = null;

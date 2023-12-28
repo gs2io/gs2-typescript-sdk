@@ -15,7 +15,6 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
-
 import * as Gs2Project from '../model'
 
 export default class WaitCleanUserDataResult implements IResult {

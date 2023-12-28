@@ -1,5 +1,6 @@
 import IResult from '../../core/interface/IResult';
 import * as Gs2Grade from '../model';
+import * as Gs2Experience from '../../experience/model';
 export default class SubGradeByStampTaskResult implements IResult {
     private item;
     private newContextStack;
@@ -14,9 +15,9 @@ export default class SubGradeByStampTaskResult implements IResult {
     getExperienceNamespaceName(): string | null;
     setExperienceNamespaceName(experienceNamespaceName: string | null): this;
     withExperienceNamespaceName(experienceNamespaceName: string | null): this;
-    getExperienceStatus(): Gs2Grade.Status | null;
-    setExperienceStatus(experienceStatus: Gs2Grade.Status | null): this;
-    withExperienceStatus(experienceStatus: Gs2Grade.Status | null): this;
+    getExperienceStatus(): Gs2Experience.Status | null;
+    setExperienceStatus(experienceStatus: Gs2Experience.Status | null): this;
+    withExperienceStatus(experienceStatus: Gs2Experience.Status | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): SubGradeByStampTaskResult;

@@ -91,12 +91,14 @@ import GetItemSetByUserIdRequest from "./GetItemSetByUserIdRequest"
 import GetItemWithSignatureRequest from "./GetItemWithSignatureRequest"
 import GetItemWithSignatureByUserIdRequest from "./GetItemWithSignatureByUserIdRequest"
 import AcquireItemSetByUserIdRequest from "./AcquireItemSetByUserIdRequest"
+import AcquireItemSetWithGradeByUserIdRequest from "./AcquireItemSetWithGradeByUserIdRequest"
 import ConsumeItemSetRequest from "./ConsumeItemSetRequest"
 import ConsumeItemSetByUserIdRequest from "./ConsumeItemSetByUserIdRequest"
 import DeleteItemSetByUserIdRequest from "./DeleteItemSetByUserIdRequest"
 import VerifyItemSetRequest from "./VerifyItemSetRequest"
 import VerifyItemSetByUserIdRequest from "./VerifyItemSetByUserIdRequest"
 import AcquireItemSetByStampSheetRequest from "./AcquireItemSetByStampSheetRequest"
+import AcquireItemSetWithGradeByStampSheetRequest from "./AcquireItemSetWithGradeByStampSheetRequest"
 import ConsumeItemSetByStampTaskRequest from "./ConsumeItemSetByStampTaskRequest"
 import VerifyItemSetByStampTaskRequest from "./VerifyItemSetByStampTaskRequest"
 import DescribeReferenceOfRequest from "./DescribeReferenceOfRequest"
@@ -224,12 +226,14 @@ export {
     GetItemWithSignatureRequest,
     GetItemWithSignatureByUserIdRequest,
     AcquireItemSetByUserIdRequest,
+    AcquireItemSetWithGradeByUserIdRequest,
     ConsumeItemSetRequest,
     ConsumeItemSetByUserIdRequest,
     DeleteItemSetByUserIdRequest,
     VerifyItemSetRequest,
     VerifyItemSetByUserIdRequest,
     AcquireItemSetByStampSheetRequest,
+    AcquireItemSetWithGradeByStampSheetRequest,
     ConsumeItemSetByStampTaskRequest,
     VerifyItemSetByStampTaskRequest,
     DescribeReferenceOfRequest,

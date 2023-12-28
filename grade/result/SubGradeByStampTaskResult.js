@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Gs2Grade = tslib_1.__importStar(require("../model"));
+var Gs2Experience = tslib_1.__importStar(require("../../experience/model"));
 var SubGradeByStampTaskResult = /** @class */ (function () {
     function SubGradeByStampTaskResult() {
         this.item = null;
@@ -73,7 +74,7 @@ var SubGradeByStampTaskResult = /** @class */ (function () {
             .withItem(Gs2Grade.Status.fromDict(data["item"]))
             .withNewContextStack(data["newContextStack"])
             .withExperienceNamespaceName(data["experienceNamespaceName"])
-            .withExperienceStatus(Gs2Grade.Status.fromDict(data["experienceStatus"]));
+            .withExperienceStatus(Gs2Experience.Status.fromDict(data["experienceStatus"]));
     };
     SubGradeByStampTaskResult.prototype.toDict = function () {
         var _a, _b;

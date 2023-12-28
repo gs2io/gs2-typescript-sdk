@@ -15,13 +15,13 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
-
 import * as Gs2Grade from '../model'
+import * as Gs2Experience from '../../experience/model'
 
 export default class AddGradeByStampSheetResult implements IResult {
     private item: Gs2Grade.Status|null = null;
     private experienceNamespaceName: string|null = null;
-    private experienceStatus: Gs2Grade.Status|null = null;
+    private experienceStatus: Gs2Experience.Status|null = null;
 
     public getItem(): Gs2Grade.Status|null {
         return this.item;
@@ -51,16 +51,16 @@ export default class AddGradeByStampSheetResult implements IResult {
         return this;
     }
 
-    public getExperienceStatus(): Gs2Grade.Status|null {
+    public getExperienceStatus(): Gs2Experience.Status|null {
         return this.experienceStatus;
     }
 
-    public setExperienceStatus(experienceStatus: Gs2Grade.Status|null) {
+    public setExperienceStatus(experienceStatus: Gs2Experience.Status|null) {
         this.experienceStatus = experienceStatus;
         return this;
     }
 
-    public withExperienceStatus(experienceStatus: Gs2Grade.Status|null): this {
+    public withExperienceStatus(experienceStatus: Gs2Experience.Status|null): this {
         this.experienceStatus = experienceStatus;
         return this;
     }
@@ -69,7 +69,7 @@ export default class AddGradeByStampSheetResult implements IResult {
         return new AddGradeByStampSheetResult()
             .withItem(Gs2Grade.Status.fromDict(data["item"]))
             .withExperienceNamespaceName(data["experienceNamespaceName"])
-            .withExperienceStatus(Gs2Grade.Status.fromDict(data["experienceStatus"]));
+            .withExperienceStatus(Gs2Experience.Status.fromDict(data["experienceStatus"]));
     }
 
     public toDict(): {[key: string]: any} {

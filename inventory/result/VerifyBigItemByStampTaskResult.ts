@@ -16,8 +16,6 @@ permissions and limitations under the License.
 
 import IResult from '../../core/interface/IResult';
 
-import * as Gs2Inventory from '../model'
-
 export default class VerifyBigItemByStampTaskResult implements IResult {
     private newContextStack: string|null = null;
 

@@ -16,8 +16,6 @@ permissions and limitations under the License.
 
 import IResult from '../../core/interface/IResult';
 
-import * as Gs2JobQueue from '../model'
-
 export default class GetNamespaceStatusResult implements IResult {
     private status: string|null = null;
 
