@@ -20,6 +20,7 @@ var Gs2Lottery = tslib_1.__importStar(require("../model"));
 var DrawByStampSheetResult = /** @class */ (function () {
     function DrawByStampSheetResult() {
         this.items = null;
+        this.boxItems = null;
         this.transactionId = null;
         this.stampSheet = null;
         this.stampSheetEncryptionKeyId = null;
@@ -34,6 +35,17 @@ var DrawByStampSheetResult = /** @class */ (function () {
     };
     DrawByStampSheetResult.prototype.withItems = function (items) {
         this.items = items;
+        return this;
+    };
+    DrawByStampSheetResult.prototype.getBoxItems = function () {
+        return this.boxItems;
+    };
+    DrawByStampSheetResult.prototype.setBoxItems = function (boxItems) {
+        this.boxItems = boxItems;
+        return this;
+    };
+    DrawByStampSheetResult.prototype.withBoxItems = function (boxItems) {
+        this.boxItems = boxItems;
         return this;
     };
     DrawByStampSheetResult.prototype.getTransactionId = function () {
@@ -86,17 +98,20 @@ var DrawByStampSheetResult = /** @class */ (function () {
             data.items.map(function (item) {
                 return Gs2Lottery.DrawnPrize.fromDict(item);
             }) : [])
+            .withBoxItems(Gs2Lottery.BoxItems.fromDict(data["boxItems"]))
             .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
             .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
             .withAutoRunStampSheet(data["autoRunStampSheet"]);
     };
     DrawByStampSheetResult.prototype.toDict = function () {
+        var _a;
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "boxItems": (_a = this.getBoxItems()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "transactionId": this.getTransactionId(),
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),

@@ -19,6 +19,7 @@ import * as Gs2Lottery from '../model'
 
 export default class DrawByUserIdResult implements IResult {
     private items: Gs2Lottery.DrawnPrize[]|null = null;
+    private boxItems: Gs2Lottery.BoxItems|null = null;
     private transactionId: string|null = null;
     private stampSheet: string|null = null;
     private stampSheetEncryptionKeyId: string|null = null;
@@ -35,6 +36,20 @@ export default class DrawByUserIdResult implements IResult {
 
     public withItems(items: Gs2Lottery.DrawnPrize[]|null): this {
         this.items = items;
+        return this;
+    }
+
+    public getBoxItems(): Gs2Lottery.BoxItems|null {
+        return this.boxItems;
+    }
+
+    public setBoxItems(boxItems: Gs2Lottery.BoxItems|null) {
+        this.boxItems = boxItems;
+        return this;
+    }
+
+    public withBoxItems(boxItems: Gs2Lottery.BoxItems|null): this {
+        this.boxItems = boxItems;
         return this;
     }
 
@@ -101,6 +116,7 @@ export default class DrawByUserIdResult implements IResult {
                     return Gs2Lottery.DrawnPrize.fromDict(item);
                 }
             ) : [])
+            .withBoxItems(Gs2Lottery.BoxItems.fromDict(data["boxItems"]))
             .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
             .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
@@ -114,6 +130,7 @@ export default class DrawByUserIdResult implements IResult {
                     return item.toDict();
                 }
             ) : [],
+            "boxItems": this.getBoxItems()?.toDict(),
             "transactionId": this.getTransactionId(),
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),

@@ -2,6 +2,7 @@ import IResult from '../../core/interface/IResult';
 import * as Gs2Lottery from '../model';
 export default class DrawByStampSheetResult implements IResult {
     private items;
+    private boxItems;
     private transactionId;
     private stampSheet;
     private stampSheetEncryptionKeyId;
@@ -9,6 +10,9 @@ export default class DrawByStampSheetResult implements IResult {
     getItems(): Gs2Lottery.DrawnPrize[] | null;
     setItems(items: Gs2Lottery.DrawnPrize[] | null): this;
     withItems(items: Gs2Lottery.DrawnPrize[] | null): this;
+    getBoxItems(): Gs2Lottery.BoxItems | null;
+    setBoxItems(boxItems: Gs2Lottery.BoxItems | null): this;
+    withBoxItems(boxItems: Gs2Lottery.BoxItems | null): this;
     getTransactionId(): string | null;
     setTransactionId(transactionId: string | null): this;
     withTransactionId(transactionId: string | null): this;

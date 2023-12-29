@@ -20,6 +20,7 @@ var Gs2Lottery = tslib_1.__importStar(require("../model"));
 var DrawByUserIdResult = /** @class */ (function () {
     function DrawByUserIdResult() {
         this.items = null;
+        this.boxItems = null;
         this.transactionId = null;
         this.stampSheet = null;
         this.stampSheetEncryptionKeyId = null;
@@ -34,6 +35,17 @@ var DrawByUserIdResult = /** @class */ (function () {
     };
     DrawByUserIdResult.prototype.withItems = function (items) {
         this.items = items;
+        return this;
+    };
+    DrawByUserIdResult.prototype.getBoxItems = function () {
+        return this.boxItems;
+    };
+    DrawByUserIdResult.prototype.setBoxItems = function (boxItems) {
+        this.boxItems = boxItems;
+        return this;
+    };
+    DrawByUserIdResult.prototype.withBoxItems = function (boxItems) {
+        this.boxItems = boxItems;
         return this;
     };
     DrawByUserIdResult.prototype.getTransactionId = function () {
@@ -86,17 +98,20 @@ var DrawByUserIdResult = /** @class */ (function () {
             data.items.map(function (item) {
                 return Gs2Lottery.DrawnPrize.fromDict(item);
             }) : [])
+            .withBoxItems(Gs2Lottery.BoxItems.fromDict(data["boxItems"]))
             .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
             .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
             .withAutoRunStampSheet(data["autoRunStampSheet"]);
     };
     DrawByUserIdResult.prototype.toDict = function () {
+        var _a;
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "boxItems": (_a = this.getBoxItems()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "transactionId": this.getTransactionId(),
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
