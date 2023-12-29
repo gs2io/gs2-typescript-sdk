@@ -15,15 +15,33 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Lottery from '../model'
 
 export default class ResetByStampSheetResult implements IResult {
+    private item: Gs2Lottery.BoxItems|null = null;
+
+    public getItem(): Gs2Lottery.BoxItems|null {
+        return this.item;
+    }
+
+    public setItem(item: Gs2Lottery.BoxItems|null) {
+        this.item = item;
+        return this;
+    }
+
+    public withItem(item: Gs2Lottery.BoxItems|null): this {
+        this.item = item;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): ResetByStampSheetResult {
-        return new ResetByStampSheetResult();
+        return new ResetByStampSheetResult()
+            .withItem(Gs2Lottery.BoxItems.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "item": this.getItem()?.toDict(),
         };
     }
 }
