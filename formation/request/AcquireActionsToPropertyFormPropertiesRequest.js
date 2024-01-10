@@ -137,7 +137,7 @@ var AcquireActionsToPropertyFormPropertiesRequest = /** @class */ (function () {
             .withAcquireAction(Gs2Formation.AcquireAction.fromDict(data["acquireAction"]))
             .withConfig(data.config ?
             data.config.map(function (item) {
-                return Gs2Formation.AcquireActionConfig.fromDict(item);
+                return Gs2Formation.Config.fromDict(item);
             }) : []);
     };
     AcquireActionsToPropertyFormPropertiesRequest.prototype.toDict = function () {

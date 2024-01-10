@@ -31,9 +31,9 @@ export default class AcquireActionsToPropertyFormPropertiesRequest implements IR
     getAcquireAction(): Gs2Formation.AcquireAction | null;
     setAcquireAction(acquireAction: Gs2Formation.AcquireAction | null): this;
     withAcquireAction(acquireAction: Gs2Formation.AcquireAction | null): this;
-    getConfig(): Gs2Formation.AcquireActionConfig[] | null;
-    setConfig(config: Gs2Formation.AcquireActionConfig[] | null): this;
-    withConfig(config: Gs2Formation.AcquireActionConfig[] | null): this;
+    getConfig(): Gs2Formation.Config[] | null;
+    setConfig(config: Gs2Formation.Config[] | null): this;
+    withConfig(config: Gs2Formation.Config[] | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

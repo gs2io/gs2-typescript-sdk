@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionSetting = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.AcquireActionConfig = exports.AcquireAction = exports.SlotWithSignature = exports.SlotModel = exports.Slot = exports.PropertyForm = exports.Form = exports.Mold = exports.CurrentFormMaster = exports.PropertyFormModelMaster = exports.PropertyFormModel = exports.MoldModelMaster = exports.MoldModel = exports.FormModelMaster = exports.FormModel = exports.Namespace = void 0;
+exports.TransactionSetting = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.AcquireAction = exports.SlotWithSignature = exports.SlotModel = exports.Slot = exports.PropertyForm = exports.Form = exports.Mold = exports.CurrentFormMaster = exports.PropertyFormModelMaster = exports.PropertyFormModel = exports.MoldModelMaster = exports.MoldModel = exports.FormModelMaster = exports.FormModel = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -47,8 +47,6 @@ var SlotWithSignature_1 = tslib_1.__importDefault(require("./SlotWithSignature")
 exports.SlotWithSignature = SlotWithSignature_1.default;
 var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 exports.AcquireAction = AcquireAction_1.default;
-var AcquireActionConfig_1 = tslib_1.__importDefault(require("./AcquireActionConfig"));
-exports.AcquireActionConfig = AcquireActionConfig_1.default;
 var Config_1 = tslib_1.__importDefault(require("./Config"));
 exports.Config = Config_1.default;
 var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));

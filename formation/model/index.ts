@@ -28,7 +28,6 @@ import Slot from "./Slot"
 import SlotModel from "./SlotModel"
 import SlotWithSignature from "./SlotWithSignature"
 import AcquireAction from "./AcquireAction"
-import AcquireActionConfig from "./AcquireActionConfig"
 import Config from "./Config"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import ScriptSetting from "./ScriptSetting"
@@ -51,7 +50,6 @@ export {
     SlotModel,
     SlotWithSignature,
     AcquireAction,
-    AcquireActionConfig,
     Config,
     GitHubCheckoutSetting,
     ScriptSetting,

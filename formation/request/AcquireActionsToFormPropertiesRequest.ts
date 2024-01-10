@@ -27,7 +27,7 @@ export default class AcquireActionsToFormPropertiesRequest implements IRequest {
     private moldModelName: string|null = null;
     private index: number|null = null;
     private acquireAction: Gs2Formation.AcquireAction|null = null;
-    private config: Gs2Formation.AcquireActionConfig[]|null = null;
+    private config: Gs2Formation.Config[]|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -112,14 +112,14 @@ export default class AcquireActionsToFormPropertiesRequest implements IRequest {
         this.acquireAction = acquireAction;
         return this;
     }
-    public getConfig(): Gs2Formation.AcquireActionConfig[]|null {
+    public getConfig(): Gs2Formation.Config[]|null {
         return this.config;
     }
-    public setConfig(config: Gs2Formation.AcquireActionConfig[]|null) {
+    public setConfig(config: Gs2Formation.Config[]|null) {
         this.config = config;
         return this;
     }
-    public withConfig(config: Gs2Formation.AcquireActionConfig[]|null): this {
+    public withConfig(config: Gs2Formation.Config[]|null): this {
         this.config = config;
         return this;
     }
@@ -147,7 +147,7 @@ export default class AcquireActionsToFormPropertiesRequest implements IRequest {
             .withAcquireAction(Gs2Formation.AcquireAction.fromDict(data["acquireAction"]))
             .withConfig(data.config ?
                 data.config.map((item: {[key: string]: any}) => {
-                    return Gs2Formation.AcquireActionConfig.fromDict(item);
+                    return Gs2Formation.Config.fromDict(item);
                 }
             ) : []);
     }
@@ -160,7 +160,7 @@ export default class AcquireActionsToFormPropertiesRequest implements IRequest {
             "index": this.getIndex(),
             "acquireAction": this.getAcquireAction()?.toDict(),
             "config": this.getConfig() ?
-                this.getConfig()!.map((item: Gs2Formation.AcquireActionConfig) => {
+                this.getConfig()!.map((item: Gs2Formation.Config) => {
                     return item.toDict();
                 }
             ) : [],
