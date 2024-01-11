@@ -25,6 +25,7 @@ export default class Wallet implements IModel {
     private paid: number|null = null;
     private free: number|null = null;
     private detail: WalletDetail[]|null = null;
+    private shareFree: boolean|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -198,6 +199,17 @@ export default class Wallet implements IModel {
         this.detail = detail;
         return this;
     }
+    public getShareFree(): boolean|null {
+        return this.shareFree;
+    }
+    public setShareFree(shareFree: boolean|null) {
+        this.shareFree = shareFree;
+        return this;
+    }
+    public withShareFree(shareFree: boolean|null): this {
+        this.shareFree = shareFree;
+        return this;
+    }
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -247,6 +259,7 @@ export default class Wallet implements IModel {
                     return WalletDetail.fromDict(item);
                 }
             ) : [])
+            .withShareFree(data["shareFree"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -264,6 +277,7 @@ export default class Wallet implements IModel {
                     return item.toDict();
                 }
             ) : [],
+            "shareFree": this.getShareFree(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

@@ -7,6 +7,7 @@ export default class Wallet implements IModel {
     private paid;
     private free;
     private detail;
+    private shareFree;
     private createdAt;
     private updatedAt;
     private revision;
@@ -35,6 +36,9 @@ export default class Wallet implements IModel {
     getDetail(): WalletDetail[] | null;
     setDetail(detail: WalletDetail[] | null): this;
     withDetail(detail: WalletDetail[] | null): this;
+    getShareFree(): boolean | null;
+    setShareFree(shareFree: boolean | null): this;
+    withShareFree(shareFree: boolean | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

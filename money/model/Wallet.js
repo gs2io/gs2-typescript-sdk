@@ -26,6 +26,7 @@ var Wallet = /** @class */ (function () {
         this.paid = null;
         this.free = null;
         this.detail = null;
+        this.shareFree = null;
         this.createdAt = null;
         this.updatedAt = null;
         this.revision = null;
@@ -182,6 +183,17 @@ var Wallet = /** @class */ (function () {
         this.detail = detail;
         return this;
     };
+    Wallet.prototype.getShareFree = function () {
+        return this.shareFree;
+    };
+    Wallet.prototype.setShareFree = function (shareFree) {
+        this.shareFree = shareFree;
+        return this;
+    };
+    Wallet.prototype.withShareFree = function (shareFree) {
+        this.shareFree = shareFree;
+        return this;
+    };
     Wallet.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -229,6 +241,7 @@ var Wallet = /** @class */ (function () {
             data.detail.map(function (item) {
                 return WalletDetail_1.default.fromDict(item);
             }) : [])
+            .withShareFree(data["shareFree"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -244,6 +257,7 @@ var Wallet = /** @class */ (function () {
                 this.getDetail().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "shareFree": this.getShareFree(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),
