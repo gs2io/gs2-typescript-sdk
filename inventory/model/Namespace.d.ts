@@ -8,6 +8,8 @@ export default class Namespace implements IModel {
     private acquireScript;
     private overflowScript;
     private consumeScript;
+    private simpleItemAcquireScript;
+    private simpleItemConsumeScript;
     private logSetting;
     private createdAt;
     private updatedAt;
@@ -35,6 +37,12 @@ export default class Namespace implements IModel {
     getConsumeScript(): ScriptSetting | null;
     setConsumeScript(consumeScript: ScriptSetting | null): this;
     withConsumeScript(consumeScript: ScriptSetting | null): this;
+    getSimpleItemAcquireScript(): ScriptSetting | null;
+    setSimpleItemAcquireScript(simpleItemAcquireScript: ScriptSetting | null): this;
+    withSimpleItemAcquireScript(simpleItemAcquireScript: ScriptSetting | null): this;
+    getSimpleItemConsumeScript(): ScriptSetting | null;
+    setSimpleItemConsumeScript(simpleItemConsumeScript: ScriptSetting | null): this;
+    withSimpleItemConsumeScript(simpleItemConsumeScript: ScriptSetting | null): this;
     getLogSetting(): LogSetting | null;
     setLogSetting(logSetting: LogSetting | null): this;
     withLogSetting(logSetting: LogSetting | null): this;

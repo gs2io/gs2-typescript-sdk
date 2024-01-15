@@ -26,6 +26,8 @@ export default class Namespace implements IModel {
     private acquireScript: ScriptSetting|null = null;
     private overflowScript: ScriptSetting|null = null;
     private consumeScript: ScriptSetting|null = null;
+    private simpleItemAcquireScript: ScriptSetting|null = null;
+    private simpleItemConsumeScript: ScriptSetting|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -156,6 +158,28 @@ export default class Namespace implements IModel {
         this.consumeScript = consumeScript;
         return this;
     }
+    public getSimpleItemAcquireScript(): ScriptSetting|null {
+        return this.simpleItemAcquireScript;
+    }
+    public setSimpleItemAcquireScript(simpleItemAcquireScript: ScriptSetting|null) {
+        this.simpleItemAcquireScript = simpleItemAcquireScript;
+        return this;
+    }
+    public withSimpleItemAcquireScript(simpleItemAcquireScript: ScriptSetting|null): this {
+        this.simpleItemAcquireScript = simpleItemAcquireScript;
+        return this;
+    }
+    public getSimpleItemConsumeScript(): ScriptSetting|null {
+        return this.simpleItemConsumeScript;
+    }
+    public setSimpleItemConsumeScript(simpleItemConsumeScript: ScriptSetting|null) {
+        this.simpleItemConsumeScript = simpleItemConsumeScript;
+        return this;
+    }
+    public withSimpleItemConsumeScript(simpleItemConsumeScript: ScriptSetting|null): this {
+        this.simpleItemConsumeScript = simpleItemConsumeScript;
+        return this;
+    }
     public getLogSetting(): LogSetting|null {
         return this.logSetting;
     }
@@ -212,6 +236,8 @@ export default class Namespace implements IModel {
             .withAcquireScript(ScriptSetting.fromDict(data["acquireScript"]))
             .withOverflowScript(ScriptSetting.fromDict(data["overflowScript"]))
             .withConsumeScript(ScriptSetting.fromDict(data["consumeScript"]))
+            .withSimpleItemAcquireScript(ScriptSetting.fromDict(data["simpleItemAcquireScript"]))
+            .withSimpleItemConsumeScript(ScriptSetting.fromDict(data["simpleItemConsumeScript"]))
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -226,6 +252,8 @@ export default class Namespace implements IModel {
             "acquireScript": this.getAcquireScript()?.toDict(),
             "overflowScript": this.getOverflowScript()?.toDict(),
             "consumeScript": this.getConsumeScript()?.toDict(),
+            "simpleItemAcquireScript": this.getSimpleItemAcquireScript()?.toDict(),
+            "simpleItemConsumeScript": this.getSimpleItemConsumeScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

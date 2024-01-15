@@ -26,6 +26,8 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.acquireScript = null;
         this.overflowScript = null;
         this.consumeScript = null;
+        this.simpleItemAcquireScript = null;
+        this.simpleItemConsumeScript = null;
         this.logSetting = null;
     }
     UpdateNamespaceRequest.prototype.getRequestId = function () {
@@ -105,6 +107,28 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.consumeScript = consumeScript;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getSimpleItemAcquireScript = function () {
+        return this.simpleItemAcquireScript;
+    };
+    UpdateNamespaceRequest.prototype.setSimpleItemAcquireScript = function (simpleItemAcquireScript) {
+        this.simpleItemAcquireScript = simpleItemAcquireScript;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withSimpleItemAcquireScript = function (simpleItemAcquireScript) {
+        this.simpleItemAcquireScript = simpleItemAcquireScript;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getSimpleItemConsumeScript = function () {
+        return this.simpleItemConsumeScript;
+    };
+    UpdateNamespaceRequest.prototype.setSimpleItemConsumeScript = function (simpleItemConsumeScript) {
+        this.simpleItemConsumeScript = simpleItemConsumeScript;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withSimpleItemConsumeScript = function (simpleItemConsumeScript) {
+        this.simpleItemConsumeScript = simpleItemConsumeScript;
+        return this;
+    };
     UpdateNamespaceRequest.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -123,17 +147,21 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withAcquireScript(Gs2Inventory.ScriptSetting.fromDict(data["acquireScript"]))
             .withOverflowScript(Gs2Inventory.ScriptSetting.fromDict(data["overflowScript"]))
             .withConsumeScript(Gs2Inventory.ScriptSetting.fromDict(data["consumeScript"]))
+            .withSimpleItemAcquireScript(Gs2Inventory.ScriptSetting.fromDict(data["simpleItemAcquireScript"]))
+            .withSimpleItemConsumeScript(Gs2Inventory.ScriptSetting.fromDict(data["simpleItemConsumeScript"]))
             .withLogSetting(Gs2Inventory.LogSetting.fromDict(data["logSetting"]));
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e, _f;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
             "acquireScript": (_a = this.getAcquireScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "overflowScript": (_b = this.getOverflowScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "consumeScript": (_c = this.getConsumeScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "simpleItemAcquireScript": (_d = this.getSimpleItemAcquireScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "simpleItemConsumeScript": (_e = this.getSimpleItemConsumeScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
         };
     };
     return UpdateNamespaceRequest;

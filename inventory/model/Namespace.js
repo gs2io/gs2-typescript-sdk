@@ -27,6 +27,8 @@ var Namespace = /** @class */ (function () {
         this.acquireScript = null;
         this.overflowScript = null;
         this.consumeScript = null;
+        this.simpleItemAcquireScript = null;
+        this.simpleItemConsumeScript = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -146,6 +148,28 @@ var Namespace = /** @class */ (function () {
         this.consumeScript = consumeScript;
         return this;
     };
+    Namespace.prototype.getSimpleItemAcquireScript = function () {
+        return this.simpleItemAcquireScript;
+    };
+    Namespace.prototype.setSimpleItemAcquireScript = function (simpleItemAcquireScript) {
+        this.simpleItemAcquireScript = simpleItemAcquireScript;
+        return this;
+    };
+    Namespace.prototype.withSimpleItemAcquireScript = function (simpleItemAcquireScript) {
+        this.simpleItemAcquireScript = simpleItemAcquireScript;
+        return this;
+    };
+    Namespace.prototype.getSimpleItemConsumeScript = function () {
+        return this.simpleItemConsumeScript;
+    };
+    Namespace.prototype.setSimpleItemConsumeScript = function (simpleItemConsumeScript) {
+        this.simpleItemConsumeScript = simpleItemConsumeScript;
+        return this;
+    };
+    Namespace.prototype.withSimpleItemConsumeScript = function (simpleItemConsumeScript) {
+        this.simpleItemConsumeScript = simpleItemConsumeScript;
+        return this;
+    };
     Namespace.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -201,13 +225,15 @@ var Namespace = /** @class */ (function () {
             .withAcquireScript(ScriptSetting_1.default.fromDict(data["acquireScript"]))
             .withOverflowScript(ScriptSetting_1.default.fromDict(data["overflowScript"]))
             .withConsumeScript(ScriptSetting_1.default.fromDict(data["consumeScript"]))
+            .withSimpleItemAcquireScript(ScriptSetting_1.default.fromDict(data["simpleItemAcquireScript"]))
+            .withSimpleItemConsumeScript(ScriptSetting_1.default.fromDict(data["simpleItemConsumeScript"]))
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e, _f;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
@@ -215,7 +241,9 @@ var Namespace = /** @class */ (function () {
             "acquireScript": (_a = this.getAcquireScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "overflowScript": (_b = this.getOverflowScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "consumeScript": (_c = this.getConsumeScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "simpleItemAcquireScript": (_d = this.getSimpleItemAcquireScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "simpleItemConsumeScript": (_e = this.getSimpleItemConsumeScript()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),
