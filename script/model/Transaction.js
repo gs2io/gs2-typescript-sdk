@@ -20,9 +20,21 @@ var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
 var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 var Transaction = /** @class */ (function () {
     function Transaction() {
+        this.transactionId = null;
         this.consumeActions = null;
         this.acquireActions = null;
     }
+    Transaction.prototype.getTransactionId = function () {
+        return this.transactionId;
+    };
+    Transaction.prototype.setTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    };
+    Transaction.prototype.withTransactionId = function (transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    };
     Transaction.prototype.getConsumeActions = function () {
         return this.consumeActions;
     };
@@ -50,6 +62,7 @@ var Transaction = /** @class */ (function () {
             return null;
         }
         return new Transaction()
+            .withTransactionId(data["transactionId"])
             .withConsumeActions(data.consumeActions ?
             data.consumeActions.map(function (item) {
                 return ConsumeAction_1.default.fromDict(item);
@@ -61,6 +74,7 @@ var Transaction = /** @class */ (function () {
     };
     Transaction.prototype.toDict = function () {
         return {
+            "transactionId": this.getTransactionId(),
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions().map(function (item) {
                     return item.toDict();

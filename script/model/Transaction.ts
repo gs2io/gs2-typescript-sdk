@@ -19,8 +19,20 @@ import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
 
 export default class Transaction implements IModel {
+    private transactionId: string|null = null;
     private consumeActions: ConsumeAction[]|null = null;
     private acquireActions: AcquireAction[]|null = null;
+    public getTransactionId(): string|null {
+        return this.transactionId;
+    }
+    public setTransactionId(transactionId: string|null) {
+        this.transactionId = transactionId;
+        return this;
+    }
+    public withTransactionId(transactionId: string|null): this {
+        this.transactionId = transactionId;
+        return this;
+    }
     public getConsumeActions(): ConsumeAction[]|null {
         return this.consumeActions;
     }
@@ -49,6 +61,7 @@ export default class Transaction implements IModel {
             return null;
         }
         return new Transaction()
+            .withTransactionId(data["transactionId"])
             .withConsumeActions(data.consumeActions ?
                 data.consumeActions.map((item: {[key: string]: any}) => {
                     return ConsumeAction.fromDict(item);
@@ -63,6 +76,7 @@ export default class Transaction implements IModel {
 
     public toDict(): {[key: string]: any} {
         return {
+            "transactionId": this.getTransactionId(),
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions()!.map((item: ConsumeAction) => {
                     return item.toDict();
