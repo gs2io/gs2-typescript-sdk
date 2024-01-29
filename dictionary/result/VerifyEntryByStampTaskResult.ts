@@ -16,8 +16,6 @@ permissions and limitations under the License.
 
 import IResult from '../../core/interface/IResult';
 
-import * as Gs2Dictionary from '../model'
-
 export default class VerifyEntryByStampTaskResult implements IResult {
     private newContextStack: string|null = null;
 
