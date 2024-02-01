@@ -26,6 +26,7 @@ export default class CreateAwaitByUserIdRequest implements IRequest {
     private userId: string|null = null;
     private rateName: string|null = null;
     private count: number|null = null;
+    private config: Gs2Exchange.Config[]|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -99,6 +100,17 @@ export default class CreateAwaitByUserIdRequest implements IRequest {
         this.count = count;
         return this;
     }
+    public getConfig(): Gs2Exchange.Config[]|null {
+        return this.config;
+    }
+    public setConfig(config: Gs2Exchange.Config[]|null) {
+        this.config = config;
+        return this;
+    }
+    public withConfig(config: Gs2Exchange.Config[]|null): this {
+        this.config = config;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -119,7 +131,12 @@ export default class CreateAwaitByUserIdRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withRateName(data["rateName"])
-            .withCount(data["count"]);
+            .withCount(data["count"])
+            .withConfig(data.config ?
+                data.config.map((item: {[key: string]: any}) => {
+                    return Gs2Exchange.Config.fromDict(item);
+                }
+            ) : []);
     }
 
     public toDict(): {[key: string]: any} {
@@ -128,6 +145,11 @@ export default class CreateAwaitByUserIdRequest implements IRequest {
             "userId": this.getUserId(),
             "rateName": this.getRateName(),
             "count": this.getCount(),
+            "config": this.getConfig() ?
+                this.getConfig()!.map((item: Gs2Exchange.Config) => {
+                    return item.toDict();
+                }
+            ) : [],
         };
     }
 }

@@ -1,4 +1,5 @@
 import IRequest from '../../core/interface/IRequest';
+import * as Gs2Exchange from '../model';
 export default class CreateAwaitByUserIdRequest implements IRequest {
     private requestId;
     private contextStack;
@@ -6,6 +7,7 @@ export default class CreateAwaitByUserIdRequest implements IRequest {
     private userId;
     private rateName;
     private count;
+    private config;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -25,6 +27,9 @@ export default class CreateAwaitByUserIdRequest implements IRequest {
     getCount(): number | null;
     setCount(count: number | null): this;
     withCount(count: number | null): this;
+    getConfig(): Gs2Exchange.Config[] | null;
+    setConfig(config: Gs2Exchange.Config[] | null): this;
+    withConfig(config: Gs2Exchange.Config[] | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

@@ -15,6 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Config_1 = tslib_1.__importDefault(require("./Config"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:exchange:{namespaceName}:user:{userId}:await:{awaitName}";
 var Await = /** @class */ (function () {
     function Await() {
@@ -23,6 +25,7 @@ var Await = /** @class */ (function () {
         this.rateName = null;
         this.name = null;
         this.count = null;
+        this.config = null;
         this.exchangedAt = null;
         this.revision = null;
     }
@@ -167,6 +170,17 @@ var Await = /** @class */ (function () {
         this.count = count;
         return this;
     };
+    Await.prototype.getConfig = function () {
+        return this.config;
+    };
+    Await.prototype.setConfig = function (config) {
+        this.config = config;
+        return this;
+    };
+    Await.prototype.withConfig = function (config) {
+        this.config = config;
+        return this;
+    };
     Await.prototype.getExchangedAt = function () {
         return this.exchangedAt;
     };
@@ -199,6 +213,10 @@ var Await = /** @class */ (function () {
             .withRateName(data["rateName"])
             .withName(data["name"])
             .withCount(data["count"])
+            .withConfig(data.config ?
+            data.config.map(function (item) {
+                return Config_1.default.fromDict(item);
+            }) : [])
             .withExchangedAt(data["exchangedAt"])
             .withRevision(data["revision"]);
     };
@@ -209,6 +227,10 @@ var Await = /** @class */ (function () {
             "rateName": this.getRateName(),
             "name": this.getName(),
             "count": this.getCount(),
+            "config": this.getConfig() ?
+                this.getConfig().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "exchangedAt": this.getExchangedAt(),
             "revision": this.getRevision(),
         };

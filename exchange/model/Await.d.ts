@@ -1,10 +1,12 @@
 import IModel from '../../core/interface/IModel';
+import Config from './Config';
 export default class Await implements IModel {
     private awaitId;
     private userId;
     private rateName;
     private name;
     private count;
+    private config;
     private exchangedAt;
     private revision;
     static getRegion(grn: string): string | null;
@@ -29,6 +31,9 @@ export default class Await implements IModel {
     getCount(): number | null;
     setCount(count: number | null): this;
     withCount(count: number | null): this;
+    getConfig(): Config[] | null;
+    setConfig(config: Config[] | null): this;
+    withConfig(config: Config[] | null): this;
     getExchangedAt(): number | null;
     setExchangedAt(exchangedAt: number | null): this;
     withExchangedAt(exchangedAt: number | null): this;

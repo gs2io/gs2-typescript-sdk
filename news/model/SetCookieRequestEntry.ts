@@ -15,10 +15,20 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+const grnFormat: string = "";
 
 export default class SetCookieRequestEntry implements IModel {
     private key: string|null = null;
     private value: string|null = null;
+
+    public static isValid(grn: string): boolean {
+        return true;
+    }
+
+    public static createGrn(
+    ): string|null {
+        return grnFormat;
+    }
     public getKey(): string|null {
         return this.key;
     }

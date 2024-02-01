@@ -1272,6 +1272,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'count': request.getCount() ?? null,
+            'config': request.getConfig()?.map((item) => item.toDict()) ?? null,
         };
         return axios.put(
             url,

@@ -15,11 +15,18 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var grnFormat = "";
 var SetCookieRequestEntry = /** @class */ (function () {
     function SetCookieRequestEntry() {
         this.key = null;
         this.value = null;
     }
+    SetCookieRequestEntry.isValid = function (grn) {
+        return true;
+    };
+    SetCookieRequestEntry.createGrn = function () {
+        return grnFormat;
+    };
     SetCookieRequestEntry.prototype.getKey = function () {
         return this.key;
     };

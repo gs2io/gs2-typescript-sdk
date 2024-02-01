@@ -16,8 +16,6 @@ permissions and limitations under the License.
 
 import IResult from '../../core/interface/IResult';
 
-import * as Gs2Stamina from '../model'
-
 export default class CheckDumpUserDataByUserIdResult implements IResult {
     private url: string|null = null;
 

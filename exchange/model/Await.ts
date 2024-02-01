@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import Config from './Config';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:exchange:{namespaceName}:user:{userId}:await:{awaitName}";
 
 export default class Await implements IModel {
@@ -23,6 +24,7 @@ export default class Await implements IModel {
     private rateName: string|null = null;
     private name: string|null = null;
     private count: number|null = null;
+    private config: Config[]|null = null;
     private exchangedAt: number|null = null;
     private revision: number|null = null;
 
@@ -184,6 +186,17 @@ export default class Await implements IModel {
         this.count = count;
         return this;
     }
+    public getConfig(): Config[]|null {
+        return this.config;
+    }
+    public setConfig(config: Config[]|null) {
+        this.config = config;
+        return this;
+    }
+    public withConfig(config: Config[]|null): this {
+        this.config = config;
+        return this;
+    }
     public getExchangedAt(): number|null {
         return this.exchangedAt;
     }
@@ -217,6 +230,11 @@ export default class Await implements IModel {
             .withRateName(data["rateName"])
             .withName(data["name"])
             .withCount(data["count"])
+            .withConfig(data.config ?
+                data.config.map((item: {[key: string]: any}) => {
+                    return Config.fromDict(item);
+                }
+            ) : [])
             .withExchangedAt(data["exchangedAt"])
             .withRevision(data["revision"]);
     }
@@ -228,6 +246,11 @@ export default class Await implements IModel {
             "rateName": this.getRateName(),
             "name": this.getName(),
             "count": this.getCount(),
+            "config": this.getConfig() ?
+                this.getConfig()!.map((item: Config) => {
+                    return item.toDict();
+                }
+            ) : [],
             "exchangedAt": this.getExchangedAt(),
             "revision": this.getRevision(),
         };

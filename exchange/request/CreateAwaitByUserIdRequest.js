@@ -15,6 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Exchange = tslib_1.__importStar(require("../model"));
 var CreateAwaitByUserIdRequest = /** @class */ (function () {
     function CreateAwaitByUserIdRequest() {
         this.requestId = null;
@@ -23,6 +25,7 @@ var CreateAwaitByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.rateName = null;
         this.count = null;
+        this.config = null;
         this.duplicationAvoider = null;
     }
     CreateAwaitByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +94,17 @@ var CreateAwaitByUserIdRequest = /** @class */ (function () {
         this.count = count;
         return this;
     };
+    CreateAwaitByUserIdRequest.prototype.getConfig = function () {
+        return this.config;
+    };
+    CreateAwaitByUserIdRequest.prototype.setConfig = function (config) {
+        this.config = config;
+        return this;
+    };
+    CreateAwaitByUserIdRequest.prototype.withConfig = function (config) {
+        this.config = config;
+        return this;
+    };
     CreateAwaitByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +121,11 @@ var CreateAwaitByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withRateName(data["rateName"])
-            .withCount(data["count"]);
+            .withCount(data["count"])
+            .withConfig(data.config ?
+            data.config.map(function (item) {
+                return Gs2Exchange.Config.fromDict(item);
+            }) : []);
     };
     CreateAwaitByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +133,10 @@ var CreateAwaitByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "rateName": this.getRateName(),
             "count": this.getCount(),
+            "config": this.getConfig() ?
+                this.getConfig().map(function (item) {
+                    return item.toDict();
+                }) : [],
         };
     };
     return CreateAwaitByUserIdRequest;
