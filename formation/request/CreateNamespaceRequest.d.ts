@@ -8,6 +8,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private transactionSetting;
     private updateMoldScript;
     private updateFormScript;
+    private updatePropertyFormScript;
     private logSetting;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -30,6 +31,9 @@ export default class CreateNamespaceRequest implements IRequest {
     getUpdateFormScript(): Gs2Formation.ScriptSetting | null;
     setUpdateFormScript(updateFormScript: Gs2Formation.ScriptSetting | null): this;
     withUpdateFormScript(updateFormScript: Gs2Formation.ScriptSetting | null): this;
+    getUpdatePropertyFormScript(): Gs2Formation.ScriptSetting | null;
+    setUpdatePropertyFormScript(updatePropertyFormScript: Gs2Formation.ScriptSetting | null): this;
+    withUpdatePropertyFormScript(updatePropertyFormScript: Gs2Formation.ScriptSetting | null): this;
     getLogSetting(): Gs2Formation.LogSetting | null;
     setLogSetting(logSetting: Gs2Formation.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Formation.LogSetting | null): this;

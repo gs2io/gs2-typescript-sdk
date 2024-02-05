@@ -28,6 +28,7 @@ var Namespace = /** @class */ (function () {
         this.transactionSetting = null;
         this.updateMoldScript = null;
         this.updateFormScript = null;
+        this.updatePropertyFormScript = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -147,6 +148,17 @@ var Namespace = /** @class */ (function () {
         this.updateFormScript = updateFormScript;
         return this;
     };
+    Namespace.prototype.getUpdatePropertyFormScript = function () {
+        return this.updatePropertyFormScript;
+    };
+    Namespace.prototype.setUpdatePropertyFormScript = function (updatePropertyFormScript) {
+        this.updatePropertyFormScript = updatePropertyFormScript;
+        return this;
+    };
+    Namespace.prototype.withUpdatePropertyFormScript = function (updatePropertyFormScript) {
+        this.updatePropertyFormScript = updatePropertyFormScript;
+        return this;
+    };
     Namespace.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -202,13 +214,14 @@ var Namespace = /** @class */ (function () {
             .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
             .withUpdateMoldScript(ScriptSetting_1.default.fromDict(data["updateMoldScript"]))
             .withUpdateFormScript(ScriptSetting_1.default.fromDict(data["updateFormScript"]))
+            .withUpdatePropertyFormScript(ScriptSetting_1.default.fromDict(data["updatePropertyFormScript"]))
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
@@ -216,7 +229,8 @@ var Namespace = /** @class */ (function () {
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "updateMoldScript": (_b = this.getUpdateMoldScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "updateFormScript": (_c = this.getUpdateFormScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "updatePropertyFormScript": (_d = this.getUpdatePropertyFormScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

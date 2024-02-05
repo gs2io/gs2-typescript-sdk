@@ -49,7 +49,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FormationRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region);
@@ -64,7 +64,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'transactionSetting': (_e = (_d = request.getTransactionSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
             'updateMoldScript': (_g = (_f = request.getUpdateMoldScript()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
             'updateFormScript': (_j = (_h = request.getUpdateFormScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
-            'logSetting': (_l = (_k = request.getLogSetting()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'updatePropertyFormScript': (_l = (_k = request.getUpdatePropertyFormScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'logSetting': (_o = (_m = request.getLogSetting()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -124,7 +125,7 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2FormationRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'formation')
             .replace('{region}', this.session.region)
@@ -139,7 +140,8 @@ var Gs2FormationRestClient = /** @class */ (function (_super) {
             'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
             'updateMoldScript': (_h = (_g = request.getUpdateMoldScript()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
             'updateFormScript': (_k = (_j = request.getUpdateFormScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'logSetting': (_m = (_l = request.getLogSetting()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'updatePropertyFormScript': (_m = (_l = request.getUpdatePropertyFormScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'logSetting': (_p = (_o = request.getLogSetting()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

@@ -26,6 +26,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.transactionSetting = null;
         this.updateMoldScript = null;
         this.updateFormScript = null;
+        this.updatePropertyFormScript = null;
         this.logSetting = null;
     }
     UpdateNamespaceRequest.prototype.getRequestId = function () {
@@ -105,6 +106,17 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.updateFormScript = updateFormScript;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getUpdatePropertyFormScript = function () {
+        return this.updatePropertyFormScript;
+    };
+    UpdateNamespaceRequest.prototype.setUpdatePropertyFormScript = function (updatePropertyFormScript) {
+        this.updatePropertyFormScript = updatePropertyFormScript;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withUpdatePropertyFormScript = function (updatePropertyFormScript) {
+        this.updatePropertyFormScript = updatePropertyFormScript;
+        return this;
+    };
     UpdateNamespaceRequest.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -123,17 +135,19 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withTransactionSetting(Gs2Formation.TransactionSetting.fromDict(data["transactionSetting"]))
             .withUpdateMoldScript(Gs2Formation.ScriptSetting.fromDict(data["updateMoldScript"]))
             .withUpdateFormScript(Gs2Formation.ScriptSetting.fromDict(data["updateFormScript"]))
+            .withUpdatePropertyFormScript(Gs2Formation.ScriptSetting.fromDict(data["updatePropertyFormScript"]))
             .withLogSetting(Gs2Formation.LogSetting.fromDict(data["logSetting"]));
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "updateMoldScript": (_b = this.getUpdateMoldScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "updateFormScript": (_c = this.getUpdateFormScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "updatePropertyFormScript": (_d = this.getUpdatePropertyFormScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "logSetting": (_e = this.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict(),
         };
     };
     return UpdateNamespaceRequest;

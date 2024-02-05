@@ -27,6 +27,7 @@ export default class Namespace implements IModel {
     private transactionSetting: TransactionSetting|null = null;
     private updateMoldScript: ScriptSetting|null = null;
     private updateFormScript: ScriptSetting|null = null;
+    private updatePropertyFormScript: ScriptSetting|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -157,6 +158,17 @@ export default class Namespace implements IModel {
         this.updateFormScript = updateFormScript;
         return this;
     }
+    public getUpdatePropertyFormScript(): ScriptSetting|null {
+        return this.updatePropertyFormScript;
+    }
+    public setUpdatePropertyFormScript(updatePropertyFormScript: ScriptSetting|null) {
+        this.updatePropertyFormScript = updatePropertyFormScript;
+        return this;
+    }
+    public withUpdatePropertyFormScript(updatePropertyFormScript: ScriptSetting|null): this {
+        this.updatePropertyFormScript = updatePropertyFormScript;
+        return this;
+    }
     public getLogSetting(): LogSetting|null {
         return this.logSetting;
     }
@@ -213,6 +225,7 @@ export default class Namespace implements IModel {
             .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
             .withUpdateMoldScript(ScriptSetting.fromDict(data["updateMoldScript"]))
             .withUpdateFormScript(ScriptSetting.fromDict(data["updateFormScript"]))
+            .withUpdatePropertyFormScript(ScriptSetting.fromDict(data["updatePropertyFormScript"]))
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -227,6 +240,7 @@ export default class Namespace implements IModel {
             "transactionSetting": this.getTransactionSetting()?.toDict(),
             "updateMoldScript": this.getUpdateMoldScript()?.toDict(),
             "updateFormScript": this.getUpdateFormScript()?.toDict(),
+            "updatePropertyFormScript": this.getUpdatePropertyFormScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

@@ -70,6 +70,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
             'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'updateMoldScript': request.getUpdateMoldScript()?.toDict() ?? null,
             'updateFormScript': request.getUpdateFormScript()?.toDict() ?? null,
+            'updatePropertyFormScript': request.getUpdatePropertyFormScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.post(
@@ -157,6 +158,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
             'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'updateMoldScript': request.getUpdateMoldScript()?.toDict() ?? null,
             'updateFormScript': request.getUpdateFormScript()?.toDict() ?? null,
+            'updatePropertyFormScript': request.getUpdatePropertyFormScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.put(

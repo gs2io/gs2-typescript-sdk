@@ -9,6 +9,7 @@ export default class Namespace implements IModel {
     private transactionSetting;
     private updateMoldScript;
     private updateFormScript;
+    private updatePropertyFormScript;
     private logSetting;
     private createdAt;
     private updatedAt;
@@ -36,6 +37,9 @@ export default class Namespace implements IModel {
     getUpdateFormScript(): ScriptSetting | null;
     setUpdateFormScript(updateFormScript: ScriptSetting | null): this;
     withUpdateFormScript(updateFormScript: ScriptSetting | null): this;
+    getUpdatePropertyFormScript(): ScriptSetting | null;
+    setUpdatePropertyFormScript(updatePropertyFormScript: ScriptSetting | null): this;
+    withUpdatePropertyFormScript(updatePropertyFormScript: ScriptSetting | null): this;
     getLogSetting(): LogSetting | null;
     setLogSetting(logSetting: LogSetting | null): this;
     withLogSetting(logSetting: LogSetting | null): this;

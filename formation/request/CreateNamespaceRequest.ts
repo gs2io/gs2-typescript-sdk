@@ -27,6 +27,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private transactionSetting: Gs2Formation.TransactionSetting|null = null;
     private updateMoldScript: Gs2Formation.ScriptSetting|null = null;
     private updateFormScript: Gs2Formation.ScriptSetting|null = null;
+    private updatePropertyFormScript: Gs2Formation.ScriptSetting|null = null;
     private logSetting: Gs2Formation.LogSetting|null = null;
 
     public getRequestId(): string|null {
@@ -111,6 +112,17 @@ export default class CreateNamespaceRequest implements IRequest {
         this.updateFormScript = updateFormScript;
         return this;
     }
+    public getUpdatePropertyFormScript(): Gs2Formation.ScriptSetting|null {
+        return this.updatePropertyFormScript;
+    }
+    public setUpdatePropertyFormScript(updatePropertyFormScript: Gs2Formation.ScriptSetting|null) {
+        this.updatePropertyFormScript = updatePropertyFormScript;
+        return this;
+    }
+    public withUpdatePropertyFormScript(updatePropertyFormScript: Gs2Formation.ScriptSetting|null): this {
+        this.updatePropertyFormScript = updatePropertyFormScript;
+        return this;
+    }
     public getLogSetting(): Gs2Formation.LogSetting|null {
         return this.logSetting;
     }
@@ -130,6 +142,7 @@ export default class CreateNamespaceRequest implements IRequest {
             .withTransactionSetting(Gs2Formation.TransactionSetting.fromDict(data["transactionSetting"]))
             .withUpdateMoldScript(Gs2Formation.ScriptSetting.fromDict(data["updateMoldScript"]))
             .withUpdateFormScript(Gs2Formation.ScriptSetting.fromDict(data["updateFormScript"]))
+            .withUpdatePropertyFormScript(Gs2Formation.ScriptSetting.fromDict(data["updatePropertyFormScript"]))
             .withLogSetting(Gs2Formation.LogSetting.fromDict(data["logSetting"]));
     }
 
@@ -140,6 +153,7 @@ export default class CreateNamespaceRequest implements IRequest {
             "transactionSetting": this.getTransactionSetting()?.toDict(),
             "updateMoldScript": this.getUpdateMoldScript()?.toDict(),
             "updateFormScript": this.getUpdateFormScript()?.toDict(),
+            "updatePropertyFormScript": this.getUpdatePropertyFormScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
         };
     }
