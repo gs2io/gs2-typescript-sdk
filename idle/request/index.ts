@@ -43,8 +43,10 @@ import ReceiveRequest from "./ReceiveRequest"
 import ReceiveByUserIdRequest from "./ReceiveByUserIdRequest"
 import IncreaseMaximumIdleMinutesByUserIdRequest from "./IncreaseMaximumIdleMinutesByUserIdRequest"
 import DecreaseMaximumIdleMinutesByUserIdRequest from "./DecreaseMaximumIdleMinutesByUserIdRequest"
+import SetMaximumIdleMinutesByUserIdRequest from "./SetMaximumIdleMinutesByUserIdRequest"
 import IncreaseMaximumIdleMinutesByStampSheetRequest from "./IncreaseMaximumIdleMinutesByStampSheetRequest"
 import DecreaseMaximumIdleMinutesByStampTaskRequest from "./DecreaseMaximumIdleMinutesByStampTaskRequest"
+import SetMaximumIdleMinutesByStampSheetRequest from "./SetMaximumIdleMinutesByStampSheetRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentCategoryMasterRequest from "./GetCurrentCategoryMasterRequest"
 import UpdateCurrentCategoryMasterRequest from "./UpdateCurrentCategoryMasterRequest"
@@ -81,8 +83,10 @@ export {
     ReceiveByUserIdRequest,
     IncreaseMaximumIdleMinutesByUserIdRequest,
     DecreaseMaximumIdleMinutesByUserIdRequest,
+    SetMaximumIdleMinutesByUserIdRequest,
     IncreaseMaximumIdleMinutesByStampSheetRequest,
     DecreaseMaximumIdleMinutesByStampTaskRequest,
+    SetMaximumIdleMinutesByStampSheetRequest,
     ExportMasterRequest,
     GetCurrentCategoryMasterRequest,
     UpdateCurrentCategoryMasterRequest,
