@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentEventMasterFromGitHubRequest = exports.UpdateCurrentEventMasterRequest = exports.GetCurrentEventMasterRequest = exports.ExportMasterRequest = exports.GetRawEventRequest = exports.GetEventByUserIdRequest = exports.GetEventRequest = exports.DescribeRawEventsRequest = exports.DescribeEventsByUserIdRequest = exports.DescribeEventsRequest = exports.DeleteTriggerByStampTaskRequest = exports.DeleteTriggerByUserIdRequest = exports.DeleteTriggerRequest = exports.TriggerByStampSheetRequest = exports.TriggerByUserIdRequest = exports.GetTriggerByUserIdRequest = exports.GetTriggerRequest = exports.DescribeTriggersByUserIdRequest = exports.DescribeTriggersRequest = exports.DeleteEventMasterRequest = exports.UpdateEventMasterRequest = exports.GetEventMasterRequest = exports.CreateEventMasterRequest = exports.DescribeEventMastersRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.UpdateCurrentEventMasterFromGitHubRequest = exports.UpdateCurrentEventMasterRequest = exports.GetCurrentEventMasterRequest = exports.ExportMasterRequest = exports.VerifyEventByStampTaskRequest = exports.VerifyEventByUserIdRequest = exports.VerifyEventRequest = exports.GetRawEventRequest = exports.GetEventByUserIdRequest = exports.GetEventRequest = exports.DescribeRawEventsRequest = exports.DescribeEventsByUserIdRequest = exports.DescribeEventsRequest = exports.DeleteTriggerByStampTaskRequest = exports.DeleteTriggerByUserIdRequest = exports.DeleteTriggerRequest = exports.TriggerByStampSheetRequest = exports.TriggerByUserIdRequest = exports.GetTriggerByUserIdRequest = exports.GetTriggerRequest = exports.DescribeTriggersByUserIdRequest = exports.DescribeTriggersRequest = exports.DeleteEventMasterRequest = exports.UpdateEventMasterRequest = exports.GetEventMasterRequest = exports.CreateEventMasterRequest = exports.DescribeEventMastersRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -83,6 +83,12 @@ var GetEventByUserIdRequest_1 = tslib_1.__importDefault(require("./GetEventByUse
 exports.GetEventByUserIdRequest = GetEventByUserIdRequest_1.default;
 var GetRawEventRequest_1 = tslib_1.__importDefault(require("./GetRawEventRequest"));
 exports.GetRawEventRequest = GetRawEventRequest_1.default;
+var VerifyEventRequest_1 = tslib_1.__importDefault(require("./VerifyEventRequest"));
+exports.VerifyEventRequest = VerifyEventRequest_1.default;
+var VerifyEventByUserIdRequest_1 = tslib_1.__importDefault(require("./VerifyEventByUserIdRequest"));
+exports.VerifyEventByUserIdRequest = VerifyEventByUserIdRequest_1.default;
+var VerifyEventByStampTaskRequest_1 = tslib_1.__importDefault(require("./VerifyEventByStampTaskRequest"));
+exports.VerifyEventByStampTaskRequest = VerifyEventByStampTaskRequest_1.default;
 var ExportMasterRequest_1 = tslib_1.__importDefault(require("./ExportMasterRequest"));
 exports.ExportMasterRequest = ExportMasterRequest_1.default;
 var GetCurrentEventMasterRequest_1 = tslib_1.__importDefault(require("./GetCurrentEventMasterRequest"));

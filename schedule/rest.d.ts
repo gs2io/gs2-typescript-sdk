@@ -37,6 +37,9 @@ export default class Gs2ScheduleRestClient extends AbstractGs2RestClient {
     getEvent(request: Request.GetEventRequest): Promise<Result.GetEventResult>;
     getEventByUserId(request: Request.GetEventByUserIdRequest): Promise<Result.GetEventByUserIdResult>;
     getRawEvent(request: Request.GetRawEventRequest): Promise<Result.GetRawEventResult>;
+    verifyEvent(request: Request.VerifyEventRequest): Promise<Result.VerifyEventResult>;
+    verifyEventByUserId(request: Request.VerifyEventByUserIdRequest): Promise<Result.VerifyEventByUserIdResult>;
+    verifyEventByStampTask(request: Request.VerifyEventByStampTaskRequest): Promise<Result.VerifyEventByStampTaskResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentEventMaster(request: Request.GetCurrentEventMasterRequest): Promise<Result.GetCurrentEventMasterResult>;
     updateCurrentEventMaster(request: Request.UpdateCurrentEventMasterRequest): Promise<Result.UpdateCurrentEventMasterResult>;

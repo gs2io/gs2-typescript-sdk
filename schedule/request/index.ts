@@ -46,6 +46,9 @@ import DescribeRawEventsRequest from "./DescribeRawEventsRequest"
 import GetEventRequest from "./GetEventRequest"
 import GetEventByUserIdRequest from "./GetEventByUserIdRequest"
 import GetRawEventRequest from "./GetRawEventRequest"
+import VerifyEventRequest from "./VerifyEventRequest"
+import VerifyEventByUserIdRequest from "./VerifyEventByUserIdRequest"
+import VerifyEventByStampTaskRequest from "./VerifyEventByStampTaskRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentEventMasterRequest from "./GetCurrentEventMasterRequest"
 import UpdateCurrentEventMasterRequest from "./UpdateCurrentEventMasterRequest"
@@ -85,6 +88,9 @@ export {
     GetEventRequest,
     GetEventByUserIdRequest,
     GetRawEventRequest,
+    VerifyEventRequest,
+    VerifyEventByUserIdRequest,
+    VerifyEventByStampTaskRequest,
     ExportMasterRequest,
     GetCurrentEventMasterRequest,
     UpdateCurrentEventMasterRequest,

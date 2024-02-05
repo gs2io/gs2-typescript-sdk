@@ -46,6 +46,9 @@ import DescribeRawEventsResult from "./DescribeRawEventsResult"
 import GetEventResult from "./GetEventResult"
 import GetEventByUserIdResult from "./GetEventByUserIdResult"
 import GetRawEventResult from "./GetRawEventResult"
+import VerifyEventResult from "./VerifyEventResult"
+import VerifyEventByUserIdResult from "./VerifyEventByUserIdResult"
+import VerifyEventByStampTaskResult from "./VerifyEventByStampTaskResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentEventMasterResult from "./GetCurrentEventMasterResult"
 import UpdateCurrentEventMasterResult from "./UpdateCurrentEventMasterResult"
@@ -85,6 +88,9 @@ export {
     GetEventResult,
     GetEventByUserIdResult,
     GetRawEventResult,
+    VerifyEventResult,
+    VerifyEventByUserIdResult,
+    VerifyEventByStampTaskResult,
     ExportMasterResult,
     GetCurrentEventMasterResult,
     UpdateCurrentEventMasterResult,
