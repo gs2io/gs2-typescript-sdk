@@ -1,10 +1,18 @@
 import IResult from '../../core/interface/IResult';
 export default class RunStampSheetExpressResult implements IResult {
+    private taskResultCodes;
     private taskResults;
+    private sheetResultCode;
     private sheetResult;
+    getTaskResultCodes(): number[] | null;
+    setTaskResultCodes(taskResultCodes: number[] | null): this;
+    withTaskResultCodes(taskResultCodes: number[] | null): this;
     getTaskResults(): string[] | null;
     setTaskResults(taskResults: string[] | null): this;
     withTaskResults(taskResults: string[] | null): this;
+    getSheetResultCode(): number | null;
+    setSheetResultCode(sheetResultCode: number | null): this;
+    withSheetResultCode(sheetResultCode: number | null): this;
     getSheetResult(): string | null;
     setSheetResult(sheetResult: string | null): this;
     withSheetResult(sheetResult: string | null): this;

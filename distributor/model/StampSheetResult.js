@@ -26,7 +26,9 @@ var StampSheetResult = /** @class */ (function () {
         this.transactionId = null;
         this.taskRequests = null;
         this.sheetRequest = null;
+        this.taskResultCodes = null;
         this.taskResults = null;
+        this.sheetResultCode = null;
         this.sheetResult = null;
         this.nextTransactionId = null;
         this.createdAt = null;
@@ -173,6 +175,17 @@ var StampSheetResult = /** @class */ (function () {
         this.sheetRequest = sheetRequest;
         return this;
     };
+    StampSheetResult.prototype.getTaskResultCodes = function () {
+        return this.taskResultCodes;
+    };
+    StampSheetResult.prototype.setTaskResultCodes = function (taskResultCodes) {
+        this.taskResultCodes = taskResultCodes;
+        return this;
+    };
+    StampSheetResult.prototype.withTaskResultCodes = function (taskResultCodes) {
+        this.taskResultCodes = taskResultCodes;
+        return this;
+    };
     StampSheetResult.prototype.getTaskResults = function () {
         return this.taskResults;
     };
@@ -182,6 +195,17 @@ var StampSheetResult = /** @class */ (function () {
     };
     StampSheetResult.prototype.withTaskResults = function (taskResults) {
         this.taskResults = taskResults;
+        return this;
+    };
+    StampSheetResult.prototype.getSheetResultCode = function () {
+        return this.sheetResultCode;
+    };
+    StampSheetResult.prototype.setSheetResultCode = function (sheetResultCode) {
+        this.sheetResultCode = sheetResultCode;
+        return this;
+    };
+    StampSheetResult.prototype.withSheetResultCode = function (sheetResultCode) {
+        this.sheetResultCode = sheetResultCode;
         return this;
     };
     StampSheetResult.prototype.getSheetResult = function () {
@@ -241,10 +265,15 @@ var StampSheetResult = /** @class */ (function () {
                 return ConsumeAction_1.default.fromDict(item);
             }) : [])
             .withSheetRequest(AcquireAction_1.default.fromDict(data["sheetRequest"]))
+            .withTaskResultCodes(data.taskResultCodes ?
+            data.taskResultCodes.map(function (item) {
+                return item;
+            }) : [])
             .withTaskResults(data.taskResults ?
             data.taskResults.map(function (item) {
                 return item;
             }) : [])
+            .withSheetResultCode(data["sheetResultCode"])
             .withSheetResult(data["sheetResult"])
             .withNextTransactionId(data["nextTransactionId"])
             .withCreatedAt(data["createdAt"])
@@ -261,10 +290,15 @@ var StampSheetResult = /** @class */ (function () {
                     return item.toDict();
                 }) : [],
             "sheetRequest": (_a = this.getSheetRequest()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "taskResultCodes": this.getTaskResultCodes() ?
+                this.getTaskResultCodes().map(function (item) {
+                    return item;
+                }) : [],
             "taskResults": this.getTaskResults() ?
                 this.getTaskResults().map(function (item) {
                     return item;
                 }) : [],
+            "sheetResultCode": this.getSheetResultCode(),
             "sheetResult": this.getSheetResult(),
             "nextTransactionId": this.getNextTransactionId(),
             "createdAt": this.getCreatedAt(),

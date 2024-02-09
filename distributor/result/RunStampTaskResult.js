@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var RunStampTaskResult = /** @class */ (function () {
     function RunStampTaskResult() {
         this.contextStack = null;
+        this.statusCode = null;
         this.result = null;
     }
     RunStampTaskResult.prototype.getContextStack = function () {
@@ -29,6 +30,17 @@ var RunStampTaskResult = /** @class */ (function () {
     };
     RunStampTaskResult.prototype.withContextStack = function (contextStack) {
         this.contextStack = contextStack;
+        return this;
+    };
+    RunStampTaskResult.prototype.getStatusCode = function () {
+        return this.statusCode;
+    };
+    RunStampTaskResult.prototype.setStatusCode = function (statusCode) {
+        this.statusCode = statusCode;
+        return this;
+    };
+    RunStampTaskResult.prototype.withStatusCode = function (statusCode) {
+        this.statusCode = statusCode;
         return this;
     };
     RunStampTaskResult.prototype.getResult = function () {
@@ -45,11 +57,13 @@ var RunStampTaskResult = /** @class */ (function () {
     RunStampTaskResult.fromDict = function (data) {
         return new RunStampTaskResult()
             .withContextStack(data["contextStack"])
+            .withStatusCode(data["statusCode"])
             .withResult(data["result"]);
     };
     RunStampTaskResult.prototype.toDict = function () {
         return {
             "contextStack": this.getContextStack(),
+            "statusCode": this.getStatusCode(),
             "result": this.getResult(),
         };
     };

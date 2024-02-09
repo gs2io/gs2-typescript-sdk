@@ -7,7 +7,9 @@ export default class StampSheetResult implements IModel {
     private transactionId;
     private taskRequests;
     private sheetRequest;
+    private taskResultCodes;
     private taskResults;
+    private sheetResultCode;
     private sheetResult;
     private nextTransactionId;
     private createdAt;
@@ -34,9 +36,15 @@ export default class StampSheetResult implements IModel {
     getSheetRequest(): AcquireAction | null;
     setSheetRequest(sheetRequest: AcquireAction | null): this;
     withSheetRequest(sheetRequest: AcquireAction | null): this;
+    getTaskResultCodes(): number[] | null;
+    setTaskResultCodes(taskResultCodes: number[] | null): this;
+    withTaskResultCodes(taskResultCodes: number[] | null): this;
     getTaskResults(): string[] | null;
     setTaskResults(taskResults: string[] | null): this;
     withTaskResults(taskResults: string[] | null): this;
+    getSheetResultCode(): number | null;
+    setSheetResultCode(sheetResultCode: number | null): this;
+    withSheetResultCode(sheetResultCode: number | null): this;
     getSheetResult(): string | null;
     setSheetResult(sheetResult: string | null): this;
     withSheetResult(sheetResult: string | null): this;

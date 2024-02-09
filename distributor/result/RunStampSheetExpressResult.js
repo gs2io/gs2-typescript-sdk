@@ -17,9 +17,22 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var RunStampSheetExpressResult = /** @class */ (function () {
     function RunStampSheetExpressResult() {
+        this.taskResultCodes = null;
         this.taskResults = null;
+        this.sheetResultCode = null;
         this.sheetResult = null;
     }
+    RunStampSheetExpressResult.prototype.getTaskResultCodes = function () {
+        return this.taskResultCodes;
+    };
+    RunStampSheetExpressResult.prototype.setTaskResultCodes = function (taskResultCodes) {
+        this.taskResultCodes = taskResultCodes;
+        return this;
+    };
+    RunStampSheetExpressResult.prototype.withTaskResultCodes = function (taskResultCodes) {
+        this.taskResultCodes = taskResultCodes;
+        return this;
+    };
     RunStampSheetExpressResult.prototype.getTaskResults = function () {
         return this.taskResults;
     };
@@ -29,6 +42,17 @@ var RunStampSheetExpressResult = /** @class */ (function () {
     };
     RunStampSheetExpressResult.prototype.withTaskResults = function (taskResults) {
         this.taskResults = taskResults;
+        return this;
+    };
+    RunStampSheetExpressResult.prototype.getSheetResultCode = function () {
+        return this.sheetResultCode;
+    };
+    RunStampSheetExpressResult.prototype.setSheetResultCode = function (sheetResultCode) {
+        this.sheetResultCode = sheetResultCode;
+        return this;
+    };
+    RunStampSheetExpressResult.prototype.withSheetResultCode = function (sheetResultCode) {
+        this.sheetResultCode = sheetResultCode;
         return this;
     };
     RunStampSheetExpressResult.prototype.getSheetResult = function () {
@@ -44,18 +68,28 @@ var RunStampSheetExpressResult = /** @class */ (function () {
     };
     RunStampSheetExpressResult.fromDict = function (data) {
         return new RunStampSheetExpressResult()
+            .withTaskResultCodes(data.taskResultCodes ?
+            data.taskResultCodes.map(function (item) {
+                return item;
+            }) : [])
             .withTaskResults(data.taskResults ?
             data.taskResults.map(function (item) {
                 return item;
             }) : [])
+            .withSheetResultCode(data["sheetResultCode"])
             .withSheetResult(data["sheetResult"]);
     };
     RunStampSheetExpressResult.prototype.toDict = function () {
         return {
+            "taskResultCodes": this.getTaskResultCodes() ?
+                this.getTaskResultCodes().map(function (item) {
+                    return item;
+                }) : [],
             "taskResults": this.getTaskResults() ?
                 this.getTaskResults().map(function (item) {
                     return item;
                 }) : [],
+            "sheetResultCode": this.getSheetResultCode(),
             "sheetResult": this.getSheetResult(),
         };
     };

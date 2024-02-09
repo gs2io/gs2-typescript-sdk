@@ -17,8 +17,20 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var RunStampSheetWithoutNamespaceResult = /** @class */ (function () {
     function RunStampSheetWithoutNamespaceResult() {
+        this.statusCode = null;
         this.result = null;
     }
+    RunStampSheetWithoutNamespaceResult.prototype.getStatusCode = function () {
+        return this.statusCode;
+    };
+    RunStampSheetWithoutNamespaceResult.prototype.setStatusCode = function (statusCode) {
+        this.statusCode = statusCode;
+        return this;
+    };
+    RunStampSheetWithoutNamespaceResult.prototype.withStatusCode = function (statusCode) {
+        this.statusCode = statusCode;
+        return this;
+    };
     RunStampSheetWithoutNamespaceResult.prototype.getResult = function () {
         return this.result;
     };
@@ -32,10 +44,12 @@ var RunStampSheetWithoutNamespaceResult = /** @class */ (function () {
     };
     RunStampSheetWithoutNamespaceResult.fromDict = function (data) {
         return new RunStampSheetWithoutNamespaceResult()
+            .withStatusCode(data["statusCode"])
             .withResult(data["result"]);
     };
     RunStampSheetWithoutNamespaceResult.prototype.toDict = function () {
         return {
+            "statusCode": this.getStatusCode(),
             "result": this.getResult(),
         };
     };

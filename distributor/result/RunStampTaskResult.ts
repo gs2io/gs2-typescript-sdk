@@ -18,6 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 export default class RunStampTaskResult implements IResult {
     private contextStack: string|null = null;
+    private statusCode: number|null = null;
     private result: string|null = null;
 
     public getContextStack(): string|null {
@@ -31,6 +32,20 @@ export default class RunStampTaskResult implements IResult {
 
     public withContextStack(contextStack: string|null): this {
         this.contextStack = contextStack;
+        return this;
+    }
+
+    public getStatusCode(): number|null {
+        return this.statusCode;
+    }
+
+    public setStatusCode(statusCode: number|null) {
+        this.statusCode = statusCode;
+        return this;
+    }
+
+    public withStatusCode(statusCode: number|null): this {
+        this.statusCode = statusCode;
         return this;
     }
 
@@ -51,12 +66,14 @@ export default class RunStampTaskResult implements IResult {
     public static fromDict(data: {[key: string]: any}): RunStampTaskResult {
         return new RunStampTaskResult()
             .withContextStack(data["contextStack"])
+            .withStatusCode(data["statusCode"])
             .withResult(data["result"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "contextStack": this.getContextStack(),
+            "statusCode": this.getStatusCode(),
             "result": this.getResult(),
         };
     }

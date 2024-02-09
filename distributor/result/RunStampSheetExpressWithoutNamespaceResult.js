@@ -17,9 +17,22 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var RunStampSheetExpressWithoutNamespaceResult = /** @class */ (function () {
     function RunStampSheetExpressWithoutNamespaceResult() {
+        this.taskResultCodes = null;
         this.taskResults = null;
+        this.sheetResultCode = null;
         this.sheetResult = null;
     }
+    RunStampSheetExpressWithoutNamespaceResult.prototype.getTaskResultCodes = function () {
+        return this.taskResultCodes;
+    };
+    RunStampSheetExpressWithoutNamespaceResult.prototype.setTaskResultCodes = function (taskResultCodes) {
+        this.taskResultCodes = taskResultCodes;
+        return this;
+    };
+    RunStampSheetExpressWithoutNamespaceResult.prototype.withTaskResultCodes = function (taskResultCodes) {
+        this.taskResultCodes = taskResultCodes;
+        return this;
+    };
     RunStampSheetExpressWithoutNamespaceResult.prototype.getTaskResults = function () {
         return this.taskResults;
     };
@@ -29,6 +42,17 @@ var RunStampSheetExpressWithoutNamespaceResult = /** @class */ (function () {
     };
     RunStampSheetExpressWithoutNamespaceResult.prototype.withTaskResults = function (taskResults) {
         this.taskResults = taskResults;
+        return this;
+    };
+    RunStampSheetExpressWithoutNamespaceResult.prototype.getSheetResultCode = function () {
+        return this.sheetResultCode;
+    };
+    RunStampSheetExpressWithoutNamespaceResult.prototype.setSheetResultCode = function (sheetResultCode) {
+        this.sheetResultCode = sheetResultCode;
+        return this;
+    };
+    RunStampSheetExpressWithoutNamespaceResult.prototype.withSheetResultCode = function (sheetResultCode) {
+        this.sheetResultCode = sheetResultCode;
         return this;
     };
     RunStampSheetExpressWithoutNamespaceResult.prototype.getSheetResult = function () {
@@ -44,18 +68,28 @@ var RunStampSheetExpressWithoutNamespaceResult = /** @class */ (function () {
     };
     RunStampSheetExpressWithoutNamespaceResult.fromDict = function (data) {
         return new RunStampSheetExpressWithoutNamespaceResult()
+            .withTaskResultCodes(data.taskResultCodes ?
+            data.taskResultCodes.map(function (item) {
+                return item;
+            }) : [])
             .withTaskResults(data.taskResults ?
             data.taskResults.map(function (item) {
                 return item;
             }) : [])
+            .withSheetResultCode(data["sheetResultCode"])
             .withSheetResult(data["sheetResult"]);
     };
     RunStampSheetExpressWithoutNamespaceResult.prototype.toDict = function () {
         return {
+            "taskResultCodes": this.getTaskResultCodes() ?
+                this.getTaskResultCodes().map(function (item) {
+                    return item;
+                }) : [],
             "taskResults": this.getTaskResults() ?
                 this.getTaskResults().map(function (item) {
                     return item;
                 }) : [],
+            "sheetResultCode": this.getSheetResultCode(),
             "sheetResult": this.getSheetResult(),
         };
     };

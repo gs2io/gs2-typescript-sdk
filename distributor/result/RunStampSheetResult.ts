@@ -17,7 +17,22 @@ permissions and limitations under the License.
 import IResult from '../../core/interface/IResult';
 
 export default class RunStampSheetResult implements IResult {
+    private statusCode: number|null = null;
     private result: string|null = null;
+
+    public getStatusCode(): number|null {
+        return this.statusCode;
+    }
+
+    public setStatusCode(statusCode: number|null) {
+        this.statusCode = statusCode;
+        return this;
+    }
+
+    public withStatusCode(statusCode: number|null): this {
+        this.statusCode = statusCode;
+        return this;
+    }
 
     public getResult(): string|null {
         return this.result;
@@ -35,11 +50,13 @@ export default class RunStampSheetResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): RunStampSheetResult {
         return new RunStampSheetResult()
+            .withStatusCode(data["statusCode"])
             .withResult(data["result"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "statusCode": this.getStatusCode(),
             "result": this.getResult(),
         };
     }
