@@ -19,6 +19,7 @@ import * as Gs2Idle from '../model'
 
 export default class ReceiveResult implements IResult {
     private items: Gs2Idle.AcquireAction[]|null = null;
+    private status: Gs2Idle.Status|null = null;
     private transactionId: string|null = null;
     private stampSheet: string|null = null;
     private stampSheetEncryptionKeyId: string|null = null;
@@ -35,6 +36,20 @@ export default class ReceiveResult implements IResult {
 
     public withItems(items: Gs2Idle.AcquireAction[]|null): this {
         this.items = items;
+        return this;
+    }
+
+    public getStatus(): Gs2Idle.Status|null {
+        return this.status;
+    }
+
+    public setStatus(status: Gs2Idle.Status|null) {
+        this.status = status;
+        return this;
+    }
+
+    public withStatus(status: Gs2Idle.Status|null): this {
+        this.status = status;
         return this;
     }
 
@@ -101,6 +116,7 @@ export default class ReceiveResult implements IResult {
                     return Gs2Idle.AcquireAction.fromDict(item);
                 }
             ) : [])
+            .withStatus(Gs2Idle.Status.fromDict(data["status"]))
             .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
             .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
@@ -114,6 +130,7 @@ export default class ReceiveResult implements IResult {
                     return item.toDict();
                 }
             ) : [],
+            "status": this.getStatus()?.toDict(),
             "transactionId": this.getTransactionId(),
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),

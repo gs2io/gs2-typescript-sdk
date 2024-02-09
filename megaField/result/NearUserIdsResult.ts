@@ -16,8 +16,6 @@ permissions and limitations under the License.
 
 import IResult from '../../core/interface/IResult';
 
-import * as Gs2MegaField from '../model'
-
 export default class NearUserIdsResult implements IResult {
     private items: string[]|null = null;
 

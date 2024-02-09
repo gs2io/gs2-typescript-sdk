@@ -20,6 +20,7 @@ var Gs2Idle = tslib_1.__importStar(require("../model"));
 var ReceiveByUserIdResult = /** @class */ (function () {
     function ReceiveByUserIdResult() {
         this.items = null;
+        this.status = null;
         this.transactionId = null;
         this.stampSheet = null;
         this.stampSheetEncryptionKeyId = null;
@@ -34,6 +35,17 @@ var ReceiveByUserIdResult = /** @class */ (function () {
     };
     ReceiveByUserIdResult.prototype.withItems = function (items) {
         this.items = items;
+        return this;
+    };
+    ReceiveByUserIdResult.prototype.getStatus = function () {
+        return this.status;
+    };
+    ReceiveByUserIdResult.prototype.setStatus = function (status) {
+        this.status = status;
+        return this;
+    };
+    ReceiveByUserIdResult.prototype.withStatus = function (status) {
+        this.status = status;
         return this;
     };
     ReceiveByUserIdResult.prototype.getTransactionId = function () {
@@ -86,17 +98,20 @@ var ReceiveByUserIdResult = /** @class */ (function () {
             data.items.map(function (item) {
                 return Gs2Idle.AcquireAction.fromDict(item);
             }) : [])
+            .withStatus(Gs2Idle.Status.fromDict(data["status"]))
             .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
             .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
             .withAutoRunStampSheet(data["autoRunStampSheet"]);
     };
     ReceiveByUserIdResult.prototype.toDict = function () {
+        var _a;
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "status": (_a = this.getStatus()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "transactionId": this.getTransactionId(),
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),

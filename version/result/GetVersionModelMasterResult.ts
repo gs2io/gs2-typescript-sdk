@@ -15,7 +15,6 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
-
 import * as Gs2Version from '../model'
 
 export default class GetVersionModelMasterResult implements IResult {
