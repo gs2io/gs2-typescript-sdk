@@ -23,6 +23,7 @@ var ResetRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
+        this.propertyId = null;
         this.config = null;
         this.duplicationAvoider = null;
     }
@@ -70,6 +71,17 @@ var ResetRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
+    ResetRequest.prototype.getPropertyId = function () {
+        return this.propertyId;
+    };
+    ResetRequest.prototype.setPropertyId = function (propertyId) {
+        this.propertyId = propertyId;
+        return this;
+    };
+    ResetRequest.prototype.withPropertyId = function (propertyId) {
+        this.propertyId = propertyId;
+        return this;
+    };
     ResetRequest.prototype.getConfig = function () {
         return this.config;
     };
@@ -96,6 +108,7 @@ var ResetRequest = /** @class */ (function () {
         return new ResetRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
+            .withPropertyId(data["propertyId"])
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2SkillTree.Config.fromDict(item);
@@ -105,6 +118,7 @@ var ResetRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
+            "propertyId": this.getPropertyId(),
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();

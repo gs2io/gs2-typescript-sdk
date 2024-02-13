@@ -24,6 +24,7 @@ export default class ResetRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private accessToken: string|null = null;
+    private propertyId: string|null = null;
     private config: Gs2SkillTree.Config[]|null = null;
     private duplicationAvoider: string|null = null;
 
@@ -76,6 +77,17 @@ export default class ResetRequest implements IRequest {
         this.accessToken = accessToken;
         return this;
     }
+    public getPropertyId(): string|null {
+        return this.propertyId;
+    }
+    public setPropertyId(propertyId: string|null) {
+        this.propertyId = propertyId;
+        return this;
+    }
+    public withPropertyId(propertyId: string|null): this {
+        this.propertyId = propertyId;
+        return this;
+    }
     public getConfig(): Gs2SkillTree.Config[]|null {
         return this.config;
     }
@@ -106,6 +118,7 @@ export default class ResetRequest implements IRequest {
         return new ResetRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
+            .withPropertyId(data["propertyId"])
             .withConfig(data.config ?
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2SkillTree.Config.fromDict(item);
@@ -117,6 +130,7 @@ export default class ResetRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
+            "propertyId": this.getPropertyId(),
             "config": this.getConfig() ?
                 this.getConfig()!.map((item: Gs2SkillTree.Config) => {
                     return item.toDict();

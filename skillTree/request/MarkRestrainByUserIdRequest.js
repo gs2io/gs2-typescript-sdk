@@ -21,6 +21,7 @@ var MarkRestrainByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
+        this.propertyId = null;
         this.nodeModelNames = null;
         this.duplicationAvoider = null;
     }
@@ -68,6 +69,17 @@ var MarkRestrainByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    MarkRestrainByUserIdRequest.prototype.getPropertyId = function () {
+        return this.propertyId;
+    };
+    MarkRestrainByUserIdRequest.prototype.setPropertyId = function (propertyId) {
+        this.propertyId = propertyId;
+        return this;
+    };
+    MarkRestrainByUserIdRequest.prototype.withPropertyId = function (propertyId) {
+        this.propertyId = propertyId;
+        return this;
+    };
     MarkRestrainByUserIdRequest.prototype.getNodeModelNames = function () {
         return this.nodeModelNames;
     };
@@ -94,6 +106,7 @@ var MarkRestrainByUserIdRequest = /** @class */ (function () {
         return new MarkRestrainByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
+            .withPropertyId(data["propertyId"])
             .withNodeModelNames(data.nodeModelNames ?
             data.nodeModelNames.map(function (item) {
                 return item;
@@ -103,6 +116,7 @@ var MarkRestrainByUserIdRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "propertyId": this.getPropertyId(),
             "nodeModelNames": this.getNodeModelNames() ?
                 this.getNodeModelNames().map(function (item) {
                     return item;

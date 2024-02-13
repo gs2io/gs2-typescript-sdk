@@ -30,6 +30,8 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     markRestrainByUserId(request: Request.MarkRestrainByUserIdRequest): Promise<Result.MarkRestrainByUserIdResult>;
     restrain(request: Request.RestrainRequest): Promise<Result.RestrainResult>;
     restrainByUserId(request: Request.RestrainByUserIdRequest): Promise<Result.RestrainByUserIdResult>;
+    describeStatuses(request: Request.DescribeStatusesRequest): Promise<Result.DescribeStatusesResult>;
+    describeStatusesByUserId(request: Request.DescribeStatusesByUserIdRequest): Promise<Result.DescribeStatusesByUserIdResult>;
     getStatus(request: Request.GetStatusRequest): Promise<Result.GetStatusResult>;
     getStatusByUserId(request: Request.GetStatusByUserIdRequest): Promise<Result.GetStatusByUserIdResult>;
     reset(request: Request.ResetRequest): Promise<Result.ResetResult>;

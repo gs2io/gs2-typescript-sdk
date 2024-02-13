@@ -23,6 +23,7 @@ var ResetByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
+        this.propertyId = null;
         this.config = null;
         this.duplicationAvoider = null;
     }
@@ -70,6 +71,17 @@ var ResetByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    ResetByUserIdRequest.prototype.getPropertyId = function () {
+        return this.propertyId;
+    };
+    ResetByUserIdRequest.prototype.setPropertyId = function (propertyId) {
+        this.propertyId = propertyId;
+        return this;
+    };
+    ResetByUserIdRequest.prototype.withPropertyId = function (propertyId) {
+        this.propertyId = propertyId;
+        return this;
+    };
     ResetByUserIdRequest.prototype.getConfig = function () {
         return this.config;
     };
@@ -96,6 +108,7 @@ var ResetByUserIdRequest = /** @class */ (function () {
         return new ResetByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
+            .withPropertyId(data["propertyId"])
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2SkillTree.Config.fromDict(item);
@@ -105,6 +118,7 @@ var ResetByUserIdRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "propertyId": this.getPropertyId(),
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();

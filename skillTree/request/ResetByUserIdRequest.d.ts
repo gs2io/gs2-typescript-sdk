@@ -5,6 +5,7 @@ export default class ResetByUserIdRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private userId;
+    private propertyId;
     private config;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -19,6 +20,9 @@ export default class ResetByUserIdRequest implements IRequest {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
+    getPropertyId(): string | null;
+    setPropertyId(propertyId: string | null): this;
+    withPropertyId(propertyId: string | null): this;
     getConfig(): Gs2SkillTree.Config[] | null;
     setConfig(config: Gs2SkillTree.Config[] | null): this;
     withConfig(config: Gs2SkillTree.Config[] | null): this;

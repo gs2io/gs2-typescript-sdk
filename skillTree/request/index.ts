@@ -39,6 +39,8 @@ import ReleaseByUserIdRequest from "./ReleaseByUserIdRequest"
 import MarkRestrainByUserIdRequest from "./MarkRestrainByUserIdRequest"
 import RestrainRequest from "./RestrainRequest"
 import RestrainByUserIdRequest from "./RestrainByUserIdRequest"
+import DescribeStatusesRequest from "./DescribeStatusesRequest"
+import DescribeStatusesByUserIdRequest from "./DescribeStatusesByUserIdRequest"
 import GetStatusRequest from "./GetStatusRequest"
 import GetStatusByUserIdRequest from "./GetStatusByUserIdRequest"
 import ResetRequest from "./ResetRequest"
@@ -77,6 +79,8 @@ export {
     MarkRestrainByUserIdRequest,
     RestrainRequest,
     RestrainByUserIdRequest,
+    DescribeStatusesRequest,
+    DescribeStatusesByUserIdRequest,
     GetStatusRequest,
     GetStatusByUserIdRequest,
     ResetRequest,

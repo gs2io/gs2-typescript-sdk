@@ -39,6 +39,8 @@ import ReleaseByUserIdResult from "./ReleaseByUserIdResult"
 import MarkRestrainByUserIdResult from "./MarkRestrainByUserIdResult"
 import RestrainResult from "./RestrainResult"
 import RestrainByUserIdResult from "./RestrainByUserIdResult"
+import DescribeStatusesResult from "./DescribeStatusesResult"
+import DescribeStatusesByUserIdResult from "./DescribeStatusesByUserIdResult"
 import GetStatusResult from "./GetStatusResult"
 import GetStatusByUserIdResult from "./GetStatusByUserIdResult"
 import ResetResult from "./ResetResult"
@@ -77,6 +79,8 @@ export {
     MarkRestrainByUserIdResult,
     RestrainResult,
     RestrainByUserIdResult,
+    DescribeStatusesResult,
+    DescribeStatusesByUserIdResult,
     GetStatusResult,
     GetStatusByUserIdResult,
     ResetResult,

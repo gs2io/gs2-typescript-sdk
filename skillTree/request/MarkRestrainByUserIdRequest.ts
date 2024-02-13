@@ -24,6 +24,7 @@ export default class MarkRestrainByUserIdRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private userId: string|null = null;
+    private propertyId: string|null = null;
     private nodeModelNames: string[]|null = null;
     private duplicationAvoider: string|null = null;
 
@@ -76,6 +77,17 @@ export default class MarkRestrainByUserIdRequest implements IRequest {
         this.userId = userId;
         return this;
     }
+    public getPropertyId(): string|null {
+        return this.propertyId;
+    }
+    public setPropertyId(propertyId: string|null) {
+        this.propertyId = propertyId;
+        return this;
+    }
+    public withPropertyId(propertyId: string|null): this {
+        this.propertyId = propertyId;
+        return this;
+    }
     public getNodeModelNames(): string[]|null {
         return this.nodeModelNames;
     }
@@ -106,6 +118,7 @@ export default class MarkRestrainByUserIdRequest implements IRequest {
         return new MarkRestrainByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
+            .withPropertyId(data["propertyId"])
             .withNodeModelNames(data.nodeModelNames ?
                 data.nodeModelNames.map((item: {[key: string]: any}) => {
                     return item;
@@ -117,6 +130,7 @@ export default class MarkRestrainByUserIdRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "propertyId": this.getPropertyId(),
             "nodeModelNames": this.getNodeModelNames() ?
                 this.getNodeModelNames()!.map((item: string) => {
                     return item;

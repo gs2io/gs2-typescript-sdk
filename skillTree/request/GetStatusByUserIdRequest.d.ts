@@ -4,6 +4,7 @@ export default class GetStatusByUserIdRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private userId;
+    private propertyId;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -16,6 +17,9 @@ export default class GetStatusByUserIdRequest implements IRequest {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
+    getPropertyId(): string | null;
+    setPropertyId(propertyId: string | null): this;
+    withPropertyId(propertyId: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetStatusByUserIdRequest;

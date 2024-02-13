@@ -631,11 +631,12 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public markReleaseByUserId(request: Request.MarkReleaseByUserIdRequest): Promise<Result.MarkReleaseByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/node/release/mark')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{propertyId}/node/release/mark')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{propertyId}', String(request.getPropertyId() ?? 'null') === "" ? "null" : String(request.getPropertyId() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -666,10 +667,11 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public release(request: Request.ReleaseRequest): Promise<Result.ReleaseResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/node/release')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{propertyId}/node/release')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{propertyId}', String(request.getPropertyId() ?? 'null') === "" ? "null" : String(request.getPropertyId() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -704,11 +706,12 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public releaseByUserId(request: Request.ReleaseByUserIdRequest): Promise<Result.ReleaseByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/node/release')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{propertyId}/node/release')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{propertyId}', String(request.getPropertyId() ?? 'null') === "" ? "null" : String(request.getPropertyId() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -740,11 +743,12 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public markRestrainByUserId(request: Request.MarkRestrainByUserIdRequest): Promise<Result.MarkRestrainByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/node/restrain/mark')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{propertyId}/node/restrain/mark')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{propertyId}', String(request.getPropertyId() ?? 'null') === "" ? "null" : String(request.getPropertyId() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -775,10 +779,11 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public restrain(request: Request.RestrainRequest): Promise<Result.RestrainResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/node/restrain')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{propertyId}/node/restrain')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{propertyId}', String(request.getPropertyId() ?? 'null') === "" ? "null" : String(request.getPropertyId() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -813,11 +818,12 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public restrainByUserId(request: Request.RestrainByUserIdRequest): Promise<Result.RestrainByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/node/restrain')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{propertyId}/node/restrain')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{propertyId}', String(request.getPropertyId() ?? 'null') === "" ? "null" : String(request.getPropertyId() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -848,11 +854,72 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
         });
     }
 
-    public getStatus(request: Request.GetStatusRequest): Promise<Result.GetStatusResult> {
+    public describeStatuses(request: Request.DescribeStatusesRequest): Promise<Result.DescribeStatusesResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeStatusesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeStatusesByUserId(request: Request.DescribeStatusesByUserIdRequest): Promise<Result.DescribeStatusesByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/')
+            .replace('{service}', 'skill-tree')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeStatusesByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getStatus(request: Request.GetStatusRequest): Promise<Result.GetStatusResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{propertyId}')
+            .replace('{service}', 'skill-tree')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{propertyId}', String(request.getPropertyId() ?? 'null') === "" ? "null" : String(request.getPropertyId() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -878,11 +945,12 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public getStatusByUserId(request: Request.GetStatusByUserIdRequest): Promise<Result.GetStatusByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{propertyId}')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{propertyId}', String(request.getPropertyId() ?? 'null') === "" ? "null" : String(request.getPropertyId() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -905,10 +973,11 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public reset(request: Request.ResetRequest): Promise<Result.ResetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/reset')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{propertyId}/reset')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{propertyId}', String(request.getPropertyId() ?? 'null') === "" ? "null" : String(request.getPropertyId() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
@@ -942,11 +1011,12 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     }
 
     public resetByUserId(request: Request.ResetByUserIdRequest): Promise<Result.ResetByUserIdResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/reset')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{propertyId}/reset')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{propertyId}', String(request.getPropertyId() ?? 'null') === "" ? "null" : String(request.getPropertyId() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {

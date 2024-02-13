@@ -1,12 +1,11 @@
 import IRequest from '../../core/interface/IRequest';
-export default class MarkReleaseByUserIdRequest implements IRequest {
+export default class DescribeStatusesByUserIdRequest implements IRequest {
     private requestId;
     private contextStack;
     private namespaceName;
     private userId;
-    private propertyId;
-    private nodeModelNames;
-    private duplicationAvoider;
+    private pageToken;
+    private limit;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -19,18 +18,15 @@ export default class MarkReleaseByUserIdRequest implements IRequest {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
-    getPropertyId(): string | null;
-    setPropertyId(propertyId: string | null): this;
-    withPropertyId(propertyId: string | null): this;
-    getNodeModelNames(): string[] | null;
-    setNodeModelNames(nodeModelNames: string[] | null): this;
-    withNodeModelNames(nodeModelNames: string[] | null): this;
-    getDuplicationAvoider(): string | null;
-    setDuplicationAvoider(duplicationAvoider: string | null): this;
-    withDuplicationAvoider(duplicationAvoider: string | null): this;
+    getPageToken(): string | null;
+    setPageToken(pageToken: string | null): this;
+    withPageToken(pageToken: string | null): this;
+    getLimit(): number | null;
+    setLimit(limit: number | null): this;
+    withLimit(limit: number | null): this;
     static fromDict(data: {
         [key: string]: any;
-    }): MarkReleaseByUserIdRequest;
+    }): DescribeStatusesByUserIdRequest;
     toDict(): {
         [key: string]: any;
     };

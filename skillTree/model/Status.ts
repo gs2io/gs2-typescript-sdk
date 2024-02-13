@@ -15,11 +15,12 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:skillTree:{namespaceName}:user:{userId}:status";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:skillTree:{namespaceName}:user:{userId}:status:{propertyId}";
 
 export default class Status implements IModel {
     private statusId: string|null = null;
     private userId: string|null = null;
+    private propertyId: string|null = null;
     private releasedNodeNames: string[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -31,6 +32,7 @@ export default class Status implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
+            .replace('{propertyId}', '.*')
         );
         if (match) {
             return match[1];
@@ -44,6 +46,7 @@ export default class Status implements IModel {
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
+            .replace('{propertyId}', '.*')
         );
         if (match) {
             return match[1];
@@ -57,6 +60,7 @@ export default class Status implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
             .replace('{userId}', '.*')
+            .replace('{propertyId}', '.*')
         );
         if (match) {
             return match[1];
@@ -70,6 +74,21 @@ export default class Status implements IModel {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '(.*)')
+            .replace('{propertyId}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getPropertyId(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{propertyId}', '(.*)')
         );
         if (match) {
             return match[1];
@@ -90,6 +109,9 @@ export default class Status implements IModel {
         if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
             return false;
         }
+        if (this.getPropertyId(grn) == null || this.getPropertyId(grn) === '') {
+            return false;
+        }
         return true;
     }
 
@@ -98,12 +120,14 @@ export default class Status implements IModel {
         ownerId: string|null,
         namespaceName: string|null,
         userId: string|null,
+        propertyId: string|null,
     ): string|null {
         return grnFormat
             .replace('{region}', region ?? '')
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '')
-            .replace('{userId}', userId ?? '');
+            .replace('{userId}', userId ?? '')
+            .replace('{propertyId}', propertyId ?? '');
     }
     public getStatusId(): string|null {
         return this.statusId;
@@ -125,6 +149,17 @@ export default class Status implements IModel {
     }
     public withUserId(userId: string|null): this {
         this.userId = userId;
+        return this;
+    }
+    public getPropertyId(): string|null {
+        return this.propertyId;
+    }
+    public setPropertyId(propertyId: string|null) {
+        this.propertyId = propertyId;
+        return this;
+    }
+    public withPropertyId(propertyId: string|null): this {
+        this.propertyId = propertyId;
         return this;
     }
     public getReleasedNodeNames(): string[]|null {
@@ -179,6 +214,7 @@ export default class Status implements IModel {
         return new Status()
             .withStatusId(data["statusId"])
             .withUserId(data["userId"])
+            .withPropertyId(data["propertyId"])
             .withReleasedNodeNames(data.releasedNodeNames ?
                 data.releasedNodeNames.map((item: {[key: string]: any}) => {
                     return item;
@@ -193,6 +229,7 @@ export default class Status implements IModel {
         return {
             "statusId": this.getStatusId(),
             "userId": this.getUserId(),
+            "propertyId": this.getPropertyId(),
             "releasedNodeNames": this.getReleasedNodeNames() ?
                 this.getReleasedNodeNames()!.map((item: string) => {
                     return item;

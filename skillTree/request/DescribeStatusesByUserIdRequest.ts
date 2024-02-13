@@ -18,13 +18,14 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2SkillTree from '../model'
 
-export default class GetStatusRequest implements IRequest {
+export default class DescribeStatusesByUserIdRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
-    private accessToken: string|null = null;
-    private propertyId: string|null = null;
+    private userId: string|null = null;
+    private pageToken: string|null = null;
+    private limit: number|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -64,41 +65,54 @@ export default class GetStatusRequest implements IRequest {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getAccessToken(): string|null {
-        return this.accessToken;
+    public getUserId(): string|null {
+        return this.userId;
     }
-    public setAccessToken(accessToken: string|null) {
-        this.accessToken = accessToken;
+    public setUserId(userId: string|null) {
+        this.userId = userId;
         return this;
     }
-    public withAccessToken(accessToken: string|null): this {
-        this.accessToken = accessToken;
+    public withUserId(userId: string|null): this {
+        this.userId = userId;
         return this;
     }
-    public getPropertyId(): string|null {
-        return this.propertyId;
+    public getPageToken(): string|null {
+        return this.pageToken;
     }
-    public setPropertyId(propertyId: string|null) {
-        this.propertyId = propertyId;
+    public setPageToken(pageToken: string|null) {
+        this.pageToken = pageToken;
         return this;
     }
-    public withPropertyId(propertyId: string|null): this {
-        this.propertyId = propertyId;
+    public withPageToken(pageToken: string|null): this {
+        this.pageToken = pageToken;
+        return this;
+    }
+    public getLimit(): number|null {
+        return this.limit;
+    }
+    public setLimit(limit: number|null) {
+        this.limit = limit;
+        return this;
+    }
+    public withLimit(limit: number|null): this {
+        this.limit = limit;
         return this;
     }
 
-    public static fromDict(data: {[key: string]: any}): GetStatusRequest {
-        return new GetStatusRequest()
+    public static fromDict(data: {[key: string]: any}): DescribeStatusesByUserIdRequest {
+        return new DescribeStatusesByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
-            .withAccessToken(data["accessToken"])
-            .withPropertyId(data["propertyId"]);
+            .withUserId(data["userId"])
+            .withPageToken(data["pageToken"])
+            .withLimit(data["limit"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
-            "accessToken": this.getAccessToken(),
-            "propertyId": this.getPropertyId(),
+            "userId": this.getUserId(),
+            "pageToken": this.getPageToken(),
+            "limit": this.getLimit(),
         };
     }
 }

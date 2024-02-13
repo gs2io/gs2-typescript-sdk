@@ -4,6 +4,7 @@ export default class GetStatusRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private accessToken;
+    private propertyId;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -16,6 +17,9 @@ export default class GetStatusRequest implements IRequest {
     getAccessToken(): string | null;
     setAccessToken(accessToken: string | null): this;
     withAccessToken(accessToken: string | null): this;
+    getPropertyId(): string | null;
+    setPropertyId(propertyId: string | null): this;
+    withPropertyId(propertyId: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetStatusRequest;

@@ -5,6 +5,7 @@ export default class ReleaseByUserIdRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private userId;
+    private propertyId;
     private nodeModelNames;
     private config;
     private duplicationAvoider;
@@ -20,6 +21,9 @@ export default class ReleaseByUserIdRequest implements IRequest {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
+    getPropertyId(): string | null;
+    setPropertyId(propertyId: string | null): this;
+    withPropertyId(propertyId: string | null): this;
     getNodeModelNames(): string[] | null;
     setNodeModelNames(nodeModelNames: string[] | null): this;
     withNodeModelNames(nodeModelNames: string[] | null): this;

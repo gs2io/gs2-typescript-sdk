@@ -23,6 +23,7 @@ var RestrainRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
+        this.propertyId = null;
         this.nodeModelNames = null;
         this.config = null;
         this.duplicationAvoider = null;
@@ -71,6 +72,17 @@ var RestrainRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
+    RestrainRequest.prototype.getPropertyId = function () {
+        return this.propertyId;
+    };
+    RestrainRequest.prototype.setPropertyId = function (propertyId) {
+        this.propertyId = propertyId;
+        return this;
+    };
+    RestrainRequest.prototype.withPropertyId = function (propertyId) {
+        this.propertyId = propertyId;
+        return this;
+    };
     RestrainRequest.prototype.getNodeModelNames = function () {
         return this.nodeModelNames;
     };
@@ -108,6 +120,7 @@ var RestrainRequest = /** @class */ (function () {
         return new RestrainRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
+            .withPropertyId(data["propertyId"])
             .withNodeModelNames(data.nodeModelNames ?
             data.nodeModelNames.map(function (item) {
                 return item;
@@ -121,6 +134,7 @@ var RestrainRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
+            "propertyId": this.getPropertyId(),
             "nodeModelNames": this.getNodeModelNames() ?
                 this.getNodeModelNames().map(function (item) {
                     return item;

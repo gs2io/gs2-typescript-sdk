@@ -23,6 +23,7 @@ var ReleaseRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
+        this.propertyId = null;
         this.nodeModelNames = null;
         this.config = null;
         this.duplicationAvoider = null;
@@ -71,6 +72,17 @@ var ReleaseRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
+    ReleaseRequest.prototype.getPropertyId = function () {
+        return this.propertyId;
+    };
+    ReleaseRequest.prototype.setPropertyId = function (propertyId) {
+        this.propertyId = propertyId;
+        return this;
+    };
+    ReleaseRequest.prototype.withPropertyId = function (propertyId) {
+        this.propertyId = propertyId;
+        return this;
+    };
     ReleaseRequest.prototype.getNodeModelNames = function () {
         return this.nodeModelNames;
     };
@@ -108,6 +120,7 @@ var ReleaseRequest = /** @class */ (function () {
         return new ReleaseRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
+            .withPropertyId(data["propertyId"])
             .withNodeModelNames(data.nodeModelNames ?
             data.nodeModelNames.map(function (item) {
                 return item;
@@ -121,6 +134,7 @@ var ReleaseRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
+            "propertyId": this.getPropertyId(),
             "nodeModelNames": this.getNodeModelNames() ?
                 this.getNodeModelNames().map(function (item) {
                     return item;

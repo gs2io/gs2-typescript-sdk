@@ -4,6 +4,7 @@ export default class MarkRestrainByUserIdRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private userId;
+    private propertyId;
     private nodeModelNames;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -18,6 +19,9 @@ export default class MarkRestrainByUserIdRequest implements IRequest {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
+    getPropertyId(): string | null;
+    setPropertyId(propertyId: string | null): this;
+    withPropertyId(propertyId: string | null): this;
     getNodeModelNames(): string[] | null;
     setNodeModelNames(nodeModelNames: string[] | null): this;
     withNodeModelNames(nodeModelNames: string[] | null): this;

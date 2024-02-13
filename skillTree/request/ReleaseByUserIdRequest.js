@@ -23,6 +23,7 @@ var ReleaseByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
+        this.propertyId = null;
         this.nodeModelNames = null;
         this.config = null;
         this.duplicationAvoider = null;
@@ -71,6 +72,17 @@ var ReleaseByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    ReleaseByUserIdRequest.prototype.getPropertyId = function () {
+        return this.propertyId;
+    };
+    ReleaseByUserIdRequest.prototype.setPropertyId = function (propertyId) {
+        this.propertyId = propertyId;
+        return this;
+    };
+    ReleaseByUserIdRequest.prototype.withPropertyId = function (propertyId) {
+        this.propertyId = propertyId;
+        return this;
+    };
     ReleaseByUserIdRequest.prototype.getNodeModelNames = function () {
         return this.nodeModelNames;
     };
@@ -108,6 +120,7 @@ var ReleaseByUserIdRequest = /** @class */ (function () {
         return new ReleaseByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
+            .withPropertyId(data["propertyId"])
             .withNodeModelNames(data.nodeModelNames ?
             data.nodeModelNames.map(function (item) {
                 return item;
@@ -121,6 +134,7 @@ var ReleaseByUserIdRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "propertyId": this.getPropertyId(),
             "nodeModelNames": this.getNodeModelNames() ?
                 this.getNodeModelNames().map(function (item) {
                     return item;

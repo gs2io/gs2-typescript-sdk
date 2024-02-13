@@ -24,6 +24,7 @@ export default class GetStatusByUserIdRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private userId: string|null = null;
+    private propertyId: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -74,17 +75,30 @@ export default class GetStatusByUserIdRequest implements IRequest {
         this.userId = userId;
         return this;
     }
+    public getPropertyId(): string|null {
+        return this.propertyId;
+    }
+    public setPropertyId(propertyId: string|null) {
+        this.propertyId = propertyId;
+        return this;
+    }
+    public withPropertyId(propertyId: string|null): this {
+        this.propertyId = propertyId;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetStatusByUserIdRequest {
         return new GetStatusByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withPropertyId(data["propertyId"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "propertyId": this.getPropertyId(),
         };
     }
 }

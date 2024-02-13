@@ -1,13 +1,11 @@
 import IRequest from '../../core/interface/IRequest';
-import * as Gs2SkillTree from '../model';
-export default class ResetRequest implements IRequest {
+export default class DescribeStatusesRequest implements IRequest {
     private requestId;
     private contextStack;
     private namespaceName;
     private accessToken;
-    private propertyId;
-    private config;
-    private duplicationAvoider;
+    private pageToken;
+    private limit;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -20,18 +18,15 @@ export default class ResetRequest implements IRequest {
     getAccessToken(): string | null;
     setAccessToken(accessToken: string | null): this;
     withAccessToken(accessToken: string | null): this;
-    getPropertyId(): string | null;
-    setPropertyId(propertyId: string | null): this;
-    withPropertyId(propertyId: string | null): this;
-    getConfig(): Gs2SkillTree.Config[] | null;
-    setConfig(config: Gs2SkillTree.Config[] | null): this;
-    withConfig(config: Gs2SkillTree.Config[] | null): this;
-    getDuplicationAvoider(): string | null;
-    setDuplicationAvoider(duplicationAvoider: string | null): this;
-    withDuplicationAvoider(duplicationAvoider: string | null): this;
+    getPageToken(): string | null;
+    setPageToken(pageToken: string | null): this;
+    withPageToken(pageToken: string | null): this;
+    getLimit(): number | null;
+    setLimit(limit: number | null): this;
+    withLimit(limit: number | null): this;
     static fromDict(data: {
         [key: string]: any;
-    }): ResetRequest;
+    }): DescribeStatusesRequest;
     toDict(): {
         [key: string]: any;
     };

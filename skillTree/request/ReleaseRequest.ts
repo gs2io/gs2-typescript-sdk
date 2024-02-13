@@ -24,6 +24,7 @@ export default class ReleaseRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private accessToken: string|null = null;
+    private propertyId: string|null = null;
     private nodeModelNames: string[]|null = null;
     private config: Gs2SkillTree.Config[]|null = null;
     private duplicationAvoider: string|null = null;
@@ -77,6 +78,17 @@ export default class ReleaseRequest implements IRequest {
         this.accessToken = accessToken;
         return this;
     }
+    public getPropertyId(): string|null {
+        return this.propertyId;
+    }
+    public setPropertyId(propertyId: string|null) {
+        this.propertyId = propertyId;
+        return this;
+    }
+    public withPropertyId(propertyId: string|null): this {
+        this.propertyId = propertyId;
+        return this;
+    }
     public getNodeModelNames(): string[]|null {
         return this.nodeModelNames;
     }
@@ -118,6 +130,7 @@ export default class ReleaseRequest implements IRequest {
         return new ReleaseRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
+            .withPropertyId(data["propertyId"])
             .withNodeModelNames(data.nodeModelNames ?
                 data.nodeModelNames.map((item: {[key: string]: any}) => {
                     return item;
@@ -134,6 +147,7 @@ export default class ReleaseRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
+            "propertyId": this.getPropertyId(),
             "nodeModelNames": this.getNodeModelNames() ?
                 this.getNodeModelNames()!.map((item: string) => {
                     return item;

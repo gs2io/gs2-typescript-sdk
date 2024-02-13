@@ -15,11 +15,12 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var grnFormat = "grn:gs2:{region}:{ownerId}:skillTree:{namespaceName}:user:{userId}:status";
+var grnFormat = "grn:gs2:{region}:{ownerId}:skillTree:{namespaceName}:user:{userId}:status:{propertyId}";
 var Status = /** @class */ (function () {
     function Status() {
         this.statusId = null;
         this.userId = null;
+        this.propertyId = null;
         this.releasedNodeNames = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -30,7 +31,8 @@ var Status = /** @class */ (function () {
             .replace('{region}', '(.*)')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{userId}', '.*'));
+            .replace('{userId}', '.*')
+            .replace('{propertyId}', '.*'));
         if (match) {
             return match[1];
         }
@@ -41,7 +43,8 @@ var Status = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
-            .replace('{userId}', '.*'));
+            .replace('{userId}', '.*')
+            .replace('{propertyId}', '.*'));
         if (match) {
             return match[1];
         }
@@ -52,7 +55,8 @@ var Status = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
-            .replace('{userId}', '.*'));
+            .replace('{userId}', '.*')
+            .replace('{propertyId}', '.*'));
         if (match) {
             return match[1];
         }
@@ -63,7 +67,20 @@ var Status = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{userId}', '(.*)'));
+            .replace('{userId}', '(.*)')
+            .replace('{propertyId}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    Status.getPropertyId = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{propertyId}', '(.*)'));
         if (match) {
             return match[1];
         }
@@ -82,14 +99,18 @@ var Status = /** @class */ (function () {
         if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
             return false;
         }
+        if (this.getPropertyId(grn) == null || this.getPropertyId(grn) === '') {
+            return false;
+        }
         return true;
     };
-    Status.createGrn = function (region, ownerId, namespaceName, userId) {
+    Status.createGrn = function (region, ownerId, namespaceName, userId, propertyId) {
         return grnFormat
             .replace('{region}', region !== null && region !== void 0 ? region : '')
             .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
             .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
-            .replace('{userId}', userId !== null && userId !== void 0 ? userId : '');
+            .replace('{userId}', userId !== null && userId !== void 0 ? userId : '')
+            .replace('{propertyId}', propertyId !== null && propertyId !== void 0 ? propertyId : '');
     };
     Status.prototype.getStatusId = function () {
         return this.statusId;
@@ -111,6 +132,17 @@ var Status = /** @class */ (function () {
     };
     Status.prototype.withUserId = function (userId) {
         this.userId = userId;
+        return this;
+    };
+    Status.prototype.getPropertyId = function () {
+        return this.propertyId;
+    };
+    Status.prototype.setPropertyId = function (propertyId) {
+        this.propertyId = propertyId;
+        return this;
+    };
+    Status.prototype.withPropertyId = function (propertyId) {
+        this.propertyId = propertyId;
         return this;
     };
     Status.prototype.getReleasedNodeNames = function () {
@@ -164,6 +196,7 @@ var Status = /** @class */ (function () {
         return new Status()
             .withStatusId(data["statusId"])
             .withUserId(data["userId"])
+            .withPropertyId(data["propertyId"])
             .withReleasedNodeNames(data.releasedNodeNames ?
             data.releasedNodeNames.map(function (item) {
                 return item;
@@ -176,6 +209,7 @@ var Status = /** @class */ (function () {
         return {
             "statusId": this.getStatusId(),
             "userId": this.getUserId(),
+            "propertyId": this.getPropertyId(),
             "releasedNodeNames": this.getReleasedNodeNames() ?
                 this.getReleasedNodeNames().map(function (item) {
                     return item;

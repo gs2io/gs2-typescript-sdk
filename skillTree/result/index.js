@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentTreeMasterFromGitHubResult = exports.UpdateCurrentTreeMasterResult = exports.GetCurrentTreeMasterResult = exports.ExportMasterResult = exports.MarkRestrainByStampTaskResult = exports.MarkReleaseByStampSheetResult = exports.ResetByUserIdResult = exports.ResetResult = exports.GetStatusByUserIdResult = exports.GetStatusResult = exports.RestrainByUserIdResult = exports.RestrainResult = exports.MarkRestrainByUserIdResult = exports.ReleaseByUserIdResult = exports.ReleaseResult = exports.MarkReleaseByUserIdResult = exports.DeleteNodeModelMasterResult = exports.UpdateNodeModelMasterResult = exports.GetNodeModelMasterResult = exports.CreateNodeModelMasterResult = exports.DescribeNodeModelMastersResult = exports.GetNodeModelResult = exports.DescribeNodeModelsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.UpdateCurrentTreeMasterFromGitHubResult = exports.UpdateCurrentTreeMasterResult = exports.GetCurrentTreeMasterResult = exports.ExportMasterResult = exports.MarkRestrainByStampTaskResult = exports.MarkReleaseByStampSheetResult = exports.ResetByUserIdResult = exports.ResetResult = exports.GetStatusByUserIdResult = exports.GetStatusResult = exports.DescribeStatusesByUserIdResult = exports.DescribeStatusesResult = exports.RestrainByUserIdResult = exports.RestrainResult = exports.MarkRestrainByUserIdResult = exports.ReleaseByUserIdResult = exports.ReleaseResult = exports.MarkReleaseByUserIdResult = exports.DeleteNodeModelMasterResult = exports.UpdateNodeModelMasterResult = exports.GetNodeModelMasterResult = exports.CreateNodeModelMasterResult = exports.DescribeNodeModelMastersResult = exports.GetNodeModelResult = exports.DescribeNodeModelsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -69,6 +69,10 @@ var RestrainResult_1 = tslib_1.__importDefault(require("./RestrainResult"));
 exports.RestrainResult = RestrainResult_1.default;
 var RestrainByUserIdResult_1 = tslib_1.__importDefault(require("./RestrainByUserIdResult"));
 exports.RestrainByUserIdResult = RestrainByUserIdResult_1.default;
+var DescribeStatusesResult_1 = tslib_1.__importDefault(require("./DescribeStatusesResult"));
+exports.DescribeStatusesResult = DescribeStatusesResult_1.default;
+var DescribeStatusesByUserIdResult_1 = tslib_1.__importDefault(require("./DescribeStatusesByUserIdResult"));
+exports.DescribeStatusesByUserIdResult = DescribeStatusesByUserIdResult_1.default;
 var GetStatusResult_1 = tslib_1.__importDefault(require("./GetStatusResult"));
 exports.GetStatusResult = GetStatusResult_1.default;
 var GetStatusByUserIdResult_1 = tslib_1.__importDefault(require("./GetStatusByUserIdResult"));

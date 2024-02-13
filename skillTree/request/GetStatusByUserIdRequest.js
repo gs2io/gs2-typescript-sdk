@@ -21,6 +21,7 @@ var GetStatusByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
+        this.propertyId = null;
     }
     GetStatusByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -66,15 +67,28 @@ var GetStatusByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    GetStatusByUserIdRequest.prototype.getPropertyId = function () {
+        return this.propertyId;
+    };
+    GetStatusByUserIdRequest.prototype.setPropertyId = function (propertyId) {
+        this.propertyId = propertyId;
+        return this;
+    };
+    GetStatusByUserIdRequest.prototype.withPropertyId = function (propertyId) {
+        this.propertyId = propertyId;
+        return this;
+    };
     GetStatusByUserIdRequest.fromDict = function (data) {
         return new GetStatusByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withPropertyId(data["propertyId"]);
     };
     GetStatusByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "propertyId": this.getPropertyId(),
         };
     };
     return GetStatusByUserIdRequest;

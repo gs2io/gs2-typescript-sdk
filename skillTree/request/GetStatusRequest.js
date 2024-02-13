@@ -21,6 +21,7 @@ var GetStatusRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.accessToken = null;
+        this.propertyId = null;
     }
     GetStatusRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -66,15 +67,28 @@ var GetStatusRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
+    GetStatusRequest.prototype.getPropertyId = function () {
+        return this.propertyId;
+    };
+    GetStatusRequest.prototype.setPropertyId = function (propertyId) {
+        this.propertyId = propertyId;
+        return this;
+    };
+    GetStatusRequest.prototype.withPropertyId = function (propertyId) {
+        this.propertyId = propertyId;
+        return this;
+    };
     GetStatusRequest.fromDict = function (data) {
         return new GetStatusRequest()
             .withNamespaceName(data["namespaceName"])
-            .withAccessToken(data["accessToken"]);
+            .withAccessToken(data["accessToken"])
+            .withPropertyId(data["propertyId"]);
     };
     GetStatusRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
+            "propertyId": this.getPropertyId(),
         };
     };
     return GetStatusRequest;

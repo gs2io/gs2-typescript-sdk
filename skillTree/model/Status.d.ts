@@ -2,6 +2,7 @@ import IModel from '../../core/interface/IModel';
 export default class Status implements IModel {
     private statusId;
     private userId;
+    private propertyId;
     private releasedNodeNames;
     private createdAt;
     private updatedAt;
@@ -10,14 +11,18 @@ export default class Status implements IModel {
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
     static getUserId(grn: string): string | null;
+    static getPropertyId(grn: string): string | null;
     static isValid(grn: string): boolean;
-    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null): string | null;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, propertyId: string | null): string | null;
     getStatusId(): string | null;
     setStatusId(statusId: string | null): this;
     withStatusId(statusId: string | null): this;
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
+    getPropertyId(): string | null;
+    setPropertyId(propertyId: string | null): this;
+    withPropertyId(propertyId: string | null): this;
     getReleasedNodeNames(): string[] | null;
     setReleasedNodeNames(releasedNodeNames: string[] | null): this;
     withReleasedNodeNames(releasedNodeNames: string[] | null): this;
