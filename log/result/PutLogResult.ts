@@ -16,8 +16,6 @@ permissions and limitations under the License.
 
 import IResult from '../../core/interface/IResult';
 
-import * as Gs2Log from '../model'
-
 export default class PutLogResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): PutLogResult {

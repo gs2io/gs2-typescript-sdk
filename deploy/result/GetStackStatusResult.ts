@@ -16,8 +16,6 @@ permissions and limitations under the License.
 
 import IResult from '../../core/interface/IResult';
 
-import * as Gs2Deploy from '../model'
-
 export default class GetStackStatusResult implements IResult {
     private status: string|null = null;
 

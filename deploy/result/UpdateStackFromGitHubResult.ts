@@ -15,7 +15,6 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
-
 import * as Gs2Deploy from '../model'
 
 export default class UpdateStackFromGitHubResult implements IResult {
