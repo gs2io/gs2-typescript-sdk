@@ -7,5 +7,6 @@ import ExecuteStampSheetLog from "./ExecuteStampSheetLog";
 import ExecuteStampSheetLogCount from "./ExecuteStampSheetLogCount";
 import ExecuteStampTaskLog from "./ExecuteStampTaskLog";
 import ExecuteStampTaskLogCount from "./ExecuteStampTaskLogCount";
+import AccessLogWithTelemetry from "./AccessLogWithTelemetry";
 import Insight from "./Insight";
-export { Namespace, AccessLog, AccessLogCount, IssueStampSheetLog, IssueStampSheetLogCount, ExecuteStampSheetLog, ExecuteStampSheetLogCount, ExecuteStampTaskLog, ExecuteStampTaskLogCount, Insight, };
+export { Namespace, AccessLog, AccessLogCount, IssueStampSheetLog, IssueStampSheetLogCount, ExecuteStampSheetLog, ExecuteStampSheetLogCount, ExecuteStampTaskLog, ExecuteStampTaskLogCount, AccessLogWithTelemetry, Insight, };

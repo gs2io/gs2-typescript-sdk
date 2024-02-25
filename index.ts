@@ -53,6 +53,7 @@ import * as ranking from './ranking';
 import * as realtime from './realtime';
 import * as schedule from './schedule';
 import * as script from './script';
+import * as seasonRating from './seasonRating';
 import * as serialKey from './serialKey';
 import * as showcase from './showcase';
 import * as skillTree from './skillTree';
@@ -101,6 +102,7 @@ export {
   realtime,
   schedule,
   script,
+  seasonRating,
   serialKey,
   showcase,
   skillTree,

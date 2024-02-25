@@ -18,6 +18,7 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
     countExecuteStampSheetLog(request: Request.CountExecuteStampSheetLogRequest): Promise<Result.CountExecuteStampSheetLogResult>;
     queryExecuteStampTaskLog(request: Request.QueryExecuteStampTaskLogRequest): Promise<Result.QueryExecuteStampTaskLogResult>;
     countExecuteStampTaskLog(request: Request.CountExecuteStampTaskLogRequest): Promise<Result.CountExecuteStampTaskLogResult>;
+    queryAccessLogWithTelemetry(request: Request.QueryAccessLogWithTelemetryRequest): Promise<Result.QueryAccessLogWithTelemetryResult>;
     putLog(request: Request.PutLogRequest): Promise<Result.PutLogResult>;
     describeInsights(request: Request.DescribeInsightsRequest): Promise<Result.DescribeInsightsResult>;
     createInsight(request: Request.CreateInsightRequest): Promise<Result.CreateInsightResult>;

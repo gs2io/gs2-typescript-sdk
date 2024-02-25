@@ -22,6 +22,7 @@ import ExecuteStampSheetLog from "./ExecuteStampSheetLog"
 import ExecuteStampSheetLogCount from "./ExecuteStampSheetLogCount"
 import ExecuteStampTaskLog from "./ExecuteStampTaskLog"
 import ExecuteStampTaskLogCount from "./ExecuteStampTaskLogCount"
+import AccessLogWithTelemetry from "./AccessLogWithTelemetry"
 import Insight from "./Insight"
 
 export {
@@ -34,5 +35,6 @@ export {
     ExecuteStampSheetLogCount,
     ExecuteStampTaskLog,
     ExecuteStampTaskLogCount,
+    AccessLogWithTelemetry,
     Insight,
 };

@@ -7,6 +7,7 @@ export default class AddExperienceByUserIdRequest implements IRequest {
     private experienceName;
     private propertyId;
     private experienceValue;
+    private truncateExperienceWhenRankUp;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -29,6 +30,9 @@ export default class AddExperienceByUserIdRequest implements IRequest {
     getExperienceValue(): number | null;
     setExperienceValue(experienceValue: number | null): this;
     withExperienceValue(experienceValue: number | null): this;
+    getTruncateExperienceWhenRankUp(): boolean | null;
+    setTruncateExperienceWhenRankUp(truncateExperienceWhenRankUp: boolean | null): this;
+    withTruncateExperienceWhenRankUp(truncateExperienceWhenRankUp: boolean | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

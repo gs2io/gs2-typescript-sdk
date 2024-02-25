@@ -442,6 +442,37 @@ var Gs2LogRestClient = /** @class */ (function (_super) {
             throw JSON.parse(error.response.data.message);
         });
     };
+    Gs2LogRestClient.prototype.queryAccessLogWithTelemetry = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/access/telemetry')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
+        }
+        var params = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'userId': String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : null),
+            'begin': String((_f = request.getBegin()) !== null && _f !== void 0 ? _f : null),
+            'end': String((_g = request.getEnd()) !== null && _g !== void 0 ? _g : null),
+            'longTerm': String((_h = request.getLongTerm()) !== null && _h !== void 0 ? _h : null),
+            'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
+            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.QueryAccessLogWithTelemetryResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
     Gs2LogRestClient.prototype.putLog = function (request) {
         var _a, _b, _c, _d;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/log/put')

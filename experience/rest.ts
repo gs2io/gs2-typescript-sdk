@@ -1107,6 +1107,7 @@ export default class Gs2ExperienceRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'experienceValue': request.getExperienceValue() ?? null,
+            'truncateExperienceWhenRankUp': request.getTruncateExperienceWhenRankUp() ?? null,
         };
         return axios.post(
             url,

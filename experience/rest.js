@@ -947,7 +947,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.addExperienceByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -965,6 +965,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'experienceValue': (_l = request.getExperienceValue()) !== null && _l !== void 0 ? _l : null,
+            'truncateExperienceWhenRankUp': (_m = request.getTruncateExperienceWhenRankUp()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

@@ -24,6 +24,7 @@ var AddExperienceByUserIdRequest = /** @class */ (function () {
         this.experienceName = null;
         this.propertyId = null;
         this.experienceValue = null;
+        this.truncateExperienceWhenRankUp = null;
         this.duplicationAvoider = null;
     }
     AddExperienceByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var AddExperienceByUserIdRequest = /** @class */ (function () {
         this.experienceValue = experienceValue;
         return this;
     };
+    AddExperienceByUserIdRequest.prototype.getTruncateExperienceWhenRankUp = function () {
+        return this.truncateExperienceWhenRankUp;
+    };
+    AddExperienceByUserIdRequest.prototype.setTruncateExperienceWhenRankUp = function (truncateExperienceWhenRankUp) {
+        this.truncateExperienceWhenRankUp = truncateExperienceWhenRankUp;
+        return this;
+    };
+    AddExperienceByUserIdRequest.prototype.withTruncateExperienceWhenRankUp = function (truncateExperienceWhenRankUp) {
+        this.truncateExperienceWhenRankUp = truncateExperienceWhenRankUp;
+        return this;
+    };
     AddExperienceByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var AddExperienceByUserIdRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withExperienceName(data["experienceName"])
             .withPropertyId(data["propertyId"])
-            .withExperienceValue(data["experienceValue"]);
+            .withExperienceValue(data["experienceValue"])
+            .withTruncateExperienceWhenRankUp(data["truncateExperienceWhenRankUp"]);
     };
     AddExperienceByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var AddExperienceByUserIdRequest = /** @class */ (function () {
             "experienceName": this.getExperienceName(),
             "propertyId": this.getPropertyId(),
             "experienceValue": this.getExperienceValue(),
+            "truncateExperienceWhenRankUp": this.getTruncateExperienceWhenRankUp(),
         };
     };
     return AddExperienceByUserIdRequest;
