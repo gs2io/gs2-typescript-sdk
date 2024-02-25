@@ -51,6 +51,7 @@ export default class Gs2ExperienceRestClient extends AbstractGs2RestClient {
     verifyRankCap(request: Request.VerifyRankCapRequest): Promise<Result.VerifyRankCapResult>;
     verifyRankCapByUserId(request: Request.VerifyRankCapByUserIdRequest): Promise<Result.VerifyRankCapByUserIdResult>;
     addExperienceByStampSheet(request: Request.AddExperienceByStampSheetRequest): Promise<Result.AddExperienceByStampSheetResult>;
+    setExperienceByStampSheet(request: Request.SetExperienceByStampSheetRequest): Promise<Result.SetExperienceByStampSheetResult>;
     subExperienceByStampTask(request: Request.SubExperienceByStampTaskRequest): Promise<Result.SubExperienceByStampTaskResult>;
     addRankCapByStampSheet(request: Request.AddRankCapByStampSheetRequest): Promise<Result.AddRankCapByStampSheetResult>;
     subRankCapByStampTask(request: Request.SubRankCapByStampTaskRequest): Promise<Result.SubRankCapByStampTaskResult>;

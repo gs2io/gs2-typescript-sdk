@@ -1530,6 +1530,37 @@ export default class Gs2ExperienceRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public setExperienceByStampSheet(request: Request.SetExperienceByStampSheetRequest): Promise<Result.SetExperienceByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/experience/set')
+            .replace('{service}', 'experience')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SetExperienceByStampSheetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public subExperienceByStampTask(request: Request.SubExperienceByStampTaskRequest): Promise<Result.SubExperienceByStampTaskResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/experience/sub')
             .replace('{service}', 'experience')

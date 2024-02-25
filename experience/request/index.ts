@@ -60,6 +60,7 @@ import VerifyRankByUserIdRequest from "./VerifyRankByUserIdRequest"
 import VerifyRankCapRequest from "./VerifyRankCapRequest"
 import VerifyRankCapByUserIdRequest from "./VerifyRankCapByUserIdRequest"
 import AddExperienceByStampSheetRequest from "./AddExperienceByStampSheetRequest"
+import SetExperienceByStampSheetRequest from "./SetExperienceByStampSheetRequest"
 import SubExperienceByStampTaskRequest from "./SubExperienceByStampTaskRequest"
 import AddRankCapByStampSheetRequest from "./AddRankCapByStampSheetRequest"
 import SubRankCapByStampTaskRequest from "./SubRankCapByStampTaskRequest"
@@ -117,6 +118,7 @@ export {
     VerifyRankCapRequest,
     VerifyRankCapByUserIdRequest,
     AddExperienceByStampSheetRequest,
+    SetExperienceByStampSheetRequest,
     SubExperienceByStampTaskRequest,
     AddRankCapByStampSheetRequest,
     SubRankCapByStampTaskRequest,
