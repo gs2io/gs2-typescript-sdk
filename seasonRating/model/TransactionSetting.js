@@ -17,22 +17,9 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var TransactionSetting = /** @class */ (function () {
     function TransactionSetting() {
-        this.enableAutoRun = null;
         this.distributorNamespaceId = null;
-        this.keyId = null;
         this.queueNamespaceId = null;
     }
-    TransactionSetting.prototype.getEnableAutoRun = function () {
-        return this.enableAutoRun;
-    };
-    TransactionSetting.prototype.setEnableAutoRun = function (enableAutoRun) {
-        this.enableAutoRun = enableAutoRun;
-        return this;
-    };
-    TransactionSetting.prototype.withEnableAutoRun = function (enableAutoRun) {
-        this.enableAutoRun = enableAutoRun;
-        return this;
-    };
     TransactionSetting.prototype.getDistributorNamespaceId = function () {
         return this.distributorNamespaceId;
     };
@@ -42,17 +29,6 @@ var TransactionSetting = /** @class */ (function () {
     };
     TransactionSetting.prototype.withDistributorNamespaceId = function (distributorNamespaceId) {
         this.distributorNamespaceId = distributorNamespaceId;
-        return this;
-    };
-    TransactionSetting.prototype.getKeyId = function () {
-        return this.keyId;
-    };
-    TransactionSetting.prototype.setKeyId = function (keyId) {
-        this.keyId = keyId;
-        return this;
-    };
-    TransactionSetting.prototype.withKeyId = function (keyId) {
-        this.keyId = keyId;
         return this;
     };
     TransactionSetting.prototype.getQueueNamespaceId = function () {
@@ -71,16 +47,12 @@ var TransactionSetting = /** @class */ (function () {
             return null;
         }
         return new TransactionSetting()
-            .withEnableAutoRun(data["enableAutoRun"])
             .withDistributorNamespaceId(data["distributorNamespaceId"])
-            .withKeyId(data["keyId"])
             .withQueueNamespaceId(data["queueNamespaceId"]);
     };
     TransactionSetting.prototype.toDict = function () {
         return {
-            "enableAutoRun": this.getEnableAutoRun(),
             "distributorNamespaceId": this.getDistributorNamespaceId(),
-            "keyId": this.getKeyId(),
             "queueNamespaceId": this.getQueueNamespaceId(),
         };
     };

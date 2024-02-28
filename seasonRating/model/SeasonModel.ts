@@ -24,6 +24,7 @@ export default class SeasonModel implements IModel {
     private metadata: string|null = null;
     private tiers: TierModel[]|null = null;
     private experienceModelId: string|null = null;
+    private challengePeriodEventId: string|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -160,6 +161,17 @@ export default class SeasonModel implements IModel {
         this.experienceModelId = experienceModelId;
         return this;
     }
+    public getChallengePeriodEventId(): string|null {
+        return this.challengePeriodEventId;
+    }
+    public setChallengePeriodEventId(challengePeriodEventId: string|null) {
+        this.challengePeriodEventId = challengePeriodEventId;
+        return this;
+    }
+    public withChallengePeriodEventId(challengePeriodEventId: string|null): this {
+        this.challengePeriodEventId = challengePeriodEventId;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): SeasonModel|null {
         if (data == undefined || data == null) {
@@ -174,7 +186,8 @@ export default class SeasonModel implements IModel {
                     return TierModel.fromDict(item);
                 }
             ) : [])
-            .withExperienceModelId(data["experienceModelId"]);
+            .withExperienceModelId(data["experienceModelId"])
+            .withChallengePeriodEventId(data["challengePeriodEventId"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -188,6 +201,7 @@ export default class SeasonModel implements IModel {
                 }
             ) : [],
             "experienceModelId": this.getExperienceModelId(),
+            "challengePeriodEventId": this.getChallengePeriodEventId(),
         };
     }
 }

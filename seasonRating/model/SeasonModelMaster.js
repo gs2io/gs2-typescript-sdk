@@ -26,6 +26,7 @@ var SeasonModelMaster = /** @class */ (function () {
         this.description = null;
         this.tiers = null;
         this.experienceModelId = null;
+        this.challengePeriodEventId = null;
         this.createdAt = null;
         this.updatedAt = null;
         this.revision = null;
@@ -162,6 +163,17 @@ var SeasonModelMaster = /** @class */ (function () {
         this.experienceModelId = experienceModelId;
         return this;
     };
+    SeasonModelMaster.prototype.getChallengePeriodEventId = function () {
+        return this.challengePeriodEventId;
+    };
+    SeasonModelMaster.prototype.setChallengePeriodEventId = function (challengePeriodEventId) {
+        this.challengePeriodEventId = challengePeriodEventId;
+        return this;
+    };
+    SeasonModelMaster.prototype.withChallengePeriodEventId = function (challengePeriodEventId) {
+        this.challengePeriodEventId = challengePeriodEventId;
+        return this;
+    };
     SeasonModelMaster.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -209,6 +221,7 @@ var SeasonModelMaster = /** @class */ (function () {
                 return TierModel_1.default.fromDict(item);
             }) : [])
             .withExperienceModelId(data["experienceModelId"])
+            .withChallengePeriodEventId(data["challengePeriodEventId"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -224,6 +237,7 @@ var SeasonModelMaster = /** @class */ (function () {
                     return item.toDict();
                 }) : [],
             "experienceModelId": this.getExperienceModelId(),
+            "challengePeriodEventId": this.getChallengePeriodEventId(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

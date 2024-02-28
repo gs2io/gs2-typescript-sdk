@@ -25,6 +25,7 @@ var SeasonModel = /** @class */ (function () {
         this.metadata = null;
         this.tiers = null;
         this.experienceModelId = null;
+        this.challengePeriodEventId = null;
     }
     SeasonModel.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -147,6 +148,17 @@ var SeasonModel = /** @class */ (function () {
         this.experienceModelId = experienceModelId;
         return this;
     };
+    SeasonModel.prototype.getChallengePeriodEventId = function () {
+        return this.challengePeriodEventId;
+    };
+    SeasonModel.prototype.setChallengePeriodEventId = function (challengePeriodEventId) {
+        this.challengePeriodEventId = challengePeriodEventId;
+        return this;
+    };
+    SeasonModel.prototype.withChallengePeriodEventId = function (challengePeriodEventId) {
+        this.challengePeriodEventId = challengePeriodEventId;
+        return this;
+    };
     SeasonModel.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -159,7 +171,8 @@ var SeasonModel = /** @class */ (function () {
             data.tiers.map(function (item) {
                 return TierModel_1.default.fromDict(item);
             }) : [])
-            .withExperienceModelId(data["experienceModelId"]);
+            .withExperienceModelId(data["experienceModelId"])
+            .withChallengePeriodEventId(data["challengePeriodEventId"]);
     };
     SeasonModel.prototype.toDict = function () {
         return {
@@ -171,6 +184,7 @@ var SeasonModel = /** @class */ (function () {
                     return item.toDict();
                 }) : [],
             "experienceModelId": this.getExperienceModelId(),
+            "challengePeriodEventId": this.getChallengePeriodEventId(),
         };
     };
     return SeasonModel;

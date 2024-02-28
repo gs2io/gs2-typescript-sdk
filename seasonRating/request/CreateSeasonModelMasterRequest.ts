@@ -28,6 +28,7 @@ export default class CreateSeasonModelMasterRequest implements IRequest {
     private metadata: string|null = null;
     private tiers: Gs2SeasonRating.TierModel[]|null = null;
     private experienceModelId: string|null = null;
+    private challengePeriodEventId: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -122,6 +123,17 @@ export default class CreateSeasonModelMasterRequest implements IRequest {
         this.experienceModelId = experienceModelId;
         return this;
     }
+    public getChallengePeriodEventId(): string|null {
+        return this.challengePeriodEventId;
+    }
+    public setChallengePeriodEventId(challengePeriodEventId: string|null) {
+        this.challengePeriodEventId = challengePeriodEventId;
+        return this;
+    }
+    public withChallengePeriodEventId(challengePeriodEventId: string|null): this {
+        this.challengePeriodEventId = challengePeriodEventId;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): CreateSeasonModelMasterRequest {
         return new CreateSeasonModelMasterRequest()
@@ -134,7 +146,8 @@ export default class CreateSeasonModelMasterRequest implements IRequest {
                     return Gs2SeasonRating.TierModel.fromDict(item);
                 }
             ) : [])
-            .withExperienceModelId(data["experienceModelId"]);
+            .withExperienceModelId(data["experienceModelId"])
+            .withChallengePeriodEventId(data["challengePeriodEventId"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -149,6 +162,7 @@ export default class CreateSeasonModelMasterRequest implements IRequest {
                 }
             ) : [],
             "experienceModelId": this.getExperienceModelId(),
+            "challengePeriodEventId": this.getChallengePeriodEventId(),
         };
     }
 }

@@ -49,7 +49,7 @@ var Gs2SeasonRatingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2SeasonRatingRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region);
@@ -61,7 +61,8 @@ var Gs2SeasonRatingRestClient = /** @class */ (function (_super) {
             'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
             'name': (_b = request.getName()) !== null && _b !== void 0 ? _b : null,
             'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
-            'logSetting': (_e = (_d = request.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
+            'transactionSetting': (_e = (_d = request.getTransactionSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
+            'logSetting': (_g = (_f = request.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -121,7 +122,7 @@ var Gs2SeasonRatingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2SeasonRatingRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
@@ -133,7 +134,8 @@ var Gs2SeasonRatingRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
-            'logSetting': (_f = (_e = request.getLogSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
+            'transactionSetting': (_f = (_e = request.getTransactionSetting()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
+            'logSetting': (_h = (_g = request.getLogSetting()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -486,7 +488,7 @@ var Gs2SeasonRatingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2SeasonRatingRestClient.prototype.createSeasonModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
@@ -502,6 +504,7 @@ var Gs2SeasonRatingRestClient = /** @class */ (function (_super) {
             'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
             'tiers': (_h = (_g = request.getTiers()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
             'experienceModelId': (_j = request.getExperienceModelId()) !== null && _j !== void 0 ? _j : null,
+            'challengePeriodEventId': (_k = request.getChallengePeriodEventId()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -540,7 +543,7 @@ var Gs2SeasonRatingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2SeasonRatingRestClient.prototype.updateSeasonModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/rating/{seasonName}')
             .replace('{service}', 'season-rating')
             .replace('{region}', this.session.region)
@@ -556,6 +559,7 @@ var Gs2SeasonRatingRestClient = /** @class */ (function (_super) {
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
             'tiers': (_j = (_h = request.getTiers()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
             'experienceModelId': (_k = request.getExperienceModelId()) !== null && _k !== void 0 ? _k : null,
+            'challengePeriodEventId': (_l = request.getChallengePeriodEventId()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

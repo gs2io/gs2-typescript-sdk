@@ -67,6 +67,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.post(
@@ -151,6 +152,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
+            'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.put(
@@ -576,6 +578,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
             'metadata': request.getMetadata() ?? null,
             'tiers': request.getTiers()?.map((item) => item.toDict()) ?? null,
             'experienceModelId': request.getExperienceModelId() ?? null,
+            'challengePeriodEventId': request.getChallengePeriodEventId() ?? null,
         };
         return axios.post(
             url,
@@ -638,6 +641,7 @@ export default class Gs2SeasonRatingRestClient extends AbstractGs2RestClient {
             'metadata': request.getMetadata() ?? null,
             'tiers': request.getTiers()?.map((item) => item.toDict()) ?? null,
             'experienceModelId': request.getExperienceModelId() ?? null,
+            'challengePeriodEventId': request.getChallengePeriodEventId() ?? null,
         };
         return axios.put(
             url,

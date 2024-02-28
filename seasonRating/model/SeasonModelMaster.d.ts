@@ -7,6 +7,7 @@ export default class SeasonModelMaster implements IModel {
     private description;
     private tiers;
     private experienceModelId;
+    private challengePeriodEventId;
     private createdAt;
     private updatedAt;
     private revision;
@@ -34,6 +35,9 @@ export default class SeasonModelMaster implements IModel {
     getExperienceModelId(): string | null;
     setExperienceModelId(experienceModelId: string | null): this;
     withExperienceModelId(experienceModelId: string | null): this;
+    getChallengePeriodEventId(): string | null;
+    setChallengePeriodEventId(challengePeriodEventId: string | null): this;
+    withChallengePeriodEventId(challengePeriodEventId: string | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

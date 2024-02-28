@@ -25,6 +25,7 @@ export default class SeasonModelMaster implements IModel {
     private description: string|null = null;
     private tiers: TierModel[]|null = null;
     private experienceModelId: string|null = null;
+    private challengePeriodEventId: string|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -175,6 +176,17 @@ export default class SeasonModelMaster implements IModel {
         this.experienceModelId = experienceModelId;
         return this;
     }
+    public getChallengePeriodEventId(): string|null {
+        return this.challengePeriodEventId;
+    }
+    public setChallengePeriodEventId(challengePeriodEventId: string|null) {
+        this.challengePeriodEventId = challengePeriodEventId;
+        return this;
+    }
+    public withChallengePeriodEventId(challengePeriodEventId: string|null): this {
+        this.challengePeriodEventId = challengePeriodEventId;
+        return this;
+    }
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -224,6 +236,7 @@ export default class SeasonModelMaster implements IModel {
                 }
             ) : [])
             .withExperienceModelId(data["experienceModelId"])
+            .withChallengePeriodEventId(data["challengePeriodEventId"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -241,6 +254,7 @@ export default class SeasonModelMaster implements IModel {
                 }
             ) : [],
             "experienceModelId": this.getExperienceModelId(),
+            "challengePeriodEventId": this.getChallengePeriodEventId(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

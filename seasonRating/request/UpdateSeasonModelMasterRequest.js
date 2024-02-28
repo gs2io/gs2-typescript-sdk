@@ -27,6 +27,7 @@ var UpdateSeasonModelMasterRequest = /** @class */ (function () {
         this.metadata = null;
         this.tiers = null;
         this.experienceModelId = null;
+        this.challengePeriodEventId = null;
     }
     UpdateSeasonModelMasterRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -116,6 +117,17 @@ var UpdateSeasonModelMasterRequest = /** @class */ (function () {
         this.experienceModelId = experienceModelId;
         return this;
     };
+    UpdateSeasonModelMasterRequest.prototype.getChallengePeriodEventId = function () {
+        return this.challengePeriodEventId;
+    };
+    UpdateSeasonModelMasterRequest.prototype.setChallengePeriodEventId = function (challengePeriodEventId) {
+        this.challengePeriodEventId = challengePeriodEventId;
+        return this;
+    };
+    UpdateSeasonModelMasterRequest.prototype.withChallengePeriodEventId = function (challengePeriodEventId) {
+        this.challengePeriodEventId = challengePeriodEventId;
+        return this;
+    };
     UpdateSeasonModelMasterRequest.fromDict = function (data) {
         return new UpdateSeasonModelMasterRequest()
             .withNamespaceName(data["namespaceName"])
@@ -126,7 +138,8 @@ var UpdateSeasonModelMasterRequest = /** @class */ (function () {
             data.tiers.map(function (item) {
                 return Gs2SeasonRating.TierModel.fromDict(item);
             }) : [])
-            .withExperienceModelId(data["experienceModelId"]);
+            .withExperienceModelId(data["experienceModelId"])
+            .withChallengePeriodEventId(data["challengePeriodEventId"]);
     };
     UpdateSeasonModelMasterRequest.prototype.toDict = function () {
         return {
@@ -139,6 +152,7 @@ var UpdateSeasonModelMasterRequest = /** @class */ (function () {
                     return item.toDict();
                 }) : [],
             "experienceModelId": this.getExperienceModelId(),
+            "challengePeriodEventId": this.getChallengePeriodEventId(),
         };
     };
     return UpdateSeasonModelMasterRequest;

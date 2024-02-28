@@ -6,6 +6,7 @@ export default class SeasonModel implements IModel {
     private metadata;
     private tiers;
     private experienceModelId;
+    private challengePeriodEventId;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -27,6 +28,9 @@ export default class SeasonModel implements IModel {
     getExperienceModelId(): string | null;
     setExperienceModelId(experienceModelId: string | null): this;
     withExperienceModelId(experienceModelId: string | null): this;
+    getChallengePeriodEventId(): string | null;
+    setChallengePeriodEventId(challengePeriodEventId: string | null): this;
+    withChallengePeriodEventId(challengePeriodEventId: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): SeasonModel | null;

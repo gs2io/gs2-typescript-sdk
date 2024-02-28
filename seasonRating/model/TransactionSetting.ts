@@ -17,21 +17,8 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 
 export default class TransactionSetting implements IModel {
-    private enableAutoRun: boolean|null = null;
     private distributorNamespaceId: string|null = null;
-    private keyId: string|null = null;
     private queueNamespaceId: string|null = null;
-    public getEnableAutoRun(): boolean|null {
-        return this.enableAutoRun;
-    }
-    public setEnableAutoRun(enableAutoRun: boolean|null) {
-        this.enableAutoRun = enableAutoRun;
-        return this;
-    }
-    public withEnableAutoRun(enableAutoRun: boolean|null): this {
-        this.enableAutoRun = enableAutoRun;
-        return this;
-    }
     public getDistributorNamespaceId(): string|null {
         return this.distributorNamespaceId;
     }
@@ -41,17 +28,6 @@ export default class TransactionSetting implements IModel {
     }
     public withDistributorNamespaceId(distributorNamespaceId: string|null): this {
         this.distributorNamespaceId = distributorNamespaceId;
-        return this;
-    }
-    public getKeyId(): string|null {
-        return this.keyId;
-    }
-    public setKeyId(keyId: string|null) {
-        this.keyId = keyId;
-        return this;
-    }
-    public withKeyId(keyId: string|null): this {
-        this.keyId = keyId;
         return this;
     }
     public getQueueNamespaceId(): string|null {
@@ -71,17 +47,13 @@ export default class TransactionSetting implements IModel {
             return null;
         }
         return new TransactionSetting()
-            .withEnableAutoRun(data["enableAutoRun"])
             .withDistributorNamespaceId(data["distributorNamespaceId"])
-            .withKeyId(data["keyId"])
             .withQueueNamespaceId(data["queueNamespaceId"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
-            "enableAutoRun": this.getEnableAutoRun(),
             "distributorNamespaceId": this.getDistributorNamespaceId(),
-            "keyId": this.getKeyId(),
             "queueNamespaceId": this.getQueueNamespaceId(),
         };
     }

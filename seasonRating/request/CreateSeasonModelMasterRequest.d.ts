@@ -9,6 +9,7 @@ export default class CreateSeasonModelMasterRequest implements IRequest {
     private metadata;
     private tiers;
     private experienceModelId;
+    private challengePeriodEventId;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -33,6 +34,9 @@ export default class CreateSeasonModelMasterRequest implements IRequest {
     getExperienceModelId(): string | null;
     setExperienceModelId(experienceModelId: string | null): this;
     withExperienceModelId(experienceModelId: string | null): this;
+    getChallengePeriodEventId(): string | null;
+    setChallengePeriodEventId(challengePeriodEventId: string | null): this;
+    withChallengePeriodEventId(challengePeriodEventId: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CreateSeasonModelMasterRequest;
