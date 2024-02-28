@@ -30,6 +30,9 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.completeMatchmakingTriggerType = null;
         this.completeMatchmakingTriggerRealtimeNamespaceId = null;
         this.completeMatchmakingTriggerScriptId = null;
+        this.enableCollaborateSeasonRating = null;
+        this.collaborateSeasonRatingNamespaceId = null;
+        this.collaborateSeasonRatingTtl = null;
         this.changeRatingScript = null;
         this.joinNotification = null;
         this.leaveNotification = null;
@@ -158,6 +161,39 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.completeMatchmakingTriggerScriptId = completeMatchmakingTriggerScriptId;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getEnableCollaborateSeasonRating = function () {
+        return this.enableCollaborateSeasonRating;
+    };
+    UpdateNamespaceRequest.prototype.setEnableCollaborateSeasonRating = function (enableCollaborateSeasonRating) {
+        this.enableCollaborateSeasonRating = enableCollaborateSeasonRating;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withEnableCollaborateSeasonRating = function (enableCollaborateSeasonRating) {
+        this.enableCollaborateSeasonRating = enableCollaborateSeasonRating;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getCollaborateSeasonRatingNamespaceId = function () {
+        return this.collaborateSeasonRatingNamespaceId;
+    };
+    UpdateNamespaceRequest.prototype.setCollaborateSeasonRatingNamespaceId = function (collaborateSeasonRatingNamespaceId) {
+        this.collaborateSeasonRatingNamespaceId = collaborateSeasonRatingNamespaceId;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withCollaborateSeasonRatingNamespaceId = function (collaborateSeasonRatingNamespaceId) {
+        this.collaborateSeasonRatingNamespaceId = collaborateSeasonRatingNamespaceId;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getCollaborateSeasonRatingTtl = function () {
+        return this.collaborateSeasonRatingTtl;
+    };
+    UpdateNamespaceRequest.prototype.setCollaborateSeasonRatingTtl = function (collaborateSeasonRatingTtl) {
+        this.collaborateSeasonRatingTtl = collaborateSeasonRatingTtl;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withCollaborateSeasonRatingTtl = function (collaborateSeasonRatingTtl) {
+        this.collaborateSeasonRatingTtl = collaborateSeasonRatingTtl;
+        return this;
+    };
     UpdateNamespaceRequest.prototype.getChangeRatingScript = function () {
         return this.changeRatingScript;
     };
@@ -235,6 +271,9 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withCompleteMatchmakingTriggerType(data["completeMatchmakingTriggerType"])
             .withCompleteMatchmakingTriggerRealtimeNamespaceId(data["completeMatchmakingTriggerRealtimeNamespaceId"])
             .withCompleteMatchmakingTriggerScriptId(data["completeMatchmakingTriggerScriptId"])
+            .withEnableCollaborateSeasonRating(data["enableCollaborateSeasonRating"])
+            .withCollaborateSeasonRatingNamespaceId(data["collaborateSeasonRatingNamespaceId"])
+            .withCollaborateSeasonRatingTtl(data["collaborateSeasonRatingTtl"])
             .withChangeRatingScript(Gs2Matchmaking.ScriptSetting.fromDict(data["changeRatingScript"]))
             .withJoinNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["joinNotification"]))
             .withLeaveNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["leaveNotification"]))
@@ -254,6 +293,9 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             "completeMatchmakingTriggerType": this.getCompleteMatchmakingTriggerType(),
             "completeMatchmakingTriggerRealtimeNamespaceId": this.getCompleteMatchmakingTriggerRealtimeNamespaceId(),
             "completeMatchmakingTriggerScriptId": this.getCompleteMatchmakingTriggerScriptId(),
+            "enableCollaborateSeasonRating": this.getEnableCollaborateSeasonRating(),
+            "collaborateSeasonRatingNamespaceId": this.getCollaborateSeasonRatingNamespaceId(),
+            "collaborateSeasonRatingTtl": this.getCollaborateSeasonRatingTtl(),
             "changeRatingScript": (_a = this.getChangeRatingScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "joinNotification": (_b = this.getJoinNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "leaveNotification": (_c = this.getLeaveNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),

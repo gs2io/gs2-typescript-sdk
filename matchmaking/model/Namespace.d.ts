@@ -13,6 +13,9 @@ export default class Namespace implements IModel {
     private completeMatchmakingTriggerType;
     private completeMatchmakingTriggerRealtimeNamespaceId;
     private completeMatchmakingTriggerScriptId;
+    private enableCollaborateSeasonRating;
+    private collaborateSeasonRatingNamespaceId;
+    private collaborateSeasonRatingTtl;
     private changeRatingScript;
     private joinNotification;
     private leaveNotification;
@@ -57,6 +60,15 @@ export default class Namespace implements IModel {
     getCompleteMatchmakingTriggerScriptId(): string | null;
     setCompleteMatchmakingTriggerScriptId(completeMatchmakingTriggerScriptId: string | null): this;
     withCompleteMatchmakingTriggerScriptId(completeMatchmakingTriggerScriptId: string | null): this;
+    getEnableCollaborateSeasonRating(): string | null;
+    setEnableCollaborateSeasonRating(enableCollaborateSeasonRating: string | null): this;
+    withEnableCollaborateSeasonRating(enableCollaborateSeasonRating: string | null): this;
+    getCollaborateSeasonRatingNamespaceId(): string | null;
+    setCollaborateSeasonRatingNamespaceId(collaborateSeasonRatingNamespaceId: string | null): this;
+    withCollaborateSeasonRatingNamespaceId(collaborateSeasonRatingNamespaceId: string | null): this;
+    getCollaborateSeasonRatingTtl(): number | null;
+    setCollaborateSeasonRatingTtl(collaborateSeasonRatingTtl: number | null): this;
+    withCollaborateSeasonRatingTtl(collaborateSeasonRatingTtl: number | null): this;
     getChangeRatingScript(): ScriptSetting | null;
     setChangeRatingScript(changeRatingScript: ScriptSetting | null): this;
     withChangeRatingScript(changeRatingScript: ScriptSetting | null): this;

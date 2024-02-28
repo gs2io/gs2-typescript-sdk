@@ -31,6 +31,9 @@ export default class CreateNamespaceRequest implements IRequest {
     private completeMatchmakingTriggerType: string|null = null;
     private completeMatchmakingTriggerRealtimeNamespaceId: string|null = null;
     private completeMatchmakingTriggerScriptId: string|null = null;
+    private enableCollaborateSeasonRating: string|null = null;
+    private collaborateSeasonRatingNamespaceId: string|null = null;
+    private collaborateSeasonRatingTtl: number|null = null;
     private changeRatingScript: Gs2Matchmaking.ScriptSetting|null = null;
     private joinNotification: Gs2Matchmaking.NotificationSetting|null = null;
     private leaveNotification: Gs2Matchmaking.NotificationSetting|null = null;
@@ -164,6 +167,39 @@ export default class CreateNamespaceRequest implements IRequest {
         this.completeMatchmakingTriggerScriptId = completeMatchmakingTriggerScriptId;
         return this;
     }
+    public getEnableCollaborateSeasonRating(): string|null {
+        return this.enableCollaborateSeasonRating;
+    }
+    public setEnableCollaborateSeasonRating(enableCollaborateSeasonRating: string|null) {
+        this.enableCollaborateSeasonRating = enableCollaborateSeasonRating;
+        return this;
+    }
+    public withEnableCollaborateSeasonRating(enableCollaborateSeasonRating: string|null): this {
+        this.enableCollaborateSeasonRating = enableCollaborateSeasonRating;
+        return this;
+    }
+    public getCollaborateSeasonRatingNamespaceId(): string|null {
+        return this.collaborateSeasonRatingNamespaceId;
+    }
+    public setCollaborateSeasonRatingNamespaceId(collaborateSeasonRatingNamespaceId: string|null) {
+        this.collaborateSeasonRatingNamespaceId = collaborateSeasonRatingNamespaceId;
+        return this;
+    }
+    public withCollaborateSeasonRatingNamespaceId(collaborateSeasonRatingNamespaceId: string|null): this {
+        this.collaborateSeasonRatingNamespaceId = collaborateSeasonRatingNamespaceId;
+        return this;
+    }
+    public getCollaborateSeasonRatingTtl(): number|null {
+        return this.collaborateSeasonRatingTtl;
+    }
+    public setCollaborateSeasonRatingTtl(collaborateSeasonRatingTtl: number|null) {
+        this.collaborateSeasonRatingTtl = collaborateSeasonRatingTtl;
+        return this;
+    }
+    public withCollaborateSeasonRatingTtl(collaborateSeasonRatingTtl: number|null): this {
+        this.collaborateSeasonRatingTtl = collaborateSeasonRatingTtl;
+        return this;
+    }
     public getChangeRatingScript(): Gs2Matchmaking.ScriptSetting|null {
         return this.changeRatingScript;
     }
@@ -242,6 +278,9 @@ export default class CreateNamespaceRequest implements IRequest {
             .withCompleteMatchmakingTriggerType(data["completeMatchmakingTriggerType"])
             .withCompleteMatchmakingTriggerRealtimeNamespaceId(data["completeMatchmakingTriggerRealtimeNamespaceId"])
             .withCompleteMatchmakingTriggerScriptId(data["completeMatchmakingTriggerScriptId"])
+            .withEnableCollaborateSeasonRating(data["enableCollaborateSeasonRating"])
+            .withCollaborateSeasonRatingNamespaceId(data["collaborateSeasonRatingNamespaceId"])
+            .withCollaborateSeasonRatingTtl(data["collaborateSeasonRatingTtl"])
             .withChangeRatingScript(Gs2Matchmaking.ScriptSetting.fromDict(data["changeRatingScript"]))
             .withJoinNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["joinNotification"]))
             .withLeaveNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["leaveNotification"]))
@@ -261,6 +300,9 @@ export default class CreateNamespaceRequest implements IRequest {
             "completeMatchmakingTriggerType": this.getCompleteMatchmakingTriggerType(),
             "completeMatchmakingTriggerRealtimeNamespaceId": this.getCompleteMatchmakingTriggerRealtimeNamespaceId(),
             "completeMatchmakingTriggerScriptId": this.getCompleteMatchmakingTriggerScriptId(),
+            "enableCollaborateSeasonRating": this.getEnableCollaborateSeasonRating(),
+            "collaborateSeasonRatingNamespaceId": this.getCollaborateSeasonRatingNamespaceId(),
+            "collaborateSeasonRatingTtl": this.getCollaborateSeasonRatingTtl(),
             "changeRatingScript": this.getChangeRatingScript()?.toDict(),
             "joinNotification": this.getJoinNotification()?.toDict(),
             "leaveNotification": this.getLeaveNotification()?.toDict(),

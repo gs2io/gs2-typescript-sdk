@@ -49,7 +49,7 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MatchmakingRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region);
@@ -68,12 +68,15 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'completeMatchmakingTriggerType': (_h = request.getCompleteMatchmakingTriggerType()) !== null && _h !== void 0 ? _h : null,
             'completeMatchmakingTriggerRealtimeNamespaceId': (_j = request.getCompleteMatchmakingTriggerRealtimeNamespaceId()) !== null && _j !== void 0 ? _j : null,
             'completeMatchmakingTriggerScriptId': (_k = request.getCompleteMatchmakingTriggerScriptId()) !== null && _k !== void 0 ? _k : null,
-            'changeRatingScript': (_m = (_l = request.getChangeRatingScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
-            'joinNotification': (_p = (_o = request.getJoinNotification()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
-            'leaveNotification': (_r = (_q = request.getLeaveNotification()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
-            'completeNotification': (_t = (_s = request.getCompleteNotification()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
-            'changeRatingNotification': (_v = (_u = request.getChangeRatingNotification()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
-            'logSetting': (_x = (_w = request.getLogSetting()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
+            'enableCollaborateSeasonRating': (_l = request.getEnableCollaborateSeasonRating()) !== null && _l !== void 0 ? _l : null,
+            'collaborateSeasonRatingNamespaceId': (_m = request.getCollaborateSeasonRatingNamespaceId()) !== null && _m !== void 0 ? _m : null,
+            'collaborateSeasonRatingTtl': (_o = request.getCollaborateSeasonRatingTtl()) !== null && _o !== void 0 ? _o : null,
+            'changeRatingScript': (_q = (_p = request.getChangeRatingScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'joinNotification': (_s = (_r = request.getJoinNotification()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'leaveNotification': (_u = (_t = request.getLeaveNotification()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'completeNotification': (_w = (_v = request.getCompleteNotification()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
+            'changeRatingNotification': (_y = (_x = request.getChangeRatingNotification()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
+            'logSetting': (_0 = (_z = request.getLogSetting()) === null || _z === void 0 ? void 0 : _z.toDict()) !== null && _0 !== void 0 ? _0 : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -133,7 +136,7 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MatchmakingRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
@@ -152,12 +155,15 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'completeMatchmakingTriggerType': (_j = request.getCompleteMatchmakingTriggerType()) !== null && _j !== void 0 ? _j : null,
             'completeMatchmakingTriggerRealtimeNamespaceId': (_k = request.getCompleteMatchmakingTriggerRealtimeNamespaceId()) !== null && _k !== void 0 ? _k : null,
             'completeMatchmakingTriggerScriptId': (_l = request.getCompleteMatchmakingTriggerScriptId()) !== null && _l !== void 0 ? _l : null,
-            'changeRatingScript': (_o = (_m = request.getChangeRatingScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'joinNotification': (_q = (_p = request.getJoinNotification()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
-            'leaveNotification': (_s = (_r = request.getLeaveNotification()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
-            'completeNotification': (_u = (_t = request.getCompleteNotification()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
-            'changeRatingNotification': (_w = (_v = request.getChangeRatingNotification()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
-            'logSetting': (_y = (_x = request.getLogSetting()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
+            'enableCollaborateSeasonRating': (_m = request.getEnableCollaborateSeasonRating()) !== null && _m !== void 0 ? _m : null,
+            'collaborateSeasonRatingNamespaceId': (_o = request.getCollaborateSeasonRatingNamespaceId()) !== null && _o !== void 0 ? _o : null,
+            'collaborateSeasonRatingTtl': (_p = request.getCollaborateSeasonRatingTtl()) !== null && _p !== void 0 ? _p : null,
+            'changeRatingScript': (_r = (_q = request.getChangeRatingScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'joinNotification': (_t = (_s = request.getJoinNotification()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'leaveNotification': (_v = (_u = request.getLeaveNotification()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
+            'completeNotification': (_x = (_w = request.getCompleteNotification()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
+            'changeRatingNotification': (_z = (_y = request.getChangeRatingNotification()) === null || _y === void 0 ? void 0 : _y.toDict()) !== null && _z !== void 0 ? _z : null,
+            'logSetting': (_1 = (_0 = request.getLogSetting()) === null || _0 === void 0 ? void 0 : _0.toDict()) !== null && _1 !== void 0 ? _1 : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

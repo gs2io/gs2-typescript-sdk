@@ -12,6 +12,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     private completeMatchmakingTriggerType;
     private completeMatchmakingTriggerRealtimeNamespaceId;
     private completeMatchmakingTriggerScriptId;
+    private enableCollaborateSeasonRating;
+    private collaborateSeasonRatingNamespaceId;
+    private collaborateSeasonRatingTtl;
     private changeRatingScript;
     private joinNotification;
     private leaveNotification;
@@ -51,6 +54,15 @@ export default class UpdateNamespaceRequest implements IRequest {
     getCompleteMatchmakingTriggerScriptId(): string | null;
     setCompleteMatchmakingTriggerScriptId(completeMatchmakingTriggerScriptId: string | null): this;
     withCompleteMatchmakingTriggerScriptId(completeMatchmakingTriggerScriptId: string | null): this;
+    getEnableCollaborateSeasonRating(): string | null;
+    setEnableCollaborateSeasonRating(enableCollaborateSeasonRating: string | null): this;
+    withEnableCollaborateSeasonRating(enableCollaborateSeasonRating: string | null): this;
+    getCollaborateSeasonRatingNamespaceId(): string | null;
+    setCollaborateSeasonRatingNamespaceId(collaborateSeasonRatingNamespaceId: string | null): this;
+    withCollaborateSeasonRatingNamespaceId(collaborateSeasonRatingNamespaceId: string | null): this;
+    getCollaborateSeasonRatingTtl(): number | null;
+    setCollaborateSeasonRatingTtl(collaborateSeasonRatingTtl: number | null): this;
+    withCollaborateSeasonRatingTtl(collaborateSeasonRatingTtl: number | null): this;
     getChangeRatingScript(): Gs2Matchmaking.ScriptSetting | null;
     setChangeRatingScript(changeRatingScript: Gs2Matchmaking.ScriptSetting | null): this;
     withChangeRatingScript(changeRatingScript: Gs2Matchmaking.ScriptSetting | null): this;
