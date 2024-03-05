@@ -8,6 +8,7 @@ export default class VerifyGradeRequest implements IRequest {
     private verifyType;
     private propertyId;
     private gradeValue;
+    private multiplyValueSpecifyingQuantity;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -33,6 +34,9 @@ export default class VerifyGradeRequest implements IRequest {
     getGradeValue(): number | null;
     setGradeValue(gradeValue: number | null): this;
     withGradeValue(gradeValue: number | null): this;
+    getMultiplyValueSpecifyingQuantity(): boolean | null;
+    setMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean | null): this;
+    withMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

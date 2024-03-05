@@ -1365,6 +1365,7 @@ export default class Gs2ExperienceRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'propertyId': request.getPropertyId() ?? null,
             'rankValue': request.getRankValue() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
         return axios.post(
             url,
@@ -1403,6 +1404,7 @@ export default class Gs2ExperienceRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'propertyId': request.getPropertyId() ?? null,
             'rankValue': request.getRankValue() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
         return axios.post(
             url,
@@ -1443,6 +1445,7 @@ export default class Gs2ExperienceRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'propertyId': request.getPropertyId() ?? null,
             'rankCapValue': request.getRankCapValue() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
         return axios.post(
             url,
@@ -1481,6 +1484,7 @@ export default class Gs2ExperienceRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'propertyId': request.getPropertyId() ?? null,
             'rankCapValue': request.getRankCapValue() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
         return axios.post(
             url,

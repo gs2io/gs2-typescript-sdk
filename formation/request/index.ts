@@ -74,6 +74,7 @@ import AcquireActionsToFormPropertiesRequest from "./AcquireActionsToFormPropert
 import DeleteFormRequest from "./DeleteFormRequest"
 import DeleteFormByUserIdRequest from "./DeleteFormByUserIdRequest"
 import AcquireActionToFormPropertiesByStampSheetRequest from "./AcquireActionToFormPropertiesByStampSheetRequest"
+import SetFormByStampSheetRequest from "./SetFormByStampSheetRequest"
 import DescribePropertyFormsRequest from "./DescribePropertyFormsRequest"
 import DescribePropertyFormsByUserIdRequest from "./DescribePropertyFormsByUserIdRequest"
 import GetPropertyFormRequest from "./GetPropertyFormRequest"
@@ -149,6 +150,7 @@ export {
     DeleteFormRequest,
     DeleteFormByUserIdRequest,
     AcquireActionToFormPropertiesByStampSheetRequest,
+    SetFormByStampSheetRequest,
     DescribePropertyFormsRequest,
     DescribePropertyFormsByUserIdRequest,
     GetPropertyFormRequest,

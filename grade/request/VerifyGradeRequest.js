@@ -25,6 +25,7 @@ var VerifyGradeRequest = /** @class */ (function () {
         this.verifyType = null;
         this.propertyId = null;
         this.gradeValue = null;
+        this.multiplyValueSpecifyingQuantity = null;
         this.duplicationAvoider = null;
     }
     VerifyGradeRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var VerifyGradeRequest = /** @class */ (function () {
         this.gradeValue = gradeValue;
         return this;
     };
+    VerifyGradeRequest.prototype.getMultiplyValueSpecifyingQuantity = function () {
+        return this.multiplyValueSpecifyingQuantity;
+    };
+    VerifyGradeRequest.prototype.setMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
+    VerifyGradeRequest.prototype.withMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
     VerifyGradeRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var VerifyGradeRequest = /** @class */ (function () {
             .withGradeName(data["gradeName"])
             .withVerifyType(data["verifyType"])
             .withPropertyId(data["propertyId"])
-            .withGradeValue(data["gradeValue"]);
+            .withGradeValue(data["gradeValue"])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     };
     VerifyGradeRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var VerifyGradeRequest = /** @class */ (function () {
             "verifyType": this.getVerifyType(),
             "propertyId": this.getPropertyId(),
             "gradeValue": this.getGradeValue(),
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };
     };
     return VerifyGradeRequest;

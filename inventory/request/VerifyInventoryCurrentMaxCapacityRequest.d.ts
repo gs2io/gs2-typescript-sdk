@@ -7,6 +7,7 @@ export default class VerifyInventoryCurrentMaxCapacityRequest implements IReques
     private inventoryName;
     private verifyType;
     private currentInventoryMaxCapacity;
+    private multiplyValueSpecifyingQuantity;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -29,6 +30,9 @@ export default class VerifyInventoryCurrentMaxCapacityRequest implements IReques
     getCurrentInventoryMaxCapacity(): number | null;
     setCurrentInventoryMaxCapacity(currentInventoryMaxCapacity: number | null): this;
     withCurrentInventoryMaxCapacity(currentInventoryMaxCapacity: number | null): this;
+    getMultiplyValueSpecifyingQuantity(): boolean | null;
+    setMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean | null): this;
+    withMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

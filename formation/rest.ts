@@ -1905,6 +1905,37 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public setFormByStampSheet(request: Request.SetFormByStampSheetRequest): Promise<Result.SetFormByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/form/set')
+            .replace('{service}', 'formation')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SetFormByStampSheetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public describePropertyForms(request: Request.DescribePropertyFormsRequest): Promise<Result.DescribePropertyFormsResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/property/{propertyFormModelName}/form')
             .replace('{service}', 'formation')

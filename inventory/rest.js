@@ -1736,7 +1736,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifyInventoryCurrentMaxCapacity = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
@@ -1756,6 +1756,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'currentInventoryMaxCapacity': (_k = request.getCurrentInventoryMaxCapacity()) !== null && _k !== void 0 ? _k : null,
+            'multiplyValueSpecifyingQuantity': (_l = request.getMultiplyValueSpecifyingQuantity()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1771,7 +1772,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifyInventoryCurrentMaxCapacityByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
@@ -1789,6 +1790,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'currentInventoryMaxCapacity': (_l = request.getCurrentInventoryMaxCapacity()) !== null && _l !== void 0 ? _l : null,
+            'multiplyValueSpecifyingQuantity': (_m = request.getMultiplyValueSpecifyingQuantity()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2218,7 +2220,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifyItemSet = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
@@ -2240,6 +2242,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
             'itemSetName': (_m = request.getItemSetName()) !== null && _m !== void 0 ? _m : null,
             'count': (_o = request.getCount()) !== null && _o !== void 0 ? _o : null,
+            'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -2255,7 +2258,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifyItemSetByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
@@ -2275,6 +2278,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'itemSetName': (_o = request.getItemSetName()) !== null && _o !== void 0 ? _o : null,
             'count': (_p = request.getCount()) !== null && _p !== void 0 ? _p : null,
+            'multiplyValueSpecifyingQuantity': (_q = request.getMultiplyValueSpecifyingQuantity()) !== null && _q !== void 0 ? _q : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3110,7 +3114,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifySimpleItem = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/simple/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
@@ -3131,6 +3135,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
             'count': (_m = request.getCount()) !== null && _m !== void 0 ? _m : null,
+            'multiplyValueSpecifyingQuantity': (_o = request.getMultiplyValueSpecifyingQuantity()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3146,7 +3151,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifySimpleItemByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/simple/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
@@ -3165,6 +3170,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'count': (_o = request.getCount()) !== null && _o !== void 0 ? _o : null,
+            'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3556,7 +3562,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifyBigItem = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/big/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
@@ -3577,6 +3583,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
             'count': (_m = request.getCount()) !== null && _m !== void 0 ? _m : null,
+            'multiplyValueSpecifyingQuantity': (_o = request.getMultiplyValueSpecifyingQuantity()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -3592,7 +3599,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.verifyBigItemByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/big/inventory/{inventoryName}/item/{itemName}/verify/{verifyType}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
@@ -3611,6 +3618,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'count': (_o = request.getCount()) !== null && _o !== void 0 ? _o : null,
+            'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

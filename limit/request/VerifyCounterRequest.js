@@ -25,6 +25,7 @@ var VerifyCounterRequest = /** @class */ (function () {
         this.counterName = null;
         this.verifyType = null;
         this.count = null;
+        this.multiplyValueSpecifyingQuantity = null;
         this.duplicationAvoider = null;
     }
     VerifyCounterRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var VerifyCounterRequest = /** @class */ (function () {
         this.count = count;
         return this;
     };
+    VerifyCounterRequest.prototype.getMultiplyValueSpecifyingQuantity = function () {
+        return this.multiplyValueSpecifyingQuantity;
+    };
+    VerifyCounterRequest.prototype.setMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
+    VerifyCounterRequest.prototype.withMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
     VerifyCounterRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var VerifyCounterRequest = /** @class */ (function () {
             .withLimitName(data["limitName"])
             .withCounterName(data["counterName"])
             .withVerifyType(data["verifyType"])
-            .withCount(data["count"]);
+            .withCount(data["count"])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     };
     VerifyCounterRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var VerifyCounterRequest = /** @class */ (function () {
             "counterName": this.getCounterName(),
             "verifyType": this.getVerifyType(),
             "count": this.getCount(),
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };
     };
     return VerifyCounterRequest;

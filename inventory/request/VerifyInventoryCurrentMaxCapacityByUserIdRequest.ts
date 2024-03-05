@@ -27,6 +27,7 @@ export default class VerifyInventoryCurrentMaxCapacityByUserIdRequest implements
     private inventoryName: string|null = null;
     private verifyType: string|null = null;
     private currentInventoryMaxCapacity: number|null = null;
+    private multiplyValueSpecifyingQuantity: boolean|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -111,6 +112,17 @@ export default class VerifyInventoryCurrentMaxCapacityByUserIdRequest implements
         this.currentInventoryMaxCapacity = currentInventoryMaxCapacity;
         return this;
     }
+    public getMultiplyValueSpecifyingQuantity(): boolean|null {
+        return this.multiplyValueSpecifyingQuantity;
+    }
+    public setMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean|null) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    }
+    public withMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean|null): this {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -132,7 +144,8 @@ export default class VerifyInventoryCurrentMaxCapacityByUserIdRequest implements
             .withUserId(data["userId"])
             .withInventoryName(data["inventoryName"])
             .withVerifyType(data["verifyType"])
-            .withCurrentInventoryMaxCapacity(data["currentInventoryMaxCapacity"]);
+            .withCurrentInventoryMaxCapacity(data["currentInventoryMaxCapacity"])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -142,6 +155,7 @@ export default class VerifyInventoryCurrentMaxCapacityByUserIdRequest implements
             "inventoryName": this.getInventoryName(),
             "verifyType": this.getVerifyType(),
             "currentInventoryMaxCapacity": this.getCurrentInventoryMaxCapacity(),
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };
     }
 }

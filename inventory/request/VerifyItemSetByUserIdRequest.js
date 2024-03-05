@@ -26,6 +26,7 @@ var VerifyItemSetByUserIdRequest = /** @class */ (function () {
         this.verifyType = null;
         this.itemSetName = null;
         this.count = null;
+        this.multiplyValueSpecifyingQuantity = null;
         this.duplicationAvoider = null;
     }
     VerifyItemSetByUserIdRequest.prototype.getRequestId = function () {
@@ -127,6 +128,17 @@ var VerifyItemSetByUserIdRequest = /** @class */ (function () {
         this.count = count;
         return this;
     };
+    VerifyItemSetByUserIdRequest.prototype.getMultiplyValueSpecifyingQuantity = function () {
+        return this.multiplyValueSpecifyingQuantity;
+    };
+    VerifyItemSetByUserIdRequest.prototype.setMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
+    VerifyItemSetByUserIdRequest.prototype.withMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
     VerifyItemSetByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -146,7 +158,8 @@ var VerifyItemSetByUserIdRequest = /** @class */ (function () {
             .withItemName(data["itemName"])
             .withVerifyType(data["verifyType"])
             .withItemSetName(data["itemSetName"])
-            .withCount(data["count"]);
+            .withCount(data["count"])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     };
     VerifyItemSetByUserIdRequest.prototype.toDict = function () {
         return {
@@ -157,6 +170,7 @@ var VerifyItemSetByUserIdRequest = /** @class */ (function () {
             "verifyType": this.getVerifyType(),
             "itemSetName": this.getItemSetName(),
             "count": this.getCount(),
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };
     };
     return VerifyItemSetByUserIdRequest;

@@ -25,6 +25,7 @@ var VerifyCounterByUserIdRequest = /** @class */ (function () {
         this.counterName = null;
         this.verifyType = null;
         this.count = null;
+        this.multiplyValueSpecifyingQuantity = null;
         this.duplicationAvoider = null;
     }
     VerifyCounterByUserIdRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var VerifyCounterByUserIdRequest = /** @class */ (function () {
         this.count = count;
         return this;
     };
+    VerifyCounterByUserIdRequest.prototype.getMultiplyValueSpecifyingQuantity = function () {
+        return this.multiplyValueSpecifyingQuantity;
+    };
+    VerifyCounterByUserIdRequest.prototype.setMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
+    VerifyCounterByUserIdRequest.prototype.withMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
     VerifyCounterByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var VerifyCounterByUserIdRequest = /** @class */ (function () {
             .withLimitName(data["limitName"])
             .withCounterName(data["counterName"])
             .withVerifyType(data["verifyType"])
-            .withCount(data["count"]);
+            .withCount(data["count"])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     };
     VerifyCounterByUserIdRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var VerifyCounterByUserIdRequest = /** @class */ (function () {
             "counterName": this.getCounterName(),
             "verifyType": this.getVerifyType(),
             "count": this.getCount(),
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };
     };
     return VerifyCounterByUserIdRequest;

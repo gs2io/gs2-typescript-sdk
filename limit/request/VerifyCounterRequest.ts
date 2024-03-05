@@ -28,6 +28,7 @@ export default class VerifyCounterRequest implements IRequest {
     private counterName: string|null = null;
     private verifyType: string|null = null;
     private count: number|null = null;
+    private multiplyValueSpecifyingQuantity: boolean|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -123,6 +124,17 @@ export default class VerifyCounterRequest implements IRequest {
         this.count = count;
         return this;
     }
+    public getMultiplyValueSpecifyingQuantity(): boolean|null {
+        return this.multiplyValueSpecifyingQuantity;
+    }
+    public setMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean|null) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    }
+    public withMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean|null): this {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -145,7 +157,8 @@ export default class VerifyCounterRequest implements IRequest {
             .withLimitName(data["limitName"])
             .withCounterName(data["counterName"])
             .withVerifyType(data["verifyType"])
-            .withCount(data["count"]);
+            .withCount(data["count"])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -156,6 +169,7 @@ export default class VerifyCounterRequest implements IRequest {
             "counterName": this.getCounterName(),
             "verifyType": this.getVerifyType(),
             "count": this.getCount(),
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };
     }
 }

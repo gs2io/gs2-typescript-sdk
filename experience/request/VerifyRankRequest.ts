@@ -28,6 +28,7 @@ export default class VerifyRankRequest implements IRequest {
     private verifyType: string|null = null;
     private propertyId: string|null = null;
     private rankValue: number|null = null;
+    private multiplyValueSpecifyingQuantity: boolean|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -123,6 +124,17 @@ export default class VerifyRankRequest implements IRequest {
         this.rankValue = rankValue;
         return this;
     }
+    public getMultiplyValueSpecifyingQuantity(): boolean|null {
+        return this.multiplyValueSpecifyingQuantity;
+    }
+    public setMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean|null) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    }
+    public withMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean|null): this {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -145,7 +157,8 @@ export default class VerifyRankRequest implements IRequest {
             .withExperienceName(data["experienceName"])
             .withVerifyType(data["verifyType"])
             .withPropertyId(data["propertyId"])
-            .withRankValue(data["rankValue"]);
+            .withRankValue(data["rankValue"])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -156,6 +169,7 @@ export default class VerifyRankRequest implements IRequest {
             "verifyType": this.getVerifyType(),
             "propertyId": this.getPropertyId(),
             "rankValue": this.getRankValue(),
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };
     }
 }

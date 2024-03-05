@@ -16,8 +16,6 @@ permissions and limitations under the License.
 
 import IResult from '../../core/interface/IResult';
 
-import * as Gs2Key from '../model'
-
 export default class EncryptResult implements IResult {
     private data: string|null = null;
 

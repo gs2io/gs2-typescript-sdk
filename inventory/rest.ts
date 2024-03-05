@@ -2022,6 +2022,7 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'currentInventoryMaxCapacity': request.getCurrentInventoryMaxCapacity() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
         return axios.post(
             url,
@@ -2059,6 +2060,7 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'currentInventoryMaxCapacity': request.getCurrentInventoryMaxCapacity() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
         return axios.post(
             url,
@@ -2570,6 +2572,7 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'itemSetName': request.getItemSetName() ?? null,
             'count': request.getCount() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
         return axios.post(
             url,
@@ -2609,6 +2612,7 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'itemSetName': request.getItemSetName() ?? null,
             'count': request.getCount() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
         return axios.post(
             url,
@@ -3581,6 +3585,7 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'count': request.getCount() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
         return axios.post(
             url,
@@ -3619,6 +3624,7 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'count': request.getCount() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
         return axios.post(
             url,
@@ -4087,6 +4093,7 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'count': request.getCount() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
         return axios.post(
             url,
@@ -4125,6 +4132,7 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'count': request.getCount() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
         return axios.post(
             url,

@@ -25,6 +25,7 @@ var VerifyBigItemRequest = /** @class */ (function () {
         this.itemName = null;
         this.verifyType = null;
         this.count = null;
+        this.multiplyValueSpecifyingQuantity = null;
         this.duplicationAvoider = null;
     }
     VerifyBigItemRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var VerifyBigItemRequest = /** @class */ (function () {
         this.count = count;
         return this;
     };
+    VerifyBigItemRequest.prototype.getMultiplyValueSpecifyingQuantity = function () {
+        return this.multiplyValueSpecifyingQuantity;
+    };
+    VerifyBigItemRequest.prototype.setMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
+    VerifyBigItemRequest.prototype.withMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
     VerifyBigItemRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var VerifyBigItemRequest = /** @class */ (function () {
             .withInventoryName(data["inventoryName"])
             .withItemName(data["itemName"])
             .withVerifyType(data["verifyType"])
-            .withCount(data["count"]);
+            .withCount(data["count"])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     };
     VerifyBigItemRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var VerifyBigItemRequest = /** @class */ (function () {
             "itemName": this.getItemName(),
             "verifyType": this.getVerifyType(),
             "count": this.getCount(),
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };
     };
     return VerifyBigItemRequest;

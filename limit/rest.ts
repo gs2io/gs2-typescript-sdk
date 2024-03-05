@@ -708,6 +708,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'count': request.getCount() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
         return axios.post(
             url,
@@ -746,6 +747,7 @@ export default class Gs2LimitRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'count': request.getCount() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
         return axios.post(
             url,

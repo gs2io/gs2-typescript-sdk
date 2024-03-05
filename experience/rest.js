@@ -1174,7 +1174,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.verifyRank = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{experienceName}/verify/rank/{verifyType}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -1195,6 +1195,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'propertyId': (_k = request.getPropertyId()) !== null && _k !== void 0 ? _k : null,
             'rankValue': (_l = request.getRankValue()) !== null && _l !== void 0 ? _l : null,
+            'multiplyValueSpecifyingQuantity': (_m = request.getMultiplyValueSpecifyingQuantity()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1210,7 +1211,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.verifyRankByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{experienceName}/verify/rank/{verifyType}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -1229,6 +1230,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'propertyId': (_l = request.getPropertyId()) !== null && _l !== void 0 ? _l : null,
             'rankValue': (_m = request.getRankValue()) !== null && _m !== void 0 ? _m : null,
+            'multiplyValueSpecifyingQuantity': (_o = request.getMultiplyValueSpecifyingQuantity()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1244,7 +1246,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.verifyRankCap = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/{experienceName}/verify/rankCap/{verifyType}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -1265,6 +1267,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
             'propertyId': (_k = request.getPropertyId()) !== null && _k !== void 0 ? _k : null,
             'rankCapValue': (_l = request.getRankCapValue()) !== null && _l !== void 0 ? _l : null,
+            'multiplyValueSpecifyingQuantity': (_m = request.getMultiplyValueSpecifyingQuantity()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1280,7 +1283,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.verifyRankCapByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{experienceName}/verify/rankCap/{verifyType}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -1299,6 +1302,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
             'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
             'propertyId': (_l = request.getPropertyId()) !== null && _l !== void 0 ? _l : null,
             'rankCapValue': (_m = request.getRankCapValue()) !== null && _m !== void 0 ? _m : null,
+            'multiplyValueSpecifyingQuantity': (_o = request.getMultiplyValueSpecifyingQuantity()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

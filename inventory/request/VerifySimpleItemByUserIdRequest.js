@@ -25,6 +25,7 @@ var VerifySimpleItemByUserIdRequest = /** @class */ (function () {
         this.itemName = null;
         this.verifyType = null;
         this.count = null;
+        this.multiplyValueSpecifyingQuantity = null;
         this.duplicationAvoider = null;
     }
     VerifySimpleItemByUserIdRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var VerifySimpleItemByUserIdRequest = /** @class */ (function () {
         this.count = count;
         return this;
     };
+    VerifySimpleItemByUserIdRequest.prototype.getMultiplyValueSpecifyingQuantity = function () {
+        return this.multiplyValueSpecifyingQuantity;
+    };
+    VerifySimpleItemByUserIdRequest.prototype.setMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
+    VerifySimpleItemByUserIdRequest.prototype.withMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
     VerifySimpleItemByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var VerifySimpleItemByUserIdRequest = /** @class */ (function () {
             .withInventoryName(data["inventoryName"])
             .withItemName(data["itemName"])
             .withVerifyType(data["verifyType"])
-            .withCount(data["count"]);
+            .withCount(data["count"])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     };
     VerifySimpleItemByUserIdRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var VerifySimpleItemByUserIdRequest = /** @class */ (function () {
             "itemName": this.getItemName(),
             "verifyType": this.getVerifyType(),
             "count": this.getCount(),
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };
     };
     return VerifySimpleItemByUserIdRequest;

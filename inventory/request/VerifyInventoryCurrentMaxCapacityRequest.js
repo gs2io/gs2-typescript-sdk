@@ -24,6 +24,7 @@ var VerifyInventoryCurrentMaxCapacityRequest = /** @class */ (function () {
         this.inventoryName = null;
         this.verifyType = null;
         this.currentInventoryMaxCapacity = null;
+        this.multiplyValueSpecifyingQuantity = null;
         this.duplicationAvoider = null;
     }
     VerifyInventoryCurrentMaxCapacityRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var VerifyInventoryCurrentMaxCapacityRequest = /** @class */ (function () {
         this.currentInventoryMaxCapacity = currentInventoryMaxCapacity;
         return this;
     };
+    VerifyInventoryCurrentMaxCapacityRequest.prototype.getMultiplyValueSpecifyingQuantity = function () {
+        return this.multiplyValueSpecifyingQuantity;
+    };
+    VerifyInventoryCurrentMaxCapacityRequest.prototype.setMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
+    VerifyInventoryCurrentMaxCapacityRequest.prototype.withMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
     VerifyInventoryCurrentMaxCapacityRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var VerifyInventoryCurrentMaxCapacityRequest = /** @class */ (function () {
             .withAccessToken(data["accessToken"])
             .withInventoryName(data["inventoryName"])
             .withVerifyType(data["verifyType"])
-            .withCurrentInventoryMaxCapacity(data["currentInventoryMaxCapacity"]);
+            .withCurrentInventoryMaxCapacity(data["currentInventoryMaxCapacity"])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     };
     VerifyInventoryCurrentMaxCapacityRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var VerifyInventoryCurrentMaxCapacityRequest = /** @class */ (function () {
             "inventoryName": this.getInventoryName(),
             "verifyType": this.getVerifyType(),
             "currentInventoryMaxCapacity": this.getCurrentInventoryMaxCapacity(),
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };
     };
     return VerifyInventoryCurrentMaxCapacityRequest;

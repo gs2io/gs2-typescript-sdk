@@ -1330,7 +1330,7 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.verifyRarityParameterStatus = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/status/rarity/{parameterName}/{propertyId}/verify/{verifyType}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
@@ -1352,6 +1352,7 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
             'parameterValueName': (_m = request.getParameterValueName()) !== null && _m !== void 0 ? _m : null,
             'parameterCount': (_o = request.getParameterCount()) !== null && _o !== void 0 ? _o : null,
+            'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1367,7 +1368,7 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2EnchantRestClient.prototype.verifyRarityParameterStatusByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/rarity/{parameterName}/{propertyId}/verify/{verifyType}')
             .replace('{service}', 'enchant')
             .replace('{region}', this.session.region)
@@ -1387,6 +1388,7 @@ var Gs2EnchantRestClient = /** @class */ (function (_super) {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'parameterValueName': (_o = request.getParameterValueName()) !== null && _o !== void 0 ? _o : null,
             'parameterCount': (_p = request.getParameterCount()) !== null && _p !== void 0 ? _p : null,
+            'multiplyValueSpecifyingQuantity': (_q = request.getMultiplyValueSpecifyingQuantity()) !== null && _q !== void 0 ? _q : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

@@ -26,6 +26,7 @@ var VerifyItemSetRequest = /** @class */ (function () {
         this.verifyType = null;
         this.itemSetName = null;
         this.count = null;
+        this.multiplyValueSpecifyingQuantity = null;
         this.duplicationAvoider = null;
     }
     VerifyItemSetRequest.prototype.getRequestId = function () {
@@ -127,6 +128,17 @@ var VerifyItemSetRequest = /** @class */ (function () {
         this.count = count;
         return this;
     };
+    VerifyItemSetRequest.prototype.getMultiplyValueSpecifyingQuantity = function () {
+        return this.multiplyValueSpecifyingQuantity;
+    };
+    VerifyItemSetRequest.prototype.setMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
+    VerifyItemSetRequest.prototype.withMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
     VerifyItemSetRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -146,7 +158,8 @@ var VerifyItemSetRequest = /** @class */ (function () {
             .withItemName(data["itemName"])
             .withVerifyType(data["verifyType"])
             .withItemSetName(data["itemSetName"])
-            .withCount(data["count"]);
+            .withCount(data["count"])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     };
     VerifyItemSetRequest.prototype.toDict = function () {
         return {
@@ -157,6 +170,7 @@ var VerifyItemSetRequest = /** @class */ (function () {
             "verifyType": this.getVerifyType(),
             "itemSetName": this.getItemSetName(),
             "count": this.getCount(),
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };
     };
     return VerifyItemSetRequest;

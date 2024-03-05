@@ -25,6 +25,7 @@ var VerifyRankRequest = /** @class */ (function () {
         this.verifyType = null;
         this.propertyId = null;
         this.rankValue = null;
+        this.multiplyValueSpecifyingQuantity = null;
         this.duplicationAvoider = null;
     }
     VerifyRankRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var VerifyRankRequest = /** @class */ (function () {
         this.rankValue = rankValue;
         return this;
     };
+    VerifyRankRequest.prototype.getMultiplyValueSpecifyingQuantity = function () {
+        return this.multiplyValueSpecifyingQuantity;
+    };
+    VerifyRankRequest.prototype.setMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
+    VerifyRankRequest.prototype.withMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
     VerifyRankRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var VerifyRankRequest = /** @class */ (function () {
             .withExperienceName(data["experienceName"])
             .withVerifyType(data["verifyType"])
             .withPropertyId(data["propertyId"])
-            .withRankValue(data["rankValue"]);
+            .withRankValue(data["rankValue"])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     };
     VerifyRankRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var VerifyRankRequest = /** @class */ (function () {
             "verifyType": this.getVerifyType(),
             "propertyId": this.getPropertyId(),
             "rankValue": this.getRankValue(),
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };
     };
     return VerifyRankRequest;

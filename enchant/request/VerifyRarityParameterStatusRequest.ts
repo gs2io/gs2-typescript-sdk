@@ -29,6 +29,7 @@ export default class VerifyRarityParameterStatusRequest implements IRequest {
     private verifyType: string|null = null;
     private parameterValueName: string|null = null;
     private parameterCount: number|null = null;
+    private multiplyValueSpecifyingQuantity: boolean|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -135,6 +136,17 @@ export default class VerifyRarityParameterStatusRequest implements IRequest {
         this.parameterCount = parameterCount;
         return this;
     }
+    public getMultiplyValueSpecifyingQuantity(): boolean|null {
+        return this.multiplyValueSpecifyingQuantity;
+    }
+    public setMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean|null) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    }
+    public withMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean|null): this {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -158,7 +170,8 @@ export default class VerifyRarityParameterStatusRequest implements IRequest {
             .withPropertyId(data["propertyId"])
             .withVerifyType(data["verifyType"])
             .withParameterValueName(data["parameterValueName"])
-            .withParameterCount(data["parameterCount"]);
+            .withParameterCount(data["parameterCount"])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -170,6 +183,7 @@ export default class VerifyRarityParameterStatusRequest implements IRequest {
             "verifyType": this.getVerifyType(),
             "parameterValueName": this.getParameterValueName(),
             "parameterCount": this.getParameterCount(),
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };
     }
 }

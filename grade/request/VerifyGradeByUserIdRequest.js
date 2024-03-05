@@ -25,6 +25,7 @@ var VerifyGradeByUserIdRequest = /** @class */ (function () {
         this.verifyType = null;
         this.propertyId = null;
         this.gradeValue = null;
+        this.multiplyValueSpecifyingQuantity = null;
         this.duplicationAvoider = null;
     }
     VerifyGradeByUserIdRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var VerifyGradeByUserIdRequest = /** @class */ (function () {
         this.gradeValue = gradeValue;
         return this;
     };
+    VerifyGradeByUserIdRequest.prototype.getMultiplyValueSpecifyingQuantity = function () {
+        return this.multiplyValueSpecifyingQuantity;
+    };
+    VerifyGradeByUserIdRequest.prototype.setMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
+    VerifyGradeByUserIdRequest.prototype.withMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
     VerifyGradeByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var VerifyGradeByUserIdRequest = /** @class */ (function () {
             .withGradeName(data["gradeName"])
             .withVerifyType(data["verifyType"])
             .withPropertyId(data["propertyId"])
-            .withGradeValue(data["gradeValue"]);
+            .withGradeValue(data["gradeValue"])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     };
     VerifyGradeByUserIdRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var VerifyGradeByUserIdRequest = /** @class */ (function () {
             "verifyType": this.getVerifyType(),
             "propertyId": this.getPropertyId(),
             "gradeValue": this.getGradeValue(),
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };
     };
     return VerifyGradeByUserIdRequest;

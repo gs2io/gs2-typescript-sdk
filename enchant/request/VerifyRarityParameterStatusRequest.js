@@ -26,6 +26,7 @@ var VerifyRarityParameterStatusRequest = /** @class */ (function () {
         this.verifyType = null;
         this.parameterValueName = null;
         this.parameterCount = null;
+        this.multiplyValueSpecifyingQuantity = null;
         this.duplicationAvoider = null;
     }
     VerifyRarityParameterStatusRequest.prototype.getRequestId = function () {
@@ -127,6 +128,17 @@ var VerifyRarityParameterStatusRequest = /** @class */ (function () {
         this.parameterCount = parameterCount;
         return this;
     };
+    VerifyRarityParameterStatusRequest.prototype.getMultiplyValueSpecifyingQuantity = function () {
+        return this.multiplyValueSpecifyingQuantity;
+    };
+    VerifyRarityParameterStatusRequest.prototype.setMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
+    VerifyRarityParameterStatusRequest.prototype.withMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
     VerifyRarityParameterStatusRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -146,7 +158,8 @@ var VerifyRarityParameterStatusRequest = /** @class */ (function () {
             .withPropertyId(data["propertyId"])
             .withVerifyType(data["verifyType"])
             .withParameterValueName(data["parameterValueName"])
-            .withParameterCount(data["parameterCount"]);
+            .withParameterCount(data["parameterCount"])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     };
     VerifyRarityParameterStatusRequest.prototype.toDict = function () {
         return {
@@ -157,6 +170,7 @@ var VerifyRarityParameterStatusRequest = /** @class */ (function () {
             "verifyType": this.getVerifyType(),
             "parameterValueName": this.getParameterValueName(),
             "parameterCount": this.getParameterCount(),
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };
     };
     return VerifyRarityParameterStatusRequest;

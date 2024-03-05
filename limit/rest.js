@@ -601,7 +601,7 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LimitRestClient.prototype.verifyCounter = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{limitName}/{counterName}/verify/{verifyType}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
@@ -622,6 +622,7 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
             'count': (_m = request.getCount()) !== null && _m !== void 0 ? _m : null,
+            'multiplyValueSpecifyingQuantity': (_o = request.getMultiplyValueSpecifyingQuantity()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -637,7 +638,7 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LimitRestClient.prototype.verifyCounterByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}/verify/{verifyType}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
@@ -656,6 +657,7 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
             'count': (_o = request.getCount()) !== null && _o !== void 0 ? _o : null,
+            'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

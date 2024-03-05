@@ -991,6 +991,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'propertyId': request.getPropertyId() ?? null,
             'gradeValue': request.getGradeValue() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
         return axios.post(
             url,
@@ -1029,6 +1030,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'propertyId': request.getPropertyId() ?? null,
             'gradeValue': request.getGradeValue() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
         return axios.post(
             url,

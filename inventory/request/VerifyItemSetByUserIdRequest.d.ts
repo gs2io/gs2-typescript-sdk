@@ -9,6 +9,7 @@ export default class VerifyItemSetByUserIdRequest implements IRequest {
     private verifyType;
     private itemSetName;
     private count;
+    private multiplyValueSpecifyingQuantity;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -37,6 +38,9 @@ export default class VerifyItemSetByUserIdRequest implements IRequest {
     getCount(): number | null;
     setCount(count: number | null): this;
     withCount(count: number | null): this;
+    getMultiplyValueSpecifyingQuantity(): boolean | null;
+    setMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean | null): this;
+    withMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

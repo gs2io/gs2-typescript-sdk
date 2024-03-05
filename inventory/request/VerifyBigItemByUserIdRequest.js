@@ -25,6 +25,7 @@ var VerifyBigItemByUserIdRequest = /** @class */ (function () {
         this.itemName = null;
         this.verifyType = null;
         this.count = null;
+        this.multiplyValueSpecifyingQuantity = null;
         this.duplicationAvoider = null;
     }
     VerifyBigItemByUserIdRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var VerifyBigItemByUserIdRequest = /** @class */ (function () {
         this.count = count;
         return this;
     };
+    VerifyBigItemByUserIdRequest.prototype.getMultiplyValueSpecifyingQuantity = function () {
+        return this.multiplyValueSpecifyingQuantity;
+    };
+    VerifyBigItemByUserIdRequest.prototype.setMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
+    VerifyBigItemByUserIdRequest.prototype.withMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
     VerifyBigItemByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var VerifyBigItemByUserIdRequest = /** @class */ (function () {
             .withInventoryName(data["inventoryName"])
             .withItemName(data["itemName"])
             .withVerifyType(data["verifyType"])
-            .withCount(data["count"]);
+            .withCount(data["count"])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     };
     VerifyBigItemByUserIdRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var VerifyBigItemByUserIdRequest = /** @class */ (function () {
             "itemName": this.getItemName(),
             "verifyType": this.getVerifyType(),
             "count": this.getCount(),
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };
     };
     return VerifyBigItemByUserIdRequest;

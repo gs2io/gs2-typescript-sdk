@@ -25,6 +25,7 @@ var VerifyRankCapByUserIdRequest = /** @class */ (function () {
         this.verifyType = null;
         this.propertyId = null;
         this.rankCapValue = null;
+        this.multiplyValueSpecifyingQuantity = null;
         this.duplicationAvoider = null;
     }
     VerifyRankCapByUserIdRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var VerifyRankCapByUserIdRequest = /** @class */ (function () {
         this.rankCapValue = rankCapValue;
         return this;
     };
+    VerifyRankCapByUserIdRequest.prototype.getMultiplyValueSpecifyingQuantity = function () {
+        return this.multiplyValueSpecifyingQuantity;
+    };
+    VerifyRankCapByUserIdRequest.prototype.setMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
+    VerifyRankCapByUserIdRequest.prototype.withMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
     VerifyRankCapByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var VerifyRankCapByUserIdRequest = /** @class */ (function () {
             .withExperienceName(data["experienceName"])
             .withVerifyType(data["verifyType"])
             .withPropertyId(data["propertyId"])
-            .withRankCapValue(data["rankCapValue"]);
+            .withRankCapValue(data["rankCapValue"])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     };
     VerifyRankCapByUserIdRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var VerifyRankCapByUserIdRequest = /** @class */ (function () {
             "verifyType": this.getVerifyType(),
             "propertyId": this.getPropertyId(),
             "rankCapValue": this.getRankCapValue(),
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };
     };
     return VerifyRankCapByUserIdRequest;

@@ -1550,6 +1550,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'parameterValueName': request.getParameterValueName() ?? null,
             'parameterCount': request.getParameterCount() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
         return axios.post(
             url,
@@ -1589,6 +1590,7 @@ export default class Gs2EnchantRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'parameterValueName': request.getParameterValueName() ?? null,
             'parameterCount': request.getParameterCount() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
         return axios.post(
             url,

@@ -9,6 +9,7 @@ export default class VerifyRarityParameterStatusRequest implements IRequest {
     private verifyType;
     private parameterValueName;
     private parameterCount;
+    private multiplyValueSpecifyingQuantity;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -37,6 +38,9 @@ export default class VerifyRarityParameterStatusRequest implements IRequest {
     getParameterCount(): number | null;
     setParameterCount(parameterCount: number | null): this;
     withParameterCount(parameterCount: number | null): this;
+    getMultiplyValueSpecifyingQuantity(): boolean | null;
+    setMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean | null): this;
+    withMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

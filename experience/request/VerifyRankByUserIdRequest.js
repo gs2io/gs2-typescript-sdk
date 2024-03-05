@@ -25,6 +25,7 @@ var VerifyRankByUserIdRequest = /** @class */ (function () {
         this.verifyType = null;
         this.propertyId = null;
         this.rankValue = null;
+        this.multiplyValueSpecifyingQuantity = null;
         this.duplicationAvoider = null;
     }
     VerifyRankByUserIdRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var VerifyRankByUserIdRequest = /** @class */ (function () {
         this.rankValue = rankValue;
         return this;
     };
+    VerifyRankByUserIdRequest.prototype.getMultiplyValueSpecifyingQuantity = function () {
+        return this.multiplyValueSpecifyingQuantity;
+    };
+    VerifyRankByUserIdRequest.prototype.setMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
+    VerifyRankByUserIdRequest.prototype.withMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
     VerifyRankByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var VerifyRankByUserIdRequest = /** @class */ (function () {
             .withExperienceName(data["experienceName"])
             .withVerifyType(data["verifyType"])
             .withPropertyId(data["propertyId"])
-            .withRankValue(data["rankValue"]);
+            .withRankValue(data["rankValue"])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     };
     VerifyRankByUserIdRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var VerifyRankByUserIdRequest = /** @class */ (function () {
             "verifyType": this.getVerifyType(),
             "propertyId": this.getPropertyId(),
             "rankValue": this.getRankValue(),
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };
     };
     return VerifyRankByUserIdRequest;

@@ -25,6 +25,7 @@ var VerifyRankCapRequest = /** @class */ (function () {
         this.verifyType = null;
         this.propertyId = null;
         this.rankCapValue = null;
+        this.multiplyValueSpecifyingQuantity = null;
         this.duplicationAvoider = null;
     }
     VerifyRankCapRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var VerifyRankCapRequest = /** @class */ (function () {
         this.rankCapValue = rankCapValue;
         return this;
     };
+    VerifyRankCapRequest.prototype.getMultiplyValueSpecifyingQuantity = function () {
+        return this.multiplyValueSpecifyingQuantity;
+    };
+    VerifyRankCapRequest.prototype.setMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
+    VerifyRankCapRequest.prototype.withMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
     VerifyRankCapRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var VerifyRankCapRequest = /** @class */ (function () {
             .withExperienceName(data["experienceName"])
             .withVerifyType(data["verifyType"])
             .withPropertyId(data["propertyId"])
-            .withRankCapValue(data["rankCapValue"]);
+            .withRankCapValue(data["rankCapValue"])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     };
     VerifyRankCapRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var VerifyRankCapRequest = /** @class */ (function () {
             "verifyType": this.getVerifyType(),
             "propertyId": this.getPropertyId(),
             "rankCapValue": this.getRankCapValue(),
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };
     };
     return VerifyRankCapRequest;
