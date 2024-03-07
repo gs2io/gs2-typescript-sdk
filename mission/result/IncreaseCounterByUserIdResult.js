@@ -20,6 +20,7 @@ var Gs2Mission = tslib_1.__importStar(require("../model"));
 var IncreaseCounterByUserIdResult = /** @class */ (function () {
     function IncreaseCounterByUserIdResult() {
         this.item = null;
+        this.changedCompletes = null;
     }
     IncreaseCounterByUserIdResult.prototype.getItem = function () {
         return this.item;
@@ -32,14 +33,33 @@ var IncreaseCounterByUserIdResult = /** @class */ (function () {
         this.item = item;
         return this;
     };
+    IncreaseCounterByUserIdResult.prototype.getChangedCompletes = function () {
+        return this.changedCompletes;
+    };
+    IncreaseCounterByUserIdResult.prototype.setChangedCompletes = function (changedCompletes) {
+        this.changedCompletes = changedCompletes;
+        return this;
+    };
+    IncreaseCounterByUserIdResult.prototype.withChangedCompletes = function (changedCompletes) {
+        this.changedCompletes = changedCompletes;
+        return this;
+    };
     IncreaseCounterByUserIdResult.fromDict = function (data) {
         return new IncreaseCounterByUserIdResult()
-            .withItem(Gs2Mission.Counter.fromDict(data["item"]));
+            .withItem(Gs2Mission.Counter.fromDict(data["item"]))
+            .withChangedCompletes(data.changedCompletes ?
+            data.changedCompletes.map(function (item) {
+                return Gs2Mission.Complete.fromDict(item);
+            }) : []);
     };
     IncreaseCounterByUserIdResult.prototype.toDict = function () {
         var _a;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "changedCompletes": this.getChangedCompletes() ?
+                this.getChangedCompletes().map(function (item) {
+                    return item.toDict();
+                }) : [],
         };
     };
     return IncreaseCounterByUserIdResult;
