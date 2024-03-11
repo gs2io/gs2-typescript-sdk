@@ -28,6 +28,7 @@ export default class AddReferenceOfByUserIdRequest implements IRequest {
     private itemName: string|null = null;
     private itemSetName: string|null = null;
     private referenceOf: string|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -123,6 +124,17 @@ export default class AddReferenceOfByUserIdRequest implements IRequest {
         this.referenceOf = referenceOf;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -145,7 +157,8 @@ export default class AddReferenceOfByUserIdRequest implements IRequest {
             .withUserId(data["userId"])
             .withItemName(data["itemName"])
             .withItemSetName(data["itemSetName"])
-            .withReferenceOf(data["referenceOf"]);
+            .withReferenceOf(data["referenceOf"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -156,6 +169,7 @@ export default class AddReferenceOfByUserIdRequest implements IRequest {
             "itemName": this.getItemName(),
             "itemSetName": this.getItemSetName(),
             "referenceOf": this.getReferenceOf(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

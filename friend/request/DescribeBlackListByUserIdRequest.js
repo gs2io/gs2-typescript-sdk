@@ -23,6 +23,7 @@ var DescribeBlackListByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.pageToken = null;
         this.limit = null;
+        this.timeOffsetToken = null;
     }
     DescribeBlackListByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,12 +91,24 @@ var DescribeBlackListByUserIdRequest = /** @class */ (function () {
         this.limit = limit;
         return this;
     };
+    DescribeBlackListByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DescribeBlackListByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DescribeBlackListByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DescribeBlackListByUserIdRequest.fromDict = function (data) {
         return new DescribeBlackListByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withPageToken(data["pageToken"])
-            .withLimit(data["limit"]);
+            .withLimit(data["limit"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DescribeBlackListByUserIdRequest.prototype.toDict = function () {
         return {
@@ -103,6 +116,7 @@ var DescribeBlackListByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DescribeBlackListByUserIdRequest;

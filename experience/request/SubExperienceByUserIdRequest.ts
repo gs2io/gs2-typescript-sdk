@@ -27,6 +27,7 @@ export default class SubExperienceByUserIdRequest implements IRequest {
     private experienceName: string|null = null;
     private propertyId: string|null = null;
     private experienceValue: number|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -111,6 +112,17 @@ export default class SubExperienceByUserIdRequest implements IRequest {
         this.experienceValue = experienceValue;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -132,7 +144,8 @@ export default class SubExperienceByUserIdRequest implements IRequest {
             .withUserId(data["userId"])
             .withExperienceName(data["experienceName"])
             .withPropertyId(data["propertyId"])
-            .withExperienceValue(data["experienceValue"]);
+            .withExperienceValue(data["experienceValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -142,6 +155,7 @@ export default class SubExperienceByUserIdRequest implements IRequest {
             "experienceName": this.getExperienceName(),
             "propertyId": this.getPropertyId(),
             "experienceValue": this.getExperienceValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

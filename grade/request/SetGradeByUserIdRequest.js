@@ -24,6 +24,7 @@ var SetGradeByUserIdRequest = /** @class */ (function () {
         this.gradeName = null;
         this.propertyId = null;
         this.gradeValue = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     SetGradeByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var SetGradeByUserIdRequest = /** @class */ (function () {
         this.gradeValue = gradeValue;
         return this;
     };
+    SetGradeByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    SetGradeByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    SetGradeByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     SetGradeByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var SetGradeByUserIdRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withGradeName(data["gradeName"])
             .withPropertyId(data["propertyId"])
-            .withGradeValue(data["gradeValue"]);
+            .withGradeValue(data["gradeValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SetGradeByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var SetGradeByUserIdRequest = /** @class */ (function () {
             "gradeName": this.getGradeName(),
             "propertyId": this.getPropertyId(),
             "gradeValue": this.getGradeValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return SetGradeByUserIdRequest;

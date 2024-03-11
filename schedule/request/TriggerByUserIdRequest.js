@@ -24,6 +24,7 @@ var TriggerByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.triggerStrategy = null;
         this.ttl = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     TriggerByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var TriggerByUserIdRequest = /** @class */ (function () {
         this.ttl = ttl;
         return this;
     };
+    TriggerByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    TriggerByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    TriggerByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     TriggerByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var TriggerByUserIdRequest = /** @class */ (function () {
             .withTriggerName(data["triggerName"])
             .withUserId(data["userId"])
             .withTriggerStrategy(data["triggerStrategy"])
-            .withTtl(data["ttl"]);
+            .withTtl(data["ttl"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     TriggerByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var TriggerByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "triggerStrategy": this.getTriggerStrategy(),
             "ttl": this.getTtl(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return TriggerByUserIdRequest;

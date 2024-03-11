@@ -6,6 +6,7 @@ export default class GetJobResultByUserIdRequest implements IRequest {
     private userId;
     private jobName;
     private tryNumber;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class GetJobResultByUserIdRequest implements IRequest {
     getTryNumber(): number | null;
     setTryNumber(tryNumber: number | null): this;
     withTryNumber(tryNumber: number | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetJobResultByUserIdRequest;

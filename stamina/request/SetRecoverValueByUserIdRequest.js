@@ -23,6 +23,7 @@ var SetRecoverValueByUserIdRequest = /** @class */ (function () {
         this.staminaName = null;
         this.userId = null;
         this.recoverValue = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     SetRecoverValueByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var SetRecoverValueByUserIdRequest = /** @class */ (function () {
         this.recoverValue = recoverValue;
         return this;
     };
+    SetRecoverValueByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    SetRecoverValueByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    SetRecoverValueByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     SetRecoverValueByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var SetRecoverValueByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withStaminaName(data["staminaName"])
             .withUserId(data["userId"])
-            .withRecoverValue(data["recoverValue"]);
+            .withRecoverValue(data["recoverValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SetRecoverValueByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var SetRecoverValueByUserIdRequest = /** @class */ (function () {
             "staminaName": this.getStaminaName(),
             "userId": this.getUserId(),
             "recoverValue": this.getRecoverValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return SetRecoverValueByUserIdRequest;

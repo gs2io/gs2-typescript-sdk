@@ -22,6 +22,7 @@ var UpdateBannedRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.banned = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     UpdateBannedRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var UpdateBannedRequest = /** @class */ (function () {
         this.banned = banned;
         return this;
     };
+    UpdateBannedRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    UpdateBannedRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    UpdateBannedRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     UpdateBannedRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var UpdateBannedRequest = /** @class */ (function () {
         return new UpdateBannedRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withBanned(data["banned"]);
+            .withBanned(data["banned"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     UpdateBannedRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "banned": this.getBanned(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return UpdateBannedRequest;

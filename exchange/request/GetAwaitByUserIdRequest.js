@@ -22,6 +22,7 @@ var GetAwaitByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.awaitName = null;
+        this.timeOffsetToken = null;
     }
     GetAwaitByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetAwaitByUserIdRequest = /** @class */ (function () {
         this.awaitName = awaitName;
         return this;
     };
+    GetAwaitByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetAwaitByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetAwaitByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetAwaitByUserIdRequest.fromDict = function (data) {
         return new GetAwaitByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withAwaitName(data["awaitName"]);
+            .withAwaitName(data["awaitName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetAwaitByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "awaitName": this.getAwaitName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetAwaitByUserIdRequest;

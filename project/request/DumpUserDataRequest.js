@@ -20,6 +20,7 @@ var DumpUserDataRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.userId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DumpUserDataRequest.prototype.getRequestId = function () {
@@ -55,6 +56,17 @@ var DumpUserDataRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    DumpUserDataRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DumpUserDataRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DumpUserDataRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DumpUserDataRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -68,11 +80,13 @@ var DumpUserDataRequest = /** @class */ (function () {
     };
     DumpUserDataRequest.fromDict = function (data) {
         return new DumpUserDataRequest()
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DumpUserDataRequest.prototype.toDict = function () {
         return {
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DumpUserDataRequest;

@@ -22,6 +22,7 @@ var ExitStateMachineByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.statusName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     ExitStateMachineByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var ExitStateMachineByUserIdRequest = /** @class */ (function () {
         this.statusName = statusName;
         return this;
     };
+    ExitStateMachineByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    ExitStateMachineByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    ExitStateMachineByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     ExitStateMachineByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var ExitStateMachineByUserIdRequest = /** @class */ (function () {
         return new ExitStateMachineByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withStatusName(data["statusName"]);
+            .withStatusName(data["statusName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     ExitStateMachineByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "statusName": this.getStatusName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return ExitStateMachineByUserIdRequest;

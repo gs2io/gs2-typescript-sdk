@@ -25,6 +25,7 @@ export default class GetStatusByUserIdRequest implements IRequest {
     private namespaceName: string|null = null;
     private userId: string|null = null;
     private statusName: string|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -86,12 +87,24 @@ export default class GetStatusByUserIdRequest implements IRequest {
         this.statusName = statusName;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetStatusByUserIdRequest {
         return new GetStatusByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withStatusName(data["statusName"]);
+            .withStatusName(data["statusName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -99,6 +112,7 @@ export default class GetStatusByUserIdRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "statusName": this.getStatusName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

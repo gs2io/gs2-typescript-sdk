@@ -24,6 +24,7 @@ var LockByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.transactionId = null;
         this.ttl = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     LockByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var LockByUserIdRequest = /** @class */ (function () {
         this.ttl = ttl;
         return this;
     };
+    LockByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    LockByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    LockByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     LockByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var LockByUserIdRequest = /** @class */ (function () {
             .withPropertyId(data["propertyId"])
             .withUserId(data["userId"])
             .withTransactionId(data["transactionId"])
-            .withTtl(data["ttl"]);
+            .withTtl(data["ttl"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     LockByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var LockByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "transactionId": this.getTransactionId(),
             "ttl": this.getTtl(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return LockByUserIdRequest;

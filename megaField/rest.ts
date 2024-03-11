@@ -776,6 +776,9 @@ export default class Gs2MegaFieldRestClient extends AbstractGs2RestClient {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'position': request.getPosition()?.toDict() ?? null,
@@ -1008,6 +1011,9 @@ export default class Gs2MegaFieldRestClient extends AbstractGs2RestClient {
         }
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,

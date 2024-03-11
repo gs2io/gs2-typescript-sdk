@@ -26,6 +26,7 @@ var UpdateStaminaByUserIdRequest = /** @class */ (function () {
         this.maxValue = null;
         this.recoverIntervalMinutes = null;
         this.recoverValue = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     UpdateStaminaByUserIdRequest.prototype.getRequestId = function () {
@@ -127,6 +128,17 @@ var UpdateStaminaByUserIdRequest = /** @class */ (function () {
         this.recoverValue = recoverValue;
         return this;
     };
+    UpdateStaminaByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    UpdateStaminaByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    UpdateStaminaByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     UpdateStaminaByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -146,7 +158,8 @@ var UpdateStaminaByUserIdRequest = /** @class */ (function () {
             .withValue(data["value"])
             .withMaxValue(data["maxValue"])
             .withRecoverIntervalMinutes(data["recoverIntervalMinutes"])
-            .withRecoverValue(data["recoverValue"]);
+            .withRecoverValue(data["recoverValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     UpdateStaminaByUserIdRequest.prototype.toDict = function () {
         return {
@@ -157,6 +170,7 @@ var UpdateStaminaByUserIdRequest = /** @class */ (function () {
             "maxValue": this.getMaxValue(),
             "recoverIntervalMinutes": this.getRecoverIntervalMinutes(),
             "recoverValue": this.getRecoverValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return UpdateStaminaByUserIdRequest;

@@ -23,6 +23,7 @@ var DescribeMutexesByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.pageToken = null;
         this.limit = null;
+        this.timeOffsetToken = null;
     }
     DescribeMutexesByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,12 +91,24 @@ var DescribeMutexesByUserIdRequest = /** @class */ (function () {
         this.limit = limit;
         return this;
     };
+    DescribeMutexesByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DescribeMutexesByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DescribeMutexesByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DescribeMutexesByUserIdRequest.fromDict = function (data) {
         return new DescribeMutexesByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withPageToken(data["pageToken"])
-            .withLimit(data["limit"]);
+            .withLimit(data["limit"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DescribeMutexesByUserIdRequest.prototype.toDict = function () {
         return {
@@ -103,6 +116,7 @@ var DescribeMutexesByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DescribeMutexesByUserIdRequest;

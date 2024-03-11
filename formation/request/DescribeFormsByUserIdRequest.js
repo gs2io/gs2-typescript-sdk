@@ -24,6 +24,7 @@ var DescribeFormsByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.pageToken = null;
         this.limit = null;
+        this.timeOffsetToken = null;
     }
     DescribeFormsByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -102,13 +103,25 @@ var DescribeFormsByUserIdRequest = /** @class */ (function () {
         this.limit = limit;
         return this;
     };
+    DescribeFormsByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DescribeFormsByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DescribeFormsByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DescribeFormsByUserIdRequest.fromDict = function (data) {
         return new DescribeFormsByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withMoldModelName(data["moldModelName"])
             .withUserId(data["userId"])
             .withPageToken(data["pageToken"])
-            .withLimit(data["limit"]);
+            .withLimit(data["limit"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DescribeFormsByUserIdRequest.prototype.toDict = function () {
         return {
@@ -117,6 +130,7 @@ var DescribeFormsByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DescribeFormsByUserIdRequest;

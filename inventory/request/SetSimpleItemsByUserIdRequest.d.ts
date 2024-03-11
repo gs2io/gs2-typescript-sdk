@@ -7,6 +7,7 @@ export default class SetSimpleItemsByUserIdRequest implements IRequest {
     private inventoryName;
     private userId;
     private counts;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -26,6 +27,9 @@ export default class SetSimpleItemsByUserIdRequest implements IRequest {
     getCounts(): Gs2Inventory.HeldCount[] | null;
     setCounts(counts: Gs2Inventory.HeldCount[] | null): this;
     withCounts(counts: Gs2Inventory.HeldCount[] | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

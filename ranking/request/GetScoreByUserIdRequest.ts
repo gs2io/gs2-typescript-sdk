@@ -27,6 +27,7 @@ export default class GetScoreByUserIdRequest implements IRequest {
     private userId: string|null = null;
     private scorerUserId: string|null = null;
     private uniqueId: string|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -110,6 +111,17 @@ export default class GetScoreByUserIdRequest implements IRequest {
         this.uniqueId = uniqueId;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetScoreByUserIdRequest {
         return new GetScoreByUserIdRequest()
@@ -117,7 +129,8 @@ export default class GetScoreByUserIdRequest implements IRequest {
             .withCategoryName(data["categoryName"])
             .withUserId(data["userId"])
             .withScorerUserId(data["scorerUserId"])
-            .withUniqueId(data["uniqueId"]);
+            .withUniqueId(data["uniqueId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -127,6 +140,7 @@ export default class GetScoreByUserIdRequest implements IRequest {
             "userId": this.getUserId(),
             "scorerUserId": this.getScorerUserId(),
             "uniqueId": this.getUniqueId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

@@ -29,6 +29,7 @@ var CountIssueStampSheetLogRequest = /** @class */ (function () {
         this.longTerm = null;
         this.pageToken = null;
         this.limit = null;
+        this.timeOffsetToken = null;
     }
     CountIssueStampSheetLogRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -162,6 +163,17 @@ var CountIssueStampSheetLogRequest = /** @class */ (function () {
         this.limit = limit;
         return this;
     };
+    CountIssueStampSheetLogRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    CountIssueStampSheetLogRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    CountIssueStampSheetLogRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     CountIssueStampSheetLogRequest.fromDict = function (data) {
         return new CountIssueStampSheetLogRequest()
             .withNamespaceName(data["namespaceName"])
@@ -173,7 +185,8 @@ var CountIssueStampSheetLogRequest = /** @class */ (function () {
             .withEnd(data["end"])
             .withLongTerm(data["longTerm"])
             .withPageToken(data["pageToken"])
-            .withLimit(data["limit"]);
+            .withLimit(data["limit"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     CountIssueStampSheetLogRequest.prototype.toDict = function () {
         return {
@@ -187,6 +200,7 @@ var CountIssueStampSheetLogRequest = /** @class */ (function () {
             "longTerm": this.getLongTerm(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return CountIssueStampSheetLogRequest;

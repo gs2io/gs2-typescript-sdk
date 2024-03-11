@@ -22,6 +22,7 @@ var GetStatusByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.categoryName = null;
+        this.timeOffsetToken = null;
     }
     GetStatusByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetStatusByUserIdRequest = /** @class */ (function () {
         this.categoryName = categoryName;
         return this;
     };
+    GetStatusByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetStatusByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetStatusByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetStatusByUserIdRequest.fromDict = function (data) {
         return new GetStatusByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withCategoryName(data["categoryName"]);
+            .withCategoryName(data["categoryName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetStatusByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "categoryName": this.getCategoryName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetStatusByUserIdRequest;

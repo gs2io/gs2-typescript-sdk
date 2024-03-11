@@ -23,6 +23,7 @@ var VerifyEventByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.eventName = null;
         this.verifyType = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     VerifyEventByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var VerifyEventByUserIdRequest = /** @class */ (function () {
         this.verifyType = verifyType;
         return this;
     };
+    VerifyEventByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    VerifyEventByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    VerifyEventByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     VerifyEventByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var VerifyEventByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withEventName(data["eventName"])
-            .withVerifyType(data["verifyType"]);
+            .withVerifyType(data["verifyType"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     VerifyEventByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var VerifyEventByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "eventName": this.getEventName(),
             "verifyType": this.getVerifyType(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return VerifyEventByUserIdRequest;

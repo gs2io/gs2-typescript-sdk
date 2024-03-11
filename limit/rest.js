@@ -171,7 +171,7 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LimitRestClient.prototype.dumpUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
@@ -183,8 +183,11 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
+        }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -200,7 +203,7 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LimitRestClient.prototype.checkDumpUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
@@ -212,8 +215,11 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
+        }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -225,7 +231,7 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LimitRestClient.prototype.cleanUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
@@ -237,8 +243,11 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
+        }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -254,7 +263,7 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LimitRestClient.prototype.checkCleanUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
@@ -266,8 +275,11 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
+        }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -279,7 +291,7 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LimitRestClient.prototype.prepareImportUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
@@ -291,8 +303,11 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
+        }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -308,7 +323,7 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LimitRestClient.prototype.importUserDataByUserId = function (request) {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
@@ -320,9 +335,12 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
+        }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'uploadToken': (_e = request.getUploadToken()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -338,7 +356,7 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LimitRestClient.prototype.checkImportUserDataByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
@@ -351,8 +369,11 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
+        }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -392,7 +413,7 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LimitRestClient.prototype.describeCountersByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
@@ -402,11 +423,14 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
+        }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'limitName': String((_f = request.getLimitName()) !== null && _f !== void 0 ? _f : null),
-            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
-            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'limitName': String((_g = request.getLimitName()) !== null && _g !== void 0 ? _g : null),
+            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
+            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -445,7 +469,7 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LimitRestClient.prototype.getCounterByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
@@ -457,8 +481,11 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
+        }
         var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -506,7 +533,7 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LimitRestClient.prototype.countUpByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
@@ -521,10 +548,13 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+        }
         var body = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
-            'countUpValue': (_l = request.getCountUpValue()) !== null && _l !== void 0 ? _l : null,
-            'maxValue': (_m = request.getMaxValue()) !== null && _m !== void 0 ? _m : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'countUpValue': (_m = request.getCountUpValue()) !== null && _m !== void 0 ? _m : null,
+            'maxValue': (_o = request.getMaxValue()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -540,7 +570,7 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LimitRestClient.prototype.countDownByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}/decrease')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
@@ -555,9 +585,12 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+        }
         var body = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
-            'countDownValue': (_l = request.getCountDownValue()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'countDownValue': (_m = request.getCountDownValue()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -573,7 +606,7 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LimitRestClient.prototype.deleteCounterByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
@@ -588,8 +621,11 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+        }
         var params = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -638,7 +674,7 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LimitRestClient.prototype.verifyCounterByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{limitName}/{counterName}/verify/{verifyType}')
             .replace('{service}', 'limit')
             .replace('{region}', this.session.region)
@@ -654,10 +690,13 @@ var Gs2LimitRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_l = request.getDuplicationAvoider()) !== null && _l !== void 0 ? _l : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_m = request.getTimeOffsetToken()) !== null && _m !== void 0 ? _m : null;
+        }
         var body = {
-            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
-            'count': (_o = request.getCount()) !== null && _o !== void 0 ? _o : null,
-            'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
+            'contextStack': (_o = request.getContextStack()) !== null && _o !== void 0 ? _o : null,
+            'count': (_p = request.getCount()) !== null && _p !== void 0 ? _p : null,
+            'multiplyValueSpecifyingQuantity': (_q = request.getMultiplyValueSpecifyingQuantity()) !== null && _q !== void 0 ? _q : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

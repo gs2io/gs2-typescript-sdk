@@ -22,6 +22,7 @@ var SetFirebaseTokenByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.token = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     SetFirebaseTokenByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var SetFirebaseTokenByUserIdRequest = /** @class */ (function () {
         this.token = token;
         return this;
     };
+    SetFirebaseTokenByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    SetFirebaseTokenByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    SetFirebaseTokenByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     SetFirebaseTokenByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var SetFirebaseTokenByUserIdRequest = /** @class */ (function () {
         return new SetFirebaseTokenByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withToken(data["token"]);
+            .withToken(data["token"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SetFirebaseTokenByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "token": this.getToken(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return SetFirebaseTokenByUserIdRequest;

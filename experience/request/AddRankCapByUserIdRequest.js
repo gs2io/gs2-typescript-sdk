@@ -24,6 +24,7 @@ var AddRankCapByUserIdRequest = /** @class */ (function () {
         this.experienceName = null;
         this.propertyId = null;
         this.rankCapValue = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     AddRankCapByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var AddRankCapByUserIdRequest = /** @class */ (function () {
         this.rankCapValue = rankCapValue;
         return this;
     };
+    AddRankCapByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    AddRankCapByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    AddRankCapByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     AddRankCapByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var AddRankCapByUserIdRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withExperienceName(data["experienceName"])
             .withPropertyId(data["propertyId"])
-            .withRankCapValue(data["rankCapValue"]);
+            .withRankCapValue(data["rankCapValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     AddRankCapByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var AddRankCapByUserIdRequest = /** @class */ (function () {
             "experienceName": this.getExperienceName(),
             "propertyId": this.getPropertyId(),
             "rankCapValue": this.getRankCapValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return AddRankCapByUserIdRequest;

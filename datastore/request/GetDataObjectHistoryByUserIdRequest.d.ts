@@ -6,6 +6,7 @@ export default class GetDataObjectHistoryByUserIdRequest implements IRequest {
     private userId;
     private dataObjectName;
     private generation;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class GetDataObjectHistoryByUserIdRequest implements IRequest {
     getGeneration(): string | null;
     setGeneration(generation: string | null): this;
     withGeneration(generation: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetDataObjectHistoryByUserIdRequest;

@@ -8,6 +8,7 @@ export default class DeleteReferenceOfByUserIdRequest implements IRequest {
     private itemName;
     private itemSetName;
     private referenceOf;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -33,6 +34,9 @@ export default class DeleteReferenceOfByUserIdRequest implements IRequest {
     getReferenceOf(): string | null;
     setReferenceOf(referenceOf: string | null): this;
     withReferenceOf(referenceOf: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

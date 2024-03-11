@@ -26,6 +26,7 @@ var VerifyRankCapByUserIdRequest = /** @class */ (function () {
         this.propertyId = null;
         this.rankCapValue = null;
         this.multiplyValueSpecifyingQuantity = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     VerifyRankCapByUserIdRequest.prototype.getRequestId = function () {
@@ -127,6 +128,17 @@ var VerifyRankCapByUserIdRequest = /** @class */ (function () {
         this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
         return this;
     };
+    VerifyRankCapByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    VerifyRankCapByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    VerifyRankCapByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     VerifyRankCapByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -146,7 +158,8 @@ var VerifyRankCapByUserIdRequest = /** @class */ (function () {
             .withVerifyType(data["verifyType"])
             .withPropertyId(data["propertyId"])
             .withRankCapValue(data["rankCapValue"])
-            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     VerifyRankCapByUserIdRequest.prototype.toDict = function () {
         return {
@@ -157,6 +170,7 @@ var VerifyRankCapByUserIdRequest = /** @class */ (function () {
             "propertyId": this.getPropertyId(),
             "rankCapValue": this.getRankCapValue(),
             "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return VerifyRankCapByUserIdRequest;

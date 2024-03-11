@@ -25,6 +25,7 @@ var GetReferenceOfByUserIdRequest = /** @class */ (function () {
         this.itemName = null;
         this.itemSetName = null;
         this.referenceOf = null;
+        this.timeOffsetToken = null;
     }
     GetReferenceOfByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -114,6 +115,17 @@ var GetReferenceOfByUserIdRequest = /** @class */ (function () {
         this.referenceOf = referenceOf;
         return this;
     };
+    GetReferenceOfByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetReferenceOfByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetReferenceOfByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetReferenceOfByUserIdRequest.fromDict = function (data) {
         return new GetReferenceOfByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
@@ -121,7 +133,8 @@ var GetReferenceOfByUserIdRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withItemName(data["itemName"])
             .withItemSetName(data["itemSetName"])
-            .withReferenceOf(data["referenceOf"]);
+            .withReferenceOf(data["referenceOf"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetReferenceOfByUserIdRequest.prototype.toDict = function () {
         return {
@@ -131,6 +144,7 @@ var GetReferenceOfByUserIdRequest = /** @class */ (function () {
             "itemName": this.getItemName(),
             "itemSetName": this.getItemSetName(),
             "referenceOf": this.getReferenceOf(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetReferenceOfByUserIdRequest;

@@ -22,6 +22,7 @@ var ForceReDrawByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.showcaseName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     ForceReDrawByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var ForceReDrawByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    ForceReDrawByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    ForceReDrawByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    ForceReDrawByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     ForceReDrawByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var ForceReDrawByUserIdRequest = /** @class */ (function () {
         return new ForceReDrawByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withShowcaseName(data["showcaseName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     ForceReDrawByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "showcaseName": this.getShowcaseName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return ForceReDrawByUserIdRequest;

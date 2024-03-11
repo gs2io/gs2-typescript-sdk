@@ -27,6 +27,7 @@ export default class DescribeSimpleItemsByUserIdRequest implements IRequest {
     private userId: string|null = null;
     private pageToken: string|null = null;
     private limit: number|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -110,6 +111,17 @@ export default class DescribeSimpleItemsByUserIdRequest implements IRequest {
         this.limit = limit;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DescribeSimpleItemsByUserIdRequest {
         return new DescribeSimpleItemsByUserIdRequest()
@@ -117,7 +129,8 @@ export default class DescribeSimpleItemsByUserIdRequest implements IRequest {
             .withInventoryName(data["inventoryName"])
             .withUserId(data["userId"])
             .withPageToken(data["pageToken"])
-            .withLimit(data["limit"]);
+            .withLimit(data["limit"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -127,6 +140,7 @@ export default class DescribeSimpleItemsByUserIdRequest implements IRequest {
             "userId": this.getUserId(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

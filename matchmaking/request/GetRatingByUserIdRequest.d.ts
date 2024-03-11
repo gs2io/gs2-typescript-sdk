@@ -5,6 +5,7 @@ export default class GetRatingByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private ratingName;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -20,6 +21,9 @@ export default class GetRatingByUserIdRequest implements IRequest {
     getRatingName(): string | null;
     setRatingName(ratingName: string | null): this;
     withRatingName(ratingName: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetRatingByUserIdRequest;

@@ -23,6 +23,7 @@ var IncreaseCounterByUserIdRequest = /** @class */ (function () {
         this.counterName = null;
         this.userId = null;
         this.value = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     IncreaseCounterByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var IncreaseCounterByUserIdRequest = /** @class */ (function () {
         this.value = value;
         return this;
     };
+    IncreaseCounterByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    IncreaseCounterByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    IncreaseCounterByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     IncreaseCounterByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var IncreaseCounterByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withCounterName(data["counterName"])
             .withUserId(data["userId"])
-            .withValue(data["value"]);
+            .withValue(data["value"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     IncreaseCounterByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var IncreaseCounterByUserIdRequest = /** @class */ (function () {
             "counterName": this.getCounterName(),
             "userId": this.getUserId(),
             "value": this.getValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return IncreaseCounterByUserIdRequest;

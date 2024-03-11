@@ -5,6 +5,7 @@ export default class GetDeadLetterJobByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private deadLetterJobName;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -20,6 +21,9 @@ export default class GetDeadLetterJobByUserIdRequest implements IRequest {
     getDeadLetterJobName(): string | null;
     setDeadLetterJobName(deadLetterJobName: string | null): this;
     withDeadLetterJobName(deadLetterJobName: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetDeadLetterJobByUserIdRequest;

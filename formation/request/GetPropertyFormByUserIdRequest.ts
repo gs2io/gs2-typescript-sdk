@@ -26,6 +26,7 @@ export default class GetPropertyFormByUserIdRequest implements IRequest {
     private userId: string|null = null;
     private propertyFormModelName: string|null = null;
     private propertyId: string|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -98,13 +99,25 @@ export default class GetPropertyFormByUserIdRequest implements IRequest {
         this.propertyId = propertyId;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetPropertyFormByUserIdRequest {
         return new GetPropertyFormByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withPropertyFormModelName(data["propertyFormModelName"])
-            .withPropertyId(data["propertyId"]);
+            .withPropertyId(data["propertyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -113,6 +126,7 @@ export default class GetPropertyFormByUserIdRequest implements IRequest {
             "userId": this.getUserId(),
             "propertyFormModelName": this.getPropertyFormModelName(),
             "propertyId": this.getPropertyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

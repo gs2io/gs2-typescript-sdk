@@ -6,6 +6,7 @@ export default class DecreaseMaxValueByUserIdRequest implements IRequest {
     private staminaName;
     private userId;
     private decreaseValue;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -25,6 +26,9 @@ export default class DecreaseMaxValueByUserIdRequest implements IRequest {
     getDecreaseValue(): number | null;
     setDecreaseValue(decreaseValue: number | null): this;
     withDecreaseValue(decreaseValue: number | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

@@ -21,6 +21,7 @@ var WantGrantByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
     }
     WantGrantByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -66,15 +67,28 @@ var WantGrantByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    WantGrantByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    WantGrantByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    WantGrantByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     WantGrantByUserIdRequest.fromDict = function (data) {
         return new WantGrantByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     WantGrantByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return WantGrantByUserIdRequest;

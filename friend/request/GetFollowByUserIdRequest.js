@@ -23,6 +23,7 @@ var GetFollowByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.targetUserId = null;
         this.withProfile = null;
+        this.timeOffsetToken = null;
     }
     GetFollowByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,12 +91,24 @@ var GetFollowByUserIdRequest = /** @class */ (function () {
         this.withProfile = withProfile;
         return this;
     };
+    GetFollowByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetFollowByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetFollowByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetFollowByUserIdRequest.fromDict = function (data) {
         return new GetFollowByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withTargetUserId(data["targetUserId"])
-            .withWithProfile(data["withProfile"]);
+            .withWithProfile(data["withProfile"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetFollowByUserIdRequest.prototype.toDict = function () {
         return {
@@ -103,6 +116,7 @@ var GetFollowByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "targetUserId": this.getTargetUserId(),
             "withProfile": this.getWithProfile(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetFollowByUserIdRequest;

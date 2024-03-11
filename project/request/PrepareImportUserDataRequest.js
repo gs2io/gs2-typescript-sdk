@@ -20,6 +20,7 @@ var PrepareImportUserDataRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.userId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     PrepareImportUserDataRequest.prototype.getRequestId = function () {
@@ -55,6 +56,17 @@ var PrepareImportUserDataRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    PrepareImportUserDataRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    PrepareImportUserDataRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    PrepareImportUserDataRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     PrepareImportUserDataRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -68,11 +80,13 @@ var PrepareImportUserDataRequest = /** @class */ (function () {
     };
     PrepareImportUserDataRequest.fromDict = function (data) {
         return new PrepareImportUserDataRequest()
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     PrepareImportUserDataRequest.prototype.toDict = function () {
         return {
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return PrepareImportUserDataRequest;

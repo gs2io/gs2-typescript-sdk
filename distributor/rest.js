@@ -450,7 +450,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DistributorRestClient.prototype.distribute = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/{distributorName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
@@ -460,10 +460,13 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
+        }
         var body = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'userId': (_f = request.getUserId()) !== null && _f !== void 0 ? _f : null,
-            'distributeResource': (_h = (_g = request.getDistributeResource()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'userId': (_g = request.getUserId()) !== null && _g !== void 0 ? _g : null,
+            'distributeResource': (_j = (_h = request.getDistributeResource()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -479,7 +482,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DistributorRestClient.prototype.distributeWithoutOverflowProcess = function (request) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/distribute')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
@@ -487,10 +490,13 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_a = request.getTimeOffsetToken()) !== null && _a !== void 0 ? _a : null;
+        }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'userId': (_b = request.getUserId()) !== null && _b !== void 0 ? _b : null,
-            'distributeResource': (_d = (_c = request.getDistributeResource()) === null || _c === void 0 ? void 0 : _c.toDict()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'userId': (_c = request.getUserId()) !== null && _c !== void 0 ? _c : null,
+            'distributeResource': (_e = (_d = request.getDistributeResource()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -697,7 +703,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DistributorRestClient.prototype.getStampSheetResultByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/stampSheet/{transactionId}/result')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
@@ -708,8 +714,11 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_g = request.getTimeOffsetToken()) !== null && _g !== void 0 ? _g : null;
+        }
         var params = {
-            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.get(url, {
             params: params,

@@ -5,6 +5,7 @@ export default class GetReceiveRequestByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private fromUserId;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -20,6 +21,9 @@ export default class GetReceiveRequestByUserIdRequest implements IRequest {
     getFromUserId(): string | null;
     setFromUserId(fromUserId: string | null): this;
     withFromUserId(fromUserId: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetReceiveRequestByUserIdRequest;

@@ -27,6 +27,7 @@ var BuyByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.quantity = null;
         this.config = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     BuyByUserIdRequest.prototype.getRequestId = function () {
@@ -117,6 +118,17 @@ var BuyByUserIdRequest = /** @class */ (function () {
         this.config = config;
         return this;
     };
+    BuyByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    BuyByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    BuyByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     BuyByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -138,7 +150,8 @@ var BuyByUserIdRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Showcase.Config.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     BuyByUserIdRequest.prototype.toDict = function () {
         return {
@@ -151,6 +164,7 @@ var BuyByUserIdRequest = /** @class */ (function () {
                 this.getConfig().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return BuyByUserIdRequest;

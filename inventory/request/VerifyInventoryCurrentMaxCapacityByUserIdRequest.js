@@ -25,6 +25,7 @@ var VerifyInventoryCurrentMaxCapacityByUserIdRequest = /** @class */ (function (
         this.verifyType = null;
         this.currentInventoryMaxCapacity = null;
         this.multiplyValueSpecifyingQuantity = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     VerifyInventoryCurrentMaxCapacityByUserIdRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var VerifyInventoryCurrentMaxCapacityByUserIdRequest = /** @class */ (function (
         this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
         return this;
     };
+    VerifyInventoryCurrentMaxCapacityByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    VerifyInventoryCurrentMaxCapacityByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    VerifyInventoryCurrentMaxCapacityByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     VerifyInventoryCurrentMaxCapacityByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var VerifyInventoryCurrentMaxCapacityByUserIdRequest = /** @class */ (function (
             .withInventoryName(data["inventoryName"])
             .withVerifyType(data["verifyType"])
             .withCurrentInventoryMaxCapacity(data["currentInventoryMaxCapacity"])
-            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     VerifyInventoryCurrentMaxCapacityByUserIdRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var VerifyInventoryCurrentMaxCapacityByUserIdRequest = /** @class */ (function (
             "verifyType": this.getVerifyType(),
             "currentInventoryMaxCapacity": this.getCurrentInventoryMaxCapacity(),
             "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return VerifyInventoryCurrentMaxCapacityByUserIdRequest;

@@ -22,6 +22,7 @@ var DeleteMutexByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.propertyId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteMutexByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var DeleteMutexByUserIdRequest = /** @class */ (function () {
         this.propertyId = propertyId;
         return this;
     };
+    DeleteMutexByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteMutexByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteMutexByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteMutexByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var DeleteMutexByUserIdRequest = /** @class */ (function () {
         return new DeleteMutexByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withPropertyId(data["propertyId"]);
+            .withPropertyId(data["propertyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteMutexByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "propertyId": this.getPropertyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteMutexByUserIdRequest;

@@ -183,7 +183,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.dumpUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -195,8 +195,11 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
+        }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -212,7 +215,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.checkDumpUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/dump/user/{userId}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -224,8 +227,11 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
+        }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -237,7 +243,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.cleanUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -249,8 +255,11 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
+        }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -266,7 +275,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.checkCleanUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/clean/user/{userId}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -278,8 +287,11 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
+        }
         var params = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -291,7 +303,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.prepareImportUserDataByUserId = function (request) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/prepare')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -303,8 +315,11 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
+        }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -320,7 +335,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.importUserDataByUserId = function (request) {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -332,9 +347,12 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_c = request.getDuplicationAvoider()) !== null && _c !== void 0 ? _c : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_d = request.getTimeOffsetToken()) !== null && _d !== void 0 ? _d : null;
+        }
         var body = {
-            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
-            'uploadToken': (_e = request.getUploadToken()) !== null && _e !== void 0 ? _e : null,
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'uploadToken': (_f = request.getUploadToken()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -350,7 +368,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.checkImportUserDataByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/import/user/{userId}/{uploadToken}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -363,8 +381,11 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
+        }
         var params = {
-            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -815,7 +836,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.describeStatusesByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -825,11 +846,14 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_e = request.getTimeOffsetToken()) !== null && _e !== void 0 ? _e : null;
+        }
         var params = {
-            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
-            'experienceName': String((_f = request.getExperienceName()) !== null && _f !== void 0 ? _f : null),
-            'pageToken': String((_g = request.getPageToken()) !== null && _g !== void 0 ? _g : null),
-            'limit': String((_h = request.getLimit()) !== null && _h !== void 0 ? _h : null),
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'experienceName': String((_g = request.getExperienceName()) !== null && _g !== void 0 ? _g : null),
+            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
+            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -868,7 +892,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.getStatusByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -880,8 +904,11 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
+        }
         var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.get(url, {
             params: params,
@@ -921,7 +948,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.getStatusWithSignatureByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}/signature')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -933,9 +960,12 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_j = request.getTimeOffsetToken()) !== null && _j !== void 0 ? _j : null;
+        }
         var params = {
-            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'keyId': String((_k = request.getKeyId()) !== null && _k !== void 0 ? _k : null),
+            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'keyId': String((_l = request.getKeyId()) !== null && _l !== void 0 ? _l : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -947,7 +977,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.addExperienceByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -962,10 +992,13 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+        }
         var body = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
-            'experienceValue': (_l = request.getExperienceValue()) !== null && _l !== void 0 ? _l : null,
-            'truncateExperienceWhenRankUp': (_m = request.getTruncateExperienceWhenRankUp()) !== null && _m !== void 0 ? _m : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'experienceValue': (_m = request.getExperienceValue()) !== null && _m !== void 0 ? _m : null,
+            'truncateExperienceWhenRankUp': (_o = request.getTruncateExperienceWhenRankUp()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -981,7 +1014,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.subExperienceByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}/sub')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -996,9 +1029,12 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+        }
         var body = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
-            'experienceValue': (_l = request.getExperienceValue()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'experienceValue': (_m = request.getExperienceValue()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1014,7 +1050,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.setExperienceByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -1029,9 +1065,12 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+        }
         var body = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
-            'experienceValue': (_l = request.getExperienceValue()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'experienceValue': (_m = request.getExperienceValue()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1047,7 +1086,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.addRankCapByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}/cap')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -1062,9 +1101,12 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+        }
         var body = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
-            'rankCapValue': (_l = request.getRankCapValue()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'rankCapValue': (_m = request.getRankCapValue()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1080,7 +1122,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.subRankCapByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}/cap/sub')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -1095,9 +1137,12 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+        }
         var body = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
-            'rankCapValue': (_l = request.getRankCapValue()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'rankCapValue': (_m = request.getRankCapValue()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1113,7 +1158,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.setRankCapByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}/cap')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -1128,9 +1173,12 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+        }
         var body = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
-            'rankCapValue': (_l = request.getRankCapValue()) !== null && _l !== void 0 ? _l : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'rankCapValue': (_m = request.getRankCapValue()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1146,7 +1194,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.deleteStatusByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -1161,8 +1209,11 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+        }
         var params = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.delete(url, {
             params: params,
@@ -1211,7 +1262,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.verifyRankByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{experienceName}/verify/rank/{verifyType}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -1226,11 +1277,14 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+        }
         var body = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
-            'propertyId': (_l = request.getPropertyId()) !== null && _l !== void 0 ? _l : null,
-            'rankValue': (_m = request.getRankValue()) !== null && _m !== void 0 ? _m : null,
-            'multiplyValueSpecifyingQuantity': (_o = request.getMultiplyValueSpecifyingQuantity()) !== null && _o !== void 0 ? _o : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'propertyId': (_m = request.getPropertyId()) !== null && _m !== void 0 ? _m : null,
+            'rankValue': (_o = request.getRankValue()) !== null && _o !== void 0 ? _o : null,
+            'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1283,7 +1337,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.verifyRankCapByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/{experienceName}/verify/rankCap/{verifyType}')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -1298,11 +1352,14 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+        }
         var body = {
-            'contextStack': (_k = request.getContextStack()) !== null && _k !== void 0 ? _k : null,
-            'propertyId': (_l = request.getPropertyId()) !== null && _l !== void 0 ? _l : null,
-            'rankCapValue': (_m = request.getRankCapValue()) !== null && _m !== void 0 ? _m : null,
-            'multiplyValueSpecifyingQuantity': (_o = request.getMultiplyValueSpecifyingQuantity()) !== null && _o !== void 0 ? _o : null,
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'propertyId': (_m = request.getPropertyId()) !== null && _m !== void 0 ? _m : null,
+            'rankCapValue': (_o = request.getRankCapValue()) !== null && _o !== void 0 ? _o : null,
+            'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1480,7 +1537,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.multiplyAcquireActionsByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}/acquire/rate/{rateName}/multiply')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -1496,9 +1553,12 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = (_l = request.getDuplicationAvoider()) !== null && _l !== void 0 ? _l : null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_m = request.getTimeOffsetToken()) !== null && _m !== void 0 ? _m : null;
+        }
         var body = {
-            'contextStack': (_m = request.getContextStack()) !== null && _m !== void 0 ? _m : null,
-            'acquireActions': (_p = (_o = request.getAcquireActions()) === null || _o === void 0 ? void 0 : _o.map(function (item) { return item.toDict(); })) !== null && _p !== void 0 ? _p : null,
+            'contextStack': (_o = request.getContextStack()) !== null && _o !== void 0 ? _o : null,
+            'acquireActions': (_q = (_p = request.getAcquireActions()) === null || _p === void 0 ? void 0 : _p.map(function (item) { return item.toDict(); })) !== null && _q !== void 0 ? _q : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

@@ -25,6 +25,7 @@ export default class GetMessageByUserIdRequest implements IRequest {
     private namespaceName: string|null = null;
     private userId: string|null = null;
     private messageName: string|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -86,12 +87,24 @@ export default class GetMessageByUserIdRequest implements IRequest {
         this.messageName = messageName;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetMessageByUserIdRequest {
         return new GetMessageByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withMessageName(data["messageName"]);
+            .withMessageName(data["messageName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -99,6 +112,7 @@ export default class GetMessageByUserIdRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "messageName": this.getMessageName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

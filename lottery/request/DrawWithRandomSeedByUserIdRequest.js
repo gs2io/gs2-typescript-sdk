@@ -27,6 +27,7 @@ var DrawWithRandomSeedByUserIdRequest = /** @class */ (function () {
         this.randomSeed = null;
         this.count = null;
         this.config = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DrawWithRandomSeedByUserIdRequest.prototype.getRequestId = function () {
@@ -117,6 +118,17 @@ var DrawWithRandomSeedByUserIdRequest = /** @class */ (function () {
         this.config = config;
         return this;
     };
+    DrawWithRandomSeedByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DrawWithRandomSeedByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DrawWithRandomSeedByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DrawWithRandomSeedByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -138,7 +150,8 @@ var DrawWithRandomSeedByUserIdRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Lottery.Config.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DrawWithRandomSeedByUserIdRequest.prototype.toDict = function () {
         return {
@@ -151,6 +164,7 @@ var DrawWithRandomSeedByUserIdRequest = /** @class */ (function () {
                 this.getConfig().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DrawWithRandomSeedByUserIdRequest;

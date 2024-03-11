@@ -24,6 +24,7 @@ export default class CheckImportUserDataByUserIdRequest implements IRequest {
     private contextStack: string|null = null;
     private userId: string|null = null;
     private uploadToken: string|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -75,6 +76,17 @@ export default class CheckImportUserDataByUserIdRequest implements IRequest {
         this.uploadToken = uploadToken;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -93,13 +105,15 @@ export default class CheckImportUserDataByUserIdRequest implements IRequest {
     public static fromDict(data: {[key: string]: any}): CheckImportUserDataByUserIdRequest {
         return new CheckImportUserDataByUserIdRequest()
             .withUserId(data["userId"])
-            .withUploadToken(data["uploadToken"]);
+            .withUploadToken(data["uploadToken"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "userId": this.getUserId(),
             "uploadToken": this.getUploadToken(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

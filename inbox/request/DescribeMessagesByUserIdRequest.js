@@ -24,6 +24,7 @@ var DescribeMessagesByUserIdRequest = /** @class */ (function () {
         this.isRead = null;
         this.pageToken = null;
         this.limit = null;
+        this.timeOffsetToken = null;
     }
     DescribeMessagesByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -102,13 +103,25 @@ var DescribeMessagesByUserIdRequest = /** @class */ (function () {
         this.limit = limit;
         return this;
     };
+    DescribeMessagesByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DescribeMessagesByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DescribeMessagesByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DescribeMessagesByUserIdRequest.fromDict = function (data) {
         return new DescribeMessagesByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withIsRead(data["isRead"])
             .withPageToken(data["pageToken"])
-            .withLimit(data["limit"]);
+            .withLimit(data["limit"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DescribeMessagesByUserIdRequest.prototype.toDict = function () {
         return {
@@ -117,6 +130,7 @@ var DescribeMessagesByUserIdRequest = /** @class */ (function () {
             "isRead": this.getIsRead(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DescribeMessagesByUserIdRequest;

@@ -1,3 +1,4 @@
 import LoginRequest from "./LoginRequest";
 import LoginBySignatureRequest from "./LoginBySignatureRequest";
-export { LoginRequest, LoginBySignatureRequest, };
+import IssueTimeOffsetTokenByUserIdRequest from "./IssueTimeOffsetTokenByUserIdRequest";
+export { LoginRequest, LoginBySignatureRequest, IssueTimeOffsetTokenByUserIdRequest, };

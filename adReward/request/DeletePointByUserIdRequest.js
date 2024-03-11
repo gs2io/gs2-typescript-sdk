@@ -21,6 +21,7 @@ var DeletePointByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeletePointByUserIdRequest.prototype.getRequestId = function () {
@@ -67,6 +68,17 @@ var DeletePointByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    DeletePointByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeletePointByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeletePointByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeletePointByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -81,12 +93,14 @@ var DeletePointByUserIdRequest = /** @class */ (function () {
     DeletePointByUserIdRequest.fromDict = function (data) {
         return new DeletePointByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeletePointByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeletePointByUserIdRequest;

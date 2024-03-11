@@ -26,6 +26,7 @@ var SetBalanceParameterStatusByUserIdRequest = /** @class */ (function () {
         this.parameterName = null;
         this.propertyId = null;
         this.parameterValues = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     SetBalanceParameterStatusByUserIdRequest.prototype.getRequestId = function () {
@@ -105,6 +106,17 @@ var SetBalanceParameterStatusByUserIdRequest = /** @class */ (function () {
         this.parameterValues = parameterValues;
         return this;
     };
+    SetBalanceParameterStatusByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    SetBalanceParameterStatusByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    SetBalanceParameterStatusByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     SetBalanceParameterStatusByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -125,7 +137,8 @@ var SetBalanceParameterStatusByUserIdRequest = /** @class */ (function () {
             .withParameterValues(data.parameterValues ?
             data.parameterValues.map(function (item) {
                 return Gs2Enchant.BalanceParameterValue.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SetBalanceParameterStatusByUserIdRequest.prototype.toDict = function () {
         return {
@@ -137,6 +150,7 @@ var SetBalanceParameterStatusByUserIdRequest = /** @class */ (function () {
                 this.getParameterValues().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return SetBalanceParameterStatusByUserIdRequest;

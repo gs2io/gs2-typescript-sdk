@@ -7,6 +7,7 @@ export default class UpdateTakeOverByUserIdRequest implements IRequest {
     private type;
     private oldPassword;
     private password;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -29,6 +30,9 @@ export default class UpdateTakeOverByUserIdRequest implements IRequest {
     getPassword(): string | null;
     setPassword(password: string | null): this;
     withPassword(password: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

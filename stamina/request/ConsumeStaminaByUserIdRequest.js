@@ -23,6 +23,7 @@ var ConsumeStaminaByUserIdRequest = /** @class */ (function () {
         this.staminaName = null;
         this.userId = null;
         this.consumeValue = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     ConsumeStaminaByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var ConsumeStaminaByUserIdRequest = /** @class */ (function () {
         this.consumeValue = consumeValue;
         return this;
     };
+    ConsumeStaminaByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    ConsumeStaminaByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    ConsumeStaminaByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     ConsumeStaminaByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var ConsumeStaminaByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withStaminaName(data["staminaName"])
             .withUserId(data["userId"])
-            .withConsumeValue(data["consumeValue"]);
+            .withConsumeValue(data["consumeValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     ConsumeStaminaByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var ConsumeStaminaByUserIdRequest = /** @class */ (function () {
             "staminaName": this.getStaminaName(),
             "userId": this.getUserId(),
             "consumeValue": this.getConsumeValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return ConsumeStaminaByUserIdRequest;

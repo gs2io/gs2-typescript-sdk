@@ -11,6 +11,7 @@ export default class CreateGatheringByUserIdRequest implements IRequest {
     private allowUserIds;
     private expiresAt;
     private expiresAtTimeSpan;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -42,6 +43,9 @@ export default class CreateGatheringByUserIdRequest implements IRequest {
     getExpiresAtTimeSpan(): Gs2Matchmaking.TimeSpan | null;
     setExpiresAtTimeSpan(expiresAtTimeSpan: Gs2Matchmaking.TimeSpan | null): this;
     withExpiresAtTimeSpan(expiresAtTimeSpan: Gs2Matchmaking.TimeSpan | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

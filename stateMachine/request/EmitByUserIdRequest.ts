@@ -27,6 +27,7 @@ export default class EmitByUserIdRequest implements IRequest {
     private statusName: string|null = null;
     private eventName: string|null = null;
     private args: string|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -111,6 +112,17 @@ export default class EmitByUserIdRequest implements IRequest {
         this.args = args;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -132,7 +144,8 @@ export default class EmitByUserIdRequest implements IRequest {
             .withUserId(data["userId"])
             .withStatusName(data["statusName"])
             .withEventName(data["eventName"])
-            .withArgs(data["args"]);
+            .withArgs(data["args"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -142,6 +155,7 @@ export default class EmitByUserIdRequest implements IRequest {
             "statusName": this.getStatusName(),
             "eventName": this.getEventName(),
             "args": this.getArgs(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

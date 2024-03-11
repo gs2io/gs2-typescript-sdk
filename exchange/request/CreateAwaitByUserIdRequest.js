@@ -26,6 +26,7 @@ var CreateAwaitByUserIdRequest = /** @class */ (function () {
         this.rateName = null;
         this.count = null;
         this.config = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     CreateAwaitByUserIdRequest.prototype.getRequestId = function () {
@@ -105,6 +106,17 @@ var CreateAwaitByUserIdRequest = /** @class */ (function () {
         this.config = config;
         return this;
     };
+    CreateAwaitByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    CreateAwaitByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    CreateAwaitByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     CreateAwaitByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -125,7 +137,8 @@ var CreateAwaitByUserIdRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Exchange.Config.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     CreateAwaitByUserIdRequest.prototype.toDict = function () {
         return {
@@ -137,6 +150,7 @@ var CreateAwaitByUserIdRequest = /** @class */ (function () {
                 this.getConfig().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return CreateAwaitByUserIdRequest;

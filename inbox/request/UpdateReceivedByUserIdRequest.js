@@ -22,6 +22,7 @@ var UpdateReceivedByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.receivedGlobalMessageNames = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     UpdateReceivedByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var UpdateReceivedByUserIdRequest = /** @class */ (function () {
         this.receivedGlobalMessageNames = receivedGlobalMessageNames;
         return this;
     };
+    UpdateReceivedByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    UpdateReceivedByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    UpdateReceivedByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     UpdateReceivedByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -97,7 +109,8 @@ var UpdateReceivedByUserIdRequest = /** @class */ (function () {
             .withReceivedGlobalMessageNames(data.receivedGlobalMessageNames ?
             data.receivedGlobalMessageNames.map(function (item) {
                 return item;
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     UpdateReceivedByUserIdRequest.prototype.toDict = function () {
         return {
@@ -107,6 +120,7 @@ var UpdateReceivedByUserIdRequest = /** @class */ (function () {
                 this.getReceivedGlobalMessageNames().map(function (item) {
                     return item;
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return UpdateReceivedByUserIdRequest;

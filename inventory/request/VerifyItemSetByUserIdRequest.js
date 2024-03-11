@@ -27,6 +27,7 @@ var VerifyItemSetByUserIdRequest = /** @class */ (function () {
         this.itemSetName = null;
         this.count = null;
         this.multiplyValueSpecifyingQuantity = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     VerifyItemSetByUserIdRequest.prototype.getRequestId = function () {
@@ -139,6 +140,17 @@ var VerifyItemSetByUserIdRequest = /** @class */ (function () {
         this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
         return this;
     };
+    VerifyItemSetByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    VerifyItemSetByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    VerifyItemSetByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     VerifyItemSetByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -159,7 +171,8 @@ var VerifyItemSetByUserIdRequest = /** @class */ (function () {
             .withVerifyType(data["verifyType"])
             .withItemSetName(data["itemSetName"])
             .withCount(data["count"])
-            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     VerifyItemSetByUserIdRequest.prototype.toDict = function () {
         return {
@@ -171,6 +184,7 @@ var VerifyItemSetByUserIdRequest = /** @class */ (function () {
             "itemSetName": this.getItemSetName(),
             "count": this.getCount(),
             "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return VerifyItemSetByUserIdRequest;

@@ -25,6 +25,7 @@ var SubscribeByUserIdRequest = /** @class */ (function () {
         this.roomName = null;
         this.userId = null;
         this.notificationTypes = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     SubscribeByUserIdRequest.prototype.getRequestId = function () {
@@ -93,6 +94,17 @@ var SubscribeByUserIdRequest = /** @class */ (function () {
         this.notificationTypes = notificationTypes;
         return this;
     };
+    SubscribeByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    SubscribeByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    SubscribeByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     SubscribeByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -112,7 +124,8 @@ var SubscribeByUserIdRequest = /** @class */ (function () {
             .withNotificationTypes(data.notificationTypes ?
             data.notificationTypes.map(function (item) {
                 return Gs2Chat.NotificationType.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SubscribeByUserIdRequest.prototype.toDict = function () {
         return {
@@ -123,6 +136,7 @@ var SubscribeByUserIdRequest = /** @class */ (function () {
                 this.getNotificationTypes().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return SubscribeByUserIdRequest;

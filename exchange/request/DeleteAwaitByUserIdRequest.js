@@ -22,6 +22,7 @@ var DeleteAwaitByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.awaitName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteAwaitByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var DeleteAwaitByUserIdRequest = /** @class */ (function () {
         this.awaitName = awaitName;
         return this;
     };
+    DeleteAwaitByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteAwaitByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteAwaitByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteAwaitByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var DeleteAwaitByUserIdRequest = /** @class */ (function () {
         return new DeleteAwaitByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withAwaitName(data["awaitName"]);
+            .withAwaitName(data["awaitName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteAwaitByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "awaitName": this.getAwaitName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteAwaitByUserIdRequest;

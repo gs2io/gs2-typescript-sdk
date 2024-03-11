@@ -25,6 +25,7 @@ export default class DescribeSubscribesByCategoryNameAndUserIdRequest implements
     private namespaceName: string|null = null;
     private categoryName: string|null = null;
     private userId: string|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -86,12 +87,24 @@ export default class DescribeSubscribesByCategoryNameAndUserIdRequest implements
         this.userId = userId;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DescribeSubscribesByCategoryNameAndUserIdRequest {
         return new DescribeSubscribesByCategoryNameAndUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withCategoryName(data["categoryName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -99,6 +112,7 @@ export default class DescribeSubscribesByCategoryNameAndUserIdRequest implements
             "namespaceName": this.getNamespaceName(),
             "categoryName": this.getCategoryName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

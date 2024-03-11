@@ -24,6 +24,7 @@ var DescribeAwaitsByUserIdRequest = /** @class */ (function () {
         this.rateName = null;
         this.pageToken = null;
         this.limit = null;
+        this.timeOffsetToken = null;
     }
     DescribeAwaitsByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -102,13 +103,25 @@ var DescribeAwaitsByUserIdRequest = /** @class */ (function () {
         this.limit = limit;
         return this;
     };
+    DescribeAwaitsByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DescribeAwaitsByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DescribeAwaitsByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DescribeAwaitsByUserIdRequest.fromDict = function (data) {
         return new DescribeAwaitsByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withRateName(data["rateName"])
             .withPageToken(data["pageToken"])
-            .withLimit(data["limit"]);
+            .withLimit(data["limit"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DescribeAwaitsByUserIdRequest.prototype.toDict = function () {
         return {
@@ -117,6 +130,7 @@ var DescribeAwaitsByUserIdRequest = /** @class */ (function () {
             "rateName": this.getRateName(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DescribeAwaitsByUserIdRequest;

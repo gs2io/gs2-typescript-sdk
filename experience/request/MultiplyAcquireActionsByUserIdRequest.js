@@ -27,6 +27,7 @@ var MultiplyAcquireActionsByUserIdRequest = /** @class */ (function () {
         this.propertyId = null;
         this.rateName = null;
         this.acquireActions = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     MultiplyAcquireActionsByUserIdRequest.prototype.getRequestId = function () {
@@ -117,6 +118,17 @@ var MultiplyAcquireActionsByUserIdRequest = /** @class */ (function () {
         this.acquireActions = acquireActions;
         return this;
     };
+    MultiplyAcquireActionsByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    MultiplyAcquireActionsByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    MultiplyAcquireActionsByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     MultiplyAcquireActionsByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -138,7 +150,8 @@ var MultiplyAcquireActionsByUserIdRequest = /** @class */ (function () {
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
                 return Gs2Experience.AcquireAction.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     MultiplyAcquireActionsByUserIdRequest.prototype.toDict = function () {
         return {
@@ -151,6 +164,7 @@ var MultiplyAcquireActionsByUserIdRequest = /** @class */ (function () {
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return MultiplyAcquireActionsByUserIdRequest;

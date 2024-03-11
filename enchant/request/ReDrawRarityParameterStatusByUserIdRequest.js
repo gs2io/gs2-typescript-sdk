@@ -24,6 +24,7 @@ var ReDrawRarityParameterStatusByUserIdRequest = /** @class */ (function () {
         this.parameterName = null;
         this.propertyId = null;
         this.fixedParameterNames = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     ReDrawRarityParameterStatusByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var ReDrawRarityParameterStatusByUserIdRequest = /** @class */ (function () {
         this.fixedParameterNames = fixedParameterNames;
         return this;
     };
+    ReDrawRarityParameterStatusByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    ReDrawRarityParameterStatusByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    ReDrawRarityParameterStatusByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     ReDrawRarityParameterStatusByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -123,7 +135,8 @@ var ReDrawRarityParameterStatusByUserIdRequest = /** @class */ (function () {
             .withFixedParameterNames(data.fixedParameterNames ?
             data.fixedParameterNames.map(function (item) {
                 return item;
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     ReDrawRarityParameterStatusByUserIdRequest.prototype.toDict = function () {
         return {
@@ -135,6 +148,7 @@ var ReDrawRarityParameterStatusByUserIdRequest = /** @class */ (function () {
                 this.getFixedParameterNames().map(function (item) {
                     return item;
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return ReDrawRarityParameterStatusByUserIdRequest;

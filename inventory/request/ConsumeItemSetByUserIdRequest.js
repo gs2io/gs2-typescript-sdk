@@ -25,6 +25,7 @@ var ConsumeItemSetByUserIdRequest = /** @class */ (function () {
         this.itemName = null;
         this.consumeCount = null;
         this.itemSetName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     ConsumeItemSetByUserIdRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var ConsumeItemSetByUserIdRequest = /** @class */ (function () {
         this.itemSetName = itemSetName;
         return this;
     };
+    ConsumeItemSetByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    ConsumeItemSetByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    ConsumeItemSetByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     ConsumeItemSetByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var ConsumeItemSetByUserIdRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withItemName(data["itemName"])
             .withConsumeCount(data["consumeCount"])
-            .withItemSetName(data["itemSetName"]);
+            .withItemSetName(data["itemSetName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     ConsumeItemSetByUserIdRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var ConsumeItemSetByUserIdRequest = /** @class */ (function () {
             "itemName": this.getItemName(),
             "consumeCount": this.getConsumeCount(),
             "itemSetName": this.getItemSetName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return ConsumeItemSetByUserIdRequest;

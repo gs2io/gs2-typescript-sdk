@@ -26,6 +26,7 @@ export default class GetCounterByUserIdRequest implements IRequest {
     private limitName: string|null = null;
     private userId: string|null = null;
     private counterName: string|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -98,13 +99,25 @@ export default class GetCounterByUserIdRequest implements IRequest {
         this.counterName = counterName;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetCounterByUserIdRequest {
         return new GetCounterByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withLimitName(data["limitName"])
             .withUserId(data["userId"])
-            .withCounterName(data["counterName"]);
+            .withCounterName(data["counterName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -113,6 +126,7 @@ export default class GetCounterByUserIdRequest implements IRequest {
             "limitName": this.getLimitName(),
             "userId": this.getUserId(),
             "counterName": this.getCounterName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

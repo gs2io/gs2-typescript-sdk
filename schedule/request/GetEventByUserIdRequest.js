@@ -23,6 +23,7 @@ var GetEventByUserIdRequest = /** @class */ (function () {
         this.eventName = null;
         this.userId = null;
         this.isInSchedule = null;
+        this.timeOffsetToken = null;
     }
     GetEventByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,12 +91,24 @@ var GetEventByUserIdRequest = /** @class */ (function () {
         this.isInSchedule = isInSchedule;
         return this;
     };
+    GetEventByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetEventByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetEventByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetEventByUserIdRequest.fromDict = function (data) {
         return new GetEventByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withEventName(data["eventName"])
             .withUserId(data["userId"])
-            .withIsInSchedule(data["isInSchedule"]);
+            .withIsInSchedule(data["isInSchedule"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetEventByUserIdRequest.prototype.toDict = function () {
         return {
@@ -103,6 +116,7 @@ var GetEventByUserIdRequest = /** @class */ (function () {
             "eventName": this.getEventName(),
             "userId": this.getUserId(),
             "isInSchedule": this.getIsInSchedule(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetEventByUserIdRequest;

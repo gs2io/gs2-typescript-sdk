@@ -5,6 +5,7 @@ export default class GetByUserIdAndTransactionIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private transactionId;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -20,6 +21,9 @@ export default class GetByUserIdAndTransactionIdRequest implements IRequest {
     getTransactionId(): string | null;
     setTransactionId(transactionId: string | null): this;
     withTransactionId(transactionId: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetByUserIdAndTransactionIdRequest;

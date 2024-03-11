@@ -25,6 +25,7 @@ var AddExperienceByUserIdRequest = /** @class */ (function () {
         this.propertyId = null;
         this.experienceValue = null;
         this.truncateExperienceWhenRankUp = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     AddExperienceByUserIdRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var AddExperienceByUserIdRequest = /** @class */ (function () {
         this.truncateExperienceWhenRankUp = truncateExperienceWhenRankUp;
         return this;
     };
+    AddExperienceByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    AddExperienceByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    AddExperienceByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     AddExperienceByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var AddExperienceByUserIdRequest = /** @class */ (function () {
             .withExperienceName(data["experienceName"])
             .withPropertyId(data["propertyId"])
             .withExperienceValue(data["experienceValue"])
-            .withTruncateExperienceWhenRankUp(data["truncateExperienceWhenRankUp"]);
+            .withTruncateExperienceWhenRankUp(data["truncateExperienceWhenRankUp"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     AddExperienceByUserIdRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var AddExperienceByUserIdRequest = /** @class */ (function () {
             "propertyId": this.getPropertyId(),
             "experienceValue": this.getExperienceValue(),
             "truncateExperienceWhenRankUp": this.getTruncateExperienceWhenRankUp(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return AddExperienceByUserIdRequest;

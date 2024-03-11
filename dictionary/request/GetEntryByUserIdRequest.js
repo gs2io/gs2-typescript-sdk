@@ -22,6 +22,7 @@ var GetEntryByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.entryModelName = null;
+        this.timeOffsetToken = null;
     }
     GetEntryByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetEntryByUserIdRequest = /** @class */ (function () {
         this.entryModelName = entryModelName;
         return this;
     };
+    GetEntryByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetEntryByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetEntryByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetEntryByUserIdRequest.fromDict = function (data) {
         return new GetEntryByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withEntryModelName(data["entryModelName"]);
+            .withEntryModelName(data["entryModelName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetEntryByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "entryModelName": this.getEntryModelName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetEntryByUserIdRequest;

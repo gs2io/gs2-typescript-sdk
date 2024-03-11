@@ -23,6 +23,7 @@ var SetMaxValueByUserIdRequest = /** @class */ (function () {
         this.staminaName = null;
         this.userId = null;
         this.maxValue = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     SetMaxValueByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var SetMaxValueByUserIdRequest = /** @class */ (function () {
         this.maxValue = maxValue;
         return this;
     };
+    SetMaxValueByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    SetMaxValueByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    SetMaxValueByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     SetMaxValueByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var SetMaxValueByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withStaminaName(data["staminaName"])
             .withUserId(data["userId"])
-            .withMaxValue(data["maxValue"]);
+            .withMaxValue(data["maxValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SetMaxValueByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var SetMaxValueByUserIdRequest = /** @class */ (function () {
             "staminaName": this.getStaminaName(),
             "userId": this.getUserId(),
             "maxValue": this.getMaxValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return SetMaxValueByUserIdRequest;

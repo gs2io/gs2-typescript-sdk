@@ -22,6 +22,7 @@ var DeleteTriggerByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.triggerName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteTriggerByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var DeleteTriggerByUserIdRequest = /** @class */ (function () {
         this.triggerName = triggerName;
         return this;
     };
+    DeleteTriggerByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteTriggerByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteTriggerByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteTriggerByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var DeleteTriggerByUserIdRequest = /** @class */ (function () {
         return new DeleteTriggerByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withTriggerName(data["triggerName"]);
+            .withTriggerName(data["triggerName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteTriggerByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "triggerName": this.getTriggerName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteTriggerByUserIdRequest;

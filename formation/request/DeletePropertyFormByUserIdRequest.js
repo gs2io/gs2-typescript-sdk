@@ -23,6 +23,7 @@ var DeletePropertyFormByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.propertyFormModelName = null;
         this.propertyId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeletePropertyFormByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var DeletePropertyFormByUserIdRequest = /** @class */ (function () {
         this.propertyId = propertyId;
         return this;
     };
+    DeletePropertyFormByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeletePropertyFormByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeletePropertyFormByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeletePropertyFormByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var DeletePropertyFormByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withPropertyFormModelName(data["propertyFormModelName"])
-            .withPropertyId(data["propertyId"]);
+            .withPropertyId(data["propertyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeletePropertyFormByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var DeletePropertyFormByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "propertyFormModelName": this.getPropertyFormModelName(),
             "propertyId": this.getPropertyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeletePropertyFormByUserIdRequest;

@@ -28,6 +28,7 @@ export default class DescribeMessagesByUserIdRequest implements IRequest {
     private userId: string|null = null;
     private startAt: number|null = null;
     private limit: number|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -122,6 +123,17 @@ export default class DescribeMessagesByUserIdRequest implements IRequest {
         this.limit = limit;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DescribeMessagesByUserIdRequest {
         return new DescribeMessagesByUserIdRequest()
@@ -130,7 +142,8 @@ export default class DescribeMessagesByUserIdRequest implements IRequest {
             .withPassword(data["password"])
             .withUserId(data["userId"])
             .withStartAt(data["startAt"])
-            .withLimit(data["limit"]);
+            .withLimit(data["limit"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -141,6 +154,7 @@ export default class DescribeMessagesByUserIdRequest implements IRequest {
             "userId": this.getUserId(),
             "startAt": this.getStartAt(),
             "limit": this.getLimit(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

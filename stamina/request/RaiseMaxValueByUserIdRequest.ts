@@ -26,6 +26,7 @@ export default class RaiseMaxValueByUserIdRequest implements IRequest {
     private staminaName: string|null = null;
     private userId: string|null = null;
     private raiseValue: number|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -99,6 +100,17 @@ export default class RaiseMaxValueByUserIdRequest implements IRequest {
         this.raiseValue = raiseValue;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -119,7 +131,8 @@ export default class RaiseMaxValueByUserIdRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withStaminaName(data["staminaName"])
             .withUserId(data["userId"])
-            .withRaiseValue(data["raiseValue"]);
+            .withRaiseValue(data["raiseValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -128,6 +141,7 @@ export default class RaiseMaxValueByUserIdRequest implements IRequest {
             "staminaName": this.getStaminaName(),
             "userId": this.getUserId(),
             "raiseValue": this.getRaiseValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

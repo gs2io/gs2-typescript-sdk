@@ -22,6 +22,7 @@ var GetRatingByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.ratingName = null;
+        this.timeOffsetToken = null;
     }
     GetRatingByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetRatingByUserIdRequest = /** @class */ (function () {
         this.ratingName = ratingName;
         return this;
     };
+    GetRatingByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetRatingByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetRatingByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetRatingByUserIdRequest.fromDict = function (data) {
         return new GetRatingByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withRatingName(data["ratingName"]);
+            .withRatingName(data["ratingName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetRatingByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "ratingName": this.getRatingName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetRatingByUserIdRequest;

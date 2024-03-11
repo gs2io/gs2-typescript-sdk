@@ -6,6 +6,7 @@ export default class AddBanRequest implements IRequest {
     private namespaceName;
     private userId;
     private banStatus;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -22,6 +23,9 @@ export default class AddBanRequest implements IRequest {
     getBanStatus(): Gs2Account.BanStatus | null;
     setBanStatus(banStatus: Gs2Account.BanStatus | null): this;
     withBanStatus(banStatus: Gs2Account.BanStatus | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

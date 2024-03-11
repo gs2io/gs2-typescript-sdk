@@ -22,6 +22,7 @@ var GetSendRequestByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.targetUserId = null;
+        this.timeOffsetToken = null;
     }
     GetSendRequestByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetSendRequestByUserIdRequest = /** @class */ (function () {
         this.targetUserId = targetUserId;
         return this;
     };
+    GetSendRequestByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetSendRequestByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetSendRequestByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetSendRequestByUserIdRequest.fromDict = function (data) {
         return new GetSendRequestByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withTargetUserId(data["targetUserId"]);
+            .withTargetUserId(data["targetUserId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetSendRequestByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "targetUserId": this.getTargetUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetSendRequestByUserIdRequest;

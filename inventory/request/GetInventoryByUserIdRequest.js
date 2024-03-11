@@ -22,6 +22,7 @@ var GetInventoryByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.inventoryName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
     }
     GetInventoryByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetInventoryByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    GetInventoryByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetInventoryByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetInventoryByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetInventoryByUserIdRequest.fromDict = function (data) {
         return new GetInventoryByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withInventoryName(data["inventoryName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetInventoryByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "inventoryName": this.getInventoryName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetInventoryByUserIdRequest;

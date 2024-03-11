@@ -28,6 +28,7 @@ export default class GetReferenceOfByUserIdRequest implements IRequest {
     private itemName: string|null = null;
     private itemSetName: string|null = null;
     private referenceOf: string|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -122,6 +123,17 @@ export default class GetReferenceOfByUserIdRequest implements IRequest {
         this.referenceOf = referenceOf;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetReferenceOfByUserIdRequest {
         return new GetReferenceOfByUserIdRequest()
@@ -130,7 +142,8 @@ export default class GetReferenceOfByUserIdRequest implements IRequest {
             .withUserId(data["userId"])
             .withItemName(data["itemName"])
             .withItemSetName(data["itemSetName"])
-            .withReferenceOf(data["referenceOf"]);
+            .withReferenceOf(data["referenceOf"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -141,6 +154,7 @@ export default class GetReferenceOfByUserIdRequest implements IRequest {
             "itemName": this.getItemName(),
             "itemSetName": this.getItemSetName(),
             "referenceOf": this.getReferenceOf(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

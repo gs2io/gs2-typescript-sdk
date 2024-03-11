@@ -22,6 +22,7 @@ var AddEntriesByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.entryModelNames = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     AddEntriesByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var AddEntriesByUserIdRequest = /** @class */ (function () {
         this.entryModelNames = entryModelNames;
         return this;
     };
+    AddEntriesByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    AddEntriesByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    AddEntriesByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     AddEntriesByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -97,7 +109,8 @@ var AddEntriesByUserIdRequest = /** @class */ (function () {
             .withEntryModelNames(data.entryModelNames ?
             data.entryModelNames.map(function (item) {
                 return item;
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     AddEntriesByUserIdRequest.prototype.toDict = function () {
         return {
@@ -107,6 +120,7 @@ var AddEntriesByUserIdRequest = /** @class */ (function () {
                 this.getEntryModelNames().map(function (item) {
                     return item;
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return AddEntriesByUserIdRequest;

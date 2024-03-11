@@ -24,6 +24,7 @@ var CountDownByUserIdRequest = /** @class */ (function () {
         this.counterName = null;
         this.userId = null;
         this.countDownValue = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     CountDownByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var CountDownByUserIdRequest = /** @class */ (function () {
         this.countDownValue = countDownValue;
         return this;
     };
+    CountDownByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    CountDownByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    CountDownByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     CountDownByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var CountDownByUserIdRequest = /** @class */ (function () {
             .withLimitName(data["limitName"])
             .withCounterName(data["counterName"])
             .withUserId(data["userId"])
-            .withCountDownValue(data["countDownValue"]);
+            .withCountDownValue(data["countDownValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     CountDownByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var CountDownByUserIdRequest = /** @class */ (function () {
             "counterName": this.getCounterName(),
             "userId": this.getUserId(),
             "countDownValue": this.getCountDownValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return CountDownByUserIdRequest;

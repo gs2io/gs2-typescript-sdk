@@ -26,6 +26,7 @@ var VerifyGradeByUserIdRequest = /** @class */ (function () {
         this.propertyId = null;
         this.gradeValue = null;
         this.multiplyValueSpecifyingQuantity = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     VerifyGradeByUserIdRequest.prototype.getRequestId = function () {
@@ -127,6 +128,17 @@ var VerifyGradeByUserIdRequest = /** @class */ (function () {
         this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
         return this;
     };
+    VerifyGradeByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    VerifyGradeByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    VerifyGradeByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     VerifyGradeByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -146,7 +158,8 @@ var VerifyGradeByUserIdRequest = /** @class */ (function () {
             .withVerifyType(data["verifyType"])
             .withPropertyId(data["propertyId"])
             .withGradeValue(data["gradeValue"])
-            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     VerifyGradeByUserIdRequest.prototype.toDict = function () {
         return {
@@ -157,6 +170,7 @@ var VerifyGradeByUserIdRequest = /** @class */ (function () {
             "propertyId": this.getPropertyId(),
             "gradeValue": this.getGradeValue(),
             "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return VerifyGradeByUserIdRequest;

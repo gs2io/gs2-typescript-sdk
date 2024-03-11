@@ -9,6 +9,7 @@ export default class RandomShowcaseBuyByUserIdRequest implements IRequest {
     private userId;
     private quantity;
     private config;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -34,6 +35,9 @@ export default class RandomShowcaseBuyByUserIdRequest implements IRequest {
     getConfig(): Gs2Showcase.Config[] | null;
     setConfig(config: Gs2Showcase.Config[] | null): this;
     withConfig(config: Gs2Showcase.Config[] | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

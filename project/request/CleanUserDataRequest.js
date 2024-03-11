@@ -20,6 +20,7 @@ var CleanUserDataRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.userId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     CleanUserDataRequest.prototype.getRequestId = function () {
@@ -55,6 +56,17 @@ var CleanUserDataRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    CleanUserDataRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    CleanUserDataRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    CleanUserDataRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     CleanUserDataRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -68,11 +80,13 @@ var CleanUserDataRequest = /** @class */ (function () {
     };
     CleanUserDataRequest.fromDict = function (data) {
         return new CleanUserDataRequest()
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     CleanUserDataRequest.prototype.toDict = function () {
         return {
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return CleanUserDataRequest;

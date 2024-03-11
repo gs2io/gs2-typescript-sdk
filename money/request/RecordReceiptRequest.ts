@@ -26,6 +26,7 @@ export default class RecordReceiptRequest implements IRequest {
     private userId: string|null = null;
     private contentsId: string|null = null;
     private receipt: string|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -99,6 +100,17 @@ export default class RecordReceiptRequest implements IRequest {
         this.receipt = receipt;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -119,7 +131,8 @@ export default class RecordReceiptRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withContentsId(data["contentsId"])
-            .withReceipt(data["receipt"]);
+            .withReceipt(data["receipt"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -128,6 +141,7 @@ export default class RecordReceiptRequest implements IRequest {
             "userId": this.getUserId(),
             "contentsId": this.getContentsId(),
             "receipt": this.getReceipt(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

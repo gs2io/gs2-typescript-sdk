@@ -26,6 +26,7 @@ export default class UnlockByUserIdRequest implements IRequest {
     private propertyId: string|null = null;
     private userId: string|null = null;
     private transactionId: string|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -99,6 +100,17 @@ export default class UnlockByUserIdRequest implements IRequest {
         this.transactionId = transactionId;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -119,7 +131,8 @@ export default class UnlockByUserIdRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withPropertyId(data["propertyId"])
             .withUserId(data["userId"])
-            .withTransactionId(data["transactionId"]);
+            .withTransactionId(data["transactionId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -128,6 +141,7 @@ export default class UnlockByUserIdRequest implements IRequest {
             "propertyId": this.getPropertyId(),
             "userId": this.getUserId(),
             "transactionId": this.getTransactionId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

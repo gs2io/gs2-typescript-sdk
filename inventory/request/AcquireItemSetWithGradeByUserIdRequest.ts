@@ -28,6 +28,7 @@ export default class AcquireItemSetWithGradeByUserIdRequest implements IRequest 
     private userId: string|null = null;
     private gradeModelId: string|null = null;
     private gradeValue: number|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -123,6 +124,17 @@ export default class AcquireItemSetWithGradeByUserIdRequest implements IRequest 
         this.gradeValue = gradeValue;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -145,7 +157,8 @@ export default class AcquireItemSetWithGradeByUserIdRequest implements IRequest 
             .withItemName(data["itemName"])
             .withUserId(data["userId"])
             .withGradeModelId(data["gradeModelId"])
-            .withGradeValue(data["gradeValue"]);
+            .withGradeValue(data["gradeValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -156,6 +169,7 @@ export default class AcquireItemSetWithGradeByUserIdRequest implements IRequest 
             "userId": this.getUserId(),
             "gradeModelId": this.getGradeModelId(),
             "gradeValue": this.getGradeValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

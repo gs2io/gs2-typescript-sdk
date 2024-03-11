@@ -28,6 +28,7 @@ export default class VerifyInventoryCurrentMaxCapacityByUserIdRequest implements
     private verifyType: string|null = null;
     private currentInventoryMaxCapacity: number|null = null;
     private multiplyValueSpecifyingQuantity: boolean|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -123,6 +124,17 @@ export default class VerifyInventoryCurrentMaxCapacityByUserIdRequest implements
         this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -145,7 +157,8 @@ export default class VerifyInventoryCurrentMaxCapacityByUserIdRequest implements
             .withInventoryName(data["inventoryName"])
             .withVerifyType(data["verifyType"])
             .withCurrentInventoryMaxCapacity(data["currentInventoryMaxCapacity"])
-            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -156,6 +169,7 @@ export default class VerifyInventoryCurrentMaxCapacityByUserIdRequest implements
             "verifyType": this.getVerifyType(),
             "currentInventoryMaxCapacity": this.getCurrentInventoryMaxCapacity(),
             "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

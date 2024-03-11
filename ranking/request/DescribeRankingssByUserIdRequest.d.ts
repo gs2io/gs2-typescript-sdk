@@ -9,6 +9,7 @@ export default class DescribeRankingssByUserIdRequest implements IRequest {
     private startIndex;
     private pageToken;
     private limit;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -36,6 +37,9 @@ export default class DescribeRankingssByUserIdRequest implements IRequest {
     getLimit(): number | null;
     setLimit(limit: number | null): this;
     withLimit(limit: number | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): DescribeRankingssByUserIdRequest;

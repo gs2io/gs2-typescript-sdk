@@ -22,6 +22,7 @@ var GetAcceptVersionByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.versionName = null;
+        this.timeOffsetToken = null;
     }
     GetAcceptVersionByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetAcceptVersionByUserIdRequest = /** @class */ (function () {
         this.versionName = versionName;
         return this;
     };
+    GetAcceptVersionByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetAcceptVersionByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetAcceptVersionByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetAcceptVersionByUserIdRequest.fromDict = function (data) {
         return new GetAcceptVersionByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withVersionName(data["versionName"]);
+            .withVersionName(data["versionName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetAcceptVersionByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "versionName": this.getVersionName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetAcceptVersionByUserIdRequest;

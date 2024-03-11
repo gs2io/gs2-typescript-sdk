@@ -25,6 +25,7 @@ var ResetByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.propertyId = null;
         this.config = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     ResetByUserIdRequest.prototype.getRequestId = function () {
@@ -93,6 +94,17 @@ var ResetByUserIdRequest = /** @class */ (function () {
         this.config = config;
         return this;
     };
+    ResetByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    ResetByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    ResetByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     ResetByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -112,7 +124,8 @@ var ResetByUserIdRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2SkillTree.Config.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     ResetByUserIdRequest.prototype.toDict = function () {
         return {
@@ -123,6 +136,7 @@ var ResetByUserIdRequest = /** @class */ (function () {
                 this.getConfig().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return ResetByUserIdRequest;

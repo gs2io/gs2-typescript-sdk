@@ -21,6 +21,7 @@ var GetProfileByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
     }
     GetProfileByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -66,15 +67,28 @@ var GetProfileByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    GetProfileByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetProfileByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetProfileByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetProfileByUserIdRequest.fromDict = function (data) {
         return new GetProfileByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetProfileByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetProfileByUserIdRequest;

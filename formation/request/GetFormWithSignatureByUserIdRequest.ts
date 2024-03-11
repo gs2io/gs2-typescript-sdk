@@ -27,6 +27,7 @@ export default class GetFormWithSignatureByUserIdRequest implements IRequest {
     private moldModelName: string|null = null;
     private index: number|null = null;
     private keyId: string|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -110,6 +111,17 @@ export default class GetFormWithSignatureByUserIdRequest implements IRequest {
         this.keyId = keyId;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetFormWithSignatureByUserIdRequest {
         return new GetFormWithSignatureByUserIdRequest()
@@ -117,7 +129,8 @@ export default class GetFormWithSignatureByUserIdRequest implements IRequest {
             .withUserId(data["userId"])
             .withMoldModelName(data["moldModelName"])
             .withIndex(data["index"])
-            .withKeyId(data["keyId"]);
+            .withKeyId(data["keyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -127,6 +140,7 @@ export default class GetFormWithSignatureByUserIdRequest implements IRequest {
             "moldModelName": this.getMoldModelName(),
             "index": this.getIndex(),
             "keyId": this.getKeyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

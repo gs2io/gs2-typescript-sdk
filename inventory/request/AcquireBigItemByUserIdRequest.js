@@ -24,6 +24,7 @@ var AcquireBigItemByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.itemName = null;
         this.acquireCount = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     AcquireBigItemByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var AcquireBigItemByUserIdRequest = /** @class */ (function () {
         this.acquireCount = acquireCount;
         return this;
     };
+    AcquireBigItemByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    AcquireBigItemByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    AcquireBigItemByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     AcquireBigItemByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var AcquireBigItemByUserIdRequest = /** @class */ (function () {
             .withInventoryName(data["inventoryName"])
             .withUserId(data["userId"])
             .withItemName(data["itemName"])
-            .withAcquireCount(data["acquireCount"]);
+            .withAcquireCount(data["acquireCount"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     AcquireBigItemByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var AcquireBigItemByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "itemName": this.getItemName(),
             "acquireCount": this.getAcquireCount(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return AcquireBigItemByUserIdRequest;

@@ -22,6 +22,7 @@ var GetSubscribeByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.roomName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
     }
     GetSubscribeByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetSubscribeByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    GetSubscribeByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetSubscribeByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetSubscribeByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetSubscribeByUserIdRequest.fromDict = function (data) {
         return new GetSubscribeByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withRoomName(data["roomName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetSubscribeByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "roomName": this.getRoomName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetSubscribeByUserIdRequest;

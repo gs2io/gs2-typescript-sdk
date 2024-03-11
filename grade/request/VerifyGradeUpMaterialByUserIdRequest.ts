@@ -28,6 +28,7 @@ export default class VerifyGradeUpMaterialByUserIdRequest implements IRequest {
     private verifyType: string|null = null;
     private propertyId: string|null = null;
     private materialPropertyId: string|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -123,6 +124,17 @@ export default class VerifyGradeUpMaterialByUserIdRequest implements IRequest {
         this.materialPropertyId = materialPropertyId;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -145,7 +157,8 @@ export default class VerifyGradeUpMaterialByUserIdRequest implements IRequest {
             .withGradeName(data["gradeName"])
             .withVerifyType(data["verifyType"])
             .withPropertyId(data["propertyId"])
-            .withMaterialPropertyId(data["materialPropertyId"]);
+            .withMaterialPropertyId(data["materialPropertyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -156,6 +169,7 @@ export default class VerifyGradeUpMaterialByUserIdRequest implements IRequest {
             "verifyType": this.getVerifyType(),
             "propertyId": this.getPropertyId(),
             "materialPropertyId": this.getMaterialPropertyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

@@ -25,6 +25,7 @@ var GetBallotByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.numberOfPlayer = null;
         this.keyId = null;
+        this.timeOffsetToken = null;
     }
     GetBallotByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -114,6 +115,17 @@ var GetBallotByUserIdRequest = /** @class */ (function () {
         this.keyId = keyId;
         return this;
     };
+    GetBallotByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetBallotByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetBallotByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetBallotByUserIdRequest.fromDict = function (data) {
         return new GetBallotByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
@@ -121,7 +133,8 @@ var GetBallotByUserIdRequest = /** @class */ (function () {
             .withGatheringName(data["gatheringName"])
             .withUserId(data["userId"])
             .withNumberOfPlayer(data["numberOfPlayer"])
-            .withKeyId(data["keyId"]);
+            .withKeyId(data["keyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetBallotByUserIdRequest.prototype.toDict = function () {
         return {
@@ -131,6 +144,7 @@ var GetBallotByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "numberOfPlayer": this.getNumberOfPlayer(),
             "keyId": this.getKeyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetBallotByUserIdRequest;

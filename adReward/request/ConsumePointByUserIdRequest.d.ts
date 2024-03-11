@@ -5,6 +5,7 @@ export default class ConsumePointByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private point;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -21,6 +22,9 @@ export default class ConsumePointByUserIdRequest implements IRequest {
     getPoint(): number | null;
     setPoint(point: number | null): this;
     withPoint(point: number | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

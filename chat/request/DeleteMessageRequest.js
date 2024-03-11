@@ -23,6 +23,7 @@ var DeleteMessageRequest = /** @class */ (function () {
         this.roomName = null;
         this.userId = null;
         this.messageName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteMessageRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var DeleteMessageRequest = /** @class */ (function () {
         this.messageName = messageName;
         return this;
     };
+    DeleteMessageRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteMessageRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteMessageRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteMessageRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var DeleteMessageRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withRoomName(data["roomName"])
             .withUserId(data["userId"])
-            .withMessageName(data["messageName"]);
+            .withMessageName(data["messageName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteMessageRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var DeleteMessageRequest = /** @class */ (function () {
             "roomName": this.getRoomName(),
             "userId": this.getUserId(),
             "messageName": this.getMessageName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteMessageRequest;

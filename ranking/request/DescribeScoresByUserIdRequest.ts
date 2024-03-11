@@ -28,6 +28,7 @@ export default class DescribeScoresByUserIdRequest implements IRequest {
     private scorerUserId: string|null = null;
     private pageToken: string|null = null;
     private limit: number|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -122,6 +123,17 @@ export default class DescribeScoresByUserIdRequest implements IRequest {
         this.limit = limit;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DescribeScoresByUserIdRequest {
         return new DescribeScoresByUserIdRequest()
@@ -130,7 +142,8 @@ export default class DescribeScoresByUserIdRequest implements IRequest {
             .withUserId(data["userId"])
             .withScorerUserId(data["scorerUserId"])
             .withPageToken(data["pageToken"])
-            .withLimit(data["limit"]);
+            .withLimit(data["limit"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -141,6 +154,7 @@ export default class DescribeScoresByUserIdRequest implements IRequest {
             "scorerUserId": this.getScorerUserId(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

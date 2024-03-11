@@ -30,6 +30,7 @@ export default class VerifyItemSetByUserIdRequest implements IRequest {
     private itemSetName: string|null = null;
     private count: number|null = null;
     private multiplyValueSpecifyingQuantity: boolean|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -147,6 +148,17 @@ export default class VerifyItemSetByUserIdRequest implements IRequest {
         this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -171,7 +183,8 @@ export default class VerifyItemSetByUserIdRequest implements IRequest {
             .withVerifyType(data["verifyType"])
             .withItemSetName(data["itemSetName"])
             .withCount(data["count"])
-            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -184,6 +197,7 @@ export default class VerifyItemSetByUserIdRequest implements IRequest {
             "itemSetName": this.getItemSetName(),
             "count": this.getCount(),
             "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

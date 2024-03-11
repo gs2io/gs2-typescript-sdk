@@ -22,6 +22,7 @@ var GetTakeOverByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.type = null;
+        this.timeOffsetToken = null;
     }
     GetTakeOverByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetTakeOverByUserIdRequest = /** @class */ (function () {
         this.type = type;
         return this;
     };
+    GetTakeOverByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetTakeOverByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetTakeOverByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetTakeOverByUserIdRequest.fromDict = function (data) {
         return new GetTakeOverByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withType(data["type"]);
+            .withType(data["type"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetTakeOverByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "type": this.getType(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetTakeOverByUserIdRequest;

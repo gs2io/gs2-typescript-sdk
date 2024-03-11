@@ -24,6 +24,7 @@ var CheckVersionByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.targetVersions = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     CheckVersionByUserIdRequest.prototype.getRequestId = function () {
@@ -81,6 +82,17 @@ var CheckVersionByUserIdRequest = /** @class */ (function () {
         this.targetVersions = targetVersions;
         return this;
     };
+    CheckVersionByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    CheckVersionByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    CheckVersionByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     CheckVersionByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -99,7 +111,8 @@ var CheckVersionByUserIdRequest = /** @class */ (function () {
             .withTargetVersions(data.targetVersions ?
             data.targetVersions.map(function (item) {
                 return Gs2Version.TargetVersion.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     CheckVersionByUserIdRequest.prototype.toDict = function () {
         return {
@@ -109,6 +122,7 @@ var CheckVersionByUserIdRequest = /** @class */ (function () {
                 this.getTargetVersions().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return CheckVersionByUserIdRequest;

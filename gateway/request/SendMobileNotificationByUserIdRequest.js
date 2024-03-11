@@ -24,6 +24,7 @@ var SendMobileNotificationByUserIdRequest = /** @class */ (function () {
         this.subject = null;
         this.payload = null;
         this.sound = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     SendMobileNotificationByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var SendMobileNotificationByUserIdRequest = /** @class */ (function () {
         this.sound = sound;
         return this;
     };
+    SendMobileNotificationByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    SendMobileNotificationByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    SendMobileNotificationByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     SendMobileNotificationByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var SendMobileNotificationByUserIdRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withSubject(data["subject"])
             .withPayload(data["payload"])
-            .withSound(data["sound"]);
+            .withSound(data["sound"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SendMobileNotificationByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var SendMobileNotificationByUserIdRequest = /** @class */ (function () {
             "subject": this.getSubject(),
             "payload": this.getPayload(),
             "sound": this.getSound(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return SendMobileNotificationByUserIdRequest;

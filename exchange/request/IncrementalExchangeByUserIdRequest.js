@@ -26,6 +26,7 @@ var IncrementalExchangeByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.count = null;
         this.config = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     IncrementalExchangeByUserIdRequest.prototype.getRequestId = function () {
@@ -105,6 +106,17 @@ var IncrementalExchangeByUserIdRequest = /** @class */ (function () {
         this.config = config;
         return this;
     };
+    IncrementalExchangeByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    IncrementalExchangeByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    IncrementalExchangeByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     IncrementalExchangeByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -125,7 +137,8 @@ var IncrementalExchangeByUserIdRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Exchange.Config.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     IncrementalExchangeByUserIdRequest.prototype.toDict = function () {
         return {
@@ -137,6 +150,7 @@ var IncrementalExchangeByUserIdRequest = /** @class */ (function () {
                 this.getConfig().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return IncrementalExchangeByUserIdRequest;

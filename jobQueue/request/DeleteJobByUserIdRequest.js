@@ -22,6 +22,7 @@ var DeleteJobByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.jobName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteJobByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var DeleteJobByUserIdRequest = /** @class */ (function () {
         this.jobName = jobName;
         return this;
     };
+    DeleteJobByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteJobByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteJobByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteJobByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var DeleteJobByUserIdRequest = /** @class */ (function () {
         return new DeleteJobByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withJobName(data["jobName"]);
+            .withJobName(data["jobName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteJobByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "jobName": this.getJobName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteJobByUserIdRequest;

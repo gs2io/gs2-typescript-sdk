@@ -6,6 +6,7 @@ export default class DeleteBigItemByUserIdRequest implements IRequest {
     private inventoryName;
     private userId;
     private itemName;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -25,6 +26,9 @@ export default class DeleteBigItemByUserIdRequest implements IRequest {
     getItemName(): string | null;
     setItemName(itemName: string | null): this;
     withItemName(itemName: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

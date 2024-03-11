@@ -21,6 +21,7 @@ var CheckImportUserDataByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.userId = null;
         this.uploadToken = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     CheckImportUserDataByUserIdRequest.prototype.getRequestId = function () {
@@ -67,6 +68,17 @@ var CheckImportUserDataByUserIdRequest = /** @class */ (function () {
         this.uploadToken = uploadToken;
         return this;
     };
+    CheckImportUserDataByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    CheckImportUserDataByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    CheckImportUserDataByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     CheckImportUserDataByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -81,12 +93,14 @@ var CheckImportUserDataByUserIdRequest = /** @class */ (function () {
     CheckImportUserDataByUserIdRequest.fromDict = function (data) {
         return new CheckImportUserDataByUserIdRequest()
             .withUserId(data["userId"])
-            .withUploadToken(data["uploadToken"]);
+            .withUploadToken(data["uploadToken"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     CheckImportUserDataByUserIdRequest.prototype.toDict = function () {
         return {
             "userId": this.getUserId(),
             "uploadToken": this.getUploadToken(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return CheckImportUserDataByUserIdRequest;

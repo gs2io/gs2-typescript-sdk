@@ -23,6 +23,7 @@ var PrepareReUploadByUserIdRequest = /** @class */ (function () {
         this.dataObjectName = null;
         this.userId = null;
         this.contentType = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     PrepareReUploadByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var PrepareReUploadByUserIdRequest = /** @class */ (function () {
         this.contentType = contentType;
         return this;
     };
+    PrepareReUploadByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    PrepareReUploadByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    PrepareReUploadByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     PrepareReUploadByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var PrepareReUploadByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withDataObjectName(data["dataObjectName"])
             .withUserId(data["userId"])
-            .withContentType(data["contentType"]);
+            .withContentType(data["contentType"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     PrepareReUploadByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var PrepareReUploadByUserIdRequest = /** @class */ (function () {
             "dataObjectName": this.getDataObjectName(),
             "userId": this.getUserId(),
             "contentType": this.getContentType(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return PrepareReUploadByUserIdRequest;

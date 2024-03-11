@@ -6,6 +6,7 @@ export default class IncreaseCounterByUserIdRequest implements IRequest {
     private counterName;
     private userId;
     private value;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -25,6 +26,9 @@ export default class IncreaseCounterByUserIdRequest implements IRequest {
     getValue(): number | null;
     setValue(value: number | null): this;
     withValue(value: number | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

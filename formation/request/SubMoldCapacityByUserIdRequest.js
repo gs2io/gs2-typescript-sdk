@@ -23,6 +23,7 @@ var SubMoldCapacityByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.moldModelName = null;
         this.capacity = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     SubMoldCapacityByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var SubMoldCapacityByUserIdRequest = /** @class */ (function () {
         this.capacity = capacity;
         return this;
     };
+    SubMoldCapacityByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    SubMoldCapacityByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    SubMoldCapacityByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     SubMoldCapacityByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var SubMoldCapacityByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withMoldModelName(data["moldModelName"])
-            .withCapacity(data["capacity"]);
+            .withCapacity(data["capacity"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SubMoldCapacityByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var SubMoldCapacityByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "moldModelName": this.getMoldModelName(),
             "capacity": this.getCapacity(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return SubMoldCapacityByUserIdRequest;

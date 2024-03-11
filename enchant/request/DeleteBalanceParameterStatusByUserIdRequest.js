@@ -23,6 +23,7 @@ var DeleteBalanceParameterStatusByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.parameterName = null;
         this.propertyId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteBalanceParameterStatusByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var DeleteBalanceParameterStatusByUserIdRequest = /** @class */ (function () {
         this.propertyId = propertyId;
         return this;
     };
+    DeleteBalanceParameterStatusByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteBalanceParameterStatusByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteBalanceParameterStatusByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteBalanceParameterStatusByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var DeleteBalanceParameterStatusByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withParameterName(data["parameterName"])
-            .withPropertyId(data["propertyId"]);
+            .withPropertyId(data["propertyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteBalanceParameterStatusByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var DeleteBalanceParameterStatusByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "parameterName": this.getParameterName(),
             "propertyId": this.getPropertyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteBalanceParameterStatusByUserIdRequest;

@@ -22,6 +22,7 @@ var GetStaminaByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.staminaName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
     }
     GetStaminaByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetStaminaByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    GetStaminaByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetStaminaByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetStaminaByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetStaminaByUserIdRequest.fromDict = function (data) {
         return new GetStaminaByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withStaminaName(data["staminaName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetStaminaByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "staminaName": this.getStaminaName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetStaminaByUserIdRequest;

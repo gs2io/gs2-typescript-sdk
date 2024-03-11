@@ -28,6 +28,7 @@ export default class DirectEnhanceByUserIdRequest implements IRequest {
     private targetItemSetId: string|null = null;
     private materials: Gs2Enhance.Material[]|null = null;
     private config: Gs2Enhance.Config[]|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -123,6 +124,17 @@ export default class DirectEnhanceByUserIdRequest implements IRequest {
         this.config = config;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -153,7 +165,8 @@ export default class DirectEnhanceByUserIdRequest implements IRequest {
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Enhance.Config.fromDict(item);
                 }
-            ) : []);
+            ) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -172,6 +185,7 @@ export default class DirectEnhanceByUserIdRequest implements IRequest {
                     return item.toDict();
                 }
             ) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

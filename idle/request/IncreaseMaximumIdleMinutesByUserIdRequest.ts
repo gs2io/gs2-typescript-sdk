@@ -26,6 +26,7 @@ export default class IncreaseMaximumIdleMinutesByUserIdRequest implements IReque
     private userId: string|null = null;
     private categoryName: string|null = null;
     private increaseMinutes: number|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -99,6 +100,17 @@ export default class IncreaseMaximumIdleMinutesByUserIdRequest implements IReque
         this.increaseMinutes = increaseMinutes;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -119,7 +131,8 @@ export default class IncreaseMaximumIdleMinutesByUserIdRequest implements IReque
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withCategoryName(data["categoryName"])
-            .withIncreaseMinutes(data["increaseMinutes"]);
+            .withIncreaseMinutes(data["increaseMinutes"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -128,6 +141,7 @@ export default class IncreaseMaximumIdleMinutesByUserIdRequest implements IReque
             "userId": this.getUserId(),
             "categoryName": this.getCategoryName(),
             "increaseMinutes": this.getIncreaseMinutes(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

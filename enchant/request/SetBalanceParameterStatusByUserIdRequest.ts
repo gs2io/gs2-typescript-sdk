@@ -27,6 +27,7 @@ export default class SetBalanceParameterStatusByUserIdRequest implements IReques
     private parameterName: string|null = null;
     private propertyId: string|null = null;
     private parameterValues: Gs2Enchant.BalanceParameterValue[]|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -111,6 +112,17 @@ export default class SetBalanceParameterStatusByUserIdRequest implements IReques
         this.parameterValues = parameterValues;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -136,7 +148,8 @@ export default class SetBalanceParameterStatusByUserIdRequest implements IReques
                 data.parameterValues.map((item: {[key: string]: any}) => {
                     return Gs2Enchant.BalanceParameterValue.fromDict(item);
                 }
-            ) : []);
+            ) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -150,6 +163,7 @@ export default class SetBalanceParameterStatusByUserIdRequest implements IReques
                     return item.toDict();
                 }
             ) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

@@ -7,6 +7,7 @@ export default class ConsumeBigItemByUserIdRequest implements IRequest {
     private userId;
     private itemName;
     private consumeCount;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -29,6 +30,9 @@ export default class ConsumeBigItemByUserIdRequest implements IRequest {
     getConsumeCount(): string | null;
     setConsumeCount(consumeCount: string | null): this;
     withConsumeCount(consumeCount: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

@@ -4,6 +4,7 @@ export default class LoginRequest implements IRequest {
     private contextStack;
     private userId;
     private timeOffset;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -16,6 +17,9 @@ export default class LoginRequest implements IRequest {
     getTimeOffset(): number | null;
     setTimeOffset(timeOffset: number | null): this;
     withTimeOffset(timeOffset: number | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): LoginRequest;

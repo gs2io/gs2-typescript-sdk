@@ -9,6 +9,7 @@ export default class StartByUserIdRequest implements IRequest {
     private userId;
     private force;
     private config;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -34,6 +35,9 @@ export default class StartByUserIdRequest implements IRequest {
     getConfig(): Gs2Quest.Config[] | null;
     setConfig(config: Gs2Quest.Config[] | null): this;
     withConfig(config: Gs2Quest.Config[] | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

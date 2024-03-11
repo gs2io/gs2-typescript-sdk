@@ -22,6 +22,7 @@ var DeleteMessageByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.messageName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteMessageByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var DeleteMessageByUserIdRequest = /** @class */ (function () {
         this.messageName = messageName;
         return this;
     };
+    DeleteMessageByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteMessageByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteMessageByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteMessageByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var DeleteMessageByUserIdRequest = /** @class */ (function () {
         return new DeleteMessageByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withMessageName(data["messageName"]);
+            .withMessageName(data["messageName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteMessageByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "messageName": this.getMessageName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteMessageByUserIdRequest;

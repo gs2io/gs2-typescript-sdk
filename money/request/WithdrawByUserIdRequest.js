@@ -24,6 +24,7 @@ var WithdrawByUserIdRequest = /** @class */ (function () {
         this.slot = null;
         this.count = null;
         this.paidOnly = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     WithdrawByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var WithdrawByUserIdRequest = /** @class */ (function () {
         this.paidOnly = paidOnly;
         return this;
     };
+    WithdrawByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    WithdrawByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    WithdrawByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     WithdrawByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var WithdrawByUserIdRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withSlot(data["slot"])
             .withCount(data["count"])
-            .withPaidOnly(data["paidOnly"]);
+            .withPaidOnly(data["paidOnly"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     WithdrawByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var WithdrawByUserIdRequest = /** @class */ (function () {
             "slot": this.getSlot(),
             "count": this.getCount(),
             "paidOnly": this.getPaidOnly(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return WithdrawByUserIdRequest;

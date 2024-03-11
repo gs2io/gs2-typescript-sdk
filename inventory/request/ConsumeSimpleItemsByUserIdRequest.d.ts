@@ -7,6 +7,7 @@ export default class ConsumeSimpleItemsByUserIdRequest implements IRequest {
     private inventoryName;
     private userId;
     private consumeCounts;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -26,6 +27,9 @@ export default class ConsumeSimpleItemsByUserIdRequest implements IRequest {
     getConsumeCounts(): Gs2Inventory.ConsumeCount[] | null;
     setConsumeCounts(consumeCounts: Gs2Inventory.ConsumeCount[] | null): this;
     withConsumeCounts(consumeCounts: Gs2Inventory.ConsumeCount[] | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

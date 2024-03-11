@@ -22,6 +22,7 @@ var DeleteDataObjectByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.dataObjectName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteDataObjectByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var DeleteDataObjectByUserIdRequest = /** @class */ (function () {
         this.dataObjectName = dataObjectName;
         return this;
     };
+    DeleteDataObjectByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteDataObjectByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteDataObjectByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteDataObjectByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var DeleteDataObjectByUserIdRequest = /** @class */ (function () {
         return new DeleteDataObjectByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withDataObjectName(data["dataObjectName"]);
+            .withDataObjectName(data["dataObjectName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteDataObjectByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "dataObjectName": this.getDataObjectName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteDataObjectByUserIdRequest;

@@ -22,6 +22,7 @@ var RegisterBlackListByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.targetUserId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     RegisterBlackListByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var RegisterBlackListByUserIdRequest = /** @class */ (function () {
         this.targetUserId = targetUserId;
         return this;
     };
+    RegisterBlackListByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    RegisterBlackListByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    RegisterBlackListByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     RegisterBlackListByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var RegisterBlackListByUserIdRequest = /** @class */ (function () {
         return new RegisterBlackListByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withTargetUserId(data["targetUserId"]);
+            .withTargetUserId(data["targetUserId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     RegisterBlackListByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "targetUserId": this.getTargetUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return RegisterBlackListByUserIdRequest;

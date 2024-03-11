@@ -23,6 +23,7 @@ var IncreaseMaximumIdleMinutesByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.categoryName = null;
         this.increaseMinutes = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     IncreaseMaximumIdleMinutesByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var IncreaseMaximumIdleMinutesByUserIdRequest = /** @class */ (function () {
         this.increaseMinutes = increaseMinutes;
         return this;
     };
+    IncreaseMaximumIdleMinutesByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    IncreaseMaximumIdleMinutesByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    IncreaseMaximumIdleMinutesByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     IncreaseMaximumIdleMinutesByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var IncreaseMaximumIdleMinutesByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withCategoryName(data["categoryName"])
-            .withIncreaseMinutes(data["increaseMinutes"]);
+            .withIncreaseMinutes(data["increaseMinutes"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     IncreaseMaximumIdleMinutesByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var IncreaseMaximumIdleMinutesByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "categoryName": this.getCategoryName(),
             "increaseMinutes": this.getIncreaseMinutes(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return IncreaseMaximumIdleMinutesByUserIdRequest;

@@ -29,6 +29,7 @@ export default class DescribeReceiptsRequest implements IRequest {
     private end: number|null = null;
     private pageToken: string|null = null;
     private limit: number|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -134,6 +135,17 @@ export default class DescribeReceiptsRequest implements IRequest {
         this.limit = limit;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DescribeReceiptsRequest {
         return new DescribeReceiptsRequest()
@@ -143,7 +155,8 @@ export default class DescribeReceiptsRequest implements IRequest {
             .withBegin(data["begin"])
             .withEnd(data["end"])
             .withPageToken(data["pageToken"])
-            .withLimit(data["limit"]);
+            .withLimit(data["limit"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -155,6 +168,7 @@ export default class DescribeReceiptsRequest implements IRequest {
             "end": this.getEnd(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

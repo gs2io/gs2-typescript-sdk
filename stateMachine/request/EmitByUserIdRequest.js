@@ -24,6 +24,7 @@ var EmitByUserIdRequest = /** @class */ (function () {
         this.statusName = null;
         this.eventName = null;
         this.args = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     EmitByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var EmitByUserIdRequest = /** @class */ (function () {
         this.args = args;
         return this;
     };
+    EmitByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    EmitByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    EmitByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     EmitByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var EmitByUserIdRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withStatusName(data["statusName"])
             .withEventName(data["eventName"])
-            .withArgs(data["args"]);
+            .withArgs(data["args"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     EmitByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var EmitByUserIdRequest = /** @class */ (function () {
             "statusName": this.getStatusName(),
             "eventName": this.getEventName(),
             "args": this.getArgs(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return EmitByUserIdRequest;

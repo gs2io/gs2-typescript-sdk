@@ -29,6 +29,7 @@ export default class PrepareUploadByUserIdRequest implements IRequest {
     private scope: string|null = null;
     private allowUserIds: string[]|null = null;
     private updateIfExists: boolean|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -135,6 +136,17 @@ export default class PrepareUploadByUserIdRequest implements IRequest {
         this.updateIfExists = updateIfExists;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -162,7 +174,8 @@ export default class PrepareUploadByUserIdRequest implements IRequest {
                     return item;
                 }
             ) : [])
-            .withUpdateIfExists(data["updateIfExists"]);
+            .withUpdateIfExists(data["updateIfExists"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -178,6 +191,7 @@ export default class PrepareUploadByUserIdRequest implements IRequest {
                 }
             ) : [],
             "updateIfExists": this.getUpdateIfExists(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

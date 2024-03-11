@@ -23,6 +23,7 @@ var MarkReleaseByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.propertyId = null;
         this.nodeModelNames = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     MarkReleaseByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var MarkReleaseByUserIdRequest = /** @class */ (function () {
         this.nodeModelNames = nodeModelNames;
         return this;
     };
+    MarkReleaseByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    MarkReleaseByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    MarkReleaseByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     MarkReleaseByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -110,7 +122,8 @@ var MarkReleaseByUserIdRequest = /** @class */ (function () {
             .withNodeModelNames(data.nodeModelNames ?
             data.nodeModelNames.map(function (item) {
                 return item;
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     MarkReleaseByUserIdRequest.prototype.toDict = function () {
         return {
@@ -121,6 +134,7 @@ var MarkReleaseByUserIdRequest = /** @class */ (function () {
                 this.getNodeModelNames().map(function (item) {
                     return item;
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return MarkReleaseByUserIdRequest;

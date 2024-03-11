@@ -26,6 +26,7 @@ var CompleteByUserIdRequest = /** @class */ (function () {
         this.missionTaskName = null;
         this.userId = null;
         this.config = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     CompleteByUserIdRequest.prototype.getRequestId = function () {
@@ -105,6 +106,17 @@ var CompleteByUserIdRequest = /** @class */ (function () {
         this.config = config;
         return this;
     };
+    CompleteByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    CompleteByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    CompleteByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     CompleteByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -125,7 +137,8 @@ var CompleteByUserIdRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Mission.Config.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     CompleteByUserIdRequest.prototype.toDict = function () {
         return {
@@ -137,6 +150,7 @@ var CompleteByUserIdRequest = /** @class */ (function () {
                 this.getConfig().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return CompleteByUserIdRequest;

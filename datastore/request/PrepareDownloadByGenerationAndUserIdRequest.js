@@ -23,6 +23,7 @@ var PrepareDownloadByGenerationAndUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.dataObjectId = null;
         this.generation = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     PrepareDownloadByGenerationAndUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var PrepareDownloadByGenerationAndUserIdRequest = /** @class */ (function () {
         this.generation = generation;
         return this;
     };
+    PrepareDownloadByGenerationAndUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    PrepareDownloadByGenerationAndUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    PrepareDownloadByGenerationAndUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     PrepareDownloadByGenerationAndUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var PrepareDownloadByGenerationAndUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withDataObjectId(data["dataObjectId"])
-            .withGeneration(data["generation"]);
+            .withGeneration(data["generation"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     PrepareDownloadByGenerationAndUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var PrepareDownloadByGenerationAndUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "dataObjectId": this.getDataObjectId(),
             "generation": this.getGeneration(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return PrepareDownloadByGenerationAndUserIdRequest;

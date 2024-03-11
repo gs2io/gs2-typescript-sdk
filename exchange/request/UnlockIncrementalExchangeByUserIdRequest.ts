@@ -26,6 +26,7 @@ export default class UnlockIncrementalExchangeByUserIdRequest implements IReques
     private rateName: string|null = null;
     private userId: string|null = null;
     private lockTransactionId: string|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -99,6 +100,17 @@ export default class UnlockIncrementalExchangeByUserIdRequest implements IReques
         this.lockTransactionId = lockTransactionId;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -119,7 +131,8 @@ export default class UnlockIncrementalExchangeByUserIdRequest implements IReques
             .withNamespaceName(data["namespaceName"])
             .withRateName(data["rateName"])
             .withUserId(data["userId"])
-            .withLockTransactionId(data["lockTransactionId"]);
+            .withLockTransactionId(data["lockTransactionId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -128,6 +141,7 @@ export default class UnlockIncrementalExchangeByUserIdRequest implements IReques
             "rateName": this.getRateName(),
             "userId": this.getUserId(),
             "lockTransactionId": this.getLockTransactionId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

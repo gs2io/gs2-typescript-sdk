@@ -23,6 +23,7 @@ var ReceiveByUserIdRequest = /** @class */ (function () {
         this.missionGroupName = null;
         this.missionTaskName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     ReceiveByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var ReceiveByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    ReceiveByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    ReceiveByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    ReceiveByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     ReceiveByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var ReceiveByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withMissionGroupName(data["missionGroupName"])
             .withMissionTaskName(data["missionTaskName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     ReceiveByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var ReceiveByUserIdRequest = /** @class */ (function () {
             "missionGroupName": this.getMissionGroupName(),
             "missionTaskName": this.getMissionTaskName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return ReceiveByUserIdRequest;

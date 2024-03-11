@@ -27,6 +27,7 @@ export default class PutScoreByUserIdRequest implements IRequest {
     private userId: string|null = null;
     private score: number|null = null;
     private metadata: string|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -111,6 +112,17 @@ export default class PutScoreByUserIdRequest implements IRequest {
         this.metadata = metadata;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -132,7 +144,8 @@ export default class PutScoreByUserIdRequest implements IRequest {
             .withCategoryName(data["categoryName"])
             .withUserId(data["userId"])
             .withScore(data["score"])
-            .withMetadata(data["metadata"]);
+            .withMetadata(data["metadata"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -142,6 +155,7 @@ export default class PutScoreByUserIdRequest implements IRequest {
             "userId": this.getUserId(),
             "score": this.getScore(),
             "metadata": this.getMetadata(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

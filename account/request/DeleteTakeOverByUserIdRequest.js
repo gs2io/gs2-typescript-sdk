@@ -22,6 +22,7 @@ var DeleteTakeOverByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.type = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteTakeOverByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var DeleteTakeOverByUserIdRequest = /** @class */ (function () {
         this.type = type;
         return this;
     };
+    DeleteTakeOverByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteTakeOverByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteTakeOverByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteTakeOverByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var DeleteTakeOverByUserIdRequest = /** @class */ (function () {
         return new DeleteTakeOverByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withType(data["type"]);
+            .withType(data["type"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteTakeOverByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "type": this.getType(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteTakeOverByUserIdRequest;

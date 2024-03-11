@@ -8,6 +8,7 @@ export default class AddExperienceByUserIdRequest implements IRequest {
     private propertyId;
     private experienceValue;
     private truncateExperienceWhenRankUp;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -33,6 +34,9 @@ export default class AddExperienceByUserIdRequest implements IRequest {
     getTruncateExperienceWhenRankUp(): boolean | null;
     setTruncateExperienceWhenRankUp(truncateExperienceWhenRankUp: boolean | null): this;
     withTruncateExperienceWhenRankUp(truncateExperienceWhenRankUp: boolean | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

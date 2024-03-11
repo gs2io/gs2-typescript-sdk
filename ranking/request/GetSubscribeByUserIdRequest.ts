@@ -26,6 +26,7 @@ export default class GetSubscribeByUserIdRequest implements IRequest {
     private categoryName: string|null = null;
     private userId: string|null = null;
     private targetUserId: string|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -98,13 +99,25 @@ export default class GetSubscribeByUserIdRequest implements IRequest {
         this.targetUserId = targetUserId;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetSubscribeByUserIdRequest {
         return new GetSubscribeByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withCategoryName(data["categoryName"])
             .withUserId(data["userId"])
-            .withTargetUserId(data["targetUserId"]);
+            .withTargetUserId(data["targetUserId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -113,6 +126,7 @@ export default class GetSubscribeByUserIdRequest implements IRequest {
             "categoryName": this.getCategoryName(),
             "userId": this.getUserId(),
             "targetUserId": this.getTargetUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

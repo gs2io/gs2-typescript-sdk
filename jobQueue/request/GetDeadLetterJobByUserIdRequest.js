@@ -22,6 +22,7 @@ var GetDeadLetterJobByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.deadLetterJobName = null;
+        this.timeOffsetToken = null;
     }
     GetDeadLetterJobByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetDeadLetterJobByUserIdRequest = /** @class */ (function () {
         this.deadLetterJobName = deadLetterJobName;
         return this;
     };
+    GetDeadLetterJobByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetDeadLetterJobByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetDeadLetterJobByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetDeadLetterJobByUserIdRequest.fromDict = function (data) {
         return new GetDeadLetterJobByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withDeadLetterJobName(data["deadLetterJobName"]);
+            .withDeadLetterJobName(data["deadLetterJobName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetDeadLetterJobByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "deadLetterJobName": this.getDeadLetterJobName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetDeadLetterJobByUserIdRequest;

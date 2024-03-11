@@ -25,6 +25,7 @@ var AcquireSimpleItemsByUserIdRequest = /** @class */ (function () {
         this.inventoryName = null;
         this.userId = null;
         this.acquireCounts = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     AcquireSimpleItemsByUserIdRequest.prototype.getRequestId = function () {
@@ -93,6 +94,17 @@ var AcquireSimpleItemsByUserIdRequest = /** @class */ (function () {
         this.acquireCounts = acquireCounts;
         return this;
     };
+    AcquireSimpleItemsByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    AcquireSimpleItemsByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    AcquireSimpleItemsByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     AcquireSimpleItemsByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -112,7 +124,8 @@ var AcquireSimpleItemsByUserIdRequest = /** @class */ (function () {
             .withAcquireCounts(data.acquireCounts ?
             data.acquireCounts.map(function (item) {
                 return Gs2Inventory.AcquireCount.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     AcquireSimpleItemsByUserIdRequest.prototype.toDict = function () {
         return {
@@ -123,6 +136,7 @@ var AcquireSimpleItemsByUserIdRequest = /** @class */ (function () {
                 this.getAcquireCounts().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return AcquireSimpleItemsByUserIdRequest;

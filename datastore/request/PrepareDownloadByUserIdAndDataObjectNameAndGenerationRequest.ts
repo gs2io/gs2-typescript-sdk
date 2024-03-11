@@ -26,6 +26,7 @@ export default class PrepareDownloadByUserIdAndDataObjectNameAndGenerationReques
     private userId: string|null = null;
     private dataObjectName: string|null = null;
     private generation: string|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -99,6 +100,17 @@ export default class PrepareDownloadByUserIdAndDataObjectNameAndGenerationReques
         this.generation = generation;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -119,7 +131,8 @@ export default class PrepareDownloadByUserIdAndDataObjectNameAndGenerationReques
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withDataObjectName(data["dataObjectName"])
-            .withGeneration(data["generation"]);
+            .withGeneration(data["generation"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -128,6 +141,7 @@ export default class PrepareDownloadByUserIdAndDataObjectNameAndGenerationReques
             "userId": this.getUserId(),
             "dataObjectName": this.getDataObjectName(),
             "generation": this.getGeneration(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

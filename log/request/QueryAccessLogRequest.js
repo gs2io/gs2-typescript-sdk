@@ -28,6 +28,7 @@ var QueryAccessLogRequest = /** @class */ (function () {
         this.longTerm = null;
         this.pageToken = null;
         this.limit = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     QueryAccessLogRequest.prototype.getRequestId = function () {
@@ -151,6 +152,17 @@ var QueryAccessLogRequest = /** @class */ (function () {
         this.limit = limit;
         return this;
     };
+    QueryAccessLogRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    QueryAccessLogRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    QueryAccessLogRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     QueryAccessLogRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -172,7 +184,8 @@ var QueryAccessLogRequest = /** @class */ (function () {
             .withEnd(data["end"])
             .withLongTerm(data["longTerm"])
             .withPageToken(data["pageToken"])
-            .withLimit(data["limit"]);
+            .withLimit(data["limit"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     QueryAccessLogRequest.prototype.toDict = function () {
         return {
@@ -185,6 +198,7 @@ var QueryAccessLogRequest = /** @class */ (function () {
             "longTerm": this.getLongTerm(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return QueryAccessLogRequest;

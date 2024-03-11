@@ -23,6 +23,7 @@ var GetPropertyFormByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.propertyFormModelName = null;
         this.propertyId = null;
+        this.timeOffsetToken = null;
     }
     GetPropertyFormByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,12 +91,24 @@ var GetPropertyFormByUserIdRequest = /** @class */ (function () {
         this.propertyId = propertyId;
         return this;
     };
+    GetPropertyFormByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetPropertyFormByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetPropertyFormByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetPropertyFormByUserIdRequest.fromDict = function (data) {
         return new GetPropertyFormByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withPropertyFormModelName(data["propertyFormModelName"])
-            .withPropertyId(data["propertyId"]);
+            .withPropertyId(data["propertyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetPropertyFormByUserIdRequest.prototype.toDict = function () {
         return {
@@ -103,6 +116,7 @@ var GetPropertyFormByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "propertyFormModelName": this.getPropertyFormModelName(),
             "propertyId": this.getPropertyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetPropertyFormByUserIdRequest;

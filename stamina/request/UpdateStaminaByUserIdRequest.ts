@@ -29,6 +29,7 @@ export default class UpdateStaminaByUserIdRequest implements IRequest {
     private maxValue: number|null = null;
     private recoverIntervalMinutes: number|null = null;
     private recoverValue: number|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -135,6 +136,17 @@ export default class UpdateStaminaByUserIdRequest implements IRequest {
         this.recoverValue = recoverValue;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -158,7 +170,8 @@ export default class UpdateStaminaByUserIdRequest implements IRequest {
             .withValue(data["value"])
             .withMaxValue(data["maxValue"])
             .withRecoverIntervalMinutes(data["recoverIntervalMinutes"])
-            .withRecoverValue(data["recoverValue"]);
+            .withRecoverValue(data["recoverValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -170,6 +183,7 @@ export default class UpdateStaminaByUserIdRequest implements IRequest {
             "maxValue": this.getMaxValue(),
             "recoverIntervalMinutes": this.getRecoverIntervalMinutes(),
             "recoverValue": this.getRecoverValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

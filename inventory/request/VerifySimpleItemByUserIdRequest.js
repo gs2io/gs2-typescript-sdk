@@ -26,6 +26,7 @@ var VerifySimpleItemByUserIdRequest = /** @class */ (function () {
         this.verifyType = null;
         this.count = null;
         this.multiplyValueSpecifyingQuantity = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     VerifySimpleItemByUserIdRequest.prototype.getRequestId = function () {
@@ -127,6 +128,17 @@ var VerifySimpleItemByUserIdRequest = /** @class */ (function () {
         this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
         return this;
     };
+    VerifySimpleItemByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    VerifySimpleItemByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    VerifySimpleItemByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     VerifySimpleItemByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -146,7 +158,8 @@ var VerifySimpleItemByUserIdRequest = /** @class */ (function () {
             .withItemName(data["itemName"])
             .withVerifyType(data["verifyType"])
             .withCount(data["count"])
-            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     VerifySimpleItemByUserIdRequest.prototype.toDict = function () {
         return {
@@ -157,6 +170,7 @@ var VerifySimpleItemByUserIdRequest = /** @class */ (function () {
             "verifyType": this.getVerifyType(),
             "count": this.getCount(),
             "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return VerifySimpleItemByUserIdRequest;

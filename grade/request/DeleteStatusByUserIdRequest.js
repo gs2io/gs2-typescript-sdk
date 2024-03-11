@@ -23,6 +23,7 @@ var DeleteStatusByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.gradeName = null;
         this.propertyId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteStatusByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var DeleteStatusByUserIdRequest = /** @class */ (function () {
         this.propertyId = propertyId;
         return this;
     };
+    DeleteStatusByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteStatusByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteStatusByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteStatusByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var DeleteStatusByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withGradeName(data["gradeName"])
-            .withPropertyId(data["propertyId"]);
+            .withPropertyId(data["propertyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteStatusByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var DeleteStatusByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "gradeName": this.getGradeName(),
             "propertyId": this.getPropertyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteStatusByUserIdRequest;

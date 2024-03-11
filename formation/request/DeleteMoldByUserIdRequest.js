@@ -22,6 +22,7 @@ var DeleteMoldByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.moldModelName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteMoldByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var DeleteMoldByUserIdRequest = /** @class */ (function () {
         this.moldModelName = moldModelName;
         return this;
     };
+    DeleteMoldByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteMoldByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteMoldByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteMoldByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var DeleteMoldByUserIdRequest = /** @class */ (function () {
         return new DeleteMoldByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withMoldModelName(data["moldModelName"]);
+            .withMoldModelName(data["moldModelName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteMoldByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "moldModelName": this.getMoldModelName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteMoldByUserIdRequest;

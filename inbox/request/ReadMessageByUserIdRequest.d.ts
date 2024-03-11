@@ -7,6 +7,7 @@ export default class ReadMessageByUserIdRequest implements IRequest {
     private userId;
     private messageName;
     private config;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -26,6 +27,9 @@ export default class ReadMessageByUserIdRequest implements IRequest {
     getConfig(): Gs2Inbox.Config[] | null;
     setConfig(config: Gs2Inbox.Config[] | null): this;
     withConfig(config: Gs2Inbox.Config[] | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

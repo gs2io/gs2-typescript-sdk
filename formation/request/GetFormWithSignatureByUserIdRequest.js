@@ -24,6 +24,7 @@ var GetFormWithSignatureByUserIdRequest = /** @class */ (function () {
         this.moldModelName = null;
         this.index = null;
         this.keyId = null;
+        this.timeOffsetToken = null;
     }
     GetFormWithSignatureByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -102,13 +103,25 @@ var GetFormWithSignatureByUserIdRequest = /** @class */ (function () {
         this.keyId = keyId;
         return this;
     };
+    GetFormWithSignatureByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetFormWithSignatureByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetFormWithSignatureByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetFormWithSignatureByUserIdRequest.fromDict = function (data) {
         return new GetFormWithSignatureByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withMoldModelName(data["moldModelName"])
             .withIndex(data["index"])
-            .withKeyId(data["keyId"]);
+            .withKeyId(data["keyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetFormWithSignatureByUserIdRequest.prototype.toDict = function () {
         return {
@@ -117,6 +130,7 @@ var GetFormWithSignatureByUserIdRequest = /** @class */ (function () {
             "moldModelName": this.getMoldModelName(),
             "index": this.getIndex(),
             "keyId": this.getKeyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetFormWithSignatureByUserIdRequest;

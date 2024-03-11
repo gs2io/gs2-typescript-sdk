@@ -7,6 +7,7 @@ export default class UpdateNotificationTypeByUserIdRequest implements IRequest {
     private roomName;
     private userId;
     private notificationTypes;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -26,6 +27,9 @@ export default class UpdateNotificationTypeByUserIdRequest implements IRequest {
     getNotificationTypes(): Gs2Chat.NotificationType[] | null;
     setNotificationTypes(notificationTypes: Gs2Chat.NotificationType[] | null): this;
     withNotificationTypes(notificationTypes: Gs2Chat.NotificationType[] | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

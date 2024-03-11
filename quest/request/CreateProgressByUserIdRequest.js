@@ -26,6 +26,7 @@ var CreateProgressByUserIdRequest = /** @class */ (function () {
         this.questModelId = null;
         this.force = null;
         this.config = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     CreateProgressByUserIdRequest.prototype.getRequestId = function () {
@@ -105,6 +106,17 @@ var CreateProgressByUserIdRequest = /** @class */ (function () {
         this.config = config;
         return this;
     };
+    CreateProgressByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    CreateProgressByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    CreateProgressByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     CreateProgressByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -125,7 +137,8 @@ var CreateProgressByUserIdRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Quest.Config.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     CreateProgressByUserIdRequest.prototype.toDict = function () {
         return {
@@ -137,6 +150,7 @@ var CreateProgressByUserIdRequest = /** @class */ (function () {
                 this.getConfig().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return CreateProgressByUserIdRequest;

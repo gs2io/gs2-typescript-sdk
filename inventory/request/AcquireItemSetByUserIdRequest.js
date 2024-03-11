@@ -27,6 +27,7 @@ var AcquireItemSetByUserIdRequest = /** @class */ (function () {
         this.expiresAt = null;
         this.createNewItemSet = null;
         this.itemSetName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     AcquireItemSetByUserIdRequest.prototype.getRequestId = function () {
@@ -139,6 +140,17 @@ var AcquireItemSetByUserIdRequest = /** @class */ (function () {
         this.itemSetName = itemSetName;
         return this;
     };
+    AcquireItemSetByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    AcquireItemSetByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    AcquireItemSetByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     AcquireItemSetByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -159,7 +171,8 @@ var AcquireItemSetByUserIdRequest = /** @class */ (function () {
             .withAcquireCount(data["acquireCount"])
             .withExpiresAt(data["expiresAt"])
             .withCreateNewItemSet(data["createNewItemSet"])
-            .withItemSetName(data["itemSetName"]);
+            .withItemSetName(data["itemSetName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     AcquireItemSetByUserIdRequest.prototype.toDict = function () {
         return {
@@ -171,6 +184,7 @@ var AcquireItemSetByUserIdRequest = /** @class */ (function () {
             "expiresAt": this.getExpiresAt(),
             "createNewItemSet": this.getCreateNewItemSet(),
             "itemSetName": this.getItemSetName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return AcquireItemSetByUserIdRequest;

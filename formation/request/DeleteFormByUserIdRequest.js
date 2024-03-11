@@ -23,6 +23,7 @@ var DeleteFormByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.moldModelName = null;
         this.index = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteFormByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var DeleteFormByUserIdRequest = /** @class */ (function () {
         this.index = index;
         return this;
     };
+    DeleteFormByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteFormByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteFormByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteFormByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var DeleteFormByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withMoldModelName(data["moldModelName"])
-            .withIndex(data["index"]);
+            .withIndex(data["index"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteFormByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var DeleteFormByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "moldModelName": this.getMoldModelName(),
             "index": this.getIndex(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteFormByUserIdRequest;

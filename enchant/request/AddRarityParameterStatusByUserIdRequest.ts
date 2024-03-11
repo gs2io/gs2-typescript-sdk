@@ -27,6 +27,7 @@ export default class AddRarityParameterStatusByUserIdRequest implements IRequest
     private parameterName: string|null = null;
     private propertyId: string|null = null;
     private count: number|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -111,6 +112,17 @@ export default class AddRarityParameterStatusByUserIdRequest implements IRequest
         this.count = count;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -132,7 +144,8 @@ export default class AddRarityParameterStatusByUserIdRequest implements IRequest
             .withUserId(data["userId"])
             .withParameterName(data["parameterName"])
             .withPropertyId(data["propertyId"])
-            .withCount(data["count"]);
+            .withCount(data["count"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -142,6 +155,7 @@ export default class AddRarityParameterStatusByUserIdRequest implements IRequest
             "parameterName": this.getParameterName(),
             "propertyId": this.getPropertyId(),
             "count": this.getCount(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

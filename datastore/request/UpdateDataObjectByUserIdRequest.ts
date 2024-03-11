@@ -27,6 +27,7 @@ export default class UpdateDataObjectByUserIdRequest implements IRequest {
     private userId: string|null = null;
     private scope: string|null = null;
     private allowUserIds: string[]|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -111,6 +112,17 @@ export default class UpdateDataObjectByUserIdRequest implements IRequest {
         this.allowUserIds = allowUserIds;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -136,7 +148,8 @@ export default class UpdateDataObjectByUserIdRequest implements IRequest {
                 data.allowUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -150,6 +163,7 @@ export default class UpdateDataObjectByUserIdRequest implements IRequest {
                     return item;
                 }
             ) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

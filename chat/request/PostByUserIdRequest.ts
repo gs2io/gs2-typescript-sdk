@@ -28,6 +28,7 @@ export default class PostByUserIdRequest implements IRequest {
     private category: number|null = null;
     private metadata: string|null = null;
     private password: string|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -123,6 +124,17 @@ export default class PostByUserIdRequest implements IRequest {
         this.password = password;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -145,7 +157,8 @@ export default class PostByUserIdRequest implements IRequest {
             .withUserId(data["userId"])
             .withCategory(data["category"])
             .withMetadata(data["metadata"])
-            .withPassword(data["password"]);
+            .withPassword(data["password"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -156,6 +169,7 @@ export default class PostByUserIdRequest implements IRequest {
             "category": this.getCategory(),
             "metadata": this.getMetadata(),
             "password": this.getPassword(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

@@ -22,6 +22,7 @@ var GetCounterByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.counterName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
     }
     GetCounterByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetCounterByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    GetCounterByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetCounterByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetCounterByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetCounterByUserIdRequest.fromDict = function (data) {
         return new GetCounterByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withCounterName(data["counterName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetCounterByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "counterName": this.getCounterName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetCounterByUserIdRequest;

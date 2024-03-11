@@ -26,7 +26,7 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
         return _super.call(this, session) || this;
     }
     Gs2AuthRestClient.prototype.login = function (request) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/login')
             .replace('{service}', 'auth')
             .replace('{region}', this.session.region);
@@ -34,10 +34,13 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_a = request.getTimeOffsetToken()) !== null && _a !== void 0 ? _a : null;
+        }
         var body = {
-            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
-            'userId': (_b = request.getUserId()) !== null && _b !== void 0 ? _b : null,
-            'timeOffset': (_c = request.getTimeOffset()) !== null && _c !== void 0 ? _c : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'userId': (_c = request.getUserId()) !== null && _c !== void 0 ? _c : null,
+            'timeOffset': (_d = request.getTimeOffset()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -71,6 +74,36 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
             headers: headers,
         }).then(function (response) {
             return Result.LoginBySignatureResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2AuthRestClient.prototype.issueTimeOffsetTokenByUserId = function (request) {
+        var _a, _b, _c, _d;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/timeoffset/token')
+            .replace('{service}', 'auth')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_a = request.getTimeOffsetToken()) !== null && _a !== void 0 ? _a : null;
+        }
+        var body = {
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'userId': (_c = request.getUserId()) !== null && _c !== void 0 ? _c : null,
+            'timeOffset': (_d = request.getTimeOffset()) !== null && _d !== void 0 ? _d : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.IssueTimeOffsetTokenByUserIdResult.fromDict(response.data);
         }).catch(function (error) {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

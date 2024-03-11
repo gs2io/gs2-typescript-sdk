@@ -26,6 +26,7 @@ export default class PrepareReUploadByUserIdRequest implements IRequest {
     private dataObjectName: string|null = null;
     private userId: string|null = null;
     private contentType: string|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -99,6 +100,17 @@ export default class PrepareReUploadByUserIdRequest implements IRequest {
         this.contentType = contentType;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -119,7 +131,8 @@ export default class PrepareReUploadByUserIdRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withDataObjectName(data["dataObjectName"])
             .withUserId(data["userId"])
-            .withContentType(data["contentType"]);
+            .withContentType(data["contentType"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -128,6 +141,7 @@ export default class PrepareReUploadByUserIdRequest implements IRequest {
             "dataObjectName": this.getDataObjectName(),
             "userId": this.getUserId(),
             "contentType": this.getContentType(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

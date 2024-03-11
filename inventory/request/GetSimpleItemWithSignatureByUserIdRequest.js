@@ -24,6 +24,7 @@ var GetSimpleItemWithSignatureByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.itemName = null;
         this.keyId = null;
+        this.timeOffsetToken = null;
     }
     GetSimpleItemWithSignatureByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -102,13 +103,25 @@ var GetSimpleItemWithSignatureByUserIdRequest = /** @class */ (function () {
         this.keyId = keyId;
         return this;
     };
+    GetSimpleItemWithSignatureByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetSimpleItemWithSignatureByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetSimpleItemWithSignatureByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetSimpleItemWithSignatureByUserIdRequest.fromDict = function (data) {
         return new GetSimpleItemWithSignatureByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withInventoryName(data["inventoryName"])
             .withUserId(data["userId"])
             .withItemName(data["itemName"])
-            .withKeyId(data["keyId"]);
+            .withKeyId(data["keyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetSimpleItemWithSignatureByUserIdRequest.prototype.toDict = function () {
         return {
@@ -117,6 +130,7 @@ var GetSimpleItemWithSignatureByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "itemName": this.getItemName(),
             "keyId": this.getKeyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetSimpleItemWithSignatureByUserIdRequest;

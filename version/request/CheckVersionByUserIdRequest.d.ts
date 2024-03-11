@@ -6,6 +6,7 @@ export default class CheckVersionByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private targetVersions;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -22,6 +23,9 @@ export default class CheckVersionByUserIdRequest implements IRequest {
     getTargetVersions(): Gs2Version.TargetVersion[] | null;
     setTargetVersions(targetVersions: Gs2Version.TargetVersion[] | null): this;
     withTargetVersions(targetVersions: Gs2Version.TargetVersion[] | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

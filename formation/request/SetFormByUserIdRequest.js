@@ -26,6 +26,7 @@ var SetFormByUserIdRequest = /** @class */ (function () {
         this.moldModelName = null;
         this.index = null;
         this.slots = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     SetFormByUserIdRequest.prototype.getRequestId = function () {
@@ -105,6 +106,17 @@ var SetFormByUserIdRequest = /** @class */ (function () {
         this.slots = slots;
         return this;
     };
+    SetFormByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    SetFormByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    SetFormByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     SetFormByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -125,7 +137,8 @@ var SetFormByUserIdRequest = /** @class */ (function () {
             .withSlots(data.slots ?
             data.slots.map(function (item) {
                 return Gs2Formation.Slot.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SetFormByUserIdRequest.prototype.toDict = function () {
         return {
@@ -137,6 +150,7 @@ var SetFormByUserIdRequest = /** @class */ (function () {
                 this.getSlots().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return SetFormByUserIdRequest;

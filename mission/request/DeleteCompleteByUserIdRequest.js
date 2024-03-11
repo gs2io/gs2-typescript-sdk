@@ -22,6 +22,7 @@ var DeleteCompleteByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.missionGroupName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteCompleteByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var DeleteCompleteByUserIdRequest = /** @class */ (function () {
         this.missionGroupName = missionGroupName;
         return this;
     };
+    DeleteCompleteByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteCompleteByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteCompleteByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteCompleteByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var DeleteCompleteByUserIdRequest = /** @class */ (function () {
         return new DeleteCompleteByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withMissionGroupName(data["missionGroupName"]);
+            .withMissionGroupName(data["missionGroupName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteCompleteByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "missionGroupName": this.getMissionGroupName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteCompleteByUserIdRequest;

@@ -22,6 +22,7 @@ var GetMutexByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.propertyId = null;
+        this.timeOffsetToken = null;
     }
     GetMutexByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetMutexByUserIdRequest = /** @class */ (function () {
         this.propertyId = propertyId;
         return this;
     };
+    GetMutexByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetMutexByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetMutexByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetMutexByUserIdRequest.fromDict = function (data) {
         return new GetMutexByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withPropertyId(data["propertyId"]);
+            .withPropertyId(data["propertyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetMutexByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "propertyId": this.getPropertyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetMutexByUserIdRequest;

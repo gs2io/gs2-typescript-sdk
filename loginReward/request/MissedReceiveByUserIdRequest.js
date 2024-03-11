@@ -26,6 +26,7 @@ var MissedReceiveByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.stepNumber = null;
         this.config = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     MissedReceiveByUserIdRequest.prototype.getRequestId = function () {
@@ -105,6 +106,17 @@ var MissedReceiveByUserIdRequest = /** @class */ (function () {
         this.config = config;
         return this;
     };
+    MissedReceiveByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    MissedReceiveByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    MissedReceiveByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     MissedReceiveByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -125,7 +137,8 @@ var MissedReceiveByUserIdRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2LoginReward.Config.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     MissedReceiveByUserIdRequest.prototype.toDict = function () {
         return {
@@ -137,6 +150,7 @@ var MissedReceiveByUserIdRequest = /** @class */ (function () {
                 this.getConfig().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return MissedReceiveByUserIdRequest;

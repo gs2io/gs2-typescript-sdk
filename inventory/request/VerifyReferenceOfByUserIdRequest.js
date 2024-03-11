@@ -26,6 +26,7 @@ var VerifyReferenceOfByUserIdRequest = /** @class */ (function () {
         this.itemSetName = null;
         this.referenceOf = null;
         this.verifyType = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     VerifyReferenceOfByUserIdRequest.prototype.getRequestId = function () {
@@ -127,6 +128,17 @@ var VerifyReferenceOfByUserIdRequest = /** @class */ (function () {
         this.verifyType = verifyType;
         return this;
     };
+    VerifyReferenceOfByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    VerifyReferenceOfByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    VerifyReferenceOfByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     VerifyReferenceOfByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -146,7 +158,8 @@ var VerifyReferenceOfByUserIdRequest = /** @class */ (function () {
             .withItemName(data["itemName"])
             .withItemSetName(data["itemSetName"])
             .withReferenceOf(data["referenceOf"])
-            .withVerifyType(data["verifyType"]);
+            .withVerifyType(data["verifyType"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     VerifyReferenceOfByUserIdRequest.prototype.toDict = function () {
         return {
@@ -157,6 +170,7 @@ var VerifyReferenceOfByUserIdRequest = /** @class */ (function () {
             "itemSetName": this.getItemSetName(),
             "referenceOf": this.getReferenceOf(),
             "verifyType": this.getVerifyType(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return VerifyReferenceOfByUserIdRequest;

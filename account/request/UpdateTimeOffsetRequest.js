@@ -22,6 +22,7 @@ var UpdateTimeOffsetRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.timeOffset = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     UpdateTimeOffsetRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var UpdateTimeOffsetRequest = /** @class */ (function () {
         this.timeOffset = timeOffset;
         return this;
     };
+    UpdateTimeOffsetRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    UpdateTimeOffsetRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    UpdateTimeOffsetRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     UpdateTimeOffsetRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var UpdateTimeOffsetRequest = /** @class */ (function () {
         return new UpdateTimeOffsetRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withTimeOffset(data["timeOffset"]);
+            .withTimeOffset(data["timeOffset"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     UpdateTimeOffsetRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "timeOffset": this.getTimeOffset(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return UpdateTimeOffsetRequest;

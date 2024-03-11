@@ -23,6 +23,7 @@ var GetFormByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.moldModelName = null;
         this.index = null;
+        this.timeOffsetToken = null;
     }
     GetFormByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,12 +91,24 @@ var GetFormByUserIdRequest = /** @class */ (function () {
         this.index = index;
         return this;
     };
+    GetFormByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetFormByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetFormByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetFormByUserIdRequest.fromDict = function (data) {
         return new GetFormByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withMoldModelName(data["moldModelName"])
-            .withIndex(data["index"]);
+            .withIndex(data["index"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetFormByUserIdRequest.prototype.toDict = function () {
         return {
@@ -103,6 +116,7 @@ var GetFormByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "moldModelName": this.getMoldModelName(),
             "index": this.getIndex(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetFormByUserIdRequest;

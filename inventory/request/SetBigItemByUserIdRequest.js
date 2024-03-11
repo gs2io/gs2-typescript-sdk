@@ -24,6 +24,7 @@ var SetBigItemByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.itemName = null;
         this.count = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     SetBigItemByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var SetBigItemByUserIdRequest = /** @class */ (function () {
         this.count = count;
         return this;
     };
+    SetBigItemByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    SetBigItemByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    SetBigItemByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     SetBigItemByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var SetBigItemByUserIdRequest = /** @class */ (function () {
             .withInventoryName(data["inventoryName"])
             .withUserId(data["userId"])
             .withItemName(data["itemName"])
-            .withCount(data["count"]);
+            .withCount(data["count"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SetBigItemByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var SetBigItemByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "itemName": this.getItemName(),
             "count": this.getCount(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return SetBigItemByUserIdRequest;

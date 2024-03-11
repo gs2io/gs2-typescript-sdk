@@ -24,6 +24,7 @@ var SubExperienceByUserIdRequest = /** @class */ (function () {
         this.experienceName = null;
         this.propertyId = null;
         this.experienceValue = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     SubExperienceByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var SubExperienceByUserIdRequest = /** @class */ (function () {
         this.experienceValue = experienceValue;
         return this;
     };
+    SubExperienceByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    SubExperienceByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    SubExperienceByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     SubExperienceByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var SubExperienceByUserIdRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withExperienceName(data["experienceName"])
             .withPropertyId(data["propertyId"])
-            .withExperienceValue(data["experienceValue"]);
+            .withExperienceValue(data["experienceValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SubExperienceByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var SubExperienceByUserIdRequest = /** @class */ (function () {
             "experienceName": this.getExperienceName(),
             "propertyId": this.getPropertyId(),
             "experienceValue": this.getExperienceValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return SubExperienceByUserIdRequest;

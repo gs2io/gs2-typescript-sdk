@@ -6,6 +6,7 @@ export default class GetBigItemByUserIdRequest implements IRequest {
     private inventoryName;
     private userId;
     private itemName;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class GetBigItemByUserIdRequest implements IRequest {
     getItemName(): string | null;
     setItemName(itemName: string | null): this;
     withItemName(itemName: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetBigItemByUserIdRequest;

@@ -22,6 +22,7 @@ var PredictionByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.categoryName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     PredictionByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var PredictionByUserIdRequest = /** @class */ (function () {
         this.categoryName = categoryName;
         return this;
     };
+    PredictionByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    PredictionByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    PredictionByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     PredictionByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var PredictionByUserIdRequest = /** @class */ (function () {
         return new PredictionByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withCategoryName(data["categoryName"]);
+            .withCategoryName(data["categoryName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     PredictionByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "categoryName": this.getCategoryName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return PredictionByUserIdRequest;

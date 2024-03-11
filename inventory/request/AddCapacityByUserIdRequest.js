@@ -23,6 +23,7 @@ var AddCapacityByUserIdRequest = /** @class */ (function () {
         this.inventoryName = null;
         this.userId = null;
         this.addCapacityValue = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     AddCapacityByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var AddCapacityByUserIdRequest = /** @class */ (function () {
         this.addCapacityValue = addCapacityValue;
         return this;
     };
+    AddCapacityByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    AddCapacityByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    AddCapacityByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     AddCapacityByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var AddCapacityByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withInventoryName(data["inventoryName"])
             .withUserId(data["userId"])
-            .withAddCapacityValue(data["addCapacityValue"]);
+            .withAddCapacityValue(data["addCapacityValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     AddCapacityByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var AddCapacityByUserIdRequest = /** @class */ (function () {
             "inventoryName": this.getInventoryName(),
             "userId": this.getUserId(),
             "addCapacityValue": this.getAddCapacityValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return AddCapacityByUserIdRequest;

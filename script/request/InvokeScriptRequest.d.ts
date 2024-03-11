@@ -7,6 +7,7 @@ export default class InvokeScriptRequest implements IRequest {
     private userId;
     private args;
     private randomStatus;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -25,6 +26,9 @@ export default class InvokeScriptRequest implements IRequest {
     getRandomStatus(): Gs2Script.RandomStatus | null;
     setRandomStatus(randomStatus: Gs2Script.RandomStatus | null): this;
     withRandomStatus(randomStatus: Gs2Script.RandomStatus | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): InvokeScriptRequest;

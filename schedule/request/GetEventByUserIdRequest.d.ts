@@ -6,6 +6,7 @@ export default class GetEventByUserIdRequest implements IRequest {
     private eventName;
     private userId;
     private isInSchedule;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class GetEventByUserIdRequest implements IRequest {
     getIsInSchedule(): boolean | null;
     setIsInSchedule(isInSchedule: boolean | null): this;
     withIsInSchedule(isInSchedule: boolean | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetEventByUserIdRequest;

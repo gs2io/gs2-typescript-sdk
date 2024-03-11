@@ -6,6 +6,7 @@ export default class GetFormByUserIdRequest implements IRequest {
     private userId;
     private moldModelName;
     private index;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class GetFormByUserIdRequest implements IRequest {
     getIndex(): number | null;
     setIndex(index: number | null): this;
     withIndex(index: number | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetFormByUserIdRequest;

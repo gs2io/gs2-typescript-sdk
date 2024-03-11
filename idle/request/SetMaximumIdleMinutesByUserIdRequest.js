@@ -23,6 +23,7 @@ var SetMaximumIdleMinutesByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.categoryName = null;
         this.maximumIdleMinutes = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     SetMaximumIdleMinutesByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var SetMaximumIdleMinutesByUserIdRequest = /** @class */ (function () {
         this.maximumIdleMinutes = maximumIdleMinutes;
         return this;
     };
+    SetMaximumIdleMinutesByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    SetMaximumIdleMinutesByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    SetMaximumIdleMinutesByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     SetMaximumIdleMinutesByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var SetMaximumIdleMinutesByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withCategoryName(data["categoryName"])
-            .withMaximumIdleMinutes(data["maximumIdleMinutes"]);
+            .withMaximumIdleMinutes(data["maximumIdleMinutes"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SetMaximumIdleMinutesByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var SetMaximumIdleMinutesByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "categoryName": this.getCategoryName(),
             "maximumIdleMinutes": this.getMaximumIdleMinutes(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return SetMaximumIdleMinutesByUserIdRequest;

@@ -23,6 +23,7 @@ var SetRecoverIntervalByUserIdRequest = /** @class */ (function () {
         this.staminaName = null;
         this.userId = null;
         this.recoverIntervalMinutes = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     SetRecoverIntervalByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var SetRecoverIntervalByUserIdRequest = /** @class */ (function () {
         this.recoverIntervalMinutes = recoverIntervalMinutes;
         return this;
     };
+    SetRecoverIntervalByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    SetRecoverIntervalByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    SetRecoverIntervalByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     SetRecoverIntervalByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var SetRecoverIntervalByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withStaminaName(data["staminaName"])
             .withUserId(data["userId"])
-            .withRecoverIntervalMinutes(data["recoverIntervalMinutes"]);
+            .withRecoverIntervalMinutes(data["recoverIntervalMinutes"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SetRecoverIntervalByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var SetRecoverIntervalByUserIdRequest = /** @class */ (function () {
             "staminaName": this.getStaminaName(),
             "userId": this.getUserId(),
             "recoverIntervalMinutes": this.getRecoverIntervalMinutes(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return SetRecoverIntervalByUserIdRequest;

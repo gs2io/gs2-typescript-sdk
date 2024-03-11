@@ -22,6 +22,7 @@ var PrepareDownloadByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.dataObjectId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     PrepareDownloadByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var PrepareDownloadByUserIdRequest = /** @class */ (function () {
         this.dataObjectId = dataObjectId;
         return this;
     };
+    PrepareDownloadByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    PrepareDownloadByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    PrepareDownloadByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     PrepareDownloadByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var PrepareDownloadByUserIdRequest = /** @class */ (function () {
         return new PrepareDownloadByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withDataObjectId(data["dataObjectId"]);
+            .withDataObjectId(data["dataObjectId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     PrepareDownloadByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "dataObjectId": this.getDataObjectId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return PrepareDownloadByUserIdRequest;

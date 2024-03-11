@@ -22,6 +22,7 @@ var UnsubscribeByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.roomName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     UnsubscribeByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var UnsubscribeByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    UnsubscribeByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    UnsubscribeByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    UnsubscribeByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     UnsubscribeByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var UnsubscribeByUserIdRequest = /** @class */ (function () {
         return new UnsubscribeByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withRoomName(data["roomName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     UnsubscribeByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "roomName": this.getRoomName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return UnsubscribeByUserIdRequest;

@@ -23,6 +23,7 @@ var UnlockByUserIdRequest = /** @class */ (function () {
         this.propertyId = null;
         this.userId = null;
         this.transactionId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     UnlockByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var UnlockByUserIdRequest = /** @class */ (function () {
         this.transactionId = transactionId;
         return this;
     };
+    UnlockByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    UnlockByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    UnlockByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     UnlockByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var UnlockByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withPropertyId(data["propertyId"])
             .withUserId(data["userId"])
-            .withTransactionId(data["transactionId"]);
+            .withTransactionId(data["transactionId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     UnlockByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var UnlockByUserIdRequest = /** @class */ (function () {
             "propertyId": this.getPropertyId(),
             "userId": this.getUserId(),
             "transactionId": this.getTransactionId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return UnlockByUserIdRequest;

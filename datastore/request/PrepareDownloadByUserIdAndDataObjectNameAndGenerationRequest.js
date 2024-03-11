@@ -23,6 +23,7 @@ var PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest = /** @class */
         this.userId = null;
         this.dataObjectName = null;
         this.generation = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest = /** @class */
         this.generation = generation;
         return this;
     };
+    PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest = /** @class */
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withDataObjectName(data["dataObjectName"])
-            .withGeneration(data["generation"]);
+            .withGeneration(data["generation"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest = /** @class */
             "userId": this.getUserId(),
             "dataObjectName": this.getDataObjectName(),
             "generation": this.getGeneration(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return PrepareDownloadByUserIdAndDataObjectNameAndGenerationRequest;

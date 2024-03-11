@@ -22,6 +22,7 @@ var GetStampSheetResultByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.transactionId = null;
+        this.timeOffsetToken = null;
     }
     GetStampSheetResultByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetStampSheetResultByUserIdRequest = /** @class */ (function () {
         this.transactionId = transactionId;
         return this;
     };
+    GetStampSheetResultByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetStampSheetResultByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetStampSheetResultByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetStampSheetResultByUserIdRequest.fromDict = function (data) {
         return new GetStampSheetResultByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withTransactionId(data["transactionId"]);
+            .withTransactionId(data["transactionId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetStampSheetResultByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "transactionId": this.getTransactionId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetStampSheetResultByUserIdRequest;

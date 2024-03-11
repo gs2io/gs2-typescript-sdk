@@ -32,6 +32,7 @@ export default class QueryExecuteStampSheetLogRequest implements IRequest {
     private longTerm: boolean|null = null;
     private pageToken: string|null = null;
     private limit: number|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -171,6 +172,17 @@ export default class QueryExecuteStampSheetLogRequest implements IRequest {
         this.limit = limit;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -197,7 +209,8 @@ export default class QueryExecuteStampSheetLogRequest implements IRequest {
             .withEnd(data["end"])
             .withLongTerm(data["longTerm"])
             .withPageToken(data["pageToken"])
-            .withLimit(data["limit"]);
+            .withLimit(data["limit"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -212,6 +225,7 @@ export default class QueryExecuteStampSheetLogRequest implements IRequest {
             "longTerm": this.getLongTerm(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

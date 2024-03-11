@@ -23,6 +23,7 @@ var GetEntryWithSignatureByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.entryModelName = null;
         this.keyId = null;
+        this.timeOffsetToken = null;
     }
     GetEntryWithSignatureByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,12 +91,24 @@ var GetEntryWithSignatureByUserIdRequest = /** @class */ (function () {
         this.keyId = keyId;
         return this;
     };
+    GetEntryWithSignatureByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetEntryWithSignatureByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetEntryWithSignatureByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetEntryWithSignatureByUserIdRequest.fromDict = function (data) {
         return new GetEntryWithSignatureByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withEntryModelName(data["entryModelName"])
-            .withKeyId(data["keyId"]);
+            .withKeyId(data["keyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetEntryWithSignatureByUserIdRequest.prototype.toDict = function () {
         return {
@@ -103,6 +116,7 @@ var GetEntryWithSignatureByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "entryModelName": this.getEntryModelName(),
             "keyId": this.getKeyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetEntryWithSignatureByUserIdRequest;

@@ -5,6 +5,7 @@ export default class DeleteDeadLetterJobByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private deadLetterJobName;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -21,6 +22,9 @@ export default class DeleteDeadLetterJobByUserIdRequest implements IRequest {
     getDeadLetterJobName(): string | null;
     setDeadLetterJobName(deadLetterJobName: string | null): this;
     withDeadLetterJobName(deadLetterJobName: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

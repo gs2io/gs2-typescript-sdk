@@ -24,6 +24,7 @@ var ReDrawBalanceParameterStatusByUserIdRequest = /** @class */ (function () {
         this.parameterName = null;
         this.propertyId = null;
         this.fixedParameterNames = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     ReDrawBalanceParameterStatusByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var ReDrawBalanceParameterStatusByUserIdRequest = /** @class */ (function () {
         this.fixedParameterNames = fixedParameterNames;
         return this;
     };
+    ReDrawBalanceParameterStatusByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    ReDrawBalanceParameterStatusByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    ReDrawBalanceParameterStatusByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     ReDrawBalanceParameterStatusByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -123,7 +135,8 @@ var ReDrawBalanceParameterStatusByUserIdRequest = /** @class */ (function () {
             .withFixedParameterNames(data.fixedParameterNames ?
             data.fixedParameterNames.map(function (item) {
                 return item;
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     ReDrawBalanceParameterStatusByUserIdRequest.prototype.toDict = function () {
         return {
@@ -135,6 +148,7 @@ var ReDrawBalanceParameterStatusByUserIdRequest = /** @class */ (function () {
                 this.getFixedParameterNames().map(function (item) {
                     return item;
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return ReDrawBalanceParameterStatusByUserIdRequest;

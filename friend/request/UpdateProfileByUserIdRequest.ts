@@ -27,6 +27,7 @@ export default class UpdateProfileByUserIdRequest implements IRequest {
     private publicProfile: string|null = null;
     private followerProfile: string|null = null;
     private friendProfile: string|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -111,6 +112,17 @@ export default class UpdateProfileByUserIdRequest implements IRequest {
         this.friendProfile = friendProfile;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -132,7 +144,8 @@ export default class UpdateProfileByUserIdRequest implements IRequest {
             .withUserId(data["userId"])
             .withPublicProfile(data["publicProfile"])
             .withFollowerProfile(data["followerProfile"])
-            .withFriendProfile(data["friendProfile"]);
+            .withFriendProfile(data["friendProfile"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -142,6 +155,7 @@ export default class UpdateProfileByUserIdRequest implements IRequest {
             "publicProfile": this.getPublicProfile(),
             "followerProfile": this.getFollowerProfile(),
             "friendProfile": this.getFriendProfile(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

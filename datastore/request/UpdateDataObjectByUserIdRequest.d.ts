@@ -7,6 +7,7 @@ export default class UpdateDataObjectByUserIdRequest implements IRequest {
     private userId;
     private scope;
     private allowUserIds;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -29,6 +30,9 @@ export default class UpdateDataObjectByUserIdRequest implements IRequest {
     getAllowUserIds(): string[] | null;
     setAllowUserIds(allowUserIds: string[] | null): this;
     withAllowUserIds(allowUserIds: string[] | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

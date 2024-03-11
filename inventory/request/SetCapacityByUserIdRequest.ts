@@ -26,6 +26,7 @@ export default class SetCapacityByUserIdRequest implements IRequest {
     private inventoryName: string|null = null;
     private userId: string|null = null;
     private newCapacityValue: number|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -99,6 +100,17 @@ export default class SetCapacityByUserIdRequest implements IRequest {
         this.newCapacityValue = newCapacityValue;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -119,7 +131,8 @@ export default class SetCapacityByUserIdRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withInventoryName(data["inventoryName"])
             .withUserId(data["userId"])
-            .withNewCapacityValue(data["newCapacityValue"]);
+            .withNewCapacityValue(data["newCapacityValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -128,6 +141,7 @@ export default class SetCapacityByUserIdRequest implements IRequest {
             "inventoryName": this.getInventoryName(),
             "userId": this.getUserId(),
             "newCapacityValue": this.getNewCapacityValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

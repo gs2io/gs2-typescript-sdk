@@ -22,6 +22,7 @@ var CancelMatchmakingByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.gatheringName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     CancelMatchmakingByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var CancelMatchmakingByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    CancelMatchmakingByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    CancelMatchmakingByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    CancelMatchmakingByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     CancelMatchmakingByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var CancelMatchmakingByUserIdRequest = /** @class */ (function () {
         return new CancelMatchmakingByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withGatheringName(data["gatheringName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     CancelMatchmakingByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "gatheringName": this.getGatheringName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return CancelMatchmakingByUserIdRequest;

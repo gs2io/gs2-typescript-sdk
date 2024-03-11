@@ -25,6 +25,7 @@ var DeleteReferenceOfByUserIdRequest = /** @class */ (function () {
         this.itemName = null;
         this.itemSetName = null;
         this.referenceOf = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteReferenceOfByUserIdRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var DeleteReferenceOfByUserIdRequest = /** @class */ (function () {
         this.referenceOf = referenceOf;
         return this;
     };
+    DeleteReferenceOfByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteReferenceOfByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteReferenceOfByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteReferenceOfByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var DeleteReferenceOfByUserIdRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withItemName(data["itemName"])
             .withItemSetName(data["itemSetName"])
-            .withReferenceOf(data["referenceOf"]);
+            .withReferenceOf(data["referenceOf"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteReferenceOfByUserIdRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var DeleteReferenceOfByUserIdRequest = /** @class */ (function () {
             "itemName": this.getItemName(),
             "itemSetName": this.getItemSetName(),
             "referenceOf": this.getReferenceOf(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteReferenceOfByUserIdRequest;

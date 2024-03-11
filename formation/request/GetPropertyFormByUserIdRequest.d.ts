@@ -6,6 +6,7 @@ export default class GetPropertyFormByUserIdRequest implements IRequest {
     private userId;
     private propertyFormModelName;
     private propertyId;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class GetPropertyFormByUserIdRequest implements IRequest {
     getPropertyId(): string | null;
     setPropertyId(propertyId: string | null): this;
     withPropertyId(propertyId: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetPropertyFormByUserIdRequest;

@@ -27,6 +27,7 @@ var DirectEnhanceByUserIdRequest = /** @class */ (function () {
         this.targetItemSetId = null;
         this.materials = null;
         this.config = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DirectEnhanceByUserIdRequest.prototype.getRequestId = function () {
@@ -117,6 +118,17 @@ var DirectEnhanceByUserIdRequest = /** @class */ (function () {
         this.config = config;
         return this;
     };
+    DirectEnhanceByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DirectEnhanceByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DirectEnhanceByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DirectEnhanceByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -141,7 +153,8 @@ var DirectEnhanceByUserIdRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Enhance.Config.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DirectEnhanceByUserIdRequest.prototype.toDict = function () {
         return {
@@ -157,6 +170,7 @@ var DirectEnhanceByUserIdRequest = /** @class */ (function () {
                 this.getConfig().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DirectEnhanceByUserIdRequest;

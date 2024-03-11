@@ -22,6 +22,7 @@ var GetWalletByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.slot = null;
+        this.timeOffsetToken = null;
     }
     GetWalletByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetWalletByUserIdRequest = /** @class */ (function () {
         this.slot = slot;
         return this;
     };
+    GetWalletByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetWalletByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetWalletByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetWalletByUserIdRequest.fromDict = function (data) {
         return new GetWalletByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withSlot(data["slot"]);
+            .withSlot(data["slot"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetWalletByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "slot": this.getSlot(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetWalletByUserIdRequest;

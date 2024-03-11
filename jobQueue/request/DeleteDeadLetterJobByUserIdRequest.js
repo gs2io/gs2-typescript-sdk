@@ -22,6 +22,7 @@ var DeleteDeadLetterJobByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.deadLetterJobName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteDeadLetterJobByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var DeleteDeadLetterJobByUserIdRequest = /** @class */ (function () {
         this.deadLetterJobName = deadLetterJobName;
         return this;
     };
+    DeleteDeadLetterJobByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteDeadLetterJobByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteDeadLetterJobByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteDeadLetterJobByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var DeleteDeadLetterJobByUserIdRequest = /** @class */ (function () {
         return new DeleteDeadLetterJobByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withDeadLetterJobName(data["deadLetterJobName"]);
+            .withDeadLetterJobName(data["deadLetterJobName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteDeadLetterJobByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "deadLetterJobName": this.getDeadLetterJobName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteDeadLetterJobByUserIdRequest;

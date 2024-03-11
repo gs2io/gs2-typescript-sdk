@@ -5,6 +5,7 @@ export default class GetStatusByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private statusName;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -20,6 +21,9 @@ export default class GetStatusByUserIdRequest implements IRequest {
     getStatusName(): string | null;
     setStatusName(statusName: string | null): this;
     withStatusName(statusName: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetStatusByUserIdRequest;

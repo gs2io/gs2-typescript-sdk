@@ -28,6 +28,7 @@ export default class CountUpByUserIdRequest implements IRequest {
     private userId: string|null = null;
     private countUpValue: number|null = null;
     private maxValue: number|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -123,6 +124,17 @@ export default class CountUpByUserIdRequest implements IRequest {
         this.maxValue = maxValue;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -145,7 +157,8 @@ export default class CountUpByUserIdRequest implements IRequest {
             .withCounterName(data["counterName"])
             .withUserId(data["userId"])
             .withCountUpValue(data["countUpValue"])
-            .withMaxValue(data["maxValue"]);
+            .withMaxValue(data["maxValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -156,6 +169,7 @@ export default class CountUpByUserIdRequest implements IRequest {
             "userId": this.getUserId(),
             "countUpValue": this.getCountUpValue(),
             "maxValue": this.getMaxValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

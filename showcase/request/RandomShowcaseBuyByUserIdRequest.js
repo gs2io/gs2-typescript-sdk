@@ -27,6 +27,7 @@ var RandomShowcaseBuyByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.quantity = null;
         this.config = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     RandomShowcaseBuyByUserIdRequest.prototype.getRequestId = function () {
@@ -117,6 +118,17 @@ var RandomShowcaseBuyByUserIdRequest = /** @class */ (function () {
         this.config = config;
         return this;
     };
+    RandomShowcaseBuyByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    RandomShowcaseBuyByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    RandomShowcaseBuyByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     RandomShowcaseBuyByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -138,7 +150,8 @@ var RandomShowcaseBuyByUserIdRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Showcase.Config.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     RandomShowcaseBuyByUserIdRequest.prototype.toDict = function () {
         return {
@@ -151,6 +164,7 @@ var RandomShowcaseBuyByUserIdRequest = /** @class */ (function () {
                 this.getConfig().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return RandomShowcaseBuyByUserIdRequest;

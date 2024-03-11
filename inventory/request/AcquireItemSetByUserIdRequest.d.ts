@@ -10,6 +10,7 @@ export default class AcquireItemSetByUserIdRequest implements IRequest {
     private expiresAt;
     private createNewItemSet;
     private itemSetName;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -41,6 +42,9 @@ export default class AcquireItemSetByUserIdRequest implements IRequest {
     getItemSetName(): string | null;
     setItemSetName(itemSetName: string | null): this;
     withItemSetName(itemSetName: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

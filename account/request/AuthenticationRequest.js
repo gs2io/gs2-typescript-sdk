@@ -23,6 +23,7 @@ var AuthenticationRequest = /** @class */ (function () {
         this.userId = null;
         this.keyId = null;
         this.password = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     AuthenticationRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var AuthenticationRequest = /** @class */ (function () {
         this.password = password;
         return this;
     };
+    AuthenticationRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    AuthenticationRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    AuthenticationRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     AuthenticationRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var AuthenticationRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withKeyId(data["keyId"])
-            .withPassword(data["password"]);
+            .withPassword(data["password"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     AuthenticationRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var AuthenticationRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "keyId": this.getKeyId(),
             "password": this.getPassword(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return AuthenticationRequest;

@@ -26,6 +26,7 @@ export default class AuthenticationRequest implements IRequest {
     private userId: string|null = null;
     private keyId: string|null = null;
     private password: string|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -99,6 +100,17 @@ export default class AuthenticationRequest implements IRequest {
         this.password = password;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -119,7 +131,8 @@ export default class AuthenticationRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withKeyId(data["keyId"])
-            .withPassword(data["password"]);
+            .withPassword(data["password"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -128,6 +141,7 @@ export default class AuthenticationRequest implements IRequest {
             "userId": this.getUserId(),
             "keyId": this.getKeyId(),
             "password": this.getPassword(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

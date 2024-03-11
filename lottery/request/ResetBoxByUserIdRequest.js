@@ -22,6 +22,7 @@ var ResetBoxByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.prizeTableName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     ResetBoxByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var ResetBoxByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    ResetBoxByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    ResetBoxByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    ResetBoxByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     ResetBoxByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var ResetBoxByUserIdRequest = /** @class */ (function () {
         return new ResetBoxByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withPrizeTableName(data["prizeTableName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     ResetBoxByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "prizeTableName": this.getPrizeTableName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return ResetBoxByUserIdRequest;

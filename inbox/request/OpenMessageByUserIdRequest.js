@@ -22,6 +22,7 @@ var OpenMessageByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.messageName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     OpenMessageByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var OpenMessageByUserIdRequest = /** @class */ (function () {
         this.messageName = messageName;
         return this;
     };
+    OpenMessageByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    OpenMessageByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    OpenMessageByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     OpenMessageByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var OpenMessageByUserIdRequest = /** @class */ (function () {
         return new OpenMessageByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withMessageName(data["messageName"]);
+            .withMessageName(data["messageName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     OpenMessageByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "messageName": this.getMessageName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return OpenMessageByUserIdRequest;

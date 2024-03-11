@@ -21,6 +21,7 @@ var DeleteProfileByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteProfileByUserIdRequest.prototype.getRequestId = function () {
@@ -67,6 +68,17 @@ var DeleteProfileByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    DeleteProfileByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteProfileByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteProfileByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteProfileByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -81,12 +93,14 @@ var DeleteProfileByUserIdRequest = /** @class */ (function () {
     DeleteProfileByUserIdRequest.fromDict = function (data) {
         return new DeleteProfileByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteProfileByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteProfileByUserIdRequest;

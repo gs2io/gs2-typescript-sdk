@@ -6,6 +6,7 @@ export default class GetFriendByUserIdRequest implements IRequest {
     private userId;
     private targetUserId;
     private withProfile;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class GetFriendByUserIdRequest implements IRequest {
     getWithProfile(): boolean | null;
     setWithProfile(withProfile: boolean | null): this;
     withWithProfile(withProfile: boolean | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetFriendByUserIdRequest;

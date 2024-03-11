@@ -6,6 +6,7 @@ export default class UnsubscribeByUserIdRequest implements IRequest {
     private categoryName;
     private userId;
     private targetUserId;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -25,6 +26,9 @@ export default class UnsubscribeByUserIdRequest implements IRequest {
     getTargetUserId(): string | null;
     setTargetUserId(targetUserId: string | null): this;
     withTargetUserId(targetUserId: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

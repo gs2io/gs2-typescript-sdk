@@ -22,6 +22,7 @@ var DeleteStaminaByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.staminaName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteStaminaByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var DeleteStaminaByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    DeleteStaminaByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteStaminaByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteStaminaByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteStaminaByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var DeleteStaminaByUserIdRequest = /** @class */ (function () {
         return new DeleteStaminaByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withStaminaName(data["staminaName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteStaminaByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "staminaName": this.getStaminaName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteStaminaByUserIdRequest;

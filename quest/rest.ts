@@ -221,6 +221,9 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
         };
@@ -254,6 +257,9 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
         };
@@ -282,6 +288,9 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
         }
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
@@ -316,6 +325,9 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
         };
@@ -344,6 +356,9 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
         }
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
@@ -377,6 +392,9 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
         }
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
@@ -412,6 +430,9 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
         }
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
@@ -868,6 +889,9 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'userId': String(request.getUserId() ?? null),
@@ -900,6 +924,9 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
         }
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
@@ -963,6 +990,9 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
@@ -1035,6 +1065,9 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
         }
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
@@ -1111,6 +1144,9 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'rewards': request.getRewards()?.map((item) => item.toDict()) ?? null,
@@ -1179,6 +1215,9 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
         }
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
@@ -1300,6 +1339,9 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'pageToken': String(request.getPageToken() ?? null),
@@ -1360,6 +1402,9 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
         };
@@ -1390,6 +1435,9 @@ export default class Gs2QuestRestClient extends AbstractGs2RestClient {
         }
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,

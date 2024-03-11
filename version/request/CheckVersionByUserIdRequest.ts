@@ -25,6 +25,7 @@ export default class CheckVersionByUserIdRequest implements IRequest {
     private namespaceName: string|null = null;
     private userId: string|null = null;
     private targetVersions: Gs2Version.TargetVersion[]|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -87,6 +88,17 @@ export default class CheckVersionByUserIdRequest implements IRequest {
         this.targetVersions = targetVersions;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -110,7 +122,8 @@ export default class CheckVersionByUserIdRequest implements IRequest {
                 data.targetVersions.map((item: {[key: string]: any}) => {
                     return Gs2Version.TargetVersion.fromDict(item);
                 }
-            ) : []);
+            ) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -122,6 +135,7 @@ export default class CheckVersionByUserIdRequest implements IRequest {
                     return item.toDict();
                 }
             ) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

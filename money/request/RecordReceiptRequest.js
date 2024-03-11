@@ -23,6 +23,7 @@ var RecordReceiptRequest = /** @class */ (function () {
         this.userId = null;
         this.contentsId = null;
         this.receipt = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     RecordReceiptRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var RecordReceiptRequest = /** @class */ (function () {
         this.receipt = receipt;
         return this;
     };
+    RecordReceiptRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    RecordReceiptRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    RecordReceiptRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     RecordReceiptRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var RecordReceiptRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withContentsId(data["contentsId"])
-            .withReceipt(data["receipt"]);
+            .withReceipt(data["receipt"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     RecordReceiptRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var RecordReceiptRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "contentsId": this.getContentsId(),
             "receipt": this.getReceipt(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return RecordReceiptRequest;

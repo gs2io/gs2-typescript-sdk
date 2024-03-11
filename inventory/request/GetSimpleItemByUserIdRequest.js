@@ -23,6 +23,7 @@ var GetSimpleItemByUserIdRequest = /** @class */ (function () {
         this.inventoryName = null;
         this.userId = null;
         this.itemName = null;
+        this.timeOffsetToken = null;
     }
     GetSimpleItemByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,12 +91,24 @@ var GetSimpleItemByUserIdRequest = /** @class */ (function () {
         this.itemName = itemName;
         return this;
     };
+    GetSimpleItemByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetSimpleItemByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetSimpleItemByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetSimpleItemByUserIdRequest.fromDict = function (data) {
         return new GetSimpleItemByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withInventoryName(data["inventoryName"])
             .withUserId(data["userId"])
-            .withItemName(data["itemName"]);
+            .withItemName(data["itemName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetSimpleItemByUserIdRequest.prototype.toDict = function () {
         return {
@@ -103,6 +116,7 @@ var GetSimpleItemByUserIdRequest = /** @class */ (function () {
             "inventoryName": this.getInventoryName(),
             "userId": this.getUserId(),
             "itemName": this.getItemName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetSimpleItemByUserIdRequest;

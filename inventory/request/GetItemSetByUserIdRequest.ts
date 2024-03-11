@@ -27,6 +27,7 @@ export default class GetItemSetByUserIdRequest implements IRequest {
     private userId: string|null = null;
     private itemName: string|null = null;
     private itemSetName: string|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -110,6 +111,17 @@ export default class GetItemSetByUserIdRequest implements IRequest {
         this.itemSetName = itemSetName;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetItemSetByUserIdRequest {
         return new GetItemSetByUserIdRequest()
@@ -117,7 +129,8 @@ export default class GetItemSetByUserIdRequest implements IRequest {
             .withInventoryName(data["inventoryName"])
             .withUserId(data["userId"])
             .withItemName(data["itemName"])
-            .withItemSetName(data["itemSetName"]);
+            .withItemSetName(data["itemSetName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -127,6 +140,7 @@ export default class GetItemSetByUserIdRequest implements IRequest {
             "userId": this.getUserId(),
             "itemName": this.getItemName(),
             "itemSetName": this.getItemSetName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

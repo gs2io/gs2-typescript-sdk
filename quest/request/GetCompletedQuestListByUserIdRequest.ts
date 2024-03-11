@@ -25,6 +25,7 @@ export default class GetCompletedQuestListByUserIdRequest implements IRequest {
     private namespaceName: string|null = null;
     private questGroupName: string|null = null;
     private userId: string|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -86,12 +87,24 @@ export default class GetCompletedQuestListByUserIdRequest implements IRequest {
         this.userId = userId;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetCompletedQuestListByUserIdRequest {
         return new GetCompletedQuestListByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withQuestGroupName(data["questGroupName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -99,6 +112,7 @@ export default class GetCompletedQuestListByUserIdRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "questGroupName": this.getQuestGroupName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

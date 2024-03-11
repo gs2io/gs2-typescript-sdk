@@ -24,6 +24,7 @@ var UpdateDataObjectByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.scope = null;
         this.allowUserIds = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     UpdateDataObjectByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var UpdateDataObjectByUserIdRequest = /** @class */ (function () {
         this.allowUserIds = allowUserIds;
         return this;
     };
+    UpdateDataObjectByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    UpdateDataObjectByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    UpdateDataObjectByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     UpdateDataObjectByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -123,7 +135,8 @@ var UpdateDataObjectByUserIdRequest = /** @class */ (function () {
             .withAllowUserIds(data.allowUserIds ?
             data.allowUserIds.map(function (item) {
                 return item;
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     UpdateDataObjectByUserIdRequest.prototype.toDict = function () {
         return {
@@ -135,6 +148,7 @@ var UpdateDataObjectByUserIdRequest = /** @class */ (function () {
                 this.getAllowUserIds().map(function (item) {
                     return item;
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return UpdateDataObjectByUserIdRequest;

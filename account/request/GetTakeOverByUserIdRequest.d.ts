@@ -5,6 +5,7 @@ export default class GetTakeOverByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private type;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -20,6 +21,9 @@ export default class GetTakeOverByUserIdRequest implements IRequest {
     getType(): number | null;
     setType(type: number | null): this;
     withType(type: number | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetTakeOverByUserIdRequest;

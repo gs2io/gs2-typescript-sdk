@@ -24,6 +24,7 @@ var CreateTakeOverByUserIdRequest = /** @class */ (function () {
         this.type = null;
         this.userIdentifier = null;
         this.password = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     CreateTakeOverByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var CreateTakeOverByUserIdRequest = /** @class */ (function () {
         this.password = password;
         return this;
     };
+    CreateTakeOverByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    CreateTakeOverByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    CreateTakeOverByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     CreateTakeOverByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var CreateTakeOverByUserIdRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withType(data["type"])
             .withUserIdentifier(data["userIdentifier"])
-            .withPassword(data["password"]);
+            .withPassword(data["password"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     CreateTakeOverByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var CreateTakeOverByUserIdRequest = /** @class */ (function () {
             "type": this.getType(),
             "userIdentifier": this.getUserIdentifier(),
             "password": this.getPassword(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return CreateTakeOverByUserIdRequest;

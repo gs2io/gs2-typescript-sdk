@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LoginBySignatureResult = exports.LoginResult = void 0;
+exports.IssueTimeOffsetTokenByUserIdResult = exports.LoginBySignatureResult = exports.LoginResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -21,4 +21,6 @@ var LoginResult_1 = tslib_1.__importDefault(require("./LoginResult"));
 exports.LoginResult = LoginResult_1.default;
 var LoginBySignatureResult_1 = tslib_1.__importDefault(require("./LoginBySignatureResult"));
 exports.LoginBySignatureResult = LoginBySignatureResult_1.default;
+var IssueTimeOffsetTokenByUserIdResult_1 = tslib_1.__importDefault(require("./IssueTimeOffsetTokenByUserIdResult"));
+exports.IssueTimeOffsetTokenByUserIdResult = IssueTimeOffsetTokenByUserIdResult_1.default;
 //# sourceMappingURL=index.js.map

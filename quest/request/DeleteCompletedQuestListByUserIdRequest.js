@@ -22,6 +22,7 @@ var DeleteCompletedQuestListByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.questGroupName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteCompletedQuestListByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var DeleteCompletedQuestListByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    DeleteCompletedQuestListByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteCompletedQuestListByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteCompletedQuestListByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteCompletedQuestListByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var DeleteCompletedQuestListByUserIdRequest = /** @class */ (function () {
         return new DeleteCompletedQuestListByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withQuestGroupName(data["questGroupName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteCompletedQuestListByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "questGroupName": this.getQuestGroupName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteCompletedQuestListByUserIdRequest;

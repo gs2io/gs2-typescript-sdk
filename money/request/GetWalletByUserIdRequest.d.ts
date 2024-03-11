@@ -5,6 +5,7 @@ export default class GetWalletByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private slot;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -20,6 +21,9 @@ export default class GetWalletByUserIdRequest implements IRequest {
     getSlot(): number | null;
     setSlot(slot: number | null): this;
     withSlot(slot: number | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetWalletByUserIdRequest;

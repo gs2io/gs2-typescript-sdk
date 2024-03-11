@@ -8,6 +8,7 @@ export default class GetRankingByUserIdRequest implements IRequest {
     private scorerUserId;
     private uniqueId;
     private additionalScopeName;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -32,6 +33,9 @@ export default class GetRankingByUserIdRequest implements IRequest {
     getAdditionalScopeName(): string | null;
     setAdditionalScopeName(additionalScopeName: string | null): this;
     withAdditionalScopeName(additionalScopeName: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetRankingByUserIdRequest;

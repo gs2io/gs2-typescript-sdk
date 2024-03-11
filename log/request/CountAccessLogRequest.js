@@ -28,6 +28,7 @@ var CountAccessLogRequest = /** @class */ (function () {
         this.longTerm = null;
         this.pageToken = null;
         this.limit = null;
+        this.timeOffsetToken = null;
     }
     CountAccessLogRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -150,6 +151,17 @@ var CountAccessLogRequest = /** @class */ (function () {
         this.limit = limit;
         return this;
     };
+    CountAccessLogRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    CountAccessLogRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    CountAccessLogRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     CountAccessLogRequest.fromDict = function (data) {
         return new CountAccessLogRequest()
             .withNamespaceName(data["namespaceName"])
@@ -160,7 +172,8 @@ var CountAccessLogRequest = /** @class */ (function () {
             .withEnd(data["end"])
             .withLongTerm(data["longTerm"])
             .withPageToken(data["pageToken"])
-            .withLimit(data["limit"]);
+            .withLimit(data["limit"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     CountAccessLogRequest.prototype.toDict = function () {
         return {
@@ -173,6 +186,7 @@ var CountAccessLogRequest = /** @class */ (function () {
             "longTerm": this.getLongTerm(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return CountAccessLogRequest;

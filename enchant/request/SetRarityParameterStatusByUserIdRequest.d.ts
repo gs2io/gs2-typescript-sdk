@@ -8,6 +8,7 @@ export default class SetRarityParameterStatusByUserIdRequest implements IRequest
     private parameterName;
     private propertyId;
     private parameterValues;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -30,6 +31,9 @@ export default class SetRarityParameterStatusByUserIdRequest implements IRequest
     getParameterValues(): Gs2Enchant.RarityParameterValue[] | null;
     setParameterValues(parameterValues: Gs2Enchant.RarityParameterValue[] | null): this;
     withParameterValues(parameterValues: Gs2Enchant.RarityParameterValue[] | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

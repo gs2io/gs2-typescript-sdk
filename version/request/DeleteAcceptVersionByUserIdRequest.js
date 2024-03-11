@@ -22,6 +22,7 @@ var DeleteAcceptVersionByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.versionName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteAcceptVersionByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var DeleteAcceptVersionByUserIdRequest = /** @class */ (function () {
         this.versionName = versionName;
         return this;
     };
+    DeleteAcceptVersionByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteAcceptVersionByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteAcceptVersionByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteAcceptVersionByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var DeleteAcceptVersionByUserIdRequest = /** @class */ (function () {
         return new DeleteAcceptVersionByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withVersionName(data["versionName"]);
+            .withVersionName(data["versionName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteAcceptVersionByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "versionName": this.getVersionName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteAcceptVersionByUserIdRequest;

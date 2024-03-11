@@ -7,6 +7,7 @@ export default class ReportByUserIdRequest implements IRequest {
     private userId;
     private statusName;
     private events;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -26,6 +27,9 @@ export default class ReportByUserIdRequest implements IRequest {
     getEvents(): Gs2StateMachine.Event[] | null;
     setEvents(events: Gs2StateMachine.Event[] | null): this;
     withEvents(events: Gs2StateMachine.Event[] | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

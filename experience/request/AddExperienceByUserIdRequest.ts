@@ -28,6 +28,7 @@ export default class AddExperienceByUserIdRequest implements IRequest {
     private propertyId: string|null = null;
     private experienceValue: number|null = null;
     private truncateExperienceWhenRankUp: boolean|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -123,6 +124,17 @@ export default class AddExperienceByUserIdRequest implements IRequest {
         this.truncateExperienceWhenRankUp = truncateExperienceWhenRankUp;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -145,7 +157,8 @@ export default class AddExperienceByUserIdRequest implements IRequest {
             .withExperienceName(data["experienceName"])
             .withPropertyId(data["propertyId"])
             .withExperienceValue(data["experienceValue"])
-            .withTruncateExperienceWhenRankUp(data["truncateExperienceWhenRankUp"]);
+            .withTruncateExperienceWhenRankUp(data["truncateExperienceWhenRankUp"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -156,6 +169,7 @@ export default class AddExperienceByUserIdRequest implements IRequest {
             "propertyId": this.getPropertyId(),
             "experienceValue": this.getExperienceValue(),
             "truncateExperienceWhenRankUp": this.getTruncateExperienceWhenRankUp(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

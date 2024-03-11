@@ -23,6 +23,7 @@ var StartStateMachineByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.args = null;
         this.ttl = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     StartStateMachineByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var StartStateMachineByUserIdRequest = /** @class */ (function () {
         this.ttl = ttl;
         return this;
     };
+    StartStateMachineByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    StartStateMachineByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    StartStateMachineByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     StartStateMachineByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var StartStateMachineByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withArgs(data["args"])
-            .withTtl(data["ttl"]);
+            .withTtl(data["ttl"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     StartStateMachineByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var StartStateMachineByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "args": this.getArgs(),
             "ttl": this.getTtl(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return StartStateMachineByUserIdRequest;

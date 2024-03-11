@@ -26,6 +26,7 @@ export default class ReportByUserIdRequest implements IRequest {
     private userId: string|null = null;
     private statusName: string|null = null;
     private events: Gs2StateMachine.Event[]|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -99,6 +100,17 @@ export default class ReportByUserIdRequest implements IRequest {
         this.events = events;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -123,7 +135,8 @@ export default class ReportByUserIdRequest implements IRequest {
                 data.events.map((item: {[key: string]: any}) => {
                     return Gs2StateMachine.Event.fromDict(item);
                 }
-            ) : []);
+            ) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -136,6 +149,7 @@ export default class ReportByUserIdRequest implements IRequest {
                     return item.toDict();
                 }
             ) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

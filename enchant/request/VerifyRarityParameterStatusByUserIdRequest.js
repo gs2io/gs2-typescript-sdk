@@ -27,6 +27,7 @@ var VerifyRarityParameterStatusByUserIdRequest = /** @class */ (function () {
         this.parameterValueName = null;
         this.parameterCount = null;
         this.multiplyValueSpecifyingQuantity = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     VerifyRarityParameterStatusByUserIdRequest.prototype.getRequestId = function () {
@@ -139,6 +140,17 @@ var VerifyRarityParameterStatusByUserIdRequest = /** @class */ (function () {
         this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
         return this;
     };
+    VerifyRarityParameterStatusByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    VerifyRarityParameterStatusByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    VerifyRarityParameterStatusByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     VerifyRarityParameterStatusByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -159,7 +171,8 @@ var VerifyRarityParameterStatusByUserIdRequest = /** @class */ (function () {
             .withVerifyType(data["verifyType"])
             .withParameterValueName(data["parameterValueName"])
             .withParameterCount(data["parameterCount"])
-            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     VerifyRarityParameterStatusByUserIdRequest.prototype.toDict = function () {
         return {
@@ -171,6 +184,7 @@ var VerifyRarityParameterStatusByUserIdRequest = /** @class */ (function () {
             "parameterValueName": this.getParameterValueName(),
             "parameterCount": this.getParameterCount(),
             "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return VerifyRarityParameterStatusByUserIdRequest;

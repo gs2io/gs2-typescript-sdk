@@ -7,6 +7,7 @@ export default class GetScoreByUserIdRequest implements IRequest {
     private userId;
     private scorerUserId;
     private uniqueId;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -28,6 +29,9 @@ export default class GetScoreByUserIdRequest implements IRequest {
     getUniqueId(): string | null;
     setUniqueId(uniqueId: string | null): this;
     withUniqueId(uniqueId: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetScoreByUserIdRequest;

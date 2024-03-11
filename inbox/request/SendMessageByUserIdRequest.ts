@@ -28,6 +28,7 @@ export default class SendMessageByUserIdRequest implements IRequest {
     private readAcquireActions: Gs2Inbox.AcquireAction[]|null = null;
     private expiresAt: number|null = null;
     private expiresTimeSpan: Gs2Inbox.TimeSpan|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -123,6 +124,17 @@ export default class SendMessageByUserIdRequest implements IRequest {
         this.expiresTimeSpan = expiresTimeSpan;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -149,7 +161,8 @@ export default class SendMessageByUserIdRequest implements IRequest {
                 }
             ) : [])
             .withExpiresAt(data["expiresAt"])
-            .withExpiresTimeSpan(Gs2Inbox.TimeSpan.fromDict(data["expiresTimeSpan"]));
+            .withExpiresTimeSpan(Gs2Inbox.TimeSpan.fromDict(data["expiresTimeSpan"]))
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -164,6 +177,7 @@ export default class SendMessageByUserIdRequest implements IRequest {
             ) : [],
             "expiresAt": this.getExpiresAt(),
             "expiresTimeSpan": this.getExpiresTimeSpan()?.toDict(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

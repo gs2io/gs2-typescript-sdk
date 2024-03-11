@@ -20,6 +20,7 @@ var DumpUserDataByUserIdRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.userId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DumpUserDataByUserIdRequest.prototype.getRequestId = function () {
@@ -55,6 +56,17 @@ var DumpUserDataByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    DumpUserDataByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DumpUserDataByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DumpUserDataByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DumpUserDataByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -68,11 +80,13 @@ var DumpUserDataByUserIdRequest = /** @class */ (function () {
     };
     DumpUserDataByUserIdRequest.fromDict = function (data) {
         return new DumpUserDataByUserIdRequest()
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DumpUserDataByUserIdRequest.prototype.toDict = function () {
         return {
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DumpUserDataByUserIdRequest;

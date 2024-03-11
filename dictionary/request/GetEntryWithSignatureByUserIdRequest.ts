@@ -26,6 +26,7 @@ export default class GetEntryWithSignatureByUserIdRequest implements IRequest {
     private userId: string|null = null;
     private entryModelName: string|null = null;
     private keyId: string|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -98,13 +99,25 @@ export default class GetEntryWithSignatureByUserIdRequest implements IRequest {
         this.keyId = keyId;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetEntryWithSignatureByUserIdRequest {
         return new GetEntryWithSignatureByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withEntryModelName(data["entryModelName"])
-            .withKeyId(data["keyId"]);
+            .withKeyId(data["keyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -113,6 +126,7 @@ export default class GetEntryWithSignatureByUserIdRequest implements IRequest {
             "userId": this.getUserId(),
             "entryModelName": this.getEntryModelName(),
             "keyId": this.getKeyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

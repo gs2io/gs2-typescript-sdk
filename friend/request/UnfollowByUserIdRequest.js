@@ -22,6 +22,7 @@ var UnfollowByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.targetUserId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     UnfollowByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var UnfollowByUserIdRequest = /** @class */ (function () {
         this.targetUserId = targetUserId;
         return this;
     };
+    UnfollowByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    UnfollowByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    UnfollowByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     UnfollowByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var UnfollowByUserIdRequest = /** @class */ (function () {
         return new UnfollowByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withTargetUserId(data["targetUserId"]);
+            .withTargetUserId(data["targetUserId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     UnfollowByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "targetUserId": this.getTargetUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return UnfollowByUserIdRequest;

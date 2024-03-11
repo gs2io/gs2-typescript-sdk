@@ -27,6 +27,7 @@ export default class SubGradeByUserIdRequest implements IRequest {
     private gradeName: string|null = null;
     private propertyId: string|null = null;
     private gradeValue: number|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -111,6 +112,17 @@ export default class SubGradeByUserIdRequest implements IRequest {
         this.gradeValue = gradeValue;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -132,7 +144,8 @@ export default class SubGradeByUserIdRequest implements IRequest {
             .withUserId(data["userId"])
             .withGradeName(data["gradeName"])
             .withPropertyId(data["propertyId"])
-            .withGradeValue(data["gradeValue"]);
+            .withGradeValue(data["gradeValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -142,6 +155,7 @@ export default class SubGradeByUserIdRequest implements IRequest {
             "gradeName": this.getGradeName(),
             "propertyId": this.getPropertyId(),
             "gradeValue": this.getGradeValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

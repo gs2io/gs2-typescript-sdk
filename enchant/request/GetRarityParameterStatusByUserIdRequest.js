@@ -23,6 +23,7 @@ var GetRarityParameterStatusByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.parameterName = null;
         this.propertyId = null;
+        this.timeOffsetToken = null;
     }
     GetRarityParameterStatusByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,12 +91,24 @@ var GetRarityParameterStatusByUserIdRequest = /** @class */ (function () {
         this.propertyId = propertyId;
         return this;
     };
+    GetRarityParameterStatusByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetRarityParameterStatusByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetRarityParameterStatusByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetRarityParameterStatusByUserIdRequest.fromDict = function (data) {
         return new GetRarityParameterStatusByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withParameterName(data["parameterName"])
-            .withPropertyId(data["propertyId"]);
+            .withPropertyId(data["propertyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetRarityParameterStatusByUserIdRequest.prototype.toDict = function () {
         return {
@@ -103,6 +116,7 @@ var GetRarityParameterStatusByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "parameterName": this.getParameterName(),
             "propertyId": this.getPropertyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetRarityParameterStatusByUserIdRequest;

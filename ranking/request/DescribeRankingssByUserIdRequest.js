@@ -26,6 +26,7 @@ var DescribeRankingssByUserIdRequest = /** @class */ (function () {
         this.startIndex = null;
         this.pageToken = null;
         this.limit = null;
+        this.timeOffsetToken = null;
     }
     DescribeRankingssByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -126,6 +127,17 @@ var DescribeRankingssByUserIdRequest = /** @class */ (function () {
         this.limit = limit;
         return this;
     };
+    DescribeRankingssByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DescribeRankingssByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DescribeRankingssByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DescribeRankingssByUserIdRequest.fromDict = function (data) {
         return new DescribeRankingssByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
@@ -134,7 +146,8 @@ var DescribeRankingssByUserIdRequest = /** @class */ (function () {
             .withAdditionalScopeName(data["additionalScopeName"])
             .withStartIndex(data["startIndex"])
             .withPageToken(data["pageToken"])
-            .withLimit(data["limit"]);
+            .withLimit(data["limit"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DescribeRankingssByUserIdRequest.prototype.toDict = function () {
         return {
@@ -145,6 +158,7 @@ var DescribeRankingssByUserIdRequest = /** @class */ (function () {
             "startIndex": this.getStartIndex(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DescribeRankingssByUserIdRequest;

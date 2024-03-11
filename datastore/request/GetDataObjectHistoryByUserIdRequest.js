@@ -23,6 +23,7 @@ var GetDataObjectHistoryByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.dataObjectName = null;
         this.generation = null;
+        this.timeOffsetToken = null;
     }
     GetDataObjectHistoryByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,12 +91,24 @@ var GetDataObjectHistoryByUserIdRequest = /** @class */ (function () {
         this.generation = generation;
         return this;
     };
+    GetDataObjectHistoryByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetDataObjectHistoryByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetDataObjectHistoryByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetDataObjectHistoryByUserIdRequest.fromDict = function (data) {
         return new GetDataObjectHistoryByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withDataObjectName(data["dataObjectName"])
-            .withGeneration(data["generation"]);
+            .withGeneration(data["generation"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetDataObjectHistoryByUserIdRequest.prototype.toDict = function () {
         return {
@@ -103,6 +116,7 @@ var GetDataObjectHistoryByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "dataObjectName": this.getDataObjectName(),
             "generation": this.getGeneration(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetDataObjectHistoryByUserIdRequest;

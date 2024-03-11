@@ -24,6 +24,7 @@ var DeleteItemSetByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.itemName = null;
         this.itemSetName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteItemSetByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var DeleteItemSetByUserIdRequest = /** @class */ (function () {
         this.itemSetName = itemSetName;
         return this;
     };
+    DeleteItemSetByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteItemSetByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteItemSetByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteItemSetByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var DeleteItemSetByUserIdRequest = /** @class */ (function () {
             .withInventoryName(data["inventoryName"])
             .withUserId(data["userId"])
             .withItemName(data["itemName"])
-            .withItemSetName(data["itemSetName"]);
+            .withItemSetName(data["itemSetName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteItemSetByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var DeleteItemSetByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "itemName": this.getItemName(),
             "itemSetName": this.getItemSetName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteItemSetByUserIdRequest;

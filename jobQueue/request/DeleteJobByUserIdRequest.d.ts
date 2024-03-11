@@ -5,6 +5,7 @@ export default class DeleteJobByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private jobName;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -21,6 +22,9 @@ export default class DeleteJobByUserIdRequest implements IRequest {
     getJobName(): string | null;
     setJobName(jobName: string | null): this;
     withJobName(jobName: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

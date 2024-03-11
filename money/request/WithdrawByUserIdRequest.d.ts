@@ -7,6 +7,7 @@ export default class WithdrawByUserIdRequest implements IRequest {
     private slot;
     private count;
     private paidOnly;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -29,6 +30,9 @@ export default class WithdrawByUserIdRequest implements IRequest {
     getPaidOnly(): boolean | null;
     setPaidOnly(paidOnly: boolean | null): this;
     withPaidOnly(paidOnly: boolean | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

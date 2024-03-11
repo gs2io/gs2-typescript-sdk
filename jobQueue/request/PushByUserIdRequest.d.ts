@@ -6,6 +6,7 @@ export default class PushByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private jobs;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -22,6 +23,9 @@ export default class PushByUserIdRequest implements IRequest {
     getJobs(): Gs2JobQueue.JobEntry[] | null;
     setJobs(jobs: Gs2JobQueue.JobEntry[] | null): this;
     withJobs(jobs: Gs2JobQueue.JobEntry[] | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

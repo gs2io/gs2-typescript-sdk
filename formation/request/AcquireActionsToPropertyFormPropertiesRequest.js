@@ -27,6 +27,7 @@ var AcquireActionsToPropertyFormPropertiesRequest = /** @class */ (function () {
         this.propertyId = null;
         this.acquireAction = null;
         this.config = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     AcquireActionsToPropertyFormPropertiesRequest.prototype.getRequestId = function () {
@@ -117,6 +118,17 @@ var AcquireActionsToPropertyFormPropertiesRequest = /** @class */ (function () {
         this.config = config;
         return this;
     };
+    AcquireActionsToPropertyFormPropertiesRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    AcquireActionsToPropertyFormPropertiesRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    AcquireActionsToPropertyFormPropertiesRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     AcquireActionsToPropertyFormPropertiesRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -138,7 +150,8 @@ var AcquireActionsToPropertyFormPropertiesRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Formation.Config.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     AcquireActionsToPropertyFormPropertiesRequest.prototype.toDict = function () {
         var _a;
@@ -152,6 +165,7 @@ var AcquireActionsToPropertyFormPropertiesRequest = /** @class */ (function () {
                 this.getConfig().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return AcquireActionsToPropertyFormPropertiesRequest;

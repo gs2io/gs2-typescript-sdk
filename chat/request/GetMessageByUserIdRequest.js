@@ -24,6 +24,7 @@ var GetMessageByUserIdRequest = /** @class */ (function () {
         this.messageName = null;
         this.password = null;
         this.userId = null;
+        this.timeOffsetToken = null;
     }
     GetMessageByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -102,13 +103,25 @@ var GetMessageByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    GetMessageByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetMessageByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetMessageByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetMessageByUserIdRequest.fromDict = function (data) {
         return new GetMessageByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withRoomName(data["roomName"])
             .withMessageName(data["messageName"])
             .withPassword(data["password"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetMessageByUserIdRequest.prototype.toDict = function () {
         return {
@@ -117,6 +130,7 @@ var GetMessageByUserIdRequest = /** @class */ (function () {
             "messageName": this.getMessageName(),
             "password": this.getPassword(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetMessageByUserIdRequest;

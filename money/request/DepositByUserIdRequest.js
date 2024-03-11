@@ -24,6 +24,7 @@ var DepositByUserIdRequest = /** @class */ (function () {
         this.slot = null;
         this.price = null;
         this.count = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DepositByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var DepositByUserIdRequest = /** @class */ (function () {
         this.count = count;
         return this;
     };
+    DepositByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DepositByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DepositByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DepositByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var DepositByUserIdRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withSlot(data["slot"])
             .withPrice(data["price"])
-            .withCount(data["count"]);
+            .withCount(data["count"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DepositByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var DepositByUserIdRequest = /** @class */ (function () {
             "slot": this.getSlot(),
             "price": this.getPrice(),
             "count": this.getCount(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DepositByUserIdRequest;

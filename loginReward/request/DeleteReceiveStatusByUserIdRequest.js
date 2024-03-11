@@ -22,6 +22,7 @@ var DeleteReceiveStatusByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.bonusModelName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteReceiveStatusByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var DeleteReceiveStatusByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    DeleteReceiveStatusByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteReceiveStatusByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteReceiveStatusByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteReceiveStatusByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var DeleteReceiveStatusByUserIdRequest = /** @class */ (function () {
         return new DeleteReceiveStatusByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withBonusModelName(data["bonusModelName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteReceiveStatusByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "bonusModelName": this.getBonusModelName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteReceiveStatusByUserIdRequest;

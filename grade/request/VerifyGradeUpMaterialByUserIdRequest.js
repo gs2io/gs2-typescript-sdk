@@ -25,6 +25,7 @@ var VerifyGradeUpMaterialByUserIdRequest = /** @class */ (function () {
         this.verifyType = null;
         this.propertyId = null;
         this.materialPropertyId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     VerifyGradeUpMaterialByUserIdRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var VerifyGradeUpMaterialByUserIdRequest = /** @class */ (function () {
         this.materialPropertyId = materialPropertyId;
         return this;
     };
+    VerifyGradeUpMaterialByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    VerifyGradeUpMaterialByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    VerifyGradeUpMaterialByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     VerifyGradeUpMaterialByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var VerifyGradeUpMaterialByUserIdRequest = /** @class */ (function () {
             .withGradeName(data["gradeName"])
             .withVerifyType(data["verifyType"])
             .withPropertyId(data["propertyId"])
-            .withMaterialPropertyId(data["materialPropertyId"]);
+            .withMaterialPropertyId(data["materialPropertyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     VerifyGradeUpMaterialByUserIdRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var VerifyGradeUpMaterialByUserIdRequest = /** @class */ (function () {
             "verifyType": this.getVerifyType(),
             "propertyId": this.getPropertyId(),
             "materialPropertyId": this.getMaterialPropertyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return VerifyGradeUpMaterialByUserIdRequest;

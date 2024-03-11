@@ -9,6 +9,7 @@ export default class PrepareUploadByUserIdRequest implements IRequest {
     private scope;
     private allowUserIds;
     private updateIfExists;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -37,6 +38,9 @@ export default class PrepareUploadByUserIdRequest implements IRequest {
     getUpdateIfExists(): boolean | null;
     setUpdateIfExists(updateIfExists: boolean | null): this;
     withUpdateIfExists(updateIfExists: boolean | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

@@ -27,6 +27,7 @@ var SendMessageByUserIdRequest = /** @class */ (function () {
         this.readAcquireActions = null;
         this.expiresAt = null;
         this.expiresTimeSpan = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     SendMessageByUserIdRequest.prototype.getRequestId = function () {
@@ -117,6 +118,17 @@ var SendMessageByUserIdRequest = /** @class */ (function () {
         this.expiresTimeSpan = expiresTimeSpan;
         return this;
     };
+    SendMessageByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    SendMessageByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    SendMessageByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     SendMessageByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -138,7 +150,8 @@ var SendMessageByUserIdRequest = /** @class */ (function () {
                 return Gs2Inbox.AcquireAction.fromDict(item);
             }) : [])
             .withExpiresAt(data["expiresAt"])
-            .withExpiresTimeSpan(Gs2Inbox.TimeSpan.fromDict(data["expiresTimeSpan"]));
+            .withExpiresTimeSpan(Gs2Inbox.TimeSpan.fromDict(data["expiresTimeSpan"]))
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SendMessageByUserIdRequest.prototype.toDict = function () {
         var _a;
@@ -152,6 +165,7 @@ var SendMessageByUserIdRequest = /** @class */ (function () {
                 }) : [],
             "expiresAt": this.getExpiresAt(),
             "expiresTimeSpan": (_a = this.getExpiresTimeSpan()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return SendMessageByUserIdRequest;

@@ -23,6 +23,7 @@ var VerifyEntryByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.entryModelName = null;
         this.verifyType = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     VerifyEntryByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var VerifyEntryByUserIdRequest = /** @class */ (function () {
         this.verifyType = verifyType;
         return this;
     };
+    VerifyEntryByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    VerifyEntryByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    VerifyEntryByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     VerifyEntryByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var VerifyEntryByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withEntryModelName(data["entryModelName"])
-            .withVerifyType(data["verifyType"]);
+            .withVerifyType(data["verifyType"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     VerifyEntryByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var VerifyEntryByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "entryModelName": this.getEntryModelName(),
             "verifyType": this.getVerifyType(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return VerifyEntryByUserIdRequest;

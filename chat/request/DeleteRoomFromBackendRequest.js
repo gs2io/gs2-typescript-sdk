@@ -22,6 +22,7 @@ var DeleteRoomFromBackendRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.roomName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteRoomFromBackendRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var DeleteRoomFromBackendRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    DeleteRoomFromBackendRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteRoomFromBackendRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteRoomFromBackendRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteRoomFromBackendRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var DeleteRoomFromBackendRequest = /** @class */ (function () {
         return new DeleteRoomFromBackendRequest()
             .withNamespaceName(data["namespaceName"])
             .withRoomName(data["roomName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteRoomFromBackendRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "roomName": this.getRoomName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteRoomFromBackendRequest;

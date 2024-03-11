@@ -25,6 +25,7 @@ var UpdateGatheringByUserIdRequest = /** @class */ (function () {
         this.gatheringName = null;
         this.userId = null;
         this.attributeRanges = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     UpdateGatheringByUserIdRequest.prototype.getRequestId = function () {
@@ -93,6 +94,17 @@ var UpdateGatheringByUserIdRequest = /** @class */ (function () {
         this.attributeRanges = attributeRanges;
         return this;
     };
+    UpdateGatheringByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    UpdateGatheringByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    UpdateGatheringByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     UpdateGatheringByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -112,7 +124,8 @@ var UpdateGatheringByUserIdRequest = /** @class */ (function () {
             .withAttributeRanges(data.attributeRanges ?
             data.attributeRanges.map(function (item) {
                 return Gs2Matchmaking.AttributeRange.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     UpdateGatheringByUserIdRequest.prototype.toDict = function () {
         return {
@@ -123,6 +136,7 @@ var UpdateGatheringByUserIdRequest = /** @class */ (function () {
                 this.getAttributeRanges().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return UpdateGatheringByUserIdRequest;

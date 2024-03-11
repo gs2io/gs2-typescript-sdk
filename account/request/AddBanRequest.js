@@ -24,6 +24,7 @@ var AddBanRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.banStatus = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     AddBanRequest.prototype.getRequestId = function () {
@@ -81,6 +82,17 @@ var AddBanRequest = /** @class */ (function () {
         this.banStatus = banStatus;
         return this;
     };
+    AddBanRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    AddBanRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    AddBanRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     AddBanRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -96,7 +108,8 @@ var AddBanRequest = /** @class */ (function () {
         return new AddBanRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withBanStatus(Gs2Account.BanStatus.fromDict(data["banStatus"]));
+            .withBanStatus(Gs2Account.BanStatus.fromDict(data["banStatus"]))
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     AddBanRequest.prototype.toDict = function () {
         var _a;
@@ -104,6 +117,7 @@ var AddBanRequest = /** @class */ (function () {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "banStatus": (_a = this.getBanStatus()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return AddBanRequest;

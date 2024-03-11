@@ -25,6 +25,7 @@ var UpdateRoomFromBackendRequest = /** @class */ (function () {
         this.password = null;
         this.whiteListUserIds = null;
         this.userId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     UpdateRoomFromBackendRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var UpdateRoomFromBackendRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    UpdateRoomFromBackendRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    UpdateRoomFromBackendRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    UpdateRoomFromBackendRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     UpdateRoomFromBackendRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -136,7 +148,8 @@ var UpdateRoomFromBackendRequest = /** @class */ (function () {
             data.whiteListUserIds.map(function (item) {
                 return item;
             }) : [])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     UpdateRoomFromBackendRequest.prototype.toDict = function () {
         return {
@@ -149,6 +162,7 @@ var UpdateRoomFromBackendRequest = /** @class */ (function () {
                     return item;
                 }) : [],
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return UpdateRoomFromBackendRequest;

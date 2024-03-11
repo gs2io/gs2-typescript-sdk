@@ -9,6 +9,7 @@ export default class VerifyReferenceOfByUserIdRequest implements IRequest {
     private itemSetName;
     private referenceOf;
     private verifyType;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -37,6 +38,9 @@ export default class VerifyReferenceOfByUserIdRequest implements IRequest {
     getVerifyType(): string | null;
     setVerifyType(verifyType: string | null): this;
     withVerifyType(verifyType: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

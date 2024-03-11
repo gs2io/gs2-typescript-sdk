@@ -24,6 +24,7 @@ var PushByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.jobs = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     PushByUserIdRequest.prototype.getRequestId = function () {
@@ -81,6 +82,17 @@ var PushByUserIdRequest = /** @class */ (function () {
         this.jobs = jobs;
         return this;
     };
+    PushByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    PushByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    PushByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     PushByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -99,7 +111,8 @@ var PushByUserIdRequest = /** @class */ (function () {
             .withJobs(data.jobs ?
             data.jobs.map(function (item) {
                 return Gs2JobQueue.JobEntry.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     PushByUserIdRequest.prototype.toDict = function () {
         return {
@@ -109,6 +122,7 @@ var PushByUserIdRequest = /** @class */ (function () {
                 this.getJobs().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return PushByUserIdRequest;

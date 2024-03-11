@@ -26,6 +26,7 @@ export default class GetDataObjectHistoryByUserIdRequest implements IRequest {
     private userId: string|null = null;
     private dataObjectName: string|null = null;
     private generation: string|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -98,13 +99,25 @@ export default class GetDataObjectHistoryByUserIdRequest implements IRequest {
         this.generation = generation;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetDataObjectHistoryByUserIdRequest {
         return new GetDataObjectHistoryByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withDataObjectName(data["dataObjectName"])
-            .withGeneration(data["generation"]);
+            .withGeneration(data["generation"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -113,6 +126,7 @@ export default class GetDataObjectHistoryByUserIdRequest implements IRequest {
             "userId": this.getUserId(),
             "dataObjectName": this.getDataObjectName(),
             "generation": this.getGeneration(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

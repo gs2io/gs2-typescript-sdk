@@ -26,6 +26,7 @@ var PrepareUploadByUserIdRequest = /** @class */ (function () {
         this.scope = null;
         this.allowUserIds = null;
         this.updateIfExists = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     PrepareUploadByUserIdRequest.prototype.getRequestId = function () {
@@ -127,6 +128,17 @@ var PrepareUploadByUserIdRequest = /** @class */ (function () {
         this.updateIfExists = updateIfExists;
         return this;
     };
+    PrepareUploadByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    PrepareUploadByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    PrepareUploadByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     PrepareUploadByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -149,7 +161,8 @@ var PrepareUploadByUserIdRequest = /** @class */ (function () {
             data.allowUserIds.map(function (item) {
                 return item;
             }) : [])
-            .withUpdateIfExists(data["updateIfExists"]);
+            .withUpdateIfExists(data["updateIfExists"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     PrepareUploadByUserIdRequest.prototype.toDict = function () {
         return {
@@ -163,6 +176,7 @@ var PrepareUploadByUserIdRequest = /** @class */ (function () {
                     return item;
                 }) : [],
             "updateIfExists": this.getUpdateIfExists(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return PrepareUploadByUserIdRequest;

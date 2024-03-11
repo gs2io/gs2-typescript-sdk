@@ -26,6 +26,7 @@ export default class UnmarkReceivedByUserIdRequest implements IRequest {
     private bonusModelName: string|null = null;
     private userId: string|null = null;
     private stepNumber: number|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -99,6 +100,17 @@ export default class UnmarkReceivedByUserIdRequest implements IRequest {
         this.stepNumber = stepNumber;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -119,7 +131,8 @@ export default class UnmarkReceivedByUserIdRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withBonusModelName(data["bonusModelName"])
             .withUserId(data["userId"])
-            .withStepNumber(data["stepNumber"]);
+            .withStepNumber(data["stepNumber"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -128,6 +141,7 @@ export default class UnmarkReceivedByUserIdRequest implements IRequest {
             "bonusModelName": this.getBonusModelName(),
             "userId": this.getUserId(),
             "stepNumber": this.getStepNumber(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

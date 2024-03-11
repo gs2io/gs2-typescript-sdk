@@ -23,6 +23,7 @@ var SubscribeByUserIdRequest = /** @class */ (function () {
         this.categoryName = null;
         this.userId = null;
         this.targetUserId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     SubscribeByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var SubscribeByUserIdRequest = /** @class */ (function () {
         this.targetUserId = targetUserId;
         return this;
     };
+    SubscribeByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    SubscribeByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    SubscribeByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     SubscribeByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var SubscribeByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withCategoryName(data["categoryName"])
             .withUserId(data["userId"])
-            .withTargetUserId(data["targetUserId"]);
+            .withTargetUserId(data["targetUserId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SubscribeByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var SubscribeByUserIdRequest = /** @class */ (function () {
             "categoryName": this.getCategoryName(),
             "userId": this.getUserId(),
             "targetUserId": this.getTargetUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return SubscribeByUserIdRequest;

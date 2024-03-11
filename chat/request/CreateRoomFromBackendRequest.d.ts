@@ -8,6 +8,7 @@ export default class CreateRoomFromBackendRequest implements IRequest {
     private metadata;
     private password;
     private whiteListUserIds;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -33,6 +34,9 @@ export default class CreateRoomFromBackendRequest implements IRequest {
     getWhiteListUserIds(): string[] | null;
     setWhiteListUserIds(whiteListUserIds: string[] | null): this;
     withWhiteListUserIds(whiteListUserIds: string[] | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

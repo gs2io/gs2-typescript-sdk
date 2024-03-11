@@ -27,6 +27,7 @@ export default class GetStatusWithSignatureByUserIdRequest implements IRequest {
     private experienceName: string|null = null;
     private propertyId: string|null = null;
     private keyId: string|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -110,6 +111,17 @@ export default class GetStatusWithSignatureByUserIdRequest implements IRequest {
         this.keyId = keyId;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetStatusWithSignatureByUserIdRequest {
         return new GetStatusWithSignatureByUserIdRequest()
@@ -117,7 +129,8 @@ export default class GetStatusWithSignatureByUserIdRequest implements IRequest {
             .withUserId(data["userId"])
             .withExperienceName(data["experienceName"])
             .withPropertyId(data["propertyId"])
-            .withKeyId(data["keyId"]);
+            .withKeyId(data["keyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -127,6 +140,7 @@ export default class GetStatusWithSignatureByUserIdRequest implements IRequest {
             "experienceName": this.getExperienceName(),
             "propertyId": this.getPropertyId(),
             "keyId": this.getKeyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

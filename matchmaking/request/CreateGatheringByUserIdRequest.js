@@ -29,6 +29,7 @@ var CreateGatheringByUserIdRequest = /** @class */ (function () {
         this.allowUserIds = null;
         this.expiresAt = null;
         this.expiresAtTimeSpan = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     CreateGatheringByUserIdRequest.prototype.getRequestId = function () {
@@ -141,6 +142,17 @@ var CreateGatheringByUserIdRequest = /** @class */ (function () {
         this.expiresAtTimeSpan = expiresAtTimeSpan;
         return this;
     };
+    CreateGatheringByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    CreateGatheringByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    CreateGatheringByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     CreateGatheringByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -170,7 +182,8 @@ var CreateGatheringByUserIdRequest = /** @class */ (function () {
                 return item;
             }) : [])
             .withExpiresAt(data["expiresAt"])
-            .withExpiresAtTimeSpan(Gs2Matchmaking.TimeSpan.fromDict(data["expiresAtTimeSpan"]));
+            .withExpiresAtTimeSpan(Gs2Matchmaking.TimeSpan.fromDict(data["expiresAtTimeSpan"]))
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     CreateGatheringByUserIdRequest.prototype.toDict = function () {
         var _a, _b;
@@ -192,6 +205,7 @@ var CreateGatheringByUserIdRequest = /** @class */ (function () {
                 }) : [],
             "expiresAt": this.getExpiresAt(),
             "expiresAtTimeSpan": (_b = this.getExpiresAtTimeSpan()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return CreateGatheringByUserIdRequest;

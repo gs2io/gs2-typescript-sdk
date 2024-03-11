@@ -23,6 +23,7 @@ var DistributeWithoutOverflowProcessRequest = /** @class */ (function () {
         this.contextStack = null;
         this.userId = null;
         this.distributeResource = null;
+        this.timeOffsetToken = null;
     }
     DistributeWithoutOverflowProcessRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -68,16 +69,29 @@ var DistributeWithoutOverflowProcessRequest = /** @class */ (function () {
         this.distributeResource = distributeResource;
         return this;
     };
+    DistributeWithoutOverflowProcessRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DistributeWithoutOverflowProcessRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DistributeWithoutOverflowProcessRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DistributeWithoutOverflowProcessRequest.fromDict = function (data) {
         return new DistributeWithoutOverflowProcessRequest()
             .withUserId(data["userId"])
-            .withDistributeResource(Gs2Distributor.DistributeResource.fromDict(data["distributeResource"]));
+            .withDistributeResource(Gs2Distributor.DistributeResource.fromDict(data["distributeResource"]))
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DistributeWithoutOverflowProcessRequest.prototype.toDict = function () {
         var _a;
         return {
             "userId": this.getUserId(),
             "distributeResource": (_a = this.getDistributeResource()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DistributeWithoutOverflowProcessRequest;

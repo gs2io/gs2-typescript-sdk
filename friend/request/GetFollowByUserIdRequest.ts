@@ -26,6 +26,7 @@ export default class GetFollowByUserIdRequest implements IRequest {
     private userId: string|null = null;
     private targetUserId: string|null = null;
     private withProfile: boolean|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -98,13 +99,25 @@ export default class GetFollowByUserIdRequest implements IRequest {
         this.withProfile = withProfile;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetFollowByUserIdRequest {
         return new GetFollowByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withTargetUserId(data["targetUserId"])
-            .withWithProfile(data["withProfile"]);
+            .withWithProfile(data["withProfile"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -113,6 +126,7 @@ export default class GetFollowByUserIdRequest implements IRequest {
             "userId": this.getUserId(),
             "targetUserId": this.getTargetUserId(),
             "withProfile": this.getWithProfile(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

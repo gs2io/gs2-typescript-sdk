@@ -29,6 +29,7 @@ var CountExecuteStampSheetLogRequest = /** @class */ (function () {
         this.longTerm = null;
         this.pageToken = null;
         this.limit = null;
+        this.timeOffsetToken = null;
     }
     CountExecuteStampSheetLogRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -162,6 +163,17 @@ var CountExecuteStampSheetLogRequest = /** @class */ (function () {
         this.limit = limit;
         return this;
     };
+    CountExecuteStampSheetLogRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    CountExecuteStampSheetLogRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    CountExecuteStampSheetLogRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     CountExecuteStampSheetLogRequest.fromDict = function (data) {
         return new CountExecuteStampSheetLogRequest()
             .withNamespaceName(data["namespaceName"])
@@ -173,7 +185,8 @@ var CountExecuteStampSheetLogRequest = /** @class */ (function () {
             .withEnd(data["end"])
             .withLongTerm(data["longTerm"])
             .withPageToken(data["pageToken"])
-            .withLimit(data["limit"]);
+            .withLimit(data["limit"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     CountExecuteStampSheetLogRequest.prototype.toDict = function () {
         return {
@@ -187,6 +200,7 @@ var CountExecuteStampSheetLogRequest = /** @class */ (function () {
             "longTerm": this.getLongTerm(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return CountExecuteStampSheetLogRequest;

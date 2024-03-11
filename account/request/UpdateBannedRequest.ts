@@ -25,6 +25,7 @@ export default class UpdateBannedRequest implements IRequest {
     private namespaceName: string|null = null;
     private userId: string|null = null;
     private banned: boolean|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -87,6 +88,17 @@ export default class UpdateBannedRequest implements IRequest {
         this.banned = banned;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -106,7 +118,8 @@ export default class UpdateBannedRequest implements IRequest {
         return new UpdateBannedRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withBanned(data["banned"]);
+            .withBanned(data["banned"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -114,6 +127,7 @@ export default class UpdateBannedRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "banned": this.getBanned(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

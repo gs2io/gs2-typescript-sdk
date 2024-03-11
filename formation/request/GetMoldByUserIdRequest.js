@@ -22,6 +22,7 @@ var GetMoldByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.moldModelName = null;
+        this.timeOffsetToken = null;
     }
     GetMoldByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetMoldByUserIdRequest = /** @class */ (function () {
         this.moldModelName = moldModelName;
         return this;
     };
+    GetMoldByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetMoldByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetMoldByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetMoldByUserIdRequest.fromDict = function (data) {
         return new GetMoldByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withMoldModelName(data["moldModelName"]);
+            .withMoldModelName(data["moldModelName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetMoldByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "moldModelName": this.getMoldModelName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetMoldByUserIdRequest;

@@ -25,6 +25,7 @@ var ReadMessageByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.messageName = null;
         this.config = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     ReadMessageByUserIdRequest.prototype.getRequestId = function () {
@@ -93,6 +94,17 @@ var ReadMessageByUserIdRequest = /** @class */ (function () {
         this.config = config;
         return this;
     };
+    ReadMessageByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    ReadMessageByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    ReadMessageByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     ReadMessageByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -112,7 +124,8 @@ var ReadMessageByUserIdRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Inbox.Config.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     ReadMessageByUserIdRequest.prototype.toDict = function () {
         return {
@@ -123,6 +136,7 @@ var ReadMessageByUserIdRequest = /** @class */ (function () {
                 this.getConfig().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return ReadMessageByUserIdRequest;

@@ -22,6 +22,7 @@ var GetCompletedQuestListByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.questGroupName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
     }
     GetCompletedQuestListByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetCompletedQuestListByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    GetCompletedQuestListByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetCompletedQuestListByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetCompletedQuestListByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetCompletedQuestListByUserIdRequest.fromDict = function (data) {
         return new GetCompletedQuestListByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withQuestGroupName(data["questGroupName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetCompletedQuestListByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "questGroupName": this.getQuestGroupName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetCompletedQuestListByUserIdRequest;

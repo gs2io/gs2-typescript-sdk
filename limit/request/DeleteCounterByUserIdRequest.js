@@ -23,6 +23,7 @@ var DeleteCounterByUserIdRequest = /** @class */ (function () {
         this.limitName = null;
         this.userId = null;
         this.counterName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteCounterByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var DeleteCounterByUserIdRequest = /** @class */ (function () {
         this.counterName = counterName;
         return this;
     };
+    DeleteCounterByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteCounterByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteCounterByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteCounterByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var DeleteCounterByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withLimitName(data["limitName"])
             .withUserId(data["userId"])
-            .withCounterName(data["counterName"]);
+            .withCounterName(data["counterName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteCounterByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var DeleteCounterByUserIdRequest = /** @class */ (function () {
             "limitName": this.getLimitName(),
             "userId": this.getUserId(),
             "counterName": this.getCounterName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteCounterByUserIdRequest;

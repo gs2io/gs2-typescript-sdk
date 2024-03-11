@@ -23,6 +23,7 @@ var UnlockIncrementalExchangeByUserIdRequest = /** @class */ (function () {
         this.rateName = null;
         this.userId = null;
         this.lockTransactionId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     UnlockIncrementalExchangeByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var UnlockIncrementalExchangeByUserIdRequest = /** @class */ (function () {
         this.lockTransactionId = lockTransactionId;
         return this;
     };
+    UnlockIncrementalExchangeByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    UnlockIncrementalExchangeByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    UnlockIncrementalExchangeByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     UnlockIncrementalExchangeByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var UnlockIncrementalExchangeByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withRateName(data["rateName"])
             .withUserId(data["userId"])
-            .withLockTransactionId(data["lockTransactionId"]);
+            .withLockTransactionId(data["lockTransactionId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     UnlockIncrementalExchangeByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var UnlockIncrementalExchangeByUserIdRequest = /** @class */ (function () {
             "rateName": this.getRateName(),
             "userId": this.getUserId(),
             "lockTransactionId": this.getLockTransactionId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return UnlockIncrementalExchangeByUserIdRequest;

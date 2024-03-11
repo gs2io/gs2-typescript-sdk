@@ -6,6 +6,7 @@ export default class MarkRestrainByUserIdRequest implements IRequest {
     private userId;
     private propertyId;
     private nodeModelNames;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -25,6 +26,9 @@ export default class MarkRestrainByUserIdRequest implements IRequest {
     getNodeModelNames(): string[] | null;
     setNodeModelNames(nodeModelNames: string[] | null): this;
     withNodeModelNames(nodeModelNames: string[] | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

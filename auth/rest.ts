@@ -36,6 +36,9 @@ export default class Gs2AuthRestClient extends AbstractGs2RestClient {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'userId': request.getUserId() ?? null,
@@ -81,6 +84,40 @@ export default class Gs2AuthRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.LoginBySignatureResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public issueTimeOffsetTokenByUserId(request: Request.IssueTimeOffsetTokenByUserIdRequest): Promise<Result.IssueTimeOffsetTokenByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/timeoffset/token')
+            .replace('{service}', 'auth')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'userId': request.getUserId() ?? null,
+            'timeOffset': request.getTimeOffset() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.IssueTimeOffsetTokenByUserIdResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

@@ -22,6 +22,7 @@ var GetTriggerByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.triggerName = null;
+        this.timeOffsetToken = null;
     }
     GetTriggerByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetTriggerByUserIdRequest = /** @class */ (function () {
         this.triggerName = triggerName;
         return this;
     };
+    GetTriggerByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetTriggerByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetTriggerByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetTriggerByUserIdRequest.fromDict = function (data) {
         return new GetTriggerByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withTriggerName(data["triggerName"]);
+            .withTriggerName(data["triggerName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetTriggerByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "triggerName": this.getTriggerName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetTriggerByUserIdRequest;

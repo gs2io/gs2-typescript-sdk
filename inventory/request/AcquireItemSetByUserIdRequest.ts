@@ -30,6 +30,7 @@ export default class AcquireItemSetByUserIdRequest implements IRequest {
     private expiresAt: number|null = null;
     private createNewItemSet: boolean|null = null;
     private itemSetName: string|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -147,6 +148,17 @@ export default class AcquireItemSetByUserIdRequest implements IRequest {
         this.itemSetName = itemSetName;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -171,7 +183,8 @@ export default class AcquireItemSetByUserIdRequest implements IRequest {
             .withAcquireCount(data["acquireCount"])
             .withExpiresAt(data["expiresAt"])
             .withCreateNewItemSet(data["createNewItemSet"])
-            .withItemSetName(data["itemSetName"]);
+            .withItemSetName(data["itemSetName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -184,6 +197,7 @@ export default class AcquireItemSetByUserIdRequest implements IRequest {
             "expiresAt": this.getExpiresAt(),
             "createNewItemSet": this.getCreateNewItemSet(),
             "itemSetName": this.getItemSetName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

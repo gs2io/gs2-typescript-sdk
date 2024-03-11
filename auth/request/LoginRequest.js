@@ -21,6 +21,7 @@ var LoginRequest = /** @class */ (function () {
         this.contextStack = null;
         this.userId = null;
         this.timeOffset = null;
+        this.timeOffsetToken = null;
     }
     LoginRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -66,15 +67,28 @@ var LoginRequest = /** @class */ (function () {
         this.timeOffset = timeOffset;
         return this;
     };
+    LoginRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    LoginRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    LoginRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     LoginRequest.fromDict = function (data) {
         return new LoginRequest()
             .withUserId(data["userId"])
-            .withTimeOffset(data["timeOffset"]);
+            .withTimeOffset(data["timeOffset"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     LoginRequest.prototype.toDict = function () {
         return {
             "userId": this.getUserId(),
             "timeOffset": this.getTimeOffset(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return LoginRequest;

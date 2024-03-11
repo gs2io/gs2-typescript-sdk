@@ -7,6 +7,7 @@ export default class AcquireSimpleItemsByUserIdRequest implements IRequest {
     private inventoryName;
     private userId;
     private acquireCounts;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -26,6 +27,9 @@ export default class AcquireSimpleItemsByUserIdRequest implements IRequest {
     getAcquireCounts(): Gs2Inventory.AcquireCount[] | null;
     setAcquireCounts(acquireCounts: Gs2Inventory.AcquireCount[] | null): this;
     withAcquireCounts(acquireCounts: Gs2Inventory.AcquireCount[] | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

@@ -6,6 +6,7 @@ export default class GetEntryWithSignatureByUserIdRequest implements IRequest {
     private userId;
     private entryModelName;
     private keyId;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class GetEntryWithSignatureByUserIdRequest implements IRequest {
     getKeyId(): string | null;
     setKeyId(keyId: string | null): this;
     withKeyId(keyId: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetEntryWithSignatureByUserIdRequest;

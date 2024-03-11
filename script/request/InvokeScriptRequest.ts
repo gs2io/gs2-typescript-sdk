@@ -26,6 +26,7 @@ export default class InvokeScriptRequest implements IRequest {
     private userId: string|null = null;
     private args: string|null = null;
     private randomStatus: Gs2Script.RandomStatus|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -98,13 +99,25 @@ export default class InvokeScriptRequest implements IRequest {
         this.randomStatus = randomStatus;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): InvokeScriptRequest {
         return new InvokeScriptRequest()
             .withScriptId(data["scriptId"])
             .withUserId(data["userId"])
             .withArgs(data["args"])
-            .withRandomStatus(Gs2Script.RandomStatus.fromDict(data["randomStatus"]));
+            .withRandomStatus(Gs2Script.RandomStatus.fromDict(data["randomStatus"]))
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -113,6 +126,7 @@ export default class InvokeScriptRequest implements IRequest {
             "userId": this.getUserId(),
             "args": this.getArgs(),
             "randomStatus": this.getRandomStatus()?.toDict(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

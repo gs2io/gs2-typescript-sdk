@@ -24,6 +24,7 @@ var PredictionByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.randomSeed = null;
         this.count = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     PredictionByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var PredictionByUserIdRequest = /** @class */ (function () {
         this.count = count;
         return this;
     };
+    PredictionByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    PredictionByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    PredictionByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     PredictionByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var PredictionByUserIdRequest = /** @class */ (function () {
             .withLotteryName(data["lotteryName"])
             .withUserId(data["userId"])
             .withRandomSeed(data["randomSeed"])
-            .withCount(data["count"]);
+            .withCount(data["count"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     PredictionByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var PredictionByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "randomSeed": this.getRandomSeed(),
             "count": this.getCount(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return PredictionByUserIdRequest;

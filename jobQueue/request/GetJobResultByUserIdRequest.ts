@@ -26,6 +26,7 @@ export default class GetJobResultByUserIdRequest implements IRequest {
     private userId: string|null = null;
     private jobName: string|null = null;
     private tryNumber: number|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -98,13 +99,25 @@ export default class GetJobResultByUserIdRequest implements IRequest {
         this.tryNumber = tryNumber;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetJobResultByUserIdRequest {
         return new GetJobResultByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withJobName(data["jobName"])
-            .withTryNumber(data["tryNumber"]);
+            .withTryNumber(data["tryNumber"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -113,6 +126,7 @@ export default class GetJobResultByUserIdRequest implements IRequest {
             "userId": this.getUserId(),
             "jobName": this.getJobName(),
             "tryNumber": this.getTryNumber(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

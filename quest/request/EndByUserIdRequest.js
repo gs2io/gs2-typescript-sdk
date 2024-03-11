@@ -26,6 +26,7 @@ var EndByUserIdRequest = /** @class */ (function () {
         this.rewards = null;
         this.isComplete = null;
         this.config = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     EndByUserIdRequest.prototype.getRequestId = function () {
@@ -105,6 +106,17 @@ var EndByUserIdRequest = /** @class */ (function () {
         this.config = config;
         return this;
     };
+    EndByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    EndByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    EndByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     EndByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -128,7 +140,8 @@ var EndByUserIdRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Quest.Config.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     EndByUserIdRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var EndByUserIdRequest = /** @class */ (function () {
                 this.getConfig().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return EndByUserIdRequest;

@@ -23,6 +23,7 @@ var MarkReceivedByUserIdRequest = /** @class */ (function () {
         this.bonusModelName = null;
         this.userId = null;
         this.stepNumber = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     MarkReceivedByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var MarkReceivedByUserIdRequest = /** @class */ (function () {
         this.stepNumber = stepNumber;
         return this;
     };
+    MarkReceivedByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    MarkReceivedByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    MarkReceivedByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     MarkReceivedByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var MarkReceivedByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withBonusModelName(data["bonusModelName"])
             .withUserId(data["userId"])
-            .withStepNumber(data["stepNumber"]);
+            .withStepNumber(data["stepNumber"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     MarkReceivedByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var MarkReceivedByUserIdRequest = /** @class */ (function () {
             "bonusModelName": this.getBonusModelName(),
             "userId": this.getUserId(),
             "stepNumber": this.getStepNumber(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return MarkReceivedByUserIdRequest;

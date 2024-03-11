@@ -23,6 +23,7 @@ var GetRandomDisplayItemByUserIdRequest = /** @class */ (function () {
         this.showcaseName = null;
         this.displayItemName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
     }
     GetRandomDisplayItemByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,12 +91,24 @@ var GetRandomDisplayItemByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    GetRandomDisplayItemByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetRandomDisplayItemByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetRandomDisplayItemByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetRandomDisplayItemByUserIdRequest.fromDict = function (data) {
         return new GetRandomDisplayItemByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withShowcaseName(data["showcaseName"])
             .withDisplayItemName(data["displayItemName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetRandomDisplayItemByUserIdRequest.prototype.toDict = function () {
         return {
@@ -103,6 +116,7 @@ var GetRandomDisplayItemByUserIdRequest = /** @class */ (function () {
             "showcaseName": this.getShowcaseName(),
             "displayItemName": this.getDisplayItemName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetRandomDisplayItemByUserIdRequest;

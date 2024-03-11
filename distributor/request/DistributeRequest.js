@@ -25,6 +25,7 @@ var DistributeRequest = /** @class */ (function () {
         this.distributorName = null;
         this.userId = null;
         this.distributeResource = null;
+        this.timeOffsetToken = null;
     }
     DistributeRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -92,12 +93,24 @@ var DistributeRequest = /** @class */ (function () {
         this.distributeResource = distributeResource;
         return this;
     };
+    DistributeRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DistributeRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DistributeRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DistributeRequest.fromDict = function (data) {
         return new DistributeRequest()
             .withNamespaceName(data["namespaceName"])
             .withDistributorName(data["distributorName"])
             .withUserId(data["userId"])
-            .withDistributeResource(Gs2Distributor.DistributeResource.fromDict(data["distributeResource"]));
+            .withDistributeResource(Gs2Distributor.DistributeResource.fromDict(data["distributeResource"]))
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DistributeRequest.prototype.toDict = function () {
         var _a;
@@ -106,6 +119,7 @@ var DistributeRequest = /** @class */ (function () {
             "distributorName": this.getDistributorName(),
             "userId": this.getUserId(),
             "distributeResource": (_a = this.getDistributeResource()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DistributeRequest;

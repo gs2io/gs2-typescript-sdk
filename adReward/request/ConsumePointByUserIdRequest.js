@@ -22,6 +22,7 @@ var ConsumePointByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.point = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     ConsumePointByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var ConsumePointByUserIdRequest = /** @class */ (function () {
         this.point = point;
         return this;
     };
+    ConsumePointByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    ConsumePointByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    ConsumePointByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     ConsumePointByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var ConsumePointByUserIdRequest = /** @class */ (function () {
         return new ConsumePointByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withPoint(data["point"]);
+            .withPoint(data["point"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     ConsumePointByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "point": this.getPoint(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return ConsumePointByUserIdRequest;

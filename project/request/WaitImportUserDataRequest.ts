@@ -25,6 +25,7 @@ export default class WaitImportUserDataRequest implements IRequest {
     private transactionId: string|null = null;
     private userId: string|null = null;
     private microserviceName: string|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -87,6 +88,17 @@ export default class WaitImportUserDataRequest implements IRequest {
         this.microserviceName = microserviceName;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -106,7 +118,8 @@ export default class WaitImportUserDataRequest implements IRequest {
         return new WaitImportUserDataRequest()
             .withTransactionId(data["transactionId"])
             .withUserId(data["userId"])
-            .withMicroserviceName(data["microserviceName"]);
+            .withMicroserviceName(data["microserviceName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -114,6 +127,7 @@ export default class WaitImportUserDataRequest implements IRequest {
             "transactionId": this.getTransactionId(),
             "userId": this.getUserId(),
             "microserviceName": this.getMicroserviceName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

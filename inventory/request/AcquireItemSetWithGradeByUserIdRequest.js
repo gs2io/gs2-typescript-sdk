@@ -25,6 +25,7 @@ var AcquireItemSetWithGradeByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.gradeModelId = null;
         this.gradeValue = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     AcquireItemSetWithGradeByUserIdRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var AcquireItemSetWithGradeByUserIdRequest = /** @class */ (function () {
         this.gradeValue = gradeValue;
         return this;
     };
+    AcquireItemSetWithGradeByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    AcquireItemSetWithGradeByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    AcquireItemSetWithGradeByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     AcquireItemSetWithGradeByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var AcquireItemSetWithGradeByUserIdRequest = /** @class */ (function () {
             .withItemName(data["itemName"])
             .withUserId(data["userId"])
             .withGradeModelId(data["gradeModelId"])
-            .withGradeValue(data["gradeValue"]);
+            .withGradeValue(data["gradeValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     AcquireItemSetWithGradeByUserIdRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var AcquireItemSetWithGradeByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "gradeModelId": this.getGradeModelId(),
             "gradeValue": this.getGradeValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return AcquireItemSetWithGradeByUserIdRequest;

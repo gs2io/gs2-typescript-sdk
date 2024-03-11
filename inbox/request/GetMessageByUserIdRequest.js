@@ -22,6 +22,7 @@ var GetMessageByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.messageName = null;
+        this.timeOffsetToken = null;
     }
     GetMessageByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetMessageByUserIdRequest = /** @class */ (function () {
         this.messageName = messageName;
         return this;
     };
+    GetMessageByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetMessageByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetMessageByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetMessageByUserIdRequest.fromDict = function (data) {
         return new GetMessageByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withMessageName(data["messageName"]);
+            .withMessageName(data["messageName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetMessageByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "messageName": this.getMessageName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetMessageByUserIdRequest;

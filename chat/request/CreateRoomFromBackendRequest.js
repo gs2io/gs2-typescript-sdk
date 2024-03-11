@@ -25,6 +25,7 @@ var CreateRoomFromBackendRequest = /** @class */ (function () {
         this.metadata = null;
         this.password = null;
         this.whiteListUserIds = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     CreateRoomFromBackendRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var CreateRoomFromBackendRequest = /** @class */ (function () {
         this.whiteListUserIds = whiteListUserIds;
         return this;
     };
+    CreateRoomFromBackendRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    CreateRoomFromBackendRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    CreateRoomFromBackendRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     CreateRoomFromBackendRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -136,7 +148,8 @@ var CreateRoomFromBackendRequest = /** @class */ (function () {
             .withWhiteListUserIds(data.whiteListUserIds ?
             data.whiteListUserIds.map(function (item) {
                 return item;
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     CreateRoomFromBackendRequest.prototype.toDict = function () {
         return {
@@ -149,6 +162,7 @@ var CreateRoomFromBackendRequest = /** @class */ (function () {
                 this.getWhiteListUserIds().map(function (item) {
                     return item;
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return CreateRoomFromBackendRequest;

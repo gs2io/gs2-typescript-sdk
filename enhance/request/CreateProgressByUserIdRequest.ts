@@ -28,6 +28,7 @@ export default class CreateProgressByUserIdRequest implements IRequest {
     private targetItemSetId: string|null = null;
     private materials: Gs2Enhance.Material[]|null = null;
     private force: boolean|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -123,6 +124,17 @@ export default class CreateProgressByUserIdRequest implements IRequest {
         this.force = force;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -149,7 +161,8 @@ export default class CreateProgressByUserIdRequest implements IRequest {
                     return Gs2Enhance.Material.fromDict(item);
                 }
             ) : [])
-            .withForce(data["force"]);
+            .withForce(data["force"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -164,6 +177,7 @@ export default class CreateProgressByUserIdRequest implements IRequest {
                 }
             ) : [],
             "force": this.getForce(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

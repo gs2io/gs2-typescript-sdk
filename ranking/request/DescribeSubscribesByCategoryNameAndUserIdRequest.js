@@ -22,6 +22,7 @@ var DescribeSubscribesByCategoryNameAndUserIdRequest = /** @class */ (function (
         this.namespaceName = null;
         this.categoryName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
     }
     DescribeSubscribesByCategoryNameAndUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var DescribeSubscribesByCategoryNameAndUserIdRequest = /** @class */ (function (
         this.userId = userId;
         return this;
     };
+    DescribeSubscribesByCategoryNameAndUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DescribeSubscribesByCategoryNameAndUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DescribeSubscribesByCategoryNameAndUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DescribeSubscribesByCategoryNameAndUserIdRequest.fromDict = function (data) {
         return new DescribeSubscribesByCategoryNameAndUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withCategoryName(data["categoryName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DescribeSubscribesByCategoryNameAndUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "categoryName": this.getCategoryName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DescribeSubscribesByCategoryNameAndUserIdRequest;

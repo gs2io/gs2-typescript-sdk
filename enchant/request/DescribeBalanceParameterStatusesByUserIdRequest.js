@@ -24,6 +24,7 @@ var DescribeBalanceParameterStatusesByUserIdRequest = /** @class */ (function ()
         this.parameterName = null;
         this.pageToken = null;
         this.limit = null;
+        this.timeOffsetToken = null;
     }
     DescribeBalanceParameterStatusesByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -102,13 +103,25 @@ var DescribeBalanceParameterStatusesByUserIdRequest = /** @class */ (function ()
         this.limit = limit;
         return this;
     };
+    DescribeBalanceParameterStatusesByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DescribeBalanceParameterStatusesByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DescribeBalanceParameterStatusesByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DescribeBalanceParameterStatusesByUserIdRequest.fromDict = function (data) {
         return new DescribeBalanceParameterStatusesByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withParameterName(data["parameterName"])
             .withPageToken(data["pageToken"])
-            .withLimit(data["limit"]);
+            .withLimit(data["limit"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DescribeBalanceParameterStatusesByUserIdRequest.prototype.toDict = function () {
         return {
@@ -117,6 +130,7 @@ var DescribeBalanceParameterStatusesByUserIdRequest = /** @class */ (function ()
             "parameterName": this.getParameterName(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DescribeBalanceParameterStatusesByUserIdRequest;

@@ -22,6 +22,7 @@ var RemoveBanRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.banStatusName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     RemoveBanRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var RemoveBanRequest = /** @class */ (function () {
         this.banStatusName = banStatusName;
         return this;
     };
+    RemoveBanRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    RemoveBanRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    RemoveBanRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     RemoveBanRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var RemoveBanRequest = /** @class */ (function () {
         return new RemoveBanRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withBanStatusName(data["banStatusName"]);
+            .withBanStatusName(data["banStatusName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     RemoveBanRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "banStatusName": this.getBanStatusName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return RemoveBanRequest;

@@ -30,6 +30,7 @@ export default class CreateGatheringByUserIdRequest implements IRequest {
     private allowUserIds: string[]|null = null;
     private expiresAt: number|null = null;
     private expiresAtTimeSpan: Gs2Matchmaking.TimeSpan|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -147,6 +148,17 @@ export default class CreateGatheringByUserIdRequest implements IRequest {
         this.expiresAtTimeSpan = expiresAtTimeSpan;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -183,7 +195,8 @@ export default class CreateGatheringByUserIdRequest implements IRequest {
                 }
             ) : [])
             .withExpiresAt(data["expiresAt"])
-            .withExpiresAtTimeSpan(Gs2Matchmaking.TimeSpan.fromDict(data["expiresAtTimeSpan"]));
+            .withExpiresAtTimeSpan(Gs2Matchmaking.TimeSpan.fromDict(data["expiresAtTimeSpan"]))
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -208,6 +221,7 @@ export default class CreateGatheringByUserIdRequest implements IRequest {
             ) : [],
             "expiresAt": this.getExpiresAt(),
             "expiresAtTimeSpan": this.getExpiresAtTimeSpan()?.toDict(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

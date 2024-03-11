@@ -24,6 +24,7 @@ var GetPropertyFormWithSignatureByUserIdRequest = /** @class */ (function () {
         this.propertyFormModelName = null;
         this.propertyId = null;
         this.keyId = null;
+        this.timeOffsetToken = null;
     }
     GetPropertyFormWithSignatureByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -102,13 +103,25 @@ var GetPropertyFormWithSignatureByUserIdRequest = /** @class */ (function () {
         this.keyId = keyId;
         return this;
     };
+    GetPropertyFormWithSignatureByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetPropertyFormWithSignatureByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetPropertyFormWithSignatureByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetPropertyFormWithSignatureByUserIdRequest.fromDict = function (data) {
         return new GetPropertyFormWithSignatureByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withPropertyFormModelName(data["propertyFormModelName"])
             .withPropertyId(data["propertyId"])
-            .withKeyId(data["keyId"]);
+            .withKeyId(data["keyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetPropertyFormWithSignatureByUserIdRequest.prototype.toDict = function () {
         return {
@@ -117,6 +130,7 @@ var GetPropertyFormWithSignatureByUserIdRequest = /** @class */ (function () {
             "propertyFormModelName": this.getPropertyFormModelName(),
             "propertyId": this.getPropertyId(),
             "keyId": this.getKeyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetPropertyFormWithSignatureByUserIdRequest;

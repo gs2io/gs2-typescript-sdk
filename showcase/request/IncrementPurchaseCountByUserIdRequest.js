@@ -24,6 +24,7 @@ var IncrementPurchaseCountByUserIdRequest = /** @class */ (function () {
         this.displayItemName = null;
         this.userId = null;
         this.count = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     IncrementPurchaseCountByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var IncrementPurchaseCountByUserIdRequest = /** @class */ (function () {
         this.count = count;
         return this;
     };
+    IncrementPurchaseCountByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    IncrementPurchaseCountByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    IncrementPurchaseCountByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     IncrementPurchaseCountByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var IncrementPurchaseCountByUserIdRequest = /** @class */ (function () {
             .withShowcaseName(data["showcaseName"])
             .withDisplayItemName(data["displayItemName"])
             .withUserId(data["userId"])
-            .withCount(data["count"]);
+            .withCount(data["count"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     IncrementPurchaseCountByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var IncrementPurchaseCountByUserIdRequest = /** @class */ (function () {
             "displayItemName": this.getDisplayItemName(),
             "userId": this.getUserId(),
             "count": this.getCount(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return IncrementPurchaseCountByUserIdRequest;

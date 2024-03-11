@@ -23,6 +23,7 @@ var GetBalanceParameterStatusByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.parameterName = null;
         this.propertyId = null;
+        this.timeOffsetToken = null;
     }
     GetBalanceParameterStatusByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,12 +91,24 @@ var GetBalanceParameterStatusByUserIdRequest = /** @class */ (function () {
         this.propertyId = propertyId;
         return this;
     };
+    GetBalanceParameterStatusByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetBalanceParameterStatusByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetBalanceParameterStatusByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetBalanceParameterStatusByUserIdRequest.fromDict = function (data) {
         return new GetBalanceParameterStatusByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withParameterName(data["parameterName"])
-            .withPropertyId(data["propertyId"]);
+            .withPropertyId(data["propertyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetBalanceParameterStatusByUserIdRequest.prototype.toDict = function () {
         return {
@@ -103,6 +116,7 @@ var GetBalanceParameterStatusByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "parameterName": this.getParameterName(),
             "propertyId": this.getPropertyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetBalanceParameterStatusByUserIdRequest;

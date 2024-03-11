@@ -22,6 +22,7 @@ var AcceptByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.versionName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     AcceptByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var AcceptByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    AcceptByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    AcceptByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    AcceptByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     AcceptByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var AcceptByUserIdRequest = /** @class */ (function () {
         return new AcceptByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withVersionName(data["versionName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     AcceptByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "versionName": this.getVersionName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return AcceptByUserIdRequest;

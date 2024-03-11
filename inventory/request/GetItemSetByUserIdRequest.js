@@ -24,6 +24,7 @@ var GetItemSetByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.itemName = null;
         this.itemSetName = null;
+        this.timeOffsetToken = null;
     }
     GetItemSetByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -102,13 +103,25 @@ var GetItemSetByUserIdRequest = /** @class */ (function () {
         this.itemSetName = itemSetName;
         return this;
     };
+    GetItemSetByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetItemSetByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetItemSetByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetItemSetByUserIdRequest.fromDict = function (data) {
         return new GetItemSetByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withInventoryName(data["inventoryName"])
             .withUserId(data["userId"])
             .withItemName(data["itemName"])
-            .withItemSetName(data["itemSetName"]);
+            .withItemSetName(data["itemSetName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetItemSetByUserIdRequest.prototype.toDict = function () {
         return {
@@ -117,6 +130,7 @@ var GetItemSetByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "itemName": this.getItemName(),
             "itemSetName": this.getItemSetName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetItemSetByUserIdRequest;

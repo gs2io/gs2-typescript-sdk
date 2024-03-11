@@ -209,6 +209,9 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
         };
@@ -242,6 +245,9 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
         };
@@ -270,6 +276,9 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
         }
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
@@ -304,6 +313,9 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
         };
@@ -332,6 +344,9 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
         }
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
@@ -365,6 +380,9 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
         }
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
@@ -400,6 +418,9 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
         }
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
@@ -643,6 +664,9 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
         }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'code': request.getCode() ?? null,
@@ -677,6 +701,9 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
         }
         if (request.getDuplicationAvoider()) {
             headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,

@@ -26,6 +26,7 @@ var SetPropertyFormByUserIdRequest = /** @class */ (function () {
         this.propertyFormModelName = null;
         this.propertyId = null;
         this.slots = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     SetPropertyFormByUserIdRequest.prototype.getRequestId = function () {
@@ -105,6 +106,17 @@ var SetPropertyFormByUserIdRequest = /** @class */ (function () {
         this.slots = slots;
         return this;
     };
+    SetPropertyFormByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    SetPropertyFormByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    SetPropertyFormByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     SetPropertyFormByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -125,7 +137,8 @@ var SetPropertyFormByUserIdRequest = /** @class */ (function () {
             .withSlots(data.slots ?
             data.slots.map(function (item) {
                 return Gs2Formation.Slot.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SetPropertyFormByUserIdRequest.prototype.toDict = function () {
         return {
@@ -137,6 +150,7 @@ var SetPropertyFormByUserIdRequest = /** @class */ (function () {
                 this.getSlots().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return SetPropertyFormByUserIdRequest;

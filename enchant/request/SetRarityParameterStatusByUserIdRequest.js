@@ -26,6 +26,7 @@ var SetRarityParameterStatusByUserIdRequest = /** @class */ (function () {
         this.parameterName = null;
         this.propertyId = null;
         this.parameterValues = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     SetRarityParameterStatusByUserIdRequest.prototype.getRequestId = function () {
@@ -105,6 +106,17 @@ var SetRarityParameterStatusByUserIdRequest = /** @class */ (function () {
         this.parameterValues = parameterValues;
         return this;
     };
+    SetRarityParameterStatusByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    SetRarityParameterStatusByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    SetRarityParameterStatusByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     SetRarityParameterStatusByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -125,7 +137,8 @@ var SetRarityParameterStatusByUserIdRequest = /** @class */ (function () {
             .withParameterValues(data.parameterValues ?
             data.parameterValues.map(function (item) {
                 return Gs2Enchant.RarityParameterValue.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SetRarityParameterStatusByUserIdRequest.prototype.toDict = function () {
         return {
@@ -137,6 +150,7 @@ var SetRarityParameterStatusByUserIdRequest = /** @class */ (function () {
                 this.getParameterValues().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return SetRarityParameterStatusByUserIdRequest;

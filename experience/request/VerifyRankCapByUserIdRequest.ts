@@ -29,6 +29,7 @@ export default class VerifyRankCapByUserIdRequest implements IRequest {
     private propertyId: string|null = null;
     private rankCapValue: number|null = null;
     private multiplyValueSpecifyingQuantity: boolean|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -135,6 +136,17 @@ export default class VerifyRankCapByUserIdRequest implements IRequest {
         this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -158,7 +170,8 @@ export default class VerifyRankCapByUserIdRequest implements IRequest {
             .withVerifyType(data["verifyType"])
             .withPropertyId(data["propertyId"])
             .withRankCapValue(data["rankCapValue"])
-            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -170,6 +183,7 @@ export default class VerifyRankCapByUserIdRequest implements IRequest {
             "propertyId": this.getPropertyId(),
             "rankCapValue": this.getRankCapValue(),
             "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

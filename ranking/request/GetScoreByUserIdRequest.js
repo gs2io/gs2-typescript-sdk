@@ -24,6 +24,7 @@ var GetScoreByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.scorerUserId = null;
         this.uniqueId = null;
+        this.timeOffsetToken = null;
     }
     GetScoreByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -102,13 +103,25 @@ var GetScoreByUserIdRequest = /** @class */ (function () {
         this.uniqueId = uniqueId;
         return this;
     };
+    GetScoreByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetScoreByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetScoreByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetScoreByUserIdRequest.fromDict = function (data) {
         return new GetScoreByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withCategoryName(data["categoryName"])
             .withUserId(data["userId"])
             .withScorerUserId(data["scorerUserId"])
-            .withUniqueId(data["uniqueId"]);
+            .withUniqueId(data["uniqueId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetScoreByUserIdRequest.prototype.toDict = function () {
         return {
@@ -117,6 +130,7 @@ var GetScoreByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "scorerUserId": this.getScorerUserId(),
             "uniqueId": this.getUniqueId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetScoreByUserIdRequest;

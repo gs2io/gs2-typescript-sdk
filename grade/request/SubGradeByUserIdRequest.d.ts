@@ -7,6 +7,7 @@ export default class SubGradeByUserIdRequest implements IRequest {
     private gradeName;
     private propertyId;
     private gradeValue;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -29,6 +30,9 @@ export default class SubGradeByUserIdRequest implements IRequest {
     getGradeValue(): number | null;
     setGradeValue(gradeValue: number | null): this;
     withGradeValue(gradeValue: number | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

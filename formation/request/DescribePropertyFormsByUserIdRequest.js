@@ -24,6 +24,7 @@ var DescribePropertyFormsByUserIdRequest = /** @class */ (function () {
         this.propertyFormModelName = null;
         this.pageToken = null;
         this.limit = null;
+        this.timeOffsetToken = null;
     }
     DescribePropertyFormsByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -102,13 +103,25 @@ var DescribePropertyFormsByUserIdRequest = /** @class */ (function () {
         this.limit = limit;
         return this;
     };
+    DescribePropertyFormsByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DescribePropertyFormsByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DescribePropertyFormsByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DescribePropertyFormsByUserIdRequest.fromDict = function (data) {
         return new DescribePropertyFormsByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withPropertyFormModelName(data["propertyFormModelName"])
             .withPageToken(data["pageToken"])
-            .withLimit(data["limit"]);
+            .withLimit(data["limit"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DescribePropertyFormsByUserIdRequest.prototype.toDict = function () {
         return {
@@ -117,6 +130,7 @@ var DescribePropertyFormsByUserIdRequest = /** @class */ (function () {
             "propertyFormModelName": this.getPropertyFormModelName(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DescribePropertyFormsByUserIdRequest;

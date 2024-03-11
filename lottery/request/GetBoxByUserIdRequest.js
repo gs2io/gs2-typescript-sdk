@@ -22,6 +22,7 @@ var GetBoxByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.prizeTableName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
     }
     GetBoxByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetBoxByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    GetBoxByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetBoxByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetBoxByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetBoxByUserIdRequest.fromDict = function (data) {
         return new GetBoxByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withPrizeTableName(data["prizeTableName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetBoxByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "prizeTableName": this.getPrizeTableName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetBoxByUserIdRequest;

@@ -24,6 +24,7 @@ var DescribeRarityParameterStatusesByUserIdRequest = /** @class */ (function () 
         this.parameterName = null;
         this.pageToken = null;
         this.limit = null;
+        this.timeOffsetToken = null;
     }
     DescribeRarityParameterStatusesByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -102,13 +103,25 @@ var DescribeRarityParameterStatusesByUserIdRequest = /** @class */ (function () 
         this.limit = limit;
         return this;
     };
+    DescribeRarityParameterStatusesByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DescribeRarityParameterStatusesByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DescribeRarityParameterStatusesByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DescribeRarityParameterStatusesByUserIdRequest.fromDict = function (data) {
         return new DescribeRarityParameterStatusesByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withParameterName(data["parameterName"])
             .withPageToken(data["pageToken"])
-            .withLimit(data["limit"]);
+            .withLimit(data["limit"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DescribeRarityParameterStatusesByUserIdRequest.prototype.toDict = function () {
         return {
@@ -117,6 +130,7 @@ var DescribeRarityParameterStatusesByUserIdRequest = /** @class */ (function () 
             "parameterName": this.getParameterName(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DescribeRarityParameterStatusesByUserIdRequest;

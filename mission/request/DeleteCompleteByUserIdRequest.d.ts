@@ -5,6 +5,7 @@ export default class DeleteCompleteByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private missionGroupName;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -21,6 +22,9 @@ export default class DeleteCompleteByUserIdRequest implements IRequest {
     getMissionGroupName(): string | null;
     setMissionGroupName(missionGroupName: string | null): this;
     withMissionGroupName(missionGroupName: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

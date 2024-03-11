@@ -6,6 +6,7 @@ export default class GetCounterByUserIdRequest implements IRequest {
     private limitName;
     private userId;
     private counterName;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class GetCounterByUserIdRequest implements IRequest {
     getCounterName(): string | null;
     setCounterName(counterName: string | null): this;
     withCounterName(counterName: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetCounterByUserIdRequest;

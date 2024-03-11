@@ -23,6 +23,7 @@ var GetJobResultByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.jobName = null;
         this.tryNumber = null;
+        this.timeOffsetToken = null;
     }
     GetJobResultByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,12 +91,24 @@ var GetJobResultByUserIdRequest = /** @class */ (function () {
         this.tryNumber = tryNumber;
         return this;
     };
+    GetJobResultByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetJobResultByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetJobResultByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetJobResultByUserIdRequest.fromDict = function (data) {
         return new GetJobResultByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withJobName(data["jobName"])
-            .withTryNumber(data["tryNumber"]);
+            .withTryNumber(data["tryNumber"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetJobResultByUserIdRequest.prototype.toDict = function () {
         return {
@@ -103,6 +116,7 @@ var GetJobResultByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "jobName": this.getJobName(),
             "tryNumber": this.getTryNumber(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetJobResultByUserIdRequest;

@@ -27,6 +27,7 @@ var ActionByUserIdRequest = /** @class */ (function () {
         this.layerModelName = null;
         this.position = null;
         this.scopes = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     ActionByUserIdRequest.prototype.getRequestId = function () {
@@ -117,6 +118,17 @@ var ActionByUserIdRequest = /** @class */ (function () {
         this.scopes = scopes;
         return this;
     };
+    ActionByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    ActionByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    ActionByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     ActionByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -138,7 +150,8 @@ var ActionByUserIdRequest = /** @class */ (function () {
             .withScopes(data.scopes ?
             data.scopes.map(function (item) {
                 return Gs2MegaField.Scope.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     ActionByUserIdRequest.prototype.toDict = function () {
         var _a;
@@ -152,6 +165,7 @@ var ActionByUserIdRequest = /** @class */ (function () {
                 this.getScopes().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return ActionByUserIdRequest;

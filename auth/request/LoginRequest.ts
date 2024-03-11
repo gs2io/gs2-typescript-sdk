@@ -24,6 +24,7 @@ export default class LoginRequest implements IRequest {
     private contextStack: string|null = null;
     private userId: string|null = null;
     private timeOffset: number|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -74,17 +75,30 @@ export default class LoginRequest implements IRequest {
         this.timeOffset = timeOffset;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): LoginRequest {
         return new LoginRequest()
             .withUserId(data["userId"])
-            .withTimeOffset(data["timeOffset"]);
+            .withTimeOffset(data["timeOffset"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "userId": this.getUserId(),
             "timeOffset": this.getTimeOffset(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

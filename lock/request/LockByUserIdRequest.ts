@@ -27,6 +27,7 @@ export default class LockByUserIdRequest implements IRequest {
     private userId: string|null = null;
     private transactionId: string|null = null;
     private ttl: number|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -111,6 +112,17 @@ export default class LockByUserIdRequest implements IRequest {
         this.ttl = ttl;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -132,7 +144,8 @@ export default class LockByUserIdRequest implements IRequest {
             .withPropertyId(data["propertyId"])
             .withUserId(data["userId"])
             .withTransactionId(data["transactionId"])
-            .withTtl(data["ttl"]);
+            .withTtl(data["ttl"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -142,6 +155,7 @@ export default class LockByUserIdRequest implements IRequest {
             "userId": this.getUserId(),
             "transactionId": this.getTransactionId(),
             "ttl": this.getTtl(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

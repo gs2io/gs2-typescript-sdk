@@ -22,6 +22,7 @@ var DeleteRatingRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.ratingName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteRatingRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var DeleteRatingRequest = /** @class */ (function () {
         this.ratingName = ratingName;
         return this;
     };
+    DeleteRatingRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteRatingRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteRatingRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteRatingRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var DeleteRatingRequest = /** @class */ (function () {
         return new DeleteRatingRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withRatingName(data["ratingName"]);
+            .withRatingName(data["ratingName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteRatingRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "ratingName": this.getRatingName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteRatingRequest;

@@ -28,6 +28,7 @@ export default class SendNotificationRequest implements IRequest {
     private payload: string|null = null;
     private enableTransferMobileNotification: boolean|null = null;
     private sound: string|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -123,6 +124,17 @@ export default class SendNotificationRequest implements IRequest {
         this.sound = sound;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -145,7 +157,8 @@ export default class SendNotificationRequest implements IRequest {
             .withSubject(data["subject"])
             .withPayload(data["payload"])
             .withEnableTransferMobileNotification(data["enableTransferMobileNotification"])
-            .withSound(data["sound"]);
+            .withSound(data["sound"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -156,6 +169,7 @@ export default class SendNotificationRequest implements IRequest {
             "payload": this.getPayload(),
             "enableTransferMobileNotification": this.getEnableTransferMobileNotification(),
             "sound": this.getSound(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

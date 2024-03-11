@@ -26,6 +26,7 @@ export default class DistributeRequest implements IRequest {
     private distributorName: string|null = null;
     private userId: string|null = null;
     private distributeResource: Gs2Distributor.DistributeResource|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -98,13 +99,25 @@ export default class DistributeRequest implements IRequest {
         this.distributeResource = distributeResource;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DistributeRequest {
         return new DistributeRequest()
             .withNamespaceName(data["namespaceName"])
             .withDistributorName(data["distributorName"])
             .withUserId(data["userId"])
-            .withDistributeResource(Gs2Distributor.DistributeResource.fromDict(data["distributeResource"]));
+            .withDistributeResource(Gs2Distributor.DistributeResource.fromDict(data["distributeResource"]))
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -113,6 +126,7 @@ export default class DistributeRequest implements IRequest {
             "distributorName": this.getDistributorName(),
             "userId": this.getUserId(),
             "distributeResource": this.getDistributeResource()?.toDict(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

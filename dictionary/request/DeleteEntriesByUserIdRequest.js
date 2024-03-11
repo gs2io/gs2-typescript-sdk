@@ -22,6 +22,7 @@ var DeleteEntriesByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.entryModelNames = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DeleteEntriesByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var DeleteEntriesByUserIdRequest = /** @class */ (function () {
         this.entryModelNames = entryModelNames;
         return this;
     };
+    DeleteEntriesByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DeleteEntriesByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DeleteEntriesByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DeleteEntriesByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -97,7 +109,8 @@ var DeleteEntriesByUserIdRequest = /** @class */ (function () {
             .withEntryModelNames(data.entryModelNames ?
             data.entryModelNames.map(function (item) {
                 return item;
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DeleteEntriesByUserIdRequest.prototype.toDict = function () {
         return {
@@ -107,6 +120,7 @@ var DeleteEntriesByUserIdRequest = /** @class */ (function () {
                 this.getEntryModelNames().map(function (item) {
                     return item;
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DeleteEntriesByUserIdRequest;

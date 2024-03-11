@@ -25,6 +25,7 @@ var AcquireForceByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.awaitName = null;
         this.config = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     AcquireForceByUserIdRequest.prototype.getRequestId = function () {
@@ -93,6 +94,17 @@ var AcquireForceByUserIdRequest = /** @class */ (function () {
         this.config = config;
         return this;
     };
+    AcquireForceByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    AcquireForceByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    AcquireForceByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     AcquireForceByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -112,7 +124,8 @@ var AcquireForceByUserIdRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Exchange.Config.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     AcquireForceByUserIdRequest.prototype.toDict = function () {
         return {
@@ -123,6 +136,7 @@ var AcquireForceByUserIdRequest = /** @class */ (function () {
                 this.getConfig().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return AcquireForceByUserIdRequest;

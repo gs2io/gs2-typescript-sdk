@@ -23,6 +23,7 @@ var DecreaseMaxValueByUserIdRequest = /** @class */ (function () {
         this.staminaName = null;
         this.userId = null;
         this.decreaseValue = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DecreaseMaxValueByUserIdRequest.prototype.getRequestId = function () {
@@ -91,6 +92,17 @@ var DecreaseMaxValueByUserIdRequest = /** @class */ (function () {
         this.decreaseValue = decreaseValue;
         return this;
     };
+    DecreaseMaxValueByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DecreaseMaxValueByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DecreaseMaxValueByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DecreaseMaxValueByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -107,7 +119,8 @@ var DecreaseMaxValueByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withStaminaName(data["staminaName"])
             .withUserId(data["userId"])
-            .withDecreaseValue(data["decreaseValue"]);
+            .withDecreaseValue(data["decreaseValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DecreaseMaxValueByUserIdRequest.prototype.toDict = function () {
         return {
@@ -115,6 +128,7 @@ var DecreaseMaxValueByUserIdRequest = /** @class */ (function () {
             "staminaName": this.getStaminaName(),
             "userId": this.getUserId(),
             "decreaseValue": this.getDecreaseValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DecreaseMaxValueByUserIdRequest;

@@ -26,6 +26,7 @@ export default class GetEventByUserIdRequest implements IRequest {
     private eventName: string|null = null;
     private userId: string|null = null;
     private isInSchedule: boolean|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -98,13 +99,25 @@ export default class GetEventByUserIdRequest implements IRequest {
         this.isInSchedule = isInSchedule;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetEventByUserIdRequest {
         return new GetEventByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withEventName(data["eventName"])
             .withUserId(data["userId"])
-            .withIsInSchedule(data["isInSchedule"]);
+            .withIsInSchedule(data["isInSchedule"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -113,6 +126,7 @@ export default class GetEventByUserIdRequest implements IRequest {
             "eventName": this.getEventName(),
             "userId": this.getUserId(),
             "isInSchedule": this.getIsInSchedule(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

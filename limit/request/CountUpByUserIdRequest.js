@@ -25,6 +25,7 @@ var CountUpByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.countUpValue = null;
         this.maxValue = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     CountUpByUserIdRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var CountUpByUserIdRequest = /** @class */ (function () {
         this.maxValue = maxValue;
         return this;
     };
+    CountUpByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    CountUpByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    CountUpByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     CountUpByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var CountUpByUserIdRequest = /** @class */ (function () {
             .withCounterName(data["counterName"])
             .withUserId(data["userId"])
             .withCountUpValue(data["countUpValue"])
-            .withMaxValue(data["maxValue"]);
+            .withMaxValue(data["maxValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     CountUpByUserIdRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var CountUpByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "countUpValue": this.getCountUpValue(),
             "maxValue": this.getMaxValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return CountUpByUserIdRequest;

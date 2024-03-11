@@ -8,6 +8,7 @@ export default class AcquireItemSetWithGradeByUserIdRequest implements IRequest 
     private userId;
     private gradeModelId;
     private gradeValue;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -33,6 +34,9 @@ export default class AcquireItemSetWithGradeByUserIdRequest implements IRequest 
     getGradeValue(): number | null;
     setGradeValue(gradeValue: number | null): this;
     withGradeValue(gradeValue: number | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

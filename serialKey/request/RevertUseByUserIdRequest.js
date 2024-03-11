@@ -22,6 +22,7 @@ var RevertUseByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.code = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     RevertUseByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var RevertUseByUserIdRequest = /** @class */ (function () {
         this.code = code;
         return this;
     };
+    RevertUseByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    RevertUseByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    RevertUseByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     RevertUseByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var RevertUseByUserIdRequest = /** @class */ (function () {
         return new RevertUseByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withCode(data["code"]);
+            .withCode(data["code"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     RevertUseByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "code": this.getCode(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return RevertUseByUserIdRequest;

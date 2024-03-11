@@ -6,6 +6,7 @@ export default class SetMaximumIdleMinutesByUserIdRequest implements IRequest {
     private userId;
     private categoryName;
     private maximumIdleMinutes;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -25,6 +26,9 @@ export default class SetMaximumIdleMinutesByUserIdRequest implements IRequest {
     getMaximumIdleMinutes(): number | null;
     setMaximumIdleMinutes(maximumIdleMinutes: number | null): this;
     withMaximumIdleMinutes(maximumIdleMinutes: number | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

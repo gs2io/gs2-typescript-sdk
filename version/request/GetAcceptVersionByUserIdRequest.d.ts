@@ -5,6 +5,7 @@ export default class GetAcceptVersionByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private versionName;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -20,6 +21,9 @@ export default class GetAcceptVersionByUserIdRequest implements IRequest {
     getVersionName(): string | null;
     setVersionName(versionName: string | null): this;
     withVersionName(versionName: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetAcceptVersionByUserIdRequest;

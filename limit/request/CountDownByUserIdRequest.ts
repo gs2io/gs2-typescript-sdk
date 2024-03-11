@@ -27,6 +27,7 @@ export default class CountDownByUserIdRequest implements IRequest {
     private counterName: string|null = null;
     private userId: string|null = null;
     private countDownValue: number|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -111,6 +112,17 @@ export default class CountDownByUserIdRequest implements IRequest {
         this.countDownValue = countDownValue;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -132,7 +144,8 @@ export default class CountDownByUserIdRequest implements IRequest {
             .withLimitName(data["limitName"])
             .withCounterName(data["counterName"])
             .withUserId(data["userId"])
-            .withCountDownValue(data["countDownValue"]);
+            .withCountDownValue(data["countDownValue"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -142,6 +155,7 @@ export default class CountDownByUserIdRequest implements IRequest {
             "counterName": this.getCounterName(),
             "userId": this.getUserId(),
             "countDownValue": this.getCountDownValue(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

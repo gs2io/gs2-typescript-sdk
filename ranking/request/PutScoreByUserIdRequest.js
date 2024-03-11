@@ -24,6 +24,7 @@ var PutScoreByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.score = null;
         this.metadata = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     PutScoreByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var PutScoreByUserIdRequest = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
+    PutScoreByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    PutScoreByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    PutScoreByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     PutScoreByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var PutScoreByUserIdRequest = /** @class */ (function () {
             .withCategoryName(data["categoryName"])
             .withUserId(data["userId"])
             .withScore(data["score"])
-            .withMetadata(data["metadata"]);
+            .withMetadata(data["metadata"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     PutScoreByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var PutScoreByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "score": this.getScore(),
             "metadata": this.getMetadata(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return PutScoreByUserIdRequest;

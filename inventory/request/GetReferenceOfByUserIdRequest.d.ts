@@ -8,6 +8,7 @@ export default class GetReferenceOfByUserIdRequest implements IRequest {
     private itemName;
     private itemSetName;
     private referenceOf;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -32,6 +33,9 @@ export default class GetReferenceOfByUserIdRequest implements IRequest {
     getReferenceOf(): string | null;
     setReferenceOf(referenceOf: string | null): this;
     withReferenceOf(referenceOf: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetReferenceOfByUserIdRequest;

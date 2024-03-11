@@ -25,6 +25,7 @@ var DoMatchmakingByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.player = null;
         this.matchmakingContextToken = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     DoMatchmakingByUserIdRequest.prototype.getRequestId = function () {
@@ -93,6 +94,17 @@ var DoMatchmakingByUserIdRequest = /** @class */ (function () {
         this.matchmakingContextToken = matchmakingContextToken;
         return this;
     };
+    DoMatchmakingByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DoMatchmakingByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DoMatchmakingByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DoMatchmakingByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -109,7 +121,8 @@ var DoMatchmakingByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withPlayer(Gs2Matchmaking.Player.fromDict(data["player"]))
-            .withMatchmakingContextToken(data["matchmakingContextToken"]);
+            .withMatchmakingContextToken(data["matchmakingContextToken"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DoMatchmakingByUserIdRequest.prototype.toDict = function () {
         var _a;
@@ -118,6 +131,7 @@ var DoMatchmakingByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "player": (_a = this.getPlayer()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "matchmakingContextToken": this.getMatchmakingContextToken(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DoMatchmakingByUserIdRequest;

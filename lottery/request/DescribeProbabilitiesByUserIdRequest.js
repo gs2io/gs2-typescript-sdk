@@ -22,6 +22,7 @@ var DescribeProbabilitiesByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.lotteryName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
     }
     DescribeProbabilitiesByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var DescribeProbabilitiesByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    DescribeProbabilitiesByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    DescribeProbabilitiesByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DescribeProbabilitiesByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     DescribeProbabilitiesByUserIdRequest.fromDict = function (data) {
         return new DescribeProbabilitiesByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withLotteryName(data["lotteryName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DescribeProbabilitiesByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "lotteryName": this.getLotteryName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return DescribeProbabilitiesByUserIdRequest;

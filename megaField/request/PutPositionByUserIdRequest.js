@@ -28,6 +28,7 @@ var PutPositionByUserIdRequest = /** @class */ (function () {
         this.position = null;
         this.vector = null;
         this.r = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     PutPositionByUserIdRequest.prototype.getRequestId = function () {
@@ -129,6 +130,17 @@ var PutPositionByUserIdRequest = /** @class */ (function () {
         this.r = r;
         return this;
     };
+    PutPositionByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    PutPositionByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    PutPositionByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     PutPositionByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -148,7 +160,8 @@ var PutPositionByUserIdRequest = /** @class */ (function () {
             .withLayerModelName(data["layerModelName"])
             .withPosition(Gs2MegaField.Position.fromDict(data["position"]))
             .withVector(Gs2MegaField.Vector.fromDict(data["vector"]))
-            .withR(data["r"]);
+            .withR(data["r"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     PutPositionByUserIdRequest.prototype.toDict = function () {
         var _a, _b;
@@ -160,6 +173,7 @@ var PutPositionByUserIdRequest = /** @class */ (function () {
             "position": (_a = this.getPosition()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "vector": (_b = this.getVector()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "r": this.getR(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return PutPositionByUserIdRequest;

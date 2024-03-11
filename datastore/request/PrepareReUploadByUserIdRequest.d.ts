@@ -6,6 +6,7 @@ export default class PrepareReUploadByUserIdRequest implements IRequest {
     private dataObjectName;
     private userId;
     private contentType;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -25,6 +26,9 @@ export default class PrepareReUploadByUserIdRequest implements IRequest {
     getContentType(): string | null;
     setContentType(contentType: string | null): this;
     withContentType(contentType: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

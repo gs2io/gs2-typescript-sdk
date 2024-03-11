@@ -24,6 +24,7 @@ var UpdateProfileByUserIdRequest = /** @class */ (function () {
         this.publicProfile = null;
         this.followerProfile = null;
         this.friendProfile = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     UpdateProfileByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var UpdateProfileByUserIdRequest = /** @class */ (function () {
         this.friendProfile = friendProfile;
         return this;
     };
+    UpdateProfileByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    UpdateProfileByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    UpdateProfileByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     UpdateProfileByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var UpdateProfileByUserIdRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withPublicProfile(data["publicProfile"])
             .withFollowerProfile(data["followerProfile"])
-            .withFriendProfile(data["friendProfile"]);
+            .withFriendProfile(data["friendProfile"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     UpdateProfileByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var UpdateProfileByUserIdRequest = /** @class */ (function () {
             "publicProfile": this.getPublicProfile(),
             "followerProfile": this.getFollowerProfile(),
             "friendProfile": this.getFriendProfile(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return UpdateProfileByUserIdRequest;

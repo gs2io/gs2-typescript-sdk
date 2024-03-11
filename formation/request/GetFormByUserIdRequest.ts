@@ -26,6 +26,7 @@ export default class GetFormByUserIdRequest implements IRequest {
     private userId: string|null = null;
     private moldModelName: string|null = null;
     private index: number|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -98,13 +99,25 @@ export default class GetFormByUserIdRequest implements IRequest {
         this.index = index;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetFormByUserIdRequest {
         return new GetFormByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withMoldModelName(data["moldModelName"])
-            .withIndex(data["index"]);
+            .withIndex(data["index"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -113,6 +126,7 @@ export default class GetFormByUserIdRequest implements IRequest {
             "userId": this.getUserId(),
             "moldModelName": this.getMoldModelName(),
             "index": this.getIndex(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

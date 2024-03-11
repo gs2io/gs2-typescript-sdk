@@ -5,6 +5,7 @@ export default class GetTriggerByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private triggerName;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -20,6 +21,9 @@ export default class GetTriggerByUserIdRequest implements IRequest {
     getTriggerName(): string | null;
     setTriggerName(triggerName: string | null): this;
     withTriggerName(triggerName: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetTriggerByUserIdRequest;

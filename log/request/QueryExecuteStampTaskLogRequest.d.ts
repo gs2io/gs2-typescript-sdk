@@ -12,6 +12,7 @@ export default class QueryExecuteStampTaskLogRequest implements IRequest {
     private longTerm;
     private pageToken;
     private limit;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -49,6 +50,9 @@ export default class QueryExecuteStampTaskLogRequest implements IRequest {
     getLimit(): number | null;
     setLimit(limit: number | null): this;
     withLimit(limit: number | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

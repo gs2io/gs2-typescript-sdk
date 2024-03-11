@@ -24,6 +24,7 @@ var AddRarityParameterStatusByUserIdRequest = /** @class */ (function () {
         this.parameterName = null;
         this.propertyId = null;
         this.count = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     AddRarityParameterStatusByUserIdRequest.prototype.getRequestId = function () {
@@ -103,6 +104,17 @@ var AddRarityParameterStatusByUserIdRequest = /** @class */ (function () {
         this.count = count;
         return this;
     };
+    AddRarityParameterStatusByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    AddRarityParameterStatusByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    AddRarityParameterStatusByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     AddRarityParameterStatusByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -120,7 +132,8 @@ var AddRarityParameterStatusByUserIdRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withParameterName(data["parameterName"])
             .withPropertyId(data["propertyId"])
-            .withCount(data["count"]);
+            .withCount(data["count"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     AddRarityParameterStatusByUserIdRequest.prototype.toDict = function () {
         return {
@@ -129,6 +142,7 @@ var AddRarityParameterStatusByUserIdRequest = /** @class */ (function () {
             "parameterName": this.getParameterName(),
             "propertyId": this.getPropertyId(),
             "count": this.getCount(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return AddRarityParameterStatusByUserIdRequest;

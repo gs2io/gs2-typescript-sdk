@@ -23,6 +23,7 @@ var GetFriendByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.targetUserId = null;
         this.withProfile = null;
+        this.timeOffsetToken = null;
     }
     GetFriendByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,12 +91,24 @@ var GetFriendByUserIdRequest = /** @class */ (function () {
         this.withProfile = withProfile;
         return this;
     };
+    GetFriendByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetFriendByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetFriendByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetFriendByUserIdRequest.fromDict = function (data) {
         return new GetFriendByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withTargetUserId(data["targetUserId"])
-            .withWithProfile(data["withProfile"]);
+            .withWithProfile(data["withProfile"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetFriendByUserIdRequest.prototype.toDict = function () {
         return {
@@ -103,6 +116,7 @@ var GetFriendByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "targetUserId": this.getTargetUserId(),
             "withProfile": this.getWithProfile(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetFriendByUserIdRequest;

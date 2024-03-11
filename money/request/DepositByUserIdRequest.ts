@@ -27,6 +27,7 @@ export default class DepositByUserIdRequest implements IRequest {
     private slot: number|null = null;
     private price: number|null = null;
     private count: number|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -111,6 +112,17 @@ export default class DepositByUserIdRequest implements IRequest {
         this.count = count;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -132,7 +144,8 @@ export default class DepositByUserIdRequest implements IRequest {
             .withUserId(data["userId"])
             .withSlot(data["slot"])
             .withPrice(data["price"])
-            .withCount(data["count"]);
+            .withCount(data["count"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -142,6 +155,7 @@ export default class DepositByUserIdRequest implements IRequest {
             "slot": this.getSlot(),
             "price": this.getPrice(),
             "count": this.getCount(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

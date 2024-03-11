@@ -5,6 +5,7 @@ export default class DistributeWithoutOverflowProcessRequest implements IRequest
     private contextStack;
     private userId;
     private distributeResource;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -17,6 +18,9 @@ export default class DistributeWithoutOverflowProcessRequest implements IRequest
     getDistributeResource(): Gs2Distributor.DistributeResource | null;
     setDistributeResource(distributeResource: Gs2Distributor.DistributeResource | null): this;
     withDistributeResource(distributeResource: Gs2Distributor.DistributeResource | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): DistributeWithoutOverflowProcessRequest;

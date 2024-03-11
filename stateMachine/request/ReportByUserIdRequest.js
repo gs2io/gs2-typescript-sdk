@@ -25,6 +25,7 @@ var ReportByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.statusName = null;
         this.events = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     ReportByUserIdRequest.prototype.getRequestId = function () {
@@ -93,6 +94,17 @@ var ReportByUserIdRequest = /** @class */ (function () {
         this.events = events;
         return this;
     };
+    ReportByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    ReportByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    ReportByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     ReportByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -112,7 +124,8 @@ var ReportByUserIdRequest = /** @class */ (function () {
             .withEvents(data.events ?
             data.events.map(function (item) {
                 return Gs2StateMachine.Event.fromDict(item);
-            }) : []);
+            }) : [])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     ReportByUserIdRequest.prototype.toDict = function () {
         return {
@@ -123,6 +136,7 @@ var ReportByUserIdRequest = /** @class */ (function () {
                 this.getEvents().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return ReportByUserIdRequest;

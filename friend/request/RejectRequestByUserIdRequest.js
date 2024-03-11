@@ -22,6 +22,7 @@ var RejectRequestByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.fromUserId = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     RejectRequestByUserIdRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var RejectRequestByUserIdRequest = /** @class */ (function () {
         this.fromUserId = fromUserId;
         return this;
     };
+    RejectRequestByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    RejectRequestByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    RejectRequestByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     RejectRequestByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var RejectRequestByUserIdRequest = /** @class */ (function () {
         return new RejectRequestByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withFromUserId(data["fromUserId"]);
+            .withFromUserId(data["fromUserId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     RejectRequestByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "fromUserId": this.getFromUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return RejectRequestByUserIdRequest;

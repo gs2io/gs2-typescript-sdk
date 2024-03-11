@@ -26,6 +26,7 @@ export default class ReceiveByUserIdRequest implements IRequest {
     private missionGroupName: string|null = null;
     private missionTaskName: string|null = null;
     private userId: string|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -99,6 +100,17 @@ export default class ReceiveByUserIdRequest implements IRequest {
         this.userId = userId;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -119,7 +131,8 @@ export default class ReceiveByUserIdRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withMissionGroupName(data["missionGroupName"])
             .withMissionTaskName(data["missionTaskName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -128,6 +141,7 @@ export default class ReceiveByUserIdRequest implements IRequest {
             "missionGroupName": this.getMissionGroupName(),
             "missionTaskName": this.getMissionTaskName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

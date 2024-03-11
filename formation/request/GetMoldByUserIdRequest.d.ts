@@ -5,6 +5,7 @@ export default class GetMoldByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private moldModelName;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -20,6 +21,9 @@ export default class GetMoldByUserIdRequest implements IRequest {
     getMoldModelName(): string | null;
     setMoldModelName(moldModelName: string | null): this;
     withMoldModelName(moldModelName: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetMoldByUserIdRequest;

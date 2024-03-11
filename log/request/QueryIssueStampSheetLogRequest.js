@@ -29,6 +29,7 @@ var QueryIssueStampSheetLogRequest = /** @class */ (function () {
         this.longTerm = null;
         this.pageToken = null;
         this.limit = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     QueryIssueStampSheetLogRequest.prototype.getRequestId = function () {
@@ -163,6 +164,17 @@ var QueryIssueStampSheetLogRequest = /** @class */ (function () {
         this.limit = limit;
         return this;
     };
+    QueryIssueStampSheetLogRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    QueryIssueStampSheetLogRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    QueryIssueStampSheetLogRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     QueryIssueStampSheetLogRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -185,7 +197,8 @@ var QueryIssueStampSheetLogRequest = /** @class */ (function () {
             .withEnd(data["end"])
             .withLongTerm(data["longTerm"])
             .withPageToken(data["pageToken"])
-            .withLimit(data["limit"]);
+            .withLimit(data["limit"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     QueryIssueStampSheetLogRequest.prototype.toDict = function () {
         return {
@@ -199,6 +212,7 @@ var QueryIssueStampSheetLogRequest = /** @class */ (function () {
             "longTerm": this.getLongTerm(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return QueryIssueStampSheetLogRequest;

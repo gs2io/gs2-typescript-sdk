@@ -5,6 +5,7 @@ export default class DeleteTakeOverByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private type;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -21,6 +22,9 @@ export default class DeleteTakeOverByUserIdRequest implements IRequest {
     getType(): number | null;
     setType(type: number | null): this;
     withType(type: number | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

@@ -29,6 +29,7 @@ export default class PutPositionByUserIdRequest implements IRequest {
     private position: Gs2MegaField.Position|null = null;
     private vector: Gs2MegaField.Vector|null = null;
     private r: number|null = null;
+    private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -135,6 +136,17 @@ export default class PutPositionByUserIdRequest implements IRequest {
         this.r = r;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -158,7 +170,8 @@ export default class PutPositionByUserIdRequest implements IRequest {
             .withLayerModelName(data["layerModelName"])
             .withPosition(Gs2MegaField.Position.fromDict(data["position"]))
             .withVector(Gs2MegaField.Vector.fromDict(data["vector"]))
-            .withR(data["r"]);
+            .withR(data["r"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -170,6 +183,7 @@ export default class PutPositionByUserIdRequest implements IRequest {
             "position": this.getPosition()?.toDict(),
             "vector": this.getVector()?.toDict(),
             "r": this.getR(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

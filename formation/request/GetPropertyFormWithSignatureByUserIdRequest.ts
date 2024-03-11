@@ -27,6 +27,7 @@ export default class GetPropertyFormWithSignatureByUserIdRequest implements IReq
     private propertyFormModelName: string|null = null;
     private propertyId: string|null = null;
     private keyId: string|null = null;
+    private timeOffsetToken: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -110,6 +111,17 @@ export default class GetPropertyFormWithSignatureByUserIdRequest implements IReq
         this.keyId = keyId;
         return this;
     }
+    public getTimeOffsetToken(): string|null {
+        return this.timeOffsetToken;
+    }
+    public setTimeOffsetToken(timeOffsetToken: string|null) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+    public withTimeOffsetToken(timeOffsetToken: string|null): this {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetPropertyFormWithSignatureByUserIdRequest {
         return new GetPropertyFormWithSignatureByUserIdRequest()
@@ -117,7 +129,8 @@ export default class GetPropertyFormWithSignatureByUserIdRequest implements IReq
             .withUserId(data["userId"])
             .withPropertyFormModelName(data["propertyFormModelName"])
             .withPropertyId(data["propertyId"])
-            .withKeyId(data["keyId"]);
+            .withKeyId(data["keyId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -127,6 +140,7 @@ export default class GetPropertyFormWithSignatureByUserIdRequest implements IReq
             "propertyFormModelName": this.getPropertyFormModelName(),
             "propertyId": this.getPropertyId(),
             "keyId": this.getKeyId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
 }

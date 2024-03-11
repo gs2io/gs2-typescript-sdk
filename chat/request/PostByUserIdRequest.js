@@ -25,6 +25,7 @@ var PostByUserIdRequest = /** @class */ (function () {
         this.category = null;
         this.metadata = null;
         this.password = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     PostByUserIdRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var PostByUserIdRequest = /** @class */ (function () {
         this.password = password;
         return this;
     };
+    PostByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    PostByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    PostByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     PostByUserIdRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var PostByUserIdRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withCategory(data["category"])
             .withMetadata(data["metadata"])
-            .withPassword(data["password"]);
+            .withPassword(data["password"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     PostByUserIdRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var PostByUserIdRequest = /** @class */ (function () {
             "category": this.getCategory(),
             "metadata": this.getMetadata(),
             "password": this.getPassword(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return PostByUserIdRequest;

@@ -22,6 +22,7 @@ var PrepareDownloadByUserIdAndDataObjectNameRequest = /** @class */ (function ()
         this.namespaceName = null;
         this.userId = null;
         this.dataObjectName = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     PrepareDownloadByUserIdAndDataObjectNameRequest.prototype.getRequestId = function () {
@@ -79,6 +80,17 @@ var PrepareDownloadByUserIdAndDataObjectNameRequest = /** @class */ (function ()
         this.dataObjectName = dataObjectName;
         return this;
     };
+    PrepareDownloadByUserIdAndDataObjectNameRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    PrepareDownloadByUserIdAndDataObjectNameRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    PrepareDownloadByUserIdAndDataObjectNameRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     PrepareDownloadByUserIdAndDataObjectNameRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +106,15 @@ var PrepareDownloadByUserIdAndDataObjectNameRequest = /** @class */ (function ()
         return new PrepareDownloadByUserIdAndDataObjectNameRequest()
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
-            .withDataObjectName(data["dataObjectName"]);
+            .withDataObjectName(data["dataObjectName"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     PrepareDownloadByUserIdAndDataObjectNameRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "dataObjectName": this.getDataObjectName(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return PrepareDownloadByUserIdAndDataObjectNameRequest;

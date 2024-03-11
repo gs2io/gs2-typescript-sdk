@@ -9,6 +9,7 @@ export default class CreateProgressByUserIdRequest implements IRequest {
     private targetItemSetId;
     private materials;
     private force;
+    private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -34,6 +35,9 @@ export default class CreateProgressByUserIdRequest implements IRequest {
     getForce(): boolean | null;
     setForce(force: boolean | null): this;
     withForce(force: boolean | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

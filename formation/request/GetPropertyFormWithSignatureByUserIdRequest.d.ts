@@ -7,6 +7,7 @@ export default class GetPropertyFormWithSignatureByUserIdRequest implements IReq
     private propertyFormModelName;
     private propertyId;
     private keyId;
+    private timeOffsetToken;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -28,6 +29,9 @@ export default class GetPropertyFormWithSignatureByUserIdRequest implements IReq
     getKeyId(): string | null;
     setKeyId(keyId: string | null): this;
     withKeyId(keyId: string | null): this;
+    getTimeOffsetToken(): string | null;
+    setTimeOffsetToken(timeOffsetToken: string | null): this;
+    withTimeOffsetToken(timeOffsetToken: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetPropertyFormWithSignatureByUserIdRequest;

@@ -25,6 +25,7 @@ var SendNotificationRequest = /** @class */ (function () {
         this.payload = null;
         this.enableTransferMobileNotification = null;
         this.sound = null;
+        this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
     SendNotificationRequest.prototype.getRequestId = function () {
@@ -115,6 +116,17 @@ var SendNotificationRequest = /** @class */ (function () {
         this.sound = sound;
         return this;
     };
+    SendNotificationRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    SendNotificationRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    SendNotificationRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     SendNotificationRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -133,7 +145,8 @@ var SendNotificationRequest = /** @class */ (function () {
             .withSubject(data["subject"])
             .withPayload(data["payload"])
             .withEnableTransferMobileNotification(data["enableTransferMobileNotification"])
-            .withSound(data["sound"]);
+            .withSound(data["sound"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SendNotificationRequest.prototype.toDict = function () {
         return {
@@ -143,6 +156,7 @@ var SendNotificationRequest = /** @class */ (function () {
             "payload": this.getPayload(),
             "enableTransferMobileNotification": this.getEnableTransferMobileNotification(),
             "sound": this.getSound(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return SendNotificationRequest;

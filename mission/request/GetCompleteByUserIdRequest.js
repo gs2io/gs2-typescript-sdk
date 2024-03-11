@@ -22,6 +22,7 @@ var GetCompleteByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.missionGroupName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
     }
     GetCompleteByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetCompleteByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    GetCompleteByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetCompleteByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetCompleteByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetCompleteByUserIdRequest.fromDict = function (data) {
         return new GetCompleteByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withMissionGroupName(data["missionGroupName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetCompleteByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "missionGroupName": this.getMissionGroupName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetCompleteByUserIdRequest;

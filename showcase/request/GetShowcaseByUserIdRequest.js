@@ -22,6 +22,7 @@ var GetShowcaseByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.showcaseName = null;
         this.userId = null;
+        this.timeOffsetToken = null;
     }
     GetShowcaseByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,17 +79,30 @@ var GetShowcaseByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    GetShowcaseByUserIdRequest.prototype.getTimeOffsetToken = function () {
+        return this.timeOffsetToken;
+    };
+    GetShowcaseByUserIdRequest.prototype.setTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    GetShowcaseByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
+        this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
     GetShowcaseByUserIdRequest.fromDict = function (data) {
         return new GetShowcaseByUserIdRequest()
             .withNamespaceName(data["namespaceName"])
             .withShowcaseName(data["showcaseName"])
-            .withUserId(data["userId"]);
+            .withUserId(data["userId"])
+            .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     GetShowcaseByUserIdRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "showcaseName": this.getShowcaseName(),
             "userId": this.getUserId(),
+            "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };
     return GetShowcaseByUserIdRequest;
