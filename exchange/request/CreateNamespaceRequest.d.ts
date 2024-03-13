@@ -9,6 +9,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private enableDirectExchange;
     private transactionSetting;
     private exchangeScript;
+    private incrementalExchangeScript;
     private logSetting;
     private queueNamespaceId;
     private keyId;
@@ -36,6 +37,9 @@ export default class CreateNamespaceRequest implements IRequest {
     getExchangeScript(): Gs2Exchange.ScriptSetting | null;
     setExchangeScript(exchangeScript: Gs2Exchange.ScriptSetting | null): this;
     withExchangeScript(exchangeScript: Gs2Exchange.ScriptSetting | null): this;
+    getIncrementalExchangeScript(): Gs2Exchange.ScriptSetting | null;
+    setIncrementalExchangeScript(incrementalExchangeScript: Gs2Exchange.ScriptSetting | null): this;
+    withIncrementalExchangeScript(incrementalExchangeScript: Gs2Exchange.ScriptSetting | null): this;
     getLogSetting(): Gs2Exchange.LogSetting | null;
     setLogSetting(logSetting: Gs2Exchange.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Exchange.LogSetting | null): this;

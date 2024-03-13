@@ -27,6 +27,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.enableDirectExchange = null;
         this.transactionSetting = null;
         this.exchangeScript = null;
+        this.incrementalExchangeScript = null;
         this.logSetting = null;
         this.queueNamespaceId = null;
         this.keyId = null;
@@ -119,6 +120,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.exchangeScript = exchangeScript;
         return this;
     };
+    CreateNamespaceRequest.prototype.getIncrementalExchangeScript = function () {
+        return this.incrementalExchangeScript;
+    };
+    CreateNamespaceRequest.prototype.setIncrementalExchangeScript = function (incrementalExchangeScript) {
+        this.incrementalExchangeScript = incrementalExchangeScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withIncrementalExchangeScript = function (incrementalExchangeScript) {
+        this.incrementalExchangeScript = incrementalExchangeScript;
+        return this;
+    };
     CreateNamespaceRequest.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -166,12 +178,13 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withEnableDirectExchange(data["enableDirectExchange"])
             .withTransactionSetting(Gs2Exchange.TransactionSetting.fromDict(data["transactionSetting"]))
             .withExchangeScript(Gs2Exchange.ScriptSetting.fromDict(data["exchangeScript"]))
+            .withIncrementalExchangeScript(Gs2Exchange.ScriptSetting.fromDict(data["incrementalExchangeScript"]))
             .withLogSetting(Gs2Exchange.LogSetting.fromDict(data["logSetting"]))
             .withQueueNamespaceId(data["queueNamespaceId"])
             .withKeyId(data["keyId"]);
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
@@ -179,7 +192,8 @@ var CreateNamespaceRequest = /** @class */ (function () {
             "enableDirectExchange": this.getEnableDirectExchange(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "exchangeScript": (_b = this.getExchangeScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "incrementalExchangeScript": (_c = this.getIncrementalExchangeScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
         };

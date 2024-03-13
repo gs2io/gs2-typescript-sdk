@@ -29,6 +29,7 @@ var Namespace = /** @class */ (function () {
         this.enableAwaitExchange = null;
         this.transactionSetting = null;
         this.exchangeScript = null;
+        this.incrementalExchangeScript = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -161,6 +162,17 @@ var Namespace = /** @class */ (function () {
         this.exchangeScript = exchangeScript;
         return this;
     };
+    Namespace.prototype.getIncrementalExchangeScript = function () {
+        return this.incrementalExchangeScript;
+    };
+    Namespace.prototype.setIncrementalExchangeScript = function (incrementalExchangeScript) {
+        this.incrementalExchangeScript = incrementalExchangeScript;
+        return this;
+    };
+    Namespace.prototype.withIncrementalExchangeScript = function (incrementalExchangeScript) {
+        this.incrementalExchangeScript = incrementalExchangeScript;
+        return this;
+    };
     Namespace.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -245,6 +257,7 @@ var Namespace = /** @class */ (function () {
             .withEnableAwaitExchange(data["enableAwaitExchange"])
             .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
             .withExchangeScript(ScriptSetting_1.default.fromDict(data["exchangeScript"]))
+            .withIncrementalExchangeScript(ScriptSetting_1.default.fromDict(data["incrementalExchangeScript"]))
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -253,7 +266,7 @@ var Namespace = /** @class */ (function () {
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
@@ -262,7 +275,8 @@ var Namespace = /** @class */ (function () {
             "enableAwaitExchange": this.getEnableAwaitExchange(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "exchangeScript": (_b = this.getExchangeScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "incrementalExchangeScript": (_c = this.getIncrementalExchangeScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "queueNamespaceId": this.getQueueNamespaceId(),

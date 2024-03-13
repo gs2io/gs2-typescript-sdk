@@ -28,6 +28,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private enableDirectExchange: boolean|null = null;
     private transactionSetting: Gs2Exchange.TransactionSetting|null = null;
     private exchangeScript: Gs2Exchange.ScriptSetting|null = null;
+    private incrementalExchangeScript: Gs2Exchange.ScriptSetting|null = null;
     private logSetting: Gs2Exchange.LogSetting|null = null;
     private queueNamespaceId: string|null = null;
     private keyId: string|null = null;
@@ -125,6 +126,17 @@ export default class CreateNamespaceRequest implements IRequest {
         this.exchangeScript = exchangeScript;
         return this;
     }
+    public getIncrementalExchangeScript(): Gs2Exchange.ScriptSetting|null {
+        return this.incrementalExchangeScript;
+    }
+    public setIncrementalExchangeScript(incrementalExchangeScript: Gs2Exchange.ScriptSetting|null) {
+        this.incrementalExchangeScript = incrementalExchangeScript;
+        return this;
+    }
+    public withIncrementalExchangeScript(incrementalExchangeScript: Gs2Exchange.ScriptSetting|null): this {
+        this.incrementalExchangeScript = incrementalExchangeScript;
+        return this;
+    }
     public getLogSetting(): Gs2Exchange.LogSetting|null {
         return this.logSetting;
     }
@@ -173,6 +185,7 @@ export default class CreateNamespaceRequest implements IRequest {
             .withEnableDirectExchange(data["enableDirectExchange"])
             .withTransactionSetting(Gs2Exchange.TransactionSetting.fromDict(data["transactionSetting"]))
             .withExchangeScript(Gs2Exchange.ScriptSetting.fromDict(data["exchangeScript"]))
+            .withIncrementalExchangeScript(Gs2Exchange.ScriptSetting.fromDict(data["incrementalExchangeScript"]))
             .withLogSetting(Gs2Exchange.LogSetting.fromDict(data["logSetting"]))
             .withQueueNamespaceId(data["queueNamespaceId"])
             .withKeyId(data["keyId"]);
@@ -186,6 +199,7 @@ export default class CreateNamespaceRequest implements IRequest {
             "enableDirectExchange": this.getEnableDirectExchange(),
             "transactionSetting": this.getTransactionSetting()?.toDict(),
             "exchangeScript": this.getExchangeScript()?.toDict(),
+            "incrementalExchangeScript": this.getIncrementalExchangeScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),

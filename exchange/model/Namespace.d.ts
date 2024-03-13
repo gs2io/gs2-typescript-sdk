@@ -10,6 +10,7 @@ export default class Namespace implements IModel {
     private enableAwaitExchange;
     private transactionSetting;
     private exchangeScript;
+    private incrementalExchangeScript;
     private logSetting;
     private createdAt;
     private updatedAt;
@@ -42,6 +43,9 @@ export default class Namespace implements IModel {
     getExchangeScript(): ScriptSetting | null;
     setExchangeScript(exchangeScript: ScriptSetting | null): this;
     withExchangeScript(exchangeScript: ScriptSetting | null): this;
+    getIncrementalExchangeScript(): ScriptSetting | null;
+    setIncrementalExchangeScript(incrementalExchangeScript: ScriptSetting | null): this;
+    withIncrementalExchangeScript(incrementalExchangeScript: ScriptSetting | null): this;
     getLogSetting(): LogSetting | null;
     setLogSetting(logSetting: LogSetting | null): this;
     withLogSetting(logSetting: LogSetting | null): this;
