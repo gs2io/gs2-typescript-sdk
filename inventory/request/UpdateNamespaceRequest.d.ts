@@ -10,6 +10,8 @@ export default class UpdateNamespaceRequest implements IRequest {
     private consumeScript;
     private simpleItemAcquireScript;
     private simpleItemConsumeScript;
+    private bigItemAcquireScript;
+    private bigItemConsumeScript;
     private logSetting;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -38,6 +40,12 @@ export default class UpdateNamespaceRequest implements IRequest {
     getSimpleItemConsumeScript(): Gs2Inventory.ScriptSetting | null;
     setSimpleItemConsumeScript(simpleItemConsumeScript: Gs2Inventory.ScriptSetting | null): this;
     withSimpleItemConsumeScript(simpleItemConsumeScript: Gs2Inventory.ScriptSetting | null): this;
+    getBigItemAcquireScript(): Gs2Inventory.ScriptSetting | null;
+    setBigItemAcquireScript(bigItemAcquireScript: Gs2Inventory.ScriptSetting | null): this;
+    withBigItemAcquireScript(bigItemAcquireScript: Gs2Inventory.ScriptSetting | null): this;
+    getBigItemConsumeScript(): Gs2Inventory.ScriptSetting | null;
+    setBigItemConsumeScript(bigItemConsumeScript: Gs2Inventory.ScriptSetting | null): this;
+    withBigItemConsumeScript(bigItemConsumeScript: Gs2Inventory.ScriptSetting | null): this;
     getLogSetting(): Gs2Inventory.LogSetting | null;
     setLogSetting(logSetting: Gs2Inventory.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Inventory.LogSetting | null): this;

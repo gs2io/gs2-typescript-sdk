@@ -72,6 +72,8 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
             'consumeScript': request.getConsumeScript()?.toDict() ?? null,
             'simpleItemAcquireScript': request.getSimpleItemAcquireScript()?.toDict() ?? null,
             'simpleItemConsumeScript': request.getSimpleItemConsumeScript()?.toDict() ?? null,
+            'bigItemAcquireScript': request.getBigItemAcquireScript()?.toDict() ?? null,
+            'bigItemConsumeScript': request.getBigItemConsumeScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.post(
@@ -161,6 +163,8 @@ export default class Gs2InventoryRestClient extends AbstractGs2RestClient {
             'consumeScript': request.getConsumeScript()?.toDict() ?? null,
             'simpleItemAcquireScript': request.getSimpleItemAcquireScript()?.toDict() ?? null,
             'simpleItemConsumeScript': request.getSimpleItemConsumeScript()?.toDict() ?? null,
+            'bigItemAcquireScript': request.getBigItemAcquireScript()?.toDict() ?? null,
+            'bigItemConsumeScript': request.getBigItemConsumeScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.put(

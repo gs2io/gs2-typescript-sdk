@@ -28,6 +28,8 @@ export default class Namespace implements IModel {
     private consumeScript: ScriptSetting|null = null;
     private simpleItemAcquireScript: ScriptSetting|null = null;
     private simpleItemConsumeScript: ScriptSetting|null = null;
+    private bigItemAcquireScript: ScriptSetting|null = null;
+    private bigItemConsumeScript: ScriptSetting|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -180,6 +182,28 @@ export default class Namespace implements IModel {
         this.simpleItemConsumeScript = simpleItemConsumeScript;
         return this;
     }
+    public getBigItemAcquireScript(): ScriptSetting|null {
+        return this.bigItemAcquireScript;
+    }
+    public setBigItemAcquireScript(bigItemAcquireScript: ScriptSetting|null) {
+        this.bigItemAcquireScript = bigItemAcquireScript;
+        return this;
+    }
+    public withBigItemAcquireScript(bigItemAcquireScript: ScriptSetting|null): this {
+        this.bigItemAcquireScript = bigItemAcquireScript;
+        return this;
+    }
+    public getBigItemConsumeScript(): ScriptSetting|null {
+        return this.bigItemConsumeScript;
+    }
+    public setBigItemConsumeScript(bigItemConsumeScript: ScriptSetting|null) {
+        this.bigItemConsumeScript = bigItemConsumeScript;
+        return this;
+    }
+    public withBigItemConsumeScript(bigItemConsumeScript: ScriptSetting|null): this {
+        this.bigItemConsumeScript = bigItemConsumeScript;
+        return this;
+    }
     public getLogSetting(): LogSetting|null {
         return this.logSetting;
     }
@@ -238,6 +262,8 @@ export default class Namespace implements IModel {
             .withConsumeScript(ScriptSetting.fromDict(data["consumeScript"]))
             .withSimpleItemAcquireScript(ScriptSetting.fromDict(data["simpleItemAcquireScript"]))
             .withSimpleItemConsumeScript(ScriptSetting.fromDict(data["simpleItemConsumeScript"]))
+            .withBigItemAcquireScript(ScriptSetting.fromDict(data["bigItemAcquireScript"]))
+            .withBigItemConsumeScript(ScriptSetting.fromDict(data["bigItemConsumeScript"]))
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -254,6 +280,8 @@ export default class Namespace implements IModel {
             "consumeScript": this.getConsumeScript()?.toDict(),
             "simpleItemAcquireScript": this.getSimpleItemAcquireScript()?.toDict(),
             "simpleItemConsumeScript": this.getSimpleItemConsumeScript()?.toDict(),
+            "bigItemAcquireScript": this.getBigItemAcquireScript()?.toDict(),
+            "bigItemConsumeScript": this.getBigItemConsumeScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

@@ -49,7 +49,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region);
@@ -66,7 +66,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'consumeScript': (_j = (_h = request.getConsumeScript()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
             'simpleItemAcquireScript': (_l = (_k = request.getSimpleItemAcquireScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
             'simpleItemConsumeScript': (_o = (_m = request.getSimpleItemConsumeScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'logSetting': (_q = (_p = request.getLogSetting()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'bigItemAcquireScript': (_q = (_p = request.getBigItemAcquireScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'bigItemConsumeScript': (_s = (_r = request.getBigItemConsumeScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'logSetting': (_u = (_t = request.getLogSetting()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -126,7 +128,7 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InventoryRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'inventory')
             .replace('{region}', this.session.region)
@@ -143,7 +145,9 @@ var Gs2InventoryRestClient = /** @class */ (function (_super) {
             'consumeScript': (_k = (_j = request.getConsumeScript()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
             'simpleItemAcquireScript': (_m = (_l = request.getSimpleItemAcquireScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
             'simpleItemConsumeScript': (_p = (_o = request.getSimpleItemConsumeScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
-            'logSetting': (_r = (_q = request.getLogSetting()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'bigItemAcquireScript': (_r = (_q = request.getBigItemAcquireScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'bigItemConsumeScript': (_t = (_s = request.getBigItemConsumeScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'logSetting': (_v = (_u = request.getLogSetting()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

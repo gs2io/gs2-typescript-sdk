@@ -29,6 +29,8 @@ export default class CreateNamespaceRequest implements IRequest {
     private consumeScript: Gs2Inventory.ScriptSetting|null = null;
     private simpleItemAcquireScript: Gs2Inventory.ScriptSetting|null = null;
     private simpleItemConsumeScript: Gs2Inventory.ScriptSetting|null = null;
+    private bigItemAcquireScript: Gs2Inventory.ScriptSetting|null = null;
+    private bigItemConsumeScript: Gs2Inventory.ScriptSetting|null = null;
     private logSetting: Gs2Inventory.LogSetting|null = null;
 
     public getRequestId(): string|null {
@@ -135,6 +137,28 @@ export default class CreateNamespaceRequest implements IRequest {
         this.simpleItemConsumeScript = simpleItemConsumeScript;
         return this;
     }
+    public getBigItemAcquireScript(): Gs2Inventory.ScriptSetting|null {
+        return this.bigItemAcquireScript;
+    }
+    public setBigItemAcquireScript(bigItemAcquireScript: Gs2Inventory.ScriptSetting|null) {
+        this.bigItemAcquireScript = bigItemAcquireScript;
+        return this;
+    }
+    public withBigItemAcquireScript(bigItemAcquireScript: Gs2Inventory.ScriptSetting|null): this {
+        this.bigItemAcquireScript = bigItemAcquireScript;
+        return this;
+    }
+    public getBigItemConsumeScript(): Gs2Inventory.ScriptSetting|null {
+        return this.bigItemConsumeScript;
+    }
+    public setBigItemConsumeScript(bigItemConsumeScript: Gs2Inventory.ScriptSetting|null) {
+        this.bigItemConsumeScript = bigItemConsumeScript;
+        return this;
+    }
+    public withBigItemConsumeScript(bigItemConsumeScript: Gs2Inventory.ScriptSetting|null): this {
+        this.bigItemConsumeScript = bigItemConsumeScript;
+        return this;
+    }
     public getLogSetting(): Gs2Inventory.LogSetting|null {
         return this.logSetting;
     }
@@ -156,6 +180,8 @@ export default class CreateNamespaceRequest implements IRequest {
             .withConsumeScript(Gs2Inventory.ScriptSetting.fromDict(data["consumeScript"]))
             .withSimpleItemAcquireScript(Gs2Inventory.ScriptSetting.fromDict(data["simpleItemAcquireScript"]))
             .withSimpleItemConsumeScript(Gs2Inventory.ScriptSetting.fromDict(data["simpleItemConsumeScript"]))
+            .withBigItemAcquireScript(Gs2Inventory.ScriptSetting.fromDict(data["bigItemAcquireScript"]))
+            .withBigItemConsumeScript(Gs2Inventory.ScriptSetting.fromDict(data["bigItemConsumeScript"]))
             .withLogSetting(Gs2Inventory.LogSetting.fromDict(data["logSetting"]));
     }
 
@@ -168,6 +194,8 @@ export default class CreateNamespaceRequest implements IRequest {
             "consumeScript": this.getConsumeScript()?.toDict(),
             "simpleItemAcquireScript": this.getSimpleItemAcquireScript()?.toDict(),
             "simpleItemConsumeScript": this.getSimpleItemConsumeScript()?.toDict(),
+            "bigItemAcquireScript": this.getBigItemAcquireScript()?.toDict(),
+            "bigItemConsumeScript": this.getBigItemConsumeScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
         };
     }
