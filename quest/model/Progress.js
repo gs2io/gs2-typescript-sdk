@@ -26,6 +26,7 @@ var Progress = /** @class */ (function () {
         this.questModelId = null;
         this.randomSeed = null;
         this.rewards = null;
+        this.failedRewards = null;
         this.metadata = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -163,6 +164,17 @@ var Progress = /** @class */ (function () {
         this.rewards = rewards;
         return this;
     };
+    Progress.prototype.getFailedRewards = function () {
+        return this.failedRewards;
+    };
+    Progress.prototype.setFailedRewards = function (failedRewards) {
+        this.failedRewards = failedRewards;
+        return this;
+    };
+    Progress.prototype.withFailedRewards = function (failedRewards) {
+        this.failedRewards = failedRewards;
+        return this;
+    };
     Progress.prototype.getMetadata = function () {
         return this.metadata;
     };
@@ -221,6 +233,10 @@ var Progress = /** @class */ (function () {
             data.rewards.map(function (item) {
                 return Reward_1.default.fromDict(item);
             }) : [])
+            .withFailedRewards(data.failedRewards ?
+            data.failedRewards.map(function (item) {
+                return Reward_1.default.fromDict(item);
+            }) : [])
             .withMetadata(data["metadata"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -235,6 +251,10 @@ var Progress = /** @class */ (function () {
             "randomSeed": this.getRandomSeed(),
             "rewards": this.getRewards() ?
                 this.getRewards().map(function (item) {
+                    return item.toDict();
+                }) : [],
+            "failedRewards": this.getFailedRewards() ?
+                this.getFailedRewards().map(function (item) {
                     return item.toDict();
                 }) : [],
             "metadata": this.getMetadata(),

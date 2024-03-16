@@ -25,6 +25,7 @@ export default class Progress implements IModel {
     private questModelId: string|null = null;
     private randomSeed: number|null = null;
     private rewards: Reward[]|null = null;
+    private failedRewards: Reward[]|null = null;
     private metadata: string|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -176,6 +177,17 @@ export default class Progress implements IModel {
         this.rewards = rewards;
         return this;
     }
+    public getFailedRewards(): Reward[]|null {
+        return this.failedRewards;
+    }
+    public setFailedRewards(failedRewards: Reward[]|null) {
+        this.failedRewards = failedRewards;
+        return this;
+    }
+    public withFailedRewards(failedRewards: Reward[]|null): this {
+        this.failedRewards = failedRewards;
+        return this;
+    }
     public getMetadata(): string|null {
         return this.metadata;
     }
@@ -236,6 +248,11 @@ export default class Progress implements IModel {
                     return Reward.fromDict(item);
                 }
             ) : [])
+            .withFailedRewards(data.failedRewards ?
+                data.failedRewards.map((item: {[key: string]: any}) => {
+                    return Reward.fromDict(item);
+                }
+            ) : [])
             .withMetadata(data["metadata"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -251,6 +268,11 @@ export default class Progress implements IModel {
             "randomSeed": this.getRandomSeed(),
             "rewards": this.getRewards() ?
                 this.getRewards()!.map((item: Reward) => {
+                    return item.toDict();
+                }
+            ) : [],
+            "failedRewards": this.getFailedRewards() ?
+                this.getFailedRewards()!.map((item: Reward) => {
                     return item.toDict();
                 }
             ) : [],

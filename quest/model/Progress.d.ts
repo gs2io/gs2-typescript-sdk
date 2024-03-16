@@ -7,6 +7,7 @@ export default class Progress implements IModel {
     private questModelId;
     private randomSeed;
     private rewards;
+    private failedRewards;
     private metadata;
     private createdAt;
     private updatedAt;
@@ -35,6 +36,9 @@ export default class Progress implements IModel {
     getRewards(): Reward[] | null;
     setRewards(rewards: Reward[] | null): this;
     withRewards(rewards: Reward[] | null): this;
+    getFailedRewards(): Reward[] | null;
+    setFailedRewards(failedRewards: Reward[] | null): this;
+    withFailedRewards(failedRewards: Reward[] | null): this;
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
