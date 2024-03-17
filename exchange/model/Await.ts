@@ -24,7 +24,9 @@ export default class Await implements IModel {
     private rateName: string|null = null;
     private name: string|null = null;
     private count: number|null = null;
+    private skipSeconds: number|null = null;
     private config: Config[]|null = null;
+    private acquirableAt: number|null = null;
     private exchangedAt: number|null = null;
     private revision: number|null = null;
 
@@ -186,6 +188,17 @@ export default class Await implements IModel {
         this.count = count;
         return this;
     }
+    public getSkipSeconds(): number|null {
+        return this.skipSeconds;
+    }
+    public setSkipSeconds(skipSeconds: number|null) {
+        this.skipSeconds = skipSeconds;
+        return this;
+    }
+    public withSkipSeconds(skipSeconds: number|null): this {
+        this.skipSeconds = skipSeconds;
+        return this;
+    }
     public getConfig(): Config[]|null {
         return this.config;
     }
@@ -195,6 +208,17 @@ export default class Await implements IModel {
     }
     public withConfig(config: Config[]|null): this {
         this.config = config;
+        return this;
+    }
+    public getAcquirableAt(): number|null {
+        return this.acquirableAt;
+    }
+    public setAcquirableAt(acquirableAt: number|null) {
+        this.acquirableAt = acquirableAt;
+        return this;
+    }
+    public withAcquirableAt(acquirableAt: number|null): this {
+        this.acquirableAt = acquirableAt;
         return this;
     }
     public getExchangedAt(): number|null {
@@ -230,11 +254,13 @@ export default class Await implements IModel {
             .withRateName(data["rateName"])
             .withName(data["name"])
             .withCount(data["count"])
+            .withSkipSeconds(data["skipSeconds"])
             .withConfig(data.config ?
                 data.config.map((item: {[key: string]: any}) => {
                     return Config.fromDict(item);
                 }
             ) : [])
+            .withAcquirableAt(data["acquirableAt"])
             .withExchangedAt(data["exchangedAt"])
             .withRevision(data["revision"]);
     }
@@ -246,11 +272,13 @@ export default class Await implements IModel {
             "rateName": this.getRateName(),
             "name": this.getName(),
             "count": this.getCount(),
+            "skipSeconds": this.getSkipSeconds(),
             "config": this.getConfig() ?
                 this.getConfig()!.map((item: Config) => {
                     return item.toDict();
                 }
             ) : [],
+            "acquirableAt": this.getAcquirableAt(),
             "exchangedAt": this.getExchangedAt(),
             "revision": this.getRevision(),
         };

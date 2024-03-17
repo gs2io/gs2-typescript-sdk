@@ -27,8 +27,6 @@ var UpdateRateModelMasterRequest = /** @class */ (function () {
         this.metadata = null;
         this.timingType = null;
         this.lockTime = null;
-        this.enableSkip = null;
-        this.skipConsumeActions = null;
         this.acquireActions = null;
         this.consumeActions = null;
     }
@@ -120,28 +118,6 @@ var UpdateRateModelMasterRequest = /** @class */ (function () {
         this.lockTime = lockTime;
         return this;
     };
-    UpdateRateModelMasterRequest.prototype.getEnableSkip = function () {
-        return this.enableSkip;
-    };
-    UpdateRateModelMasterRequest.prototype.setEnableSkip = function (enableSkip) {
-        this.enableSkip = enableSkip;
-        return this;
-    };
-    UpdateRateModelMasterRequest.prototype.withEnableSkip = function (enableSkip) {
-        this.enableSkip = enableSkip;
-        return this;
-    };
-    UpdateRateModelMasterRequest.prototype.getSkipConsumeActions = function () {
-        return this.skipConsumeActions;
-    };
-    UpdateRateModelMasterRequest.prototype.setSkipConsumeActions = function (skipConsumeActions) {
-        this.skipConsumeActions = skipConsumeActions;
-        return this;
-    };
-    UpdateRateModelMasterRequest.prototype.withSkipConsumeActions = function (skipConsumeActions) {
-        this.skipConsumeActions = skipConsumeActions;
-        return this;
-    };
     UpdateRateModelMasterRequest.prototype.getAcquireActions = function () {
         return this.acquireActions;
     };
@@ -172,11 +148,6 @@ var UpdateRateModelMasterRequest = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withTimingType(data["timingType"])
             .withLockTime(data["lockTime"])
-            .withEnableSkip(data["enableSkip"])
-            .withSkipConsumeActions(data.skipConsumeActions ?
-            data.skipConsumeActions.map(function (item) {
-                return Gs2Exchange.ConsumeAction.fromDict(item);
-            }) : [])
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
                 return Gs2Exchange.AcquireAction.fromDict(item);
@@ -194,11 +165,6 @@ var UpdateRateModelMasterRequest = /** @class */ (function () {
             "metadata": this.getMetadata(),
             "timingType": this.getTimingType(),
             "lockTime": this.getLockTime(),
-            "enableSkip": this.getEnableSkip(),
-            "skipConsumeActions": this.getSkipConsumeActions() ?
-                this.getSkipConsumeActions().map(function (item) {
-                    return item.toDict();
-                }) : [],
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();

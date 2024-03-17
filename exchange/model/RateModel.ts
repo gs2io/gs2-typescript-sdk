@@ -26,8 +26,6 @@ export default class RateModel implements IModel {
     private consumeActions: ConsumeAction[]|null = null;
     private timingType: string|null = null;
     private lockTime: number|null = null;
-    private enableSkip: boolean|null = null;
-    private skipConsumeActions: ConsumeAction[]|null = null;
     private acquireActions: AcquireAction[]|null = null;
 
     public static getRegion(grn: string): string|null {
@@ -176,28 +174,6 @@ export default class RateModel implements IModel {
         this.lockTime = lockTime;
         return this;
     }
-    public getEnableSkip(): boolean|null {
-        return this.enableSkip;
-    }
-    public setEnableSkip(enableSkip: boolean|null) {
-        this.enableSkip = enableSkip;
-        return this;
-    }
-    public withEnableSkip(enableSkip: boolean|null): this {
-        this.enableSkip = enableSkip;
-        return this;
-    }
-    public getSkipConsumeActions(): ConsumeAction[]|null {
-        return this.skipConsumeActions;
-    }
-    public setSkipConsumeActions(skipConsumeActions: ConsumeAction[]|null) {
-        this.skipConsumeActions = skipConsumeActions;
-        return this;
-    }
-    public withSkipConsumeActions(skipConsumeActions: ConsumeAction[]|null): this {
-        this.skipConsumeActions = skipConsumeActions;
-        return this;
-    }
     public getAcquireActions(): AcquireAction[]|null {
         return this.acquireActions;
     }
@@ -225,12 +201,6 @@ export default class RateModel implements IModel {
             ) : [])
             .withTimingType(data["timingType"])
             .withLockTime(data["lockTime"])
-            .withEnableSkip(data["enableSkip"])
-            .withSkipConsumeActions(data.skipConsumeActions ?
-                data.skipConsumeActions.map((item: {[key: string]: any}) => {
-                    return ConsumeAction.fromDict(item);
-                }
-            ) : [])
             .withAcquireActions(data.acquireActions ?
                 data.acquireActions.map((item: {[key: string]: any}) => {
                     return AcquireAction.fromDict(item);
@@ -250,12 +220,6 @@ export default class RateModel implements IModel {
             ) : [],
             "timingType": this.getTimingType(),
             "lockTime": this.getLockTime(),
-            "enableSkip": this.getEnableSkip(),
-            "skipConsumeActions": this.getSkipConsumeActions() ?
-                this.getSkipConsumeActions()!.map((item: ConsumeAction) => {
-                    return item.toDict();
-                }
-            ) : [],
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions()!.map((item: AcquireAction) => {
                     return item.toDict();

@@ -60,11 +60,11 @@ import GetAwaitByUserIdResult from "./GetAwaitByUserIdResult"
 import AcquireResult from "./AcquireResult"
 import AcquireByUserIdResult from "./AcquireByUserIdResult"
 import AcquireForceByUserIdResult from "./AcquireForceByUserIdResult"
-import SkipResult from "./SkipResult"
 import SkipByUserIdResult from "./SkipByUserIdResult"
 import DeleteAwaitResult from "./DeleteAwaitResult"
 import DeleteAwaitByUserIdResult from "./DeleteAwaitByUserIdResult"
 import CreateAwaitByStampSheetResult from "./CreateAwaitByStampSheetResult"
+import SkipByStampSheetResult from "./SkipByStampSheetResult"
 import DeleteAwaitByStampTaskResult from "./DeleteAwaitByStampTaskResult"
 
 export {
@@ -115,10 +115,10 @@ export {
     AcquireResult,
     AcquireByUserIdResult,
     AcquireForceByUserIdResult,
-    SkipResult,
     SkipByUserIdResult,
     DeleteAwaitResult,
     DeleteAwaitByUserIdResult,
     CreateAwaitByStampSheetResult,
+    SkipByStampSheetResult,
     DeleteAwaitByStampTaskResult,
 };

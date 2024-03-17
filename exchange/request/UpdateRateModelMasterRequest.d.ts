@@ -9,8 +9,6 @@ export default class UpdateRateModelMasterRequest implements IRequest {
     private metadata;
     private timingType;
     private lockTime;
-    private enableSkip;
-    private skipConsumeActions;
     private acquireActions;
     private consumeActions;
     getRequestId(): string | null;
@@ -37,12 +35,6 @@ export default class UpdateRateModelMasterRequest implements IRequest {
     getLockTime(): number | null;
     setLockTime(lockTime: number | null): this;
     withLockTime(lockTime: number | null): this;
-    getEnableSkip(): boolean | null;
-    setEnableSkip(enableSkip: boolean | null): this;
-    withEnableSkip(enableSkip: boolean | null): this;
-    getSkipConsumeActions(): Gs2Exchange.ConsumeAction[] | null;
-    setSkipConsumeActions(skipConsumeActions: Gs2Exchange.ConsumeAction[] | null): this;
-    withSkipConsumeActions(skipConsumeActions: Gs2Exchange.ConsumeAction[] | null): this;
     getAcquireActions(): Gs2Exchange.AcquireAction[] | null;
     setAcquireActions(acquireActions: Gs2Exchange.AcquireAction[] | null): this;
     withAcquireActions(acquireActions: Gs2Exchange.AcquireAction[] | null): this;

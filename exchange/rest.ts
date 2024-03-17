@@ -550,8 +550,6 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
             'metadata': request.getMetadata() ?? null,
             'timingType': request.getTimingType() ?? null,
             'lockTime': request.getLockTime() ?? null,
-            'enableSkip': request.getEnableSkip() ?? null,
-            'skipConsumeActions': request.getSkipConsumeActions()?.map((item) => item.toDict()) ?? null,
             'acquireActions': request.getAcquireActions()?.map((item) => item.toDict()) ?? null,
             'consumeActions': request.getConsumeActions()?.map((item) => item.toDict()) ?? null,
         };
@@ -616,8 +614,6 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
             'metadata': request.getMetadata() ?? null,
             'timingType': request.getTimingType() ?? null,
             'lockTime': request.getLockTime() ?? null,
-            'enableSkip': request.getEnableSkip() ?? null,
-            'skipConsumeActions': request.getSkipConsumeActions()?.map((item) => item.toDict()) ?? null,
             'acquireActions': request.getAcquireActions()?.map((item) => item.toDict()) ?? null,
             'consumeActions': request.getConsumeActions()?.map((item) => item.toDict()) ?? null,
         };
@@ -1568,44 +1564,6 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
         });
     }
 
-    public skip(request: Request.SkipRequest): Promise<Result.SkipResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/exchange/await/{awaitName}/skip')
-            .replace('{service}', 'exchange')
-            .replace('{region}', this.session.region)
-            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{awaitName}', String(request.getAwaitName() ?? 'null') === "" ? "null" : String(request.getAwaitName() ?? 'null'));
-    
-        const headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        if (request.getAccessToken()) {
-            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
-        }
-        if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
-        }
-        const body: {[key: string]: any} = {
-            'contextStack': request.getContextStack() ?? null,
-            'config': request.getConfig()?.map((item) => item.toDict()) ?? null,
-        };
-        return axios.post(
-            url,
-            body,
-            {
-                headers,
-            },
-        ).then((response: any) => {
-            return Result.SkipResult.fromDict(response.data);
-        }).catch((error: any) => {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            } else {
-                throw [];
-            }
-        });
-    }
-
     public skipByUserId(request: Request.SkipByUserIdRequest): Promise<Result.SkipByUserIdResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/exchange/await/{awaitName}/skip')
             .replace('{service}', 'exchange')
@@ -1626,7 +1584,9 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
-            'config': request.getConfig()?.map((item) => item.toDict()) ?? null,
+            'skipType': request.getSkipType() ?? null,
+            'minutes': request.getMinutes() ?? null,
+            'rate': request.getRate() ?? null,
         };
         return axios.post(
             url,
@@ -1734,6 +1694,37 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.CreateAwaitByStampSheetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public skipByStampSheet(request: Request.SkipByStampSheetRequest): Promise<Result.SkipByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/await/skip')
+            .replace('{service}', 'exchange')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SkipByStampSheetResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

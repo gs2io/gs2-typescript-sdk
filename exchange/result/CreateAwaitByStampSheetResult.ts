@@ -19,7 +19,6 @@ import * as Gs2Exchange from '../model'
 
 export default class CreateAwaitByStampSheetResult implements IResult {
     private item: Gs2Exchange.Await|null = null;
-    private unlockAt: number|null = null;
 
     public getItem(): Gs2Exchange.Await|null {
         return this.item;
@@ -35,30 +34,14 @@ export default class CreateAwaitByStampSheetResult implements IResult {
         return this;
     }
 
-    public getUnlockAt(): number|null {
-        return this.unlockAt;
-    }
-
-    public setUnlockAt(unlockAt: number|null) {
-        this.unlockAt = unlockAt;
-        return this;
-    }
-
-    public withUnlockAt(unlockAt: number|null): this {
-        this.unlockAt = unlockAt;
-        return this;
-    }
-
     public static fromDict(data: {[key: string]: any}): CreateAwaitByStampSheetResult {
         return new CreateAwaitByStampSheetResult()
-            .withItem(Gs2Exchange.Await.fromDict(data["item"]))
-            .withUnlockAt(data["unlockAt"]);
+            .withItem(Gs2Exchange.Await.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
-            "unlockAt": this.getUnlockAt(),
         };
     }
 }

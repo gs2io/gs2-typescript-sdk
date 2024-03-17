@@ -28,8 +28,6 @@ export default class UpdateRateModelMasterRequest implements IRequest {
     private metadata: string|null = null;
     private timingType: string|null = null;
     private lockTime: number|null = null;
-    private enableSkip: boolean|null = null;
-    private skipConsumeActions: Gs2Exchange.ConsumeAction[]|null = null;
     private acquireActions: Gs2Exchange.AcquireAction[]|null = null;
     private consumeActions: Gs2Exchange.ConsumeAction[]|null = null;
 
@@ -126,28 +124,6 @@ export default class UpdateRateModelMasterRequest implements IRequest {
         this.lockTime = lockTime;
         return this;
     }
-    public getEnableSkip(): boolean|null {
-        return this.enableSkip;
-    }
-    public setEnableSkip(enableSkip: boolean|null) {
-        this.enableSkip = enableSkip;
-        return this;
-    }
-    public withEnableSkip(enableSkip: boolean|null): this {
-        this.enableSkip = enableSkip;
-        return this;
-    }
-    public getSkipConsumeActions(): Gs2Exchange.ConsumeAction[]|null {
-        return this.skipConsumeActions;
-    }
-    public setSkipConsumeActions(skipConsumeActions: Gs2Exchange.ConsumeAction[]|null) {
-        this.skipConsumeActions = skipConsumeActions;
-        return this;
-    }
-    public withSkipConsumeActions(skipConsumeActions: Gs2Exchange.ConsumeAction[]|null): this {
-        this.skipConsumeActions = skipConsumeActions;
-        return this;
-    }
     public getAcquireActions(): Gs2Exchange.AcquireAction[]|null {
         return this.acquireActions;
     }
@@ -179,12 +155,6 @@ export default class UpdateRateModelMasterRequest implements IRequest {
             .withMetadata(data["metadata"])
             .withTimingType(data["timingType"])
             .withLockTime(data["lockTime"])
-            .withEnableSkip(data["enableSkip"])
-            .withSkipConsumeActions(data.skipConsumeActions ?
-                data.skipConsumeActions.map((item: {[key: string]: any}) => {
-                    return Gs2Exchange.ConsumeAction.fromDict(item);
-                }
-            ) : [])
             .withAcquireActions(data.acquireActions ?
                 data.acquireActions.map((item: {[key: string]: any}) => {
                     return Gs2Exchange.AcquireAction.fromDict(item);
@@ -205,12 +175,6 @@ export default class UpdateRateModelMasterRequest implements IRequest {
             "metadata": this.getMetadata(),
             "timingType": this.getTimingType(),
             "lockTime": this.getLockTime(),
-            "enableSkip": this.getEnableSkip(),
-            "skipConsumeActions": this.getSkipConsumeActions() ?
-                this.getSkipConsumeActions()!.map((item: Gs2Exchange.ConsumeAction) => {
-                    return item.toDict();
-                }
-            ) : [],
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions()!.map((item: Gs2Exchange.AcquireAction) => {
                     return item.toDict();

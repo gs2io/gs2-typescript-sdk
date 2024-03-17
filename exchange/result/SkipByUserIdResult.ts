@@ -19,10 +19,6 @@ import * as Gs2Exchange from '../model'
 
 export default class SkipByUserIdResult implements IResult {
     private item: Gs2Exchange.Await|null = null;
-    private transactionId: string|null = null;
-    private stampSheet: string|null = null;
-    private stampSheetEncryptionKeyId: string|null = null;
-    private autoRunStampSheet: boolean|null = null;
 
     public getItem(): Gs2Exchange.Await|null {
         return this.item;
@@ -38,78 +34,14 @@ export default class SkipByUserIdResult implements IResult {
         return this;
     }
 
-    public getTransactionId(): string|null {
-        return this.transactionId;
-    }
-
-    public setTransactionId(transactionId: string|null) {
-        this.transactionId = transactionId;
-        return this;
-    }
-
-    public withTransactionId(transactionId: string|null): this {
-        this.transactionId = transactionId;
-        return this;
-    }
-
-    public getStampSheet(): string|null {
-        return this.stampSheet;
-    }
-
-    public setStampSheet(stampSheet: string|null) {
-        this.stampSheet = stampSheet;
-        return this;
-    }
-
-    public withStampSheet(stampSheet: string|null): this {
-        this.stampSheet = stampSheet;
-        return this;
-    }
-
-    public getStampSheetEncryptionKeyId(): string|null {
-        return this.stampSheetEncryptionKeyId;
-    }
-
-    public setStampSheetEncryptionKeyId(stampSheetEncryptionKeyId: string|null) {
-        this.stampSheetEncryptionKeyId = stampSheetEncryptionKeyId;
-        return this;
-    }
-
-    public withStampSheetEncryptionKeyId(stampSheetEncryptionKeyId: string|null): this {
-        this.stampSheetEncryptionKeyId = stampSheetEncryptionKeyId;
-        return this;
-    }
-
-    public getAutoRunStampSheet(): boolean|null {
-        return this.autoRunStampSheet;
-    }
-
-    public setAutoRunStampSheet(autoRunStampSheet: boolean|null) {
-        this.autoRunStampSheet = autoRunStampSheet;
-        return this;
-    }
-
-    public withAutoRunStampSheet(autoRunStampSheet: boolean|null): this {
-        this.autoRunStampSheet = autoRunStampSheet;
-        return this;
-    }
-
     public static fromDict(data: {[key: string]: any}): SkipByUserIdResult {
         return new SkipByUserIdResult()
-            .withItem(Gs2Exchange.Await.fromDict(data["item"]))
-            .withTransactionId(data["transactionId"])
-            .withStampSheet(data["stampSheet"])
-            .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
-            .withAutoRunStampSheet(data["autoRunStampSheet"]);
+            .withItem(Gs2Exchange.Await.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
-            "transactionId": this.getTransactionId(),
-            "stampSheet": this.getStampSheet(),
-            "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
-            "autoRunStampSheet": this.getAutoRunStampSheet(),
         };
     }
 }

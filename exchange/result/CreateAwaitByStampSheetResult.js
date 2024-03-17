@@ -20,7 +20,6 @@ var Gs2Exchange = tslib_1.__importStar(require("../model"));
 var CreateAwaitByStampSheetResult = /** @class */ (function () {
     function CreateAwaitByStampSheetResult() {
         this.item = null;
-        this.unlockAt = null;
     }
     CreateAwaitByStampSheetResult.prototype.getItem = function () {
         return this.item;
@@ -33,27 +32,14 @@ var CreateAwaitByStampSheetResult = /** @class */ (function () {
         this.item = item;
         return this;
     };
-    CreateAwaitByStampSheetResult.prototype.getUnlockAt = function () {
-        return this.unlockAt;
-    };
-    CreateAwaitByStampSheetResult.prototype.setUnlockAt = function (unlockAt) {
-        this.unlockAt = unlockAt;
-        return this;
-    };
-    CreateAwaitByStampSheetResult.prototype.withUnlockAt = function (unlockAt) {
-        this.unlockAt = unlockAt;
-        return this;
-    };
     CreateAwaitByStampSheetResult.fromDict = function (data) {
         return new CreateAwaitByStampSheetResult()
-            .withItem(Gs2Exchange.Await.fromDict(data["item"]))
-            .withUnlockAt(data["unlockAt"]);
+            .withItem(Gs2Exchange.Await.fromDict(data["item"]));
     };
     CreateAwaitByStampSheetResult.prototype.toDict = function () {
         var _a;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "unlockAt": this.getUnlockAt(),
         };
     };
     return CreateAwaitByStampSheetResult;

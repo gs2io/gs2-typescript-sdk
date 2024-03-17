@@ -6,7 +6,9 @@ export default class Await implements IModel {
     private rateName;
     private name;
     private count;
+    private skipSeconds;
     private config;
+    private acquirableAt;
     private exchangedAt;
     private revision;
     static getRegion(grn: string): string | null;
@@ -31,9 +33,15 @@ export default class Await implements IModel {
     getCount(): number | null;
     setCount(count: number | null): this;
     withCount(count: number | null): this;
+    getSkipSeconds(): number | null;
+    setSkipSeconds(skipSeconds: number | null): this;
+    withSkipSeconds(skipSeconds: number | null): this;
     getConfig(): Config[] | null;
     setConfig(config: Config[] | null): this;
     withConfig(config: Config[] | null): this;
+    getAcquirableAt(): number | null;
+    setAcquirableAt(acquirableAt: number | null): this;
+    withAcquirableAt(acquirableAt: number | null): this;
     getExchangedAt(): number | null;
     setExchangedAt(exchangedAt: number | null): this;
     withExchangedAt(exchangedAt: number | null): this;

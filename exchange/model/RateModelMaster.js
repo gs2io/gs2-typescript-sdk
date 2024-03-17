@@ -28,8 +28,6 @@ var RateModelMaster = /** @class */ (function () {
         this.consumeActions = null;
         this.timingType = null;
         this.lockTime = null;
-        this.enableSkip = null;
-        this.skipConsumeActions = null;
         this.acquireActions = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -178,28 +176,6 @@ var RateModelMaster = /** @class */ (function () {
         this.lockTime = lockTime;
         return this;
     };
-    RateModelMaster.prototype.getEnableSkip = function () {
-        return this.enableSkip;
-    };
-    RateModelMaster.prototype.setEnableSkip = function (enableSkip) {
-        this.enableSkip = enableSkip;
-        return this;
-    };
-    RateModelMaster.prototype.withEnableSkip = function (enableSkip) {
-        this.enableSkip = enableSkip;
-        return this;
-    };
-    RateModelMaster.prototype.getSkipConsumeActions = function () {
-        return this.skipConsumeActions;
-    };
-    RateModelMaster.prototype.setSkipConsumeActions = function (skipConsumeActions) {
-        this.skipConsumeActions = skipConsumeActions;
-        return this;
-    };
-    RateModelMaster.prototype.withSkipConsumeActions = function (skipConsumeActions) {
-        this.skipConsumeActions = skipConsumeActions;
-        return this;
-    };
     RateModelMaster.prototype.getAcquireActions = function () {
         return this.acquireActions;
     };
@@ -259,11 +235,6 @@ var RateModelMaster = /** @class */ (function () {
             }) : [])
             .withTimingType(data["timingType"])
             .withLockTime(data["lockTime"])
-            .withEnableSkip(data["enableSkip"])
-            .withSkipConsumeActions(data.skipConsumeActions ?
-            data.skipConsumeActions.map(function (item) {
-                return ConsumeAction_1.default.fromDict(item);
-            }) : [])
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
                 return AcquireAction_1.default.fromDict(item);
@@ -284,11 +255,6 @@ var RateModelMaster = /** @class */ (function () {
                 }) : [],
             "timingType": this.getTimingType(),
             "lockTime": this.getLockTime(),
-            "enableSkip": this.getEnableSkip(),
-            "skipConsumeActions": this.getSkipConsumeActions() ?
-                this.getSkipConsumeActions().map(function (item) {
-                    return item.toDict();
-                }) : [],
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();

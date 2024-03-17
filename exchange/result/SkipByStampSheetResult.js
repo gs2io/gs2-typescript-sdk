@@ -17,32 +17,32 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Gs2Exchange = tslib_1.__importStar(require("../model"));
-var CreateAwaitByUserIdResult = /** @class */ (function () {
-    function CreateAwaitByUserIdResult() {
+var SkipByStampSheetResult = /** @class */ (function () {
+    function SkipByStampSheetResult() {
         this.item = null;
     }
-    CreateAwaitByUserIdResult.prototype.getItem = function () {
+    SkipByStampSheetResult.prototype.getItem = function () {
         return this.item;
     };
-    CreateAwaitByUserIdResult.prototype.setItem = function (item) {
+    SkipByStampSheetResult.prototype.setItem = function (item) {
         this.item = item;
         return this;
     };
-    CreateAwaitByUserIdResult.prototype.withItem = function (item) {
+    SkipByStampSheetResult.prototype.withItem = function (item) {
         this.item = item;
         return this;
     };
-    CreateAwaitByUserIdResult.fromDict = function (data) {
-        return new CreateAwaitByUserIdResult()
+    SkipByStampSheetResult.fromDict = function (data) {
+        return new SkipByStampSheetResult()
             .withItem(Gs2Exchange.Await.fromDict(data["item"]));
     };
-    CreateAwaitByUserIdResult.prototype.toDict = function () {
+    SkipByStampSheetResult.prototype.toDict = function () {
         var _a;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
         };
     };
-    return CreateAwaitByUserIdResult;
+    return SkipByStampSheetResult;
 }());
-exports.default = CreateAwaitByUserIdResult;
-//# sourceMappingURL=CreateAwaitByUserIdResult.js.map
+exports.default = SkipByStampSheetResult;
+//# sourceMappingURL=SkipByStampSheetResult.js.map

@@ -25,7 +25,9 @@ export default class SkipByUserIdRequest implements IRequest {
     private namespaceName: string|null = null;
     private userId: string|null = null;
     private awaitName: string|null = null;
-    private config: Gs2Exchange.Config[]|null = null;
+    private skipType: string|null = null;
+    private minutes: number|null = null;
+    private rate: number|null = null;
     private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
@@ -89,15 +91,37 @@ export default class SkipByUserIdRequest implements IRequest {
         this.awaitName = awaitName;
         return this;
     }
-    public getConfig(): Gs2Exchange.Config[]|null {
-        return this.config;
+    public getSkipType(): string|null {
+        return this.skipType;
     }
-    public setConfig(config: Gs2Exchange.Config[]|null) {
-        this.config = config;
+    public setSkipType(skipType: string|null) {
+        this.skipType = skipType;
         return this;
     }
-    public withConfig(config: Gs2Exchange.Config[]|null): this {
-        this.config = config;
+    public withSkipType(skipType: string|null): this {
+        this.skipType = skipType;
+        return this;
+    }
+    public getMinutes(): number|null {
+        return this.minutes;
+    }
+    public setMinutes(minutes: number|null) {
+        this.minutes = minutes;
+        return this;
+    }
+    public withMinutes(minutes: number|null): this {
+        this.minutes = minutes;
+        return this;
+    }
+    public getRate(): number|null {
+        return this.rate;
+    }
+    public setRate(rate: number|null) {
+        this.rate = rate;
+        return this;
+    }
+    public withRate(rate: number|null): this {
+        this.rate = rate;
         return this;
     }
     public getTimeOffsetToken(): string|null {
@@ -131,11 +155,9 @@ export default class SkipByUserIdRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withAwaitName(data["awaitName"])
-            .withConfig(data.config ?
-                data.config.map((item: {[key: string]: any}) => {
-                    return Gs2Exchange.Config.fromDict(item);
-                }
-            ) : [])
+            .withSkipType(data["skipType"])
+            .withMinutes(data["minutes"])
+            .withRate(data["rate"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -144,11 +166,9 @@ export default class SkipByUserIdRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "awaitName": this.getAwaitName(),
-            "config": this.getConfig() ?
-                this.getConfig()!.map((item: Gs2Exchange.Config) => {
-                    return item.toDict();
-                }
-            ) : [],
+            "skipType": this.getSkipType(),
+            "minutes": this.getMinutes(),
+            "rate": this.getRate(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

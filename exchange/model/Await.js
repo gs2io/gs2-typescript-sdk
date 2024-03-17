@@ -25,7 +25,9 @@ var Await = /** @class */ (function () {
         this.rateName = null;
         this.name = null;
         this.count = null;
+        this.skipSeconds = null;
         this.config = null;
+        this.acquirableAt = null;
         this.exchangedAt = null;
         this.revision = null;
     }
@@ -170,6 +172,17 @@ var Await = /** @class */ (function () {
         this.count = count;
         return this;
     };
+    Await.prototype.getSkipSeconds = function () {
+        return this.skipSeconds;
+    };
+    Await.prototype.setSkipSeconds = function (skipSeconds) {
+        this.skipSeconds = skipSeconds;
+        return this;
+    };
+    Await.prototype.withSkipSeconds = function (skipSeconds) {
+        this.skipSeconds = skipSeconds;
+        return this;
+    };
     Await.prototype.getConfig = function () {
         return this.config;
     };
@@ -179,6 +192,17 @@ var Await = /** @class */ (function () {
     };
     Await.prototype.withConfig = function (config) {
         this.config = config;
+        return this;
+    };
+    Await.prototype.getAcquirableAt = function () {
+        return this.acquirableAt;
+    };
+    Await.prototype.setAcquirableAt = function (acquirableAt) {
+        this.acquirableAt = acquirableAt;
+        return this;
+    };
+    Await.prototype.withAcquirableAt = function (acquirableAt) {
+        this.acquirableAt = acquirableAt;
         return this;
     };
     Await.prototype.getExchangedAt = function () {
@@ -213,10 +237,12 @@ var Await = /** @class */ (function () {
             .withRateName(data["rateName"])
             .withName(data["name"])
             .withCount(data["count"])
+            .withSkipSeconds(data["skipSeconds"])
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Config_1.default.fromDict(item);
             }) : [])
+            .withAcquirableAt(data["acquirableAt"])
             .withExchangedAt(data["exchangedAt"])
             .withRevision(data["revision"]);
     };
@@ -227,10 +253,12 @@ var Await = /** @class */ (function () {
             "rateName": this.getRateName(),
             "name": this.getName(),
             "count": this.getCount(),
+            "skipSeconds": this.getSkipSeconds(),
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "acquirableAt": this.getAcquirableAt(),
             "exchangedAt": this.getExchangedAt(),
             "revision": this.getRevision(),
         };

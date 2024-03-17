@@ -15,8 +15,6 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = require("tslib");
-var Gs2Exchange = tslib_1.__importStar(require("../model"));
 var SkipByUserIdRequest = /** @class */ (function () {
     function SkipByUserIdRequest() {
         this.requestId = null;
@@ -24,7 +22,9 @@ var SkipByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.awaitName = null;
-        this.config = null;
+        this.skipType = null;
+        this.minutes = null;
+        this.rate = null;
         this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
@@ -83,15 +83,37 @@ var SkipByUserIdRequest = /** @class */ (function () {
         this.awaitName = awaitName;
         return this;
     };
-    SkipByUserIdRequest.prototype.getConfig = function () {
-        return this.config;
+    SkipByUserIdRequest.prototype.getSkipType = function () {
+        return this.skipType;
     };
-    SkipByUserIdRequest.prototype.setConfig = function (config) {
-        this.config = config;
+    SkipByUserIdRequest.prototype.setSkipType = function (skipType) {
+        this.skipType = skipType;
         return this;
     };
-    SkipByUserIdRequest.prototype.withConfig = function (config) {
-        this.config = config;
+    SkipByUserIdRequest.prototype.withSkipType = function (skipType) {
+        this.skipType = skipType;
+        return this;
+    };
+    SkipByUserIdRequest.prototype.getMinutes = function () {
+        return this.minutes;
+    };
+    SkipByUserIdRequest.prototype.setMinutes = function (minutes) {
+        this.minutes = minutes;
+        return this;
+    };
+    SkipByUserIdRequest.prototype.withMinutes = function (minutes) {
+        this.minutes = minutes;
+        return this;
+    };
+    SkipByUserIdRequest.prototype.getRate = function () {
+        return this.rate;
+    };
+    SkipByUserIdRequest.prototype.setRate = function (rate) {
+        this.rate = rate;
+        return this;
+    };
+    SkipByUserIdRequest.prototype.withRate = function (rate) {
+        this.rate = rate;
         return this;
     };
     SkipByUserIdRequest.prototype.getTimeOffsetToken = function () {
@@ -121,10 +143,9 @@ var SkipByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withAwaitName(data["awaitName"])
-            .withConfig(data.config ?
-            data.config.map(function (item) {
-                return Gs2Exchange.Config.fromDict(item);
-            }) : [])
+            .withSkipType(data["skipType"])
+            .withMinutes(data["minutes"])
+            .withRate(data["rate"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SkipByUserIdRequest.prototype.toDict = function () {
@@ -132,10 +153,9 @@ var SkipByUserIdRequest = /** @class */ (function () {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "awaitName": this.getAwaitName(),
-            "config": this.getConfig() ?
-                this.getConfig().map(function (item) {
-                    return item.toDict();
-                }) : [],
+            "skipType": this.getSkipType(),
+            "minutes": this.getMinutes(),
+            "rate": this.getRate(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

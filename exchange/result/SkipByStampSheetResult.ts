@@ -17,7 +17,7 @@ permissions and limitations under the License.
 import IResult from '../../core/interface/IResult';
 import * as Gs2Exchange from '../model'
 
-export default class CreateAwaitByUserIdResult implements IResult {
+export default class SkipByStampSheetResult implements IResult {
     private item: Gs2Exchange.Await|null = null;
 
     public getItem(): Gs2Exchange.Await|null {
@@ -34,8 +34,8 @@ export default class CreateAwaitByUserIdResult implements IResult {
         return this;
     }
 
-    public static fromDict(data: {[key: string]: any}): CreateAwaitByUserIdResult {
-        return new CreateAwaitByUserIdResult()
+    public static fromDict(data: {[key: string]: any}): SkipByStampSheetResult {
+        return new SkipByStampSheetResult()
             .withItem(Gs2Exchange.Await.fromDict(data["item"]));
     }
 

@@ -1,12 +1,13 @@
 import IRequest from '../../core/interface/IRequest';
-import * as Gs2Exchange from '../model';
 export default class SkipByUserIdRequest implements IRequest {
     private requestId;
     private contextStack;
     private namespaceName;
     private userId;
     private awaitName;
-    private config;
+    private skipType;
+    private minutes;
+    private rate;
     private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -24,9 +25,15 @@ export default class SkipByUserIdRequest implements IRequest {
     getAwaitName(): string | null;
     setAwaitName(awaitName: string | null): this;
     withAwaitName(awaitName: string | null): this;
-    getConfig(): Gs2Exchange.Config[] | null;
-    setConfig(config: Gs2Exchange.Config[] | null): this;
-    withConfig(config: Gs2Exchange.Config[] | null): this;
+    getSkipType(): string | null;
+    setSkipType(skipType: string | null): this;
+    withSkipType(skipType: string | null): this;
+    getMinutes(): number | null;
+    setMinutes(minutes: number | null): this;
+    withMinutes(minutes: number | null): this;
+    getRate(): number | null;
+    setRate(rate: number | null): this;
+    withRate(rate: number | null): this;
     getTimeOffsetToken(): string | null;
     setTimeOffsetToken(timeOffsetToken: string | null): this;
     withTimeOffsetToken(timeOffsetToken: string | null): this;

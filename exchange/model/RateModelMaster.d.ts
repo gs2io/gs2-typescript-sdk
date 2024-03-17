@@ -9,8 +9,6 @@ export default class RateModelMaster implements IModel {
     private consumeActions;
     private timingType;
     private lockTime;
-    private enableSkip;
-    private skipConsumeActions;
     private acquireActions;
     private createdAt;
     private updatedAt;
@@ -42,12 +40,6 @@ export default class RateModelMaster implements IModel {
     getLockTime(): number | null;
     setLockTime(lockTime: number | null): this;
     withLockTime(lockTime: number | null): this;
-    getEnableSkip(): boolean | null;
-    setEnableSkip(enableSkip: boolean | null): this;
-    withEnableSkip(enableSkip: boolean | null): this;
-    getSkipConsumeActions(): ConsumeAction[] | null;
-    setSkipConsumeActions(skipConsumeActions: ConsumeAction[] | null): this;
-    withSkipConsumeActions(skipConsumeActions: ConsumeAction[] | null): this;
     getAcquireActions(): AcquireAction[] | null;
     setAcquireActions(acquireActions: AcquireAction[] | null): this;
     withAcquireActions(acquireActions: AcquireAction[] | null): this;
