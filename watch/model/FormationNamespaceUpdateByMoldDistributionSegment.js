@@ -17,18 +17,18 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var FormationNamespaceUpdateByMoldDistributionSegment = /** @class */ (function () {
     function FormationNamespaceUpdateByMoldDistributionSegment() {
-        this.moldName = null;
+        this.moldModelName = null;
         this.count = null;
     }
-    FormationNamespaceUpdateByMoldDistributionSegment.prototype.getMoldName = function () {
-        return this.moldName;
+    FormationNamespaceUpdateByMoldDistributionSegment.prototype.getMoldModelName = function () {
+        return this.moldModelName;
     };
-    FormationNamespaceUpdateByMoldDistributionSegment.prototype.setMoldName = function (moldName) {
-        this.moldName = moldName;
+    FormationNamespaceUpdateByMoldDistributionSegment.prototype.setMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
-    FormationNamespaceUpdateByMoldDistributionSegment.prototype.withMoldName = function (moldName) {
-        this.moldName = moldName;
+    FormationNamespaceUpdateByMoldDistributionSegment.prototype.withMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
     FormationNamespaceUpdateByMoldDistributionSegment.prototype.getCount = function () {
@@ -47,12 +47,12 @@ var FormationNamespaceUpdateByMoldDistributionSegment = /** @class */ (function 
             return null;
         }
         return new FormationNamespaceUpdateByMoldDistributionSegment()
-            .withMoldName(data["moldName"])
+            .withMoldModelName(data["moldModelName"])
             .withCount(data["count"]);
     };
     FormationNamespaceUpdateByMoldDistributionSegment.prototype.toDict = function () {
         return {
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
             "count": this.getCount(),
         };
     };

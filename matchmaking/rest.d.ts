@@ -28,6 +28,8 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     getGathering(request: Request.GetGatheringRequest): Promise<Result.GetGatheringResult>;
     cancelMatchmaking(request: Request.CancelMatchmakingRequest): Promise<Result.CancelMatchmakingResult>;
     cancelMatchmakingByUserId(request: Request.CancelMatchmakingByUserIdRequest): Promise<Result.CancelMatchmakingByUserIdResult>;
+    earlyComplete(request: Request.EarlyCompleteRequest): Promise<Result.EarlyCompleteResult>;
+    earlyCompleteByUserId(request: Request.EarlyCompleteByUserIdRequest): Promise<Result.EarlyCompleteByUserIdResult>;
     deleteGathering(request: Request.DeleteGatheringRequest): Promise<Result.DeleteGatheringResult>;
     describeRatingModelMasters(request: Request.DescribeRatingModelMastersRequest): Promise<Result.DescribeRatingModelMastersResult>;
     createRatingModelMaster(request: Request.CreateRatingModelMasterRequest): Promise<Result.CreateRatingModelMasterResult>;

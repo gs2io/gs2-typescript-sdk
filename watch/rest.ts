@@ -662,11 +662,11 @@ export default class Gs2WatchRestClient extends AbstractGs2RestClient {
     }
 
     public describeFormationFormMetrics(request: Request.DescribeFormationFormMetricsRequest): Promise<Result.DescribeFormationFormMetricsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/metrics/formation/namespace/{namespaceName}/mold/{moldName}/form')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/metrics/formation/namespace/{namespaceName}/mold/{moldModelName}/form')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
-            .replace('{moldName}', String(request.getMoldName() ?? 'null') === "" ? "null" : String(request.getMoldName() ?? 'null'));
+            .replace('{moldModelName}', String(request.getMoldModelName() ?? 'null') === "" ? "null" : String(request.getMoldModelName() ?? 'null'));
     
         const headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {

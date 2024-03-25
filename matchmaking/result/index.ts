@@ -37,6 +37,8 @@ import DoMatchmakingByUserIdResult from "./DoMatchmakingByUserIdResult"
 import GetGatheringResult from "./GetGatheringResult"
 import CancelMatchmakingResult from "./CancelMatchmakingResult"
 import CancelMatchmakingByUserIdResult from "./CancelMatchmakingByUserIdResult"
+import EarlyCompleteResult from "./EarlyCompleteResult"
+import EarlyCompleteByUserIdResult from "./EarlyCompleteByUserIdResult"
 import DeleteGatheringResult from "./DeleteGatheringResult"
 import DescribeRatingModelMastersResult from "./DescribeRatingModelMastersResult"
 import CreateRatingModelMasterResult from "./CreateRatingModelMasterResult"
@@ -86,6 +88,8 @@ export {
     GetGatheringResult,
     CancelMatchmakingResult,
     CancelMatchmakingByUserIdResult,
+    EarlyCompleteResult,
+    EarlyCompleteByUserIdResult,
     DeleteGatheringResult,
     DescribeRatingModelMastersResult,
     CreateRatingModelMasterResult,

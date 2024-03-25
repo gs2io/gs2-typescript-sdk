@@ -12,10 +12,10 @@ export default class FormationForm implements IModel {
     static getMonth(grn: string): string | null;
     static getDay(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
-    static getMoldName(grn: string): string | null;
+    static getMoldModelName(grn: string): string | null;
     static getIndex(grn: string): string | null;
     static isValid(grn: string): boolean;
-    static createGrn(region: string | null, ownerId: string | null, year: string | null, month: string | null, day: string | null, namespaceName: string | null, moldName: string | null, index: string | null): string | null;
+    static createGrn(region: string | null, ownerId: string | null, year: string | null, month: string | null, day: string | null, namespaceName: string | null, moldModelName: string | null, index: string | null): string | null;
     getFormId(): string | null;
     setFormId(formId: string | null): this;
     withFormId(formId: string | null): this;

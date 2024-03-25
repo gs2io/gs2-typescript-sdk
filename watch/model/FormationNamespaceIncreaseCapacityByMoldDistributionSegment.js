@@ -17,18 +17,18 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var FormationNamespaceIncreaseCapacityByMoldDistributionSegment = /** @class */ (function () {
     function FormationNamespaceIncreaseCapacityByMoldDistributionSegment() {
-        this.moldName = null;
+        this.moldModelName = null;
         this.count = null;
     }
-    FormationNamespaceIncreaseCapacityByMoldDistributionSegment.prototype.getMoldName = function () {
-        return this.moldName;
+    FormationNamespaceIncreaseCapacityByMoldDistributionSegment.prototype.getMoldModelName = function () {
+        return this.moldModelName;
     };
-    FormationNamespaceIncreaseCapacityByMoldDistributionSegment.prototype.setMoldName = function (moldName) {
-        this.moldName = moldName;
+    FormationNamespaceIncreaseCapacityByMoldDistributionSegment.prototype.setMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
-    FormationNamespaceIncreaseCapacityByMoldDistributionSegment.prototype.withMoldName = function (moldName) {
-        this.moldName = moldName;
+    FormationNamespaceIncreaseCapacityByMoldDistributionSegment.prototype.withMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
     FormationNamespaceIncreaseCapacityByMoldDistributionSegment.prototype.getCount = function () {
@@ -47,12 +47,12 @@ var FormationNamespaceIncreaseCapacityByMoldDistributionSegment = /** @class */ 
             return null;
         }
         return new FormationNamespaceIncreaseCapacityByMoldDistributionSegment()
-            .withMoldName(data["moldName"])
+            .withMoldModelName(data["moldModelName"])
             .withCount(data["count"]);
     };
     FormationNamespaceIncreaseCapacityByMoldDistributionSegment.prototype.toDict = function () {
         return {
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
             "count": this.getCount(),
         };
     };

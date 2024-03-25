@@ -23,7 +23,7 @@ import FormationFormUsageDistributionStatistics from './FormationFormUsageDistri
 import FormationFormUsageDistributionSegment from './FormationFormUsageDistributionSegment';
 import FormationFormUsageDistribution from './FormationFormUsageDistribution';
 import FormationFormDistributions from './FormationFormDistributions';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:formation:namespace:{namespaceName}:mold:{moldName}:form:{index}";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:formation:namespace:{namespaceName}:mold:{moldModelName}:form:{index}";
 
 export default class FormationForm implements IModel {
     private formId: string|null = null;
@@ -39,7 +39,7 @@ export default class FormationForm implements IModel {
             .replace('{month}', '.*')
             .replace('{day}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{index}', '.*')
         );
         if (match) {
@@ -56,7 +56,7 @@ export default class FormationForm implements IModel {
             .replace('{month}', '.*')
             .replace('{day}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{index}', '.*')
         );
         if (match) {
@@ -73,7 +73,7 @@ export default class FormationForm implements IModel {
             .replace('{month}', '.*')
             .replace('{day}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{index}', '.*')
         );
         if (match) {
@@ -90,7 +90,7 @@ export default class FormationForm implements IModel {
             .replace('{month}', '(.*)')
             .replace('{day}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{index}', '.*')
         );
         if (match) {
@@ -107,7 +107,7 @@ export default class FormationForm implements IModel {
             .replace('{month}', '.*')
             .replace('{day}', '(.*)')
             .replace('{namespaceName}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{index}', '.*')
         );
         if (match) {
@@ -124,7 +124,7 @@ export default class FormationForm implements IModel {
             .replace('{month}', '.*')
             .replace('{day}', '.*')
             .replace('{namespaceName}', '(.*)')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{index}', '.*')
         );
         if (match) {
@@ -133,7 +133,7 @@ export default class FormationForm implements IModel {
         return null;
     }
 
-    public static getMoldName(grn: string): string|null {
+    public static getMoldModelName(grn: string): string|null {
         const match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
@@ -141,7 +141,7 @@ export default class FormationForm implements IModel {
             .replace('{month}', '.*')
             .replace('{day}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{moldName}', '(.*)')
+            .replace('{moldModelName}', '(.*)')
             .replace('{index}', '.*')
         );
         if (match) {
@@ -158,7 +158,7 @@ export default class FormationForm implements IModel {
             .replace('{month}', '.*')
             .replace('{day}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
             .replace('{index}', '(.*)')
         );
         if (match) {
@@ -186,7 +186,7 @@ export default class FormationForm implements IModel {
         if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getMoldName(grn) == null || this.getMoldName(grn) === '') {
+        if (this.getMoldModelName(grn) == null || this.getMoldModelName(grn) === '') {
             return false;
         }
         if (this.getIndex(grn) == null || this.getIndex(grn) === '') {
@@ -202,7 +202,7 @@ export default class FormationForm implements IModel {
         month: string|null,
         day: string|null,
         namespaceName: string|null,
-        moldName: string|null,
+        moldModelName: string|null,
         index: string|null,
     ): string|null {
         return grnFormat
@@ -212,7 +212,7 @@ export default class FormationForm implements IModel {
             .replace('{month}', month ?? '')
             .replace('{day}', day ?? '')
             .replace('{namespaceName}', namespaceName ?? '')
-            .replace('{moldName}', moldName ?? '')
+            .replace('{moldModelName}', moldModelName ?? '')
             .replace('{index}', index ?? '');
     }
     public getFormId(): string|null {

@@ -569,11 +569,11 @@ var Gs2WatchRestClient = /** @class */ (function (_super) {
     };
     Gs2WatchRestClient.prototype.describeFormationFormMetrics = function (request) {
         var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/formation/namespace/{namespaceName}/mold/{moldName}/form')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/metrics/formation/namespace/{namespaceName}/mold/{moldModelName}/form')
             .replace('{service}', 'watch')
             .replace('{region}', this.session.region)
             .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
-            .replace('{moldName}', String((_c = request.getMoldName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldName()) !== null && _d !== void 0 ? _d : 'null'));
+            .replace('{moldModelName}', String((_c = request.getMoldModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getMoldModelName()) !== null && _d !== void 0 ? _d : 'null'));
         var headers = this.createAuthorizedHeaders();
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();

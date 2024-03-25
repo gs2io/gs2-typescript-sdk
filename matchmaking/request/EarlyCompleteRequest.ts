@@ -16,14 +16,16 @@ permissions and limitations under the License.
 
 import IRequest from '../../core/interface/IRequest';
 
-import * as Gs2Watch from '../model'
+import * as Gs2Matchmaking from '../model'
 
-export default class DescribeFormationFormMetricsRequest implements IRequest {
+export default class EarlyCompleteRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
-    private moldModelName: string|null = null;
+    private gatheringName: string|null = null;
+    private accessToken: string|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -63,28 +65,55 @@ export default class DescribeFormationFormMetricsRequest implements IRequest {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getMoldModelName(): string|null {
-        return this.moldModelName;
+    public getGatheringName(): string|null {
+        return this.gatheringName;
     }
-    public setMoldModelName(moldModelName: string|null) {
-        this.moldModelName = moldModelName;
+    public setGatheringName(gatheringName: string|null) {
+        this.gatheringName = gatheringName;
         return this;
     }
-    public withMoldModelName(moldModelName: string|null): this {
-        this.moldModelName = moldModelName;
+    public withGatheringName(gatheringName: string|null): this {
+        this.gatheringName = gatheringName;
+        return this;
+    }
+    public getAccessToken(): string|null {
+        return this.accessToken;
+    }
+    public setAccessToken(accessToken: string|null) {
+        this.accessToken = accessToken;
+        return this;
+    }
+    public withAccessToken(accessToken: string|null): this {
+        this.accessToken = accessToken;
         return this;
     }
 
-    public static fromDict(data: {[key: string]: any}): DescribeFormationFormMetricsRequest {
-        return new DescribeFormationFormMetricsRequest()
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public static fromDict(data: {[key: string]: any}): EarlyCompleteRequest {
+        return new EarlyCompleteRequest()
             .withNamespaceName(data["namespaceName"])
-            .withMoldModelName(data["moldModelName"]);
+            .withGatheringName(data["gatheringName"])
+            .withAccessToken(data["accessToken"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
-            "moldModelName": this.getMoldModelName(),
+            "gatheringName": this.getGatheringName(),
+            "accessToken": this.getAccessToken(),
         };
     }
 }

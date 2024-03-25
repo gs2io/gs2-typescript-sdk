@@ -32,11 +32,11 @@ import FormationFormUsageDistributionSegment from './FormationFormUsageDistribut
 import FormationFormUsageDistribution from './FormationFormUsageDistribution';
 import FormationFormDistributions from './FormationFormDistributions';
 import FormationForm from './FormationForm';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:formation:namespace:{namespaceName}:mold:{moldName}";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:formation:namespace:{namespaceName}:mold:{moldModelName}";
 
 export default class FormationMold implements IModel {
     private moldId: string|null = null;
-    private moldName: string|null = null;
+    private moldModelName: string|null = null;
     private statistics: FormationMoldStatistics|null = null;
     private distributions: FormationMoldDistributions|null = null;
     private forms: FormationForm[]|null = null;
@@ -49,7 +49,7 @@ export default class FormationMold implements IModel {
             .replace('{month}', '.*')
             .replace('{day}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
         );
         if (match) {
             return match[1];
@@ -65,7 +65,7 @@ export default class FormationMold implements IModel {
             .replace('{month}', '.*')
             .replace('{day}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
         );
         if (match) {
             return match[1];
@@ -81,7 +81,7 @@ export default class FormationMold implements IModel {
             .replace('{month}', '.*')
             .replace('{day}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
         );
         if (match) {
             return match[1];
@@ -97,7 +97,7 @@ export default class FormationMold implements IModel {
             .replace('{month}', '(.*)')
             .replace('{day}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
         );
         if (match) {
             return match[1];
@@ -113,7 +113,7 @@ export default class FormationMold implements IModel {
             .replace('{month}', '.*')
             .replace('{day}', '(.*)')
             .replace('{namespaceName}', '.*')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
         );
         if (match) {
             return match[1];
@@ -129,7 +129,7 @@ export default class FormationMold implements IModel {
             .replace('{month}', '.*')
             .replace('{day}', '.*')
             .replace('{namespaceName}', '(.*)')
-            .replace('{moldName}', '.*')
+            .replace('{moldModelName}', '.*')
         );
         if (match) {
             return match[1];
@@ -137,7 +137,7 @@ export default class FormationMold implements IModel {
         return null;
     }
 
-    public static getMoldName(grn: string): string|null {
+    public static getMoldModelName(grn: string): string|null {
         const match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
@@ -145,7 +145,7 @@ export default class FormationMold implements IModel {
             .replace('{month}', '.*')
             .replace('{day}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{moldName}', '(.*)')
+            .replace('{moldModelName}', '(.*)')
         );
         if (match) {
             return match[1];
@@ -172,7 +172,7 @@ export default class FormationMold implements IModel {
         if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getMoldName(grn) == null || this.getMoldName(grn) === '') {
+        if (this.getMoldModelName(grn) == null || this.getMoldModelName(grn) === '') {
             return false;
         }
         return true;
@@ -185,7 +185,7 @@ export default class FormationMold implements IModel {
         month: string|null,
         day: string|null,
         namespaceName: string|null,
-        moldName: string|null,
+        moldModelName: string|null,
     ): string|null {
         return grnFormat
             .replace('{region}', region ?? '')
@@ -194,7 +194,7 @@ export default class FormationMold implements IModel {
             .replace('{month}', month ?? '')
             .replace('{day}', day ?? '')
             .replace('{namespaceName}', namespaceName ?? '')
-            .replace('{moldName}', moldName ?? '');
+            .replace('{moldModelName}', moldModelName ?? '');
     }
     public getMoldId(): string|null {
         return this.moldId;
@@ -207,15 +207,15 @@ export default class FormationMold implements IModel {
         this.moldId = moldId;
         return this;
     }
-    public getMoldName(): string|null {
-        return this.moldName;
+    public getMoldModelName(): string|null {
+        return this.moldModelName;
     }
-    public setMoldName(moldName: string|null) {
-        this.moldName = moldName;
+    public setMoldModelName(moldModelName: string|null) {
+        this.moldModelName = moldModelName;
         return this;
     }
-    public withMoldName(moldName: string|null): this {
-        this.moldName = moldName;
+    public withMoldModelName(moldModelName: string|null): this {
+        this.moldModelName = moldModelName;
         return this;
     }
     public getStatistics(): FormationMoldStatistics|null {
@@ -258,7 +258,7 @@ export default class FormationMold implements IModel {
         }
         return new FormationMold()
             .withMoldId(data["moldId"])
-            .withMoldName(data["moldName"])
+            .withMoldModelName(data["moldModelName"])
             .withStatistics(FormationMoldStatistics.fromDict(data["statistics"]))
             .withDistributions(FormationMoldDistributions.fromDict(data["distributions"]))
             .withForms(data.forms ?
@@ -271,7 +271,7 @@ export default class FormationMold implements IModel {
     public toDict(): {[key: string]: any} {
         return {
             "moldId": this.getMoldId(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
             "statistics": this.getStatistics()?.toDict(),
             "distributions": this.getDistributions()?.toDict(),
             "forms": this.getForms() ?

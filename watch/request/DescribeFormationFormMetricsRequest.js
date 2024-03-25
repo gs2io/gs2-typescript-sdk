@@ -20,7 +20,7 @@ var DescribeFormationFormMetricsRequest = /** @class */ (function () {
         this.requestId = null;
         this.contextStack = null;
         this.namespaceName = null;
-        this.moldName = null;
+        this.moldModelName = null;
     }
     DescribeFormationFormMetricsRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -55,26 +55,26 @@ var DescribeFormationFormMetricsRequest = /** @class */ (function () {
         this.namespaceName = namespaceName;
         return this;
     };
-    DescribeFormationFormMetricsRequest.prototype.getMoldName = function () {
-        return this.moldName;
+    DescribeFormationFormMetricsRequest.prototype.getMoldModelName = function () {
+        return this.moldModelName;
     };
-    DescribeFormationFormMetricsRequest.prototype.setMoldName = function (moldName) {
-        this.moldName = moldName;
+    DescribeFormationFormMetricsRequest.prototype.setMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
-    DescribeFormationFormMetricsRequest.prototype.withMoldName = function (moldName) {
-        this.moldName = moldName;
+    DescribeFormationFormMetricsRequest.prototype.withMoldModelName = function (moldModelName) {
+        this.moldModelName = moldModelName;
         return this;
     };
     DescribeFormationFormMetricsRequest.fromDict = function (data) {
         return new DescribeFormationFormMetricsRequest()
             .withNamespaceName(data["namespaceName"])
-            .withMoldName(data["moldName"]);
+            .withMoldModelName(data["moldModelName"]);
     };
     DescribeFormationFormMetricsRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
-            "moldName": this.getMoldName(),
+            "moldModelName": this.getMoldModelName(),
         };
     };
     return DescribeFormationFormMetricsRequest;
