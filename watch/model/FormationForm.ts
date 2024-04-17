@@ -27,7 +27,7 @@ const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{mont
 
 export default class FormationForm implements IModel {
     private formId: string|null = null;
-    private index: string|null = null;
+    private index: number|null = null;
     private statistics: FormationFormStatistics|null = null;
     private distributions: FormationFormDistributions|null = null;
 
@@ -226,14 +226,14 @@ export default class FormationForm implements IModel {
         this.formId = formId;
         return this;
     }
-    public getIndex(): string|null {
+    public getIndex(): number|null {
         return this.index;
     }
-    public setIndex(index: string|null) {
+    public setIndex(index: number|null) {
         this.index = index;
         return this;
     }
-    public withIndex(index: string|null): this {
+    public withIndex(index: number|null): this {
         this.index = index;
         return this;
     }

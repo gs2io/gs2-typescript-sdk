@@ -19,9 +19,9 @@ export default class FormationForm implements IModel {
     getFormId(): string | null;
     setFormId(formId: string | null): this;
     withFormId(formId: string | null): this;
-    getIndex(): string | null;
-    setIndex(index: string | null): this;
-    withIndex(index: string | null): this;
+    getIndex(): number | null;
+    setIndex(index: number | null): this;
+    withIndex(index: number | null): this;
     getStatistics(): FormationFormStatistics | null;
     setStatistics(statistics: FormationFormStatistics | null): this;
     withStatistics(statistics: FormationFormStatistics | null): this;

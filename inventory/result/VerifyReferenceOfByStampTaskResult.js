@@ -82,10 +82,7 @@ var VerifyReferenceOfByStampTaskResult = /** @class */ (function () {
     };
     VerifyReferenceOfByStampTaskResult.fromDict = function (data) {
         return new VerifyReferenceOfByStampTaskResult()
-            .withItem(data.item ?
-            data.item.map(function (item) {
-                return item;
-            }) : [])
+            .withItem(data["item"])
             .withItemSet(Gs2Inventory.ItemSet.fromDict(data["itemSet"]))
             .withItemModel(Gs2Inventory.ItemModel.fromDict(data["itemModel"]))
             .withInventory(Gs2Inventory.Inventory.fromDict(data["inventory"]))
@@ -94,10 +91,7 @@ var VerifyReferenceOfByStampTaskResult = /** @class */ (function () {
     VerifyReferenceOfByStampTaskResult.prototype.toDict = function () {
         var _a, _b, _c;
         return {
-            "item": this.getItem() ?
-                this.getItem().map(function (item) {
-                    return item;
-                }) : [],
+            "item": this.getItem(),
             "itemSet": (_a = this.getItemSet()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "itemModel": (_b = this.getItemModel()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "inventory": (_c = this.getInventory()) === null || _c === void 0 ? void 0 : _c.toDict(),

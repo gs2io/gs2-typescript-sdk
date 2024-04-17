@@ -5,9 +5,9 @@ export default class DeleteReferenceOfByUserIdResult implements IResult {
     private itemSet;
     private itemModel;
     private inventory;
-    getItem(): string[] | null;
-    setItem(item: string[] | null): this;
-    withItem(item: string[] | null): this;
+    getItem(): string | null;
+    setItem(item: string | null): this;
+    withItem(item: string | null): this;
     getItemSet(): Gs2Inventory.ItemSet | null;
     setItemSet(itemSet: Gs2Inventory.ItemSet | null): this;
     withItemSet(itemSet: Gs2Inventory.ItemSet | null): this;

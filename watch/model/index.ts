@@ -76,6 +76,7 @@ import DictionaryNamespaceEntryByUserDistributionSegment from "./DictionaryNames
 import DictionaryNamespaceEntryByUserDistribution from "./DictionaryNamespaceEntryByUserDistribution"
 import DictionaryNamespaceDistributions from "./DictionaryNamespaceDistributions"
 import DictionaryNamespace from "./DictionaryNamespace"
+import DictionaryEntryModel from "./DictionaryEntryModel"
 import ExchangeRateModelStatistics from "./ExchangeRateModelStatistics"
 import ExchangeRateModelAmountDistributionStatistics from "./ExchangeRateModelAmountDistributionStatistics"
 import ExchangeRateModelAmountDistributionSegment from "./ExchangeRateModelAmountDistributionSegment"
@@ -234,6 +235,7 @@ import KeyNamespaceDecryptDistributionSegment from "./KeyNamespaceDecryptDistrib
 import KeyNamespaceDecryptDistribution from "./KeyNamespaceDecryptDistribution"
 import KeyNamespaceDistributions from "./KeyNamespaceDistributions"
 import KeyNamespace from "./KeyNamespace"
+import KeyKey from "./KeyKey"
 import LimitCounterStatistics from "./LimitCounterStatistics"
 import LimitCounterCounterDistributionStatistics from "./LimitCounterCounterDistributionStatistics"
 import LimitCounterCounterDistributionSegment from "./LimitCounterCounterDistributionSegment"
@@ -282,6 +284,7 @@ import LotteryNamespaceDrawAmountByUserDistributionSegment from "./LotteryNamesp
 import LotteryNamespaceDrawAmountByUserDistribution from "./LotteryNamespaceDrawAmountByUserDistribution"
 import LotteryNamespaceDistributions from "./LotteryNamespaceDistributions"
 import LotteryNamespace from "./LotteryNamespace"
+import LotteryLotteryModel from "./LotteryLotteryModel"
 import MatchmakingNamespaceStatistics from "./MatchmakingNamespaceStatistics"
 import MatchmakingNamespaceResultDistributionStatistics from "./MatchmakingNamespaceResultDistributionStatistics"
 import MatchmakingNamespaceResultDistributionSegment from "./MatchmakingNamespaceResultDistributionSegment"
@@ -302,6 +305,7 @@ import MissionMissionGroupModelReceiveDistributionSegment from "./MissionMission
 import MissionMissionGroupModelReceiveDistribution from "./MissionMissionGroupModelReceiveDistribution"
 import MissionMissionGroupModelDistributions from "./MissionMissionGroupModelDistributions"
 import MissionMissionGroupModel from "./MissionMissionGroupModel"
+import MissionMissionTaskModel from "./MissionMissionTaskModel"
 import MissionNamespaceStatistics from "./MissionNamespaceStatistics"
 import MissionNamespaceIncreaseDistributionStatistics from "./MissionNamespaceIncreaseDistributionStatistics"
 import MissionNamespaceIncreaseDistributionSegment from "./MissionNamespaceIncreaseDistributionSegment"
@@ -475,6 +479,7 @@ export {
     DictionaryNamespaceEntryByUserDistribution,
     DictionaryNamespaceDistributions,
     DictionaryNamespace,
+    DictionaryEntryModel,
     ExchangeRateModelStatistics,
     ExchangeRateModelAmountDistributionStatistics,
     ExchangeRateModelAmountDistributionSegment,
@@ -633,6 +638,7 @@ export {
     KeyNamespaceDecryptDistribution,
     KeyNamespaceDistributions,
     KeyNamespace,
+    KeyKey,
     LimitCounterStatistics,
     LimitCounterCounterDistributionStatistics,
     LimitCounterCounterDistributionSegment,
@@ -681,6 +687,7 @@ export {
     LotteryNamespaceDrawAmountByUserDistribution,
     LotteryNamespaceDistributions,
     LotteryNamespace,
+    LotteryLotteryModel,
     MatchmakingNamespaceStatistics,
     MatchmakingNamespaceResultDistributionStatistics,
     MatchmakingNamespaceResultDistributionSegment,
@@ -701,6 +708,7 @@ export {
     MissionMissionGroupModelReceiveDistribution,
     MissionMissionGroupModelDistributions,
     MissionMissionGroupModel,
+    MissionMissionTaskModel,
     MissionNamespaceStatistics,
     MissionNamespaceIncreaseDistributionStatistics,
     MissionNamespaceIncreaseDistributionSegment,

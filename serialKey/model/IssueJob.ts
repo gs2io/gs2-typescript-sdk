@@ -15,7 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:serialKey:{namespaceName}:master:campaign:{campaignModelName}:issue:job:{issueJobName}";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:serialKey:{namespaceName}:model:campaign:{campaignModelName}:issue:job:{issueJobName}";
 
 export default class IssueJob implements IModel {
     private issueJobId: string|null = null;

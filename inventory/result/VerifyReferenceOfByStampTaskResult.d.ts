@@ -6,9 +6,9 @@ export default class VerifyReferenceOfByStampTaskResult implements IResult {
     private itemModel;
     private inventory;
     private newContextStack;
-    getItem(): string[] | null;
-    setItem(item: string[] | null): this;
-    withItem(item: string[] | null): this;
+    getItem(): string | null;
+    setItem(item: string | null): this;
+    withItem(item: string | null): this;
     getItemSet(): Gs2Inventory.ItemSet | null;
     setItemSet(itemSet: Gs2Inventory.ItemSet | null): this;
     withItemSet(itemSet: Gs2Inventory.ItemSet | null): this;

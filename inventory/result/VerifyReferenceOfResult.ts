@@ -18,21 +18,21 @@ import IResult from '../../core/interface/IResult';
 import * as Gs2Inventory from '../model'
 
 export default class VerifyReferenceOfResult implements IResult {
-    private item: string[]|null = null;
+    private item: string|null = null;
     private itemSet: Gs2Inventory.ItemSet|null = null;
     private itemModel: Gs2Inventory.ItemModel|null = null;
     private inventory: Gs2Inventory.Inventory|null = null;
 
-    public getItem(): string[]|null {
+    public getItem(): string|null {
         return this.item;
     }
 
-    public setItem(item: string[]|null) {
+    public setItem(item: string|null) {
         this.item = item;
         return this;
     }
 
-    public withItem(item: string[]|null): this {
+    public withItem(item: string|null): this {
         this.item = item;
         return this;
     }
@@ -81,11 +81,7 @@ export default class VerifyReferenceOfResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): VerifyReferenceOfResult {
         return new VerifyReferenceOfResult()
-            .withItem(data.item ?
-                data.item.map((item: {[key: string]: any}) => {
-                    return item;
-                }
-            ) : [])
+            .withItem(data["item"])
             .withItemSet(Gs2Inventory.ItemSet.fromDict(data["itemSet"]))
             .withItemModel(Gs2Inventory.ItemModel.fromDict(data["itemModel"]))
             .withInventory(Gs2Inventory.Inventory.fromDict(data["inventory"]));
@@ -93,11 +89,7 @@ export default class VerifyReferenceOfResult implements IResult {
 
     public toDict(): {[key: string]: any} {
         return {
-            "item": this.getItem() ?
-                this.getItem()!.map((item: string) => {
-                    return item;
-                }
-            ) : [],
+            "item": this.getItem(),
             "itemSet": this.getItemSet()?.toDict(),
             "itemModel": this.getItemModel()?.toDict(),
             "inventory": this.getInventory()?.toDict(),

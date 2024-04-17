@@ -19,9 +19,9 @@ export default class MoneyWallet implements IModel {
     getWalletId(): string | null;
     setWalletId(walletId: string | null): this;
     withWalletId(walletId: string | null): this;
-    getSlot(): string | null;
-    setSlot(slot: string | null): this;
-    withSlot(slot: string | null): this;
+    getSlot(): number | null;
+    setSlot(slot: number | null): this;
+    withSlot(slot: number | null): this;
     getStatistics(): MoneyWalletStatistics | null;
     setStatistics(statistics: MoneyWalletStatistics | null): this;
     withStatistics(statistics: MoneyWalletStatistics | null): this;

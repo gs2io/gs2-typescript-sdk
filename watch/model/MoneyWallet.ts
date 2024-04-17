@@ -27,7 +27,7 @@ const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{mont
 
 export default class MoneyWallet implements IModel {
     private walletId: string|null = null;
-    private slot: string|null = null;
+    private slot: number|null = null;
     private statistics: MoneyWalletStatistics|null = null;
     private distributions: MoneyWalletDistributions|null = null;
 
@@ -226,14 +226,14 @@ export default class MoneyWallet implements IModel {
         this.walletId = walletId;
         return this;
     }
-    public getSlot(): string|null {
+    public getSlot(): number|null {
         return this.slot;
     }
-    public setSlot(slot: string|null) {
+    public setSlot(slot: number|null) {
         this.slot = slot;
         return this;
     }
-    public withSlot(slot: string|null): this {
+    public withSlot(slot: number|null): this {
         this.slot = slot;
         return this;
     }
