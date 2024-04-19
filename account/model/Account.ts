@@ -25,6 +25,7 @@ export default class Account implements IModel {
     private timeOffset: number|null = null;
     private banStatuses: BanStatus[]|null = null;
     private banned: boolean|null = null;
+    private lastAuthenticatedAt: number|null = null;
     private createdAt: number|null = null;
     private revision: number|null = null;
 
@@ -174,6 +175,17 @@ export default class Account implements IModel {
         this.banned = banned;
         return this;
     }
+    public getLastAuthenticatedAt(): number|null {
+        return this.lastAuthenticatedAt;
+    }
+    public setLastAuthenticatedAt(lastAuthenticatedAt: number|null) {
+        this.lastAuthenticatedAt = lastAuthenticatedAt;
+        return this;
+    }
+    public withLastAuthenticatedAt(lastAuthenticatedAt: number|null): this {
+        this.lastAuthenticatedAt = lastAuthenticatedAt;
+        return this;
+    }
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -212,6 +224,7 @@ export default class Account implements IModel {
                 }
             ) : [])
             .withBanned(data["banned"])
+            .withLastAuthenticatedAt(data["lastAuthenticatedAt"])
             .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     }
@@ -228,6 +241,7 @@ export default class Account implements IModel {
                 }
             ) : [],
             "banned": this.getBanned(),
+            "lastAuthenticatedAt": this.getLastAuthenticatedAt(),
             "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };

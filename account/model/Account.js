@@ -26,6 +26,7 @@ var Account = /** @class */ (function () {
         this.timeOffset = null;
         this.banStatuses = null;
         this.banned = null;
+        this.lastAuthenticatedAt = null;
         this.createdAt = null;
         this.revision = null;
     }
@@ -161,6 +162,17 @@ var Account = /** @class */ (function () {
         this.banned = banned;
         return this;
     };
+    Account.prototype.getLastAuthenticatedAt = function () {
+        return this.lastAuthenticatedAt;
+    };
+    Account.prototype.setLastAuthenticatedAt = function (lastAuthenticatedAt) {
+        this.lastAuthenticatedAt = lastAuthenticatedAt;
+        return this;
+    };
+    Account.prototype.withLastAuthenticatedAt = function (lastAuthenticatedAt) {
+        this.lastAuthenticatedAt = lastAuthenticatedAt;
+        return this;
+    };
     Account.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -197,6 +209,7 @@ var Account = /** @class */ (function () {
                 return BanStatus_1.default.fromDict(item);
             }) : [])
             .withBanned(data["banned"])
+            .withLastAuthenticatedAt(data["lastAuthenticatedAt"])
             .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     };
@@ -211,6 +224,7 @@ var Account = /** @class */ (function () {
                     return item.toDict();
                 }) : [],
             "banned": this.getBanned(),
+            "lastAuthenticatedAt": this.getLastAuthenticatedAt(),
             "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };

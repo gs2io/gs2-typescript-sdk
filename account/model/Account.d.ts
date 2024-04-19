@@ -7,6 +7,7 @@ export default class Account implements IModel {
     private timeOffset;
     private banStatuses;
     private banned;
+    private lastAuthenticatedAt;
     private createdAt;
     private revision;
     static getRegion(grn: string): string | null;
@@ -33,6 +34,9 @@ export default class Account implements IModel {
     getBanned(): boolean | null;
     setBanned(banned: boolean | null): this;
     withBanned(banned: boolean | null): this;
+    getLastAuthenticatedAt(): number | null;
+    setLastAuthenticatedAt(lastAuthenticatedAt: number | null): this;
+    withLastAuthenticatedAt(lastAuthenticatedAt: number | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;
