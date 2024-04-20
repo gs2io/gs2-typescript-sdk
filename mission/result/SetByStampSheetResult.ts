@@ -17,10 +17,10 @@ permissions and limitations under the License.
 import IResult from '../../core/interface/IResult';
 import * as Gs2Mission from '../model'
 
-export default class DecreaseByStampTaskResult implements IResult {
+export default class SetByStampSheetResult implements IResult {
     private item: Gs2Mission.Counter|null = null;
+    private old: Gs2Mission.Counter|null = null;
     private changedCompletes: Gs2Mission.Complete[]|null = null;
-    private newContextStack: string|null = null;
 
     public getItem(): Gs2Mission.Counter|null {
         return this.item;
@@ -33,6 +33,20 @@ export default class DecreaseByStampTaskResult implements IResult {
 
     public withItem(item: Gs2Mission.Counter|null): this {
         this.item = item;
+        return this;
+    }
+
+    public getOld(): Gs2Mission.Counter|null {
+        return this.old;
+    }
+
+    public setOld(old: Gs2Mission.Counter|null) {
+        this.old = old;
+        return this;
+    }
+
+    public withOld(old: Gs2Mission.Counter|null): this {
+        this.old = old;
         return this;
     }
 
@@ -50,40 +64,26 @@ export default class DecreaseByStampTaskResult implements IResult {
         return this;
     }
 
-    public getNewContextStack(): string|null {
-        return this.newContextStack;
-    }
-
-    public setNewContextStack(newContextStack: string|null) {
-        this.newContextStack = newContextStack;
-        return this;
-    }
-
-    public withNewContextStack(newContextStack: string|null): this {
-        this.newContextStack = newContextStack;
-        return this;
-    }
-
-    public static fromDict(data: {[key: string]: any}): DecreaseByStampTaskResult {
-        return new DecreaseByStampTaskResult()
+    public static fromDict(data: {[key: string]: any}): SetByStampSheetResult {
+        return new SetByStampSheetResult()
             .withItem(Gs2Mission.Counter.fromDict(data["item"]))
+            .withOld(Gs2Mission.Counter.fromDict(data["old"]))
             .withChangedCompletes(data.changedCompletes ?
                 data.changedCompletes.map((item: {[key: string]: any}) => {
                     return Gs2Mission.Complete.fromDict(item);
                 }
-            ) : [])
-            .withNewContextStack(data["newContextStack"]);
+            ) : []);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
+            "old": this.getOld()?.toDict(),
             "changedCompletes": this.getChangedCompletes() ?
                 this.getChangedCompletes()!.map((item: Gs2Mission.Complete) => {
                     return item.toDict();
                 }
             ) : [],
-            "newContextStack": this.getNewContextStack(),
         };
     }
 }

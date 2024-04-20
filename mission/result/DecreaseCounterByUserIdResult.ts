@@ -19,6 +19,7 @@ import * as Gs2Mission from '../model'
 
 export default class DecreaseCounterByUserIdResult implements IResult {
     private item: Gs2Mission.Counter|null = null;
+    private changedCompletes: Gs2Mission.Complete[]|null = null;
 
     public getItem(): Gs2Mission.Counter|null {
         return this.item;
@@ -34,14 +35,38 @@ export default class DecreaseCounterByUserIdResult implements IResult {
         return this;
     }
 
+    public getChangedCompletes(): Gs2Mission.Complete[]|null {
+        return this.changedCompletes;
+    }
+
+    public setChangedCompletes(changedCompletes: Gs2Mission.Complete[]|null) {
+        this.changedCompletes = changedCompletes;
+        return this;
+    }
+
+    public withChangedCompletes(changedCompletes: Gs2Mission.Complete[]|null): this {
+        this.changedCompletes = changedCompletes;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): DecreaseCounterByUserIdResult {
         return new DecreaseCounterByUserIdResult()
-            .withItem(Gs2Mission.Counter.fromDict(data["item"]));
+            .withItem(Gs2Mission.Counter.fromDict(data["item"]))
+            .withChangedCompletes(data.changedCompletes ?
+                data.changedCompletes.map((item: {[key: string]: any}) => {
+                    return Gs2Mission.Complete.fromDict(item);
+                }
+            ) : []);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
+            "changedCompletes": this.getChangedCompletes() ?
+                this.getChangedCompletes()!.map((item: Gs2Mission.Complete) => {
+                    return item.toDict();
+                }
+            ) : [],
         };
     }
 }

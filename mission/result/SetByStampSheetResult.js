@@ -17,66 +17,66 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Gs2Mission = tslib_1.__importStar(require("../model"));
-var DecreaseByStampTaskResult = /** @class */ (function () {
-    function DecreaseByStampTaskResult() {
+var SetByStampSheetResult = /** @class */ (function () {
+    function SetByStampSheetResult() {
         this.item = null;
+        this.old = null;
         this.changedCompletes = null;
-        this.newContextStack = null;
     }
-    DecreaseByStampTaskResult.prototype.getItem = function () {
+    SetByStampSheetResult.prototype.getItem = function () {
         return this.item;
     };
-    DecreaseByStampTaskResult.prototype.setItem = function (item) {
+    SetByStampSheetResult.prototype.setItem = function (item) {
         this.item = item;
         return this;
     };
-    DecreaseByStampTaskResult.prototype.withItem = function (item) {
+    SetByStampSheetResult.prototype.withItem = function (item) {
         this.item = item;
         return this;
     };
-    DecreaseByStampTaskResult.prototype.getChangedCompletes = function () {
+    SetByStampSheetResult.prototype.getOld = function () {
+        return this.old;
+    };
+    SetByStampSheetResult.prototype.setOld = function (old) {
+        this.old = old;
+        return this;
+    };
+    SetByStampSheetResult.prototype.withOld = function (old) {
+        this.old = old;
+        return this;
+    };
+    SetByStampSheetResult.prototype.getChangedCompletes = function () {
         return this.changedCompletes;
     };
-    DecreaseByStampTaskResult.prototype.setChangedCompletes = function (changedCompletes) {
+    SetByStampSheetResult.prototype.setChangedCompletes = function (changedCompletes) {
         this.changedCompletes = changedCompletes;
         return this;
     };
-    DecreaseByStampTaskResult.prototype.withChangedCompletes = function (changedCompletes) {
+    SetByStampSheetResult.prototype.withChangedCompletes = function (changedCompletes) {
         this.changedCompletes = changedCompletes;
         return this;
     };
-    DecreaseByStampTaskResult.prototype.getNewContextStack = function () {
-        return this.newContextStack;
-    };
-    DecreaseByStampTaskResult.prototype.setNewContextStack = function (newContextStack) {
-        this.newContextStack = newContextStack;
-        return this;
-    };
-    DecreaseByStampTaskResult.prototype.withNewContextStack = function (newContextStack) {
-        this.newContextStack = newContextStack;
-        return this;
-    };
-    DecreaseByStampTaskResult.fromDict = function (data) {
-        return new DecreaseByStampTaskResult()
+    SetByStampSheetResult.fromDict = function (data) {
+        return new SetByStampSheetResult()
             .withItem(Gs2Mission.Counter.fromDict(data["item"]))
+            .withOld(Gs2Mission.Counter.fromDict(data["old"]))
             .withChangedCompletes(data.changedCompletes ?
             data.changedCompletes.map(function (item) {
                 return Gs2Mission.Complete.fromDict(item);
-            }) : [])
-            .withNewContextStack(data["newContextStack"]);
+            }) : []);
     };
-    DecreaseByStampTaskResult.prototype.toDict = function () {
-        var _a;
+    SetByStampSheetResult.prototype.toDict = function () {
+        var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "old": (_b = this.getOld()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "changedCompletes": this.getChangedCompletes() ?
                 this.getChangedCompletes().map(function (item) {
                     return item.toDict();
                 }) : [],
-            "newContextStack": this.getNewContextStack(),
         };
     };
-    return DecreaseByStampTaskResult;
+    return SetByStampSheetResult;
 }());
-exports.default = DecreaseByStampTaskResult;
-//# sourceMappingURL=DecreaseByStampTaskResult.js.map
+exports.default = SetByStampSheetResult;
+//# sourceMappingURL=SetByStampSheetResult.js.map

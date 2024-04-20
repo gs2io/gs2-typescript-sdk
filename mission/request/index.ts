@@ -50,11 +50,13 @@ import CheckImportUserDataByUserIdRequest from "./CheckImportUserDataByUserIdReq
 import DescribeCountersRequest from "./DescribeCountersRequest"
 import DescribeCountersByUserIdRequest from "./DescribeCountersByUserIdRequest"
 import IncreaseCounterByUserIdRequest from "./IncreaseCounterByUserIdRequest"
+import SetCounterByUserIdRequest from "./SetCounterByUserIdRequest"
 import DecreaseCounterByUserIdRequest from "./DecreaseCounterByUserIdRequest"
 import GetCounterRequest from "./GetCounterRequest"
 import GetCounterByUserIdRequest from "./GetCounterByUserIdRequest"
 import DeleteCounterByUserIdRequest from "./DeleteCounterByUserIdRequest"
 import IncreaseByStampSheetRequest from "./IncreaseByStampSheetRequest"
+import SetByStampSheetRequest from "./SetByStampSheetRequest"
 import DecreaseByStampTaskRequest from "./DecreaseByStampTaskRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentMissionMasterRequest from "./GetCurrentMissionMasterRequest"
@@ -110,11 +112,13 @@ export {
     DescribeCountersRequest,
     DescribeCountersByUserIdRequest,
     IncreaseCounterByUserIdRequest,
+    SetCounterByUserIdRequest,
     DecreaseCounterByUserIdRequest,
     GetCounterRequest,
     GetCounterByUserIdRequest,
     DeleteCounterByUserIdRequest,
     IncreaseByStampSheetRequest,
+    SetByStampSheetRequest,
     DecreaseByStampTaskRequest,
     ExportMasterRequest,
     GetCurrentMissionMasterRequest,

@@ -17,66 +17,66 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Gs2Mission = tslib_1.__importStar(require("../model"));
-var DecreaseByStampTaskResult = /** @class */ (function () {
-    function DecreaseByStampTaskResult() {
+var SetCounterByUserIdResult = /** @class */ (function () {
+    function SetCounterByUserIdResult() {
         this.item = null;
+        this.old = null;
         this.changedCompletes = null;
-        this.newContextStack = null;
     }
-    DecreaseByStampTaskResult.prototype.getItem = function () {
+    SetCounterByUserIdResult.prototype.getItem = function () {
         return this.item;
     };
-    DecreaseByStampTaskResult.prototype.setItem = function (item) {
+    SetCounterByUserIdResult.prototype.setItem = function (item) {
         this.item = item;
         return this;
     };
-    DecreaseByStampTaskResult.prototype.withItem = function (item) {
+    SetCounterByUserIdResult.prototype.withItem = function (item) {
         this.item = item;
         return this;
     };
-    DecreaseByStampTaskResult.prototype.getChangedCompletes = function () {
+    SetCounterByUserIdResult.prototype.getOld = function () {
+        return this.old;
+    };
+    SetCounterByUserIdResult.prototype.setOld = function (old) {
+        this.old = old;
+        return this;
+    };
+    SetCounterByUserIdResult.prototype.withOld = function (old) {
+        this.old = old;
+        return this;
+    };
+    SetCounterByUserIdResult.prototype.getChangedCompletes = function () {
         return this.changedCompletes;
     };
-    DecreaseByStampTaskResult.prototype.setChangedCompletes = function (changedCompletes) {
+    SetCounterByUserIdResult.prototype.setChangedCompletes = function (changedCompletes) {
         this.changedCompletes = changedCompletes;
         return this;
     };
-    DecreaseByStampTaskResult.prototype.withChangedCompletes = function (changedCompletes) {
+    SetCounterByUserIdResult.prototype.withChangedCompletes = function (changedCompletes) {
         this.changedCompletes = changedCompletes;
         return this;
     };
-    DecreaseByStampTaskResult.prototype.getNewContextStack = function () {
-        return this.newContextStack;
-    };
-    DecreaseByStampTaskResult.prototype.setNewContextStack = function (newContextStack) {
-        this.newContextStack = newContextStack;
-        return this;
-    };
-    DecreaseByStampTaskResult.prototype.withNewContextStack = function (newContextStack) {
-        this.newContextStack = newContextStack;
-        return this;
-    };
-    DecreaseByStampTaskResult.fromDict = function (data) {
-        return new DecreaseByStampTaskResult()
+    SetCounterByUserIdResult.fromDict = function (data) {
+        return new SetCounterByUserIdResult()
             .withItem(Gs2Mission.Counter.fromDict(data["item"]))
+            .withOld(Gs2Mission.Counter.fromDict(data["old"]))
             .withChangedCompletes(data.changedCompletes ?
             data.changedCompletes.map(function (item) {
                 return Gs2Mission.Complete.fromDict(item);
-            }) : [])
-            .withNewContextStack(data["newContextStack"]);
+            }) : []);
     };
-    DecreaseByStampTaskResult.prototype.toDict = function () {
-        var _a;
+    SetCounterByUserIdResult.prototype.toDict = function () {
+        var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "old": (_b = this.getOld()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "changedCompletes": this.getChangedCompletes() ?
                 this.getChangedCompletes().map(function (item) {
                     return item.toDict();
                 }) : [],
-            "newContextStack": this.getNewContextStack(),
         };
     };
-    return DecreaseByStampTaskResult;
+    return SetCounterByUserIdResult;
 }());
-exports.default = DecreaseByStampTaskResult;
-//# sourceMappingURL=DecreaseByStampTaskResult.js.map
+exports.default = SetCounterByUserIdResult;
+//# sourceMappingURL=SetCounterByUserIdResult.js.map

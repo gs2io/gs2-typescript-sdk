@@ -50,11 +50,13 @@ import CheckImportUserDataByUserIdResult from "./CheckImportUserDataByUserIdResu
 import DescribeCountersResult from "./DescribeCountersResult"
 import DescribeCountersByUserIdResult from "./DescribeCountersByUserIdResult"
 import IncreaseCounterByUserIdResult from "./IncreaseCounterByUserIdResult"
+import SetCounterByUserIdResult from "./SetCounterByUserIdResult"
 import DecreaseCounterByUserIdResult from "./DecreaseCounterByUserIdResult"
 import GetCounterResult from "./GetCounterResult"
 import GetCounterByUserIdResult from "./GetCounterByUserIdResult"
 import DeleteCounterByUserIdResult from "./DeleteCounterByUserIdResult"
 import IncreaseByStampSheetResult from "./IncreaseByStampSheetResult"
+import SetByStampSheetResult from "./SetByStampSheetResult"
 import DecreaseByStampTaskResult from "./DecreaseByStampTaskResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentMissionMasterResult from "./GetCurrentMissionMasterResult"
@@ -110,11 +112,13 @@ export {
     DescribeCountersResult,
     DescribeCountersByUserIdResult,
     IncreaseCounterByUserIdResult,
+    SetCounterByUserIdResult,
     DecreaseCounterByUserIdResult,
     GetCounterResult,
     GetCounterByUserIdResult,
     DeleteCounterByUserIdResult,
     IncreaseByStampSheetResult,
+    SetByStampSheetResult,
     DecreaseByStampTaskResult,
     ExportMasterResult,
     GetCurrentMissionMasterResult,
