@@ -15,6 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Version = tslib_1.__importStar(require("../model"));
 var AcceptRequest = /** @class */ (function () {
     function AcceptRequest() {
         this.requestId = null;
@@ -22,6 +24,7 @@ var AcceptRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.versionName = null;
         this.accessToken = null;
+        this.version = null;
         this.duplicationAvoider = null;
     }
     AcceptRequest.prototype.getRequestId = function () {
@@ -79,6 +82,17 @@ var AcceptRequest = /** @class */ (function () {
         this.accessToken = accessToken;
         return this;
     };
+    AcceptRequest.prototype.getVersion = function () {
+        return this.version;
+    };
+    AcceptRequest.prototype.setVersion = function (version) {
+        this.version = version;
+        return this;
+    };
+    AcceptRequest.prototype.withVersion = function (version) {
+        this.version = version;
+        return this;
+    };
     AcceptRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -94,13 +108,16 @@ var AcceptRequest = /** @class */ (function () {
         return new AcceptRequest()
             .withNamespaceName(data["namespaceName"])
             .withVersionName(data["versionName"])
-            .withAccessToken(data["accessToken"]);
+            .withAccessToken(data["accessToken"])
+            .withVersion(Gs2Version.Version.fromDict(data["version"]));
     };
     AcceptRequest.prototype.toDict = function () {
+        var _a;
         return {
             "namespaceName": this.getNamespaceName(),
             "versionName": this.getVersionName(),
             "accessToken": this.getAccessToken(),
+            "version": (_a = this.getVersion()) === null || _a === void 0 ? void 0 : _a.toDict(),
         };
     };
     return AcceptRequest;

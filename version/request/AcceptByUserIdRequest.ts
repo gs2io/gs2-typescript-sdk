@@ -25,6 +25,7 @@ export default class AcceptByUserIdRequest implements IRequest {
     private namespaceName: string|null = null;
     private versionName: string|null = null;
     private userId: string|null = null;
+    private version: Gs2Version.Version|null = null;
     private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
@@ -88,6 +89,17 @@ export default class AcceptByUserIdRequest implements IRequest {
         this.userId = userId;
         return this;
     }
+    public getVersion(): Gs2Version.Version|null {
+        return this.version;
+    }
+    public setVersion(version: Gs2Version.Version|null) {
+        this.version = version;
+        return this;
+    }
+    public withVersion(version: Gs2Version.Version|null): this {
+        this.version = version;
+        return this;
+    }
     public getTimeOffsetToken(): string|null {
         return this.timeOffsetToken;
     }
@@ -119,6 +131,7 @@ export default class AcceptByUserIdRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withVersionName(data["versionName"])
             .withUserId(data["userId"])
+            .withVersion(Gs2Version.Version.fromDict(data["version"]))
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -127,6 +140,7 @@ export default class AcceptByUserIdRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "versionName": this.getVersionName(),
             "userId": this.getUserId(),
+            "version": this.getVersion()?.toDict(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

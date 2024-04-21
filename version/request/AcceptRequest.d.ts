@@ -1,10 +1,12 @@
 import IRequest from '../../core/interface/IRequest';
+import * as Gs2Version from '../model';
 export default class AcceptRequest implements IRequest {
     private requestId;
     private contextStack;
     private namespaceName;
     private versionName;
     private accessToken;
+    private version;
     private duplicationAvoider;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -21,6 +23,9 @@ export default class AcceptRequest implements IRequest {
     getAccessToken(): string | null;
     setAccessToken(accessToken: string | null): this;
     withAccessToken(accessToken: string | null): this;
+    getVersion(): Gs2Version.Version | null;
+    setVersion(version: Gs2Version.Version | null): this;
+    withVersion(version: Gs2Version.Version | null): this;
     getDuplicationAvoider(): string | null;
     setDuplicationAvoider(duplicationAvoider: string | null): this;
     withDuplicationAvoider(duplicationAvoider: string | null): this;

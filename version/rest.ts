@@ -743,6 +743,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'versionName': request.getVersionName() ?? null,
+            'version': request.getVersion()?.toDict() ?? null,
         };
         return axios.post(
             url,
@@ -781,6 +782,7 @@ export default class Gs2VersionRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'versionName': request.getVersionName() ?? null,
+            'version': request.getVersion()?.toDict() ?? null,
         };
         return axios.post(
             url,

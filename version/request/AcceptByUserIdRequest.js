@@ -15,6 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Version = tslib_1.__importStar(require("../model"));
 var AcceptByUserIdRequest = /** @class */ (function () {
     function AcceptByUserIdRequest() {
         this.requestId = null;
@@ -22,6 +24,7 @@ var AcceptByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.versionName = null;
         this.userId = null;
+        this.version = null;
         this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
@@ -80,6 +83,17 @@ var AcceptByUserIdRequest = /** @class */ (function () {
         this.userId = userId;
         return this;
     };
+    AcceptByUserIdRequest.prototype.getVersion = function () {
+        return this.version;
+    };
+    AcceptByUserIdRequest.prototype.setVersion = function (version) {
+        this.version = version;
+        return this;
+    };
+    AcceptByUserIdRequest.prototype.withVersion = function (version) {
+        this.version = version;
+        return this;
+    };
     AcceptByUserIdRequest.prototype.getTimeOffsetToken = function () {
         return this.timeOffsetToken;
     };
@@ -107,13 +121,16 @@ var AcceptByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withVersionName(data["versionName"])
             .withUserId(data["userId"])
+            .withVersion(Gs2Version.Version.fromDict(data["version"]))
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     AcceptByUserIdRequest.prototype.toDict = function () {
+        var _a;
         return {
             "namespaceName": this.getNamespaceName(),
             "versionName": this.getVersionName(),
             "userId": this.getUserId(),
+            "version": (_a = this.getVersion()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

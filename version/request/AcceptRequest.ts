@@ -25,6 +25,7 @@ export default class AcceptRequest implements IRequest {
     private namespaceName: string|null = null;
     private versionName: string|null = null;
     private accessToken: string|null = null;
+    private version: Gs2Version.Version|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -87,6 +88,17 @@ export default class AcceptRequest implements IRequest {
         this.accessToken = accessToken;
         return this;
     }
+    public getVersion(): Gs2Version.Version|null {
+        return this.version;
+    }
+    public setVersion(version: Gs2Version.Version|null) {
+        this.version = version;
+        return this;
+    }
+    public withVersion(version: Gs2Version.Version|null): this {
+        this.version = version;
+        return this;
+    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -106,7 +118,8 @@ export default class AcceptRequest implements IRequest {
         return new AcceptRequest()
             .withNamespaceName(data["namespaceName"])
             .withVersionName(data["versionName"])
-            .withAccessToken(data["accessToken"]);
+            .withAccessToken(data["accessToken"])
+            .withVersion(Gs2Version.Version.fromDict(data["version"]));
     }
 
     public toDict(): {[key: string]: any} {
@@ -114,6 +127,7 @@ export default class AcceptRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "versionName": this.getVersionName(),
             "accessToken": this.getAccessToken(),
+            "version": this.getVersion()?.toDict(),
         };
     }
 }
