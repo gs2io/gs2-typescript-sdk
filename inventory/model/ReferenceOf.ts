@@ -15,7 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:user:{userId}:inventory:{inventoryName}:item:{itemName}:itemSet:{itemSetName}:referenceOf";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:user:{userId}:inventory:{inventoryName}:item:{itemName}:itemSet:{itemSetName}:referenceOf:{referenceOfName}";
 
 export default class ReferenceOf implements IModel {
     private referenceOfId: string|null = null;
@@ -30,6 +30,7 @@ export default class ReferenceOf implements IModel {
             .replace('{inventoryName}', '.*')
             .replace('{itemName}', '.*')
             .replace('{itemSetName}', '.*')
+            .replace('{referenceOfName}', '.*')
         );
         if (match) {
             return match[1];
@@ -46,6 +47,7 @@ export default class ReferenceOf implements IModel {
             .replace('{inventoryName}', '.*')
             .replace('{itemName}', '.*')
             .replace('{itemSetName}', '.*')
+            .replace('{referenceOfName}', '.*')
         );
         if (match) {
             return match[1];
@@ -62,6 +64,7 @@ export default class ReferenceOf implements IModel {
             .replace('{inventoryName}', '.*')
             .replace('{itemName}', '.*')
             .replace('{itemSetName}', '.*')
+            .replace('{referenceOfName}', '.*')
         );
         if (match) {
             return match[1];
@@ -78,6 +81,7 @@ export default class ReferenceOf implements IModel {
             .replace('{inventoryName}', '.*')
             .replace('{itemName}', '.*')
             .replace('{itemSetName}', '.*')
+            .replace('{referenceOfName}', '.*')
         );
         if (match) {
             return match[1];
@@ -94,6 +98,7 @@ export default class ReferenceOf implements IModel {
             .replace('{inventoryName}', '(.*)')
             .replace('{itemName}', '.*')
             .replace('{itemSetName}', '.*')
+            .replace('{referenceOfName}', '.*')
         );
         if (match) {
             return match[1];
@@ -110,6 +115,7 @@ export default class ReferenceOf implements IModel {
             .replace('{inventoryName}', '.*')
             .replace('{itemName}', '(.*)')
             .replace('{itemSetName}', '.*')
+            .replace('{referenceOfName}', '.*')
         );
         if (match) {
             return match[1];
@@ -126,6 +132,24 @@ export default class ReferenceOf implements IModel {
             .replace('{inventoryName}', '.*')
             .replace('{itemName}', '.*')
             .replace('{itemSetName}', '(.*)')
+            .replace('{referenceOfName}', '.*')
+        );
+        if (match) {
+            return match[1];
+        }
+        return null;
+    }
+
+    public static getReferenceOfName(grn: string): string|null {
+        const match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{inventoryName}', '.*')
+            .replace('{itemName}', '.*')
+            .replace('{itemSetName}', '.*')
+            .replace('{referenceOfName}', '(.*)')
         );
         if (match) {
             return match[1];
@@ -155,6 +179,9 @@ export default class ReferenceOf implements IModel {
         if (this.getItemSetName(grn) == null || this.getItemSetName(grn) === '') {
             return false;
         }
+        if (this.getReferenceOfName(grn) == null || this.getReferenceOfName(grn) === '') {
+            return false;
+        }
         return true;
     }
 
@@ -166,6 +193,7 @@ export default class ReferenceOf implements IModel {
         inventoryName: string|null,
         itemName: string|null,
         itemSetName: string|null,
+        referenceOfName: string|null,
     ): string|null {
         return grnFormat
             .replace('{region}', region ?? '')
@@ -174,7 +202,8 @@ export default class ReferenceOf implements IModel {
             .replace('{userId}', userId ?? '')
             .replace('{inventoryName}', inventoryName ?? '')
             .replace('{itemName}', itemName ?? '')
-            .replace('{itemSetName}', itemSetName ?? '');
+            .replace('{itemSetName}', itemSetName ?? '')
+            .replace('{referenceOfName}', referenceOfName ?? '');
     }
     public getReferenceOfId(): string|null {
         return this.referenceOfId;

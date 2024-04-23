@@ -15,7 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var grnFormat = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:user:{userId}:inventory:{inventoryName}:item:{itemName}:itemSet:{itemSetName}:referenceOf";
+var grnFormat = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:user:{userId}:inventory:{inventoryName}:item:{itemName}:itemSet:{itemSetName}:referenceOf:{referenceOfName}";
 var ReferenceOf = /** @class */ (function () {
     function ReferenceOf() {
         this.referenceOfId = null;
@@ -29,7 +29,8 @@ var ReferenceOf = /** @class */ (function () {
             .replace('{userId}', '.*')
             .replace('{inventoryName}', '.*')
             .replace('{itemName}', '.*')
-            .replace('{itemSetName}', '.*'));
+            .replace('{itemSetName}', '.*')
+            .replace('{referenceOfName}', '.*'));
         if (match) {
             return match[1];
         }
@@ -43,7 +44,8 @@ var ReferenceOf = /** @class */ (function () {
             .replace('{userId}', '.*')
             .replace('{inventoryName}', '.*')
             .replace('{itemName}', '.*')
-            .replace('{itemSetName}', '.*'));
+            .replace('{itemSetName}', '.*')
+            .replace('{referenceOfName}', '.*'));
         if (match) {
             return match[1];
         }
@@ -57,7 +59,8 @@ var ReferenceOf = /** @class */ (function () {
             .replace('{userId}', '.*')
             .replace('{inventoryName}', '.*')
             .replace('{itemName}', '.*')
-            .replace('{itemSetName}', '.*'));
+            .replace('{itemSetName}', '.*')
+            .replace('{referenceOfName}', '.*'));
         if (match) {
             return match[1];
         }
@@ -71,7 +74,8 @@ var ReferenceOf = /** @class */ (function () {
             .replace('{userId}', '(.*)')
             .replace('{inventoryName}', '.*')
             .replace('{itemName}', '.*')
-            .replace('{itemSetName}', '.*'));
+            .replace('{itemSetName}', '.*')
+            .replace('{referenceOfName}', '.*'));
         if (match) {
             return match[1];
         }
@@ -85,7 +89,8 @@ var ReferenceOf = /** @class */ (function () {
             .replace('{userId}', '.*')
             .replace('{inventoryName}', '(.*)')
             .replace('{itemName}', '.*')
-            .replace('{itemSetName}', '.*'));
+            .replace('{itemSetName}', '.*')
+            .replace('{referenceOfName}', '.*'));
         if (match) {
             return match[1];
         }
@@ -99,7 +104,8 @@ var ReferenceOf = /** @class */ (function () {
             .replace('{userId}', '.*')
             .replace('{inventoryName}', '.*')
             .replace('{itemName}', '(.*)')
-            .replace('{itemSetName}', '.*'));
+            .replace('{itemSetName}', '.*')
+            .replace('{referenceOfName}', '.*'));
         if (match) {
             return match[1];
         }
@@ -113,7 +119,23 @@ var ReferenceOf = /** @class */ (function () {
             .replace('{userId}', '.*')
             .replace('{inventoryName}', '.*')
             .replace('{itemName}', '.*')
-            .replace('{itemSetName}', '(.*)'));
+            .replace('{itemSetName}', '(.*)')
+            .replace('{referenceOfName}', '.*'));
+        if (match) {
+            return match[1];
+        }
+        return null;
+    };
+    ReferenceOf.getReferenceOfName = function (grn) {
+        var match = grn.match(grnFormat
+            .replace('{region}', '.*')
+            .replace('{ownerId}', '.*')
+            .replace('{namespaceName}', '.*')
+            .replace('{userId}', '.*')
+            .replace('{inventoryName}', '.*')
+            .replace('{itemName}', '.*')
+            .replace('{itemSetName}', '.*')
+            .replace('{referenceOfName}', '(.*)'));
         if (match) {
             return match[1];
         }
@@ -141,9 +163,12 @@ var ReferenceOf = /** @class */ (function () {
         if (this.getItemSetName(grn) == null || this.getItemSetName(grn) === '') {
             return false;
         }
+        if (this.getReferenceOfName(grn) == null || this.getReferenceOfName(grn) === '') {
+            return false;
+        }
         return true;
     };
-    ReferenceOf.createGrn = function (region, ownerId, namespaceName, userId, inventoryName, itemName, itemSetName) {
+    ReferenceOf.createGrn = function (region, ownerId, namespaceName, userId, inventoryName, itemName, itemSetName, referenceOfName) {
         return grnFormat
             .replace('{region}', region !== null && region !== void 0 ? region : '')
             .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
@@ -151,7 +176,8 @@ var ReferenceOf = /** @class */ (function () {
             .replace('{userId}', userId !== null && userId !== void 0 ? userId : '')
             .replace('{inventoryName}', inventoryName !== null && inventoryName !== void 0 ? inventoryName : '')
             .replace('{itemName}', itemName !== null && itemName !== void 0 ? itemName : '')
-            .replace('{itemSetName}', itemSetName !== null && itemSetName !== void 0 ? itemSetName : '');
+            .replace('{itemSetName}', itemSetName !== null && itemSetName !== void 0 ? itemSetName : '')
+            .replace('{referenceOfName}', referenceOfName !== null && referenceOfName !== void 0 ? referenceOfName : '');
     };
     ReferenceOf.prototype.getReferenceOfId = function () {
         return this.referenceOfId;

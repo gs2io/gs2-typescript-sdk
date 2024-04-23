@@ -9,8 +9,9 @@ export default class ReferenceOf implements IModel {
     static getInventoryName(grn: string): string | null;
     static getItemName(grn: string): string | null;
     static getItemSetName(grn: string): string | null;
+    static getReferenceOfName(grn: string): string | null;
     static isValid(grn: string): boolean;
-    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, inventoryName: string | null, itemName: string | null, itemSetName: string | null): string | null;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, inventoryName: string | null, itemName: string | null, itemSetName: string | null, referenceOfName: string | null): string | null;
     getReferenceOfId(): string | null;
     setReferenceOfId(referenceOfId: string | null): this;
     withReferenceOfId(referenceOfId: string | null): this;
