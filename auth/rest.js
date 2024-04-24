@@ -83,6 +83,38 @@ var Gs2AuthRestClient = /** @class */ (function (_super) {
             }
         });
     };
+    Gs2AuthRestClient.prototype.federation = function (request) {
+        var _a, _b, _c, _d, _e, _f;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/federation')
+            .replace('{service}', 'auth')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_a = request.getTimeOffsetToken()) !== null && _a !== void 0 ? _a : null;
+        }
+        var body = {
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'originalUserId': (_c = request.getOriginalUserId()) !== null && _c !== void 0 ? _c : null,
+            'userId': (_d = request.getUserId()) !== null && _d !== void 0 ? _d : null,
+            'policyDocument': (_e = request.getPolicyDocument()) !== null && _e !== void 0 ? _e : null,
+            'timeOffset': (_f = request.getTimeOffset()) !== null && _f !== void 0 ? _f : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.FederationResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
     Gs2AuthRestClient.prototype.issueTimeOffsetTokenByUserId = function (request) {
         var _a, _b, _c, _d;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/timeoffset/token')

@@ -93,6 +93,42 @@ export default class Gs2AuthRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public federation(request: Request.FederationRequest): Promise<Result.FederationResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/federation')
+            .replace('{service}', 'auth')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'originalUserId': request.getOriginalUserId() ?? null,
+            'userId': request.getUserId() ?? null,
+            'policyDocument': request.getPolicyDocument() ?? null,
+            'timeOffset': request.getTimeOffset() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.FederationResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public issueTimeOffsetTokenByUserId(request: Request.IssueTimeOffsetTokenByUserIdRequest): Promise<Result.IssueTimeOffsetTokenByUserIdResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/timeoffset/token')
             .replace('{service}', 'auth')

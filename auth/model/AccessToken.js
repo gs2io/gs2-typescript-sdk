@@ -19,6 +19,7 @@ var AccessToken = /** @class */ (function () {
     function AccessToken() {
         this.token = null;
         this.userId = null;
+        this.federationFromUserId = null;
         this.expire = null;
         this.timeOffset = null;
     }
@@ -42,6 +43,17 @@ var AccessToken = /** @class */ (function () {
     };
     AccessToken.prototype.withUserId = function (userId) {
         this.userId = userId;
+        return this;
+    };
+    AccessToken.prototype.getFederationFromUserId = function () {
+        return this.federationFromUserId;
+    };
+    AccessToken.prototype.setFederationFromUserId = function (federationFromUserId) {
+        this.federationFromUserId = federationFromUserId;
+        return this;
+    };
+    AccessToken.prototype.withFederationFromUserId = function (federationFromUserId) {
+        this.federationFromUserId = federationFromUserId;
         return this;
     };
     AccessToken.prototype.getExpire = function () {
@@ -73,6 +85,7 @@ var AccessToken = /** @class */ (function () {
         return new AccessToken()
             .withToken(data["token"])
             .withUserId(data["userId"])
+            .withFederationFromUserId(data["federationFromUserId"])
             .withExpire(data["expire"])
             .withTimeOffset(data["timeOffset"]);
     };
@@ -80,6 +93,7 @@ var AccessToken = /** @class */ (function () {
         return {
             "token": this.getToken(),
             "userId": this.getUserId(),
+            "federationFromUserId": this.getFederationFromUserId(),
             "expire": this.getExpire(),
             "timeOffset": this.getTimeOffset(),
         };

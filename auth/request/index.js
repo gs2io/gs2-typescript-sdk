@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IssueTimeOffsetTokenByUserIdRequest = exports.LoginBySignatureRequest = exports.LoginRequest = void 0;
+exports.IssueTimeOffsetTokenByUserIdRequest = exports.FederationRequest = exports.LoginBySignatureRequest = exports.LoginRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -21,6 +21,8 @@ var LoginRequest_1 = tslib_1.__importDefault(require("./LoginRequest"));
 exports.LoginRequest = LoginRequest_1.default;
 var LoginBySignatureRequest_1 = tslib_1.__importDefault(require("./LoginBySignatureRequest"));
 exports.LoginBySignatureRequest = LoginBySignatureRequest_1.default;
+var FederationRequest_1 = tslib_1.__importDefault(require("./FederationRequest"));
+exports.FederationRequest = FederationRequest_1.default;
 var IssueTimeOffsetTokenByUserIdRequest_1 = tslib_1.__importDefault(require("./IssueTimeOffsetTokenByUserIdRequest"));
 exports.IssueTimeOffsetTokenByUserIdRequest = IssueTimeOffsetTokenByUserIdRequest_1.default;
 //# sourceMappingURL=index.js.map
