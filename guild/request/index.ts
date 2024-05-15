@@ -1,0 +1,154 @@
+/*
+Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License").
+You may not use this file except in compliance with the License.
+A copy of the License is located at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+or in the "license" file accompanying this file. This file is distributed
+on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+express or implied. See the License for the specific language governing
+permissions and limitations under the License.
+ */
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest"
+import CreateNamespaceRequest from "./CreateNamespaceRequest"
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
+import GetNamespaceRequest from "./GetNamespaceRequest"
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DumpUserDataByUserIdRequest from "./DumpUserDataByUserIdRequest"
+import CheckDumpUserDataByUserIdRequest from "./CheckDumpUserDataByUserIdRequest"
+import CleanUserDataByUserIdRequest from "./CleanUserDataByUserIdRequest"
+import CheckCleanUserDataByUserIdRequest from "./CheckCleanUserDataByUserIdRequest"
+import PrepareImportUserDataByUserIdRequest from "./PrepareImportUserDataByUserIdRequest"
+import ImportUserDataByUserIdRequest from "./ImportUserDataByUserIdRequest"
+import CheckImportUserDataByUserIdRequest from "./CheckImportUserDataByUserIdRequest"
+import DescribeGuildModelMastersRequest from "./DescribeGuildModelMastersRequest"
+import CreateGuildModelMasterRequest from "./CreateGuildModelMasterRequest"
+import GetGuildModelMasterRequest from "./GetGuildModelMasterRequest"
+import UpdateGuildModelMasterRequest from "./UpdateGuildModelMasterRequest"
+import DeleteGuildModelMasterRequest from "./DeleteGuildModelMasterRequest"
+import DescribeGuildModelsRequest from "./DescribeGuildModelsRequest"
+import GetGuildModelRequest from "./GetGuildModelRequest"
+import SearchGuildsRequest from "./SearchGuildsRequest"
+import SearchGuildsByUserIdRequest from "./SearchGuildsByUserIdRequest"
+import CreateGuildRequest from "./CreateGuildRequest"
+import CreateGuildByUserIdRequest from "./CreateGuildByUserIdRequest"
+import GetGuildRequest from "./GetGuildRequest"
+import GetGuildByUserIdRequest from "./GetGuildByUserIdRequest"
+import UpdateGuildRequest from "./UpdateGuildRequest"
+import UpdateGuildByGuildNameRequest from "./UpdateGuildByGuildNameRequest"
+import DeleteMemberRequest from "./DeleteMemberRequest"
+import DeleteMemberByGuildNameRequest from "./DeleteMemberByGuildNameRequest"
+import UpdateMemberRoleRequest from "./UpdateMemberRoleRequest"
+import UpdateMemberRoleByGuildNameRequest from "./UpdateMemberRoleByGuildNameRequest"
+import DeleteGuildRequest from "./DeleteGuildRequest"
+import DeleteGuildByGuildNameRequest from "./DeleteGuildByGuildNameRequest"
+import IncreaseMaximumCurrentMaximumMemberCountByGuildNameRequest from "./IncreaseMaximumCurrentMaximumMemberCountByGuildNameRequest"
+import DecreaseMaximumCurrentMaximumMemberCountByGuildNameRequest from "./DecreaseMaximumCurrentMaximumMemberCountByGuildNameRequest"
+import SetMaximumCurrentMaximumMemberCountByGuildNameRequest from "./SetMaximumCurrentMaximumMemberCountByGuildNameRequest"
+import AssumeRequest from "./AssumeRequest"
+import AssumeByUserIdRequest from "./AssumeByUserIdRequest"
+import IncreaseMaximumCurrentMaximumMemberCountByStampSheetRequest from "./IncreaseMaximumCurrentMaximumMemberCountByStampSheetRequest"
+import DecreaseMaximumCurrentMaximumMemberCountByStampTaskRequest from "./DecreaseMaximumCurrentMaximumMemberCountByStampTaskRequest"
+import SetMaximumCurrentMaximumMemberCountByStampSheetRequest from "./SetMaximumCurrentMaximumMemberCountByStampSheetRequest"
+import DescribeJoinedGuildsRequest from "./DescribeJoinedGuildsRequest"
+import DescribeJoinedGuildsByUserIdRequest from "./DescribeJoinedGuildsByUserIdRequest"
+import GetJoinedGuildRequest from "./GetJoinedGuildRequest"
+import GetJoinedGuildByUserIdRequest from "./GetJoinedGuildByUserIdRequest"
+import WithdrawalRequest from "./WithdrawalRequest"
+import WithdrawalByUserIdRequest from "./WithdrawalByUserIdRequest"
+import ExportMasterRequest from "./ExportMasterRequest"
+import GetCurrentGuildMasterRequest from "./GetCurrentGuildMasterRequest"
+import UpdateCurrentGuildMasterRequest from "./UpdateCurrentGuildMasterRequest"
+import UpdateCurrentGuildMasterFromGitHubRequest from "./UpdateCurrentGuildMasterFromGitHubRequest"
+import DescribeReceiveRequestsRequest from "./DescribeReceiveRequestsRequest"
+import DescribeReceiveRequestsByGuildNameRequest from "./DescribeReceiveRequestsByGuildNameRequest"
+import GetReceiveRequestRequest from "./GetReceiveRequestRequest"
+import GetReceiveRequestByGuildNameRequest from "./GetReceiveRequestByGuildNameRequest"
+import AcceptRequestRequest from "./AcceptRequestRequest"
+import AcceptRequestByGuildNameRequest from "./AcceptRequestByGuildNameRequest"
+import RejectRequestRequest from "./RejectRequestRequest"
+import RejectRequestByGuildNameRequest from "./RejectRequestByGuildNameRequest"
+import DescribeSendRequestsRequest from "./DescribeSendRequestsRequest"
+import DescribeSendRequestsByUserIdRequest from "./DescribeSendRequestsByUserIdRequest"
+import GetSendRequestRequest from "./GetSendRequestRequest"
+import GetSendRequestByUserIdRequest from "./GetSendRequestByUserIdRequest"
+import SendRequestRequest from "./SendRequestRequest"
+import SendRequestByUserIdRequest from "./SendRequestByUserIdRequest"
+import DeleteRequestRequest from "./DeleteRequestRequest"
+import DeleteRequestByUserIdRequest from "./DeleteRequestByUserIdRequest"
+
+export {
+    DescribeNamespacesRequest,
+    CreateNamespaceRequest,
+    GetNamespaceStatusRequest,
+    GetNamespaceRequest,
+    UpdateNamespaceRequest,
+    DeleteNamespaceRequest,
+    DumpUserDataByUserIdRequest,
+    CheckDumpUserDataByUserIdRequest,
+    CleanUserDataByUserIdRequest,
+    CheckCleanUserDataByUserIdRequest,
+    PrepareImportUserDataByUserIdRequest,
+    ImportUserDataByUserIdRequest,
+    CheckImportUserDataByUserIdRequest,
+    DescribeGuildModelMastersRequest,
+    CreateGuildModelMasterRequest,
+    GetGuildModelMasterRequest,
+    UpdateGuildModelMasterRequest,
+    DeleteGuildModelMasterRequest,
+    DescribeGuildModelsRequest,
+    GetGuildModelRequest,
+    SearchGuildsRequest,
+    SearchGuildsByUserIdRequest,
+    CreateGuildRequest,
+    CreateGuildByUserIdRequest,
+    GetGuildRequest,
+    GetGuildByUserIdRequest,
+    UpdateGuildRequest,
+    UpdateGuildByGuildNameRequest,
+    DeleteMemberRequest,
+    DeleteMemberByGuildNameRequest,
+    UpdateMemberRoleRequest,
+    UpdateMemberRoleByGuildNameRequest,
+    DeleteGuildRequest,
+    DeleteGuildByGuildNameRequest,
+    IncreaseMaximumCurrentMaximumMemberCountByGuildNameRequest,
+    DecreaseMaximumCurrentMaximumMemberCountByGuildNameRequest,
+    SetMaximumCurrentMaximumMemberCountByGuildNameRequest,
+    AssumeRequest,
+    AssumeByUserIdRequest,
+    IncreaseMaximumCurrentMaximumMemberCountByStampSheetRequest,
+    DecreaseMaximumCurrentMaximumMemberCountByStampTaskRequest,
+    SetMaximumCurrentMaximumMemberCountByStampSheetRequest,
+    DescribeJoinedGuildsRequest,
+    DescribeJoinedGuildsByUserIdRequest,
+    GetJoinedGuildRequest,
+    GetJoinedGuildByUserIdRequest,
+    WithdrawalRequest,
+    WithdrawalByUserIdRequest,
+    ExportMasterRequest,
+    GetCurrentGuildMasterRequest,
+    UpdateCurrentGuildMasterRequest,
+    UpdateCurrentGuildMasterFromGitHubRequest,
+    DescribeReceiveRequestsRequest,
+    DescribeReceiveRequestsByGuildNameRequest,
+    GetReceiveRequestRequest,
+    GetReceiveRequestByGuildNameRequest,
+    AcceptRequestRequest,
+    AcceptRequestByGuildNameRequest,
+    RejectRequestRequest,
+    RejectRequestByGuildNameRequest,
+    DescribeSendRequestsRequest,
+    DescribeSendRequestsByUserIdRequest,
+    GetSendRequestRequest,
+    GetSendRequestByUserIdRequest,
+    SendRequestRequest,
+    SendRequestByUserIdRequest,
+    DeleteRequestRequest,
+    DeleteRequestByUserIdRequest,
+};

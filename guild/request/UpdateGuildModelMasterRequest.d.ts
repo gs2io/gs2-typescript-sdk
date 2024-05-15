@@ -1,0 +1,58 @@
+import IRequest from '../../core/interface/IRequest';
+import * as Gs2Guild from '../model';
+export default class UpdateGuildModelMasterRequest implements IRequest {
+    private requestId;
+    private contextStack;
+    private namespaceName;
+    private guildModelName;
+    private description;
+    private metadata;
+    private defaultMaximumMemberCount;
+    private maximumMemberCount;
+    private roles;
+    private guildMasterRole;
+    private guildMemberDefaultRole;
+    private rejoinCoolTimeMinutes;
+    getRequestId(): string | null;
+    setRequestId(requestId: string | null): this;
+    withRequestId(requestId: string | null): this;
+    getContextStack(): string | null;
+    setContextStack(contextStack: string | null): this;
+    withContextStack(contextStack: string | null): this;
+    getNamespaceName(): string | null;
+    setNamespaceName(namespaceName: string | null): this;
+    withNamespaceName(namespaceName: string | null): this;
+    getGuildModelName(): string | null;
+    setGuildModelName(guildModelName: string | null): this;
+    withGuildModelName(guildModelName: string | null): this;
+    getDescription(): string | null;
+    setDescription(description: string | null): this;
+    withDescription(description: string | null): this;
+    getMetadata(): string | null;
+    setMetadata(metadata: string | null): this;
+    withMetadata(metadata: string | null): this;
+    getDefaultMaximumMemberCount(): number | null;
+    setDefaultMaximumMemberCount(defaultMaximumMemberCount: number | null): this;
+    withDefaultMaximumMemberCount(defaultMaximumMemberCount: number | null): this;
+    getMaximumMemberCount(): number | null;
+    setMaximumMemberCount(maximumMemberCount: number | null): this;
+    withMaximumMemberCount(maximumMemberCount: number | null): this;
+    getRoles(): Gs2Guild.RoleModel[] | null;
+    setRoles(roles: Gs2Guild.RoleModel[] | null): this;
+    withRoles(roles: Gs2Guild.RoleModel[] | null): this;
+    getGuildMasterRole(): string | null;
+    setGuildMasterRole(guildMasterRole: string | null): this;
+    withGuildMasterRole(guildMasterRole: string | null): this;
+    getGuildMemberDefaultRole(): string | null;
+    setGuildMemberDefaultRole(guildMemberDefaultRole: string | null): this;
+    withGuildMemberDefaultRole(guildMemberDefaultRole: string | null): this;
+    getRejoinCoolTimeMinutes(): number | null;
+    setRejoinCoolTimeMinutes(rejoinCoolTimeMinutes: number | null): this;
+    withRejoinCoolTimeMinutes(rejoinCoolTimeMinutes: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): UpdateGuildModelMasterRequest;
+    toDict(): {
+        [key: string]: any;
+    };
+}

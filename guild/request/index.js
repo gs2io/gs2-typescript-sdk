@@ -1,0 +1,157 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GetCurrentGuildMasterRequest = exports.ExportMasterRequest = exports.WithdrawalByUserIdRequest = exports.WithdrawalRequest = exports.GetJoinedGuildByUserIdRequest = exports.GetJoinedGuildRequest = exports.DescribeJoinedGuildsByUserIdRequest = exports.DescribeJoinedGuildsRequest = exports.SetMaximumCurrentMaximumMemberCountByStampSheetRequest = exports.DecreaseMaximumCurrentMaximumMemberCountByStampTaskRequest = exports.IncreaseMaximumCurrentMaximumMemberCountByStampSheetRequest = exports.AssumeByUserIdRequest = exports.AssumeRequest = exports.SetMaximumCurrentMaximumMemberCountByGuildNameRequest = exports.DecreaseMaximumCurrentMaximumMemberCountByGuildNameRequest = exports.IncreaseMaximumCurrentMaximumMemberCountByGuildNameRequest = exports.DeleteGuildByGuildNameRequest = exports.DeleteGuildRequest = exports.UpdateMemberRoleByGuildNameRequest = exports.UpdateMemberRoleRequest = exports.DeleteMemberByGuildNameRequest = exports.DeleteMemberRequest = exports.UpdateGuildByGuildNameRequest = exports.UpdateGuildRequest = exports.GetGuildByUserIdRequest = exports.GetGuildRequest = exports.CreateGuildByUserIdRequest = exports.CreateGuildRequest = exports.SearchGuildsByUserIdRequest = exports.SearchGuildsRequest = exports.GetGuildModelRequest = exports.DescribeGuildModelsRequest = exports.DeleteGuildModelMasterRequest = exports.UpdateGuildModelMasterRequest = exports.GetGuildModelMasterRequest = exports.CreateGuildModelMasterRequest = exports.DescribeGuildModelMastersRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.DeleteRequestByUserIdRequest = exports.DeleteRequestRequest = exports.SendRequestByUserIdRequest = exports.SendRequestRequest = exports.GetSendRequestByUserIdRequest = exports.GetSendRequestRequest = exports.DescribeSendRequestsByUserIdRequest = exports.DescribeSendRequestsRequest = exports.RejectRequestByGuildNameRequest = exports.RejectRequestRequest = exports.AcceptRequestByGuildNameRequest = exports.AcceptRequestRequest = exports.GetReceiveRequestByGuildNameRequest = exports.GetReceiveRequestRequest = exports.DescribeReceiveRequestsByGuildNameRequest = exports.DescribeReceiveRequestsRequest = exports.UpdateCurrentGuildMasterFromGitHubRequest = exports.UpdateCurrentGuildMasterRequest = void 0;
+var tslib_1 = require("tslib");
+/*
+Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License").
+You may not use this file except in compliance with the License.
+A copy of the License is located at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+or in the "license" file accompanying this file. This file is distributed
+on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+express or implied. See the License for the specific language governing
+permissions and limitations under the License.
+ */
+var DescribeNamespacesRequest_1 = tslib_1.__importDefault(require("./DescribeNamespacesRequest"));
+exports.DescribeNamespacesRequest = DescribeNamespacesRequest_1.default;
+var CreateNamespaceRequest_1 = tslib_1.__importDefault(require("./CreateNamespaceRequest"));
+exports.CreateNamespaceRequest = CreateNamespaceRequest_1.default;
+var GetNamespaceStatusRequest_1 = tslib_1.__importDefault(require("./GetNamespaceStatusRequest"));
+exports.GetNamespaceStatusRequest = GetNamespaceStatusRequest_1.default;
+var GetNamespaceRequest_1 = tslib_1.__importDefault(require("./GetNamespaceRequest"));
+exports.GetNamespaceRequest = GetNamespaceRequest_1.default;
+var UpdateNamespaceRequest_1 = tslib_1.__importDefault(require("./UpdateNamespaceRequest"));
+exports.UpdateNamespaceRequest = UpdateNamespaceRequest_1.default;
+var DeleteNamespaceRequest_1 = tslib_1.__importDefault(require("./DeleteNamespaceRequest"));
+exports.DeleteNamespaceRequest = DeleteNamespaceRequest_1.default;
+var DumpUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./DumpUserDataByUserIdRequest"));
+exports.DumpUserDataByUserIdRequest = DumpUserDataByUserIdRequest_1.default;
+var CheckDumpUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CheckDumpUserDataByUserIdRequest"));
+exports.CheckDumpUserDataByUserIdRequest = CheckDumpUserDataByUserIdRequest_1.default;
+var CleanUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CleanUserDataByUserIdRequest"));
+exports.CleanUserDataByUserIdRequest = CleanUserDataByUserIdRequest_1.default;
+var CheckCleanUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CheckCleanUserDataByUserIdRequest"));
+exports.CheckCleanUserDataByUserIdRequest = CheckCleanUserDataByUserIdRequest_1.default;
+var PrepareImportUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./PrepareImportUserDataByUserIdRequest"));
+exports.PrepareImportUserDataByUserIdRequest = PrepareImportUserDataByUserIdRequest_1.default;
+var ImportUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./ImportUserDataByUserIdRequest"));
+exports.ImportUserDataByUserIdRequest = ImportUserDataByUserIdRequest_1.default;
+var CheckImportUserDataByUserIdRequest_1 = tslib_1.__importDefault(require("./CheckImportUserDataByUserIdRequest"));
+exports.CheckImportUserDataByUserIdRequest = CheckImportUserDataByUserIdRequest_1.default;
+var DescribeGuildModelMastersRequest_1 = tslib_1.__importDefault(require("./DescribeGuildModelMastersRequest"));
+exports.DescribeGuildModelMastersRequest = DescribeGuildModelMastersRequest_1.default;
+var CreateGuildModelMasterRequest_1 = tslib_1.__importDefault(require("./CreateGuildModelMasterRequest"));
+exports.CreateGuildModelMasterRequest = CreateGuildModelMasterRequest_1.default;
+var GetGuildModelMasterRequest_1 = tslib_1.__importDefault(require("./GetGuildModelMasterRequest"));
+exports.GetGuildModelMasterRequest = GetGuildModelMasterRequest_1.default;
+var UpdateGuildModelMasterRequest_1 = tslib_1.__importDefault(require("./UpdateGuildModelMasterRequest"));
+exports.UpdateGuildModelMasterRequest = UpdateGuildModelMasterRequest_1.default;
+var DeleteGuildModelMasterRequest_1 = tslib_1.__importDefault(require("./DeleteGuildModelMasterRequest"));
+exports.DeleteGuildModelMasterRequest = DeleteGuildModelMasterRequest_1.default;
+var DescribeGuildModelsRequest_1 = tslib_1.__importDefault(require("./DescribeGuildModelsRequest"));
+exports.DescribeGuildModelsRequest = DescribeGuildModelsRequest_1.default;
+var GetGuildModelRequest_1 = tslib_1.__importDefault(require("./GetGuildModelRequest"));
+exports.GetGuildModelRequest = GetGuildModelRequest_1.default;
+var SearchGuildsRequest_1 = tslib_1.__importDefault(require("./SearchGuildsRequest"));
+exports.SearchGuildsRequest = SearchGuildsRequest_1.default;
+var SearchGuildsByUserIdRequest_1 = tslib_1.__importDefault(require("./SearchGuildsByUserIdRequest"));
+exports.SearchGuildsByUserIdRequest = SearchGuildsByUserIdRequest_1.default;
+var CreateGuildRequest_1 = tslib_1.__importDefault(require("./CreateGuildRequest"));
+exports.CreateGuildRequest = CreateGuildRequest_1.default;
+var CreateGuildByUserIdRequest_1 = tslib_1.__importDefault(require("./CreateGuildByUserIdRequest"));
+exports.CreateGuildByUserIdRequest = CreateGuildByUserIdRequest_1.default;
+var GetGuildRequest_1 = tslib_1.__importDefault(require("./GetGuildRequest"));
+exports.GetGuildRequest = GetGuildRequest_1.default;
+var GetGuildByUserIdRequest_1 = tslib_1.__importDefault(require("./GetGuildByUserIdRequest"));
+exports.GetGuildByUserIdRequest = GetGuildByUserIdRequest_1.default;
+var UpdateGuildRequest_1 = tslib_1.__importDefault(require("./UpdateGuildRequest"));
+exports.UpdateGuildRequest = UpdateGuildRequest_1.default;
+var UpdateGuildByGuildNameRequest_1 = tslib_1.__importDefault(require("./UpdateGuildByGuildNameRequest"));
+exports.UpdateGuildByGuildNameRequest = UpdateGuildByGuildNameRequest_1.default;
+var DeleteMemberRequest_1 = tslib_1.__importDefault(require("./DeleteMemberRequest"));
+exports.DeleteMemberRequest = DeleteMemberRequest_1.default;
+var DeleteMemberByGuildNameRequest_1 = tslib_1.__importDefault(require("./DeleteMemberByGuildNameRequest"));
+exports.DeleteMemberByGuildNameRequest = DeleteMemberByGuildNameRequest_1.default;
+var UpdateMemberRoleRequest_1 = tslib_1.__importDefault(require("./UpdateMemberRoleRequest"));
+exports.UpdateMemberRoleRequest = UpdateMemberRoleRequest_1.default;
+var UpdateMemberRoleByGuildNameRequest_1 = tslib_1.__importDefault(require("./UpdateMemberRoleByGuildNameRequest"));
+exports.UpdateMemberRoleByGuildNameRequest = UpdateMemberRoleByGuildNameRequest_1.default;
+var DeleteGuildRequest_1 = tslib_1.__importDefault(require("./DeleteGuildRequest"));
+exports.DeleteGuildRequest = DeleteGuildRequest_1.default;
+var DeleteGuildByGuildNameRequest_1 = tslib_1.__importDefault(require("./DeleteGuildByGuildNameRequest"));
+exports.DeleteGuildByGuildNameRequest = DeleteGuildByGuildNameRequest_1.default;
+var IncreaseMaximumCurrentMaximumMemberCountByGuildNameRequest_1 = tslib_1.__importDefault(require("./IncreaseMaximumCurrentMaximumMemberCountByGuildNameRequest"));
+exports.IncreaseMaximumCurrentMaximumMemberCountByGuildNameRequest = IncreaseMaximumCurrentMaximumMemberCountByGuildNameRequest_1.default;
+var DecreaseMaximumCurrentMaximumMemberCountByGuildNameRequest_1 = tslib_1.__importDefault(require("./DecreaseMaximumCurrentMaximumMemberCountByGuildNameRequest"));
+exports.DecreaseMaximumCurrentMaximumMemberCountByGuildNameRequest = DecreaseMaximumCurrentMaximumMemberCountByGuildNameRequest_1.default;
+var SetMaximumCurrentMaximumMemberCountByGuildNameRequest_1 = tslib_1.__importDefault(require("./SetMaximumCurrentMaximumMemberCountByGuildNameRequest"));
+exports.SetMaximumCurrentMaximumMemberCountByGuildNameRequest = SetMaximumCurrentMaximumMemberCountByGuildNameRequest_1.default;
+var AssumeRequest_1 = tslib_1.__importDefault(require("./AssumeRequest"));
+exports.AssumeRequest = AssumeRequest_1.default;
+var AssumeByUserIdRequest_1 = tslib_1.__importDefault(require("./AssumeByUserIdRequest"));
+exports.AssumeByUserIdRequest = AssumeByUserIdRequest_1.default;
+var IncreaseMaximumCurrentMaximumMemberCountByStampSheetRequest_1 = tslib_1.__importDefault(require("./IncreaseMaximumCurrentMaximumMemberCountByStampSheetRequest"));
+exports.IncreaseMaximumCurrentMaximumMemberCountByStampSheetRequest = IncreaseMaximumCurrentMaximumMemberCountByStampSheetRequest_1.default;
+var DecreaseMaximumCurrentMaximumMemberCountByStampTaskRequest_1 = tslib_1.__importDefault(require("./DecreaseMaximumCurrentMaximumMemberCountByStampTaskRequest"));
+exports.DecreaseMaximumCurrentMaximumMemberCountByStampTaskRequest = DecreaseMaximumCurrentMaximumMemberCountByStampTaskRequest_1.default;
+var SetMaximumCurrentMaximumMemberCountByStampSheetRequest_1 = tslib_1.__importDefault(require("./SetMaximumCurrentMaximumMemberCountByStampSheetRequest"));
+exports.SetMaximumCurrentMaximumMemberCountByStampSheetRequest = SetMaximumCurrentMaximumMemberCountByStampSheetRequest_1.default;
+var DescribeJoinedGuildsRequest_1 = tslib_1.__importDefault(require("./DescribeJoinedGuildsRequest"));
+exports.DescribeJoinedGuildsRequest = DescribeJoinedGuildsRequest_1.default;
+var DescribeJoinedGuildsByUserIdRequest_1 = tslib_1.__importDefault(require("./DescribeJoinedGuildsByUserIdRequest"));
+exports.DescribeJoinedGuildsByUserIdRequest = DescribeJoinedGuildsByUserIdRequest_1.default;
+var GetJoinedGuildRequest_1 = tslib_1.__importDefault(require("./GetJoinedGuildRequest"));
+exports.GetJoinedGuildRequest = GetJoinedGuildRequest_1.default;
+var GetJoinedGuildByUserIdRequest_1 = tslib_1.__importDefault(require("./GetJoinedGuildByUserIdRequest"));
+exports.GetJoinedGuildByUserIdRequest = GetJoinedGuildByUserIdRequest_1.default;
+var WithdrawalRequest_1 = tslib_1.__importDefault(require("./WithdrawalRequest"));
+exports.WithdrawalRequest = WithdrawalRequest_1.default;
+var WithdrawalByUserIdRequest_1 = tslib_1.__importDefault(require("./WithdrawalByUserIdRequest"));
+exports.WithdrawalByUserIdRequest = WithdrawalByUserIdRequest_1.default;
+var ExportMasterRequest_1 = tslib_1.__importDefault(require("./ExportMasterRequest"));
+exports.ExportMasterRequest = ExportMasterRequest_1.default;
+var GetCurrentGuildMasterRequest_1 = tslib_1.__importDefault(require("./GetCurrentGuildMasterRequest"));
+exports.GetCurrentGuildMasterRequest = GetCurrentGuildMasterRequest_1.default;
+var UpdateCurrentGuildMasterRequest_1 = tslib_1.__importDefault(require("./UpdateCurrentGuildMasterRequest"));
+exports.UpdateCurrentGuildMasterRequest = UpdateCurrentGuildMasterRequest_1.default;
+var UpdateCurrentGuildMasterFromGitHubRequest_1 = tslib_1.__importDefault(require("./UpdateCurrentGuildMasterFromGitHubRequest"));
+exports.UpdateCurrentGuildMasterFromGitHubRequest = UpdateCurrentGuildMasterFromGitHubRequest_1.default;
+var DescribeReceiveRequestsRequest_1 = tslib_1.__importDefault(require("./DescribeReceiveRequestsRequest"));
+exports.DescribeReceiveRequestsRequest = DescribeReceiveRequestsRequest_1.default;
+var DescribeReceiveRequestsByGuildNameRequest_1 = tslib_1.__importDefault(require("./DescribeReceiveRequestsByGuildNameRequest"));
+exports.DescribeReceiveRequestsByGuildNameRequest = DescribeReceiveRequestsByGuildNameRequest_1.default;
+var GetReceiveRequestRequest_1 = tslib_1.__importDefault(require("./GetReceiveRequestRequest"));
+exports.GetReceiveRequestRequest = GetReceiveRequestRequest_1.default;
+var GetReceiveRequestByGuildNameRequest_1 = tslib_1.__importDefault(require("./GetReceiveRequestByGuildNameRequest"));
+exports.GetReceiveRequestByGuildNameRequest = GetReceiveRequestByGuildNameRequest_1.default;
+var AcceptRequestRequest_1 = tslib_1.__importDefault(require("./AcceptRequestRequest"));
+exports.AcceptRequestRequest = AcceptRequestRequest_1.default;
+var AcceptRequestByGuildNameRequest_1 = tslib_1.__importDefault(require("./AcceptRequestByGuildNameRequest"));
+exports.AcceptRequestByGuildNameRequest = AcceptRequestByGuildNameRequest_1.default;
+var RejectRequestRequest_1 = tslib_1.__importDefault(require("./RejectRequestRequest"));
+exports.RejectRequestRequest = RejectRequestRequest_1.default;
+var RejectRequestByGuildNameRequest_1 = tslib_1.__importDefault(require("./RejectRequestByGuildNameRequest"));
+exports.RejectRequestByGuildNameRequest = RejectRequestByGuildNameRequest_1.default;
+var DescribeSendRequestsRequest_1 = tslib_1.__importDefault(require("./DescribeSendRequestsRequest"));
+exports.DescribeSendRequestsRequest = DescribeSendRequestsRequest_1.default;
+var DescribeSendRequestsByUserIdRequest_1 = tslib_1.__importDefault(require("./DescribeSendRequestsByUserIdRequest"));
+exports.DescribeSendRequestsByUserIdRequest = DescribeSendRequestsByUserIdRequest_1.default;
+var GetSendRequestRequest_1 = tslib_1.__importDefault(require("./GetSendRequestRequest"));
+exports.GetSendRequestRequest = GetSendRequestRequest_1.default;
+var GetSendRequestByUserIdRequest_1 = tslib_1.__importDefault(require("./GetSendRequestByUserIdRequest"));
+exports.GetSendRequestByUserIdRequest = GetSendRequestByUserIdRequest_1.default;
+var SendRequestRequest_1 = tslib_1.__importDefault(require("./SendRequestRequest"));
+exports.SendRequestRequest = SendRequestRequest_1.default;
+var SendRequestByUserIdRequest_1 = tslib_1.__importDefault(require("./SendRequestByUserIdRequest"));
+exports.SendRequestByUserIdRequest = SendRequestByUserIdRequest_1.default;
+var DeleteRequestRequest_1 = tslib_1.__importDefault(require("./DeleteRequestRequest"));
+exports.DeleteRequestRequest = DeleteRequestRequest_1.default;
+var DeleteRequestByUserIdRequest_1 = tslib_1.__importDefault(require("./DeleteRequestByUserIdRequest"));
+exports.DeleteRequestByUserIdRequest = DeleteRequestByUserIdRequest_1.default;
+//# sourceMappingURL=index.js.map
