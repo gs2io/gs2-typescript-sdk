@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 import AdMob from './AdMob';
 import UnityAd from './UnityAd';
+import AppLovinMax from './AppLovinMax';
 import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:adReward:{namespaceName}";
@@ -27,6 +28,7 @@ export default class Namespace implements IModel {
     private description: string|null = null;
     private admob: AdMob|null = null;
     private unityAd: UnityAd|null = null;
+    private appLovinMaxes: AppLovinMax[]|null = null;
     private changePointNotification: NotificationSetting|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
@@ -147,6 +149,17 @@ export default class Namespace implements IModel {
         this.unityAd = unityAd;
         return this;
     }
+    public getAppLovinMaxes(): AppLovinMax[]|null {
+        return this.appLovinMaxes;
+    }
+    public setAppLovinMaxes(appLovinMaxes: AppLovinMax[]|null) {
+        this.appLovinMaxes = appLovinMaxes;
+        return this;
+    }
+    public withAppLovinMaxes(appLovinMaxes: AppLovinMax[]|null): this {
+        this.appLovinMaxes = appLovinMaxes;
+        return this;
+    }
     public getChangePointNotification(): NotificationSetting|null {
         return this.changePointNotification;
     }
@@ -213,6 +226,11 @@ export default class Namespace implements IModel {
             .withDescription(data["description"])
             .withAdmob(AdMob.fromDict(data["admob"]))
             .withUnityAd(UnityAd.fromDict(data["unityAd"]))
+            .withAppLovinMaxes(data.appLovinMaxes ?
+                data.appLovinMaxes.map((item: {[key: string]: any}) => {
+                    return AppLovinMax.fromDict(item);
+                }
+            ) : [])
             .withChangePointNotification(NotificationSetting.fromDict(data["changePointNotification"]))
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
@@ -227,6 +245,11 @@ export default class Namespace implements IModel {
             "description": this.getDescription(),
             "admob": this.getAdmob()?.toDict(),
             "unityAd": this.getUnityAd()?.toDict(),
+            "appLovinMaxes": this.getAppLovinMaxes() ?
+                this.getAppLovinMaxes()!.map((item: AppLovinMax) => {
+                    return item.toDict();
+                }
+            ) : [],
             "changePointNotification": this.getChangePointNotification()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),

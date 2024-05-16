@@ -25,6 +25,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private name: string|null = null;
     private admob: Gs2AdReward.AdMob|null = null;
     private unityAd: Gs2AdReward.UnityAd|null = null;
+    private appLovinMaxes: Gs2AdReward.AppLovinMax[]|null = null;
     private description: string|null = null;
     private changePointNotification: Gs2AdReward.NotificationSetting|null = null;
     private logSetting: Gs2AdReward.LogSetting|null = null;
@@ -89,6 +90,17 @@ export default class CreateNamespaceRequest implements IRequest {
         this.unityAd = unityAd;
         return this;
     }
+    public getAppLovinMaxes(): Gs2AdReward.AppLovinMax[]|null {
+        return this.appLovinMaxes;
+    }
+    public setAppLovinMaxes(appLovinMaxes: Gs2AdReward.AppLovinMax[]|null) {
+        this.appLovinMaxes = appLovinMaxes;
+        return this;
+    }
+    public withAppLovinMaxes(appLovinMaxes: Gs2AdReward.AppLovinMax[]|null): this {
+        this.appLovinMaxes = appLovinMaxes;
+        return this;
+    }
     public getDescription(): string|null {
         return this.description;
     }
@@ -128,6 +140,11 @@ export default class CreateNamespaceRequest implements IRequest {
             .withName(data["name"])
             .withAdmob(Gs2AdReward.AdMob.fromDict(data["admob"]))
             .withUnityAd(Gs2AdReward.UnityAd.fromDict(data["unityAd"]))
+            .withAppLovinMaxes(data.appLovinMaxes ?
+                data.appLovinMaxes.map((item: {[key: string]: any}) => {
+                    return Gs2AdReward.AppLovinMax.fromDict(item);
+                }
+            ) : [])
             .withDescription(data["description"])
             .withChangePointNotification(Gs2AdReward.NotificationSetting.fromDict(data["changePointNotification"]))
             .withLogSetting(Gs2AdReward.LogSetting.fromDict(data["logSetting"]));
@@ -138,6 +155,11 @@ export default class CreateNamespaceRequest implements IRequest {
             "name": this.getName(),
             "admob": this.getAdmob()?.toDict(),
             "unityAd": this.getUnityAd()?.toDict(),
+            "appLovinMaxes": this.getAppLovinMaxes() ?
+                this.getAppLovinMaxes()!.map((item: Gs2AdReward.AppLovinMax) => {
+                    return item.toDict();
+                }
+            ) : [],
             "description": this.getDescription(),
             "changePointNotification": this.getChangePointNotification()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),

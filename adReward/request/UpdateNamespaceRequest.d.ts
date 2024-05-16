@@ -7,6 +7,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private description;
     private admob;
     private unityAd;
+    private appLovinMaxes;
     private changePointNotification;
     private logSetting;
     getRequestId(): string | null;
@@ -27,6 +28,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getUnityAd(): Gs2AdReward.UnityAd | null;
     setUnityAd(unityAd: Gs2AdReward.UnityAd | null): this;
     withUnityAd(unityAd: Gs2AdReward.UnityAd | null): this;
+    getAppLovinMaxes(): Gs2AdReward.AppLovinMax[] | null;
+    setAppLovinMaxes(appLovinMaxes: Gs2AdReward.AppLovinMax[] | null): this;
+    withAppLovinMaxes(appLovinMaxes: Gs2AdReward.AppLovinMax[] | null): this;
     getChangePointNotification(): Gs2AdReward.NotificationSetting | null;
     setChangePointNotification(changePointNotification: Gs2AdReward.NotificationSetting | null): this;
     withChangePointNotification(changePointNotification: Gs2AdReward.NotificationSetting | null): this;

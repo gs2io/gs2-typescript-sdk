@@ -68,6 +68,7 @@ export default class Gs2AdRewardRestClient extends AbstractGs2RestClient {
             'name': request.getName() ?? null,
             'admob': request.getAdmob()?.toDict() ?? null,
             'unityAd': request.getUnityAd()?.toDict() ?? null,
+            'appLovinMaxes': request.getAppLovinMaxes()?.map((item) => item.toDict()) ?? null,
             'description': request.getDescription() ?? null,
             'changePointNotification': request.getChangePointNotification()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
@@ -156,6 +157,7 @@ export default class Gs2AdRewardRestClient extends AbstractGs2RestClient {
             'description': request.getDescription() ?? null,
             'admob': request.getAdmob()?.toDict() ?? null,
             'unityAd': request.getUnityAd()?.toDict() ?? null,
+            'appLovinMaxes': request.getAppLovinMaxes()?.map((item) => item.toDict()) ?? null,
             'changePointNotification': request.getChangePointNotification()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };

@@ -6,6 +6,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private name;
     private admob;
     private unityAd;
+    private appLovinMaxes;
     private description;
     private changePointNotification;
     private logSetting;
@@ -24,6 +25,9 @@ export default class CreateNamespaceRequest implements IRequest {
     getUnityAd(): Gs2AdReward.UnityAd | null;
     setUnityAd(unityAd: Gs2AdReward.UnityAd | null): this;
     withUnityAd(unityAd: Gs2AdReward.UnityAd | null): this;
+    getAppLovinMaxes(): Gs2AdReward.AppLovinMax[] | null;
+    setAppLovinMaxes(appLovinMaxes: Gs2AdReward.AppLovinMax[] | null): this;
+    withAppLovinMaxes(appLovinMaxes: Gs2AdReward.AppLovinMax[] | null): this;
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;

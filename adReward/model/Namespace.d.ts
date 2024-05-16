@@ -1,6 +1,7 @@
 import IModel from '../../core/interface/IModel';
 import AdMob from './AdMob';
 import UnityAd from './UnityAd';
+import AppLovinMax from './AppLovinMax';
 import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
 export default class Namespace implements IModel {
@@ -9,6 +10,7 @@ export default class Namespace implements IModel {
     private description;
     private admob;
     private unityAd;
+    private appLovinMaxes;
     private changePointNotification;
     private logSetting;
     private createdAt;
@@ -34,6 +36,9 @@ export default class Namespace implements IModel {
     getUnityAd(): UnityAd | null;
     setUnityAd(unityAd: UnityAd | null): this;
     withUnityAd(unityAd: UnityAd | null): this;
+    getAppLovinMaxes(): AppLovinMax[] | null;
+    setAppLovinMaxes(appLovinMaxes: AppLovinMax[] | null): this;
+    withAppLovinMaxes(appLovinMaxes: AppLovinMax[] | null): this;
     getChangePointNotification(): NotificationSetting | null;
     setChangePointNotification(changePointNotification: NotificationSetting | null): this;
     withChangePointNotification(changePointNotification: NotificationSetting | null): this;

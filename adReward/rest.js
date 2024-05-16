@@ -49,7 +49,7 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AdRewardRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'ad-reward')
             .replace('{region}', this.session.region);
@@ -62,9 +62,10 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
             'name': (_b = request.getName()) !== null && _b !== void 0 ? _b : null,
             'admob': (_d = (_c = request.getAdmob()) === null || _c === void 0 ? void 0 : _c.toDict()) !== null && _d !== void 0 ? _d : null,
             'unityAd': (_f = (_e = request.getUnityAd()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
-            'description': (_g = request.getDescription()) !== null && _g !== void 0 ? _g : null,
-            'changePointNotification': (_j = (_h = request.getChangePointNotification()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
-            'logSetting': (_l = (_k = request.getLogSetting()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'appLovinMaxes': (_h = (_g = request.getAppLovinMaxes()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
+            'description': (_j = request.getDescription()) !== null && _j !== void 0 ? _j : null,
+            'changePointNotification': (_l = (_k = request.getChangePointNotification()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'logSetting': (_o = (_m = request.getLogSetting()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -124,7 +125,7 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AdRewardRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'ad-reward')
             .replace('{region}', this.session.region)
@@ -138,8 +139,9 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
             'admob': (_f = (_e = request.getAdmob()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
             'unityAd': (_h = (_g = request.getUnityAd()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
-            'changePointNotification': (_k = (_j = request.getChangePointNotification()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'logSetting': (_m = (_l = request.getLogSetting()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'appLovinMaxes': (_k = (_j = request.getAppLovinMaxes()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
+            'changePointNotification': (_m = (_l = request.getChangePointNotification()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'logSetting': (_p = (_o = request.getLogSetting()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

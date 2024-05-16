@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var AdMob_1 = tslib_1.__importDefault(require("./AdMob"));
 var UnityAd_1 = tslib_1.__importDefault(require("./UnityAd"));
+var AppLovinMax_1 = tslib_1.__importDefault(require("./AppLovinMax"));
 var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:adReward:{namespaceName}";
@@ -28,6 +29,7 @@ var Namespace = /** @class */ (function () {
         this.description = null;
         this.admob = null;
         this.unityAd = null;
+        this.appLovinMaxes = null;
         this.changePointNotification = null;
         this.logSetting = null;
         this.createdAt = null;
@@ -137,6 +139,17 @@ var Namespace = /** @class */ (function () {
         this.unityAd = unityAd;
         return this;
     };
+    Namespace.prototype.getAppLovinMaxes = function () {
+        return this.appLovinMaxes;
+    };
+    Namespace.prototype.setAppLovinMaxes = function (appLovinMaxes) {
+        this.appLovinMaxes = appLovinMaxes;
+        return this;
+    };
+    Namespace.prototype.withAppLovinMaxes = function (appLovinMaxes) {
+        this.appLovinMaxes = appLovinMaxes;
+        return this;
+    };
     Namespace.prototype.getChangePointNotification = function () {
         return this.changePointNotification;
     };
@@ -202,6 +215,10 @@ var Namespace = /** @class */ (function () {
             .withDescription(data["description"])
             .withAdmob(AdMob_1.default.fromDict(data["admob"]))
             .withUnityAd(UnityAd_1.default.fromDict(data["unityAd"]))
+            .withAppLovinMaxes(data.appLovinMaxes ?
+            data.appLovinMaxes.map(function (item) {
+                return AppLovinMax_1.default.fromDict(item);
+            }) : [])
             .withChangePointNotification(NotificationSetting_1.default.fromDict(data["changePointNotification"]))
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
@@ -216,6 +233,10 @@ var Namespace = /** @class */ (function () {
             "description": this.getDescription(),
             "admob": (_a = this.getAdmob()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "unityAd": (_b = this.getUnityAd()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "appLovinMaxes": this.getAppLovinMaxes() ?
+                this.getAppLovinMaxes().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "changePointNotification": (_c = this.getChangePointNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "createdAt": this.getCreatedAt(),

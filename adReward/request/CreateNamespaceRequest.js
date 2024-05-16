@@ -24,6 +24,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.name = null;
         this.admob = null;
         this.unityAd = null;
+        this.appLovinMaxes = null;
         this.description = null;
         this.changePointNotification = null;
         this.logSetting = null;
@@ -83,6 +84,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.unityAd = unityAd;
         return this;
     };
+    CreateNamespaceRequest.prototype.getAppLovinMaxes = function () {
+        return this.appLovinMaxes;
+    };
+    CreateNamespaceRequest.prototype.setAppLovinMaxes = function (appLovinMaxes) {
+        this.appLovinMaxes = appLovinMaxes;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withAppLovinMaxes = function (appLovinMaxes) {
+        this.appLovinMaxes = appLovinMaxes;
+        return this;
+    };
     CreateNamespaceRequest.prototype.getDescription = function () {
         return this.description;
     };
@@ -121,6 +133,10 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withName(data["name"])
             .withAdmob(Gs2AdReward.AdMob.fromDict(data["admob"]))
             .withUnityAd(Gs2AdReward.UnityAd.fromDict(data["unityAd"]))
+            .withAppLovinMaxes(data.appLovinMaxes ?
+            data.appLovinMaxes.map(function (item) {
+                return Gs2AdReward.AppLovinMax.fromDict(item);
+            }) : [])
             .withDescription(data["description"])
             .withChangePointNotification(Gs2AdReward.NotificationSetting.fromDict(data["changePointNotification"]))
             .withLogSetting(Gs2AdReward.LogSetting.fromDict(data["logSetting"]));
@@ -131,6 +147,10 @@ var CreateNamespaceRequest = /** @class */ (function () {
             "name": this.getName(),
             "admob": (_a = this.getAdmob()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "unityAd": (_b = this.getUnityAd()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "appLovinMaxes": this.getAppLovinMaxes() ?
+                this.getAppLovinMaxes().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "description": this.getDescription(),
             "changePointNotification": (_c = this.getChangePointNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
