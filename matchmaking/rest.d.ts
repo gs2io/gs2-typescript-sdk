@@ -25,6 +25,8 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     doMatchmakingByPlayer(request: Request.DoMatchmakingByPlayerRequest): Promise<Result.DoMatchmakingByPlayerResult>;
     doMatchmaking(request: Request.DoMatchmakingRequest): Promise<Result.DoMatchmakingResult>;
     doMatchmakingByUserId(request: Request.DoMatchmakingByUserIdRequest): Promise<Result.DoMatchmakingByUserIdResult>;
+    ping(request: Request.PingRequest): Promise<Result.PingResult>;
+    pingByUserId(request: Request.PingByUserIdRequest): Promise<Result.PingByUserIdResult>;
     getGathering(request: Request.GetGatheringRequest): Promise<Result.GetGatheringResult>;
     cancelMatchmaking(request: Request.CancelMatchmakingRequest): Promise<Result.CancelMatchmakingResult>;
     cancelMatchmakingByUserId(request: Request.CancelMatchmakingByUserIdRequest): Promise<Result.CancelMatchmakingByUserIdResult>;

@@ -24,6 +24,8 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.description = null;
         this.enableRating = null;
+        this.enableDisconnectDetection = null;
+        this.disconnectDetectionTimeoutSeconds = null;
         this.createGatheringTriggerType = null;
         this.createGatheringTriggerRealtimeNamespaceId = null;
         this.createGatheringTriggerScriptId = null;
@@ -93,6 +95,28 @@ var UpdateNamespaceRequest = /** @class */ (function () {
     };
     UpdateNamespaceRequest.prototype.withEnableRating = function (enableRating) {
         this.enableRating = enableRating;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getEnableDisconnectDetection = function () {
+        return this.enableDisconnectDetection;
+    };
+    UpdateNamespaceRequest.prototype.setEnableDisconnectDetection = function (enableDisconnectDetection) {
+        this.enableDisconnectDetection = enableDisconnectDetection;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withEnableDisconnectDetection = function (enableDisconnectDetection) {
+        this.enableDisconnectDetection = enableDisconnectDetection;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getDisconnectDetectionTimeoutSeconds = function () {
+        return this.disconnectDetectionTimeoutSeconds;
+    };
+    UpdateNamespaceRequest.prototype.setDisconnectDetectionTimeoutSeconds = function (disconnectDetectionTimeoutSeconds) {
+        this.disconnectDetectionTimeoutSeconds = disconnectDetectionTimeoutSeconds;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withDisconnectDetectionTimeoutSeconds = function (disconnectDetectionTimeoutSeconds) {
+        this.disconnectDetectionTimeoutSeconds = disconnectDetectionTimeoutSeconds;
         return this;
     };
     UpdateNamespaceRequest.prototype.getCreateGatheringTriggerType = function () {
@@ -265,6 +289,8 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
             .withEnableRating(data["enableRating"])
+            .withEnableDisconnectDetection(data["enableDisconnectDetection"])
+            .withDisconnectDetectionTimeoutSeconds(data["disconnectDetectionTimeoutSeconds"])
             .withCreateGatheringTriggerType(data["createGatheringTriggerType"])
             .withCreateGatheringTriggerRealtimeNamespaceId(data["createGatheringTriggerRealtimeNamespaceId"])
             .withCreateGatheringTriggerScriptId(data["createGatheringTriggerScriptId"])
@@ -287,6 +313,8 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
             "enableRating": this.getEnableRating(),
+            "enableDisconnectDetection": this.getEnableDisconnectDetection(),
+            "disconnectDetectionTimeoutSeconds": this.getDisconnectDetectionTimeoutSeconds(),
             "createGatheringTriggerType": this.getCreateGatheringTriggerType(),
             "createGatheringTriggerRealtimeNamespaceId": this.getCreateGatheringTriggerRealtimeNamespaceId(),
             "createGatheringTriggerScriptId": this.getCreateGatheringTriggerScriptId(),

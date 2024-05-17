@@ -34,6 +34,8 @@ import UpdateGatheringByUserIdResult from "./UpdateGatheringByUserIdResult"
 import DoMatchmakingByPlayerResult from "./DoMatchmakingByPlayerResult"
 import DoMatchmakingResult from "./DoMatchmakingResult"
 import DoMatchmakingByUserIdResult from "./DoMatchmakingByUserIdResult"
+import PingResult from "./PingResult"
+import PingByUserIdResult from "./PingByUserIdResult"
 import GetGatheringResult from "./GetGatheringResult"
 import CancelMatchmakingResult from "./CancelMatchmakingResult"
 import CancelMatchmakingByUserIdResult from "./CancelMatchmakingByUserIdResult"
@@ -85,6 +87,8 @@ export {
     DoMatchmakingByPlayerResult,
     DoMatchmakingResult,
     DoMatchmakingByUserIdResult,
+    PingResult,
+    PingByUserIdResult,
     GetGatheringResult,
     CancelMatchmakingResult,
     CancelMatchmakingByUserIdResult,

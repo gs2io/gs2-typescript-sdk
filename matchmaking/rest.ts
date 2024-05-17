@@ -68,6 +68,8 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
             'enableRating': request.getEnableRating() ?? null,
+            'enableDisconnectDetection': request.getEnableDisconnectDetection() ?? null,
+            'disconnectDetectionTimeoutSeconds': request.getDisconnectDetectionTimeoutSeconds() ?? null,
             'createGatheringTriggerType': request.getCreateGatheringTriggerType() ?? null,
             'createGatheringTriggerRealtimeNamespaceId': request.getCreateGatheringTriggerRealtimeNamespaceId() ?? null,
             'createGatheringTriggerScriptId': request.getCreateGatheringTriggerScriptId() ?? null,
@@ -167,6 +169,8 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
             'enableRating': request.getEnableRating() ?? null,
+            'enableDisconnectDetection': request.getEnableDisconnectDetection() ?? null,
+            'disconnectDetectionTimeoutSeconds': request.getDisconnectDetectionTimeoutSeconds() ?? null,
             'createGatheringTriggerType': request.getCreateGatheringTriggerType() ?? null,
             'createGatheringTriggerRealtimeNamespaceId': request.getCreateGatheringTriggerRealtimeNamespaceId() ?? null,
             'createGatheringTriggerScriptId': request.getCreateGatheringTriggerScriptId() ?? null,
@@ -758,6 +762,81 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.DoMatchmakingByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public ping(request: Request.PingRequest): Promise<Result.PingResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}/ping')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{gatheringName}', String(request.getGatheringName() ?? 'null') === "" ? "null" : String(request.getGatheringName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.PingResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public pingByUserId(request: Request.PingByUserIdRequest): Promise<Result.PingByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}/user/{userId}/ping')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{gatheringName}', String(request.getGatheringName() ?? 'null') === "" ? "null" : String(request.getGatheringName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.PingByUserIdResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

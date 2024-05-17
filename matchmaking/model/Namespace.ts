@@ -25,6 +25,8 @@ export default class Namespace implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private enableRating: boolean|null = null;
+    private enableDisconnectDetection: string|null = null;
+    private disconnectDetectionTimeoutSeconds: number|null = null;
     private createGatheringTriggerType: string|null = null;
     private createGatheringTriggerRealtimeNamespaceId: string|null = null;
     private createGatheringTriggerScriptId: string|null = null;
@@ -145,6 +147,28 @@ export default class Namespace implements IModel {
     }
     public withEnableRating(enableRating: boolean|null): this {
         this.enableRating = enableRating;
+        return this;
+    }
+    public getEnableDisconnectDetection(): string|null {
+        return this.enableDisconnectDetection;
+    }
+    public setEnableDisconnectDetection(enableDisconnectDetection: string|null) {
+        this.enableDisconnectDetection = enableDisconnectDetection;
+        return this;
+    }
+    public withEnableDisconnectDetection(enableDisconnectDetection: string|null): this {
+        this.enableDisconnectDetection = enableDisconnectDetection;
+        return this;
+    }
+    public getDisconnectDetectionTimeoutSeconds(): number|null {
+        return this.disconnectDetectionTimeoutSeconds;
+    }
+    public setDisconnectDetectionTimeoutSeconds(disconnectDetectionTimeoutSeconds: number|null) {
+        this.disconnectDetectionTimeoutSeconds = disconnectDetectionTimeoutSeconds;
+        return this;
+    }
+    public withDisconnectDetectionTimeoutSeconds(disconnectDetectionTimeoutSeconds: number|null): this {
+        this.disconnectDetectionTimeoutSeconds = disconnectDetectionTimeoutSeconds;
         return this;
     }
     public getCreateGatheringTriggerType(): string|null {
@@ -355,6 +379,8 @@ export default class Namespace implements IModel {
             .withName(data["name"])
             .withDescription(data["description"])
             .withEnableRating(data["enableRating"])
+            .withEnableDisconnectDetection(data["enableDisconnectDetection"])
+            .withDisconnectDetectionTimeoutSeconds(data["disconnectDetectionTimeoutSeconds"])
             .withCreateGatheringTriggerType(data["createGatheringTriggerType"])
             .withCreateGatheringTriggerRealtimeNamespaceId(data["createGatheringTriggerRealtimeNamespaceId"])
             .withCreateGatheringTriggerScriptId(data["createGatheringTriggerScriptId"])
@@ -381,6 +407,8 @@ export default class Namespace implements IModel {
             "name": this.getName(),
             "description": this.getDescription(),
             "enableRating": this.getEnableRating(),
+            "enableDisconnectDetection": this.getEnableDisconnectDetection(),
+            "disconnectDetectionTimeoutSeconds": this.getDisconnectDetectionTimeoutSeconds(),
             "createGatheringTriggerType": this.getCreateGatheringTriggerType(),
             "createGatheringTriggerRealtimeNamespaceId": this.getCreateGatheringTriggerRealtimeNamespaceId(),
             "createGatheringTriggerScriptId": this.getCreateGatheringTriggerScriptId(),

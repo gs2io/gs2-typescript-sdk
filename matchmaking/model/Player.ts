@@ -22,6 +22,7 @@ export default class Player implements IModel {
     private attributes: Attribute[]|null = null;
     private roleName: string|null = null;
     private denyUserIds: string[]|null = null;
+    private createdAt: number|null = null;
     public getUserId(): string|null {
         return this.userId;
     }
@@ -66,6 +67,17 @@ export default class Player implements IModel {
         this.denyUserIds = denyUserIds;
         return this;
     }
+    public getCreatedAt(): number|null {
+        return this.createdAt;
+    }
+    public setCreatedAt(createdAt: number|null) {
+        this.createdAt = createdAt;
+        return this;
+    }
+    public withCreatedAt(createdAt: number|null): this {
+        this.createdAt = createdAt;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): Player|null {
         if (data == undefined || data == null) {
@@ -83,7 +95,8 @@ export default class Player implements IModel {
                 data.denyUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : [])
+            .withCreatedAt(data["createdAt"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -100,6 +113,7 @@ export default class Player implements IModel {
                     return item;
                 }
             ) : [],
+            "createdAt": this.getCreatedAt(),
         };
     }
 }

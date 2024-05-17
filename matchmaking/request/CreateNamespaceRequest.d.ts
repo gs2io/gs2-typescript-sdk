@@ -6,6 +6,8 @@ export default class CreateNamespaceRequest implements IRequest {
     private name;
     private description;
     private enableRating;
+    private enableDisconnectDetection;
+    private disconnectDetectionTimeoutSeconds;
     private createGatheringTriggerType;
     private createGatheringTriggerRealtimeNamespaceId;
     private createGatheringTriggerScriptId;
@@ -36,6 +38,12 @@ export default class CreateNamespaceRequest implements IRequest {
     getEnableRating(): boolean | null;
     setEnableRating(enableRating: boolean | null): this;
     withEnableRating(enableRating: boolean | null): this;
+    getEnableDisconnectDetection(): string | null;
+    setEnableDisconnectDetection(enableDisconnectDetection: string | null): this;
+    withEnableDisconnectDetection(enableDisconnectDetection: string | null): this;
+    getDisconnectDetectionTimeoutSeconds(): number | null;
+    setDisconnectDetectionTimeoutSeconds(disconnectDetectionTimeoutSeconds: number | null): this;
+    withDisconnectDetectionTimeoutSeconds(disconnectDetectionTimeoutSeconds: number | null): this;
     getCreateGatheringTriggerType(): string | null;
     setCreateGatheringTriggerType(createGatheringTriggerType: string | null): this;
     withCreateGatheringTriggerType(createGatheringTriggerType: string | null): this;

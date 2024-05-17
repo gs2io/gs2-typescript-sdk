@@ -23,6 +23,7 @@ var Player = /** @class */ (function () {
         this.attributes = null;
         this.roleName = null;
         this.denyUserIds = null;
+        this.createdAt = null;
     }
     Player.prototype.getUserId = function () {
         return this.userId;
@@ -68,6 +69,17 @@ var Player = /** @class */ (function () {
         this.denyUserIds = denyUserIds;
         return this;
     };
+    Player.prototype.getCreatedAt = function () {
+        return this.createdAt;
+    };
+    Player.prototype.setCreatedAt = function (createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    };
+    Player.prototype.withCreatedAt = function (createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    };
     Player.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -82,7 +94,8 @@ var Player = /** @class */ (function () {
             .withDenyUserIds(data.denyUserIds ?
             data.denyUserIds.map(function (item) {
                 return item;
-            }) : []);
+            }) : [])
+            .withCreatedAt(data["createdAt"]);
     };
     Player.prototype.toDict = function () {
         return {
@@ -96,6 +109,7 @@ var Player = /** @class */ (function () {
                 this.getDenyUserIds().map(function (item) {
                     return item;
                 }) : [],
+            "createdAt": this.getCreatedAt(),
         };
     };
     return Player;

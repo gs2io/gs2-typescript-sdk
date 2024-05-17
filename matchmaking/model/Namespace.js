@@ -26,6 +26,8 @@ var Namespace = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.enableRating = null;
+        this.enableDisconnectDetection = null;
+        this.disconnectDetectionTimeoutSeconds = null;
         this.createGatheringTriggerType = null;
         this.createGatheringTriggerRealtimeNamespaceId = null;
         this.createGatheringTriggerScriptId = null;
@@ -135,6 +137,28 @@ var Namespace = /** @class */ (function () {
     };
     Namespace.prototype.withEnableRating = function (enableRating) {
         this.enableRating = enableRating;
+        return this;
+    };
+    Namespace.prototype.getEnableDisconnectDetection = function () {
+        return this.enableDisconnectDetection;
+    };
+    Namespace.prototype.setEnableDisconnectDetection = function (enableDisconnectDetection) {
+        this.enableDisconnectDetection = enableDisconnectDetection;
+        return this;
+    };
+    Namespace.prototype.withEnableDisconnectDetection = function (enableDisconnectDetection) {
+        this.enableDisconnectDetection = enableDisconnectDetection;
+        return this;
+    };
+    Namespace.prototype.getDisconnectDetectionTimeoutSeconds = function () {
+        return this.disconnectDetectionTimeoutSeconds;
+    };
+    Namespace.prototype.setDisconnectDetectionTimeoutSeconds = function (disconnectDetectionTimeoutSeconds) {
+        this.disconnectDetectionTimeoutSeconds = disconnectDetectionTimeoutSeconds;
+        return this;
+    };
+    Namespace.prototype.withDisconnectDetectionTimeoutSeconds = function (disconnectDetectionTimeoutSeconds) {
+        this.disconnectDetectionTimeoutSeconds = disconnectDetectionTimeoutSeconds;
         return this;
     };
     Namespace.prototype.getCreateGatheringTriggerType = function () {
@@ -344,6 +368,8 @@ var Namespace = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withEnableRating(data["enableRating"])
+            .withEnableDisconnectDetection(data["enableDisconnectDetection"])
+            .withDisconnectDetectionTimeoutSeconds(data["disconnectDetectionTimeoutSeconds"])
             .withCreateGatheringTriggerType(data["createGatheringTriggerType"])
             .withCreateGatheringTriggerRealtimeNamespaceId(data["createGatheringTriggerRealtimeNamespaceId"])
             .withCreateGatheringTriggerScriptId(data["createGatheringTriggerScriptId"])
@@ -370,6 +396,8 @@ var Namespace = /** @class */ (function () {
             "name": this.getName(),
             "description": this.getDescription(),
             "enableRating": this.getEnableRating(),
+            "enableDisconnectDetection": this.getEnableDisconnectDetection(),
+            "disconnectDetectionTimeoutSeconds": this.getDisconnectDetectionTimeoutSeconds(),
             "createGatheringTriggerType": this.getCreateGatheringTriggerType(),
             "createGatheringTriggerRealtimeNamespaceId": this.getCreateGatheringTriggerRealtimeNamespaceId(),
             "createGatheringTriggerScriptId": this.getCreateGatheringTriggerScriptId(),

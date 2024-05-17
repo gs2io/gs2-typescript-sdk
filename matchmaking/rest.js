@@ -49,7 +49,7 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MatchmakingRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region);
@@ -62,21 +62,23 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'name': (_b = request.getName()) !== null && _b !== void 0 ? _b : null,
             'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
             'enableRating': (_d = request.getEnableRating()) !== null && _d !== void 0 ? _d : null,
-            'createGatheringTriggerType': (_e = request.getCreateGatheringTriggerType()) !== null && _e !== void 0 ? _e : null,
-            'createGatheringTriggerRealtimeNamespaceId': (_f = request.getCreateGatheringTriggerRealtimeNamespaceId()) !== null && _f !== void 0 ? _f : null,
-            'createGatheringTriggerScriptId': (_g = request.getCreateGatheringTriggerScriptId()) !== null && _g !== void 0 ? _g : null,
-            'completeMatchmakingTriggerType': (_h = request.getCompleteMatchmakingTriggerType()) !== null && _h !== void 0 ? _h : null,
-            'completeMatchmakingTriggerRealtimeNamespaceId': (_j = request.getCompleteMatchmakingTriggerRealtimeNamespaceId()) !== null && _j !== void 0 ? _j : null,
-            'completeMatchmakingTriggerScriptId': (_k = request.getCompleteMatchmakingTriggerScriptId()) !== null && _k !== void 0 ? _k : null,
-            'enableCollaborateSeasonRating': (_l = request.getEnableCollaborateSeasonRating()) !== null && _l !== void 0 ? _l : null,
-            'collaborateSeasonRatingNamespaceId': (_m = request.getCollaborateSeasonRatingNamespaceId()) !== null && _m !== void 0 ? _m : null,
-            'collaborateSeasonRatingTtl': (_o = request.getCollaborateSeasonRatingTtl()) !== null && _o !== void 0 ? _o : null,
-            'changeRatingScript': (_q = (_p = request.getChangeRatingScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
-            'joinNotification': (_s = (_r = request.getJoinNotification()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
-            'leaveNotification': (_u = (_t = request.getLeaveNotification()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
-            'completeNotification': (_w = (_v = request.getCompleteNotification()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
-            'changeRatingNotification': (_y = (_x = request.getChangeRatingNotification()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
-            'logSetting': (_0 = (_z = request.getLogSetting()) === null || _z === void 0 ? void 0 : _z.toDict()) !== null && _0 !== void 0 ? _0 : null,
+            'enableDisconnectDetection': (_e = request.getEnableDisconnectDetection()) !== null && _e !== void 0 ? _e : null,
+            'disconnectDetectionTimeoutSeconds': (_f = request.getDisconnectDetectionTimeoutSeconds()) !== null && _f !== void 0 ? _f : null,
+            'createGatheringTriggerType': (_g = request.getCreateGatheringTriggerType()) !== null && _g !== void 0 ? _g : null,
+            'createGatheringTriggerRealtimeNamespaceId': (_h = request.getCreateGatheringTriggerRealtimeNamespaceId()) !== null && _h !== void 0 ? _h : null,
+            'createGatheringTriggerScriptId': (_j = request.getCreateGatheringTriggerScriptId()) !== null && _j !== void 0 ? _j : null,
+            'completeMatchmakingTriggerType': (_k = request.getCompleteMatchmakingTriggerType()) !== null && _k !== void 0 ? _k : null,
+            'completeMatchmakingTriggerRealtimeNamespaceId': (_l = request.getCompleteMatchmakingTriggerRealtimeNamespaceId()) !== null && _l !== void 0 ? _l : null,
+            'completeMatchmakingTriggerScriptId': (_m = request.getCompleteMatchmakingTriggerScriptId()) !== null && _m !== void 0 ? _m : null,
+            'enableCollaborateSeasonRating': (_o = request.getEnableCollaborateSeasonRating()) !== null && _o !== void 0 ? _o : null,
+            'collaborateSeasonRatingNamespaceId': (_p = request.getCollaborateSeasonRatingNamespaceId()) !== null && _p !== void 0 ? _p : null,
+            'collaborateSeasonRatingTtl': (_q = request.getCollaborateSeasonRatingTtl()) !== null && _q !== void 0 ? _q : null,
+            'changeRatingScript': (_s = (_r = request.getChangeRatingScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'joinNotification': (_u = (_t = request.getJoinNotification()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'leaveNotification': (_w = (_v = request.getLeaveNotification()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
+            'completeNotification': (_y = (_x = request.getCompleteNotification()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
+            'changeRatingNotification': (_0 = (_z = request.getChangeRatingNotification()) === null || _z === void 0 ? void 0 : _z.toDict()) !== null && _0 !== void 0 ? _0 : null,
+            'logSetting': (_2 = (_1 = request.getLogSetting()) === null || _1 === void 0 ? void 0 : _1.toDict()) !== null && _2 !== void 0 ? _2 : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -136,7 +138,7 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MatchmakingRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
@@ -149,21 +151,23 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
             'enableRating': (_e = request.getEnableRating()) !== null && _e !== void 0 ? _e : null,
-            'createGatheringTriggerType': (_f = request.getCreateGatheringTriggerType()) !== null && _f !== void 0 ? _f : null,
-            'createGatheringTriggerRealtimeNamespaceId': (_g = request.getCreateGatheringTriggerRealtimeNamespaceId()) !== null && _g !== void 0 ? _g : null,
-            'createGatheringTriggerScriptId': (_h = request.getCreateGatheringTriggerScriptId()) !== null && _h !== void 0 ? _h : null,
-            'completeMatchmakingTriggerType': (_j = request.getCompleteMatchmakingTriggerType()) !== null && _j !== void 0 ? _j : null,
-            'completeMatchmakingTriggerRealtimeNamespaceId': (_k = request.getCompleteMatchmakingTriggerRealtimeNamespaceId()) !== null && _k !== void 0 ? _k : null,
-            'completeMatchmakingTriggerScriptId': (_l = request.getCompleteMatchmakingTriggerScriptId()) !== null && _l !== void 0 ? _l : null,
-            'enableCollaborateSeasonRating': (_m = request.getEnableCollaborateSeasonRating()) !== null && _m !== void 0 ? _m : null,
-            'collaborateSeasonRatingNamespaceId': (_o = request.getCollaborateSeasonRatingNamespaceId()) !== null && _o !== void 0 ? _o : null,
-            'collaborateSeasonRatingTtl': (_p = request.getCollaborateSeasonRatingTtl()) !== null && _p !== void 0 ? _p : null,
-            'changeRatingScript': (_r = (_q = request.getChangeRatingScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
-            'joinNotification': (_t = (_s = request.getJoinNotification()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
-            'leaveNotification': (_v = (_u = request.getLeaveNotification()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
-            'completeNotification': (_x = (_w = request.getCompleteNotification()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
-            'changeRatingNotification': (_z = (_y = request.getChangeRatingNotification()) === null || _y === void 0 ? void 0 : _y.toDict()) !== null && _z !== void 0 ? _z : null,
-            'logSetting': (_1 = (_0 = request.getLogSetting()) === null || _0 === void 0 ? void 0 : _0.toDict()) !== null && _1 !== void 0 ? _1 : null,
+            'enableDisconnectDetection': (_f = request.getEnableDisconnectDetection()) !== null && _f !== void 0 ? _f : null,
+            'disconnectDetectionTimeoutSeconds': (_g = request.getDisconnectDetectionTimeoutSeconds()) !== null && _g !== void 0 ? _g : null,
+            'createGatheringTriggerType': (_h = request.getCreateGatheringTriggerType()) !== null && _h !== void 0 ? _h : null,
+            'createGatheringTriggerRealtimeNamespaceId': (_j = request.getCreateGatheringTriggerRealtimeNamespaceId()) !== null && _j !== void 0 ? _j : null,
+            'createGatheringTriggerScriptId': (_k = request.getCreateGatheringTriggerScriptId()) !== null && _k !== void 0 ? _k : null,
+            'completeMatchmakingTriggerType': (_l = request.getCompleteMatchmakingTriggerType()) !== null && _l !== void 0 ? _l : null,
+            'completeMatchmakingTriggerRealtimeNamespaceId': (_m = request.getCompleteMatchmakingTriggerRealtimeNamespaceId()) !== null && _m !== void 0 ? _m : null,
+            'completeMatchmakingTriggerScriptId': (_o = request.getCompleteMatchmakingTriggerScriptId()) !== null && _o !== void 0 ? _o : null,
+            'enableCollaborateSeasonRating': (_p = request.getEnableCollaborateSeasonRating()) !== null && _p !== void 0 ? _p : null,
+            'collaborateSeasonRatingNamespaceId': (_q = request.getCollaborateSeasonRatingNamespaceId()) !== null && _q !== void 0 ? _q : null,
+            'collaborateSeasonRatingTtl': (_r = request.getCollaborateSeasonRatingTtl()) !== null && _r !== void 0 ? _r : null,
+            'changeRatingScript': (_t = (_s = request.getChangeRatingScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'joinNotification': (_v = (_u = request.getJoinNotification()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
+            'leaveNotification': (_x = (_w = request.getLeaveNotification()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
+            'completeNotification': (_z = (_y = request.getCompleteNotification()) === null || _y === void 0 ? void 0 : _y.toDict()) !== null && _z !== void 0 ? _z : null,
+            'changeRatingNotification': (_1 = (_0 = request.getChangeRatingNotification()) === null || _0 === void 0 ? void 0 : _0.toDict()) !== null && _1 !== void 0 ? _1 : null,
+            'logSetting': (_3 = (_2 = request.getLogSetting()) === null || _2 === void 0 ? void 0 : _2.toDict()) !== null && _3 !== void 0 ? _3 : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -672,6 +676,73 @@ var Gs2MatchmakingRestClient = /** @class */ (function (_super) {
             headers: headers,
         }).then(function (response) {
             return Result.DoMatchmakingByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2MatchmakingRestClient.prototype.ping = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}/ping')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{gatheringName}', String((_c = request.getGatheringName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGatheringName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+        }
+        var body = {
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.PingResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2MatchmakingRestClient.prototype.pingByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/gathering/{gatheringName}/user/{userId}/ping')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{gatheringName}', String((_c = request.getGatheringName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGatheringName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+        }
+        var body = {
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.PingByUserIdResult.fromDict(response.data);
         }).catch(function (error) {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

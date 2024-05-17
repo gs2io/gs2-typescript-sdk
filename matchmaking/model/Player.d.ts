@@ -5,6 +5,7 @@ export default class Player implements IModel {
     private attributes;
     private roleName;
     private denyUserIds;
+    private createdAt;
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
@@ -17,6 +18,9 @@ export default class Player implements IModel {
     getDenyUserIds(): string[] | null;
     setDenyUserIds(denyUserIds: string[] | null): this;
     withDenyUserIds(denyUserIds: string[] | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): Player | null;
