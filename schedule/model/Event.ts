@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import RepeatSetting from './RepeatSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:schedule:{namespaceName}:event:{eventName}";
 
 export default class Event implements IModel {
@@ -22,16 +23,17 @@ export default class Event implements IModel {
     private name: string|null = null;
     private metadata: string|null = null;
     private scheduleType: string|null = null;
-    private repeatType: string|null = null;
     private absoluteBegin: number|null = null;
     private absoluteEnd: number|null = null;
+    private relativeTriggerName: string|null = null;
+    private repeatSetting: RepeatSetting|null = null;
+    private repeatType: string|null = null;
     private repeatBeginDayOfMonth: number|null = null;
     private repeatEndDayOfMonth: number|null = null;
     private repeatBeginDayOfWeek: string|null = null;
     private repeatEndDayOfWeek: string|null = null;
     private repeatBeginHour: number|null = null;
     private repeatEndHour: number|null = null;
-    private relativeTriggerName: string|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -157,17 +159,6 @@ export default class Event implements IModel {
         this.scheduleType = scheduleType;
         return this;
     }
-    public getRepeatType(): string|null {
-        return this.repeatType;
-    }
-    public setRepeatType(repeatType: string|null) {
-        this.repeatType = repeatType;
-        return this;
-    }
-    public withRepeatType(repeatType: string|null): this {
-        this.repeatType = repeatType;
-        return this;
-    }
     public getAbsoluteBegin(): number|null {
         return this.absoluteBegin;
     }
@@ -190,72 +181,6 @@ export default class Event implements IModel {
         this.absoluteEnd = absoluteEnd;
         return this;
     }
-    public getRepeatBeginDayOfMonth(): number|null {
-        return this.repeatBeginDayOfMonth;
-    }
-    public setRepeatBeginDayOfMonth(repeatBeginDayOfMonth: number|null) {
-        this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
-        return this;
-    }
-    public withRepeatBeginDayOfMonth(repeatBeginDayOfMonth: number|null): this {
-        this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
-        return this;
-    }
-    public getRepeatEndDayOfMonth(): number|null {
-        return this.repeatEndDayOfMonth;
-    }
-    public setRepeatEndDayOfMonth(repeatEndDayOfMonth: number|null) {
-        this.repeatEndDayOfMonth = repeatEndDayOfMonth;
-        return this;
-    }
-    public withRepeatEndDayOfMonth(repeatEndDayOfMonth: number|null): this {
-        this.repeatEndDayOfMonth = repeatEndDayOfMonth;
-        return this;
-    }
-    public getRepeatBeginDayOfWeek(): string|null {
-        return this.repeatBeginDayOfWeek;
-    }
-    public setRepeatBeginDayOfWeek(repeatBeginDayOfWeek: string|null) {
-        this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
-        return this;
-    }
-    public withRepeatBeginDayOfWeek(repeatBeginDayOfWeek: string|null): this {
-        this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
-        return this;
-    }
-    public getRepeatEndDayOfWeek(): string|null {
-        return this.repeatEndDayOfWeek;
-    }
-    public setRepeatEndDayOfWeek(repeatEndDayOfWeek: string|null) {
-        this.repeatEndDayOfWeek = repeatEndDayOfWeek;
-        return this;
-    }
-    public withRepeatEndDayOfWeek(repeatEndDayOfWeek: string|null): this {
-        this.repeatEndDayOfWeek = repeatEndDayOfWeek;
-        return this;
-    }
-    public getRepeatBeginHour(): number|null {
-        return this.repeatBeginHour;
-    }
-    public setRepeatBeginHour(repeatBeginHour: number|null) {
-        this.repeatBeginHour = repeatBeginHour;
-        return this;
-    }
-    public withRepeatBeginHour(repeatBeginHour: number|null): this {
-        this.repeatBeginHour = repeatBeginHour;
-        return this;
-    }
-    public getRepeatEndHour(): number|null {
-        return this.repeatEndHour;
-    }
-    public setRepeatEndHour(repeatEndHour: number|null) {
-        this.repeatEndHour = repeatEndHour;
-        return this;
-    }
-    public withRepeatEndHour(repeatEndHour: number|null): this {
-        this.repeatEndHour = repeatEndHour;
-        return this;
-    }
     public getRelativeTriggerName(): string|null {
         return this.relativeTriggerName;
     }
@@ -265,6 +190,115 @@ export default class Event implements IModel {
     }
     public withRelativeTriggerName(relativeTriggerName: string|null): this {
         this.relativeTriggerName = relativeTriggerName;
+        return this;
+    }
+    public getRepeatSetting(): RepeatSetting|null {
+        return this.repeatSetting;
+    }
+    public setRepeatSetting(repeatSetting: RepeatSetting|null) {
+        this.repeatSetting = repeatSetting;
+        return this;
+    }
+    public withRepeatSetting(repeatSetting: RepeatSetting|null): this {
+        this.repeatSetting = repeatSetting;
+        return this;
+    }
+    /** @deprecated */
+    public getRepeatType(): string|null {
+        return this.repeatType;
+    }
+    /** @deprecated */
+    public setRepeatType(repeatType: string|null) {
+        this.repeatType = repeatType;
+        return this;
+    }
+    /** @deprecated */
+    public withRepeatType(repeatType: string|null): this {
+        this.repeatType = repeatType;
+        return this;
+    }
+    /** @deprecated */
+    public getRepeatBeginDayOfMonth(): number|null {
+        return this.repeatBeginDayOfMonth;
+    }
+    /** @deprecated */
+    public setRepeatBeginDayOfMonth(repeatBeginDayOfMonth: number|null) {
+        this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
+        return this;
+    }
+    /** @deprecated */
+    public withRepeatBeginDayOfMonth(repeatBeginDayOfMonth: number|null): this {
+        this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
+        return this;
+    }
+    /** @deprecated */
+    public getRepeatEndDayOfMonth(): number|null {
+        return this.repeatEndDayOfMonth;
+    }
+    /** @deprecated */
+    public setRepeatEndDayOfMonth(repeatEndDayOfMonth: number|null) {
+        this.repeatEndDayOfMonth = repeatEndDayOfMonth;
+        return this;
+    }
+    /** @deprecated */
+    public withRepeatEndDayOfMonth(repeatEndDayOfMonth: number|null): this {
+        this.repeatEndDayOfMonth = repeatEndDayOfMonth;
+        return this;
+    }
+    /** @deprecated */
+    public getRepeatBeginDayOfWeek(): string|null {
+        return this.repeatBeginDayOfWeek;
+    }
+    /** @deprecated */
+    public setRepeatBeginDayOfWeek(repeatBeginDayOfWeek: string|null) {
+        this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
+        return this;
+    }
+    /** @deprecated */
+    public withRepeatBeginDayOfWeek(repeatBeginDayOfWeek: string|null): this {
+        this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
+        return this;
+    }
+    /** @deprecated */
+    public getRepeatEndDayOfWeek(): string|null {
+        return this.repeatEndDayOfWeek;
+    }
+    /** @deprecated */
+    public setRepeatEndDayOfWeek(repeatEndDayOfWeek: string|null) {
+        this.repeatEndDayOfWeek = repeatEndDayOfWeek;
+        return this;
+    }
+    /** @deprecated */
+    public withRepeatEndDayOfWeek(repeatEndDayOfWeek: string|null): this {
+        this.repeatEndDayOfWeek = repeatEndDayOfWeek;
+        return this;
+    }
+    /** @deprecated */
+    public getRepeatBeginHour(): number|null {
+        return this.repeatBeginHour;
+    }
+    /** @deprecated */
+    public setRepeatBeginHour(repeatBeginHour: number|null) {
+        this.repeatBeginHour = repeatBeginHour;
+        return this;
+    }
+    /** @deprecated */
+    public withRepeatBeginHour(repeatBeginHour: number|null): this {
+        this.repeatBeginHour = repeatBeginHour;
+        return this;
+    }
+    /** @deprecated */
+    public getRepeatEndHour(): number|null {
+        return this.repeatEndHour;
+    }
+    /** @deprecated */
+    public setRepeatEndHour(repeatEndHour: number|null) {
+        this.repeatEndHour = repeatEndHour;
+        return this;
+    }
+    /** @deprecated */
+    public withRepeatEndHour(repeatEndHour: number|null): this {
+        this.repeatEndHour = repeatEndHour;
         return this;
     }
 
@@ -277,16 +311,17 @@ export default class Event implements IModel {
             .withName(data["name"])
             .withMetadata(data["metadata"])
             .withScheduleType(data["scheduleType"])
-            .withRepeatType(data["repeatType"])
             .withAbsoluteBegin(data["absoluteBegin"])
             .withAbsoluteEnd(data["absoluteEnd"])
+            .withRelativeTriggerName(data["relativeTriggerName"])
+            .withRepeatSetting(RepeatSetting.fromDict(data["repeatSetting"]))
+            .withRepeatType(data["repeatType"])
             .withRepeatBeginDayOfMonth(data["repeatBeginDayOfMonth"])
             .withRepeatEndDayOfMonth(data["repeatEndDayOfMonth"])
             .withRepeatBeginDayOfWeek(data["repeatBeginDayOfWeek"])
             .withRepeatEndDayOfWeek(data["repeatEndDayOfWeek"])
             .withRepeatBeginHour(data["repeatBeginHour"])
-            .withRepeatEndHour(data["repeatEndHour"])
-            .withRelativeTriggerName(data["relativeTriggerName"]);
+            .withRepeatEndHour(data["repeatEndHour"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -295,16 +330,17 @@ export default class Event implements IModel {
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "scheduleType": this.getScheduleType(),
-            "repeatType": this.getRepeatType(),
             "absoluteBegin": this.getAbsoluteBegin(),
             "absoluteEnd": this.getAbsoluteEnd(),
+            "relativeTriggerName": this.getRelativeTriggerName(),
+            "repeatSetting": this.getRepeatSetting()?.toDict(),
+            "repeatType": this.getRepeatType(),
             "repeatBeginDayOfMonth": this.getRepeatBeginDayOfMonth(),
             "repeatEndDayOfMonth": this.getRepeatEndDayOfMonth(),
             "repeatBeginDayOfWeek": this.getRepeatBeginDayOfWeek(),
             "repeatEndDayOfWeek": this.getRepeatEndDayOfWeek(),
             "repeatBeginHour": this.getRepeatBeginHour(),
             "repeatEndHour": this.getRepeatEndHour(),
-            "relativeTriggerName": this.getRelativeTriggerName(),
         };
     }
 }

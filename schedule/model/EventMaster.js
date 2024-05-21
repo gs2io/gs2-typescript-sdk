@@ -15,6 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var RepeatSetting_1 = tslib_1.__importDefault(require("./RepeatSetting"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:schedule:{namespaceName}:event:{eventName}";
 var EventMaster = /** @class */ (function () {
     function EventMaster() {
@@ -23,19 +25,20 @@ var EventMaster = /** @class */ (function () {
         this.description = null;
         this.metadata = null;
         this.scheduleType = null;
-        this.repeatType = null;
         this.absoluteBegin = null;
         this.absoluteEnd = null;
+        this.relativeTriggerName = null;
+        this.repeatSetting = null;
+        this.createdAt = null;
+        this.updatedAt = null;
+        this.revision = null;
+        this.repeatType = null;
         this.repeatBeginDayOfMonth = null;
         this.repeatEndDayOfMonth = null;
         this.repeatBeginDayOfWeek = null;
         this.repeatEndDayOfWeek = null;
         this.repeatBeginHour = null;
         this.repeatEndHour = null;
-        this.relativeTriggerName = null;
-        this.createdAt = null;
-        this.updatedAt = null;
-        this.revision = null;
     }
     EventMaster.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -158,17 +161,6 @@ var EventMaster = /** @class */ (function () {
         this.scheduleType = scheduleType;
         return this;
     };
-    EventMaster.prototype.getRepeatType = function () {
-        return this.repeatType;
-    };
-    EventMaster.prototype.setRepeatType = function (repeatType) {
-        this.repeatType = repeatType;
-        return this;
-    };
-    EventMaster.prototype.withRepeatType = function (repeatType) {
-        this.repeatType = repeatType;
-        return this;
-    };
     EventMaster.prototype.getAbsoluteBegin = function () {
         return this.absoluteBegin;
     };
@@ -191,72 +183,6 @@ var EventMaster = /** @class */ (function () {
         this.absoluteEnd = absoluteEnd;
         return this;
     };
-    EventMaster.prototype.getRepeatBeginDayOfMonth = function () {
-        return this.repeatBeginDayOfMonth;
-    };
-    EventMaster.prototype.setRepeatBeginDayOfMonth = function (repeatBeginDayOfMonth) {
-        this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
-        return this;
-    };
-    EventMaster.prototype.withRepeatBeginDayOfMonth = function (repeatBeginDayOfMonth) {
-        this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
-        return this;
-    };
-    EventMaster.prototype.getRepeatEndDayOfMonth = function () {
-        return this.repeatEndDayOfMonth;
-    };
-    EventMaster.prototype.setRepeatEndDayOfMonth = function (repeatEndDayOfMonth) {
-        this.repeatEndDayOfMonth = repeatEndDayOfMonth;
-        return this;
-    };
-    EventMaster.prototype.withRepeatEndDayOfMonth = function (repeatEndDayOfMonth) {
-        this.repeatEndDayOfMonth = repeatEndDayOfMonth;
-        return this;
-    };
-    EventMaster.prototype.getRepeatBeginDayOfWeek = function () {
-        return this.repeatBeginDayOfWeek;
-    };
-    EventMaster.prototype.setRepeatBeginDayOfWeek = function (repeatBeginDayOfWeek) {
-        this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
-        return this;
-    };
-    EventMaster.prototype.withRepeatBeginDayOfWeek = function (repeatBeginDayOfWeek) {
-        this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
-        return this;
-    };
-    EventMaster.prototype.getRepeatEndDayOfWeek = function () {
-        return this.repeatEndDayOfWeek;
-    };
-    EventMaster.prototype.setRepeatEndDayOfWeek = function (repeatEndDayOfWeek) {
-        this.repeatEndDayOfWeek = repeatEndDayOfWeek;
-        return this;
-    };
-    EventMaster.prototype.withRepeatEndDayOfWeek = function (repeatEndDayOfWeek) {
-        this.repeatEndDayOfWeek = repeatEndDayOfWeek;
-        return this;
-    };
-    EventMaster.prototype.getRepeatBeginHour = function () {
-        return this.repeatBeginHour;
-    };
-    EventMaster.prototype.setRepeatBeginHour = function (repeatBeginHour) {
-        this.repeatBeginHour = repeatBeginHour;
-        return this;
-    };
-    EventMaster.prototype.withRepeatBeginHour = function (repeatBeginHour) {
-        this.repeatBeginHour = repeatBeginHour;
-        return this;
-    };
-    EventMaster.prototype.getRepeatEndHour = function () {
-        return this.repeatEndHour;
-    };
-    EventMaster.prototype.setRepeatEndHour = function (repeatEndHour) {
-        this.repeatEndHour = repeatEndHour;
-        return this;
-    };
-    EventMaster.prototype.withRepeatEndHour = function (repeatEndHour) {
-        this.repeatEndHour = repeatEndHour;
-        return this;
-    };
     EventMaster.prototype.getRelativeTriggerName = function () {
         return this.relativeTriggerName;
     };
@@ -266,6 +192,17 @@ var EventMaster = /** @class */ (function () {
     };
     EventMaster.prototype.withRelativeTriggerName = function (relativeTriggerName) {
         this.relativeTriggerName = relativeTriggerName;
+        return this;
+    };
+    EventMaster.prototype.getRepeatSetting = function () {
+        return this.repeatSetting;
+    };
+    EventMaster.prototype.setRepeatSetting = function (repeatSetting) {
+        this.repeatSetting = repeatSetting;
+        return this;
+    };
+    EventMaster.prototype.withRepeatSetting = function (repeatSetting) {
+        this.repeatSetting = repeatSetting;
         return this;
     };
     EventMaster.prototype.getCreatedAt = function () {
@@ -301,6 +238,104 @@ var EventMaster = /** @class */ (function () {
         this.revision = revision;
         return this;
     };
+    /** @deprecated */
+    EventMaster.prototype.getRepeatType = function () {
+        return this.repeatType;
+    };
+    /** @deprecated */
+    EventMaster.prototype.setRepeatType = function (repeatType) {
+        this.repeatType = repeatType;
+        return this;
+    };
+    /** @deprecated */
+    EventMaster.prototype.withRepeatType = function (repeatType) {
+        this.repeatType = repeatType;
+        return this;
+    };
+    /** @deprecated */
+    EventMaster.prototype.getRepeatBeginDayOfMonth = function () {
+        return this.repeatBeginDayOfMonth;
+    };
+    /** @deprecated */
+    EventMaster.prototype.setRepeatBeginDayOfMonth = function (repeatBeginDayOfMonth) {
+        this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
+        return this;
+    };
+    /** @deprecated */
+    EventMaster.prototype.withRepeatBeginDayOfMonth = function (repeatBeginDayOfMonth) {
+        this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
+        return this;
+    };
+    /** @deprecated */
+    EventMaster.prototype.getRepeatEndDayOfMonth = function () {
+        return this.repeatEndDayOfMonth;
+    };
+    /** @deprecated */
+    EventMaster.prototype.setRepeatEndDayOfMonth = function (repeatEndDayOfMonth) {
+        this.repeatEndDayOfMonth = repeatEndDayOfMonth;
+        return this;
+    };
+    /** @deprecated */
+    EventMaster.prototype.withRepeatEndDayOfMonth = function (repeatEndDayOfMonth) {
+        this.repeatEndDayOfMonth = repeatEndDayOfMonth;
+        return this;
+    };
+    /** @deprecated */
+    EventMaster.prototype.getRepeatBeginDayOfWeek = function () {
+        return this.repeatBeginDayOfWeek;
+    };
+    /** @deprecated */
+    EventMaster.prototype.setRepeatBeginDayOfWeek = function (repeatBeginDayOfWeek) {
+        this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
+        return this;
+    };
+    /** @deprecated */
+    EventMaster.prototype.withRepeatBeginDayOfWeek = function (repeatBeginDayOfWeek) {
+        this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
+        return this;
+    };
+    /** @deprecated */
+    EventMaster.prototype.getRepeatEndDayOfWeek = function () {
+        return this.repeatEndDayOfWeek;
+    };
+    /** @deprecated */
+    EventMaster.prototype.setRepeatEndDayOfWeek = function (repeatEndDayOfWeek) {
+        this.repeatEndDayOfWeek = repeatEndDayOfWeek;
+        return this;
+    };
+    /** @deprecated */
+    EventMaster.prototype.withRepeatEndDayOfWeek = function (repeatEndDayOfWeek) {
+        this.repeatEndDayOfWeek = repeatEndDayOfWeek;
+        return this;
+    };
+    /** @deprecated */
+    EventMaster.prototype.getRepeatBeginHour = function () {
+        return this.repeatBeginHour;
+    };
+    /** @deprecated */
+    EventMaster.prototype.setRepeatBeginHour = function (repeatBeginHour) {
+        this.repeatBeginHour = repeatBeginHour;
+        return this;
+    };
+    /** @deprecated */
+    EventMaster.prototype.withRepeatBeginHour = function (repeatBeginHour) {
+        this.repeatBeginHour = repeatBeginHour;
+        return this;
+    };
+    /** @deprecated */
+    EventMaster.prototype.getRepeatEndHour = function () {
+        return this.repeatEndHour;
+    };
+    /** @deprecated */
+    EventMaster.prototype.setRepeatEndHour = function (repeatEndHour) {
+        this.repeatEndHour = repeatEndHour;
+        return this;
+    };
+    /** @deprecated */
+    EventMaster.prototype.withRepeatEndHour = function (repeatEndHour) {
+        this.repeatEndHour = repeatEndHour;
+        return this;
+    };
     EventMaster.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -311,40 +346,43 @@ var EventMaster = /** @class */ (function () {
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
             .withScheduleType(data["scheduleType"])
-            .withRepeatType(data["repeatType"])
             .withAbsoluteBegin(data["absoluteBegin"])
             .withAbsoluteEnd(data["absoluteEnd"])
+            .withRelativeTriggerName(data["relativeTriggerName"])
+            .withRepeatSetting(RepeatSetting_1.default.fromDict(data["repeatSetting"]))
+            .withCreatedAt(data["createdAt"])
+            .withUpdatedAt(data["updatedAt"])
+            .withRevision(data["revision"])
+            .withRepeatType(data["repeatType"])
             .withRepeatBeginDayOfMonth(data["repeatBeginDayOfMonth"])
             .withRepeatEndDayOfMonth(data["repeatEndDayOfMonth"])
             .withRepeatBeginDayOfWeek(data["repeatBeginDayOfWeek"])
             .withRepeatEndDayOfWeek(data["repeatEndDayOfWeek"])
             .withRepeatBeginHour(data["repeatBeginHour"])
-            .withRepeatEndHour(data["repeatEndHour"])
-            .withRelativeTriggerName(data["relativeTriggerName"])
-            .withCreatedAt(data["createdAt"])
-            .withUpdatedAt(data["updatedAt"])
-            .withRevision(data["revision"]);
+            .withRepeatEndHour(data["repeatEndHour"]);
     };
     EventMaster.prototype.toDict = function () {
+        var _a;
         return {
             "eventId": this.getEventId(),
             "name": this.getName(),
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
             "scheduleType": this.getScheduleType(),
-            "repeatType": this.getRepeatType(),
             "absoluteBegin": this.getAbsoluteBegin(),
             "absoluteEnd": this.getAbsoluteEnd(),
+            "relativeTriggerName": this.getRelativeTriggerName(),
+            "repeatSetting": (_a = this.getRepeatSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "createdAt": this.getCreatedAt(),
+            "updatedAt": this.getUpdatedAt(),
+            "revision": this.getRevision(),
+            "repeatType": this.getRepeatType(),
             "repeatBeginDayOfMonth": this.getRepeatBeginDayOfMonth(),
             "repeatEndDayOfMonth": this.getRepeatEndDayOfMonth(),
             "repeatBeginDayOfWeek": this.getRepeatBeginDayOfWeek(),
             "repeatEndDayOfWeek": this.getRepeatEndDayOfWeek(),
             "repeatBeginHour": this.getRepeatBeginHour(),
             "repeatEndHour": this.getRepeatEndHour(),
-            "relativeTriggerName": this.getRelativeTriggerName(),
-            "createdAt": this.getCreatedAt(),
-            "updatedAt": this.getUpdatedAt(),
-            "revision": this.getRevision(),
         };
     };
     return EventMaster;

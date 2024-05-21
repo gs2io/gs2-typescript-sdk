@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RepeatSchedule = exports.LogSetting = exports.GitHubCheckoutSetting = exports.CurrentEventMaster = exports.Event = exports.Trigger = exports.EventMaster = exports.Namespace = void 0;
+exports.LogSetting = exports.GitHubCheckoutSetting = exports.CurrentEventMaster = exports.RepeatSchedule = exports.RepeatSetting = exports.Event = exports.Trigger = exports.EventMaster = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -25,12 +25,14 @@ var Trigger_1 = tslib_1.__importDefault(require("./Trigger"));
 exports.Trigger = Trigger_1.default;
 var Event_1 = tslib_1.__importDefault(require("./Event"));
 exports.Event = Event_1.default;
+var RepeatSetting_1 = tslib_1.__importDefault(require("./RepeatSetting"));
+exports.RepeatSetting = RepeatSetting_1.default;
+var RepeatSchedule_1 = tslib_1.__importDefault(require("./RepeatSchedule"));
+exports.RepeatSchedule = RepeatSchedule_1.default;
 var CurrentEventMaster_1 = tslib_1.__importDefault(require("./CurrentEventMaster"));
 exports.CurrentEventMaster = CurrentEventMaster_1.default;
 var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
 exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
-var RepeatSchedule_1 = tslib_1.__importDefault(require("./RepeatSchedule"));
-exports.RepeatSchedule = RepeatSchedule_1.default;
 //# sourceMappingURL=index.js.map

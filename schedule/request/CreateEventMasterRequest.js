@@ -15,6 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var Gs2Schedule = tslib_1.__importStar(require("../model"));
 var CreateEventMasterRequest = /** @class */ (function () {
     function CreateEventMasterRequest() {
         this.requestId = null;
@@ -34,6 +36,7 @@ var CreateEventMasterRequest = /** @class */ (function () {
         this.repeatBeginHour = null;
         this.repeatEndHour = null;
         this.relativeTriggerName = null;
+        this.repeatSetting = null;
     }
     CreateEventMasterRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -134,79 +137,100 @@ var CreateEventMasterRequest = /** @class */ (function () {
         this.absoluteEnd = absoluteEnd;
         return this;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.getRepeatType = function () {
         return this.repeatType;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.setRepeatType = function (repeatType) {
         this.repeatType = repeatType;
         return this;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.withRepeatType = function (repeatType) {
         this.repeatType = repeatType;
         return this;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.getRepeatBeginDayOfMonth = function () {
         return this.repeatBeginDayOfMonth;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.setRepeatBeginDayOfMonth = function (repeatBeginDayOfMonth) {
         this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
         return this;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.withRepeatBeginDayOfMonth = function (repeatBeginDayOfMonth) {
         this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
         return this;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.getRepeatEndDayOfMonth = function () {
         return this.repeatEndDayOfMonth;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.setRepeatEndDayOfMonth = function (repeatEndDayOfMonth) {
         this.repeatEndDayOfMonth = repeatEndDayOfMonth;
         return this;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.withRepeatEndDayOfMonth = function (repeatEndDayOfMonth) {
         this.repeatEndDayOfMonth = repeatEndDayOfMonth;
         return this;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.getRepeatBeginDayOfWeek = function () {
         return this.repeatBeginDayOfWeek;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.setRepeatBeginDayOfWeek = function (repeatBeginDayOfWeek) {
         this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
         return this;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.withRepeatBeginDayOfWeek = function (repeatBeginDayOfWeek) {
         this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
         return this;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.getRepeatEndDayOfWeek = function () {
         return this.repeatEndDayOfWeek;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.setRepeatEndDayOfWeek = function (repeatEndDayOfWeek) {
         this.repeatEndDayOfWeek = repeatEndDayOfWeek;
         return this;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.withRepeatEndDayOfWeek = function (repeatEndDayOfWeek) {
         this.repeatEndDayOfWeek = repeatEndDayOfWeek;
         return this;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.getRepeatBeginHour = function () {
         return this.repeatBeginHour;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.setRepeatBeginHour = function (repeatBeginHour) {
         this.repeatBeginHour = repeatBeginHour;
         return this;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.withRepeatBeginHour = function (repeatBeginHour) {
         this.repeatBeginHour = repeatBeginHour;
         return this;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.getRepeatEndHour = function () {
         return this.repeatEndHour;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.setRepeatEndHour = function (repeatEndHour) {
         this.repeatEndHour = repeatEndHour;
         return this;
     };
+    /** @deprecated */
     CreateEventMasterRequest.prototype.withRepeatEndHour = function (repeatEndHour) {
         this.repeatEndHour = repeatEndHour;
         return this;
@@ -220,6 +244,17 @@ var CreateEventMasterRequest = /** @class */ (function () {
     };
     CreateEventMasterRequest.prototype.withRelativeTriggerName = function (relativeTriggerName) {
         this.relativeTriggerName = relativeTriggerName;
+        return this;
+    };
+    CreateEventMasterRequest.prototype.getRepeatSetting = function () {
+        return this.repeatSetting;
+    };
+    CreateEventMasterRequest.prototype.setRepeatSetting = function (repeatSetting) {
+        this.repeatSetting = repeatSetting;
+        return this;
+    };
+    CreateEventMasterRequest.prototype.withRepeatSetting = function (repeatSetting) {
+        this.repeatSetting = repeatSetting;
         return this;
     };
     CreateEventMasterRequest.fromDict = function (data) {
@@ -238,9 +273,11 @@ var CreateEventMasterRequest = /** @class */ (function () {
             .withRepeatEndDayOfWeek(data["repeatEndDayOfWeek"])
             .withRepeatBeginHour(data["repeatBeginHour"])
             .withRepeatEndHour(data["repeatEndHour"])
-            .withRelativeTriggerName(data["relativeTriggerName"]);
+            .withRelativeTriggerName(data["relativeTriggerName"])
+            .withRepeatSetting(Gs2Schedule.RepeatSetting.fromDict(data["repeatSetting"]));
     };
     CreateEventMasterRequest.prototype.toDict = function () {
+        var _a;
         return {
             "namespaceName": this.getNamespaceName(),
             "name": this.getName(),
@@ -257,6 +294,7 @@ var CreateEventMasterRequest = /** @class */ (function () {
             "repeatBeginHour": this.getRepeatBeginHour(),
             "repeatEndHour": this.getRepeatEndHour(),
             "relativeTriggerName": this.getRelativeTriggerName(),
+            "repeatSetting": (_a = this.getRepeatSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
         };
     };
     return CreateEventMasterRequest;

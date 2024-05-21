@@ -1,23 +1,25 @@
 import IModel from '../../core/interface/IModel';
+import RepeatSetting from './RepeatSetting';
 export default class EventMaster implements IModel {
     private eventId;
     private name;
     private description;
     private metadata;
     private scheduleType;
-    private repeatType;
     private absoluteBegin;
     private absoluteEnd;
+    private relativeTriggerName;
+    private repeatSetting;
+    private createdAt;
+    private updatedAt;
+    private revision;
+    private repeatType;
     private repeatBeginDayOfMonth;
     private repeatEndDayOfMonth;
     private repeatBeginDayOfWeek;
     private repeatEndDayOfWeek;
     private repeatBeginHour;
     private repeatEndHour;
-    private relativeTriggerName;
-    private createdAt;
-    private updatedAt;
-    private revision;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -39,36 +41,18 @@ export default class EventMaster implements IModel {
     getScheduleType(): string | null;
     setScheduleType(scheduleType: string | null): this;
     withScheduleType(scheduleType: string | null): this;
-    getRepeatType(): string | null;
-    setRepeatType(repeatType: string | null): this;
-    withRepeatType(repeatType: string | null): this;
     getAbsoluteBegin(): number | null;
     setAbsoluteBegin(absoluteBegin: number | null): this;
     withAbsoluteBegin(absoluteBegin: number | null): this;
     getAbsoluteEnd(): number | null;
     setAbsoluteEnd(absoluteEnd: number | null): this;
     withAbsoluteEnd(absoluteEnd: number | null): this;
-    getRepeatBeginDayOfMonth(): number | null;
-    setRepeatBeginDayOfMonth(repeatBeginDayOfMonth: number | null): this;
-    withRepeatBeginDayOfMonth(repeatBeginDayOfMonth: number | null): this;
-    getRepeatEndDayOfMonth(): number | null;
-    setRepeatEndDayOfMonth(repeatEndDayOfMonth: number | null): this;
-    withRepeatEndDayOfMonth(repeatEndDayOfMonth: number | null): this;
-    getRepeatBeginDayOfWeek(): string | null;
-    setRepeatBeginDayOfWeek(repeatBeginDayOfWeek: string | null): this;
-    withRepeatBeginDayOfWeek(repeatBeginDayOfWeek: string | null): this;
-    getRepeatEndDayOfWeek(): string | null;
-    setRepeatEndDayOfWeek(repeatEndDayOfWeek: string | null): this;
-    withRepeatEndDayOfWeek(repeatEndDayOfWeek: string | null): this;
-    getRepeatBeginHour(): number | null;
-    setRepeatBeginHour(repeatBeginHour: number | null): this;
-    withRepeatBeginHour(repeatBeginHour: number | null): this;
-    getRepeatEndHour(): number | null;
-    setRepeatEndHour(repeatEndHour: number | null): this;
-    withRepeatEndHour(repeatEndHour: number | null): this;
     getRelativeTriggerName(): string | null;
     setRelativeTriggerName(relativeTriggerName: string | null): this;
     withRelativeTriggerName(relativeTriggerName: string | null): this;
+    getRepeatSetting(): RepeatSetting | null;
+    setRepeatSetting(repeatSetting: RepeatSetting | null): this;
+    withRepeatSetting(repeatSetting: RepeatSetting | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;
@@ -78,6 +62,48 @@ export default class EventMaster implements IModel {
     getRevision(): number | null;
     setRevision(revision: number | null): this;
     withRevision(revision: number | null): this;
+    /** @deprecated */
+    getRepeatType(): string | null;
+    /** @deprecated */
+    setRepeatType(repeatType: string | null): this;
+    /** @deprecated */
+    withRepeatType(repeatType: string | null): this;
+    /** @deprecated */
+    getRepeatBeginDayOfMonth(): number | null;
+    /** @deprecated */
+    setRepeatBeginDayOfMonth(repeatBeginDayOfMonth: number | null): this;
+    /** @deprecated */
+    withRepeatBeginDayOfMonth(repeatBeginDayOfMonth: number | null): this;
+    /** @deprecated */
+    getRepeatEndDayOfMonth(): number | null;
+    /** @deprecated */
+    setRepeatEndDayOfMonth(repeatEndDayOfMonth: number | null): this;
+    /** @deprecated */
+    withRepeatEndDayOfMonth(repeatEndDayOfMonth: number | null): this;
+    /** @deprecated */
+    getRepeatBeginDayOfWeek(): string | null;
+    /** @deprecated */
+    setRepeatBeginDayOfWeek(repeatBeginDayOfWeek: string | null): this;
+    /** @deprecated */
+    withRepeatBeginDayOfWeek(repeatBeginDayOfWeek: string | null): this;
+    /** @deprecated */
+    getRepeatEndDayOfWeek(): string | null;
+    /** @deprecated */
+    setRepeatEndDayOfWeek(repeatEndDayOfWeek: string | null): this;
+    /** @deprecated */
+    withRepeatEndDayOfWeek(repeatEndDayOfWeek: string | null): this;
+    /** @deprecated */
+    getRepeatBeginHour(): number | null;
+    /** @deprecated */
+    setRepeatBeginHour(repeatBeginHour: number | null): this;
+    /** @deprecated */
+    withRepeatBeginHour(repeatBeginHour: number | null): this;
+    /** @deprecated */
+    getRepeatEndHour(): number | null;
+    /** @deprecated */
+    setRepeatEndHour(repeatEndHour: number | null): this;
+    /** @deprecated */
+    withRepeatEndHour(repeatEndHour: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): EventMaster | null;

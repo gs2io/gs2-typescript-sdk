@@ -15,6 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var RepeatSetting_1 = tslib_1.__importDefault(require("./RepeatSetting"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:schedule:{namespaceName}:event:{eventName}";
 var Event = /** @class */ (function () {
     function Event() {
@@ -22,16 +24,17 @@ var Event = /** @class */ (function () {
         this.name = null;
         this.metadata = null;
         this.scheduleType = null;
-        this.repeatType = null;
         this.absoluteBegin = null;
         this.absoluteEnd = null;
+        this.relativeTriggerName = null;
+        this.repeatSetting = null;
+        this.repeatType = null;
         this.repeatBeginDayOfMonth = null;
         this.repeatEndDayOfMonth = null;
         this.repeatBeginDayOfWeek = null;
         this.repeatEndDayOfWeek = null;
         this.repeatBeginHour = null;
         this.repeatEndHour = null;
-        this.relativeTriggerName = null;
     }
     Event.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -143,17 +146,6 @@ var Event = /** @class */ (function () {
         this.scheduleType = scheduleType;
         return this;
     };
-    Event.prototype.getRepeatType = function () {
-        return this.repeatType;
-    };
-    Event.prototype.setRepeatType = function (repeatType) {
-        this.repeatType = repeatType;
-        return this;
-    };
-    Event.prototype.withRepeatType = function (repeatType) {
-        this.repeatType = repeatType;
-        return this;
-    };
     Event.prototype.getAbsoluteBegin = function () {
         return this.absoluteBegin;
     };
@@ -176,72 +168,6 @@ var Event = /** @class */ (function () {
         this.absoluteEnd = absoluteEnd;
         return this;
     };
-    Event.prototype.getRepeatBeginDayOfMonth = function () {
-        return this.repeatBeginDayOfMonth;
-    };
-    Event.prototype.setRepeatBeginDayOfMonth = function (repeatBeginDayOfMonth) {
-        this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
-        return this;
-    };
-    Event.prototype.withRepeatBeginDayOfMonth = function (repeatBeginDayOfMonth) {
-        this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
-        return this;
-    };
-    Event.prototype.getRepeatEndDayOfMonth = function () {
-        return this.repeatEndDayOfMonth;
-    };
-    Event.prototype.setRepeatEndDayOfMonth = function (repeatEndDayOfMonth) {
-        this.repeatEndDayOfMonth = repeatEndDayOfMonth;
-        return this;
-    };
-    Event.prototype.withRepeatEndDayOfMonth = function (repeatEndDayOfMonth) {
-        this.repeatEndDayOfMonth = repeatEndDayOfMonth;
-        return this;
-    };
-    Event.prototype.getRepeatBeginDayOfWeek = function () {
-        return this.repeatBeginDayOfWeek;
-    };
-    Event.prototype.setRepeatBeginDayOfWeek = function (repeatBeginDayOfWeek) {
-        this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
-        return this;
-    };
-    Event.prototype.withRepeatBeginDayOfWeek = function (repeatBeginDayOfWeek) {
-        this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
-        return this;
-    };
-    Event.prototype.getRepeatEndDayOfWeek = function () {
-        return this.repeatEndDayOfWeek;
-    };
-    Event.prototype.setRepeatEndDayOfWeek = function (repeatEndDayOfWeek) {
-        this.repeatEndDayOfWeek = repeatEndDayOfWeek;
-        return this;
-    };
-    Event.prototype.withRepeatEndDayOfWeek = function (repeatEndDayOfWeek) {
-        this.repeatEndDayOfWeek = repeatEndDayOfWeek;
-        return this;
-    };
-    Event.prototype.getRepeatBeginHour = function () {
-        return this.repeatBeginHour;
-    };
-    Event.prototype.setRepeatBeginHour = function (repeatBeginHour) {
-        this.repeatBeginHour = repeatBeginHour;
-        return this;
-    };
-    Event.prototype.withRepeatBeginHour = function (repeatBeginHour) {
-        this.repeatBeginHour = repeatBeginHour;
-        return this;
-    };
-    Event.prototype.getRepeatEndHour = function () {
-        return this.repeatEndHour;
-    };
-    Event.prototype.setRepeatEndHour = function (repeatEndHour) {
-        this.repeatEndHour = repeatEndHour;
-        return this;
-    };
-    Event.prototype.withRepeatEndHour = function (repeatEndHour) {
-        this.repeatEndHour = repeatEndHour;
-        return this;
-    };
     Event.prototype.getRelativeTriggerName = function () {
         return this.relativeTriggerName;
     };
@@ -253,6 +179,115 @@ var Event = /** @class */ (function () {
         this.relativeTriggerName = relativeTriggerName;
         return this;
     };
+    Event.prototype.getRepeatSetting = function () {
+        return this.repeatSetting;
+    };
+    Event.prototype.setRepeatSetting = function (repeatSetting) {
+        this.repeatSetting = repeatSetting;
+        return this;
+    };
+    Event.prototype.withRepeatSetting = function (repeatSetting) {
+        this.repeatSetting = repeatSetting;
+        return this;
+    };
+    /** @deprecated */
+    Event.prototype.getRepeatType = function () {
+        return this.repeatType;
+    };
+    /** @deprecated */
+    Event.prototype.setRepeatType = function (repeatType) {
+        this.repeatType = repeatType;
+        return this;
+    };
+    /** @deprecated */
+    Event.prototype.withRepeatType = function (repeatType) {
+        this.repeatType = repeatType;
+        return this;
+    };
+    /** @deprecated */
+    Event.prototype.getRepeatBeginDayOfMonth = function () {
+        return this.repeatBeginDayOfMonth;
+    };
+    /** @deprecated */
+    Event.prototype.setRepeatBeginDayOfMonth = function (repeatBeginDayOfMonth) {
+        this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
+        return this;
+    };
+    /** @deprecated */
+    Event.prototype.withRepeatBeginDayOfMonth = function (repeatBeginDayOfMonth) {
+        this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
+        return this;
+    };
+    /** @deprecated */
+    Event.prototype.getRepeatEndDayOfMonth = function () {
+        return this.repeatEndDayOfMonth;
+    };
+    /** @deprecated */
+    Event.prototype.setRepeatEndDayOfMonth = function (repeatEndDayOfMonth) {
+        this.repeatEndDayOfMonth = repeatEndDayOfMonth;
+        return this;
+    };
+    /** @deprecated */
+    Event.prototype.withRepeatEndDayOfMonth = function (repeatEndDayOfMonth) {
+        this.repeatEndDayOfMonth = repeatEndDayOfMonth;
+        return this;
+    };
+    /** @deprecated */
+    Event.prototype.getRepeatBeginDayOfWeek = function () {
+        return this.repeatBeginDayOfWeek;
+    };
+    /** @deprecated */
+    Event.prototype.setRepeatBeginDayOfWeek = function (repeatBeginDayOfWeek) {
+        this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
+        return this;
+    };
+    /** @deprecated */
+    Event.prototype.withRepeatBeginDayOfWeek = function (repeatBeginDayOfWeek) {
+        this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
+        return this;
+    };
+    /** @deprecated */
+    Event.prototype.getRepeatEndDayOfWeek = function () {
+        return this.repeatEndDayOfWeek;
+    };
+    /** @deprecated */
+    Event.prototype.setRepeatEndDayOfWeek = function (repeatEndDayOfWeek) {
+        this.repeatEndDayOfWeek = repeatEndDayOfWeek;
+        return this;
+    };
+    /** @deprecated */
+    Event.prototype.withRepeatEndDayOfWeek = function (repeatEndDayOfWeek) {
+        this.repeatEndDayOfWeek = repeatEndDayOfWeek;
+        return this;
+    };
+    /** @deprecated */
+    Event.prototype.getRepeatBeginHour = function () {
+        return this.repeatBeginHour;
+    };
+    /** @deprecated */
+    Event.prototype.setRepeatBeginHour = function (repeatBeginHour) {
+        this.repeatBeginHour = repeatBeginHour;
+        return this;
+    };
+    /** @deprecated */
+    Event.prototype.withRepeatBeginHour = function (repeatBeginHour) {
+        this.repeatBeginHour = repeatBeginHour;
+        return this;
+    };
+    /** @deprecated */
+    Event.prototype.getRepeatEndHour = function () {
+        return this.repeatEndHour;
+    };
+    /** @deprecated */
+    Event.prototype.setRepeatEndHour = function (repeatEndHour) {
+        this.repeatEndHour = repeatEndHour;
+        return this;
+    };
+    /** @deprecated */
+    Event.prototype.withRepeatEndHour = function (repeatEndHour) {
+        this.repeatEndHour = repeatEndHour;
+        return this;
+    };
     Event.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -262,33 +297,36 @@ var Event = /** @class */ (function () {
             .withName(data["name"])
             .withMetadata(data["metadata"])
             .withScheduleType(data["scheduleType"])
-            .withRepeatType(data["repeatType"])
             .withAbsoluteBegin(data["absoluteBegin"])
             .withAbsoluteEnd(data["absoluteEnd"])
+            .withRelativeTriggerName(data["relativeTriggerName"])
+            .withRepeatSetting(RepeatSetting_1.default.fromDict(data["repeatSetting"]))
+            .withRepeatType(data["repeatType"])
             .withRepeatBeginDayOfMonth(data["repeatBeginDayOfMonth"])
             .withRepeatEndDayOfMonth(data["repeatEndDayOfMonth"])
             .withRepeatBeginDayOfWeek(data["repeatBeginDayOfWeek"])
             .withRepeatEndDayOfWeek(data["repeatEndDayOfWeek"])
             .withRepeatBeginHour(data["repeatBeginHour"])
-            .withRepeatEndHour(data["repeatEndHour"])
-            .withRelativeTriggerName(data["relativeTriggerName"]);
+            .withRepeatEndHour(data["repeatEndHour"]);
     };
     Event.prototype.toDict = function () {
+        var _a;
         return {
             "eventId": this.getEventId(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "scheduleType": this.getScheduleType(),
-            "repeatType": this.getRepeatType(),
             "absoluteBegin": this.getAbsoluteBegin(),
             "absoluteEnd": this.getAbsoluteEnd(),
+            "relativeTriggerName": this.getRelativeTriggerName(),
+            "repeatSetting": (_a = this.getRepeatSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "repeatType": this.getRepeatType(),
             "repeatBeginDayOfMonth": this.getRepeatBeginDayOfMonth(),
             "repeatEndDayOfMonth": this.getRepeatEndDayOfMonth(),
             "repeatBeginDayOfWeek": this.getRepeatBeginDayOfWeek(),
             "repeatEndDayOfWeek": this.getRepeatEndDayOfWeek(),
             "repeatBeginHour": this.getRepeatBeginHour(),
             "repeatEndHour": this.getRepeatEndHour(),
-            "relativeTriggerName": this.getRelativeTriggerName(),
         };
     };
     return Event;

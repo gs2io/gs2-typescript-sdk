@@ -492,6 +492,7 @@ export default class Gs2ScheduleRestClient extends AbstractGs2RestClient {
             'repeatBeginHour': request.getRepeatBeginHour() ?? null,
             'repeatEndHour': request.getRepeatEndHour() ?? null,
             'relativeTriggerName': request.getRelativeTriggerName() ?? null,
+            'repeatSetting': request.getRepeatSetting()?.toDict() ?? null,
         };
         return axios.post(
             url,
@@ -563,6 +564,7 @@ export default class Gs2ScheduleRestClient extends AbstractGs2RestClient {
             'repeatBeginHour': request.getRepeatBeginHour() ?? null,
             'repeatEndHour': request.getRepeatEndHour() ?? null,
             'relativeTriggerName': request.getRelativeTriggerName() ?? null,
+            'repeatSetting': request.getRepeatSetting()?.toDict() ?? null,
         };
         return axios.put(
             url,

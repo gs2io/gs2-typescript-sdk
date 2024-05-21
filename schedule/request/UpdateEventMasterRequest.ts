@@ -37,6 +37,7 @@ export default class UpdateEventMasterRequest implements IRequest {
     private repeatBeginHour: number|null = null;
     private repeatEndHour: number|null = null;
     private relativeTriggerName: string|null = null;
+    private repeatSetting: Gs2Schedule.RepeatSetting|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -142,79 +143,100 @@ export default class UpdateEventMasterRequest implements IRequest {
         this.absoluteEnd = absoluteEnd;
         return this;
     }
+    /** @deprecated */
     public getRepeatType(): string|null {
         return this.repeatType;
     }
+    /** @deprecated */
     public setRepeatType(repeatType: string|null) {
         this.repeatType = repeatType;
         return this;
     }
+    /** @deprecated */
     public withRepeatType(repeatType: string|null): this {
         this.repeatType = repeatType;
         return this;
     }
+    /** @deprecated */
     public getRepeatBeginDayOfMonth(): number|null {
         return this.repeatBeginDayOfMonth;
     }
+    /** @deprecated */
     public setRepeatBeginDayOfMonth(repeatBeginDayOfMonth: number|null) {
         this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
         return this;
     }
+    /** @deprecated */
     public withRepeatBeginDayOfMonth(repeatBeginDayOfMonth: number|null): this {
         this.repeatBeginDayOfMonth = repeatBeginDayOfMonth;
         return this;
     }
+    /** @deprecated */
     public getRepeatEndDayOfMonth(): number|null {
         return this.repeatEndDayOfMonth;
     }
+    /** @deprecated */
     public setRepeatEndDayOfMonth(repeatEndDayOfMonth: number|null) {
         this.repeatEndDayOfMonth = repeatEndDayOfMonth;
         return this;
     }
+    /** @deprecated */
     public withRepeatEndDayOfMonth(repeatEndDayOfMonth: number|null): this {
         this.repeatEndDayOfMonth = repeatEndDayOfMonth;
         return this;
     }
+    /** @deprecated */
     public getRepeatBeginDayOfWeek(): string|null {
         return this.repeatBeginDayOfWeek;
     }
+    /** @deprecated */
     public setRepeatBeginDayOfWeek(repeatBeginDayOfWeek: string|null) {
         this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
         return this;
     }
+    /** @deprecated */
     public withRepeatBeginDayOfWeek(repeatBeginDayOfWeek: string|null): this {
         this.repeatBeginDayOfWeek = repeatBeginDayOfWeek;
         return this;
     }
+    /** @deprecated */
     public getRepeatEndDayOfWeek(): string|null {
         return this.repeatEndDayOfWeek;
     }
+    /** @deprecated */
     public setRepeatEndDayOfWeek(repeatEndDayOfWeek: string|null) {
         this.repeatEndDayOfWeek = repeatEndDayOfWeek;
         return this;
     }
+    /** @deprecated */
     public withRepeatEndDayOfWeek(repeatEndDayOfWeek: string|null): this {
         this.repeatEndDayOfWeek = repeatEndDayOfWeek;
         return this;
     }
+    /** @deprecated */
     public getRepeatBeginHour(): number|null {
         return this.repeatBeginHour;
     }
+    /** @deprecated */
     public setRepeatBeginHour(repeatBeginHour: number|null) {
         this.repeatBeginHour = repeatBeginHour;
         return this;
     }
+    /** @deprecated */
     public withRepeatBeginHour(repeatBeginHour: number|null): this {
         this.repeatBeginHour = repeatBeginHour;
         return this;
     }
+    /** @deprecated */
     public getRepeatEndHour(): number|null {
         return this.repeatEndHour;
     }
+    /** @deprecated */
     public setRepeatEndHour(repeatEndHour: number|null) {
         this.repeatEndHour = repeatEndHour;
         return this;
     }
+    /** @deprecated */
     public withRepeatEndHour(repeatEndHour: number|null): this {
         this.repeatEndHour = repeatEndHour;
         return this;
@@ -228,6 +250,17 @@ export default class UpdateEventMasterRequest implements IRequest {
     }
     public withRelativeTriggerName(relativeTriggerName: string|null): this {
         this.relativeTriggerName = relativeTriggerName;
+        return this;
+    }
+    public getRepeatSetting(): Gs2Schedule.RepeatSetting|null {
+        return this.repeatSetting;
+    }
+    public setRepeatSetting(repeatSetting: Gs2Schedule.RepeatSetting|null) {
+        this.repeatSetting = repeatSetting;
+        return this;
+    }
+    public withRepeatSetting(repeatSetting: Gs2Schedule.RepeatSetting|null): this {
+        this.repeatSetting = repeatSetting;
         return this;
     }
 
@@ -247,7 +280,8 @@ export default class UpdateEventMasterRequest implements IRequest {
             .withRepeatEndDayOfWeek(data["repeatEndDayOfWeek"])
             .withRepeatBeginHour(data["repeatBeginHour"])
             .withRepeatEndHour(data["repeatEndHour"])
-            .withRelativeTriggerName(data["relativeTriggerName"]);
+            .withRelativeTriggerName(data["relativeTriggerName"])
+            .withRepeatSetting(Gs2Schedule.RepeatSetting.fromDict(data["repeatSetting"]));
     }
 
     public toDict(): {[key: string]: any} {
@@ -267,6 +301,7 @@ export default class UpdateEventMasterRequest implements IRequest {
             "repeatBeginHour": this.getRepeatBeginHour(),
             "repeatEndHour": this.getRepeatEndHour(),
             "relativeTriggerName": this.getRelativeTriggerName(),
+            "repeatSetting": this.getRepeatSetting()?.toDict(),
         };
     }
 }
