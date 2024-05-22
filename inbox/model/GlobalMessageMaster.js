@@ -26,8 +26,9 @@ var GlobalMessageMaster = /** @class */ (function () {
         this.metadata = null;
         this.readAcquireActions = null;
         this.expiresTimeSpan = null;
-        this.createdAt = null;
         this.expiresAt = null;
+        this.messageReceptionPeriodEventId = null;
+        this.createdAt = null;
         this.revision = null;
     }
     GlobalMessageMaster.getRegion = function (grn) {
@@ -151,17 +152,6 @@ var GlobalMessageMaster = /** @class */ (function () {
         this.expiresTimeSpan = expiresTimeSpan;
         return this;
     };
-    GlobalMessageMaster.prototype.getCreatedAt = function () {
-        return this.createdAt;
-    };
-    GlobalMessageMaster.prototype.setCreatedAt = function (createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    };
-    GlobalMessageMaster.prototype.withCreatedAt = function (createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    };
     GlobalMessageMaster.prototype.getExpiresAt = function () {
         return this.expiresAt;
     };
@@ -171,6 +161,28 @@ var GlobalMessageMaster = /** @class */ (function () {
     };
     GlobalMessageMaster.prototype.withExpiresAt = function (expiresAt) {
         this.expiresAt = expiresAt;
+        return this;
+    };
+    GlobalMessageMaster.prototype.getMessageReceptionPeriodEventId = function () {
+        return this.messageReceptionPeriodEventId;
+    };
+    GlobalMessageMaster.prototype.setMessageReceptionPeriodEventId = function (messageReceptionPeriodEventId) {
+        this.messageReceptionPeriodEventId = messageReceptionPeriodEventId;
+        return this;
+    };
+    GlobalMessageMaster.prototype.withMessageReceptionPeriodEventId = function (messageReceptionPeriodEventId) {
+        this.messageReceptionPeriodEventId = messageReceptionPeriodEventId;
+        return this;
+    };
+    GlobalMessageMaster.prototype.getCreatedAt = function () {
+        return this.createdAt;
+    };
+    GlobalMessageMaster.prototype.setCreatedAt = function (createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    };
+    GlobalMessageMaster.prototype.withCreatedAt = function (createdAt) {
+        this.createdAt = createdAt;
         return this;
     };
     GlobalMessageMaster.prototype.getRevision = function () {
@@ -197,8 +209,9 @@ var GlobalMessageMaster = /** @class */ (function () {
                 return AcquireAction_1.default.fromDict(item);
             }) : [])
             .withExpiresTimeSpan(TimeSpan_1.default.fromDict(data["expiresTimeSpan"]))
-            .withCreatedAt(data["createdAt"])
             .withExpiresAt(data["expiresAt"])
+            .withMessageReceptionPeriodEventId(data["messageReceptionPeriodEventId"])
+            .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     };
     GlobalMessageMaster.prototype.toDict = function () {
@@ -212,8 +225,9 @@ var GlobalMessageMaster = /** @class */ (function () {
                     return item.toDict();
                 }) : [],
             "expiresTimeSpan": (_a = this.getExpiresTimeSpan()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "createdAt": this.getCreatedAt(),
             "expiresAt": this.getExpiresAt(),
+            "messageReceptionPeriodEventId": this.getMessageReceptionPeriodEventId(),
+            "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };
     };

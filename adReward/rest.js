@@ -49,7 +49,7 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AdRewardRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'ad-reward')
             .replace('{region}', this.session.region);
@@ -64,8 +64,10 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
             'unityAd': (_f = (_e = request.getUnityAd()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
             'appLovinMaxes': (_h = (_g = request.getAppLovinMaxes()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
             'description': (_j = request.getDescription()) !== null && _j !== void 0 ? _j : null,
-            'changePointNotification': (_l = (_k = request.getChangePointNotification()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'logSetting': (_o = (_m = request.getLogSetting()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'acquirePointScript': (_l = (_k = request.getAcquirePointScript()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'consumePointScript': (_o = (_m = request.getConsumePointScript()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'changePointNotification': (_q = (_p = request.getChangePointNotification()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'logSetting': (_s = (_r = request.getLogSetting()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -125,7 +127,7 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AdRewardRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'ad-reward')
             .replace('{region}', this.session.region)
@@ -140,8 +142,10 @@ var Gs2AdRewardRestClient = /** @class */ (function (_super) {
             'admob': (_f = (_e = request.getAdmob()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
             'unityAd': (_h = (_g = request.getUnityAd()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
             'appLovinMaxes': (_k = (_j = request.getAppLovinMaxes()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
-            'changePointNotification': (_m = (_l = request.getChangePointNotification()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
-            'logSetting': (_p = (_o = request.getLogSetting()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'acquirePointScript': (_m = (_l = request.getAcquirePointScript()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'consumePointScript': (_p = (_o = request.getConsumePointScript()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'changePointNotification': (_r = (_q = request.getChangePointNotification()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'logSetting': (_t = (_s = request.getLogSetting()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

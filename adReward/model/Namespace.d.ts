@@ -2,6 +2,7 @@ import IModel from '../../core/interface/IModel';
 import AdMob from './AdMob';
 import UnityAd from './UnityAd';
 import AppLovinMax from './AppLovinMax';
+import ScriptSetting from './ScriptSetting';
 import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
 export default class Namespace implements IModel {
@@ -11,6 +12,8 @@ export default class Namespace implements IModel {
     private admob;
     private unityAd;
     private appLovinMaxes;
+    private acquirePointScript;
+    private consumePointScript;
     private changePointNotification;
     private logSetting;
     private createdAt;
@@ -39,6 +42,12 @@ export default class Namespace implements IModel {
     getAppLovinMaxes(): AppLovinMax[] | null;
     setAppLovinMaxes(appLovinMaxes: AppLovinMax[] | null): this;
     withAppLovinMaxes(appLovinMaxes: AppLovinMax[] | null): this;
+    getAcquirePointScript(): ScriptSetting | null;
+    setAcquirePointScript(acquirePointScript: ScriptSetting | null): this;
+    withAcquirePointScript(acquirePointScript: ScriptSetting | null): this;
+    getConsumePointScript(): ScriptSetting | null;
+    setConsumePointScript(consumePointScript: ScriptSetting | null): this;
+    withConsumePointScript(consumePointScript: ScriptSetting | null): this;
     getChangePointNotification(): NotificationSetting | null;
     setChangePointNotification(changePointNotification: NotificationSetting | null): this;
     withChangePointNotification(changePointNotification: NotificationSetting | null): this;

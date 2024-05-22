@@ -26,6 +26,8 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.admob = null;
         this.unityAd = null;
         this.appLovinMaxes = null;
+        this.acquirePointScript = null;
+        this.consumePointScript = null;
         this.changePointNotification = null;
         this.logSetting = null;
     }
@@ -106,6 +108,28 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.appLovinMaxes = appLovinMaxes;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getAcquirePointScript = function () {
+        return this.acquirePointScript;
+    };
+    UpdateNamespaceRequest.prototype.setAcquirePointScript = function (acquirePointScript) {
+        this.acquirePointScript = acquirePointScript;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withAcquirePointScript = function (acquirePointScript) {
+        this.acquirePointScript = acquirePointScript;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getConsumePointScript = function () {
+        return this.consumePointScript;
+    };
+    UpdateNamespaceRequest.prototype.setConsumePointScript = function (consumePointScript) {
+        this.consumePointScript = consumePointScript;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withConsumePointScript = function (consumePointScript) {
+        this.consumePointScript = consumePointScript;
+        return this;
+    };
     UpdateNamespaceRequest.prototype.getChangePointNotification = function () {
         return this.changePointNotification;
     };
@@ -138,11 +162,13 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             data.appLovinMaxes.map(function (item) {
                 return Gs2AdReward.AppLovinMax.fromDict(item);
             }) : [])
+            .withAcquirePointScript(Gs2AdReward.ScriptSetting.fromDict(data["acquirePointScript"]))
+            .withConsumePointScript(Gs2AdReward.ScriptSetting.fromDict(data["consumePointScript"]))
             .withChangePointNotification(Gs2AdReward.NotificationSetting.fromDict(data["changePointNotification"]))
             .withLogSetting(Gs2AdReward.LogSetting.fromDict(data["logSetting"]));
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e, _f;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
@@ -152,8 +178,10 @@ var UpdateNamespaceRequest = /** @class */ (function () {
                 this.getAppLovinMaxes().map(function (item) {
                     return item.toDict();
                 }) : [],
-            "changePointNotification": (_c = this.getChangePointNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "acquirePointScript": (_c = this.getAcquirePointScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "consumePointScript": (_d = this.getConsumePointScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "changePointNotification": (_e = this.getChangePointNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
         };
     };
     return UpdateNamespaceRequest;

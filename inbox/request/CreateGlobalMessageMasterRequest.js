@@ -27,6 +27,7 @@ var CreateGlobalMessageMasterRequest = /** @class */ (function () {
         this.readAcquireActions = null;
         this.expiresTimeSpan = null;
         this.expiresAt = null;
+        this.messageReceptionPeriodEventId = null;
     }
     CreateGlobalMessageMasterRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -116,6 +117,17 @@ var CreateGlobalMessageMasterRequest = /** @class */ (function () {
         this.expiresAt = expiresAt;
         return this;
     };
+    CreateGlobalMessageMasterRequest.prototype.getMessageReceptionPeriodEventId = function () {
+        return this.messageReceptionPeriodEventId;
+    };
+    CreateGlobalMessageMasterRequest.prototype.setMessageReceptionPeriodEventId = function (messageReceptionPeriodEventId) {
+        this.messageReceptionPeriodEventId = messageReceptionPeriodEventId;
+        return this;
+    };
+    CreateGlobalMessageMasterRequest.prototype.withMessageReceptionPeriodEventId = function (messageReceptionPeriodEventId) {
+        this.messageReceptionPeriodEventId = messageReceptionPeriodEventId;
+        return this;
+    };
     CreateGlobalMessageMasterRequest.fromDict = function (data) {
         return new CreateGlobalMessageMasterRequest()
             .withNamespaceName(data["namespaceName"])
@@ -126,7 +138,8 @@ var CreateGlobalMessageMasterRequest = /** @class */ (function () {
                 return Gs2Inbox.AcquireAction.fromDict(item);
             }) : [])
             .withExpiresTimeSpan(Gs2Inbox.TimeSpan.fromDict(data["expiresTimeSpan"]))
-            .withExpiresAt(data["expiresAt"]);
+            .withExpiresAt(data["expiresAt"])
+            .withMessageReceptionPeriodEventId(data["messageReceptionPeriodEventId"]);
     };
     CreateGlobalMessageMasterRequest.prototype.toDict = function () {
         var _a;
@@ -140,6 +153,7 @@ var CreateGlobalMessageMasterRequest = /** @class */ (function () {
                 }) : [],
             "expiresTimeSpan": (_a = this.getExpiresTimeSpan()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "expiresAt": this.getExpiresAt(),
+            "messageReceptionPeriodEventId": this.getMessageReceptionPeriodEventId(),
         };
     };
     return CreateGlobalMessageMasterRequest;

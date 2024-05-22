@@ -8,6 +8,8 @@ export default class CreateNamespaceRequest implements IRequest {
     private unityAd;
     private appLovinMaxes;
     private description;
+    private acquirePointScript;
+    private consumePointScript;
     private changePointNotification;
     private logSetting;
     getRequestId(): string | null;
@@ -31,6 +33,12 @@ export default class CreateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getAcquirePointScript(): Gs2AdReward.ScriptSetting | null;
+    setAcquirePointScript(acquirePointScript: Gs2AdReward.ScriptSetting | null): this;
+    withAcquirePointScript(acquirePointScript: Gs2AdReward.ScriptSetting | null): this;
+    getConsumePointScript(): Gs2AdReward.ScriptSetting | null;
+    setConsumePointScript(consumePointScript: Gs2AdReward.ScriptSetting | null): this;
+    withConsumePointScript(consumePointScript: Gs2AdReward.ScriptSetting | null): this;
     getChangePointNotification(): Gs2AdReward.NotificationSetting | null;
     setChangePointNotification(changePointNotification: Gs2AdReward.NotificationSetting | null): this;
     withChangePointNotification(changePointNotification: Gs2AdReward.NotificationSetting | null): this;

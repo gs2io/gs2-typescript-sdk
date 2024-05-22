@@ -27,6 +27,8 @@ export default class UpdateNamespaceRequest implements IRequest {
     private admob: Gs2AdReward.AdMob|null = null;
     private unityAd: Gs2AdReward.UnityAd|null = null;
     private appLovinMaxes: Gs2AdReward.AppLovinMax[]|null = null;
+    private acquirePointScript: Gs2AdReward.ScriptSetting|null = null;
+    private consumePointScript: Gs2AdReward.ScriptSetting|null = null;
     private changePointNotification: Gs2AdReward.NotificationSetting|null = null;
     private logSetting: Gs2AdReward.LogSetting|null = null;
 
@@ -112,6 +114,28 @@ export default class UpdateNamespaceRequest implements IRequest {
         this.appLovinMaxes = appLovinMaxes;
         return this;
     }
+    public getAcquirePointScript(): Gs2AdReward.ScriptSetting|null {
+        return this.acquirePointScript;
+    }
+    public setAcquirePointScript(acquirePointScript: Gs2AdReward.ScriptSetting|null) {
+        this.acquirePointScript = acquirePointScript;
+        return this;
+    }
+    public withAcquirePointScript(acquirePointScript: Gs2AdReward.ScriptSetting|null): this {
+        this.acquirePointScript = acquirePointScript;
+        return this;
+    }
+    public getConsumePointScript(): Gs2AdReward.ScriptSetting|null {
+        return this.consumePointScript;
+    }
+    public setConsumePointScript(consumePointScript: Gs2AdReward.ScriptSetting|null) {
+        this.consumePointScript = consumePointScript;
+        return this;
+    }
+    public withConsumePointScript(consumePointScript: Gs2AdReward.ScriptSetting|null): this {
+        this.consumePointScript = consumePointScript;
+        return this;
+    }
     public getChangePointNotification(): Gs2AdReward.NotificationSetting|null {
         return this.changePointNotification;
     }
@@ -146,6 +170,8 @@ export default class UpdateNamespaceRequest implements IRequest {
                     return Gs2AdReward.AppLovinMax.fromDict(item);
                 }
             ) : [])
+            .withAcquirePointScript(Gs2AdReward.ScriptSetting.fromDict(data["acquirePointScript"]))
+            .withConsumePointScript(Gs2AdReward.ScriptSetting.fromDict(data["consumePointScript"]))
             .withChangePointNotification(Gs2AdReward.NotificationSetting.fromDict(data["changePointNotification"]))
             .withLogSetting(Gs2AdReward.LogSetting.fromDict(data["logSetting"]));
     }
@@ -161,6 +187,8 @@ export default class UpdateNamespaceRequest implements IRequest {
                     return item.toDict();
                 }
             ) : [],
+            "acquirePointScript": this.getAcquirePointScript()?.toDict(),
+            "consumePointScript": this.getConsumePointScript()?.toDict(),
             "changePointNotification": this.getChangePointNotification()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
         };

@@ -26,6 +26,7 @@ export default class GlobalMessage implements IModel {
     private readAcquireActions: AcquireAction[]|null = null;
     private expiresTimeSpan: TimeSpan|null = null;
     private expiresAt: number|null = null;
+    private messageReceptionPeriodEventId: string|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -173,6 +174,17 @@ export default class GlobalMessage implements IModel {
         this.expiresAt = expiresAt;
         return this;
     }
+    public getMessageReceptionPeriodEventId(): string|null {
+        return this.messageReceptionPeriodEventId;
+    }
+    public setMessageReceptionPeriodEventId(messageReceptionPeriodEventId: string|null) {
+        this.messageReceptionPeriodEventId = messageReceptionPeriodEventId;
+        return this;
+    }
+    public withMessageReceptionPeriodEventId(messageReceptionPeriodEventId: string|null): this {
+        this.messageReceptionPeriodEventId = messageReceptionPeriodEventId;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GlobalMessage|null {
         if (data == undefined || data == null) {
@@ -188,7 +200,8 @@ export default class GlobalMessage implements IModel {
                 }
             ) : [])
             .withExpiresTimeSpan(TimeSpan.fromDict(data["expiresTimeSpan"]))
-            .withExpiresAt(data["expiresAt"]);
+            .withExpiresAt(data["expiresAt"])
+            .withMessageReceptionPeriodEventId(data["messageReceptionPeriodEventId"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -203,6 +216,7 @@ export default class GlobalMessage implements IModel {
             ) : [],
             "expiresTimeSpan": this.getExpiresTimeSpan()?.toDict(),
             "expiresAt": this.getExpiresAt(),
+            "messageReceptionPeriodEventId": this.getMessageReceptionPeriodEventId(),
         };
     }
 }

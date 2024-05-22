@@ -1165,6 +1165,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
             'readAcquireActions': request.getReadAcquireActions()?.map((item) => item.toDict()) ?? null,
             'expiresTimeSpan': request.getExpiresTimeSpan()?.toDict() ?? null,
             'expiresAt': request.getExpiresAt() ?? null,
+            'messageReceptionPeriodEventId': request.getMessageReceptionPeriodEventId() ?? null,
         };
         return axios.post(
             url,
@@ -1227,6 +1228,7 @@ export default class Gs2InboxRestClient extends AbstractGs2RestClient {
             'readAcquireActions': request.getReadAcquireActions()?.map((item) => item.toDict()) ?? null,
             'expiresTimeSpan': request.getExpiresTimeSpan()?.toDict() ?? null,
             'expiresAt': request.getExpiresAt() ?? null,
+            'messageReceptionPeriodEventId': request.getMessageReceptionPeriodEventId() ?? null,
         };
         return axios.put(
             url,

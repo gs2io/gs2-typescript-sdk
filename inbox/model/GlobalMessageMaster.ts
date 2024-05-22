@@ -25,8 +25,9 @@ export default class GlobalMessageMaster implements IModel {
     private metadata: string|null = null;
     private readAcquireActions: AcquireAction[]|null = null;
     private expiresTimeSpan: TimeSpan|null = null;
-    private createdAt: number|null = null;
     private expiresAt: number|null = null;
+    private messageReceptionPeriodEventId: string|null = null;
+    private createdAt: number|null = null;
     private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
@@ -164,17 +165,6 @@ export default class GlobalMessageMaster implements IModel {
         this.expiresTimeSpan = expiresTimeSpan;
         return this;
     }
-    public getCreatedAt(): number|null {
-        return this.createdAt;
-    }
-    public setCreatedAt(createdAt: number|null) {
-        this.createdAt = createdAt;
-        return this;
-    }
-    public withCreatedAt(createdAt: number|null): this {
-        this.createdAt = createdAt;
-        return this;
-    }
     public getExpiresAt(): number|null {
         return this.expiresAt;
     }
@@ -184,6 +174,28 @@ export default class GlobalMessageMaster implements IModel {
     }
     public withExpiresAt(expiresAt: number|null): this {
         this.expiresAt = expiresAt;
+        return this;
+    }
+    public getMessageReceptionPeriodEventId(): string|null {
+        return this.messageReceptionPeriodEventId;
+    }
+    public setMessageReceptionPeriodEventId(messageReceptionPeriodEventId: string|null) {
+        this.messageReceptionPeriodEventId = messageReceptionPeriodEventId;
+        return this;
+    }
+    public withMessageReceptionPeriodEventId(messageReceptionPeriodEventId: string|null): this {
+        this.messageReceptionPeriodEventId = messageReceptionPeriodEventId;
+        return this;
+    }
+    public getCreatedAt(): number|null {
+        return this.createdAt;
+    }
+    public setCreatedAt(createdAt: number|null) {
+        this.createdAt = createdAt;
+        return this;
+    }
+    public withCreatedAt(createdAt: number|null): this {
+        this.createdAt = createdAt;
         return this;
     }
     public getRevision(): number|null {
@@ -212,8 +224,9 @@ export default class GlobalMessageMaster implements IModel {
                 }
             ) : [])
             .withExpiresTimeSpan(TimeSpan.fromDict(data["expiresTimeSpan"]))
-            .withCreatedAt(data["createdAt"])
             .withExpiresAt(data["expiresAt"])
+            .withMessageReceptionPeriodEventId(data["messageReceptionPeriodEventId"])
+            .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     }
 
@@ -228,8 +241,9 @@ export default class GlobalMessageMaster implements IModel {
                 }
             ) : [],
             "expiresTimeSpan": this.getExpiresTimeSpan()?.toDict(),
-            "createdAt": this.getCreatedAt(),
             "expiresAt": this.getExpiresAt(),
+            "messageReceptionPeriodEventId": this.getMessageReceptionPeriodEventId(),
+            "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };
     }

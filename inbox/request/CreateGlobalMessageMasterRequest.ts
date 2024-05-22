@@ -28,6 +28,7 @@ export default class CreateGlobalMessageMasterRequest implements IRequest {
     private readAcquireActions: Gs2Inbox.AcquireAction[]|null = null;
     private expiresTimeSpan: Gs2Inbox.TimeSpan|null = null;
     private expiresAt: number|null = null;
+    private messageReceptionPeriodEventId: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -122,6 +123,17 @@ export default class CreateGlobalMessageMasterRequest implements IRequest {
         this.expiresAt = expiresAt;
         return this;
     }
+    public getMessageReceptionPeriodEventId(): string|null {
+        return this.messageReceptionPeriodEventId;
+    }
+    public setMessageReceptionPeriodEventId(messageReceptionPeriodEventId: string|null) {
+        this.messageReceptionPeriodEventId = messageReceptionPeriodEventId;
+        return this;
+    }
+    public withMessageReceptionPeriodEventId(messageReceptionPeriodEventId: string|null): this {
+        this.messageReceptionPeriodEventId = messageReceptionPeriodEventId;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): CreateGlobalMessageMasterRequest {
         return new CreateGlobalMessageMasterRequest()
@@ -134,7 +146,8 @@ export default class CreateGlobalMessageMasterRequest implements IRequest {
                 }
             ) : [])
             .withExpiresTimeSpan(Gs2Inbox.TimeSpan.fromDict(data["expiresTimeSpan"]))
-            .withExpiresAt(data["expiresAt"]);
+            .withExpiresAt(data["expiresAt"])
+            .withMessageReceptionPeriodEventId(data["messageReceptionPeriodEventId"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -149,6 +162,7 @@ export default class CreateGlobalMessageMasterRequest implements IRequest {
             ) : [],
             "expiresTimeSpan": this.getExpiresTimeSpan()?.toDict(),
             "expiresAt": this.getExpiresAt(),
+            "messageReceptionPeriodEventId": this.getMessageReceptionPeriodEventId(),
         };
     }
 }

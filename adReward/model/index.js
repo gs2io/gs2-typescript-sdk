@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LogSetting = exports.NotificationSetting = exports.AppLovinMax = exports.UnityAd = exports.AdMob = exports.Point = exports.Namespace = void 0;
+exports.LogSetting = exports.NotificationSetting = exports.ScriptSetting = exports.AppLovinMax = exports.UnityAd = exports.AdMob = exports.Point = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -27,6 +27,8 @@ var UnityAd_1 = tslib_1.__importDefault(require("./UnityAd"));
 exports.UnityAd = UnityAd_1.default;
 var AppLovinMax_1 = tslib_1.__importDefault(require("./AppLovinMax"));
 exports.AppLovinMax = AppLovinMax_1.default;
+var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
+exports.ScriptSetting = ScriptSetting_1.default;
 var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
 exports.NotificationSetting = NotificationSetting_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));

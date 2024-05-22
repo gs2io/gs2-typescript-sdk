@@ -8,6 +8,7 @@ export default class GlobalMessage implements IModel {
     private readAcquireActions;
     private expiresTimeSpan;
     private expiresAt;
+    private messageReceptionPeriodEventId;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -32,6 +33,9 @@ export default class GlobalMessage implements IModel {
     getExpiresAt(): number | null;
     setExpiresAt(expiresAt: number | null): this;
     withExpiresAt(expiresAt: number | null): this;
+    getMessageReceptionPeriodEventId(): string | null;
+    setMessageReceptionPeriodEventId(messageReceptionPeriodEventId: string | null): this;
+    withMessageReceptionPeriodEventId(messageReceptionPeriodEventId: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GlobalMessage | null;

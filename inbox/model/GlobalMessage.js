@@ -27,6 +27,7 @@ var GlobalMessage = /** @class */ (function () {
         this.readAcquireActions = null;
         this.expiresTimeSpan = null;
         this.expiresAt = null;
+        this.messageReceptionPeriodEventId = null;
     }
     GlobalMessage.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -160,6 +161,17 @@ var GlobalMessage = /** @class */ (function () {
         this.expiresAt = expiresAt;
         return this;
     };
+    GlobalMessage.prototype.getMessageReceptionPeriodEventId = function () {
+        return this.messageReceptionPeriodEventId;
+    };
+    GlobalMessage.prototype.setMessageReceptionPeriodEventId = function (messageReceptionPeriodEventId) {
+        this.messageReceptionPeriodEventId = messageReceptionPeriodEventId;
+        return this;
+    };
+    GlobalMessage.prototype.withMessageReceptionPeriodEventId = function (messageReceptionPeriodEventId) {
+        this.messageReceptionPeriodEventId = messageReceptionPeriodEventId;
+        return this;
+    };
     GlobalMessage.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -173,7 +185,8 @@ var GlobalMessage = /** @class */ (function () {
                 return AcquireAction_1.default.fromDict(item);
             }) : [])
             .withExpiresTimeSpan(TimeSpan_1.default.fromDict(data["expiresTimeSpan"]))
-            .withExpiresAt(data["expiresAt"]);
+            .withExpiresAt(data["expiresAt"])
+            .withMessageReceptionPeriodEventId(data["messageReceptionPeriodEventId"]);
     };
     GlobalMessage.prototype.toDict = function () {
         var _a;
@@ -187,6 +200,7 @@ var GlobalMessage = /** @class */ (function () {
                 }) : [],
             "expiresTimeSpan": (_a = this.getExpiresTimeSpan()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "expiresAt": this.getExpiresAt(),
+            "messageReceptionPeriodEventId": this.getMessageReceptionPeriodEventId(),
         };
     };
     return GlobalMessage;

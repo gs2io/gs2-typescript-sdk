@@ -9,6 +9,7 @@ export default class UpdateGlobalMessageMasterRequest implements IRequest {
     private readAcquireActions;
     private expiresTimeSpan;
     private expiresAt;
+    private messageReceptionPeriodEventId;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -33,6 +34,9 @@ export default class UpdateGlobalMessageMasterRequest implements IRequest {
     getExpiresAt(): number | null;
     setExpiresAt(expiresAt: number | null): this;
     withExpiresAt(expiresAt: number | null): this;
+    getMessageReceptionPeriodEventId(): string | null;
+    setMessageReceptionPeriodEventId(messageReceptionPeriodEventId: string | null): this;
+    withMessageReceptionPeriodEventId(messageReceptionPeriodEventId: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): UpdateGlobalMessageMasterRequest;

@@ -1011,7 +1011,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InboxRestClient.prototype.createGlobalMessageMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/globalMessage')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
@@ -1027,6 +1027,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'readAcquireActions': (_g = (_f = request.getReadAcquireActions()) === null || _f === void 0 ? void 0 : _f.map(function (item) { return item.toDict(); })) !== null && _g !== void 0 ? _g : null,
             'expiresTimeSpan': (_j = (_h = request.getExpiresTimeSpan()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
             'expiresAt': (_k = request.getExpiresAt()) !== null && _k !== void 0 ? _k : null,
+            'messageReceptionPeriodEventId': (_l = request.getMessageReceptionPeriodEventId()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1065,7 +1066,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2InboxRestClient.prototype.updateGlobalMessageMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/globalMessage/{globalMessageName}')
             .replace('{service}', 'inbox')
             .replace('{region}', this.session.region)
@@ -1081,6 +1082,7 @@ var Gs2InboxRestClient = /** @class */ (function (_super) {
             'readAcquireActions': (_h = (_g = request.getReadAcquireActions()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
             'expiresTimeSpan': (_k = (_j = request.getExpiresTimeSpan()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
             'expiresAt': (_l = request.getExpiresAt()) !== null && _l !== void 0 ? _l : null,
+            'messageReceptionPeriodEventId': (_m = request.getMessageReceptionPeriodEventId()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

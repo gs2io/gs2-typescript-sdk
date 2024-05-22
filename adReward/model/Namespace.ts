@@ -18,6 +18,7 @@ import IModel from '../../core/interface/IModel';
 import AdMob from './AdMob';
 import UnityAd from './UnityAd';
 import AppLovinMax from './AppLovinMax';
+import ScriptSetting from './ScriptSetting';
 import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:adReward:{namespaceName}";
@@ -29,6 +30,8 @@ export default class Namespace implements IModel {
     private admob: AdMob|null = null;
     private unityAd: UnityAd|null = null;
     private appLovinMaxes: AppLovinMax[]|null = null;
+    private acquirePointScript: ScriptSetting|null = null;
+    private consumePointScript: ScriptSetting|null = null;
     private changePointNotification: NotificationSetting|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
@@ -160,6 +163,28 @@ export default class Namespace implements IModel {
         this.appLovinMaxes = appLovinMaxes;
         return this;
     }
+    public getAcquirePointScript(): ScriptSetting|null {
+        return this.acquirePointScript;
+    }
+    public setAcquirePointScript(acquirePointScript: ScriptSetting|null) {
+        this.acquirePointScript = acquirePointScript;
+        return this;
+    }
+    public withAcquirePointScript(acquirePointScript: ScriptSetting|null): this {
+        this.acquirePointScript = acquirePointScript;
+        return this;
+    }
+    public getConsumePointScript(): ScriptSetting|null {
+        return this.consumePointScript;
+    }
+    public setConsumePointScript(consumePointScript: ScriptSetting|null) {
+        this.consumePointScript = consumePointScript;
+        return this;
+    }
+    public withConsumePointScript(consumePointScript: ScriptSetting|null): this {
+        this.consumePointScript = consumePointScript;
+        return this;
+    }
     public getChangePointNotification(): NotificationSetting|null {
         return this.changePointNotification;
     }
@@ -231,6 +256,8 @@ export default class Namespace implements IModel {
                     return AppLovinMax.fromDict(item);
                 }
             ) : [])
+            .withAcquirePointScript(ScriptSetting.fromDict(data["acquirePointScript"]))
+            .withConsumePointScript(ScriptSetting.fromDict(data["consumePointScript"]))
             .withChangePointNotification(NotificationSetting.fromDict(data["changePointNotification"]))
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
@@ -250,6 +277,8 @@ export default class Namespace implements IModel {
                     return item.toDict();
                 }
             ) : [],
+            "acquirePointScript": this.getAcquirePointScript()?.toDict(),
+            "consumePointScript": this.getConsumePointScript()?.toDict(),
             "changePointNotification": this.getChangePointNotification()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
