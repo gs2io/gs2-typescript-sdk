@@ -8,12 +8,15 @@ export default class CreateMissionTaskModelMasterRequest implements IRequest {
     private name;
     private metadata;
     private description;
-    private counterName;
-    private targetResetType;
-    private targetValue;
+    private verifyCompleteType;
+    private targetCounter;
+    private verifyCompleteConsumeActions;
     private completeAcquireActions;
     private challengePeriodEventId;
     private premiseMissionTaskName;
+    private counterName;
+    private targetResetType;
+    private targetValue;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -35,15 +38,15 @@ export default class CreateMissionTaskModelMasterRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
-    getCounterName(): string | null;
-    setCounterName(counterName: string | null): this;
-    withCounterName(counterName: string | null): this;
-    getTargetResetType(): string | null;
-    setTargetResetType(targetResetType: string | null): this;
-    withTargetResetType(targetResetType: string | null): this;
-    getTargetValue(): number | null;
-    setTargetValue(targetValue: number | null): this;
-    withTargetValue(targetValue: number | null): this;
+    getVerifyCompleteType(): string | null;
+    setVerifyCompleteType(verifyCompleteType: string | null): this;
+    withVerifyCompleteType(verifyCompleteType: string | null): this;
+    getTargetCounter(): Gs2Mission.TargetCounterModel | null;
+    setTargetCounter(targetCounter: Gs2Mission.TargetCounterModel | null): this;
+    withTargetCounter(targetCounter: Gs2Mission.TargetCounterModel | null): this;
+    getVerifyCompleteConsumeActions(): Gs2Mission.ConsumeAction[] | null;
+    setVerifyCompleteConsumeActions(verifyCompleteConsumeActions: Gs2Mission.ConsumeAction[] | null): this;
+    withVerifyCompleteConsumeActions(verifyCompleteConsumeActions: Gs2Mission.ConsumeAction[] | null): this;
     getCompleteAcquireActions(): Gs2Mission.AcquireAction[] | null;
     setCompleteAcquireActions(completeAcquireActions: Gs2Mission.AcquireAction[] | null): this;
     withCompleteAcquireActions(completeAcquireActions: Gs2Mission.AcquireAction[] | null): this;
@@ -53,6 +56,24 @@ export default class CreateMissionTaskModelMasterRequest implements IRequest {
     getPremiseMissionTaskName(): string | null;
     setPremiseMissionTaskName(premiseMissionTaskName: string | null): this;
     withPremiseMissionTaskName(premiseMissionTaskName: string | null): this;
+    /** @deprecated */
+    getCounterName(): string | null;
+    /** @deprecated */
+    setCounterName(counterName: string | null): this;
+    /** @deprecated */
+    withCounterName(counterName: string | null): this;
+    /** @deprecated */
+    getTargetResetType(): string | null;
+    /** @deprecated */
+    setTargetResetType(targetResetType: string | null): this;
+    /** @deprecated */
+    withTargetResetType(targetResetType: string | null): this;
+    /** @deprecated */
+    getTargetValue(): number | null;
+    /** @deprecated */
+    setTargetValue(targetValue: number | null): this;
+    /** @deprecated */
+    withTargetValue(targetValue: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CreateMissionTaskModelMasterRequest;

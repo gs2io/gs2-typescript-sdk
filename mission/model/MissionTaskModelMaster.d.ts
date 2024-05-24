@@ -1,19 +1,24 @@
 import IModel from '../../core/interface/IModel';
+import TargetCounterModel from './TargetCounterModel';
+import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
 export default class MissionTaskModelMaster implements IModel {
     private missionTaskId;
     private name;
     private metadata;
     private description;
-    private counterName;
-    private targetResetType;
-    private targetValue;
+    private verifyCompleteType;
+    private targetCounter;
+    private verifyCompleteConsumeActions;
     private completeAcquireActions;
     private challengePeriodEventId;
     private premiseMissionTaskName;
     private createdAt;
     private updatedAt;
     private revision;
+    private counterName;
+    private targetResetType;
+    private targetValue;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -33,15 +38,15 @@ export default class MissionTaskModelMaster implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
-    getCounterName(): string | null;
-    setCounterName(counterName: string | null): this;
-    withCounterName(counterName: string | null): this;
-    getTargetResetType(): string | null;
-    setTargetResetType(targetResetType: string | null): this;
-    withTargetResetType(targetResetType: string | null): this;
-    getTargetValue(): number | null;
-    setTargetValue(targetValue: number | null): this;
-    withTargetValue(targetValue: number | null): this;
+    getVerifyCompleteType(): string | null;
+    setVerifyCompleteType(verifyCompleteType: string | null): this;
+    withVerifyCompleteType(verifyCompleteType: string | null): this;
+    getTargetCounter(): TargetCounterModel | null;
+    setTargetCounter(targetCounter: TargetCounterModel | null): this;
+    withTargetCounter(targetCounter: TargetCounterModel | null): this;
+    getVerifyCompleteConsumeActions(): ConsumeAction[] | null;
+    setVerifyCompleteConsumeActions(verifyCompleteConsumeActions: ConsumeAction[] | null): this;
+    withVerifyCompleteConsumeActions(verifyCompleteConsumeActions: ConsumeAction[] | null): this;
     getCompleteAcquireActions(): AcquireAction[] | null;
     setCompleteAcquireActions(completeAcquireActions: AcquireAction[] | null): this;
     withCompleteAcquireActions(completeAcquireActions: AcquireAction[] | null): this;
@@ -60,6 +65,24 @@ export default class MissionTaskModelMaster implements IModel {
     getRevision(): number | null;
     setRevision(revision: number | null): this;
     withRevision(revision: number | null): this;
+    /** @deprecated */
+    getCounterName(): string | null;
+    /** @deprecated */
+    setCounterName(counterName: string | null): this;
+    /** @deprecated */
+    withCounterName(counterName: string | null): this;
+    /** @deprecated */
+    getTargetResetType(): string | null;
+    /** @deprecated */
+    setTargetResetType(targetResetType: string | null): this;
+    /** @deprecated */
+    withTargetResetType(targetResetType: string | null): this;
+    /** @deprecated */
+    getTargetValue(): number | null;
+    /** @deprecated */
+    setTargetValue(targetValue: number | null): this;
+    /** @deprecated */
+    withTargetValue(targetValue: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): MissionTaskModelMaster | null;

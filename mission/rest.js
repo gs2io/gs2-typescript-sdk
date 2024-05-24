@@ -1214,6 +1214,81 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             throw JSON.parse(error.response.data.message);
         });
     };
+    Gs2MissionRestClient.prototype.verifyCounterValue = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{counterName}/verify/counter/{verifyType}')
+            .replace('{service}', 'mission')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{counterName}', String((_c = request.getCounterName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getCounterName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{verifyType}', String((_e = request.getVerifyType()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getVerifyType()) !== null && _f !== void 0 ? _f : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+        }
+        var body = {
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'resetType': (_k = request.getResetType()) !== null && _k !== void 0 ? _k : null,
+            'value': (_l = request.getValue()) !== null && _l !== void 0 ? _l : null,
+            'multiplyValueSpecifyingQuantity': (_m = request.getMultiplyValueSpecifyingQuantity()) !== null && _m !== void 0 ? _m : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.VerifyCounterValueResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2MissionRestClient.prototype.verifyCounterValueByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}/verify/counter/{verifyType}')
+            .replace('{service}', 'mission')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{counterName}', String((_e = request.getCounterName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getCounterName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{verifyType}', String((_g = request.getVerifyType()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getVerifyType()) !== null && _h !== void 0 ? _h : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+        }
+        var body = {
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'resetType': (_m = request.getResetType()) !== null && _m !== void 0 ? _m : null,
+            'value': (_o = request.getValue()) !== null && _o !== void 0 ? _o : null,
+            'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.VerifyCounterValueByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
     Gs2MissionRestClient.prototype.deleteCounterByUserId = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}')
@@ -1316,6 +1391,33 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             headers: headers,
         }).then(function (response) {
             return Result.DecreaseByStampTaskResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2MissionRestClient.prototype.verifyCounterValueByStampTask = function (request) {
+        var _a, _b, _c;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/counter/verify')
+            .replace('{service}', 'mission')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
+            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.VerifyCounterValueByStampTaskResult.fromDict(response.data);
         }).catch(function (error) {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);
@@ -1586,7 +1688,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MissionRestClient.prototype.createMissionTaskModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
@@ -1601,12 +1703,15 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'name': (_f = request.getName()) !== null && _f !== void 0 ? _f : null,
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
             'description': (_h = request.getDescription()) !== null && _h !== void 0 ? _h : null,
-            'counterName': (_j = request.getCounterName()) !== null && _j !== void 0 ? _j : null,
-            'targetResetType': (_k = request.getTargetResetType()) !== null && _k !== void 0 ? _k : null,
-            'targetValue': (_l = request.getTargetValue()) !== null && _l !== void 0 ? _l : null,
-            'completeAcquireActions': (_o = (_m = request.getCompleteAcquireActions()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
-            'challengePeriodEventId': (_p = request.getChallengePeriodEventId()) !== null && _p !== void 0 ? _p : null,
-            'premiseMissionTaskName': (_q = request.getPremiseMissionTaskName()) !== null && _q !== void 0 ? _q : null,
+            'verifyCompleteType': (_j = request.getVerifyCompleteType()) !== null && _j !== void 0 ? _j : null,
+            'targetCounter': (_l = (_k = request.getTargetCounter()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'verifyCompleteConsumeActions': (_o = (_m = request.getVerifyCompleteConsumeActions()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
+            'completeAcquireActions': (_q = (_p = request.getCompleteAcquireActions()) === null || _p === void 0 ? void 0 : _p.map(function (item) { return item.toDict(); })) !== null && _q !== void 0 ? _q : null,
+            'challengePeriodEventId': (_r = request.getChallengePeriodEventId()) !== null && _r !== void 0 ? _r : null,
+            'premiseMissionTaskName': (_s = request.getPremiseMissionTaskName()) !== null && _s !== void 0 ? _s : null,
+            'counterName': (_t = request.getCounterName()) !== null && _t !== void 0 ? _t : null,
+            'targetResetType': (_u = request.getTargetResetType()) !== null && _u !== void 0 ? _u : null,
+            'targetValue': (_v = request.getTargetValue()) !== null && _v !== void 0 ? _v : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1646,7 +1751,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MissionRestClient.prototype.updateMissionTaskModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{missionGroupName}/task/{missionTaskName}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
@@ -1661,12 +1766,15 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
             'metadata': (_h = request.getMetadata()) !== null && _h !== void 0 ? _h : null,
             'description': (_j = request.getDescription()) !== null && _j !== void 0 ? _j : null,
-            'counterName': (_k = request.getCounterName()) !== null && _k !== void 0 ? _k : null,
-            'targetResetType': (_l = request.getTargetResetType()) !== null && _l !== void 0 ? _l : null,
-            'targetValue': (_m = request.getTargetValue()) !== null && _m !== void 0 ? _m : null,
-            'completeAcquireActions': (_p = (_o = request.getCompleteAcquireActions()) === null || _o === void 0 ? void 0 : _o.map(function (item) { return item.toDict(); })) !== null && _p !== void 0 ? _p : null,
-            'challengePeriodEventId': (_q = request.getChallengePeriodEventId()) !== null && _q !== void 0 ? _q : null,
-            'premiseMissionTaskName': (_r = request.getPremiseMissionTaskName()) !== null && _r !== void 0 ? _r : null,
+            'verifyCompleteType': (_k = request.getVerifyCompleteType()) !== null && _k !== void 0 ? _k : null,
+            'targetCounter': (_m = (_l = request.getTargetCounter()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'verifyCompleteConsumeActions': (_p = (_o = request.getVerifyCompleteConsumeActions()) === null || _o === void 0 ? void 0 : _o.map(function (item) { return item.toDict(); })) !== null && _p !== void 0 ? _p : null,
+            'completeAcquireActions': (_r = (_q = request.getCompleteAcquireActions()) === null || _q === void 0 ? void 0 : _q.map(function (item) { return item.toDict(); })) !== null && _r !== void 0 ? _r : null,
+            'challengePeriodEventId': (_s = request.getChallengePeriodEventId()) !== null && _s !== void 0 ? _s : null,
+            'premiseMissionTaskName': (_t = request.getPremiseMissionTaskName()) !== null && _t !== void 0 ? _t : null,
+            'counterName': (_u = request.getCounterName()) !== null && _u !== void 0 ? _u : null,
+            'targetResetType': (_v = request.getTargetResetType()) !== null && _v !== void 0 ? _v : null,
+            'targetValue': (_w = request.getTargetValue()) !== null && _w !== void 0 ? _w : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

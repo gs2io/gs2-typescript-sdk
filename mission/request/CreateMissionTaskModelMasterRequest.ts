@@ -27,12 +27,15 @@ export default class CreateMissionTaskModelMasterRequest implements IRequest {
     private name: string|null = null;
     private metadata: string|null = null;
     private description: string|null = null;
-    private counterName: string|null = null;
-    private targetResetType: string|null = null;
-    private targetValue: number|null = null;
+    private verifyCompleteType: string|null = null;
+    private targetCounter: Gs2Mission.TargetCounterModel|null = null;
+    private verifyCompleteConsumeActions: Gs2Mission.ConsumeAction[]|null = null;
     private completeAcquireActions: Gs2Mission.AcquireAction[]|null = null;
     private challengePeriodEventId: string|null = null;
     private premiseMissionTaskName: string|null = null;
+    private counterName: string|null = null;
+    private targetResetType: string|null = null;
+    private targetValue: number|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -116,37 +119,37 @@ export default class CreateMissionTaskModelMasterRequest implements IRequest {
         this.description = description;
         return this;
     }
-    public getCounterName(): string|null {
-        return this.counterName;
+    public getVerifyCompleteType(): string|null {
+        return this.verifyCompleteType;
     }
-    public setCounterName(counterName: string|null) {
-        this.counterName = counterName;
+    public setVerifyCompleteType(verifyCompleteType: string|null) {
+        this.verifyCompleteType = verifyCompleteType;
         return this;
     }
-    public withCounterName(counterName: string|null): this {
-        this.counterName = counterName;
+    public withVerifyCompleteType(verifyCompleteType: string|null): this {
+        this.verifyCompleteType = verifyCompleteType;
         return this;
     }
-    public getTargetResetType(): string|null {
-        return this.targetResetType;
+    public getTargetCounter(): Gs2Mission.TargetCounterModel|null {
+        return this.targetCounter;
     }
-    public setTargetResetType(targetResetType: string|null) {
-        this.targetResetType = targetResetType;
+    public setTargetCounter(targetCounter: Gs2Mission.TargetCounterModel|null) {
+        this.targetCounter = targetCounter;
         return this;
     }
-    public withTargetResetType(targetResetType: string|null): this {
-        this.targetResetType = targetResetType;
+    public withTargetCounter(targetCounter: Gs2Mission.TargetCounterModel|null): this {
+        this.targetCounter = targetCounter;
         return this;
     }
-    public getTargetValue(): number|null {
-        return this.targetValue;
+    public getVerifyCompleteConsumeActions(): Gs2Mission.ConsumeAction[]|null {
+        return this.verifyCompleteConsumeActions;
     }
-    public setTargetValue(targetValue: number|null) {
-        this.targetValue = targetValue;
+    public setVerifyCompleteConsumeActions(verifyCompleteConsumeActions: Gs2Mission.ConsumeAction[]|null) {
+        this.verifyCompleteConsumeActions = verifyCompleteConsumeActions;
         return this;
     }
-    public withTargetValue(targetValue: number|null): this {
-        this.targetValue = targetValue;
+    public withVerifyCompleteConsumeActions(verifyCompleteConsumeActions: Gs2Mission.ConsumeAction[]|null): this {
+        this.verifyCompleteConsumeActions = verifyCompleteConsumeActions;
         return this;
     }
     public getCompleteAcquireActions(): Gs2Mission.AcquireAction[]|null {
@@ -182,6 +185,48 @@ export default class CreateMissionTaskModelMasterRequest implements IRequest {
         this.premiseMissionTaskName = premiseMissionTaskName;
         return this;
     }
+    /** @deprecated */
+    public getCounterName(): string|null {
+        return this.counterName;
+    }
+    /** @deprecated */
+    public setCounterName(counterName: string|null) {
+        this.counterName = counterName;
+        return this;
+    }
+    /** @deprecated */
+    public withCounterName(counterName: string|null): this {
+        this.counterName = counterName;
+        return this;
+    }
+    /** @deprecated */
+    public getTargetResetType(): string|null {
+        return this.targetResetType;
+    }
+    /** @deprecated */
+    public setTargetResetType(targetResetType: string|null) {
+        this.targetResetType = targetResetType;
+        return this;
+    }
+    /** @deprecated */
+    public withTargetResetType(targetResetType: string|null): this {
+        this.targetResetType = targetResetType;
+        return this;
+    }
+    /** @deprecated */
+    public getTargetValue(): number|null {
+        return this.targetValue;
+    }
+    /** @deprecated */
+    public setTargetValue(targetValue: number|null) {
+        this.targetValue = targetValue;
+        return this;
+    }
+    /** @deprecated */
+    public withTargetValue(targetValue: number|null): this {
+        this.targetValue = targetValue;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): CreateMissionTaskModelMasterRequest {
         return new CreateMissionTaskModelMasterRequest()
@@ -190,16 +235,23 @@ export default class CreateMissionTaskModelMasterRequest implements IRequest {
             .withName(data["name"])
             .withMetadata(data["metadata"])
             .withDescription(data["description"])
-            .withCounterName(data["counterName"])
-            .withTargetResetType(data["targetResetType"])
-            .withTargetValue(data["targetValue"])
+            .withVerifyCompleteType(data["verifyCompleteType"])
+            .withTargetCounter(Gs2Mission.TargetCounterModel.fromDict(data["targetCounter"]))
+            .withVerifyCompleteConsumeActions(data.verifyCompleteConsumeActions ?
+                data.verifyCompleteConsumeActions.map((item: {[key: string]: any}) => {
+                    return Gs2Mission.ConsumeAction.fromDict(item);
+                }
+            ) : [])
             .withCompleteAcquireActions(data.completeAcquireActions ?
                 data.completeAcquireActions.map((item: {[key: string]: any}) => {
                     return Gs2Mission.AcquireAction.fromDict(item);
                 }
             ) : [])
             .withChallengePeriodEventId(data["challengePeriodEventId"])
-            .withPremiseMissionTaskName(data["premiseMissionTaskName"]);
+            .withPremiseMissionTaskName(data["premiseMissionTaskName"])
+            .withCounterName(data["counterName"])
+            .withTargetResetType(data["targetResetType"])
+            .withTargetValue(data["targetValue"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -209,9 +261,13 @@ export default class CreateMissionTaskModelMasterRequest implements IRequest {
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "description": this.getDescription(),
-            "counterName": this.getCounterName(),
-            "targetResetType": this.getTargetResetType(),
-            "targetValue": this.getTargetValue(),
+            "verifyCompleteType": this.getVerifyCompleteType(),
+            "targetCounter": this.getTargetCounter()?.toDict(),
+            "verifyCompleteConsumeActions": this.getVerifyCompleteConsumeActions() ?
+                this.getVerifyCompleteConsumeActions()!.map((item: Gs2Mission.ConsumeAction) => {
+                    return item.toDict();
+                }
+            ) : [],
             "completeAcquireActions": this.getCompleteAcquireActions() ?
                 this.getCompleteAcquireActions()!.map((item: Gs2Mission.AcquireAction) => {
                     return item.toDict();
@@ -219,6 +275,9 @@ export default class CreateMissionTaskModelMasterRequest implements IRequest {
             ) : [],
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "premiseMissionTaskName": this.getPremiseMissionTaskName(),
+            "counterName": this.getCounterName(),
+            "targetResetType": this.getTargetResetType(),
+            "targetValue": this.getTargetValue(),
         };
     }
 }

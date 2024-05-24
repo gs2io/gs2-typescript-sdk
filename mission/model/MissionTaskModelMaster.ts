@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import TargetCounterModel from './TargetCounterModel';
+import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}:group:{missionGroupName}:missionTaskModelMaster:{missionTaskName}";
 
@@ -23,15 +25,18 @@ export default class MissionTaskModelMaster implements IModel {
     private name: string|null = null;
     private metadata: string|null = null;
     private description: string|null = null;
-    private counterName: string|null = null;
-    private targetResetType: string|null = null;
-    private targetValue: number|null = null;
+    private verifyCompleteType: string|null = null;
+    private targetCounter: TargetCounterModel|null = null;
+    private verifyCompleteConsumeActions: ConsumeAction[]|null = null;
     private completeAcquireActions: AcquireAction[]|null = null;
     private challengePeriodEventId: string|null = null;
     private premiseMissionTaskName: string|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
+    private counterName: string|null = null;
+    private targetResetType: string|null = null;
+    private targetValue: number|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -180,37 +185,37 @@ export default class MissionTaskModelMaster implements IModel {
         this.description = description;
         return this;
     }
-    public getCounterName(): string|null {
-        return this.counterName;
+    public getVerifyCompleteType(): string|null {
+        return this.verifyCompleteType;
     }
-    public setCounterName(counterName: string|null) {
-        this.counterName = counterName;
+    public setVerifyCompleteType(verifyCompleteType: string|null) {
+        this.verifyCompleteType = verifyCompleteType;
         return this;
     }
-    public withCounterName(counterName: string|null): this {
-        this.counterName = counterName;
+    public withVerifyCompleteType(verifyCompleteType: string|null): this {
+        this.verifyCompleteType = verifyCompleteType;
         return this;
     }
-    public getTargetResetType(): string|null {
-        return this.targetResetType;
+    public getTargetCounter(): TargetCounterModel|null {
+        return this.targetCounter;
     }
-    public setTargetResetType(targetResetType: string|null) {
-        this.targetResetType = targetResetType;
+    public setTargetCounter(targetCounter: TargetCounterModel|null) {
+        this.targetCounter = targetCounter;
         return this;
     }
-    public withTargetResetType(targetResetType: string|null): this {
-        this.targetResetType = targetResetType;
+    public withTargetCounter(targetCounter: TargetCounterModel|null): this {
+        this.targetCounter = targetCounter;
         return this;
     }
-    public getTargetValue(): number|null {
-        return this.targetValue;
+    public getVerifyCompleteConsumeActions(): ConsumeAction[]|null {
+        return this.verifyCompleteConsumeActions;
     }
-    public setTargetValue(targetValue: number|null) {
-        this.targetValue = targetValue;
+    public setVerifyCompleteConsumeActions(verifyCompleteConsumeActions: ConsumeAction[]|null) {
+        this.verifyCompleteConsumeActions = verifyCompleteConsumeActions;
         return this;
     }
-    public withTargetValue(targetValue: number|null): this {
-        this.targetValue = targetValue;
+    public withVerifyCompleteConsumeActions(verifyCompleteConsumeActions: ConsumeAction[]|null): this {
+        this.verifyCompleteConsumeActions = verifyCompleteConsumeActions;
         return this;
     }
     public getCompleteAcquireActions(): AcquireAction[]|null {
@@ -279,6 +284,48 @@ export default class MissionTaskModelMaster implements IModel {
         this.revision = revision;
         return this;
     }
+    /** @deprecated */
+    public getCounterName(): string|null {
+        return this.counterName;
+    }
+    /** @deprecated */
+    public setCounterName(counterName: string|null) {
+        this.counterName = counterName;
+        return this;
+    }
+    /** @deprecated */
+    public withCounterName(counterName: string|null): this {
+        this.counterName = counterName;
+        return this;
+    }
+    /** @deprecated */
+    public getTargetResetType(): string|null {
+        return this.targetResetType;
+    }
+    /** @deprecated */
+    public setTargetResetType(targetResetType: string|null) {
+        this.targetResetType = targetResetType;
+        return this;
+    }
+    /** @deprecated */
+    public withTargetResetType(targetResetType: string|null): this {
+        this.targetResetType = targetResetType;
+        return this;
+    }
+    /** @deprecated */
+    public getTargetValue(): number|null {
+        return this.targetValue;
+    }
+    /** @deprecated */
+    public setTargetValue(targetValue: number|null) {
+        this.targetValue = targetValue;
+        return this;
+    }
+    /** @deprecated */
+    public withTargetValue(targetValue: number|null): this {
+        this.targetValue = targetValue;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): MissionTaskModelMaster|null {
         if (data == undefined || data == null) {
@@ -289,9 +336,13 @@ export default class MissionTaskModelMaster implements IModel {
             .withName(data["name"])
             .withMetadata(data["metadata"])
             .withDescription(data["description"])
-            .withCounterName(data["counterName"])
-            .withTargetResetType(data["targetResetType"])
-            .withTargetValue(data["targetValue"])
+            .withVerifyCompleteType(data["verifyCompleteType"])
+            .withTargetCounter(TargetCounterModel.fromDict(data["targetCounter"]))
+            .withVerifyCompleteConsumeActions(data.verifyCompleteConsumeActions ?
+                data.verifyCompleteConsumeActions.map((item: {[key: string]: any}) => {
+                    return ConsumeAction.fromDict(item);
+                }
+            ) : [])
             .withCompleteAcquireActions(data.completeAcquireActions ?
                 data.completeAcquireActions.map((item: {[key: string]: any}) => {
                     return AcquireAction.fromDict(item);
@@ -301,7 +352,10 @@ export default class MissionTaskModelMaster implements IModel {
             .withPremiseMissionTaskName(data["premiseMissionTaskName"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
-            .withRevision(data["revision"]);
+            .withRevision(data["revision"])
+            .withCounterName(data["counterName"])
+            .withTargetResetType(data["targetResetType"])
+            .withTargetValue(data["targetValue"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -310,9 +364,13 @@ export default class MissionTaskModelMaster implements IModel {
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "description": this.getDescription(),
-            "counterName": this.getCounterName(),
-            "targetResetType": this.getTargetResetType(),
-            "targetValue": this.getTargetValue(),
+            "verifyCompleteType": this.getVerifyCompleteType(),
+            "targetCounter": this.getTargetCounter()?.toDict(),
+            "verifyCompleteConsumeActions": this.getVerifyCompleteConsumeActions() ?
+                this.getVerifyCompleteConsumeActions()!.map((item: ConsumeAction) => {
+                    return item.toDict();
+                }
+            ) : [],
             "completeAcquireActions": this.getCompleteAcquireActions() ?
                 this.getCompleteAcquireActions()!.map((item: AcquireAction) => {
                     return item.toDict();
@@ -323,6 +381,9 @@ export default class MissionTaskModelMaster implements IModel {
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),
+            "counterName": this.getCounterName(),
+            "targetResetType": this.getTargetResetType(),
+            "targetValue": this.getTargetValue(),
         };
     }
 }

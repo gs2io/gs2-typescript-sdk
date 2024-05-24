@@ -54,10 +54,13 @@ import SetCounterByUserIdResult from "./SetCounterByUserIdResult"
 import DecreaseCounterByUserIdResult from "./DecreaseCounterByUserIdResult"
 import GetCounterResult from "./GetCounterResult"
 import GetCounterByUserIdResult from "./GetCounterByUserIdResult"
+import VerifyCounterValueResult from "./VerifyCounterValueResult"
+import VerifyCounterValueByUserIdResult from "./VerifyCounterValueByUserIdResult"
 import DeleteCounterByUserIdResult from "./DeleteCounterByUserIdResult"
 import IncreaseByStampSheetResult from "./IncreaseByStampSheetResult"
 import SetByStampSheetResult from "./SetByStampSheetResult"
 import DecreaseByStampTaskResult from "./DecreaseByStampTaskResult"
+import VerifyCounterValueByStampTaskResult from "./VerifyCounterValueByStampTaskResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentMissionMasterResult from "./GetCurrentMissionMasterResult"
 import UpdateCurrentMissionMasterResult from "./UpdateCurrentMissionMasterResult"
@@ -116,10 +119,13 @@ export {
     DecreaseCounterByUserIdResult,
     GetCounterResult,
     GetCounterByUserIdResult,
+    VerifyCounterValueResult,
+    VerifyCounterValueByUserIdResult,
     DeleteCounterByUserIdResult,
     IncreaseByStampSheetResult,
     SetByStampSheetResult,
     DecreaseByStampTaskResult,
+    VerifyCounterValueByStampTaskResult,
     ExportMasterResult,
     GetCurrentMissionMasterResult,
     UpdateCurrentMissionMasterResult,

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.LogSetting = exports.Config = exports.AcquireAction = exports.MissionTaskModelMaster = exports.ScopedValue = exports.MissionTaskModel = exports.MissionGroupModel = exports.CounterModel = exports.CurrentMissionMaster = exports.Counter = exports.Namespace = exports.MissionGroupModelMaster = exports.CounterScopeModel = exports.CounterModelMaster = exports.NotificationSetting = exports.Complete = void 0;
+exports.TransactionSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.LogSetting = exports.Config = exports.ConsumeAction = exports.AcquireAction = exports.TargetCounterModel = exports.ScopedValue = exports.MissionTaskModelMaster = exports.MissionTaskModel = exports.MissionGroupModel = exports.CounterModel = exports.CurrentMissionMaster = exports.Counter = exports.Namespace = exports.MissionGroupModelMaster = exports.CounterScopeModel = exports.CounterModelMaster = exports.NotificationSetting = exports.Complete = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -39,12 +39,16 @@ var MissionGroupModel_1 = tslib_1.__importDefault(require("./MissionGroupModel")
 exports.MissionGroupModel = MissionGroupModel_1.default;
 var MissionTaskModel_1 = tslib_1.__importDefault(require("./MissionTaskModel"));
 exports.MissionTaskModel = MissionTaskModel_1.default;
-var ScopedValue_1 = tslib_1.__importDefault(require("./ScopedValue"));
-exports.ScopedValue = ScopedValue_1.default;
 var MissionTaskModelMaster_1 = tslib_1.__importDefault(require("./MissionTaskModelMaster"));
 exports.MissionTaskModelMaster = MissionTaskModelMaster_1.default;
+var ScopedValue_1 = tslib_1.__importDefault(require("./ScopedValue"));
+exports.ScopedValue = ScopedValue_1.default;
+var TargetCounterModel_1 = tslib_1.__importDefault(require("./TargetCounterModel"));
+exports.TargetCounterModel = TargetCounterModel_1.default;
 var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 exports.AcquireAction = AcquireAction_1.default;
+var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
+exports.ConsumeAction = ConsumeAction_1.default;
 var Config_1 = tslib_1.__importDefault(require("./Config"));
 exports.Config = Config_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));

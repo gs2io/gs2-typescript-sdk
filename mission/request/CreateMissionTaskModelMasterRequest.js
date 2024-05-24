@@ -26,12 +26,15 @@ var CreateMissionTaskModelMasterRequest = /** @class */ (function () {
         this.name = null;
         this.metadata = null;
         this.description = null;
-        this.counterName = null;
-        this.targetResetType = null;
-        this.targetValue = null;
+        this.verifyCompleteType = null;
+        this.targetCounter = null;
+        this.verifyCompleteConsumeActions = null;
         this.completeAcquireActions = null;
         this.challengePeriodEventId = null;
         this.premiseMissionTaskName = null;
+        this.counterName = null;
+        this.targetResetType = null;
+        this.targetValue = null;
     }
     CreateMissionTaskModelMasterRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -110,37 +113,37 @@ var CreateMissionTaskModelMasterRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
-    CreateMissionTaskModelMasterRequest.prototype.getCounterName = function () {
-        return this.counterName;
+    CreateMissionTaskModelMasterRequest.prototype.getVerifyCompleteType = function () {
+        return this.verifyCompleteType;
     };
-    CreateMissionTaskModelMasterRequest.prototype.setCounterName = function (counterName) {
-        this.counterName = counterName;
+    CreateMissionTaskModelMasterRequest.prototype.setVerifyCompleteType = function (verifyCompleteType) {
+        this.verifyCompleteType = verifyCompleteType;
         return this;
     };
-    CreateMissionTaskModelMasterRequest.prototype.withCounterName = function (counterName) {
-        this.counterName = counterName;
+    CreateMissionTaskModelMasterRequest.prototype.withVerifyCompleteType = function (verifyCompleteType) {
+        this.verifyCompleteType = verifyCompleteType;
         return this;
     };
-    CreateMissionTaskModelMasterRequest.prototype.getTargetResetType = function () {
-        return this.targetResetType;
+    CreateMissionTaskModelMasterRequest.prototype.getTargetCounter = function () {
+        return this.targetCounter;
     };
-    CreateMissionTaskModelMasterRequest.prototype.setTargetResetType = function (targetResetType) {
-        this.targetResetType = targetResetType;
+    CreateMissionTaskModelMasterRequest.prototype.setTargetCounter = function (targetCounter) {
+        this.targetCounter = targetCounter;
         return this;
     };
-    CreateMissionTaskModelMasterRequest.prototype.withTargetResetType = function (targetResetType) {
-        this.targetResetType = targetResetType;
+    CreateMissionTaskModelMasterRequest.prototype.withTargetCounter = function (targetCounter) {
+        this.targetCounter = targetCounter;
         return this;
     };
-    CreateMissionTaskModelMasterRequest.prototype.getTargetValue = function () {
-        return this.targetValue;
+    CreateMissionTaskModelMasterRequest.prototype.getVerifyCompleteConsumeActions = function () {
+        return this.verifyCompleteConsumeActions;
     };
-    CreateMissionTaskModelMasterRequest.prototype.setTargetValue = function (targetValue) {
-        this.targetValue = targetValue;
+    CreateMissionTaskModelMasterRequest.prototype.setVerifyCompleteConsumeActions = function (verifyCompleteConsumeActions) {
+        this.verifyCompleteConsumeActions = verifyCompleteConsumeActions;
         return this;
     };
-    CreateMissionTaskModelMasterRequest.prototype.withTargetValue = function (targetValue) {
-        this.targetValue = targetValue;
+    CreateMissionTaskModelMasterRequest.prototype.withVerifyCompleteConsumeActions = function (verifyCompleteConsumeActions) {
+        this.verifyCompleteConsumeActions = verifyCompleteConsumeActions;
         return this;
     };
     CreateMissionTaskModelMasterRequest.prototype.getCompleteAcquireActions = function () {
@@ -176,6 +179,48 @@ var CreateMissionTaskModelMasterRequest = /** @class */ (function () {
         this.premiseMissionTaskName = premiseMissionTaskName;
         return this;
     };
+    /** @deprecated */
+    CreateMissionTaskModelMasterRequest.prototype.getCounterName = function () {
+        return this.counterName;
+    };
+    /** @deprecated */
+    CreateMissionTaskModelMasterRequest.prototype.setCounterName = function (counterName) {
+        this.counterName = counterName;
+        return this;
+    };
+    /** @deprecated */
+    CreateMissionTaskModelMasterRequest.prototype.withCounterName = function (counterName) {
+        this.counterName = counterName;
+        return this;
+    };
+    /** @deprecated */
+    CreateMissionTaskModelMasterRequest.prototype.getTargetResetType = function () {
+        return this.targetResetType;
+    };
+    /** @deprecated */
+    CreateMissionTaskModelMasterRequest.prototype.setTargetResetType = function (targetResetType) {
+        this.targetResetType = targetResetType;
+        return this;
+    };
+    /** @deprecated */
+    CreateMissionTaskModelMasterRequest.prototype.withTargetResetType = function (targetResetType) {
+        this.targetResetType = targetResetType;
+        return this;
+    };
+    /** @deprecated */
+    CreateMissionTaskModelMasterRequest.prototype.getTargetValue = function () {
+        return this.targetValue;
+    };
+    /** @deprecated */
+    CreateMissionTaskModelMasterRequest.prototype.setTargetValue = function (targetValue) {
+        this.targetValue = targetValue;
+        return this;
+    };
+    /** @deprecated */
+    CreateMissionTaskModelMasterRequest.prototype.withTargetValue = function (targetValue) {
+        this.targetValue = targetValue;
+        return this;
+    };
     CreateMissionTaskModelMasterRequest.fromDict = function (data) {
         return new CreateMissionTaskModelMasterRequest()
             .withNamespaceName(data["namespaceName"])
@@ -183,32 +228,45 @@ var CreateMissionTaskModelMasterRequest = /** @class */ (function () {
             .withName(data["name"])
             .withMetadata(data["metadata"])
             .withDescription(data["description"])
-            .withCounterName(data["counterName"])
-            .withTargetResetType(data["targetResetType"])
-            .withTargetValue(data["targetValue"])
+            .withVerifyCompleteType(data["verifyCompleteType"])
+            .withTargetCounter(Gs2Mission.TargetCounterModel.fromDict(data["targetCounter"]))
+            .withVerifyCompleteConsumeActions(data.verifyCompleteConsumeActions ?
+            data.verifyCompleteConsumeActions.map(function (item) {
+                return Gs2Mission.ConsumeAction.fromDict(item);
+            }) : [])
             .withCompleteAcquireActions(data.completeAcquireActions ?
             data.completeAcquireActions.map(function (item) {
                 return Gs2Mission.AcquireAction.fromDict(item);
             }) : [])
             .withChallengePeriodEventId(data["challengePeriodEventId"])
-            .withPremiseMissionTaskName(data["premiseMissionTaskName"]);
+            .withPremiseMissionTaskName(data["premiseMissionTaskName"])
+            .withCounterName(data["counterName"])
+            .withTargetResetType(data["targetResetType"])
+            .withTargetValue(data["targetValue"]);
     };
     CreateMissionTaskModelMasterRequest.prototype.toDict = function () {
+        var _a;
         return {
             "namespaceName": this.getNamespaceName(),
             "missionGroupName": this.getMissionGroupName(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "description": this.getDescription(),
-            "counterName": this.getCounterName(),
-            "targetResetType": this.getTargetResetType(),
-            "targetValue": this.getTargetValue(),
+            "verifyCompleteType": this.getVerifyCompleteType(),
+            "targetCounter": (_a = this.getTargetCounter()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "verifyCompleteConsumeActions": this.getVerifyCompleteConsumeActions() ?
+                this.getVerifyCompleteConsumeActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "completeAcquireActions": this.getCompleteAcquireActions() ?
                 this.getCompleteAcquireActions().map(function (item) {
                     return item.toDict();
                 }) : [],
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "premiseMissionTaskName": this.getPremiseMissionTaskName(),
+            "counterName": this.getCounterName(),
+            "targetResetType": this.getTargetResetType(),
+            "targetValue": this.getTargetValue(),
         };
     };
     return CreateMissionTaskModelMasterRequest;

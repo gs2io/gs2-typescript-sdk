@@ -24,9 +24,11 @@ import CurrentMissionMaster from "./CurrentMissionMaster"
 import CounterModel from "./CounterModel"
 import MissionGroupModel from "./MissionGroupModel"
 import MissionTaskModel from "./MissionTaskModel"
-import ScopedValue from "./ScopedValue"
 import MissionTaskModelMaster from "./MissionTaskModelMaster"
+import ScopedValue from "./ScopedValue"
+import TargetCounterModel from "./TargetCounterModel"
 import AcquireAction from "./AcquireAction"
+import ConsumeAction from "./ConsumeAction"
 import Config from "./Config"
 import LogSetting from "./LogSetting"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
@@ -45,9 +47,11 @@ export {
     CounterModel,
     MissionGroupModel,
     MissionTaskModel,
-    ScopedValue,
     MissionTaskModelMaster,
+    ScopedValue,
+    TargetCounterModel,
     AcquireAction,
+    ConsumeAction,
     Config,
     LogSetting,
     GitHubCheckoutSetting,

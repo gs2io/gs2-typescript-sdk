@@ -1380,6 +1380,89 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public verifyCounterValue(request: Request.VerifyCounterValueRequest): Promise<Result.VerifyCounterValueResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{counterName}/verify/counter/{verifyType}')
+            .replace('{service}', 'mission')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{counterName}', String(request.getCounterName() ?? 'null') === "" ? "null" : String(request.getCounterName() ?? 'null'))
+            .replace('{verifyType}', String(request.getVerifyType() ?? 'null') === "" ? "null" : String(request.getVerifyType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'resetType': request.getResetType() ?? null,
+            'value': request.getValue() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyCounterValueResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public verifyCounterValueByUserId(request: Request.VerifyCounterValueByUserIdRequest): Promise<Result.VerifyCounterValueByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}/verify/counter/{verifyType}')
+            .replace('{service}', 'mission')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{counterName}', String(request.getCounterName() ?? 'null') === "" ? "null" : String(request.getCounterName() ?? 'null'))
+            .replace('{verifyType}', String(request.getVerifyType() ?? 'null') === "" ? "null" : String(request.getVerifyType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'resetType': request.getResetType() ?? null,
+            'value': request.getValue() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyCounterValueByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public deleteCounterByUserId(request: Request.DeleteCounterByUserIdRequest): Promise<Result.DeleteCounterByUserIdResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}')
             .replace('{service}', 'mission')
@@ -1498,6 +1581,37 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.DecreaseByStampTaskResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public verifyCounterValueByStampTask(request: Request.VerifyCounterValueByStampTaskRequest): Promise<Result.VerifyCounterValueByStampTaskResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/counter/verify')
+            .replace('{service}', 'mission')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampTask': request.getStampTask() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyCounterValueByStampTaskResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);
@@ -1827,12 +1941,15 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
             'name': request.getName() ?? null,
             'metadata': request.getMetadata() ?? null,
             'description': request.getDescription() ?? null,
-            'counterName': request.getCounterName() ?? null,
-            'targetResetType': request.getTargetResetType() ?? null,
-            'targetValue': request.getTargetValue() ?? null,
+            'verifyCompleteType': request.getVerifyCompleteType() ?? null,
+            'targetCounter': request.getTargetCounter()?.toDict() ?? null,
+            'verifyCompleteConsumeActions': request.getVerifyCompleteConsumeActions()?.map((item) => item.toDict()) ?? null,
             'completeAcquireActions': request.getCompleteAcquireActions()?.map((item) => item.toDict()) ?? null,
             'challengePeriodEventId': request.getChallengePeriodEventId() ?? null,
             'premiseMissionTaskName': request.getPremiseMissionTaskName() ?? null,
+            'counterName': request.getCounterName() ?? null,
+            'targetResetType': request.getTargetResetType() ?? null,
+            'targetValue': request.getTargetValue() ?? null,
         };
         return axios.post(
             url,
@@ -1895,12 +2012,15 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'metadata': request.getMetadata() ?? null,
             'description': request.getDescription() ?? null,
-            'counterName': request.getCounterName() ?? null,
-            'targetResetType': request.getTargetResetType() ?? null,
-            'targetValue': request.getTargetValue() ?? null,
+            'verifyCompleteType': request.getVerifyCompleteType() ?? null,
+            'targetCounter': request.getTargetCounter()?.toDict() ?? null,
+            'verifyCompleteConsumeActions': request.getVerifyCompleteConsumeActions()?.map((item) => item.toDict()) ?? null,
             'completeAcquireActions': request.getCompleteAcquireActions()?.map((item) => item.toDict()) ?? null,
             'challengePeriodEventId': request.getChallengePeriodEventId() ?? null,
             'premiseMissionTaskName': request.getPremiseMissionTaskName() ?? null,
+            'counterName': request.getCounterName() ?? null,
+            'targetResetType': request.getTargetResetType() ?? null,
+            'targetValue': request.getTargetValue() ?? null,
         };
         return axios.put(
             url,

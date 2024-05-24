@@ -45,10 +45,13 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     decreaseCounterByUserId(request: Request.DecreaseCounterByUserIdRequest): Promise<Result.DecreaseCounterByUserIdResult>;
     getCounter(request: Request.GetCounterRequest): Promise<Result.GetCounterResult>;
     getCounterByUserId(request: Request.GetCounterByUserIdRequest): Promise<Result.GetCounterByUserIdResult>;
+    verifyCounterValue(request: Request.VerifyCounterValueRequest): Promise<Result.VerifyCounterValueResult>;
+    verifyCounterValueByUserId(request: Request.VerifyCounterValueByUserIdRequest): Promise<Result.VerifyCounterValueByUserIdResult>;
     deleteCounterByUserId(request: Request.DeleteCounterByUserIdRequest): Promise<Result.DeleteCounterByUserIdResult>;
     increaseByStampSheet(request: Request.IncreaseByStampSheetRequest): Promise<Result.IncreaseByStampSheetResult>;
     setByStampSheet(request: Request.SetByStampSheetRequest): Promise<Result.SetByStampSheetResult>;
     decreaseByStampTask(request: Request.DecreaseByStampTaskRequest): Promise<Result.DecreaseByStampTaskResult>;
+    verifyCounterValueByStampTask(request: Request.VerifyCounterValueByStampTaskRequest): Promise<Result.VerifyCounterValueByStampTaskResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentMissionMaster(request: Request.GetCurrentMissionMasterRequest): Promise<Result.GetCurrentMissionMasterResult>;
     updateCurrentMissionMaster(request: Request.UpdateCurrentMissionMasterRequest): Promise<Result.UpdateCurrentMissionMasterResult>;
