@@ -454,7 +454,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2RankingRestClient.prototype.createCategoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/category')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
@@ -472,16 +472,17 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'maximumValue': (_h = request.getMaximumValue()) !== null && _h !== void 0 ? _h : null,
             'orderDirection': (_j = request.getOrderDirection()) !== null && _j !== void 0 ? _j : null,
             'scope': (_k = request.getScope()) !== null && _k !== void 0 ? _k : null,
-            'uniqueByUserId': (_l = request.getUniqueByUserId()) !== null && _l !== void 0 ? _l : null,
-            'sum': (_m = request.getSum()) !== null && _m !== void 0 ? _m : null,
-            'calculateFixedTimingHour': (_o = request.getCalculateFixedTimingHour()) !== null && _o !== void 0 ? _o : null,
-            'calculateFixedTimingMinute': (_p = request.getCalculateFixedTimingMinute()) !== null && _p !== void 0 ? _p : null,
-            'calculateIntervalMinutes': (_q = request.getCalculateIntervalMinutes()) !== null && _q !== void 0 ? _q : null,
-            'additionalScopes': (_s = (_r = request.getAdditionalScopes()) === null || _r === void 0 ? void 0 : _r.map(function (item) { return item.toDict(); })) !== null && _s !== void 0 ? _s : null,
-            'entryPeriodEventId': (_t = request.getEntryPeriodEventId()) !== null && _t !== void 0 ? _t : null,
-            'accessPeriodEventId': (_u = request.getAccessPeriodEventId()) !== null && _u !== void 0 ? _u : null,
-            'ignoreUserIds': (_v = request.getIgnoreUserIds()) !== null && _v !== void 0 ? _v : null,
-            'generation': (_w = request.getGeneration()) !== null && _w !== void 0 ? _w : null,
+            'globalRankingSetting': (_m = (_l = request.getGlobalRankingSetting()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'entryPeriodEventId': (_o = request.getEntryPeriodEventId()) !== null && _o !== void 0 ? _o : null,
+            'accessPeriodEventId': (_p = request.getAccessPeriodEventId()) !== null && _p !== void 0 ? _p : null,
+            'uniqueByUserId': (_q = request.getUniqueByUserId()) !== null && _q !== void 0 ? _q : null,
+            'sum': (_r = request.getSum()) !== null && _r !== void 0 ? _r : null,
+            'calculateFixedTimingHour': (_s = request.getCalculateFixedTimingHour()) !== null && _s !== void 0 ? _s : null,
+            'calculateFixedTimingMinute': (_t = request.getCalculateFixedTimingMinute()) !== null && _t !== void 0 ? _t : null,
+            'calculateIntervalMinutes': (_u = request.getCalculateIntervalMinutes()) !== null && _u !== void 0 ? _u : null,
+            'additionalScopes': (_w = (_v = request.getAdditionalScopes()) === null || _v === void 0 ? void 0 : _v.map(function (item) { return item.toDict(); })) !== null && _w !== void 0 ? _w : null,
+            'ignoreUserIds': (_x = request.getIgnoreUserIds()) !== null && _x !== void 0 ? _x : null,
+            'generation': (_y = request.getGeneration()) !== null && _y !== void 0 ? _y : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -520,7 +521,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2RankingRestClient.prototype.updateCategoryModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/category/{categoryName}')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
@@ -538,16 +539,17 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
             'maximumValue': (_j = request.getMaximumValue()) !== null && _j !== void 0 ? _j : null,
             'orderDirection': (_k = request.getOrderDirection()) !== null && _k !== void 0 ? _k : null,
             'scope': (_l = request.getScope()) !== null && _l !== void 0 ? _l : null,
-            'uniqueByUserId': (_m = request.getUniqueByUserId()) !== null && _m !== void 0 ? _m : null,
-            'sum': (_o = request.getSum()) !== null && _o !== void 0 ? _o : null,
-            'calculateFixedTimingHour': (_p = request.getCalculateFixedTimingHour()) !== null && _p !== void 0 ? _p : null,
-            'calculateFixedTimingMinute': (_q = request.getCalculateFixedTimingMinute()) !== null && _q !== void 0 ? _q : null,
-            'calculateIntervalMinutes': (_r = request.getCalculateIntervalMinutes()) !== null && _r !== void 0 ? _r : null,
-            'additionalScopes': (_t = (_s = request.getAdditionalScopes()) === null || _s === void 0 ? void 0 : _s.map(function (item) { return item.toDict(); })) !== null && _t !== void 0 ? _t : null,
-            'entryPeriodEventId': (_u = request.getEntryPeriodEventId()) !== null && _u !== void 0 ? _u : null,
-            'accessPeriodEventId': (_v = request.getAccessPeriodEventId()) !== null && _v !== void 0 ? _v : null,
-            'ignoreUserIds': (_w = request.getIgnoreUserIds()) !== null && _w !== void 0 ? _w : null,
-            'generation': (_x = request.getGeneration()) !== null && _x !== void 0 ? _x : null,
+            'globalRankingSetting': (_o = (_m = request.getGlobalRankingSetting()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'entryPeriodEventId': (_p = request.getEntryPeriodEventId()) !== null && _p !== void 0 ? _p : null,
+            'accessPeriodEventId': (_q = request.getAccessPeriodEventId()) !== null && _q !== void 0 ? _q : null,
+            'uniqueByUserId': (_r = request.getUniqueByUserId()) !== null && _r !== void 0 ? _r : null,
+            'sum': (_s = request.getSum()) !== null && _s !== void 0 ? _s : null,
+            'calculateFixedTimingHour': (_t = request.getCalculateFixedTimingHour()) !== null && _t !== void 0 ? _t : null,
+            'calculateFixedTimingMinute': (_u = request.getCalculateFixedTimingMinute()) !== null && _u !== void 0 ? _u : null,
+            'calculateIntervalMinutes': (_v = request.getCalculateIntervalMinutes()) !== null && _v !== void 0 ? _v : null,
+            'additionalScopes': (_x = (_w = request.getAdditionalScopes()) === null || _w === void 0 ? void 0 : _w.map(function (item) { return item.toDict(); })) !== null && _x !== void 0 ? _x : null,
+            'ignoreUserIds': (_y = request.getIgnoreUserIds()) !== null && _y !== void 0 ? _y : null,
+            'generation': (_z = request.getGeneration()) !== null && _z !== void 0 ? _z : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

@@ -1,21 +1,23 @@
 import IModel from '../../core/interface/IModel';
 import Scope from './Scope';
+import GlobalRankingSetting from './GlobalRankingSetting';
 export default class CategoryModel implements IModel {
     private categoryModelId;
     private name;
     private metadata;
     private minimumValue;
     private maximumValue;
+    private sum;
     private orderDirection;
     private scope;
+    private globalRankingSetting;
+    private entryPeriodEventId;
+    private accessPeriodEventId;
     private uniqueByUserId;
-    private sum;
     private calculateFixedTimingHour;
     private calculateFixedTimingMinute;
     private calculateIntervalMinutes;
     private additionalScopes;
-    private entryPeriodEventId;
-    private accessPeriodEventId;
     private ignoreUserIds;
     private generation;
     static getRegion(grn: string): string | null;
@@ -39,41 +41,65 @@ export default class CategoryModel implements IModel {
     getMaximumValue(): number | null;
     setMaximumValue(maximumValue: number | null): this;
     withMaximumValue(maximumValue: number | null): this;
+    getSum(): boolean | null;
+    setSum(sum: boolean | null): this;
+    withSum(sum: boolean | null): this;
     getOrderDirection(): string | null;
     setOrderDirection(orderDirection: string | null): this;
     withOrderDirection(orderDirection: string | null): this;
     getScope(): string | null;
     setScope(scope: string | null): this;
     withScope(scope: string | null): this;
-    getUniqueByUserId(): boolean | null;
-    setUniqueByUserId(uniqueByUserId: boolean | null): this;
-    withUniqueByUserId(uniqueByUserId: boolean | null): this;
-    getSum(): boolean | null;
-    setSum(sum: boolean | null): this;
-    withSum(sum: boolean | null): this;
-    getCalculateFixedTimingHour(): number | null;
-    setCalculateFixedTimingHour(calculateFixedTimingHour: number | null): this;
-    withCalculateFixedTimingHour(calculateFixedTimingHour: number | null): this;
-    getCalculateFixedTimingMinute(): number | null;
-    setCalculateFixedTimingMinute(calculateFixedTimingMinute: number | null): this;
-    withCalculateFixedTimingMinute(calculateFixedTimingMinute: number | null): this;
-    getCalculateIntervalMinutes(): number | null;
-    setCalculateIntervalMinutes(calculateIntervalMinutes: number | null): this;
-    withCalculateIntervalMinutes(calculateIntervalMinutes: number | null): this;
-    getAdditionalScopes(): Scope[] | null;
-    setAdditionalScopes(additionalScopes: Scope[] | null): this;
-    withAdditionalScopes(additionalScopes: Scope[] | null): this;
+    getGlobalRankingSetting(): GlobalRankingSetting | null;
+    setGlobalRankingSetting(globalRankingSetting: GlobalRankingSetting | null): this;
+    withGlobalRankingSetting(globalRankingSetting: GlobalRankingSetting | null): this;
     getEntryPeriodEventId(): string | null;
     setEntryPeriodEventId(entryPeriodEventId: string | null): this;
     withEntryPeriodEventId(entryPeriodEventId: string | null): this;
     getAccessPeriodEventId(): string | null;
     setAccessPeriodEventId(accessPeriodEventId: string | null): this;
     withAccessPeriodEventId(accessPeriodEventId: string | null): this;
+    /** @deprecated */
+    getUniqueByUserId(): boolean | null;
+    /** @deprecated */
+    setUniqueByUserId(uniqueByUserId: boolean | null): this;
+    /** @deprecated */
+    withUniqueByUserId(uniqueByUserId: boolean | null): this;
+    /** @deprecated */
+    getCalculateFixedTimingHour(): number | null;
+    /** @deprecated */
+    setCalculateFixedTimingHour(calculateFixedTimingHour: number | null): this;
+    /** @deprecated */
+    withCalculateFixedTimingHour(calculateFixedTimingHour: number | null): this;
+    /** @deprecated */
+    getCalculateFixedTimingMinute(): number | null;
+    /** @deprecated */
+    setCalculateFixedTimingMinute(calculateFixedTimingMinute: number | null): this;
+    /** @deprecated */
+    withCalculateFixedTimingMinute(calculateFixedTimingMinute: number | null): this;
+    /** @deprecated */
+    getCalculateIntervalMinutes(): number | null;
+    /** @deprecated */
+    setCalculateIntervalMinutes(calculateIntervalMinutes: number | null): this;
+    /** @deprecated */
+    withCalculateIntervalMinutes(calculateIntervalMinutes: number | null): this;
+    /** @deprecated */
+    getAdditionalScopes(): Scope[] | null;
+    /** @deprecated */
+    setAdditionalScopes(additionalScopes: Scope[] | null): this;
+    /** @deprecated */
+    withAdditionalScopes(additionalScopes: Scope[] | null): this;
+    /** @deprecated */
     getIgnoreUserIds(): string[] | null;
+    /** @deprecated */
     setIgnoreUserIds(ignoreUserIds: string[] | null): this;
+    /** @deprecated */
     withIgnoreUserIds(ignoreUserIds: string[] | null): this;
+    /** @deprecated */
     getGeneration(): string | null;
+    /** @deprecated */
     setGeneration(generation: string | null): this;
+    /** @deprecated */
     withGeneration(generation: string | null): this;
     static fromDict(data: {
         [key: string]: any;

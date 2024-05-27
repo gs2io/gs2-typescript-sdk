@@ -30,14 +30,15 @@ export default class CreateCategoryModelMasterRequest implements IRequest {
     private maximumValue: number|null = null;
     private orderDirection: string|null = null;
     private scope: string|null = null;
+    private globalRankingSetting: Gs2Ranking.GlobalRankingSetting|null = null;
+    private entryPeriodEventId: string|null = null;
+    private accessPeriodEventId: string|null = null;
     private uniqueByUserId: boolean|null = null;
     private sum: boolean|null = null;
     private calculateFixedTimingHour: number|null = null;
     private calculateFixedTimingMinute: number|null = null;
     private calculateIntervalMinutes: number|null = null;
     private additionalScopes: Gs2Ranking.Scope[]|null = null;
-    private entryPeriodEventId: string|null = null;
-    private accessPeriodEventId: string|null = null;
     private ignoreUserIds: string[]|null = null;
     private generation: string|null = null;
 
@@ -156,70 +157,15 @@ export default class CreateCategoryModelMasterRequest implements IRequest {
         this.scope = scope;
         return this;
     }
-    public getUniqueByUserId(): boolean|null {
-        return this.uniqueByUserId;
+    public getGlobalRankingSetting(): Gs2Ranking.GlobalRankingSetting|null {
+        return this.globalRankingSetting;
     }
-    public setUniqueByUserId(uniqueByUserId: boolean|null) {
-        this.uniqueByUserId = uniqueByUserId;
+    public setGlobalRankingSetting(globalRankingSetting: Gs2Ranking.GlobalRankingSetting|null) {
+        this.globalRankingSetting = globalRankingSetting;
         return this;
     }
-    public withUniqueByUserId(uniqueByUserId: boolean|null): this {
-        this.uniqueByUserId = uniqueByUserId;
-        return this;
-    }
-    public getSum(): boolean|null {
-        return this.sum;
-    }
-    public setSum(sum: boolean|null) {
-        this.sum = sum;
-        return this;
-    }
-    public withSum(sum: boolean|null): this {
-        this.sum = sum;
-        return this;
-    }
-    public getCalculateFixedTimingHour(): number|null {
-        return this.calculateFixedTimingHour;
-    }
-    public setCalculateFixedTimingHour(calculateFixedTimingHour: number|null) {
-        this.calculateFixedTimingHour = calculateFixedTimingHour;
-        return this;
-    }
-    public withCalculateFixedTimingHour(calculateFixedTimingHour: number|null): this {
-        this.calculateFixedTimingHour = calculateFixedTimingHour;
-        return this;
-    }
-    public getCalculateFixedTimingMinute(): number|null {
-        return this.calculateFixedTimingMinute;
-    }
-    public setCalculateFixedTimingMinute(calculateFixedTimingMinute: number|null) {
-        this.calculateFixedTimingMinute = calculateFixedTimingMinute;
-        return this;
-    }
-    public withCalculateFixedTimingMinute(calculateFixedTimingMinute: number|null): this {
-        this.calculateFixedTimingMinute = calculateFixedTimingMinute;
-        return this;
-    }
-    public getCalculateIntervalMinutes(): number|null {
-        return this.calculateIntervalMinutes;
-    }
-    public setCalculateIntervalMinutes(calculateIntervalMinutes: number|null) {
-        this.calculateIntervalMinutes = calculateIntervalMinutes;
-        return this;
-    }
-    public withCalculateIntervalMinutes(calculateIntervalMinutes: number|null): this {
-        this.calculateIntervalMinutes = calculateIntervalMinutes;
-        return this;
-    }
-    public getAdditionalScopes(): Gs2Ranking.Scope[]|null {
-        return this.additionalScopes;
-    }
-    public setAdditionalScopes(additionalScopes: Gs2Ranking.Scope[]|null) {
-        this.additionalScopes = additionalScopes;
-        return this;
-    }
-    public withAdditionalScopes(additionalScopes: Gs2Ranking.Scope[]|null): this {
-        this.additionalScopes = additionalScopes;
+    public withGlobalRankingSetting(globalRankingSetting: Gs2Ranking.GlobalRankingSetting|null): this {
+        this.globalRankingSetting = globalRankingSetting;
         return this;
     }
     public getEntryPeriodEventId(): string|null {
@@ -244,24 +190,111 @@ export default class CreateCategoryModelMasterRequest implements IRequest {
         this.accessPeriodEventId = accessPeriodEventId;
         return this;
     }
+    /** @deprecated */
+    public getUniqueByUserId(): boolean|null {
+        return this.uniqueByUserId;
+    }
+    /** @deprecated */
+    public setUniqueByUserId(uniqueByUserId: boolean|null) {
+        this.uniqueByUserId = uniqueByUserId;
+        return this;
+    }
+    /** @deprecated */
+    public withUniqueByUserId(uniqueByUserId: boolean|null): this {
+        this.uniqueByUserId = uniqueByUserId;
+        return this;
+    }
+    public getSum(): boolean|null {
+        return this.sum;
+    }
+    public setSum(sum: boolean|null) {
+        this.sum = sum;
+        return this;
+    }
+    public withSum(sum: boolean|null): this {
+        this.sum = sum;
+        return this;
+    }
+    /** @deprecated */
+    public getCalculateFixedTimingHour(): number|null {
+        return this.calculateFixedTimingHour;
+    }
+    /** @deprecated */
+    public setCalculateFixedTimingHour(calculateFixedTimingHour: number|null) {
+        this.calculateFixedTimingHour = calculateFixedTimingHour;
+        return this;
+    }
+    /** @deprecated */
+    public withCalculateFixedTimingHour(calculateFixedTimingHour: number|null): this {
+        this.calculateFixedTimingHour = calculateFixedTimingHour;
+        return this;
+    }
+    /** @deprecated */
+    public getCalculateFixedTimingMinute(): number|null {
+        return this.calculateFixedTimingMinute;
+    }
+    /** @deprecated */
+    public setCalculateFixedTimingMinute(calculateFixedTimingMinute: number|null) {
+        this.calculateFixedTimingMinute = calculateFixedTimingMinute;
+        return this;
+    }
+    /** @deprecated */
+    public withCalculateFixedTimingMinute(calculateFixedTimingMinute: number|null): this {
+        this.calculateFixedTimingMinute = calculateFixedTimingMinute;
+        return this;
+    }
+    /** @deprecated */
+    public getCalculateIntervalMinutes(): number|null {
+        return this.calculateIntervalMinutes;
+    }
+    /** @deprecated */
+    public setCalculateIntervalMinutes(calculateIntervalMinutes: number|null) {
+        this.calculateIntervalMinutes = calculateIntervalMinutes;
+        return this;
+    }
+    /** @deprecated */
+    public withCalculateIntervalMinutes(calculateIntervalMinutes: number|null): this {
+        this.calculateIntervalMinutes = calculateIntervalMinutes;
+        return this;
+    }
+    /** @deprecated */
+    public getAdditionalScopes(): Gs2Ranking.Scope[]|null {
+        return this.additionalScopes;
+    }
+    /** @deprecated */
+    public setAdditionalScopes(additionalScopes: Gs2Ranking.Scope[]|null) {
+        this.additionalScopes = additionalScopes;
+        return this;
+    }
+    /** @deprecated */
+    public withAdditionalScopes(additionalScopes: Gs2Ranking.Scope[]|null): this {
+        this.additionalScopes = additionalScopes;
+        return this;
+    }
+    /** @deprecated */
     public getIgnoreUserIds(): string[]|null {
         return this.ignoreUserIds;
     }
+    /** @deprecated */
     public setIgnoreUserIds(ignoreUserIds: string[]|null) {
         this.ignoreUserIds = ignoreUserIds;
         return this;
     }
+    /** @deprecated */
     public withIgnoreUserIds(ignoreUserIds: string[]|null): this {
         this.ignoreUserIds = ignoreUserIds;
         return this;
     }
+    /** @deprecated */
     public getGeneration(): string|null {
         return this.generation;
     }
+    /** @deprecated */
     public setGeneration(generation: string|null) {
         this.generation = generation;
         return this;
     }
+    /** @deprecated */
     public withGeneration(generation: string|null): this {
         this.generation = generation;
         return this;
@@ -277,6 +310,9 @@ export default class CreateCategoryModelMasterRequest implements IRequest {
             .withMaximumValue(data["maximumValue"])
             .withOrderDirection(data["orderDirection"])
             .withScope(data["scope"])
+            .withGlobalRankingSetting(Gs2Ranking.GlobalRankingSetting.fromDict(data["globalRankingSetting"]))
+            .withEntryPeriodEventId(data["entryPeriodEventId"])
+            .withAccessPeriodEventId(data["accessPeriodEventId"])
             .withUniqueByUserId(data["uniqueByUserId"])
             .withSum(data["sum"])
             .withCalculateFixedTimingHour(data["calculateFixedTimingHour"])
@@ -287,8 +323,6 @@ export default class CreateCategoryModelMasterRequest implements IRequest {
                     return Gs2Ranking.Scope.fromDict(item);
                 }
             ) : [])
-            .withEntryPeriodEventId(data["entryPeriodEventId"])
-            .withAccessPeriodEventId(data["accessPeriodEventId"])
             .withIgnoreUserIds(data.ignoreUserIds ?
                 data.ignoreUserIds.map((item: {[key: string]: any}) => {
                     return item;
@@ -307,6 +341,9 @@ export default class CreateCategoryModelMasterRequest implements IRequest {
             "maximumValue": this.getMaximumValue(),
             "orderDirection": this.getOrderDirection(),
             "scope": this.getScope(),
+            "globalRankingSetting": this.getGlobalRankingSetting()?.toDict(),
+            "entryPeriodEventId": this.getEntryPeriodEventId(),
+            "accessPeriodEventId": this.getAccessPeriodEventId(),
             "uniqueByUserId": this.getUniqueByUserId(),
             "sum": this.getSum(),
             "calculateFixedTimingHour": this.getCalculateFixedTimingHour(),
@@ -317,8 +354,6 @@ export default class CreateCategoryModelMasterRequest implements IRequest {
                     return item.toDict();
                 }
             ) : [],
-            "entryPeriodEventId": this.getEntryPeriodEventId(),
-            "accessPeriodEventId": this.getAccessPeriodEventId(),
             "ignoreUserIds": this.getIgnoreUserIds() ?
                 this.getIgnoreUserIds()!.map((item: string) => {
                     return item;

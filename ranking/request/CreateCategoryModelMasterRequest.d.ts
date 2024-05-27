@@ -11,14 +11,15 @@ export default class CreateCategoryModelMasterRequest implements IRequest {
     private maximumValue;
     private orderDirection;
     private scope;
+    private globalRankingSetting;
+    private entryPeriodEventId;
+    private accessPeriodEventId;
     private uniqueByUserId;
     private sum;
     private calculateFixedTimingHour;
     private calculateFixedTimingMinute;
     private calculateIntervalMinutes;
     private additionalScopes;
-    private entryPeriodEventId;
-    private accessPeriodEventId;
     private ignoreUserIds;
     private generation;
     getRequestId(): string | null;
@@ -51,35 +52,59 @@ export default class CreateCategoryModelMasterRequest implements IRequest {
     getScope(): string | null;
     setScope(scope: string | null): this;
     withScope(scope: string | null): this;
-    getUniqueByUserId(): boolean | null;
-    setUniqueByUserId(uniqueByUserId: boolean | null): this;
-    withUniqueByUserId(uniqueByUserId: boolean | null): this;
-    getSum(): boolean | null;
-    setSum(sum: boolean | null): this;
-    withSum(sum: boolean | null): this;
-    getCalculateFixedTimingHour(): number | null;
-    setCalculateFixedTimingHour(calculateFixedTimingHour: number | null): this;
-    withCalculateFixedTimingHour(calculateFixedTimingHour: number | null): this;
-    getCalculateFixedTimingMinute(): number | null;
-    setCalculateFixedTimingMinute(calculateFixedTimingMinute: number | null): this;
-    withCalculateFixedTimingMinute(calculateFixedTimingMinute: number | null): this;
-    getCalculateIntervalMinutes(): number | null;
-    setCalculateIntervalMinutes(calculateIntervalMinutes: number | null): this;
-    withCalculateIntervalMinutes(calculateIntervalMinutes: number | null): this;
-    getAdditionalScopes(): Gs2Ranking.Scope[] | null;
-    setAdditionalScopes(additionalScopes: Gs2Ranking.Scope[] | null): this;
-    withAdditionalScopes(additionalScopes: Gs2Ranking.Scope[] | null): this;
+    getGlobalRankingSetting(): Gs2Ranking.GlobalRankingSetting | null;
+    setGlobalRankingSetting(globalRankingSetting: Gs2Ranking.GlobalRankingSetting | null): this;
+    withGlobalRankingSetting(globalRankingSetting: Gs2Ranking.GlobalRankingSetting | null): this;
     getEntryPeriodEventId(): string | null;
     setEntryPeriodEventId(entryPeriodEventId: string | null): this;
     withEntryPeriodEventId(entryPeriodEventId: string | null): this;
     getAccessPeriodEventId(): string | null;
     setAccessPeriodEventId(accessPeriodEventId: string | null): this;
     withAccessPeriodEventId(accessPeriodEventId: string | null): this;
+    /** @deprecated */
+    getUniqueByUserId(): boolean | null;
+    /** @deprecated */
+    setUniqueByUserId(uniqueByUserId: boolean | null): this;
+    /** @deprecated */
+    withUniqueByUserId(uniqueByUserId: boolean | null): this;
+    getSum(): boolean | null;
+    setSum(sum: boolean | null): this;
+    withSum(sum: boolean | null): this;
+    /** @deprecated */
+    getCalculateFixedTimingHour(): number | null;
+    /** @deprecated */
+    setCalculateFixedTimingHour(calculateFixedTimingHour: number | null): this;
+    /** @deprecated */
+    withCalculateFixedTimingHour(calculateFixedTimingHour: number | null): this;
+    /** @deprecated */
+    getCalculateFixedTimingMinute(): number | null;
+    /** @deprecated */
+    setCalculateFixedTimingMinute(calculateFixedTimingMinute: number | null): this;
+    /** @deprecated */
+    withCalculateFixedTimingMinute(calculateFixedTimingMinute: number | null): this;
+    /** @deprecated */
+    getCalculateIntervalMinutes(): number | null;
+    /** @deprecated */
+    setCalculateIntervalMinutes(calculateIntervalMinutes: number | null): this;
+    /** @deprecated */
+    withCalculateIntervalMinutes(calculateIntervalMinutes: number | null): this;
+    /** @deprecated */
+    getAdditionalScopes(): Gs2Ranking.Scope[] | null;
+    /** @deprecated */
+    setAdditionalScopes(additionalScopes: Gs2Ranking.Scope[] | null): this;
+    /** @deprecated */
+    withAdditionalScopes(additionalScopes: Gs2Ranking.Scope[] | null): this;
+    /** @deprecated */
     getIgnoreUserIds(): string[] | null;
+    /** @deprecated */
     setIgnoreUserIds(ignoreUserIds: string[] | null): this;
+    /** @deprecated */
     withIgnoreUserIds(ignoreUserIds: string[] | null): this;
+    /** @deprecated */
     getGeneration(): string | null;
+    /** @deprecated */
     setGeneration(generation: string | null): this;
+    /** @deprecated */
     withGeneration(generation: string | null): this;
     static fromDict(data: {
         [key: string]: any;

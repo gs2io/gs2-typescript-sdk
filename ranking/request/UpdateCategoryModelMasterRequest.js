@@ -29,14 +29,15 @@ var UpdateCategoryModelMasterRequest = /** @class */ (function () {
         this.maximumValue = null;
         this.orderDirection = null;
         this.scope = null;
+        this.globalRankingSetting = null;
+        this.entryPeriodEventId = null;
+        this.accessPeriodEventId = null;
         this.uniqueByUserId = null;
         this.sum = null;
         this.calculateFixedTimingHour = null;
         this.calculateFixedTimingMinute = null;
         this.calculateIntervalMinutes = null;
         this.additionalScopes = null;
-        this.entryPeriodEventId = null;
-        this.accessPeriodEventId = null;
         this.ignoreUserIds = null;
         this.generation = null;
     }
@@ -150,70 +151,15 @@ var UpdateCategoryModelMasterRequest = /** @class */ (function () {
         this.scope = scope;
         return this;
     };
-    UpdateCategoryModelMasterRequest.prototype.getUniqueByUserId = function () {
-        return this.uniqueByUserId;
+    UpdateCategoryModelMasterRequest.prototype.getGlobalRankingSetting = function () {
+        return this.globalRankingSetting;
     };
-    UpdateCategoryModelMasterRequest.prototype.setUniqueByUserId = function (uniqueByUserId) {
-        this.uniqueByUserId = uniqueByUserId;
+    UpdateCategoryModelMasterRequest.prototype.setGlobalRankingSetting = function (globalRankingSetting) {
+        this.globalRankingSetting = globalRankingSetting;
         return this;
     };
-    UpdateCategoryModelMasterRequest.prototype.withUniqueByUserId = function (uniqueByUserId) {
-        this.uniqueByUserId = uniqueByUserId;
-        return this;
-    };
-    UpdateCategoryModelMasterRequest.prototype.getSum = function () {
-        return this.sum;
-    };
-    UpdateCategoryModelMasterRequest.prototype.setSum = function (sum) {
-        this.sum = sum;
-        return this;
-    };
-    UpdateCategoryModelMasterRequest.prototype.withSum = function (sum) {
-        this.sum = sum;
-        return this;
-    };
-    UpdateCategoryModelMasterRequest.prototype.getCalculateFixedTimingHour = function () {
-        return this.calculateFixedTimingHour;
-    };
-    UpdateCategoryModelMasterRequest.prototype.setCalculateFixedTimingHour = function (calculateFixedTimingHour) {
-        this.calculateFixedTimingHour = calculateFixedTimingHour;
-        return this;
-    };
-    UpdateCategoryModelMasterRequest.prototype.withCalculateFixedTimingHour = function (calculateFixedTimingHour) {
-        this.calculateFixedTimingHour = calculateFixedTimingHour;
-        return this;
-    };
-    UpdateCategoryModelMasterRequest.prototype.getCalculateFixedTimingMinute = function () {
-        return this.calculateFixedTimingMinute;
-    };
-    UpdateCategoryModelMasterRequest.prototype.setCalculateFixedTimingMinute = function (calculateFixedTimingMinute) {
-        this.calculateFixedTimingMinute = calculateFixedTimingMinute;
-        return this;
-    };
-    UpdateCategoryModelMasterRequest.prototype.withCalculateFixedTimingMinute = function (calculateFixedTimingMinute) {
-        this.calculateFixedTimingMinute = calculateFixedTimingMinute;
-        return this;
-    };
-    UpdateCategoryModelMasterRequest.prototype.getCalculateIntervalMinutes = function () {
-        return this.calculateIntervalMinutes;
-    };
-    UpdateCategoryModelMasterRequest.prototype.setCalculateIntervalMinutes = function (calculateIntervalMinutes) {
-        this.calculateIntervalMinutes = calculateIntervalMinutes;
-        return this;
-    };
-    UpdateCategoryModelMasterRequest.prototype.withCalculateIntervalMinutes = function (calculateIntervalMinutes) {
-        this.calculateIntervalMinutes = calculateIntervalMinutes;
-        return this;
-    };
-    UpdateCategoryModelMasterRequest.prototype.getAdditionalScopes = function () {
-        return this.additionalScopes;
-    };
-    UpdateCategoryModelMasterRequest.prototype.setAdditionalScopes = function (additionalScopes) {
-        this.additionalScopes = additionalScopes;
-        return this;
-    };
-    UpdateCategoryModelMasterRequest.prototype.withAdditionalScopes = function (additionalScopes) {
-        this.additionalScopes = additionalScopes;
+    UpdateCategoryModelMasterRequest.prototype.withGlobalRankingSetting = function (globalRankingSetting) {
+        this.globalRankingSetting = globalRankingSetting;
         return this;
     };
     UpdateCategoryModelMasterRequest.prototype.getEntryPeriodEventId = function () {
@@ -238,24 +184,111 @@ var UpdateCategoryModelMasterRequest = /** @class */ (function () {
         this.accessPeriodEventId = accessPeriodEventId;
         return this;
     };
+    /** @deprecated */
+    UpdateCategoryModelMasterRequest.prototype.getUniqueByUserId = function () {
+        return this.uniqueByUserId;
+    };
+    /** @deprecated */
+    UpdateCategoryModelMasterRequest.prototype.setUniqueByUserId = function (uniqueByUserId) {
+        this.uniqueByUserId = uniqueByUserId;
+        return this;
+    };
+    /** @deprecated */
+    UpdateCategoryModelMasterRequest.prototype.withUniqueByUserId = function (uniqueByUserId) {
+        this.uniqueByUserId = uniqueByUserId;
+        return this;
+    };
+    UpdateCategoryModelMasterRequest.prototype.getSum = function () {
+        return this.sum;
+    };
+    UpdateCategoryModelMasterRequest.prototype.setSum = function (sum) {
+        this.sum = sum;
+        return this;
+    };
+    UpdateCategoryModelMasterRequest.prototype.withSum = function (sum) {
+        this.sum = sum;
+        return this;
+    };
+    /** @deprecated */
+    UpdateCategoryModelMasterRequest.prototype.getCalculateFixedTimingHour = function () {
+        return this.calculateFixedTimingHour;
+    };
+    /** @deprecated */
+    UpdateCategoryModelMasterRequest.prototype.setCalculateFixedTimingHour = function (calculateFixedTimingHour) {
+        this.calculateFixedTimingHour = calculateFixedTimingHour;
+        return this;
+    };
+    /** @deprecated */
+    UpdateCategoryModelMasterRequest.prototype.withCalculateFixedTimingHour = function (calculateFixedTimingHour) {
+        this.calculateFixedTimingHour = calculateFixedTimingHour;
+        return this;
+    };
+    /** @deprecated */
+    UpdateCategoryModelMasterRequest.prototype.getCalculateFixedTimingMinute = function () {
+        return this.calculateFixedTimingMinute;
+    };
+    /** @deprecated */
+    UpdateCategoryModelMasterRequest.prototype.setCalculateFixedTimingMinute = function (calculateFixedTimingMinute) {
+        this.calculateFixedTimingMinute = calculateFixedTimingMinute;
+        return this;
+    };
+    /** @deprecated */
+    UpdateCategoryModelMasterRequest.prototype.withCalculateFixedTimingMinute = function (calculateFixedTimingMinute) {
+        this.calculateFixedTimingMinute = calculateFixedTimingMinute;
+        return this;
+    };
+    /** @deprecated */
+    UpdateCategoryModelMasterRequest.prototype.getCalculateIntervalMinutes = function () {
+        return this.calculateIntervalMinutes;
+    };
+    /** @deprecated */
+    UpdateCategoryModelMasterRequest.prototype.setCalculateIntervalMinutes = function (calculateIntervalMinutes) {
+        this.calculateIntervalMinutes = calculateIntervalMinutes;
+        return this;
+    };
+    /** @deprecated */
+    UpdateCategoryModelMasterRequest.prototype.withCalculateIntervalMinutes = function (calculateIntervalMinutes) {
+        this.calculateIntervalMinutes = calculateIntervalMinutes;
+        return this;
+    };
+    /** @deprecated */
+    UpdateCategoryModelMasterRequest.prototype.getAdditionalScopes = function () {
+        return this.additionalScopes;
+    };
+    /** @deprecated */
+    UpdateCategoryModelMasterRequest.prototype.setAdditionalScopes = function (additionalScopes) {
+        this.additionalScopes = additionalScopes;
+        return this;
+    };
+    /** @deprecated */
+    UpdateCategoryModelMasterRequest.prototype.withAdditionalScopes = function (additionalScopes) {
+        this.additionalScopes = additionalScopes;
+        return this;
+    };
+    /** @deprecated */
     UpdateCategoryModelMasterRequest.prototype.getIgnoreUserIds = function () {
         return this.ignoreUserIds;
     };
+    /** @deprecated */
     UpdateCategoryModelMasterRequest.prototype.setIgnoreUserIds = function (ignoreUserIds) {
         this.ignoreUserIds = ignoreUserIds;
         return this;
     };
+    /** @deprecated */
     UpdateCategoryModelMasterRequest.prototype.withIgnoreUserIds = function (ignoreUserIds) {
         this.ignoreUserIds = ignoreUserIds;
         return this;
     };
+    /** @deprecated */
     UpdateCategoryModelMasterRequest.prototype.getGeneration = function () {
         return this.generation;
     };
+    /** @deprecated */
     UpdateCategoryModelMasterRequest.prototype.setGeneration = function (generation) {
         this.generation = generation;
         return this;
     };
+    /** @deprecated */
     UpdateCategoryModelMasterRequest.prototype.withGeneration = function (generation) {
         this.generation = generation;
         return this;
@@ -270,6 +303,9 @@ var UpdateCategoryModelMasterRequest = /** @class */ (function () {
             .withMaximumValue(data["maximumValue"])
             .withOrderDirection(data["orderDirection"])
             .withScope(data["scope"])
+            .withGlobalRankingSetting(Gs2Ranking.GlobalRankingSetting.fromDict(data["globalRankingSetting"]))
+            .withEntryPeriodEventId(data["entryPeriodEventId"])
+            .withAccessPeriodEventId(data["accessPeriodEventId"])
             .withUniqueByUserId(data["uniqueByUserId"])
             .withSum(data["sum"])
             .withCalculateFixedTimingHour(data["calculateFixedTimingHour"])
@@ -279,8 +315,6 @@ var UpdateCategoryModelMasterRequest = /** @class */ (function () {
             data.additionalScopes.map(function (item) {
                 return Gs2Ranking.Scope.fromDict(item);
             }) : [])
-            .withEntryPeriodEventId(data["entryPeriodEventId"])
-            .withAccessPeriodEventId(data["accessPeriodEventId"])
             .withIgnoreUserIds(data.ignoreUserIds ?
             data.ignoreUserIds.map(function (item) {
                 return item;
@@ -288,6 +322,7 @@ var UpdateCategoryModelMasterRequest = /** @class */ (function () {
             .withGeneration(data["generation"]);
     };
     UpdateCategoryModelMasterRequest.prototype.toDict = function () {
+        var _a;
         return {
             "namespaceName": this.getNamespaceName(),
             "categoryName": this.getCategoryName(),
@@ -297,6 +332,9 @@ var UpdateCategoryModelMasterRequest = /** @class */ (function () {
             "maximumValue": this.getMaximumValue(),
             "orderDirection": this.getOrderDirection(),
             "scope": this.getScope(),
+            "globalRankingSetting": (_a = this.getGlobalRankingSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "entryPeriodEventId": this.getEntryPeriodEventId(),
+            "accessPeriodEventId": this.getAccessPeriodEventId(),
             "uniqueByUserId": this.getUniqueByUserId(),
             "sum": this.getSum(),
             "calculateFixedTimingHour": this.getCalculateFixedTimingHour(),
@@ -306,8 +344,6 @@ var UpdateCategoryModelMasterRequest = /** @class */ (function () {
                 this.getAdditionalScopes().map(function (item) {
                     return item.toDict();
                 }) : [],
-            "entryPeriodEventId": this.getEntryPeriodEventId(),
-            "accessPeriodEventId": this.getAccessPeriodEventId(),
             "ignoreUserIds": this.getIgnoreUserIds() ?
                 this.getIgnoreUserIds().map(function (item) {
                     return item;

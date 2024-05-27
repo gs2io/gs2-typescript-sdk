@@ -15,7 +15,9 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import FixedTiming from './FixedTiming';
 import Scope from './Scope';
+import GlobalRankingSetting from './GlobalRankingSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:ranking:{namespaceName}:categoryModel:{categoryName}";
 
 export default class CategoryModel implements IModel {
@@ -24,16 +26,17 @@ export default class CategoryModel implements IModel {
     private metadata: string|null = null;
     private minimumValue: number|null = null;
     private maximumValue: number|null = null;
+    private sum: boolean|null = null;
     private orderDirection: string|null = null;
     private scope: string|null = null;
+    private globalRankingSetting: GlobalRankingSetting|null = null;
+    private entryPeriodEventId: string|null = null;
+    private accessPeriodEventId: string|null = null;
     private uniqueByUserId: boolean|null = null;
-    private sum: boolean|null = null;
     private calculateFixedTimingHour: number|null = null;
     private calculateFixedTimingMinute: number|null = null;
     private calculateIntervalMinutes: number|null = null;
     private additionalScopes: Scope[]|null = null;
-    private entryPeriodEventId: string|null = null;
-    private accessPeriodEventId: string|null = null;
     private ignoreUserIds: string[]|null = null;
     private generation: string|null = null;
 
@@ -172,6 +175,17 @@ export default class CategoryModel implements IModel {
         this.maximumValue = maximumValue;
         return this;
     }
+    public getSum(): boolean|null {
+        return this.sum;
+    }
+    public setSum(sum: boolean|null) {
+        this.sum = sum;
+        return this;
+    }
+    public withSum(sum: boolean|null): this {
+        this.sum = sum;
+        return this;
+    }
     public getOrderDirection(): string|null {
         return this.orderDirection;
     }
@@ -194,70 +208,15 @@ export default class CategoryModel implements IModel {
         this.scope = scope;
         return this;
     }
-    public getUniqueByUserId(): boolean|null {
-        return this.uniqueByUserId;
+    public getGlobalRankingSetting(): GlobalRankingSetting|null {
+        return this.globalRankingSetting;
     }
-    public setUniqueByUserId(uniqueByUserId: boolean|null) {
-        this.uniqueByUserId = uniqueByUserId;
+    public setGlobalRankingSetting(globalRankingSetting: GlobalRankingSetting|null) {
+        this.globalRankingSetting = globalRankingSetting;
         return this;
     }
-    public withUniqueByUserId(uniqueByUserId: boolean|null): this {
-        this.uniqueByUserId = uniqueByUserId;
-        return this;
-    }
-    public getSum(): boolean|null {
-        return this.sum;
-    }
-    public setSum(sum: boolean|null) {
-        this.sum = sum;
-        return this;
-    }
-    public withSum(sum: boolean|null): this {
-        this.sum = sum;
-        return this;
-    }
-    public getCalculateFixedTimingHour(): number|null {
-        return this.calculateFixedTimingHour;
-    }
-    public setCalculateFixedTimingHour(calculateFixedTimingHour: number|null) {
-        this.calculateFixedTimingHour = calculateFixedTimingHour;
-        return this;
-    }
-    public withCalculateFixedTimingHour(calculateFixedTimingHour: number|null): this {
-        this.calculateFixedTimingHour = calculateFixedTimingHour;
-        return this;
-    }
-    public getCalculateFixedTimingMinute(): number|null {
-        return this.calculateFixedTimingMinute;
-    }
-    public setCalculateFixedTimingMinute(calculateFixedTimingMinute: number|null) {
-        this.calculateFixedTimingMinute = calculateFixedTimingMinute;
-        return this;
-    }
-    public withCalculateFixedTimingMinute(calculateFixedTimingMinute: number|null): this {
-        this.calculateFixedTimingMinute = calculateFixedTimingMinute;
-        return this;
-    }
-    public getCalculateIntervalMinutes(): number|null {
-        return this.calculateIntervalMinutes;
-    }
-    public setCalculateIntervalMinutes(calculateIntervalMinutes: number|null) {
-        this.calculateIntervalMinutes = calculateIntervalMinutes;
-        return this;
-    }
-    public withCalculateIntervalMinutes(calculateIntervalMinutes: number|null): this {
-        this.calculateIntervalMinutes = calculateIntervalMinutes;
-        return this;
-    }
-    public getAdditionalScopes(): Scope[]|null {
-        return this.additionalScopes;
-    }
-    public setAdditionalScopes(additionalScopes: Scope[]|null) {
-        this.additionalScopes = additionalScopes;
-        return this;
-    }
-    public withAdditionalScopes(additionalScopes: Scope[]|null): this {
-        this.additionalScopes = additionalScopes;
+    public withGlobalRankingSetting(globalRankingSetting: GlobalRankingSetting|null): this {
+        this.globalRankingSetting = globalRankingSetting;
         return this;
     }
     public getEntryPeriodEventId(): string|null {
@@ -282,24 +241,100 @@ export default class CategoryModel implements IModel {
         this.accessPeriodEventId = accessPeriodEventId;
         return this;
     }
+    /** @deprecated */
+    public getUniqueByUserId(): boolean|null {
+        return this.uniqueByUserId;
+    }
+    /** @deprecated */
+    public setUniqueByUserId(uniqueByUserId: boolean|null) {
+        this.uniqueByUserId = uniqueByUserId;
+        return this;
+    }
+    /** @deprecated */
+    public withUniqueByUserId(uniqueByUserId: boolean|null): this {
+        this.uniqueByUserId = uniqueByUserId;
+        return this;
+    }
+    /** @deprecated */
+    public getCalculateFixedTimingHour(): number|null {
+        return this.calculateFixedTimingHour;
+    }
+    /** @deprecated */
+    public setCalculateFixedTimingHour(calculateFixedTimingHour: number|null) {
+        this.calculateFixedTimingHour = calculateFixedTimingHour;
+        return this;
+    }
+    /** @deprecated */
+    public withCalculateFixedTimingHour(calculateFixedTimingHour: number|null): this {
+        this.calculateFixedTimingHour = calculateFixedTimingHour;
+        return this;
+    }
+    /** @deprecated */
+    public getCalculateFixedTimingMinute(): number|null {
+        return this.calculateFixedTimingMinute;
+    }
+    /** @deprecated */
+    public setCalculateFixedTimingMinute(calculateFixedTimingMinute: number|null) {
+        this.calculateFixedTimingMinute = calculateFixedTimingMinute;
+        return this;
+    }
+    /** @deprecated */
+    public withCalculateFixedTimingMinute(calculateFixedTimingMinute: number|null): this {
+        this.calculateFixedTimingMinute = calculateFixedTimingMinute;
+        return this;
+    }
+    /** @deprecated */
+    public getCalculateIntervalMinutes(): number|null {
+        return this.calculateIntervalMinutes;
+    }
+    /** @deprecated */
+    public setCalculateIntervalMinutes(calculateIntervalMinutes: number|null) {
+        this.calculateIntervalMinutes = calculateIntervalMinutes;
+        return this;
+    }
+    /** @deprecated */
+    public withCalculateIntervalMinutes(calculateIntervalMinutes: number|null): this {
+        this.calculateIntervalMinutes = calculateIntervalMinutes;
+        return this;
+    }
+    /** @deprecated */
+    public getAdditionalScopes(): Scope[]|null {
+        return this.additionalScopes;
+    }
+    /** @deprecated */
+    public setAdditionalScopes(additionalScopes: Scope[]|null) {
+        this.additionalScopes = additionalScopes;
+        return this;
+    }
+    /** @deprecated */
+    public withAdditionalScopes(additionalScopes: Scope[]|null): this {
+        this.additionalScopes = additionalScopes;
+        return this;
+    }
+    /** @deprecated */
     public getIgnoreUserIds(): string[]|null {
         return this.ignoreUserIds;
     }
+    /** @deprecated */
     public setIgnoreUserIds(ignoreUserIds: string[]|null) {
         this.ignoreUserIds = ignoreUserIds;
         return this;
     }
+    /** @deprecated */
     public withIgnoreUserIds(ignoreUserIds: string[]|null): this {
         this.ignoreUserIds = ignoreUserIds;
         return this;
     }
+    /** @deprecated */
     public getGeneration(): string|null {
         return this.generation;
     }
+    /** @deprecated */
     public setGeneration(generation: string|null) {
         this.generation = generation;
         return this;
     }
+    /** @deprecated */
     public withGeneration(generation: string|null): this {
         this.generation = generation;
         return this;
@@ -315,10 +350,13 @@ export default class CategoryModel implements IModel {
             .withMetadata(data["metadata"])
             .withMinimumValue(data["minimumValue"])
             .withMaximumValue(data["maximumValue"])
+            .withSum(data["sum"])
             .withOrderDirection(data["orderDirection"])
             .withScope(data["scope"])
+            .withGlobalRankingSetting(GlobalRankingSetting.fromDict(data["globalRankingSetting"]))
+            .withEntryPeriodEventId(data["entryPeriodEventId"])
+            .withAccessPeriodEventId(data["accessPeriodEventId"])
             .withUniqueByUserId(data["uniqueByUserId"])
-            .withSum(data["sum"])
             .withCalculateFixedTimingHour(data["calculateFixedTimingHour"])
             .withCalculateFixedTimingMinute(data["calculateFixedTimingMinute"])
             .withCalculateIntervalMinutes(data["calculateIntervalMinutes"])
@@ -327,8 +365,6 @@ export default class CategoryModel implements IModel {
                     return Scope.fromDict(item);
                 }
             ) : [])
-            .withEntryPeriodEventId(data["entryPeriodEventId"])
-            .withAccessPeriodEventId(data["accessPeriodEventId"])
             .withIgnoreUserIds(data.ignoreUserIds ?
                 data.ignoreUserIds.map((item: {[key: string]: any}) => {
                     return item;
@@ -344,10 +380,13 @@ export default class CategoryModel implements IModel {
             "metadata": this.getMetadata(),
             "minimumValue": this.getMinimumValue(),
             "maximumValue": this.getMaximumValue(),
+            "sum": this.getSum(),
             "orderDirection": this.getOrderDirection(),
             "scope": this.getScope(),
+            "globalRankingSetting": this.getGlobalRankingSetting()?.toDict(),
+            "entryPeriodEventId": this.getEntryPeriodEventId(),
+            "accessPeriodEventId": this.getAccessPeriodEventId(),
             "uniqueByUserId": this.getUniqueByUserId(),
-            "sum": this.getSum(),
             "calculateFixedTimingHour": this.getCalculateFixedTimingHour(),
             "calculateFixedTimingMinute": this.getCalculateFixedTimingMinute(),
             "calculateIntervalMinutes": this.getCalculateIntervalMinutes(),
@@ -356,8 +395,6 @@ export default class CategoryModel implements IModel {
                     return item.toDict();
                 }
             ) : [],
-            "entryPeriodEventId": this.getEntryPeriodEventId(),
-            "accessPeriodEventId": this.getAccessPeriodEventId(),
             "ignoreUserIds": this.getIgnoreUserIds() ?
                 this.getIgnoreUserIds()!.map((item: string) => {
                     return item;
