@@ -24,6 +24,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
     private description: string|null = null;
+    private applyBuffScript: Gs2Buff.ScriptSetting|null = null;
     private logSetting: Gs2Buff.LogSetting|null = null;
 
     public getRequestId(): string|null {
@@ -75,6 +76,17 @@ export default class UpdateNamespaceRequest implements IRequest {
         this.description = description;
         return this;
     }
+    public getApplyBuffScript(): Gs2Buff.ScriptSetting|null {
+        return this.applyBuffScript;
+    }
+    public setApplyBuffScript(applyBuffScript: Gs2Buff.ScriptSetting|null) {
+        this.applyBuffScript = applyBuffScript;
+        return this;
+    }
+    public withApplyBuffScript(applyBuffScript: Gs2Buff.ScriptSetting|null): this {
+        this.applyBuffScript = applyBuffScript;
+        return this;
+    }
     public getLogSetting(): Gs2Buff.LogSetting|null {
         return this.logSetting;
     }
@@ -91,6 +103,7 @@ export default class UpdateNamespaceRequest implements IRequest {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
+            .withApplyBuffScript(Gs2Buff.ScriptSetting.fromDict(data["applyBuffScript"]))
             .withLogSetting(Gs2Buff.LogSetting.fromDict(data["logSetting"]));
     }
 
@@ -98,6 +111,7 @@ export default class UpdateNamespaceRequest implements IRequest {
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
+            "applyBuffScript": this.getApplyBuffScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
         };
     }

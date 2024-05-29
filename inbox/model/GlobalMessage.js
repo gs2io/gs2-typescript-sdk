@@ -150,13 +150,16 @@ var GlobalMessage = /** @class */ (function () {
         this.expiresTimeSpan = expiresTimeSpan;
         return this;
     };
+    /** @deprecated */
     GlobalMessage.prototype.getExpiresAt = function () {
         return this.expiresAt;
     };
+    /** @deprecated */
     GlobalMessage.prototype.setExpiresAt = function (expiresAt) {
         this.expiresAt = expiresAt;
         return this;
     };
+    /** @deprecated */
     GlobalMessage.prototype.withExpiresAt = function (expiresAt) {
         this.expiresAt = expiresAt;
         return this;

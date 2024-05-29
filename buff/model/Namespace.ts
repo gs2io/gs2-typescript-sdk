@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:buff:{namespaceName}";
 
@@ -22,6 +23,7 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private applyBuffScript: ScriptSetting|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -119,6 +121,17 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
+    public getApplyBuffScript(): ScriptSetting|null {
+        return this.applyBuffScript;
+    }
+    public setApplyBuffScript(applyBuffScript: ScriptSetting|null) {
+        this.applyBuffScript = applyBuffScript;
+        return this;
+    }
+    public withApplyBuffScript(applyBuffScript: ScriptSetting|null): this {
+        this.applyBuffScript = applyBuffScript;
+        return this;
+    }
     public getLogSetting(): LogSetting|null {
         return this.logSetting;
     }
@@ -172,6 +185,7 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withApplyBuffScript(ScriptSetting.fromDict(data["applyBuffScript"]))
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -183,6 +197,7 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "applyBuffScript": this.getApplyBuffScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

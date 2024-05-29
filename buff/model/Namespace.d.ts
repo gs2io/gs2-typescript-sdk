@@ -1,9 +1,11 @@
 import IModel from '../../core/interface/IModel';
+import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
+    private applyBuffScript;
     private logSetting;
     private createdAt;
     private updatedAt;
@@ -22,6 +24,9 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getApplyBuffScript(): ScriptSetting | null;
+    setApplyBuffScript(applyBuffScript: ScriptSetting | null): this;
+    withApplyBuffScript(applyBuffScript: ScriptSetting | null): this;
     getLogSetting(): LogSetting | null;
     setLogSetting(logSetting: LogSetting | null): this;
     withLogSetting(logSetting: LogSetting | null): this;

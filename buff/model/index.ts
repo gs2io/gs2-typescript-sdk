@@ -20,6 +20,8 @@ import BuffTargetGrn from "./BuffTargetGrn"
 import BuffEntryModel from "./BuffEntryModel"
 import BuffEntryModelMaster from "./BuffEntryModelMaster"
 import CurrentBuffMaster from "./CurrentBuffMaster"
+import OverrideBuffRate from "./OverrideBuffRate"
+import ScriptSetting from "./ScriptSetting"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import LogSetting from "./LogSetting"
 
@@ -31,6 +33,8 @@ export {
     BuffEntryModel,
     BuffEntryModelMaster,
     CurrentBuffMaster,
+    OverrideBuffRate,
+    ScriptSetting,
     GitHubCheckoutSetting,
     LogSetting,
 };

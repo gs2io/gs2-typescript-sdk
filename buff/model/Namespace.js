@@ -16,6 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
+var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:buff:{namespaceName}";
 var Namespace = /** @class */ (function () {
@@ -23,6 +24,7 @@ var Namespace = /** @class */ (function () {
         this.namespaceId = null;
         this.name = null;
         this.description = null;
+        this.applyBuffScript = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -109,6 +111,17 @@ var Namespace = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    Namespace.prototype.getApplyBuffScript = function () {
+        return this.applyBuffScript;
+    };
+    Namespace.prototype.setApplyBuffScript = function (applyBuffScript) {
+        this.applyBuffScript = applyBuffScript;
+        return this;
+    };
+    Namespace.prototype.withApplyBuffScript = function (applyBuffScript) {
+        this.applyBuffScript = applyBuffScript;
+        return this;
+    };
     Namespace.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -161,18 +174,20 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withApplyBuffScript(ScriptSetting_1.default.fromDict(data["applyBuffScript"]))
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
-            "logSetting": (_a = this.getLogSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "applyBuffScript": (_a = this.getApplyBuffScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

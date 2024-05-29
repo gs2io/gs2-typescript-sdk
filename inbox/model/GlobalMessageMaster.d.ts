@@ -32,8 +32,11 @@ export default class GlobalMessageMaster implements IModel {
     getExpiresTimeSpan(): TimeSpan | null;
     setExpiresTimeSpan(expiresTimeSpan: TimeSpan | null): this;
     withExpiresTimeSpan(expiresTimeSpan: TimeSpan | null): this;
+    /** @deprecated */
     getExpiresAt(): number | null;
+    /** @deprecated */
     setExpiresAt(expiresAt: number | null): this;
+    /** @deprecated */
     withExpiresAt(expiresAt: number | null): this;
     getMessageReceptionPeriodEventId(): string | null;
     setMessageReceptionPeriodEventId(messageReceptionPeriodEventId: string | null): this;

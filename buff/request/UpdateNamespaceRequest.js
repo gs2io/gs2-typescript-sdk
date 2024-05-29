@@ -23,6 +23,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.description = null;
+        this.applyBuffScript = null;
         this.logSetting = null;
     }
     UpdateNamespaceRequest.prototype.getRequestId = function () {
@@ -69,6 +70,17 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getApplyBuffScript = function () {
+        return this.applyBuffScript;
+    };
+    UpdateNamespaceRequest.prototype.setApplyBuffScript = function (applyBuffScript) {
+        this.applyBuffScript = applyBuffScript;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withApplyBuffScript = function (applyBuffScript) {
+        this.applyBuffScript = applyBuffScript;
+        return this;
+    };
     UpdateNamespaceRequest.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -84,14 +96,16 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
+            .withApplyBuffScript(Gs2Buff.ScriptSetting.fromDict(data["applyBuffScript"]))
             .withLogSetting(Gs2Buff.LogSetting.fromDict(data["logSetting"]));
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
-            "logSetting": (_a = this.getLogSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "applyBuffScript": (_a = this.getApplyBuffScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return UpdateNamespaceRequest;

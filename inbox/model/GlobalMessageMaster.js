@@ -152,13 +152,16 @@ var GlobalMessageMaster = /** @class */ (function () {
         this.expiresTimeSpan = expiresTimeSpan;
         return this;
     };
+    /** @deprecated */
     GlobalMessageMaster.prototype.getExpiresAt = function () {
         return this.expiresAt;
     };
+    /** @deprecated */
     GlobalMessageMaster.prototype.setExpiresAt = function (expiresAt) {
         this.expiresAt = expiresAt;
         return this;
     };
+    /** @deprecated */
     GlobalMessageMaster.prototype.withExpiresAt = function (expiresAt) {
         this.expiresAt = expiresAt;
         return this;

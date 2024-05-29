@@ -163,13 +163,16 @@ export default class GlobalMessage implements IModel {
         this.expiresTimeSpan = expiresTimeSpan;
         return this;
     }
+    /** @deprecated */
     public getExpiresAt(): number|null {
         return this.expiresAt;
     }
+    /** @deprecated */
     public setExpiresAt(expiresAt: number|null) {
         this.expiresAt = expiresAt;
         return this;
     }
+    /** @deprecated */
     public withExpiresAt(expiresAt: number|null): this {
         this.expiresAt = expiresAt;
         return this;

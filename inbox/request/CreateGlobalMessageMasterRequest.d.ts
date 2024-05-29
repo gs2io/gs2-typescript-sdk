@@ -31,8 +31,11 @@ export default class CreateGlobalMessageMasterRequest implements IRequest {
     getExpiresTimeSpan(): Gs2Inbox.TimeSpan | null;
     setExpiresTimeSpan(expiresTimeSpan: Gs2Inbox.TimeSpan | null): this;
     withExpiresTimeSpan(expiresTimeSpan: Gs2Inbox.TimeSpan | null): this;
+    /** @deprecated */
     getExpiresAt(): number | null;
+    /** @deprecated */
     setExpiresAt(expiresAt: number | null): this;
+    /** @deprecated */
     withExpiresAt(expiresAt: number | null): this;
     getMessageReceptionPeriodEventId(): string | null;
     setMessageReceptionPeriodEventId(messageReceptionPeriodEventId: string | null): this;
