@@ -49,12 +49,18 @@ import DeleteGuildResult from "./DeleteGuildResult"
 import DeleteGuildByGuildNameResult from "./DeleteGuildByGuildNameResult"
 import IncreaseMaximumCurrentMaximumMemberCountByGuildNameResult from "./IncreaseMaximumCurrentMaximumMemberCountByGuildNameResult"
 import DecreaseMaximumCurrentMaximumMemberCountByGuildNameResult from "./DecreaseMaximumCurrentMaximumMemberCountByGuildNameResult"
+import VerifyCurrentMaximumMemberCountResult from "./VerifyCurrentMaximumMemberCountResult"
+import VerifyCurrentMaximumMemberCountByGuildNameResult from "./VerifyCurrentMaximumMemberCountByGuildNameResult"
+import VerifyIncludeMemberResult from "./VerifyIncludeMemberResult"
+import VerifyIncludeMemberByUserIdResult from "./VerifyIncludeMemberByUserIdResult"
 import SetMaximumCurrentMaximumMemberCountByGuildNameResult from "./SetMaximumCurrentMaximumMemberCountByGuildNameResult"
 import AssumeResult from "./AssumeResult"
 import AssumeByUserIdResult from "./AssumeByUserIdResult"
 import IncreaseMaximumCurrentMaximumMemberCountByStampSheetResult from "./IncreaseMaximumCurrentMaximumMemberCountByStampSheetResult"
 import DecreaseMaximumCurrentMaximumMemberCountByStampTaskResult from "./DecreaseMaximumCurrentMaximumMemberCountByStampTaskResult"
 import SetMaximumCurrentMaximumMemberCountByStampSheetResult from "./SetMaximumCurrentMaximumMemberCountByStampSheetResult"
+import VerifyCurrentMaximumMemberCountByStampTaskResult from "./VerifyCurrentMaximumMemberCountByStampTaskResult"
+import VerifyIncludeMemberByStampTaskResult from "./VerifyIncludeMemberByStampTaskResult"
 import DescribeJoinedGuildsResult from "./DescribeJoinedGuildsResult"
 import DescribeJoinedGuildsByUserIdResult from "./DescribeJoinedGuildsByUserIdResult"
 import GetJoinedGuildResult from "./GetJoinedGuildResult"
@@ -119,12 +125,18 @@ export {
     DeleteGuildByGuildNameResult,
     IncreaseMaximumCurrentMaximumMemberCountByGuildNameResult,
     DecreaseMaximumCurrentMaximumMemberCountByGuildNameResult,
+    VerifyCurrentMaximumMemberCountResult,
+    VerifyCurrentMaximumMemberCountByGuildNameResult,
+    VerifyIncludeMemberResult,
+    VerifyIncludeMemberByUserIdResult,
     SetMaximumCurrentMaximumMemberCountByGuildNameResult,
     AssumeResult,
     AssumeByUserIdResult,
     IncreaseMaximumCurrentMaximumMemberCountByStampSheetResult,
     DecreaseMaximumCurrentMaximumMemberCountByStampTaskResult,
     SetMaximumCurrentMaximumMemberCountByStampSheetResult,
+    VerifyCurrentMaximumMemberCountByStampTaskResult,
+    VerifyIncludeMemberByStampTaskResult,
     DescribeJoinedGuildsResult,
     DescribeJoinedGuildsByUserIdResult,
     GetJoinedGuildResult,

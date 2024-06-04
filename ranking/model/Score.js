@@ -26,6 +26,7 @@ var Score = /** @class */ (function () {
         this.score = null;
         this.metadata = null;
         this.createdAt = null;
+        this.revision = null;
     }
     Score.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -247,6 +248,17 @@ var Score = /** @class */ (function () {
         this.createdAt = createdAt;
         return this;
     };
+    Score.prototype.getRevision = function () {
+        return this.revision;
+    };
+    Score.prototype.setRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
+    Score.prototype.withRevision = function (revision) {
+        this.revision = revision;
+        return this;
+    };
     Score.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -259,7 +271,8 @@ var Score = /** @class */ (function () {
             .withScorerUserId(data["scorerUserId"])
             .withScore(data["score"])
             .withMetadata(data["metadata"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     };
     Score.prototype.toDict = function () {
         return {
@@ -271,6 +284,7 @@ var Score = /** @class */ (function () {
             "score": this.getScore(),
             "metadata": this.getMetadata(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     };
     return Score;

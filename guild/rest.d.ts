@@ -40,12 +40,18 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     deleteGuildByGuildName(request: Request.DeleteGuildByGuildNameRequest): Promise<Result.DeleteGuildByGuildNameResult>;
     increaseMaximumCurrentMaximumMemberCountByGuildName(request: Request.IncreaseMaximumCurrentMaximumMemberCountByGuildNameRequest): Promise<Result.IncreaseMaximumCurrentMaximumMemberCountByGuildNameResult>;
     decreaseMaximumCurrentMaximumMemberCountByGuildName(request: Request.DecreaseMaximumCurrentMaximumMemberCountByGuildNameRequest): Promise<Result.DecreaseMaximumCurrentMaximumMemberCountByGuildNameResult>;
+    verifyCurrentMaximumMemberCount(request: Request.VerifyCurrentMaximumMemberCountRequest): Promise<Result.VerifyCurrentMaximumMemberCountResult>;
+    verifyCurrentMaximumMemberCountByGuildName(request: Request.VerifyCurrentMaximumMemberCountByGuildNameRequest): Promise<Result.VerifyCurrentMaximumMemberCountByGuildNameResult>;
+    verifyIncludeMember(request: Request.VerifyIncludeMemberRequest): Promise<Result.VerifyIncludeMemberResult>;
+    verifyIncludeMemberByUserId(request: Request.VerifyIncludeMemberByUserIdRequest): Promise<Result.VerifyIncludeMemberByUserIdResult>;
     setMaximumCurrentMaximumMemberCountByGuildName(request: Request.SetMaximumCurrentMaximumMemberCountByGuildNameRequest): Promise<Result.SetMaximumCurrentMaximumMemberCountByGuildNameResult>;
     assume(request: Request.AssumeRequest): Promise<Result.AssumeResult>;
     assumeByUserId(request: Request.AssumeByUserIdRequest): Promise<Result.AssumeByUserIdResult>;
     increaseMaximumCurrentMaximumMemberCountByStampSheet(request: Request.IncreaseMaximumCurrentMaximumMemberCountByStampSheetRequest): Promise<Result.IncreaseMaximumCurrentMaximumMemberCountByStampSheetResult>;
     decreaseMaximumCurrentMaximumMemberCountByStampTask(request: Request.DecreaseMaximumCurrentMaximumMemberCountByStampTaskRequest): Promise<Result.DecreaseMaximumCurrentMaximumMemberCountByStampTaskResult>;
     setMaximumCurrentMaximumMemberCountByStampSheet(request: Request.SetMaximumCurrentMaximumMemberCountByStampSheetRequest): Promise<Result.SetMaximumCurrentMaximumMemberCountByStampSheetResult>;
+    verifyCurrentMaximumMemberCountByStampTask(request: Request.VerifyCurrentMaximumMemberCountByStampTaskRequest): Promise<Result.VerifyCurrentMaximumMemberCountByStampTaskResult>;
+    verifyIncludeMemberByStampTask(request: Request.VerifyIncludeMemberByStampTaskRequest): Promise<Result.VerifyIncludeMemberByStampTaskResult>;
     describeJoinedGuilds(request: Request.DescribeJoinedGuildsRequest): Promise<Result.DescribeJoinedGuildsResult>;
     describeJoinedGuildsByUserId(request: Request.DescribeJoinedGuildsByUserIdRequest): Promise<Result.DescribeJoinedGuildsByUserIdResult>;
     getJoinedGuild(request: Request.GetJoinedGuildRequest): Promise<Result.GetJoinedGuildResult>;

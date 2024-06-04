@@ -26,6 +26,7 @@ export default class Score implements IModel {
     private score: number|null = null;
     private metadata: string|null = null;
     private createdAt: number|null = null;
+    private revision: number|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -270,6 +271,17 @@ export default class Score implements IModel {
         this.createdAt = createdAt;
         return this;
     }
+    public getRevision(): number|null {
+        return this.revision;
+    }
+    public setRevision(revision: number|null) {
+        this.revision = revision;
+        return this;
+    }
+    public withRevision(revision: number|null): this {
+        this.revision = revision;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): Score|null {
         if (data == undefined || data == null) {
@@ -283,7 +295,8 @@ export default class Score implements IModel {
             .withScorerUserId(data["scorerUserId"])
             .withScore(data["score"])
             .withMetadata(data["metadata"])
-            .withCreatedAt(data["createdAt"]);
+            .withCreatedAt(data["createdAt"])
+            .withRevision(data["revision"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -296,6 +309,7 @@ export default class Score implements IModel {
             "score": this.getScore(),
             "metadata": this.getMetadata(),
             "createdAt": this.getCreatedAt(),
+            "revision": this.getRevision(),
         };
     }
 }
