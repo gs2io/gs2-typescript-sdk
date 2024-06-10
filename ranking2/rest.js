@@ -847,7 +847,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
         });
     };
     Gs2Ranking2RestClient.prototype.createGlobalRankingReceivedReward = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/global/reward/received/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
@@ -865,6 +865,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
         }
         var body = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'season': (_h = request.getSeason()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -880,7 +881,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
         });
     };
     Gs2Ranking2RestClient.prototype.createGlobalRankingReceivedRewardByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/global/reward/received/{rankingName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
@@ -899,6 +900,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
         }
         var body = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'season': (_k = request.getSeason()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1687,7 +1689,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
         });
     };
     Gs2Ranking2RestClient.prototype.createClusterRankingReceivedReward = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/cluster/reward/received/{rankingName}/{clusterName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
@@ -1706,6 +1708,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
         }
         var body = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'season': (_k = request.getSeason()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1721,7 +1724,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
         });
     };
     Gs2Ranking2RestClient.prototype.createClusterRankingReceivedRewardByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/cluster/reward/received/{rankingName}/{clusterName}')
             .replace('{service}', 'ranking2')
             .replace('{region}', this.session.region)
@@ -1741,6 +1744,7 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
         }
         var body = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'season': (_m = request.getSeason()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

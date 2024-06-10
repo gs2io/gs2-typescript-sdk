@@ -983,6 +983,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'season': request.getSeason() ?? null,
         };
         return axios.post(
             url,
@@ -1021,6 +1022,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'season': request.getSeason() ?? null,
         };
         return axios.post(
             url,
@@ -1936,6 +1938,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'season': request.getSeason() ?? null,
         };
         return axios.post(
             url,
@@ -1975,6 +1978,7 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'season': request.getSeason() ?? null,
         };
         return axios.post(
             url,
