@@ -562,38 +562,6 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
         });
     }
 
-    public putLog(request: Request.PutLogRequest): Promise<Result.PutLogResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/log/put')
-            .replace('{service}', 'log')
-            .replace('{region}', this.session.region);
-    
-        const headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        const body: {[key: string]: any} = {
-            'contextStack': request.getContextStack() ?? null,
-            'loggingNamespaceId': request.getLoggingNamespaceId() ?? null,
-            'logCategory': request.getLogCategory() ?? null,
-            'payload': request.getPayload() ?? null,
-        };
-        return axios.post(
-            url,
-            body,
-            {
-                headers,
-            },
-        ).then((response: any) => {
-            return Result.PutLogResult.fromDict(response.data);
-        }).catch((error: any) => {
-            if (error.response) {
-                throw JSON.parse(error.response.data.message);
-            } else {
-                throw [];
-            }
-        });
-    }
-
     public describeInsights(request: Request.DescribeInsightsRequest): Promise<Result.DescribeInsightsResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/insight')
             .replace('{service}', 'log')

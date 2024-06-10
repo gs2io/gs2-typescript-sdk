@@ -28,7 +28,6 @@ import CountExecuteStampSheetLogResult from "./CountExecuteStampSheetLogResult"
 import QueryExecuteStampTaskLogResult from "./QueryExecuteStampTaskLogResult"
 import CountExecuteStampTaskLogResult from "./CountExecuteStampTaskLogResult"
 import QueryAccessLogWithTelemetryResult from "./QueryAccessLogWithTelemetryResult"
-import PutLogResult from "./PutLogResult"
 import DescribeInsightsResult from "./DescribeInsightsResult"
 import CreateInsightResult from "./CreateInsightResult"
 import GetInsightResult from "./GetInsightResult"
@@ -50,7 +49,6 @@ export {
     QueryExecuteStampTaskLogResult,
     CountExecuteStampTaskLogResult,
     QueryAccessLogWithTelemetryResult,
-    PutLogResult,
     DescribeInsightsResult,
     CreateInsightResult,
     GetInsightResult,

@@ -52,6 +52,7 @@ import * as news from './news';
 import * as project from './project';
 import * as quest from './quest';
 import * as ranking from './ranking';
+import * as ranking2 from './ranking2';
 import * as realtime from './realtime';
 import * as schedule from './schedule';
 import * as script from './script';
@@ -103,6 +104,7 @@ export {
   project,
   quest,
   ranking,
+  ranking2,
   realtime,
   schedule,
   script,

@@ -15,7 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.watch = exports.version = exports.stamina = exports.stateMachine = exports.skillTree = exports.showcase = exports.serialKey = exports.seasonRating = exports.script = exports.schedule = exports.realtime = exports.ranking = exports.quest = exports.project = exports.news = exports.money = exports.mission = exports.megaField = exports.matchmaking = exports.lottery = exports.log = exports.lock = exports.loginReward = exports.limit = exports.key = exports.jobQueue = exports.inventory = exports.inbox = exports.idle = exports.identifier = exports.guild = exports.grade = exports.gateway = exports.friend = exports.formation = exports.experience = exports.exchange = exports.enhance = exports.enchant = exports.distributor = exports.dictionary = exports.deploy = exports.datastore = exports.chat = exports.buff = exports.core = exports.auth = exports.adReward = exports.account = void 0;
+exports.watch = exports.version = exports.stamina = exports.stateMachine = exports.skillTree = exports.showcase = exports.serialKey = exports.seasonRating = exports.script = exports.schedule = exports.realtime = exports.ranking2 = exports.ranking = exports.quest = exports.project = exports.news = exports.money = exports.mission = exports.megaField = exports.matchmaking = exports.lottery = exports.log = exports.lock = exports.loginReward = exports.limit = exports.key = exports.jobQueue = exports.inventory = exports.inbox = exports.idle = exports.identifier = exports.guild = exports.grade = exports.gateway = exports.friend = exports.formation = exports.experience = exports.exchange = exports.enhance = exports.enchant = exports.distributor = exports.dictionary = exports.deploy = exports.datastore = exports.chat = exports.buff = exports.core = exports.auth = exports.adReward = exports.account = void 0;
 var tslib_1 = require("tslib");
 var account = tslib_1.__importStar(require("./account"));
 exports.account = account;
@@ -94,6 +94,8 @@ var quest = tslib_1.__importStar(require("./quest"));
 exports.quest = quest;
 var ranking = tslib_1.__importStar(require("./ranking"));
 exports.ranking = ranking;
+var ranking2 = tslib_1.__importStar(require("./ranking2"));
+exports.ranking2 = ranking2;
 var realtime = tslib_1.__importStar(require("./realtime"));
 exports.realtime = realtime;
 var schedule = tslib_1.__importStar(require("./schedule"));

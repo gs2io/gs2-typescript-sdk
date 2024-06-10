@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteInsightResult = exports.GetInsightResult = exports.CreateInsightResult = exports.DescribeInsightsResult = exports.PutLogResult = exports.QueryAccessLogWithTelemetryResult = exports.CountExecuteStampTaskLogResult = exports.QueryExecuteStampTaskLogResult = exports.CountExecuteStampSheetLogResult = exports.QueryExecuteStampSheetLogResult = exports.CountIssueStampSheetLogResult = exports.QueryIssueStampSheetLogResult = exports.CountAccessLogResult = exports.QueryAccessLogResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.DeleteInsightResult = exports.GetInsightResult = exports.CreateInsightResult = exports.DescribeInsightsResult = exports.QueryAccessLogWithTelemetryResult = exports.CountExecuteStampTaskLogResult = exports.QueryExecuteStampTaskLogResult = exports.CountExecuteStampSheetLogResult = exports.QueryExecuteStampSheetLogResult = exports.CountIssueStampSheetLogResult = exports.QueryIssueStampSheetLogResult = exports.CountAccessLogResult = exports.QueryAccessLogResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -47,8 +47,6 @@ var CountExecuteStampTaskLogResult_1 = tslib_1.__importDefault(require("./CountE
 exports.CountExecuteStampTaskLogResult = CountExecuteStampTaskLogResult_1.default;
 var QueryAccessLogWithTelemetryResult_1 = tslib_1.__importDefault(require("./QueryAccessLogWithTelemetryResult"));
 exports.QueryAccessLogWithTelemetryResult = QueryAccessLogWithTelemetryResult_1.default;
-var PutLogResult_1 = tslib_1.__importDefault(require("./PutLogResult"));
-exports.PutLogResult = PutLogResult_1.default;
 var DescribeInsightsResult_1 = tslib_1.__importDefault(require("./DescribeInsightsResult"));
 exports.DescribeInsightsResult = DescribeInsightsResult_1.default;
 var CreateInsightResult_1 = tslib_1.__importDefault(require("./CreateInsightResult"));
