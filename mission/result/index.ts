@@ -22,8 +22,10 @@ import RevertReceiveByUserIdResult from "./RevertReceiveByUserIdResult"
 import GetCompleteResult from "./GetCompleteResult"
 import GetCompleteByUserIdResult from "./GetCompleteByUserIdResult"
 import DeleteCompleteByUserIdResult from "./DeleteCompleteByUserIdResult"
+import VerifyCompleteByUserIdResult from "./VerifyCompleteByUserIdResult"
 import ReceiveByStampTaskResult from "./ReceiveByStampTaskResult"
 import RevertReceiveByStampSheetResult from "./RevertReceiveByStampSheetResult"
+import VerifyCompleteByStampTaskResult from "./VerifyCompleteByStampTaskResult"
 import DescribeCounterModelMastersResult from "./DescribeCounterModelMastersResult"
 import CreateCounterModelMasterResult from "./CreateCounterModelMasterResult"
 import GetCounterModelMasterResult from "./GetCounterModelMasterResult"
@@ -87,8 +89,10 @@ export {
     GetCompleteResult,
     GetCompleteByUserIdResult,
     DeleteCompleteByUserIdResult,
+    VerifyCompleteByUserIdResult,
     ReceiveByStampTaskResult,
     RevertReceiveByStampSheetResult,
+    VerifyCompleteByStampTaskResult,
     DescribeCounterModelMastersResult,
     CreateCounterModelMasterResult,
     GetCounterModelMasterResult,

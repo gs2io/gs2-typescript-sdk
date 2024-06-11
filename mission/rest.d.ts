@@ -13,8 +13,10 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     getComplete(request: Request.GetCompleteRequest): Promise<Result.GetCompleteResult>;
     getCompleteByUserId(request: Request.GetCompleteByUserIdRequest): Promise<Result.GetCompleteByUserIdResult>;
     deleteCompleteByUserId(request: Request.DeleteCompleteByUserIdRequest): Promise<Result.DeleteCompleteByUserIdResult>;
+    verifyCompleteByUserId(request: Request.VerifyCompleteByUserIdRequest): Promise<Result.VerifyCompleteByUserIdResult>;
     receiveByStampTask(request: Request.ReceiveByStampTaskRequest): Promise<Result.ReceiveByStampTaskResult>;
     revertReceiveByStampSheet(request: Request.RevertReceiveByStampSheetRequest): Promise<Result.RevertReceiveByStampSheetResult>;
+    verifyCompleteByStampTask(request: Request.VerifyCompleteByStampTaskRequest): Promise<Result.VerifyCompleteByStampTaskResult>;
     describeCounterModelMasters(request: Request.DescribeCounterModelMastersRequest): Promise<Result.DescribeCounterModelMastersResult>;
     createCounterModelMaster(request: Request.CreateCounterModelMasterRequest): Promise<Result.CreateCounterModelMasterResult>;
     getCounterModelMaster(request: Request.GetCounterModelMasterRequest): Promise<Result.GetCounterModelMasterResult>;

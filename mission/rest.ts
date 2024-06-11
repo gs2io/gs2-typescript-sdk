@@ -342,6 +342,47 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public verifyCompleteByUserId(request: Request.VerifyCompleteByUserIdRequest): Promise<Result.VerifyCompleteByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/complete/group/{missionGroupName}/task/{missionTaskName}/verify/{verifyType}')
+            .replace('{service}', 'mission')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{missionGroupName}', String(request.getMissionGroupName() ?? 'null') === "" ? "null" : String(request.getMissionGroupName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{verifyType}', String(request.getVerifyType() ?? 'null') === "" ? "null" : String(request.getVerifyType() ?? 'null'))
+            .replace('{missionTaskName}', String(request.getMissionTaskName() ?? 'null') === "" ? "null" : String(request.getMissionTaskName() ?? 'null'))
+            .replace('{multiplyValueSpecifyingQuantity}', String(request.getMultiplyValueSpecifyingQuantity() ?? 'null') === "" ? "null" : String(request.getMultiplyValueSpecifyingQuantity() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyCompleteByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public receiveByStampTask(request: Request.ReceiveByStampTaskRequest): Promise<Result.ReceiveByStampTaskResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/receive')
             .replace('{service}', 'mission')
@@ -395,6 +436,37 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.RevertReceiveByStampSheetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public verifyCompleteByStampTask(request: Request.VerifyCompleteByStampTaskRequest): Promise<Result.VerifyCompleteByStampTaskResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/complete/verify')
+            .replace('{service}', 'mission')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampTask': request.getStampTask() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyCompleteByStampTaskResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

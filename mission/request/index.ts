@@ -22,8 +22,10 @@ import RevertReceiveByUserIdRequest from "./RevertReceiveByUserIdRequest"
 import GetCompleteRequest from "./GetCompleteRequest"
 import GetCompleteByUserIdRequest from "./GetCompleteByUserIdRequest"
 import DeleteCompleteByUserIdRequest from "./DeleteCompleteByUserIdRequest"
+import VerifyCompleteByUserIdRequest from "./VerifyCompleteByUserIdRequest"
 import ReceiveByStampTaskRequest from "./ReceiveByStampTaskRequest"
 import RevertReceiveByStampSheetRequest from "./RevertReceiveByStampSheetRequest"
+import VerifyCompleteByStampTaskRequest from "./VerifyCompleteByStampTaskRequest"
 import DescribeCounterModelMastersRequest from "./DescribeCounterModelMastersRequest"
 import CreateCounterModelMasterRequest from "./CreateCounterModelMasterRequest"
 import GetCounterModelMasterRequest from "./GetCounterModelMasterRequest"
@@ -87,8 +89,10 @@ export {
     GetCompleteRequest,
     GetCompleteByUserIdRequest,
     DeleteCompleteByUserIdRequest,
+    VerifyCompleteByUserIdRequest,
     ReceiveByStampTaskRequest,
     RevertReceiveByStampSheetRequest,
+    VerifyCompleteByStampTaskRequest,
     DescribeCounterModelMastersRequest,
     CreateCounterModelMasterRequest,
     GetCounterModelMasterRequest,
