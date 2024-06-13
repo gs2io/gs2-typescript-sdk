@@ -17,7 +17,11 @@ import Namespace from "./Namespace"
 import Gathering from "./Gathering"
 import RatingModelMaster from "./RatingModelMaster"
 import RatingModel from "./RatingModel"
-import CurrentRatingModelMaster from "./CurrentRatingModelMaster"
+import CurrentModelMaster from "./CurrentModelMaster"
+import SeasonModel from "./SeasonModel"
+import SeasonModelMaster from "./SeasonModelMaster"
+import SeasonGathering from "./SeasonGathering"
+import JoinedSeasonGathering from "./JoinedSeasonGathering"
 import ScriptSetting from "./ScriptSetting"
 import NotificationSetting from "./NotificationSetting"
 import LogSetting from "./LogSetting"
@@ -39,7 +43,11 @@ export {
     Gathering,
     RatingModelMaster,
     RatingModel,
-    CurrentRatingModelMaster,
+    CurrentModelMaster,
+    SeasonModel,
+    SeasonModelMaster,
+    SeasonGathering,
+    JoinedSeasonGathering,
     ScriptSetting,
     NotificationSetting,
     LogSetting,

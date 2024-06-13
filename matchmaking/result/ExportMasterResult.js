@@ -34,7 +34,7 @@ var ExportMasterResult = /** @class */ (function () {
     };
     ExportMasterResult.fromDict = function (data) {
         return new ExportMasterResult()
-            .withItem(Gs2Matchmaking.CurrentRatingModelMaster.fromDict(data["item"]));
+            .withItem(Gs2Matchmaking.CurrentModelMaster.fromDict(data["item"]));
     };
     ExportMasterResult.prototype.toDict = function () {
         var _a;

@@ -18,25 +18,25 @@ import IResult from '../../core/interface/IResult';
 import * as Gs2Matchmaking from '../model'
 
 export default class ExportMasterResult implements IResult {
-    private item: Gs2Matchmaking.CurrentRatingModelMaster|null = null;
+    private item: Gs2Matchmaking.CurrentModelMaster|null = null;
 
-    public getItem(): Gs2Matchmaking.CurrentRatingModelMaster|null {
+    public getItem(): Gs2Matchmaking.CurrentModelMaster|null {
         return this.item;
     }
 
-    public setItem(item: Gs2Matchmaking.CurrentRatingModelMaster|null) {
+    public setItem(item: Gs2Matchmaking.CurrentModelMaster|null) {
         this.item = item;
         return this;
     }
 
-    public withItem(item: Gs2Matchmaking.CurrentRatingModelMaster|null): this {
+    public withItem(item: Gs2Matchmaking.CurrentModelMaster|null): this {
         this.item = item;
         return this;
     }
 
     public static fromDict(data: {[key: string]: any}): ExportMasterResult {
         return new ExportMasterResult()
-            .withItem(Gs2Matchmaking.CurrentRatingModelMaster.fromDict(data["item"]));
+            .withItem(Gs2Matchmaking.CurrentModelMaster.fromDict(data["item"]));
     }
 
     public toDict(): {[key: string]: any} {

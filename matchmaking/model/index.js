@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TimeSpan = exports.Vote = exports.WrittenBallot = exports.SignedBallot = exports.Ballot = exports.GameResult = exports.Rating = exports.Player = exports.Attribute = exports.CapacityOfRole = exports.AttributeRange = exports.GitHubCheckoutSetting = exports.LogSetting = exports.NotificationSetting = exports.ScriptSetting = exports.CurrentRatingModelMaster = exports.RatingModel = exports.RatingModelMaster = exports.Gathering = exports.Namespace = void 0;
+exports.TimeSpan = exports.Vote = exports.WrittenBallot = exports.SignedBallot = exports.Ballot = exports.GameResult = exports.Rating = exports.Player = exports.Attribute = exports.CapacityOfRole = exports.AttributeRange = exports.GitHubCheckoutSetting = exports.LogSetting = exports.NotificationSetting = exports.ScriptSetting = exports.JoinedSeasonGathering = exports.SeasonGathering = exports.SeasonModelMaster = exports.SeasonModel = exports.CurrentModelMaster = exports.RatingModel = exports.RatingModelMaster = exports.Gathering = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -25,8 +25,16 @@ var RatingModelMaster_1 = tslib_1.__importDefault(require("./RatingModelMaster")
 exports.RatingModelMaster = RatingModelMaster_1.default;
 var RatingModel_1 = tslib_1.__importDefault(require("./RatingModel"));
 exports.RatingModel = RatingModel_1.default;
-var CurrentRatingModelMaster_1 = tslib_1.__importDefault(require("./CurrentRatingModelMaster"));
-exports.CurrentRatingModelMaster = CurrentRatingModelMaster_1.default;
+var CurrentModelMaster_1 = tslib_1.__importDefault(require("./CurrentModelMaster"));
+exports.CurrentModelMaster = CurrentModelMaster_1.default;
+var SeasonModel_1 = tslib_1.__importDefault(require("./SeasonModel"));
+exports.SeasonModel = SeasonModel_1.default;
+var SeasonModelMaster_1 = tslib_1.__importDefault(require("./SeasonModelMaster"));
+exports.SeasonModelMaster = SeasonModelMaster_1.default;
+var SeasonGathering_1 = tslib_1.__importDefault(require("./SeasonGathering"));
+exports.SeasonGathering = SeasonGathering_1.default;
+var JoinedSeasonGathering_1 = tslib_1.__importDefault(require("./JoinedSeasonGathering"));
+exports.JoinedSeasonGathering = JoinedSeasonGathering_1.default;
 var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 exports.ScriptSetting = ScriptSetting_1.default;
 var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));

@@ -50,9 +50,26 @@ import DeleteRatingModelMasterRequest from "./DeleteRatingModelMasterRequest"
 import DescribeRatingModelsRequest from "./DescribeRatingModelsRequest"
 import GetRatingModelRequest from "./GetRatingModelRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
-import GetCurrentRatingModelMasterRequest from "./GetCurrentRatingModelMasterRequest"
-import UpdateCurrentRatingModelMasterRequest from "./UpdateCurrentRatingModelMasterRequest"
-import UpdateCurrentRatingModelMasterFromGitHubRequest from "./UpdateCurrentRatingModelMasterFromGitHubRequest"
+import GetCurrentModelMasterRequest from "./GetCurrentModelMasterRequest"
+import UpdateCurrentModelMasterRequest from "./UpdateCurrentModelMasterRequest"
+import UpdateCurrentModelMasterFromGitHubRequest from "./UpdateCurrentModelMasterFromGitHubRequest"
+import DescribeSeasonModelsRequest from "./DescribeSeasonModelsRequest"
+import GetSeasonModelRequest from "./GetSeasonModelRequest"
+import DescribeSeasonModelMastersRequest from "./DescribeSeasonModelMastersRequest"
+import CreateSeasonModelMasterRequest from "./CreateSeasonModelMasterRequest"
+import GetSeasonModelMasterRequest from "./GetSeasonModelMasterRequest"
+import UpdateSeasonModelMasterRequest from "./UpdateSeasonModelMasterRequest"
+import DeleteSeasonModelMasterRequest from "./DeleteSeasonModelMasterRequest"
+import DescribeSeasonGatheringsRequest from "./DescribeSeasonGatheringsRequest"
+import DescribeMatchmakingSeasonGatheringsRequest from "./DescribeMatchmakingSeasonGatheringsRequest"
+import DoSeasonMatchmakingRequest from "./DoSeasonMatchmakingRequest"
+import DoSeasonMatchmakingByUserIdRequest from "./DoSeasonMatchmakingByUserIdRequest"
+import GetSeasonGatheringRequest from "./GetSeasonGatheringRequest"
+import DeleteSeasonGatheringRequest from "./DeleteSeasonGatheringRequest"
+import DescribeJoinedSeasonGatheringsRequest from "./DescribeJoinedSeasonGatheringsRequest"
+import DescribeJoinedSeasonGatheringsByUserIdRequest from "./DescribeJoinedSeasonGatheringsByUserIdRequest"
+import GetJoinedSeasonGatheringRequest from "./GetJoinedSeasonGatheringRequest"
+import GetJoinedSeasonGatheringByUserIdRequest from "./GetJoinedSeasonGatheringByUserIdRequest"
 import DescribeRatingsRequest from "./DescribeRatingsRequest"
 import DescribeRatingsByUserIdRequest from "./DescribeRatingsByUserIdRequest"
 import GetRatingRequest from "./GetRatingRequest"
@@ -103,9 +120,26 @@ export {
     DescribeRatingModelsRequest,
     GetRatingModelRequest,
     ExportMasterRequest,
-    GetCurrentRatingModelMasterRequest,
-    UpdateCurrentRatingModelMasterRequest,
-    UpdateCurrentRatingModelMasterFromGitHubRequest,
+    GetCurrentModelMasterRequest,
+    UpdateCurrentModelMasterRequest,
+    UpdateCurrentModelMasterFromGitHubRequest,
+    DescribeSeasonModelsRequest,
+    GetSeasonModelRequest,
+    DescribeSeasonModelMastersRequest,
+    CreateSeasonModelMasterRequest,
+    GetSeasonModelMasterRequest,
+    UpdateSeasonModelMasterRequest,
+    DeleteSeasonModelMasterRequest,
+    DescribeSeasonGatheringsRequest,
+    DescribeMatchmakingSeasonGatheringsRequest,
+    DoSeasonMatchmakingRequest,
+    DoSeasonMatchmakingByUserIdRequest,
+    GetSeasonGatheringRequest,
+    DeleteSeasonGatheringRequest,
+    DescribeJoinedSeasonGatheringsRequest,
+    DescribeJoinedSeasonGatheringsByUserIdRequest,
+    GetJoinedSeasonGatheringRequest,
+    GetJoinedSeasonGatheringByUserIdRequest,
     DescribeRatingsRequest,
     DescribeRatingsByUserIdRequest,
     GetRatingRequest,

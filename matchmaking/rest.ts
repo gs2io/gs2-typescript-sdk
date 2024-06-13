@@ -1265,7 +1265,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
         });
     }
 
-    public getCurrentRatingModelMaster(request: Request.GetCurrentRatingModelMasterRequest): Promise<Result.GetCurrentRatingModelMasterResult> {
+    public getCurrentModelMaster(request: Request.GetCurrentModelMasterRequest): Promise<Result.GetCurrentModelMasterResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
@@ -1285,13 +1285,13 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
                 headers,
             },
         ).then((response: any) => {
-            return Result.GetCurrentRatingModelMasterResult.fromDict(response.data);
+            return Result.GetCurrentModelMasterResult.fromDict(response.data);
         }).catch((error: any) => {
             throw JSON.parse(error.response.data.message);
         });
     }
 
-    public updateCurrentRatingModelMaster(request: Request.UpdateCurrentRatingModelMasterRequest): Promise<Result.UpdateCurrentRatingModelMasterResult> {
+    public updateCurrentModelMaster(request: Request.UpdateCurrentModelMasterRequest): Promise<Result.UpdateCurrentModelMasterResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
@@ -1312,7 +1312,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
                 headers,
             },
         ).then((response: any) => {
-            return Result.UpdateCurrentRatingModelMasterResult.fromDict(response.data);
+            return Result.UpdateCurrentModelMasterResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);
@@ -1322,7 +1322,7 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
         });
     }
 
-    public updateCurrentRatingModelMasterFromGitHub(request: Request.UpdateCurrentRatingModelMasterFromGitHubRequest): Promise<Result.UpdateCurrentRatingModelMasterFromGitHubResult> {
+    public updateCurrentModelMasterFromGitHub(request: Request.UpdateCurrentModelMasterFromGitHubRequest): Promise<Result.UpdateCurrentModelMasterFromGitHubResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
             .replace('{service}', 'matchmaking')
             .replace('{region}', this.session.region)
@@ -1343,13 +1343,547 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
                 headers,
             },
         ).then((response: any) => {
-            return Result.UpdateCurrentRatingModelMasterFromGitHubResult.fromDict(response.data);
+            return Result.UpdateCurrentModelMasterFromGitHubResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);
             } else {
                 throw [];
             }
+        });
+    }
+
+    public describeSeasonModels(request: Request.DescribeSeasonModelsRequest): Promise<Result.DescribeSeasonModelsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeSeasonModelsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getSeasonModel(request: Request.GetSeasonModelRequest): Promise<Result.GetSeasonModelResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{seasonName}', String(request.getSeasonName() ?? 'null') === "" ? "null" : String(request.getSeasonName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetSeasonModelResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeSeasonModelMasters(request: Request.DescribeSeasonModelMastersRequest): Promise<Result.DescribeSeasonModelMastersResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/season')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeSeasonModelMastersResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public createSeasonModelMaster(request: Request.CreateSeasonModelMasterRequest): Promise<Result.CreateSeasonModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/season')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'name': request.getName() ?? null,
+            'description': request.getDescription() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'maximumParticipants': request.getMaximumParticipants() ?? null,
+            'experienceModelId': request.getExperienceModelId() ?? null,
+            'challengePeriodEventId': request.getChallengePeriodEventId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateSeasonModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public getSeasonModelMaster(request: Request.GetSeasonModelMasterRequest): Promise<Result.GetSeasonModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/season/{seasonName}')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{seasonName}', String(request.getSeasonName() ?? 'null') === "" ? "null" : String(request.getSeasonName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetSeasonModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public updateSeasonModelMaster(request: Request.UpdateSeasonModelMasterRequest): Promise<Result.UpdateSeasonModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/season/{seasonName}')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{seasonName}', String(request.getSeasonName() ?? 'null') === "" ? "null" : String(request.getSeasonName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'description': request.getDescription() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'maximumParticipants': request.getMaximumParticipants() ?? null,
+            'experienceModelId': request.getExperienceModelId() ?? null,
+            'challengePeriodEventId': request.getChallengePeriodEventId() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateSeasonModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public deleteSeasonModelMaster(request: Request.DeleteSeasonModelMasterRequest): Promise<Result.DeleteSeasonModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/season/{seasonName}')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{seasonName}', String(request.getSeasonName() ?? 'null') === "" ? "null" : String(request.getSeasonName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteSeasonModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeSeasonGatherings(request: Request.DescribeSeasonGatheringsRequest): Promise<Result.DescribeSeasonGatheringsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/gathering')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{seasonName}', String(request.getSeasonName() ?? 'null') === "" ? "null" : String(request.getSeasonName() ?? 'null'))
+            .replace('{season}', String(request.getSeason() ?? 'null') === "" ? "null" : String(request.getSeason() ?? 'null'))
+            .replace('{tier}', String(request.getTier() ?? 'null') === "" ? "null" : String(request.getTier() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeSeasonGatheringsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeMatchmakingSeasonGatherings(request: Request.DescribeMatchmakingSeasonGatheringsRequest): Promise<Result.DescribeMatchmakingSeasonGatheringsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/gathering/matchmaking')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{seasonName}', String(request.getSeasonName() ?? 'null') === "" ? "null" : String(request.getSeasonName() ?? 'null'))
+            .replace('{season}', String(request.getSeason() ?? 'null') === "" ? "null" : String(request.getSeason() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'tier': String(request.getTier() ?? null),
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeMatchmakingSeasonGatheringsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public doSeasonMatchmaking(request: Request.DoSeasonMatchmakingRequest): Promise<Result.DoSeasonMatchmakingResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/season/{seasonName}/gathering/do')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{seasonName}', String(request.getSeasonName() ?? 'null') === "" ? "null" : String(request.getSeasonName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'matchmakingContextToken': request.getMatchmakingContextToken() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DoSeasonMatchmakingResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public doSeasonMatchmakingByUserId(request: Request.DoSeasonMatchmakingByUserIdRequest): Promise<Result.DoSeasonMatchmakingByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/season/{seasonName}/gathering/do')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{seasonName}', String(request.getSeasonName() ?? 'null') === "" ? "null" : String(request.getSeasonName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'matchmakingContextToken': request.getMatchmakingContextToken() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DoSeasonMatchmakingByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public getSeasonGathering(request: Request.GetSeasonGatheringRequest): Promise<Result.GetSeasonGatheringResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/{tier}/gathering/{seasonGatheringName}')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{seasonName}', String(request.getSeasonName() ?? 'null') === "" ? "null" : String(request.getSeasonName() ?? 'null'))
+            .replace('{season}', String(request.getSeason() ?? 'null') === "" ? "null" : String(request.getSeason() ?? 'null'))
+            .replace('{tier}', String(request.getTier() ?? 'null') === "" ? "null" : String(request.getTier() ?? 'null'))
+            .replace('{seasonGatheringName}', String(request.getSeasonGatheringName() ?? 'null') === "" ? "null" : String(request.getSeasonGatheringName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetSeasonGatheringResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public deleteSeasonGathering(request: Request.DeleteSeasonGatheringRequest): Promise<Result.DeleteSeasonGatheringResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/{tier}/gathering/{seasonGatheringName}')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{seasonName}', String(request.getSeasonName() ?? 'null') === "" ? "null" : String(request.getSeasonName() ?? 'null'))
+            .replace('{season}', String(request.getSeason() ?? 'null') === "" ? "null" : String(request.getSeason() ?? 'null'))
+            .replace('{tier}', String(request.getTier() ?? 'null') === "" ? "null" : String(request.getTier() ?? 'null'))
+            .replace('{seasonGatheringName}', String(request.getSeasonGatheringName() ?? 'null') === "" ? "null" : String(request.getSeasonGatheringName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteSeasonGatheringResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeJoinedSeasonGatherings(request: Request.DescribeJoinedSeasonGatheringsRequest): Promise<Result.DescribeJoinedSeasonGatheringsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/season/{seasonName}/gathering/join')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{seasonName}', String(request.getSeasonName() ?? 'null') === "" ? "null" : String(request.getSeasonName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeJoinedSeasonGatheringsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeJoinedSeasonGatheringsByUserId(request: Request.DescribeJoinedSeasonGatheringsByUserIdRequest): Promise<Result.DescribeJoinedSeasonGatheringsByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/season/{seasonName}/gathering/join')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{seasonName}', String(request.getSeasonName() ?? 'null') === "" ? "null" : String(request.getSeasonName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeJoinedSeasonGatheringsByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getJoinedSeasonGathering(request: Request.GetJoinedSeasonGatheringRequest): Promise<Result.GetJoinedSeasonGatheringResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/season/{seasonName}/gathering/join/{season}')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{seasonName}', String(request.getSeasonName() ?? 'null') === "" ? "null" : String(request.getSeasonName() ?? 'null'))
+            .replace('{season}', String(request.getSeason() ?? 'null') === "" ? "null" : String(request.getSeason() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetJoinedSeasonGatheringResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getJoinedSeasonGatheringByUserId(request: Request.GetJoinedSeasonGatheringByUserIdRequest): Promise<Result.GetJoinedSeasonGatheringByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/season/{seasonName}/gathering/join/{season}')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{seasonName}', String(request.getSeasonName() ?? 'null') === "" ? "null" : String(request.getSeasonName() ?? 'null'))
+            .replace('{season}', String(request.getSeason() ?? 'null') === "" ? "null" : String(request.getSeason() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetJoinedSeasonGatheringByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
         });
     }
 
