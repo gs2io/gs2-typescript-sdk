@@ -65,7 +65,10 @@ import DescribeMatchmakingSeasonGatheringsRequest from "./DescribeMatchmakingSea
 import DoSeasonMatchmakingRequest from "./DoSeasonMatchmakingRequest"
 import DoSeasonMatchmakingByUserIdRequest from "./DoSeasonMatchmakingByUserIdRequest"
 import GetSeasonGatheringRequest from "./GetSeasonGatheringRequest"
+import VerifyIncludeParticipantRequest from "./VerifyIncludeParticipantRequest"
+import VerifyIncludeParticipantByUserIdRequest from "./VerifyIncludeParticipantByUserIdRequest"
 import DeleteSeasonGatheringRequest from "./DeleteSeasonGatheringRequest"
+import VerifyIncludeParticipantByStampTaskRequest from "./VerifyIncludeParticipantByStampTaskRequest"
 import DescribeJoinedSeasonGatheringsRequest from "./DescribeJoinedSeasonGatheringsRequest"
 import DescribeJoinedSeasonGatheringsByUserIdRequest from "./DescribeJoinedSeasonGatheringsByUserIdRequest"
 import GetJoinedSeasonGatheringRequest from "./GetJoinedSeasonGatheringRequest"
@@ -135,7 +138,10 @@ export {
     DoSeasonMatchmakingRequest,
     DoSeasonMatchmakingByUserIdRequest,
     GetSeasonGatheringRequest,
+    VerifyIncludeParticipantRequest,
+    VerifyIncludeParticipantByUserIdRequest,
     DeleteSeasonGatheringRequest,
+    VerifyIncludeParticipantByStampTaskRequest,
     DescribeJoinedSeasonGatheringsRequest,
     DescribeJoinedSeasonGatheringsByUserIdRequest,
     GetJoinedSeasonGatheringRequest,

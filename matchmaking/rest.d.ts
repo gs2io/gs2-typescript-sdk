@@ -56,7 +56,10 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
     doSeasonMatchmaking(request: Request.DoSeasonMatchmakingRequest): Promise<Result.DoSeasonMatchmakingResult>;
     doSeasonMatchmakingByUserId(request: Request.DoSeasonMatchmakingByUserIdRequest): Promise<Result.DoSeasonMatchmakingByUserIdResult>;
     getSeasonGathering(request: Request.GetSeasonGatheringRequest): Promise<Result.GetSeasonGatheringResult>;
+    verifyIncludeParticipant(request: Request.VerifyIncludeParticipantRequest): Promise<Result.VerifyIncludeParticipantResult>;
+    verifyIncludeParticipantByUserId(request: Request.VerifyIncludeParticipantByUserIdRequest): Promise<Result.VerifyIncludeParticipantByUserIdResult>;
     deleteSeasonGathering(request: Request.DeleteSeasonGatheringRequest): Promise<Result.DeleteSeasonGatheringResult>;
+    verifyIncludeParticipantByStampTask(request: Request.VerifyIncludeParticipantByStampTaskRequest): Promise<Result.VerifyIncludeParticipantByStampTaskResult>;
     describeJoinedSeasonGatherings(request: Request.DescribeJoinedSeasonGatheringsRequest): Promise<Result.DescribeJoinedSeasonGatheringsResult>;
     describeJoinedSeasonGatheringsByUserId(request: Request.DescribeJoinedSeasonGatheringsByUserIdRequest): Promise<Result.DescribeJoinedSeasonGatheringsByUserIdResult>;
     getJoinedSeasonGathering(request: Request.GetJoinedSeasonGatheringRequest): Promise<Result.GetJoinedSeasonGatheringResult>;

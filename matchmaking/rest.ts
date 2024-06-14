@@ -1729,6 +1729,89 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public verifyIncludeParticipant(request: Request.VerifyIncludeParticipantRequest): Promise<Result.VerifyIncludeParticipantResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/{tier}/gathering/{seasonGatheringName}/participant/me/verify')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{seasonName}', String(request.getSeasonName() ?? 'null') === "" ? "null" : String(request.getSeasonName() ?? 'null'))
+            .replace('{season}', String(request.getSeason() ?? 'null') === "" ? "null" : String(request.getSeason() ?? 'null'))
+            .replace('{tier}', String(request.getTier() ?? 'null') === "" ? "null" : String(request.getTier() ?? 'null'))
+            .replace('{seasonGatheringName}', String(request.getSeasonGatheringName() ?? 'null') === "" ? "null" : String(request.getSeasonGatheringName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'verifyType': request.getVerifyType() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyIncludeParticipantResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public verifyIncludeParticipantByUserId(request: Request.VerifyIncludeParticipantByUserIdRequest): Promise<Result.VerifyIncludeParticipantByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/{tier}/gathering/{seasonGatheringName}/participant/{userId}/verify')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{seasonName}', String(request.getSeasonName() ?? 'null') === "" ? "null" : String(request.getSeasonName() ?? 'null'))
+            .replace('{season}', String(request.getSeason() ?? 'null') === "" ? "null" : String(request.getSeason() ?? 'null'))
+            .replace('{tier}', String(request.getTier() ?? 'null') === "" ? "null" : String(request.getTier() ?? 'null'))
+            .replace('{seasonGatheringName}', String(request.getSeasonGatheringName() ?? 'null') === "" ? "null" : String(request.getSeasonGatheringName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'verifyType': request.getVerifyType() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyIncludeParticipantByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public deleteSeasonGathering(request: Request.DeleteSeasonGatheringRequest): Promise<Result.DeleteSeasonGatheringResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/season/{seasonName}/{season}/{tier}/gathering/{seasonGatheringName}')
             .replace('{service}', 'matchmaking')
@@ -1756,6 +1839,37 @@ export default class Gs2MatchmakingRestClient extends AbstractGs2RestClient {
             return Result.DeleteSeasonGatheringResult.fromDict(response.data);
         }).catch((error: any) => {
             throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public verifyIncludeParticipantByStampTask(request: Request.VerifyIncludeParticipantByStampTaskRequest): Promise<Result.VerifyIncludeParticipantByStampTaskResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/season/gathering/participant/verify')
+            .replace('{service}', 'matchmaking')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampTask': request.getStampTask() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyIncludeParticipantByStampTaskResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
         });
     }
 
