@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NotificationSetting = exports.LogSetting = exports.DistributeResource = exports.GitHubCheckoutSetting = exports.ConsumeAction = exports.AcquireAction = exports.StampSheetResult = exports.CurrentDistributorMaster = exports.DistributorModel = exports.DistributorModelMaster = exports.Namespace = void 0;
+exports.NotificationSetting = exports.LogSetting = exports.DistributeResource = exports.GitHubCheckoutSetting = exports.Config = exports.ConsumeAction = exports.AcquireAction = exports.StampSheetResult = exports.CurrentDistributorMaster = exports.DistributorModel = exports.DistributorModelMaster = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -31,6 +31,8 @@ var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 exports.AcquireAction = AcquireAction_1.default;
 var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
 exports.ConsumeAction = ConsumeAction_1.default;
+var Config_1 = tslib_1.__importDefault(require("./Config"));
+exports.Config = Config_1.default;
 var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
 exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
 var DistributeResource_1 = tslib_1.__importDefault(require("./DistributeResource"));

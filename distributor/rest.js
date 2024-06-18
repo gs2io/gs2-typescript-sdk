@@ -676,6 +676,65 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             }
         });
     };
+    Gs2DistributorRestClient.prototype.setTransactionDefaultConfig = function (request) {
+        var _a, _b, _c, _d;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/transaction/user/me/config')
+            .replace('{service}', 'distributor')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_a = request.getAccessToken()) !== null && _a !== void 0 ? _a : null;
+        }
+        var body = {
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'config': (_d = (_c = request.getConfig()) === null || _c === void 0 ? void 0 : _c.map(function (item) { return item.toDict(); })) !== null && _d !== void 0 ? _d : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.SetTransactionDefaultConfigResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2DistributorRestClient.prototype.setTransactionDefaultConfigByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/transaction/user/{userId}/config')
+            .replace('{service}', 'distributor')
+            .replace('{region}', this.session.region)
+            .replace('{userId}', String((_a = request.getUserId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserId()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_c = request.getTimeOffsetToken()) !== null && _c !== void 0 ? _c : null;
+        }
+        var body = {
+            'contextStack': (_d = request.getContextStack()) !== null && _d !== void 0 ? _d : null,
+            'config': (_f = (_e = request.getConfig()) === null || _e === void 0 ? void 0 : _e.map(function (item) { return item.toDict(); })) !== null && _f !== void 0 ? _f : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.SetTransactionDefaultConfigByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
     Gs2DistributorRestClient.prototype.getStampSheetResult = function (request) {
         var _a, _b, _c, _d, _e, _f;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stampSheet/{transactionId}/result')

@@ -38,6 +38,8 @@ import RunStampSheetExpressResult from "./RunStampSheetExpressResult"
 import RunStampTaskWithoutNamespaceResult from "./RunStampTaskWithoutNamespaceResult"
 import RunStampSheetWithoutNamespaceResult from "./RunStampSheetWithoutNamespaceResult"
 import RunStampSheetExpressWithoutNamespaceResult from "./RunStampSheetExpressWithoutNamespaceResult"
+import SetTransactionDefaultConfigResult from "./SetTransactionDefaultConfigResult"
+import SetTransactionDefaultConfigByUserIdResult from "./SetTransactionDefaultConfigByUserIdResult"
 import GetStampSheetResultResult from "./GetStampSheetResultResult"
 import GetStampSheetResultByUserIdResult from "./GetStampSheetResultByUserIdResult"
 
@@ -67,6 +69,8 @@ export {
     RunStampTaskWithoutNamespaceResult,
     RunStampSheetWithoutNamespaceResult,
     RunStampSheetExpressWithoutNamespaceResult,
+    SetTransactionDefaultConfigResult,
+    SetTransactionDefaultConfigByUserIdResult,
     GetStampSheetResultResult,
     GetStampSheetResultByUserIdResult,
 };

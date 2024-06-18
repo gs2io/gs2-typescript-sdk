@@ -778,6 +778,73 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public setTransactionDefaultConfig(request: Request.SetTransactionDefaultConfigRequest): Promise<Result.SetTransactionDefaultConfigResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/transaction/user/me/config')
+            .replace('{service}', 'distributor')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'config': request.getConfig()?.map((item) => item.toDict()) ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SetTransactionDefaultConfigResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public setTransactionDefaultConfigByUserId(request: Request.SetTransactionDefaultConfigByUserIdRequest): Promise<Result.SetTransactionDefaultConfigByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/transaction/user/{userId}/config')
+            .replace('{service}', 'distributor')
+            .replace('{region}', this.session.region)
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'config': request.getConfig()?.map((item) => item.toDict()) ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SetTransactionDefaultConfigByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public getStampSheetResult(request: Request.GetStampSheetResultRequest): Promise<Result.GetStampSheetResultResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/stampSheet/{transactionId}/result')
             .replace('{service}', 'distributor')
