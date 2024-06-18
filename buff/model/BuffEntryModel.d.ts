@@ -5,10 +5,10 @@ export default class BuffEntryModel implements IModel {
     private buffEntryModelId;
     private name;
     private metadata;
+    private expression;
     private targetType;
     private targetModel;
     private targetAction;
-    private expression;
     private priority;
     private applyPeriodScheduleEventId;
     static getRegion(grn: string): string | null;
@@ -26,6 +26,9 @@ export default class BuffEntryModel implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
+    getExpression(): string | null;
+    setExpression(expression: string | null): this;
+    withExpression(expression: string | null): this;
     getTargetType(): string | null;
     setTargetType(targetType: string | null): this;
     withTargetType(targetType: string | null): this;
@@ -35,9 +38,6 @@ export default class BuffEntryModel implements IModel {
     getTargetAction(): BuffTargetAction | null;
     setTargetAction(targetAction: BuffTargetAction | null): this;
     withTargetAction(targetAction: BuffTargetAction | null): this;
-    getExpression(): string | null;
-    setExpression(expression: string | null): this;
-    withExpression(expression: string | null): this;
     getPriority(): number | null;
     setPriority(priority: number | null): this;
     withPriority(priority: number | null): this;

@@ -25,10 +25,10 @@ export default class BuffEntryModelMaster implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private metadata: string|null = null;
+    private expression: string|null = null;
     private targetType: string|null = null;
     private targetModel: BuffTargetModel|null = null;
     private targetAction: BuffTargetAction|null = null;
-    private expression: string|null = null;
     private priority: number|null = null;
     private applyPeriodScheduleEventId: string|null = null;
     private createdAt: number|null = null;
@@ -159,6 +159,17 @@ export default class BuffEntryModelMaster implements IModel {
         this.metadata = metadata;
         return this;
     }
+    public getExpression(): string|null {
+        return this.expression;
+    }
+    public setExpression(expression: string|null) {
+        this.expression = expression;
+        return this;
+    }
+    public withExpression(expression: string|null): this {
+        this.expression = expression;
+        return this;
+    }
     public getTargetType(): string|null {
         return this.targetType;
     }
@@ -190,17 +201,6 @@ export default class BuffEntryModelMaster implements IModel {
     }
     public withTargetAction(targetAction: BuffTargetAction|null): this {
         this.targetAction = targetAction;
-        return this;
-    }
-    public getExpression(): string|null {
-        return this.expression;
-    }
-    public setExpression(expression: string|null) {
-        this.expression = expression;
-        return this;
-    }
-    public withExpression(expression: string|null): this {
-        this.expression = expression;
         return this;
     }
     public getPriority(): number|null {
@@ -268,10 +268,10 @@ export default class BuffEntryModelMaster implements IModel {
             .withName(data["name"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
+            .withExpression(data["expression"])
             .withTargetType(data["targetType"])
             .withTargetModel(BuffTargetModel.fromDict(data["targetModel"]))
             .withTargetAction(BuffTargetAction.fromDict(data["targetAction"]))
-            .withExpression(data["expression"])
             .withPriority(data["priority"])
             .withApplyPeriodScheduleEventId(data["applyPeriodScheduleEventId"])
             .withCreatedAt(data["createdAt"])
@@ -285,10 +285,10 @@ export default class BuffEntryModelMaster implements IModel {
             "name": this.getName(),
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
+            "expression": this.getExpression(),
             "targetType": this.getTargetType(),
             "targetModel": this.getTargetModel()?.toDict(),
             "targetAction": this.getTargetAction()?.toDict(),
-            "expression": this.getExpression(),
             "priority": this.getPriority(),
             "applyPeriodScheduleEventId": this.getApplyPeriodScheduleEventId(),
             "createdAt": this.getCreatedAt(),

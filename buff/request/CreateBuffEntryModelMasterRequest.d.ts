@@ -7,10 +7,10 @@ export default class CreateBuffEntryModelMasterRequest implements IRequest {
     private name;
     private description;
     private metadata;
+    private expression;
     private targetType;
     private targetModel;
     private targetAction;
-    private expression;
     private priority;
     private applyPeriodScheduleEventId;
     getRequestId(): string | null;
@@ -31,6 +31,9 @@ export default class CreateBuffEntryModelMasterRequest implements IRequest {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
+    getExpression(): string | null;
+    setExpression(expression: string | null): this;
+    withExpression(expression: string | null): this;
     getTargetType(): string | null;
     setTargetType(targetType: string | null): this;
     withTargetType(targetType: string | null): this;
@@ -40,9 +43,6 @@ export default class CreateBuffEntryModelMasterRequest implements IRequest {
     getTargetAction(): Gs2Buff.BuffTargetAction | null;
     setTargetAction(targetAction: Gs2Buff.BuffTargetAction | null): this;
     withTargetAction(targetAction: Gs2Buff.BuffTargetAction | null): this;
-    getExpression(): string | null;
-    setExpression(expression: string | null): this;
-    withExpression(expression: string | null): this;
     getPriority(): number | null;
     setPriority(priority: number | null): this;
     withPriority(priority: number | null): this;

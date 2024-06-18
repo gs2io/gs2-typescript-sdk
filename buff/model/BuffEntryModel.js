@@ -24,10 +24,10 @@ var BuffEntryModel = /** @class */ (function () {
         this.buffEntryModelId = null;
         this.name = null;
         this.metadata = null;
+        this.expression = null;
         this.targetType = null;
         this.targetModel = null;
         this.targetAction = null;
-        this.expression = null;
         this.priority = null;
         this.applyPeriodScheduleEventId = null;
     }
@@ -130,6 +130,17 @@ var BuffEntryModel = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
+    BuffEntryModel.prototype.getExpression = function () {
+        return this.expression;
+    };
+    BuffEntryModel.prototype.setExpression = function (expression) {
+        this.expression = expression;
+        return this;
+    };
+    BuffEntryModel.prototype.withExpression = function (expression) {
+        this.expression = expression;
+        return this;
+    };
     BuffEntryModel.prototype.getTargetType = function () {
         return this.targetType;
     };
@@ -163,17 +174,6 @@ var BuffEntryModel = /** @class */ (function () {
         this.targetAction = targetAction;
         return this;
     };
-    BuffEntryModel.prototype.getExpression = function () {
-        return this.expression;
-    };
-    BuffEntryModel.prototype.setExpression = function (expression) {
-        this.expression = expression;
-        return this;
-    };
-    BuffEntryModel.prototype.withExpression = function (expression) {
-        this.expression = expression;
-        return this;
-    };
     BuffEntryModel.prototype.getPriority = function () {
         return this.priority;
     };
@@ -204,10 +204,10 @@ var BuffEntryModel = /** @class */ (function () {
             .withBuffEntryModelId(data["buffEntryModelId"])
             .withName(data["name"])
             .withMetadata(data["metadata"])
+            .withExpression(data["expression"])
             .withTargetType(data["targetType"])
             .withTargetModel(BuffTargetModel_1.default.fromDict(data["targetModel"]))
             .withTargetAction(BuffTargetAction_1.default.fromDict(data["targetAction"]))
-            .withExpression(data["expression"])
             .withPriority(data["priority"])
             .withApplyPeriodScheduleEventId(data["applyPeriodScheduleEventId"]);
     };
@@ -217,10 +217,10 @@ var BuffEntryModel = /** @class */ (function () {
             "buffEntryModelId": this.getBuffEntryModelId(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
+            "expression": this.getExpression(),
             "targetType": this.getTargetType(),
             "targetModel": (_a = this.getTargetModel()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "targetAction": (_b = this.getTargetAction()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "expression": this.getExpression(),
             "priority": this.getPriority(),
             "applyPeriodScheduleEventId": this.getApplyPeriodScheduleEventId(),
         };

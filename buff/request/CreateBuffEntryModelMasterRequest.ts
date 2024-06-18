@@ -26,10 +26,10 @@ export default class CreateBuffEntryModelMasterRequest implements IRequest {
     private name: string|null = null;
     private description: string|null = null;
     private metadata: string|null = null;
+    private expression: string|null = null;
     private targetType: string|null = null;
     private targetModel: Gs2Buff.BuffTargetModel|null = null;
     private targetAction: Gs2Buff.BuffTargetAction|null = null;
-    private expression: string|null = null;
     private priority: number|null = null;
     private applyPeriodScheduleEventId: string|null = null;
 
@@ -104,6 +104,17 @@ export default class CreateBuffEntryModelMasterRequest implements IRequest {
         this.metadata = metadata;
         return this;
     }
+    public getExpression(): string|null {
+        return this.expression;
+    }
+    public setExpression(expression: string|null) {
+        this.expression = expression;
+        return this;
+    }
+    public withExpression(expression: string|null): this {
+        this.expression = expression;
+        return this;
+    }
     public getTargetType(): string|null {
         return this.targetType;
     }
@@ -137,17 +148,6 @@ export default class CreateBuffEntryModelMasterRequest implements IRequest {
         this.targetAction = targetAction;
         return this;
     }
-    public getExpression(): string|null {
-        return this.expression;
-    }
-    public setExpression(expression: string|null) {
-        this.expression = expression;
-        return this;
-    }
-    public withExpression(expression: string|null): this {
-        this.expression = expression;
-        return this;
-    }
     public getPriority(): number|null {
         return this.priority;
     }
@@ -177,10 +177,10 @@ export default class CreateBuffEntryModelMasterRequest implements IRequest {
             .withName(data["name"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
+            .withExpression(data["expression"])
             .withTargetType(data["targetType"])
             .withTargetModel(Gs2Buff.BuffTargetModel.fromDict(data["targetModel"]))
             .withTargetAction(Gs2Buff.BuffTargetAction.fromDict(data["targetAction"]))
-            .withExpression(data["expression"])
             .withPriority(data["priority"])
             .withApplyPeriodScheduleEventId(data["applyPeriodScheduleEventId"]);
     }
@@ -191,10 +191,10 @@ export default class CreateBuffEntryModelMasterRequest implements IRequest {
             "name": this.getName(),
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
+            "expression": this.getExpression(),
             "targetType": this.getTargetType(),
             "targetModel": this.getTargetModel()?.toDict(),
             "targetAction": this.getTargetAction()?.toDict(),
-            "expression": this.getExpression(),
             "priority": this.getPriority(),
             "applyPeriodScheduleEventId": this.getApplyPeriodScheduleEventId(),
         };

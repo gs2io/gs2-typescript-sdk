@@ -24,10 +24,10 @@ export default class BuffEntryModel implements IModel {
     private buffEntryModelId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;
+    private expression: string|null = null;
     private targetType: string|null = null;
     private targetModel: BuffTargetModel|null = null;
     private targetAction: BuffTargetAction|null = null;
-    private expression: string|null = null;
     private priority: number|null = null;
     private applyPeriodScheduleEventId: string|null = null;
 
@@ -144,6 +144,17 @@ export default class BuffEntryModel implements IModel {
         this.metadata = metadata;
         return this;
     }
+    public getExpression(): string|null {
+        return this.expression;
+    }
+    public setExpression(expression: string|null) {
+        this.expression = expression;
+        return this;
+    }
+    public withExpression(expression: string|null): this {
+        this.expression = expression;
+        return this;
+    }
     public getTargetType(): string|null {
         return this.targetType;
     }
@@ -177,17 +188,6 @@ export default class BuffEntryModel implements IModel {
         this.targetAction = targetAction;
         return this;
     }
-    public getExpression(): string|null {
-        return this.expression;
-    }
-    public setExpression(expression: string|null) {
-        this.expression = expression;
-        return this;
-    }
-    public withExpression(expression: string|null): this {
-        this.expression = expression;
-        return this;
-    }
     public getPriority(): number|null {
         return this.priority;
     }
@@ -219,10 +219,10 @@ export default class BuffEntryModel implements IModel {
             .withBuffEntryModelId(data["buffEntryModelId"])
             .withName(data["name"])
             .withMetadata(data["metadata"])
+            .withExpression(data["expression"])
             .withTargetType(data["targetType"])
             .withTargetModel(BuffTargetModel.fromDict(data["targetModel"]))
             .withTargetAction(BuffTargetAction.fromDict(data["targetAction"]))
-            .withExpression(data["expression"])
             .withPriority(data["priority"])
             .withApplyPeriodScheduleEventId(data["applyPeriodScheduleEventId"]);
     }
@@ -232,10 +232,10 @@ export default class BuffEntryModel implements IModel {
             "buffEntryModelId": this.getBuffEntryModelId(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
+            "expression": this.getExpression(),
             "targetType": this.getTargetType(),
             "targetModel": this.getTargetModel()?.toDict(),
             "targetAction": this.getTargetAction()?.toDict(),
-            "expression": this.getExpression(),
             "priority": this.getPriority(),
             "applyPeriodScheduleEventId": this.getApplyPeriodScheduleEventId(),
         };
