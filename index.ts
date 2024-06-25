@@ -48,6 +48,7 @@ import * as matchmaking from './matchmaking';
 import * as megaField from './megaField';
 import * as mission from './mission';
 import * as money from './money';
+import * as money2 from './money2';
 import * as news from './news';
 import * as project from './project';
 import * as quest from './quest';
@@ -100,6 +101,7 @@ export {
   megaField,
   mission,
   money,
+  money2,
   news,
   project,
   quest,

@@ -1,0 +1,94 @@
+/*
+Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License").
+You may not use this file except in compliance with the License.
+A copy of the License is located at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+or in the "license" file accompanying this file. This file is distributed
+on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+express or implied. See the License for the specific language governing
+permissions and limitations under the License.
+ */
+import DescribeNamespacesRequest from "./DescribeNamespacesRequest"
+import CreateNamespaceRequest from "./CreateNamespaceRequest"
+import GetNamespaceStatusRequest from "./GetNamespaceStatusRequest"
+import GetNamespaceRequest from "./GetNamespaceRequest"
+import UpdateNamespaceRequest from "./UpdateNamespaceRequest"
+import DeleteNamespaceRequest from "./DeleteNamespaceRequest"
+import DumpUserDataByUserIdRequest from "./DumpUserDataByUserIdRequest"
+import CheckDumpUserDataByUserIdRequest from "./CheckDumpUserDataByUserIdRequest"
+import CleanUserDataByUserIdRequest from "./CleanUserDataByUserIdRequest"
+import CheckCleanUserDataByUserIdRequest from "./CheckCleanUserDataByUserIdRequest"
+import PrepareImportUserDataByUserIdRequest from "./PrepareImportUserDataByUserIdRequest"
+import ImportUserDataByUserIdRequest from "./ImportUserDataByUserIdRequest"
+import CheckImportUserDataByUserIdRequest from "./CheckImportUserDataByUserIdRequest"
+import DescribeWalletsRequest from "./DescribeWalletsRequest"
+import DescribeWalletsByUserIdRequest from "./DescribeWalletsByUserIdRequest"
+import GetWalletRequest from "./GetWalletRequest"
+import GetWalletByUserIdRequest from "./GetWalletByUserIdRequest"
+import DepositByUserIdRequest from "./DepositByUserIdRequest"
+import WithdrawRequest from "./WithdrawRequest"
+import WithdrawByUserIdRequest from "./WithdrawByUserIdRequest"
+import DepositByStampSheetRequest from "./DepositByStampSheetRequest"
+import WithdrawByStampTaskRequest from "./WithdrawByStampTaskRequest"
+import DescribeEventsByUserIdRequest from "./DescribeEventsByUserIdRequest"
+import GetEventByTransactionIdRequest from "./GetEventByTransactionIdRequest"
+import VerifyReceiptRequest from "./VerifyReceiptRequest"
+import VerifyReceiptByUserIdRequest from "./VerifyReceiptByUserIdRequest"
+import VerifyReceiptByStampTaskRequest from "./VerifyReceiptByStampTaskRequest"
+import DescribeStoreContentModelsRequest from "./DescribeStoreContentModelsRequest"
+import GetStoreContentModelRequest from "./GetStoreContentModelRequest"
+import DescribeStoreContentModelMastersRequest from "./DescribeStoreContentModelMastersRequest"
+import CreateStoreContentModelMasterRequest from "./CreateStoreContentModelMasterRequest"
+import GetStoreContentModelMasterRequest from "./GetStoreContentModelMasterRequest"
+import UpdateStoreContentModelMasterRequest from "./UpdateStoreContentModelMasterRequest"
+import DeleteStoreContentModelMasterRequest from "./DeleteStoreContentModelMasterRequest"
+import ExportMasterRequest from "./ExportMasterRequest"
+import GetCurrentModelMasterRequest from "./GetCurrentModelMasterRequest"
+import UpdateCurrentModelMasterRequest from "./UpdateCurrentModelMasterRequest"
+import UpdateCurrentModelMasterFromGitHubRequest from "./UpdateCurrentModelMasterFromGitHubRequest"
+
+export {
+    DescribeNamespacesRequest,
+    CreateNamespaceRequest,
+    GetNamespaceStatusRequest,
+    GetNamespaceRequest,
+    UpdateNamespaceRequest,
+    DeleteNamespaceRequest,
+    DumpUserDataByUserIdRequest,
+    CheckDumpUserDataByUserIdRequest,
+    CleanUserDataByUserIdRequest,
+    CheckCleanUserDataByUserIdRequest,
+    PrepareImportUserDataByUserIdRequest,
+    ImportUserDataByUserIdRequest,
+    CheckImportUserDataByUserIdRequest,
+    DescribeWalletsRequest,
+    DescribeWalletsByUserIdRequest,
+    GetWalletRequest,
+    GetWalletByUserIdRequest,
+    DepositByUserIdRequest,
+    WithdrawRequest,
+    WithdrawByUserIdRequest,
+    DepositByStampSheetRequest,
+    WithdrawByStampTaskRequest,
+    DescribeEventsByUserIdRequest,
+    GetEventByTransactionIdRequest,
+    VerifyReceiptRequest,
+    VerifyReceiptByUserIdRequest,
+    VerifyReceiptByStampTaskRequest,
+    DescribeStoreContentModelsRequest,
+    GetStoreContentModelRequest,
+    DescribeStoreContentModelMastersRequest,
+    CreateStoreContentModelMasterRequest,
+    GetStoreContentModelMasterRequest,
+    UpdateStoreContentModelMasterRequest,
+    DeleteStoreContentModelMasterRequest,
+    ExportMasterRequest,
+    GetCurrentModelMasterRequest,
+    UpdateCurrentModelMasterRequest,
+    UpdateCurrentModelMasterFromGitHubRequest,
+};

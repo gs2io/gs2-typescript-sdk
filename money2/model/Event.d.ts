@@ -1,0 +1,54 @@
+import IModel from '../../core/interface/IModel';
+import VerifyReceiptEvent from './VerifyReceiptEvent';
+import DepositEvent from './DepositEvent';
+import WithdrawEvent from './WithdrawEvent';
+export default class Event implements IModel {
+    private eventId;
+    private transactionId;
+    private userId;
+    private eventType;
+    private verifyReceiptEvent;
+    private depositEvent;
+    private withdrawEvent;
+    private createdAt;
+    private revision;
+    static getRegion(grn: string): string | null;
+    static getOwnerId(grn: string): string | null;
+    static getNamespaceName(grn: string): string | null;
+    static getTransactionId(grn: string): string | null;
+    static isValid(grn: string): boolean;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, transactionId: string | null): string | null;
+    getEventId(): string | null;
+    setEventId(eventId: string | null): this;
+    withEventId(eventId: string | null): this;
+    getTransactionId(): string | null;
+    setTransactionId(transactionId: string | null): this;
+    withTransactionId(transactionId: string | null): this;
+    getUserId(): string | null;
+    setUserId(userId: string | null): this;
+    withUserId(userId: string | null): this;
+    getEventType(): string | null;
+    setEventType(eventType: string | null): this;
+    withEventType(eventType: string | null): this;
+    getVerifyReceiptEvent(): VerifyReceiptEvent | null;
+    setVerifyReceiptEvent(verifyReceiptEvent: VerifyReceiptEvent | null): this;
+    withVerifyReceiptEvent(verifyReceiptEvent: VerifyReceiptEvent | null): this;
+    getDepositEvent(): DepositEvent | null;
+    setDepositEvent(depositEvent: DepositEvent | null): this;
+    withDepositEvent(depositEvent: DepositEvent | null): this;
+    getWithdrawEvent(): WithdrawEvent | null;
+    setWithdrawEvent(withdrawEvent: WithdrawEvent | null): this;
+    withWithdrawEvent(withdrawEvent: WithdrawEvent | null): this;
+    getCreatedAt(): number | null;
+    setCreatedAt(createdAt: number | null): this;
+    withCreatedAt(createdAt: number | null): this;
+    getRevision(): number | null;
+    setRevision(revision: number | null): this;
+    withRevision(revision: number | null): this;
+    static fromDict(data: {
+        [key: string]: any;
+    }): Event | null;
+    toDict(): {
+        [key: string]: any;
+    };
+}
