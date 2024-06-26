@@ -27,6 +27,7 @@ var Namespace = /** @class */ (function () {
         this.description = null;
         this.transactionSetting = null;
         this.receiveScript = null;
+        this.overrideAcquireActionsScriptId = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -135,6 +136,17 @@ var Namespace = /** @class */ (function () {
         this.receiveScript = receiveScript;
         return this;
     };
+    Namespace.prototype.getOverrideAcquireActionsScriptId = function () {
+        return this.overrideAcquireActionsScriptId;
+    };
+    Namespace.prototype.setOverrideAcquireActionsScriptId = function (overrideAcquireActionsScriptId) {
+        this.overrideAcquireActionsScriptId = overrideAcquireActionsScriptId;
+        return this;
+    };
+    Namespace.prototype.withOverrideAcquireActionsScriptId = function (overrideAcquireActionsScriptId) {
+        this.overrideAcquireActionsScriptId = overrideAcquireActionsScriptId;
+        return this;
+    };
     Namespace.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -189,6 +201,7 @@ var Namespace = /** @class */ (function () {
             .withDescription(data["description"])
             .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
             .withReceiveScript(ScriptSetting_1.default.fromDict(data["receiveScript"]))
+            .withOverrideAcquireActionsScriptId(data["overrideAcquireActionsScriptId"])
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -202,6 +215,7 @@ var Namespace = /** @class */ (function () {
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "receiveScript": (_b = this.getReceiveScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "overrideAcquireActionsScriptId": this.getOverrideAcquireActionsScriptId(),
             "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

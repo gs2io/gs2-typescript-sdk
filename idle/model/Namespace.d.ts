@@ -8,6 +8,7 @@ export default class Namespace implements IModel {
     private description;
     private transactionSetting;
     private receiveScript;
+    private overrideAcquireActionsScriptId;
     private logSetting;
     private createdAt;
     private updatedAt;
@@ -32,6 +33,9 @@ export default class Namespace implements IModel {
     getReceiveScript(): ScriptSetting | null;
     setReceiveScript(receiveScript: ScriptSetting | null): this;
     withReceiveScript(receiveScript: ScriptSetting | null): this;
+    getOverrideAcquireActionsScriptId(): string | null;
+    setOverrideAcquireActionsScriptId(overrideAcquireActionsScriptId: string | null): this;
+    withOverrideAcquireActionsScriptId(overrideAcquireActionsScriptId: string | null): this;
     getLogSetting(): LogSetting | null;
     setLogSetting(logSetting: LogSetting | null): this;
     withLogSetting(logSetting: LogSetting | null): this;

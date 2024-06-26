@@ -25,6 +25,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.description = null;
         this.transactionSetting = null;
         this.receiveScript = null;
+        this.overrideAcquireActionsScriptId = null;
         this.logSetting = null;
     }
     CreateNamespaceRequest.prototype.getRequestId = function () {
@@ -93,6 +94,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.receiveScript = receiveScript;
         return this;
     };
+    CreateNamespaceRequest.prototype.getOverrideAcquireActionsScriptId = function () {
+        return this.overrideAcquireActionsScriptId;
+    };
+    CreateNamespaceRequest.prototype.setOverrideAcquireActionsScriptId = function (overrideAcquireActionsScriptId) {
+        this.overrideAcquireActionsScriptId = overrideAcquireActionsScriptId;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withOverrideAcquireActionsScriptId = function (overrideAcquireActionsScriptId) {
+        this.overrideAcquireActionsScriptId = overrideAcquireActionsScriptId;
+        return this;
+    };
     CreateNamespaceRequest.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -110,6 +122,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Idle.TransactionSetting.fromDict(data["transactionSetting"]))
             .withReceiveScript(Gs2Idle.ScriptSetting.fromDict(data["receiveScript"]))
+            .withOverrideAcquireActionsScriptId(data["overrideAcquireActionsScriptId"])
             .withLogSetting(Gs2Idle.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
@@ -119,6 +132,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
             "description": this.getDescription(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "receiveScript": (_b = this.getReceiveScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "overrideAcquireActionsScriptId": this.getOverrideAcquireActionsScriptId(),
             "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
         };
     };

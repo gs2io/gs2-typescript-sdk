@@ -7,6 +7,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private description;
     private transactionSetting;
     private receiveScript;
+    private overrideAcquireActionsScriptId;
     private logSetting;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -26,6 +27,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getReceiveScript(): Gs2Idle.ScriptSetting | null;
     setReceiveScript(receiveScript: Gs2Idle.ScriptSetting | null): this;
     withReceiveScript(receiveScript: Gs2Idle.ScriptSetting | null): this;
+    getOverrideAcquireActionsScriptId(): string | null;
+    setOverrideAcquireActionsScriptId(overrideAcquireActionsScriptId: string | null): this;
+    withOverrideAcquireActionsScriptId(overrideAcquireActionsScriptId: string | null): this;
     getLogSetting(): Gs2Idle.LogSetting | null;
     setLogSetting(logSetting: Gs2Idle.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Idle.LogSetting | null): this;

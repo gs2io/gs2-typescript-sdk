@@ -26,6 +26,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private description: string|null = null;
     private transactionSetting: Gs2Idle.TransactionSetting|null = null;
     private receiveScript: Gs2Idle.ScriptSetting|null = null;
+    private overrideAcquireActionsScriptId: string|null = null;
     private logSetting: Gs2Idle.LogSetting|null = null;
 
     public getRequestId(): string|null {
@@ -99,6 +100,17 @@ export default class UpdateNamespaceRequest implements IRequest {
         this.receiveScript = receiveScript;
         return this;
     }
+    public getOverrideAcquireActionsScriptId(): string|null {
+        return this.overrideAcquireActionsScriptId;
+    }
+    public setOverrideAcquireActionsScriptId(overrideAcquireActionsScriptId: string|null) {
+        this.overrideAcquireActionsScriptId = overrideAcquireActionsScriptId;
+        return this;
+    }
+    public withOverrideAcquireActionsScriptId(overrideAcquireActionsScriptId: string|null): this {
+        this.overrideAcquireActionsScriptId = overrideAcquireActionsScriptId;
+        return this;
+    }
     public getLogSetting(): Gs2Idle.LogSetting|null {
         return this.logSetting;
     }
@@ -117,6 +129,7 @@ export default class UpdateNamespaceRequest implements IRequest {
             .withDescription(data["description"])
             .withTransactionSetting(Gs2Idle.TransactionSetting.fromDict(data["transactionSetting"]))
             .withReceiveScript(Gs2Idle.ScriptSetting.fromDict(data["receiveScript"]))
+            .withOverrideAcquireActionsScriptId(data["overrideAcquireActionsScriptId"])
             .withLogSetting(Gs2Idle.LogSetting.fromDict(data["logSetting"]));
     }
 
@@ -126,6 +139,7 @@ export default class UpdateNamespaceRequest implements IRequest {
             "description": this.getDescription(),
             "transactionSetting": this.getTransactionSetting()?.toDict(),
             "receiveScript": this.getReceiveScript()?.toDict(),
+            "overrideAcquireActionsScriptId": this.getOverrideAcquireActionsScriptId(),
             "logSetting": this.getLogSetting()?.toDict(),
         };
     }

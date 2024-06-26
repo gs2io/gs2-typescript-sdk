@@ -69,6 +69,7 @@ export default class Gs2IdleRestClient extends AbstractGs2RestClient {
             'description': request.getDescription() ?? null,
             'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'receiveScript': request.getReceiveScript()?.toDict() ?? null,
+            'overrideAcquireActionsScriptId': request.getOverrideAcquireActionsScriptId() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.post(
@@ -155,6 +156,7 @@ export default class Gs2IdleRestClient extends AbstractGs2RestClient {
             'description': request.getDescription() ?? null,
             'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'receiveScript': request.getReceiveScript()?.toDict() ?? null,
+            'overrideAcquireActionsScriptId': request.getOverrideAcquireActionsScriptId() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.put(

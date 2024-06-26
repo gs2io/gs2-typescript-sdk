@@ -26,6 +26,7 @@ export default class Namespace implements IModel {
     private description: string|null = null;
     private transactionSetting: TransactionSetting|null = null;
     private receiveScript: ScriptSetting|null = null;
+    private overrideAcquireActionsScriptId: string|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -145,6 +146,17 @@ export default class Namespace implements IModel {
         this.receiveScript = receiveScript;
         return this;
     }
+    public getOverrideAcquireActionsScriptId(): string|null {
+        return this.overrideAcquireActionsScriptId;
+    }
+    public setOverrideAcquireActionsScriptId(overrideAcquireActionsScriptId: string|null) {
+        this.overrideAcquireActionsScriptId = overrideAcquireActionsScriptId;
+        return this;
+    }
+    public withOverrideAcquireActionsScriptId(overrideAcquireActionsScriptId: string|null): this {
+        this.overrideAcquireActionsScriptId = overrideAcquireActionsScriptId;
+        return this;
+    }
     public getLogSetting(): LogSetting|null {
         return this.logSetting;
     }
@@ -200,6 +212,7 @@ export default class Namespace implements IModel {
             .withDescription(data["description"])
             .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
             .withReceiveScript(ScriptSetting.fromDict(data["receiveScript"]))
+            .withOverrideAcquireActionsScriptId(data["overrideAcquireActionsScriptId"])
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -213,6 +226,7 @@ export default class Namespace implements IModel {
             "description": this.getDescription(),
             "transactionSetting": this.getTransactionSetting()?.toDict(),
             "receiveScript": this.getReceiveScript()?.toDict(),
+            "overrideAcquireActionsScriptId": this.getOverrideAcquireActionsScriptId(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
