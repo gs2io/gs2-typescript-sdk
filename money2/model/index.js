@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.GooglePlayContent = exports.AppleAppStoreContent = exports.GooglePlayVerifyReceiptEvent = exports.AppleAppStoreVerifyReceiptEvent = exports.WithdrawEvent = exports.DepositEvent = exports.VerifyReceiptEvent = exports.DepositTransaction = exports.WalletSummary = exports.FakeSetting = exports.GooglePlaySetting = exports.AppleAppStoreSetting = exports.PlatformSetting = exports.Receipt = exports.CurrentModelMaster = exports.StoreContentModelMaster = exports.StoreContentModel = exports.Event = exports.Wallet = exports.Namespace = void 0;
+exports.UnusedBalance = exports.DailyTransactionHistory = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.GooglePlayContent = exports.AppleAppStoreContent = exports.GooglePlayVerifyReceiptEvent = exports.AppleAppStoreVerifyReceiptEvent = exports.WithdrawEvent = exports.DepositEvent = exports.VerifyReceiptEvent = exports.DepositTransaction = exports.WalletSummary = exports.FakeSetting = exports.GooglePlaySetting = exports.AppleAppStoreSetting = exports.PlatformSetting = exports.Receipt = exports.CurrentModelMaster = exports.StoreContentModelMaster = exports.StoreContentModel = exports.Event = exports.Wallet = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -63,4 +63,8 @@ var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 exports.ScriptSetting = ScriptSetting_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 exports.LogSetting = LogSetting_1.default;
+var DailyTransactionHistory_1 = tslib_1.__importDefault(require("./DailyTransactionHistory"));
+exports.DailyTransactionHistory = DailyTransactionHistory_1.default;
+var UnusedBalance_1 = tslib_1.__importDefault(require("./UnusedBalance"));
+exports.UnusedBalance = UnusedBalance_1.default;
 //# sourceMappingURL=index.js.map

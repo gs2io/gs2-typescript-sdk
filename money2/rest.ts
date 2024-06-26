@@ -1236,4 +1236,151 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
             }
         });
     }
+
+    public describeDailyTransactionHistoriesByCurrency(request: Request.DescribeDailyTransactionHistoriesByCurrencyRequest): Promise<Result.DescribeDailyTransactionHistoriesByCurrencyResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/transaction/daily/currency/{currency}/date/{year}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{currency}', String(request.getCurrency() ?? 'null') === "" ? "null" : String(request.getCurrency() ?? 'null'))
+            .replace('{year}', String(request.getYear() ?? 'null') === "" ? "null" : String(request.getYear() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'month': String(request.getMonth() ?? null),
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeDailyTransactionHistoriesByCurrencyResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeDailyTransactionHistories(request: Request.DescribeDailyTransactionHistoriesRequest): Promise<Result.DescribeDailyTransactionHistoriesResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/transaction/daily/{year}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{year}', String(request.getYear() ?? 'null') === "" ? "null" : String(request.getYear() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'month': String(request.getMonth() ?? null),
+            'day': String(request.getDay() ?? null),
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeDailyTransactionHistoriesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getDailyTransactionHistory(request: Request.GetDailyTransactionHistoryRequest): Promise<Result.GetDailyTransactionHistoryResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/transaction/daily/{year}/{month}/{day}/currency/{currency}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{year}', String(request.getYear() ?? 'null') === "" ? "null" : String(request.getYear() ?? 'null'))
+            .replace('{month}', String(request.getMonth() ?? 'null') === "" ? "null" : String(request.getMonth() ?? 'null'))
+            .replace('{day}', String(request.getDay() ?? 'null') === "" ? "null" : String(request.getDay() ?? 'null'))
+            .replace('{currency}', String(request.getCurrency() ?? 'null') === "" ? "null" : String(request.getCurrency() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetDailyTransactionHistoryResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeUnusedBalances(request: Request.DescribeUnusedBalancesRequest): Promise<Result.DescribeUnusedBalancesResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/balance/unused')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeUnusedBalancesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getUnusedBalance(request: Request.GetUnusedBalanceRequest): Promise<Result.GetUnusedBalanceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/balance/unused/{currency}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{currency}', String(request.getCurrency() ?? 'null') === "" ? "null" : String(request.getCurrency() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetUnusedBalanceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
 }

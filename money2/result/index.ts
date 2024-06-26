@@ -51,6 +51,11 @@ import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentModelMasterResult from "./GetCurrentModelMasterResult"
 import UpdateCurrentModelMasterResult from "./UpdateCurrentModelMasterResult"
 import UpdateCurrentModelMasterFromGitHubResult from "./UpdateCurrentModelMasterFromGitHubResult"
+import DescribeDailyTransactionHistoriesByCurrencyResult from "./DescribeDailyTransactionHistoriesByCurrencyResult"
+import DescribeDailyTransactionHistoriesResult from "./DescribeDailyTransactionHistoriesResult"
+import GetDailyTransactionHistoryResult from "./GetDailyTransactionHistoryResult"
+import DescribeUnusedBalancesResult from "./DescribeUnusedBalancesResult"
+import GetUnusedBalanceResult from "./GetUnusedBalanceResult"
 
 export {
     DescribeNamespacesResult,
@@ -91,4 +96,9 @@ export {
     GetCurrentModelMasterResult,
     UpdateCurrentModelMasterResult,
     UpdateCurrentModelMasterFromGitHubResult,
+    DescribeDailyTransactionHistoriesByCurrencyResult,
+    DescribeDailyTransactionHistoriesResult,
+    GetDailyTransactionHistoryResult,
+    DescribeUnusedBalancesResult,
+    GetUnusedBalanceResult,
 };

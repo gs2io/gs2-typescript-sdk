@@ -36,6 +36,8 @@ import GooglePlayContent from "./GooglePlayContent"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import ScriptSetting from "./ScriptSetting"
 import LogSetting from "./LogSetting"
+import DailyTransactionHistory from "./DailyTransactionHistory"
+import UnusedBalance from "./UnusedBalance"
 
 export {
     Namespace,
@@ -61,4 +63,6 @@ export {
     GitHubCheckoutSetting,
     ScriptSetting,
     LogSetting,
+    DailyTransactionHistory,
+    UnusedBalance,
 };

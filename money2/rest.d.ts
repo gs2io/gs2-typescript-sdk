@@ -42,4 +42,9 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
     getCurrentModelMaster(request: Request.GetCurrentModelMasterRequest): Promise<Result.GetCurrentModelMasterResult>;
     updateCurrentModelMaster(request: Request.UpdateCurrentModelMasterRequest): Promise<Result.UpdateCurrentModelMasterResult>;
     updateCurrentModelMasterFromGitHub(request: Request.UpdateCurrentModelMasterFromGitHubRequest): Promise<Result.UpdateCurrentModelMasterFromGitHubResult>;
+    describeDailyTransactionHistoriesByCurrency(request: Request.DescribeDailyTransactionHistoriesByCurrencyRequest): Promise<Result.DescribeDailyTransactionHistoriesByCurrencyResult>;
+    describeDailyTransactionHistories(request: Request.DescribeDailyTransactionHistoriesRequest): Promise<Result.DescribeDailyTransactionHistoriesResult>;
+    getDailyTransactionHistory(request: Request.GetDailyTransactionHistoryRequest): Promise<Result.GetDailyTransactionHistoryResult>;
+    describeUnusedBalances(request: Request.DescribeUnusedBalancesRequest): Promise<Result.DescribeUnusedBalancesResult>;
+    getUnusedBalance(request: Request.GetUnusedBalanceRequest): Promise<Result.GetUnusedBalanceResult>;
 }

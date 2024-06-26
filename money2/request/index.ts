@@ -51,6 +51,11 @@ import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentModelMasterRequest from "./GetCurrentModelMasterRequest"
 import UpdateCurrentModelMasterRequest from "./UpdateCurrentModelMasterRequest"
 import UpdateCurrentModelMasterFromGitHubRequest from "./UpdateCurrentModelMasterFromGitHubRequest"
+import DescribeDailyTransactionHistoriesByCurrencyRequest from "./DescribeDailyTransactionHistoriesByCurrencyRequest"
+import DescribeDailyTransactionHistoriesRequest from "./DescribeDailyTransactionHistoriesRequest"
+import GetDailyTransactionHistoryRequest from "./GetDailyTransactionHistoryRequest"
+import DescribeUnusedBalancesRequest from "./DescribeUnusedBalancesRequest"
+import GetUnusedBalanceRequest from "./GetUnusedBalanceRequest"
 
 export {
     DescribeNamespacesRequest,
@@ -91,4 +96,9 @@ export {
     GetCurrentModelMasterRequest,
     UpdateCurrentModelMasterRequest,
     UpdateCurrentModelMasterFromGitHubRequest,
+    DescribeDailyTransactionHistoriesByCurrencyRequest,
+    DescribeDailyTransactionHistoriesRequest,
+    GetDailyTransactionHistoryRequest,
+    DescribeUnusedBalancesRequest,
+    GetUnusedBalanceRequest,
 };

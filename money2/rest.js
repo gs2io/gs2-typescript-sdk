@@ -1083,6 +1083,133 @@ var Gs2Money2RestClient = /** @class */ (function (_super) {
             }
         });
     };
+    Gs2Money2RestClient.prototype.describeDailyTransactionHistoriesByCurrency = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/transaction/daily/currency/{currency}/date/{year}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{currency}', String((_c = request.getCurrency()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getCurrency()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{year}', String((_e = request.getYear()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getYear()) !== null && _f !== void 0 ? _f : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'month': String((_h = request.getMonth()) !== null && _h !== void 0 ? _h : null),
+            'pageToken': String((_j = request.getPageToken()) !== null && _j !== void 0 ? _j : null),
+            'limit': String((_k = request.getLimit()) !== null && _k !== void 0 ? _k : null),
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DescribeDailyTransactionHistoriesByCurrencyResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2Money2RestClient.prototype.describeDailyTransactionHistories = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/transaction/daily/{year}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{year}', String((_c = request.getYear()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getYear()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'month': String((_f = request.getMonth()) !== null && _f !== void 0 ? _f : null),
+            'day': String((_g = request.getDay()) !== null && _g !== void 0 ? _g : null),
+            'pageToken': String((_h = request.getPageToken()) !== null && _h !== void 0 ? _h : null),
+            'limit': String((_j = request.getLimit()) !== null && _j !== void 0 ? _j : null),
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DescribeDailyTransactionHistoriesResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2Money2RestClient.prototype.getDailyTransactionHistory = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/transaction/daily/{year}/{month}/{day}/currency/{currency}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{year}', String((_c = request.getYear()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getYear()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{month}', String((_e = request.getMonth()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getMonth()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{day}', String((_g = request.getDay()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getDay()) !== null && _h !== void 0 ? _h : 'null'))
+            .replace('{currency}', String((_j = request.getCurrency()) !== null && _j !== void 0 ? _j : 'null') === "" ? "null" : String((_k = request.getCurrency()) !== null && _k !== void 0 ? _k : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetDailyTransactionHistoryResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2Money2RestClient.prototype.describeUnusedBalances = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/balance/unused')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
+            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DescribeUnusedBalancesResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2Money2RestClient.prototype.getUnusedBalance = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/balance/unused/{currency}')
+            .replace('{service}', 'money2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{currency}', String((_c = request.getCurrency()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getCurrency()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetUnusedBalanceResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
     return Gs2Money2RestClient;
 }(AbstractGs2RestClient_1.default));
 exports.default = Gs2Money2RestClient;
