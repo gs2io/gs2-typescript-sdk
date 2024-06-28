@@ -758,7 +758,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     }
 
     public revertUseByStampSheet(request: Request.RevertUseByStampSheetRequest): Promise<Result.RevertUseByStampSheetResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/serialKey/use')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/serialKey/revert')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region);
     

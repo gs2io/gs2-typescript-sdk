@@ -665,7 +665,7 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
     };
     Gs2SerialKeyRestClient.prototype.revertUseByStampSheet = function (request) {
         var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/serialKey/use')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/serialKey/revert')
             .replace('{service}', 'serial-key')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();
