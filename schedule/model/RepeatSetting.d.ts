@@ -7,6 +7,9 @@ export default class RepeatSetting implements IModel {
     private endDayOfWeek;
     private beginHour;
     private endHour;
+    private anchorTimestamp;
+    private activeDays;
+    private inactiveDays;
     getRepeatType(): string | null;
     setRepeatType(repeatType: string | null): this;
     withRepeatType(repeatType: string | null): this;
@@ -28,6 +31,15 @@ export default class RepeatSetting implements IModel {
     getEndHour(): number | null;
     setEndHour(endHour: number | null): this;
     withEndHour(endHour: number | null): this;
+    getAnchorTimestamp(): number | null;
+    setAnchorTimestamp(anchorTimestamp: number | null): this;
+    withAnchorTimestamp(anchorTimestamp: number | null): this;
+    getActiveDays(): number | null;
+    setActiveDays(activeDays: number | null): this;
+    withActiveDays(activeDays: number | null): this;
+    getInactiveDays(): number | null;
+    setInactiveDays(inactiveDays: number | null): this;
+    withInactiveDays(inactiveDays: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): RepeatSetting | null;

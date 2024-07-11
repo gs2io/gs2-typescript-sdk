@@ -24,6 +24,9 @@ var RepeatSetting = /** @class */ (function () {
         this.endDayOfWeek = null;
         this.beginHour = null;
         this.endHour = null;
+        this.anchorTimestamp = null;
+        this.activeDays = null;
+        this.inactiveDays = null;
     }
     RepeatSetting.prototype.getRepeatType = function () {
         return this.repeatType;
@@ -102,6 +105,39 @@ var RepeatSetting = /** @class */ (function () {
         this.endHour = endHour;
         return this;
     };
+    RepeatSetting.prototype.getAnchorTimestamp = function () {
+        return this.anchorTimestamp;
+    };
+    RepeatSetting.prototype.setAnchorTimestamp = function (anchorTimestamp) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    };
+    RepeatSetting.prototype.withAnchorTimestamp = function (anchorTimestamp) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    };
+    RepeatSetting.prototype.getActiveDays = function () {
+        return this.activeDays;
+    };
+    RepeatSetting.prototype.setActiveDays = function (activeDays) {
+        this.activeDays = activeDays;
+        return this;
+    };
+    RepeatSetting.prototype.withActiveDays = function (activeDays) {
+        this.activeDays = activeDays;
+        return this;
+    };
+    RepeatSetting.prototype.getInactiveDays = function () {
+        return this.inactiveDays;
+    };
+    RepeatSetting.prototype.setInactiveDays = function (inactiveDays) {
+        this.inactiveDays = inactiveDays;
+        return this;
+    };
+    RepeatSetting.prototype.withInactiveDays = function (inactiveDays) {
+        this.inactiveDays = inactiveDays;
+        return this;
+    };
     RepeatSetting.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -113,7 +149,10 @@ var RepeatSetting = /** @class */ (function () {
             .withBeginDayOfWeek(data["beginDayOfWeek"])
             .withEndDayOfWeek(data["endDayOfWeek"])
             .withBeginHour(data["beginHour"])
-            .withEndHour(data["endHour"]);
+            .withEndHour(data["endHour"])
+            .withAnchorTimestamp(data["anchorTimestamp"])
+            .withActiveDays(data["activeDays"])
+            .withInactiveDays(data["inactiveDays"]);
     };
     RepeatSetting.prototype.toDict = function () {
         return {
@@ -124,6 +163,9 @@ var RepeatSetting = /** @class */ (function () {
             "endDayOfWeek": this.getEndDayOfWeek(),
             "beginHour": this.getBeginHour(),
             "endHour": this.getEndHour(),
+            "anchorTimestamp": this.getAnchorTimestamp(),
+            "activeDays": this.getActiveDays(),
+            "inactiveDays": this.getInactiveDays(),
         };
     };
     return RepeatSetting;

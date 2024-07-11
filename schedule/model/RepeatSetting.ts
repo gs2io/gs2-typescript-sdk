@@ -24,6 +24,9 @@ export default class RepeatSetting implements IModel {
     private endDayOfWeek: string|null = null;
     private beginHour: number|null = null;
     private endHour: number|null = null;
+    private anchorTimestamp: number|null = null;
+    private activeDays: number|null = null;
+    private inactiveDays: number|null = null;
     public getRepeatType(): string|null {
         return this.repeatType;
     }
@@ -101,6 +104,39 @@ export default class RepeatSetting implements IModel {
         this.endHour = endHour;
         return this;
     }
+    public getAnchorTimestamp(): number|null {
+        return this.anchorTimestamp;
+    }
+    public setAnchorTimestamp(anchorTimestamp: number|null) {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    }
+    public withAnchorTimestamp(anchorTimestamp: number|null): this {
+        this.anchorTimestamp = anchorTimestamp;
+        return this;
+    }
+    public getActiveDays(): number|null {
+        return this.activeDays;
+    }
+    public setActiveDays(activeDays: number|null) {
+        this.activeDays = activeDays;
+        return this;
+    }
+    public withActiveDays(activeDays: number|null): this {
+        this.activeDays = activeDays;
+        return this;
+    }
+    public getInactiveDays(): number|null {
+        return this.inactiveDays;
+    }
+    public setInactiveDays(inactiveDays: number|null) {
+        this.inactiveDays = inactiveDays;
+        return this;
+    }
+    public withInactiveDays(inactiveDays: number|null): this {
+        this.inactiveDays = inactiveDays;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): RepeatSetting|null {
         if (data == undefined || data == null) {
@@ -113,7 +149,10 @@ export default class RepeatSetting implements IModel {
             .withBeginDayOfWeek(data["beginDayOfWeek"])
             .withEndDayOfWeek(data["endDayOfWeek"])
             .withBeginHour(data["beginHour"])
-            .withEndHour(data["endHour"]);
+            .withEndHour(data["endHour"])
+            .withAnchorTimestamp(data["anchorTimestamp"])
+            .withActiveDays(data["activeDays"])
+            .withInactiveDays(data["inactiveDays"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -125,6 +164,9 @@ export default class RepeatSetting implements IModel {
             "endDayOfWeek": this.getEndDayOfWeek(),
             "beginHour": this.getBeginHour(),
             "endHour": this.getEndHour(),
+            "anchorTimestamp": this.getAnchorTimestamp(),
+            "activeDays": this.getActiveDays(),
+            "inactiveDays": this.getInactiveDays(),
         };
     }
 }
