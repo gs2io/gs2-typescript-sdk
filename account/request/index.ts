@@ -47,6 +47,17 @@ import DeleteTakeOverRequest from "./DeleteTakeOverRequest"
 import DeleteTakeOverByUserIdentifierRequest from "./DeleteTakeOverByUserIdentifierRequest"
 import DeleteTakeOverByUserIdRequest from "./DeleteTakeOverByUserIdRequest"
 import DoTakeOverRequest from "./DoTakeOverRequest"
+import DescribePlatformIdsRequest from "./DescribePlatformIdsRequest"
+import DescribePlatformIdsByUserIdRequest from "./DescribePlatformIdsByUserIdRequest"
+import CreatePlatformIdRequest from "./CreatePlatformIdRequest"
+import CreatePlatformIdByUserIdRequest from "./CreatePlatformIdByUserIdRequest"
+import GetPlatformIdRequest from "./GetPlatformIdRequest"
+import GetPlatformIdByUserIdRequest from "./GetPlatformIdByUserIdRequest"
+import FindPlatformIdRequest from "./FindPlatformIdRequest"
+import FindPlatformIdByUserIdRequest from "./FindPlatformIdByUserIdRequest"
+import DeletePlatformIdRequest from "./DeletePlatformIdRequest"
+import DeletePlatformIdByUserIdentifierRequest from "./DeletePlatformIdByUserIdentifierRequest"
+import DeletePlatformIdByUserIdRequest from "./DeletePlatformIdByUserIdRequest"
 import GetDataOwnerByUserIdRequest from "./GetDataOwnerByUserIdRequest"
 import DeleteDataOwnerByUserIdRequest from "./DeleteDataOwnerByUserIdRequest"
 
@@ -85,6 +96,17 @@ export {
     DeleteTakeOverByUserIdentifierRequest,
     DeleteTakeOverByUserIdRequest,
     DoTakeOverRequest,
+    DescribePlatformIdsRequest,
+    DescribePlatformIdsByUserIdRequest,
+    CreatePlatformIdRequest,
+    CreatePlatformIdByUserIdRequest,
+    GetPlatformIdRequest,
+    GetPlatformIdByUserIdRequest,
+    FindPlatformIdRequest,
+    FindPlatformIdByUserIdRequest,
+    DeletePlatformIdRequest,
+    DeletePlatformIdByUserIdentifierRequest,
+    DeletePlatformIdByUserIdRequest,
     GetDataOwnerByUserIdRequest,
     DeleteDataOwnerByUserIdRequest,
 };

@@ -47,6 +47,17 @@ import DeleteTakeOverResult from "./DeleteTakeOverResult"
 import DeleteTakeOverByUserIdentifierResult from "./DeleteTakeOverByUserIdentifierResult"
 import DeleteTakeOverByUserIdResult from "./DeleteTakeOverByUserIdResult"
 import DoTakeOverResult from "./DoTakeOverResult"
+import DescribePlatformIdsResult from "./DescribePlatformIdsResult"
+import DescribePlatformIdsByUserIdResult from "./DescribePlatformIdsByUserIdResult"
+import CreatePlatformIdResult from "./CreatePlatformIdResult"
+import CreatePlatformIdByUserIdResult from "./CreatePlatformIdByUserIdResult"
+import GetPlatformIdResult from "./GetPlatformIdResult"
+import GetPlatformIdByUserIdResult from "./GetPlatformIdByUserIdResult"
+import FindPlatformIdResult from "./FindPlatformIdResult"
+import FindPlatformIdByUserIdResult from "./FindPlatformIdByUserIdResult"
+import DeletePlatformIdResult from "./DeletePlatformIdResult"
+import DeletePlatformIdByUserIdentifierResult from "./DeletePlatformIdByUserIdentifierResult"
+import DeletePlatformIdByUserIdResult from "./DeletePlatformIdByUserIdResult"
 import GetDataOwnerByUserIdResult from "./GetDataOwnerByUserIdResult"
 import DeleteDataOwnerByUserIdResult from "./DeleteDataOwnerByUserIdResult"
 
@@ -85,6 +96,17 @@ export {
     DeleteTakeOverByUserIdentifierResult,
     DeleteTakeOverByUserIdResult,
     DoTakeOverResult,
+    DescribePlatformIdsResult,
+    DescribePlatformIdsByUserIdResult,
+    CreatePlatformIdResult,
+    CreatePlatformIdByUserIdResult,
+    GetPlatformIdResult,
+    GetPlatformIdByUserIdResult,
+    FindPlatformIdResult,
+    FindPlatformIdByUserIdResult,
+    DeletePlatformIdResult,
+    DeletePlatformIdByUserIdentifierResult,
+    DeletePlatformIdByUserIdResult,
     GetDataOwnerByUserIdResult,
     DeleteDataOwnerByUserIdResult,
 };

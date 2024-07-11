@@ -68,8 +68,8 @@ var LoginRequest = /** @class */ (function () {
     };
     LoginRequest.fromDict = function (data) {
         return new LoginRequest()
-            .withClientId(data["clientId"])
-            .withClientSecret(data["clientSecret"]);
+            .withClientId(data["client_id"])
+            .withClientSecret(data["client_secret"]);
     };
     LoginRequest.prototype.toDict = function () {
         return {

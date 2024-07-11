@@ -77,8 +77,8 @@ export default class LoginRequest implements IRequest {
 
     public static fromDict(data: {[key: string]: any}): LoginRequest {
         return new LoginRequest()
-            .withClientId(data["clientId"])
-            .withClientSecret(data["clientSecret"]);
+            .withClientId(data["client_id"])
+            .withClientSecret(data["client_secret"]);
     }
 
     public toDict(): {[key: string]: any} {

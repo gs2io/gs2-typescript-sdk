@@ -38,6 +38,17 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
     deleteTakeOverByUserIdentifier(request: Request.DeleteTakeOverByUserIdentifierRequest): Promise<Result.DeleteTakeOverByUserIdentifierResult>;
     deleteTakeOverByUserId(request: Request.DeleteTakeOverByUserIdRequest): Promise<Result.DeleteTakeOverByUserIdResult>;
     doTakeOver(request: Request.DoTakeOverRequest): Promise<Result.DoTakeOverResult>;
+    describePlatformIds(request: Request.DescribePlatformIdsRequest): Promise<Result.DescribePlatformIdsResult>;
+    describePlatformIdsByUserId(request: Request.DescribePlatformIdsByUserIdRequest): Promise<Result.DescribePlatformIdsByUserIdResult>;
+    createPlatformId(request: Request.CreatePlatformIdRequest): Promise<Result.CreatePlatformIdResult>;
+    createPlatformIdByUserId(request: Request.CreatePlatformIdByUserIdRequest): Promise<Result.CreatePlatformIdByUserIdResult>;
+    getPlatformId(request: Request.GetPlatformIdRequest): Promise<Result.GetPlatformIdResult>;
+    getPlatformIdByUserId(request: Request.GetPlatformIdByUserIdRequest): Promise<Result.GetPlatformIdByUserIdResult>;
+    findPlatformId(request: Request.FindPlatformIdRequest): Promise<Result.FindPlatformIdResult>;
+    findPlatformIdByUserId(request: Request.FindPlatformIdByUserIdRequest): Promise<Result.FindPlatformIdByUserIdResult>;
+    deletePlatformId(request: Request.DeletePlatformIdRequest): Promise<Result.DeletePlatformIdResult>;
+    deletePlatformIdByUserIdentifier(request: Request.DeletePlatformIdByUserIdentifierRequest): Promise<Result.DeletePlatformIdByUserIdentifierResult>;
+    deletePlatformIdByUserId(request: Request.DeletePlatformIdByUserIdRequest): Promise<Result.DeletePlatformIdByUserIdResult>;
     getDataOwnerByUserId(request: Request.GetDataOwnerByUserIdRequest): Promise<Result.GetDataOwnerByUserIdResult>;
     deleteDataOwnerByUserId(request: Request.DeleteDataOwnerByUserIdRequest): Promise<Result.DeleteDataOwnerByUserIdResult>;
 }

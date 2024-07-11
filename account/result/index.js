@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteDataOwnerByUserIdResult = exports.GetDataOwnerByUserIdResult = exports.DoTakeOverResult = exports.DeleteTakeOverByUserIdResult = exports.DeleteTakeOverByUserIdentifierResult = exports.DeleteTakeOverResult = exports.UpdateTakeOverByUserIdResult = exports.UpdateTakeOverResult = exports.GetTakeOverByUserIdResult = exports.GetTakeOverResult = exports.CreateTakeOverByUserIdResult = exports.CreateTakeOverResult = exports.DescribeTakeOversByUserIdResult = exports.DescribeTakeOversResult = exports.AuthenticationResult = exports.DeleteAccountResult = exports.GetAccountResult = exports.RemoveBanResult = exports.AddBanResult = exports.UpdateBannedResult = exports.UpdateTimeOffsetResult = exports.CreateAccountResult = exports.DescribeAccountsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.DeleteDataOwnerByUserIdResult = exports.GetDataOwnerByUserIdResult = exports.DeletePlatformIdByUserIdResult = exports.DeletePlatformIdByUserIdentifierResult = exports.DeletePlatformIdResult = exports.FindPlatformIdByUserIdResult = exports.FindPlatformIdResult = exports.GetPlatformIdByUserIdResult = exports.GetPlatformIdResult = exports.CreatePlatformIdByUserIdResult = exports.CreatePlatformIdResult = exports.DescribePlatformIdsByUserIdResult = exports.DescribePlatformIdsResult = exports.DoTakeOverResult = exports.DeleteTakeOverByUserIdResult = exports.DeleteTakeOverByUserIdentifierResult = exports.DeleteTakeOverResult = exports.UpdateTakeOverByUserIdResult = exports.UpdateTakeOverResult = exports.GetTakeOverByUserIdResult = exports.GetTakeOverResult = exports.CreateTakeOverByUserIdResult = exports.CreateTakeOverResult = exports.DescribeTakeOversByUserIdResult = exports.DescribeTakeOversResult = exports.AuthenticationResult = exports.DeleteAccountResult = exports.GetAccountResult = exports.RemoveBanResult = exports.AddBanResult = exports.UpdateBannedResult = exports.UpdateTimeOffsetResult = exports.CreateAccountResult = exports.DescribeAccountsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -85,6 +85,28 @@ var DeleteTakeOverByUserIdResult_1 = tslib_1.__importDefault(require("./DeleteTa
 exports.DeleteTakeOverByUserIdResult = DeleteTakeOverByUserIdResult_1.default;
 var DoTakeOverResult_1 = tslib_1.__importDefault(require("./DoTakeOverResult"));
 exports.DoTakeOverResult = DoTakeOverResult_1.default;
+var DescribePlatformIdsResult_1 = tslib_1.__importDefault(require("./DescribePlatformIdsResult"));
+exports.DescribePlatformIdsResult = DescribePlatformIdsResult_1.default;
+var DescribePlatformIdsByUserIdResult_1 = tslib_1.__importDefault(require("./DescribePlatformIdsByUserIdResult"));
+exports.DescribePlatformIdsByUserIdResult = DescribePlatformIdsByUserIdResult_1.default;
+var CreatePlatformIdResult_1 = tslib_1.__importDefault(require("./CreatePlatformIdResult"));
+exports.CreatePlatformIdResult = CreatePlatformIdResult_1.default;
+var CreatePlatformIdByUserIdResult_1 = tslib_1.__importDefault(require("./CreatePlatformIdByUserIdResult"));
+exports.CreatePlatformIdByUserIdResult = CreatePlatformIdByUserIdResult_1.default;
+var GetPlatformIdResult_1 = tslib_1.__importDefault(require("./GetPlatformIdResult"));
+exports.GetPlatformIdResult = GetPlatformIdResult_1.default;
+var GetPlatformIdByUserIdResult_1 = tslib_1.__importDefault(require("./GetPlatformIdByUserIdResult"));
+exports.GetPlatformIdByUserIdResult = GetPlatformIdByUserIdResult_1.default;
+var FindPlatformIdResult_1 = tslib_1.__importDefault(require("./FindPlatformIdResult"));
+exports.FindPlatformIdResult = FindPlatformIdResult_1.default;
+var FindPlatformIdByUserIdResult_1 = tslib_1.__importDefault(require("./FindPlatformIdByUserIdResult"));
+exports.FindPlatformIdByUserIdResult = FindPlatformIdByUserIdResult_1.default;
+var DeletePlatformIdResult_1 = tslib_1.__importDefault(require("./DeletePlatformIdResult"));
+exports.DeletePlatformIdResult = DeletePlatformIdResult_1.default;
+var DeletePlatformIdByUserIdentifierResult_1 = tslib_1.__importDefault(require("./DeletePlatformIdByUserIdentifierResult"));
+exports.DeletePlatformIdByUserIdentifierResult = DeletePlatformIdByUserIdentifierResult_1.default;
+var DeletePlatformIdByUserIdResult_1 = tslib_1.__importDefault(require("./DeletePlatformIdByUserIdResult"));
+exports.DeletePlatformIdByUserIdResult = DeletePlatformIdByUserIdResult_1.default;
 var GetDataOwnerByUserIdResult_1 = tslib_1.__importDefault(require("./GetDataOwnerByUserIdResult"));
 exports.GetDataOwnerByUserIdResult = GetDataOwnerByUserIdResult_1.default;
 var DeleteDataOwnerByUserIdResult_1 = tslib_1.__importDefault(require("./DeleteDataOwnerByUserIdResult"));
