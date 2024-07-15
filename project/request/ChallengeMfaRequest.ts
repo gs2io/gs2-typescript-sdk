@@ -18,13 +18,12 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Project from '../model'
 
-export default class SignInRequest implements IRequest {
+export default class ChallengeMfaRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
-    private email: string|null = null;
-    private password: string|null = null;
-    private otp: string|null = null;
+    private accountToken: string|null = null;
+    private passcode: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -53,52 +52,39 @@ export default class SignInRequest implements IRequest {
         this.contextStack = contextStack;
         return this;
     }
-    public getEmail(): string|null {
-        return this.email;
+    public getAccountToken(): string|null {
+        return this.accountToken;
     }
-    public setEmail(email: string|null) {
-        this.email = email;
+    public setAccountToken(accountToken: string|null) {
+        this.accountToken = accountToken;
         return this;
     }
-    public withEmail(email: string|null): this {
-        this.email = email;
+    public withAccountToken(accountToken: string|null): this {
+        this.accountToken = accountToken;
         return this;
     }
-    public getPassword(): string|null {
-        return this.password;
+    public getPasscode(): string|null {
+        return this.passcode;
     }
-    public setPassword(password: string|null) {
-        this.password = password;
+    public setPasscode(passcode: string|null) {
+        this.passcode = passcode;
         return this;
     }
-    public withPassword(password: string|null): this {
-        this.password = password;
-        return this;
-    }
-    public getOtp(): string|null {
-        return this.otp;
-    }
-    public setOtp(otp: string|null) {
-        this.otp = otp;
-        return this;
-    }
-    public withOtp(otp: string|null): this {
-        this.otp = otp;
+    public withPasscode(passcode: string|null): this {
+        this.passcode = passcode;
         return this;
     }
 
-    public static fromDict(data: {[key: string]: any}): SignInRequest {
-        return new SignInRequest()
-            .withEmail(data["email"])
-            .withPassword(data["password"])
-            .withOtp(data["otp"]);
+    public static fromDict(data: {[key: string]: any}): ChallengeMfaRequest {
+        return new ChallengeMfaRequest()
+            .withAccountToken(data["accountToken"])
+            .withPasscode(data["passcode"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
-            "email": this.getEmail(),
-            "password": this.getPassword(),
-            "otp": this.getOtp(),
+            "accountToken": this.getAccountToken(),
+            "passcode": this.getPasscode(),
         };
     }
 }

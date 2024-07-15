@@ -21,6 +21,7 @@ var SignInRequest = /** @class */ (function () {
         this.contextStack = null;
         this.email = null;
         this.password = null;
+        this.otp = null;
     }
     SignInRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -66,15 +67,28 @@ var SignInRequest = /** @class */ (function () {
         this.password = password;
         return this;
     };
+    SignInRequest.prototype.getOtp = function () {
+        return this.otp;
+    };
+    SignInRequest.prototype.setOtp = function (otp) {
+        this.otp = otp;
+        return this;
+    };
+    SignInRequest.prototype.withOtp = function (otp) {
+        this.otp = otp;
+        return this;
+    };
     SignInRequest.fromDict = function (data) {
         return new SignInRequest()
             .withEmail(data["email"])
-            .withPassword(data["password"]);
+            .withPassword(data["password"])
+            .withOtp(data["otp"]);
     };
     SignInRequest.prototype.toDict = function () {
         return {
             "email": this.getEmail(),
             "password": this.getPassword(),
+            "otp": this.getOtp(),
         };
     };
     return SignInRequest;

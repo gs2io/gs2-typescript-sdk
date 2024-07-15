@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetImportErrorLogRequest = exports.DescribeImportErrorLogsRequest = exports.ImportUserDataRequest = exports.PrepareImportUserDataRequest = exports.WaitImportUserDataRequest = exports.GetImportProgressRequest = exports.DescribeImportProgressesRequest = exports.CleanUserDataRequest = exports.WaitCleanUserDataRequest = exports.GetCleanProgressRequest = exports.DescribeCleanProgressesRequest = exports.GetDumpUserDataRequest = exports.DumpUserDataRequest = exports.ArchiveDumpUserDataRequest = exports.WaitDumpUserDataRequest = exports.GetDumpProgressRequest = exports.DescribeDumpProgressesRequest = exports.DescribeBillingsRequest = exports.DescribeReceiptsRequest = exports.DeleteBillingMethodRequest = exports.UpdateBillingMethodRequest = exports.GetBillingMethodRequest = exports.CreateBillingMethodRequest = exports.DescribeBillingMethodsRequest = exports.DeleteProjectRequest = exports.WaitActivateRegionRequest = exports.ActivateRegionRequest = exports.UpdateProjectRequest = exports.GetProjectTokenByIdentifierRequest = exports.GetProjectTokenRequest = exports.GetProjectRequest = exports.CreateProjectRequest = exports.DescribeProjectsRequest = exports.DeleteAccountRequest = exports.UpdateAccountRequest = exports.IssuePasswordRequest = exports.ForgetRequest = exports.SignInRequest = exports.VerifyRequest = exports.CreateAccountRequest = void 0;
+exports.GetImportErrorLogRequest = exports.DescribeImportErrorLogsRequest = exports.ImportUserDataRequest = exports.PrepareImportUserDataRequest = exports.WaitImportUserDataRequest = exports.GetImportProgressRequest = exports.DescribeImportProgressesRequest = exports.CleanUserDataRequest = exports.WaitCleanUserDataRequest = exports.GetCleanProgressRequest = exports.DescribeCleanProgressesRequest = exports.GetDumpUserDataRequest = exports.DumpUserDataRequest = exports.ArchiveDumpUserDataRequest = exports.WaitDumpUserDataRequest = exports.GetDumpProgressRequest = exports.DescribeDumpProgressesRequest = exports.DescribeBillingsRequest = exports.DescribeReceiptsRequest = exports.DeleteBillingMethodRequest = exports.UpdateBillingMethodRequest = exports.GetBillingMethodRequest = exports.CreateBillingMethodRequest = exports.DescribeBillingMethodsRequest = exports.DeleteProjectRequest = exports.WaitActivateRegionRequest = exports.ActivateRegionRequest = exports.UpdateProjectRequest = exports.GetProjectTokenByIdentifierRequest = exports.GetProjectTokenRequest = exports.GetProjectRequest = exports.CreateProjectRequest = exports.DescribeProjectsRequest = exports.DeleteAccountRequest = exports.DisableMfaRequest = exports.ChallengeMfaRequest = exports.EnableMfaRequest = exports.UpdateAccountRequest = exports.IssuePasswordRequest = exports.ForgetRequest = exports.SignInRequest = exports.VerifyRequest = exports.CreateAccountRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,6 +29,12 @@ var IssuePasswordRequest_1 = tslib_1.__importDefault(require("./IssuePasswordReq
 exports.IssuePasswordRequest = IssuePasswordRequest_1.default;
 var UpdateAccountRequest_1 = tslib_1.__importDefault(require("./UpdateAccountRequest"));
 exports.UpdateAccountRequest = UpdateAccountRequest_1.default;
+var EnableMfaRequest_1 = tslib_1.__importDefault(require("./EnableMfaRequest"));
+exports.EnableMfaRequest = EnableMfaRequest_1.default;
+var ChallengeMfaRequest_1 = tslib_1.__importDefault(require("./ChallengeMfaRequest"));
+exports.ChallengeMfaRequest = ChallengeMfaRequest_1.default;
+var DisableMfaRequest_1 = tslib_1.__importDefault(require("./DisableMfaRequest"));
+exports.DisableMfaRequest = DisableMfaRequest_1.default;
 var DeleteAccountRequest_1 = tslib_1.__importDefault(require("./DeleteAccountRequest"));
 exports.DeleteAccountRequest = DeleteAccountRequest_1.default;
 var DescribeProjectsRequest_1 = tslib_1.__importDefault(require("./DescribeProjectsRequest"));

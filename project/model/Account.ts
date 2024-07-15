@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import TwoFactorAuthenticationSetting from './TwoFactorAuthenticationSetting';
 const grnFormat: string = "grn:gs2:::gs2:account:{accountName}";
 
 export default class Account implements IModel {
@@ -23,6 +24,8 @@ export default class Account implements IModel {
     private email: string|null = null;
     private fullName: string|null = null;
     private companyName: string|null = null;
+    private enableTwoFactorAuthentication: string|null = null;
+    private twoFactorAuthenticationSetting: TwoFactorAuthenticationSetting|null = null;
     private status: string|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -105,6 +108,28 @@ export default class Account implements IModel {
         this.companyName = companyName;
         return this;
     }
+    public getEnableTwoFactorAuthentication(): string|null {
+        return this.enableTwoFactorAuthentication;
+    }
+    public setEnableTwoFactorAuthentication(enableTwoFactorAuthentication: string|null) {
+        this.enableTwoFactorAuthentication = enableTwoFactorAuthentication;
+        return this;
+    }
+    public withEnableTwoFactorAuthentication(enableTwoFactorAuthentication: string|null): this {
+        this.enableTwoFactorAuthentication = enableTwoFactorAuthentication;
+        return this;
+    }
+    public getTwoFactorAuthenticationSetting(): TwoFactorAuthenticationSetting|null {
+        return this.twoFactorAuthenticationSetting;
+    }
+    public setTwoFactorAuthenticationSetting(twoFactorAuthenticationSetting: TwoFactorAuthenticationSetting|null) {
+        this.twoFactorAuthenticationSetting = twoFactorAuthenticationSetting;
+        return this;
+    }
+    public withTwoFactorAuthenticationSetting(twoFactorAuthenticationSetting: TwoFactorAuthenticationSetting|null): this {
+        this.twoFactorAuthenticationSetting = twoFactorAuthenticationSetting;
+        return this;
+    }
     public getStatus(): string|null {
         return this.status;
     }
@@ -149,6 +174,8 @@ export default class Account implements IModel {
             .withEmail(data["email"])
             .withFullName(data["fullName"])
             .withCompanyName(data["companyName"])
+            .withEnableTwoFactorAuthentication(data["enableTwoFactorAuthentication"])
+            .withTwoFactorAuthenticationSetting(TwoFactorAuthenticationSetting.fromDict(data["twoFactorAuthenticationSetting"]))
             .withStatus(data["status"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
@@ -161,6 +188,8 @@ export default class Account implements IModel {
             "email": this.getEmail(),
             "fullName": this.getFullName(),
             "companyName": this.getCompanyName(),
+            "enableTwoFactorAuthentication": this.getEnableTwoFactorAuthentication(),
+            "twoFactorAuthenticationSetting": this.getTwoFactorAuthenticationSetting()?.toDict(),
             "status": this.getStatus(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

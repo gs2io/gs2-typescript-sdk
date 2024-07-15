@@ -15,6 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var TwoFactorAuthenticationSetting_1 = tslib_1.__importDefault(require("./TwoFactorAuthenticationSetting"));
 var grnFormat = "grn:gs2:::gs2:account:{accountName}";
 var Account = /** @class */ (function () {
     function Account() {
@@ -23,6 +25,8 @@ var Account = /** @class */ (function () {
         this.email = null;
         this.fullName = null;
         this.companyName = null;
+        this.enableTwoFactorAuthentication = null;
+        this.twoFactorAuthenticationSetting = null;
         this.status = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -100,6 +104,28 @@ var Account = /** @class */ (function () {
         this.companyName = companyName;
         return this;
     };
+    Account.prototype.getEnableTwoFactorAuthentication = function () {
+        return this.enableTwoFactorAuthentication;
+    };
+    Account.prototype.setEnableTwoFactorAuthentication = function (enableTwoFactorAuthentication) {
+        this.enableTwoFactorAuthentication = enableTwoFactorAuthentication;
+        return this;
+    };
+    Account.prototype.withEnableTwoFactorAuthentication = function (enableTwoFactorAuthentication) {
+        this.enableTwoFactorAuthentication = enableTwoFactorAuthentication;
+        return this;
+    };
+    Account.prototype.getTwoFactorAuthenticationSetting = function () {
+        return this.twoFactorAuthenticationSetting;
+    };
+    Account.prototype.setTwoFactorAuthenticationSetting = function (twoFactorAuthenticationSetting) {
+        this.twoFactorAuthenticationSetting = twoFactorAuthenticationSetting;
+        return this;
+    };
+    Account.prototype.withTwoFactorAuthenticationSetting = function (twoFactorAuthenticationSetting) {
+        this.twoFactorAuthenticationSetting = twoFactorAuthenticationSetting;
+        return this;
+    };
     Account.prototype.getStatus = function () {
         return this.status;
     };
@@ -143,17 +169,22 @@ var Account = /** @class */ (function () {
             .withEmail(data["email"])
             .withFullName(data["fullName"])
             .withCompanyName(data["companyName"])
+            .withEnableTwoFactorAuthentication(data["enableTwoFactorAuthentication"])
+            .withTwoFactorAuthenticationSetting(TwoFactorAuthenticationSetting_1.default.fromDict(data["twoFactorAuthenticationSetting"]))
             .withStatus(data["status"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     };
     Account.prototype.toDict = function () {
+        var _a;
         return {
             "accountId": this.getAccountId(),
             "name": this.getName(),
             "email": this.getEmail(),
             "fullName": this.getFullName(),
             "companyName": this.getCompanyName(),
+            "enableTwoFactorAuthentication": this.getEnableTwoFactorAuthentication(),
+            "twoFactorAuthenticationSetting": (_a = this.getTwoFactorAuthenticationSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "status": this.getStatus(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

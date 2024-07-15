@@ -19,6 +19,9 @@ import SignInResult from "./SignInResult"
 import ForgetResult from "./ForgetResult"
 import IssuePasswordResult from "./IssuePasswordResult"
 import UpdateAccountResult from "./UpdateAccountResult"
+import EnableMfaResult from "./EnableMfaResult"
+import ChallengeMfaResult from "./ChallengeMfaResult"
+import DisableMfaResult from "./DisableMfaResult"
 import DeleteAccountResult from "./DeleteAccountResult"
 import DescribeProjectsResult from "./DescribeProjectsResult"
 import CreateProjectResult from "./CreateProjectResult"
@@ -61,6 +64,9 @@ export {
     ForgetResult,
     IssuePasswordResult,
     UpdateAccountResult,
+    EnableMfaResult,
+    ChallengeMfaResult,
+    DisableMfaResult,
     DeleteAccountResult,
     DescribeProjectsResult,
     CreateProjectResult,

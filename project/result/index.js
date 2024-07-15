@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetImportErrorLogResult = exports.DescribeImportErrorLogsResult = exports.ImportUserDataResult = exports.PrepareImportUserDataResult = exports.WaitImportUserDataResult = exports.GetImportProgressResult = exports.DescribeImportProgressesResult = exports.CleanUserDataResult = exports.WaitCleanUserDataResult = exports.GetCleanProgressResult = exports.DescribeCleanProgressesResult = exports.GetDumpUserDataResult = exports.DumpUserDataResult = exports.ArchiveDumpUserDataResult = exports.WaitDumpUserDataResult = exports.GetDumpProgressResult = exports.DescribeDumpProgressesResult = exports.DescribeBillingsResult = exports.DescribeReceiptsResult = exports.DeleteBillingMethodResult = exports.UpdateBillingMethodResult = exports.GetBillingMethodResult = exports.CreateBillingMethodResult = exports.DescribeBillingMethodsResult = exports.DeleteProjectResult = exports.WaitActivateRegionResult = exports.ActivateRegionResult = exports.UpdateProjectResult = exports.GetProjectTokenByIdentifierResult = exports.GetProjectTokenResult = exports.GetProjectResult = exports.CreateProjectResult = exports.DescribeProjectsResult = exports.DeleteAccountResult = exports.UpdateAccountResult = exports.IssuePasswordResult = exports.ForgetResult = exports.SignInResult = exports.VerifyResult = exports.CreateAccountResult = void 0;
+exports.GetImportErrorLogResult = exports.DescribeImportErrorLogsResult = exports.ImportUserDataResult = exports.PrepareImportUserDataResult = exports.WaitImportUserDataResult = exports.GetImportProgressResult = exports.DescribeImportProgressesResult = exports.CleanUserDataResult = exports.WaitCleanUserDataResult = exports.GetCleanProgressResult = exports.DescribeCleanProgressesResult = exports.GetDumpUserDataResult = exports.DumpUserDataResult = exports.ArchiveDumpUserDataResult = exports.WaitDumpUserDataResult = exports.GetDumpProgressResult = exports.DescribeDumpProgressesResult = exports.DescribeBillingsResult = exports.DescribeReceiptsResult = exports.DeleteBillingMethodResult = exports.UpdateBillingMethodResult = exports.GetBillingMethodResult = exports.CreateBillingMethodResult = exports.DescribeBillingMethodsResult = exports.DeleteProjectResult = exports.WaitActivateRegionResult = exports.ActivateRegionResult = exports.UpdateProjectResult = exports.GetProjectTokenByIdentifierResult = exports.GetProjectTokenResult = exports.GetProjectResult = exports.CreateProjectResult = exports.DescribeProjectsResult = exports.DeleteAccountResult = exports.DisableMfaResult = exports.ChallengeMfaResult = exports.EnableMfaResult = exports.UpdateAccountResult = exports.IssuePasswordResult = exports.ForgetResult = exports.SignInResult = exports.VerifyResult = exports.CreateAccountResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,6 +29,12 @@ var IssuePasswordResult_1 = tslib_1.__importDefault(require("./IssuePasswordResu
 exports.IssuePasswordResult = IssuePasswordResult_1.default;
 var UpdateAccountResult_1 = tslib_1.__importDefault(require("./UpdateAccountResult"));
 exports.UpdateAccountResult = UpdateAccountResult_1.default;
+var EnableMfaResult_1 = tslib_1.__importDefault(require("./EnableMfaResult"));
+exports.EnableMfaResult = EnableMfaResult_1.default;
+var ChallengeMfaResult_1 = tslib_1.__importDefault(require("./ChallengeMfaResult"));
+exports.ChallengeMfaResult = ChallengeMfaResult_1.default;
+var DisableMfaResult_1 = tslib_1.__importDefault(require("./DisableMfaResult"));
+exports.DisableMfaResult = DisableMfaResult_1.default;
 var DeleteAccountResult_1 = tslib_1.__importDefault(require("./DeleteAccountResult"));
 exports.DeleteAccountResult = DeleteAccountResult_1.default;
 var DescribeProjectsResult_1 = tslib_1.__importDefault(require("./DescribeProjectsResult"));

@@ -82,7 +82,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ProjectRestClient.prototype.signIn = function (request) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/signIn')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
@@ -94,6 +94,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
             'email': (_b = request.getEmail()) !== null && _b !== void 0 ? _b : null,
             'password': (_c = request.getPassword()) !== null && _c !== void 0 ? _c : null,
+            'otp': (_d = request.getOtp()) !== null && _d !== void 0 ? _d : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -189,6 +190,81 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
             else {
                 throw [];
             }
+        });
+    };
+    Gs2ProjectRestClient.prototype.enableMfa = function (request) {
+        var _a, _b;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/mfa')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'accountToken': (_b = request.getAccountToken()) !== null && _b !== void 0 ? _b : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.EnableMfaResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2ProjectRestClient.prototype.challengeMfa = function (request) {
+        var _a, _b, _c;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/mfa/challenge')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'accountToken': (_b = request.getAccountToken()) !== null && _b !== void 0 ? _b : null,
+            'passcode': (_c = request.getPasscode()) !== null && _c !== void 0 ? _c : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.ChallengeMfaResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2ProjectRestClient.prototype.disableMfa = function (request) {
+        var _a, _b;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account/mfa')
+            .replace('{service}', 'project')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'accountToken': String((_b = request.getAccountToken()) !== null && _b !== void 0 ? _b : null),
+        };
+        return axios_1.default.delete(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DisableMfaResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
         });
     };
     Gs2ProjectRestClient.prototype.deleteAccount = function (request) {

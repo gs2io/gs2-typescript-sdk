@@ -1,10 +1,13 @@
 import IModel from '../../core/interface/IModel';
+import TwoFactorAuthenticationSetting from './TwoFactorAuthenticationSetting';
 export default class Account implements IModel {
     private accountId;
     private name;
     private email;
     private fullName;
     private companyName;
+    private enableTwoFactorAuthentication;
+    private twoFactorAuthenticationSetting;
     private status;
     private createdAt;
     private updatedAt;
@@ -26,6 +29,12 @@ export default class Account implements IModel {
     getCompanyName(): string | null;
     setCompanyName(companyName: string | null): this;
     withCompanyName(companyName: string | null): this;
+    getEnableTwoFactorAuthentication(): string | null;
+    setEnableTwoFactorAuthentication(enableTwoFactorAuthentication: string | null): this;
+    withEnableTwoFactorAuthentication(enableTwoFactorAuthentication: string | null): this;
+    getTwoFactorAuthenticationSetting(): TwoFactorAuthenticationSetting | null;
+    setTwoFactorAuthenticationSetting(twoFactorAuthenticationSetting: TwoFactorAuthenticationSetting | null): this;
+    withTwoFactorAuthenticationSetting(twoFactorAuthenticationSetting: TwoFactorAuthenticationSetting | null): this;
     getStatus(): string | null;
     setStatus(status: string | null): this;
     withStatus(status: string | null): this;

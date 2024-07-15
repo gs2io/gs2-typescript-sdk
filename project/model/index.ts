@@ -19,6 +19,7 @@ import Gs2Region from "./Gs2Region"
 import BillingMethod from "./BillingMethod"
 import Receipt from "./Receipt"
 import Billing from "./Billing"
+import TwoFactorAuthenticationSetting from "./TwoFactorAuthenticationSetting"
 import DumpProgress from "./DumpProgress"
 import CleanProgress from "./CleanProgress"
 import ImportProgress from "./ImportProgress"
@@ -31,6 +32,7 @@ export {
     BillingMethod,
     Receipt,
     Billing,
+    TwoFactorAuthenticationSetting,
     DumpProgress,
     CleanProgress,
     ImportProgress,

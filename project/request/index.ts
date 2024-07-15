@@ -19,6 +19,9 @@ import SignInRequest from "./SignInRequest"
 import ForgetRequest from "./ForgetRequest"
 import IssuePasswordRequest from "./IssuePasswordRequest"
 import UpdateAccountRequest from "./UpdateAccountRequest"
+import EnableMfaRequest from "./EnableMfaRequest"
+import ChallengeMfaRequest from "./ChallengeMfaRequest"
+import DisableMfaRequest from "./DisableMfaRequest"
 import DeleteAccountRequest from "./DeleteAccountRequest"
 import DescribeProjectsRequest from "./DescribeProjectsRequest"
 import CreateProjectRequest from "./CreateProjectRequest"
@@ -61,6 +64,9 @@ export {
     ForgetRequest,
     IssuePasswordRequest,
     UpdateAccountRequest,
+    EnableMfaRequest,
+    ChallengeMfaRequest,
+    DisableMfaRequest,
     DeleteAccountRequest,
     DescribeProjectsRequest,
     CreateProjectRequest,
