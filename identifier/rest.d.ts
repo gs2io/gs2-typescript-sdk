@@ -22,6 +22,9 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
     describePasswords(request: Request.DescribePasswordsRequest): Promise<Result.DescribePasswordsResult>;
     createPassword(request: Request.CreatePasswordRequest): Promise<Result.CreatePasswordResult>;
     getPassword(request: Request.GetPasswordRequest): Promise<Result.GetPasswordResult>;
+    enableMfa(request: Request.EnableMfaRequest): Promise<Result.EnableMfaResult>;
+    challengeMfa(request: Request.ChallengeMfaRequest): Promise<Result.ChallengeMfaResult>;
+    disableMfa(request: Request.DisableMfaRequest): Promise<Result.DisableMfaResult>;
     deletePassword(request: Request.DeletePasswordRequest): Promise<Result.DeletePasswordResult>;
     getHasSecurityPolicy(request: Request.GetHasSecurityPolicyRequest): Promise<Result.GetHasSecurityPolicyResult>;
     attachSecurityPolicy(request: Request.AttachSecurityPolicyRequest): Promise<Result.AttachSecurityPolicyResult>;

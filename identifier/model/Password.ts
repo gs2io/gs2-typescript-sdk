@@ -15,12 +15,15 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import TwoFactorAuthenticationSetting from './TwoFactorAuthenticationSetting';
 const grnFormat: string = "grn:gs2::{ownerId}:identifier:user:{userName}";
 
 export default class Password implements IModel {
     private passwordId: string|null = null;
     private userId: string|null = null;
     private userName: string|null = null;
+    private enableTwoFactorAuthentication: string|null = null;
+    private twoFactorAuthenticationSetting: TwoFactorAuthenticationSetting|null = null;
     private createdAt: number|null = null;
     private revision: number|null = null;
 
@@ -97,6 +100,28 @@ export default class Password implements IModel {
         this.userName = userName;
         return this;
     }
+    public getEnableTwoFactorAuthentication(): string|null {
+        return this.enableTwoFactorAuthentication;
+    }
+    public setEnableTwoFactorAuthentication(enableTwoFactorAuthentication: string|null) {
+        this.enableTwoFactorAuthentication = enableTwoFactorAuthentication;
+        return this;
+    }
+    public withEnableTwoFactorAuthentication(enableTwoFactorAuthentication: string|null): this {
+        this.enableTwoFactorAuthentication = enableTwoFactorAuthentication;
+        return this;
+    }
+    public getTwoFactorAuthenticationSetting(): TwoFactorAuthenticationSetting|null {
+        return this.twoFactorAuthenticationSetting;
+    }
+    public setTwoFactorAuthenticationSetting(twoFactorAuthenticationSetting: TwoFactorAuthenticationSetting|null) {
+        this.twoFactorAuthenticationSetting = twoFactorAuthenticationSetting;
+        return this;
+    }
+    public withTwoFactorAuthenticationSetting(twoFactorAuthenticationSetting: TwoFactorAuthenticationSetting|null): this {
+        this.twoFactorAuthenticationSetting = twoFactorAuthenticationSetting;
+        return this;
+    }
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -128,6 +153,8 @@ export default class Password implements IModel {
             .withPasswordId(data["passwordId"])
             .withUserId(data["userId"])
             .withUserName(data["userName"])
+            .withEnableTwoFactorAuthentication(data["enableTwoFactorAuthentication"])
+            .withTwoFactorAuthenticationSetting(TwoFactorAuthenticationSetting.fromDict(data["twoFactorAuthenticationSetting"]))
             .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     }
@@ -137,6 +164,8 @@ export default class Password implements IModel {
             "passwordId": this.getPasswordId(),
             "userId": this.getUserId(),
             "userName": this.getUserName(),
+            "enableTwoFactorAuthentication": this.getEnableTwoFactorAuthentication(),
+            "twoFactorAuthenticationSetting": this.getTwoFactorAuthenticationSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };

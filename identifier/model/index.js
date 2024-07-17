@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProjectToken = exports.AttachSecurityPolicy = exports.Password = exports.Identifier = exports.SecurityPolicy = exports.User = void 0;
+exports.TwoFactorAuthenticationSetting = exports.ProjectToken = exports.AttachSecurityPolicy = exports.Password = exports.Identifier = exports.SecurityPolicy = exports.User = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,4 +29,6 @@ var AttachSecurityPolicy_1 = tslib_1.__importDefault(require("./AttachSecurityPo
 exports.AttachSecurityPolicy = AttachSecurityPolicy_1.default;
 var ProjectToken_1 = tslib_1.__importDefault(require("./ProjectToken"));
 exports.ProjectToken = ProjectToken_1.default;
+var TwoFactorAuthenticationSetting_1 = tslib_1.__importDefault(require("./TwoFactorAuthenticationSetting"));
+exports.TwoFactorAuthenticationSetting = TwoFactorAuthenticationSetting_1.default;
 //# sourceMappingURL=index.js.map

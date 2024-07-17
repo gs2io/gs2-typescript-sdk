@@ -4,4 +4,5 @@ import Identifier from "./Identifier";
 import Password from "./Password";
 import AttachSecurityPolicy from "./AttachSecurityPolicy";
 import ProjectToken from "./ProjectToken";
-export { User, SecurityPolicy, Identifier, Password, AttachSecurityPolicy, ProjectToken, };
+import TwoFactorAuthenticationSetting from "./TwoFactorAuthenticationSetting";
+export { User, SecurityPolicy, Identifier, Password, AttachSecurityPolicy, ProjectToken, TwoFactorAuthenticationSetting, };

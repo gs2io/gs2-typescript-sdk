@@ -31,6 +31,9 @@ import DeleteIdentifierRequest from "./DeleteIdentifierRequest"
 import DescribePasswordsRequest from "./DescribePasswordsRequest"
 import CreatePasswordRequest from "./CreatePasswordRequest"
 import GetPasswordRequest from "./GetPasswordRequest"
+import EnableMfaRequest from "./EnableMfaRequest"
+import ChallengeMfaRequest from "./ChallengeMfaRequest"
+import DisableMfaRequest from "./DisableMfaRequest"
 import DeletePasswordRequest from "./DeletePasswordRequest"
 import GetHasSecurityPolicyRequest from "./GetHasSecurityPolicyRequest"
 import AttachSecurityPolicyRequest from "./AttachSecurityPolicyRequest"
@@ -57,6 +60,9 @@ export {
     DescribePasswordsRequest,
     CreatePasswordRequest,
     GetPasswordRequest,
+    EnableMfaRequest,
+    ChallengeMfaRequest,
+    DisableMfaRequest,
     DeletePasswordRequest,
     GetHasSecurityPolicyRequest,
     AttachSecurityPolicyRequest,

@@ -19,6 +19,7 @@ import Identifier from "./Identifier"
 import Password from "./Password"
 import AttachSecurityPolicy from "./AttachSecurityPolicy"
 import ProjectToken from "./ProjectToken"
+import TwoFactorAuthenticationSetting from "./TwoFactorAuthenticationSetting"
 
 export {
     User,
@@ -27,4 +28,5 @@ export {
     Password,
     AttachSecurityPolicy,
     ProjectToken,
+    TwoFactorAuthenticationSetting,
 };

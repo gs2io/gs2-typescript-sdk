@@ -18,13 +18,11 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Identifier from '../model'
 
-export default class LoginByUserRequest implements IRequest {
+export default class DisableMfaRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private userName: string|null = null;
-    private password: string|null = null;
-    private otp: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -64,41 +62,15 @@ export default class LoginByUserRequest implements IRequest {
         this.userName = userName;
         return this;
     }
-    public getPassword(): string|null {
-        return this.password;
-    }
-    public setPassword(password: string|null) {
-        this.password = password;
-        return this;
-    }
-    public withPassword(password: string|null): this {
-        this.password = password;
-        return this;
-    }
-    public getOtp(): string|null {
-        return this.otp;
-    }
-    public setOtp(otp: string|null) {
-        this.otp = otp;
-        return this;
-    }
-    public withOtp(otp: string|null): this {
-        this.otp = otp;
-        return this;
-    }
 
-    public static fromDict(data: {[key: string]: any}): LoginByUserRequest {
-        return new LoginByUserRequest()
-            .withUserName(data["userName"])
-            .withPassword(data["password"])
-            .withOtp(data["otp"]);
+    public static fromDict(data: {[key: string]: any}): DisableMfaRequest {
+        return new DisableMfaRequest()
+            .withUserName(data["userName"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "userName": this.getUserName(),
-            "password": this.getPassword(),
-            "otp": this.getOtp(),
         };
     }
 }

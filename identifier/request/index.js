@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LoginByUserRequest = exports.LoginRequest = exports.DetachSecurityPolicyRequest = exports.AttachSecurityPolicyRequest = exports.GetHasSecurityPolicyRequest = exports.DeletePasswordRequest = exports.GetPasswordRequest = exports.CreatePasswordRequest = exports.DescribePasswordsRequest = exports.DeleteIdentifierRequest = exports.GetIdentifierRequest = exports.CreateIdentifierRequest = exports.DescribeIdentifiersRequest = exports.DeleteSecurityPolicyRequest = exports.GetSecurityPolicyRequest = exports.UpdateSecurityPolicyRequest = exports.CreateSecurityPolicyRequest = exports.DescribeCommonSecurityPoliciesRequest = exports.DescribeSecurityPoliciesRequest = exports.DeleteUserRequest = exports.GetUserRequest = exports.UpdateUserRequest = exports.CreateUserRequest = exports.DescribeUsersRequest = void 0;
+exports.LoginByUserRequest = exports.LoginRequest = exports.DetachSecurityPolicyRequest = exports.AttachSecurityPolicyRequest = exports.GetHasSecurityPolicyRequest = exports.DeletePasswordRequest = exports.DisableMfaRequest = exports.ChallengeMfaRequest = exports.EnableMfaRequest = exports.GetPasswordRequest = exports.CreatePasswordRequest = exports.DescribePasswordsRequest = exports.DeleteIdentifierRequest = exports.GetIdentifierRequest = exports.CreateIdentifierRequest = exports.DescribeIdentifiersRequest = exports.DeleteSecurityPolicyRequest = exports.GetSecurityPolicyRequest = exports.UpdateSecurityPolicyRequest = exports.CreateSecurityPolicyRequest = exports.DescribeCommonSecurityPoliciesRequest = exports.DescribeSecurityPoliciesRequest = exports.DeleteUserRequest = exports.GetUserRequest = exports.UpdateUserRequest = exports.CreateUserRequest = exports.DescribeUsersRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -53,6 +53,12 @@ var CreatePasswordRequest_1 = tslib_1.__importDefault(require("./CreatePasswordR
 exports.CreatePasswordRequest = CreatePasswordRequest_1.default;
 var GetPasswordRequest_1 = tslib_1.__importDefault(require("./GetPasswordRequest"));
 exports.GetPasswordRequest = GetPasswordRequest_1.default;
+var EnableMfaRequest_1 = tslib_1.__importDefault(require("./EnableMfaRequest"));
+exports.EnableMfaRequest = EnableMfaRequest_1.default;
+var ChallengeMfaRequest_1 = tslib_1.__importDefault(require("./ChallengeMfaRequest"));
+exports.ChallengeMfaRequest = ChallengeMfaRequest_1.default;
+var DisableMfaRequest_1 = tslib_1.__importDefault(require("./DisableMfaRequest"));
+exports.DisableMfaRequest = DisableMfaRequest_1.default;
 var DeletePasswordRequest_1 = tslib_1.__importDefault(require("./DeletePasswordRequest"));
 exports.DeletePasswordRequest = DeletePasswordRequest_1.default;
 var GetHasSecurityPolicyRequest_1 = tslib_1.__importDefault(require("./GetHasSecurityPolicyRequest"));

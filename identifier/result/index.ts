@@ -31,6 +31,9 @@ import DeleteIdentifierResult from "./DeleteIdentifierResult"
 import DescribePasswordsResult from "./DescribePasswordsResult"
 import CreatePasswordResult from "./CreatePasswordResult"
 import GetPasswordResult from "./GetPasswordResult"
+import EnableMfaResult from "./EnableMfaResult"
+import ChallengeMfaResult from "./ChallengeMfaResult"
+import DisableMfaResult from "./DisableMfaResult"
 import DeletePasswordResult from "./DeletePasswordResult"
 import GetHasSecurityPolicyResult from "./GetHasSecurityPolicyResult"
 import AttachSecurityPolicyResult from "./AttachSecurityPolicyResult"
@@ -57,6 +60,9 @@ export {
     DescribePasswordsResult,
     CreatePasswordResult,
     GetPasswordResult,
+    EnableMfaResult,
+    ChallengeMfaResult,
+    DisableMfaResult,
     DeletePasswordResult,
     GetHasSecurityPolicyResult,
     AttachSecurityPolicyResult,

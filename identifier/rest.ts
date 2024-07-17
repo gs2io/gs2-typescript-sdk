@@ -535,6 +535,93 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public enableMfa(request: Request.EnableMfaRequest): Promise<Result.EnableMfaResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/mfa')
+            .replace('{service}', 'identifier')
+            .replace('{region}', this.session.region)
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.EnableMfaResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public challengeMfa(request: Request.ChallengeMfaRequest): Promise<Result.ChallengeMfaResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/mfa/challenge')
+            .replace('{service}', 'identifier')
+            .replace('{region}', this.session.region)
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'passcode': request.getPasscode() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ChallengeMfaResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public disableMfa(request: Request.DisableMfaRequest): Promise<Result.DisableMfaResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/mfa')
+            .replace('{service}', 'identifier')
+            .replace('{region}', this.session.region)
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DisableMfaResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
     public deletePassword(request: Request.DeletePasswordRequest): Promise<Result.DeletePasswordResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password/entity')
             .replace('{service}', 'identifier')
@@ -689,6 +776,7 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'userName': request.getUserName() ?? null,
             'password': request.getPassword() ?? null,
+            'otp': request.getOtp() ?? null,
         };
         return axios.post(
             url,

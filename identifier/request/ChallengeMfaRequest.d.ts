@@ -1,10 +1,9 @@
 import IRequest from '../../core/interface/IRequest';
-export default class LoginByUserRequest implements IRequest {
+export default class ChallengeMfaRequest implements IRequest {
     private requestId;
     private contextStack;
     private userName;
-    private password;
-    private otp;
+    private passcode;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -14,15 +13,12 @@ export default class LoginByUserRequest implements IRequest {
     getUserName(): string | null;
     setUserName(userName: string | null): this;
     withUserName(userName: string | null): this;
-    getPassword(): string | null;
-    setPassword(password: string | null): this;
-    withPassword(password: string | null): this;
-    getOtp(): string | null;
-    setOtp(otp: string | null): this;
-    withOtp(otp: string | null): this;
+    getPasscode(): string | null;
+    setPasscode(passcode: string | null): this;
+    withPasscode(passcode: string | null): this;
     static fromDict(data: {
         [key: string]: any;
-    }): LoginByUserRequest;
+    }): ChallengeMfaRequest;
     toDict(): {
         [key: string]: any;
     };

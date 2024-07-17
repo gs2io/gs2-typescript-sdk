@@ -21,6 +21,7 @@ var LoginByUserRequest = /** @class */ (function () {
         this.contextStack = null;
         this.userName = null;
         this.password = null;
+        this.otp = null;
     }
     LoginByUserRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -66,15 +67,28 @@ var LoginByUserRequest = /** @class */ (function () {
         this.password = password;
         return this;
     };
+    LoginByUserRequest.prototype.getOtp = function () {
+        return this.otp;
+    };
+    LoginByUserRequest.prototype.setOtp = function (otp) {
+        this.otp = otp;
+        return this;
+    };
+    LoginByUserRequest.prototype.withOtp = function (otp) {
+        this.otp = otp;
+        return this;
+    };
     LoginByUserRequest.fromDict = function (data) {
         return new LoginByUserRequest()
             .withUserName(data["userName"])
-            .withPassword(data["password"]);
+            .withPassword(data["password"])
+            .withOtp(data["otp"]);
     };
     LoginByUserRequest.prototype.toDict = function () {
         return {
             "userName": this.getUserName(),
             "password": this.getPassword(),
+            "otp": this.getOtp(),
         };
     };
     return LoginByUserRequest;

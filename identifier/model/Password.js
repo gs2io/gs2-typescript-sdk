@@ -15,12 +15,16 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var TwoFactorAuthenticationSetting_1 = tslib_1.__importDefault(require("./TwoFactorAuthenticationSetting"));
 var grnFormat = "grn:gs2::{ownerId}:identifier:user:{userName}";
 var Password = /** @class */ (function () {
     function Password() {
         this.passwordId = null;
         this.userId = null;
         this.userName = null;
+        this.enableTwoFactorAuthentication = null;
+        this.twoFactorAuthenticationSetting = null;
         this.createdAt = null;
         this.revision = null;
     }
@@ -89,6 +93,28 @@ var Password = /** @class */ (function () {
         this.userName = userName;
         return this;
     };
+    Password.prototype.getEnableTwoFactorAuthentication = function () {
+        return this.enableTwoFactorAuthentication;
+    };
+    Password.prototype.setEnableTwoFactorAuthentication = function (enableTwoFactorAuthentication) {
+        this.enableTwoFactorAuthentication = enableTwoFactorAuthentication;
+        return this;
+    };
+    Password.prototype.withEnableTwoFactorAuthentication = function (enableTwoFactorAuthentication) {
+        this.enableTwoFactorAuthentication = enableTwoFactorAuthentication;
+        return this;
+    };
+    Password.prototype.getTwoFactorAuthenticationSetting = function () {
+        return this.twoFactorAuthenticationSetting;
+    };
+    Password.prototype.setTwoFactorAuthenticationSetting = function (twoFactorAuthenticationSetting) {
+        this.twoFactorAuthenticationSetting = twoFactorAuthenticationSetting;
+        return this;
+    };
+    Password.prototype.withTwoFactorAuthenticationSetting = function (twoFactorAuthenticationSetting) {
+        this.twoFactorAuthenticationSetting = twoFactorAuthenticationSetting;
+        return this;
+    };
     Password.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -119,14 +145,19 @@ var Password = /** @class */ (function () {
             .withPasswordId(data["passwordId"])
             .withUserId(data["userId"])
             .withUserName(data["userName"])
+            .withEnableTwoFactorAuthentication(data["enableTwoFactorAuthentication"])
+            .withTwoFactorAuthenticationSetting(TwoFactorAuthenticationSetting_1.default.fromDict(data["twoFactorAuthenticationSetting"]))
             .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     };
     Password.prototype.toDict = function () {
+        var _a;
         return {
             "passwordId": this.getPasswordId(),
             "userId": this.getUserId(),
             "userName": this.getUserName(),
+            "enableTwoFactorAuthentication": this.getEnableTwoFactorAuthentication(),
+            "twoFactorAuthenticationSetting": (_a = this.getTwoFactorAuthenticationSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };
