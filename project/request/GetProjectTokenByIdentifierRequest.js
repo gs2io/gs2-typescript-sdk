@@ -23,6 +23,7 @@ var GetProjectTokenByIdentifierRequest = /** @class */ (function () {
         this.projectName = null;
         this.userName = null;
         this.password = null;
+        this.otp = null;
     }
     GetProjectTokenByIdentifierRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,12 +91,24 @@ var GetProjectTokenByIdentifierRequest = /** @class */ (function () {
         this.password = password;
         return this;
     };
+    GetProjectTokenByIdentifierRequest.prototype.getOtp = function () {
+        return this.otp;
+    };
+    GetProjectTokenByIdentifierRequest.prototype.setOtp = function (otp) {
+        this.otp = otp;
+        return this;
+    };
+    GetProjectTokenByIdentifierRequest.prototype.withOtp = function (otp) {
+        this.otp = otp;
+        return this;
+    };
     GetProjectTokenByIdentifierRequest.fromDict = function (data) {
         return new GetProjectTokenByIdentifierRequest()
             .withAccountName(data["accountName"])
             .withProjectName(data["projectName"])
             .withUserName(data["userName"])
-            .withPassword(data["password"]);
+            .withPassword(data["password"])
+            .withOtp(data["otp"]);
     };
     GetProjectTokenByIdentifierRequest.prototype.toDict = function () {
         return {
@@ -103,6 +116,7 @@ var GetProjectTokenByIdentifierRequest = /** @class */ (function () {
             "projectName": this.getProjectName(),
             "userName": this.getUserName(),
             "password": this.getPassword(),
+            "otp": this.getOtp(),
         };
     };
     return GetProjectTokenByIdentifierRequest;

@@ -470,6 +470,7 @@ export default class Gs2ProjectRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'password': request.getPassword() ?? null,
+            'otp': request.getOtp() ?? null,
         };
         return axios.post(
             url,

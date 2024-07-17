@@ -6,6 +6,7 @@ export default class GetProjectTokenByIdentifierRequest implements IRequest {
     private projectName;
     private userName;
     private password;
+    private otp;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class GetProjectTokenByIdentifierRequest implements IRequest {
     getPassword(): string | null;
     setPassword(password: string | null): this;
     withPassword(password: string | null): this;
+    getOtp(): string | null;
+    setOtp(otp: string | null): this;
+    withOtp(otp: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GetProjectTokenByIdentifierRequest;

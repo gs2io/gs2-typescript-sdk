@@ -26,6 +26,7 @@ export default class GetProjectTokenByIdentifierRequest implements IRequest {
     private projectName: string|null = null;
     private userName: string|null = null;
     private password: string|null = null;
+    private otp: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -98,13 +99,25 @@ export default class GetProjectTokenByIdentifierRequest implements IRequest {
         this.password = password;
         return this;
     }
+    public getOtp(): string|null {
+        return this.otp;
+    }
+    public setOtp(otp: string|null) {
+        this.otp = otp;
+        return this;
+    }
+    public withOtp(otp: string|null): this {
+        this.otp = otp;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): GetProjectTokenByIdentifierRequest {
         return new GetProjectTokenByIdentifierRequest()
             .withAccountName(data["accountName"])
             .withProjectName(data["projectName"])
             .withUserName(data["userName"])
-            .withPassword(data["password"]);
+            .withPassword(data["password"])
+            .withOtp(data["otp"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -113,6 +126,7 @@ export default class GetProjectTokenByIdentifierRequest implements IRequest {
             "projectName": this.getProjectName(),
             "userName": this.getUserName(),
             "password": this.getPassword(),
+            "otp": this.getOtp(),
         };
     }
 }
