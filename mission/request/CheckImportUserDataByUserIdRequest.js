@@ -22,7 +22,6 @@ var CheckImportUserDataByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.uploadToken = null;
         this.timeOffsetToken = null;
-        this.duplicationAvoider = null;
     }
     CheckImportUserDataByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -77,17 +76,6 @@ var CheckImportUserDataByUserIdRequest = /** @class */ (function () {
     };
     CheckImportUserDataByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
         this.timeOffsetToken = timeOffsetToken;
-        return this;
-    };
-    CheckImportUserDataByUserIdRequest.prototype.getDuplicationAvoider = function () {
-        return this.duplicationAvoider;
-    };
-    CheckImportUserDataByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
-        return this;
-    };
-    CheckImportUserDataByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     CheckImportUserDataByUserIdRequest.fromDict = function (data) {

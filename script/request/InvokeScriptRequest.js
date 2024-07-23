@@ -26,7 +26,6 @@ var InvokeScriptRequest = /** @class */ (function () {
         this.args = null;
         this.randomStatus = null;
         this.timeOffsetToken = null;
-        this.duplicationAvoider = null;
     }
     InvokeScriptRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -103,17 +102,6 @@ var InvokeScriptRequest = /** @class */ (function () {
     };
     InvokeScriptRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
         this.timeOffsetToken = timeOffsetToken;
-        return this;
-    };
-    InvokeScriptRequest.prototype.getDuplicationAvoider = function () {
-        return this.duplicationAvoider;
-    };
-    InvokeScriptRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
-        return this;
-    };
-    InvokeScriptRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     InvokeScriptRequest.fromDict = function (data) {

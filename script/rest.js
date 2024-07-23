@@ -359,7 +359,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ScriptRestClient.prototype.invokeScript = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/invoke')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region);
@@ -367,18 +367,15 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
-        if (request.getDuplicationAvoider()) {
-            headers['X-GS2-DUPLICATION-AVOIDER'] = (_a = request.getDuplicationAvoider()) !== null && _a !== void 0 ? _a : null;
-        }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_b = request.getTimeOffsetToken()) !== null && _b !== void 0 ? _b : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_a = request.getTimeOffsetToken()) !== null && _a !== void 0 ? _a : null;
         }
         var body = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'scriptId': (_d = request.getScriptId()) !== null && _d !== void 0 ? _d : null,
-            'userId': (_e = request.getUserId()) !== null && _e !== void 0 ? _e : null,
-            'args': (_f = request.getArgs()) !== null && _f !== void 0 ? _f : null,
-            'randomStatus': (_h = (_g = request.getRandomStatus()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'contextStack': (_b = request.getContextStack()) !== null && _b !== void 0 ? _b : null,
+            'scriptId': (_c = request.getScriptId()) !== null && _c !== void 0 ? _c : null,
+            'userId': (_d = request.getUserId()) !== null && _d !== void 0 ? _d : null,
+            'args': (_e = request.getArgs()) !== null && _e !== void 0 ? _e : null,
+            'randomStatus': (_g = (_f = request.getRandomStatus()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

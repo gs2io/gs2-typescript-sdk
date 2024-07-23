@@ -21,7 +21,6 @@ var DumpUserDataByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.userId = null;
         this.timeOffsetToken = null;
-        this.duplicationAvoider = null;
     }
     DumpUserDataByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -65,17 +64,6 @@ var DumpUserDataByUserIdRequest = /** @class */ (function () {
     };
     DumpUserDataByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
         this.timeOffsetToken = timeOffsetToken;
-        return this;
-    };
-    DumpUserDataByUserIdRequest.prototype.getDuplicationAvoider = function () {
-        return this.duplicationAvoider;
-    };
-    DumpUserDataByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
-        return this;
-    };
-    DumpUserDataByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DumpUserDataByUserIdRequest.fromDict = function (data) {

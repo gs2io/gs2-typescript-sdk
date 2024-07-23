@@ -21,7 +21,6 @@ var PrepareImportUserDataByUserIdRequest = /** @class */ (function () {
         this.contextStack = null;
         this.userId = null;
         this.timeOffsetToken = null;
-        this.duplicationAvoider = null;
     }
     PrepareImportUserDataByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -65,17 +64,6 @@ var PrepareImportUserDataByUserIdRequest = /** @class */ (function () {
     };
     PrepareImportUserDataByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
         this.timeOffsetToken = timeOffsetToken;
-        return this;
-    };
-    PrepareImportUserDataByUserIdRequest.prototype.getDuplicationAvoider = function () {
-        return this.duplicationAvoider;
-    };
-    PrepareImportUserDataByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
-        return this;
-    };
-    PrepareImportUserDataByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     PrepareImportUserDataByUserIdRequest.fromDict = function (data) {
