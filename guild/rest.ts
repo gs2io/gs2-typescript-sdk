@@ -2555,4 +2555,275 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
             throw JSON.parse(error.response.data.message);
         });
     }
+
+    public describeIgnoreUsers(request: Request.DescribeIgnoreUsersRequest): Promise<Result.DescribeIgnoreUsersResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{guildModelName}', String(request.getGuildModelName() ?? 'null') === "" ? "null" : String(request.getGuildModelName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeIgnoreUsersResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeIgnoreUsersByGuildName(request: Request.DescribeIgnoreUsersByGuildNameRequest): Promise<Result.DescribeIgnoreUsersByGuildNameResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{guildModelName}', String(request.getGuildModelName() ?? 'null') === "" ? "null" : String(request.getGuildModelName() ?? 'null'))
+            .replace('{guildName}', String(request.getGuildName() ?? 'null') === "" ? "null" : String(request.getGuildName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeIgnoreUsersByGuildNameResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getIgnoreUser(request: Request.GetIgnoreUserRequest): Promise<Result.GetIgnoreUserResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user/{userId}')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{guildModelName}', String(request.getGuildModelName() ?? 'null') === "" ? "null" : String(request.getGuildModelName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetIgnoreUserResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getIgnoreUserByGuildName(request: Request.GetIgnoreUserByGuildNameRequest): Promise<Result.GetIgnoreUserByGuildNameResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user/{userId}')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{guildModelName}', String(request.getGuildModelName() ?? 'null') === "" ? "null" : String(request.getGuildModelName() ?? 'null'))
+            .replace('{guildName}', String(request.getGuildName() ?? 'null') === "" ? "null" : String(request.getGuildName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetIgnoreUserByGuildNameResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public addIgnoreUser(request: Request.AddIgnoreUserRequest): Promise<Result.AddIgnoreUserResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user/{userId}')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{guildModelName}', String(request.getGuildModelName() ?? 'null') === "" ? "null" : String(request.getGuildModelName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.AddIgnoreUserResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public addIgnoreUserByGuildName(request: Request.AddIgnoreUserByGuildNameRequest): Promise<Result.AddIgnoreUserByGuildNameResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user/{userId}')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{guildModelName}', String(request.getGuildModelName() ?? 'null') === "" ? "null" : String(request.getGuildModelName() ?? 'null'))
+            .replace('{guildName}', String(request.getGuildName() ?? 'null') === "" ? "null" : String(request.getGuildName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.AddIgnoreUserByGuildNameResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public deleteIgnoreUser(request: Request.DeleteIgnoreUserRequest): Promise<Result.DeleteIgnoreUserResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/ignore/user/{userId}')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{guildModelName}', String(request.getGuildModelName() ?? 'null') === "" ? "null" : String(request.getGuildModelName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteIgnoreUserResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public deleteIgnoreUserByGuildName(request: Request.DeleteIgnoreUserByGuildNameRequest): Promise<Result.DeleteIgnoreUserByGuildNameResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/ignore/user/{userId}')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{guildModelName}', String(request.getGuildModelName() ?? 'null') === "" ? "null" : String(request.getGuildModelName() ?? 'null'))
+            .replace('{guildName}', String(request.getGuildName() ?? 'null') === "" ? "null" : String(request.getGuildName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteIgnoreUserByGuildNameResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
 }

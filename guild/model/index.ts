@@ -25,6 +25,7 @@ import RoleModel from "./RoleModel"
 import Member from "./Member"
 import ReceiveMemberRequest from "./ReceiveMemberRequest"
 import SendMemberRequest from "./SendMemberRequest"
+import IgnoreUser from "./IgnoreUser"
 import TransactionSetting from "./TransactionSetting"
 import NotificationSetting from "./NotificationSetting"
 import ScriptSetting from "./ScriptSetting"
@@ -44,6 +45,7 @@ export {
     Member,
     ReceiveMemberRequest,
     SendMemberRequest,
+    IgnoreUser,
     TransactionSetting,
     NotificationSetting,
     ScriptSetting,

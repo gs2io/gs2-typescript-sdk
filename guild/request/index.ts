@@ -87,6 +87,14 @@ import SendRequestRequest from "./SendRequestRequest"
 import SendRequestByUserIdRequest from "./SendRequestByUserIdRequest"
 import DeleteRequestRequest from "./DeleteRequestRequest"
 import DeleteRequestByUserIdRequest from "./DeleteRequestByUserIdRequest"
+import DescribeIgnoreUsersRequest from "./DescribeIgnoreUsersRequest"
+import DescribeIgnoreUsersByGuildNameRequest from "./DescribeIgnoreUsersByGuildNameRequest"
+import GetIgnoreUserRequest from "./GetIgnoreUserRequest"
+import GetIgnoreUserByGuildNameRequest from "./GetIgnoreUserByGuildNameRequest"
+import AddIgnoreUserRequest from "./AddIgnoreUserRequest"
+import AddIgnoreUserByGuildNameRequest from "./AddIgnoreUserByGuildNameRequest"
+import DeleteIgnoreUserRequest from "./DeleteIgnoreUserRequest"
+import DeleteIgnoreUserByGuildNameRequest from "./DeleteIgnoreUserByGuildNameRequest"
 
 export {
     DescribeNamespacesRequest,
@@ -163,4 +171,12 @@ export {
     SendRequestByUserIdRequest,
     DeleteRequestRequest,
     DeleteRequestByUserIdRequest,
+    DescribeIgnoreUsersRequest,
+    DescribeIgnoreUsersByGuildNameRequest,
+    GetIgnoreUserRequest,
+    GetIgnoreUserByGuildNameRequest,
+    AddIgnoreUserRequest,
+    AddIgnoreUserByGuildNameRequest,
+    DeleteIgnoreUserRequest,
+    DeleteIgnoreUserByGuildNameRequest,
 };

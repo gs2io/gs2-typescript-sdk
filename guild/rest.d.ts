@@ -78,4 +78,12 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     sendRequestByUserId(request: Request.SendRequestByUserIdRequest): Promise<Result.SendRequestByUserIdResult>;
     deleteRequest(request: Request.DeleteRequestRequest): Promise<Result.DeleteRequestResult>;
     deleteRequestByUserId(request: Request.DeleteRequestByUserIdRequest): Promise<Result.DeleteRequestByUserIdResult>;
+    describeIgnoreUsers(request: Request.DescribeIgnoreUsersRequest): Promise<Result.DescribeIgnoreUsersResult>;
+    describeIgnoreUsersByGuildName(request: Request.DescribeIgnoreUsersByGuildNameRequest): Promise<Result.DescribeIgnoreUsersByGuildNameResult>;
+    getIgnoreUser(request: Request.GetIgnoreUserRequest): Promise<Result.GetIgnoreUserResult>;
+    getIgnoreUserByGuildName(request: Request.GetIgnoreUserByGuildNameRequest): Promise<Result.GetIgnoreUserByGuildNameResult>;
+    addIgnoreUser(request: Request.AddIgnoreUserRequest): Promise<Result.AddIgnoreUserResult>;
+    addIgnoreUserByGuildName(request: Request.AddIgnoreUserByGuildNameRequest): Promise<Result.AddIgnoreUserByGuildNameResult>;
+    deleteIgnoreUser(request: Request.DeleteIgnoreUserRequest): Promise<Result.DeleteIgnoreUserResult>;
+    deleteIgnoreUserByGuildName(request: Request.DeleteIgnoreUserByGuildNameRequest): Promise<Result.DeleteIgnoreUserByGuildNameResult>;
 }

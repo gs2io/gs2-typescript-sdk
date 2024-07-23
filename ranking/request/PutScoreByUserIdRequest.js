@@ -25,7 +25,6 @@ var PutScoreByUserIdRequest = /** @class */ (function () {
         this.score = null;
         this.metadata = null;
         this.timeOffsetToken = null;
-        this.duplicationAvoider = null;
     }
     PutScoreByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -113,17 +112,6 @@ var PutScoreByUserIdRequest = /** @class */ (function () {
     };
     PutScoreByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
         this.timeOffsetToken = timeOffsetToken;
-        return this;
-    };
-    PutScoreByUserIdRequest.prototype.getDuplicationAvoider = function () {
-        return this.duplicationAvoider;
-    };
-    PutScoreByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
-        return this;
-    };
-    PutScoreByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     PutScoreByUserIdRequest.fromDict = function (data) {

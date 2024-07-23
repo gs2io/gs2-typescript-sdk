@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GitHubCheckoutSetting = exports.LogSetting = exports.ScriptSetting = exports.NotificationSetting = exports.TransactionSetting = exports.SendMemberRequest = exports.ReceiveMemberRequest = exports.Member = exports.RoleModel = exports.CurrentGuildMaster = exports.JoinedGuild = exports.Guild = exports.SendBox = exports.Inbox = exports.GuildModel = exports.GuildModelMaster = exports.Namespace = void 0;
+exports.GitHubCheckoutSetting = exports.LogSetting = exports.ScriptSetting = exports.NotificationSetting = exports.TransactionSetting = exports.IgnoreUser = exports.SendMemberRequest = exports.ReceiveMemberRequest = exports.Member = exports.RoleModel = exports.CurrentGuildMaster = exports.JoinedGuild = exports.Guild = exports.SendBox = exports.Inbox = exports.GuildModel = exports.GuildModelMaster = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -41,6 +41,8 @@ var ReceiveMemberRequest_1 = tslib_1.__importDefault(require("./ReceiveMemberReq
 exports.ReceiveMemberRequest = ReceiveMemberRequest_1.default;
 var SendMemberRequest_1 = tslib_1.__importDefault(require("./SendMemberRequest"));
 exports.SendMemberRequest = SendMemberRequest_1.default;
+var IgnoreUser_1 = tslib_1.__importDefault(require("./IgnoreUser"));
+exports.IgnoreUser = IgnoreUser_1.default;
 var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
 exports.TransactionSetting = TransactionSetting_1.default;
 var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
