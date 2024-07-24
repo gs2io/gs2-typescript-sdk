@@ -6,6 +6,7 @@ export default class GuildModel implements IModel {
     private metadata;
     private defaultMaximumMemberCount;
     private maximumMemberCount;
+    private inactivityPeriodDays;
     private roles;
     private guildMasterRole;
     private guildMemberDefaultRole;
@@ -31,6 +32,9 @@ export default class GuildModel implements IModel {
     getMaximumMemberCount(): number | null;
     setMaximumMemberCount(maximumMemberCount: number | null): this;
     withMaximumMemberCount(maximumMemberCount: number | null): this;
+    getInactivityPeriodDays(): number | null;
+    setInactivityPeriodDays(inactivityPeriodDays: number | null): this;
+    withInactivityPeriodDays(inactivityPeriodDays: number | null): this;
     getRoles(): RoleModel[] | null;
     setRoles(roles: RoleModel[] | null): this;
     withRoles(roles: RoleModel[] | null): this;

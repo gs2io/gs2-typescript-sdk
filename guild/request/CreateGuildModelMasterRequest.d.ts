@@ -9,6 +9,7 @@ export default class CreateGuildModelMasterRequest implements IRequest {
     private metadata;
     private defaultMaximumMemberCount;
     private maximumMemberCount;
+    private inactivityPeriodDays;
     private roles;
     private guildMasterRole;
     private guildMemberDefaultRole;
@@ -37,6 +38,9 @@ export default class CreateGuildModelMasterRequest implements IRequest {
     getMaximumMemberCount(): number | null;
     setMaximumMemberCount(maximumMemberCount: number | null): this;
     withMaximumMemberCount(maximumMemberCount: number | null): this;
+    getInactivityPeriodDays(): number | null;
+    setInactivityPeriodDays(inactivityPeriodDays: number | null): this;
+    withInactivityPeriodDays(inactivityPeriodDays: number | null): this;
     getRoles(): Gs2Guild.RoleModel[] | null;
     setRoles(roles: Gs2Guild.RoleModel[] | null): this;
     withRoles(roles: Gs2Guild.RoleModel[] | null): this;

@@ -72,6 +72,10 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
             'changeMemberNotification': request.getChangeMemberNotification()?.toDict() ?? null,
             'receiveRequestNotification': request.getReceiveRequestNotification()?.toDict() ?? null,
             'removeRequestNotification': request.getRemoveRequestNotification()?.toDict() ?? null,
+            'createGuildScript': request.getCreateGuildScript()?.toDict() ?? null,
+            'joinGuildScript': request.getJoinGuildScript()?.toDict() ?? null,
+            'leaveGuildScript': request.getLeaveGuildScript()?.toDict() ?? null,
+            'changeRoleScript': request.getChangeRoleScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.post(
@@ -161,6 +165,10 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
             'changeMemberNotification': request.getChangeMemberNotification()?.toDict() ?? null,
             'receiveRequestNotification': request.getReceiveRequestNotification()?.toDict() ?? null,
             'removeRequestNotification': request.getRemoveRequestNotification()?.toDict() ?? null,
+            'createGuildScript': request.getCreateGuildScript()?.toDict() ?? null,
+            'joinGuildScript': request.getJoinGuildScript()?.toDict() ?? null,
+            'leaveGuildScript': request.getLeaveGuildScript()?.toDict() ?? null,
+            'changeRoleScript': request.getChangeRoleScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.put(
@@ -472,6 +480,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
             'metadata': request.getMetadata() ?? null,
             'defaultMaximumMemberCount': request.getDefaultMaximumMemberCount() ?? null,
             'maximumMemberCount': request.getMaximumMemberCount() ?? null,
+            'inactivityPeriodDays': request.getInactivityPeriodDays() ?? null,
             'roles': request.getRoles()?.map((item) => item.toDict()) ?? null,
             'guildMasterRole': request.getGuildMasterRole() ?? null,
             'guildMemberDefaultRole': request.getGuildMemberDefaultRole() ?? null,
@@ -538,6 +547,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
             'metadata': request.getMetadata() ?? null,
             'defaultMaximumMemberCount': request.getDefaultMaximumMemberCount() ?? null,
             'maximumMemberCount': request.getMaximumMemberCount() ?? null,
+            'inactivityPeriodDays': request.getInactivityPeriodDays() ?? null,
             'roles': request.getRoles()?.map((item) => item.toDict()) ?? null,
             'guildMasterRole': request.getGuildMasterRole() ?? null,
             'guildMemberDefaultRole': request.getGuildMemberDefaultRole() ?? null,
@@ -1882,6 +1892,136 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
             return Result.WithdrawalByUserIdResult.fromDict(response.data);
         }).catch((error: any) => {
             throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getLastGuildMasterActivity(request: Request.GetLastGuildMasterActivityRequest): Promise<Result.GetLastGuildMasterActivityResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/activity/guildMaster/last')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{guildModelName}', String(request.getGuildModelName() ?? 'null') === "" ? "null" : String(request.getGuildModelName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetLastGuildMasterActivityResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getLastGuildMasterActivityByGuildName(request: Request.GetLastGuildMasterActivityByGuildNameRequest): Promise<Result.GetLastGuildMasterActivityByGuildNameResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/activity/guildMaster/last')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{guildModelName}', String(request.getGuildModelName() ?? 'null') === "" ? "null" : String(request.getGuildModelName() ?? 'null'))
+            .replace('{guildName}', String(request.getGuildName() ?? 'null') === "" ? "null" : String(request.getGuildName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetLastGuildMasterActivityByGuildNameResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public promoteSeniorMember(request: Request.PromoteSeniorMemberRequest): Promise<Result.PromoteSeniorMemberResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/promote')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{guildModelName}', String(request.getGuildModelName() ?? 'null') === "" ? "null" : String(request.getGuildModelName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.PromoteSeniorMemberResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public promoteSeniorMemberByGuildName(request: Request.PromoteSeniorMemberByGuildNameRequest): Promise<Result.PromoteSeniorMemberByGuildNameResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/promote')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{guildModelName}', String(request.getGuildModelName() ?? 'null') === "" ? "null" : String(request.getGuildModelName() ?? 'null'))
+            .replace('{guildName}', String(request.getGuildName() ?? 'null') === "" ? "null" : String(request.getGuildName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.PromoteSeniorMemberByGuildNameResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
         });
     }
 

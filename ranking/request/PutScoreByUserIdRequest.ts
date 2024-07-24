@@ -28,6 +28,7 @@ export default class PutScoreByUserIdRequest implements IRequest {
     private score: number|null = null;
     private metadata: string|null = null;
     private timeOffsetToken: string|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -120,6 +121,20 @@ export default class PutScoreByUserIdRequest implements IRequest {
     }
     public withTimeOffsetToken(timeOffsetToken: string|null): this {
         this.timeOffsetToken = timeOffsetToken;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 

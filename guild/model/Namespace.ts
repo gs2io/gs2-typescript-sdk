@@ -16,6 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 import NotificationSetting from './NotificationSetting';
+import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:guild:{namespaceName}";
 
@@ -28,6 +29,10 @@ export default class Namespace implements IModel {
     private changeMemberNotification: NotificationSetting|null = null;
     private receiveRequestNotification: NotificationSetting|null = null;
     private removeRequestNotification: NotificationSetting|null = null;
+    private createGuildScript: ScriptSetting|null = null;
+    private joinGuildScript: ScriptSetting|null = null;
+    private leaveGuildScript: ScriptSetting|null = null;
+    private changeRoleScript: ScriptSetting|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -180,6 +185,50 @@ export default class Namespace implements IModel {
         this.removeRequestNotification = removeRequestNotification;
         return this;
     }
+    public getCreateGuildScript(): ScriptSetting|null {
+        return this.createGuildScript;
+    }
+    public setCreateGuildScript(createGuildScript: ScriptSetting|null) {
+        this.createGuildScript = createGuildScript;
+        return this;
+    }
+    public withCreateGuildScript(createGuildScript: ScriptSetting|null): this {
+        this.createGuildScript = createGuildScript;
+        return this;
+    }
+    public getJoinGuildScript(): ScriptSetting|null {
+        return this.joinGuildScript;
+    }
+    public setJoinGuildScript(joinGuildScript: ScriptSetting|null) {
+        this.joinGuildScript = joinGuildScript;
+        return this;
+    }
+    public withJoinGuildScript(joinGuildScript: ScriptSetting|null): this {
+        this.joinGuildScript = joinGuildScript;
+        return this;
+    }
+    public getLeaveGuildScript(): ScriptSetting|null {
+        return this.leaveGuildScript;
+    }
+    public setLeaveGuildScript(leaveGuildScript: ScriptSetting|null) {
+        this.leaveGuildScript = leaveGuildScript;
+        return this;
+    }
+    public withLeaveGuildScript(leaveGuildScript: ScriptSetting|null): this {
+        this.leaveGuildScript = leaveGuildScript;
+        return this;
+    }
+    public getChangeRoleScript(): ScriptSetting|null {
+        return this.changeRoleScript;
+    }
+    public setChangeRoleScript(changeRoleScript: ScriptSetting|null) {
+        this.changeRoleScript = changeRoleScript;
+        return this;
+    }
+    public withChangeRoleScript(changeRoleScript: ScriptSetting|null): this {
+        this.changeRoleScript = changeRoleScript;
+        return this;
+    }
     public getLogSetting(): LogSetting|null {
         return this.logSetting;
     }
@@ -238,6 +287,10 @@ export default class Namespace implements IModel {
             .withChangeMemberNotification(NotificationSetting.fromDict(data["changeMemberNotification"]))
             .withReceiveRequestNotification(NotificationSetting.fromDict(data["receiveRequestNotification"]))
             .withRemoveRequestNotification(NotificationSetting.fromDict(data["removeRequestNotification"]))
+            .withCreateGuildScript(ScriptSetting.fromDict(data["createGuildScript"]))
+            .withJoinGuildScript(ScriptSetting.fromDict(data["joinGuildScript"]))
+            .withLeaveGuildScript(ScriptSetting.fromDict(data["leaveGuildScript"]))
+            .withChangeRoleScript(ScriptSetting.fromDict(data["changeRoleScript"]))
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -254,6 +307,10 @@ export default class Namespace implements IModel {
             "changeMemberNotification": this.getChangeMemberNotification()?.toDict(),
             "receiveRequestNotification": this.getReceiveRequestNotification()?.toDict(),
             "removeRequestNotification": this.getRemoveRequestNotification()?.toDict(),
+            "createGuildScript": this.getCreateGuildScript()?.toDict(),
+            "joinGuildScript": this.getJoinGuildScript()?.toDict(),
+            "leaveGuildScript": this.getLeaveGuildScript()?.toDict(),
+            "changeRoleScript": this.getChangeRoleScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

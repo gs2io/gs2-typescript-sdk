@@ -932,7 +932,7 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2RankingRestClient.prototype.putScoreByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/category/{categoryName}/ranking')
             .replace('{service}', 'ranking')
             .replace('{region}', this.session.region)
@@ -943,13 +943,16 @@ var Gs2RankingRestClient = /** @class */ (function (_super) {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
         if (request.getTimeOffsetToken()) {
-            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_g = request.getTimeOffsetToken()) !== null && _g !== void 0 ? _g : null;
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
         }
         var body = {
-            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
-            'score': (_j = request.getScore()) !== null && _j !== void 0 ? _j : null,
-            'metadata': (_k = request.getMetadata()) !== null && _k !== void 0 ? _k : null,
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'score': (_k = request.getScore()) !== null && _k !== void 0 ? _k : null,
+            'metadata': (_l = request.getMetadata()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

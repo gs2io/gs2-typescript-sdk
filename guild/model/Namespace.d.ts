@@ -1,5 +1,6 @@
 import IModel from '../../core/interface/IModel';
 import NotificationSetting from './NotificationSetting';
+import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 export default class Namespace implements IModel {
     private namespaceId;
@@ -10,6 +11,10 @@ export default class Namespace implements IModel {
     private changeMemberNotification;
     private receiveRequestNotification;
     private removeRequestNotification;
+    private createGuildScript;
+    private joinGuildScript;
+    private leaveGuildScript;
+    private changeRoleScript;
     private logSetting;
     private createdAt;
     private updatedAt;
@@ -43,6 +48,18 @@ export default class Namespace implements IModel {
     getRemoveRequestNotification(): NotificationSetting | null;
     setRemoveRequestNotification(removeRequestNotification: NotificationSetting | null): this;
     withRemoveRequestNotification(removeRequestNotification: NotificationSetting | null): this;
+    getCreateGuildScript(): ScriptSetting | null;
+    setCreateGuildScript(createGuildScript: ScriptSetting | null): this;
+    withCreateGuildScript(createGuildScript: ScriptSetting | null): this;
+    getJoinGuildScript(): ScriptSetting | null;
+    setJoinGuildScript(joinGuildScript: ScriptSetting | null): this;
+    withJoinGuildScript(joinGuildScript: ScriptSetting | null): this;
+    getLeaveGuildScript(): ScriptSetting | null;
+    setLeaveGuildScript(leaveGuildScript: ScriptSetting | null): this;
+    withLeaveGuildScript(leaveGuildScript: ScriptSetting | null): this;
+    getChangeRoleScript(): ScriptSetting | null;
+    setChangeRoleScript(changeRoleScript: ScriptSetting | null): this;
+    withChangeRoleScript(changeRoleScript: ScriptSetting | null): this;
     getLogSetting(): LogSetting | null;
     setLogSetting(logSetting: LogSetting | null): this;
     withLogSetting(logSetting: LogSetting | null): this;

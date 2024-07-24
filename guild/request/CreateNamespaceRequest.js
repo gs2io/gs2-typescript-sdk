@@ -28,6 +28,10 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.changeMemberNotification = null;
         this.receiveRequestNotification = null;
         this.removeRequestNotification = null;
+        this.createGuildScript = null;
+        this.joinGuildScript = null;
+        this.leaveGuildScript = null;
+        this.changeRoleScript = null;
         this.logSetting = null;
     }
     CreateNamespaceRequest.prototype.getRequestId = function () {
@@ -129,6 +133,50 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.removeRequestNotification = removeRequestNotification;
         return this;
     };
+    CreateNamespaceRequest.prototype.getCreateGuildScript = function () {
+        return this.createGuildScript;
+    };
+    CreateNamespaceRequest.prototype.setCreateGuildScript = function (createGuildScript) {
+        this.createGuildScript = createGuildScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withCreateGuildScript = function (createGuildScript) {
+        this.createGuildScript = createGuildScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getJoinGuildScript = function () {
+        return this.joinGuildScript;
+    };
+    CreateNamespaceRequest.prototype.setJoinGuildScript = function (joinGuildScript) {
+        this.joinGuildScript = joinGuildScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withJoinGuildScript = function (joinGuildScript) {
+        this.joinGuildScript = joinGuildScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getLeaveGuildScript = function () {
+        return this.leaveGuildScript;
+    };
+    CreateNamespaceRequest.prototype.setLeaveGuildScript = function (leaveGuildScript) {
+        this.leaveGuildScript = leaveGuildScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withLeaveGuildScript = function (leaveGuildScript) {
+        this.leaveGuildScript = leaveGuildScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getChangeRoleScript = function () {
+        return this.changeRoleScript;
+    };
+    CreateNamespaceRequest.prototype.setChangeRoleScript = function (changeRoleScript) {
+        this.changeRoleScript = changeRoleScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withChangeRoleScript = function (changeRoleScript) {
+        this.changeRoleScript = changeRoleScript;
+        return this;
+    };
     CreateNamespaceRequest.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -149,10 +197,14 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withChangeMemberNotification(Gs2Guild.NotificationSetting.fromDict(data["changeMemberNotification"]))
             .withReceiveRequestNotification(Gs2Guild.NotificationSetting.fromDict(data["receiveRequestNotification"]))
             .withRemoveRequestNotification(Gs2Guild.NotificationSetting.fromDict(data["removeRequestNotification"]))
+            .withCreateGuildScript(Gs2Guild.ScriptSetting.fromDict(data["createGuildScript"]))
+            .withJoinGuildScript(Gs2Guild.ScriptSetting.fromDict(data["joinGuildScript"]))
+            .withLeaveGuildScript(Gs2Guild.ScriptSetting.fromDict(data["leaveGuildScript"]))
+            .withChangeRoleScript(Gs2Guild.ScriptSetting.fromDict(data["changeRoleScript"]))
             .withLogSetting(Gs2Guild.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         return {
             "name": this.getName(),
             "description": this.getDescription(),
@@ -161,7 +213,11 @@ var CreateNamespaceRequest = /** @class */ (function () {
             "changeMemberNotification": (_c = this.getChangeMemberNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "receiveRequestNotification": (_d = this.getReceiveRequestNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "removeRequestNotification": (_e = this.getRemoveRequestNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "createGuildScript": (_f = this.getCreateGuildScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "joinGuildScript": (_g = this.getJoinGuildScript()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "leaveGuildScript": (_h = this.getLeaveGuildScript()) === null || _h === void 0 ? void 0 : _h.toDict(),
+            "changeRoleScript": (_j = this.getChangeRoleScript()) === null || _j === void 0 ? void 0 : _j.toDict(),
+            "logSetting": (_k = this.getLogSetting()) === null || _k === void 0 ? void 0 : _k.toDict(),
         };
     };
     return CreateNamespaceRequest;

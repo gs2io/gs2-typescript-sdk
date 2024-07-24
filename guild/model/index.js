@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GitHubCheckoutSetting = exports.LogSetting = exports.ScriptSetting = exports.NotificationSetting = exports.TransactionSetting = exports.IgnoreUser = exports.SendMemberRequest = exports.ReceiveMemberRequest = exports.Member = exports.RoleModel = exports.CurrentGuildMaster = exports.JoinedGuild = exports.Guild = exports.SendBox = exports.Inbox = exports.GuildModel = exports.GuildModelMaster = exports.Namespace = void 0;
+exports.GitHubCheckoutSetting = exports.LogSetting = exports.ScriptSetting = exports.NotificationSetting = exports.TransactionSetting = exports.IgnoreUser = exports.SendMemberRequest = exports.ReceiveMemberRequest = exports.Member = exports.RoleModel = exports.CurrentGuildMaster = exports.LastGuildMasterActivity = exports.JoinedGuild = exports.Guild = exports.SendBox = exports.Inbox = exports.GuildModel = exports.GuildModelMaster = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -31,6 +31,8 @@ var Guild_1 = tslib_1.__importDefault(require("./Guild"));
 exports.Guild = Guild_1.default;
 var JoinedGuild_1 = tslib_1.__importDefault(require("./JoinedGuild"));
 exports.JoinedGuild = JoinedGuild_1.default;
+var LastGuildMasterActivity_1 = tslib_1.__importDefault(require("./LastGuildMasterActivity"));
+exports.LastGuildMasterActivity = LastGuildMasterActivity_1.default;
 var CurrentGuildMaster_1 = tslib_1.__importDefault(require("./CurrentGuildMaster"));
 exports.CurrentGuildMaster = CurrentGuildMaster_1.default;
 var RoleModel_1 = tslib_1.__importDefault(require("./RoleModel"));

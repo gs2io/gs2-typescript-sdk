@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
+var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:guild:{namespaceName}";
 var Namespace = /** @class */ (function () {
@@ -29,6 +30,10 @@ var Namespace = /** @class */ (function () {
         this.changeMemberNotification = null;
         this.receiveRequestNotification = null;
         this.removeRequestNotification = null;
+        this.createGuildScript = null;
+        this.joinGuildScript = null;
+        this.leaveGuildScript = null;
+        this.changeRoleScript = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -170,6 +175,50 @@ var Namespace = /** @class */ (function () {
         this.removeRequestNotification = removeRequestNotification;
         return this;
     };
+    Namespace.prototype.getCreateGuildScript = function () {
+        return this.createGuildScript;
+    };
+    Namespace.prototype.setCreateGuildScript = function (createGuildScript) {
+        this.createGuildScript = createGuildScript;
+        return this;
+    };
+    Namespace.prototype.withCreateGuildScript = function (createGuildScript) {
+        this.createGuildScript = createGuildScript;
+        return this;
+    };
+    Namespace.prototype.getJoinGuildScript = function () {
+        return this.joinGuildScript;
+    };
+    Namespace.prototype.setJoinGuildScript = function (joinGuildScript) {
+        this.joinGuildScript = joinGuildScript;
+        return this;
+    };
+    Namespace.prototype.withJoinGuildScript = function (joinGuildScript) {
+        this.joinGuildScript = joinGuildScript;
+        return this;
+    };
+    Namespace.prototype.getLeaveGuildScript = function () {
+        return this.leaveGuildScript;
+    };
+    Namespace.prototype.setLeaveGuildScript = function (leaveGuildScript) {
+        this.leaveGuildScript = leaveGuildScript;
+        return this;
+    };
+    Namespace.prototype.withLeaveGuildScript = function (leaveGuildScript) {
+        this.leaveGuildScript = leaveGuildScript;
+        return this;
+    };
+    Namespace.prototype.getChangeRoleScript = function () {
+        return this.changeRoleScript;
+    };
+    Namespace.prototype.setChangeRoleScript = function (changeRoleScript) {
+        this.changeRoleScript = changeRoleScript;
+        return this;
+    };
+    Namespace.prototype.withChangeRoleScript = function (changeRoleScript) {
+        this.changeRoleScript = changeRoleScript;
+        return this;
+    };
     Namespace.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -227,13 +276,17 @@ var Namespace = /** @class */ (function () {
             .withChangeMemberNotification(NotificationSetting_1.default.fromDict(data["changeMemberNotification"]))
             .withReceiveRequestNotification(NotificationSetting_1.default.fromDict(data["receiveRequestNotification"]))
             .withRemoveRequestNotification(NotificationSetting_1.default.fromDict(data["removeRequestNotification"]))
+            .withCreateGuildScript(ScriptSetting_1.default.fromDict(data["createGuildScript"]))
+            .withJoinGuildScript(ScriptSetting_1.default.fromDict(data["joinGuildScript"]))
+            .withLeaveGuildScript(ScriptSetting_1.default.fromDict(data["leaveGuildScript"]))
+            .withChangeRoleScript(ScriptSetting_1.default.fromDict(data["changeRoleScript"]))
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
@@ -243,7 +296,11 @@ var Namespace = /** @class */ (function () {
             "changeMemberNotification": (_c = this.getChangeMemberNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "receiveRequestNotification": (_d = this.getReceiveRequestNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "removeRequestNotification": (_e = this.getRemoveRequestNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "logSetting": (_f = this.getLogSetting()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "createGuildScript": (_f = this.getCreateGuildScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "joinGuildScript": (_g = this.getJoinGuildScript()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "leaveGuildScript": (_h = this.getLeaveGuildScript()) === null || _h === void 0 ? void 0 : _h.toDict(),
+            "changeRoleScript": (_j = this.getChangeRoleScript()) === null || _j === void 0 ? void 0 : _j.toDict(),
+            "logSetting": (_k = this.getLogSetting()) === null || _k === void 0 ? void 0 : _k.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

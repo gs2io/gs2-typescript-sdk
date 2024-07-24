@@ -28,6 +28,7 @@ export default class UpdateGuildModelMasterRequest implements IRequest {
     private metadata: string|null = null;
     private defaultMaximumMemberCount: number|null = null;
     private maximumMemberCount: number|null = null;
+    private inactivityPeriodDays: number|null = null;
     private roles: Gs2Guild.RoleModel[]|null = null;
     private guildMasterRole: string|null = null;
     private guildMemberDefaultRole: string|null = null;
@@ -126,6 +127,17 @@ export default class UpdateGuildModelMasterRequest implements IRequest {
         this.maximumMemberCount = maximumMemberCount;
         return this;
     }
+    public getInactivityPeriodDays(): number|null {
+        return this.inactivityPeriodDays;
+    }
+    public setInactivityPeriodDays(inactivityPeriodDays: number|null) {
+        this.inactivityPeriodDays = inactivityPeriodDays;
+        return this;
+    }
+    public withInactivityPeriodDays(inactivityPeriodDays: number|null): this {
+        this.inactivityPeriodDays = inactivityPeriodDays;
+        return this;
+    }
     public getRoles(): Gs2Guild.RoleModel[]|null {
         return this.roles;
     }
@@ -179,6 +191,7 @@ export default class UpdateGuildModelMasterRequest implements IRequest {
             .withMetadata(data["metadata"])
             .withDefaultMaximumMemberCount(data["defaultMaximumMemberCount"])
             .withMaximumMemberCount(data["maximumMemberCount"])
+            .withInactivityPeriodDays(data["inactivityPeriodDays"])
             .withRoles(data.roles ?
                 data.roles.map((item: {[key: string]: any}) => {
                     return Gs2Guild.RoleModel.fromDict(item);
@@ -197,6 +210,7 @@ export default class UpdateGuildModelMasterRequest implements IRequest {
             "metadata": this.getMetadata(),
             "defaultMaximumMemberCount": this.getDefaultMaximumMemberCount(),
             "maximumMemberCount": this.getMaximumMemberCount(),
+            "inactivityPeriodDays": this.getInactivityPeriodDays(),
             "roles": this.getRoles() ?
                 this.getRoles()!.map((item: Gs2Guild.RoleModel) => {
                     return item.toDict();

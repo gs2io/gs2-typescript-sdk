@@ -67,6 +67,10 @@ import GetJoinedGuildRequest from "./GetJoinedGuildRequest"
 import GetJoinedGuildByUserIdRequest from "./GetJoinedGuildByUserIdRequest"
 import WithdrawalRequest from "./WithdrawalRequest"
 import WithdrawalByUserIdRequest from "./WithdrawalByUserIdRequest"
+import GetLastGuildMasterActivityRequest from "./GetLastGuildMasterActivityRequest"
+import GetLastGuildMasterActivityByGuildNameRequest from "./GetLastGuildMasterActivityByGuildNameRequest"
+import PromoteSeniorMemberRequest from "./PromoteSeniorMemberRequest"
+import PromoteSeniorMemberByGuildNameRequest from "./PromoteSeniorMemberByGuildNameRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentGuildMasterRequest from "./GetCurrentGuildMasterRequest"
 import UpdateCurrentGuildMasterRequest from "./UpdateCurrentGuildMasterRequest"
@@ -151,6 +155,10 @@ export {
     GetJoinedGuildByUserIdRequest,
     WithdrawalRequest,
     WithdrawalByUserIdRequest,
+    GetLastGuildMasterActivityRequest,
+    GetLastGuildMasterActivityByGuildNameRequest,
+    PromoteSeniorMemberRequest,
+    PromoteSeniorMemberByGuildNameRequest,
     ExportMasterRequest,
     GetCurrentGuildMasterRequest,
     UpdateCurrentGuildMasterRequest,

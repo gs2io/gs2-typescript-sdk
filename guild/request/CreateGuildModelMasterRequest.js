@@ -27,6 +27,7 @@ var CreateGuildModelMasterRequest = /** @class */ (function () {
         this.metadata = null;
         this.defaultMaximumMemberCount = null;
         this.maximumMemberCount = null;
+        this.inactivityPeriodDays = null;
         this.roles = null;
         this.guildMasterRole = null;
         this.guildMemberDefaultRole = null;
@@ -120,6 +121,17 @@ var CreateGuildModelMasterRequest = /** @class */ (function () {
         this.maximumMemberCount = maximumMemberCount;
         return this;
     };
+    CreateGuildModelMasterRequest.prototype.getInactivityPeriodDays = function () {
+        return this.inactivityPeriodDays;
+    };
+    CreateGuildModelMasterRequest.prototype.setInactivityPeriodDays = function (inactivityPeriodDays) {
+        this.inactivityPeriodDays = inactivityPeriodDays;
+        return this;
+    };
+    CreateGuildModelMasterRequest.prototype.withInactivityPeriodDays = function (inactivityPeriodDays) {
+        this.inactivityPeriodDays = inactivityPeriodDays;
+        return this;
+    };
     CreateGuildModelMasterRequest.prototype.getRoles = function () {
         return this.roles;
     };
@@ -172,6 +184,7 @@ var CreateGuildModelMasterRequest = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withDefaultMaximumMemberCount(data["defaultMaximumMemberCount"])
             .withMaximumMemberCount(data["maximumMemberCount"])
+            .withInactivityPeriodDays(data["inactivityPeriodDays"])
             .withRoles(data.roles ?
             data.roles.map(function (item) {
                 return Gs2Guild.RoleModel.fromDict(item);
@@ -188,6 +201,7 @@ var CreateGuildModelMasterRequest = /** @class */ (function () {
             "metadata": this.getMetadata(),
             "defaultMaximumMemberCount": this.getDefaultMaximumMemberCount(),
             "maximumMemberCount": this.getMaximumMemberCount(),
+            "inactivityPeriodDays": this.getInactivityPeriodDays(),
             "roles": this.getRoles() ?
                 this.getRoles().map(function (item) {
                     return item.toDict();

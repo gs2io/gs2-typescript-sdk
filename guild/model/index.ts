@@ -20,6 +20,7 @@ import Inbox from "./Inbox"
 import SendBox from "./SendBox"
 import Guild from "./Guild"
 import JoinedGuild from "./JoinedGuild"
+import LastGuildMasterActivity from "./LastGuildMasterActivity"
 import CurrentGuildMaster from "./CurrentGuildMaster"
 import RoleModel from "./RoleModel"
 import Member from "./Member"
@@ -40,6 +41,7 @@ export {
     SendBox,
     Guild,
     JoinedGuild,
+    LastGuildMasterActivity,
     CurrentGuildMaster,
     RoleModel,
     Member,

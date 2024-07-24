@@ -58,6 +58,10 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     getJoinedGuildByUserId(request: Request.GetJoinedGuildByUserIdRequest): Promise<Result.GetJoinedGuildByUserIdResult>;
     withdrawal(request: Request.WithdrawalRequest): Promise<Result.WithdrawalResult>;
     withdrawalByUserId(request: Request.WithdrawalByUserIdRequest): Promise<Result.WithdrawalByUserIdResult>;
+    getLastGuildMasterActivity(request: Request.GetLastGuildMasterActivityRequest): Promise<Result.GetLastGuildMasterActivityResult>;
+    getLastGuildMasterActivityByGuildName(request: Request.GetLastGuildMasterActivityByGuildNameRequest): Promise<Result.GetLastGuildMasterActivityByGuildNameResult>;
+    promoteSeniorMember(request: Request.PromoteSeniorMemberRequest): Promise<Result.PromoteSeniorMemberResult>;
+    promoteSeniorMemberByGuildName(request: Request.PromoteSeniorMemberByGuildNameRequest): Promise<Result.PromoteSeniorMemberByGuildNameResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentGuildMaster(request: Request.GetCurrentGuildMasterRequest): Promise<Result.GetCurrentGuildMasterResult>;
     updateCurrentGuildMaster(request: Request.UpdateCurrentGuildMasterRequest): Promise<Result.UpdateCurrentGuildMasterResult>;

@@ -29,6 +29,10 @@ export default class UpdateNamespaceRequest implements IRequest {
     private changeMemberNotification: Gs2Guild.NotificationSetting|null = null;
     private receiveRequestNotification: Gs2Guild.NotificationSetting|null = null;
     private removeRequestNotification: Gs2Guild.NotificationSetting|null = null;
+    private createGuildScript: Gs2Guild.ScriptSetting|null = null;
+    private joinGuildScript: Gs2Guild.ScriptSetting|null = null;
+    private leaveGuildScript: Gs2Guild.ScriptSetting|null = null;
+    private changeRoleScript: Gs2Guild.ScriptSetting|null = null;
     private logSetting: Gs2Guild.LogSetting|null = null;
 
     public getRequestId(): string|null {
@@ -135,6 +139,50 @@ export default class UpdateNamespaceRequest implements IRequest {
         this.removeRequestNotification = removeRequestNotification;
         return this;
     }
+    public getCreateGuildScript(): Gs2Guild.ScriptSetting|null {
+        return this.createGuildScript;
+    }
+    public setCreateGuildScript(createGuildScript: Gs2Guild.ScriptSetting|null) {
+        this.createGuildScript = createGuildScript;
+        return this;
+    }
+    public withCreateGuildScript(createGuildScript: Gs2Guild.ScriptSetting|null): this {
+        this.createGuildScript = createGuildScript;
+        return this;
+    }
+    public getJoinGuildScript(): Gs2Guild.ScriptSetting|null {
+        return this.joinGuildScript;
+    }
+    public setJoinGuildScript(joinGuildScript: Gs2Guild.ScriptSetting|null) {
+        this.joinGuildScript = joinGuildScript;
+        return this;
+    }
+    public withJoinGuildScript(joinGuildScript: Gs2Guild.ScriptSetting|null): this {
+        this.joinGuildScript = joinGuildScript;
+        return this;
+    }
+    public getLeaveGuildScript(): Gs2Guild.ScriptSetting|null {
+        return this.leaveGuildScript;
+    }
+    public setLeaveGuildScript(leaveGuildScript: Gs2Guild.ScriptSetting|null) {
+        this.leaveGuildScript = leaveGuildScript;
+        return this;
+    }
+    public withLeaveGuildScript(leaveGuildScript: Gs2Guild.ScriptSetting|null): this {
+        this.leaveGuildScript = leaveGuildScript;
+        return this;
+    }
+    public getChangeRoleScript(): Gs2Guild.ScriptSetting|null {
+        return this.changeRoleScript;
+    }
+    public setChangeRoleScript(changeRoleScript: Gs2Guild.ScriptSetting|null) {
+        this.changeRoleScript = changeRoleScript;
+        return this;
+    }
+    public withChangeRoleScript(changeRoleScript: Gs2Guild.ScriptSetting|null): this {
+        this.changeRoleScript = changeRoleScript;
+        return this;
+    }
     public getLogSetting(): Gs2Guild.LogSetting|null {
         return this.logSetting;
     }
@@ -156,6 +204,10 @@ export default class UpdateNamespaceRequest implements IRequest {
             .withChangeMemberNotification(Gs2Guild.NotificationSetting.fromDict(data["changeMemberNotification"]))
             .withReceiveRequestNotification(Gs2Guild.NotificationSetting.fromDict(data["receiveRequestNotification"]))
             .withRemoveRequestNotification(Gs2Guild.NotificationSetting.fromDict(data["removeRequestNotification"]))
+            .withCreateGuildScript(Gs2Guild.ScriptSetting.fromDict(data["createGuildScript"]))
+            .withJoinGuildScript(Gs2Guild.ScriptSetting.fromDict(data["joinGuildScript"]))
+            .withLeaveGuildScript(Gs2Guild.ScriptSetting.fromDict(data["leaveGuildScript"]))
+            .withChangeRoleScript(Gs2Guild.ScriptSetting.fromDict(data["changeRoleScript"]))
             .withLogSetting(Gs2Guild.LogSetting.fromDict(data["logSetting"]));
     }
 
@@ -168,6 +220,10 @@ export default class UpdateNamespaceRequest implements IRequest {
             "changeMemberNotification": this.getChangeMemberNotification()?.toDict(),
             "receiveRequestNotification": this.getReceiveRequestNotification()?.toDict(),
             "removeRequestNotification": this.getRemoveRequestNotification()?.toDict(),
+            "createGuildScript": this.getCreateGuildScript()?.toDict(),
+            "joinGuildScript": this.getJoinGuildScript()?.toDict(),
+            "leaveGuildScript": this.getLeaveGuildScript()?.toDict(),
+            "changeRoleScript": this.getChangeRoleScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
         };
     }

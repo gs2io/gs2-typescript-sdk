@@ -67,6 +67,10 @@ import GetJoinedGuildResult from "./GetJoinedGuildResult"
 import GetJoinedGuildByUserIdResult from "./GetJoinedGuildByUserIdResult"
 import WithdrawalResult from "./WithdrawalResult"
 import WithdrawalByUserIdResult from "./WithdrawalByUserIdResult"
+import GetLastGuildMasterActivityResult from "./GetLastGuildMasterActivityResult"
+import GetLastGuildMasterActivityByGuildNameResult from "./GetLastGuildMasterActivityByGuildNameResult"
+import PromoteSeniorMemberResult from "./PromoteSeniorMemberResult"
+import PromoteSeniorMemberByGuildNameResult from "./PromoteSeniorMemberByGuildNameResult"
 import ExportMasterResult from "./ExportMasterResult"
 import GetCurrentGuildMasterResult from "./GetCurrentGuildMasterResult"
 import UpdateCurrentGuildMasterResult from "./UpdateCurrentGuildMasterResult"
@@ -151,6 +155,10 @@ export {
     GetJoinedGuildByUserIdResult,
     WithdrawalResult,
     WithdrawalByUserIdResult,
+    GetLastGuildMasterActivityResult,
+    GetLastGuildMasterActivityByGuildNameResult,
+    PromoteSeniorMemberResult,
+    PromoteSeniorMemberByGuildNameResult,
     ExportMasterResult,
     GetCurrentGuildMasterResult,
     UpdateCurrentGuildMasterResult,
