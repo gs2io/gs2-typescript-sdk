@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 import TargetCounterModel from './TargetCounterModel';
-import ConsumeAction from './ConsumeAction';
+import VerifyAction from './VerifyAction';
 import AcquireAction from './AcquireAction';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}:group:{missionGroupName}:missionTaskModel:{missionTaskName}";
 
@@ -26,7 +26,7 @@ export default class MissionTaskModel implements IModel {
     private metadata: string|null = null;
     private verifyCompleteType: string|null = null;
     private targetCounter: TargetCounterModel|null = null;
-    private verifyCompleteConsumeActions: ConsumeAction[]|null = null;
+    private verifyCompleteConsumeActions: VerifyAction[]|null = null;
     private completeAcquireActions: AcquireAction[]|null = null;
     private challengePeriodEventId: string|null = null;
     private premiseMissionTaskName: string|null = null;
@@ -192,14 +192,14 @@ export default class MissionTaskModel implements IModel {
         this.targetCounter = targetCounter;
         return this;
     }
-    public getVerifyCompleteConsumeActions(): ConsumeAction[]|null {
+    public getVerifyCompleteConsumeActions(): VerifyAction[]|null {
         return this.verifyCompleteConsumeActions;
     }
-    public setVerifyCompleteConsumeActions(verifyCompleteConsumeActions: ConsumeAction[]|null) {
+    public setVerifyCompleteConsumeActions(verifyCompleteConsumeActions: VerifyAction[]|null) {
         this.verifyCompleteConsumeActions = verifyCompleteConsumeActions;
         return this;
     }
-    public withVerifyCompleteConsumeActions(verifyCompleteConsumeActions: ConsumeAction[]|null): this {
+    public withVerifyCompleteConsumeActions(verifyCompleteConsumeActions: VerifyAction[]|null): this {
         this.verifyCompleteConsumeActions = verifyCompleteConsumeActions;
         return this;
     }
@@ -291,7 +291,7 @@ export default class MissionTaskModel implements IModel {
             .withTargetCounter(TargetCounterModel.fromDict(data["targetCounter"]))
             .withVerifyCompleteConsumeActions(data.verifyCompleteConsumeActions ?
                 data.verifyCompleteConsumeActions.map((item: {[key: string]: any}) => {
-                    return ConsumeAction.fromDict(item);
+                    return VerifyAction.fromDict(item);
                 }
             ) : [])
             .withCompleteAcquireActions(data.completeAcquireActions ?
@@ -314,7 +314,7 @@ export default class MissionTaskModel implements IModel {
             "verifyCompleteType": this.getVerifyCompleteType(),
             "targetCounter": this.getTargetCounter()?.toDict(),
             "verifyCompleteConsumeActions": this.getVerifyCompleteConsumeActions() ?
-                this.getVerifyCompleteConsumeActions()!.map((item: ConsumeAction) => {
+                this.getVerifyCompleteConsumeActions()!.map((item: VerifyAction) => {
                     return item.toDict();
                 }
             ) : [],

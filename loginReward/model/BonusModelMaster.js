@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Reward_1 = tslib_1.__importDefault(require("./Reward"));
+var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
 var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:loginReward:{namespaceName}:bonusModel:{bonusModelName}";
 var BonusModelMaster = /** @class */ (function () {
@@ -31,6 +32,7 @@ var BonusModelMaster = /** @class */ (function () {
         this.repeat = null;
         this.rewards = null;
         this.missedReceiveRelief = null;
+        this.missedReceiveReliefVerifyActions = null;
         this.missedReceiveReliefConsumeActions = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -212,6 +214,17 @@ var BonusModelMaster = /** @class */ (function () {
         this.missedReceiveRelief = missedReceiveRelief;
         return this;
     };
+    BonusModelMaster.prototype.getMissedReceiveReliefVerifyActions = function () {
+        return this.missedReceiveReliefVerifyActions;
+    };
+    BonusModelMaster.prototype.setMissedReceiveReliefVerifyActions = function (missedReceiveReliefVerifyActions) {
+        this.missedReceiveReliefVerifyActions = missedReceiveReliefVerifyActions;
+        return this;
+    };
+    BonusModelMaster.prototype.withMissedReceiveReliefVerifyActions = function (missedReceiveReliefVerifyActions) {
+        this.missedReceiveReliefVerifyActions = missedReceiveReliefVerifyActions;
+        return this;
+    };
     BonusModelMaster.prototype.getMissedReceiveReliefConsumeActions = function () {
         return this.missedReceiveReliefConsumeActions;
     };
@@ -274,6 +287,10 @@ var BonusModelMaster = /** @class */ (function () {
                 return Reward_1.default.fromDict(item);
             }) : [])
             .withMissedReceiveRelief(data["missedReceiveRelief"])
+            .withMissedReceiveReliefVerifyActions(data.missedReceiveReliefVerifyActions ?
+            data.missedReceiveReliefVerifyActions.map(function (item) {
+                return VerifyAction_1.default.fromDict(item);
+            }) : [])
             .withMissedReceiveReliefConsumeActions(data.missedReceiveReliefConsumeActions ?
             data.missedReceiveReliefConsumeActions.map(function (item) {
                 return ConsumeAction_1.default.fromDict(item);
@@ -297,6 +314,10 @@ var BonusModelMaster = /** @class */ (function () {
                     return item.toDict();
                 }) : [],
             "missedReceiveRelief": this.getMissedReceiveRelief(),
+            "missedReceiveReliefVerifyActions": this.getMissedReceiveReliefVerifyActions() ?
+                this.getMissedReceiveReliefVerifyActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "missedReceiveReliefConsumeActions": this.getMissedReceiveReliefConsumeActions() ?
                 this.getMissedReceiveReliefConsumeActions().map(function (item) {
                     return item.toDict();

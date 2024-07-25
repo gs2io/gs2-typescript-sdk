@@ -470,6 +470,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
             'repeat': request.getRepeat() ?? null,
             'rewards': request.getRewards()?.map((item) => item.toDict()) ?? null,
             'missedReceiveRelief': request.getMissedReceiveRelief() ?? null,
+            'missedReceiveReliefVerifyActions': request.getMissedReceiveReliefVerifyActions()?.map((item) => item.toDict()) ?? null,
             'missedReceiveReliefConsumeActions': request.getMissedReceiveReliefConsumeActions()?.map((item) => item.toDict()) ?? null,
         };
         return axios.post(
@@ -537,6 +538,7 @@ export default class Gs2LoginRewardRestClient extends AbstractGs2RestClient {
             'repeat': request.getRepeat() ?? null,
             'rewards': request.getRewards()?.map((item) => item.toDict()) ?? null,
             'missedReceiveRelief': request.getMissedReceiveRelief() ?? null,
+            'missedReceiveReliefVerifyActions': request.getMissedReceiveReliefVerifyActions()?.map((item) => item.toDict()) ?? null,
             'missedReceiveReliefConsumeActions': request.getMissedReceiveReliefConsumeActions()?.map((item) => item.toDict()) ?? null,
         };
         return axios.put(

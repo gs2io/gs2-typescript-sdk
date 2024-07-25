@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 import AcquireAction from './AcquireAction';
 import Reward from './Reward';
+import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:loginReward:{namespaceName}:bonusModel:{bonusModelName}";
 
@@ -31,6 +32,7 @@ export default class BonusModelMaster implements IModel {
     private repeat: string|null = null;
     private rewards: Reward[]|null = null;
     private missedReceiveRelief: string|null = null;
+    private missedReceiveReliefVerifyActions: VerifyAction[]|null = null;
     private missedReceiveReliefConsumeActions: ConsumeAction[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -226,6 +228,17 @@ export default class BonusModelMaster implements IModel {
         this.missedReceiveRelief = missedReceiveRelief;
         return this;
     }
+    public getMissedReceiveReliefVerifyActions(): VerifyAction[]|null {
+        return this.missedReceiveReliefVerifyActions;
+    }
+    public setMissedReceiveReliefVerifyActions(missedReceiveReliefVerifyActions: VerifyAction[]|null) {
+        this.missedReceiveReliefVerifyActions = missedReceiveReliefVerifyActions;
+        return this;
+    }
+    public withMissedReceiveReliefVerifyActions(missedReceiveReliefVerifyActions: VerifyAction[]|null): this {
+        this.missedReceiveReliefVerifyActions = missedReceiveReliefVerifyActions;
+        return this;
+    }
     public getMissedReceiveReliefConsumeActions(): ConsumeAction[]|null {
         return this.missedReceiveReliefConsumeActions;
     }
@@ -290,6 +303,11 @@ export default class BonusModelMaster implements IModel {
                 }
             ) : [])
             .withMissedReceiveRelief(data["missedReceiveRelief"])
+            .withMissedReceiveReliefVerifyActions(data.missedReceiveReliefVerifyActions ?
+                data.missedReceiveReliefVerifyActions.map((item: {[key: string]: any}) => {
+                    return VerifyAction.fromDict(item);
+                }
+            ) : [])
             .withMissedReceiveReliefConsumeActions(data.missedReceiveReliefConsumeActions ?
                 data.missedReceiveReliefConsumeActions.map((item: {[key: string]: any}) => {
                     return ConsumeAction.fromDict(item);
@@ -316,6 +334,11 @@ export default class BonusModelMaster implements IModel {
                 }
             ) : [],
             "missedReceiveRelief": this.getMissedReceiveRelief(),
+            "missedReceiveReliefVerifyActions": this.getMissedReceiveReliefVerifyActions() ?
+                this.getMissedReceiveReliefVerifyActions()!.map((item: VerifyAction) => {
+                    return item.toDict();
+                }
+            ) : [],
             "missedReceiveReliefConsumeActions": this.getMissedReceiveReliefConsumeActions() ?
                 this.getMissedReceiveReliefConsumeActions()!.map((item: ConsumeAction) => {
                     return item.toDict();

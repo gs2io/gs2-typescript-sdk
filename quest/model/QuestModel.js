@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 var Contents_1 = tslib_1.__importDefault(require("./Contents"));
+var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
 var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:quest:{namespaceName}:group:{questGroupName}:quest:{questName}";
 var QuestModel = /** @class */ (function () {
@@ -28,6 +29,7 @@ var QuestModel = /** @class */ (function () {
         this.contents = null;
         this.challengePeriodEventId = null;
         this.firstCompleteAcquireActions = null;
+        this.verifyActions = null;
         this.consumeActions = null;
         this.failedAcquireActions = null;
         this.premiseQuestNames = null;
@@ -184,6 +186,17 @@ var QuestModel = /** @class */ (function () {
         this.firstCompleteAcquireActions = firstCompleteAcquireActions;
         return this;
     };
+    QuestModel.prototype.getVerifyActions = function () {
+        return this.verifyActions;
+    };
+    QuestModel.prototype.setVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
+        return this;
+    };
+    QuestModel.prototype.withVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
+        return this;
+    };
     QuestModel.prototype.getConsumeActions = function () {
         return this.consumeActions;
     };
@@ -234,6 +247,10 @@ var QuestModel = /** @class */ (function () {
             data.firstCompleteAcquireActions.map(function (item) {
                 return AcquireAction_1.default.fromDict(item);
             }) : [])
+            .withVerifyActions(data.verifyActions ?
+            data.verifyActions.map(function (item) {
+                return VerifyAction_1.default.fromDict(item);
+            }) : [])
             .withConsumeActions(data.consumeActions ?
             data.consumeActions.map(function (item) {
                 return ConsumeAction_1.default.fromDict(item);
@@ -259,6 +276,10 @@ var QuestModel = /** @class */ (function () {
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "firstCompleteAcquireActions": this.getFirstCompleteAcquireActions() ?
                 this.getFirstCompleteAcquireActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
+            "verifyActions": this.getVerifyActions() ?
+                this.getVerifyActions().map(function (item) {
                     return item.toDict();
                 }) : [],
             "consumeActions": this.getConsumeActions() ?

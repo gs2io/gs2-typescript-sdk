@@ -1,12 +1,16 @@
 import IModel from '../../core/interface/IModel';
+import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
 export default class StampSheetResult implements IModel {
     private stampSheetResultId;
     private userId;
     private transactionId;
+    private verifyTaskRequests;
     private taskRequests;
     private sheetRequest;
+    private verifyTaskResultCodes;
+    private verifyTaskResults;
     private taskResultCodes;
     private taskResults;
     private sheetResultCode;
@@ -30,12 +34,21 @@ export default class StampSheetResult implements IModel {
     getTransactionId(): string | null;
     setTransactionId(transactionId: string | null): this;
     withTransactionId(transactionId: string | null): this;
+    getVerifyTaskRequests(): VerifyAction[] | null;
+    setVerifyTaskRequests(verifyTaskRequests: VerifyAction[] | null): this;
+    withVerifyTaskRequests(verifyTaskRequests: VerifyAction[] | null): this;
     getTaskRequests(): ConsumeAction[] | null;
     setTaskRequests(taskRequests: ConsumeAction[] | null): this;
     withTaskRequests(taskRequests: ConsumeAction[] | null): this;
     getSheetRequest(): AcquireAction | null;
     setSheetRequest(sheetRequest: AcquireAction | null): this;
     withSheetRequest(sheetRequest: AcquireAction | null): this;
+    getVerifyTaskResultCodes(): number[] | null;
+    setVerifyTaskResultCodes(verifyTaskResultCodes: number[] | null): this;
+    withVerifyTaskResultCodes(verifyTaskResultCodes: number[] | null): this;
+    getVerifyTaskResults(): string[] | null;
+    setVerifyTaskResults(verifyTaskResults: string[] | null): this;
+    withVerifyTaskResults(verifyTaskResults: string[] | null): this;
     getTaskResultCodes(): number[] | null;
     setTaskResultCodes(taskResultCodes: number[] | null): this;
     withTaskResultCodes(taskResultCodes: number[] | null): this;

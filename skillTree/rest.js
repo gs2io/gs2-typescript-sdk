@@ -439,7 +439,7 @@ var Gs2SkillTreeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2SkillTreeRestClient.prototype.createNodeModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
@@ -453,9 +453,10 @@ var Gs2SkillTreeRestClient = /** @class */ (function (_super) {
             'name': (_d = request.getName()) !== null && _d !== void 0 ? _d : null,
             'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
             'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
-            'releaseConsumeActions': (_h = (_g = request.getReleaseConsumeActions()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
-            'restrainReturnRate': (_j = request.getRestrainReturnRate()) !== null && _j !== void 0 ? _j : null,
-            'premiseNodeNames': (_k = request.getPremiseNodeNames()) !== null && _k !== void 0 ? _k : null,
+            'releaseVerifyActions': (_h = (_g = request.getReleaseVerifyActions()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
+            'releaseConsumeActions': (_k = (_j = request.getReleaseConsumeActions()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
+            'restrainReturnRate': (_l = request.getRestrainReturnRate()) !== null && _l !== void 0 ? _l : null,
+            'premiseNodeNames': (_m = request.getPremiseNodeNames()) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -494,7 +495,7 @@ var Gs2SkillTreeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2SkillTreeRestClient.prototype.updateNodeModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{nodeModelName}')
             .replace('{service}', 'skill-tree')
             .replace('{region}', this.session.region)
@@ -508,9 +509,10 @@ var Gs2SkillTreeRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
-            'releaseConsumeActions': (_j = (_h = request.getReleaseConsumeActions()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
-            'restrainReturnRate': (_k = request.getRestrainReturnRate()) !== null && _k !== void 0 ? _k : null,
-            'premiseNodeNames': (_l = request.getPremiseNodeNames()) !== null && _l !== void 0 ? _l : null,
+            'releaseVerifyActions': (_j = (_h = request.getReleaseVerifyActions()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
+            'releaseConsumeActions': (_l = (_k = request.getReleaseConsumeActions()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
+            'restrainReturnRate': (_m = request.getRestrainReturnRate()) !== null && _m !== void 0 ? _m : null,
+            'premiseNodeNames': (_o = request.getPremiseNodeNames()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

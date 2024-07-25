@@ -1,9 +1,11 @@
 import IModel from '../../core/interface/IModel';
+import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
 export default class SalesItem implements IModel {
     private name;
     private metadata;
+    private verifyActions;
     private consumeActions;
     private acquireActions;
     getName(): string | null;
@@ -12,6 +14,9 @@ export default class SalesItem implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
+    getVerifyActions(): VerifyAction[] | null;
+    setVerifyActions(verifyActions: VerifyAction[] | null): this;
+    withVerifyActions(verifyActions: VerifyAction[] | null): this;
     getConsumeActions(): ConsumeAction[] | null;
     setConsumeActions(consumeActions: ConsumeAction[] | null): this;
     withConsumeActions(consumeActions: ConsumeAction[] | null): this;

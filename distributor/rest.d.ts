@@ -23,9 +23,11 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     updateCurrentDistributorMasterFromGitHub(request: Request.UpdateCurrentDistributorMasterFromGitHubRequest): Promise<Result.UpdateCurrentDistributorMasterFromGitHubResult>;
     distribute(request: Request.DistributeRequest): Promise<Result.DistributeResult>;
     distributeWithoutOverflowProcess(request: Request.DistributeWithoutOverflowProcessRequest): Promise<Result.DistributeWithoutOverflowProcessResult>;
+    runVerifyTask(request: Request.RunVerifyTaskRequest): Promise<Result.RunVerifyTaskResult>;
     runStampTask(request: Request.RunStampTaskRequest): Promise<Result.RunStampTaskResult>;
     runStampSheet(request: Request.RunStampSheetRequest): Promise<Result.RunStampSheetResult>;
     runStampSheetExpress(request: Request.RunStampSheetExpressRequest): Promise<Result.RunStampSheetExpressResult>;
+    runVerifyTaskWithoutNamespace(request: Request.RunVerifyTaskWithoutNamespaceRequest): Promise<Result.RunVerifyTaskWithoutNamespaceResult>;
     runStampTaskWithoutNamespace(request: Request.RunStampTaskWithoutNamespaceRequest): Promise<Result.RunStampTaskWithoutNamespaceResult>;
     runStampSheetWithoutNamespace(request: Request.RunStampSheetWithoutNamespaceRequest): Promise<Result.RunStampSheetWithoutNamespaceResult>;
     runStampSheetExpressWithoutNamespace(request: Request.RunStampSheetExpressWithoutNamespaceRequest): Promise<Result.RunStampSheetExpressWithoutNamespaceResult>;

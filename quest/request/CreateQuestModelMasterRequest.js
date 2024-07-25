@@ -29,6 +29,7 @@ var CreateQuestModelMasterRequest = /** @class */ (function () {
         this.contents = null;
         this.challengePeriodEventId = null;
         this.firstCompleteAcquireActions = null;
+        this.verifyActions = null;
         this.consumeActions = null;
         this.failedAcquireActions = null;
         this.premiseQuestNames = null;
@@ -143,6 +144,17 @@ var CreateQuestModelMasterRequest = /** @class */ (function () {
         this.firstCompleteAcquireActions = firstCompleteAcquireActions;
         return this;
     };
+    CreateQuestModelMasterRequest.prototype.getVerifyActions = function () {
+        return this.verifyActions;
+    };
+    CreateQuestModelMasterRequest.prototype.setVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
+        return this;
+    };
+    CreateQuestModelMasterRequest.prototype.withVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
+        return this;
+    };
     CreateQuestModelMasterRequest.prototype.getConsumeActions = function () {
         return this.consumeActions;
     };
@@ -192,6 +204,10 @@ var CreateQuestModelMasterRequest = /** @class */ (function () {
             data.firstCompleteAcquireActions.map(function (item) {
                 return Gs2Quest.AcquireAction.fromDict(item);
             }) : [])
+            .withVerifyActions(data.verifyActions ?
+            data.verifyActions.map(function (item) {
+                return Gs2Quest.VerifyAction.fromDict(item);
+            }) : [])
             .withConsumeActions(data.consumeActions ?
             data.consumeActions.map(function (item) {
                 return Gs2Quest.ConsumeAction.fromDict(item);
@@ -219,6 +235,10 @@ var CreateQuestModelMasterRequest = /** @class */ (function () {
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "firstCompleteAcquireActions": this.getFirstCompleteAcquireActions() ?
                 this.getFirstCompleteAcquireActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
+            "verifyActions": this.getVerifyActions() ?
+                this.getVerifyActions().map(function (item) {
                     return item.toDict();
                 }) : [],
             "consumeActions": this.getConsumeActions() ?

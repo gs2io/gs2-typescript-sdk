@@ -1,9 +1,17 @@
 import IResult from '../../core/interface/IResult';
 export default class RunStampSheetExpressResult implements IResult {
+    private verifyTaskResultCodes;
+    private verifyTaskResults;
     private taskResultCodes;
     private taskResults;
     private sheetResultCode;
     private sheetResult;
+    getVerifyTaskResultCodes(): number[] | null;
+    setVerifyTaskResultCodes(verifyTaskResultCodes: number[] | null): this;
+    withVerifyTaskResultCodes(verifyTaskResultCodes: number[] | null): this;
+    getVerifyTaskResults(): string[] | null;
+    setVerifyTaskResults(verifyTaskResults: string[] | null): this;
+    withVerifyTaskResults(verifyTaskResults: string[] | null): this;
     getTaskResultCodes(): number[] | null;
     setTaskResultCodes(taskResultCodes: number[] | null): this;
     withTaskResultCodes(taskResultCodes: number[] | null): this;

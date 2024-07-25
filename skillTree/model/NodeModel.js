@@ -16,6 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
+var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
 var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
 var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:skillTree:{namespaceName}:model:{nodeModelName}";
@@ -24,6 +25,7 @@ var NodeModel = /** @class */ (function () {
         this.nodeModelId = null;
         this.name = null;
         this.metadata = null;
+        this.releaseVerifyActions = null;
         this.releaseConsumeActions = null;
         this.returnAcquireActions = null;
         this.restrainReturnRate = null;
@@ -128,6 +130,17 @@ var NodeModel = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
+    NodeModel.prototype.getReleaseVerifyActions = function () {
+        return this.releaseVerifyActions;
+    };
+    NodeModel.prototype.setReleaseVerifyActions = function (releaseVerifyActions) {
+        this.releaseVerifyActions = releaseVerifyActions;
+        return this;
+    };
+    NodeModel.prototype.withReleaseVerifyActions = function (releaseVerifyActions) {
+        this.releaseVerifyActions = releaseVerifyActions;
+        return this;
+    };
     NodeModel.prototype.getReleaseConsumeActions = function () {
         return this.releaseConsumeActions;
     };
@@ -180,6 +193,10 @@ var NodeModel = /** @class */ (function () {
             .withNodeModelId(data["nodeModelId"])
             .withName(data["name"])
             .withMetadata(data["metadata"])
+            .withReleaseVerifyActions(data.releaseVerifyActions ?
+            data.releaseVerifyActions.map(function (item) {
+                return VerifyAction_1.default.fromDict(item);
+            }) : [])
             .withReleaseConsumeActions(data.releaseConsumeActions ?
             data.releaseConsumeActions.map(function (item) {
                 return ConsumeAction_1.default.fromDict(item);
@@ -199,6 +216,10 @@ var NodeModel = /** @class */ (function () {
             "nodeModelId": this.getNodeModelId(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
+            "releaseVerifyActions": this.getReleaseVerifyActions() ?
+                this.getReleaseVerifyActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "releaseConsumeActions": this.getReleaseConsumeActions() ?
                 this.getReleaseConsumeActions().map(function (item) {
                     return item.toDict();

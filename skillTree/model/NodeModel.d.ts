@@ -1,10 +1,12 @@
 import IModel from '../../core/interface/IModel';
+import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
 export default class NodeModel implements IModel {
     private nodeModelId;
     private name;
     private metadata;
+    private releaseVerifyActions;
     private releaseConsumeActions;
     private returnAcquireActions;
     private restrainReturnRate;
@@ -24,6 +26,9 @@ export default class NodeModel implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
+    getReleaseVerifyActions(): VerifyAction[] | null;
+    setReleaseVerifyActions(releaseVerifyActions: VerifyAction[] | null): this;
+    withReleaseVerifyActions(releaseVerifyActions: VerifyAction[] | null): this;
     getReleaseConsumeActions(): ConsumeAction[] | null;
     setReleaseConsumeActions(releaseConsumeActions: ConsumeAction[] | null): this;
     withReleaseConsumeActions(releaseConsumeActions: ConsumeAction[] | null): this;

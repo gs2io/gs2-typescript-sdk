@@ -29,6 +29,7 @@ export default class UpdateRateModelMasterRequest implements IRequest {
     private timingType: string|null = null;
     private lockTime: number|null = null;
     private acquireActions: Gs2Exchange.AcquireAction[]|null = null;
+    private verifyActions: Gs2Exchange.VerifyAction[]|null = null;
     private consumeActions: Gs2Exchange.ConsumeAction[]|null = null;
 
     public getRequestId(): string|null {
@@ -135,6 +136,17 @@ export default class UpdateRateModelMasterRequest implements IRequest {
         this.acquireActions = acquireActions;
         return this;
     }
+    public getVerifyActions(): Gs2Exchange.VerifyAction[]|null {
+        return this.verifyActions;
+    }
+    public setVerifyActions(verifyActions: Gs2Exchange.VerifyAction[]|null) {
+        this.verifyActions = verifyActions;
+        return this;
+    }
+    public withVerifyActions(verifyActions: Gs2Exchange.VerifyAction[]|null): this {
+        this.verifyActions = verifyActions;
+        return this;
+    }
     public getConsumeActions(): Gs2Exchange.ConsumeAction[]|null {
         return this.consumeActions;
     }
@@ -160,6 +172,11 @@ export default class UpdateRateModelMasterRequest implements IRequest {
                     return Gs2Exchange.AcquireAction.fromDict(item);
                 }
             ) : [])
+            .withVerifyActions(data.verifyActions ?
+                data.verifyActions.map((item: {[key: string]: any}) => {
+                    return Gs2Exchange.VerifyAction.fromDict(item);
+                }
+            ) : [])
             .withConsumeActions(data.consumeActions ?
                 data.consumeActions.map((item: {[key: string]: any}) => {
                     return Gs2Exchange.ConsumeAction.fromDict(item);
@@ -177,6 +194,11 @@ export default class UpdateRateModelMasterRequest implements IRequest {
             "lockTime": this.getLockTime(),
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions()!.map((item: Gs2Exchange.AcquireAction) => {
+                    return item.toDict();
+                }
+            ) : [],
+            "verifyActions": this.getVerifyActions() ?
+                this.getVerifyActions()!.map((item: Gs2Exchange.VerifyAction) => {
                     return item.toDict();
                 }
             ) : [],

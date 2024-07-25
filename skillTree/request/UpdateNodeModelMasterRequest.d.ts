@@ -7,6 +7,7 @@ export default class UpdateNodeModelMasterRequest implements IRequest {
     private nodeModelName;
     private description;
     private metadata;
+    private releaseVerifyActions;
     private releaseConsumeActions;
     private restrainReturnRate;
     private premiseNodeNames;
@@ -28,6 +29,9 @@ export default class UpdateNodeModelMasterRequest implements IRequest {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
+    getReleaseVerifyActions(): Gs2SkillTree.VerifyAction[] | null;
+    setReleaseVerifyActions(releaseVerifyActions: Gs2SkillTree.VerifyAction[] | null): this;
+    withReleaseVerifyActions(releaseVerifyActions: Gs2SkillTree.VerifyAction[] | null): this;
     getReleaseConsumeActions(): Gs2SkillTree.ConsumeAction[] | null;
     setReleaseConsumeActions(releaseConsumeActions: Gs2SkillTree.ConsumeAction[] | null): this;
     withReleaseConsumeActions(releaseConsumeActions: Gs2SkillTree.ConsumeAction[] | null): this;

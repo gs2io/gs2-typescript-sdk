@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:exchange:{namespaceName}:model:{rateName}";
@@ -24,6 +25,7 @@ export default class RateModelMaster implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private metadata: string|null = null;
+    private verifyActions: VerifyAction[]|null = null;
     private consumeActions: ConsumeAction[]|null = null;
     private timingType: string|null = null;
     private lockTime: number|null = null;
@@ -156,6 +158,17 @@ export default class RateModelMaster implements IModel {
         this.metadata = metadata;
         return this;
     }
+    public getVerifyActions(): VerifyAction[]|null {
+        return this.verifyActions;
+    }
+    public setVerifyActions(verifyActions: VerifyAction[]|null) {
+        this.verifyActions = verifyActions;
+        return this;
+    }
+    public withVerifyActions(verifyActions: VerifyAction[]|null): this {
+        this.verifyActions = verifyActions;
+        return this;
+    }
     public getConsumeActions(): ConsumeAction[]|null {
         return this.consumeActions;
     }
@@ -243,6 +256,11 @@ export default class RateModelMaster implements IModel {
             .withName(data["name"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
+            .withVerifyActions(data.verifyActions ?
+                data.verifyActions.map((item: {[key: string]: any}) => {
+                    return VerifyAction.fromDict(item);
+                }
+            ) : [])
             .withConsumeActions(data.consumeActions ?
                 data.consumeActions.map((item: {[key: string]: any}) => {
                     return ConsumeAction.fromDict(item);
@@ -266,6 +284,11 @@ export default class RateModelMaster implements IModel {
             "name": this.getName(),
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
+            "verifyActions": this.getVerifyActions() ?
+                this.getVerifyActions()!.map((item: VerifyAction) => {
+                    return item.toDict();
+                }
+            ) : [],
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions()!.map((item: ConsumeAction) => {
                     return item.toDict();

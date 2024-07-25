@@ -1,6 +1,7 @@
 import IModel from '../../core/interface/IModel';
 import AcquireAction from './AcquireAction';
 import Contents from './Contents';
+import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 export default class QuestModelMaster implements IModel {
     private questModelId;
@@ -11,6 +12,7 @@ export default class QuestModelMaster implements IModel {
     private contents;
     private challengePeriodEventId;
     private firstCompleteAcquireActions;
+    private verifyActions;
     private consumeActions;
     private failedAcquireActions;
     private premiseQuestNames;
@@ -48,6 +50,9 @@ export default class QuestModelMaster implements IModel {
     getFirstCompleteAcquireActions(): AcquireAction[] | null;
     setFirstCompleteAcquireActions(firstCompleteAcquireActions: AcquireAction[] | null): this;
     withFirstCompleteAcquireActions(firstCompleteAcquireActions: AcquireAction[] | null): this;
+    getVerifyActions(): VerifyAction[] | null;
+    setVerifyActions(verifyActions: VerifyAction[] | null): this;
+    withVerifyActions(verifyActions: VerifyAction[] | null): this;
     getConsumeActions(): ConsumeAction[] | null;
     setConsumeActions(consumeActions: ConsumeAction[] | null): this;
     withConsumeActions(consumeActions: ConsumeAction[] | null): this;

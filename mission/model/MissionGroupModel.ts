@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 import TargetCounterModel from './TargetCounterModel';
-import ConsumeAction from './ConsumeAction';
+import VerifyAction from './VerifyAction';
 import AcquireAction from './AcquireAction';
 import MissionTaskModel from './MissionTaskModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}:group:{missionGroupName}";

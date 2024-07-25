@@ -530,6 +530,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
             'timingType': request.getTimingType() ?? null,
             'lockTime': request.getLockTime() ?? null,
             'acquireActions': request.getAcquireActions()?.map((item) => item.toDict()) ?? null,
+            'verifyActions': request.getVerifyActions()?.map((item) => item.toDict()) ?? null,
             'consumeActions': request.getConsumeActions()?.map((item) => item.toDict()) ?? null,
         };
         return axios.post(
@@ -594,6 +595,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
             'timingType': request.getTimingType() ?? null,
             'lockTime': request.getLockTime() ?? null,
             'acquireActions': request.getAcquireActions()?.map((item) => item.toDict()) ?? null,
+            'verifyActions': request.getVerifyActions()?.map((item) => item.toDict()) ?? null,
             'consumeActions': request.getConsumeActions()?.map((item) => item.toDict()) ?? null,
         };
         return axios.put(

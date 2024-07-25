@@ -31,6 +31,7 @@ var CreateBonusModelMasterRequest = /** @class */ (function () {
         this.repeat = null;
         this.rewards = null;
         this.missedReceiveRelief = null;
+        this.missedReceiveReliefVerifyActions = null;
         this.missedReceiveReliefConsumeActions = null;
     }
     CreateBonusModelMasterRequest.prototype.getRequestId = function () {
@@ -165,6 +166,17 @@ var CreateBonusModelMasterRequest = /** @class */ (function () {
         this.missedReceiveRelief = missedReceiveRelief;
         return this;
     };
+    CreateBonusModelMasterRequest.prototype.getMissedReceiveReliefVerifyActions = function () {
+        return this.missedReceiveReliefVerifyActions;
+    };
+    CreateBonusModelMasterRequest.prototype.setMissedReceiveReliefVerifyActions = function (missedReceiveReliefVerifyActions) {
+        this.missedReceiveReliefVerifyActions = missedReceiveReliefVerifyActions;
+        return this;
+    };
+    CreateBonusModelMasterRequest.prototype.withMissedReceiveReliefVerifyActions = function (missedReceiveReliefVerifyActions) {
+        this.missedReceiveReliefVerifyActions = missedReceiveReliefVerifyActions;
+        return this;
+    };
     CreateBonusModelMasterRequest.prototype.getMissedReceiveReliefConsumeActions = function () {
         return this.missedReceiveReliefConsumeActions;
     };
@@ -191,6 +203,10 @@ var CreateBonusModelMasterRequest = /** @class */ (function () {
                 return Gs2LoginReward.Reward.fromDict(item);
             }) : [])
             .withMissedReceiveRelief(data["missedReceiveRelief"])
+            .withMissedReceiveReliefVerifyActions(data.missedReceiveReliefVerifyActions ?
+            data.missedReceiveReliefVerifyActions.map(function (item) {
+                return Gs2LoginReward.VerifyAction.fromDict(item);
+            }) : [])
             .withMissedReceiveReliefConsumeActions(data.missedReceiveReliefConsumeActions ?
             data.missedReceiveReliefConsumeActions.map(function (item) {
                 return Gs2LoginReward.ConsumeAction.fromDict(item);
@@ -211,6 +227,10 @@ var CreateBonusModelMasterRequest = /** @class */ (function () {
                     return item.toDict();
                 }) : [],
             "missedReceiveRelief": this.getMissedReceiveRelief(),
+            "missedReceiveReliefVerifyActions": this.getMissedReceiveReliefVerifyActions() ?
+                this.getMissedReceiveReliefVerifyActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "missedReceiveReliefConsumeActions": this.getMissedReceiveReliefConsumeActions() ?
                 this.getMissedReceiveReliefConsumeActions().map(function (item) {
                     return item.toDict();

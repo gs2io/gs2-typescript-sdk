@@ -1,5 +1,6 @@
 import IModel from '../../core/interface/IModel';
 import Reward from './Reward';
+import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 export default class BonusModel implements IModel {
     private bonusModelId;
@@ -11,6 +12,7 @@ export default class BonusModel implements IModel {
     private repeat;
     private rewards;
     private missedReceiveRelief;
+    private missedReceiveReliefVerifyActions;
     private missedReceiveReliefConsumeActions;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
@@ -45,6 +47,9 @@ export default class BonusModel implements IModel {
     getMissedReceiveRelief(): string | null;
     setMissedReceiveRelief(missedReceiveRelief: string | null): this;
     withMissedReceiveRelief(missedReceiveRelief: string | null): this;
+    getMissedReceiveReliefVerifyActions(): VerifyAction[] | null;
+    setMissedReceiveReliefVerifyActions(missedReceiveReliefVerifyActions: VerifyAction[] | null): this;
+    withMissedReceiveReliefVerifyActions(missedReceiveReliefVerifyActions: VerifyAction[] | null): this;
     getMissedReceiveReliefConsumeActions(): ConsumeAction[] | null;
     setMissedReceiveReliefConsumeActions(missedReceiveReliefConsumeActions: ConsumeAction[] | null): this;
     withMissedReceiveReliefConsumeActions(missedReceiveReliefConsumeActions: ConsumeAction[] | null): this;

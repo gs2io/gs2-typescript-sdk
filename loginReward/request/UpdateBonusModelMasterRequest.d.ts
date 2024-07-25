@@ -13,6 +13,7 @@ export default class UpdateBonusModelMasterRequest implements IRequest {
     private repeat;
     private rewards;
     private missedReceiveRelief;
+    private missedReceiveReliefVerifyActions;
     private missedReceiveReliefConsumeActions;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -50,6 +51,9 @@ export default class UpdateBonusModelMasterRequest implements IRequest {
     getMissedReceiveRelief(): string | null;
     setMissedReceiveRelief(missedReceiveRelief: string | null): this;
     withMissedReceiveRelief(missedReceiveRelief: string | null): this;
+    getMissedReceiveReliefVerifyActions(): Gs2LoginReward.VerifyAction[] | null;
+    setMissedReceiveReliefVerifyActions(missedReceiveReliefVerifyActions: Gs2LoginReward.VerifyAction[] | null): this;
+    withMissedReceiveReliefVerifyActions(missedReceiveReliefVerifyActions: Gs2LoginReward.VerifyAction[] | null): this;
     getMissedReceiveReliefConsumeActions(): Gs2LoginReward.ConsumeAction[] | null;
     setMissedReceiveReliefConsumeActions(missedReceiveReliefConsumeActions: Gs2LoginReward.ConsumeAction[] | null): this;
     withMissedReceiveReliefConsumeActions(missedReceiveReliefConsumeActions: Gs2LoginReward.ConsumeAction[] | null): this;

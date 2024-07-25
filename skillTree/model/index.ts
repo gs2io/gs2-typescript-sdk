@@ -20,6 +20,7 @@ import Status from "./Status"
 import CurrentTreeMaster from "./CurrentTreeMaster"
 import Config from "./Config"
 import ConsumeAction from "./ConsumeAction"
+import VerifyAction from "./VerifyAction"
 import AcquireAction from "./AcquireAction"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import ScriptSetting from "./ScriptSetting"
@@ -34,6 +35,7 @@ export {
     CurrentTreeMaster,
     Config,
     ConsumeAction,
+    VerifyAction,
     AcquireAction,
     GitHubCheckoutSetting,
     ScriptSetting,

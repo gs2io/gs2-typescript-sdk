@@ -11,6 +11,7 @@ export default class UpdateQuestModelMasterRequest implements IRequest {
     private contents;
     private challengePeriodEventId;
     private firstCompleteAcquireActions;
+    private verifyActions;
     private consumeActions;
     private failedAcquireActions;
     private premiseQuestNames;
@@ -44,6 +45,9 @@ export default class UpdateQuestModelMasterRequest implements IRequest {
     getFirstCompleteAcquireActions(): Gs2Quest.AcquireAction[] | null;
     setFirstCompleteAcquireActions(firstCompleteAcquireActions: Gs2Quest.AcquireAction[] | null): this;
     withFirstCompleteAcquireActions(firstCompleteAcquireActions: Gs2Quest.AcquireAction[] | null): this;
+    getVerifyActions(): Gs2Quest.VerifyAction[] | null;
+    setVerifyActions(verifyActions: Gs2Quest.VerifyAction[] | null): this;
+    withVerifyActions(verifyActions: Gs2Quest.VerifyAction[] | null): this;
     getConsumeActions(): Gs2Quest.ConsumeAction[] | null;
     setConsumeActions(consumeActions: Gs2Quest.ConsumeAction[] | null): this;
     withConsumeActions(consumeActions: Gs2Quest.ConsumeAction[] | null): this;

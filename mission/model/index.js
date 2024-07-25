@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.LogSetting = exports.Config = exports.ConsumeAction = exports.AcquireAction = exports.TargetCounterModel = exports.ScopedValue = exports.MissionTaskModelMaster = exports.MissionTaskModel = exports.MissionGroupModel = exports.CounterModel = exports.CurrentMissionMaster = exports.Counter = exports.Namespace = exports.MissionGroupModelMaster = exports.CounterScopeModel = exports.CounterModelMaster = exports.NotificationSetting = exports.Complete = void 0;
+exports.TransactionSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.LogSetting = exports.Config = exports.VerifyAction = exports.ConsumeAction = exports.AcquireAction = exports.TargetCounterModel = exports.ScopedValue = exports.MissionTaskModelMaster = exports.MissionTaskModel = exports.MissionGroupModel = exports.CounterModel = exports.CurrentMissionMaster = exports.Counter = exports.Namespace = exports.MissionGroupModelMaster = exports.CounterScopeModel = exports.CounterModelMaster = exports.NotificationSetting = exports.Complete = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -49,6 +49,8 @@ var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 exports.AcquireAction = AcquireAction_1.default;
 var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
 exports.ConsumeAction = ConsumeAction_1.default;
+var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
+exports.VerifyAction = VerifyAction_1.default;
 var Config_1 = tslib_1.__importDefault(require("./Config"));
 exports.Config = Config_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));

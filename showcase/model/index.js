@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScriptSetting = exports.TransactionSetting = exports.LogSetting = exports.GitHubCheckoutSetting = exports.Config = exports.AcquireAction = exports.ConsumeAction = exports.RandomDisplayItemModel = exports.RandomDisplayItem = exports.PurchaseCount = exports.RandomShowcase = exports.RandomShowcaseMaster = exports.DisplayItemMaster = exports.DisplayItem = exports.Showcase = exports.SalesItemGroup = exports.SalesItem = exports.CurrentShowcaseMaster = exports.ShowcaseMaster = exports.SalesItemGroupMaster = exports.SalesItemMaster = exports.Namespace = void 0;
+exports.ScriptSetting = exports.TransactionSetting = exports.LogSetting = exports.GitHubCheckoutSetting = exports.Config = exports.AcquireAction = exports.VerifyAction = exports.ConsumeAction = exports.RandomDisplayItemModel = exports.RandomDisplayItem = exports.PurchaseCount = exports.RandomShowcase = exports.RandomShowcaseMaster = exports.DisplayItemMaster = exports.DisplayItem = exports.Showcase = exports.SalesItemGroup = exports.SalesItem = exports.CurrentShowcaseMaster = exports.ShowcaseMaster = exports.SalesItemGroupMaster = exports.SalesItemMaster = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -49,6 +49,8 @@ var RandomDisplayItemModel_1 = tslib_1.__importDefault(require("./RandomDisplayI
 exports.RandomDisplayItemModel = RandomDisplayItemModel_1.default;
 var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
 exports.ConsumeAction = ConsumeAction_1.default;
+var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
+exports.VerifyAction = VerifyAction_1.default;
 var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 exports.AcquireAction = AcquireAction_1.default;
 var Config_1 = tslib_1.__importDefault(require("./Config"));

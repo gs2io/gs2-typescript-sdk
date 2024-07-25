@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionSetting = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.ConsumeAction = exports.AcquireAction = exports.QuestModel = exports.QuestGroupModel = exports.CompletedQuestList = exports.Progress = exports.Reward = exports.Contents = exports.CurrentQuestMaster = exports.QuestModelMaster = exports.QuestGroupModelMaster = exports.Namespace = void 0;
+exports.TransactionSetting = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.VerifyAction = exports.ConsumeAction = exports.AcquireAction = exports.QuestModel = exports.QuestGroupModel = exports.CompletedQuestList = exports.Progress = exports.Reward = exports.Contents = exports.CurrentQuestMaster = exports.QuestModelMaster = exports.QuestGroupModelMaster = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -41,6 +41,8 @@ var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 exports.AcquireAction = AcquireAction_1.default;
 var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
 exports.ConsumeAction = ConsumeAction_1.default;
+var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
+exports.VerifyAction = VerifyAction_1.default;
 var Config_1 = tslib_1.__importDefault(require("./Config"));
 exports.Config = Config_1.default;
 var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));

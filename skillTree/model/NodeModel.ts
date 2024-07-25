@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:skillTree:{namespaceName}:model:{nodeModelName}";
@@ -23,6 +24,7 @@ export default class NodeModel implements IModel {
     private nodeModelId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;
+    private releaseVerifyActions: VerifyAction[]|null = null;
     private releaseConsumeActions: ConsumeAction[]|null = null;
     private returnAcquireActions: AcquireAction[]|null = null;
     private restrainReturnRate: number|null = null;
@@ -141,6 +143,17 @@ export default class NodeModel implements IModel {
         this.metadata = metadata;
         return this;
     }
+    public getReleaseVerifyActions(): VerifyAction[]|null {
+        return this.releaseVerifyActions;
+    }
+    public setReleaseVerifyActions(releaseVerifyActions: VerifyAction[]|null) {
+        this.releaseVerifyActions = releaseVerifyActions;
+        return this;
+    }
+    public withReleaseVerifyActions(releaseVerifyActions: VerifyAction[]|null): this {
+        this.releaseVerifyActions = releaseVerifyActions;
+        return this;
+    }
     public getReleaseConsumeActions(): ConsumeAction[]|null {
         return this.releaseConsumeActions;
     }
@@ -194,6 +207,11 @@ export default class NodeModel implements IModel {
             .withNodeModelId(data["nodeModelId"])
             .withName(data["name"])
             .withMetadata(data["metadata"])
+            .withReleaseVerifyActions(data.releaseVerifyActions ?
+                data.releaseVerifyActions.map((item: {[key: string]: any}) => {
+                    return VerifyAction.fromDict(item);
+                }
+            ) : [])
             .withReleaseConsumeActions(data.releaseConsumeActions ?
                 data.releaseConsumeActions.map((item: {[key: string]: any}) => {
                     return ConsumeAction.fromDict(item);
@@ -217,6 +235,11 @@ export default class NodeModel implements IModel {
             "nodeModelId": this.getNodeModelId(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
+            "releaseVerifyActions": this.getReleaseVerifyActions() ?
+                this.getReleaseVerifyActions()!.map((item: VerifyAction) => {
+                    return item.toDict();
+                }
+            ) : [],
             "releaseConsumeActions": this.getReleaseConsumeActions() ?
                 this.getReleaseConsumeActions()!.map((item: ConsumeAction) => {
                     return item.toDict();

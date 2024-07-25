@@ -16,6 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
+var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
 var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
 var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:distributor:{namespaceName}:user:{userId}:stampSheet:result:{transactionId}";
@@ -24,8 +25,11 @@ var StampSheetResult = /** @class */ (function () {
         this.stampSheetResultId = null;
         this.userId = null;
         this.transactionId = null;
+        this.verifyTaskRequests = null;
         this.taskRequests = null;
         this.sheetRequest = null;
+        this.verifyTaskResultCodes = null;
+        this.verifyTaskResults = null;
         this.taskResultCodes = null;
         this.taskResults = null;
         this.sheetResultCode = null;
@@ -153,6 +157,17 @@ var StampSheetResult = /** @class */ (function () {
         this.transactionId = transactionId;
         return this;
     };
+    StampSheetResult.prototype.getVerifyTaskRequests = function () {
+        return this.verifyTaskRequests;
+    };
+    StampSheetResult.prototype.setVerifyTaskRequests = function (verifyTaskRequests) {
+        this.verifyTaskRequests = verifyTaskRequests;
+        return this;
+    };
+    StampSheetResult.prototype.withVerifyTaskRequests = function (verifyTaskRequests) {
+        this.verifyTaskRequests = verifyTaskRequests;
+        return this;
+    };
     StampSheetResult.prototype.getTaskRequests = function () {
         return this.taskRequests;
     };
@@ -173,6 +188,28 @@ var StampSheetResult = /** @class */ (function () {
     };
     StampSheetResult.prototype.withSheetRequest = function (sheetRequest) {
         this.sheetRequest = sheetRequest;
+        return this;
+    };
+    StampSheetResult.prototype.getVerifyTaskResultCodes = function () {
+        return this.verifyTaskResultCodes;
+    };
+    StampSheetResult.prototype.setVerifyTaskResultCodes = function (verifyTaskResultCodes) {
+        this.verifyTaskResultCodes = verifyTaskResultCodes;
+        return this;
+    };
+    StampSheetResult.prototype.withVerifyTaskResultCodes = function (verifyTaskResultCodes) {
+        this.verifyTaskResultCodes = verifyTaskResultCodes;
+        return this;
+    };
+    StampSheetResult.prototype.getVerifyTaskResults = function () {
+        return this.verifyTaskResults;
+    };
+    StampSheetResult.prototype.setVerifyTaskResults = function (verifyTaskResults) {
+        this.verifyTaskResults = verifyTaskResults;
+        return this;
+    };
+    StampSheetResult.prototype.withVerifyTaskResults = function (verifyTaskResults) {
+        this.verifyTaskResults = verifyTaskResults;
         return this;
     };
     StampSheetResult.prototype.getTaskResultCodes = function () {
@@ -260,11 +297,23 @@ var StampSheetResult = /** @class */ (function () {
             .withStampSheetResultId(data["stampSheetResultId"])
             .withUserId(data["userId"])
             .withTransactionId(data["transactionId"])
+            .withVerifyTaskRequests(data.verifyTaskRequests ?
+            data.verifyTaskRequests.map(function (item) {
+                return VerifyAction_1.default.fromDict(item);
+            }) : [])
             .withTaskRequests(data.taskRequests ?
             data.taskRequests.map(function (item) {
                 return ConsumeAction_1.default.fromDict(item);
             }) : [])
             .withSheetRequest(AcquireAction_1.default.fromDict(data["sheetRequest"]))
+            .withVerifyTaskResultCodes(data.verifyTaskResultCodes ?
+            data.verifyTaskResultCodes.map(function (item) {
+                return item;
+            }) : [])
+            .withVerifyTaskResults(data.verifyTaskResults ?
+            data.verifyTaskResults.map(function (item) {
+                return item;
+            }) : [])
             .withTaskResultCodes(data.taskResultCodes ?
             data.taskResultCodes.map(function (item) {
                 return item;
@@ -285,11 +334,23 @@ var StampSheetResult = /** @class */ (function () {
             "stampSheetResultId": this.getStampSheetResultId(),
             "userId": this.getUserId(),
             "transactionId": this.getTransactionId(),
+            "verifyTaskRequests": this.getVerifyTaskRequests() ?
+                this.getVerifyTaskRequests().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "taskRequests": this.getTaskRequests() ?
                 this.getTaskRequests().map(function (item) {
                     return item.toDict();
                 }) : [],
             "sheetRequest": (_a = this.getSheetRequest()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "verifyTaskResultCodes": this.getVerifyTaskResultCodes() ?
+                this.getVerifyTaskResultCodes().map(function (item) {
+                    return item;
+                }) : [],
+            "verifyTaskResults": this.getVerifyTaskResults() ?
+                this.getVerifyTaskResults().map(function (item) {
+                    return item;
+                }) : [],
             "taskResultCodes": this.getTaskResultCodes() ?
                 this.getTaskResultCodes().map(function (item) {
                     return item;

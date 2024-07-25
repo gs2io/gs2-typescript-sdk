@@ -22,6 +22,7 @@ import CurrentRateMaster from "./CurrentRateMaster"
 import Await from "./Await"
 import AcquireAction from "./AcquireAction"
 import ConsumeAction from "./ConsumeAction"
+import VerifyAction from "./VerifyAction"
 import Config from "./Config"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import ScriptSetting from "./ScriptSetting"
@@ -38,6 +39,7 @@ export {
     Await,
     AcquireAction,
     ConsumeAction,
+    VerifyAction,
     Config,
     GitHubCheckoutSetting,
     ScriptSetting,

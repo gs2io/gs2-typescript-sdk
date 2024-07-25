@@ -32,6 +32,7 @@ export default class CreateBonusModelMasterRequest implements IRequest {
     private repeat: string|null = null;
     private rewards: Gs2LoginReward.Reward[]|null = null;
     private missedReceiveRelief: string|null = null;
+    private missedReceiveReliefVerifyActions: Gs2LoginReward.VerifyAction[]|null = null;
     private missedReceiveReliefConsumeActions: Gs2LoginReward.ConsumeAction[]|null = null;
 
     public getRequestId(): string|null {
@@ -171,6 +172,17 @@ export default class CreateBonusModelMasterRequest implements IRequest {
         this.missedReceiveRelief = missedReceiveRelief;
         return this;
     }
+    public getMissedReceiveReliefVerifyActions(): Gs2LoginReward.VerifyAction[]|null {
+        return this.missedReceiveReliefVerifyActions;
+    }
+    public setMissedReceiveReliefVerifyActions(missedReceiveReliefVerifyActions: Gs2LoginReward.VerifyAction[]|null) {
+        this.missedReceiveReliefVerifyActions = missedReceiveReliefVerifyActions;
+        return this;
+    }
+    public withMissedReceiveReliefVerifyActions(missedReceiveReliefVerifyActions: Gs2LoginReward.VerifyAction[]|null): this {
+        this.missedReceiveReliefVerifyActions = missedReceiveReliefVerifyActions;
+        return this;
+    }
     public getMissedReceiveReliefConsumeActions(): Gs2LoginReward.ConsumeAction[]|null {
         return this.missedReceiveReliefConsumeActions;
     }
@@ -199,6 +211,11 @@ export default class CreateBonusModelMasterRequest implements IRequest {
                 }
             ) : [])
             .withMissedReceiveRelief(data["missedReceiveRelief"])
+            .withMissedReceiveReliefVerifyActions(data.missedReceiveReliefVerifyActions ?
+                data.missedReceiveReliefVerifyActions.map((item: {[key: string]: any}) => {
+                    return Gs2LoginReward.VerifyAction.fromDict(item);
+                }
+            ) : [])
             .withMissedReceiveReliefConsumeActions(data.missedReceiveReliefConsumeActions ?
                 data.missedReceiveReliefConsumeActions.map((item: {[key: string]: any}) => {
                     return Gs2LoginReward.ConsumeAction.fromDict(item);
@@ -222,6 +239,11 @@ export default class CreateBonusModelMasterRequest implements IRequest {
                 }
             ) : [],
             "missedReceiveRelief": this.getMissedReceiveRelief(),
+            "missedReceiveReliefVerifyActions": this.getMissedReceiveReliefVerifyActions() ?
+                this.getMissedReceiveReliefVerifyActions()!.map((item: Gs2LoginReward.VerifyAction) => {
+                    return item.toDict();
+                }
+            ) : [],
             "missedReceiveReliefConsumeActions": this.getMissedReceiveReliefConsumeActions() ?
                 this.getMissedReceiveReliefConsumeActions()!.map((item: Gs2LoginReward.ConsumeAction) => {
                     return item.toDict();

@@ -7,6 +7,7 @@ export default class UpdateSalesItemMasterRequest implements IRequest {
     private salesItemName;
     private description;
     private metadata;
+    private verifyActions;
     private consumeActions;
     private acquireActions;
     getRequestId(): string | null;
@@ -27,6 +28,9 @@ export default class UpdateSalesItemMasterRequest implements IRequest {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
+    getVerifyActions(): Gs2Showcase.VerifyAction[] | null;
+    setVerifyActions(verifyActions: Gs2Showcase.VerifyAction[] | null): this;
+    withVerifyActions(verifyActions: Gs2Showcase.VerifyAction[] | null): this;
     getConsumeActions(): Gs2Showcase.ConsumeAction[] | null;
     setConsumeActions(consumeActions: Gs2Showcase.ConsumeAction[] | null): this;
     withConsumeActions(consumeActions: Gs2Showcase.ConsumeAction[] | null): this;

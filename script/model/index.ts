@@ -19,6 +19,7 @@ import RandomStatus from "./RandomStatus"
 import RandomUsed from "./RandomUsed"
 import AcquireAction from "./AcquireAction"
 import ConsumeAction from "./ConsumeAction"
+import VerifyAction from "./VerifyAction"
 import Transaction from "./Transaction"
 import TransactionSetting from "./TransactionSetting"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
@@ -31,6 +32,7 @@ export {
     RandomUsed,
     AcquireAction,
     ConsumeAction,
+    VerifyAction,
     Transaction,
     TransactionSetting,
     GitHubCheckoutSetting,

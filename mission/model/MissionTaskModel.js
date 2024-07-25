@@ -17,7 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var TargetCounterModel_1 = tslib_1.__importDefault(require("./TargetCounterModel"));
-var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
+var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
 var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}:group:{missionGroupName}:missionTaskModel:{missionTaskName}";
 var MissionTaskModel = /** @class */ (function () {
@@ -274,7 +274,7 @@ var MissionTaskModel = /** @class */ (function () {
             .withTargetCounter(TargetCounterModel_1.default.fromDict(data["targetCounter"]))
             .withVerifyCompleteConsumeActions(data.verifyCompleteConsumeActions ?
             data.verifyCompleteConsumeActions.map(function (item) {
-                return ConsumeAction_1.default.fromDict(item);
+                return VerifyAction_1.default.fromDict(item);
             }) : [])
             .withCompleteAcquireActions(data.completeAcquireActions ?
             data.completeAcquireActions.map(function (item) {

@@ -17,11 +17,35 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var RunStampSheetExpressWithoutNamespaceResult = /** @class */ (function () {
     function RunStampSheetExpressWithoutNamespaceResult() {
+        this.verifyTaskResultCodes = null;
+        this.verifyTaskResults = null;
         this.taskResultCodes = null;
         this.taskResults = null;
         this.sheetResultCode = null;
         this.sheetResult = null;
     }
+    RunStampSheetExpressWithoutNamespaceResult.prototype.getVerifyTaskResultCodes = function () {
+        return this.verifyTaskResultCodes;
+    };
+    RunStampSheetExpressWithoutNamespaceResult.prototype.setVerifyTaskResultCodes = function (verifyTaskResultCodes) {
+        this.verifyTaskResultCodes = verifyTaskResultCodes;
+        return this;
+    };
+    RunStampSheetExpressWithoutNamespaceResult.prototype.withVerifyTaskResultCodes = function (verifyTaskResultCodes) {
+        this.verifyTaskResultCodes = verifyTaskResultCodes;
+        return this;
+    };
+    RunStampSheetExpressWithoutNamespaceResult.prototype.getVerifyTaskResults = function () {
+        return this.verifyTaskResults;
+    };
+    RunStampSheetExpressWithoutNamespaceResult.prototype.setVerifyTaskResults = function (verifyTaskResults) {
+        this.verifyTaskResults = verifyTaskResults;
+        return this;
+    };
+    RunStampSheetExpressWithoutNamespaceResult.prototype.withVerifyTaskResults = function (verifyTaskResults) {
+        this.verifyTaskResults = verifyTaskResults;
+        return this;
+    };
     RunStampSheetExpressWithoutNamespaceResult.prototype.getTaskResultCodes = function () {
         return this.taskResultCodes;
     };
@@ -68,6 +92,14 @@ var RunStampSheetExpressWithoutNamespaceResult = /** @class */ (function () {
     };
     RunStampSheetExpressWithoutNamespaceResult.fromDict = function (data) {
         return new RunStampSheetExpressWithoutNamespaceResult()
+            .withVerifyTaskResultCodes(data.verifyTaskResultCodes ?
+            data.verifyTaskResultCodes.map(function (item) {
+                return item;
+            }) : [])
+            .withVerifyTaskResults(data.verifyTaskResults ?
+            data.verifyTaskResults.map(function (item) {
+                return item;
+            }) : [])
             .withTaskResultCodes(data.taskResultCodes ?
             data.taskResultCodes.map(function (item) {
                 return item;
@@ -81,6 +113,14 @@ var RunStampSheetExpressWithoutNamespaceResult = /** @class */ (function () {
     };
     RunStampSheetExpressWithoutNamespaceResult.prototype.toDict = function () {
         return {
+            "verifyTaskResultCodes": this.getVerifyTaskResultCodes() ?
+                this.getVerifyTaskResultCodes().map(function (item) {
+                    return item;
+                }) : [],
+            "verifyTaskResults": this.getVerifyTaskResults() ?
+                this.getVerifyTaskResults().map(function (item) {
+                    return item;
+                }) : [],
             "taskResultCodes": this.getTaskResultCodes() ?
                 this.getTaskResultCodes().map(function (item) {
                     return item;

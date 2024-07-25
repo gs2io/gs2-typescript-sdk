@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:distributor:{namespaceName}:user:{userId}:stampSheet:result:{transactionId}";
@@ -23,8 +24,11 @@ export default class StampSheetResult implements IModel {
     private stampSheetResultId: string|null = null;
     private userId: string|null = null;
     private transactionId: string|null = null;
+    private verifyTaskRequests: VerifyAction[]|null = null;
     private taskRequests: ConsumeAction[]|null = null;
     private sheetRequest: AcquireAction|null = null;
+    private verifyTaskResultCodes: number[]|null = null;
+    private verifyTaskResults: string[]|null = null;
     private taskResultCodes: number[]|null = null;
     private taskResults: string[]|null = null;
     private sheetResultCode: number|null = null;
@@ -169,6 +173,17 @@ export default class StampSheetResult implements IModel {
         this.transactionId = transactionId;
         return this;
     }
+    public getVerifyTaskRequests(): VerifyAction[]|null {
+        return this.verifyTaskRequests;
+    }
+    public setVerifyTaskRequests(verifyTaskRequests: VerifyAction[]|null) {
+        this.verifyTaskRequests = verifyTaskRequests;
+        return this;
+    }
+    public withVerifyTaskRequests(verifyTaskRequests: VerifyAction[]|null): this {
+        this.verifyTaskRequests = verifyTaskRequests;
+        return this;
+    }
     public getTaskRequests(): ConsumeAction[]|null {
         return this.taskRequests;
     }
@@ -189,6 +204,28 @@ export default class StampSheetResult implements IModel {
     }
     public withSheetRequest(sheetRequest: AcquireAction|null): this {
         this.sheetRequest = sheetRequest;
+        return this;
+    }
+    public getVerifyTaskResultCodes(): number[]|null {
+        return this.verifyTaskResultCodes;
+    }
+    public setVerifyTaskResultCodes(verifyTaskResultCodes: number[]|null) {
+        this.verifyTaskResultCodes = verifyTaskResultCodes;
+        return this;
+    }
+    public withVerifyTaskResultCodes(verifyTaskResultCodes: number[]|null): this {
+        this.verifyTaskResultCodes = verifyTaskResultCodes;
+        return this;
+    }
+    public getVerifyTaskResults(): string[]|null {
+        return this.verifyTaskResults;
+    }
+    public setVerifyTaskResults(verifyTaskResults: string[]|null) {
+        this.verifyTaskResults = verifyTaskResults;
+        return this;
+    }
+    public withVerifyTaskResults(verifyTaskResults: string[]|null): this {
+        this.verifyTaskResults = verifyTaskResults;
         return this;
     }
     public getTaskResultCodes(): number[]|null {
@@ -277,12 +314,27 @@ export default class StampSheetResult implements IModel {
             .withStampSheetResultId(data["stampSheetResultId"])
             .withUserId(data["userId"])
             .withTransactionId(data["transactionId"])
+            .withVerifyTaskRequests(data.verifyTaskRequests ?
+                data.verifyTaskRequests.map((item: {[key: string]: any}) => {
+                    return VerifyAction.fromDict(item);
+                }
+            ) : [])
             .withTaskRequests(data.taskRequests ?
                 data.taskRequests.map((item: {[key: string]: any}) => {
                     return ConsumeAction.fromDict(item);
                 }
             ) : [])
             .withSheetRequest(AcquireAction.fromDict(data["sheetRequest"]))
+            .withVerifyTaskResultCodes(data.verifyTaskResultCodes ?
+                data.verifyTaskResultCodes.map((item: {[key: string]: any}) => {
+                    return item;
+                }
+            ) : [])
+            .withVerifyTaskResults(data.verifyTaskResults ?
+                data.verifyTaskResults.map((item: {[key: string]: any}) => {
+                    return item;
+                }
+            ) : [])
             .withTaskResultCodes(data.taskResultCodes ?
                 data.taskResultCodes.map((item: {[key: string]: any}) => {
                     return item;
@@ -305,12 +357,27 @@ export default class StampSheetResult implements IModel {
             "stampSheetResultId": this.getStampSheetResultId(),
             "userId": this.getUserId(),
             "transactionId": this.getTransactionId(),
+            "verifyTaskRequests": this.getVerifyTaskRequests() ?
+                this.getVerifyTaskRequests()!.map((item: VerifyAction) => {
+                    return item.toDict();
+                }
+            ) : [],
             "taskRequests": this.getTaskRequests() ?
                 this.getTaskRequests()!.map((item: ConsumeAction) => {
                     return item.toDict();
                 }
             ) : [],
             "sheetRequest": this.getSheetRequest()?.toDict(),
+            "verifyTaskResultCodes": this.getVerifyTaskResultCodes() ?
+                this.getVerifyTaskResultCodes()!.map((item: number) => {
+                    return item;
+                }
+            ) : [],
+            "verifyTaskResults": this.getVerifyTaskResults() ?
+                this.getVerifyTaskResults()!.map((item: string) => {
+                    return item;
+                }
+            ) : [],
             "taskResultCodes": this.getTaskResultCodes() ?
                 this.getTaskResultCodes()!.map((item: number) => {
                     return item;

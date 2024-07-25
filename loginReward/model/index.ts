@@ -21,6 +21,7 @@ import Reward from "./Reward"
 import ReceiveStatus from "./ReceiveStatus"
 import ConsumeAction from "./ConsumeAction"
 import AcquireAction from "./AcquireAction"
+import VerifyAction from "./VerifyAction"
 import Config from "./Config"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import LogSetting from "./LogSetting"
@@ -36,6 +37,7 @@ export {
     ReceiveStatus,
     ConsumeAction,
     AcquireAction,
+    VerifyAction,
     Config,
     GitHubCheckoutSetting,
     LogSetting,

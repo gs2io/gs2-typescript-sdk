@@ -29,7 +29,7 @@ export default class UpdateMissionTaskModelMasterRequest implements IRequest {
     private description: string|null = null;
     private verifyCompleteType: string|null = null;
     private targetCounter: Gs2Mission.TargetCounterModel|null = null;
-    private verifyCompleteConsumeActions: Gs2Mission.ConsumeAction[]|null = null;
+    private verifyCompleteConsumeActions: Gs2Mission.VerifyAction[]|null = null;
     private completeAcquireActions: Gs2Mission.AcquireAction[]|null = null;
     private challengePeriodEventId: string|null = null;
     private premiseMissionTaskName: string|null = null;
@@ -141,14 +141,14 @@ export default class UpdateMissionTaskModelMasterRequest implements IRequest {
         this.targetCounter = targetCounter;
         return this;
     }
-    public getVerifyCompleteConsumeActions(): Gs2Mission.ConsumeAction[]|null {
+    public getVerifyCompleteConsumeActions(): Gs2Mission.VerifyAction[]|null {
         return this.verifyCompleteConsumeActions;
     }
-    public setVerifyCompleteConsumeActions(verifyCompleteConsumeActions: Gs2Mission.ConsumeAction[]|null) {
+    public setVerifyCompleteConsumeActions(verifyCompleteConsumeActions: Gs2Mission.VerifyAction[]|null) {
         this.verifyCompleteConsumeActions = verifyCompleteConsumeActions;
         return this;
     }
-    public withVerifyCompleteConsumeActions(verifyCompleteConsumeActions: Gs2Mission.ConsumeAction[]|null): this {
+    public withVerifyCompleteConsumeActions(verifyCompleteConsumeActions: Gs2Mission.VerifyAction[]|null): this {
         this.verifyCompleteConsumeActions = verifyCompleteConsumeActions;
         return this;
     }
@@ -239,7 +239,7 @@ export default class UpdateMissionTaskModelMasterRequest implements IRequest {
             .withTargetCounter(Gs2Mission.TargetCounterModel.fromDict(data["targetCounter"]))
             .withVerifyCompleteConsumeActions(data.verifyCompleteConsumeActions ?
                 data.verifyCompleteConsumeActions.map((item: {[key: string]: any}) => {
-                    return Gs2Mission.ConsumeAction.fromDict(item);
+                    return Gs2Mission.VerifyAction.fromDict(item);
                 }
             ) : [])
             .withCompleteAcquireActions(data.completeAcquireActions ?
@@ -264,7 +264,7 @@ export default class UpdateMissionTaskModelMasterRequest implements IRequest {
             "verifyCompleteType": this.getVerifyCompleteType(),
             "targetCounter": this.getTargetCounter()?.toDict(),
             "verifyCompleteConsumeActions": this.getVerifyCompleteConsumeActions() ?
-                this.getVerifyCompleteConsumeActions()!.map((item: Gs2Mission.ConsumeAction) => {
+                this.getVerifyCompleteConsumeActions()!.map((item: Gs2Mission.VerifyAction) => {
                     return item.toDict();
                 }
             ) : [],

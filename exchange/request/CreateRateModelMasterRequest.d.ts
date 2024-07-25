@@ -10,6 +10,7 @@ export default class CreateRateModelMasterRequest implements IRequest {
     private timingType;
     private lockTime;
     private acquireActions;
+    private verifyActions;
     private consumeActions;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -38,6 +39,9 @@ export default class CreateRateModelMasterRequest implements IRequest {
     getAcquireActions(): Gs2Exchange.AcquireAction[] | null;
     setAcquireActions(acquireActions: Gs2Exchange.AcquireAction[] | null): this;
     withAcquireActions(acquireActions: Gs2Exchange.AcquireAction[] | null): this;
+    getVerifyActions(): Gs2Exchange.VerifyAction[] | null;
+    setVerifyActions(verifyActions: Gs2Exchange.VerifyAction[] | null): this;
+    withVerifyActions(verifyActions: Gs2Exchange.VerifyAction[] | null): this;
     getConsumeActions(): Gs2Exchange.ConsumeAction[] | null;
     setConsumeActions(consumeActions: Gs2Exchange.ConsumeAction[] | null): this;
     withConsumeActions(consumeActions: Gs2Exchange.ConsumeAction[] | null): this;

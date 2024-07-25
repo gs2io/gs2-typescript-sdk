@@ -20,6 +20,7 @@ import CurrentDistributorMaster from "./CurrentDistributorMaster"
 import StampSheetResult from "./StampSheetResult"
 import AcquireAction from "./AcquireAction"
 import ConsumeAction from "./ConsumeAction"
+import VerifyAction from "./VerifyAction"
 import Config from "./Config"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import DistributeResource from "./DistributeResource"
@@ -34,6 +35,7 @@ export {
     StampSheetResult,
     AcquireAction,
     ConsumeAction,
+    VerifyAction,
     Config,
     GitHubCheckoutSetting,
     DistributeResource,

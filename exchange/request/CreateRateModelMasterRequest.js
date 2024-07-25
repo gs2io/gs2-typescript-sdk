@@ -28,6 +28,7 @@ var CreateRateModelMasterRequest = /** @class */ (function () {
         this.timingType = null;
         this.lockTime = null;
         this.acquireActions = null;
+        this.verifyActions = null;
         this.consumeActions = null;
     }
     CreateRateModelMasterRequest.prototype.getRequestId = function () {
@@ -129,6 +130,17 @@ var CreateRateModelMasterRequest = /** @class */ (function () {
         this.acquireActions = acquireActions;
         return this;
     };
+    CreateRateModelMasterRequest.prototype.getVerifyActions = function () {
+        return this.verifyActions;
+    };
+    CreateRateModelMasterRequest.prototype.setVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
+        return this;
+    };
+    CreateRateModelMasterRequest.prototype.withVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
+        return this;
+    };
     CreateRateModelMasterRequest.prototype.getConsumeActions = function () {
         return this.consumeActions;
     };
@@ -152,6 +164,10 @@ var CreateRateModelMasterRequest = /** @class */ (function () {
             data.acquireActions.map(function (item) {
                 return Gs2Exchange.AcquireAction.fromDict(item);
             }) : [])
+            .withVerifyActions(data.verifyActions ?
+            data.verifyActions.map(function (item) {
+                return Gs2Exchange.VerifyAction.fromDict(item);
+            }) : [])
             .withConsumeActions(data.consumeActions ?
             data.consumeActions.map(function (item) {
                 return Gs2Exchange.ConsumeAction.fromDict(item);
@@ -167,6 +183,10 @@ var CreateRateModelMasterRequest = /** @class */ (function () {
             "lockTime": this.getLockTime(),
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
+            "verifyActions": this.getVerifyActions() ?
+                this.getVerifyActions().map(function (item) {
                     return item.toDict();
                 }) : [],
             "consumeActions": this.getConsumeActions() ?

@@ -17,10 +17,40 @@ permissions and limitations under the License.
 import IResult from '../../core/interface/IResult';
 
 export default class RunStampSheetExpressResult implements IResult {
+    private verifyTaskResultCodes: number[]|null = null;
+    private verifyTaskResults: string[]|null = null;
     private taskResultCodes: number[]|null = null;
     private taskResults: string[]|null = null;
     private sheetResultCode: number|null = null;
     private sheetResult: string|null = null;
+
+    public getVerifyTaskResultCodes(): number[]|null {
+        return this.verifyTaskResultCodes;
+    }
+
+    public setVerifyTaskResultCodes(verifyTaskResultCodes: number[]|null) {
+        this.verifyTaskResultCodes = verifyTaskResultCodes;
+        return this;
+    }
+
+    public withVerifyTaskResultCodes(verifyTaskResultCodes: number[]|null): this {
+        this.verifyTaskResultCodes = verifyTaskResultCodes;
+        return this;
+    }
+
+    public getVerifyTaskResults(): string[]|null {
+        return this.verifyTaskResults;
+    }
+
+    public setVerifyTaskResults(verifyTaskResults: string[]|null) {
+        this.verifyTaskResults = verifyTaskResults;
+        return this;
+    }
+
+    public withVerifyTaskResults(verifyTaskResults: string[]|null): this {
+        this.verifyTaskResults = verifyTaskResults;
+        return this;
+    }
 
     public getTaskResultCodes(): number[]|null {
         return this.taskResultCodes;
@@ -80,6 +110,16 @@ export default class RunStampSheetExpressResult implements IResult {
 
     public static fromDict(data: {[key: string]: any}): RunStampSheetExpressResult {
         return new RunStampSheetExpressResult()
+            .withVerifyTaskResultCodes(data.verifyTaskResultCodes ?
+                data.verifyTaskResultCodes.map((item: {[key: string]: any}) => {
+                    return item;
+                }
+            ) : [])
+            .withVerifyTaskResults(data.verifyTaskResults ?
+                data.verifyTaskResults.map((item: {[key: string]: any}) => {
+                    return item;
+                }
+            ) : [])
             .withTaskResultCodes(data.taskResultCodes ?
                 data.taskResultCodes.map((item: {[key: string]: any}) => {
                     return item;
@@ -96,6 +136,16 @@ export default class RunStampSheetExpressResult implements IResult {
 
     public toDict(): {[key: string]: any} {
         return {
+            "verifyTaskResultCodes": this.getVerifyTaskResultCodes() ?
+                this.getVerifyTaskResultCodes()!.map((item: number) => {
+                    return item;
+                }
+            ) : [],
+            "verifyTaskResults": this.getVerifyTaskResults() ?
+                this.getVerifyTaskResults()!.map((item: string) => {
+                    return item;
+                }
+            ) : [],
             "taskResultCodes": this.getTaskResultCodes() ?
                 this.getTaskResultCodes()!.map((item: number) => {
                     return item;

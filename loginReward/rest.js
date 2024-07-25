@@ -392,7 +392,7 @@ var Gs2LoginRewardRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LoginRewardRestClient.prototype.createBonusModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/bonusModel')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
@@ -412,7 +412,8 @@ var Gs2LoginRewardRestClient = /** @class */ (function (_super) {
             'repeat': (_k = request.getRepeat()) !== null && _k !== void 0 ? _k : null,
             'rewards': (_m = (_l = request.getRewards()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
             'missedReceiveRelief': (_o = request.getMissedReceiveRelief()) !== null && _o !== void 0 ? _o : null,
-            'missedReceiveReliefConsumeActions': (_q = (_p = request.getMissedReceiveReliefConsumeActions()) === null || _p === void 0 ? void 0 : _p.map(function (item) { return item.toDict(); })) !== null && _q !== void 0 ? _q : null,
+            'missedReceiveReliefVerifyActions': (_q = (_p = request.getMissedReceiveReliefVerifyActions()) === null || _p === void 0 ? void 0 : _p.map(function (item) { return item.toDict(); })) !== null && _q !== void 0 ? _q : null,
+            'missedReceiveReliefConsumeActions': (_s = (_r = request.getMissedReceiveReliefConsumeActions()) === null || _r === void 0 ? void 0 : _r.map(function (item) { return item.toDict(); })) !== null && _s !== void 0 ? _s : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -451,7 +452,7 @@ var Gs2LoginRewardRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2LoginRewardRestClient.prototype.updateBonusModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/bonusModel/{bonusModelName}')
             .replace('{service}', 'login-reward')
             .replace('{region}', this.session.region)
@@ -471,7 +472,8 @@ var Gs2LoginRewardRestClient = /** @class */ (function (_super) {
             'repeat': (_l = request.getRepeat()) !== null && _l !== void 0 ? _l : null,
             'rewards': (_o = (_m = request.getRewards()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
             'missedReceiveRelief': (_p = request.getMissedReceiveRelief()) !== null && _p !== void 0 ? _p : null,
-            'missedReceiveReliefConsumeActions': (_r = (_q = request.getMissedReceiveReliefConsumeActions()) === null || _q === void 0 ? void 0 : _q.map(function (item) { return item.toDict(); })) !== null && _r !== void 0 ? _r : null,
+            'missedReceiveReliefVerifyActions': (_r = (_q = request.getMissedReceiveReliefVerifyActions()) === null || _q === void 0 ? void 0 : _q.map(function (item) { return item.toDict(); })) !== null && _r !== void 0 ? _r : null,
+            'missedReceiveReliefConsumeActions': (_t = (_s = request.getMissedReceiveReliefConsumeActions()) === null || _s === void 0 ? void 0 : _s.map(function (item) { return item.toDict(); })) !== null && _t !== void 0 ? _t : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

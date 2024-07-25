@@ -16,12 +16,14 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
+var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
 var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
 var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 var RandomDisplayItemModel = /** @class */ (function () {
     function RandomDisplayItemModel() {
         this.name = null;
         this.metadata = null;
+        this.verifyActions = null;
         this.consumeActions = null;
         this.acquireActions = null;
         this.stock = null;
@@ -47,6 +49,17 @@ var RandomDisplayItemModel = /** @class */ (function () {
     };
     RandomDisplayItemModel.prototype.withMetadata = function (metadata) {
         this.metadata = metadata;
+        return this;
+    };
+    RandomDisplayItemModel.prototype.getVerifyActions = function () {
+        return this.verifyActions;
+    };
+    RandomDisplayItemModel.prototype.setVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
+        return this;
+    };
+    RandomDisplayItemModel.prototype.withVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
         return this;
     };
     RandomDisplayItemModel.prototype.getConsumeActions = function () {
@@ -100,6 +113,10 @@ var RandomDisplayItemModel = /** @class */ (function () {
         return new RandomDisplayItemModel()
             .withName(data["name"])
             .withMetadata(data["metadata"])
+            .withVerifyActions(data.verifyActions ?
+            data.verifyActions.map(function (item) {
+                return VerifyAction_1.default.fromDict(item);
+            }) : [])
             .withConsumeActions(data.consumeActions ?
             data.consumeActions.map(function (item) {
                 return ConsumeAction_1.default.fromDict(item);
@@ -115,6 +132,10 @@ var RandomDisplayItemModel = /** @class */ (function () {
         return {
             "name": this.getName(),
             "metadata": this.getMetadata(),
+            "verifyActions": this.getVerifyActions() ?
+                this.getVerifyActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions().map(function (item) {
                     return item.toDict();

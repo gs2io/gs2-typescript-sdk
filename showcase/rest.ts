@@ -468,6 +468,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
             'metadata': request.getMetadata() ?? null,
+            'verifyActions': request.getVerifyActions()?.map((item) => item.toDict()) ?? null,
             'consumeActions': request.getConsumeActions()?.map((item) => item.toDict()) ?? null,
             'acquireActions': request.getAcquireActions()?.map((item) => item.toDict()) ?? null,
         };
@@ -530,6 +531,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
             'metadata': request.getMetadata() ?? null,
+            'verifyActions': request.getVerifyActions()?.map((item) => item.toDict()) ?? null,
             'consumeActions': request.getConsumeActions()?.map((item) => item.toDict()) ?? null,
             'acquireActions': request.getAcquireActions()?.map((item) => item.toDict()) ?? null,
         };

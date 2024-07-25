@@ -25,6 +25,7 @@ var UpdateNodeModelMasterRequest = /** @class */ (function () {
         this.nodeModelName = null;
         this.description = null;
         this.metadata = null;
+        this.releaseVerifyActions = null;
         this.releaseConsumeActions = null;
         this.restrainReturnRate = null;
         this.premiseNodeNames = null;
@@ -95,6 +96,17 @@ var UpdateNodeModelMasterRequest = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
+    UpdateNodeModelMasterRequest.prototype.getReleaseVerifyActions = function () {
+        return this.releaseVerifyActions;
+    };
+    UpdateNodeModelMasterRequest.prototype.setReleaseVerifyActions = function (releaseVerifyActions) {
+        this.releaseVerifyActions = releaseVerifyActions;
+        return this;
+    };
+    UpdateNodeModelMasterRequest.prototype.withReleaseVerifyActions = function (releaseVerifyActions) {
+        this.releaseVerifyActions = releaseVerifyActions;
+        return this;
+    };
     UpdateNodeModelMasterRequest.prototype.getReleaseConsumeActions = function () {
         return this.releaseConsumeActions;
     };
@@ -134,6 +146,10 @@ var UpdateNodeModelMasterRequest = /** @class */ (function () {
             .withNodeModelName(data["nodeModelName"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
+            .withReleaseVerifyActions(data.releaseVerifyActions ?
+            data.releaseVerifyActions.map(function (item) {
+                return Gs2SkillTree.VerifyAction.fromDict(item);
+            }) : [])
             .withReleaseConsumeActions(data.releaseConsumeActions ?
             data.releaseConsumeActions.map(function (item) {
                 return Gs2SkillTree.ConsumeAction.fromDict(item);
@@ -150,6 +166,10 @@ var UpdateNodeModelMasterRequest = /** @class */ (function () {
             "nodeModelName": this.getNodeModelName(),
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
+            "releaseVerifyActions": this.getReleaseVerifyActions() ?
+                this.getReleaseVerifyActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "releaseConsumeActions": this.getReleaseConsumeActions() ?
                 this.getReleaseConsumeActions().map(function (item) {
                     return item.toDict();

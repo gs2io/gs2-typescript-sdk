@@ -16,12 +16,14 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
+var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
 var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
 var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 var SalesItem = /** @class */ (function () {
     function SalesItem() {
         this.name = null;
         this.metadata = null;
+        this.verifyActions = null;
         this.consumeActions = null;
         this.acquireActions = null;
     }
@@ -45,6 +47,17 @@ var SalesItem = /** @class */ (function () {
     };
     SalesItem.prototype.withMetadata = function (metadata) {
         this.metadata = metadata;
+        return this;
+    };
+    SalesItem.prototype.getVerifyActions = function () {
+        return this.verifyActions;
+    };
+    SalesItem.prototype.setVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
+        return this;
+    };
+    SalesItem.prototype.withVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
         return this;
     };
     SalesItem.prototype.getConsumeActions = function () {
@@ -76,6 +89,10 @@ var SalesItem = /** @class */ (function () {
         return new SalesItem()
             .withName(data["name"])
             .withMetadata(data["metadata"])
+            .withVerifyActions(data.verifyActions ?
+            data.verifyActions.map(function (item) {
+                return VerifyAction_1.default.fromDict(item);
+            }) : [])
             .withConsumeActions(data.consumeActions ?
             data.consumeActions.map(function (item) {
                 return ConsumeAction_1.default.fromDict(item);
@@ -89,6 +106,10 @@ var SalesItem = /** @class */ (function () {
         return {
             "name": this.getName(),
             "metadata": this.getMetadata(),
+            "verifyActions": this.getVerifyActions() ?
+                this.getVerifyActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions().map(function (item) {
                     return item.toDict();

@@ -531,7 +531,7 @@ var Gs2QuestRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2QuestRestClient.prototype.createQuestModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{questGroupName}/quest')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
@@ -549,9 +549,10 @@ var Gs2QuestRestClient = /** @class */ (function (_super) {
             'contents': (_k = (_j = request.getContents()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
             'challengePeriodEventId': (_l = request.getChallengePeriodEventId()) !== null && _l !== void 0 ? _l : null,
             'firstCompleteAcquireActions': (_o = (_m = request.getFirstCompleteAcquireActions()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
-            'consumeActions': (_q = (_p = request.getConsumeActions()) === null || _p === void 0 ? void 0 : _p.map(function (item) { return item.toDict(); })) !== null && _q !== void 0 ? _q : null,
-            'failedAcquireActions': (_s = (_r = request.getFailedAcquireActions()) === null || _r === void 0 ? void 0 : _r.map(function (item) { return item.toDict(); })) !== null && _s !== void 0 ? _s : null,
-            'premiseQuestNames': (_t = request.getPremiseQuestNames()) !== null && _t !== void 0 ? _t : null,
+            'verifyActions': (_q = (_p = request.getVerifyActions()) === null || _p === void 0 ? void 0 : _p.map(function (item) { return item.toDict(); })) !== null && _q !== void 0 ? _q : null,
+            'consumeActions': (_s = (_r = request.getConsumeActions()) === null || _r === void 0 ? void 0 : _r.map(function (item) { return item.toDict(); })) !== null && _s !== void 0 ? _s : null,
+            'failedAcquireActions': (_u = (_t = request.getFailedAcquireActions()) === null || _t === void 0 ? void 0 : _t.map(function (item) { return item.toDict(); })) !== null && _u !== void 0 ? _u : null,
+            'premiseQuestNames': (_v = request.getPremiseQuestNames()) !== null && _v !== void 0 ? _v : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -591,7 +592,7 @@ var Gs2QuestRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2QuestRestClient.prototype.updateQuestModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/group/{questGroupName}/quest/{questName}')
             .replace('{service}', 'quest')
             .replace('{region}', this.session.region)
@@ -609,9 +610,10 @@ var Gs2QuestRestClient = /** @class */ (function (_super) {
             'contents': (_l = (_k = request.getContents()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
             'challengePeriodEventId': (_m = request.getChallengePeriodEventId()) !== null && _m !== void 0 ? _m : null,
             'firstCompleteAcquireActions': (_p = (_o = request.getFirstCompleteAcquireActions()) === null || _o === void 0 ? void 0 : _o.map(function (item) { return item.toDict(); })) !== null && _p !== void 0 ? _p : null,
-            'consumeActions': (_r = (_q = request.getConsumeActions()) === null || _q === void 0 ? void 0 : _q.map(function (item) { return item.toDict(); })) !== null && _r !== void 0 ? _r : null,
-            'failedAcquireActions': (_t = (_s = request.getFailedAcquireActions()) === null || _s === void 0 ? void 0 : _s.map(function (item) { return item.toDict(); })) !== null && _t !== void 0 ? _t : null,
-            'premiseQuestNames': (_u = request.getPremiseQuestNames()) !== null && _u !== void 0 ? _u : null,
+            'verifyActions': (_r = (_q = request.getVerifyActions()) === null || _q === void 0 ? void 0 : _q.map(function (item) { return item.toDict(); })) !== null && _r !== void 0 ? _r : null,
+            'consumeActions': (_t = (_s = request.getConsumeActions()) === null || _s === void 0 ? void 0 : _s.map(function (item) { return item.toDict(); })) !== null && _t !== void 0 ? _t : null,
+            'failedAcquireActions': (_v = (_u = request.getFailedAcquireActions()) === null || _u === void 0 ? void 0 : _u.map(function (item) { return item.toDict(); })) !== null && _v !== void 0 ? _v : null,
+            'premiseQuestNames': (_w = request.getPremiseQuestNames()) !== null && _w !== void 0 ? _w : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

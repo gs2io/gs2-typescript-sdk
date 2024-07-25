@@ -25,6 +25,7 @@ var CreateSalesItemMasterRequest = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.metadata = null;
+        this.verifyActions = null;
         this.consumeActions = null;
         this.acquireActions = null;
     }
@@ -94,6 +95,17 @@ var CreateSalesItemMasterRequest = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
+    CreateSalesItemMasterRequest.prototype.getVerifyActions = function () {
+        return this.verifyActions;
+    };
+    CreateSalesItemMasterRequest.prototype.setVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
+        return this;
+    };
+    CreateSalesItemMasterRequest.prototype.withVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
+        return this;
+    };
     CreateSalesItemMasterRequest.prototype.getConsumeActions = function () {
         return this.consumeActions;
     };
@@ -122,6 +134,10 @@ var CreateSalesItemMasterRequest = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
+            .withVerifyActions(data.verifyActions ?
+            data.verifyActions.map(function (item) {
+                return Gs2Showcase.VerifyAction.fromDict(item);
+            }) : [])
             .withConsumeActions(data.consumeActions ?
             data.consumeActions.map(function (item) {
                 return Gs2Showcase.ConsumeAction.fromDict(item);
@@ -137,6 +153,10 @@ var CreateSalesItemMasterRequest = /** @class */ (function () {
             "name": this.getName(),
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
+            "verifyActions": this.getVerifyActions() ?
+                this.getVerifyActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions().map(function (item) {
                     return item.toDict();

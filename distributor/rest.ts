@@ -589,6 +589,38 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public runVerifyTask(request: Request.RunVerifyTaskRequest): Promise<Result.RunVerifyTaskResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/stamp/verifyTask/run')
+            .replace('{service}', 'distributor')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'verifyTask': request.getVerifyTask() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.RunVerifyTaskResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public runStampTask(request: Request.RunStampTaskRequest): Promise<Result.RunStampTaskResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/distribute/stamp/task/run')
             .replace('{service}', 'distributor')
@@ -676,6 +708,37 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.RunStampSheetExpressResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public runVerifyTaskWithoutNamespace(request: Request.RunVerifyTaskWithoutNamespaceRequest): Promise<Result.RunVerifyTaskWithoutNamespaceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/verifyTask/run')
+            .replace('{service}', 'distributor')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'verifyTask': request.getVerifyTask() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.RunVerifyTaskWithoutNamespaceResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

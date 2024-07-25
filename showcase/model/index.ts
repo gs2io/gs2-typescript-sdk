@@ -29,6 +29,7 @@ import PurchaseCount from "./PurchaseCount"
 import RandomDisplayItem from "./RandomDisplayItem"
 import RandomDisplayItemModel from "./RandomDisplayItemModel"
 import ConsumeAction from "./ConsumeAction"
+import VerifyAction from "./VerifyAction"
 import AcquireAction from "./AcquireAction"
 import Config from "./Config"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
@@ -53,6 +54,7 @@ export {
     RandomDisplayItem,
     RandomDisplayItemModel,
     ConsumeAction,
+    VerifyAction,
     AcquireAction,
     Config,
     GitHubCheckoutSetting,

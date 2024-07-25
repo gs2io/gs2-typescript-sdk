@@ -25,6 +25,7 @@ import QuestGroupModel from "./QuestGroupModel"
 import QuestModel from "./QuestModel"
 import AcquireAction from "./AcquireAction"
 import ConsumeAction from "./ConsumeAction"
+import VerifyAction from "./VerifyAction"
 import Config from "./Config"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import ScriptSetting from "./ScriptSetting"
@@ -44,6 +45,7 @@ export {
     QuestModel,
     AcquireAction,
     ConsumeAction,
+    VerifyAction,
     Config,
     GitHubCheckoutSetting,
     ScriptSetting,

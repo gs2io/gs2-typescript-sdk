@@ -26,6 +26,7 @@ export default class CreateNodeModelMasterRequest implements IRequest {
     private name: string|null = null;
     private description: string|null = null;
     private metadata: string|null = null;
+    private releaseVerifyActions: Gs2SkillTree.VerifyAction[]|null = null;
     private releaseConsumeActions: Gs2SkillTree.ConsumeAction[]|null = null;
     private restrainReturnRate: number|null = null;
     private premiseNodeNames: string[]|null = null;
@@ -101,6 +102,17 @@ export default class CreateNodeModelMasterRequest implements IRequest {
         this.metadata = metadata;
         return this;
     }
+    public getReleaseVerifyActions(): Gs2SkillTree.VerifyAction[]|null {
+        return this.releaseVerifyActions;
+    }
+    public setReleaseVerifyActions(releaseVerifyActions: Gs2SkillTree.VerifyAction[]|null) {
+        this.releaseVerifyActions = releaseVerifyActions;
+        return this;
+    }
+    public withReleaseVerifyActions(releaseVerifyActions: Gs2SkillTree.VerifyAction[]|null): this {
+        this.releaseVerifyActions = releaseVerifyActions;
+        return this;
+    }
     public getReleaseConsumeActions(): Gs2SkillTree.ConsumeAction[]|null {
         return this.releaseConsumeActions;
     }
@@ -141,6 +153,11 @@ export default class CreateNodeModelMasterRequest implements IRequest {
             .withName(data["name"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
+            .withReleaseVerifyActions(data.releaseVerifyActions ?
+                data.releaseVerifyActions.map((item: {[key: string]: any}) => {
+                    return Gs2SkillTree.VerifyAction.fromDict(item);
+                }
+            ) : [])
             .withReleaseConsumeActions(data.releaseConsumeActions ?
                 data.releaseConsumeActions.map((item: {[key: string]: any}) => {
                     return Gs2SkillTree.ConsumeAction.fromDict(item);
@@ -160,6 +177,11 @@ export default class CreateNodeModelMasterRequest implements IRequest {
             "name": this.getName(),
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
+            "releaseVerifyActions": this.getReleaseVerifyActions() ?
+                this.getReleaseVerifyActions()!.map((item: Gs2SkillTree.VerifyAction) => {
+                    return item.toDict();
+                }
+            ) : [],
             "releaseConsumeActions": this.getReleaseConsumeActions() ?
                 this.getReleaseConsumeActions()!.map((item: Gs2SkillTree.ConsumeAction) => {
                     return item.toDict();

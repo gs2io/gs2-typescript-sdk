@@ -32,9 +32,11 @@ import UpdateCurrentDistributorMasterResult from "./UpdateCurrentDistributorMast
 import UpdateCurrentDistributorMasterFromGitHubResult from "./UpdateCurrentDistributorMasterFromGitHubResult"
 import DistributeResult from "./DistributeResult"
 import DistributeWithoutOverflowProcessResult from "./DistributeWithoutOverflowProcessResult"
+import RunVerifyTaskResult from "./RunVerifyTaskResult"
 import RunStampTaskResult from "./RunStampTaskResult"
 import RunStampSheetResult from "./RunStampSheetResult"
 import RunStampSheetExpressResult from "./RunStampSheetExpressResult"
+import RunVerifyTaskWithoutNamespaceResult from "./RunVerifyTaskWithoutNamespaceResult"
 import RunStampTaskWithoutNamespaceResult from "./RunStampTaskWithoutNamespaceResult"
 import RunStampSheetWithoutNamespaceResult from "./RunStampSheetWithoutNamespaceResult"
 import RunStampSheetExpressWithoutNamespaceResult from "./RunStampSheetExpressWithoutNamespaceResult"
@@ -63,9 +65,11 @@ export {
     UpdateCurrentDistributorMasterFromGitHubResult,
     DistributeResult,
     DistributeWithoutOverflowProcessResult,
+    RunVerifyTaskResult,
     RunStampTaskResult,
     RunStampSheetResult,
     RunStampSheetExpressResult,
+    RunVerifyTaskWithoutNamespaceResult,
     RunStampTaskWithoutNamespaceResult,
     RunStampSheetWithoutNamespaceResult,
     RunStampSheetExpressWithoutNamespaceResult,

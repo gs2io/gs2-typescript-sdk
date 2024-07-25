@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 import AcquireAction from './AcquireAction';
 import Contents from './Contents';
+import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 import QuestModel from './QuestModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:quest:{namespaceName}:group:{questGroupName}";

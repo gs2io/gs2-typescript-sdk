@@ -17,6 +17,7 @@ permissions and limitations under the License.
 import IModel from '../../core/interface/IModel';
 import AcquireAction from './AcquireAction';
 import Contents from './Contents';
+import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:quest:{namespaceName}:group:{questGroupName}:quest:{questName}";
 
@@ -29,6 +30,7 @@ export default class QuestModelMaster implements IModel {
     private contents: Contents[]|null = null;
     private challengePeriodEventId: string|null = null;
     private firstCompleteAcquireActions: AcquireAction[]|null = null;
+    private verifyActions: VerifyAction[]|null = null;
     private consumeActions: ConsumeAction[]|null = null;
     private failedAcquireActions: AcquireAction[]|null = null;
     private premiseQuestNames: string[]|null = null;
@@ -227,6 +229,17 @@ export default class QuestModelMaster implements IModel {
         this.firstCompleteAcquireActions = firstCompleteAcquireActions;
         return this;
     }
+    public getVerifyActions(): VerifyAction[]|null {
+        return this.verifyActions;
+    }
+    public setVerifyActions(verifyActions: VerifyAction[]|null) {
+        this.verifyActions = verifyActions;
+        return this;
+    }
+    public withVerifyActions(verifyActions: VerifyAction[]|null): this {
+        this.verifyActions = verifyActions;
+        return this;
+    }
     public getConsumeActions(): ConsumeAction[]|null {
         return this.consumeActions;
     }
@@ -315,6 +328,11 @@ export default class QuestModelMaster implements IModel {
                     return AcquireAction.fromDict(item);
                 }
             ) : [])
+            .withVerifyActions(data.verifyActions ?
+                data.verifyActions.map((item: {[key: string]: any}) => {
+                    return VerifyAction.fromDict(item);
+                }
+            ) : [])
             .withConsumeActions(data.consumeActions ?
                 data.consumeActions.map((item: {[key: string]: any}) => {
                     return ConsumeAction.fromDict(item);
@@ -350,6 +368,11 @@ export default class QuestModelMaster implements IModel {
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "firstCompleteAcquireActions": this.getFirstCompleteAcquireActions() ?
                 this.getFirstCompleteAcquireActions()!.map((item: AcquireAction) => {
+                    return item.toDict();
+                }
+            ) : [],
+            "verifyActions": this.getVerifyActions() ?
+                this.getVerifyActions()!.map((item: VerifyAction) => {
                     return item.toDict();
                 }
             ) : [],

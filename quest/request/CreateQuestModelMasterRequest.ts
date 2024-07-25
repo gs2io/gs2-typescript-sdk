@@ -30,6 +30,7 @@ export default class CreateQuestModelMasterRequest implements IRequest {
     private contents: Gs2Quest.Contents[]|null = null;
     private challengePeriodEventId: string|null = null;
     private firstCompleteAcquireActions: Gs2Quest.AcquireAction[]|null = null;
+    private verifyActions: Gs2Quest.VerifyAction[]|null = null;
     private consumeActions: Gs2Quest.ConsumeAction[]|null = null;
     private failedAcquireActions: Gs2Quest.AcquireAction[]|null = null;
     private premiseQuestNames: string[]|null = null;
@@ -149,6 +150,17 @@ export default class CreateQuestModelMasterRequest implements IRequest {
         this.firstCompleteAcquireActions = firstCompleteAcquireActions;
         return this;
     }
+    public getVerifyActions(): Gs2Quest.VerifyAction[]|null {
+        return this.verifyActions;
+    }
+    public setVerifyActions(verifyActions: Gs2Quest.VerifyAction[]|null) {
+        this.verifyActions = verifyActions;
+        return this;
+    }
+    public withVerifyActions(verifyActions: Gs2Quest.VerifyAction[]|null): this {
+        this.verifyActions = verifyActions;
+        return this;
+    }
     public getConsumeActions(): Gs2Quest.ConsumeAction[]|null {
         return this.consumeActions;
     }
@@ -201,6 +213,11 @@ export default class CreateQuestModelMasterRequest implements IRequest {
                     return Gs2Quest.AcquireAction.fromDict(item);
                 }
             ) : [])
+            .withVerifyActions(data.verifyActions ?
+                data.verifyActions.map((item: {[key: string]: any}) => {
+                    return Gs2Quest.VerifyAction.fromDict(item);
+                }
+            ) : [])
             .withConsumeActions(data.consumeActions ?
                 data.consumeActions.map((item: {[key: string]: any}) => {
                     return Gs2Quest.ConsumeAction.fromDict(item);
@@ -233,6 +250,11 @@ export default class CreateQuestModelMasterRequest implements IRequest {
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "firstCompleteAcquireActions": this.getFirstCompleteAcquireActions() ?
                 this.getFirstCompleteAcquireActions()!.map((item: Gs2Quest.AcquireAction) => {
+                    return item.toDict();
+                }
+            ) : [],
+            "verifyActions": this.getVerifyActions() ?
+                this.getVerifyActions()!.map((item: Gs2Quest.VerifyAction) => {
                     return item.toDict();
                 }
             ) : [],

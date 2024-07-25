@@ -15,11 +15,13 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
 
 export default class Transaction implements IModel {
     private transactionId: string|null = null;
+    private verifyActions: VerifyAction[]|null = null;
     private consumeActions: ConsumeAction[]|null = null;
     private acquireActions: AcquireAction[]|null = null;
     public getTransactionId(): string|null {
@@ -31,6 +33,17 @@ export default class Transaction implements IModel {
     }
     public withTransactionId(transactionId: string|null): this {
         this.transactionId = transactionId;
+        return this;
+    }
+    public getVerifyActions(): VerifyAction[]|null {
+        return this.verifyActions;
+    }
+    public setVerifyActions(verifyActions: VerifyAction[]|null) {
+        this.verifyActions = verifyActions;
+        return this;
+    }
+    public withVerifyActions(verifyActions: VerifyAction[]|null): this {
+        this.verifyActions = verifyActions;
         return this;
     }
     public getConsumeActions(): ConsumeAction[]|null {
@@ -62,6 +75,11 @@ export default class Transaction implements IModel {
         }
         return new Transaction()
             .withTransactionId(data["transactionId"])
+            .withVerifyActions(data.verifyActions ?
+                data.verifyActions.map((item: {[key: string]: any}) => {
+                    return VerifyAction.fromDict(item);
+                }
+            ) : [])
             .withConsumeActions(data.consumeActions ?
                 data.consumeActions.map((item: {[key: string]: any}) => {
                     return ConsumeAction.fromDict(item);
@@ -77,6 +95,11 @@ export default class Transaction implements IModel {
     public toDict(): {[key: string]: any} {
         return {
             "transactionId": this.getTransactionId(),
+            "verifyActions": this.getVerifyActions() ?
+                this.getVerifyActions()!.map((item: VerifyAction) => {
+                    return item.toDict();
+                }
+            ) : [],
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions()!.map((item: ConsumeAction) => {
                     return item.toDict();

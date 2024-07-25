@@ -29,6 +29,7 @@ import ScopedValue from "./ScopedValue"
 import TargetCounterModel from "./TargetCounterModel"
 import AcquireAction from "./AcquireAction"
 import ConsumeAction from "./ConsumeAction"
+import VerifyAction from "./VerifyAction"
 import Config from "./Config"
 import LogSetting from "./LogSetting"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
@@ -52,6 +53,7 @@ export {
     TargetCounterModel,
     AcquireAction,
     ConsumeAction,
+    VerifyAction,
     Config,
     LogSetting,
     GitHubCheckoutSetting,

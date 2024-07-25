@@ -447,7 +447,7 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExchangeRestClient.prototype.createRateModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
@@ -464,7 +464,8 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
             'timingType': (_g = request.getTimingType()) !== null && _g !== void 0 ? _g : null,
             'lockTime': (_h = request.getLockTime()) !== null && _h !== void 0 ? _h : null,
             'acquireActions': (_k = (_j = request.getAcquireActions()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
-            'consumeActions': (_m = (_l = request.getConsumeActions()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
+            'verifyActions': (_m = (_l = request.getVerifyActions()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
+            'consumeActions': (_p = (_o = request.getConsumeActions()) === null || _o === void 0 ? void 0 : _o.map(function (item) { return item.toDict(); })) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -503,7 +504,7 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExchangeRestClient.prototype.updateRateModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{rateName}')
             .replace('{service}', 'exchange')
             .replace('{region}', this.session.region)
@@ -520,7 +521,8 @@ var Gs2ExchangeRestClient = /** @class */ (function (_super) {
             'timingType': (_h = request.getTimingType()) !== null && _h !== void 0 ? _h : null,
             'lockTime': (_j = request.getLockTime()) !== null && _j !== void 0 ? _j : null,
             'acquireActions': (_l = (_k = request.getAcquireActions()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
-            'consumeActions': (_o = (_m = request.getConsumeActions()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
+            'verifyActions': (_o = (_m = request.getVerifyActions()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
+            'consumeActions': (_q = (_p = request.getConsumeActions()) === null || _p === void 0 ? void 0 : _p.map(function (item) { return item.toDict(); })) !== null && _q !== void 0 ? _q : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

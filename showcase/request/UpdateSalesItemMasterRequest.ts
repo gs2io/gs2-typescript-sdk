@@ -26,6 +26,7 @@ export default class UpdateSalesItemMasterRequest implements IRequest {
     private salesItemName: string|null = null;
     private description: string|null = null;
     private metadata: string|null = null;
+    private verifyActions: Gs2Showcase.VerifyAction[]|null = null;
     private consumeActions: Gs2Showcase.ConsumeAction[]|null = null;
     private acquireActions: Gs2Showcase.AcquireAction[]|null = null;
 
@@ -100,6 +101,17 @@ export default class UpdateSalesItemMasterRequest implements IRequest {
         this.metadata = metadata;
         return this;
     }
+    public getVerifyActions(): Gs2Showcase.VerifyAction[]|null {
+        return this.verifyActions;
+    }
+    public setVerifyActions(verifyActions: Gs2Showcase.VerifyAction[]|null) {
+        this.verifyActions = verifyActions;
+        return this;
+    }
+    public withVerifyActions(verifyActions: Gs2Showcase.VerifyAction[]|null): this {
+        this.verifyActions = verifyActions;
+        return this;
+    }
     public getConsumeActions(): Gs2Showcase.ConsumeAction[]|null {
         return this.consumeActions;
     }
@@ -129,6 +141,11 @@ export default class UpdateSalesItemMasterRequest implements IRequest {
             .withSalesItemName(data["salesItemName"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
+            .withVerifyActions(data.verifyActions ?
+                data.verifyActions.map((item: {[key: string]: any}) => {
+                    return Gs2Showcase.VerifyAction.fromDict(item);
+                }
+            ) : [])
             .withConsumeActions(data.consumeActions ?
                 data.consumeActions.map((item: {[key: string]: any}) => {
                     return Gs2Showcase.ConsumeAction.fromDict(item);
@@ -147,6 +164,11 @@ export default class UpdateSalesItemMasterRequest implements IRequest {
             "salesItemName": this.getSalesItemName(),
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
+            "verifyActions": this.getVerifyActions() ?
+                this.getVerifyActions()!.map((item: Gs2Showcase.VerifyAction) => {
+                    return item.toDict();
+                }
+            ) : [],
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions()!.map((item: Gs2Showcase.ConsumeAction) => {
                     return item.toDict();

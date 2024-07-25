@@ -16,6 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
+var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
 var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
 var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 var RandomDisplayItem = /** @class */ (function () {
@@ -23,6 +24,7 @@ var RandomDisplayItem = /** @class */ (function () {
         this.showcaseName = null;
         this.name = null;
         this.metadata = null;
+        this.verifyActions = null;
         this.consumeActions = null;
         this.acquireActions = null;
         this.currentPurchaseCount = null;
@@ -59,6 +61,17 @@ var RandomDisplayItem = /** @class */ (function () {
     };
     RandomDisplayItem.prototype.withMetadata = function (metadata) {
         this.metadata = metadata;
+        return this;
+    };
+    RandomDisplayItem.prototype.getVerifyActions = function () {
+        return this.verifyActions;
+    };
+    RandomDisplayItem.prototype.setVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
+        return this;
+    };
+    RandomDisplayItem.prototype.withVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
         return this;
     };
     RandomDisplayItem.prototype.getConsumeActions = function () {
@@ -113,6 +126,10 @@ var RandomDisplayItem = /** @class */ (function () {
             .withShowcaseName(data["showcaseName"])
             .withName(data["name"])
             .withMetadata(data["metadata"])
+            .withVerifyActions(data.verifyActions ?
+            data.verifyActions.map(function (item) {
+                return VerifyAction_1.default.fromDict(item);
+            }) : [])
             .withConsumeActions(data.consumeActions ?
             data.consumeActions.map(function (item) {
                 return ConsumeAction_1.default.fromDict(item);
@@ -129,6 +146,10 @@ var RandomDisplayItem = /** @class */ (function () {
             "showcaseName": this.getShowcaseName(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
+            "verifyActions": this.getVerifyActions() ?
+                this.getVerifyActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions().map(function (item) {
                     return item.toDict();

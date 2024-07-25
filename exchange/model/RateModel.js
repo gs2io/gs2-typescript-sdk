@@ -16,6 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
+var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
 var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
 var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:exchange:{namespaceName}:model:{rateName}";
@@ -24,6 +25,7 @@ var RateModel = /** @class */ (function () {
         this.rateModelId = null;
         this.name = null;
         this.metadata = null;
+        this.verifyActions = null;
         this.consumeActions = null;
         this.timingType = null;
         this.lockTime = null;
@@ -128,6 +130,17 @@ var RateModel = /** @class */ (function () {
         this.metadata = metadata;
         return this;
     };
+    RateModel.prototype.getVerifyActions = function () {
+        return this.verifyActions;
+    };
+    RateModel.prototype.setVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
+        return this;
+    };
+    RateModel.prototype.withVerifyActions = function (verifyActions) {
+        this.verifyActions = verifyActions;
+        return this;
+    };
     RateModel.prototype.getConsumeActions = function () {
         return this.consumeActions;
     };
@@ -180,6 +193,10 @@ var RateModel = /** @class */ (function () {
             .withRateModelId(data["rateModelId"])
             .withName(data["name"])
             .withMetadata(data["metadata"])
+            .withVerifyActions(data.verifyActions ?
+            data.verifyActions.map(function (item) {
+                return VerifyAction_1.default.fromDict(item);
+            }) : [])
             .withConsumeActions(data.consumeActions ?
             data.consumeActions.map(function (item) {
                 return ConsumeAction_1.default.fromDict(item);
@@ -196,6 +213,10 @@ var RateModel = /** @class */ (function () {
             "rateModelId": this.getRateModelId(),
             "name": this.getName(),
             "metadata": this.getMetadata(),
+            "verifyActions": this.getVerifyActions() ?
+                this.getVerifyActions().map(function (item) {
+                    return item.toDict();
+                }) : [],
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions().map(function (item) {
                     return item.toDict();

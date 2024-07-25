@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LogSetting = exports.GitHubCheckoutSetting = exports.TransactionSetting = exports.Transaction = exports.ConsumeAction = exports.AcquireAction = exports.RandomUsed = exports.RandomStatus = exports.Script = exports.Namespace = void 0;
+exports.LogSetting = exports.GitHubCheckoutSetting = exports.TransactionSetting = exports.Transaction = exports.VerifyAction = exports.ConsumeAction = exports.AcquireAction = exports.RandomUsed = exports.RandomStatus = exports.Script = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,6 +29,8 @@ var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 exports.AcquireAction = AcquireAction_1.default;
 var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
 exports.ConsumeAction = ConsumeAction_1.default;
+var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
+exports.VerifyAction = VerifyAction_1.default;
 var Transaction_1 = tslib_1.__importDefault(require("./Transaction"));
 exports.Transaction = Transaction_1.default;
 var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));

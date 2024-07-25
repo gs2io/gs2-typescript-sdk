@@ -44,9 +44,9 @@ export default class CreateMissionTaskModelMasterRequest implements IRequest {
     getTargetCounter(): Gs2Mission.TargetCounterModel | null;
     setTargetCounter(targetCounter: Gs2Mission.TargetCounterModel | null): this;
     withTargetCounter(targetCounter: Gs2Mission.TargetCounterModel | null): this;
-    getVerifyCompleteConsumeActions(): Gs2Mission.ConsumeAction[] | null;
-    setVerifyCompleteConsumeActions(verifyCompleteConsumeActions: Gs2Mission.ConsumeAction[] | null): this;
-    withVerifyCompleteConsumeActions(verifyCompleteConsumeActions: Gs2Mission.ConsumeAction[] | null): this;
+    getVerifyCompleteConsumeActions(): Gs2Mission.VerifyAction[] | null;
+    setVerifyCompleteConsumeActions(verifyCompleteConsumeActions: Gs2Mission.VerifyAction[] | null): this;
+    withVerifyCompleteConsumeActions(verifyCompleteConsumeActions: Gs2Mission.VerifyAction[] | null): this;
     getCompleteAcquireActions(): Gs2Mission.AcquireAction[] | null;
     setCompleteAcquireActions(completeAcquireActions: Gs2Mission.AcquireAction[] | null): this;
     withCompleteAcquireActions(completeAcquireActions: Gs2Mission.AcquireAction[] | null): this;

@@ -1,6 +1,6 @@
 import IModel from '../../core/interface/IModel';
 import TargetCounterModel from './TargetCounterModel';
-import ConsumeAction from './ConsumeAction';
+import VerifyAction from './VerifyAction';
 import AcquireAction from './AcquireAction';
 export default class MissionTaskModelMaster implements IModel {
     private missionTaskId;
@@ -44,9 +44,9 @@ export default class MissionTaskModelMaster implements IModel {
     getTargetCounter(): TargetCounterModel | null;
     setTargetCounter(targetCounter: TargetCounterModel | null): this;
     withTargetCounter(targetCounter: TargetCounterModel | null): this;
-    getVerifyCompleteConsumeActions(): ConsumeAction[] | null;
-    setVerifyCompleteConsumeActions(verifyCompleteConsumeActions: ConsumeAction[] | null): this;
-    withVerifyCompleteConsumeActions(verifyCompleteConsumeActions: ConsumeAction[] | null): this;
+    getVerifyCompleteConsumeActions(): VerifyAction[] | null;
+    setVerifyCompleteConsumeActions(verifyCompleteConsumeActions: VerifyAction[] | null): this;
+    withVerifyCompleteConsumeActions(verifyCompleteConsumeActions: VerifyAction[] | null): this;
     getCompleteAcquireActions(): AcquireAction[] | null;
     setCompleteAcquireActions(completeAcquireActions: AcquireAction[] | null): this;
     withCompleteAcquireActions(completeAcquireActions: AcquireAction[] | null): this;

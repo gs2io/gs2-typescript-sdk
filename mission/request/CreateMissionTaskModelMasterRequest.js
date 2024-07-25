@@ -232,7 +232,7 @@ var CreateMissionTaskModelMasterRequest = /** @class */ (function () {
             .withTargetCounter(Gs2Mission.TargetCounterModel.fromDict(data["targetCounter"]))
             .withVerifyCompleteConsumeActions(data.verifyCompleteConsumeActions ?
             data.verifyCompleteConsumeActions.map(function (item) {
-                return Gs2Mission.ConsumeAction.fromDict(item);
+                return Gs2Mission.VerifyAction.fromDict(item);
             }) : [])
             .withCompleteAcquireActions(data.completeAcquireActions ?
             data.completeAcquireActions.map(function (item) {

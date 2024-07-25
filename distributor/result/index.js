@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetStampSheetResultByUserIdResult = exports.GetStampSheetResultResult = exports.SetTransactionDefaultConfigByUserIdResult = exports.SetTransactionDefaultConfigResult = exports.RunStampSheetExpressWithoutNamespaceResult = exports.RunStampSheetWithoutNamespaceResult = exports.RunStampTaskWithoutNamespaceResult = exports.RunStampSheetExpressResult = exports.RunStampSheetResult = exports.RunStampTaskResult = exports.DistributeWithoutOverflowProcessResult = exports.DistributeResult = exports.UpdateCurrentDistributorMasterFromGitHubResult = exports.UpdateCurrentDistributorMasterResult = exports.GetCurrentDistributorMasterResult = exports.ExportMasterResult = exports.GetDistributorModelResult = exports.DescribeDistributorModelsResult = exports.DeleteDistributorModelMasterResult = exports.UpdateDistributorModelMasterResult = exports.GetDistributorModelMasterResult = exports.CreateDistributorModelMasterResult = exports.DescribeDistributorModelMastersResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.GetStampSheetResultByUserIdResult = exports.GetStampSheetResultResult = exports.SetTransactionDefaultConfigByUserIdResult = exports.SetTransactionDefaultConfigResult = exports.RunStampSheetExpressWithoutNamespaceResult = exports.RunStampSheetWithoutNamespaceResult = exports.RunStampTaskWithoutNamespaceResult = exports.RunVerifyTaskWithoutNamespaceResult = exports.RunStampSheetExpressResult = exports.RunStampSheetResult = exports.RunStampTaskResult = exports.RunVerifyTaskResult = exports.DistributeWithoutOverflowProcessResult = exports.DistributeResult = exports.UpdateCurrentDistributorMasterFromGitHubResult = exports.UpdateCurrentDistributorMasterResult = exports.GetCurrentDistributorMasterResult = exports.ExportMasterResult = exports.GetDistributorModelResult = exports.DescribeDistributorModelsResult = exports.DeleteDistributorModelMasterResult = exports.UpdateDistributorModelMasterResult = exports.GetDistributorModelMasterResult = exports.CreateDistributorModelMasterResult = exports.DescribeDistributorModelMastersResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -55,12 +55,16 @@ var DistributeResult_1 = tslib_1.__importDefault(require("./DistributeResult"));
 exports.DistributeResult = DistributeResult_1.default;
 var DistributeWithoutOverflowProcessResult_1 = tslib_1.__importDefault(require("./DistributeWithoutOverflowProcessResult"));
 exports.DistributeWithoutOverflowProcessResult = DistributeWithoutOverflowProcessResult_1.default;
+var RunVerifyTaskResult_1 = tslib_1.__importDefault(require("./RunVerifyTaskResult"));
+exports.RunVerifyTaskResult = RunVerifyTaskResult_1.default;
 var RunStampTaskResult_1 = tslib_1.__importDefault(require("./RunStampTaskResult"));
 exports.RunStampTaskResult = RunStampTaskResult_1.default;
 var RunStampSheetResult_1 = tslib_1.__importDefault(require("./RunStampSheetResult"));
 exports.RunStampSheetResult = RunStampSheetResult_1.default;
 var RunStampSheetExpressResult_1 = tslib_1.__importDefault(require("./RunStampSheetExpressResult"));
 exports.RunStampSheetExpressResult = RunStampSheetExpressResult_1.default;
+var RunVerifyTaskWithoutNamespaceResult_1 = tslib_1.__importDefault(require("./RunVerifyTaskWithoutNamespaceResult"));
+exports.RunVerifyTaskWithoutNamespaceResult = RunVerifyTaskWithoutNamespaceResult_1.default;
 var RunStampTaskWithoutNamespaceResult_1 = tslib_1.__importDefault(require("./RunStampTaskWithoutNamespaceResult"));
 exports.RunStampTaskWithoutNamespaceResult = RunStampTaskWithoutNamespaceResult_1.default;
 var RunStampSheetWithoutNamespaceResult_1 = tslib_1.__importDefault(require("./RunStampSheetWithoutNamespaceResult"));

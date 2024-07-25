@@ -396,7 +396,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ShowcaseRestClient.prototype.createSalesItemMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/salesItem')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
@@ -410,8 +410,9 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
             'name': (_d = request.getName()) !== null && _d !== void 0 ? _d : null,
             'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
             'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
-            'consumeActions': (_h = (_g = request.getConsumeActions()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
-            'acquireActions': (_k = (_j = request.getAcquireActions()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
+            'verifyActions': (_h = (_g = request.getVerifyActions()) === null || _g === void 0 ? void 0 : _g.map(function (item) { return item.toDict(); })) !== null && _h !== void 0 ? _h : null,
+            'consumeActions': (_k = (_j = request.getConsumeActions()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
+            'acquireActions': (_m = (_l = request.getAcquireActions()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -450,7 +451,7 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ShowcaseRestClient.prototype.updateSalesItemMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/salesItem/{salesItemName}')
             .replace('{service}', 'showcase')
             .replace('{region}', this.session.region)
@@ -464,8 +465,9 @@ var Gs2ShowcaseRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
             'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
-            'consumeActions': (_j = (_h = request.getConsumeActions()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
-            'acquireActions': (_l = (_k = request.getAcquireActions()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
+            'verifyActions': (_j = (_h = request.getVerifyActions()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
+            'consumeActions': (_l = (_k = request.getConsumeActions()) === null || _k === void 0 ? void 0 : _k.map(function (item) { return item.toDict(); })) !== null && _l !== void 0 ? _l : null,
+            'acquireActions': (_o = (_m = request.getAcquireActions()) === null || _m === void 0 ? void 0 : _m.map(function (item) { return item.toDict(); })) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
