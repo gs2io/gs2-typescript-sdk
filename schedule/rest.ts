@@ -983,6 +983,7 @@ export default class Gs2ScheduleRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'isInSchedule': String(request.getIsInSchedule() ?? null),
         };
         return axios.get(
             url,
@@ -1014,6 +1015,7 @@ export default class Gs2ScheduleRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'isInSchedule': String(request.getIsInSchedule() ?? null),
         };
         return axios.get(
             url,

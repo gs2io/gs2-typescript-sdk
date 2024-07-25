@@ -846,7 +846,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ScheduleRestClient.prototype.getEvent = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/event/{eventName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
@@ -861,6 +861,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+            'isInSchedule': String((_g = request.getIsInSchedule()) !== null && _g !== void 0 ? _g : null),
         };
         return axios_1.default.get(url, {
             params: params,
@@ -872,7 +873,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ScheduleRestClient.prototype.getEventByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/event/{eventName}')
             .replace('{service}', 'schedule')
             .replace('{region}', this.session.region)
@@ -888,6 +889,7 @@ var Gs2ScheduleRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'isInSchedule': String((_j = request.getIsInSchedule()) !== null && _j !== void 0 ? _j : null),
         };
         return axios_1.default.get(url, {
             params: params,
