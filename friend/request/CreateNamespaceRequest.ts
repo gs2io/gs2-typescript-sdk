@@ -34,7 +34,10 @@ export default class CreateNamespaceRequest implements IRequest {
     private updateProfileScript: Gs2Friend.ScriptSetting|null = null;
     private followNotification: Gs2Friend.NotificationSetting|null = null;
     private receiveRequestNotification: Gs2Friend.NotificationSetting|null = null;
+    private cancelRequestNotification: Gs2Friend.NotificationSetting|null = null;
     private acceptRequestNotification: Gs2Friend.NotificationSetting|null = null;
+    private rejectRequestNotification: Gs2Friend.NotificationSetting|null = null;
+    private deleteFriendNotification: Gs2Friend.NotificationSetting|null = null;
     private logSetting: Gs2Friend.LogSetting|null = null;
 
     public getRequestId(): string|null {
@@ -196,6 +199,17 @@ export default class CreateNamespaceRequest implements IRequest {
         this.receiveRequestNotification = receiveRequestNotification;
         return this;
     }
+    public getCancelRequestNotification(): Gs2Friend.NotificationSetting|null {
+        return this.cancelRequestNotification;
+    }
+    public setCancelRequestNotification(cancelRequestNotification: Gs2Friend.NotificationSetting|null) {
+        this.cancelRequestNotification = cancelRequestNotification;
+        return this;
+    }
+    public withCancelRequestNotification(cancelRequestNotification: Gs2Friend.NotificationSetting|null): this {
+        this.cancelRequestNotification = cancelRequestNotification;
+        return this;
+    }
     public getAcceptRequestNotification(): Gs2Friend.NotificationSetting|null {
         return this.acceptRequestNotification;
     }
@@ -205,6 +219,28 @@ export default class CreateNamespaceRequest implements IRequest {
     }
     public withAcceptRequestNotification(acceptRequestNotification: Gs2Friend.NotificationSetting|null): this {
         this.acceptRequestNotification = acceptRequestNotification;
+        return this;
+    }
+    public getRejectRequestNotification(): Gs2Friend.NotificationSetting|null {
+        return this.rejectRequestNotification;
+    }
+    public setRejectRequestNotification(rejectRequestNotification: Gs2Friend.NotificationSetting|null) {
+        this.rejectRequestNotification = rejectRequestNotification;
+        return this;
+    }
+    public withRejectRequestNotification(rejectRequestNotification: Gs2Friend.NotificationSetting|null): this {
+        this.rejectRequestNotification = rejectRequestNotification;
+        return this;
+    }
+    public getDeleteFriendNotification(): Gs2Friend.NotificationSetting|null {
+        return this.deleteFriendNotification;
+    }
+    public setDeleteFriendNotification(deleteFriendNotification: Gs2Friend.NotificationSetting|null) {
+        this.deleteFriendNotification = deleteFriendNotification;
+        return this;
+    }
+    public withDeleteFriendNotification(deleteFriendNotification: Gs2Friend.NotificationSetting|null): this {
+        this.deleteFriendNotification = deleteFriendNotification;
         return this;
     }
     public getLogSetting(): Gs2Friend.LogSetting|null {
@@ -233,7 +269,10 @@ export default class CreateNamespaceRequest implements IRequest {
             .withUpdateProfileScript(Gs2Friend.ScriptSetting.fromDict(data["updateProfileScript"]))
             .withFollowNotification(Gs2Friend.NotificationSetting.fromDict(data["followNotification"]))
             .withReceiveRequestNotification(Gs2Friend.NotificationSetting.fromDict(data["receiveRequestNotification"]))
+            .withCancelRequestNotification(Gs2Friend.NotificationSetting.fromDict(data["cancelRequestNotification"]))
             .withAcceptRequestNotification(Gs2Friend.NotificationSetting.fromDict(data["acceptRequestNotification"]))
+            .withRejectRequestNotification(Gs2Friend.NotificationSetting.fromDict(data["rejectRequestNotification"]))
+            .withDeleteFriendNotification(Gs2Friend.NotificationSetting.fromDict(data["deleteFriendNotification"]))
             .withLogSetting(Gs2Friend.LogSetting.fromDict(data["logSetting"]));
     }
 
@@ -251,7 +290,10 @@ export default class CreateNamespaceRequest implements IRequest {
             "updateProfileScript": this.getUpdateProfileScript()?.toDict(),
             "followNotification": this.getFollowNotification()?.toDict(),
             "receiveRequestNotification": this.getReceiveRequestNotification()?.toDict(),
+            "cancelRequestNotification": this.getCancelRequestNotification()?.toDict(),
             "acceptRequestNotification": this.getAcceptRequestNotification()?.toDict(),
+            "rejectRequestNotification": this.getRejectRequestNotification()?.toDict(),
+            "deleteFriendNotification": this.getDeleteFriendNotification()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
         };
     }

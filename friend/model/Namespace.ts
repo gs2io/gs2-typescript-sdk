@@ -34,7 +34,10 @@ export default class Namespace implements IModel {
     private updateProfileScript: ScriptSetting|null = null;
     private followNotification: NotificationSetting|null = null;
     private receiveRequestNotification: NotificationSetting|null = null;
+    private cancelRequestNotification: NotificationSetting|null = null;
     private acceptRequestNotification: NotificationSetting|null = null;
+    private rejectRequestNotification: NotificationSetting|null = null;
+    private deleteFriendNotification: NotificationSetting|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -242,6 +245,17 @@ export default class Namespace implements IModel {
         this.receiveRequestNotification = receiveRequestNotification;
         return this;
     }
+    public getCancelRequestNotification(): NotificationSetting|null {
+        return this.cancelRequestNotification;
+    }
+    public setCancelRequestNotification(cancelRequestNotification: NotificationSetting|null) {
+        this.cancelRequestNotification = cancelRequestNotification;
+        return this;
+    }
+    public withCancelRequestNotification(cancelRequestNotification: NotificationSetting|null): this {
+        this.cancelRequestNotification = cancelRequestNotification;
+        return this;
+    }
     public getAcceptRequestNotification(): NotificationSetting|null {
         return this.acceptRequestNotification;
     }
@@ -251,6 +265,28 @@ export default class Namespace implements IModel {
     }
     public withAcceptRequestNotification(acceptRequestNotification: NotificationSetting|null): this {
         this.acceptRequestNotification = acceptRequestNotification;
+        return this;
+    }
+    public getRejectRequestNotification(): NotificationSetting|null {
+        return this.rejectRequestNotification;
+    }
+    public setRejectRequestNotification(rejectRequestNotification: NotificationSetting|null) {
+        this.rejectRequestNotification = rejectRequestNotification;
+        return this;
+    }
+    public withRejectRequestNotification(rejectRequestNotification: NotificationSetting|null): this {
+        this.rejectRequestNotification = rejectRequestNotification;
+        return this;
+    }
+    public getDeleteFriendNotification(): NotificationSetting|null {
+        return this.deleteFriendNotification;
+    }
+    public setDeleteFriendNotification(deleteFriendNotification: NotificationSetting|null) {
+        this.deleteFriendNotification = deleteFriendNotification;
+        return this;
+    }
+    public withDeleteFriendNotification(deleteFriendNotification: NotificationSetting|null): this {
+        this.deleteFriendNotification = deleteFriendNotification;
         return this;
     }
     public getLogSetting(): LogSetting|null {
@@ -316,7 +352,10 @@ export default class Namespace implements IModel {
             .withUpdateProfileScript(ScriptSetting.fromDict(data["updateProfileScript"]))
             .withFollowNotification(NotificationSetting.fromDict(data["followNotification"]))
             .withReceiveRequestNotification(NotificationSetting.fromDict(data["receiveRequestNotification"]))
+            .withCancelRequestNotification(NotificationSetting.fromDict(data["cancelRequestNotification"]))
             .withAcceptRequestNotification(NotificationSetting.fromDict(data["acceptRequestNotification"]))
+            .withRejectRequestNotification(NotificationSetting.fromDict(data["rejectRequestNotification"]))
+            .withDeleteFriendNotification(NotificationSetting.fromDict(data["deleteFriendNotification"]))
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -338,7 +377,10 @@ export default class Namespace implements IModel {
             "updateProfileScript": this.getUpdateProfileScript()?.toDict(),
             "followNotification": this.getFollowNotification()?.toDict(),
             "receiveRequestNotification": this.getReceiveRequestNotification()?.toDict(),
+            "cancelRequestNotification": this.getCancelRequestNotification()?.toDict(),
             "acceptRequestNotification": this.getAcceptRequestNotification()?.toDict(),
+            "rejectRequestNotification": this.getRejectRequestNotification()?.toDict(),
+            "deleteFriendNotification": this.getDeleteFriendNotification()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

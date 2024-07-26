@@ -35,7 +35,10 @@ var Namespace = /** @class */ (function () {
         this.updateProfileScript = null;
         this.followNotification = null;
         this.receiveRequestNotification = null;
+        this.cancelRequestNotification = null;
         this.acceptRequestNotification = null;
+        this.rejectRequestNotification = null;
+        this.deleteFriendNotification = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -232,6 +235,17 @@ var Namespace = /** @class */ (function () {
         this.receiveRequestNotification = receiveRequestNotification;
         return this;
     };
+    Namespace.prototype.getCancelRequestNotification = function () {
+        return this.cancelRequestNotification;
+    };
+    Namespace.prototype.setCancelRequestNotification = function (cancelRequestNotification) {
+        this.cancelRequestNotification = cancelRequestNotification;
+        return this;
+    };
+    Namespace.prototype.withCancelRequestNotification = function (cancelRequestNotification) {
+        this.cancelRequestNotification = cancelRequestNotification;
+        return this;
+    };
     Namespace.prototype.getAcceptRequestNotification = function () {
         return this.acceptRequestNotification;
     };
@@ -241,6 +255,28 @@ var Namespace = /** @class */ (function () {
     };
     Namespace.prototype.withAcceptRequestNotification = function (acceptRequestNotification) {
         this.acceptRequestNotification = acceptRequestNotification;
+        return this;
+    };
+    Namespace.prototype.getRejectRequestNotification = function () {
+        return this.rejectRequestNotification;
+    };
+    Namespace.prototype.setRejectRequestNotification = function (rejectRequestNotification) {
+        this.rejectRequestNotification = rejectRequestNotification;
+        return this;
+    };
+    Namespace.prototype.withRejectRequestNotification = function (rejectRequestNotification) {
+        this.rejectRequestNotification = rejectRequestNotification;
+        return this;
+    };
+    Namespace.prototype.getDeleteFriendNotification = function () {
+        return this.deleteFriendNotification;
+    };
+    Namespace.prototype.setDeleteFriendNotification = function (deleteFriendNotification) {
+        this.deleteFriendNotification = deleteFriendNotification;
+        return this;
+    };
+    Namespace.prototype.withDeleteFriendNotification = function (deleteFriendNotification) {
+        this.deleteFriendNotification = deleteFriendNotification;
         return this;
     };
     Namespace.prototype.getLogSetting = function () {
@@ -305,14 +341,17 @@ var Namespace = /** @class */ (function () {
             .withUpdateProfileScript(ScriptSetting_1.default.fromDict(data["updateProfileScript"]))
             .withFollowNotification(NotificationSetting_1.default.fromDict(data["followNotification"]))
             .withReceiveRequestNotification(NotificationSetting_1.default.fromDict(data["receiveRequestNotification"]))
+            .withCancelRequestNotification(NotificationSetting_1.default.fromDict(data["cancelRequestNotification"]))
             .withAcceptRequestNotification(NotificationSetting_1.default.fromDict(data["acceptRequestNotification"]))
+            .withRejectRequestNotification(NotificationSetting_1.default.fromDict(data["rejectRequestNotification"]))
+            .withDeleteFriendNotification(NotificationSetting_1.default.fromDict(data["deleteFriendNotification"]))
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
@@ -327,8 +366,11 @@ var Namespace = /** @class */ (function () {
             "updateProfileScript": (_h = this.getUpdateProfileScript()) === null || _h === void 0 ? void 0 : _h.toDict(),
             "followNotification": (_j = this.getFollowNotification()) === null || _j === void 0 ? void 0 : _j.toDict(),
             "receiveRequestNotification": (_k = this.getReceiveRequestNotification()) === null || _k === void 0 ? void 0 : _k.toDict(),
-            "acceptRequestNotification": (_l = this.getAcceptRequestNotification()) === null || _l === void 0 ? void 0 : _l.toDict(),
-            "logSetting": (_m = this.getLogSetting()) === null || _m === void 0 ? void 0 : _m.toDict(),
+            "cancelRequestNotification": (_l = this.getCancelRequestNotification()) === null || _l === void 0 ? void 0 : _l.toDict(),
+            "acceptRequestNotification": (_m = this.getAcceptRequestNotification()) === null || _m === void 0 ? void 0 : _m.toDict(),
+            "rejectRequestNotification": (_o = this.getRejectRequestNotification()) === null || _o === void 0 ? void 0 : _o.toDict(),
+            "deleteFriendNotification": (_p = this.getDeleteFriendNotification()) === null || _p === void 0 ? void 0 : _p.toDict(),
+            "logSetting": (_q = this.getLogSetting()) === null || _q === void 0 ? void 0 : _q.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

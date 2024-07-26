@@ -33,7 +33,10 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.updateProfileScript = null;
         this.followNotification = null;
         this.receiveRequestNotification = null;
+        this.cancelRequestNotification = null;
         this.acceptRequestNotification = null;
+        this.rejectRequestNotification = null;
+        this.deleteFriendNotification = null;
         this.logSetting = null;
     }
     UpdateNamespaceRequest.prototype.getRequestId = function () {
@@ -190,6 +193,17 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.receiveRequestNotification = receiveRequestNotification;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getCancelRequestNotification = function () {
+        return this.cancelRequestNotification;
+    };
+    UpdateNamespaceRequest.prototype.setCancelRequestNotification = function (cancelRequestNotification) {
+        this.cancelRequestNotification = cancelRequestNotification;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withCancelRequestNotification = function (cancelRequestNotification) {
+        this.cancelRequestNotification = cancelRequestNotification;
+        return this;
+    };
     UpdateNamespaceRequest.prototype.getAcceptRequestNotification = function () {
         return this.acceptRequestNotification;
     };
@@ -199,6 +213,28 @@ var UpdateNamespaceRequest = /** @class */ (function () {
     };
     UpdateNamespaceRequest.prototype.withAcceptRequestNotification = function (acceptRequestNotification) {
         this.acceptRequestNotification = acceptRequestNotification;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getRejectRequestNotification = function () {
+        return this.rejectRequestNotification;
+    };
+    UpdateNamespaceRequest.prototype.setRejectRequestNotification = function (rejectRequestNotification) {
+        this.rejectRequestNotification = rejectRequestNotification;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withRejectRequestNotification = function (rejectRequestNotification) {
+        this.rejectRequestNotification = rejectRequestNotification;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.getDeleteFriendNotification = function () {
+        return this.deleteFriendNotification;
+    };
+    UpdateNamespaceRequest.prototype.setDeleteFriendNotification = function (deleteFriendNotification) {
+        this.deleteFriendNotification = deleteFriendNotification;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withDeleteFriendNotification = function (deleteFriendNotification) {
+        this.deleteFriendNotification = deleteFriendNotification;
         return this;
     };
     UpdateNamespaceRequest.prototype.getLogSetting = function () {
@@ -226,11 +262,14 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withUpdateProfileScript(Gs2Friend.ScriptSetting.fromDict(data["updateProfileScript"]))
             .withFollowNotification(Gs2Friend.NotificationSetting.fromDict(data["followNotification"]))
             .withReceiveRequestNotification(Gs2Friend.NotificationSetting.fromDict(data["receiveRequestNotification"]))
+            .withCancelRequestNotification(Gs2Friend.NotificationSetting.fromDict(data["cancelRequestNotification"]))
             .withAcceptRequestNotification(Gs2Friend.NotificationSetting.fromDict(data["acceptRequestNotification"]))
+            .withRejectRequestNotification(Gs2Friend.NotificationSetting.fromDict(data["rejectRequestNotification"]))
+            .withDeleteFriendNotification(Gs2Friend.NotificationSetting.fromDict(data["deleteFriendNotification"]))
             .withLogSetting(Gs2Friend.LogSetting.fromDict(data["logSetting"]));
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
@@ -244,8 +283,11 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             "updateProfileScript": (_h = this.getUpdateProfileScript()) === null || _h === void 0 ? void 0 : _h.toDict(),
             "followNotification": (_j = this.getFollowNotification()) === null || _j === void 0 ? void 0 : _j.toDict(),
             "receiveRequestNotification": (_k = this.getReceiveRequestNotification()) === null || _k === void 0 ? void 0 : _k.toDict(),
-            "acceptRequestNotification": (_l = this.getAcceptRequestNotification()) === null || _l === void 0 ? void 0 : _l.toDict(),
-            "logSetting": (_m = this.getLogSetting()) === null || _m === void 0 ? void 0 : _m.toDict(),
+            "cancelRequestNotification": (_l = this.getCancelRequestNotification()) === null || _l === void 0 ? void 0 : _l.toDict(),
+            "acceptRequestNotification": (_m = this.getAcceptRequestNotification()) === null || _m === void 0 ? void 0 : _m.toDict(),
+            "rejectRequestNotification": (_o = this.getRejectRequestNotification()) === null || _o === void 0 ? void 0 : _o.toDict(),
+            "deleteFriendNotification": (_p = this.getDeleteFriendNotification()) === null || _p === void 0 ? void 0 : _p.toDict(),
+            "logSetting": (_q = this.getLogSetting()) === null || _q === void 0 ? void 0 : _q.toDict(),
         };
     };
     return UpdateNamespaceRequest;

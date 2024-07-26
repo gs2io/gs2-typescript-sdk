@@ -77,7 +77,10 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
             'updateProfileScript': request.getUpdateProfileScript()?.toDict() ?? null,
             'followNotification': request.getFollowNotification()?.toDict() ?? null,
             'receiveRequestNotification': request.getReceiveRequestNotification()?.toDict() ?? null,
+            'cancelRequestNotification': request.getCancelRequestNotification()?.toDict() ?? null,
             'acceptRequestNotification': request.getAcceptRequestNotification()?.toDict() ?? null,
+            'rejectRequestNotification': request.getRejectRequestNotification()?.toDict() ?? null,
+            'deleteFriendNotification': request.getDeleteFriendNotification()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.post(
@@ -172,7 +175,10 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
             'updateProfileScript': request.getUpdateProfileScript()?.toDict() ?? null,
             'followNotification': request.getFollowNotification()?.toDict() ?? null,
             'receiveRequestNotification': request.getReceiveRequestNotification()?.toDict() ?? null,
+            'cancelRequestNotification': request.getCancelRequestNotification()?.toDict() ?? null,
             'acceptRequestNotification': request.getAcceptRequestNotification()?.toDict() ?? null,
+            'rejectRequestNotification': request.getRejectRequestNotification()?.toDict() ?? null,
+            'deleteFriendNotification': request.getDeleteFriendNotification()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.put(
