@@ -56,6 +56,7 @@ import GetMoldRequest from "./GetMoldRequest"
 import GetMoldByUserIdRequest from "./GetMoldByUserIdRequest"
 import SetMoldCapacityByUserIdRequest from "./SetMoldCapacityByUserIdRequest"
 import AddMoldCapacityByUserIdRequest from "./AddMoldCapacityByUserIdRequest"
+import SubMoldCapacityRequest from "./SubMoldCapacityRequest"
 import SubMoldCapacityByUserIdRequest from "./SubMoldCapacityByUserIdRequest"
 import DeleteMoldRequest from "./DeleteMoldRequest"
 import DeleteMoldByUserIdRequest from "./DeleteMoldByUserIdRequest"
@@ -132,6 +133,7 @@ export {
     GetMoldByUserIdRequest,
     SetMoldCapacityByUserIdRequest,
     AddMoldCapacityByUserIdRequest,
+    SubMoldCapacityRequest,
     SubMoldCapacityByUserIdRequest,
     DeleteMoldRequest,
     DeleteMoldByUserIdRequest,

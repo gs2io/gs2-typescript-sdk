@@ -39,6 +39,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
     deleteGuild(request: Request.DeleteGuildRequest): Promise<Result.DeleteGuildResult>;
     deleteGuildByGuildName(request: Request.DeleteGuildByGuildNameRequest): Promise<Result.DeleteGuildByGuildNameResult>;
     increaseMaximumCurrentMaximumMemberCountByGuildName(request: Request.IncreaseMaximumCurrentMaximumMemberCountByGuildNameRequest): Promise<Result.IncreaseMaximumCurrentMaximumMemberCountByGuildNameResult>;
+    decreaseMaximumCurrentMaximumMemberCount(request: Request.DecreaseMaximumCurrentMaximumMemberCountRequest): Promise<Result.DecreaseMaximumCurrentMaximumMemberCountResult>;
     decreaseMaximumCurrentMaximumMemberCountByGuildName(request: Request.DecreaseMaximumCurrentMaximumMemberCountByGuildNameRequest): Promise<Result.DecreaseMaximumCurrentMaximumMemberCountByGuildNameResult>;
     verifyCurrentMaximumMemberCount(request: Request.VerifyCurrentMaximumMemberCountRequest): Promise<Result.VerifyCurrentMaximumMemberCountResult>;
     verifyCurrentMaximumMemberCountByGuildName(request: Request.VerifyCurrentMaximumMemberCountByGuildNameRequest): Promise<Result.VerifyCurrentMaximumMemberCountByGuildNameResult>;

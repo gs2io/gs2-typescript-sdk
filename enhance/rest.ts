@@ -67,10 +67,10 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
-            'enableDirectEnhance': request.getEnableDirectEnhance() ?? null,
             'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'enhanceScript': request.getEnhanceScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
+            'enableDirectEnhance': request.getEnableDirectEnhance() ?? null,
             'queueNamespaceId': request.getQueueNamespaceId() ?? null,
             'keyId': request.getKeyId() ?? null,
         };
@@ -156,10 +156,10 @@ export default class Gs2EnhanceRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
-            'enableDirectEnhance': request.getEnableDirectEnhance() ?? null,
             'transactionSetting': request.getTransactionSetting()?.toDict() ?? null,
             'enhanceScript': request.getEnhanceScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
+            'enableDirectEnhance': request.getEnableDirectEnhance() ?? null,
             'queueNamespaceId': request.getQueueNamespaceId() ?? null,
             'keyId': request.getKeyId() ?? null,
         };

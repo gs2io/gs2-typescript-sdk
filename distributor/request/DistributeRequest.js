@@ -26,6 +26,7 @@ var DistributeRequest = /** @class */ (function () {
         this.userId = null;
         this.distributeResource = null;
         this.timeOffsetToken = null;
+        this.duplicationAvoider = null;
     }
     DistributeRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -102,6 +103,17 @@ var DistributeRequest = /** @class */ (function () {
     };
     DistributeRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
         this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DistributeRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DistributeRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DistributeRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DistributeRequest.fromDict = function (data) {

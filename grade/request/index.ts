@@ -38,6 +38,7 @@ import DescribeStatusesByUserIdRequest from "./DescribeStatusesByUserIdRequest"
 import GetStatusRequest from "./GetStatusRequest"
 import GetStatusByUserIdRequest from "./GetStatusByUserIdRequest"
 import AddGradeByUserIdRequest from "./AddGradeByUserIdRequest"
+import SubGradeRequest from "./SubGradeRequest"
 import SubGradeByUserIdRequest from "./SubGradeByUserIdRequest"
 import SetGradeByUserIdRequest from "./SetGradeByUserIdRequest"
 import ApplyRankCapRequest from "./ApplyRankCapRequest"
@@ -85,6 +86,7 @@ export {
     GetStatusRequest,
     GetStatusByUserIdRequest,
     AddGradeByUserIdRequest,
+    SubGradeRequest,
     SubGradeByUserIdRequest,
     SetGradeByUserIdRequest,
     ApplyRankCapRequest,

@@ -5,10 +5,10 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private description;
-    private enableDirectEnhance;
     private transactionSetting;
     private enhanceScript;
     private logSetting;
+    private enableDirectEnhance;
     private queueNamespaceId;
     private keyId;
     getRequestId(): string | null;
@@ -23,9 +23,6 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
-    getEnableDirectEnhance(): boolean | null;
-    setEnableDirectEnhance(enableDirectEnhance: boolean | null): this;
-    withEnableDirectEnhance(enableDirectEnhance: boolean | null): this;
     getTransactionSetting(): Gs2Enhance.TransactionSetting | null;
     setTransactionSetting(transactionSetting: Gs2Enhance.TransactionSetting | null): this;
     withTransactionSetting(transactionSetting: Gs2Enhance.TransactionSetting | null): this;
@@ -35,6 +32,12 @@ export default class UpdateNamespaceRequest implements IRequest {
     getLogSetting(): Gs2Enhance.LogSetting | null;
     setLogSetting(logSetting: Gs2Enhance.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Enhance.LogSetting | null): this;
+    /** @deprecated */
+    getEnableDirectEnhance(): boolean | null;
+    /** @deprecated */
+    setEnableDirectEnhance(enableDirectEnhance: boolean | null): this;
+    /** @deprecated */
+    withEnableDirectEnhance(enableDirectEnhance: boolean | null): this;
     /** @deprecated */
     getQueueNamespaceId(): string | null;
     /** @deprecated */

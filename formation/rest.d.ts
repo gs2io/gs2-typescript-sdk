@@ -47,6 +47,7 @@ export default class Gs2FormationRestClient extends AbstractGs2RestClient {
     getMoldByUserId(request: Request.GetMoldByUserIdRequest): Promise<Result.GetMoldByUserIdResult>;
     setMoldCapacityByUserId(request: Request.SetMoldCapacityByUserIdRequest): Promise<Result.SetMoldCapacityByUserIdResult>;
     addMoldCapacityByUserId(request: Request.AddMoldCapacityByUserIdRequest): Promise<Result.AddMoldCapacityByUserIdResult>;
+    subMoldCapacity(request: Request.SubMoldCapacityRequest): Promise<Result.SubMoldCapacityResult>;
     subMoldCapacityByUserId(request: Request.SubMoldCapacityByUserIdRequest): Promise<Result.SubMoldCapacityByUserIdResult>;
     deleteMold(request: Request.DeleteMoldRequest): Promise<Result.DeleteMoldResult>;
     deleteMoldByUserId(request: Request.DeleteMoldByUserIdRequest): Promise<Result.DeleteMoldByUserIdResult>;

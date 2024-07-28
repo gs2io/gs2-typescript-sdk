@@ -56,6 +56,7 @@ import CreateRandomShowcaseMasterRequest from "./CreateRandomShowcaseMasterReque
 import GetRandomShowcaseMasterRequest from "./GetRandomShowcaseMasterRequest"
 import UpdateRandomShowcaseMasterRequest from "./UpdateRandomShowcaseMasterRequest"
 import DeleteRandomShowcaseMasterRequest from "./DeleteRandomShowcaseMasterRequest"
+import IncrementPurchaseCountRequest from "./IncrementPurchaseCountRequest"
 import IncrementPurchaseCountByUserIdRequest from "./IncrementPurchaseCountByUserIdRequest"
 import DecrementPurchaseCountByUserIdRequest from "./DecrementPurchaseCountByUserIdRequest"
 import IncrementPurchaseCountByStampTaskRequest from "./IncrementPurchaseCountByStampTaskRequest"
@@ -113,6 +114,7 @@ export {
     GetRandomShowcaseMasterRequest,
     UpdateRandomShowcaseMasterRequest,
     DeleteRandomShowcaseMasterRequest,
+    IncrementPurchaseCountRequest,
     IncrementPurchaseCountByUserIdRequest,
     DecrementPurchaseCountByUserIdRequest,
     IncrementPurchaseCountByStampTaskRequest,

@@ -56,6 +56,7 @@ import CreateRandomShowcaseMasterResult from "./CreateRandomShowcaseMasterResult
 import GetRandomShowcaseMasterResult from "./GetRandomShowcaseMasterResult"
 import UpdateRandomShowcaseMasterResult from "./UpdateRandomShowcaseMasterResult"
 import DeleteRandomShowcaseMasterResult from "./DeleteRandomShowcaseMasterResult"
+import IncrementPurchaseCountResult from "./IncrementPurchaseCountResult"
 import IncrementPurchaseCountByUserIdResult from "./IncrementPurchaseCountByUserIdResult"
 import DecrementPurchaseCountByUserIdResult from "./DecrementPurchaseCountByUserIdResult"
 import IncrementPurchaseCountByStampTaskResult from "./IncrementPurchaseCountByStampTaskResult"
@@ -113,6 +114,7 @@ export {
     GetRandomShowcaseMasterResult,
     UpdateRandomShowcaseMasterResult,
     DeleteRandomShowcaseMasterResult,
+    IncrementPurchaseCountResult,
     IncrementPurchaseCountByUserIdResult,
     DecrementPurchaseCountByUserIdResult,
     IncrementPurchaseCountByStampTaskResult,

@@ -29,6 +29,7 @@ export default class Gs2GradeRestClient extends AbstractGs2RestClient {
     getStatus(request: Request.GetStatusRequest): Promise<Result.GetStatusResult>;
     getStatusByUserId(request: Request.GetStatusByUserIdRequest): Promise<Result.GetStatusByUserIdResult>;
     addGradeByUserId(request: Request.AddGradeByUserIdRequest): Promise<Result.AddGradeByUserIdResult>;
+    subGrade(request: Request.SubGradeRequest): Promise<Result.SubGradeResult>;
     subGradeByUserId(request: Request.SubGradeByUserIdRequest): Promise<Result.SubGradeByUserIdResult>;
     setGradeByUserId(request: Request.SetGradeByUserIdRequest): Promise<Result.SetGradeByUserIdResult>;
     applyRankCap(request: Request.ApplyRankCapRequest): Promise<Result.ApplyRankCapResult>;

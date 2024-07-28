@@ -48,6 +48,7 @@ import UpdateMemberRoleByGuildNameResult from "./UpdateMemberRoleByGuildNameResu
 import DeleteGuildResult from "./DeleteGuildResult"
 import DeleteGuildByGuildNameResult from "./DeleteGuildByGuildNameResult"
 import IncreaseMaximumCurrentMaximumMemberCountByGuildNameResult from "./IncreaseMaximumCurrentMaximumMemberCountByGuildNameResult"
+import DecreaseMaximumCurrentMaximumMemberCountResult from "./DecreaseMaximumCurrentMaximumMemberCountResult"
 import DecreaseMaximumCurrentMaximumMemberCountByGuildNameResult from "./DecreaseMaximumCurrentMaximumMemberCountByGuildNameResult"
 import VerifyCurrentMaximumMemberCountResult from "./VerifyCurrentMaximumMemberCountResult"
 import VerifyCurrentMaximumMemberCountByGuildNameResult from "./VerifyCurrentMaximumMemberCountByGuildNameResult"
@@ -136,6 +137,7 @@ export {
     DeleteGuildResult,
     DeleteGuildByGuildNameResult,
     IncreaseMaximumCurrentMaximumMemberCountByGuildNameResult,
+    DecreaseMaximumCurrentMaximumMemberCountResult,
     DecreaseMaximumCurrentMaximumMemberCountByGuildNameResult,
     VerifyCurrentMaximumMemberCountResult,
     VerifyCurrentMaximumMemberCountByGuildNameResult,

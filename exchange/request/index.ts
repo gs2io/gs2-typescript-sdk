@@ -46,8 +46,6 @@ import ExchangeByStampSheetRequest from "./ExchangeByStampSheetRequest"
 import IncrementalExchangeRequest from "./IncrementalExchangeRequest"
 import IncrementalExchangeByUserIdRequest from "./IncrementalExchangeByUserIdRequest"
 import IncrementalExchangeByStampSheetRequest from "./IncrementalExchangeByStampSheetRequest"
-import UnlockIncrementalExchangeByUserIdRequest from "./UnlockIncrementalExchangeByUserIdRequest"
-import UnlockIncrementalExchangeByStampSheetRequest from "./UnlockIncrementalExchangeByStampSheetRequest"
 import ExportMasterRequest from "./ExportMasterRequest"
 import GetCurrentRateMasterRequest from "./GetCurrentRateMasterRequest"
 import UpdateCurrentRateMasterRequest from "./UpdateCurrentRateMasterRequest"
@@ -101,8 +99,6 @@ export {
     IncrementalExchangeRequest,
     IncrementalExchangeByUserIdRequest,
     IncrementalExchangeByStampSheetRequest,
-    UnlockIncrementalExchangeByUserIdRequest,
-    UnlockIncrementalExchangeByStampSheetRequest,
     ExportMasterRequest,
     GetCurrentRateMasterRequest,
     UpdateCurrentRateMasterRequest,

@@ -47,6 +47,7 @@ export default class Gs2ShowcaseRestClient extends AbstractGs2RestClient {
     getRandomShowcaseMaster(request: Request.GetRandomShowcaseMasterRequest): Promise<Result.GetRandomShowcaseMasterResult>;
     updateRandomShowcaseMaster(request: Request.UpdateRandomShowcaseMasterRequest): Promise<Result.UpdateRandomShowcaseMasterResult>;
     deleteRandomShowcaseMaster(request: Request.DeleteRandomShowcaseMasterRequest): Promise<Result.DeleteRandomShowcaseMasterResult>;
+    incrementPurchaseCount(request: Request.IncrementPurchaseCountRequest): Promise<Result.IncrementPurchaseCountResult>;
     incrementPurchaseCountByUserId(request: Request.IncrementPurchaseCountByUserIdRequest): Promise<Result.IncrementPurchaseCountByUserIdResult>;
     decrementPurchaseCountByUserId(request: Request.DecrementPurchaseCountByUserIdRequest): Promise<Result.DecrementPurchaseCountByUserIdResult>;
     incrementPurchaseCountByStampTask(request: Request.IncrementPurchaseCountByStampTaskRequest): Promise<Result.IncrementPurchaseCountByStampTaskResult>;

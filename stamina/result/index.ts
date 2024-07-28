@@ -61,6 +61,7 @@ import ConsumeStaminaResult from "./ConsumeStaminaResult"
 import ConsumeStaminaByUserIdResult from "./ConsumeStaminaByUserIdResult"
 import RecoverStaminaByUserIdResult from "./RecoverStaminaByUserIdResult"
 import RaiseMaxValueByUserIdResult from "./RaiseMaxValueByUserIdResult"
+import DecreaseMaxValueResult from "./DecreaseMaxValueResult"
 import DecreaseMaxValueByUserIdResult from "./DecreaseMaxValueByUserIdResult"
 import SetMaxValueByUserIdResult from "./SetMaxValueByUserIdResult"
 import SetRecoverIntervalByUserIdResult from "./SetRecoverIntervalByUserIdResult"
@@ -126,6 +127,7 @@ export {
     ConsumeStaminaByUserIdResult,
     RecoverStaminaByUserIdResult,
     RaiseMaxValueByUserIdResult,
+    DecreaseMaxValueResult,
     DecreaseMaxValueByUserIdResult,
     SetMaxValueByUserIdResult,
     SetRecoverIntervalByUserIdResult,

@@ -24,10 +24,10 @@ export default class CreateNamespaceRequest implements IRequest {
     private contextStack: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
-    private enableDirectEnhance: boolean|null = null;
     private transactionSetting: Gs2Enhance.TransactionSetting|null = null;
     private enhanceScript: Gs2Enhance.ScriptSetting|null = null;
     private logSetting: Gs2Enhance.LogSetting|null = null;
+    private enableDirectEnhance: boolean|null = null;
     private queueNamespaceId: string|null = null;
     private keyId: string|null = null;
 
@@ -80,17 +80,6 @@ export default class CreateNamespaceRequest implements IRequest {
         this.description = description;
         return this;
     }
-    public getEnableDirectEnhance(): boolean|null {
-        return this.enableDirectEnhance;
-    }
-    public setEnableDirectEnhance(enableDirectEnhance: boolean|null) {
-        this.enableDirectEnhance = enableDirectEnhance;
-        return this;
-    }
-    public withEnableDirectEnhance(enableDirectEnhance: boolean|null): this {
-        this.enableDirectEnhance = enableDirectEnhance;
-        return this;
-    }
     public getTransactionSetting(): Gs2Enhance.TransactionSetting|null {
         return this.transactionSetting;
     }
@@ -122,6 +111,20 @@ export default class CreateNamespaceRequest implements IRequest {
     }
     public withLogSetting(logSetting: Gs2Enhance.LogSetting|null): this {
         this.logSetting = logSetting;
+        return this;
+    }
+    /** @deprecated */
+    public getEnableDirectEnhance(): boolean|null {
+        return this.enableDirectEnhance;
+    }
+    /** @deprecated */
+    public setEnableDirectEnhance(enableDirectEnhance: boolean|null) {
+        this.enableDirectEnhance = enableDirectEnhance;
+        return this;
+    }
+    /** @deprecated */
+    public withEnableDirectEnhance(enableDirectEnhance: boolean|null): this {
+        this.enableDirectEnhance = enableDirectEnhance;
         return this;
     }
     /** @deprecated */
@@ -157,10 +160,10 @@ export default class CreateNamespaceRequest implements IRequest {
         return new CreateNamespaceRequest()
             .withName(data["name"])
             .withDescription(data["description"])
-            .withEnableDirectEnhance(data["enableDirectEnhance"])
             .withTransactionSetting(Gs2Enhance.TransactionSetting.fromDict(data["transactionSetting"]))
             .withEnhanceScript(Gs2Enhance.ScriptSetting.fromDict(data["enhanceScript"]))
             .withLogSetting(Gs2Enhance.LogSetting.fromDict(data["logSetting"]))
+            .withEnableDirectEnhance(data["enableDirectEnhance"])
             .withQueueNamespaceId(data["queueNamespaceId"])
             .withKeyId(data["keyId"]);
     }
@@ -169,10 +172,10 @@ export default class CreateNamespaceRequest implements IRequest {
         return {
             "name": this.getName(),
             "description": this.getDescription(),
-            "enableDirectEnhance": this.getEnableDirectEnhance(),
             "transactionSetting": this.getTransactionSetting()?.toDict(),
             "enhanceScript": this.getEnhanceScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
+            "enableDirectEnhance": this.getEnableDirectEnhance(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
         };

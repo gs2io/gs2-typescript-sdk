@@ -38,6 +38,7 @@ import DescribeStatusesByUserIdResult from "./DescribeStatusesByUserIdResult"
 import GetStatusResult from "./GetStatusResult"
 import GetStatusByUserIdResult from "./GetStatusByUserIdResult"
 import AddGradeByUserIdResult from "./AddGradeByUserIdResult"
+import SubGradeResult from "./SubGradeResult"
 import SubGradeByUserIdResult from "./SubGradeByUserIdResult"
 import SetGradeByUserIdResult from "./SetGradeByUserIdResult"
 import ApplyRankCapResult from "./ApplyRankCapResult"
@@ -85,6 +86,7 @@ export {
     GetStatusResult,
     GetStatusByUserIdResult,
     AddGradeByUserIdResult,
+    SubGradeResult,
     SubGradeByUserIdResult,
     SetGradeByUserIdResult,
     ApplyRankCapResult,

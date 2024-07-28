@@ -49,9 +49,11 @@ import GetStatusByUserIdResult from "./GetStatusByUserIdResult"
 import GetStatusWithSignatureResult from "./GetStatusWithSignatureResult"
 import GetStatusWithSignatureByUserIdResult from "./GetStatusWithSignatureByUserIdResult"
 import AddExperienceByUserIdResult from "./AddExperienceByUserIdResult"
+import SubExperienceResult from "./SubExperienceResult"
 import SubExperienceByUserIdResult from "./SubExperienceByUserIdResult"
 import SetExperienceByUserIdResult from "./SetExperienceByUserIdResult"
 import AddRankCapByUserIdResult from "./AddRankCapByUserIdResult"
+import SubRankCapResult from "./SubRankCapResult"
 import SubRankCapByUserIdResult from "./SubRankCapByUserIdResult"
 import SetRankCapByUserIdResult from "./SetRankCapByUserIdResult"
 import DeleteStatusByUserIdResult from "./DeleteStatusByUserIdResult"
@@ -107,9 +109,11 @@ export {
     GetStatusWithSignatureResult,
     GetStatusWithSignatureByUserIdResult,
     AddExperienceByUserIdResult,
+    SubExperienceResult,
     SubExperienceByUserIdResult,
     SetExperienceByUserIdResult,
     AddRankCapByUserIdResult,
+    SubRankCapResult,
     SubRankCapByUserIdResult,
     SetRankCapByUserIdResult,
     DeleteStatusByUserIdResult,

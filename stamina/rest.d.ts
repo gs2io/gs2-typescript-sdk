@@ -52,6 +52,7 @@ export default class Gs2StaminaRestClient extends AbstractGs2RestClient {
     consumeStaminaByUserId(request: Request.ConsumeStaminaByUserIdRequest): Promise<Result.ConsumeStaminaByUserIdResult>;
     recoverStaminaByUserId(request: Request.RecoverStaminaByUserIdRequest): Promise<Result.RecoverStaminaByUserIdResult>;
     raiseMaxValueByUserId(request: Request.RaiseMaxValueByUserIdRequest): Promise<Result.RaiseMaxValueByUserIdResult>;
+    decreaseMaxValue(request: Request.DecreaseMaxValueRequest): Promise<Result.DecreaseMaxValueResult>;
     decreaseMaxValueByUserId(request: Request.DecreaseMaxValueByUserIdRequest): Promise<Result.DecreaseMaxValueByUserIdResult>;
     setMaxValueByUserId(request: Request.SetMaxValueByUserIdRequest): Promise<Result.SetMaxValueByUserIdResult>;
     setRecoverIntervalByUserId(request: Request.SetRecoverIntervalByUserIdRequest): Promise<Result.SetRecoverIntervalByUserIdResult>;

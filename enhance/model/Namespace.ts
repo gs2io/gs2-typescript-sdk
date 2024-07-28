@@ -24,12 +24,12 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
-    private enableDirectEnhance: boolean|null = null;
     private transactionSetting: TransactionSetting|null = null;
     private enhanceScript: ScriptSetting|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
+    private enableDirectEnhance: boolean|null = null;
     private queueNamespaceId: string|null = null;
     private keyId: string|null = null;
     private revision: number|null = null;
@@ -126,17 +126,6 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
-    public getEnableDirectEnhance(): boolean|null {
-        return this.enableDirectEnhance;
-    }
-    public setEnableDirectEnhance(enableDirectEnhance: boolean|null) {
-        this.enableDirectEnhance = enableDirectEnhance;
-        return this;
-    }
-    public withEnableDirectEnhance(enableDirectEnhance: boolean|null): this {
-        this.enableDirectEnhance = enableDirectEnhance;
-        return this;
-    }
     public getTransactionSetting(): TransactionSetting|null {
         return this.transactionSetting;
     }
@@ -193,6 +182,20 @@ export default class Namespace implements IModel {
         return this;
     }
     /** @deprecated */
+    public getEnableDirectEnhance(): boolean|null {
+        return this.enableDirectEnhance;
+    }
+    /** @deprecated */
+    public setEnableDirectEnhance(enableDirectEnhance: boolean|null) {
+        this.enableDirectEnhance = enableDirectEnhance;
+        return this;
+    }
+    /** @deprecated */
+    public withEnableDirectEnhance(enableDirectEnhance: boolean|null): this {
+        this.enableDirectEnhance = enableDirectEnhance;
+        return this;
+    }
+    /** @deprecated */
     public getQueueNamespaceId(): string|null {
         return this.queueNamespaceId;
     }
@@ -240,12 +243,12 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withEnableDirectEnhance(data["enableDirectEnhance"])
             .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
             .withEnhanceScript(ScriptSetting.fromDict(data["enhanceScript"]))
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
+            .withEnableDirectEnhance(data["enableDirectEnhance"])
             .withQueueNamespaceId(data["queueNamespaceId"])
             .withKeyId(data["keyId"])
             .withRevision(data["revision"]);
@@ -256,12 +259,12 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
-            "enableDirectEnhance": this.getEnableDirectEnhance(),
             "transactionSetting": this.getTransactionSetting()?.toDict(),
             "enhanceScript": this.getEnhanceScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "enableDirectEnhance": this.getEnableDirectEnhance(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
             "revision": this.getRevision(),

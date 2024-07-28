@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteDeadLetterJobByUserIdRequest = exports.GetDeadLetterJobByUserIdRequest = exports.DescribeDeadLetterJobsByUserIdRequest = exports.GetJobResultByUserIdRequest = exports.GetJobResultRequest = exports.DeleteByStampTaskRequest = exports.PushByStampSheetRequest = exports.DeleteJobByUserIdRequest = exports.RunByUserIdRequest = exports.RunRequest = exports.PushByUserIdRequest = exports.GetJobByUserIdRequest = exports.DescribeJobsByUserIdRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.DeleteDeadLetterJobByUserIdRequest = exports.GetDeadLetterJobByUserIdRequest = exports.DescribeDeadLetterJobsByUserIdRequest = exports.GetJobResultByUserIdRequest = exports.GetJobResultRequest = exports.DeleteByStampTaskRequest = exports.PushByStampSheetRequest = exports.DeleteJobByUserIdRequest = exports.DeleteJobRequest = exports.RunByUserIdRequest = exports.RunRequest = exports.PushByUserIdRequest = exports.GetJobByUserIdRequest = exports.DescribeJobsByUserIdRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -53,6 +53,8 @@ var RunRequest_1 = tslib_1.__importDefault(require("./RunRequest"));
 exports.RunRequest = RunRequest_1.default;
 var RunByUserIdRequest_1 = tslib_1.__importDefault(require("./RunByUserIdRequest"));
 exports.RunByUserIdRequest = RunByUserIdRequest_1.default;
+var DeleteJobRequest_1 = tslib_1.__importDefault(require("./DeleteJobRequest"));
+exports.DeleteJobRequest = DeleteJobRequest_1.default;
 var DeleteJobByUserIdRequest_1 = tslib_1.__importDefault(require("./DeleteJobByUserIdRequest"));
 exports.DeleteJobByUserIdRequest = DeleteJobByUserIdRequest_1.default;
 var PushByStampSheetRequest_1 = tslib_1.__importDefault(require("./PushByStampSheetRequest"));

@@ -37,8 +37,6 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     incrementalExchange(request: Request.IncrementalExchangeRequest): Promise<Result.IncrementalExchangeResult>;
     incrementalExchangeByUserId(request: Request.IncrementalExchangeByUserIdRequest): Promise<Result.IncrementalExchangeByUserIdResult>;
     incrementalExchangeByStampSheet(request: Request.IncrementalExchangeByStampSheetRequest): Promise<Result.IncrementalExchangeByStampSheetResult>;
-    unlockIncrementalExchangeByUserId(request: Request.UnlockIncrementalExchangeByUserIdRequest): Promise<Result.UnlockIncrementalExchangeByUserIdResult>;
-    unlockIncrementalExchangeByStampSheet(request: Request.UnlockIncrementalExchangeByStampSheetRequest): Promise<Result.UnlockIncrementalExchangeByStampSheetResult>;
     exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
     getCurrentRateMaster(request: Request.GetCurrentRateMasterRequest): Promise<Result.GetCurrentRateMasterResult>;
     updateCurrentRateMaster(request: Request.UpdateCurrentRateMasterRequest): Promise<Result.UpdateCurrentRateMasterResult>;

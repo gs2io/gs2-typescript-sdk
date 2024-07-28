@@ -27,6 +27,7 @@ export default class Gs2SkillTreeRestClient extends AbstractGs2RestClient {
     markReleaseByUserId(request: Request.MarkReleaseByUserIdRequest): Promise<Result.MarkReleaseByUserIdResult>;
     release(request: Request.ReleaseRequest): Promise<Result.ReleaseResult>;
     releaseByUserId(request: Request.ReleaseByUserIdRequest): Promise<Result.ReleaseByUserIdResult>;
+    markRestrain(request: Request.MarkRestrainRequest): Promise<Result.MarkRestrainResult>;
     markRestrainByUserId(request: Request.MarkRestrainByUserIdRequest): Promise<Result.MarkRestrainByUserIdResult>;
     restrain(request: Request.RestrainRequest): Promise<Result.RestrainResult>;
     restrainByUserId(request: Request.RestrainByUserIdRequest): Promise<Result.RestrainByUserIdResult>;

@@ -42,6 +42,12 @@ import RunStampSheetWithoutNamespaceRequest from "./RunStampSheetWithoutNamespac
 import RunStampSheetExpressWithoutNamespaceRequest from "./RunStampSheetExpressWithoutNamespaceRequest"
 import SetTransactionDefaultConfigRequest from "./SetTransactionDefaultConfigRequest"
 import SetTransactionDefaultConfigByUserIdRequest from "./SetTransactionDefaultConfigByUserIdRequest"
+import IfExpressionByUserIdRequest from "./IfExpressionByUserIdRequest"
+import AndExpressionByUserIdRequest from "./AndExpressionByUserIdRequest"
+import OrExpressionByUserIdRequest from "./OrExpressionByUserIdRequest"
+import IfExpressionByUserByStampTaskRequest from "./IfExpressionByUserByStampTaskRequest"
+import AndExpressionByUserByStampTaskRequest from "./AndExpressionByUserByStampTaskRequest"
+import OrExpressionByUserByStampTaskRequest from "./OrExpressionByUserByStampTaskRequest"
 import GetStampSheetResultRequest from "./GetStampSheetResultRequest"
 import GetStampSheetResultByUserIdRequest from "./GetStampSheetResultByUserIdRequest"
 
@@ -75,6 +81,12 @@ export {
     RunStampSheetExpressWithoutNamespaceRequest,
     SetTransactionDefaultConfigRequest,
     SetTransactionDefaultConfigByUserIdRequest,
+    IfExpressionByUserIdRequest,
+    AndExpressionByUserIdRequest,
+    OrExpressionByUserIdRequest,
+    IfExpressionByUserByStampTaskRequest,
+    AndExpressionByUserByStampTaskRequest,
+    OrExpressionByUserByStampTaskRequest,
     GetStampSheetResultRequest,
     GetStampSheetResultByUserIdRequest,
 };

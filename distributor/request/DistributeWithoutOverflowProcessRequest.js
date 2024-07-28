@@ -24,6 +24,7 @@ var DistributeWithoutOverflowProcessRequest = /** @class */ (function () {
         this.userId = null;
         this.distributeResource = null;
         this.timeOffsetToken = null;
+        this.duplicationAvoider = null;
     }
     DistributeWithoutOverflowProcessRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,6 +79,17 @@ var DistributeWithoutOverflowProcessRequest = /** @class */ (function () {
     };
     DistributeWithoutOverflowProcessRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
         this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    DistributeWithoutOverflowProcessRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    DistributeWithoutOverflowProcessRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    DistributeWithoutOverflowProcessRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     DistributeWithoutOverflowProcessRequest.fromDict = function (data) {

@@ -6,12 +6,12 @@ export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
-    private enableDirectEnhance;
     private transactionSetting;
     private enhanceScript;
     private logSetting;
     private createdAt;
     private updatedAt;
+    private enableDirectEnhance;
     private queueNamespaceId;
     private keyId;
     private revision;
@@ -29,9 +29,6 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
-    getEnableDirectEnhance(): boolean | null;
-    setEnableDirectEnhance(enableDirectEnhance: boolean | null): this;
-    withEnableDirectEnhance(enableDirectEnhance: boolean | null): this;
     getTransactionSetting(): TransactionSetting | null;
     setTransactionSetting(transactionSetting: TransactionSetting | null): this;
     withTransactionSetting(transactionSetting: TransactionSetting | null): this;
@@ -47,6 +44,12 @@ export default class Namespace implements IModel {
     getUpdatedAt(): number | null;
     setUpdatedAt(updatedAt: number | null): this;
     withUpdatedAt(updatedAt: number | null): this;
+    /** @deprecated */
+    getEnableDirectEnhance(): boolean | null;
+    /** @deprecated */
+    setEnableDirectEnhance(enableDirectEnhance: boolean | null): this;
+    /** @deprecated */
+    withEnableDirectEnhance(enableDirectEnhance: boolean | null): this;
     /** @deprecated */
     getQueueNamespaceId(): string | null;
     /** @deprecated */

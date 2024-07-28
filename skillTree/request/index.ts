@@ -36,6 +36,7 @@ import DeleteNodeModelMasterRequest from "./DeleteNodeModelMasterRequest"
 import MarkReleaseByUserIdRequest from "./MarkReleaseByUserIdRequest"
 import ReleaseRequest from "./ReleaseRequest"
 import ReleaseByUserIdRequest from "./ReleaseByUserIdRequest"
+import MarkRestrainRequest from "./MarkRestrainRequest"
 import MarkRestrainByUserIdRequest from "./MarkRestrainByUserIdRequest"
 import RestrainRequest from "./RestrainRequest"
 import RestrainByUserIdRequest from "./RestrainByUserIdRequest"
@@ -76,6 +77,7 @@ export {
     MarkReleaseByUserIdRequest,
     ReleaseRequest,
     ReleaseByUserIdRequest,
+    MarkRestrainRequest,
     MarkRestrainByUserIdRequest,
     RestrainRequest,
     RestrainByUserIdRequest,

@@ -25,12 +25,12 @@ var Namespace = /** @class */ (function () {
         this.namespaceId = null;
         this.name = null;
         this.description = null;
-        this.enableDirectEnhance = null;
         this.transactionSetting = null;
         this.enhanceScript = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
+        this.enableDirectEnhance = null;
         this.queueNamespaceId = null;
         this.keyId = null;
         this.revision = null;
@@ -116,17 +116,6 @@ var Namespace = /** @class */ (function () {
         this.description = description;
         return this;
     };
-    Namespace.prototype.getEnableDirectEnhance = function () {
-        return this.enableDirectEnhance;
-    };
-    Namespace.prototype.setEnableDirectEnhance = function (enableDirectEnhance) {
-        this.enableDirectEnhance = enableDirectEnhance;
-        return this;
-    };
-    Namespace.prototype.withEnableDirectEnhance = function (enableDirectEnhance) {
-        this.enableDirectEnhance = enableDirectEnhance;
-        return this;
-    };
     Namespace.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
@@ -183,6 +172,20 @@ var Namespace = /** @class */ (function () {
         return this;
     };
     /** @deprecated */
+    Namespace.prototype.getEnableDirectEnhance = function () {
+        return this.enableDirectEnhance;
+    };
+    /** @deprecated */
+    Namespace.prototype.setEnableDirectEnhance = function (enableDirectEnhance) {
+        this.enableDirectEnhance = enableDirectEnhance;
+        return this;
+    };
+    /** @deprecated */
+    Namespace.prototype.withEnableDirectEnhance = function (enableDirectEnhance) {
+        this.enableDirectEnhance = enableDirectEnhance;
+        return this;
+    };
+    /** @deprecated */
     Namespace.prototype.getQueueNamespaceId = function () {
         return this.queueNamespaceId;
     };
@@ -229,12 +232,12 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withEnableDirectEnhance(data["enableDirectEnhance"])
             .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
             .withEnhanceScript(ScriptSetting_1.default.fromDict(data["enhanceScript"]))
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
+            .withEnableDirectEnhance(data["enableDirectEnhance"])
             .withQueueNamespaceId(data["queueNamespaceId"])
             .withKeyId(data["keyId"])
             .withRevision(data["revision"]);
@@ -245,12 +248,12 @@ var Namespace = /** @class */ (function () {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
-            "enableDirectEnhance": this.getEnableDirectEnhance(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "enhanceScript": (_b = this.getEnhanceScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
+            "enableDirectEnhance": this.getEnableDirectEnhance(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
             "revision": this.getRevision(),

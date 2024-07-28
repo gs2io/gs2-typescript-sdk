@@ -36,6 +36,7 @@ import DeleteNodeModelMasterResult from "./DeleteNodeModelMasterResult"
 import MarkReleaseByUserIdResult from "./MarkReleaseByUserIdResult"
 import ReleaseResult from "./ReleaseResult"
 import ReleaseByUserIdResult from "./ReleaseByUserIdResult"
+import MarkRestrainResult from "./MarkRestrainResult"
 import MarkRestrainByUserIdResult from "./MarkRestrainByUserIdResult"
 import RestrainResult from "./RestrainResult"
 import RestrainByUserIdResult from "./RestrainByUserIdResult"
@@ -76,6 +77,7 @@ export {
     MarkReleaseByUserIdResult,
     ReleaseResult,
     ReleaseByUserIdResult,
+    MarkRestrainResult,
     MarkRestrainByUserIdResult,
     RestrainResult,
     RestrainByUserIdResult,

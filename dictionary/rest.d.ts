@@ -34,6 +34,7 @@ export default class Gs2DictionaryRestClient extends AbstractGs2RestClient {
     resetByUserId(request: Request.ResetByUserIdRequest): Promise<Result.ResetByUserIdResult>;
     verifyEntry(request: Request.VerifyEntryRequest): Promise<Result.VerifyEntryResult>;
     verifyEntryByUserId(request: Request.VerifyEntryByUserIdRequest): Promise<Result.VerifyEntryByUserIdResult>;
+    deleteEntries(request: Request.DeleteEntriesRequest): Promise<Result.DeleteEntriesResult>;
     deleteEntriesByUserId(request: Request.DeleteEntriesByUserIdRequest): Promise<Result.DeleteEntriesByUserIdResult>;
     addEntriesByStampSheet(request: Request.AddEntriesByStampSheetRequest): Promise<Result.AddEntriesByStampSheetResult>;
     deleteEntriesByStampTask(request: Request.DeleteEntriesByStampTaskRequest): Promise<Result.DeleteEntriesByStampTaskResult>;

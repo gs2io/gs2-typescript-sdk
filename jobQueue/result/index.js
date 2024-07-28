@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteDeadLetterJobByUserIdResult = exports.GetDeadLetterJobByUserIdResult = exports.DescribeDeadLetterJobsByUserIdResult = exports.GetJobResultByUserIdResult = exports.GetJobResultResult = exports.DeleteByStampTaskResult = exports.PushByStampSheetResult = exports.DeleteJobByUserIdResult = exports.RunByUserIdResult = exports.RunResult = exports.PushByUserIdResult = exports.GetJobByUserIdResult = exports.DescribeJobsByUserIdResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.DeleteDeadLetterJobByUserIdResult = exports.GetDeadLetterJobByUserIdResult = exports.DescribeDeadLetterJobsByUserIdResult = exports.GetJobResultByUserIdResult = exports.GetJobResultResult = exports.DeleteByStampTaskResult = exports.PushByStampSheetResult = exports.DeleteJobByUserIdResult = exports.DeleteJobResult = exports.RunByUserIdResult = exports.RunResult = exports.PushByUserIdResult = exports.GetJobByUserIdResult = exports.DescribeJobsByUserIdResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -53,6 +53,8 @@ var RunResult_1 = tslib_1.__importDefault(require("./RunResult"));
 exports.RunResult = RunResult_1.default;
 var RunByUserIdResult_1 = tslib_1.__importDefault(require("./RunByUserIdResult"));
 exports.RunByUserIdResult = RunByUserIdResult_1.default;
+var DeleteJobResult_1 = tslib_1.__importDefault(require("./DeleteJobResult"));
+exports.DeleteJobResult = DeleteJobResult_1.default;
 var DeleteJobByUserIdResult_1 = tslib_1.__importDefault(require("./DeleteJobByUserIdResult"));
 exports.DeleteJobByUserIdResult = DeleteJobByUserIdResult_1.default;
 var PushByStampSheetResult_1 = tslib_1.__importDefault(require("./PushByStampSheetResult"));

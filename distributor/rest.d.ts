@@ -33,6 +33,12 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     runStampSheetExpressWithoutNamespace(request: Request.RunStampSheetExpressWithoutNamespaceRequest): Promise<Result.RunStampSheetExpressWithoutNamespaceResult>;
     setTransactionDefaultConfig(request: Request.SetTransactionDefaultConfigRequest): Promise<Result.SetTransactionDefaultConfigResult>;
     setTransactionDefaultConfigByUserId(request: Request.SetTransactionDefaultConfigByUserIdRequest): Promise<Result.SetTransactionDefaultConfigByUserIdResult>;
+    ifExpressionByUserId(request: Request.IfExpressionByUserIdRequest): Promise<Result.IfExpressionByUserIdResult>;
+    andExpressionByUserId(request: Request.AndExpressionByUserIdRequest): Promise<Result.AndExpressionByUserIdResult>;
+    orExpressionByUserId(request: Request.OrExpressionByUserIdRequest): Promise<Result.OrExpressionByUserIdResult>;
+    ifExpressionByUserByStampTask(request: Request.IfExpressionByUserByStampTaskRequest): Promise<Result.IfExpressionByUserByStampTaskResult>;
+    andExpressionByUserByStampTask(request: Request.AndExpressionByUserByStampTaskRequest): Promise<Result.AndExpressionByUserByStampTaskResult>;
+    orExpressionByUserByStampTask(request: Request.OrExpressionByUserByStampTaskRequest): Promise<Result.OrExpressionByUserByStampTaskResult>;
     getStampSheetResult(request: Request.GetStampSheetResultRequest): Promise<Result.GetStampSheetResultResult>;
     getStampSheetResultByUserId(request: Request.GetStampSheetResultByUserIdRequest): Promise<Result.GetStampSheetResultByUserIdResult>;
 }

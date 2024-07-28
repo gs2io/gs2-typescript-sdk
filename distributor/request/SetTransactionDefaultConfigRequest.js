@@ -23,6 +23,7 @@ var SetTransactionDefaultConfigRequest = /** @class */ (function () {
         this.contextStack = null;
         this.accessToken = null;
         this.config = null;
+        this.duplicationAvoider = null;
     }
     SetTransactionDefaultConfigRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -66,6 +67,17 @@ var SetTransactionDefaultConfigRequest = /** @class */ (function () {
     };
     SetTransactionDefaultConfigRequest.prototype.withConfig = function (config) {
         this.config = config;
+        return this;
+    };
+    SetTransactionDefaultConfigRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SetTransactionDefaultConfigRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SetTransactionDefaultConfigRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SetTransactionDefaultConfigRequest.fromDict = function (data) {

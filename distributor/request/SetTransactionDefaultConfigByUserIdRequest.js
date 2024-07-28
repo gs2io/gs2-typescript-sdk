@@ -24,6 +24,7 @@ var SetTransactionDefaultConfigByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.config = null;
         this.timeOffsetToken = null;
+        this.duplicationAvoider = null;
     }
     SetTransactionDefaultConfigByUserIdRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -78,6 +79,17 @@ var SetTransactionDefaultConfigByUserIdRequest = /** @class */ (function () {
     };
     SetTransactionDefaultConfigByUserIdRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
         this.timeOffsetToken = timeOffsetToken;
+        return this;
+    };
+    SetTransactionDefaultConfigByUserIdRequest.prototype.getDuplicationAvoider = function () {
+        return this.duplicationAvoider;
+    };
+    SetTransactionDefaultConfigByUserIdRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    };
+    SetTransactionDefaultConfigByUserIdRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     SetTransactionDefaultConfigByUserIdRequest.fromDict = function (data) {

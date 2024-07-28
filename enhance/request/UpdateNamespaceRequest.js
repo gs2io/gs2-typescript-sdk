@@ -23,10 +23,10 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.contextStack = null;
         this.namespaceName = null;
         this.description = null;
-        this.enableDirectEnhance = null;
         this.transactionSetting = null;
         this.enhanceScript = null;
         this.logSetting = null;
+        this.enableDirectEnhance = null;
         this.queueNamespaceId = null;
         this.keyId = null;
     }
@@ -74,17 +74,6 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.description = description;
         return this;
     };
-    UpdateNamespaceRequest.prototype.getEnableDirectEnhance = function () {
-        return this.enableDirectEnhance;
-    };
-    UpdateNamespaceRequest.prototype.setEnableDirectEnhance = function (enableDirectEnhance) {
-        this.enableDirectEnhance = enableDirectEnhance;
-        return this;
-    };
-    UpdateNamespaceRequest.prototype.withEnableDirectEnhance = function (enableDirectEnhance) {
-        this.enableDirectEnhance = enableDirectEnhance;
-        return this;
-    };
     UpdateNamespaceRequest.prototype.getTransactionSetting = function () {
         return this.transactionSetting;
     };
@@ -119,6 +108,20 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         return this;
     };
     /** @deprecated */
+    UpdateNamespaceRequest.prototype.getEnableDirectEnhance = function () {
+        return this.enableDirectEnhance;
+    };
+    /** @deprecated */
+    UpdateNamespaceRequest.prototype.setEnableDirectEnhance = function (enableDirectEnhance) {
+        this.enableDirectEnhance = enableDirectEnhance;
+        return this;
+    };
+    /** @deprecated */
+    UpdateNamespaceRequest.prototype.withEnableDirectEnhance = function (enableDirectEnhance) {
+        this.enableDirectEnhance = enableDirectEnhance;
+        return this;
+    };
+    /** @deprecated */
     UpdateNamespaceRequest.prototype.getQueueNamespaceId = function () {
         return this.queueNamespaceId;
     };
@@ -150,10 +153,10 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         return new UpdateNamespaceRequest()
             .withNamespaceName(data["namespaceName"])
             .withDescription(data["description"])
-            .withEnableDirectEnhance(data["enableDirectEnhance"])
             .withTransactionSetting(Gs2Enhance.TransactionSetting.fromDict(data["transactionSetting"]))
             .withEnhanceScript(Gs2Enhance.ScriptSetting.fromDict(data["enhanceScript"]))
             .withLogSetting(Gs2Enhance.LogSetting.fromDict(data["logSetting"]))
+            .withEnableDirectEnhance(data["enableDirectEnhance"])
             .withQueueNamespaceId(data["queueNamespaceId"])
             .withKeyId(data["keyId"]);
     };
@@ -162,10 +165,10 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
-            "enableDirectEnhance": this.getEnableDirectEnhance(),
             "transactionSetting": (_a = this.getTransactionSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "enhanceScript": (_b = this.getEnhanceScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "enableDirectEnhance": this.getEnableDirectEnhance(),
             "queueNamespaceId": this.getQueueNamespaceId(),
             "keyId": this.getKeyId(),
         };

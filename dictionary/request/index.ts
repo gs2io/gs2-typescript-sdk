@@ -43,6 +43,7 @@ import GetEntryWithSignatureByUserIdRequest from "./GetEntryWithSignatureByUserI
 import ResetByUserIdRequest from "./ResetByUserIdRequest"
 import VerifyEntryRequest from "./VerifyEntryRequest"
 import VerifyEntryByUserIdRequest from "./VerifyEntryByUserIdRequest"
+import DeleteEntriesRequest from "./DeleteEntriesRequest"
 import DeleteEntriesByUserIdRequest from "./DeleteEntriesByUserIdRequest"
 import AddEntriesByStampSheetRequest from "./AddEntriesByStampSheetRequest"
 import DeleteEntriesByStampTaskRequest from "./DeleteEntriesByStampTaskRequest"
@@ -83,6 +84,7 @@ export {
     ResetByUserIdRequest,
     VerifyEntryRequest,
     VerifyEntryByUserIdRequest,
+    DeleteEntriesRequest,
     DeleteEntriesByUserIdRequest,
     AddEntriesByStampSheetRequest,
     DeleteEntriesByStampTaskRequest,

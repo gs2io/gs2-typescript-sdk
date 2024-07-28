@@ -13,6 +13,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     getComplete(request: Request.GetCompleteRequest): Promise<Result.GetCompleteResult>;
     getCompleteByUserId(request: Request.GetCompleteByUserIdRequest): Promise<Result.GetCompleteByUserIdResult>;
     deleteCompleteByUserId(request: Request.DeleteCompleteByUserIdRequest): Promise<Result.DeleteCompleteByUserIdResult>;
+    verifyComplete(request: Request.VerifyCompleteRequest): Promise<Result.VerifyCompleteResult>;
     verifyCompleteByUserId(request: Request.VerifyCompleteByUserIdRequest): Promise<Result.VerifyCompleteByUserIdResult>;
     receiveByStampTask(request: Request.ReceiveByStampTaskRequest): Promise<Result.ReceiveByStampTaskResult>;
     revertReceiveByStampSheet(request: Request.RevertReceiveByStampSheetRequest): Promise<Result.RevertReceiveByStampSheetResult>;
@@ -44,6 +45,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     describeCountersByUserId(request: Request.DescribeCountersByUserIdRequest): Promise<Result.DescribeCountersByUserIdResult>;
     increaseCounterByUserId(request: Request.IncreaseCounterByUserIdRequest): Promise<Result.IncreaseCounterByUserIdResult>;
     setCounterByUserId(request: Request.SetCounterByUserIdRequest): Promise<Result.SetCounterByUserIdResult>;
+    decreaseCounter(request: Request.DecreaseCounterRequest): Promise<Result.DecreaseCounterResult>;
     decreaseCounterByUserId(request: Request.DecreaseCounterByUserIdRequest): Promise<Result.DecreaseCounterByUserIdResult>;
     getCounter(request: Request.GetCounterRequest): Promise<Result.GetCounterResult>;
     getCounterByUserId(request: Request.GetCounterByUserIdRequest): Promise<Result.GetCounterByUserIdResult>;

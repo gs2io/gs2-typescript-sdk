@@ -22,6 +22,7 @@ import RevertReceiveByUserIdResult from "./RevertReceiveByUserIdResult"
 import GetCompleteResult from "./GetCompleteResult"
 import GetCompleteByUserIdResult from "./GetCompleteByUserIdResult"
 import DeleteCompleteByUserIdResult from "./DeleteCompleteByUserIdResult"
+import VerifyCompleteResult from "./VerifyCompleteResult"
 import VerifyCompleteByUserIdResult from "./VerifyCompleteByUserIdResult"
 import ReceiveByStampTaskResult from "./ReceiveByStampTaskResult"
 import RevertReceiveByStampSheetResult from "./RevertReceiveByStampSheetResult"
@@ -53,6 +54,7 @@ import DescribeCountersResult from "./DescribeCountersResult"
 import DescribeCountersByUserIdResult from "./DescribeCountersByUserIdResult"
 import IncreaseCounterByUserIdResult from "./IncreaseCounterByUserIdResult"
 import SetCounterByUserIdResult from "./SetCounterByUserIdResult"
+import DecreaseCounterResult from "./DecreaseCounterResult"
 import DecreaseCounterByUserIdResult from "./DecreaseCounterByUserIdResult"
 import GetCounterResult from "./GetCounterResult"
 import GetCounterByUserIdResult from "./GetCounterByUserIdResult"
@@ -89,6 +91,7 @@ export {
     GetCompleteResult,
     GetCompleteByUserIdResult,
     DeleteCompleteByUserIdResult,
+    VerifyCompleteResult,
     VerifyCompleteByUserIdResult,
     ReceiveByStampTaskResult,
     RevertReceiveByStampSheetResult,
@@ -120,6 +123,7 @@ export {
     DescribeCountersByUserIdResult,
     IncreaseCounterByUserIdResult,
     SetCounterByUserIdResult,
+    DecreaseCounterResult,
     DecreaseCounterByUserIdResult,
     GetCounterResult,
     GetCounterByUserIdResult,

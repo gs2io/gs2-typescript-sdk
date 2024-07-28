@@ -24,6 +24,7 @@ export default class SetTransactionDefaultConfigRequest implements IRequest {
     private contextStack: string|null = null;
     private accessToken: string|null = null;
     private config: Gs2Distributor.Config[]|null = null;
+    private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -72,6 +73,20 @@ export default class SetTransactionDefaultConfigRequest implements IRequest {
     }
     public withConfig(config: Gs2Distributor.Config[]|null): this {
         this.config = config;
+        return this;
+    }
+
+    public getDuplicationAvoider(): string|null {
+        return this.duplicationAvoider;
+    }
+
+    public setDuplicationAvoider(duplicationAvoider: string|null) {
+        this.duplicationAvoider = duplicationAvoider;
+        return this;
+    }
+
+    public withDuplicationAvoider(duplicationAvoider: string|null): this {
+        this.duplicationAvoider = duplicationAvoider;
         return this;
     }
 
