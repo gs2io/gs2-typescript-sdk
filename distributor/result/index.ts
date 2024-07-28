@@ -45,9 +45,9 @@ import SetTransactionDefaultConfigByUserIdResult from "./SetTransactionDefaultCo
 import IfExpressionByUserIdResult from "./IfExpressionByUserIdResult"
 import AndExpressionByUserIdResult from "./AndExpressionByUserIdResult"
 import OrExpressionByUserIdResult from "./OrExpressionByUserIdResult"
-import IfExpressionByUserByStampTaskResult from "./IfExpressionByUserByStampTaskResult"
-import AndExpressionByUserByStampTaskResult from "./AndExpressionByUserByStampTaskResult"
-import OrExpressionByUserByStampTaskResult from "./OrExpressionByUserByStampTaskResult"
+import IfExpressionByStampTaskResult from "./IfExpressionByStampTaskResult"
+import AndExpressionByStampTaskResult from "./AndExpressionByStampTaskResult"
+import OrExpressionByStampTaskResult from "./OrExpressionByStampTaskResult"
 import GetStampSheetResultResult from "./GetStampSheetResultResult"
 import GetStampSheetResultByUserIdResult from "./GetStampSheetResultByUserIdResult"
 
@@ -84,9 +84,9 @@ export {
     IfExpressionByUserIdResult,
     AndExpressionByUserIdResult,
     OrExpressionByUserIdResult,
-    IfExpressionByUserByStampTaskResult,
-    AndExpressionByUserByStampTaskResult,
-    OrExpressionByUserByStampTaskResult,
+    IfExpressionByStampTaskResult,
+    AndExpressionByStampTaskResult,
+    OrExpressionByStampTaskResult,
     GetStampSheetResultResult,
     GetStampSheetResultByUserIdResult,
 };

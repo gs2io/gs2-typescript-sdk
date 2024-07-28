@@ -15,31 +15,31 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var AndExpressionByUserByStampTaskResult = /** @class */ (function () {
-    function AndExpressionByUserByStampTaskResult() {
+var AndExpressionByStampTaskResult = /** @class */ (function () {
+    function AndExpressionByStampTaskResult() {
         this.newContextStack = null;
     }
-    AndExpressionByUserByStampTaskResult.prototype.getNewContextStack = function () {
+    AndExpressionByStampTaskResult.prototype.getNewContextStack = function () {
         return this.newContextStack;
     };
-    AndExpressionByUserByStampTaskResult.prototype.setNewContextStack = function (newContextStack) {
+    AndExpressionByStampTaskResult.prototype.setNewContextStack = function (newContextStack) {
         this.newContextStack = newContextStack;
         return this;
     };
-    AndExpressionByUserByStampTaskResult.prototype.withNewContextStack = function (newContextStack) {
+    AndExpressionByStampTaskResult.prototype.withNewContextStack = function (newContextStack) {
         this.newContextStack = newContextStack;
         return this;
     };
-    AndExpressionByUserByStampTaskResult.fromDict = function (data) {
-        return new AndExpressionByUserByStampTaskResult()
+    AndExpressionByStampTaskResult.fromDict = function (data) {
+        return new AndExpressionByStampTaskResult()
             .withNewContextStack(data["newContextStack"]);
     };
-    AndExpressionByUserByStampTaskResult.prototype.toDict = function () {
+    AndExpressionByStampTaskResult.prototype.toDict = function () {
         return {
             "newContextStack": this.getNewContextStack(),
         };
     };
-    return AndExpressionByUserByStampTaskResult;
+    return AndExpressionByStampTaskResult;
 }());
-exports.default = AndExpressionByUserByStampTaskResult;
-//# sourceMappingURL=AndExpressionByUserByStampTaskResult.js.map
+exports.default = AndExpressionByStampTaskResult;
+//# sourceMappingURL=AndExpressionByStampTaskResult.js.map

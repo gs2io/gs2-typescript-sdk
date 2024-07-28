@@ -15,31 +15,31 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var OrExpressionByUserByStampTaskResult = /** @class */ (function () {
-    function OrExpressionByUserByStampTaskResult() {
+var OrExpressionByStampTaskResult = /** @class */ (function () {
+    function OrExpressionByStampTaskResult() {
         this.newContextStack = null;
     }
-    OrExpressionByUserByStampTaskResult.prototype.getNewContextStack = function () {
+    OrExpressionByStampTaskResult.prototype.getNewContextStack = function () {
         return this.newContextStack;
     };
-    OrExpressionByUserByStampTaskResult.prototype.setNewContextStack = function (newContextStack) {
+    OrExpressionByStampTaskResult.prototype.setNewContextStack = function (newContextStack) {
         this.newContextStack = newContextStack;
         return this;
     };
-    OrExpressionByUserByStampTaskResult.prototype.withNewContextStack = function (newContextStack) {
+    OrExpressionByStampTaskResult.prototype.withNewContextStack = function (newContextStack) {
         this.newContextStack = newContextStack;
         return this;
     };
-    OrExpressionByUserByStampTaskResult.fromDict = function (data) {
-        return new OrExpressionByUserByStampTaskResult()
+    OrExpressionByStampTaskResult.fromDict = function (data) {
+        return new OrExpressionByStampTaskResult()
             .withNewContextStack(data["newContextStack"]);
     };
-    OrExpressionByUserByStampTaskResult.prototype.toDict = function () {
+    OrExpressionByStampTaskResult.prototype.toDict = function () {
         return {
             "newContextStack": this.getNewContextStack(),
         };
     };
-    return OrExpressionByUserByStampTaskResult;
+    return OrExpressionByStampTaskResult;
 }());
-exports.default = OrExpressionByUserByStampTaskResult;
-//# sourceMappingURL=OrExpressionByUserByStampTaskResult.js.map
+exports.default = OrExpressionByStampTaskResult;
+//# sourceMappingURL=OrExpressionByStampTaskResult.js.map

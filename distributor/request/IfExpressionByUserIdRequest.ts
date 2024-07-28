@@ -27,6 +27,7 @@ export default class IfExpressionByUserIdRequest implements IRequest {
     private condition: Gs2Distributor.VerifyAction|null = null;
     private trueActions: Gs2Distributor.ConsumeAction[]|null = null;
     private falseActions: Gs2Distributor.ConsumeAction[]|null = null;
+    private multiplyValueSpecifyingQuantity: boolean|null = null;
     private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
@@ -112,6 +113,17 @@ export default class IfExpressionByUserIdRequest implements IRequest {
         this.falseActions = falseActions;
         return this;
     }
+    public getMultiplyValueSpecifyingQuantity(): boolean|null {
+        return this.multiplyValueSpecifyingQuantity;
+    }
+    public setMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean|null) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    }
+    public withMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean|null): this {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    }
     public getTimeOffsetToken(): string|null {
         return this.timeOffsetToken;
     }
@@ -153,6 +165,7 @@ export default class IfExpressionByUserIdRequest implements IRequest {
                     return Gs2Distributor.ConsumeAction.fromDict(item);
                 }
             ) : [])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -171,6 +184,7 @@ export default class IfExpressionByUserIdRequest implements IRequest {
                     return item.toDict();
                 }
             ) : [],
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

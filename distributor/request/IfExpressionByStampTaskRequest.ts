@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Distributor from '../model'
 
-export default class IfExpressionByUserByStampTaskRequest implements IRequest {
+export default class IfExpressionByStampTaskRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
@@ -75,8 +75,8 @@ export default class IfExpressionByUserByStampTaskRequest implements IRequest {
         return this;
     }
 
-    public static fromDict(data: {[key: string]: any}): IfExpressionByUserByStampTaskRequest {
-        return new IfExpressionByUserByStampTaskRequest()
+    public static fromDict(data: {[key: string]: any}): IfExpressionByStampTaskRequest {
+        return new IfExpressionByStampTaskRequest()
             .withStampTask(data["stampTask"])
             .withKeyId(data["keyId"]);
     }

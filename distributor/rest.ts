@@ -942,6 +942,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
             'condition': request.getCondition()?.toDict() ?? null,
             'trueActions': request.getTrueActions()?.map((item) => item.toDict()) ?? null,
             'falseActions': request.getFalseActions()?.map((item) => item.toDict()) ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
         return axios.post(
             url,
@@ -1036,7 +1037,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
         });
     }
 
-    public ifExpressionByUserByStampTask(request: Request.IfExpressionByUserByStampTaskRequest): Promise<Result.IfExpressionByUserByStampTaskResult> {
+    public ifExpressionByStampTask(request: Request.IfExpressionByStampTaskRequest): Promise<Result.IfExpressionByStampTaskResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/expression/if')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
@@ -1057,7 +1058,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
                 headers,
             },
         ).then((response: any) => {
-            return Result.IfExpressionByUserByStampTaskResult.fromDict(response.data);
+            return Result.IfExpressionByStampTaskResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);
@@ -1067,7 +1068,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
         });
     }
 
-    public andExpressionByUserByStampTask(request: Request.AndExpressionByUserByStampTaskRequest): Promise<Result.AndExpressionByUserByStampTaskResult> {
+    public andExpressionByStampTask(request: Request.AndExpressionByStampTaskRequest): Promise<Result.AndExpressionByStampTaskResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/expression/and')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
@@ -1088,7 +1089,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
                 headers,
             },
         ).then((response: any) => {
-            return Result.AndExpressionByUserByStampTaskResult.fromDict(response.data);
+            return Result.AndExpressionByStampTaskResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);
@@ -1098,7 +1099,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
         });
     }
 
-    public orExpressionByUserByStampTask(request: Request.OrExpressionByUserByStampTaskRequest): Promise<Result.OrExpressionByUserByStampTaskResult> {
+    public orExpressionByStampTask(request: Request.OrExpressionByStampTaskRequest): Promise<Result.OrExpressionByStampTaskResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/expression/or')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
@@ -1119,7 +1120,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
                 headers,
             },
         ).then((response: any) => {
-            return Result.OrExpressionByUserByStampTaskResult.fromDict(response.data);
+            return Result.OrExpressionByStampTaskResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

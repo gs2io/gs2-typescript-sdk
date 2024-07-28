@@ -36,9 +36,9 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     ifExpressionByUserId(request: Request.IfExpressionByUserIdRequest): Promise<Result.IfExpressionByUserIdResult>;
     andExpressionByUserId(request: Request.AndExpressionByUserIdRequest): Promise<Result.AndExpressionByUserIdResult>;
     orExpressionByUserId(request: Request.OrExpressionByUserIdRequest): Promise<Result.OrExpressionByUserIdResult>;
-    ifExpressionByUserByStampTask(request: Request.IfExpressionByUserByStampTaskRequest): Promise<Result.IfExpressionByUserByStampTaskResult>;
-    andExpressionByUserByStampTask(request: Request.AndExpressionByUserByStampTaskRequest): Promise<Result.AndExpressionByUserByStampTaskResult>;
-    orExpressionByUserByStampTask(request: Request.OrExpressionByUserByStampTaskRequest): Promise<Result.OrExpressionByUserByStampTaskResult>;
+    ifExpressionByStampTask(request: Request.IfExpressionByStampTaskRequest): Promise<Result.IfExpressionByStampTaskResult>;
+    andExpressionByStampTask(request: Request.AndExpressionByStampTaskRequest): Promise<Result.AndExpressionByStampTaskResult>;
+    orExpressionByStampTask(request: Request.OrExpressionByStampTaskRequest): Promise<Result.OrExpressionByStampTaskResult>;
     getStampSheetResult(request: Request.GetStampSheetResultRequest): Promise<Result.GetStampSheetResultResult>;
     getStampSheetResultByUserId(request: Request.GetStampSheetResultByUserIdRequest): Promise<Result.GetStampSheetResultByUserIdResult>;
 }

@@ -18,7 +18,7 @@ import IRequest from '../../core/interface/IRequest';
 
 import * as Gs2Distributor from '../model'
 
-export default class AndExpressionByUserByStampTaskRequest implements IRequest {
+export default class OrExpressionByStampTaskRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
@@ -75,8 +75,8 @@ export default class AndExpressionByUserByStampTaskRequest implements IRequest {
         return this;
     }
 
-    public static fromDict(data: {[key: string]: any}): AndExpressionByUserByStampTaskRequest {
-        return new AndExpressionByUserByStampTaskRequest()
+    public static fromDict(data: {[key: string]: any}): OrExpressionByStampTaskRequest {
+        return new OrExpressionByStampTaskRequest()
             .withStampTask(data["stampTask"])
             .withKeyId(data["keyId"]);
     }

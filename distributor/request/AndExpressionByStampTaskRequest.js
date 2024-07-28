@@ -15,69 +15,69 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var OrExpressionByUserByStampTaskRequest = /** @class */ (function () {
-    function OrExpressionByUserByStampTaskRequest() {
+var AndExpressionByStampTaskRequest = /** @class */ (function () {
+    function AndExpressionByStampTaskRequest() {
         this.requestId = null;
         this.contextStack = null;
         this.stampTask = null;
         this.keyId = null;
     }
-    OrExpressionByUserByStampTaskRequest.prototype.getRequestId = function () {
+    AndExpressionByStampTaskRequest.prototype.getRequestId = function () {
         return this.requestId;
     };
-    OrExpressionByUserByStampTaskRequest.prototype.setRequestId = function (requestId) {
+    AndExpressionByStampTaskRequest.prototype.setRequestId = function (requestId) {
         this.requestId = requestId;
         return this;
     };
-    OrExpressionByUserByStampTaskRequest.prototype.withRequestId = function (requestId) {
+    AndExpressionByStampTaskRequest.prototype.withRequestId = function (requestId) {
         this.requestId = requestId;
         return this;
     };
-    OrExpressionByUserByStampTaskRequest.prototype.getContextStack = function () {
+    AndExpressionByStampTaskRequest.prototype.getContextStack = function () {
         return this.contextStack;
     };
-    OrExpressionByUserByStampTaskRequest.prototype.setContextStack = function (contextStack) {
+    AndExpressionByStampTaskRequest.prototype.setContextStack = function (contextStack) {
         this.contextStack = contextStack;
         return this;
     };
-    OrExpressionByUserByStampTaskRequest.prototype.withContextStack = function (contextStack) {
+    AndExpressionByStampTaskRequest.prototype.withContextStack = function (contextStack) {
         this.contextStack = contextStack;
         return this;
     };
-    OrExpressionByUserByStampTaskRequest.prototype.getStampTask = function () {
+    AndExpressionByStampTaskRequest.prototype.getStampTask = function () {
         return this.stampTask;
     };
-    OrExpressionByUserByStampTaskRequest.prototype.setStampTask = function (stampTask) {
+    AndExpressionByStampTaskRequest.prototype.setStampTask = function (stampTask) {
         this.stampTask = stampTask;
         return this;
     };
-    OrExpressionByUserByStampTaskRequest.prototype.withStampTask = function (stampTask) {
+    AndExpressionByStampTaskRequest.prototype.withStampTask = function (stampTask) {
         this.stampTask = stampTask;
         return this;
     };
-    OrExpressionByUserByStampTaskRequest.prototype.getKeyId = function () {
+    AndExpressionByStampTaskRequest.prototype.getKeyId = function () {
         return this.keyId;
     };
-    OrExpressionByUserByStampTaskRequest.prototype.setKeyId = function (keyId) {
+    AndExpressionByStampTaskRequest.prototype.setKeyId = function (keyId) {
         this.keyId = keyId;
         return this;
     };
-    OrExpressionByUserByStampTaskRequest.prototype.withKeyId = function (keyId) {
+    AndExpressionByStampTaskRequest.prototype.withKeyId = function (keyId) {
         this.keyId = keyId;
         return this;
     };
-    OrExpressionByUserByStampTaskRequest.fromDict = function (data) {
-        return new OrExpressionByUserByStampTaskRequest()
+    AndExpressionByStampTaskRequest.fromDict = function (data) {
+        return new AndExpressionByStampTaskRequest()
             .withStampTask(data["stampTask"])
             .withKeyId(data["keyId"]);
     };
-    OrExpressionByUserByStampTaskRequest.prototype.toDict = function () {
+    AndExpressionByStampTaskRequest.prototype.toDict = function () {
         return {
             "stampTask": this.getStampTask(),
             "keyId": this.getKeyId(),
         };
     };
-    return OrExpressionByUserByStampTaskRequest;
+    return AndExpressionByStampTaskRequest;
 }());
-exports.default = OrExpressionByUserByStampTaskRequest;
-//# sourceMappingURL=OrExpressionByUserByStampTaskRequest.js.map
+exports.default = AndExpressionByStampTaskRequest;
+//# sourceMappingURL=AndExpressionByStampTaskRequest.js.map

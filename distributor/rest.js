@@ -803,7 +803,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DistributorRestClient.prototype.ifExpressionByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/expression/if')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
@@ -824,6 +824,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             'condition': (_h = (_g = request.getCondition()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
             'trueActions': (_k = (_j = request.getTrueActions()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
             'falseActions': (_m = (_l = request.getFalseActions()) === null || _l === void 0 ? void 0 : _l.map(function (item) { return item.toDict(); })) !== null && _m !== void 0 ? _m : null,
+            'multiplyValueSpecifyingQuantity': (_o = request.getMultiplyValueSpecifyingQuantity()) !== null && _o !== void 0 ? _o : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -906,7 +907,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             }
         });
     };
-    Gs2DistributorRestClient.prototype.ifExpressionByUserByStampTask = function (request) {
+    Gs2DistributorRestClient.prototype.ifExpressionByStampTask = function (request) {
         var _a, _b, _c;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/expression/if')
             .replace('{service}', 'distributor')
@@ -923,7 +924,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
-            return Result.IfExpressionByUserByStampTaskResult.fromDict(response.data);
+            return Result.IfExpressionByStampTaskResult.fromDict(response.data);
         }).catch(function (error) {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);
@@ -933,7 +934,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             }
         });
     };
-    Gs2DistributorRestClient.prototype.andExpressionByUserByStampTask = function (request) {
+    Gs2DistributorRestClient.prototype.andExpressionByStampTask = function (request) {
         var _a, _b, _c;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/expression/and')
             .replace('{service}', 'distributor')
@@ -950,7 +951,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
-            return Result.AndExpressionByUserByStampTaskResult.fromDict(response.data);
+            return Result.AndExpressionByStampTaskResult.fromDict(response.data);
         }).catch(function (error) {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);
@@ -960,7 +961,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             }
         });
     };
-    Gs2DistributorRestClient.prototype.orExpressionByUserByStampTask = function (request) {
+    Gs2DistributorRestClient.prototype.orExpressionByStampTask = function (request) {
         var _a, _b, _c;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/expression/or')
             .replace('{service}', 'distributor')
@@ -977,7 +978,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         return axios_1.default.post(url, body, {
             headers: headers,
         }).then(function (response) {
-            return Result.OrExpressionByUserByStampTaskResult.fromDict(response.data);
+            return Result.OrExpressionByStampTaskResult.fromDict(response.data);
         }).catch(function (error) {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

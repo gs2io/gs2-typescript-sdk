@@ -1,5 +1,5 @@
 import IRequest from '../../core/interface/IRequest';
-export default class IfExpressionByUserByStampTaskRequest implements IRequest {
+export default class IfExpressionByStampTaskRequest implements IRequest {
     private requestId;
     private contextStack;
     private stampTask;
@@ -18,7 +18,7 @@ export default class IfExpressionByUserByStampTaskRequest implements IRequest {
     withKeyId(keyId: string | null): this;
     static fromDict(data: {
         [key: string]: any;
-    }): IfExpressionByUserByStampTaskRequest;
+    }): IfExpressionByStampTaskRequest;
     toDict(): {
         [key: string]: any;
     };

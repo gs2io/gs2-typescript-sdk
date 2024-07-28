@@ -26,6 +26,7 @@ var IfExpressionByUserIdRequest = /** @class */ (function () {
         this.condition = null;
         this.trueActions = null;
         this.falseActions = null;
+        this.multiplyValueSpecifyingQuantity = null;
         this.timeOffsetToken = null;
         this.duplicationAvoider = null;
     }
@@ -106,6 +107,17 @@ var IfExpressionByUserIdRequest = /** @class */ (function () {
         this.falseActions = falseActions;
         return this;
     };
+    IfExpressionByUserIdRequest.prototype.getMultiplyValueSpecifyingQuantity = function () {
+        return this.multiplyValueSpecifyingQuantity;
+    };
+    IfExpressionByUserIdRequest.prototype.setMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
+    IfExpressionByUserIdRequest.prototype.withMultiplyValueSpecifyingQuantity = function (multiplyValueSpecifyingQuantity) {
+        this.multiplyValueSpecifyingQuantity = multiplyValueSpecifyingQuantity;
+        return this;
+    };
     IfExpressionByUserIdRequest.prototype.getTimeOffsetToken = function () {
         return this.timeOffsetToken;
     };
@@ -141,6 +153,7 @@ var IfExpressionByUserIdRequest = /** @class */ (function () {
             data.falseActions.map(function (item) {
                 return Gs2Distributor.ConsumeAction.fromDict(item);
             }) : [])
+            .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     IfExpressionByUserIdRequest.prototype.toDict = function () {
@@ -157,6 +170,7 @@ var IfExpressionByUserIdRequest = /** @class */ (function () {
                 this.getFalseActions().map(function (item) {
                     return item.toDict();
                 }) : [],
+            "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

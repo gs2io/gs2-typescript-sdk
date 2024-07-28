@@ -15,31 +15,31 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var IfExpressionByUserByStampTaskResult = /** @class */ (function () {
-    function IfExpressionByUserByStampTaskResult() {
+var IfExpressionByStampTaskResult = /** @class */ (function () {
+    function IfExpressionByStampTaskResult() {
         this.newContextStack = null;
     }
-    IfExpressionByUserByStampTaskResult.prototype.getNewContextStack = function () {
+    IfExpressionByStampTaskResult.prototype.getNewContextStack = function () {
         return this.newContextStack;
     };
-    IfExpressionByUserByStampTaskResult.prototype.setNewContextStack = function (newContextStack) {
+    IfExpressionByStampTaskResult.prototype.setNewContextStack = function (newContextStack) {
         this.newContextStack = newContextStack;
         return this;
     };
-    IfExpressionByUserByStampTaskResult.prototype.withNewContextStack = function (newContextStack) {
+    IfExpressionByStampTaskResult.prototype.withNewContextStack = function (newContextStack) {
         this.newContextStack = newContextStack;
         return this;
     };
-    IfExpressionByUserByStampTaskResult.fromDict = function (data) {
-        return new IfExpressionByUserByStampTaskResult()
+    IfExpressionByStampTaskResult.fromDict = function (data) {
+        return new IfExpressionByStampTaskResult()
             .withNewContextStack(data["newContextStack"]);
     };
-    IfExpressionByUserByStampTaskResult.prototype.toDict = function () {
+    IfExpressionByStampTaskResult.prototype.toDict = function () {
         return {
             "newContextStack": this.getNewContextStack(),
         };
     };
-    return IfExpressionByUserByStampTaskResult;
+    return IfExpressionByStampTaskResult;
 }());
-exports.default = IfExpressionByUserByStampTaskResult;
-//# sourceMappingURL=IfExpressionByUserByStampTaskResult.js.map
+exports.default = IfExpressionByStampTaskResult;
+//# sourceMappingURL=IfExpressionByStampTaskResult.js.map

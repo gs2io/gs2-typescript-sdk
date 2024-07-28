@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetStampSheetResultByUserIdRequest = exports.GetStampSheetResultRequest = exports.OrExpressionByUserByStampTaskRequest = exports.AndExpressionByUserByStampTaskRequest = exports.IfExpressionByUserByStampTaskRequest = exports.OrExpressionByUserIdRequest = exports.AndExpressionByUserIdRequest = exports.IfExpressionByUserIdRequest = exports.SetTransactionDefaultConfigByUserIdRequest = exports.SetTransactionDefaultConfigRequest = exports.RunStampSheetExpressWithoutNamespaceRequest = exports.RunStampSheetWithoutNamespaceRequest = exports.RunStampTaskWithoutNamespaceRequest = exports.RunVerifyTaskWithoutNamespaceRequest = exports.RunStampSheetExpressRequest = exports.RunStampSheetRequest = exports.RunStampTaskRequest = exports.RunVerifyTaskRequest = exports.DistributeWithoutOverflowProcessRequest = exports.DistributeRequest = exports.UpdateCurrentDistributorMasterFromGitHubRequest = exports.UpdateCurrentDistributorMasterRequest = exports.GetCurrentDistributorMasterRequest = exports.ExportMasterRequest = exports.GetDistributorModelRequest = exports.DescribeDistributorModelsRequest = exports.DeleteDistributorModelMasterRequest = exports.UpdateDistributorModelMasterRequest = exports.GetDistributorModelMasterRequest = exports.CreateDistributorModelMasterRequest = exports.DescribeDistributorModelMastersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.GetStampSheetResultByUserIdRequest = exports.GetStampSheetResultRequest = exports.OrExpressionByStampTaskRequest = exports.AndExpressionByStampTaskRequest = exports.IfExpressionByStampTaskRequest = exports.OrExpressionByUserIdRequest = exports.AndExpressionByUserIdRequest = exports.IfExpressionByUserIdRequest = exports.SetTransactionDefaultConfigByUserIdRequest = exports.SetTransactionDefaultConfigRequest = exports.RunStampSheetExpressWithoutNamespaceRequest = exports.RunStampSheetWithoutNamespaceRequest = exports.RunStampTaskWithoutNamespaceRequest = exports.RunVerifyTaskWithoutNamespaceRequest = exports.RunStampSheetExpressRequest = exports.RunStampSheetRequest = exports.RunStampTaskRequest = exports.RunVerifyTaskRequest = exports.DistributeWithoutOverflowProcessRequest = exports.DistributeRequest = exports.UpdateCurrentDistributorMasterFromGitHubRequest = exports.UpdateCurrentDistributorMasterRequest = exports.GetCurrentDistributorMasterRequest = exports.ExportMasterRequest = exports.GetDistributorModelRequest = exports.DescribeDistributorModelsRequest = exports.DeleteDistributorModelMasterRequest = exports.UpdateDistributorModelMasterRequest = exports.GetDistributorModelMasterRequest = exports.CreateDistributorModelMasterRequest = exports.DescribeDistributorModelMastersRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -81,12 +81,12 @@ var AndExpressionByUserIdRequest_1 = tslib_1.__importDefault(require("./AndExpre
 exports.AndExpressionByUserIdRequest = AndExpressionByUserIdRequest_1.default;
 var OrExpressionByUserIdRequest_1 = tslib_1.__importDefault(require("./OrExpressionByUserIdRequest"));
 exports.OrExpressionByUserIdRequest = OrExpressionByUserIdRequest_1.default;
-var IfExpressionByUserByStampTaskRequest_1 = tslib_1.__importDefault(require("./IfExpressionByUserByStampTaskRequest"));
-exports.IfExpressionByUserByStampTaskRequest = IfExpressionByUserByStampTaskRequest_1.default;
-var AndExpressionByUserByStampTaskRequest_1 = tslib_1.__importDefault(require("./AndExpressionByUserByStampTaskRequest"));
-exports.AndExpressionByUserByStampTaskRequest = AndExpressionByUserByStampTaskRequest_1.default;
-var OrExpressionByUserByStampTaskRequest_1 = tslib_1.__importDefault(require("./OrExpressionByUserByStampTaskRequest"));
-exports.OrExpressionByUserByStampTaskRequest = OrExpressionByUserByStampTaskRequest_1.default;
+var IfExpressionByStampTaskRequest_1 = tslib_1.__importDefault(require("./IfExpressionByStampTaskRequest"));
+exports.IfExpressionByStampTaskRequest = IfExpressionByStampTaskRequest_1.default;
+var AndExpressionByStampTaskRequest_1 = tslib_1.__importDefault(require("./AndExpressionByStampTaskRequest"));
+exports.AndExpressionByStampTaskRequest = AndExpressionByStampTaskRequest_1.default;
+var OrExpressionByStampTaskRequest_1 = tslib_1.__importDefault(require("./OrExpressionByStampTaskRequest"));
+exports.OrExpressionByStampTaskRequest = OrExpressionByStampTaskRequest_1.default;
 var GetStampSheetResultRequest_1 = tslib_1.__importDefault(require("./GetStampSheetResultRequest"));
 exports.GetStampSheetResultRequest = GetStampSheetResultRequest_1.default;
 var GetStampSheetResultByUserIdRequest_1 = tslib_1.__importDefault(require("./GetStampSheetResultByUserIdRequest"));

@@ -8,6 +8,7 @@ export default class IfExpressionByUserIdRequest implements IRequest {
     private condition;
     private trueActions;
     private falseActions;
+    private multiplyValueSpecifyingQuantity;
     private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -31,6 +32,9 @@ export default class IfExpressionByUserIdRequest implements IRequest {
     getFalseActions(): Gs2Distributor.ConsumeAction[] | null;
     setFalseActions(falseActions: Gs2Distributor.ConsumeAction[] | null): this;
     withFalseActions(falseActions: Gs2Distributor.ConsumeAction[] | null): this;
+    getMultiplyValueSpecifyingQuantity(): boolean | null;
+    setMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean | null): this;
+    withMultiplyValueSpecifyingQuantity(multiplyValueSpecifyingQuantity: boolean | null): this;
     getTimeOffsetToken(): string | null;
     setTimeOffsetToken(timeOffsetToken: string | null): this;
     withTimeOffsetToken(timeOffsetToken: string | null): this;

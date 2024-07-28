@@ -15,69 +15,69 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var AndExpressionByUserByStampTaskRequest = /** @class */ (function () {
-    function AndExpressionByUserByStampTaskRequest() {
+var IfExpressionByStampTaskRequest = /** @class */ (function () {
+    function IfExpressionByStampTaskRequest() {
         this.requestId = null;
         this.contextStack = null;
         this.stampTask = null;
         this.keyId = null;
     }
-    AndExpressionByUserByStampTaskRequest.prototype.getRequestId = function () {
+    IfExpressionByStampTaskRequest.prototype.getRequestId = function () {
         return this.requestId;
     };
-    AndExpressionByUserByStampTaskRequest.prototype.setRequestId = function (requestId) {
+    IfExpressionByStampTaskRequest.prototype.setRequestId = function (requestId) {
         this.requestId = requestId;
         return this;
     };
-    AndExpressionByUserByStampTaskRequest.prototype.withRequestId = function (requestId) {
+    IfExpressionByStampTaskRequest.prototype.withRequestId = function (requestId) {
         this.requestId = requestId;
         return this;
     };
-    AndExpressionByUserByStampTaskRequest.prototype.getContextStack = function () {
+    IfExpressionByStampTaskRequest.prototype.getContextStack = function () {
         return this.contextStack;
     };
-    AndExpressionByUserByStampTaskRequest.prototype.setContextStack = function (contextStack) {
+    IfExpressionByStampTaskRequest.prototype.setContextStack = function (contextStack) {
         this.contextStack = contextStack;
         return this;
     };
-    AndExpressionByUserByStampTaskRequest.prototype.withContextStack = function (contextStack) {
+    IfExpressionByStampTaskRequest.prototype.withContextStack = function (contextStack) {
         this.contextStack = contextStack;
         return this;
     };
-    AndExpressionByUserByStampTaskRequest.prototype.getStampTask = function () {
+    IfExpressionByStampTaskRequest.prototype.getStampTask = function () {
         return this.stampTask;
     };
-    AndExpressionByUserByStampTaskRequest.prototype.setStampTask = function (stampTask) {
+    IfExpressionByStampTaskRequest.prototype.setStampTask = function (stampTask) {
         this.stampTask = stampTask;
         return this;
     };
-    AndExpressionByUserByStampTaskRequest.prototype.withStampTask = function (stampTask) {
+    IfExpressionByStampTaskRequest.prototype.withStampTask = function (stampTask) {
         this.stampTask = stampTask;
         return this;
     };
-    AndExpressionByUserByStampTaskRequest.prototype.getKeyId = function () {
+    IfExpressionByStampTaskRequest.prototype.getKeyId = function () {
         return this.keyId;
     };
-    AndExpressionByUserByStampTaskRequest.prototype.setKeyId = function (keyId) {
+    IfExpressionByStampTaskRequest.prototype.setKeyId = function (keyId) {
         this.keyId = keyId;
         return this;
     };
-    AndExpressionByUserByStampTaskRequest.prototype.withKeyId = function (keyId) {
+    IfExpressionByStampTaskRequest.prototype.withKeyId = function (keyId) {
         this.keyId = keyId;
         return this;
     };
-    AndExpressionByUserByStampTaskRequest.fromDict = function (data) {
-        return new AndExpressionByUserByStampTaskRequest()
+    IfExpressionByStampTaskRequest.fromDict = function (data) {
+        return new IfExpressionByStampTaskRequest()
             .withStampTask(data["stampTask"])
             .withKeyId(data["keyId"]);
     };
-    AndExpressionByUserByStampTaskRequest.prototype.toDict = function () {
+    IfExpressionByStampTaskRequest.prototype.toDict = function () {
         return {
             "stampTask": this.getStampTask(),
             "keyId": this.getKeyId(),
         };
     };
-    return AndExpressionByUserByStampTaskRequest;
+    return IfExpressionByStampTaskRequest;
 }());
-exports.default = AndExpressionByUserByStampTaskRequest;
-//# sourceMappingURL=AndExpressionByUserByStampTaskRequest.js.map
+exports.default = IfExpressionByStampTaskRequest;
+//# sourceMappingURL=IfExpressionByStampTaskRequest.js.map

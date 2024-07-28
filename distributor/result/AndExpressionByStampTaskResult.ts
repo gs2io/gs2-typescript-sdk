@@ -16,7 +16,7 @@ permissions and limitations under the License.
 
 import IResult from '../../core/interface/IResult';
 
-export default class OrExpressionByUserByStampTaskResult implements IResult {
+export default class AndExpressionByStampTaskResult implements IResult {
     private newContextStack: string|null = null;
 
     public getNewContextStack(): string|null {
@@ -33,8 +33,8 @@ export default class OrExpressionByUserByStampTaskResult implements IResult {
         return this;
     }
 
-    public static fromDict(data: {[key: string]: any}): OrExpressionByUserByStampTaskResult {
-        return new OrExpressionByUserByStampTaskResult()
+    public static fromDict(data: {[key: string]: any}): AndExpressionByStampTaskResult {
+        return new AndExpressionByStampTaskResult()
             .withNewContextStack(data["newContextStack"]);
     }
 

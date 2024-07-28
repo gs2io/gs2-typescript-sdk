@@ -1,5 +1,5 @@
 import IRequest from '../../core/interface/IRequest';
-export default class OrExpressionByUserByStampTaskRequest implements IRequest {
+export default class AndExpressionByStampTaskRequest implements IRequest {
     private requestId;
     private contextStack;
     private stampTask;
@@ -18,7 +18,7 @@ export default class OrExpressionByUserByStampTaskRequest implements IRequest {
     withKeyId(keyId: string | null): this;
     static fromDict(data: {
         [key: string]: any;
-    }): OrExpressionByUserByStampTaskRequest;
+    }): AndExpressionByStampTaskRequest;
     toDict(): {
         [key: string]: any;
     };
