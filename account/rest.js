@@ -772,6 +772,75 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             }
         });
     };
+    Gs2AccountRestClient.prototype.createTakeOverOpenIdConnect = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/takeover/openIdConnect')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_d = request.getDuplicationAvoider()) !== null && _d !== void 0 ? _d : null;
+        }
+        var body = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'type': (_f = request.getType()) !== null && _f !== void 0 ? _f : null,
+            'idToken': (_g = request.getIdToken()) !== null && _g !== void 0 ? _g : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.CreateTakeOverOpenIdConnectResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2AccountRestClient.prototype.createTakeOverOpenIdConnectAndByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}/takeover/openIdConnect')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
+        }
+        var body = {
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'type': (_h = request.getType()) !== null && _h !== void 0 ? _h : null,
+            'idToken': (_j = request.getIdToken()) !== null && _j !== void 0 ? _j : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.CreateTakeOverOpenIdConnectAndByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
     Gs2AccountRestClient.prototype.getTakeOver = function (request) {
         var _a, _b, _c, _d, _e, _f;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/takeover/type/{type}')
@@ -1003,6 +1072,34 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             headers: headers,
         }).then(function (response) {
             return Result.DoTakeOverResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2AccountRestClient.prototype.doTakeOverOpenIdConnect = function (request) {
+        var _a, _b, _c, _d, _e, _f;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/takeover/type/{type}/openIdConnect')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{type}', String((_c = request.getType()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getType()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'idToken': (_f = request.getIdToken()) !== null && _f !== void 0 ? _f : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.DoTakeOverOpenIdConnectResult.fromDict(response.data);
         }).catch(function (error) {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);
@@ -1390,6 +1487,279 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
             return Result.DeleteDataOwnerByUserIdResult.fromDict(response.data);
         }).catch(function (error) {
             throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2AccountRestClient.prototype.describeTakeOverTypeModels = function (request) {
+        var _a, _b, _c;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DescribeTakeOverTypeModelsResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2AccountRestClient.prototype.getTakeOverTypeModel = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{type}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{type}', String((_c = request.getType()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getType()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetTakeOverTypeModelResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2AccountRestClient.prototype.describeTakeOverTypeModelMasters = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
+            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DescribeTakeOverTypeModelMastersResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2AccountRestClient.prototype.createTakeOverTypeModelMaster = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'type': (_d = request.getType()) !== null && _d !== void 0 ? _d : null,
+            'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
+            'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
+            'openIdConnectSetting': (_h = (_g = request.getOpenIdConnectSetting()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.CreateTakeOverTypeModelMasterResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2AccountRestClient.prototype.getTakeOverTypeModelMaster = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{type}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{type}', String((_c = request.getType()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getType()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetTakeOverTypeModelMasterResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2AccountRestClient.prototype.updateTakeOverTypeModelMaster = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{type}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{type}', String((_c = request.getType()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getType()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
+            'metadata': (_g = request.getMetadata()) !== null && _g !== void 0 ? _g : null,
+            'openIdConnectSetting': (_j = (_h = request.getOpenIdConnectSetting()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+        };
+        return axios_1.default.put(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.UpdateTakeOverTypeModelMasterResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2AccountRestClient.prototype.deleteTakeOverTypeModelMaster = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{type}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{type}', String((_c = request.getType()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getType()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+        };
+        return axios_1.default.delete(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.DeleteTakeOverTypeModelMasterResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2AccountRestClient.prototype.exportMaster = function (request) {
+        var _a, _b, _c;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.ExportMasterResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2AccountRestClient.prototype.getCurrentModelMaster = function (request) {
+        var _a, _b, _c;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var params = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetCurrentModelMasterResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2AccountRestClient.prototype.updateCurrentModelMaster = function (request) {
+        var _a, _b, _c, _d;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'settings': (_d = request.getSettings()) !== null && _d !== void 0 ? _d : null,
+        };
+        return axios_1.default.put(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.UpdateCurrentModelMasterResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2AccountRestClient.prototype.updateCurrentModelMasterFromGitHub = function (request) {
+        var _a, _b, _c, _d, _e;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
+            'checkoutSetting': (_e = (_d = request.getCheckoutSetting()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
+        };
+        return axios_1.default.put(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.UpdateCurrentModelMasterFromGitHubResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
         });
     };
     return Gs2AccountRestClient;

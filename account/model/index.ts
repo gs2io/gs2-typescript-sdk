@@ -18,8 +18,13 @@ import Account from "./Account"
 import TakeOver from "./TakeOver"
 import PlatformId from "./PlatformId"
 import DataOwner from "./DataOwner"
+import TakeOverTypeModel from "./TakeOverTypeModel"
+import TakeOverTypeModelMaster from "./TakeOverTypeModelMaster"
+import CurrentModelMaster from "./CurrentModelMaster"
+import OpenIdConnectSetting from "./OpenIdConnectSetting"
 import PlatformUser from "./PlatformUser"
 import BanStatus from "./BanStatus"
+import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import ScriptSetting from "./ScriptSetting"
 import LogSetting from "./LogSetting"
 
@@ -29,8 +34,13 @@ export {
     TakeOver,
     PlatformId,
     DataOwner,
+    TakeOverTypeModel,
+    TakeOverTypeModelMaster,
+    CurrentModelMaster,
+    OpenIdConnectSetting,
     PlatformUser,
     BanStatus,
+    GitHubCheckoutSetting,
     ScriptSetting,
     LogSetting,
 };

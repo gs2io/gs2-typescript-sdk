@@ -878,6 +878,83 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public createTakeOverOpenIdConnect(request: Request.CreateTakeOverOpenIdConnectRequest): Promise<Result.CreateTakeOverOpenIdConnectResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/takeover/openIdConnect')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'type': request.getType() ?? null,
+            'idToken': request.getIdToken() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateTakeOverOpenIdConnectResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public createTakeOverOpenIdConnectAndByUserId(request: Request.CreateTakeOverOpenIdConnectAndByUserIdRequest): Promise<Result.CreateTakeOverOpenIdConnectAndByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/{userId}/takeover/openIdConnect')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'type': request.getType() ?? null,
+            'idToken': request.getIdToken() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateTakeOverOpenIdConnectAndByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public getTakeOver(request: Request.GetTakeOverRequest): Promise<Result.GetTakeOverResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/takeover/type/{type}')
             .replace('{service}', 'account')
@@ -1141,6 +1218,38 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.DoTakeOverResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public doTakeOverOpenIdConnect(request: Request.DoTakeOverOpenIdConnectRequest): Promise<Result.DoTakeOverOpenIdConnectResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/takeover/type/{type}/openIdConnect')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{type}', String(request.getType() ?? 'null') === "" ? "null" : String(request.getType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'idToken': request.getIdToken() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DoTakeOverOpenIdConnectResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);
@@ -1579,6 +1688,323 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
             return Result.DeleteDataOwnerByUserIdResult.fromDict(response.data);
         }).catch((error: any) => {
             throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeTakeOverTypeModels(request: Request.DescribeTakeOverTypeModelsRequest): Promise<Result.DescribeTakeOverTypeModelsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeTakeOverTypeModelsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getTakeOverTypeModel(request: Request.GetTakeOverTypeModelRequest): Promise<Result.GetTakeOverTypeModelResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/model/{type}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{type}', String(request.getType() ?? 'null') === "" ? "null" : String(request.getType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetTakeOverTypeModelResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeTakeOverTypeModelMasters(request: Request.DescribeTakeOverTypeModelMastersRequest): Promise<Result.DescribeTakeOverTypeModelMastersResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'pageToken': String(request.getPageToken() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeTakeOverTypeModelMastersResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public createTakeOverTypeModelMaster(request: Request.CreateTakeOverTypeModelMasterRequest): Promise<Result.CreateTakeOverTypeModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'type': request.getType() ?? null,
+            'description': request.getDescription() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'openIdConnectSetting': request.getOpenIdConnectSetting()?.toDict() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.CreateTakeOverTypeModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public getTakeOverTypeModelMaster(request: Request.GetTakeOverTypeModelMasterRequest): Promise<Result.GetTakeOverTypeModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{type}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{type}', String(request.getType() ?? 'null') === "" ? "null" : String(request.getType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetTakeOverTypeModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public updateTakeOverTypeModelMaster(request: Request.UpdateTakeOverTypeModelMasterRequest): Promise<Result.UpdateTakeOverTypeModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{type}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{type}', String(request.getType() ?? 'null') === "" ? "null" : String(request.getType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'description': request.getDescription() ?? null,
+            'metadata': request.getMetadata() ?? null,
+            'openIdConnectSetting': request.getOpenIdConnectSetting()?.toDict() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateTakeOverTypeModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public deleteTakeOverTypeModelMaster(request: Request.DeleteTakeOverTypeModelMasterRequest): Promise<Result.DeleteTakeOverTypeModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{type}')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{type}', String(request.getType() ?? 'null') === "" ? "null" : String(request.getType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DeleteTakeOverTypeModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/export')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.ExportMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public getCurrentModelMaster(request: Request.GetCurrentModelMasterRequest): Promise<Result.GetCurrentModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetCurrentModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public updateCurrentModelMaster(request: Request.UpdateCurrentModelMasterRequest): Promise<Result.UpdateCurrentModelMasterResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'settings': request.getSettings() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateCurrentModelMasterResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public updateCurrentModelMasterFromGitHub(request: Request.UpdateCurrentModelMasterFromGitHubRequest): Promise<Result.UpdateCurrentModelMasterFromGitHubResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/from_git_hub')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'checkoutSetting': request.getCheckoutSetting()?.toDict() ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateCurrentModelMasterFromGitHubResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
         });
     }
 }

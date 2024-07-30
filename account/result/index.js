@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteDataOwnerByUserIdResult = exports.GetDataOwnerByUserIdResult = exports.DeletePlatformIdByUserIdResult = exports.DeletePlatformIdByUserIdentifierResult = exports.DeletePlatformIdResult = exports.FindPlatformIdByUserIdResult = exports.FindPlatformIdResult = exports.GetPlatformIdByUserIdResult = exports.GetPlatformIdResult = exports.CreatePlatformIdByUserIdResult = exports.CreatePlatformIdResult = exports.DescribePlatformIdsByUserIdResult = exports.DescribePlatformIdsResult = exports.DoTakeOverResult = exports.DeleteTakeOverByUserIdResult = exports.DeleteTakeOverByUserIdentifierResult = exports.DeleteTakeOverResult = exports.UpdateTakeOverByUserIdResult = exports.UpdateTakeOverResult = exports.GetTakeOverByUserIdResult = exports.GetTakeOverResult = exports.CreateTakeOverByUserIdResult = exports.CreateTakeOverResult = exports.DescribeTakeOversByUserIdResult = exports.DescribeTakeOversResult = exports.AuthenticationResult = exports.DeleteAccountResult = exports.GetAccountResult = exports.RemoveBanResult = exports.AddBanResult = exports.UpdateBannedResult = exports.UpdateTimeOffsetResult = exports.CreateAccountResult = exports.DescribeAccountsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.DeleteDataOwnerByUserIdResult = exports.GetDataOwnerByUserIdResult = exports.DeletePlatformIdByUserIdResult = exports.DeletePlatformIdByUserIdentifierResult = exports.DeletePlatformIdResult = exports.FindPlatformIdByUserIdResult = exports.FindPlatformIdResult = exports.GetPlatformIdByUserIdResult = exports.GetPlatformIdResult = exports.CreatePlatformIdByUserIdResult = exports.CreatePlatformIdResult = exports.DescribePlatformIdsByUserIdResult = exports.DescribePlatformIdsResult = exports.DoTakeOverOpenIdConnectResult = exports.DoTakeOverResult = exports.DeleteTakeOverByUserIdResult = exports.DeleteTakeOverByUserIdentifierResult = exports.DeleteTakeOverResult = exports.UpdateTakeOverByUserIdResult = exports.UpdateTakeOverResult = exports.GetTakeOverByUserIdResult = exports.GetTakeOverResult = exports.CreateTakeOverOpenIdConnectAndByUserIdResult = exports.CreateTakeOverOpenIdConnectResult = exports.CreateTakeOverByUserIdResult = exports.CreateTakeOverResult = exports.DescribeTakeOversByUserIdResult = exports.DescribeTakeOversResult = exports.AuthenticationResult = exports.DeleteAccountResult = exports.GetAccountResult = exports.RemoveBanResult = exports.AddBanResult = exports.UpdateBannedResult = exports.UpdateTimeOffsetResult = exports.CreateAccountResult = exports.DescribeAccountsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.UpdateCurrentModelMasterFromGitHubResult = exports.UpdateCurrentModelMasterResult = exports.GetCurrentModelMasterResult = exports.ExportMasterResult = exports.DeleteTakeOverTypeModelMasterResult = exports.UpdateTakeOverTypeModelMasterResult = exports.GetTakeOverTypeModelMasterResult = exports.CreateTakeOverTypeModelMasterResult = exports.DescribeTakeOverTypeModelMastersResult = exports.GetTakeOverTypeModelResult = exports.DescribeTakeOverTypeModelsResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -69,6 +70,10 @@ var CreateTakeOverResult_1 = tslib_1.__importDefault(require("./CreateTakeOverRe
 exports.CreateTakeOverResult = CreateTakeOverResult_1.default;
 var CreateTakeOverByUserIdResult_1 = tslib_1.__importDefault(require("./CreateTakeOverByUserIdResult"));
 exports.CreateTakeOverByUserIdResult = CreateTakeOverByUserIdResult_1.default;
+var CreateTakeOverOpenIdConnectResult_1 = tslib_1.__importDefault(require("./CreateTakeOverOpenIdConnectResult"));
+exports.CreateTakeOverOpenIdConnectResult = CreateTakeOverOpenIdConnectResult_1.default;
+var CreateTakeOverOpenIdConnectAndByUserIdResult_1 = tslib_1.__importDefault(require("./CreateTakeOverOpenIdConnectAndByUserIdResult"));
+exports.CreateTakeOverOpenIdConnectAndByUserIdResult = CreateTakeOverOpenIdConnectAndByUserIdResult_1.default;
 var GetTakeOverResult_1 = tslib_1.__importDefault(require("./GetTakeOverResult"));
 exports.GetTakeOverResult = GetTakeOverResult_1.default;
 var GetTakeOverByUserIdResult_1 = tslib_1.__importDefault(require("./GetTakeOverByUserIdResult"));
@@ -85,6 +90,8 @@ var DeleteTakeOverByUserIdResult_1 = tslib_1.__importDefault(require("./DeleteTa
 exports.DeleteTakeOverByUserIdResult = DeleteTakeOverByUserIdResult_1.default;
 var DoTakeOverResult_1 = tslib_1.__importDefault(require("./DoTakeOverResult"));
 exports.DoTakeOverResult = DoTakeOverResult_1.default;
+var DoTakeOverOpenIdConnectResult_1 = tslib_1.__importDefault(require("./DoTakeOverOpenIdConnectResult"));
+exports.DoTakeOverOpenIdConnectResult = DoTakeOverOpenIdConnectResult_1.default;
 var DescribePlatformIdsResult_1 = tslib_1.__importDefault(require("./DescribePlatformIdsResult"));
 exports.DescribePlatformIdsResult = DescribePlatformIdsResult_1.default;
 var DescribePlatformIdsByUserIdResult_1 = tslib_1.__importDefault(require("./DescribePlatformIdsByUserIdResult"));
@@ -111,4 +118,26 @@ var GetDataOwnerByUserIdResult_1 = tslib_1.__importDefault(require("./GetDataOwn
 exports.GetDataOwnerByUserIdResult = GetDataOwnerByUserIdResult_1.default;
 var DeleteDataOwnerByUserIdResult_1 = tslib_1.__importDefault(require("./DeleteDataOwnerByUserIdResult"));
 exports.DeleteDataOwnerByUserIdResult = DeleteDataOwnerByUserIdResult_1.default;
+var DescribeTakeOverTypeModelsResult_1 = tslib_1.__importDefault(require("./DescribeTakeOverTypeModelsResult"));
+exports.DescribeTakeOverTypeModelsResult = DescribeTakeOverTypeModelsResult_1.default;
+var GetTakeOverTypeModelResult_1 = tslib_1.__importDefault(require("./GetTakeOverTypeModelResult"));
+exports.GetTakeOverTypeModelResult = GetTakeOverTypeModelResult_1.default;
+var DescribeTakeOverTypeModelMastersResult_1 = tslib_1.__importDefault(require("./DescribeTakeOverTypeModelMastersResult"));
+exports.DescribeTakeOverTypeModelMastersResult = DescribeTakeOverTypeModelMastersResult_1.default;
+var CreateTakeOverTypeModelMasterResult_1 = tslib_1.__importDefault(require("./CreateTakeOverTypeModelMasterResult"));
+exports.CreateTakeOverTypeModelMasterResult = CreateTakeOverTypeModelMasterResult_1.default;
+var GetTakeOverTypeModelMasterResult_1 = tslib_1.__importDefault(require("./GetTakeOverTypeModelMasterResult"));
+exports.GetTakeOverTypeModelMasterResult = GetTakeOverTypeModelMasterResult_1.default;
+var UpdateTakeOverTypeModelMasterResult_1 = tslib_1.__importDefault(require("./UpdateTakeOverTypeModelMasterResult"));
+exports.UpdateTakeOverTypeModelMasterResult = UpdateTakeOverTypeModelMasterResult_1.default;
+var DeleteTakeOverTypeModelMasterResult_1 = tslib_1.__importDefault(require("./DeleteTakeOverTypeModelMasterResult"));
+exports.DeleteTakeOverTypeModelMasterResult = DeleteTakeOverTypeModelMasterResult_1.default;
+var ExportMasterResult_1 = tslib_1.__importDefault(require("./ExportMasterResult"));
+exports.ExportMasterResult = ExportMasterResult_1.default;
+var GetCurrentModelMasterResult_1 = tslib_1.__importDefault(require("./GetCurrentModelMasterResult"));
+exports.GetCurrentModelMasterResult = GetCurrentModelMasterResult_1.default;
+var UpdateCurrentModelMasterResult_1 = tslib_1.__importDefault(require("./UpdateCurrentModelMasterResult"));
+exports.UpdateCurrentModelMasterResult = UpdateCurrentModelMasterResult_1.default;
+var UpdateCurrentModelMasterFromGitHubResult_1 = tslib_1.__importDefault(require("./UpdateCurrentModelMasterFromGitHubResult"));
+exports.UpdateCurrentModelMasterFromGitHubResult = UpdateCurrentModelMasterFromGitHubResult_1.default;
 //# sourceMappingURL=index.js.map

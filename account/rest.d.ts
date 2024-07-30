@@ -30,6 +30,8 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
     describeTakeOversByUserId(request: Request.DescribeTakeOversByUserIdRequest): Promise<Result.DescribeTakeOversByUserIdResult>;
     createTakeOver(request: Request.CreateTakeOverRequest): Promise<Result.CreateTakeOverResult>;
     createTakeOverByUserId(request: Request.CreateTakeOverByUserIdRequest): Promise<Result.CreateTakeOverByUserIdResult>;
+    createTakeOverOpenIdConnect(request: Request.CreateTakeOverOpenIdConnectRequest): Promise<Result.CreateTakeOverOpenIdConnectResult>;
+    createTakeOverOpenIdConnectAndByUserId(request: Request.CreateTakeOverOpenIdConnectAndByUserIdRequest): Promise<Result.CreateTakeOverOpenIdConnectAndByUserIdResult>;
     getTakeOver(request: Request.GetTakeOverRequest): Promise<Result.GetTakeOverResult>;
     getTakeOverByUserId(request: Request.GetTakeOverByUserIdRequest): Promise<Result.GetTakeOverByUserIdResult>;
     updateTakeOver(request: Request.UpdateTakeOverRequest): Promise<Result.UpdateTakeOverResult>;
@@ -38,6 +40,7 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
     deleteTakeOverByUserIdentifier(request: Request.DeleteTakeOverByUserIdentifierRequest): Promise<Result.DeleteTakeOverByUserIdentifierResult>;
     deleteTakeOverByUserId(request: Request.DeleteTakeOverByUserIdRequest): Promise<Result.DeleteTakeOverByUserIdResult>;
     doTakeOver(request: Request.DoTakeOverRequest): Promise<Result.DoTakeOverResult>;
+    doTakeOverOpenIdConnect(request: Request.DoTakeOverOpenIdConnectRequest): Promise<Result.DoTakeOverOpenIdConnectResult>;
     describePlatformIds(request: Request.DescribePlatformIdsRequest): Promise<Result.DescribePlatformIdsResult>;
     describePlatformIdsByUserId(request: Request.DescribePlatformIdsByUserIdRequest): Promise<Result.DescribePlatformIdsByUserIdResult>;
     createPlatformId(request: Request.CreatePlatformIdRequest): Promise<Result.CreatePlatformIdResult>;
@@ -51,4 +54,15 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
     deletePlatformIdByUserId(request: Request.DeletePlatformIdByUserIdRequest): Promise<Result.DeletePlatformIdByUserIdResult>;
     getDataOwnerByUserId(request: Request.GetDataOwnerByUserIdRequest): Promise<Result.GetDataOwnerByUserIdResult>;
     deleteDataOwnerByUserId(request: Request.DeleteDataOwnerByUserIdRequest): Promise<Result.DeleteDataOwnerByUserIdResult>;
+    describeTakeOverTypeModels(request: Request.DescribeTakeOverTypeModelsRequest): Promise<Result.DescribeTakeOverTypeModelsResult>;
+    getTakeOverTypeModel(request: Request.GetTakeOverTypeModelRequest): Promise<Result.GetTakeOverTypeModelResult>;
+    describeTakeOverTypeModelMasters(request: Request.DescribeTakeOverTypeModelMastersRequest): Promise<Result.DescribeTakeOverTypeModelMastersResult>;
+    createTakeOverTypeModelMaster(request: Request.CreateTakeOverTypeModelMasterRequest): Promise<Result.CreateTakeOverTypeModelMasterResult>;
+    getTakeOverTypeModelMaster(request: Request.GetTakeOverTypeModelMasterRequest): Promise<Result.GetTakeOverTypeModelMasterResult>;
+    updateTakeOverTypeModelMaster(request: Request.UpdateTakeOverTypeModelMasterRequest): Promise<Result.UpdateTakeOverTypeModelMasterResult>;
+    deleteTakeOverTypeModelMaster(request: Request.DeleteTakeOverTypeModelMasterRequest): Promise<Result.DeleteTakeOverTypeModelMasterResult>;
+    exportMaster(request: Request.ExportMasterRequest): Promise<Result.ExportMasterResult>;
+    getCurrentModelMaster(request: Request.GetCurrentModelMasterRequest): Promise<Result.GetCurrentModelMasterResult>;
+    updateCurrentModelMaster(request: Request.UpdateCurrentModelMasterRequest): Promise<Result.UpdateCurrentModelMasterResult>;
+    updateCurrentModelMasterFromGitHub(request: Request.UpdateCurrentModelMasterFromGitHubRequest): Promise<Result.UpdateCurrentModelMasterFromGitHubResult>;
 }

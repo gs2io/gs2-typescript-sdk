@@ -39,6 +39,8 @@ import DescribeTakeOversRequest from "./DescribeTakeOversRequest"
 import DescribeTakeOversByUserIdRequest from "./DescribeTakeOversByUserIdRequest"
 import CreateTakeOverRequest from "./CreateTakeOverRequest"
 import CreateTakeOverByUserIdRequest from "./CreateTakeOverByUserIdRequest"
+import CreateTakeOverOpenIdConnectRequest from "./CreateTakeOverOpenIdConnectRequest"
+import CreateTakeOverOpenIdConnectAndByUserIdRequest from "./CreateTakeOverOpenIdConnectAndByUserIdRequest"
 import GetTakeOverRequest from "./GetTakeOverRequest"
 import GetTakeOverByUserIdRequest from "./GetTakeOverByUserIdRequest"
 import UpdateTakeOverRequest from "./UpdateTakeOverRequest"
@@ -47,6 +49,7 @@ import DeleteTakeOverRequest from "./DeleteTakeOverRequest"
 import DeleteTakeOverByUserIdentifierRequest from "./DeleteTakeOverByUserIdentifierRequest"
 import DeleteTakeOverByUserIdRequest from "./DeleteTakeOverByUserIdRequest"
 import DoTakeOverRequest from "./DoTakeOverRequest"
+import DoTakeOverOpenIdConnectRequest from "./DoTakeOverOpenIdConnectRequest"
 import DescribePlatformIdsRequest from "./DescribePlatformIdsRequest"
 import DescribePlatformIdsByUserIdRequest from "./DescribePlatformIdsByUserIdRequest"
 import CreatePlatformIdRequest from "./CreatePlatformIdRequest"
@@ -60,6 +63,17 @@ import DeletePlatformIdByUserIdentifierRequest from "./DeletePlatformIdByUserIde
 import DeletePlatformIdByUserIdRequest from "./DeletePlatformIdByUserIdRequest"
 import GetDataOwnerByUserIdRequest from "./GetDataOwnerByUserIdRequest"
 import DeleteDataOwnerByUserIdRequest from "./DeleteDataOwnerByUserIdRequest"
+import DescribeTakeOverTypeModelsRequest from "./DescribeTakeOverTypeModelsRequest"
+import GetTakeOverTypeModelRequest from "./GetTakeOverTypeModelRequest"
+import DescribeTakeOverTypeModelMastersRequest from "./DescribeTakeOverTypeModelMastersRequest"
+import CreateTakeOverTypeModelMasterRequest from "./CreateTakeOverTypeModelMasterRequest"
+import GetTakeOverTypeModelMasterRequest from "./GetTakeOverTypeModelMasterRequest"
+import UpdateTakeOverTypeModelMasterRequest from "./UpdateTakeOverTypeModelMasterRequest"
+import DeleteTakeOverTypeModelMasterRequest from "./DeleteTakeOverTypeModelMasterRequest"
+import ExportMasterRequest from "./ExportMasterRequest"
+import GetCurrentModelMasterRequest from "./GetCurrentModelMasterRequest"
+import UpdateCurrentModelMasterRequest from "./UpdateCurrentModelMasterRequest"
+import UpdateCurrentModelMasterFromGitHubRequest from "./UpdateCurrentModelMasterFromGitHubRequest"
 
 export {
     DescribeNamespacesRequest,
@@ -88,6 +102,8 @@ export {
     DescribeTakeOversByUserIdRequest,
     CreateTakeOverRequest,
     CreateTakeOverByUserIdRequest,
+    CreateTakeOverOpenIdConnectRequest,
+    CreateTakeOverOpenIdConnectAndByUserIdRequest,
     GetTakeOverRequest,
     GetTakeOverByUserIdRequest,
     UpdateTakeOverRequest,
@@ -96,6 +112,7 @@ export {
     DeleteTakeOverByUserIdentifierRequest,
     DeleteTakeOverByUserIdRequest,
     DoTakeOverRequest,
+    DoTakeOverOpenIdConnectRequest,
     DescribePlatformIdsRequest,
     DescribePlatformIdsByUserIdRequest,
     CreatePlatformIdRequest,
@@ -109,4 +126,15 @@ export {
     DeletePlatformIdByUserIdRequest,
     GetDataOwnerByUserIdRequest,
     DeleteDataOwnerByUserIdRequest,
+    DescribeTakeOverTypeModelsRequest,
+    GetTakeOverTypeModelRequest,
+    DescribeTakeOverTypeModelMastersRequest,
+    CreateTakeOverTypeModelMasterRequest,
+    GetTakeOverTypeModelMasterRequest,
+    UpdateTakeOverTypeModelMasterRequest,
+    DeleteTakeOverTypeModelMasterRequest,
+    ExportMasterRequest,
+    GetCurrentModelMasterRequest,
+    UpdateCurrentModelMasterRequest,
+    UpdateCurrentModelMasterFromGitHubRequest,
 };

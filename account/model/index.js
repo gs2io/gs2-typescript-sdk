@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LogSetting = exports.ScriptSetting = exports.BanStatus = exports.PlatformUser = exports.DataOwner = exports.PlatformId = exports.TakeOver = exports.Account = exports.Namespace = void 0;
+exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.BanStatus = exports.PlatformUser = exports.OpenIdConnectSetting = exports.CurrentModelMaster = exports.TakeOverTypeModelMaster = exports.TakeOverTypeModel = exports.DataOwner = exports.PlatformId = exports.TakeOver = exports.Account = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -27,10 +27,20 @@ var PlatformId_1 = tslib_1.__importDefault(require("./PlatformId"));
 exports.PlatformId = PlatformId_1.default;
 var DataOwner_1 = tslib_1.__importDefault(require("./DataOwner"));
 exports.DataOwner = DataOwner_1.default;
+var TakeOverTypeModel_1 = tslib_1.__importDefault(require("./TakeOverTypeModel"));
+exports.TakeOverTypeModel = TakeOverTypeModel_1.default;
+var TakeOverTypeModelMaster_1 = tslib_1.__importDefault(require("./TakeOverTypeModelMaster"));
+exports.TakeOverTypeModelMaster = TakeOverTypeModelMaster_1.default;
+var CurrentModelMaster_1 = tslib_1.__importDefault(require("./CurrentModelMaster"));
+exports.CurrentModelMaster = CurrentModelMaster_1.default;
+var OpenIdConnectSetting_1 = tslib_1.__importDefault(require("./OpenIdConnectSetting"));
+exports.OpenIdConnectSetting = OpenIdConnectSetting_1.default;
 var PlatformUser_1 = tslib_1.__importDefault(require("./PlatformUser"));
 exports.PlatformUser = PlatformUser_1.default;
 var BanStatus_1 = tslib_1.__importDefault(require("./BanStatus"));
 exports.BanStatus = BanStatus_1.default;
+var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));
+exports.GitHubCheckoutSetting = GitHubCheckoutSetting_1.default;
 var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
 exports.ScriptSetting = ScriptSetting_1.default;
 var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
