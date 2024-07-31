@@ -1259,6 +1259,36 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public getAuthorizationUrl(request: Request.GetAuthorizationUrlRequest): Promise<Result.GetAuthorizationUrlResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/type/{type}/authorization/url')
+            .replace('{service}', 'account')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{type}', String(request.getType() ?? 'null') === "" ? "null" : String(request.getType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.GetAuthorizationUrlResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
     public describePlatformIds(request: Request.DescribePlatformIdsRequest): Promise<Result.DescribePlatformIdsResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/platformId')
             .replace('{service}', 'account')

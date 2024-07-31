@@ -41,6 +41,7 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
     deleteTakeOverByUserId(request: Request.DeleteTakeOverByUserIdRequest): Promise<Result.DeleteTakeOverByUserIdResult>;
     doTakeOver(request: Request.DoTakeOverRequest): Promise<Result.DoTakeOverResult>;
     doTakeOverOpenIdConnect(request: Request.DoTakeOverOpenIdConnectRequest): Promise<Result.DoTakeOverOpenIdConnectResult>;
+    getAuthorizationUrl(request: Request.GetAuthorizationUrlRequest): Promise<Result.GetAuthorizationUrlResult>;
     describePlatformIds(request: Request.DescribePlatformIdsRequest): Promise<Result.DescribePlatformIdsResult>;
     describePlatformIdsByUserId(request: Request.DescribePlatformIdsByUserIdRequest): Promise<Result.DescribePlatformIdsByUserIdResult>;
     createPlatformId(request: Request.CreatePlatformIdRequest): Promise<Result.CreatePlatformIdResult>;

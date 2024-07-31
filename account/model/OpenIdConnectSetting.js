@@ -19,6 +19,10 @@ var OpenIdConnectSetting = /** @class */ (function () {
     function OpenIdConnectSetting() {
         this.configurationPath = null;
         this.clientId = null;
+        this.clientSecret = null;
+        this.appleTeamId = null;
+        this.appleKeyId = null;
+        this.applePrivateKeyPem = null;
     }
     OpenIdConnectSetting.prototype.getConfigurationPath = function () {
         return this.configurationPath;
@@ -42,18 +46,70 @@ var OpenIdConnectSetting = /** @class */ (function () {
         this.clientId = clientId;
         return this;
     };
+    OpenIdConnectSetting.prototype.getClientSecret = function () {
+        return this.clientSecret;
+    };
+    OpenIdConnectSetting.prototype.setClientSecret = function (clientSecret) {
+        this.clientSecret = clientSecret;
+        return this;
+    };
+    OpenIdConnectSetting.prototype.withClientSecret = function (clientSecret) {
+        this.clientSecret = clientSecret;
+        return this;
+    };
+    OpenIdConnectSetting.prototype.getAppleTeamId = function () {
+        return this.appleTeamId;
+    };
+    OpenIdConnectSetting.prototype.setAppleTeamId = function (appleTeamId) {
+        this.appleTeamId = appleTeamId;
+        return this;
+    };
+    OpenIdConnectSetting.prototype.withAppleTeamId = function (appleTeamId) {
+        this.appleTeamId = appleTeamId;
+        return this;
+    };
+    OpenIdConnectSetting.prototype.getAppleKeyId = function () {
+        return this.appleKeyId;
+    };
+    OpenIdConnectSetting.prototype.setAppleKeyId = function (appleKeyId) {
+        this.appleKeyId = appleKeyId;
+        return this;
+    };
+    OpenIdConnectSetting.prototype.withAppleKeyId = function (appleKeyId) {
+        this.appleKeyId = appleKeyId;
+        return this;
+    };
+    OpenIdConnectSetting.prototype.getApplePrivateKeyPem = function () {
+        return this.applePrivateKeyPem;
+    };
+    OpenIdConnectSetting.prototype.setApplePrivateKeyPem = function (applePrivateKeyPem) {
+        this.applePrivateKeyPem = applePrivateKeyPem;
+        return this;
+    };
+    OpenIdConnectSetting.prototype.withApplePrivateKeyPem = function (applePrivateKeyPem) {
+        this.applePrivateKeyPem = applePrivateKeyPem;
+        return this;
+    };
     OpenIdConnectSetting.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
         }
         return new OpenIdConnectSetting()
             .withConfigurationPath(data["configurationPath"])
-            .withClientId(data["clientId"]);
+            .withClientId(data["clientId"])
+            .withClientSecret(data["clientSecret"])
+            .withAppleTeamId(data["appleTeamId"])
+            .withAppleKeyId(data["appleKeyId"])
+            .withApplePrivateKeyPem(data["applePrivateKeyPem"]);
     };
     OpenIdConnectSetting.prototype.toDict = function () {
         return {
             "configurationPath": this.getConfigurationPath(),
             "clientId": this.getClientId(),
+            "clientSecret": this.getClientSecret(),
+            "appleTeamId": this.getAppleTeamId(),
+            "appleKeyId": this.getAppleKeyId(),
+            "applePrivateKeyPem": this.getApplePrivateKeyPem(),
         };
     };
     return OpenIdConnectSetting;

@@ -19,6 +19,10 @@ import IModel from '../../core/interface/IModel';
 export default class OpenIdConnectSetting implements IModel {
     private configurationPath: string|null = null;
     private clientId: string|null = null;
+    private clientSecret: string|null = null;
+    private appleTeamId: string|null = null;
+    private appleKeyId: string|null = null;
+    private applePrivateKeyPem: string|null = null;
     public getConfigurationPath(): string|null {
         return this.configurationPath;
     }
@@ -41,6 +45,50 @@ export default class OpenIdConnectSetting implements IModel {
         this.clientId = clientId;
         return this;
     }
+    public getClientSecret(): string|null {
+        return this.clientSecret;
+    }
+    public setClientSecret(clientSecret: string|null) {
+        this.clientSecret = clientSecret;
+        return this;
+    }
+    public withClientSecret(clientSecret: string|null): this {
+        this.clientSecret = clientSecret;
+        return this;
+    }
+    public getAppleTeamId(): string|null {
+        return this.appleTeamId;
+    }
+    public setAppleTeamId(appleTeamId: string|null) {
+        this.appleTeamId = appleTeamId;
+        return this;
+    }
+    public withAppleTeamId(appleTeamId: string|null): this {
+        this.appleTeamId = appleTeamId;
+        return this;
+    }
+    public getAppleKeyId(): string|null {
+        return this.appleKeyId;
+    }
+    public setAppleKeyId(appleKeyId: string|null) {
+        this.appleKeyId = appleKeyId;
+        return this;
+    }
+    public withAppleKeyId(appleKeyId: string|null): this {
+        this.appleKeyId = appleKeyId;
+        return this;
+    }
+    public getApplePrivateKeyPem(): string|null {
+        return this.applePrivateKeyPem;
+    }
+    public setApplePrivateKeyPem(applePrivateKeyPem: string|null) {
+        this.applePrivateKeyPem = applePrivateKeyPem;
+        return this;
+    }
+    public withApplePrivateKeyPem(applePrivateKeyPem: string|null): this {
+        this.applePrivateKeyPem = applePrivateKeyPem;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): OpenIdConnectSetting|null {
         if (data == undefined || data == null) {
@@ -48,13 +96,21 @@ export default class OpenIdConnectSetting implements IModel {
         }
         return new OpenIdConnectSetting()
             .withConfigurationPath(data["configurationPath"])
-            .withClientId(data["clientId"]);
+            .withClientId(data["clientId"])
+            .withClientSecret(data["clientSecret"])
+            .withAppleTeamId(data["appleTeamId"])
+            .withAppleKeyId(data["appleKeyId"])
+            .withApplePrivateKeyPem(data["applePrivateKeyPem"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "configurationPath": this.getConfigurationPath(),
             "clientId": this.getClientId(),
+            "clientSecret": this.getClientSecret(),
+            "appleTeamId": this.getAppleTeamId(),
+            "appleKeyId": this.getAppleKeyId(),
+            "applePrivateKeyPem": this.getApplePrivateKeyPem(),
         };
     }
 }

@@ -50,6 +50,7 @@ import DeleteTakeOverByUserIdentifierResult from "./DeleteTakeOverByUserIdentifi
 import DeleteTakeOverByUserIdResult from "./DeleteTakeOverByUserIdResult"
 import DoTakeOverResult from "./DoTakeOverResult"
 import DoTakeOverOpenIdConnectResult from "./DoTakeOverOpenIdConnectResult"
+import GetAuthorizationUrlResult from "./GetAuthorizationUrlResult"
 import DescribePlatformIdsResult from "./DescribePlatformIdsResult"
 import DescribePlatformIdsByUserIdResult from "./DescribePlatformIdsByUserIdResult"
 import CreatePlatformIdResult from "./CreatePlatformIdResult"
@@ -113,6 +114,7 @@ export {
     DeleteTakeOverByUserIdResult,
     DoTakeOverResult,
     DoTakeOverOpenIdConnectResult,
+    GetAuthorizationUrlResult,
     DescribePlatformIdsResult,
     DescribePlatformIdsByUserIdResult,
     CreatePlatformIdResult,
