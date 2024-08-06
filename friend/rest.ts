@@ -616,6 +616,37 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public updateProfileByStampSheet(request: Request.UpdateProfileByStampSheetRequest): Promise<Result.UpdateProfileByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/profile/update')
+            .replace('{service}', 'friend')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.UpdateProfileByStampSheetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public describeFriends(request: Request.DescribeFriendsRequest): Promise<Result.DescribeFriendsResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/friend')
             .replace('{service}', 'friend')

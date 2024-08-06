@@ -27,6 +27,9 @@ import QueryExecuteStampSheetLogResult from "./QueryExecuteStampSheetLogResult"
 import CountExecuteStampSheetLogResult from "./CountExecuteStampSheetLogResult"
 import QueryExecuteStampTaskLogResult from "./QueryExecuteStampTaskLogResult"
 import CountExecuteStampTaskLogResult from "./CountExecuteStampTaskLogResult"
+import QueryInGameLogResult from "./QueryInGameLogResult"
+import SendInGameLogResult from "./SendInGameLogResult"
+import SendInGameLogByUserIdResult from "./SendInGameLogByUserIdResult"
 import QueryAccessLogWithTelemetryResult from "./QueryAccessLogWithTelemetryResult"
 import DescribeInsightsResult from "./DescribeInsightsResult"
 import CreateInsightResult from "./CreateInsightResult"
@@ -48,6 +51,9 @@ export {
     CountExecuteStampSheetLogResult,
     QueryExecuteStampTaskLogResult,
     CountExecuteStampTaskLogResult,
+    QueryInGameLogResult,
+    SendInGameLogResult,
+    SendInGameLogByUserIdResult,
     QueryAccessLogWithTelemetryResult,
     DescribeInsightsResult,
     CreateInsightResult,

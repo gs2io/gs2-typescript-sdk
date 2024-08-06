@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteInsightRequest = exports.GetInsightRequest = exports.CreateInsightRequest = exports.DescribeInsightsRequest = exports.QueryAccessLogWithTelemetryRequest = exports.CountExecuteStampTaskLogRequest = exports.QueryExecuteStampTaskLogRequest = exports.CountExecuteStampSheetLogRequest = exports.QueryExecuteStampSheetLogRequest = exports.CountIssueStampSheetLogRequest = exports.QueryIssueStampSheetLogRequest = exports.CountAccessLogRequest = exports.QueryAccessLogRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.DeleteInsightRequest = exports.GetInsightRequest = exports.CreateInsightRequest = exports.DescribeInsightsRequest = exports.QueryAccessLogWithTelemetryRequest = exports.SendInGameLogByUserIdRequest = exports.SendInGameLogRequest = exports.QueryInGameLogRequest = exports.CountExecuteStampTaskLogRequest = exports.QueryExecuteStampTaskLogRequest = exports.CountExecuteStampSheetLogRequest = exports.QueryExecuteStampSheetLogRequest = exports.CountIssueStampSheetLogRequest = exports.QueryIssueStampSheetLogRequest = exports.CountAccessLogRequest = exports.QueryAccessLogRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -45,6 +45,12 @@ var QueryExecuteStampTaskLogRequest_1 = tslib_1.__importDefault(require("./Query
 exports.QueryExecuteStampTaskLogRequest = QueryExecuteStampTaskLogRequest_1.default;
 var CountExecuteStampTaskLogRequest_1 = tslib_1.__importDefault(require("./CountExecuteStampTaskLogRequest"));
 exports.CountExecuteStampTaskLogRequest = CountExecuteStampTaskLogRequest_1.default;
+var QueryInGameLogRequest_1 = tslib_1.__importDefault(require("./QueryInGameLogRequest"));
+exports.QueryInGameLogRequest = QueryInGameLogRequest_1.default;
+var SendInGameLogRequest_1 = tslib_1.__importDefault(require("./SendInGameLogRequest"));
+exports.SendInGameLogRequest = SendInGameLogRequest_1.default;
+var SendInGameLogByUserIdRequest_1 = tslib_1.__importDefault(require("./SendInGameLogByUserIdRequest"));
+exports.SendInGameLogByUserIdRequest = SendInGameLogByUserIdRequest_1.default;
 var QueryAccessLogWithTelemetryRequest_1 = tslib_1.__importDefault(require("./QueryAccessLogWithTelemetryRequest"));
 exports.QueryAccessLogWithTelemetryRequest = QueryAccessLogWithTelemetryRequest_1.default;
 var DescribeInsightsRequest_1 = tslib_1.__importDefault(require("./DescribeInsightsRequest"));

@@ -27,6 +27,9 @@ import QueryExecuteStampSheetLogRequest from "./QueryExecuteStampSheetLogRequest
 import CountExecuteStampSheetLogRequest from "./CountExecuteStampSheetLogRequest"
 import QueryExecuteStampTaskLogRequest from "./QueryExecuteStampTaskLogRequest"
 import CountExecuteStampTaskLogRequest from "./CountExecuteStampTaskLogRequest"
+import QueryInGameLogRequest from "./QueryInGameLogRequest"
+import SendInGameLogRequest from "./SendInGameLogRequest"
+import SendInGameLogByUserIdRequest from "./SendInGameLogByUserIdRequest"
 import QueryAccessLogWithTelemetryRequest from "./QueryAccessLogWithTelemetryRequest"
 import DescribeInsightsRequest from "./DescribeInsightsRequest"
 import CreateInsightRequest from "./CreateInsightRequest"
@@ -48,6 +51,9 @@ export {
     CountExecuteStampSheetLogRequest,
     QueryExecuteStampTaskLogRequest,
     CountExecuteStampTaskLogRequest,
+    QueryInGameLogRequest,
+    SendInGameLogRequest,
+    SendInGameLogByUserIdRequest,
     QueryAccessLogWithTelemetryRequest,
     DescribeInsightsRequest,
     CreateInsightRequest,

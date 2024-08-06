@@ -31,6 +31,7 @@ import GetProfileByUserIdRequest from "./GetProfileByUserIdRequest"
 import UpdateProfileRequest from "./UpdateProfileRequest"
 import UpdateProfileByUserIdRequest from "./UpdateProfileByUserIdRequest"
 import DeleteProfileByUserIdRequest from "./DeleteProfileByUserIdRequest"
+import UpdateProfileByStampSheetRequest from "./UpdateProfileByStampSheetRequest"
 import DescribeFriendsRequest from "./DescribeFriendsRequest"
 import DescribeFriendsByUserIdRequest from "./DescribeFriendsByUserIdRequest"
 import DescribeBlackListRequest from "./DescribeBlackListRequest"
@@ -88,6 +89,7 @@ export {
     UpdateProfileRequest,
     UpdateProfileByUserIdRequest,
     DeleteProfileByUserIdRequest,
+    UpdateProfileByStampSheetRequest,
     DescribeFriendsRequest,
     DescribeFriendsByUserIdRequest,
     DescribeBlackListRequest,

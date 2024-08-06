@@ -22,8 +22,10 @@ import ExecuteStampSheetLog from "./ExecuteStampSheetLog"
 import ExecuteStampSheetLogCount from "./ExecuteStampSheetLogCount"
 import ExecuteStampTaskLog from "./ExecuteStampTaskLog"
 import ExecuteStampTaskLogCount from "./ExecuteStampTaskLogCount"
+import InGameLog from "./InGameLog"
 import AccessLogWithTelemetry from "./AccessLogWithTelemetry"
 import Insight from "./Insight"
+import InGameLogTag from "./InGameLogTag"
 
 export {
     Namespace,
@@ -35,6 +37,8 @@ export {
     ExecuteStampSheetLogCount,
     ExecuteStampTaskLog,
     ExecuteStampTaskLogCount,
+    InGameLog,
     AccessLogWithTelemetry,
     Insight,
+    InGameLogTag,
 };

@@ -524,6 +524,126 @@ export default class Gs2LogRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public queryInGameLog(request: Request.QueryInGameLogRequest): Promise<Result.QueryInGameLogResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ingame/log')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'userId': request.getUserId() ?? null,
+            'tags': request.getTags()?.map((item) => item.toDict()) ?? null,
+            'begin': request.getBegin() ?? null,
+            'end': request.getEnd() ?? null,
+            'longTerm': request.getLongTerm() ?? null,
+            'pageToken': request.getPageToken() ?? null,
+            'limit': request.getLimit() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.QueryInGameLogResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public sendInGameLog(request: Request.SendInGameLogRequest): Promise<Result.SendInGameLogResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ingame/log/user/me/send')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'tags': request.getTags()?.map((item) => item.toDict()) ?? null,
+            'payload': request.getPayload() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SendInGameLogResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public sendInGameLogByUserId(request: Request.SendInGameLogByUserIdRequest): Promise<Result.SendInGameLogByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/ingame/log/user/{userId}/send')
+            .replace('{service}', 'log')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'tags': request.getTags()?.map((item) => item.toDict()) ?? null,
+            'payload': request.getPayload() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.SendInGameLogByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public queryAccessLogWithTelemetry(request: Request.QueryAccessLogWithTelemetryRequest): Promise<Result.QueryAccessLogWithTelemetryResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/log/access/telemetry')
             .replace('{service}', 'log')

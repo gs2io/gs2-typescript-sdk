@@ -31,6 +31,7 @@ import GetProfileByUserIdResult from "./GetProfileByUserIdResult"
 import UpdateProfileResult from "./UpdateProfileResult"
 import UpdateProfileByUserIdResult from "./UpdateProfileByUserIdResult"
 import DeleteProfileByUserIdResult from "./DeleteProfileByUserIdResult"
+import UpdateProfileByStampSheetResult from "./UpdateProfileByStampSheetResult"
 import DescribeFriendsResult from "./DescribeFriendsResult"
 import DescribeFriendsByUserIdResult from "./DescribeFriendsByUserIdResult"
 import DescribeBlackListResult from "./DescribeBlackListResult"
@@ -88,6 +89,7 @@ export {
     UpdateProfileResult,
     UpdateProfileByUserIdResult,
     DeleteProfileByUserIdResult,
+    UpdateProfileByStampSheetResult,
     DescribeFriendsResult,
     DescribeFriendsByUserIdResult,
     DescribeBlackListResult,

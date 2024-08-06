@@ -12,9 +12,12 @@ import QueryExecuteStampSheetLogRequest from "./QueryExecuteStampSheetLogRequest
 import CountExecuteStampSheetLogRequest from "./CountExecuteStampSheetLogRequest";
 import QueryExecuteStampTaskLogRequest from "./QueryExecuteStampTaskLogRequest";
 import CountExecuteStampTaskLogRequest from "./CountExecuteStampTaskLogRequest";
+import QueryInGameLogRequest from "./QueryInGameLogRequest";
+import SendInGameLogRequest from "./SendInGameLogRequest";
+import SendInGameLogByUserIdRequest from "./SendInGameLogByUserIdRequest";
 import QueryAccessLogWithTelemetryRequest from "./QueryAccessLogWithTelemetryRequest";
 import DescribeInsightsRequest from "./DescribeInsightsRequest";
 import CreateInsightRequest from "./CreateInsightRequest";
 import GetInsightRequest from "./GetInsightRequest";
 import DeleteInsightRequest from "./DeleteInsightRequest";
-export { DescribeNamespacesRequest, CreateNamespaceRequest, GetNamespaceStatusRequest, GetNamespaceRequest, UpdateNamespaceRequest, DeleteNamespaceRequest, QueryAccessLogRequest, CountAccessLogRequest, QueryIssueStampSheetLogRequest, CountIssueStampSheetLogRequest, QueryExecuteStampSheetLogRequest, CountExecuteStampSheetLogRequest, QueryExecuteStampTaskLogRequest, CountExecuteStampTaskLogRequest, QueryAccessLogWithTelemetryRequest, DescribeInsightsRequest, CreateInsightRequest, GetInsightRequest, DeleteInsightRequest, };
+export { DescribeNamespacesRequest, CreateNamespaceRequest, GetNamespaceStatusRequest, GetNamespaceRequest, UpdateNamespaceRequest, DeleteNamespaceRequest, QueryAccessLogRequest, CountAccessLogRequest, QueryIssueStampSheetLogRequest, CountIssueStampSheetLogRequest, QueryExecuteStampSheetLogRequest, CountExecuteStampSheetLogRequest, QueryExecuteStampTaskLogRequest, CountExecuteStampTaskLogRequest, QueryInGameLogRequest, SendInGameLogRequest, SendInGameLogByUserIdRequest, QueryAccessLogWithTelemetryRequest, DescribeInsightsRequest, CreateInsightRequest, GetInsightRequest, DeleteInsightRequest, };

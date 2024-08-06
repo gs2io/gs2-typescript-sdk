@@ -22,6 +22,7 @@ export default class Gs2FriendRestClient extends AbstractGs2RestClient {
     updateProfile(request: Request.UpdateProfileRequest): Promise<Result.UpdateProfileResult>;
     updateProfileByUserId(request: Request.UpdateProfileByUserIdRequest): Promise<Result.UpdateProfileByUserIdResult>;
     deleteProfileByUserId(request: Request.DeleteProfileByUserIdRequest): Promise<Result.DeleteProfileByUserIdResult>;
+    updateProfileByStampSheet(request: Request.UpdateProfileByStampSheetRequest): Promise<Result.UpdateProfileByStampSheetResult>;
     describeFriends(request: Request.DescribeFriendsRequest): Promise<Result.DescribeFriendsResult>;
     describeFriendsByUserId(request: Request.DescribeFriendsByUserIdRequest): Promise<Result.DescribeFriendsByUserIdResult>;
     describeBlackList(request: Request.DescribeBlackListRequest): Promise<Result.DescribeBlackListResult>;
