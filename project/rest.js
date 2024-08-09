@@ -268,7 +268,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ProjectRestClient.prototype.deleteAccount = function (request) {
-        var _a;
+        var _a, _b;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/account')
             .replace('{service}', 'project')
             .replace('{region}', this.session.region);
@@ -278,6 +278,7 @@ var Gs2ProjectRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'accountToken': String((_b = request.getAccountToken()) !== null && _b !== void 0 ? _b : null),
         };
         return axios_1.default.delete(url, {
             params: params,
