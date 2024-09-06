@@ -5,6 +5,7 @@ export default class Status implements IModel {
     private userId;
     private randomSeed;
     private idleMinutes;
+    private nextRewardsAt;
     private maximumIdleMinutes;
     private createdAt;
     private updatedAt;
@@ -31,6 +32,9 @@ export default class Status implements IModel {
     getIdleMinutes(): number | null;
     setIdleMinutes(idleMinutes: number | null): this;
     withIdleMinutes(idleMinutes: number | null): this;
+    getNextRewardsAt(): number | null;
+    setNextRewardsAt(nextRewardsAt: number | null): this;
+    withNextRewardsAt(nextRewardsAt: number | null): this;
     getMaximumIdleMinutes(): number | null;
     setMaximumIdleMinutes(maximumIdleMinutes: number | null): this;
     withMaximumIdleMinutes(maximumIdleMinutes: number | null): this;

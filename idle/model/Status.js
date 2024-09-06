@@ -23,6 +23,7 @@ var Status = /** @class */ (function () {
         this.userId = null;
         this.randomSeed = null;
         this.idleMinutes = null;
+        this.nextRewardsAt = null;
         this.maximumIdleMinutes = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -169,6 +170,17 @@ var Status = /** @class */ (function () {
         this.idleMinutes = idleMinutes;
         return this;
     };
+    Status.prototype.getNextRewardsAt = function () {
+        return this.nextRewardsAt;
+    };
+    Status.prototype.setNextRewardsAt = function (nextRewardsAt) {
+        this.nextRewardsAt = nextRewardsAt;
+        return this;
+    };
+    Status.prototype.withNextRewardsAt = function (nextRewardsAt) {
+        this.nextRewardsAt = nextRewardsAt;
+        return this;
+    };
     Status.prototype.getMaximumIdleMinutes = function () {
         return this.maximumIdleMinutes;
     };
@@ -223,6 +235,7 @@ var Status = /** @class */ (function () {
             .withUserId(data["userId"])
             .withRandomSeed(data["randomSeed"])
             .withIdleMinutes(data["idleMinutes"])
+            .withNextRewardsAt(data["nextRewardsAt"])
             .withMaximumIdleMinutes(data["maximumIdleMinutes"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -235,6 +248,7 @@ var Status = /** @class */ (function () {
             "userId": this.getUserId(),
             "randomSeed": this.getRandomSeed(),
             "idleMinutes": this.getIdleMinutes(),
+            "nextRewardsAt": this.getNextRewardsAt(),
             "maximumIdleMinutes": this.getMaximumIdleMinutes(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

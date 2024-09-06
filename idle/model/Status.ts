@@ -23,6 +23,7 @@ export default class Status implements IModel {
     private userId: string|null = null;
     private randomSeed: number|null = null;
     private idleMinutes: number|null = null;
+    private nextRewardsAt: number|null = null;
     private maximumIdleMinutes: number|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -186,6 +187,17 @@ export default class Status implements IModel {
         this.idleMinutes = idleMinutes;
         return this;
     }
+    public getNextRewardsAt(): number|null {
+        return this.nextRewardsAt;
+    }
+    public setNextRewardsAt(nextRewardsAt: number|null) {
+        this.nextRewardsAt = nextRewardsAt;
+        return this;
+    }
+    public withNextRewardsAt(nextRewardsAt: number|null): this {
+        this.nextRewardsAt = nextRewardsAt;
+        return this;
+    }
     public getMaximumIdleMinutes(): number|null {
         return this.maximumIdleMinutes;
     }
@@ -241,6 +253,7 @@ export default class Status implements IModel {
             .withUserId(data["userId"])
             .withRandomSeed(data["randomSeed"])
             .withIdleMinutes(data["idleMinutes"])
+            .withNextRewardsAt(data["nextRewardsAt"])
             .withMaximumIdleMinutes(data["maximumIdleMinutes"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -254,6 +267,7 @@ export default class Status implements IModel {
             "userId": this.getUserId(),
             "randomSeed": this.getRandomSeed(),
             "idleMinutes": this.getIdleMinutes(),
+            "nextRewardsAt": this.getNextRewardsAt(),
             "maximumIdleMinutes": this.getMaximumIdleMinutes(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
