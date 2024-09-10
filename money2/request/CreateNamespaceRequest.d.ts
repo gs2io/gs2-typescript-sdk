@@ -8,7 +8,8 @@ export default class CreateNamespaceRequest implements IRequest {
     private description;
     private sharedFreeCurrency;
     private platformSetting;
-    private changeBalanceScript;
+    private depositBalanceScript;
+    private withdrawBalanceScript;
     private logSetting;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
@@ -31,9 +32,12 @@ export default class CreateNamespaceRequest implements IRequest {
     getPlatformSetting(): Gs2Money2.PlatformSetting | null;
     setPlatformSetting(platformSetting: Gs2Money2.PlatformSetting | null): this;
     withPlatformSetting(platformSetting: Gs2Money2.PlatformSetting | null): this;
-    getChangeBalanceScript(): Gs2Money2.ScriptSetting | null;
-    setChangeBalanceScript(changeBalanceScript: Gs2Money2.ScriptSetting | null): this;
-    withChangeBalanceScript(changeBalanceScript: Gs2Money2.ScriptSetting | null): this;
+    getDepositBalanceScript(): Gs2Money2.ScriptSetting | null;
+    setDepositBalanceScript(depositBalanceScript: Gs2Money2.ScriptSetting | null): this;
+    withDepositBalanceScript(depositBalanceScript: Gs2Money2.ScriptSetting | null): this;
+    getWithdrawBalanceScript(): Gs2Money2.ScriptSetting | null;
+    setWithdrawBalanceScript(withdrawBalanceScript: Gs2Money2.ScriptSetting | null): this;
+    withWithdrawBalanceScript(withdrawBalanceScript: Gs2Money2.ScriptSetting | null): this;
     getLogSetting(): Gs2Money2.LogSetting | null;
     setLogSetting(logSetting: Gs2Money2.LogSetting | null): this;
     withLogSetting(logSetting: Gs2Money2.LogSetting | null): this;

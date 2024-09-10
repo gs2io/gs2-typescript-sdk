@@ -25,7 +25,6 @@ export default class DeleteTakeOverRequest implements IRequest {
     private namespaceName: string|null = null;
     private accessToken: string|null = null;
     private type: number|null = null;
-    private userIdentifier: string|null = null;
     private duplicationAvoider: string|null = null;
 
     public getRequestId(): string|null {
@@ -88,17 +87,6 @@ export default class DeleteTakeOverRequest implements IRequest {
         this.type = type;
         return this;
     }
-    public getUserIdentifier(): string|null {
-        return this.userIdentifier;
-    }
-    public setUserIdentifier(userIdentifier: string|null) {
-        this.userIdentifier = userIdentifier;
-        return this;
-    }
-    public withUserIdentifier(userIdentifier: string|null): this {
-        this.userIdentifier = userIdentifier;
-        return this;
-    }
 
     public getDuplicationAvoider(): string|null {
         return this.duplicationAvoider;
@@ -118,8 +106,7 @@ export default class DeleteTakeOverRequest implements IRequest {
         return new DeleteTakeOverRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withType(data["type"])
-            .withUserIdentifier(data["userIdentifier"]);
+            .withType(data["type"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -127,7 +114,6 @@ export default class DeleteTakeOverRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
             "type": this.getType(),
-            "userIdentifier": this.getUserIdentifier(),
         };
     }
 }

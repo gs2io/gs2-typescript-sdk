@@ -30,7 +30,8 @@ export default class Namespace implements IModel {
     private currencyUsagePriority: string|null = null;
     private sharedFreeCurrency: boolean|null = null;
     private platformSetting: PlatformSetting|null = null;
-    private changeBalanceScript: ScriptSetting|null = null;
+    private depositBalanceScript: ScriptSetting|null = null;
+    private withdrawBalanceScript: ScriptSetting|null = null;
     private logSetting: LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -161,15 +162,26 @@ export default class Namespace implements IModel {
         this.platformSetting = platformSetting;
         return this;
     }
-    public getChangeBalanceScript(): ScriptSetting|null {
-        return this.changeBalanceScript;
+    public getDepositBalanceScript(): ScriptSetting|null {
+        return this.depositBalanceScript;
     }
-    public setChangeBalanceScript(changeBalanceScript: ScriptSetting|null) {
-        this.changeBalanceScript = changeBalanceScript;
+    public setDepositBalanceScript(depositBalanceScript: ScriptSetting|null) {
+        this.depositBalanceScript = depositBalanceScript;
         return this;
     }
-    public withChangeBalanceScript(changeBalanceScript: ScriptSetting|null): this {
-        this.changeBalanceScript = changeBalanceScript;
+    public withDepositBalanceScript(depositBalanceScript: ScriptSetting|null): this {
+        this.depositBalanceScript = depositBalanceScript;
+        return this;
+    }
+    public getWithdrawBalanceScript(): ScriptSetting|null {
+        return this.withdrawBalanceScript;
+    }
+    public setWithdrawBalanceScript(withdrawBalanceScript: ScriptSetting|null) {
+        this.withdrawBalanceScript = withdrawBalanceScript;
+        return this;
+    }
+    public withWithdrawBalanceScript(withdrawBalanceScript: ScriptSetting|null): this {
+        this.withdrawBalanceScript = withdrawBalanceScript;
         return this;
     }
     public getLogSetting(): LogSetting|null {
@@ -228,7 +240,8 @@ export default class Namespace implements IModel {
             .withCurrencyUsagePriority(data["currencyUsagePriority"])
             .withSharedFreeCurrency(data["sharedFreeCurrency"])
             .withPlatformSetting(PlatformSetting.fromDict(data["platformSetting"]))
-            .withChangeBalanceScript(ScriptSetting.fromDict(data["changeBalanceScript"]))
+            .withDepositBalanceScript(ScriptSetting.fromDict(data["depositBalanceScript"]))
+            .withWithdrawBalanceScript(ScriptSetting.fromDict(data["withdrawBalanceScript"]))
             .withLogSetting(LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -243,7 +256,8 @@ export default class Namespace implements IModel {
             "currencyUsagePriority": this.getCurrencyUsagePriority(),
             "sharedFreeCurrency": this.getSharedFreeCurrency(),
             "platformSetting": this.getPlatformSetting()?.toDict(),
-            "changeBalanceScript": this.getChangeBalanceScript()?.toDict(),
+            "depositBalanceScript": this.getDepositBalanceScript()?.toDict(),
+            "withdrawBalanceScript": this.getWithdrawBalanceScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

@@ -22,7 +22,6 @@ var DeleteTakeOverRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.accessToken = null;
         this.type = null;
-        this.userIdentifier = null;
         this.duplicationAvoider = null;
     }
     DeleteTakeOverRequest.prototype.getRequestId = function () {
@@ -80,17 +79,6 @@ var DeleteTakeOverRequest = /** @class */ (function () {
         this.type = type;
         return this;
     };
-    DeleteTakeOverRequest.prototype.getUserIdentifier = function () {
-        return this.userIdentifier;
-    };
-    DeleteTakeOverRequest.prototype.setUserIdentifier = function (userIdentifier) {
-        this.userIdentifier = userIdentifier;
-        return this;
-    };
-    DeleteTakeOverRequest.prototype.withUserIdentifier = function (userIdentifier) {
-        this.userIdentifier = userIdentifier;
-        return this;
-    };
     DeleteTakeOverRequest.prototype.getDuplicationAvoider = function () {
         return this.duplicationAvoider;
     };
@@ -106,15 +94,13 @@ var DeleteTakeOverRequest = /** @class */ (function () {
         return new DeleteTakeOverRequest()
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
-            .withType(data["type"])
-            .withUserIdentifier(data["userIdentifier"]);
+            .withType(data["type"]);
     };
     DeleteTakeOverRequest.prototype.toDict = function () {
         return {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
             "type": this.getType(),
-            "userIdentifier": this.getUserIdentifier(),
         };
     };
     return DeleteTakeOverRequest;

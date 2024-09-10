@@ -28,7 +28,8 @@ var Namespace = /** @class */ (function () {
         this.currencyUsagePriority = null;
         this.sharedFreeCurrency = null;
         this.platformSetting = null;
-        this.changeBalanceScript = null;
+        this.depositBalanceScript = null;
+        this.withdrawBalanceScript = null;
         this.logSetting = null;
         this.createdAt = null;
         this.updatedAt = null;
@@ -148,15 +149,26 @@ var Namespace = /** @class */ (function () {
         this.platformSetting = platformSetting;
         return this;
     };
-    Namespace.prototype.getChangeBalanceScript = function () {
-        return this.changeBalanceScript;
+    Namespace.prototype.getDepositBalanceScript = function () {
+        return this.depositBalanceScript;
     };
-    Namespace.prototype.setChangeBalanceScript = function (changeBalanceScript) {
-        this.changeBalanceScript = changeBalanceScript;
+    Namespace.prototype.setDepositBalanceScript = function (depositBalanceScript) {
+        this.depositBalanceScript = depositBalanceScript;
         return this;
     };
-    Namespace.prototype.withChangeBalanceScript = function (changeBalanceScript) {
-        this.changeBalanceScript = changeBalanceScript;
+    Namespace.prototype.withDepositBalanceScript = function (depositBalanceScript) {
+        this.depositBalanceScript = depositBalanceScript;
+        return this;
+    };
+    Namespace.prototype.getWithdrawBalanceScript = function () {
+        return this.withdrawBalanceScript;
+    };
+    Namespace.prototype.setWithdrawBalanceScript = function (withdrawBalanceScript) {
+        this.withdrawBalanceScript = withdrawBalanceScript;
+        return this;
+    };
+    Namespace.prototype.withWithdrawBalanceScript = function (withdrawBalanceScript) {
+        this.withdrawBalanceScript = withdrawBalanceScript;
         return this;
     };
     Namespace.prototype.getLogSetting = function () {
@@ -214,14 +226,15 @@ var Namespace = /** @class */ (function () {
             .withCurrencyUsagePriority(data["currencyUsagePriority"])
             .withSharedFreeCurrency(data["sharedFreeCurrency"])
             .withPlatformSetting(PlatformSetting_1.default.fromDict(data["platformSetting"]))
-            .withChangeBalanceScript(ScriptSetting_1.default.fromDict(data["changeBalanceScript"]))
+            .withDepositBalanceScript(ScriptSetting_1.default.fromDict(data["depositBalanceScript"]))
+            .withWithdrawBalanceScript(ScriptSetting_1.default.fromDict(data["withdrawBalanceScript"]))
             .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
@@ -229,8 +242,9 @@ var Namespace = /** @class */ (function () {
             "currencyUsagePriority": this.getCurrencyUsagePriority(),
             "sharedFreeCurrency": this.getSharedFreeCurrency(),
             "platformSetting": (_a = this.getPlatformSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "changeBalanceScript": (_b = this.getChangeBalanceScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "depositBalanceScript": (_b = this.getDepositBalanceScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "withdrawBalanceScript": (_c = this.getWithdrawBalanceScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

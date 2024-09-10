@@ -1114,7 +1114,6 @@ export default class Gs2AccountRestClient extends AbstractGs2RestClient {
         }
         const params: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
-            'userIdentifier': String(request.getUserIdentifier() ?? null),
         };
         return axios.delete(
             url,

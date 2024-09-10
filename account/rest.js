@@ -966,7 +966,7 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2AccountRestClient.prototype.deleteTakeOver = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/account/me/takeover/type/{type}')
             .replace('{service}', 'account')
             .replace('{region}', this.session.region)
@@ -984,7 +984,6 @@ var Gs2AccountRestClient = /** @class */ (function (_super) {
         }
         var params = {
             'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
-            'userIdentifier': String((_h = request.getUserIdentifier()) !== null && _h !== void 0 ? _h : null),
         };
         return axios_1.default.delete(url, {
             params: params,

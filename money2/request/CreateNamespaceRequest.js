@@ -26,7 +26,8 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.description = null;
         this.sharedFreeCurrency = null;
         this.platformSetting = null;
-        this.changeBalanceScript = null;
+        this.depositBalanceScript = null;
+        this.withdrawBalanceScript = null;
         this.logSetting = null;
     }
     CreateNamespaceRequest.prototype.getRequestId = function () {
@@ -106,15 +107,26 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.platformSetting = platformSetting;
         return this;
     };
-    CreateNamespaceRequest.prototype.getChangeBalanceScript = function () {
-        return this.changeBalanceScript;
+    CreateNamespaceRequest.prototype.getDepositBalanceScript = function () {
+        return this.depositBalanceScript;
     };
-    CreateNamespaceRequest.prototype.setChangeBalanceScript = function (changeBalanceScript) {
-        this.changeBalanceScript = changeBalanceScript;
+    CreateNamespaceRequest.prototype.setDepositBalanceScript = function (depositBalanceScript) {
+        this.depositBalanceScript = depositBalanceScript;
         return this;
     };
-    CreateNamespaceRequest.prototype.withChangeBalanceScript = function (changeBalanceScript) {
-        this.changeBalanceScript = changeBalanceScript;
+    CreateNamespaceRequest.prototype.withDepositBalanceScript = function (depositBalanceScript) {
+        this.depositBalanceScript = depositBalanceScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getWithdrawBalanceScript = function () {
+        return this.withdrawBalanceScript;
+    };
+    CreateNamespaceRequest.prototype.setWithdrawBalanceScript = function (withdrawBalanceScript) {
+        this.withdrawBalanceScript = withdrawBalanceScript;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withWithdrawBalanceScript = function (withdrawBalanceScript) {
+        this.withdrawBalanceScript = withdrawBalanceScript;
         return this;
     };
     CreateNamespaceRequest.prototype.getLogSetting = function () {
@@ -135,19 +147,21 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withDescription(data["description"])
             .withSharedFreeCurrency(data["sharedFreeCurrency"])
             .withPlatformSetting(Gs2Money2.PlatformSetting.fromDict(data["platformSetting"]))
-            .withChangeBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["changeBalanceScript"]))
+            .withDepositBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["depositBalanceScript"]))
+            .withWithdrawBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["withdrawBalanceScript"]))
             .withLogSetting(Gs2Money2.LogSetting.fromDict(data["logSetting"]));
     };
     CreateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         return {
             "name": this.getName(),
             "currencyUsagePriority": this.getCurrencyUsagePriority(),
             "description": this.getDescription(),
             "sharedFreeCurrency": this.getSharedFreeCurrency(),
             "platformSetting": (_a = this.getPlatformSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "changeBalanceScript": (_b = this.getChangeBalanceScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "depositBalanceScript": (_b = this.getDepositBalanceScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "withdrawBalanceScript": (_c = this.getWithdrawBalanceScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "logSetting": (_d = this.getLogSetting()) === null || _d === void 0 ? void 0 : _d.toDict(),
         };
     };
     return CreateNamespaceRequest;

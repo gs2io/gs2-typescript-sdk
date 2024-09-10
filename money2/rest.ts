@@ -70,7 +70,8 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
             'description': request.getDescription() ?? null,
             'sharedFreeCurrency': request.getSharedFreeCurrency() ?? null,
             'platformSetting': request.getPlatformSetting()?.toDict() ?? null,
-            'changeBalanceScript': request.getChangeBalanceScript()?.toDict() ?? null,
+            'depositBalanceScript': request.getDepositBalanceScript()?.toDict() ?? null,
+            'withdrawBalanceScript': request.getWithdrawBalanceScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.post(
@@ -157,7 +158,8 @@ export default class Gs2Money2RestClient extends AbstractGs2RestClient {
             'currencyUsagePriority': request.getCurrencyUsagePriority() ?? null,
             'description': request.getDescription() ?? null,
             'platformSetting': request.getPlatformSetting()?.toDict() ?? null,
-            'changeBalanceScript': request.getChangeBalanceScript()?.toDict() ?? null,
+            'depositBalanceScript': request.getDepositBalanceScript()?.toDict() ?? null,
+            'withdrawBalanceScript': request.getWithdrawBalanceScript()?.toDict() ?? null,
             'logSetting': request.getLogSetting()?.toDict() ?? null,
         };
         return axios.put(

@@ -9,7 +9,8 @@ export default class Namespace implements IModel {
     private currencyUsagePriority;
     private sharedFreeCurrency;
     private platformSetting;
-    private changeBalanceScript;
+    private depositBalanceScript;
+    private withdrawBalanceScript;
     private logSetting;
     private createdAt;
     private updatedAt;
@@ -37,9 +38,12 @@ export default class Namespace implements IModel {
     getPlatformSetting(): PlatformSetting | null;
     setPlatformSetting(platformSetting: PlatformSetting | null): this;
     withPlatformSetting(platformSetting: PlatformSetting | null): this;
-    getChangeBalanceScript(): ScriptSetting | null;
-    setChangeBalanceScript(changeBalanceScript: ScriptSetting | null): this;
-    withChangeBalanceScript(changeBalanceScript: ScriptSetting | null): this;
+    getDepositBalanceScript(): ScriptSetting | null;
+    setDepositBalanceScript(depositBalanceScript: ScriptSetting | null): this;
+    withDepositBalanceScript(depositBalanceScript: ScriptSetting | null): this;
+    getWithdrawBalanceScript(): ScriptSetting | null;
+    setWithdrawBalanceScript(withdrawBalanceScript: ScriptSetting | null): this;
+    withWithdrawBalanceScript(withdrawBalanceScript: ScriptSetting | null): this;
     getLogSetting(): LogSetting | null;
     setLogSetting(logSetting: LogSetting | null): this;
     withLogSetting(logSetting: LogSetting | null): this;

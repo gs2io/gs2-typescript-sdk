@@ -15,11 +15,21 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+const grnFormat: string = "";
 
 export default class BanStatus implements IModel {
     private name: string|null = null;
     private reason: string|null = null;
     private releaseTimestamp: number|null = null;
+
+    public static isValid(grn: string): boolean {
+        return true;
+    }
+
+    public static createGrn(
+    ): string|null {
+        return grnFormat;
+    }
     public getName(): string|null {
         return this.name;
     }

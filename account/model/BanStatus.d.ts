@@ -3,6 +3,8 @@ export default class BanStatus implements IModel {
     private name;
     private reason;
     private releaseTimestamp;
+    static isValid(grn: string): boolean;
+    static createGrn(): string | null;
     getName(): string | null;
     setName(name: string | null): this;
     withName(name: string | null): this;

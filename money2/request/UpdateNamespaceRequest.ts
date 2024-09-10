@@ -26,7 +26,8 @@ export default class UpdateNamespaceRequest implements IRequest {
     private currencyUsagePriority: string|null = null;
     private description: string|null = null;
     private platformSetting: Gs2Money2.PlatformSetting|null = null;
-    private changeBalanceScript: Gs2Money2.ScriptSetting|null = null;
+    private depositBalanceScript: Gs2Money2.ScriptSetting|null = null;
+    private withdrawBalanceScript: Gs2Money2.ScriptSetting|null = null;
     private logSetting: Gs2Money2.LogSetting|null = null;
 
     public getRequestId(): string|null {
@@ -100,15 +101,26 @@ export default class UpdateNamespaceRequest implements IRequest {
         this.platformSetting = platformSetting;
         return this;
     }
-    public getChangeBalanceScript(): Gs2Money2.ScriptSetting|null {
-        return this.changeBalanceScript;
+    public getDepositBalanceScript(): Gs2Money2.ScriptSetting|null {
+        return this.depositBalanceScript;
     }
-    public setChangeBalanceScript(changeBalanceScript: Gs2Money2.ScriptSetting|null) {
-        this.changeBalanceScript = changeBalanceScript;
+    public setDepositBalanceScript(depositBalanceScript: Gs2Money2.ScriptSetting|null) {
+        this.depositBalanceScript = depositBalanceScript;
         return this;
     }
-    public withChangeBalanceScript(changeBalanceScript: Gs2Money2.ScriptSetting|null): this {
-        this.changeBalanceScript = changeBalanceScript;
+    public withDepositBalanceScript(depositBalanceScript: Gs2Money2.ScriptSetting|null): this {
+        this.depositBalanceScript = depositBalanceScript;
+        return this;
+    }
+    public getWithdrawBalanceScript(): Gs2Money2.ScriptSetting|null {
+        return this.withdrawBalanceScript;
+    }
+    public setWithdrawBalanceScript(withdrawBalanceScript: Gs2Money2.ScriptSetting|null) {
+        this.withdrawBalanceScript = withdrawBalanceScript;
+        return this;
+    }
+    public withWithdrawBalanceScript(withdrawBalanceScript: Gs2Money2.ScriptSetting|null): this {
+        this.withdrawBalanceScript = withdrawBalanceScript;
         return this;
     }
     public getLogSetting(): Gs2Money2.LogSetting|null {
@@ -129,7 +141,8 @@ export default class UpdateNamespaceRequest implements IRequest {
             .withCurrencyUsagePriority(data["currencyUsagePriority"])
             .withDescription(data["description"])
             .withPlatformSetting(Gs2Money2.PlatformSetting.fromDict(data["platformSetting"]))
-            .withChangeBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["changeBalanceScript"]))
+            .withDepositBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["depositBalanceScript"]))
+            .withWithdrawBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["withdrawBalanceScript"]))
             .withLogSetting(Gs2Money2.LogSetting.fromDict(data["logSetting"]));
     }
 
@@ -139,7 +152,8 @@ export default class UpdateNamespaceRequest implements IRequest {
             "currencyUsagePriority": this.getCurrencyUsagePriority(),
             "description": this.getDescription(),
             "platformSetting": this.getPlatformSetting()?.toDict(),
-            "changeBalanceScript": this.getChangeBalanceScript()?.toDict(),
+            "depositBalanceScript": this.getDepositBalanceScript()?.toDict(),
+            "withdrawBalanceScript": this.getWithdrawBalanceScript()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
         };
     }
