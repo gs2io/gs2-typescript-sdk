@@ -26,7 +26,9 @@ export default class VerifyCounterValueByUserIdRequest implements IRequest {
     private userId: string|null = null;
     private counterName: string|null = null;
     private verifyType: string|null = null;
+    private scopeType: string|null = null;
     private resetType: string|null = null;
+    private conditionName: string|null = null;
     private value: number|null = null;
     private multiplyValueSpecifyingQuantity: boolean|null = null;
     private timeOffsetToken: string|null = null;
@@ -103,6 +105,17 @@ export default class VerifyCounterValueByUserIdRequest implements IRequest {
         this.verifyType = verifyType;
         return this;
     }
+    public getScopeType(): string|null {
+        return this.scopeType;
+    }
+    public setScopeType(scopeType: string|null) {
+        this.scopeType = scopeType;
+        return this;
+    }
+    public withScopeType(scopeType: string|null): this {
+        this.scopeType = scopeType;
+        return this;
+    }
     public getResetType(): string|null {
         return this.resetType;
     }
@@ -112,6 +125,17 @@ export default class VerifyCounterValueByUserIdRequest implements IRequest {
     }
     public withResetType(resetType: string|null): this {
         this.resetType = resetType;
+        return this;
+    }
+    public getConditionName(): string|null {
+        return this.conditionName;
+    }
+    public setConditionName(conditionName: string|null) {
+        this.conditionName = conditionName;
+        return this;
+    }
+    public withConditionName(conditionName: string|null): this {
+        this.conditionName = conditionName;
         return this;
     }
     public getValue(): number|null {
@@ -168,7 +192,9 @@ export default class VerifyCounterValueByUserIdRequest implements IRequest {
             .withUserId(data["userId"])
             .withCounterName(data["counterName"])
             .withVerifyType(data["verifyType"])
+            .withScopeType(data["scopeType"])
             .withResetType(data["resetType"])
+            .withConditionName(data["conditionName"])
             .withValue(data["value"])
             .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
@@ -180,7 +206,9 @@ export default class VerifyCounterValueByUserIdRequest implements IRequest {
             "userId": this.getUserId(),
             "counterName": this.getCounterName(),
             "verifyType": this.getVerifyType(),
+            "scopeType": this.getScopeType(),
             "resetType": this.getResetType(),
+            "conditionName": this.getConditionName(),
             "value": this.getValue(),
             "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
             "timeOffsetToken": this.getTimeOffsetToken(),

@@ -17,11 +17,24 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var ScopedValue = /** @class */ (function () {
     function ScopedValue() {
+        this.scopeType = null;
         this.resetType = null;
+        this.conditionName = null;
         this.value = null;
         this.nextResetAt = null;
         this.updatedAt = null;
     }
+    ScopedValue.prototype.getScopeType = function () {
+        return this.scopeType;
+    };
+    ScopedValue.prototype.setScopeType = function (scopeType) {
+        this.scopeType = scopeType;
+        return this;
+    };
+    ScopedValue.prototype.withScopeType = function (scopeType) {
+        this.scopeType = scopeType;
+        return this;
+    };
     ScopedValue.prototype.getResetType = function () {
         return this.resetType;
     };
@@ -31,6 +44,17 @@ var ScopedValue = /** @class */ (function () {
     };
     ScopedValue.prototype.withResetType = function (resetType) {
         this.resetType = resetType;
+        return this;
+    };
+    ScopedValue.prototype.getConditionName = function () {
+        return this.conditionName;
+    };
+    ScopedValue.prototype.setConditionName = function (conditionName) {
+        this.conditionName = conditionName;
+        return this;
+    };
+    ScopedValue.prototype.withConditionName = function (conditionName) {
+        this.conditionName = conditionName;
         return this;
     };
     ScopedValue.prototype.getValue = function () {
@@ -71,14 +95,18 @@ var ScopedValue = /** @class */ (function () {
             return null;
         }
         return new ScopedValue()
+            .withScopeType(data["scopeType"])
             .withResetType(data["resetType"])
+            .withConditionName(data["conditionName"])
             .withValue(data["value"])
             .withNextResetAt(data["nextResetAt"])
             .withUpdatedAt(data["updatedAt"]);
     };
     ScopedValue.prototype.toDict = function () {
         return {
+            "scopeType": this.getScopeType(),
             "resetType": this.getResetType(),
+            "conditionName": this.getConditionName(),
             "value": this.getValue(),
             "nextResetAt": this.getNextResetAt(),
             "updatedAt": this.getUpdatedAt(),

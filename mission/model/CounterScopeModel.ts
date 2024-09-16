@@ -15,12 +15,27 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import VerifyAction from './VerifyAction';
 
 export default class CounterScopeModel implements IModel {
+    private scopeType: string|null = null;
     private resetType: string|null = null;
     private resetDayOfMonth: number|null = null;
     private resetDayOfWeek: string|null = null;
     private resetHour: number|null = null;
+    private conditionName: string|null = null;
+    private condition: VerifyAction|null = null;
+    public getScopeType(): string|null {
+        return this.scopeType;
+    }
+    public setScopeType(scopeType: string|null) {
+        this.scopeType = scopeType;
+        return this;
+    }
+    public withScopeType(scopeType: string|null): this {
+        this.scopeType = scopeType;
+        return this;
+    }
     public getResetType(): string|null {
         return this.resetType;
     }
@@ -65,24 +80,52 @@ export default class CounterScopeModel implements IModel {
         this.resetHour = resetHour;
         return this;
     }
+    public getConditionName(): string|null {
+        return this.conditionName;
+    }
+    public setConditionName(conditionName: string|null) {
+        this.conditionName = conditionName;
+        return this;
+    }
+    public withConditionName(conditionName: string|null): this {
+        this.conditionName = conditionName;
+        return this;
+    }
+    public getCondition(): VerifyAction|null {
+        return this.condition;
+    }
+    public setCondition(condition: VerifyAction|null) {
+        this.condition = condition;
+        return this;
+    }
+    public withCondition(condition: VerifyAction|null): this {
+        this.condition = condition;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): CounterScopeModel|null {
         if (data == undefined || data == null) {
             return null;
         }
         return new CounterScopeModel()
+            .withScopeType(data["scopeType"])
             .withResetType(data["resetType"])
             .withResetDayOfMonth(data["resetDayOfMonth"])
             .withResetDayOfWeek(data["resetDayOfWeek"])
-            .withResetHour(data["resetHour"]);
+            .withResetHour(data["resetHour"])
+            .withConditionName(data["conditionName"])
+            .withCondition(VerifyAction.fromDict(data["condition"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "scopeType": this.getScopeType(),
             "resetType": this.getResetType(),
             "resetDayOfMonth": this.getResetDayOfMonth(),
             "resetDayOfWeek": this.getResetDayOfWeek(),
             "resetHour": this.getResetHour(),
+            "conditionName": this.getConditionName(),
+            "condition": this.getCondition()?.toDict(),
         };
     }
 }

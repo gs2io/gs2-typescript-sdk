@@ -6,7 +6,9 @@ export default class VerifyCounterValueByUserIdRequest implements IRequest {
     private userId;
     private counterName;
     private verifyType;
+    private scopeType;
     private resetType;
+    private conditionName;
     private value;
     private multiplyValueSpecifyingQuantity;
     private timeOffsetToken;
@@ -29,9 +31,15 @@ export default class VerifyCounterValueByUserIdRequest implements IRequest {
     getVerifyType(): string | null;
     setVerifyType(verifyType: string | null): this;
     withVerifyType(verifyType: string | null): this;
+    getScopeType(): string | null;
+    setScopeType(scopeType: string | null): this;
+    withScopeType(scopeType: string | null): this;
     getResetType(): string | null;
     setResetType(resetType: string | null): this;
     withResetType(resetType: string | null): this;
+    getConditionName(): string | null;
+    setConditionName(conditionName: string | null): this;
+    withConditionName(conditionName: string | null): this;
     getValue(): number | null;
     setValue(value: number | null): this;
     withValue(value: number | null): this;

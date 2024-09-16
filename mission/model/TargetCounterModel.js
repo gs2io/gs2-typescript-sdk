@@ -18,7 +18,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var TargetCounterModel = /** @class */ (function () {
     function TargetCounterModel() {
         this.counterName = null;
+        this.scopeType = null;
         this.resetType = null;
+        this.conditionName = null;
         this.value = null;
     }
     TargetCounterModel.prototype.getCounterName = function () {
@@ -32,6 +34,17 @@ var TargetCounterModel = /** @class */ (function () {
         this.counterName = counterName;
         return this;
     };
+    TargetCounterModel.prototype.getScopeType = function () {
+        return this.scopeType;
+    };
+    TargetCounterModel.prototype.setScopeType = function (scopeType) {
+        this.scopeType = scopeType;
+        return this;
+    };
+    TargetCounterModel.prototype.withScopeType = function (scopeType) {
+        this.scopeType = scopeType;
+        return this;
+    };
     TargetCounterModel.prototype.getResetType = function () {
         return this.resetType;
     };
@@ -41,6 +54,17 @@ var TargetCounterModel = /** @class */ (function () {
     };
     TargetCounterModel.prototype.withResetType = function (resetType) {
         this.resetType = resetType;
+        return this;
+    };
+    TargetCounterModel.prototype.getConditionName = function () {
+        return this.conditionName;
+    };
+    TargetCounterModel.prototype.setConditionName = function (conditionName) {
+        this.conditionName = conditionName;
+        return this;
+    };
+    TargetCounterModel.prototype.withConditionName = function (conditionName) {
+        this.conditionName = conditionName;
         return this;
     };
     TargetCounterModel.prototype.getValue = function () {
@@ -60,13 +84,17 @@ var TargetCounterModel = /** @class */ (function () {
         }
         return new TargetCounterModel()
             .withCounterName(data["counterName"])
+            .withScopeType(data["scopeType"])
             .withResetType(data["resetType"])
+            .withConditionName(data["conditionName"])
             .withValue(data["value"]);
     };
     TargetCounterModel.prototype.toDict = function () {
         return {
             "counterName": this.getCounterName(),
+            "scopeType": this.getScopeType(),
             "resetType": this.getResetType(),
+            "conditionName": this.getConditionName(),
             "value": this.getValue(),
         };
     };

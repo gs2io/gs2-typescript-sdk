@@ -1529,7 +1529,9 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'scopeType': request.getScopeType() ?? null,
             'resetType': request.getResetType() ?? null,
+            'conditionName': request.getConditionName() ?? null,
             'value': request.getValue() ?? null,
             'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };
@@ -1571,7 +1573,9 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
         }
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
+            'scopeType': request.getScopeType() ?? null,
             'resetType': request.getResetType() ?? null,
+            'conditionName': request.getConditionName() ?? null,
             'value': request.getValue() ?? null,
             'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
         };

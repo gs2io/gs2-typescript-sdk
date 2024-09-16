@@ -15,13 +15,29 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
 var CounterScopeModel = /** @class */ (function () {
     function CounterScopeModel() {
+        this.scopeType = null;
         this.resetType = null;
         this.resetDayOfMonth = null;
         this.resetDayOfWeek = null;
         this.resetHour = null;
+        this.conditionName = null;
+        this.condition = null;
     }
+    CounterScopeModel.prototype.getScopeType = function () {
+        return this.scopeType;
+    };
+    CounterScopeModel.prototype.setScopeType = function (scopeType) {
+        this.scopeType = scopeType;
+        return this;
+    };
+    CounterScopeModel.prototype.withScopeType = function (scopeType) {
+        this.scopeType = scopeType;
+        return this;
+    };
     CounterScopeModel.prototype.getResetType = function () {
         return this.resetType;
     };
@@ -66,22 +82,51 @@ var CounterScopeModel = /** @class */ (function () {
         this.resetHour = resetHour;
         return this;
     };
+    CounterScopeModel.prototype.getConditionName = function () {
+        return this.conditionName;
+    };
+    CounterScopeModel.prototype.setConditionName = function (conditionName) {
+        this.conditionName = conditionName;
+        return this;
+    };
+    CounterScopeModel.prototype.withConditionName = function (conditionName) {
+        this.conditionName = conditionName;
+        return this;
+    };
+    CounterScopeModel.prototype.getCondition = function () {
+        return this.condition;
+    };
+    CounterScopeModel.prototype.setCondition = function (condition) {
+        this.condition = condition;
+        return this;
+    };
+    CounterScopeModel.prototype.withCondition = function (condition) {
+        this.condition = condition;
+        return this;
+    };
     CounterScopeModel.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
         }
         return new CounterScopeModel()
+            .withScopeType(data["scopeType"])
             .withResetType(data["resetType"])
             .withResetDayOfMonth(data["resetDayOfMonth"])
             .withResetDayOfWeek(data["resetDayOfWeek"])
-            .withResetHour(data["resetHour"]);
+            .withResetHour(data["resetHour"])
+            .withConditionName(data["conditionName"])
+            .withCondition(VerifyAction_1.default.fromDict(data["condition"]));
     };
     CounterScopeModel.prototype.toDict = function () {
+        var _a;
         return {
+            "scopeType": this.getScopeType(),
             "resetType": this.getResetType(),
             "resetDayOfMonth": this.getResetDayOfMonth(),
             "resetDayOfWeek": this.getResetDayOfWeek(),
             "resetHour": this.getResetHour(),
+            "conditionName": this.getConditionName(),
+            "condition": (_a = this.getCondition()) === null || _a === void 0 ? void 0 : _a.toDict(),
         };
     };
     return CounterScopeModel;

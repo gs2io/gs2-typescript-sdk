@@ -1328,7 +1328,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MissionRestClient.prototype.verifyCounterValue = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/counter/{counterName}/verify/counter/{verifyType}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
@@ -1347,9 +1347,11 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         }
         var body = {
             'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
-            'resetType': (_k = request.getResetType()) !== null && _k !== void 0 ? _k : null,
-            'value': (_l = request.getValue()) !== null && _l !== void 0 ? _l : null,
-            'multiplyValueSpecifyingQuantity': (_m = request.getMultiplyValueSpecifyingQuantity()) !== null && _m !== void 0 ? _m : null,
+            'scopeType': (_k = request.getScopeType()) !== null && _k !== void 0 ? _k : null,
+            'resetType': (_l = request.getResetType()) !== null && _l !== void 0 ? _l : null,
+            'conditionName': (_m = request.getConditionName()) !== null && _m !== void 0 ? _m : null,
+            'value': (_o = request.getValue()) !== null && _o !== void 0 ? _o : null,
+            'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -1365,7 +1367,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2MissionRestClient.prototype.verifyCounterValueByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/counter/{counterName}/verify/counter/{verifyType}')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region)
@@ -1385,9 +1387,11 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
         }
         var body = {
             'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
-            'resetType': (_m = request.getResetType()) !== null && _m !== void 0 ? _m : null,
-            'value': (_o = request.getValue()) !== null && _o !== void 0 ? _o : null,
-            'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
+            'scopeType': (_m = request.getScopeType()) !== null && _m !== void 0 ? _m : null,
+            'resetType': (_o = request.getResetType()) !== null && _o !== void 0 ? _o : null,
+            'conditionName': (_p = request.getConditionName()) !== null && _p !== void 0 ? _p : null,
+            'value': (_q = request.getValue()) !== null && _q !== void 0 ? _q : null,
+            'multiplyValueSpecifyingQuantity': (_r = request.getMultiplyValueSpecifyingQuantity()) !== null && _r !== void 0 ? _r : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

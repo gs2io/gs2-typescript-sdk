@@ -23,7 +23,9 @@ var VerifyCounterValueRequest = /** @class */ (function () {
         this.accessToken = null;
         this.counterName = null;
         this.verifyType = null;
+        this.scopeType = null;
         this.resetType = null;
+        this.conditionName = null;
         this.value = null;
         this.multiplyValueSpecifyingQuantity = null;
         this.duplicationAvoider = null;
@@ -94,6 +96,17 @@ var VerifyCounterValueRequest = /** @class */ (function () {
         this.verifyType = verifyType;
         return this;
     };
+    VerifyCounterValueRequest.prototype.getScopeType = function () {
+        return this.scopeType;
+    };
+    VerifyCounterValueRequest.prototype.setScopeType = function (scopeType) {
+        this.scopeType = scopeType;
+        return this;
+    };
+    VerifyCounterValueRequest.prototype.withScopeType = function (scopeType) {
+        this.scopeType = scopeType;
+        return this;
+    };
     VerifyCounterValueRequest.prototype.getResetType = function () {
         return this.resetType;
     };
@@ -103,6 +116,17 @@ var VerifyCounterValueRequest = /** @class */ (function () {
     };
     VerifyCounterValueRequest.prototype.withResetType = function (resetType) {
         this.resetType = resetType;
+        return this;
+    };
+    VerifyCounterValueRequest.prototype.getConditionName = function () {
+        return this.conditionName;
+    };
+    VerifyCounterValueRequest.prototype.setConditionName = function (conditionName) {
+        this.conditionName = conditionName;
+        return this;
+    };
+    VerifyCounterValueRequest.prototype.withConditionName = function (conditionName) {
+        this.conditionName = conditionName;
         return this;
     };
     VerifyCounterValueRequest.prototype.getValue = function () {
@@ -144,7 +168,9 @@ var VerifyCounterValueRequest = /** @class */ (function () {
             .withAccessToken(data["accessToken"])
             .withCounterName(data["counterName"])
             .withVerifyType(data["verifyType"])
+            .withScopeType(data["scopeType"])
             .withResetType(data["resetType"])
+            .withConditionName(data["conditionName"])
             .withValue(data["value"])
             .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"]);
     };
@@ -154,7 +180,9 @@ var VerifyCounterValueRequest = /** @class */ (function () {
             "accessToken": this.getAccessToken(),
             "counterName": this.getCounterName(),
             "verifyType": this.getVerifyType(),
+            "scopeType": this.getScopeType(),
             "resetType": this.getResetType(),
+            "conditionName": this.getConditionName(),
             "value": this.getValue(),
             "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
         };

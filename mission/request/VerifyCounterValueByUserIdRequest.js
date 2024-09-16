@@ -23,7 +23,9 @@ var VerifyCounterValueByUserIdRequest = /** @class */ (function () {
         this.userId = null;
         this.counterName = null;
         this.verifyType = null;
+        this.scopeType = null;
         this.resetType = null;
+        this.conditionName = null;
         this.value = null;
         this.multiplyValueSpecifyingQuantity = null;
         this.timeOffsetToken = null;
@@ -95,6 +97,17 @@ var VerifyCounterValueByUserIdRequest = /** @class */ (function () {
         this.verifyType = verifyType;
         return this;
     };
+    VerifyCounterValueByUserIdRequest.prototype.getScopeType = function () {
+        return this.scopeType;
+    };
+    VerifyCounterValueByUserIdRequest.prototype.setScopeType = function (scopeType) {
+        this.scopeType = scopeType;
+        return this;
+    };
+    VerifyCounterValueByUserIdRequest.prototype.withScopeType = function (scopeType) {
+        this.scopeType = scopeType;
+        return this;
+    };
     VerifyCounterValueByUserIdRequest.prototype.getResetType = function () {
         return this.resetType;
     };
@@ -104,6 +117,17 @@ var VerifyCounterValueByUserIdRequest = /** @class */ (function () {
     };
     VerifyCounterValueByUserIdRequest.prototype.withResetType = function (resetType) {
         this.resetType = resetType;
+        return this;
+    };
+    VerifyCounterValueByUserIdRequest.prototype.getConditionName = function () {
+        return this.conditionName;
+    };
+    VerifyCounterValueByUserIdRequest.prototype.setConditionName = function (conditionName) {
+        this.conditionName = conditionName;
+        return this;
+    };
+    VerifyCounterValueByUserIdRequest.prototype.withConditionName = function (conditionName) {
+        this.conditionName = conditionName;
         return this;
     };
     VerifyCounterValueByUserIdRequest.prototype.getValue = function () {
@@ -156,7 +180,9 @@ var VerifyCounterValueByUserIdRequest = /** @class */ (function () {
             .withUserId(data["userId"])
             .withCounterName(data["counterName"])
             .withVerifyType(data["verifyType"])
+            .withScopeType(data["scopeType"])
             .withResetType(data["resetType"])
+            .withConditionName(data["conditionName"])
             .withValue(data["value"])
             .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
@@ -167,7 +193,9 @@ var VerifyCounterValueByUserIdRequest = /** @class */ (function () {
             "userId": this.getUserId(),
             "counterName": this.getCounterName(),
             "verifyType": this.getVerifyType(),
+            "scopeType": this.getScopeType(),
             "resetType": this.getResetType(),
+            "conditionName": this.getConditionName(),
             "value": this.getValue(),
             "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
             "timeOffsetToken": this.getTimeOffsetToken(),

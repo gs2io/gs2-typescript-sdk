@@ -15,6 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+import VerifyAction from './VerifyAction';
 import CounterScopeModel from './CounterScopeModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}:counter:{counterName}";
 
