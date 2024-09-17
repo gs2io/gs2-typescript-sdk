@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentEventMasterFromGitHubResult = exports.UpdateCurrentEventMasterResult = exports.GetCurrentEventMasterResult = exports.ExportMasterResult = exports.VerifyEventByStampTaskResult = exports.VerifyEventByUserIdResult = exports.VerifyEventResult = exports.GetRawEventResult = exports.GetEventByUserIdResult = exports.GetEventResult = exports.DescribeRawEventsResult = exports.DescribeEventsByUserIdResult = exports.DescribeEventsResult = exports.DeleteTriggerByStampTaskResult = exports.DeleteTriggerByUserIdResult = exports.DeleteTriggerResult = exports.TriggerByStampSheetResult = exports.TriggerByUserIdResult = exports.GetTriggerByUserIdResult = exports.GetTriggerResult = exports.DescribeTriggersByUserIdResult = exports.DescribeTriggersResult = exports.DeleteEventMasterResult = exports.UpdateEventMasterResult = exports.GetEventMasterResult = exports.CreateEventMasterResult = exports.DescribeEventMastersResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.UpdateCurrentEventMasterFromGitHubResult = exports.UpdateCurrentEventMasterResult = exports.GetCurrentEventMasterResult = exports.ExportMasterResult = exports.VerifyEventByStampTaskResult = exports.VerifyEventByUserIdResult = exports.VerifyEventResult = exports.GetRawEventResult = exports.GetEventByUserIdResult = exports.GetEventResult = exports.DescribeRawEventsResult = exports.DescribeEventsByUserIdResult = exports.DescribeEventsResult = exports.VerifyTriggerByStampTaskResult = exports.DeleteTriggerByStampTaskResult = exports.VerifyTriggerByUserIdResult = exports.VerifyTriggerResult = exports.DeleteTriggerByUserIdResult = exports.DeleteTriggerResult = exports.TriggerByStampSheetResult = exports.TriggerByUserIdResult = exports.GetTriggerByUserIdResult = exports.GetTriggerResult = exports.DescribeTriggersByUserIdResult = exports.DescribeTriggersResult = exports.DeleteEventMasterResult = exports.UpdateEventMasterResult = exports.GetEventMasterResult = exports.CreateEventMasterResult = exports.DescribeEventMastersResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -69,8 +69,14 @@ var DeleteTriggerResult_1 = tslib_1.__importDefault(require("./DeleteTriggerResu
 exports.DeleteTriggerResult = DeleteTriggerResult_1.default;
 var DeleteTriggerByUserIdResult_1 = tslib_1.__importDefault(require("./DeleteTriggerByUserIdResult"));
 exports.DeleteTriggerByUserIdResult = DeleteTriggerByUserIdResult_1.default;
+var VerifyTriggerResult_1 = tslib_1.__importDefault(require("./VerifyTriggerResult"));
+exports.VerifyTriggerResult = VerifyTriggerResult_1.default;
+var VerifyTriggerByUserIdResult_1 = tslib_1.__importDefault(require("./VerifyTriggerByUserIdResult"));
+exports.VerifyTriggerByUserIdResult = VerifyTriggerByUserIdResult_1.default;
 var DeleteTriggerByStampTaskResult_1 = tslib_1.__importDefault(require("./DeleteTriggerByStampTaskResult"));
 exports.DeleteTriggerByStampTaskResult = DeleteTriggerByStampTaskResult_1.default;
+var VerifyTriggerByStampTaskResult_1 = tslib_1.__importDefault(require("./VerifyTriggerByStampTaskResult"));
+exports.VerifyTriggerByStampTaskResult = VerifyTriggerByStampTaskResult_1.default;
 var DescribeEventsResult_1 = tslib_1.__importDefault(require("./DescribeEventsResult"));
 exports.DescribeEventsResult = DescribeEventsResult_1.default;
 var DescribeEventsByUserIdResult_1 = tslib_1.__importDefault(require("./DescribeEventsByUserIdResult"));
