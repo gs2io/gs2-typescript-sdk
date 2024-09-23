@@ -17,7 +17,10 @@ import DescribeCompletesRequest from "./DescribeCompletesRequest"
 import DescribeCompletesByUserIdRequest from "./DescribeCompletesByUserIdRequest"
 import CompleteRequest from "./CompleteRequest"
 import CompleteByUserIdRequest from "./CompleteByUserIdRequest"
+import BatchCompleteRequest from "./BatchCompleteRequest"
+import BatchCompleteByUserIdRequest from "./BatchCompleteByUserIdRequest"
 import ReceiveByUserIdRequest from "./ReceiveByUserIdRequest"
+import BatchReceiveByUserIdRequest from "./BatchReceiveByUserIdRequest"
 import RevertReceiveByUserIdRequest from "./RevertReceiveByUserIdRequest"
 import GetCompleteRequest from "./GetCompleteRequest"
 import GetCompleteByUserIdRequest from "./GetCompleteByUserIdRequest"
@@ -25,6 +28,7 @@ import DeleteCompleteByUserIdRequest from "./DeleteCompleteByUserIdRequest"
 import VerifyCompleteRequest from "./VerifyCompleteRequest"
 import VerifyCompleteByUserIdRequest from "./VerifyCompleteByUserIdRequest"
 import ReceiveByStampTaskRequest from "./ReceiveByStampTaskRequest"
+import BatchReceiveByStampTaskRequest from "./BatchReceiveByStampTaskRequest"
 import RevertReceiveByStampSheetRequest from "./RevertReceiveByStampSheetRequest"
 import VerifyCompleteByStampTaskRequest from "./VerifyCompleteByStampTaskRequest"
 import DescribeCounterModelMastersRequest from "./DescribeCounterModelMastersRequest"
@@ -86,7 +90,10 @@ export {
     DescribeCompletesByUserIdRequest,
     CompleteRequest,
     CompleteByUserIdRequest,
+    BatchCompleteRequest,
+    BatchCompleteByUserIdRequest,
     ReceiveByUserIdRequest,
+    BatchReceiveByUserIdRequest,
     RevertReceiveByUserIdRequest,
     GetCompleteRequest,
     GetCompleteByUserIdRequest,
@@ -94,6 +101,7 @@ export {
     VerifyCompleteRequest,
     VerifyCompleteByUserIdRequest,
     ReceiveByStampTaskRequest,
+    BatchReceiveByStampTaskRequest,
     RevertReceiveByStampSheetRequest,
     VerifyCompleteByStampTaskRequest,
     DescribeCounterModelMastersRequest,

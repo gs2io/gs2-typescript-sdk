@@ -17,7 +17,10 @@ import DescribeCompletesResult from "./DescribeCompletesResult"
 import DescribeCompletesByUserIdResult from "./DescribeCompletesByUserIdResult"
 import CompleteResult from "./CompleteResult"
 import CompleteByUserIdResult from "./CompleteByUserIdResult"
+import BatchCompleteResult from "./BatchCompleteResult"
+import BatchCompleteByUserIdResult from "./BatchCompleteByUserIdResult"
 import ReceiveByUserIdResult from "./ReceiveByUserIdResult"
+import BatchReceiveByUserIdResult from "./BatchReceiveByUserIdResult"
 import RevertReceiveByUserIdResult from "./RevertReceiveByUserIdResult"
 import GetCompleteResult from "./GetCompleteResult"
 import GetCompleteByUserIdResult from "./GetCompleteByUserIdResult"
@@ -25,6 +28,7 @@ import DeleteCompleteByUserIdResult from "./DeleteCompleteByUserIdResult"
 import VerifyCompleteResult from "./VerifyCompleteResult"
 import VerifyCompleteByUserIdResult from "./VerifyCompleteByUserIdResult"
 import ReceiveByStampTaskResult from "./ReceiveByStampTaskResult"
+import BatchReceiveByStampTaskResult from "./BatchReceiveByStampTaskResult"
 import RevertReceiveByStampSheetResult from "./RevertReceiveByStampSheetResult"
 import VerifyCompleteByStampTaskResult from "./VerifyCompleteByStampTaskResult"
 import DescribeCounterModelMastersResult from "./DescribeCounterModelMastersResult"
@@ -86,7 +90,10 @@ export {
     DescribeCompletesByUserIdResult,
     CompleteResult,
     CompleteByUserIdResult,
+    BatchCompleteResult,
+    BatchCompleteByUserIdResult,
     ReceiveByUserIdResult,
+    BatchReceiveByUserIdResult,
     RevertReceiveByUserIdResult,
     GetCompleteResult,
     GetCompleteByUserIdResult,
@@ -94,6 +101,7 @@ export {
     VerifyCompleteResult,
     VerifyCompleteByUserIdResult,
     ReceiveByStampTaskResult,
+    BatchReceiveByStampTaskResult,
     RevertReceiveByStampSheetResult,
     VerifyCompleteByStampTaskResult,
     DescribeCounterModelMastersResult,

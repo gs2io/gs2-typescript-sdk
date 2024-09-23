@@ -8,7 +8,10 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     describeCompletesByUserId(request: Request.DescribeCompletesByUserIdRequest): Promise<Result.DescribeCompletesByUserIdResult>;
     complete(request: Request.CompleteRequest): Promise<Result.CompleteResult>;
     completeByUserId(request: Request.CompleteByUserIdRequest): Promise<Result.CompleteByUserIdResult>;
+    batchComplete(request: Request.BatchCompleteRequest): Promise<Result.BatchCompleteResult>;
+    batchCompleteByUserId(request: Request.BatchCompleteByUserIdRequest): Promise<Result.BatchCompleteByUserIdResult>;
     receiveByUserId(request: Request.ReceiveByUserIdRequest): Promise<Result.ReceiveByUserIdResult>;
+    batchReceiveByUserId(request: Request.BatchReceiveByUserIdRequest): Promise<Result.BatchReceiveByUserIdResult>;
     revertReceiveByUserId(request: Request.RevertReceiveByUserIdRequest): Promise<Result.RevertReceiveByUserIdResult>;
     getComplete(request: Request.GetCompleteRequest): Promise<Result.GetCompleteResult>;
     getCompleteByUserId(request: Request.GetCompleteByUserIdRequest): Promise<Result.GetCompleteByUserIdResult>;
@@ -16,6 +19,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     verifyComplete(request: Request.VerifyCompleteRequest): Promise<Result.VerifyCompleteResult>;
     verifyCompleteByUserId(request: Request.VerifyCompleteByUserIdRequest): Promise<Result.VerifyCompleteByUserIdResult>;
     receiveByStampTask(request: Request.ReceiveByStampTaskRequest): Promise<Result.ReceiveByStampTaskResult>;
+    batchReceiveByStampTask(request: Request.BatchReceiveByStampTaskRequest): Promise<Result.BatchReceiveByStampTaskResult>;
     revertReceiveByStampSheet(request: Request.RevertReceiveByStampSheetRequest): Promise<Result.RevertReceiveByStampSheetResult>;
     verifyCompleteByStampTask(request: Request.VerifyCompleteByStampTaskRequest): Promise<Result.VerifyCompleteByStampTaskResult>;
     describeCounterModelMasters(request: Request.DescribeCounterModelMastersRequest): Promise<Result.DescribeCounterModelMastersResult>;
