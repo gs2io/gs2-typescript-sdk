@@ -512,7 +512,7 @@ var Gs2MissionRestClient = /** @class */ (function (_super) {
     };
     Gs2MissionRestClient.prototype.batchReceiveByStampTask = function (request) {
         var _a, _b, _c;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/receive')
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/receive/batch')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
         var headers = this.createAuthorizedHeaders();

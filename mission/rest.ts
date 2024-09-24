@@ -573,7 +573,7 @@ export default class Gs2MissionRestClient extends AbstractGs2RestClient {
     }
 
     public batchReceiveByStampTask(request: Request.BatchReceiveByStampTaskRequest): Promise<Result.BatchReceiveByStampTaskResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/receive')
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/receive/batch')
             .replace('{service}', 'mission')
             .replace('{region}', this.session.region);
     
