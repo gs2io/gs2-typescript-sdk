@@ -22,6 +22,7 @@ var Script = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.script = null;
+        this.disableStringNumberToNumber = null;
         this.createdAt = null;
         this.updatedAt = null;
         this.revision = null;
@@ -136,6 +137,17 @@ var Script = /** @class */ (function () {
         this.script = script;
         return this;
     };
+    Script.prototype.getDisableStringNumberToNumber = function () {
+        return this.disableStringNumberToNumber;
+    };
+    Script.prototype.setDisableStringNumberToNumber = function (disableStringNumberToNumber) {
+        this.disableStringNumberToNumber = disableStringNumberToNumber;
+        return this;
+    };
+    Script.prototype.withDisableStringNumberToNumber = function (disableStringNumberToNumber) {
+        this.disableStringNumberToNumber = disableStringNumberToNumber;
+        return this;
+    };
     Script.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -178,6 +190,7 @@ var Script = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withScript(data["script"])
+            .withDisableStringNumberToNumber(data["disableStringNumberToNumber"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -188,6 +201,7 @@ var Script = /** @class */ (function () {
             "name": this.getName(),
             "description": this.getDescription(),
             "script": this.getScript(),
+            "disableStringNumberToNumber": this.getDisableStringNumberToNumber(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

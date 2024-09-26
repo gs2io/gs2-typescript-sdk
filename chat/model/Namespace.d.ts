@@ -7,6 +7,7 @@ export default class Namespace implements IModel {
     private name;
     private description;
     private allowCreateRoom;
+    private messageLifeTimeDays;
     private postMessageScript;
     private createRoomScript;
     private deleteRoomScript;
@@ -34,6 +35,9 @@ export default class Namespace implements IModel {
     getAllowCreateRoom(): boolean | null;
     setAllowCreateRoom(allowCreateRoom: boolean | null): this;
     withAllowCreateRoom(allowCreateRoom: boolean | null): this;
+    getMessageLifeTimeDays(): number | null;
+    setMessageLifeTimeDays(messageLifeTimeDays: number | null): this;
+    withMessageLifeTimeDays(messageLifeTimeDays: number | null): this;
     getPostMessageScript(): ScriptSetting | null;
     setPostMessageScript(postMessageScript: ScriptSetting | null): this;
     withPostMessageScript(postMessageScript: ScriptSetting | null): this;

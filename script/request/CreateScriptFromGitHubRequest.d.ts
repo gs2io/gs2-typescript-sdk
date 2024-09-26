@@ -7,6 +7,7 @@ export default class CreateScriptFromGitHubRequest implements IRequest {
     private name;
     private description;
     private checkoutSetting;
+    private disableStringNumberToNumber;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -25,6 +26,9 @@ export default class CreateScriptFromGitHubRequest implements IRequest {
     getCheckoutSetting(): Gs2Script.GitHubCheckoutSetting | null;
     setCheckoutSetting(checkoutSetting: Gs2Script.GitHubCheckoutSetting | null): this;
     withCheckoutSetting(checkoutSetting: Gs2Script.GitHubCheckoutSetting | null): this;
+    getDisableStringNumberToNumber(): boolean | null;
+    setDisableStringNumberToNumber(disableStringNumberToNumber: boolean | null): this;
+    withDisableStringNumberToNumber(disableStringNumberToNumber: boolean | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CreateScriptFromGitHubRequest;

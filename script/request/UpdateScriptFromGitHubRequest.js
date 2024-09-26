@@ -25,6 +25,7 @@ var UpdateScriptFromGitHubRequest = /** @class */ (function () {
         this.scriptName = null;
         this.description = null;
         this.checkoutSetting = null;
+        this.disableStringNumberToNumber = null;
     }
     UpdateScriptFromGitHubRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -92,12 +93,24 @@ var UpdateScriptFromGitHubRequest = /** @class */ (function () {
         this.checkoutSetting = checkoutSetting;
         return this;
     };
+    UpdateScriptFromGitHubRequest.prototype.getDisableStringNumberToNumber = function () {
+        return this.disableStringNumberToNumber;
+    };
+    UpdateScriptFromGitHubRequest.prototype.setDisableStringNumberToNumber = function (disableStringNumberToNumber) {
+        this.disableStringNumberToNumber = disableStringNumberToNumber;
+        return this;
+    };
+    UpdateScriptFromGitHubRequest.prototype.withDisableStringNumberToNumber = function (disableStringNumberToNumber) {
+        this.disableStringNumberToNumber = disableStringNumberToNumber;
+        return this;
+    };
     UpdateScriptFromGitHubRequest.fromDict = function (data) {
         return new UpdateScriptFromGitHubRequest()
             .withNamespaceName(data["namespaceName"])
             .withScriptName(data["scriptName"])
             .withDescription(data["description"])
-            .withCheckoutSetting(Gs2Script.GitHubCheckoutSetting.fromDict(data["checkoutSetting"]));
+            .withCheckoutSetting(Gs2Script.GitHubCheckoutSetting.fromDict(data["checkoutSetting"]))
+            .withDisableStringNumberToNumber(data["disableStringNumberToNumber"]);
     };
     UpdateScriptFromGitHubRequest.prototype.toDict = function () {
         var _a;
@@ -106,6 +119,7 @@ var UpdateScriptFromGitHubRequest = /** @class */ (function () {
             "scriptName": this.getScriptName(),
             "description": this.getDescription(),
             "checkoutSetting": (_a = this.getCheckoutSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "disableStringNumberToNumber": this.getDisableStringNumberToNumber(),
         };
     };
     return UpdateScriptFromGitHubRequest;

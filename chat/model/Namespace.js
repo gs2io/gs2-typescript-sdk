@@ -26,6 +26,7 @@ var Namespace = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.allowCreateRoom = null;
+        this.messageLifeTimeDays = null;
         this.postMessageScript = null;
         this.createRoomScript = null;
         this.deleteRoomScript = null;
@@ -127,6 +128,17 @@ var Namespace = /** @class */ (function () {
     };
     Namespace.prototype.withAllowCreateRoom = function (allowCreateRoom) {
         this.allowCreateRoom = allowCreateRoom;
+        return this;
+    };
+    Namespace.prototype.getMessageLifeTimeDays = function () {
+        return this.messageLifeTimeDays;
+    };
+    Namespace.prototype.setMessageLifeTimeDays = function (messageLifeTimeDays) {
+        this.messageLifeTimeDays = messageLifeTimeDays;
+        return this;
+    };
+    Namespace.prototype.withMessageLifeTimeDays = function (messageLifeTimeDays) {
+        this.messageLifeTimeDays = messageLifeTimeDays;
         return this;
     };
     Namespace.prototype.getPostMessageScript = function () {
@@ -248,6 +260,7 @@ var Namespace = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withAllowCreateRoom(data["allowCreateRoom"])
+            .withMessageLifeTimeDays(data["messageLifeTimeDays"])
             .withPostMessageScript(ScriptSetting_1.default.fromDict(data["postMessageScript"]))
             .withCreateRoomScript(ScriptSetting_1.default.fromDict(data["createRoomScript"]))
             .withDeleteRoomScript(ScriptSetting_1.default.fromDict(data["deleteRoomScript"]))
@@ -266,6 +279,7 @@ var Namespace = /** @class */ (function () {
             "name": this.getName(),
             "description": this.getDescription(),
             "allowCreateRoom": this.getAllowCreateRoom(),
+            "messageLifeTimeDays": this.getMessageLifeTimeDays(),
             "postMessageScript": (_a = this.getPostMessageScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "createRoomScript": (_b = this.getCreateRoomScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "deleteRoomScript": (_c = this.getDeleteRoomScript()) === null || _c === void 0 ? void 0 : _c.toDict(),

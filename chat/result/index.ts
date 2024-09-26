@@ -36,6 +36,8 @@ import DeleteRoomResult from "./DeleteRoomResult"
 import DeleteRoomFromBackendResult from "./DeleteRoomFromBackendResult"
 import DescribeMessagesResult from "./DescribeMessagesResult"
 import DescribeMessagesByUserIdResult from "./DescribeMessagesByUserIdResult"
+import DescribeLatestMessagesResult from "./DescribeLatestMessagesResult"
+import DescribeLatestMessagesByUserIdResult from "./DescribeLatestMessagesByUserIdResult"
 import PostResult from "./PostResult"
 import PostByUserIdResult from "./PostByUserIdResult"
 import GetMessageResult from "./GetMessageResult"
@@ -77,6 +79,8 @@ export {
     DeleteRoomFromBackendResult,
     DescribeMessagesResult,
     DescribeMessagesByUserIdResult,
+    DescribeLatestMessagesResult,
+    DescribeLatestMessagesByUserIdResult,
     PostResult,
     PostByUserIdResult,
     GetMessageResult,

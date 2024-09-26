@@ -25,6 +25,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private name: string|null = null;
     private description: string|null = null;
     private allowCreateRoom: boolean|null = null;
+    private messageLifeTimeDays: number|null = null;
     private postMessageScript: Gs2Chat.ScriptSetting|null = null;
     private createRoomScript: Gs2Chat.ScriptSetting|null = null;
     private deleteRoomScript: Gs2Chat.ScriptSetting|null = null;
@@ -91,6 +92,17 @@ export default class CreateNamespaceRequest implements IRequest {
     }
     public withAllowCreateRoom(allowCreateRoom: boolean|null): this {
         this.allowCreateRoom = allowCreateRoom;
+        return this;
+    }
+    public getMessageLifeTimeDays(): number|null {
+        return this.messageLifeTimeDays;
+    }
+    public setMessageLifeTimeDays(messageLifeTimeDays: number|null) {
+        this.messageLifeTimeDays = messageLifeTimeDays;
+        return this;
+    }
+    public withMessageLifeTimeDays(messageLifeTimeDays: number|null): this {
+        this.messageLifeTimeDays = messageLifeTimeDays;
         return this;
     }
     public getPostMessageScript(): Gs2Chat.ScriptSetting|null {
@@ -176,6 +188,7 @@ export default class CreateNamespaceRequest implements IRequest {
             .withName(data["name"])
             .withDescription(data["description"])
             .withAllowCreateRoom(data["allowCreateRoom"])
+            .withMessageLifeTimeDays(data["messageLifeTimeDays"])
             .withPostMessageScript(Gs2Chat.ScriptSetting.fromDict(data["postMessageScript"]))
             .withCreateRoomScript(Gs2Chat.ScriptSetting.fromDict(data["createRoomScript"]))
             .withDeleteRoomScript(Gs2Chat.ScriptSetting.fromDict(data["deleteRoomScript"]))
@@ -190,6 +203,7 @@ export default class CreateNamespaceRequest implements IRequest {
             "name": this.getName(),
             "description": this.getDescription(),
             "allowCreateRoom": this.getAllowCreateRoom(),
+            "messageLifeTimeDays": this.getMessageLifeTimeDays(),
             "postMessageScript": this.getPostMessageScript()?.toDict(),
             "createRoomScript": this.getCreateRoomScript()?.toDict(),
             "deleteRoomScript": this.getDeleteRoomScript()?.toDict(),

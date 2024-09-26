@@ -27,6 +27,8 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
     deleteRoomFromBackend(request: Request.DeleteRoomFromBackendRequest): Promise<Result.DeleteRoomFromBackendResult>;
     describeMessages(request: Request.DescribeMessagesRequest): Promise<Result.DescribeMessagesResult>;
     describeMessagesByUserId(request: Request.DescribeMessagesByUserIdRequest): Promise<Result.DescribeMessagesByUserIdResult>;
+    describeLatestMessages(request: Request.DescribeLatestMessagesRequest): Promise<Result.DescribeLatestMessagesResult>;
+    describeLatestMessagesByUserId(request: Request.DescribeLatestMessagesByUserIdRequest): Promise<Result.DescribeLatestMessagesByUserIdResult>;
     post(request: Request.PostRequest): Promise<Result.PostResult>;
     postByUserId(request: Request.PostByUserIdRequest): Promise<Result.PostByUserIdResult>;
     getMessage(request: Request.GetMessageRequest): Promise<Result.GetMessageResult>;

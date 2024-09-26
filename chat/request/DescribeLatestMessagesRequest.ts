@@ -16,17 +16,17 @@ permissions and limitations under the License.
 
 import IRequest from '../../core/interface/IRequest';
 
-import * as Gs2Script from '../model'
+import * as Gs2Chat from '../model'
 
-export default class CreateScriptRequest implements IRequest {
+export default class DescribeLatestMessagesRequest implements IRequest {
 
     private requestId: string|null = null;
     private contextStack: string|null = null;
     private namespaceName: string|null = null;
-    private name: string|null = null;
-    private description: string|null = null;
-    private script: string|null = null;
-    private disableStringNumberToNumber: boolean|null = null;
+    private roomName: string|null = null;
+    private password: string|null = null;
+    private accessToken: string|null = null;
+    private limit: number|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -66,67 +66,67 @@ export default class CreateScriptRequest implements IRequest {
         this.namespaceName = namespaceName;
         return this;
     }
-    public getName(): string|null {
-        return this.name;
+    public getRoomName(): string|null {
+        return this.roomName;
     }
-    public setName(name: string|null) {
-        this.name = name;
+    public setRoomName(roomName: string|null) {
+        this.roomName = roomName;
         return this;
     }
-    public withName(name: string|null): this {
-        this.name = name;
+    public withRoomName(roomName: string|null): this {
+        this.roomName = roomName;
         return this;
     }
-    public getDescription(): string|null {
-        return this.description;
+    public getPassword(): string|null {
+        return this.password;
     }
-    public setDescription(description: string|null) {
-        this.description = description;
+    public setPassword(password: string|null) {
+        this.password = password;
         return this;
     }
-    public withDescription(description: string|null): this {
-        this.description = description;
+    public withPassword(password: string|null): this {
+        this.password = password;
         return this;
     }
-    public getScript(): string|null {
-        return this.script;
+    public getAccessToken(): string|null {
+        return this.accessToken;
     }
-    public setScript(script: string|null) {
-        this.script = script;
+    public setAccessToken(accessToken: string|null) {
+        this.accessToken = accessToken;
         return this;
     }
-    public withScript(script: string|null): this {
-        this.script = script;
+    public withAccessToken(accessToken: string|null): this {
+        this.accessToken = accessToken;
         return this;
     }
-    public getDisableStringNumberToNumber(): boolean|null {
-        return this.disableStringNumberToNumber;
+    public getLimit(): number|null {
+        return this.limit;
     }
-    public setDisableStringNumberToNumber(disableStringNumberToNumber: boolean|null) {
-        this.disableStringNumberToNumber = disableStringNumberToNumber;
+    public setLimit(limit: number|null) {
+        this.limit = limit;
         return this;
     }
-    public withDisableStringNumberToNumber(disableStringNumberToNumber: boolean|null): this {
-        this.disableStringNumberToNumber = disableStringNumberToNumber;
+    public withLimit(limit: number|null): this {
+        this.limit = limit;
         return this;
     }
 
-    public static fromDict(data: {[key: string]: any}): CreateScriptRequest {
-        return new CreateScriptRequest()
+    public static fromDict(data: {[key: string]: any}): DescribeLatestMessagesRequest {
+        return new DescribeLatestMessagesRequest()
             .withNamespaceName(data["namespaceName"])
-            .withName(data["name"])
-            .withDescription(data["description"])
-            .withScript(data["script"])
-            .withDisableStringNumberToNumber(data["disableStringNumberToNumber"]);
+            .withRoomName(data["roomName"])
+            .withPassword(data["password"])
+            .withAccessToken(data["accessToken"])
+            .withLimit(data["limit"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "namespaceName": this.getNamespaceName(),
-            "name": this.getName(),
-            "description": this.getDescription(),
-            "script": this.getScript(),
-            "disableStringNumberToNumber": this.getDisableStringNumberToNumber(),
+            "roomName": this.getRoomName(),
+            "password": this.getPassword(),
+            "accessToken": this.getAccessToken(),
+            "limit": this.getLimit(),
         };
     }
 }

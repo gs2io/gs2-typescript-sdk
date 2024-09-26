@@ -4,6 +4,7 @@ export default class Script implements IModel {
     private name;
     private description;
     private script;
+    private disableStringNumberToNumber;
     private createdAt;
     private updatedAt;
     private revision;
@@ -25,6 +26,9 @@ export default class Script implements IModel {
     getScript(): string | null;
     setScript(script: string | null): this;
     withScript(script: string | null): this;
+    getDisableStringNumberToNumber(): boolean | null;
+    setDisableStringNumberToNumber(disableStringNumberToNumber: boolean | null): this;
+    withDisableStringNumberToNumber(disableStringNumberToNumber: boolean | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

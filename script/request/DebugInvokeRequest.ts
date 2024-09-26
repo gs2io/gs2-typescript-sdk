@@ -25,6 +25,7 @@ export default class DebugInvokeRequest implements IRequest {
     private script: string|null = null;
     private args: string|null = null;
     private randomStatus: Gs2Script.RandomStatus|null = null;
+    private disableStringNumberToNumber: boolean|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -86,12 +87,24 @@ export default class DebugInvokeRequest implements IRequest {
         this.randomStatus = randomStatus;
         return this;
     }
+    public getDisableStringNumberToNumber(): boolean|null {
+        return this.disableStringNumberToNumber;
+    }
+    public setDisableStringNumberToNumber(disableStringNumberToNumber: boolean|null) {
+        this.disableStringNumberToNumber = disableStringNumberToNumber;
+        return this;
+    }
+    public withDisableStringNumberToNumber(disableStringNumberToNumber: boolean|null): this {
+        this.disableStringNumberToNumber = disableStringNumberToNumber;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): DebugInvokeRequest {
         return new DebugInvokeRequest()
             .withScript(data["script"])
             .withArgs(data["args"])
-            .withRandomStatus(Gs2Script.RandomStatus.fromDict(data["randomStatus"]));
+            .withRandomStatus(Gs2Script.RandomStatus.fromDict(data["randomStatus"]))
+            .withDisableStringNumberToNumber(data["disableStringNumberToNumber"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -99,6 +112,7 @@ export default class DebugInvokeRequest implements IRequest {
             "script": this.getScript(),
             "args": this.getArgs(),
             "randomStatus": this.getRandomStatus()?.toDict(),
+            "disableStringNumberToNumber": this.getDisableStringNumberToNumber(),
         };
     }
 }

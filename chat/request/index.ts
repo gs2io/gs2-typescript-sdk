@@ -36,6 +36,8 @@ import DeleteRoomRequest from "./DeleteRoomRequest"
 import DeleteRoomFromBackendRequest from "./DeleteRoomFromBackendRequest"
 import DescribeMessagesRequest from "./DescribeMessagesRequest"
 import DescribeMessagesByUserIdRequest from "./DescribeMessagesByUserIdRequest"
+import DescribeLatestMessagesRequest from "./DescribeLatestMessagesRequest"
+import DescribeLatestMessagesByUserIdRequest from "./DescribeLatestMessagesByUserIdRequest"
 import PostRequest from "./PostRequest"
 import PostByUserIdRequest from "./PostByUserIdRequest"
 import GetMessageRequest from "./GetMessageRequest"
@@ -77,6 +79,8 @@ export {
     DeleteRoomFromBackendRequest,
     DescribeMessagesRequest,
     DescribeMessagesByUserIdRequest,
+    DescribeLatestMessagesRequest,
+    DescribeLatestMessagesByUserIdRequest,
     PostRequest,
     PostByUserIdRequest,
     GetMessageRequest,

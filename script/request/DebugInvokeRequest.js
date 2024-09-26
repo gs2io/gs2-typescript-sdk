@@ -24,6 +24,7 @@ var DebugInvokeRequest = /** @class */ (function () {
         this.script = null;
         this.args = null;
         this.randomStatus = null;
+        this.disableStringNumberToNumber = null;
     }
     DebugInvokeRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -80,11 +81,23 @@ var DebugInvokeRequest = /** @class */ (function () {
         this.randomStatus = randomStatus;
         return this;
     };
+    DebugInvokeRequest.prototype.getDisableStringNumberToNumber = function () {
+        return this.disableStringNumberToNumber;
+    };
+    DebugInvokeRequest.prototype.setDisableStringNumberToNumber = function (disableStringNumberToNumber) {
+        this.disableStringNumberToNumber = disableStringNumberToNumber;
+        return this;
+    };
+    DebugInvokeRequest.prototype.withDisableStringNumberToNumber = function (disableStringNumberToNumber) {
+        this.disableStringNumberToNumber = disableStringNumberToNumber;
+        return this;
+    };
     DebugInvokeRequest.fromDict = function (data) {
         return new DebugInvokeRequest()
             .withScript(data["script"])
             .withArgs(data["args"])
-            .withRandomStatus(Gs2Script.RandomStatus.fromDict(data["randomStatus"]));
+            .withRandomStatus(Gs2Script.RandomStatus.fromDict(data["randomStatus"]))
+            .withDisableStringNumberToNumber(data["disableStringNumberToNumber"]);
     };
     DebugInvokeRequest.prototype.toDict = function () {
         var _a;
@@ -92,6 +105,7 @@ var DebugInvokeRequest = /** @class */ (function () {
             "script": this.getScript(),
             "args": this.getArgs(),
             "randomStatus": (_a = this.getRandomStatus()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "disableStringNumberToNumber": this.getDisableStringNumberToNumber(),
         };
     };
     return DebugInvokeRequest;

@@ -23,6 +23,7 @@ var CreateScriptRequest = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.script = null;
+        this.disableStringNumberToNumber = null;
     }
     CreateScriptRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -90,12 +91,24 @@ var CreateScriptRequest = /** @class */ (function () {
         this.script = script;
         return this;
     };
+    CreateScriptRequest.prototype.getDisableStringNumberToNumber = function () {
+        return this.disableStringNumberToNumber;
+    };
+    CreateScriptRequest.prototype.setDisableStringNumberToNumber = function (disableStringNumberToNumber) {
+        this.disableStringNumberToNumber = disableStringNumberToNumber;
+        return this;
+    };
+    CreateScriptRequest.prototype.withDisableStringNumberToNumber = function (disableStringNumberToNumber) {
+        this.disableStringNumberToNumber = disableStringNumberToNumber;
+        return this;
+    };
     CreateScriptRequest.fromDict = function (data) {
         return new CreateScriptRequest()
             .withNamespaceName(data["namespaceName"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withScript(data["script"]);
+            .withScript(data["script"])
+            .withDisableStringNumberToNumber(data["disableStringNumberToNumber"]);
     };
     CreateScriptRequest.prototype.toDict = function () {
         return {
@@ -103,6 +116,7 @@ var CreateScriptRequest = /** @class */ (function () {
             "name": this.getName(),
             "description": this.getDescription(),
             "script": this.getScript(),
+            "disableStringNumberToNumber": this.getDisableStringNumberToNumber(),
         };
     };
     return CreateScriptRequest;

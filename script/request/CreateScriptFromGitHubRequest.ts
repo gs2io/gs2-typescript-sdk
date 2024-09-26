@@ -26,6 +26,7 @@ export default class CreateScriptFromGitHubRequest implements IRequest {
     private name: string|null = null;
     private description: string|null = null;
     private checkoutSetting: Gs2Script.GitHubCheckoutSetting|null = null;
+    private disableStringNumberToNumber: boolean|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -98,13 +99,25 @@ export default class CreateScriptFromGitHubRequest implements IRequest {
         this.checkoutSetting = checkoutSetting;
         return this;
     }
+    public getDisableStringNumberToNumber(): boolean|null {
+        return this.disableStringNumberToNumber;
+    }
+    public setDisableStringNumberToNumber(disableStringNumberToNumber: boolean|null) {
+        this.disableStringNumberToNumber = disableStringNumberToNumber;
+        return this;
+    }
+    public withDisableStringNumberToNumber(disableStringNumberToNumber: boolean|null): this {
+        this.disableStringNumberToNumber = disableStringNumberToNumber;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): CreateScriptFromGitHubRequest {
         return new CreateScriptFromGitHubRequest()
             .withNamespaceName(data["namespaceName"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withCheckoutSetting(Gs2Script.GitHubCheckoutSetting.fromDict(data["checkoutSetting"]));
+            .withCheckoutSetting(Gs2Script.GitHubCheckoutSetting.fromDict(data["checkoutSetting"]))
+            .withDisableStringNumberToNumber(data["disableStringNumberToNumber"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -113,6 +126,7 @@ export default class CreateScriptFromGitHubRequest implements IRequest {
             "name": this.getName(),
             "description": this.getDescription(),
             "checkoutSetting": this.getCheckoutSetting()?.toDict(),
+            "disableStringNumberToNumber": this.getDisableStringNumberToNumber(),
         };
     }
 }

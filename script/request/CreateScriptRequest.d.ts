@@ -6,6 +6,7 @@ export default class CreateScriptRequest implements IRequest {
     private name;
     private description;
     private script;
+    private disableStringNumberToNumber;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -24,6 +25,9 @@ export default class CreateScriptRequest implements IRequest {
     getScript(): string | null;
     setScript(script: string | null): this;
     withScript(script: string | null): this;
+    getDisableStringNumberToNumber(): boolean | null;
+    setDisableStringNumberToNumber(disableStringNumberToNumber: boolean | null): this;
+    withDisableStringNumberToNumber(disableStringNumberToNumber: boolean | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CreateScriptRequest;

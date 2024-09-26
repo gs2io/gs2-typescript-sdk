@@ -22,6 +22,7 @@ export default class Script implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private script: string|null = null;
+    private disableStringNumberToNumber: boolean|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -150,6 +151,17 @@ export default class Script implements IModel {
         this.script = script;
         return this;
     }
+    public getDisableStringNumberToNumber(): boolean|null {
+        return this.disableStringNumberToNumber;
+    }
+    public setDisableStringNumberToNumber(disableStringNumberToNumber: boolean|null) {
+        this.disableStringNumberToNumber = disableStringNumberToNumber;
+        return this;
+    }
+    public withDisableStringNumberToNumber(disableStringNumberToNumber: boolean|null): this {
+        this.disableStringNumberToNumber = disableStringNumberToNumber;
+        return this;
+    }
     public getCreatedAt(): number|null {
         return this.createdAt;
     }
@@ -193,6 +205,7 @@ export default class Script implements IModel {
             .withName(data["name"])
             .withDescription(data["description"])
             .withScript(data["script"])
+            .withDisableStringNumberToNumber(data["disableStringNumberToNumber"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -204,6 +217,7 @@ export default class Script implements IModel {
             "name": this.getName(),
             "description": this.getDescription(),
             "script": this.getScript(),
+            "disableStringNumberToNumber": this.getDisableStringNumberToNumber(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

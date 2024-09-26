@@ -241,6 +241,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
             'script': request.getScript() ?? null,
+            'disableStringNumberToNumber': request.getDisableStringNumberToNumber() ?? null,
         };
         return axios.post(
             url,
@@ -274,6 +275,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
             'checkoutSetting': request.getCheckoutSetting()?.toDict() ?? null,
+            'disableStringNumberToNumber': request.getDisableStringNumberToNumber() ?? null,
         };
         return axios.post(
             url,
@@ -334,6 +336,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
             'script': request.getScript() ?? null,
+            'disableStringNumberToNumber': request.getDisableStringNumberToNumber() ?? null,
         };
         return axios.put(
             url,
@@ -367,6 +370,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
             'checkoutSetting': request.getCheckoutSetting()?.toDict() ?? null,
+            'disableStringNumberToNumber': request.getDisableStringNumberToNumber() ?? null,
         };
         return axios.put(
             url,
@@ -462,6 +466,7 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
             'script': request.getScript() ?? null,
             'args': request.getArgs() ?? null,
             'randomStatus': request.getRandomStatus()?.toDict() ?? null,
+            'disableStringNumberToNumber': request.getDisableStringNumberToNumber() ?? null,
         };
         return axios.post(
             url,

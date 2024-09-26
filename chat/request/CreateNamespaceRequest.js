@@ -24,6 +24,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.allowCreateRoom = null;
+        this.messageLifeTimeDays = null;
         this.postMessageScript = null;
         this.createRoomScript = null;
         this.deleteRoomScript = null;
@@ -85,6 +86,17 @@ var CreateNamespaceRequest = /** @class */ (function () {
     };
     CreateNamespaceRequest.prototype.withAllowCreateRoom = function (allowCreateRoom) {
         this.allowCreateRoom = allowCreateRoom;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.getMessageLifeTimeDays = function () {
+        return this.messageLifeTimeDays;
+    };
+    CreateNamespaceRequest.prototype.setMessageLifeTimeDays = function (messageLifeTimeDays) {
+        this.messageLifeTimeDays = messageLifeTimeDays;
+        return this;
+    };
+    CreateNamespaceRequest.prototype.withMessageLifeTimeDays = function (messageLifeTimeDays) {
+        this.messageLifeTimeDays = messageLifeTimeDays;
         return this;
     };
     CreateNamespaceRequest.prototype.getPostMessageScript = function () {
@@ -169,6 +181,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withAllowCreateRoom(data["allowCreateRoom"])
+            .withMessageLifeTimeDays(data["messageLifeTimeDays"])
             .withPostMessageScript(Gs2Chat.ScriptSetting.fromDict(data["postMessageScript"]))
             .withCreateRoomScript(Gs2Chat.ScriptSetting.fromDict(data["createRoomScript"]))
             .withDeleteRoomScript(Gs2Chat.ScriptSetting.fromDict(data["deleteRoomScript"]))
@@ -183,6 +196,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
             "name": this.getName(),
             "description": this.getDescription(),
             "allowCreateRoom": this.getAllowCreateRoom(),
+            "messageLifeTimeDays": this.getMessageLifeTimeDays(),
             "postMessageScript": (_a = this.getPostMessageScript()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "createRoomScript": (_b = this.getCreateRoomScript()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "deleteRoomScript": (_c = this.getDeleteRoomScript()) === null || _c === void 0 ? void 0 : _c.toDict(),

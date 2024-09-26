@@ -25,6 +25,7 @@ export default class Namespace implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private allowCreateRoom: boolean|null = null;
+    private messageLifeTimeDays: number|null = null;
     private postMessageScript: ScriptSetting|null = null;
     private createRoomScript: ScriptSetting|null = null;
     private deleteRoomScript: ScriptSetting|null = null;
@@ -137,6 +138,17 @@ export default class Namespace implements IModel {
     }
     public withAllowCreateRoom(allowCreateRoom: boolean|null): this {
         this.allowCreateRoom = allowCreateRoom;
+        return this;
+    }
+    public getMessageLifeTimeDays(): number|null {
+        return this.messageLifeTimeDays;
+    }
+    public setMessageLifeTimeDays(messageLifeTimeDays: number|null) {
+        this.messageLifeTimeDays = messageLifeTimeDays;
+        return this;
+    }
+    public withMessageLifeTimeDays(messageLifeTimeDays: number|null): this {
+        this.messageLifeTimeDays = messageLifeTimeDays;
         return this;
     }
     public getPostMessageScript(): ScriptSetting|null {
@@ -259,6 +271,7 @@ export default class Namespace implements IModel {
             .withName(data["name"])
             .withDescription(data["description"])
             .withAllowCreateRoom(data["allowCreateRoom"])
+            .withMessageLifeTimeDays(data["messageLifeTimeDays"])
             .withPostMessageScript(ScriptSetting.fromDict(data["postMessageScript"]))
             .withCreateRoomScript(ScriptSetting.fromDict(data["createRoomScript"]))
             .withDeleteRoomScript(ScriptSetting.fromDict(data["deleteRoomScript"]))
@@ -277,6 +290,7 @@ export default class Namespace implements IModel {
             "name": this.getName(),
             "description": this.getDescription(),
             "allowCreateRoom": this.getAllowCreateRoom(),
+            "messageLifeTimeDays": this.getMessageLifeTimeDays(),
             "postMessageScript": this.getPostMessageScript()?.toDict(),
             "createRoomScript": this.getCreateRoomScript()?.toDict(),
             "deleteRoomScript": this.getDeleteRoomScript()?.toDict(),

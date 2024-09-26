@@ -26,6 +26,7 @@ export default class UpdateScriptRequest implements IRequest {
     private scriptName: string|null = null;
     private description: string|null = null;
     private script: string|null = null;
+    private disableStringNumberToNumber: boolean|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -98,13 +99,25 @@ export default class UpdateScriptRequest implements IRequest {
         this.script = script;
         return this;
     }
+    public getDisableStringNumberToNumber(): boolean|null {
+        return this.disableStringNumberToNumber;
+    }
+    public setDisableStringNumberToNumber(disableStringNumberToNumber: boolean|null) {
+        this.disableStringNumberToNumber = disableStringNumberToNumber;
+        return this;
+    }
+    public withDisableStringNumberToNumber(disableStringNumberToNumber: boolean|null): this {
+        this.disableStringNumberToNumber = disableStringNumberToNumber;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): UpdateScriptRequest {
         return new UpdateScriptRequest()
             .withNamespaceName(data["namespaceName"])
             .withScriptName(data["scriptName"])
             .withDescription(data["description"])
-            .withScript(data["script"]);
+            .withScript(data["script"])
+            .withDisableStringNumberToNumber(data["disableStringNumberToNumber"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -113,6 +126,7 @@ export default class UpdateScriptRequest implements IRequest {
             "scriptName": this.getScriptName(),
             "description": this.getDescription(),
             "script": this.getScript(),
+            "disableStringNumberToNumber": this.getDisableStringNumberToNumber(),
         };
     }
 }

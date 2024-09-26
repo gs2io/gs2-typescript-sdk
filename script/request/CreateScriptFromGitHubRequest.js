@@ -25,6 +25,7 @@ var CreateScriptFromGitHubRequest = /** @class */ (function () {
         this.name = null;
         this.description = null;
         this.checkoutSetting = null;
+        this.disableStringNumberToNumber = null;
     }
     CreateScriptFromGitHubRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -92,12 +93,24 @@ var CreateScriptFromGitHubRequest = /** @class */ (function () {
         this.checkoutSetting = checkoutSetting;
         return this;
     };
+    CreateScriptFromGitHubRequest.prototype.getDisableStringNumberToNumber = function () {
+        return this.disableStringNumberToNumber;
+    };
+    CreateScriptFromGitHubRequest.prototype.setDisableStringNumberToNumber = function (disableStringNumberToNumber) {
+        this.disableStringNumberToNumber = disableStringNumberToNumber;
+        return this;
+    };
+    CreateScriptFromGitHubRequest.prototype.withDisableStringNumberToNumber = function (disableStringNumberToNumber) {
+        this.disableStringNumberToNumber = disableStringNumberToNumber;
+        return this;
+    };
     CreateScriptFromGitHubRequest.fromDict = function (data) {
         return new CreateScriptFromGitHubRequest()
             .withNamespaceName(data["namespaceName"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withCheckoutSetting(Gs2Script.GitHubCheckoutSetting.fromDict(data["checkoutSetting"]));
+            .withCheckoutSetting(Gs2Script.GitHubCheckoutSetting.fromDict(data["checkoutSetting"]))
+            .withDisableStringNumberToNumber(data["disableStringNumberToNumber"]);
     };
     CreateScriptFromGitHubRequest.prototype.toDict = function () {
         var _a;
@@ -106,6 +119,7 @@ var CreateScriptFromGitHubRequest = /** @class */ (function () {
             "name": this.getName(),
             "description": this.getDescription(),
             "checkoutSetting": (_a = this.getCheckoutSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "disableStringNumberToNumber": this.getDisableStringNumberToNumber(),
         };
     };
     return CreateScriptFromGitHubRequest;

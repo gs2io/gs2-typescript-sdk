@@ -6,6 +6,7 @@ export default class DebugInvokeRequest implements IRequest {
     private script;
     private args;
     private randomStatus;
+    private disableStringNumberToNumber;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -21,6 +22,9 @@ export default class DebugInvokeRequest implements IRequest {
     getRandomStatus(): Gs2Script.RandomStatus | null;
     setRandomStatus(randomStatus: Gs2Script.RandomStatus | null): this;
     withRandomStatus(randomStatus: Gs2Script.RandomStatus | null): this;
+    getDisableStringNumberToNumber(): boolean | null;
+    setDisableStringNumberToNumber(disableStringNumberToNumber: boolean | null): this;
+    withDisableStringNumberToNumber(disableStringNumberToNumber: boolean | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): DebugInvokeRequest;

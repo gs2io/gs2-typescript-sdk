@@ -6,6 +6,7 @@ export default class UpdateNamespaceRequest implements IRequest {
     private namespaceName;
     private description;
     private allowCreateRoom;
+    private messageLifeTimeDays;
     private postMessageScript;
     private createRoomScript;
     private deleteRoomScript;
@@ -28,6 +29,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getAllowCreateRoom(): boolean | null;
     setAllowCreateRoom(allowCreateRoom: boolean | null): this;
     withAllowCreateRoom(allowCreateRoom: boolean | null): this;
+    getMessageLifeTimeDays(): number | null;
+    setMessageLifeTimeDays(messageLifeTimeDays: number | null): this;
+    withMessageLifeTimeDays(messageLifeTimeDays: number | null): this;
     getPostMessageScript(): Gs2Chat.ScriptSetting | null;
     setPostMessageScript(postMessageScript: Gs2Chat.ScriptSetting | null): this;
     withPostMessageScript(postMessageScript: Gs2Chat.ScriptSetting | null): this;

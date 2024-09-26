@@ -197,7 +197,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ScriptRestClient.prototype.createScript = function (request) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/script')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
@@ -211,6 +211,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
             'name': (_d = request.getName()) !== null && _d !== void 0 ? _d : null,
             'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
             'script': (_f = request.getScript()) !== null && _f !== void 0 ? _f : null,
+            'disableStringNumberToNumber': (_g = request.getDisableStringNumberToNumber()) !== null && _g !== void 0 ? _g : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -226,7 +227,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ScriptRestClient.prototype.createScriptFromGitHub = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/script/from_git_hub')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
@@ -240,6 +241,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
             'name': (_d = request.getName()) !== null && _d !== void 0 ? _d : null,
             'description': (_e = request.getDescription()) !== null && _e !== void 0 ? _e : null,
             'checkoutSetting': (_g = (_f = request.getCheckoutSetting()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
+            'disableStringNumberToNumber': (_h = request.getDisableStringNumberToNumber()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -278,7 +280,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ScriptRestClient.prototype.updateScript = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/script/{scriptName}')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
@@ -292,6 +294,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
             'script': (_g = request.getScript()) !== null && _g !== void 0 ? _g : null,
+            'disableStringNumberToNumber': (_h = request.getDisableStringNumberToNumber()) !== null && _h !== void 0 ? _h : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -307,7 +310,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ScriptRestClient.prototype.updateScriptFromGitHub = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/script/{scriptName}/from_git_hub')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region)
@@ -321,6 +324,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
             'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
             'description': (_f = request.getDescription()) !== null && _f !== void 0 ? _f : null,
             'checkoutSetting': (_h = (_g = request.getCheckoutSetting()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'disableStringNumberToNumber': (_j = request.getDisableStringNumberToNumber()) !== null && _j !== void 0 ? _j : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -391,7 +395,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ScriptRestClient.prototype.debugInvoke = function (request) {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d, _e, _f;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/debug/invoke')
             .replace('{service}', 'script')
             .replace('{region}', this.session.region);
@@ -404,6 +408,7 @@ var Gs2ScriptRestClient = /** @class */ (function (_super) {
             'script': (_b = request.getScript()) !== null && _b !== void 0 ? _b : null,
             'args': (_c = request.getArgs()) !== null && _c !== void 0 ? _c : null,
             'randomStatus': (_e = (_d = request.getRandomStatus()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
+            'disableStringNumberToNumber': (_f = request.getDisableStringNumberToNumber()) !== null && _f !== void 0 ? _f : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

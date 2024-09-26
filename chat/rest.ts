@@ -68,6 +68,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
             'name': request.getName() ?? null,
             'description': request.getDescription() ?? null,
             'allowCreateRoom': request.getAllowCreateRoom() ?? null,
+            'messageLifeTimeDays': request.getMessageLifeTimeDays() ?? null,
             'postMessageScript': request.getPostMessageScript()?.toDict() ?? null,
             'createRoomScript': request.getCreateRoomScript()?.toDict() ?? null,
             'deleteRoomScript': request.getDeleteRoomScript()?.toDict() ?? null,
@@ -159,6 +160,7 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
             'contextStack': request.getContextStack() ?? null,
             'description': request.getDescription() ?? null,
             'allowCreateRoom': request.getAllowCreateRoom() ?? null,
+            'messageLifeTimeDays': request.getMessageLifeTimeDays() ?? null,
             'postMessageScript': request.getPostMessageScript()?.toDict() ?? null,
             'createRoomScript': request.getCreateRoomScript()?.toDict() ?? null,
             'deleteRoomScript': request.getDeleteRoomScript()?.toDict() ?? null,
@@ -777,6 +779,71 @@ export default class Gs2ChatRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.DescribeMessagesByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeLatestMessages(request: Request.DescribeLatestMessagesRequest): Promise<Result.DescribeLatestMessagesResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/latest')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null') === "" ? "null" : String(request.getRoomName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'password': String(request.getPassword() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeLatestMessagesResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public describeLatestMessagesByUserId(request: Request.DescribeLatestMessagesByUserIdRequest): Promise<Result.DescribeLatestMessagesByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/room/{roomName}/message/latest/get')
+            .replace('{service}', 'chat')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{roomName}', String(request.getRoomName() ?? 'null') === "" ? "null" : String(request.getRoomName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'password': String(request.getPassword() ?? null),
+            'userId': String(request.getUserId() ?? null),
+            'limit': String(request.getLimit() ?? null),
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeLatestMessagesByUserIdResult.fromDict(response.data);
         }).catch((error: any) => {
             throw JSON.parse(error.response.data.message);
         });
