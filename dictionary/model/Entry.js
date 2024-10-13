@@ -15,7 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var grnFormat = "grn:gs2:{region}:{ownerId}:dictionary:{namespaceName}:user:{userId}:entry:{entryName}";
+var grnFormat = "grn:gs2:{region}:{ownerId}:dictionary:{namespaceName}:user:{userId}:entry:{entryModelName}";
 var Entry = /** @class */ (function () {
     function Entry() {
         this.entryId = null;
@@ -29,7 +29,7 @@ var Entry = /** @class */ (function () {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{entryName}', '.*'));
+            .replace('{entryModelName}', '.*'));
         if (match) {
             return match[1];
         }
@@ -41,7 +41,7 @@ var Entry = /** @class */ (function () {
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{entryName}', '.*'));
+            .replace('{entryModelName}', '.*'));
         if (match) {
             return match[1];
         }
@@ -53,7 +53,7 @@ var Entry = /** @class */ (function () {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
             .replace('{userId}', '.*')
-            .replace('{entryName}', '.*'));
+            .replace('{entryModelName}', '.*'));
         if (match) {
             return match[1];
         }
@@ -65,19 +65,19 @@ var Entry = /** @class */ (function () {
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '(.*)')
-            .replace('{entryName}', '.*'));
+            .replace('{entryModelName}', '.*'));
         if (match) {
             return match[1];
         }
         return null;
     };
-    Entry.getEntryName = function (grn) {
+    Entry.getEntryModelName = function (grn) {
         var match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
             .replace('{userId}', '.*')
-            .replace('{entryName}', '(.*)'));
+            .replace('{entryModelName}', '(.*)'));
         if (match) {
             return match[1];
         }
@@ -96,18 +96,18 @@ var Entry = /** @class */ (function () {
         if (this.getUserId(grn) == null || this.getUserId(grn) === '') {
             return false;
         }
-        if (this.getEntryName(grn) == null || this.getEntryName(grn) === '') {
+        if (this.getEntryModelName(grn) == null || this.getEntryModelName(grn) === '') {
             return false;
         }
         return true;
     };
-    Entry.createGrn = function (region, ownerId, namespaceName, userId, entryName) {
+    Entry.createGrn = function (region, ownerId, namespaceName, userId, entryModelName) {
         return grnFormat
             .replace('{region}', region !== null && region !== void 0 ? region : '')
             .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
             .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
             .replace('{userId}', userId !== null && userId !== void 0 ? userId : '')
-            .replace('{entryName}', entryName !== null && entryName !== void 0 ? entryName : '');
+            .replace('{entryModelName}', entryModelName !== null && entryModelName !== void 0 ? entryModelName : '');
     };
     Entry.prototype.getEntryId = function () {
         return this.entryId;

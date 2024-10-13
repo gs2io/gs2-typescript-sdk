@@ -30,7 +30,6 @@ var QueryIssueStampSheetLogRequest = /** @class */ (function () {
         this.pageToken = null;
         this.limit = null;
         this.timeOffsetToken = null;
-        this.duplicationAvoider = null;
     }
     QueryIssueStampSheetLogRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -173,17 +172,6 @@ var QueryIssueStampSheetLogRequest = /** @class */ (function () {
     };
     QueryIssueStampSheetLogRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
         this.timeOffsetToken = timeOffsetToken;
-        return this;
-    };
-    QueryIssueStampSheetLogRequest.prototype.getDuplicationAvoider = function () {
-        return this.duplicationAvoider;
-    };
-    QueryIssueStampSheetLogRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
-        return this;
-    };
-    QueryIssueStampSheetLogRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     QueryIssueStampSheetLogRequest.fromDict = function (data) {

@@ -31,12 +31,16 @@ import GetIssueJobRequest from "./GetIssueJobRequest"
 import IssueRequest from "./IssueRequest"
 import DescribeSerialKeysRequest from "./DescribeSerialKeysRequest"
 import DownloadSerialCodesRequest from "./DownloadSerialCodesRequest"
+import IssueOnceRequest from "./IssueOnceRequest"
 import GetSerialKeyRequest from "./GetSerialKeyRequest"
+import VerifyCodeRequest from "./VerifyCodeRequest"
+import VerifyCodeByUserIdRequest from "./VerifyCodeByUserIdRequest"
 import UseRequest from "./UseRequest"
 import UseByUserIdRequest from "./UseByUserIdRequest"
 import RevertUseByUserIdRequest from "./RevertUseByUserIdRequest"
 import UseByStampTaskRequest from "./UseByStampTaskRequest"
 import RevertUseByStampSheetRequest from "./RevertUseByStampSheetRequest"
+import VerifyByStampTaskRequest from "./VerifyByStampTaskRequest"
 import DescribeCampaignModelsRequest from "./DescribeCampaignModelsRequest"
 import GetCampaignModelRequest from "./GetCampaignModelRequest"
 import DescribeCampaignModelMastersRequest from "./DescribeCampaignModelMastersRequest"
@@ -68,12 +72,16 @@ export {
     IssueRequest,
     DescribeSerialKeysRequest,
     DownloadSerialCodesRequest,
+    IssueOnceRequest,
     GetSerialKeyRequest,
+    VerifyCodeRequest,
+    VerifyCodeByUserIdRequest,
     UseRequest,
     UseByUserIdRequest,
     RevertUseByUserIdRequest,
     UseByStampTaskRequest,
     RevertUseByStampSheetRequest,
+    VerifyByStampTaskRequest,
     DescribeCampaignModelsRequest,
     GetCampaignModelRequest,
     DescribeCampaignModelMastersRequest,

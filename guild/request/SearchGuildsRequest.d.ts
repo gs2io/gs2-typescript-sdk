@@ -13,6 +13,7 @@ export default class SearchGuildsRequest implements IRequest {
     private attributes5;
     private joinPolicies;
     private includeFullMembersGuild;
+    private orderBy;
     private pageToken;
     private limit;
     private duplicationAvoider;
@@ -55,6 +56,9 @@ export default class SearchGuildsRequest implements IRequest {
     getIncludeFullMembersGuild(): boolean | null;
     setIncludeFullMembersGuild(includeFullMembersGuild: boolean | null): this;
     withIncludeFullMembersGuild(includeFullMembersGuild: boolean | null): this;
+    getOrderBy(): string | null;
+    setOrderBy(orderBy: string | null): this;
+    withOrderBy(orderBy: string | null): this;
     getPageToken(): string | null;
     setPageToken(pageToken: string | null): this;
     withPageToken(pageToken: string | null): this;

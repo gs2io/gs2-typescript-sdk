@@ -15,7 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:dictionary:{namespaceName}:model:{entryName}";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:dictionary:{namespaceName}:model:{entryModelName}";
 
 export default class EntryModel implements IModel {
     private entryModelId: string|null = null;
@@ -27,7 +27,7 @@ export default class EntryModel implements IModel {
             .replace('{region}', '(.*)')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{entryName}', '.*')
+            .replace('{entryModelName}', '.*')
         );
         if (match) {
             return match[1];
@@ -40,7 +40,7 @@ export default class EntryModel implements IModel {
             .replace('{region}', '.*')
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
-            .replace('{entryName}', '.*')
+            .replace('{entryModelName}', '.*')
         );
         if (match) {
             return match[1];
@@ -53,7 +53,7 @@ export default class EntryModel implements IModel {
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
-            .replace('{entryName}', '.*')
+            .replace('{entryModelName}', '.*')
         );
         if (match) {
             return match[1];
@@ -61,12 +61,12 @@ export default class EntryModel implements IModel {
         return null;
     }
 
-    public static getEntryName(grn: string): string|null {
+    public static getEntryModelName(grn: string): string|null {
         const match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{entryName}', '(.*)')
+            .replace('{entryModelName}', '(.*)')
         );
         if (match) {
             return match[1];
@@ -84,7 +84,7 @@ export default class EntryModel implements IModel {
         if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getEntryName(grn) == null || this.getEntryName(grn) === '') {
+        if (this.getEntryModelName(grn) == null || this.getEntryModelName(grn) === '') {
             return false;
         }
         return true;
@@ -94,13 +94,13 @@ export default class EntryModel implements IModel {
         region: string|null,
         ownerId: string|null,
         namespaceName: string|null,
-        entryName: string|null,
+        entryModelName: string|null,
     ): string|null {
         return grnFormat
             .replace('{region}', region ?? '')
             .replace('{ownerId}', ownerId ?? '')
             .replace('{namespaceName}', namespaceName ?? '')
-            .replace('{entryName}', entryName ?? '');
+            .replace('{entryModelName}', entryModelName ?? '');
     }
     public getEntryModelId(): string|null {
         return this.entryModelId;

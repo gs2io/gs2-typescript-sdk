@@ -491,6 +491,34 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             throw JSON.parse(error.response.data.message);
         });
     };
+    Gs2SerialKeyRestClient.prototype.issueOnce = function (request) {
+        var _a, _b, _c, _d, _e, _f;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}/serialKey')
+            .replace('{service}', 'serial-key')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{campaignModelName}', String((_c = request.getCampaignModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getCampaignModelName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'metadata': (_f = request.getMetadata()) !== null && _f !== void 0 ? _f : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.IssueOnceResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
     Gs2SerialKeyRestClient.prototype.getSerialKey = function (request) {
         var _a, _b, _c, _d, _e;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/serialKey/{code}')
@@ -512,6 +540,75 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             return Result.GetSerialKeyResult.fromDict(response.data);
         }).catch(function (error) {
             throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2SerialKeyRestClient.prototype.verifyCode = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/serialKey/verify')
+            .replace('{service}', 'serial-key')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_c = request.getAccessToken()) !== null && _c !== void 0 ? _c : null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_d = request.getDuplicationAvoider()) !== null && _d !== void 0 ? _d : null;
+        }
+        var body = {
+            'contextStack': (_e = request.getContextStack()) !== null && _e !== void 0 ? _e : null,
+            'code': (_f = request.getCode()) !== null && _f !== void 0 ? _f : null,
+            'verifyType': (_g = request.getVerifyType()) !== null && _g !== void 0 ? _g : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.VerifyCodeResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2SerialKeyRestClient.prototype.verifyCodeByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/serialKey/verify')
+            .replace('{service}', 'serial-key')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_e = request.getDuplicationAvoider()) !== null && _e !== void 0 ? _e : null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_f = request.getTimeOffsetToken()) !== null && _f !== void 0 ? _f : null;
+        }
+        var body = {
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'code': (_h = request.getCode()) !== null && _h !== void 0 ? _h : null,
+            'verifyType': (_j = request.getVerifyType()) !== null && _j !== void 0 ? _j : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.VerifyCodeByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
         });
     };
     Gs2SerialKeyRestClient.prototype.use = function (request) {
@@ -660,6 +757,33 @@ var Gs2SerialKeyRestClient = /** @class */ (function (_super) {
             headers: headers,
         }).then(function (response) {
             return Result.RevertUseByStampSheetResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2SerialKeyRestClient.prototype.verifyByStampTask = function (request) {
+        var _a, _b, _c;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/serialKey/verify')
+            .replace('{service}', 'serial-key')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
+            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.VerifyByStampTaskResult.fromDict(response.data);
         }).catch(function (error) {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

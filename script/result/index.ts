@@ -28,6 +28,7 @@ import UpdateScriptFromGitHubResult from "./UpdateScriptFromGitHubResult"
 import DeleteScriptResult from "./DeleteScriptResult"
 import InvokeScriptResult from "./InvokeScriptResult"
 import DebugInvokeResult from "./DebugInvokeResult"
+import InvokeByStampSheetResult from "./InvokeByStampSheetResult"
 
 export {
     DescribeNamespacesResult,
@@ -45,4 +46,5 @@ export {
     DeleteScriptResult,
     InvokeScriptResult,
     DebugInvokeResult,
+    InvokeByStampSheetResult,
 };

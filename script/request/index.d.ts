@@ -13,4 +13,5 @@ import UpdateScriptFromGitHubRequest from "./UpdateScriptFromGitHubRequest";
 import DeleteScriptRequest from "./DeleteScriptRequest";
 import InvokeScriptRequest from "./InvokeScriptRequest";
 import DebugInvokeRequest from "./DebugInvokeRequest";
-export { DescribeNamespacesRequest, CreateNamespaceRequest, GetNamespaceStatusRequest, GetNamespaceRequest, UpdateNamespaceRequest, DeleteNamespaceRequest, DescribeScriptsRequest, CreateScriptRequest, CreateScriptFromGitHubRequest, GetScriptRequest, UpdateScriptRequest, UpdateScriptFromGitHubRequest, DeleteScriptRequest, InvokeScriptRequest, DebugInvokeRequest, };
+import InvokeByStampSheetRequest from "./InvokeByStampSheetRequest";
+export { DescribeNamespacesRequest, CreateNamespaceRequest, GetNamespaceStatusRequest, GetNamespaceRequest, UpdateNamespaceRequest, DeleteNamespaceRequest, DescribeScriptsRequest, CreateScriptRequest, CreateScriptFromGitHubRequest, GetScriptRequest, UpdateScriptRequest, UpdateScriptFromGitHubRequest, DeleteScriptRequest, InvokeScriptRequest, DebugInvokeRequest, InvokeByStampSheetRequest, };

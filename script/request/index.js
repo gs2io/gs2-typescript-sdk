@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DebugInvokeRequest = exports.InvokeScriptRequest = exports.DeleteScriptRequest = exports.UpdateScriptFromGitHubRequest = exports.UpdateScriptRequest = exports.GetScriptRequest = exports.CreateScriptFromGitHubRequest = exports.CreateScriptRequest = exports.DescribeScriptsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.InvokeByStampSheetRequest = exports.DebugInvokeRequest = exports.InvokeScriptRequest = exports.DeleteScriptRequest = exports.UpdateScriptFromGitHubRequest = exports.UpdateScriptRequest = exports.GetScriptRequest = exports.CreateScriptFromGitHubRequest = exports.CreateScriptRequest = exports.DescribeScriptsRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -47,4 +47,6 @@ var InvokeScriptRequest_1 = tslib_1.__importDefault(require("./InvokeScriptReque
 exports.InvokeScriptRequest = InvokeScriptRequest_1.default;
 var DebugInvokeRequest_1 = tslib_1.__importDefault(require("./DebugInvokeRequest"));
 exports.DebugInvokeRequest = DebugInvokeRequest_1.default;
+var InvokeByStampSheetRequest_1 = tslib_1.__importDefault(require("./InvokeByStampSheetRequest"));
+exports.InvokeByStampSheetRequest = InvokeByStampSheetRequest_1.default;
 //# sourceMappingURL=index.js.map

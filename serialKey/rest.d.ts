@@ -22,12 +22,16 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     issue(request: Request.IssueRequest): Promise<Result.IssueResult>;
     describeSerialKeys(request: Request.DescribeSerialKeysRequest): Promise<Result.DescribeSerialKeysResult>;
     downloadSerialCodes(request: Request.DownloadSerialCodesRequest): Promise<Result.DownloadSerialCodesResult>;
+    issueOnce(request: Request.IssueOnceRequest): Promise<Result.IssueOnceResult>;
     getSerialKey(request: Request.GetSerialKeyRequest): Promise<Result.GetSerialKeyResult>;
+    verifyCode(request: Request.VerifyCodeRequest): Promise<Result.VerifyCodeResult>;
+    verifyCodeByUserId(request: Request.VerifyCodeByUserIdRequest): Promise<Result.VerifyCodeByUserIdResult>;
     use(request: Request.UseRequest): Promise<Result.UseResult>;
     useByUserId(request: Request.UseByUserIdRequest): Promise<Result.UseByUserIdResult>;
     revertUseByUserId(request: Request.RevertUseByUserIdRequest): Promise<Result.RevertUseByUserIdResult>;
     useByStampTask(request: Request.UseByStampTaskRequest): Promise<Result.UseByStampTaskResult>;
     revertUseByStampSheet(request: Request.RevertUseByStampSheetRequest): Promise<Result.RevertUseByStampSheetResult>;
+    verifyByStampTask(request: Request.VerifyByStampTaskRequest): Promise<Result.VerifyByStampTaskResult>;
     describeCampaignModels(request: Request.DescribeCampaignModelsRequest): Promise<Result.DescribeCampaignModelsResult>;
     getCampaignModel(request: Request.GetCampaignModelRequest): Promise<Result.GetCampaignModelResult>;
     describeCampaignModelMasters(request: Request.DescribeCampaignModelMastersRequest): Promise<Result.DescribeCampaignModelMastersResult>;

@@ -8,9 +8,9 @@ export default class Entry implements IModel {
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
     static getUserId(grn: string): string | null;
-    static getEntryName(grn: string): string | null;
+    static getEntryModelName(grn: string): string | null;
     static isValid(grn: string): boolean;
-    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, entryName: string | null): string | null;
+    static createGrn(region: string | null, ownerId: string | null, namespaceName: string | null, userId: string | null, entryModelName: string | null): string | null;
     getEntryId(): string | null;
     setEntryId(entryId: string | null): this;
     withEntryId(entryId: string | null): this;

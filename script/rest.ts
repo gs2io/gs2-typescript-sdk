@@ -425,6 +425,9 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
         if (request.getRequestId()) {
             headers['X-GS2-REQUEST-ID'] = request.getRequestId();
         }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
         if (request.getTimeOffsetToken()) {
             headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
         }
@@ -476,6 +479,37 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.DebugInvokeResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public invokeByStampSheet(request: Request.InvokeByStampSheetRequest): Promise<Result.InvokeByStampSheetResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/script/invoke')
+            .replace('{service}', 'script')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampSheet': request.getStampSheet() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.InvokeByStampSheetResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

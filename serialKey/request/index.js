@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentCampaignMasterFromGitHubRequest = exports.UpdateCurrentCampaignMasterRequest = exports.GetCurrentCampaignMasterRequest = exports.ExportMasterRequest = exports.DeleteCampaignModelMasterRequest = exports.UpdateCampaignModelMasterRequest = exports.GetCampaignModelMasterRequest = exports.CreateCampaignModelMasterRequest = exports.DescribeCampaignModelMastersRequest = exports.GetCampaignModelRequest = exports.DescribeCampaignModelsRequest = exports.RevertUseByStampSheetRequest = exports.UseByStampTaskRequest = exports.RevertUseByUserIdRequest = exports.UseByUserIdRequest = exports.UseRequest = exports.GetSerialKeyRequest = exports.DownloadSerialCodesRequest = exports.DescribeSerialKeysRequest = exports.IssueRequest = exports.GetIssueJobRequest = exports.DescribeIssueJobsRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
+exports.UpdateCurrentCampaignMasterFromGitHubRequest = exports.UpdateCurrentCampaignMasterRequest = exports.GetCurrentCampaignMasterRequest = exports.ExportMasterRequest = exports.DeleteCampaignModelMasterRequest = exports.UpdateCampaignModelMasterRequest = exports.GetCampaignModelMasterRequest = exports.CreateCampaignModelMasterRequest = exports.DescribeCampaignModelMastersRequest = exports.GetCampaignModelRequest = exports.DescribeCampaignModelsRequest = exports.VerifyByStampTaskRequest = exports.RevertUseByStampSheetRequest = exports.UseByStampTaskRequest = exports.RevertUseByUserIdRequest = exports.UseByUserIdRequest = exports.UseRequest = exports.VerifyCodeByUserIdRequest = exports.VerifyCodeRequest = exports.GetSerialKeyRequest = exports.IssueOnceRequest = exports.DownloadSerialCodesRequest = exports.DescribeSerialKeysRequest = exports.IssueRequest = exports.GetIssueJobRequest = exports.DescribeIssueJobsRequest = exports.CheckImportUserDataByUserIdRequest = exports.ImportUserDataByUserIdRequest = exports.PrepareImportUserDataByUserIdRequest = exports.CheckCleanUserDataByUserIdRequest = exports.CleanUserDataByUserIdRequest = exports.CheckDumpUserDataByUserIdRequest = exports.DumpUserDataByUserIdRequest = exports.DeleteNamespaceRequest = exports.UpdateNamespaceRequest = exports.GetNamespaceRequest = exports.GetNamespaceStatusRequest = exports.CreateNamespaceRequest = exports.DescribeNamespacesRequest = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -53,8 +53,14 @@ var DescribeSerialKeysRequest_1 = tslib_1.__importDefault(require("./DescribeSer
 exports.DescribeSerialKeysRequest = DescribeSerialKeysRequest_1.default;
 var DownloadSerialCodesRequest_1 = tslib_1.__importDefault(require("./DownloadSerialCodesRequest"));
 exports.DownloadSerialCodesRequest = DownloadSerialCodesRequest_1.default;
+var IssueOnceRequest_1 = tslib_1.__importDefault(require("./IssueOnceRequest"));
+exports.IssueOnceRequest = IssueOnceRequest_1.default;
 var GetSerialKeyRequest_1 = tslib_1.__importDefault(require("./GetSerialKeyRequest"));
 exports.GetSerialKeyRequest = GetSerialKeyRequest_1.default;
+var VerifyCodeRequest_1 = tslib_1.__importDefault(require("./VerifyCodeRequest"));
+exports.VerifyCodeRequest = VerifyCodeRequest_1.default;
+var VerifyCodeByUserIdRequest_1 = tslib_1.__importDefault(require("./VerifyCodeByUserIdRequest"));
+exports.VerifyCodeByUserIdRequest = VerifyCodeByUserIdRequest_1.default;
 var UseRequest_1 = tslib_1.__importDefault(require("./UseRequest"));
 exports.UseRequest = UseRequest_1.default;
 var UseByUserIdRequest_1 = tslib_1.__importDefault(require("./UseByUserIdRequest"));
@@ -65,6 +71,8 @@ var UseByStampTaskRequest_1 = tslib_1.__importDefault(require("./UseByStampTaskR
 exports.UseByStampTaskRequest = UseByStampTaskRequest_1.default;
 var RevertUseByStampSheetRequest_1 = tslib_1.__importDefault(require("./RevertUseByStampSheetRequest"));
 exports.RevertUseByStampSheetRequest = RevertUseByStampSheetRequest_1.default;
+var VerifyByStampTaskRequest_1 = tslib_1.__importDefault(require("./VerifyByStampTaskRequest"));
+exports.VerifyByStampTaskRequest = VerifyByStampTaskRequest_1.default;
 var DescribeCampaignModelsRequest_1 = tslib_1.__importDefault(require("./DescribeCampaignModelsRequest"));
 exports.DescribeCampaignModelsRequest = DescribeCampaignModelsRequest_1.default;
 var GetCampaignModelRequest_1 = tslib_1.__importDefault(require("./GetCampaignModelRequest"));

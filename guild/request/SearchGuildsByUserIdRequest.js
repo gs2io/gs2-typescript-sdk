@@ -30,6 +30,7 @@ var SearchGuildsByUserIdRequest = /** @class */ (function () {
         this.attributes5 = null;
         this.joinPolicies = null;
         this.includeFullMembersGuild = null;
+        this.orderBy = null;
         this.pageToken = null;
         this.limit = null;
         this.timeOffsetToken = null;
@@ -178,6 +179,17 @@ var SearchGuildsByUserIdRequest = /** @class */ (function () {
         this.includeFullMembersGuild = includeFullMembersGuild;
         return this;
     };
+    SearchGuildsByUserIdRequest.prototype.getOrderBy = function () {
+        return this.orderBy;
+    };
+    SearchGuildsByUserIdRequest.prototype.setOrderBy = function (orderBy) {
+        this.orderBy = orderBy;
+        return this;
+    };
+    SearchGuildsByUserIdRequest.prototype.withOrderBy = function (orderBy) {
+        this.orderBy = orderBy;
+        return this;
+    };
     SearchGuildsByUserIdRequest.prototype.getPageToken = function () {
         return this.pageToken;
     };
@@ -253,6 +265,7 @@ var SearchGuildsByUserIdRequest = /** @class */ (function () {
                 return item;
             }) : [])
             .withIncludeFullMembersGuild(data["includeFullMembersGuild"])
+            .withOrderBy(data["orderBy"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
@@ -288,6 +301,7 @@ var SearchGuildsByUserIdRequest = /** @class */ (function () {
                     return item;
                 }) : [],
             "includeFullMembersGuild": this.getIncludeFullMembersGuild(),
+            "orderBy": this.getOrderBy(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
             "timeOffsetToken": this.getTimeOffsetToken(),

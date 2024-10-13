@@ -569,7 +569,7 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.searchGuilds = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/guild/{guildModelName}/search')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
@@ -595,8 +595,9 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'attributes5': (_o = request.getAttributes5()) !== null && _o !== void 0 ? _o : null,
             'joinPolicies': (_p = request.getJoinPolicies()) !== null && _p !== void 0 ? _p : null,
             'includeFullMembersGuild': (_q = request.getIncludeFullMembersGuild()) !== null && _q !== void 0 ? _q : null,
-            'pageToken': (_r = request.getPageToken()) !== null && _r !== void 0 ? _r : null,
-            'limit': (_s = request.getLimit()) !== null && _s !== void 0 ? _s : null,
+            'orderBy': (_r = request.getOrderBy()) !== null && _r !== void 0 ? _r : null,
+            'pageToken': (_s = request.getPageToken()) !== null && _s !== void 0 ? _s : null,
+            'limit': (_t = request.getLimit()) !== null && _t !== void 0 ? _t : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -612,7 +613,7 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.searchGuildsByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/guild/{guildModelName}/search')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
@@ -639,8 +640,9 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'attributes5': (_q = request.getAttributes5()) !== null && _q !== void 0 ? _q : null,
             'joinPolicies': (_r = request.getJoinPolicies()) !== null && _r !== void 0 ? _r : null,
             'includeFullMembersGuild': (_s = request.getIncludeFullMembersGuild()) !== null && _s !== void 0 ? _s : null,
-            'pageToken': (_t = request.getPageToken()) !== null && _t !== void 0 ? _t : null,
-            'limit': (_u = request.getLimit()) !== null && _u !== void 0 ? _u : null,
+            'orderBy': (_t = request.getOrderBy()) !== null && _t !== void 0 ? _t : null,
+            'pageToken': (_u = request.getPageToken()) !== null && _u !== void 0 ? _u : null,
+            'limit': (_v = request.getLimit()) !== null && _v !== void 0 ? _v : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

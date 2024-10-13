@@ -677,6 +677,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
             'attributes5': request.getAttributes5() ?? null,
             'joinPolicies': request.getJoinPolicies() ?? null,
             'includeFullMembersGuild': request.getIncludeFullMembersGuild() ?? null,
+            'orderBy': request.getOrderBy() ?? null,
             'pageToken': request.getPageToken() ?? null,
             'limit': request.getLimit() ?? null,
         };
@@ -725,6 +726,7 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
             'attributes5': request.getAttributes5() ?? null,
             'joinPolicies': request.getJoinPolicies() ?? null,
             'includeFullMembersGuild': request.getIncludeFullMembersGuild() ?? null,
+            'orderBy': request.getOrderBy() ?? null,
             'pageToken': request.getPageToken() ?? null,
             'limit': request.getLimit() ?? null,
         };

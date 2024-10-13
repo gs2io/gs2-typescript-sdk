@@ -31,12 +31,16 @@ import GetIssueJobResult from "./GetIssueJobResult"
 import IssueResult from "./IssueResult"
 import DescribeSerialKeysResult from "./DescribeSerialKeysResult"
 import DownloadSerialCodesResult from "./DownloadSerialCodesResult"
+import IssueOnceResult from "./IssueOnceResult"
 import GetSerialKeyResult from "./GetSerialKeyResult"
+import VerifyCodeResult from "./VerifyCodeResult"
+import VerifyCodeByUserIdResult from "./VerifyCodeByUserIdResult"
 import UseResult from "./UseResult"
 import UseByUserIdResult from "./UseByUserIdResult"
 import RevertUseByUserIdResult from "./RevertUseByUserIdResult"
 import UseByStampTaskResult from "./UseByStampTaskResult"
 import RevertUseByStampSheetResult from "./RevertUseByStampSheetResult"
+import VerifyByStampTaskResult from "./VerifyByStampTaskResult"
 import DescribeCampaignModelsResult from "./DescribeCampaignModelsResult"
 import GetCampaignModelResult from "./GetCampaignModelResult"
 import DescribeCampaignModelMastersResult from "./DescribeCampaignModelMastersResult"
@@ -68,12 +72,16 @@ export {
     IssueResult,
     DescribeSerialKeysResult,
     DownloadSerialCodesResult,
+    IssueOnceResult,
     GetSerialKeyResult,
+    VerifyCodeResult,
+    VerifyCodeByUserIdResult,
     UseResult,
     UseByUserIdResult,
     RevertUseByUserIdResult,
     UseByStampTaskResult,
     RevertUseByStampSheetResult,
+    VerifyByStampTaskResult,
     DescribeCampaignModelsResult,
     GetCampaignModelResult,
     DescribeCampaignModelMastersResult,

@@ -30,6 +30,7 @@ var SearchGuildsRequest = /** @class */ (function () {
         this.attributes5 = null;
         this.joinPolicies = null;
         this.includeFullMembersGuild = null;
+        this.orderBy = null;
         this.pageToken = null;
         this.limit = null;
         this.duplicationAvoider = null;
@@ -177,6 +178,17 @@ var SearchGuildsRequest = /** @class */ (function () {
         this.includeFullMembersGuild = includeFullMembersGuild;
         return this;
     };
+    SearchGuildsRequest.prototype.getOrderBy = function () {
+        return this.orderBy;
+    };
+    SearchGuildsRequest.prototype.setOrderBy = function (orderBy) {
+        this.orderBy = orderBy;
+        return this;
+    };
+    SearchGuildsRequest.prototype.withOrderBy = function (orderBy) {
+        this.orderBy = orderBy;
+        return this;
+    };
     SearchGuildsRequest.prototype.getPageToken = function () {
         return this.pageToken;
     };
@@ -241,6 +253,7 @@ var SearchGuildsRequest = /** @class */ (function () {
                 return item;
             }) : [])
             .withIncludeFullMembersGuild(data["includeFullMembersGuild"])
+            .withOrderBy(data["orderBy"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
     };
@@ -275,6 +288,7 @@ var SearchGuildsRequest = /** @class */ (function () {
                     return item;
                 }) : [],
             "includeFullMembersGuild": this.getIncludeFullMembersGuild(),
+            "orderBy": this.getOrderBy(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
         };

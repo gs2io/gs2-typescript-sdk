@@ -27,7 +27,6 @@ var QueryAccessLogWithTelemetryRequest = /** @class */ (function () {
         this.pageToken = null;
         this.limit = null;
         this.timeOffsetToken = null;
-        this.duplicationAvoider = null;
     }
     QueryAccessLogWithTelemetryRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -137,17 +136,6 @@ var QueryAccessLogWithTelemetryRequest = /** @class */ (function () {
     };
     QueryAccessLogWithTelemetryRequest.prototype.withTimeOffsetToken = function (timeOffsetToken) {
         this.timeOffsetToken = timeOffsetToken;
-        return this;
-    };
-    QueryAccessLogWithTelemetryRequest.prototype.getDuplicationAvoider = function () {
-        return this.duplicationAvoider;
-    };
-    QueryAccessLogWithTelemetryRequest.prototype.setDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
-        return this;
-    };
-    QueryAccessLogWithTelemetryRequest.prototype.withDuplicationAvoider = function (duplicationAvoider) {
-        this.duplicationAvoider = duplicationAvoider;
         return this;
     };
     QueryAccessLogWithTelemetryRequest.fromDict = function (data) {

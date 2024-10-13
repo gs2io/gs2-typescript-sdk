@@ -33,6 +33,7 @@ export default class SearchGuildsRequest implements IRequest {
     private attributes5: number[]|null = null;
     private joinPolicies: string[]|null = null;
     private includeFullMembersGuild: boolean|null = null;
+    private orderBy: string|null = null;
     private pageToken: string|null = null;
     private limit: number|null = null;
     private duplicationAvoider: string|null = null;
@@ -185,6 +186,17 @@ export default class SearchGuildsRequest implements IRequest {
         this.includeFullMembersGuild = includeFullMembersGuild;
         return this;
     }
+    public getOrderBy(): string|null {
+        return this.orderBy;
+    }
+    public setOrderBy(orderBy: string|null) {
+        this.orderBy = orderBy;
+        return this;
+    }
+    public withOrderBy(orderBy: string|null): this {
+        this.orderBy = orderBy;
+        return this;
+    }
     public getPageToken(): string|null {
         return this.pageToken;
     }
@@ -259,6 +271,7 @@ export default class SearchGuildsRequest implements IRequest {
                 }
             ) : [])
             .withIncludeFullMembersGuild(data["includeFullMembersGuild"])
+            .withOrderBy(data["orderBy"])
             .withPageToken(data["pageToken"])
             .withLimit(data["limit"]);
     }
@@ -300,6 +313,7 @@ export default class SearchGuildsRequest implements IRequest {
                 }
             ) : [],
             "includeFullMembersGuild": this.getIncludeFullMembersGuild(),
+            "orderBy": this.getOrderBy(),
             "pageToken": this.getPageToken(),
             "limit": this.getLimit(),
         };

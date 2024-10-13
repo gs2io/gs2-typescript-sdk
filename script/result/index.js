@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DebugInvokeResult = exports.InvokeScriptResult = exports.DeleteScriptResult = exports.UpdateScriptFromGitHubResult = exports.UpdateScriptResult = exports.GetScriptResult = exports.CreateScriptFromGitHubResult = exports.CreateScriptResult = exports.DescribeScriptsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.InvokeByStampSheetResult = exports.DebugInvokeResult = exports.InvokeScriptResult = exports.DeleteScriptResult = exports.UpdateScriptFromGitHubResult = exports.UpdateScriptResult = exports.GetScriptResult = exports.CreateScriptFromGitHubResult = exports.CreateScriptResult = exports.DescribeScriptsResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -47,4 +47,6 @@ var InvokeScriptResult_1 = tslib_1.__importDefault(require("./InvokeScriptResult
 exports.InvokeScriptResult = InvokeScriptResult_1.default;
 var DebugInvokeResult_1 = tslib_1.__importDefault(require("./DebugInvokeResult"));
 exports.DebugInvokeResult = DebugInvokeResult_1.default;
+var InvokeByStampSheetResult_1 = tslib_1.__importDefault(require("./InvokeByStampSheetResult"));
+exports.InvokeByStampSheetResult = InvokeByStampSheetResult_1.default;
 //# sourceMappingURL=index.js.map

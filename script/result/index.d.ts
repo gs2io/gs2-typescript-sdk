@@ -13,4 +13,5 @@ import UpdateScriptFromGitHubResult from "./UpdateScriptFromGitHubResult";
 import DeleteScriptResult from "./DeleteScriptResult";
 import InvokeScriptResult from "./InvokeScriptResult";
 import DebugInvokeResult from "./DebugInvokeResult";
-export { DescribeNamespacesResult, CreateNamespaceResult, GetNamespaceStatusResult, GetNamespaceResult, UpdateNamespaceResult, DeleteNamespaceResult, DescribeScriptsResult, CreateScriptResult, CreateScriptFromGitHubResult, GetScriptResult, UpdateScriptResult, UpdateScriptFromGitHubResult, DeleteScriptResult, InvokeScriptResult, DebugInvokeResult, };
+import InvokeByStampSheetResult from "./InvokeByStampSheetResult";
+export { DescribeNamespacesResult, CreateNamespaceResult, GetNamespaceStatusResult, GetNamespaceResult, UpdateNamespaceResult, DeleteNamespaceResult, DescribeScriptsResult, CreateScriptResult, CreateScriptFromGitHubResult, GetScriptResult, UpdateScriptResult, UpdateScriptFromGitHubResult, DeleteScriptResult, InvokeScriptResult, DebugInvokeResult, InvokeByStampSheetResult, };

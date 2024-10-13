@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCurrentCampaignMasterFromGitHubResult = exports.UpdateCurrentCampaignMasterResult = exports.GetCurrentCampaignMasterResult = exports.ExportMasterResult = exports.DeleteCampaignModelMasterResult = exports.UpdateCampaignModelMasterResult = exports.GetCampaignModelMasterResult = exports.CreateCampaignModelMasterResult = exports.DescribeCampaignModelMastersResult = exports.GetCampaignModelResult = exports.DescribeCampaignModelsResult = exports.RevertUseByStampSheetResult = exports.UseByStampTaskResult = exports.RevertUseByUserIdResult = exports.UseByUserIdResult = exports.UseResult = exports.GetSerialKeyResult = exports.DownloadSerialCodesResult = exports.DescribeSerialKeysResult = exports.IssueResult = exports.GetIssueJobResult = exports.DescribeIssueJobsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.UpdateCurrentCampaignMasterFromGitHubResult = exports.UpdateCurrentCampaignMasterResult = exports.GetCurrentCampaignMasterResult = exports.ExportMasterResult = exports.DeleteCampaignModelMasterResult = exports.UpdateCampaignModelMasterResult = exports.GetCampaignModelMasterResult = exports.CreateCampaignModelMasterResult = exports.DescribeCampaignModelMastersResult = exports.GetCampaignModelResult = exports.DescribeCampaignModelsResult = exports.VerifyByStampTaskResult = exports.RevertUseByStampSheetResult = exports.UseByStampTaskResult = exports.RevertUseByUserIdResult = exports.UseByUserIdResult = exports.UseResult = exports.VerifyCodeByUserIdResult = exports.VerifyCodeResult = exports.GetSerialKeyResult = exports.IssueOnceResult = exports.DownloadSerialCodesResult = exports.DescribeSerialKeysResult = exports.IssueResult = exports.GetIssueJobResult = exports.DescribeIssueJobsResult = exports.CheckImportUserDataByUserIdResult = exports.ImportUserDataByUserIdResult = exports.PrepareImportUserDataByUserIdResult = exports.CheckCleanUserDataByUserIdResult = exports.CleanUserDataByUserIdResult = exports.CheckDumpUserDataByUserIdResult = exports.DumpUserDataByUserIdResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -53,8 +53,14 @@ var DescribeSerialKeysResult_1 = tslib_1.__importDefault(require("./DescribeSeri
 exports.DescribeSerialKeysResult = DescribeSerialKeysResult_1.default;
 var DownloadSerialCodesResult_1 = tslib_1.__importDefault(require("./DownloadSerialCodesResult"));
 exports.DownloadSerialCodesResult = DownloadSerialCodesResult_1.default;
+var IssueOnceResult_1 = tslib_1.__importDefault(require("./IssueOnceResult"));
+exports.IssueOnceResult = IssueOnceResult_1.default;
 var GetSerialKeyResult_1 = tslib_1.__importDefault(require("./GetSerialKeyResult"));
 exports.GetSerialKeyResult = GetSerialKeyResult_1.default;
+var VerifyCodeResult_1 = tslib_1.__importDefault(require("./VerifyCodeResult"));
+exports.VerifyCodeResult = VerifyCodeResult_1.default;
+var VerifyCodeByUserIdResult_1 = tslib_1.__importDefault(require("./VerifyCodeByUserIdResult"));
+exports.VerifyCodeByUserIdResult = VerifyCodeByUserIdResult_1.default;
 var UseResult_1 = tslib_1.__importDefault(require("./UseResult"));
 exports.UseResult = UseResult_1.default;
 var UseByUserIdResult_1 = tslib_1.__importDefault(require("./UseByUserIdResult"));
@@ -65,6 +71,8 @@ var UseByStampTaskResult_1 = tslib_1.__importDefault(require("./UseByStampTaskRe
 exports.UseByStampTaskResult = UseByStampTaskResult_1.default;
 var RevertUseByStampSheetResult_1 = tslib_1.__importDefault(require("./RevertUseByStampSheetResult"));
 exports.RevertUseByStampSheetResult = RevertUseByStampSheetResult_1.default;
+var VerifyByStampTaskResult_1 = tslib_1.__importDefault(require("./VerifyByStampTaskResult"));
+exports.VerifyByStampTaskResult = VerifyByStampTaskResult_1.default;
 var DescribeCampaignModelsResult_1 = tslib_1.__importDefault(require("./DescribeCampaignModelsResult"));
 exports.DescribeCampaignModelsResult = DescribeCampaignModelsResult_1.default;
 var GetCampaignModelResult_1 = tslib_1.__importDefault(require("./GetCampaignModelResult"));

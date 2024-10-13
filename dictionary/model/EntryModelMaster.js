@@ -15,7 +15,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var grnFormat = "grn:gs2:{region}:{ownerId}:dictionary:{namespaceName}:model:{entryName}";
+var grnFormat = "grn:gs2:{region}:{ownerId}:dictionary:{namespaceName}:model:{entryModelName}";
 var EntryModelMaster = /** @class */ (function () {
     function EntryModelMaster() {
         this.entryModelId = null;
@@ -31,7 +31,7 @@ var EntryModelMaster = /** @class */ (function () {
             .replace('{region}', '(.*)')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{entryName}', '.*'));
+            .replace('{entryModelName}', '.*'));
         if (match) {
             return match[1];
         }
@@ -42,7 +42,7 @@ var EntryModelMaster = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '(.*)')
             .replace('{namespaceName}', '.*')
-            .replace('{entryName}', '.*'));
+            .replace('{entryModelName}', '.*'));
         if (match) {
             return match[1];
         }
@@ -53,18 +53,18 @@ var EntryModelMaster = /** @class */ (function () {
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '(.*)')
-            .replace('{entryName}', '.*'));
+            .replace('{entryModelName}', '.*'));
         if (match) {
             return match[1];
         }
         return null;
     };
-    EntryModelMaster.getEntryName = function (grn) {
+    EntryModelMaster.getEntryModelName = function (grn) {
         var match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{entryName}', '(.*)'));
+            .replace('{entryModelName}', '(.*)'));
         if (match) {
             return match[1];
         }
@@ -80,17 +80,17 @@ var EntryModelMaster = /** @class */ (function () {
         if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getEntryName(grn) == null || this.getEntryName(grn) === '') {
+        if (this.getEntryModelName(grn) == null || this.getEntryModelName(grn) === '') {
             return false;
         }
         return true;
     };
-    EntryModelMaster.createGrn = function (region, ownerId, namespaceName, entryName) {
+    EntryModelMaster.createGrn = function (region, ownerId, namespaceName, entryModelName) {
         return grnFormat
             .replace('{region}', region !== null && region !== void 0 ? region : '')
             .replace('{ownerId}', ownerId !== null && ownerId !== void 0 ? ownerId : '')
             .replace('{namespaceName}', namespaceName !== null && namespaceName !== void 0 ? namespaceName : '')
-            .replace('{entryName}', entryName !== null && entryName !== void 0 ? entryName : '');
+            .replace('{entryModelName}', entryModelName !== null && entryModelName !== void 0 ? entryModelName : '');
     };
     EntryModelMaster.prototype.getEntryModelId = function () {
         return this.entryModelId;

@@ -19,4 +19,5 @@ export default class Gs2ScriptRestClient extends AbstractGs2RestClient {
     deleteScript(request: Request.DeleteScriptRequest): Promise<Result.DeleteScriptResult>;
     invokeScript(request: Request.InvokeScriptRequest): Promise<Result.InvokeScriptResult>;
     debugInvoke(request: Request.DebugInvokeRequest): Promise<Result.DebugInvokeResult>;
+    invokeByStampSheet(request: Request.InvokeByStampSheetRequest): Promise<Result.InvokeByStampSheetResult>;
 }

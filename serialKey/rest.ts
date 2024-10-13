@@ -565,6 +565,38 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public issueOnce(request: Request.IssueOnceRequest): Promise<Result.IssueOnceResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/campaign/{campaignModelName}/serialKey')
+            .replace('{service}', 'serial-key')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{campaignModelName}', String(request.getCampaignModelName() ?? 'null') === "" ? "null" : String(request.getCampaignModelName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'metadata': request.getMetadata() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.IssueOnceResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public getSerialKey(request: Request.GetSerialKeyRequest): Promise<Result.GetSerialKeyResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/serialKey/{code}')
             .replace('{service}', 'serial-key')
@@ -589,6 +621,83 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
             return Result.GetSerialKeyResult.fromDict(response.data);
         }).catch((error: any) => {
             throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public verifyCode(request: Request.VerifyCodeRequest): Promise<Result.VerifyCodeResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/serialKey/verify')
+            .replace('{service}', 'serial-key')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'code': request.getCode() ?? null,
+            'verifyType': request.getVerifyType() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyCodeResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public verifyCodeByUserId(request: Request.VerifyCodeByUserIdRequest): Promise<Result.VerifyCodeByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/serialKey/verify')
+            .replace('{service}', 'serial-key')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'code': request.getCode() ?? null,
+            'verifyType': request.getVerifyType() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyCodeByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
         });
     }
 
@@ -758,6 +867,37 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.RevertUseByStampSheetResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public verifyByStampTask(request: Request.VerifyByStampTaskRequest): Promise<Result.VerifyByStampTaskResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/serialKey/verify')
+            .replace('{service}', 'serial-key')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampTask': request.getStampTask() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyByStampTaskResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);
