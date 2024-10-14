@@ -40,6 +40,9 @@ import PutGlobalRankingScoreByUserIdResult from "./PutGlobalRankingScoreByUserId
 import GetGlobalRankingScoreResult from "./GetGlobalRankingScoreResult"
 import GetGlobalRankingScoreByUserIdResult from "./GetGlobalRankingScoreByUserIdResult"
 import DeleteGlobalRankingScoreByUserIdResult from "./DeleteGlobalRankingScoreByUserIdResult"
+import VerifyGlobalRankingScoreResult from "./VerifyGlobalRankingScoreResult"
+import VerifyGlobalRankingScoreByUserIdResult from "./VerifyGlobalRankingScoreByUserIdResult"
+import VerifyGlobalRankingScoreByStampTaskResult from "./VerifyGlobalRankingScoreByStampTaskResult"
 import DescribeGlobalRankingReceivedRewardsResult from "./DescribeGlobalRankingReceivedRewardsResult"
 import DescribeGlobalRankingReceivedRewardsByUserIdResult from "./DescribeGlobalRankingReceivedRewardsByUserIdResult"
 import CreateGlobalRankingReceivedRewardResult from "./CreateGlobalRankingReceivedRewardResult"
@@ -68,6 +71,9 @@ import PutClusterRankingScoreByUserIdResult from "./PutClusterRankingScoreByUser
 import GetClusterRankingScoreResult from "./GetClusterRankingScoreResult"
 import GetClusterRankingScoreByUserIdResult from "./GetClusterRankingScoreByUserIdResult"
 import DeleteClusterRankingScoreByUserIdResult from "./DeleteClusterRankingScoreByUserIdResult"
+import VerifyClusterRankingScoreResult from "./VerifyClusterRankingScoreResult"
+import VerifyClusterRankingScoreByUserIdResult from "./VerifyClusterRankingScoreByUserIdResult"
+import VerifyClusterRankingScoreByStampTaskResult from "./VerifyClusterRankingScoreByStampTaskResult"
 import DescribeClusterRankingReceivedRewardsResult from "./DescribeClusterRankingReceivedRewardsResult"
 import DescribeClusterRankingReceivedRewardsByUserIdResult from "./DescribeClusterRankingReceivedRewardsByUserIdResult"
 import CreateClusterRankingReceivedRewardResult from "./CreateClusterRankingReceivedRewardResult"
@@ -100,6 +106,9 @@ import PutSubscribeRankingScoreByUserIdResult from "./PutSubscribeRankingScoreBy
 import GetSubscribeRankingScoreResult from "./GetSubscribeRankingScoreResult"
 import GetSubscribeRankingScoreByUserIdResult from "./GetSubscribeRankingScoreByUserIdResult"
 import DeleteSubscribeRankingScoreByUserIdResult from "./DeleteSubscribeRankingScoreByUserIdResult"
+import VerifySubscribeRankingScoreResult from "./VerifySubscribeRankingScoreResult"
+import VerifySubscribeRankingScoreByUserIdResult from "./VerifySubscribeRankingScoreByUserIdResult"
+import VerifySubscribeRankingScoreByStampTaskResult from "./VerifySubscribeRankingScoreByStampTaskResult"
 import DescribeSubscribeRankingsResult from "./DescribeSubscribeRankingsResult"
 import DescribeSubscribeRankingsByUserIdResult from "./DescribeSubscribeRankingsByUserIdResult"
 import GetSubscribeRankingResult from "./GetSubscribeRankingResult"
@@ -141,6 +150,9 @@ export {
     GetGlobalRankingScoreResult,
     GetGlobalRankingScoreByUserIdResult,
     DeleteGlobalRankingScoreByUserIdResult,
+    VerifyGlobalRankingScoreResult,
+    VerifyGlobalRankingScoreByUserIdResult,
+    VerifyGlobalRankingScoreByStampTaskResult,
     DescribeGlobalRankingReceivedRewardsResult,
     DescribeGlobalRankingReceivedRewardsByUserIdResult,
     CreateGlobalRankingReceivedRewardResult,
@@ -169,6 +181,9 @@ export {
     GetClusterRankingScoreResult,
     GetClusterRankingScoreByUserIdResult,
     DeleteClusterRankingScoreByUserIdResult,
+    VerifyClusterRankingScoreResult,
+    VerifyClusterRankingScoreByUserIdResult,
+    VerifyClusterRankingScoreByStampTaskResult,
     DescribeClusterRankingReceivedRewardsResult,
     DescribeClusterRankingReceivedRewardsByUserIdResult,
     CreateClusterRankingReceivedRewardResult,
@@ -201,6 +216,9 @@ export {
     GetSubscribeRankingScoreResult,
     GetSubscribeRankingScoreByUserIdResult,
     DeleteSubscribeRankingScoreByUserIdResult,
+    VerifySubscribeRankingScoreResult,
+    VerifySubscribeRankingScoreByUserIdResult,
+    VerifySubscribeRankingScoreByStampTaskResult,
     DescribeSubscribeRankingsResult,
     DescribeSubscribeRankingsByUserIdResult,
     GetSubscribeRankingResult,

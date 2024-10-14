@@ -31,6 +31,9 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     getGlobalRankingScore(request: Request.GetGlobalRankingScoreRequest): Promise<Result.GetGlobalRankingScoreResult>;
     getGlobalRankingScoreByUserId(request: Request.GetGlobalRankingScoreByUserIdRequest): Promise<Result.GetGlobalRankingScoreByUserIdResult>;
     deleteGlobalRankingScoreByUserId(request: Request.DeleteGlobalRankingScoreByUserIdRequest): Promise<Result.DeleteGlobalRankingScoreByUserIdResult>;
+    verifyGlobalRankingScore(request: Request.VerifyGlobalRankingScoreRequest): Promise<Result.VerifyGlobalRankingScoreResult>;
+    verifyGlobalRankingScoreByUserId(request: Request.VerifyGlobalRankingScoreByUserIdRequest): Promise<Result.VerifyGlobalRankingScoreByUserIdResult>;
+    verifyGlobalRankingScoreByStampTask(request: Request.VerifyGlobalRankingScoreByStampTaskRequest): Promise<Result.VerifyGlobalRankingScoreByStampTaskResult>;
     describeGlobalRankingReceivedRewards(request: Request.DescribeGlobalRankingReceivedRewardsRequest): Promise<Result.DescribeGlobalRankingReceivedRewardsResult>;
     describeGlobalRankingReceivedRewardsByUserId(request: Request.DescribeGlobalRankingReceivedRewardsByUserIdRequest): Promise<Result.DescribeGlobalRankingReceivedRewardsByUserIdResult>;
     createGlobalRankingReceivedReward(request: Request.CreateGlobalRankingReceivedRewardRequest): Promise<Result.CreateGlobalRankingReceivedRewardResult>;
@@ -59,6 +62,9 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     getClusterRankingScore(request: Request.GetClusterRankingScoreRequest): Promise<Result.GetClusterRankingScoreResult>;
     getClusterRankingScoreByUserId(request: Request.GetClusterRankingScoreByUserIdRequest): Promise<Result.GetClusterRankingScoreByUserIdResult>;
     deleteClusterRankingScoreByUserId(request: Request.DeleteClusterRankingScoreByUserIdRequest): Promise<Result.DeleteClusterRankingScoreByUserIdResult>;
+    verifyClusterRankingScore(request: Request.VerifyClusterRankingScoreRequest): Promise<Result.VerifyClusterRankingScoreResult>;
+    verifyClusterRankingScoreByUserId(request: Request.VerifyClusterRankingScoreByUserIdRequest): Promise<Result.VerifyClusterRankingScoreByUserIdResult>;
+    verifyClusterRankingScoreByStampTask(request: Request.VerifyClusterRankingScoreByStampTaskRequest): Promise<Result.VerifyClusterRankingScoreByStampTaskResult>;
     describeClusterRankingReceivedRewards(request: Request.DescribeClusterRankingReceivedRewardsRequest): Promise<Result.DescribeClusterRankingReceivedRewardsResult>;
     describeClusterRankingReceivedRewardsByUserId(request: Request.DescribeClusterRankingReceivedRewardsByUserIdRequest): Promise<Result.DescribeClusterRankingReceivedRewardsByUserIdResult>;
     createClusterRankingReceivedReward(request: Request.CreateClusterRankingReceivedRewardRequest): Promise<Result.CreateClusterRankingReceivedRewardResult>;
@@ -91,6 +97,9 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
     getSubscribeRankingScore(request: Request.GetSubscribeRankingScoreRequest): Promise<Result.GetSubscribeRankingScoreResult>;
     getSubscribeRankingScoreByUserId(request: Request.GetSubscribeRankingScoreByUserIdRequest): Promise<Result.GetSubscribeRankingScoreByUserIdResult>;
     deleteSubscribeRankingScoreByUserId(request: Request.DeleteSubscribeRankingScoreByUserIdRequest): Promise<Result.DeleteSubscribeRankingScoreByUserIdResult>;
+    verifySubscribeRankingScore(request: Request.VerifySubscribeRankingScoreRequest): Promise<Result.VerifySubscribeRankingScoreResult>;
+    verifySubscribeRankingScoreByUserId(request: Request.VerifySubscribeRankingScoreByUserIdRequest): Promise<Result.VerifySubscribeRankingScoreByUserIdResult>;
+    verifySubscribeRankingScoreByStampTask(request: Request.VerifySubscribeRankingScoreByStampTaskRequest): Promise<Result.VerifySubscribeRankingScoreByStampTaskResult>;
     describeSubscribeRankings(request: Request.DescribeSubscribeRankingsRequest): Promise<Result.DescribeSubscribeRankingsResult>;
     describeSubscribeRankingsByUserId(request: Request.DescribeSubscribeRankingsByUserIdRequest): Promise<Result.DescribeSubscribeRankingsByUserIdResult>;
     getSubscribeRanking(request: Request.GetSubscribeRankingRequest): Promise<Result.GetSubscribeRankingResult>;

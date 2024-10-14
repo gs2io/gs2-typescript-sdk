@@ -876,6 +876,120 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
         });
     }
 
+    public verifyGlobalRankingScore(request: Request.VerifyGlobalRankingScoreRequest): Promise<Result.VerifyGlobalRankingScoreResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global/{rankingName}/verify/{verifyType}')
+            .replace('{service}', 'ranking2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{rankingName}', String(request.getRankingName() ?? 'null') === "" ? "null" : String(request.getRankingName() ?? 'null'))
+            .replace('{verifyType}', String(request.getVerifyType() ?? 'null') === "" ? "null" : String(request.getVerifyType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'season': request.getSeason() ?? null,
+            'score': request.getScore() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyGlobalRankingScoreResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public verifyGlobalRankingScoreByUserId(request: Request.VerifyGlobalRankingScoreByUserIdRequest): Promise<Result.VerifyGlobalRankingScoreByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global/{rankingName}/verify/{verifyType}')
+            .replace('{service}', 'ranking2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{rankingName}', String(request.getRankingName() ?? 'null') === "" ? "null" : String(request.getRankingName() ?? 'null'))
+            .replace('{verifyType}', String(request.getVerifyType() ?? 'null') === "" ? "null" : String(request.getVerifyType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'season': request.getSeason() ?? null,
+            'score': request.getScore() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyGlobalRankingScoreByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public verifyGlobalRankingScoreByStampTask(request: Request.VerifyGlobalRankingScoreByStampTaskRequest): Promise<Result.VerifyGlobalRankingScoreByStampTaskResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/global/score/verify')
+            .replace('{service}', 'ranking2')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampTask': request.getStampTask() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyGlobalRankingScoreByStampTaskResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public describeGlobalRankingReceivedRewards(request: Request.DescribeGlobalRankingReceivedRewardsRequest): Promise<Result.DescribeGlobalRankingReceivedRewardsResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/global/reward/received')
             .replace('{service}', 'ranking2')
@@ -1825,6 +1939,122 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
             return Result.DeleteClusterRankingScoreByUserIdResult.fromDict(response.data);
         }).catch((error: any) => {
             throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public verifyClusterRankingScore(request: Request.VerifyClusterRankingScoreRequest): Promise<Result.VerifyClusterRankingScoreResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}/verify/{verifyType}')
+            .replace('{service}', 'ranking2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{rankingName}', String(request.getRankingName() ?? 'null') === "" ? "null" : String(request.getRankingName() ?? 'null'))
+            .replace('{clusterName}', String(request.getClusterName() ?? 'null') === "" ? "null" : String(request.getClusterName() ?? 'null'))
+            .replace('{verifyType}', String(request.getVerifyType() ?? 'null') === "" ? "null" : String(request.getVerifyType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'season': request.getSeason() ?? null,
+            'score': request.getScore() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyClusterRankingScoreResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public verifyClusterRankingScoreByUserId(request: Request.VerifyClusterRankingScoreByUserIdRequest): Promise<Result.VerifyClusterRankingScoreByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}/verify/{verifyType}')
+            .replace('{service}', 'ranking2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{rankingName}', String(request.getRankingName() ?? 'null') === "" ? "null" : String(request.getRankingName() ?? 'null'))
+            .replace('{clusterName}', String(request.getClusterName() ?? 'null') === "" ? "null" : String(request.getClusterName() ?? 'null'))
+            .replace('{verifyType}', String(request.getVerifyType() ?? 'null') === "" ? "null" : String(request.getVerifyType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'season': request.getSeason() ?? null,
+            'score': request.getScore() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyClusterRankingScoreByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public verifyClusterRankingScoreByStampTask(request: Request.VerifyClusterRankingScoreByStampTaskRequest): Promise<Result.VerifyClusterRankingScoreByStampTaskResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/cluster/score/verify')
+            .replace('{service}', 'ranking2')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampTask': request.getStampTask() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifyClusterRankingScoreByStampTaskResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
         });
     }
 
@@ -2919,6 +3149,120 @@ export default class Gs2Ranking2RestClient extends AbstractGs2RestClient {
             return Result.DeleteSubscribeRankingScoreByUserIdResult.fromDict(response.data);
         }).catch((error: any) => {
             throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public verifySubscribeRankingScore(request: Request.VerifySubscribeRankingScoreRequest): Promise<Result.VerifySubscribeRankingScoreResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}/verify/{verifyType}')
+            .replace('{service}', 'ranking2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{rankingName}', String(request.getRankingName() ?? 'null') === "" ? "null" : String(request.getRankingName() ?? 'null'))
+            .replace('{verifyType}', String(request.getVerifyType() ?? 'null') === "" ? "null" : String(request.getVerifyType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'season': request.getSeason() ?? null,
+            'score': request.getScore() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifySubscribeRankingScoreResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public verifySubscribeRankingScoreByUserId(request: Request.VerifySubscribeRankingScoreByUserIdRequest): Promise<Result.VerifySubscribeRankingScoreByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}/verify/{verifyType}')
+            .replace('{service}', 'ranking2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'))
+            .replace('{rankingName}', String(request.getRankingName() ?? 'null') === "" ? "null" : String(request.getRankingName() ?? 'null'))
+            .replace('{verifyType}', String(request.getVerifyType() ?? 'null') === "" ? "null" : String(request.getVerifyType() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'season': request.getSeason() ?? null,
+            'score': request.getScore() ?? null,
+            'multiplyValueSpecifyingQuantity': request.getMultiplyValueSpecifyingQuantity() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifySubscribeRankingScoreByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public verifySubscribeRankingScoreByStampTask(request: Request.VerifySubscribeRankingScoreByStampTaskRequest): Promise<Result.VerifySubscribeRankingScoreByStampTaskResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/stamp/subscribe/score/verify')
+            .replace('{service}', 'ranking2')
+            .replace('{region}', this.session.region);
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'stampTask': request.getStampTask() ?? null,
+            'keyId': request.getKeyId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.VerifySubscribeRankingScoreByStampTaskResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
         });
     }
 

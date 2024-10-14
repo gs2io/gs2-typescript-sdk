@@ -19,7 +19,7 @@ import GeneralDauWauMauHistory from './GeneralDauWauMauHistory';
 import GeneralDauWauMauAverage from './GeneralDauWauMauAverage';
 import GeneralDauWauMau from './GeneralDauWauMau';
 import SessionDurationStatistics from './SessionDurationStatistics';
-import SessionDurationDistributionSegment from './SessionDurationDistributionSegment';
+import SessionDurationDistribution from './SessionDurationDistribution';
 import SessionDuration from './SessionDuration';
 import FirstEngagementStatisticsLoginDays from './FirstEngagementStatisticsLoginDays';
 import FirstEngagementStatistics from './FirstEngagementStatistics';

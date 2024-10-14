@@ -17,7 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var SessionDurationStatistics_1 = tslib_1.__importDefault(require("./SessionDurationStatistics"));
-var SessionDurationDistributionSegment_1 = tslib_1.__importDefault(require("./SessionDurationDistributionSegment"));
+var SessionDurationDistribution_1 = tslib_1.__importDefault(require("./SessionDurationDistribution"));
 var SessionDuration = /** @class */ (function () {
     function SessionDuration() {
         this.statistics = null;
@@ -53,7 +53,7 @@ var SessionDuration = /** @class */ (function () {
             .withStatistics(SessionDurationStatistics_1.default.fromDict(data["statistics"]))
             .withDistribution(data.distribution ?
             data.distribution.map(function (item) {
-                return SessionDurationDistributionSegment_1.default.fromDict(item);
+                return SessionDurationDistribution_1.default.fromDict(item);
             }) : []);
     };
     SessionDuration.prototype.toDict = function () {

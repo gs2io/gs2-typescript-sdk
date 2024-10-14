@@ -8,9 +8,9 @@ export default class DictionaryEntryModel implements IModel {
     static getMonth(grn: string): string | null;
     static getDay(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
-    static getEntryName(grn: string): string | null;
+    static getEntryModelName(grn: string): string | null;
     static isValid(grn: string): boolean;
-    static createGrn(region: string | null, ownerId: string | null, year: string | null, month: string | null, day: string | null, namespaceName: string | null, entryName: string | null): string | null;
+    static createGrn(region: string | null, ownerId: string | null, year: string | null, month: string | null, day: string | null, namespaceName: string | null, entryModelName: string | null): string | null;
     getEntryModelModelId(): string | null;
     setEntryModelModelId(entryModelModelId: string | null): this;
     withEntryModelModelId(entryModelModelId: string | null): this;

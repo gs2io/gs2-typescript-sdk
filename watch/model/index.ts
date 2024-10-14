@@ -28,6 +28,7 @@ import FirstEngagementDistributionSegment from "./FirstEngagementDistributionSeg
 import FirstEngagement from "./FirstEngagement"
 import SessionDurationStatistics from "./SessionDurationStatistics"
 import SessionDurationDistributionSegment from "./SessionDurationDistributionSegment"
+import SessionDurationDistribution from "./SessionDurationDistribution"
 import EngagementHistory from "./EngagementHistory"
 import EngagementAverage from "./EngagementAverage"
 import Engagements from "./Engagements"
@@ -431,6 +432,7 @@ export {
     FirstEngagement,
     SessionDurationStatistics,
     SessionDurationDistributionSegment,
+    SessionDurationDistribution,
     EngagementHistory,
     EngagementAverage,
     Engagements,

@@ -15,7 +15,7 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
-const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:dictionary:namespace:{namespaceName}:entryModel:{entryName}";
+const grnFormat: string = "grn:gs2:{region}:{ownerId}:watch:metrics:{year}:{month}:{day}:dictionary:namespace:{namespaceName}:entryModel:{entryModelName}";
 
 export default class DictionaryEntryModel implements IModel {
     private entryModelModelId: string|null = null;
@@ -29,7 +29,7 @@ export default class DictionaryEntryModel implements IModel {
             .replace('{month}', '.*')
             .replace('{day}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{entryName}', '.*')
+            .replace('{entryModelName}', '.*')
         );
         if (match) {
             return match[1];
@@ -45,7 +45,7 @@ export default class DictionaryEntryModel implements IModel {
             .replace('{month}', '.*')
             .replace('{day}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{entryName}', '.*')
+            .replace('{entryModelName}', '.*')
         );
         if (match) {
             return match[1];
@@ -61,7 +61,7 @@ export default class DictionaryEntryModel implements IModel {
             .replace('{month}', '.*')
             .replace('{day}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{entryName}', '.*')
+            .replace('{entryModelName}', '.*')
         );
         if (match) {
             return match[1];
@@ -77,7 +77,7 @@ export default class DictionaryEntryModel implements IModel {
             .replace('{month}', '(.*)')
             .replace('{day}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{entryName}', '.*')
+            .replace('{entryModelName}', '.*')
         );
         if (match) {
             return match[1];
@@ -93,7 +93,7 @@ export default class DictionaryEntryModel implements IModel {
             .replace('{month}', '.*')
             .replace('{day}', '(.*)')
             .replace('{namespaceName}', '.*')
-            .replace('{entryName}', '.*')
+            .replace('{entryModelName}', '.*')
         );
         if (match) {
             return match[1];
@@ -109,7 +109,7 @@ export default class DictionaryEntryModel implements IModel {
             .replace('{month}', '.*')
             .replace('{day}', '.*')
             .replace('{namespaceName}', '(.*)')
-            .replace('{entryName}', '.*')
+            .replace('{entryModelName}', '.*')
         );
         if (match) {
             return match[1];
@@ -117,7 +117,7 @@ export default class DictionaryEntryModel implements IModel {
         return null;
     }
 
-    public static getEntryName(grn: string): string|null {
+    public static getEntryModelName(grn: string): string|null {
         const match = grn.match(grnFormat
             .replace('{region}', '.*')
             .replace('{ownerId}', '.*')
@@ -125,7 +125,7 @@ export default class DictionaryEntryModel implements IModel {
             .replace('{month}', '.*')
             .replace('{day}', '.*')
             .replace('{namespaceName}', '.*')
-            .replace('{entryName}', '(.*)')
+            .replace('{entryModelName}', '(.*)')
         );
         if (match) {
             return match[1];
@@ -152,7 +152,7 @@ export default class DictionaryEntryModel implements IModel {
         if (this.getNamespaceName(grn) == null || this.getNamespaceName(grn) === '') {
             return false;
         }
-        if (this.getEntryName(grn) == null || this.getEntryName(grn) === '') {
+        if (this.getEntryModelName(grn) == null || this.getEntryModelName(grn) === '') {
             return false;
         }
         return true;
@@ -165,7 +165,7 @@ export default class DictionaryEntryModel implements IModel {
         month: string|null,
         day: string|null,
         namespaceName: string|null,
-        entryName: string|null,
+        entryModelName: string|null,
     ): string|null {
         return grnFormat
             .replace('{region}', region ?? '')
@@ -174,7 +174,7 @@ export default class DictionaryEntryModel implements IModel {
             .replace('{month}', month ?? '')
             .replace('{day}', day ?? '')
             .replace('{namespaceName}', namespaceName ?? '')
-            .replace('{entryName}', entryName ?? '');
+            .replace('{entryModelName}', entryModelName ?? '');
     }
     public getEntryModelModelId(): string|null {
         return this.entryModelModelId;

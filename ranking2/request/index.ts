@@ -40,6 +40,9 @@ import PutGlobalRankingScoreByUserIdRequest from "./PutGlobalRankingScoreByUserI
 import GetGlobalRankingScoreRequest from "./GetGlobalRankingScoreRequest"
 import GetGlobalRankingScoreByUserIdRequest from "./GetGlobalRankingScoreByUserIdRequest"
 import DeleteGlobalRankingScoreByUserIdRequest from "./DeleteGlobalRankingScoreByUserIdRequest"
+import VerifyGlobalRankingScoreRequest from "./VerifyGlobalRankingScoreRequest"
+import VerifyGlobalRankingScoreByUserIdRequest from "./VerifyGlobalRankingScoreByUserIdRequest"
+import VerifyGlobalRankingScoreByStampTaskRequest from "./VerifyGlobalRankingScoreByStampTaskRequest"
 import DescribeGlobalRankingReceivedRewardsRequest from "./DescribeGlobalRankingReceivedRewardsRequest"
 import DescribeGlobalRankingReceivedRewardsByUserIdRequest from "./DescribeGlobalRankingReceivedRewardsByUserIdRequest"
 import CreateGlobalRankingReceivedRewardRequest from "./CreateGlobalRankingReceivedRewardRequest"
@@ -68,6 +71,9 @@ import PutClusterRankingScoreByUserIdRequest from "./PutClusterRankingScoreByUse
 import GetClusterRankingScoreRequest from "./GetClusterRankingScoreRequest"
 import GetClusterRankingScoreByUserIdRequest from "./GetClusterRankingScoreByUserIdRequest"
 import DeleteClusterRankingScoreByUserIdRequest from "./DeleteClusterRankingScoreByUserIdRequest"
+import VerifyClusterRankingScoreRequest from "./VerifyClusterRankingScoreRequest"
+import VerifyClusterRankingScoreByUserIdRequest from "./VerifyClusterRankingScoreByUserIdRequest"
+import VerifyClusterRankingScoreByStampTaskRequest from "./VerifyClusterRankingScoreByStampTaskRequest"
 import DescribeClusterRankingReceivedRewardsRequest from "./DescribeClusterRankingReceivedRewardsRequest"
 import DescribeClusterRankingReceivedRewardsByUserIdRequest from "./DescribeClusterRankingReceivedRewardsByUserIdRequest"
 import CreateClusterRankingReceivedRewardRequest from "./CreateClusterRankingReceivedRewardRequest"
@@ -100,6 +106,9 @@ import PutSubscribeRankingScoreByUserIdRequest from "./PutSubscribeRankingScoreB
 import GetSubscribeRankingScoreRequest from "./GetSubscribeRankingScoreRequest"
 import GetSubscribeRankingScoreByUserIdRequest from "./GetSubscribeRankingScoreByUserIdRequest"
 import DeleteSubscribeRankingScoreByUserIdRequest from "./DeleteSubscribeRankingScoreByUserIdRequest"
+import VerifySubscribeRankingScoreRequest from "./VerifySubscribeRankingScoreRequest"
+import VerifySubscribeRankingScoreByUserIdRequest from "./VerifySubscribeRankingScoreByUserIdRequest"
+import VerifySubscribeRankingScoreByStampTaskRequest from "./VerifySubscribeRankingScoreByStampTaskRequest"
 import DescribeSubscribeRankingsRequest from "./DescribeSubscribeRankingsRequest"
 import DescribeSubscribeRankingsByUserIdRequest from "./DescribeSubscribeRankingsByUserIdRequest"
 import GetSubscribeRankingRequest from "./GetSubscribeRankingRequest"
@@ -141,6 +150,9 @@ export {
     GetGlobalRankingScoreRequest,
     GetGlobalRankingScoreByUserIdRequest,
     DeleteGlobalRankingScoreByUserIdRequest,
+    VerifyGlobalRankingScoreRequest,
+    VerifyGlobalRankingScoreByUserIdRequest,
+    VerifyGlobalRankingScoreByStampTaskRequest,
     DescribeGlobalRankingReceivedRewardsRequest,
     DescribeGlobalRankingReceivedRewardsByUserIdRequest,
     CreateGlobalRankingReceivedRewardRequest,
@@ -169,6 +181,9 @@ export {
     GetClusterRankingScoreRequest,
     GetClusterRankingScoreByUserIdRequest,
     DeleteClusterRankingScoreByUserIdRequest,
+    VerifyClusterRankingScoreRequest,
+    VerifyClusterRankingScoreByUserIdRequest,
+    VerifyClusterRankingScoreByStampTaskRequest,
     DescribeClusterRankingReceivedRewardsRequest,
     DescribeClusterRankingReceivedRewardsByUserIdRequest,
     CreateClusterRankingReceivedRewardRequest,
@@ -201,6 +216,9 @@ export {
     GetSubscribeRankingScoreRequest,
     GetSubscribeRankingScoreByUserIdRequest,
     DeleteSubscribeRankingScoreByUserIdRequest,
+    VerifySubscribeRankingScoreRequest,
+    VerifySubscribeRankingScoreByUserIdRequest,
+    VerifySubscribeRankingScoreByStampTaskRequest,
     DescribeSubscribeRankingsRequest,
     DescribeSubscribeRankingsByUserIdRequest,
     GetSubscribeRankingRequest,

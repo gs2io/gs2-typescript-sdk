@@ -766,6 +766,108 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
             throw JSON.parse(error.response.data.message);
         });
     };
+    Gs2Ranking2RestClient.prototype.verifyGlobalRankingScore = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global/{rankingName}/verify/{verifyType}')
+            .replace('{service}', 'ranking2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{rankingName}', String((_c = request.getRankingName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getRankingName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{verifyType}', String((_e = request.getVerifyType()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getVerifyType()) !== null && _f !== void 0 ? _f : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+        }
+        var body = {
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'season': (_k = request.getSeason()) !== null && _k !== void 0 ? _k : null,
+            'score': (_l = request.getScore()) !== null && _l !== void 0 ? _l : null,
+            'multiplyValueSpecifyingQuantity': (_m = request.getMultiplyValueSpecifyingQuantity()) !== null && _m !== void 0 ? _m : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.VerifyGlobalRankingScoreResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2Ranking2RestClient.prototype.verifyGlobalRankingScoreByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/global/{rankingName}/verify/{verifyType}')
+            .replace('{service}', 'ranking2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{rankingName}', String((_e = request.getRankingName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getRankingName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{verifyType}', String((_g = request.getVerifyType()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getVerifyType()) !== null && _h !== void 0 ? _h : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+        }
+        var body = {
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'season': (_m = request.getSeason()) !== null && _m !== void 0 ? _m : null,
+            'score': (_o = request.getScore()) !== null && _o !== void 0 ? _o : null,
+            'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.VerifyGlobalRankingScoreByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2Ranking2RestClient.prototype.verifyGlobalRankingScoreByStampTask = function (request) {
+        var _a, _b, _c;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/global/score/verify')
+            .replace('{service}', 'ranking2')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
+            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.VerifyGlobalRankingScoreByStampTaskResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
     Gs2Ranking2RestClient.prototype.describeGlobalRankingReceivedRewards = function (request) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/global/reward/received')
@@ -1604,6 +1706,110 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
             return Result.DeleteClusterRankingScoreByUserIdResult.fromDict(response.data);
         }).catch(function (error) {
             throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2Ranking2RestClient.prototype.verifyClusterRankingScore = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}/verify/{verifyType}')
+            .replace('{service}', 'ranking2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{rankingName}', String((_c = request.getRankingName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getRankingName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{clusterName}', String((_e = request.getClusterName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getClusterName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{verifyType}', String((_g = request.getVerifyType()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getVerifyType()) !== null && _h !== void 0 ? _h : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_j = request.getAccessToken()) !== null && _j !== void 0 ? _j : null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_k = request.getDuplicationAvoider()) !== null && _k !== void 0 ? _k : null;
+        }
+        var body = {
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'season': (_m = request.getSeason()) !== null && _m !== void 0 ? _m : null,
+            'score': (_o = request.getScore()) !== null && _o !== void 0 ? _o : null,
+            'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.VerifyClusterRankingScoreResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2Ranking2RestClient.prototype.verifyClusterRankingScoreByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/cluster/{rankingName}/{clusterName}/verify/{verifyType}')
+            .replace('{service}', 'ranking2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{rankingName}', String((_e = request.getRankingName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getRankingName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{clusterName}', String((_g = request.getClusterName()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getClusterName()) !== null && _h !== void 0 ? _h : 'null'))
+            .replace('{verifyType}', String((_j = request.getVerifyType()) !== null && _j !== void 0 ? _j : 'null') === "" ? "null" : String((_k = request.getVerifyType()) !== null && _k !== void 0 ? _k : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_l = request.getDuplicationAvoider()) !== null && _l !== void 0 ? _l : null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_m = request.getTimeOffsetToken()) !== null && _m !== void 0 ? _m : null;
+        }
+        var body = {
+            'contextStack': (_o = request.getContextStack()) !== null && _o !== void 0 ? _o : null,
+            'season': (_p = request.getSeason()) !== null && _p !== void 0 ? _p : null,
+            'score': (_q = request.getScore()) !== null && _q !== void 0 ? _q : null,
+            'multiplyValueSpecifyingQuantity': (_r = request.getMultiplyValueSpecifyingQuantity()) !== null && _r !== void 0 ? _r : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.VerifyClusterRankingScoreByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2Ranking2RestClient.prototype.verifyClusterRankingScoreByStampTask = function (request) {
+        var _a, _b, _c;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/cluster/score/verify')
+            .replace('{service}', 'ranking2')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
+            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.VerifyClusterRankingScoreByStampTaskResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
         });
     };
     Gs2Ranking2RestClient.prototype.describeClusterRankingReceivedRewards = function (request) {
@@ -2570,6 +2776,108 @@ var Gs2Ranking2RestClient = /** @class */ (function (_super) {
             return Result.DeleteSubscribeRankingScoreByUserIdResult.fromDict(response.data);
         }).catch(function (error) {
             throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2Ranking2RestClient.prototype.verifySubscribeRankingScore = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}/verify/{verifyType}')
+            .replace('{service}', 'ranking2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{rankingName}', String((_c = request.getRankingName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getRankingName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{verifyType}', String((_e = request.getVerifyType()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getVerifyType()) !== null && _f !== void 0 ? _f : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_g = request.getAccessToken()) !== null && _g !== void 0 ? _g : null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_h = request.getDuplicationAvoider()) !== null && _h !== void 0 ? _h : null;
+        }
+        var body = {
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'season': (_k = request.getSeason()) !== null && _k !== void 0 ? _k : null,
+            'score': (_l = request.getScore()) !== null && _l !== void 0 ? _l : null,
+            'multiplyValueSpecifyingQuantity': (_m = request.getMultiplyValueSpecifyingQuantity()) !== null && _m !== void 0 ? _m : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.VerifySubscribeRankingScoreResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2Ranking2RestClient.prototype.verifySubscribeRankingScoreByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/score/subscribe/{rankingName}/verify/{verifyType}')
+            .replace('{service}', 'ranking2')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{rankingName}', String((_e = request.getRankingName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getRankingName()) !== null && _f !== void 0 ? _f : 'null'))
+            .replace('{verifyType}', String((_g = request.getVerifyType()) !== null && _g !== void 0 ? _g : 'null') === "" ? "null" : String((_h = request.getVerifyType()) !== null && _h !== void 0 ? _h : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_j = request.getDuplicationAvoider()) !== null && _j !== void 0 ? _j : null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_k = request.getTimeOffsetToken()) !== null && _k !== void 0 ? _k : null;
+        }
+        var body = {
+            'contextStack': (_l = request.getContextStack()) !== null && _l !== void 0 ? _l : null,
+            'season': (_m = request.getSeason()) !== null && _m !== void 0 ? _m : null,
+            'score': (_o = request.getScore()) !== null && _o !== void 0 ? _o : null,
+            'multiplyValueSpecifyingQuantity': (_p = request.getMultiplyValueSpecifyingQuantity()) !== null && _p !== void 0 ? _p : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.VerifySubscribeRankingScoreByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2Ranking2RestClient.prototype.verifySubscribeRankingScoreByStampTask = function (request) {
+        var _a, _b, _c;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/stamp/subscribe/score/verify')
+            .replace('{service}', 'ranking2')
+            .replace('{region}', this.session.region);
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        var body = {
+            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+            'stampTask': (_b = request.getStampTask()) !== null && _b !== void 0 ? _b : null,
+            'keyId': (_c = request.getKeyId()) !== null && _c !== void 0 ? _c : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.VerifySubscribeRankingScoreByStampTaskResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
         });
     };
     Gs2Ranking2RestClient.prototype.describeSubscribeRankings = function (request) {
