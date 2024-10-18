@@ -42,6 +42,8 @@ import RunStampSheetWithoutNamespaceResult from "./RunStampSheetWithoutNamespace
 import RunStampSheetExpressWithoutNamespaceResult from "./RunStampSheetExpressWithoutNamespaceResult"
 import SetTransactionDefaultConfigResult from "./SetTransactionDefaultConfigResult"
 import SetTransactionDefaultConfigByUserIdResult from "./SetTransactionDefaultConfigByUserIdResult"
+import FreezeMasterDataResult from "./FreezeMasterDataResult"
+import FreezeMasterDataByUserIdResult from "./FreezeMasterDataByUserIdResult"
 import IfExpressionByUserIdResult from "./IfExpressionByUserIdResult"
 import AndExpressionByUserIdResult from "./AndExpressionByUserIdResult"
 import OrExpressionByUserIdResult from "./OrExpressionByUserIdResult"
@@ -81,6 +83,8 @@ export {
     RunStampSheetExpressWithoutNamespaceResult,
     SetTransactionDefaultConfigResult,
     SetTransactionDefaultConfigByUserIdResult,
+    FreezeMasterDataResult,
+    FreezeMasterDataByUserIdResult,
     IfExpressionByUserIdResult,
     AndExpressionByUserIdResult,
     OrExpressionByUserIdResult,

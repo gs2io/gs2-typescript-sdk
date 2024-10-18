@@ -920,6 +920,79 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public freezeMasterData(request: Request.FreezeMasterDataRequest): Promise<Result.FreezeMasterDataResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/masterdata/freeze')
+            .replace('{service}', 'distributor')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.FreezeMasterDataResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public freezeMasterDataByUserId(request: Request.FreezeMasterDataByUserIdRequest): Promise<Result.FreezeMasterDataByUserIdResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/masterdata/freeze')
+            .replace('{service}', 'distributor')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{userId}', String(request.getUserId() ?? 'null') === "" ? "null" : String(request.getUserId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = request.getTimeOffsetToken() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.FreezeMasterDataByUserIdResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
     public ifExpressionByUserId(request: Request.IfExpressionByUserIdRequest): Promise<Result.IfExpressionByUserIdResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/expression/if')
             .replace('{service}', 'distributor')
