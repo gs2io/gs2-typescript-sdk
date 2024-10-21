@@ -32,6 +32,7 @@ import * as formation from './formation';
 import * as friend from './friend';
 import * as gateway from './gateway';
 import * as grade from './grade';
+import * as guard from './guard';
 import * as guild from './guild';
 import * as identifier from './identifier';
 import * as idle from './idle';
@@ -85,6 +86,7 @@ export {
   friend,
   gateway,
   grade,
+  guard,
   guild,
   identifier,
   idle,

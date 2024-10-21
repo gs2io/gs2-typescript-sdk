@@ -15,8 +15,8 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.version = exports.stamina = exports.stateMachine = exports.skillTree = exports.showcase = exports.serialKey = exports.seasonRating = exports.script = exports.schedule = exports.realtime = exports.ranking2 = exports.ranking = exports.quest = exports.project = exports.news = exports.money2 = exports.money = exports.mission = exports.megaField = exports.matchmaking = exports.lottery = exports.log = exports.lock = exports.loginReward = exports.limit = exports.key = exports.jobQueue = exports.inventory = exports.inbox = exports.idle = exports.identifier = exports.guild = exports.grade = exports.gateway = exports.friend = exports.formation = exports.experience = exports.exchange = exports.enhance = exports.enchant = exports.distributor = exports.dictionary = exports.deploy = exports.datastore = exports.chat = exports.buff = exports.core = exports.auth = exports.adReward = exports.account = void 0;
-exports.watch = void 0;
+exports.stamina = exports.stateMachine = exports.skillTree = exports.showcase = exports.serialKey = exports.seasonRating = exports.script = exports.schedule = exports.realtime = exports.ranking2 = exports.ranking = exports.quest = exports.project = exports.news = exports.money2 = exports.money = exports.mission = exports.megaField = exports.matchmaking = exports.lottery = exports.log = exports.lock = exports.loginReward = exports.limit = exports.key = exports.jobQueue = exports.inventory = exports.inbox = exports.idle = exports.identifier = exports.guild = exports.guard = exports.grade = exports.gateway = exports.friend = exports.formation = exports.experience = exports.exchange = exports.enhance = exports.enchant = exports.distributor = exports.dictionary = exports.deploy = exports.datastore = exports.chat = exports.buff = exports.core = exports.auth = exports.adReward = exports.account = void 0;
+exports.watch = exports.version = void 0;
 var tslib_1 = require("tslib");
 var account = tslib_1.__importStar(require("./account"));
 exports.account = account;
@@ -55,6 +55,8 @@ var gateway = tslib_1.__importStar(require("./gateway"));
 exports.gateway = gateway;
 var grade = tslib_1.__importStar(require("./grade"));
 exports.grade = grade;
+var guard = tslib_1.__importStar(require("./guard"));
+exports.guard = guard;
 var guild = tslib_1.__importStar(require("./guild"));
 exports.guild = guild;
 var identifier = tslib_1.__importStar(require("./identifier"));
