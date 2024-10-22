@@ -450,6 +450,93 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         });
     }
 
+    public describeAttachedGuards(request: Request.DescribeAttachedGuardsRequest): Promise<Result.DescribeAttachedGuardsResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}/guard')
+            .replace('{service}', 'identifier')
+            .replace('{region}', this.session.region)
+            .replace('{clientId}', String(request.getClientId() ?? 'null') === "" ? "null" : String(request.getClientId() ?? 'null'))
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.get(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DescribeAttachedGuardsResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
+    public attachGuard(request: Request.AttachGuardRequest): Promise<Result.AttachGuardResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}/guard')
+            .replace('{service}', 'identifier')
+            .replace('{region}', this.session.region)
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'))
+            .replace('{clientId}', String(request.getClientId() ?? 'null') === "" ? "null" : String(request.getClientId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'guardNamespaceId': request.getGuardNamespaceId() ?? null,
+        };
+        return axios.post(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.AttachGuardResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public detachGuard(request: Request.DetachGuardRequest): Promise<Result.DetachGuardResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/identifier/{clientId}/guard/{guardNamespaceId}')
+            .replace('{service}', 'identifier')
+            .replace('{region}', this.session.region)
+            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'))
+            .replace('{clientId}', String(request.getClientId() ?? 'null') === "" ? "null" : String(request.getClientId() ?? 'null'))
+            .replace('{guardNamespaceId}', String(request.getGuardNamespaceId() ?? 'null') === "" ? "null" : String(request.getGuardNamespaceId() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        const params: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+        };
+        return axios.delete(
+            url,
+             {
+                params,
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.DetachGuardResult.fromDict(response.data);
+        }).catch((error: any) => {
+            throw JSON.parse(error.response.data.message);
+        });
+    }
+
     public describePasswords(request: Request.DescribePasswordsRequest): Promise<Result.DescribePasswordsResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password')
             .replace('{service}', 'identifier')

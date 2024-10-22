@@ -28,6 +28,9 @@ import DescribeIdentifiersResult from "./DescribeIdentifiersResult"
 import CreateIdentifierResult from "./CreateIdentifierResult"
 import GetIdentifierResult from "./GetIdentifierResult"
 import DeleteIdentifierResult from "./DeleteIdentifierResult"
+import DescribeAttachedGuardsResult from "./DescribeAttachedGuardsResult"
+import AttachGuardResult from "./AttachGuardResult"
+import DetachGuardResult from "./DetachGuardResult"
 import DescribePasswordsResult from "./DescribePasswordsResult"
 import CreatePasswordResult from "./CreatePasswordResult"
 import GetPasswordResult from "./GetPasswordResult"
@@ -57,6 +60,9 @@ export {
     CreateIdentifierResult,
     GetIdentifierResult,
     DeleteIdentifierResult,
+    DescribeAttachedGuardsResult,
+    AttachGuardResult,
+    DetachGuardResult,
     DescribePasswordsResult,
     CreatePasswordResult,
     GetPasswordResult,

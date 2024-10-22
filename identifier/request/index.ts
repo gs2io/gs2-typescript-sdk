@@ -28,6 +28,9 @@ import DescribeIdentifiersRequest from "./DescribeIdentifiersRequest"
 import CreateIdentifierRequest from "./CreateIdentifierRequest"
 import GetIdentifierRequest from "./GetIdentifierRequest"
 import DeleteIdentifierRequest from "./DeleteIdentifierRequest"
+import DescribeAttachedGuardsRequest from "./DescribeAttachedGuardsRequest"
+import AttachGuardRequest from "./AttachGuardRequest"
+import DetachGuardRequest from "./DetachGuardRequest"
 import DescribePasswordsRequest from "./DescribePasswordsRequest"
 import CreatePasswordRequest from "./CreatePasswordRequest"
 import GetPasswordRequest from "./GetPasswordRequest"
@@ -57,6 +60,9 @@ export {
     CreateIdentifierRequest,
     GetIdentifierRequest,
     DeleteIdentifierRequest,
+    DescribeAttachedGuardsRequest,
+    AttachGuardRequest,
+    DetachGuardRequest,
     DescribePasswordsRequest,
     CreatePasswordRequest,
     GetPasswordRequest,

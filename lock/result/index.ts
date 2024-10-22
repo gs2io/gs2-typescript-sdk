@@ -19,8 +19,6 @@ import GetNamespaceStatusResult from "./GetNamespaceStatusResult"
 import GetNamespaceResult from "./GetNamespaceResult"
 import UpdateNamespaceResult from "./UpdateNamespaceResult"
 import DeleteNamespaceResult from "./DeleteNamespaceResult"
-import DescribeMutexesResult from "./DescribeMutexesResult"
-import DescribeMutexesByUserIdResult from "./DescribeMutexesByUserIdResult"
 import LockResult from "./LockResult"
 import LockByUserIdResult from "./LockByUserIdResult"
 import UnlockResult from "./UnlockResult"
@@ -36,8 +34,6 @@ export {
     GetNamespaceResult,
     UpdateNamespaceResult,
     DeleteNamespaceResult,
-    DescribeMutexesResult,
-    DescribeMutexesByUserIdResult,
     LockResult,
     LockByUserIdResult,
     UnlockResult,

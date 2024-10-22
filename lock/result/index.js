@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteMutexByUserIdResult = exports.GetMutexByUserIdResult = exports.GetMutexResult = exports.UnlockByUserIdResult = exports.UnlockResult = exports.LockByUserIdResult = exports.LockResult = exports.DescribeMutexesByUserIdResult = exports.DescribeMutexesResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
+exports.DeleteMutexByUserIdResult = exports.GetMutexByUserIdResult = exports.GetMutexResult = exports.UnlockByUserIdResult = exports.UnlockResult = exports.LockByUserIdResult = exports.LockResult = exports.DeleteNamespaceResult = exports.UpdateNamespaceResult = exports.GetNamespaceResult = exports.GetNamespaceStatusResult = exports.CreateNamespaceResult = exports.DescribeNamespacesResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -29,10 +29,6 @@ var UpdateNamespaceResult_1 = tslib_1.__importDefault(require("./UpdateNamespace
 exports.UpdateNamespaceResult = UpdateNamespaceResult_1.default;
 var DeleteNamespaceResult_1 = tslib_1.__importDefault(require("./DeleteNamespaceResult"));
 exports.DeleteNamespaceResult = DeleteNamespaceResult_1.default;
-var DescribeMutexesResult_1 = tslib_1.__importDefault(require("./DescribeMutexesResult"));
-exports.DescribeMutexesResult = DescribeMutexesResult_1.default;
-var DescribeMutexesByUserIdResult_1 = tslib_1.__importDefault(require("./DescribeMutexesByUserIdResult"));
-exports.DescribeMutexesByUserIdResult = DescribeMutexesByUserIdResult_1.default;
 var LockResult_1 = tslib_1.__importDefault(require("./LockResult"));
 exports.LockResult = LockResult_1.default;
 var LockByUserIdResult_1 = tslib_1.__importDefault(require("./LockByUserIdResult"));

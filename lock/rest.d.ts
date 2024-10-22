@@ -10,8 +10,6 @@ export default class Gs2LockRestClient extends AbstractGs2RestClient {
     getNamespace(request: Request.GetNamespaceRequest): Promise<Result.GetNamespaceResult>;
     updateNamespace(request: Request.UpdateNamespaceRequest): Promise<Result.UpdateNamespaceResult>;
     deleteNamespace(request: Request.DeleteNamespaceRequest): Promise<Result.DeleteNamespaceResult>;
-    describeMutexes(request: Request.DescribeMutexesRequest): Promise<Result.DescribeMutexesResult>;
-    describeMutexesByUserId(request: Request.DescribeMutexesByUserIdRequest): Promise<Result.DescribeMutexesByUserIdResult>;
     lock(request: Request.LockRequest): Promise<Result.LockResult>;
     lockByUserId(request: Request.LockByUserIdRequest): Promise<Result.LockByUserIdResult>;
     unlock(request: Request.UnlockRequest): Promise<Result.UnlockResult>;
