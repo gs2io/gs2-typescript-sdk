@@ -5,12 +5,14 @@ export default class UpdateNamespaceRequest implements IRequest {
     private contextStack;
     private namespaceName;
     private description;
+    private changeNotification;
     private joinNotification;
     private leaveNotification;
     private changeMemberNotification;
     private receiveRequestNotification;
     private removeRequestNotification;
     private createGuildScript;
+    private updateGuildScript;
     private joinGuildScript;
     private leaveGuildScript;
     private changeRoleScript;
@@ -27,6 +29,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getChangeNotification(): Gs2Guild.NotificationSetting | null;
+    setChangeNotification(changeNotification: Gs2Guild.NotificationSetting | null): this;
+    withChangeNotification(changeNotification: Gs2Guild.NotificationSetting | null): this;
     getJoinNotification(): Gs2Guild.NotificationSetting | null;
     setJoinNotification(joinNotification: Gs2Guild.NotificationSetting | null): this;
     withJoinNotification(joinNotification: Gs2Guild.NotificationSetting | null): this;
@@ -45,6 +50,9 @@ export default class UpdateNamespaceRequest implements IRequest {
     getCreateGuildScript(): Gs2Guild.ScriptSetting | null;
     setCreateGuildScript(createGuildScript: Gs2Guild.ScriptSetting | null): this;
     withCreateGuildScript(createGuildScript: Gs2Guild.ScriptSetting | null): this;
+    getUpdateGuildScript(): Gs2Guild.ScriptSetting | null;
+    setUpdateGuildScript(updateGuildScript: Gs2Guild.ScriptSetting | null): this;
+    withUpdateGuildScript(updateGuildScript: Gs2Guild.ScriptSetting | null): this;
     getJoinGuildScript(): Gs2Guild.ScriptSetting | null;
     setJoinGuildScript(joinGuildScript: Gs2Guild.ScriptSetting | null): this;
     withJoinGuildScript(joinGuildScript: Gs2Guild.ScriptSetting | null): this;

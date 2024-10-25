@@ -25,12 +25,14 @@ var Namespace = /** @class */ (function () {
         this.namespaceId = null;
         this.name = null;
         this.description = null;
+        this.changeNotification = null;
         this.joinNotification = null;
         this.leaveNotification = null;
         this.changeMemberNotification = null;
         this.receiveRequestNotification = null;
         this.removeRequestNotification = null;
         this.createGuildScript = null;
+        this.updateGuildScript = null;
         this.joinGuildScript = null;
         this.leaveGuildScript = null;
         this.changeRoleScript = null;
@@ -120,6 +122,17 @@ var Namespace = /** @class */ (function () {
         this.description = description;
         return this;
     };
+    Namespace.prototype.getChangeNotification = function () {
+        return this.changeNotification;
+    };
+    Namespace.prototype.setChangeNotification = function (changeNotification) {
+        this.changeNotification = changeNotification;
+        return this;
+    };
+    Namespace.prototype.withChangeNotification = function (changeNotification) {
+        this.changeNotification = changeNotification;
+        return this;
+    };
     Namespace.prototype.getJoinNotification = function () {
         return this.joinNotification;
     };
@@ -184,6 +197,17 @@ var Namespace = /** @class */ (function () {
     };
     Namespace.prototype.withCreateGuildScript = function (createGuildScript) {
         this.createGuildScript = createGuildScript;
+        return this;
+    };
+    Namespace.prototype.getUpdateGuildScript = function () {
+        return this.updateGuildScript;
+    };
+    Namespace.prototype.setUpdateGuildScript = function (updateGuildScript) {
+        this.updateGuildScript = updateGuildScript;
+        return this;
+    };
+    Namespace.prototype.withUpdateGuildScript = function (updateGuildScript) {
+        this.updateGuildScript = updateGuildScript;
         return this;
     };
     Namespace.prototype.getJoinGuildScript = function () {
@@ -271,12 +295,14 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withChangeNotification(NotificationSetting_1.default.fromDict(data["changeNotification"]))
             .withJoinNotification(NotificationSetting_1.default.fromDict(data["joinNotification"]))
             .withLeaveNotification(NotificationSetting_1.default.fromDict(data["leaveNotification"]))
             .withChangeMemberNotification(NotificationSetting_1.default.fromDict(data["changeMemberNotification"]))
             .withReceiveRequestNotification(NotificationSetting_1.default.fromDict(data["receiveRequestNotification"]))
             .withRemoveRequestNotification(NotificationSetting_1.default.fromDict(data["removeRequestNotification"]))
             .withCreateGuildScript(ScriptSetting_1.default.fromDict(data["createGuildScript"]))
+            .withUpdateGuildScript(ScriptSetting_1.default.fromDict(data["updateGuildScript"]))
             .withJoinGuildScript(ScriptSetting_1.default.fromDict(data["joinGuildScript"]))
             .withLeaveGuildScript(ScriptSetting_1.default.fromDict(data["leaveGuildScript"]))
             .withChangeRoleScript(ScriptSetting_1.default.fromDict(data["changeRoleScript"]))
@@ -286,21 +312,23 @@ var Namespace = /** @class */ (function () {
             .withRevision(data["revision"]);
     };
     Namespace.prototype.toDict = function () {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         return {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
-            "joinNotification": (_a = this.getJoinNotification()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "leaveNotification": (_b = this.getLeaveNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
-            "changeMemberNotification": (_c = this.getChangeMemberNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
-            "receiveRequestNotification": (_d = this.getReceiveRequestNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
-            "removeRequestNotification": (_e = this.getRemoveRequestNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
-            "createGuildScript": (_f = this.getCreateGuildScript()) === null || _f === void 0 ? void 0 : _f.toDict(),
-            "joinGuildScript": (_g = this.getJoinGuildScript()) === null || _g === void 0 ? void 0 : _g.toDict(),
-            "leaveGuildScript": (_h = this.getLeaveGuildScript()) === null || _h === void 0 ? void 0 : _h.toDict(),
-            "changeRoleScript": (_j = this.getChangeRoleScript()) === null || _j === void 0 ? void 0 : _j.toDict(),
-            "logSetting": (_k = this.getLogSetting()) === null || _k === void 0 ? void 0 : _k.toDict(),
+            "changeNotification": (_a = this.getChangeNotification()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "joinNotification": (_b = this.getJoinNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "leaveNotification": (_c = this.getLeaveNotification()) === null || _c === void 0 ? void 0 : _c.toDict(),
+            "changeMemberNotification": (_d = this.getChangeMemberNotification()) === null || _d === void 0 ? void 0 : _d.toDict(),
+            "receiveRequestNotification": (_e = this.getReceiveRequestNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),
+            "removeRequestNotification": (_f = this.getRemoveRequestNotification()) === null || _f === void 0 ? void 0 : _f.toDict(),
+            "createGuildScript": (_g = this.getCreateGuildScript()) === null || _g === void 0 ? void 0 : _g.toDict(),
+            "updateGuildScript": (_h = this.getUpdateGuildScript()) === null || _h === void 0 ? void 0 : _h.toDict(),
+            "joinGuildScript": (_j = this.getJoinGuildScript()) === null || _j === void 0 ? void 0 : _j.toDict(),
+            "leaveGuildScript": (_k = this.getLeaveGuildScript()) === null || _k === void 0 ? void 0 : _k.toDict(),
+            "changeRoleScript": (_l = this.getChangeRoleScript()) === null || _l === void 0 ? void 0 : _l.toDict(),
+            "logSetting": (_m = this.getLogSetting()) === null || _m === void 0 ? void 0 : _m.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

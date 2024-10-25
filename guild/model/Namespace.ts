@@ -24,12 +24,14 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
+    private changeNotification: NotificationSetting|null = null;
     private joinNotification: NotificationSetting|null = null;
     private leaveNotification: NotificationSetting|null = null;
     private changeMemberNotification: NotificationSetting|null = null;
     private receiveRequestNotification: NotificationSetting|null = null;
     private removeRequestNotification: NotificationSetting|null = null;
     private createGuildScript: ScriptSetting|null = null;
+    private updateGuildScript: ScriptSetting|null = null;
     private joinGuildScript: ScriptSetting|null = null;
     private leaveGuildScript: ScriptSetting|null = null;
     private changeRoleScript: ScriptSetting|null = null;
@@ -130,6 +132,17 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
+    public getChangeNotification(): NotificationSetting|null {
+        return this.changeNotification;
+    }
+    public setChangeNotification(changeNotification: NotificationSetting|null) {
+        this.changeNotification = changeNotification;
+        return this;
+    }
+    public withChangeNotification(changeNotification: NotificationSetting|null): this {
+        this.changeNotification = changeNotification;
+        return this;
+    }
     public getJoinNotification(): NotificationSetting|null {
         return this.joinNotification;
     }
@@ -194,6 +207,17 @@ export default class Namespace implements IModel {
     }
     public withCreateGuildScript(createGuildScript: ScriptSetting|null): this {
         this.createGuildScript = createGuildScript;
+        return this;
+    }
+    public getUpdateGuildScript(): ScriptSetting|null {
+        return this.updateGuildScript;
+    }
+    public setUpdateGuildScript(updateGuildScript: ScriptSetting|null) {
+        this.updateGuildScript = updateGuildScript;
+        return this;
+    }
+    public withUpdateGuildScript(updateGuildScript: ScriptSetting|null): this {
+        this.updateGuildScript = updateGuildScript;
         return this;
     }
     public getJoinGuildScript(): ScriptSetting|null {
@@ -282,12 +306,14 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
+            .withChangeNotification(NotificationSetting.fromDict(data["changeNotification"]))
             .withJoinNotification(NotificationSetting.fromDict(data["joinNotification"]))
             .withLeaveNotification(NotificationSetting.fromDict(data["leaveNotification"]))
             .withChangeMemberNotification(NotificationSetting.fromDict(data["changeMemberNotification"]))
             .withReceiveRequestNotification(NotificationSetting.fromDict(data["receiveRequestNotification"]))
             .withRemoveRequestNotification(NotificationSetting.fromDict(data["removeRequestNotification"]))
             .withCreateGuildScript(ScriptSetting.fromDict(data["createGuildScript"]))
+            .withUpdateGuildScript(ScriptSetting.fromDict(data["updateGuildScript"]))
             .withJoinGuildScript(ScriptSetting.fromDict(data["joinGuildScript"]))
             .withLeaveGuildScript(ScriptSetting.fromDict(data["leaveGuildScript"]))
             .withChangeRoleScript(ScriptSetting.fromDict(data["changeRoleScript"]))
@@ -302,12 +328,14 @@ export default class Namespace implements IModel {
             "namespaceId": this.getNamespaceId(),
             "name": this.getName(),
             "description": this.getDescription(),
+            "changeNotification": this.getChangeNotification()?.toDict(),
             "joinNotification": this.getJoinNotification()?.toDict(),
             "leaveNotification": this.getLeaveNotification()?.toDict(),
             "changeMemberNotification": this.getChangeMemberNotification()?.toDict(),
             "receiveRequestNotification": this.getReceiveRequestNotification()?.toDict(),
             "removeRequestNotification": this.getRemoveRequestNotification()?.toDict(),
             "createGuildScript": this.getCreateGuildScript()?.toDict(),
+            "updateGuildScript": this.getUpdateGuildScript()?.toDict(),
             "joinGuildScript": this.getJoinGuildScript()?.toDict(),
             "leaveGuildScript": this.getLeaveGuildScript()?.toDict(),
             "changeRoleScript": this.getChangeRoleScript()?.toDict(),

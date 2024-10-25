@@ -49,7 +49,7 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region);
@@ -61,16 +61,18 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
             'name': (_b = request.getName()) !== null && _b !== void 0 ? _b : null,
             'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
-            'joinNotification': (_e = (_d = request.getJoinNotification()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
-            'leaveNotification': (_g = (_f = request.getLeaveNotification()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'changeMemberNotification': (_j = (_h = request.getChangeMemberNotification()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
-            'receiveRequestNotification': (_l = (_k = request.getReceiveRequestNotification()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
-            'removeRequestNotification': (_o = (_m = request.getRemoveRequestNotification()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
-            'createGuildScript': (_q = (_p = request.getCreateGuildScript()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
-            'joinGuildScript': (_s = (_r = request.getJoinGuildScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
-            'leaveGuildScript': (_u = (_t = request.getLeaveGuildScript()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
-            'changeRoleScript': (_w = (_v = request.getChangeRoleScript()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
-            'logSetting': (_y = (_x = request.getLogSetting()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
+            'changeNotification': (_e = (_d = request.getChangeNotification()) === null || _d === void 0 ? void 0 : _d.toDict()) !== null && _e !== void 0 ? _e : null,
+            'joinNotification': (_g = (_f = request.getJoinNotification()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
+            'leaveNotification': (_j = (_h = request.getLeaveNotification()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'changeMemberNotification': (_l = (_k = request.getChangeMemberNotification()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
+            'receiveRequestNotification': (_o = (_m = request.getReceiveRequestNotification()) === null || _m === void 0 ? void 0 : _m.toDict()) !== null && _o !== void 0 ? _o : null,
+            'removeRequestNotification': (_q = (_p = request.getRemoveRequestNotification()) === null || _p === void 0 ? void 0 : _p.toDict()) !== null && _q !== void 0 ? _q : null,
+            'createGuildScript': (_s = (_r = request.getCreateGuildScript()) === null || _r === void 0 ? void 0 : _r.toDict()) !== null && _s !== void 0 ? _s : null,
+            'updateGuildScript': (_u = (_t = request.getUpdateGuildScript()) === null || _t === void 0 ? void 0 : _t.toDict()) !== null && _u !== void 0 ? _u : null,
+            'joinGuildScript': (_w = (_v = request.getJoinGuildScript()) === null || _v === void 0 ? void 0 : _v.toDict()) !== null && _w !== void 0 ? _w : null,
+            'leaveGuildScript': (_y = (_x = request.getLeaveGuildScript()) === null || _x === void 0 ? void 0 : _x.toDict()) !== null && _y !== void 0 ? _y : null,
+            'changeRoleScript': (_0 = (_z = request.getChangeRoleScript()) === null || _z === void 0 ? void 0 : _z.toDict()) !== null && _0 !== void 0 ? _0 : null,
+            'logSetting': (_2 = (_1 = request.getLogSetting()) === null || _1 === void 0 ? void 0 : _1.toDict()) !== null && _2 !== void 0 ? _2 : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -130,7 +132,7 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
@@ -142,16 +144,18 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
-            'joinNotification': (_f = (_e = request.getJoinNotification()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
-            'leaveNotification': (_h = (_g = request.getLeaveNotification()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
-            'changeMemberNotification': (_k = (_j = request.getChangeMemberNotification()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
-            'receiveRequestNotification': (_m = (_l = request.getReceiveRequestNotification()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
-            'removeRequestNotification': (_p = (_o = request.getRemoveRequestNotification()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
-            'createGuildScript': (_r = (_q = request.getCreateGuildScript()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
-            'joinGuildScript': (_t = (_s = request.getJoinGuildScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
-            'leaveGuildScript': (_v = (_u = request.getLeaveGuildScript()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
-            'changeRoleScript': (_x = (_w = request.getChangeRoleScript()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
-            'logSetting': (_z = (_y = request.getLogSetting()) === null || _y === void 0 ? void 0 : _y.toDict()) !== null && _z !== void 0 ? _z : null,
+            'changeNotification': (_f = (_e = request.getChangeNotification()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
+            'joinNotification': (_h = (_g = request.getJoinNotification()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'leaveNotification': (_k = (_j = request.getLeaveNotification()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
+            'changeMemberNotification': (_m = (_l = request.getChangeMemberNotification()) === null || _l === void 0 ? void 0 : _l.toDict()) !== null && _m !== void 0 ? _m : null,
+            'receiveRequestNotification': (_p = (_o = request.getReceiveRequestNotification()) === null || _o === void 0 ? void 0 : _o.toDict()) !== null && _p !== void 0 ? _p : null,
+            'removeRequestNotification': (_r = (_q = request.getRemoveRequestNotification()) === null || _q === void 0 ? void 0 : _q.toDict()) !== null && _r !== void 0 ? _r : null,
+            'createGuildScript': (_t = (_s = request.getCreateGuildScript()) === null || _s === void 0 ? void 0 : _s.toDict()) !== null && _t !== void 0 ? _t : null,
+            'updateGuildScript': (_v = (_u = request.getUpdateGuildScript()) === null || _u === void 0 ? void 0 : _u.toDict()) !== null && _v !== void 0 ? _v : null,
+            'joinGuildScript': (_x = (_w = request.getJoinGuildScript()) === null || _w === void 0 ? void 0 : _w.toDict()) !== null && _x !== void 0 ? _x : null,
+            'leaveGuildScript': (_z = (_y = request.getLeaveGuildScript()) === null || _y === void 0 ? void 0 : _y.toDict()) !== null && _z !== void 0 ? _z : null,
+            'changeRoleScript': (_1 = (_0 = request.getChangeRoleScript()) === null || _0 === void 0 ? void 0 : _0.toDict()) !== null && _1 !== void 0 ? _1 : null,
+            'logSetting': (_3 = (_2 = request.getLogSetting()) === null || _2 === void 0 ? void 0 : _2.toDict()) !== null && _3 !== void 0 ? _3 : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,

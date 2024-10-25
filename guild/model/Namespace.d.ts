@@ -6,12 +6,14 @@ export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
+    private changeNotification;
     private joinNotification;
     private leaveNotification;
     private changeMemberNotification;
     private receiveRequestNotification;
     private removeRequestNotification;
     private createGuildScript;
+    private updateGuildScript;
     private joinGuildScript;
     private leaveGuildScript;
     private changeRoleScript;
@@ -33,6 +35,9 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
+    getChangeNotification(): NotificationSetting | null;
+    setChangeNotification(changeNotification: NotificationSetting | null): this;
+    withChangeNotification(changeNotification: NotificationSetting | null): this;
     getJoinNotification(): NotificationSetting | null;
     setJoinNotification(joinNotification: NotificationSetting | null): this;
     withJoinNotification(joinNotification: NotificationSetting | null): this;
@@ -51,6 +56,9 @@ export default class Namespace implements IModel {
     getCreateGuildScript(): ScriptSetting | null;
     setCreateGuildScript(createGuildScript: ScriptSetting | null): this;
     withCreateGuildScript(createGuildScript: ScriptSetting | null): this;
+    getUpdateGuildScript(): ScriptSetting | null;
+    setUpdateGuildScript(updateGuildScript: ScriptSetting | null): this;
+    withUpdateGuildScript(updateGuildScript: ScriptSetting | null): this;
     getJoinGuildScript(): ScriptSetting | null;
     setJoinGuildScript(joinGuildScript: ScriptSetting | null): this;
     withJoinGuildScript(joinGuildScript: ScriptSetting | null): this;
