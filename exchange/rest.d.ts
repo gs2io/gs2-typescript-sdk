@@ -53,6 +53,7 @@ export default class Gs2ExchangeRestClient extends AbstractGs2RestClient {
     deleteAwait(request: Request.DeleteAwaitRequest): Promise<Result.DeleteAwaitResult>;
     deleteAwaitByUserId(request: Request.DeleteAwaitByUserIdRequest): Promise<Result.DeleteAwaitByUserIdResult>;
     createAwaitByStampSheet(request: Request.CreateAwaitByStampSheetRequest): Promise<Result.CreateAwaitByStampSheetResult>;
+    acquireForceByStampSheet(request: Request.AcquireForceByStampSheetRequest): Promise<Result.AcquireForceByStampSheetResult>;
     skipByStampSheet(request: Request.SkipByStampSheetRequest): Promise<Result.SkipByStampSheetResult>;
     deleteAwaitByStampTask(request: Request.DeleteAwaitByStampTaskRequest): Promise<Result.DeleteAwaitByStampTaskResult>;
 }

@@ -62,6 +62,7 @@ import SkipByUserIdRequest from "./SkipByUserIdRequest"
 import DeleteAwaitRequest from "./DeleteAwaitRequest"
 import DeleteAwaitByUserIdRequest from "./DeleteAwaitByUserIdRequest"
 import CreateAwaitByStampSheetRequest from "./CreateAwaitByStampSheetRequest"
+import AcquireForceByStampSheetRequest from "./AcquireForceByStampSheetRequest"
 import SkipByStampSheetRequest from "./SkipByStampSheetRequest"
 import DeleteAwaitByStampTaskRequest from "./DeleteAwaitByStampTaskRequest"
 
@@ -115,6 +116,7 @@ export {
     DeleteAwaitRequest,
     DeleteAwaitByUserIdRequest,
     CreateAwaitByStampSheetRequest,
+    AcquireForceByStampSheetRequest,
     SkipByStampSheetRequest,
     DeleteAwaitByStampTaskRequest,
 };
