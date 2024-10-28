@@ -6,6 +6,7 @@ export default class OpenIdConnectSetting implements IModel {
     private appleTeamId;
     private appleKeyId;
     private applePrivateKeyPem;
+    private doneEndpointUrl;
     getConfigurationPath(): string | null;
     setConfigurationPath(configurationPath: string | null): this;
     withConfigurationPath(configurationPath: string | null): this;
@@ -24,6 +25,9 @@ export default class OpenIdConnectSetting implements IModel {
     getApplePrivateKeyPem(): string | null;
     setApplePrivateKeyPem(applePrivateKeyPem: string | null): this;
     withApplePrivateKeyPem(applePrivateKeyPem: string | null): this;
+    getDoneEndpointUrl(): string | null;
+    setDoneEndpointUrl(doneEndpointUrl: string | null): this;
+    withDoneEndpointUrl(doneEndpointUrl: string | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): OpenIdConnectSetting | null;

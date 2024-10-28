@@ -23,6 +23,7 @@ export default class OpenIdConnectSetting implements IModel {
     private appleTeamId: string|null = null;
     private appleKeyId: string|null = null;
     private applePrivateKeyPem: string|null = null;
+    private doneEndpointUrl: string|null = null;
     public getConfigurationPath(): string|null {
         return this.configurationPath;
     }
@@ -89,6 +90,17 @@ export default class OpenIdConnectSetting implements IModel {
         this.applePrivateKeyPem = applePrivateKeyPem;
         return this;
     }
+    public getDoneEndpointUrl(): string|null {
+        return this.doneEndpointUrl;
+    }
+    public setDoneEndpointUrl(doneEndpointUrl: string|null) {
+        this.doneEndpointUrl = doneEndpointUrl;
+        return this;
+    }
+    public withDoneEndpointUrl(doneEndpointUrl: string|null): this {
+        this.doneEndpointUrl = doneEndpointUrl;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): OpenIdConnectSetting|null {
         if (data == undefined || data == null) {
@@ -100,7 +112,8 @@ export default class OpenIdConnectSetting implements IModel {
             .withClientSecret(data["clientSecret"])
             .withAppleTeamId(data["appleTeamId"])
             .withAppleKeyId(data["appleKeyId"])
-            .withApplePrivateKeyPem(data["applePrivateKeyPem"]);
+            .withApplePrivateKeyPem(data["applePrivateKeyPem"])
+            .withDoneEndpointUrl(data["doneEndpointUrl"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -111,6 +124,7 @@ export default class OpenIdConnectSetting implements IModel {
             "appleTeamId": this.getAppleTeamId(),
             "appleKeyId": this.getAppleKeyId(),
             "applePrivateKeyPem": this.getApplePrivateKeyPem(),
+            "doneEndpointUrl": this.getDoneEndpointUrl(),
         };
     }
 }

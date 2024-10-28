@@ -23,6 +23,7 @@ var OpenIdConnectSetting = /** @class */ (function () {
         this.appleTeamId = null;
         this.appleKeyId = null;
         this.applePrivateKeyPem = null;
+        this.doneEndpointUrl = null;
     }
     OpenIdConnectSetting.prototype.getConfigurationPath = function () {
         return this.configurationPath;
@@ -90,6 +91,17 @@ var OpenIdConnectSetting = /** @class */ (function () {
         this.applePrivateKeyPem = applePrivateKeyPem;
         return this;
     };
+    OpenIdConnectSetting.prototype.getDoneEndpointUrl = function () {
+        return this.doneEndpointUrl;
+    };
+    OpenIdConnectSetting.prototype.setDoneEndpointUrl = function (doneEndpointUrl) {
+        this.doneEndpointUrl = doneEndpointUrl;
+        return this;
+    };
+    OpenIdConnectSetting.prototype.withDoneEndpointUrl = function (doneEndpointUrl) {
+        this.doneEndpointUrl = doneEndpointUrl;
+        return this;
+    };
     OpenIdConnectSetting.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -100,7 +112,8 @@ var OpenIdConnectSetting = /** @class */ (function () {
             .withClientSecret(data["clientSecret"])
             .withAppleTeamId(data["appleTeamId"])
             .withAppleKeyId(data["appleKeyId"])
-            .withApplePrivateKeyPem(data["applePrivateKeyPem"]);
+            .withApplePrivateKeyPem(data["applePrivateKeyPem"])
+            .withDoneEndpointUrl(data["doneEndpointUrl"]);
     };
     OpenIdConnectSetting.prototype.toDict = function () {
         return {
@@ -110,6 +123,7 @@ var OpenIdConnectSetting = /** @class */ (function () {
             "appleTeamId": this.getAppleTeamId(),
             "appleKeyId": this.getAppleKeyId(),
             "applePrivateKeyPem": this.getApplePrivateKeyPem(),
+            "doneEndpointUrl": this.getDoneEndpointUrl(),
         };
     };
     return OpenIdConnectSetting;
