@@ -9,6 +9,7 @@ export default class MultiplyAcquireActionsByUserIdRequest implements IRequest {
     private propertyId;
     private rateName;
     private acquireActions;
+    private baseRate;
     private timeOffsetToken;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -35,6 +36,9 @@ export default class MultiplyAcquireActionsByUserIdRequest implements IRequest {
     getAcquireActions(): Gs2Experience.AcquireAction[] | null;
     setAcquireActions(acquireActions: Gs2Experience.AcquireAction[] | null): this;
     withAcquireActions(acquireActions: Gs2Experience.AcquireAction[] | null): this;
+    getBaseRate(): number | null;
+    setBaseRate(baseRate: number | null): this;
+    withBaseRate(baseRate: number | null): this;
     getTimeOffsetToken(): string | null;
     setTimeOffsetToken(timeOffsetToken: string | null): this;
     withTimeOffsetToken(timeOffsetToken: string | null): this;

@@ -1826,6 +1826,7 @@ export default class Gs2ExperienceRestClient extends AbstractGs2RestClient {
         const body: {[key: string]: any} = {
             'contextStack': request.getContextStack() ?? null,
             'acquireActions': request.getAcquireActions()?.map((item) => item.toDict()) ?? null,
+            'baseRate': request.getBaseRate() ?? null,
         };
         return axios.post(
             url,

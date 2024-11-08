@@ -1586,7 +1586,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2ExperienceRestClient.prototype.multiplyAcquireActionsByUserId = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/status/model/{experienceName}/property/{propertyId}/acquire/rate/{rateName}/multiply')
             .replace('{service}', 'experience')
             .replace('{region}', this.session.region)
@@ -1608,6 +1608,7 @@ var Gs2ExperienceRestClient = /** @class */ (function (_super) {
         var body = {
             'contextStack': (_o = request.getContextStack()) !== null && _o !== void 0 ? _o : null,
             'acquireActions': (_q = (_p = request.getAcquireActions()) === null || _p === void 0 ? void 0 : _p.map(function (item) { return item.toDict(); })) !== null && _q !== void 0 ? _q : null,
+            'baseRate': (_r = request.getBaseRate()) !== null && _r !== void 0 ? _r : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,

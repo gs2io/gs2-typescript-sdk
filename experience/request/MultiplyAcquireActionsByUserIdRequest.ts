@@ -28,6 +28,7 @@ export default class MultiplyAcquireActionsByUserIdRequest implements IRequest {
     private propertyId: string|null = null;
     private rateName: string|null = null;
     private acquireActions: Gs2Experience.AcquireAction[]|null = null;
+    private baseRate: number|null = null;
     private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
 
@@ -124,6 +125,17 @@ export default class MultiplyAcquireActionsByUserIdRequest implements IRequest {
         this.acquireActions = acquireActions;
         return this;
     }
+    public getBaseRate(): number|null {
+        return this.baseRate;
+    }
+    public setBaseRate(baseRate: number|null) {
+        this.baseRate = baseRate;
+        return this;
+    }
+    public withBaseRate(baseRate: number|null): this {
+        this.baseRate = baseRate;
+        return this;
+    }
     public getTimeOffsetToken(): string|null {
         return this.timeOffsetToken;
     }
@@ -162,6 +174,7 @@ export default class MultiplyAcquireActionsByUserIdRequest implements IRequest {
                     return Gs2Experience.AcquireAction.fromDict(item);
                 }
             ) : [])
+            .withBaseRate(data["baseRate"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -177,6 +190,7 @@ export default class MultiplyAcquireActionsByUserIdRequest implements IRequest {
                     return item.toDict();
                 }
             ) : [],
+            "baseRate": this.getBaseRate(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }
