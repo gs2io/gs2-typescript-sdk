@@ -41,4 +41,19 @@ export default class Gs2GatewayWebSocketClient extends AbstractGs2WebSocketClien
         );
         return Result.SetUserIdResult.fromDict(result);
     }
+
+    public async setUserIdByUserId(request: Request.SetUserIdByUserIdRequest): Promise<Result.SetUserIdResult> {
+        const result = await this.session.send(
+            "gateway",
+            "webSocketSession",
+            "setUserIdByUserId",
+            {
+                'contextStack': request.getContextStack() ?? null,
+                'namespaceName': request.getNamespaceName() ?? null,
+                'userId': request.getUserId() ?? null,
+                'allowConcurrentAccess': request.getAllowConcurrentAccess() ?? null,
+            },
+        );
+        return Result.SetUserIdResult.fromDict(result);
+    }
 }

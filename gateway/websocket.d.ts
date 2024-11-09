@@ -5,4 +5,5 @@ import * as Result from './result';
 export default class Gs2GatewayWebSocketClient extends AbstractGs2WebSocketClient {
     constructor(session: Gs2WebSocketSession);
     setUserId(request: Request.SetUserIdRequest): Promise<Result.SetUserIdResult>;
+    setUserIdByUserId(request: Request.SetUserIdByUserIdRequest): Promise<Result.SetUserIdResult>;
 }

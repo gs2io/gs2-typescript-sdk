@@ -42,6 +42,25 @@ var Gs2GatewayWebSocketClient = /** @class */ (function (_super) {
             });
         });
     };
+    Gs2GatewayWebSocketClient.prototype.setUserIdByUserId = function (request) {
+        var _a, _b, _c, _d;
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var result;
+            return tslib_1.__generator(this, function (_e) {
+                switch (_e.label) {
+                    case 0: return [4 /*yield*/, this.session.send("gateway", "webSocketSession", "setUserIdByUserId", {
+                            'contextStack': (_a = request.getContextStack()) !== null && _a !== void 0 ? _a : null,
+                            'namespaceName': (_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : null,
+                            'userId': (_c = request.getUserId()) !== null && _c !== void 0 ? _c : null,
+                            'allowConcurrentAccess': (_d = request.getAllowConcurrentAccess()) !== null && _d !== void 0 ? _d : null,
+                        })];
+                    case 1:
+                        result = _e.sent();
+                        return [2 /*return*/, Result.SetUserIdResult.fromDict(result)];
+                }
+            });
+        });
+    };
     return Gs2GatewayWebSocketClient;
 }(AbstractGs2WebSocketClient_1.default));
 exports.default = Gs2GatewayWebSocketClient;
