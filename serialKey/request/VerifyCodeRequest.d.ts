@@ -5,6 +5,7 @@ export default class VerifyCodeRequest implements IRequest {
     private namespaceName;
     private accessToken;
     private code;
+    private campaignModelName;
     private verifyType;
     private duplicationAvoider;
     getRequestId(): string | null;
@@ -22,6 +23,9 @@ export default class VerifyCodeRequest implements IRequest {
     getCode(): string | null;
     setCode(code: string | null): this;
     withCode(code: string | null): this;
+    getCampaignModelName(): string | null;
+    setCampaignModelName(campaignModelName: string | null): this;
+    withCampaignModelName(campaignModelName: string | null): this;
     getVerifyType(): string | null;
     setVerifyType(verifyType: string | null): this;
     withVerifyType(verifyType: string | null): this;

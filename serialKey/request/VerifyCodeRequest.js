@@ -22,6 +22,7 @@ var VerifyCodeRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.accessToken = null;
         this.code = null;
+        this.campaignModelName = null;
         this.verifyType = null;
         this.duplicationAvoider = null;
     }
@@ -80,6 +81,17 @@ var VerifyCodeRequest = /** @class */ (function () {
         this.code = code;
         return this;
     };
+    VerifyCodeRequest.prototype.getCampaignModelName = function () {
+        return this.campaignModelName;
+    };
+    VerifyCodeRequest.prototype.setCampaignModelName = function (campaignModelName) {
+        this.campaignModelName = campaignModelName;
+        return this;
+    };
+    VerifyCodeRequest.prototype.withCampaignModelName = function (campaignModelName) {
+        this.campaignModelName = campaignModelName;
+        return this;
+    };
     VerifyCodeRequest.prototype.getVerifyType = function () {
         return this.verifyType;
     };
@@ -107,6 +119,7 @@ var VerifyCodeRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
             .withCode(data["code"])
+            .withCampaignModelName(data["campaignModelName"])
             .withVerifyType(data["verifyType"]);
     };
     VerifyCodeRequest.prototype.toDict = function () {
@@ -114,6 +127,7 @@ var VerifyCodeRequest = /** @class */ (function () {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
             "code": this.getCode(),
+            "campaignModelName": this.getCampaignModelName(),
             "verifyType": this.getVerifyType(),
         };
     };

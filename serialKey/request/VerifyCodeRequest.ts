@@ -25,6 +25,7 @@ export default class VerifyCodeRequest implements IRequest {
     private namespaceName: string|null = null;
     private accessToken: string|null = null;
     private code: string|null = null;
+    private campaignModelName: string|null = null;
     private verifyType: string|null = null;
     private duplicationAvoider: string|null = null;
 
@@ -88,6 +89,17 @@ export default class VerifyCodeRequest implements IRequest {
         this.code = code;
         return this;
     }
+    public getCampaignModelName(): string|null {
+        return this.campaignModelName;
+    }
+    public setCampaignModelName(campaignModelName: string|null) {
+        this.campaignModelName = campaignModelName;
+        return this;
+    }
+    public withCampaignModelName(campaignModelName: string|null): this {
+        this.campaignModelName = campaignModelName;
+        return this;
+    }
     public getVerifyType(): string|null {
         return this.verifyType;
     }
@@ -119,6 +131,7 @@ export default class VerifyCodeRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withAccessToken(data["accessToken"])
             .withCode(data["code"])
+            .withCampaignModelName(data["campaignModelName"])
             .withVerifyType(data["verifyType"]);
     }
 
@@ -127,6 +140,7 @@ export default class VerifyCodeRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "accessToken": this.getAccessToken(),
             "code": this.getCode(),
+            "campaignModelName": this.getCampaignModelName(),
             "verifyType": this.getVerifyType(),
         };
     }

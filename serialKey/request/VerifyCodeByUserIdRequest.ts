@@ -25,6 +25,7 @@ export default class VerifyCodeByUserIdRequest implements IRequest {
     private namespaceName: string|null = null;
     private userId: string|null = null;
     private code: string|null = null;
+    private campaignModelName: string|null = null;
     private verifyType: string|null = null;
     private timeOffsetToken: string|null = null;
     private duplicationAvoider: string|null = null;
@@ -89,6 +90,17 @@ export default class VerifyCodeByUserIdRequest implements IRequest {
         this.code = code;
         return this;
     }
+    public getCampaignModelName(): string|null {
+        return this.campaignModelName;
+    }
+    public setCampaignModelName(campaignModelName: string|null) {
+        this.campaignModelName = campaignModelName;
+        return this;
+    }
+    public withCampaignModelName(campaignModelName: string|null): this {
+        this.campaignModelName = campaignModelName;
+        return this;
+    }
     public getVerifyType(): string|null {
         return this.verifyType;
     }
@@ -131,6 +143,7 @@ export default class VerifyCodeByUserIdRequest implements IRequest {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withCode(data["code"])
+            .withCampaignModelName(data["campaignModelName"])
             .withVerifyType(data["verifyType"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
@@ -140,6 +153,7 @@ export default class VerifyCodeByUserIdRequest implements IRequest {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "code": this.getCode(),
+            "campaignModelName": this.getCampaignModelName(),
             "verifyType": this.getVerifyType(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };

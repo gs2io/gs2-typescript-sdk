@@ -41,6 +41,7 @@ import RevertUseByUserIdResult from "./RevertUseByUserIdResult"
 import UseByStampTaskResult from "./UseByStampTaskResult"
 import RevertUseByStampSheetResult from "./RevertUseByStampSheetResult"
 import VerifyByStampTaskResult from "./VerifyByStampTaskResult"
+import IssueOnceByStampSheetResult from "./IssueOnceByStampSheetResult"
 import DescribeCampaignModelsResult from "./DescribeCampaignModelsResult"
 import GetCampaignModelResult from "./GetCampaignModelResult"
 import DescribeCampaignModelMastersResult from "./DescribeCampaignModelMastersResult"
@@ -82,6 +83,7 @@ export {
     UseByStampTaskResult,
     RevertUseByStampSheetResult,
     VerifyByStampTaskResult,
+    IssueOnceByStampSheetResult,
     DescribeCampaignModelsResult,
     GetCampaignModelResult,
     DescribeCampaignModelMastersResult,

@@ -5,6 +5,7 @@ export default class VerifyCodeByUserIdRequest implements IRequest {
     private namespaceName;
     private userId;
     private code;
+    private campaignModelName;
     private verifyType;
     private timeOffsetToken;
     private duplicationAvoider;
@@ -23,6 +24,9 @@ export default class VerifyCodeByUserIdRequest implements IRequest {
     getCode(): string | null;
     setCode(code: string | null): this;
     withCode(code: string | null): this;
+    getCampaignModelName(): string | null;
+    setCampaignModelName(campaignModelName: string | null): this;
+    withCampaignModelName(campaignModelName: string | null): this;
     getVerifyType(): string | null;
     setVerifyType(verifyType: string | null): this;
     withVerifyType(verifyType: string | null): this;

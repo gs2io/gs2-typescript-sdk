@@ -32,6 +32,7 @@ export default class Gs2SerialKeyRestClient extends AbstractGs2RestClient {
     useByStampTask(request: Request.UseByStampTaskRequest): Promise<Result.UseByStampTaskResult>;
     revertUseByStampSheet(request: Request.RevertUseByStampSheetRequest): Promise<Result.RevertUseByStampSheetResult>;
     verifyByStampTask(request: Request.VerifyByStampTaskRequest): Promise<Result.VerifyByStampTaskResult>;
+    issueOnceByStampSheet(request: Request.IssueOnceByStampSheetRequest): Promise<Result.IssueOnceByStampSheetResult>;
     describeCampaignModels(request: Request.DescribeCampaignModelsRequest): Promise<Result.DescribeCampaignModelsResult>;
     getCampaignModel(request: Request.GetCampaignModelRequest): Promise<Result.GetCampaignModelResult>;
     describeCampaignModelMasters(request: Request.DescribeCampaignModelMastersRequest): Promise<Result.DescribeCampaignModelMastersResult>;

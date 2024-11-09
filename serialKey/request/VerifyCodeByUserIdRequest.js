@@ -22,6 +22,7 @@ var VerifyCodeByUserIdRequest = /** @class */ (function () {
         this.namespaceName = null;
         this.userId = null;
         this.code = null;
+        this.campaignModelName = null;
         this.verifyType = null;
         this.timeOffsetToken = null;
         this.duplicationAvoider = null;
@@ -81,6 +82,17 @@ var VerifyCodeByUserIdRequest = /** @class */ (function () {
         this.code = code;
         return this;
     };
+    VerifyCodeByUserIdRequest.prototype.getCampaignModelName = function () {
+        return this.campaignModelName;
+    };
+    VerifyCodeByUserIdRequest.prototype.setCampaignModelName = function (campaignModelName) {
+        this.campaignModelName = campaignModelName;
+        return this;
+    };
+    VerifyCodeByUserIdRequest.prototype.withCampaignModelName = function (campaignModelName) {
+        this.campaignModelName = campaignModelName;
+        return this;
+    };
     VerifyCodeByUserIdRequest.prototype.getVerifyType = function () {
         return this.verifyType;
     };
@@ -119,6 +131,7 @@ var VerifyCodeByUserIdRequest = /** @class */ (function () {
             .withNamespaceName(data["namespaceName"])
             .withUserId(data["userId"])
             .withCode(data["code"])
+            .withCampaignModelName(data["campaignModelName"])
             .withVerifyType(data["verifyType"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
@@ -127,6 +140,7 @@ var VerifyCodeByUserIdRequest = /** @class */ (function () {
             "namespaceName": this.getNamespaceName(),
             "userId": this.getUserId(),
             "code": this.getCode(),
+            "campaignModelName": this.getCampaignModelName(),
             "verifyType": this.getVerifyType(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
