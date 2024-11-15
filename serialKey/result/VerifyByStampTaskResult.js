@@ -20,6 +20,7 @@ var Gs2SerialKey = tslib_1.__importStar(require("../model"));
 var VerifyByStampTaskResult = /** @class */ (function () {
     function VerifyByStampTaskResult() {
         this.item = null;
+        this.campaignModel = null;
         this.newContextStack = null;
     }
     VerifyByStampTaskResult.prototype.getItem = function () {
@@ -31,6 +32,17 @@ var VerifyByStampTaskResult = /** @class */ (function () {
     };
     VerifyByStampTaskResult.prototype.withItem = function (item) {
         this.item = item;
+        return this;
+    };
+    VerifyByStampTaskResult.prototype.getCampaignModel = function () {
+        return this.campaignModel;
+    };
+    VerifyByStampTaskResult.prototype.setCampaignModel = function (campaignModel) {
+        this.campaignModel = campaignModel;
+        return this;
+    };
+    VerifyByStampTaskResult.prototype.withCampaignModel = function (campaignModel) {
+        this.campaignModel = campaignModel;
         return this;
     };
     VerifyByStampTaskResult.prototype.getNewContextStack = function () {
@@ -47,12 +59,14 @@ var VerifyByStampTaskResult = /** @class */ (function () {
     VerifyByStampTaskResult.fromDict = function (data) {
         return new VerifyByStampTaskResult()
             .withItem(Gs2SerialKey.SerialKey.fromDict(data["item"]))
+            .withCampaignModel(Gs2SerialKey.CampaignModel.fromDict(data["campaignModel"]))
             .withNewContextStack(data["newContextStack"]);
     };
     VerifyByStampTaskResult.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "campaignModel": (_b = this.getCampaignModel()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "newContextStack": this.getNewContextStack(),
         };
     };

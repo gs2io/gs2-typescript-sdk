@@ -19,6 +19,7 @@ import * as Gs2SerialKey from '../model'
 
 export default class VerifyByStampTaskResult implements IResult {
     private item: Gs2SerialKey.SerialKey|null = null;
+    private campaignModel: Gs2SerialKey.CampaignModel|null = null;
     private newContextStack: string|null = null;
 
     public getItem(): Gs2SerialKey.SerialKey|null {
@@ -32,6 +33,20 @@ export default class VerifyByStampTaskResult implements IResult {
 
     public withItem(item: Gs2SerialKey.SerialKey|null): this {
         this.item = item;
+        return this;
+    }
+
+    public getCampaignModel(): Gs2SerialKey.CampaignModel|null {
+        return this.campaignModel;
+    }
+
+    public setCampaignModel(campaignModel: Gs2SerialKey.CampaignModel|null) {
+        this.campaignModel = campaignModel;
+        return this;
+    }
+
+    public withCampaignModel(campaignModel: Gs2SerialKey.CampaignModel|null): this {
+        this.campaignModel = campaignModel;
         return this;
     }
 
@@ -52,12 +67,14 @@ export default class VerifyByStampTaskResult implements IResult {
     public static fromDict(data: {[key: string]: any}): VerifyByStampTaskResult {
         return new VerifyByStampTaskResult()
             .withItem(Gs2SerialKey.SerialKey.fromDict(data["item"]))
+            .withCampaignModel(Gs2SerialKey.CampaignModel.fromDict(data["campaignModel"]))
             .withNewContextStack(data["newContextStack"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
+            "campaignModel": this.getCampaignModel()?.toDict(),
             "newContextStack": this.getNewContextStack(),
         };
     }

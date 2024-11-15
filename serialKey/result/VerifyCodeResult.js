@@ -20,6 +20,7 @@ var Gs2SerialKey = tslib_1.__importStar(require("../model"));
 var VerifyCodeResult = /** @class */ (function () {
     function VerifyCodeResult() {
         this.item = null;
+        this.campaignModel = null;
     }
     VerifyCodeResult.prototype.getItem = function () {
         return this.item;
@@ -32,14 +33,27 @@ var VerifyCodeResult = /** @class */ (function () {
         this.item = item;
         return this;
     };
+    VerifyCodeResult.prototype.getCampaignModel = function () {
+        return this.campaignModel;
+    };
+    VerifyCodeResult.prototype.setCampaignModel = function (campaignModel) {
+        this.campaignModel = campaignModel;
+        return this;
+    };
+    VerifyCodeResult.prototype.withCampaignModel = function (campaignModel) {
+        this.campaignModel = campaignModel;
+        return this;
+    };
     VerifyCodeResult.fromDict = function (data) {
         return new VerifyCodeResult()
-            .withItem(Gs2SerialKey.SerialKey.fromDict(data["item"]));
+            .withItem(Gs2SerialKey.SerialKey.fromDict(data["item"]))
+            .withCampaignModel(Gs2SerialKey.CampaignModel.fromDict(data["campaignModel"]));
     };
     VerifyCodeResult.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "campaignModel": (_b = this.getCampaignModel()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return VerifyCodeResult;

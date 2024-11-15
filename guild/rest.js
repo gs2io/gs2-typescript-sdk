@@ -410,7 +410,7 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.createGuildModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
@@ -431,6 +431,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'guildMasterRole': (_m = request.getGuildMasterRole()) !== null && _m !== void 0 ? _m : null,
             'guildMemberDefaultRole': (_o = request.getGuildMemberDefaultRole()) !== null && _o !== void 0 ? _o : null,
             'rejoinCoolTimeMinutes': (_p = request.getRejoinCoolTimeMinutes()) !== null && _p !== void 0 ? _p : null,
+            'maxConcurrentJoinGuilds': (_q = request.getMaxConcurrentJoinGuilds()) !== null && _q !== void 0 ? _q : null,
+            'maxConcurrentGuildMasterCount': (_r = request.getMaxConcurrentGuildMasterCount()) !== null && _r !== void 0 ? _r : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -469,7 +471,7 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2GuildRestClient.prototype.updateGuildModelMaster = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/master/model/{guildModelName}')
             .replace('{service}', 'guild')
             .replace('{region}', this.session.region)
@@ -490,6 +492,8 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             'guildMasterRole': (_o = request.getGuildMasterRole()) !== null && _o !== void 0 ? _o : null,
             'guildMemberDefaultRole': (_p = request.getGuildMemberDefaultRole()) !== null && _p !== void 0 ? _p : null,
             'rejoinCoolTimeMinutes': (_q = request.getRejoinCoolTimeMinutes()) !== null && _q !== void 0 ? _q : null,
+            'maxConcurrentJoinGuilds': (_r = request.getMaxConcurrentJoinGuilds()) !== null && _r !== void 0 ? _r : null,
+            'maxConcurrentGuildMasterCount': (_s = request.getMaxConcurrentGuildMasterCount()) !== null && _s !== void 0 ? _s : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1004,6 +1008,72 @@ var Gs2GuildRestClient = /** @class */ (function (_super) {
             headers: headers,
         }).then(function (response) {
             return Result.UpdateMemberRoleByGuildNameResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2GuildRestClient.prototype.batchUpdateMemberRole = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/batch/member/role')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_f = request.getDuplicationAvoider()) !== null && _f !== void 0 ? _f : null;
+        }
+        var body = {
+            'contextStack': (_g = request.getContextStack()) !== null && _g !== void 0 ? _g : null,
+            'members': (_j = (_h = request.getMembers()) === null || _h === void 0 ? void 0 : _h.map(function (item) { return item.toDict(); })) !== null && _j !== void 0 ? _j : null,
+        };
+        return axios_1.default.put(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.BatchUpdateMemberRoleResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2GuildRestClient.prototype.batchUpdateMemberRoleByGuildName = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/batch/member/role')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{guildModelName}', String((_c = request.getGuildModelName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getGuildModelName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{guildName}', String((_e = request.getGuildName()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getGuildName()) !== null && _f !== void 0 ? _f : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
+        var body = {
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+            'members': (_k = (_j = request.getMembers()) === null || _j === void 0 ? void 0 : _j.map(function (item) { return item.toDict(); })) !== null && _k !== void 0 ? _k : null,
+        };
+        return axios_1.default.put(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.BatchUpdateMemberRoleByGuildNameResult.fromDict(response.data);
         }).catch(function (error) {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

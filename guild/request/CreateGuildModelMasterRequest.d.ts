@@ -14,6 +14,8 @@ export default class CreateGuildModelMasterRequest implements IRequest {
     private guildMasterRole;
     private guildMemberDefaultRole;
     private rejoinCoolTimeMinutes;
+    private maxConcurrentJoinGuilds;
+    private maxConcurrentGuildMasterCount;
     getRequestId(): string | null;
     setRequestId(requestId: string | null): this;
     withRequestId(requestId: string | null): this;
@@ -53,6 +55,12 @@ export default class CreateGuildModelMasterRequest implements IRequest {
     getRejoinCoolTimeMinutes(): number | null;
     setRejoinCoolTimeMinutes(rejoinCoolTimeMinutes: number | null): this;
     withRejoinCoolTimeMinutes(rejoinCoolTimeMinutes: number | null): this;
+    getMaxConcurrentJoinGuilds(): number | null;
+    setMaxConcurrentJoinGuilds(maxConcurrentJoinGuilds: number | null): this;
+    withMaxConcurrentJoinGuilds(maxConcurrentJoinGuilds: number | null): this;
+    getMaxConcurrentGuildMasterCount(): number | null;
+    setMaxConcurrentGuildMasterCount(maxConcurrentGuildMasterCount: number | null): this;
+    withMaxConcurrentGuildMasterCount(maxConcurrentGuildMasterCount: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CreateGuildModelMasterRequest;

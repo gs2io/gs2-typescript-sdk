@@ -11,6 +11,8 @@ export default class GuildModel implements IModel {
     private guildMasterRole;
     private guildMemberDefaultRole;
     private rejoinCoolTimeMinutes;
+    private maxConcurrentJoinGuilds;
+    private maxConcurrentGuildMasterCount;
     static getRegion(grn: string): string | null;
     static getOwnerId(grn: string): string | null;
     static getNamespaceName(grn: string): string | null;
@@ -47,6 +49,12 @@ export default class GuildModel implements IModel {
     getRejoinCoolTimeMinutes(): number | null;
     setRejoinCoolTimeMinutes(rejoinCoolTimeMinutes: number | null): this;
     withRejoinCoolTimeMinutes(rejoinCoolTimeMinutes: number | null): this;
+    getMaxConcurrentJoinGuilds(): number | null;
+    setMaxConcurrentJoinGuilds(maxConcurrentJoinGuilds: number | null): this;
+    withMaxConcurrentJoinGuilds(maxConcurrentJoinGuilds: number | null): this;
+    getMaxConcurrentGuildMasterCount(): number | null;
+    setMaxConcurrentGuildMasterCount(maxConcurrentGuildMasterCount: number | null): this;
+    withMaxConcurrentGuildMasterCount(maxConcurrentGuildMasterCount: number | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GuildModel | null;

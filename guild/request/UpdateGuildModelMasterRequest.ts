@@ -33,6 +33,8 @@ export default class UpdateGuildModelMasterRequest implements IRequest {
     private guildMasterRole: string|null = null;
     private guildMemberDefaultRole: string|null = null;
     private rejoinCoolTimeMinutes: number|null = null;
+    private maxConcurrentJoinGuilds: number|null = null;
+    private maxConcurrentGuildMasterCount: number|null = null;
 
     public getRequestId(): string|null {
         return this.requestId;
@@ -182,6 +184,28 @@ export default class UpdateGuildModelMasterRequest implements IRequest {
         this.rejoinCoolTimeMinutes = rejoinCoolTimeMinutes;
         return this;
     }
+    public getMaxConcurrentJoinGuilds(): number|null {
+        return this.maxConcurrentJoinGuilds;
+    }
+    public setMaxConcurrentJoinGuilds(maxConcurrentJoinGuilds: number|null) {
+        this.maxConcurrentJoinGuilds = maxConcurrentJoinGuilds;
+        return this;
+    }
+    public withMaxConcurrentJoinGuilds(maxConcurrentJoinGuilds: number|null): this {
+        this.maxConcurrentJoinGuilds = maxConcurrentJoinGuilds;
+        return this;
+    }
+    public getMaxConcurrentGuildMasterCount(): number|null {
+        return this.maxConcurrentGuildMasterCount;
+    }
+    public setMaxConcurrentGuildMasterCount(maxConcurrentGuildMasterCount: number|null) {
+        this.maxConcurrentGuildMasterCount = maxConcurrentGuildMasterCount;
+        return this;
+    }
+    public withMaxConcurrentGuildMasterCount(maxConcurrentGuildMasterCount: number|null): this {
+        this.maxConcurrentGuildMasterCount = maxConcurrentGuildMasterCount;
+        return this;
+    }
 
     public static fromDict(data: {[key: string]: any}): UpdateGuildModelMasterRequest {
         return new UpdateGuildModelMasterRequest()
@@ -199,7 +223,9 @@ export default class UpdateGuildModelMasterRequest implements IRequest {
             ) : [])
             .withGuildMasterRole(data["guildMasterRole"])
             .withGuildMemberDefaultRole(data["guildMemberDefaultRole"])
-            .withRejoinCoolTimeMinutes(data["rejoinCoolTimeMinutes"]);
+            .withRejoinCoolTimeMinutes(data["rejoinCoolTimeMinutes"])
+            .withMaxConcurrentJoinGuilds(data["maxConcurrentJoinGuilds"])
+            .withMaxConcurrentGuildMasterCount(data["maxConcurrentGuildMasterCount"]);
     }
 
     public toDict(): {[key: string]: any} {
@@ -219,6 +245,8 @@ export default class UpdateGuildModelMasterRequest implements IRequest {
             "guildMasterRole": this.getGuildMasterRole(),
             "guildMemberDefaultRole": this.getGuildMemberDefaultRole(),
             "rejoinCoolTimeMinutes": this.getRejoinCoolTimeMinutes(),
+            "maxConcurrentJoinGuilds": this.getMaxConcurrentJoinGuilds(),
+            "maxConcurrentGuildMasterCount": this.getMaxConcurrentGuildMasterCount(),
         };
     }
 }

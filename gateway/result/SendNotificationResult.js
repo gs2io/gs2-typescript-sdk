@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var SendNotificationResult = /** @class */ (function () {
     function SendNotificationResult() {
         this.protocol = null;
+        this.sendConnectionIds = null;
     }
     SendNotificationResult.prototype.getProtocol = function () {
         return this.protocol;
@@ -30,13 +31,32 @@ var SendNotificationResult = /** @class */ (function () {
         this.protocol = protocol;
         return this;
     };
+    SendNotificationResult.prototype.getSendConnectionIds = function () {
+        return this.sendConnectionIds;
+    };
+    SendNotificationResult.prototype.setSendConnectionIds = function (sendConnectionIds) {
+        this.sendConnectionIds = sendConnectionIds;
+        return this;
+    };
+    SendNotificationResult.prototype.withSendConnectionIds = function (sendConnectionIds) {
+        this.sendConnectionIds = sendConnectionIds;
+        return this;
+    };
     SendNotificationResult.fromDict = function (data) {
         return new SendNotificationResult()
-            .withProtocol(data["protocol"]);
+            .withProtocol(data["protocol"])
+            .withSendConnectionIds(data.sendConnectionIds ?
+            data.sendConnectionIds.map(function (item) {
+                return item;
+            }) : []);
     };
     SendNotificationResult.prototype.toDict = function () {
         return {
             "protocol": this.getProtocol(),
+            "sendConnectionIds": this.getSendConnectionIds() ?
+                this.getSendConnectionIds().map(function (item) {
+                    return item;
+                }) : [],
         };
     };
     return SendNotificationResult;

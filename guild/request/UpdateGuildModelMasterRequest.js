@@ -32,6 +32,8 @@ var UpdateGuildModelMasterRequest = /** @class */ (function () {
         this.guildMasterRole = null;
         this.guildMemberDefaultRole = null;
         this.rejoinCoolTimeMinutes = null;
+        this.maxConcurrentJoinGuilds = null;
+        this.maxConcurrentGuildMasterCount = null;
     }
     UpdateGuildModelMasterRequest.prototype.getRequestId = function () {
         return this.requestId;
@@ -176,6 +178,28 @@ var UpdateGuildModelMasterRequest = /** @class */ (function () {
         this.rejoinCoolTimeMinutes = rejoinCoolTimeMinutes;
         return this;
     };
+    UpdateGuildModelMasterRequest.prototype.getMaxConcurrentJoinGuilds = function () {
+        return this.maxConcurrentJoinGuilds;
+    };
+    UpdateGuildModelMasterRequest.prototype.setMaxConcurrentJoinGuilds = function (maxConcurrentJoinGuilds) {
+        this.maxConcurrentJoinGuilds = maxConcurrentJoinGuilds;
+        return this;
+    };
+    UpdateGuildModelMasterRequest.prototype.withMaxConcurrentJoinGuilds = function (maxConcurrentJoinGuilds) {
+        this.maxConcurrentJoinGuilds = maxConcurrentJoinGuilds;
+        return this;
+    };
+    UpdateGuildModelMasterRequest.prototype.getMaxConcurrentGuildMasterCount = function () {
+        return this.maxConcurrentGuildMasterCount;
+    };
+    UpdateGuildModelMasterRequest.prototype.setMaxConcurrentGuildMasterCount = function (maxConcurrentGuildMasterCount) {
+        this.maxConcurrentGuildMasterCount = maxConcurrentGuildMasterCount;
+        return this;
+    };
+    UpdateGuildModelMasterRequest.prototype.withMaxConcurrentGuildMasterCount = function (maxConcurrentGuildMasterCount) {
+        this.maxConcurrentGuildMasterCount = maxConcurrentGuildMasterCount;
+        return this;
+    };
     UpdateGuildModelMasterRequest.fromDict = function (data) {
         return new UpdateGuildModelMasterRequest()
             .withNamespaceName(data["namespaceName"])
@@ -191,7 +215,9 @@ var UpdateGuildModelMasterRequest = /** @class */ (function () {
             }) : [])
             .withGuildMasterRole(data["guildMasterRole"])
             .withGuildMemberDefaultRole(data["guildMemberDefaultRole"])
-            .withRejoinCoolTimeMinutes(data["rejoinCoolTimeMinutes"]);
+            .withRejoinCoolTimeMinutes(data["rejoinCoolTimeMinutes"])
+            .withMaxConcurrentJoinGuilds(data["maxConcurrentJoinGuilds"])
+            .withMaxConcurrentGuildMasterCount(data["maxConcurrentGuildMasterCount"]);
     };
     UpdateGuildModelMasterRequest.prototype.toDict = function () {
         return {
@@ -209,6 +235,8 @@ var UpdateGuildModelMasterRequest = /** @class */ (function () {
             "guildMasterRole": this.getGuildMasterRole(),
             "guildMemberDefaultRole": this.getGuildMemberDefaultRole(),
             "rejoinCoolTimeMinutes": this.getRejoinCoolTimeMinutes(),
+            "maxConcurrentJoinGuilds": this.getMaxConcurrentJoinGuilds(),
+            "maxConcurrentGuildMasterCount": this.getMaxConcurrentGuildMasterCount(),
         };
     };
     return UpdateGuildModelMasterRequest;

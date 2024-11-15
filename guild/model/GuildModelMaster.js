@@ -31,6 +31,8 @@ var GuildModelMaster = /** @class */ (function () {
         this.guildMasterRole = null;
         this.guildMemberDefaultRole = null;
         this.rejoinCoolTimeMinutes = null;
+        this.maxConcurrentJoinGuilds = null;
+        this.maxConcurrentGuildMasterCount = null;
         this.createdAt = null;
         this.updatedAt = null;
         this.revision = null;
@@ -222,6 +224,28 @@ var GuildModelMaster = /** @class */ (function () {
         this.rejoinCoolTimeMinutes = rejoinCoolTimeMinutes;
         return this;
     };
+    GuildModelMaster.prototype.getMaxConcurrentJoinGuilds = function () {
+        return this.maxConcurrentJoinGuilds;
+    };
+    GuildModelMaster.prototype.setMaxConcurrentJoinGuilds = function (maxConcurrentJoinGuilds) {
+        this.maxConcurrentJoinGuilds = maxConcurrentJoinGuilds;
+        return this;
+    };
+    GuildModelMaster.prototype.withMaxConcurrentJoinGuilds = function (maxConcurrentJoinGuilds) {
+        this.maxConcurrentJoinGuilds = maxConcurrentJoinGuilds;
+        return this;
+    };
+    GuildModelMaster.prototype.getMaxConcurrentGuildMasterCount = function () {
+        return this.maxConcurrentGuildMasterCount;
+    };
+    GuildModelMaster.prototype.setMaxConcurrentGuildMasterCount = function (maxConcurrentGuildMasterCount) {
+        this.maxConcurrentGuildMasterCount = maxConcurrentGuildMasterCount;
+        return this;
+    };
+    GuildModelMaster.prototype.withMaxConcurrentGuildMasterCount = function (maxConcurrentGuildMasterCount) {
+        this.maxConcurrentGuildMasterCount = maxConcurrentGuildMasterCount;
+        return this;
+    };
     GuildModelMaster.prototype.getCreatedAt = function () {
         return this.createdAt;
     };
@@ -274,6 +298,8 @@ var GuildModelMaster = /** @class */ (function () {
             .withGuildMasterRole(data["guildMasterRole"])
             .withGuildMemberDefaultRole(data["guildMemberDefaultRole"])
             .withRejoinCoolTimeMinutes(data["rejoinCoolTimeMinutes"])
+            .withMaxConcurrentJoinGuilds(data["maxConcurrentJoinGuilds"])
+            .withMaxConcurrentGuildMasterCount(data["maxConcurrentGuildMasterCount"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -294,6 +320,8 @@ var GuildModelMaster = /** @class */ (function () {
             "guildMasterRole": this.getGuildMasterRole(),
             "guildMemberDefaultRole": this.getGuildMemberDefaultRole(),
             "rejoinCoolTimeMinutes": this.getRejoinCoolTimeMinutes(),
+            "maxConcurrentJoinGuilds": this.getMaxConcurrentJoinGuilds(),
+            "maxConcurrentGuildMasterCount": this.getMaxConcurrentGuildMasterCount(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

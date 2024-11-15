@@ -20,6 +20,7 @@ var Gs2SerialKey = tslib_1.__importStar(require("../model"));
 var VerifyCodeByUserIdResult = /** @class */ (function () {
     function VerifyCodeByUserIdResult() {
         this.item = null;
+        this.campaignModel = null;
     }
     VerifyCodeByUserIdResult.prototype.getItem = function () {
         return this.item;
@@ -32,14 +33,27 @@ var VerifyCodeByUserIdResult = /** @class */ (function () {
         this.item = item;
         return this;
     };
+    VerifyCodeByUserIdResult.prototype.getCampaignModel = function () {
+        return this.campaignModel;
+    };
+    VerifyCodeByUserIdResult.prototype.setCampaignModel = function (campaignModel) {
+        this.campaignModel = campaignModel;
+        return this;
+    };
+    VerifyCodeByUserIdResult.prototype.withCampaignModel = function (campaignModel) {
+        this.campaignModel = campaignModel;
+        return this;
+    };
     VerifyCodeByUserIdResult.fromDict = function (data) {
         return new VerifyCodeByUserIdResult()
-            .withItem(Gs2SerialKey.SerialKey.fromDict(data["item"]));
+            .withItem(Gs2SerialKey.SerialKey.fromDict(data["item"]))
+            .withCampaignModel(Gs2SerialKey.CampaignModel.fromDict(data["campaignModel"]));
     };
     VerifyCodeByUserIdResult.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
+            "campaignModel": (_b = this.getCampaignModel()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return VerifyCodeByUserIdResult;

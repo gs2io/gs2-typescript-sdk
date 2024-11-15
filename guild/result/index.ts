@@ -45,6 +45,8 @@ import DeleteMemberResult from "./DeleteMemberResult"
 import DeleteMemberByGuildNameResult from "./DeleteMemberByGuildNameResult"
 import UpdateMemberRoleResult from "./UpdateMemberRoleResult"
 import UpdateMemberRoleByGuildNameResult from "./UpdateMemberRoleByGuildNameResult"
+import BatchUpdateMemberRoleResult from "./BatchUpdateMemberRoleResult"
+import BatchUpdateMemberRoleByGuildNameResult from "./BatchUpdateMemberRoleByGuildNameResult"
 import DeleteGuildResult from "./DeleteGuildResult"
 import DeleteGuildByGuildNameResult from "./DeleteGuildByGuildNameResult"
 import IncreaseMaximumCurrentMaximumMemberCountByGuildNameResult from "./IncreaseMaximumCurrentMaximumMemberCountByGuildNameResult"
@@ -134,6 +136,8 @@ export {
     DeleteMemberByGuildNameResult,
     UpdateMemberRoleResult,
     UpdateMemberRoleByGuildNameResult,
+    BatchUpdateMemberRoleResult,
+    BatchUpdateMemberRoleByGuildNameResult,
     DeleteGuildResult,
     DeleteGuildByGuildNameResult,
     IncreaseMaximumCurrentMaximumMemberCountByGuildNameResult,

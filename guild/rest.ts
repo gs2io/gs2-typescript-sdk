@@ -489,6 +489,8 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
             'guildMasterRole': request.getGuildMasterRole() ?? null,
             'guildMemberDefaultRole': request.getGuildMemberDefaultRole() ?? null,
             'rejoinCoolTimeMinutes': request.getRejoinCoolTimeMinutes() ?? null,
+            'maxConcurrentJoinGuilds': request.getMaxConcurrentJoinGuilds() ?? null,
+            'maxConcurrentGuildMasterCount': request.getMaxConcurrentGuildMasterCount() ?? null,
         };
         return axios.post(
             url,
@@ -556,6 +558,8 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
             'guildMasterRole': request.getGuildMasterRole() ?? null,
             'guildMemberDefaultRole': request.getGuildMemberDefaultRole() ?? null,
             'rejoinCoolTimeMinutes': request.getRejoinCoolTimeMinutes() ?? null,
+            'maxConcurrentJoinGuilds': request.getMaxConcurrentJoinGuilds() ?? null,
+            'maxConcurrentGuildMasterCount': request.getMaxConcurrentGuildMasterCount() ?? null,
         };
         return axios.put(
             url,
@@ -1134,6 +1138,80 @@ export default class Gs2GuildRestClient extends AbstractGs2RestClient {
             },
         ).then((response: any) => {
             return Result.UpdateMemberRoleByGuildNameResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public batchUpdateMemberRole(request: Request.BatchUpdateMemberRoleRequest): Promise<Result.BatchUpdateMemberRoleResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/me/batch/member/role')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{guildModelName}', String(request.getGuildModelName() ?? 'null') === "" ? "null" : String(request.getGuildModelName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = request.getAccessToken() ?? null;
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'members': request.getMembers()?.map((item) => item.toDict()) ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.BatchUpdateMemberRoleResult.fromDict(response.data);
+        }).catch((error: any) => {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            } else {
+                throw [];
+            }
+        });
+    }
+
+    public batchUpdateMemberRoleByGuildName(request: Request.BatchUpdateMemberRoleByGuildNameRequest): Promise<Result.BatchUpdateMemberRoleByGuildNameResult> {
+        const url = (Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/guild/{guildModelName}/{guildName}/batch/member/role')
+            .replace('{service}', 'guild')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String(request.getNamespaceName() ?? 'null') === "" ? "null" : String(request.getNamespaceName() ?? 'null'))
+            .replace('{guildModelName}', String(request.getGuildModelName() ?? 'null') === "" ? "null" : String(request.getGuildModelName() ?? 'null'))
+            .replace('{guildName}', String(request.getGuildName() ?? 'null') === "" ? "null" : String(request.getGuildName() ?? 'null'));
+    
+        const headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = request.getDuplicationAvoider() ?? null;
+        }
+        const body: {[key: string]: any} = {
+            'contextStack': request.getContextStack() ?? null,
+            'members': request.getMembers()?.map((item) => item.toDict()) ?? null,
+        };
+        return axios.put(
+            url,
+            body,
+            {
+                headers,
+            },
+        ).then((response: any) => {
+            return Result.BatchUpdateMemberRoleByGuildNameResult.fromDict(response.data);
         }).catch((error: any) => {
             if (error.response) {
                 throw JSON.parse(error.response.data.message);

@@ -19,6 +19,7 @@ import * as Gs2SerialKey from '../model'
 
 export default class VerifyCodeResult implements IResult {
     private item: Gs2SerialKey.SerialKey|null = null;
+    private campaignModel: Gs2SerialKey.CampaignModel|null = null;
 
     public getItem(): Gs2SerialKey.SerialKey|null {
         return this.item;
@@ -34,14 +35,30 @@ export default class VerifyCodeResult implements IResult {
         return this;
     }
 
+    public getCampaignModel(): Gs2SerialKey.CampaignModel|null {
+        return this.campaignModel;
+    }
+
+    public setCampaignModel(campaignModel: Gs2SerialKey.CampaignModel|null) {
+        this.campaignModel = campaignModel;
+        return this;
+    }
+
+    public withCampaignModel(campaignModel: Gs2SerialKey.CampaignModel|null): this {
+        this.campaignModel = campaignModel;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): VerifyCodeResult {
         return new VerifyCodeResult()
-            .withItem(Gs2SerialKey.SerialKey.fromDict(data["item"]));
+            .withItem(Gs2SerialKey.SerialKey.fromDict(data["item"]))
+            .withCampaignModel(Gs2SerialKey.CampaignModel.fromDict(data["campaignModel"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "item": this.getItem()?.toDict(),
+            "campaignModel": this.getCampaignModel()?.toDict(),
         };
     }
 }

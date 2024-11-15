@@ -18,6 +18,7 @@ import IResult from '../../core/interface/IResult';
 
 export default class SendNotificationResult implements IResult {
     private protocol: string|null = null;
+    private sendConnectionIds: string[]|null = null;
 
     public getProtocol(): string|null {
         return this.protocol;
@@ -33,14 +34,38 @@ export default class SendNotificationResult implements IResult {
         return this;
     }
 
+    public getSendConnectionIds(): string[]|null {
+        return this.sendConnectionIds;
+    }
+
+    public setSendConnectionIds(sendConnectionIds: string[]|null) {
+        this.sendConnectionIds = sendConnectionIds;
+        return this;
+    }
+
+    public withSendConnectionIds(sendConnectionIds: string[]|null): this {
+        this.sendConnectionIds = sendConnectionIds;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): SendNotificationResult {
         return new SendNotificationResult()
-            .withProtocol(data["protocol"]);
+            .withProtocol(data["protocol"])
+            .withSendConnectionIds(data.sendConnectionIds ?
+                data.sendConnectionIds.map((item: {[key: string]: any}) => {
+                    return item;
+                }
+            ) : []);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "protocol": this.getProtocol(),
+            "sendConnectionIds": this.getSendConnectionIds() ?
+                this.getSendConnectionIds()!.map((item: string) => {
+                    return item;
+                }
+            ) : [],
         };
     }
 }

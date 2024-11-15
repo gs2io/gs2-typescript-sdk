@@ -12,6 +12,8 @@ export default class GuildModelMaster implements IModel {
     private guildMasterRole;
     private guildMemberDefaultRole;
     private rejoinCoolTimeMinutes;
+    private maxConcurrentJoinGuilds;
+    private maxConcurrentGuildMasterCount;
     private createdAt;
     private updatedAt;
     private revision;
@@ -54,6 +56,12 @@ export default class GuildModelMaster implements IModel {
     getRejoinCoolTimeMinutes(): number | null;
     setRejoinCoolTimeMinutes(rejoinCoolTimeMinutes: number | null): this;
     withRejoinCoolTimeMinutes(rejoinCoolTimeMinutes: number | null): this;
+    getMaxConcurrentJoinGuilds(): number | null;
+    setMaxConcurrentJoinGuilds(maxConcurrentJoinGuilds: number | null): this;
+    withMaxConcurrentJoinGuilds(maxConcurrentJoinGuilds: number | null): this;
+    getMaxConcurrentGuildMasterCount(): number | null;
+    setMaxConcurrentGuildMasterCount(maxConcurrentGuildMasterCount: number | null): this;
+    withMaxConcurrentGuildMasterCount(maxConcurrentGuildMasterCount: number | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

@@ -30,6 +30,8 @@ var GuildModel = /** @class */ (function () {
         this.guildMasterRole = null;
         this.guildMemberDefaultRole = null;
         this.rejoinCoolTimeMinutes = null;
+        this.maxConcurrentJoinGuilds = null;
+        this.maxConcurrentGuildMasterCount = null;
     }
     GuildModel.getRegion = function (grn) {
         var match = grn.match(grnFormat
@@ -207,6 +209,28 @@ var GuildModel = /** @class */ (function () {
         this.rejoinCoolTimeMinutes = rejoinCoolTimeMinutes;
         return this;
     };
+    GuildModel.prototype.getMaxConcurrentJoinGuilds = function () {
+        return this.maxConcurrentJoinGuilds;
+    };
+    GuildModel.prototype.setMaxConcurrentJoinGuilds = function (maxConcurrentJoinGuilds) {
+        this.maxConcurrentJoinGuilds = maxConcurrentJoinGuilds;
+        return this;
+    };
+    GuildModel.prototype.withMaxConcurrentJoinGuilds = function (maxConcurrentJoinGuilds) {
+        this.maxConcurrentJoinGuilds = maxConcurrentJoinGuilds;
+        return this;
+    };
+    GuildModel.prototype.getMaxConcurrentGuildMasterCount = function () {
+        return this.maxConcurrentGuildMasterCount;
+    };
+    GuildModel.prototype.setMaxConcurrentGuildMasterCount = function (maxConcurrentGuildMasterCount) {
+        this.maxConcurrentGuildMasterCount = maxConcurrentGuildMasterCount;
+        return this;
+    };
+    GuildModel.prototype.withMaxConcurrentGuildMasterCount = function (maxConcurrentGuildMasterCount) {
+        this.maxConcurrentGuildMasterCount = maxConcurrentGuildMasterCount;
+        return this;
+    };
     GuildModel.fromDict = function (data) {
         if (data == undefined || data == null) {
             return null;
@@ -224,7 +248,9 @@ var GuildModel = /** @class */ (function () {
             }) : [])
             .withGuildMasterRole(data["guildMasterRole"])
             .withGuildMemberDefaultRole(data["guildMemberDefaultRole"])
-            .withRejoinCoolTimeMinutes(data["rejoinCoolTimeMinutes"]);
+            .withRejoinCoolTimeMinutes(data["rejoinCoolTimeMinutes"])
+            .withMaxConcurrentJoinGuilds(data["maxConcurrentJoinGuilds"])
+            .withMaxConcurrentGuildMasterCount(data["maxConcurrentGuildMasterCount"]);
     };
     GuildModel.prototype.toDict = function () {
         return {
@@ -241,6 +267,8 @@ var GuildModel = /** @class */ (function () {
             "guildMasterRole": this.getGuildMasterRole(),
             "guildMemberDefaultRole": this.getGuildMemberDefaultRole(),
             "rejoinCoolTimeMinutes": this.getRejoinCoolTimeMinutes(),
+            "maxConcurrentJoinGuilds": this.getMaxConcurrentJoinGuilds(),
+            "maxConcurrentGuildMasterCount": this.getMaxConcurrentGuildMasterCount(),
         };
     };
     return GuildModel;
