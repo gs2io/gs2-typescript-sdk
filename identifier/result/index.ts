@@ -31,7 +31,6 @@ import DeleteIdentifierResult from "./DeleteIdentifierResult"
 import DescribeAttachedGuardsResult from "./DescribeAttachedGuardsResult"
 import AttachGuardResult from "./AttachGuardResult"
 import DetachGuardResult from "./DetachGuardResult"
-import DescribePasswordsResult from "./DescribePasswordsResult"
 import CreatePasswordResult from "./CreatePasswordResult"
 import GetPasswordResult from "./GetPasswordResult"
 import EnableMfaResult from "./EnableMfaResult"
@@ -63,7 +62,6 @@ export {
     DescribeAttachedGuardsResult,
     AttachGuardResult,
     DetachGuardResult,
-    DescribePasswordsResult,
     CreatePasswordResult,
     GetPasswordResult,
     EnableMfaResult,

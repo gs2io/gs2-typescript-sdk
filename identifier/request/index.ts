@@ -31,7 +31,6 @@ import DeleteIdentifierRequest from "./DeleteIdentifierRequest"
 import DescribeAttachedGuardsRequest from "./DescribeAttachedGuardsRequest"
 import AttachGuardRequest from "./AttachGuardRequest"
 import DetachGuardRequest from "./DetachGuardRequest"
-import DescribePasswordsRequest from "./DescribePasswordsRequest"
 import CreatePasswordRequest from "./CreatePasswordRequest"
 import GetPasswordRequest from "./GetPasswordRequest"
 import EnableMfaRequest from "./EnableMfaRequest"
@@ -63,7 +62,6 @@ export {
     DescribeAttachedGuardsRequest,
     AttachGuardRequest,
     DetachGuardRequest,
-    DescribePasswordsRequest,
     CreatePasswordRequest,
     GetPasswordRequest,
     EnableMfaRequest,

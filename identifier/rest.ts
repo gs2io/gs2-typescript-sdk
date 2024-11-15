@@ -537,34 +537,6 @@ export default class Gs2IdentifierRestClient extends AbstractGs2RestClient {
         });
     }
 
-    public describePasswords(request: Request.DescribePasswordsRequest): Promise<Result.DescribePasswordsResult> {
-        const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password')
-            .replace('{service}', 'identifier')
-            .replace('{region}', this.session.region)
-            .replace('{userName}', String(request.getUserName() ?? 'null') === "" ? "null" : String(request.getUserName() ?? 'null'));
-    
-        const headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        const params: {[key: string]: any} = {
-            'contextStack': request.getContextStack() ?? null,
-            'pageToken': String(request.getPageToken() ?? null),
-            'limit': String(request.getLimit() ?? null),
-        };
-        return axios.get(
-            url,
-             {
-                params,
-                headers,
-            },
-        ).then((response: any) => {
-            return Result.DescribePasswordsResult.fromDict(response.data);
-        }).catch((error: any) => {
-            throw JSON.parse(error.response.data.message);
-        });
-    }
-
     public createPassword(request: Request.CreatePasswordRequest): Promise<Result.CreatePasswordResult> {
         const url = (Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password')
             .replace('{service}', 'identifier')

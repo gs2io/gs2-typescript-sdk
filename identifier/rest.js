@@ -463,30 +463,6 @@ var Gs2IdentifierRestClient = /** @class */ (function (_super) {
             throw JSON.parse(error.response.data.message);
         });
     };
-    Gs2IdentifierRestClient.prototype.describePasswords = function (request) {
-        var _a, _b, _c, _d, _e;
-        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password')
-            .replace('{service}', 'identifier')
-            .replace('{region}', this.session.region)
-            .replace('{userName}', String((_a = request.getUserName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getUserName()) !== null && _b !== void 0 ? _b : 'null'));
-        var headers = this.createAuthorizedHeaders();
-        if (request.getRequestId()) {
-            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
-        }
-        var params = {
-            'contextStack': (_c = request.getContextStack()) !== null && _c !== void 0 ? _c : null,
-            'pageToken': String((_d = request.getPageToken()) !== null && _d !== void 0 ? _d : null),
-            'limit': String((_e = request.getLimit()) !== null && _e !== void 0 ? _e : null),
-        };
-        return axios_1.default.get(url, {
-            params: params,
-            headers: headers,
-        }).then(function (response) {
-            return Result.DescribePasswordsResult.fromDict(response.data);
-        }).catch(function (error) {
-            throw JSON.parse(error.response.data.message);
-        });
-    };
     Gs2IdentifierRestClient.prototype.createPassword = function (request) {
         var _a, _b, _c, _d;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/user/{userName}/password')

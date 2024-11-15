@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LoginByUserResult = exports.LoginResult = exports.DetachSecurityPolicyResult = exports.AttachSecurityPolicyResult = exports.GetHasSecurityPolicyResult = exports.DeletePasswordResult = exports.DisableMfaResult = exports.ChallengeMfaResult = exports.EnableMfaResult = exports.GetPasswordResult = exports.CreatePasswordResult = exports.DescribePasswordsResult = exports.DetachGuardResult = exports.AttachGuardResult = exports.DescribeAttachedGuardsResult = exports.DeleteIdentifierResult = exports.GetIdentifierResult = exports.CreateIdentifierResult = exports.DescribeIdentifiersResult = exports.DeleteSecurityPolicyResult = exports.GetSecurityPolicyResult = exports.UpdateSecurityPolicyResult = exports.CreateSecurityPolicyResult = exports.DescribeCommonSecurityPoliciesResult = exports.DescribeSecurityPoliciesResult = exports.DeleteUserResult = exports.GetUserResult = exports.UpdateUserResult = exports.CreateUserResult = exports.DescribeUsersResult = void 0;
+exports.LoginByUserResult = exports.LoginResult = exports.DetachSecurityPolicyResult = exports.AttachSecurityPolicyResult = exports.GetHasSecurityPolicyResult = exports.DeletePasswordResult = exports.DisableMfaResult = exports.ChallengeMfaResult = exports.EnableMfaResult = exports.GetPasswordResult = exports.CreatePasswordResult = exports.DetachGuardResult = exports.AttachGuardResult = exports.DescribeAttachedGuardsResult = exports.DeleteIdentifierResult = exports.GetIdentifierResult = exports.CreateIdentifierResult = exports.DescribeIdentifiersResult = exports.DeleteSecurityPolicyResult = exports.GetSecurityPolicyResult = exports.UpdateSecurityPolicyResult = exports.CreateSecurityPolicyResult = exports.DescribeCommonSecurityPoliciesResult = exports.DescribeSecurityPoliciesResult = exports.DeleteUserResult = exports.GetUserResult = exports.UpdateUserResult = exports.CreateUserResult = exports.DescribeUsersResult = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -53,8 +53,6 @@ var AttachGuardResult_1 = tslib_1.__importDefault(require("./AttachGuardResult")
 exports.AttachGuardResult = AttachGuardResult_1.default;
 var DetachGuardResult_1 = tslib_1.__importDefault(require("./DetachGuardResult"));
 exports.DetachGuardResult = DetachGuardResult_1.default;
-var DescribePasswordsResult_1 = tslib_1.__importDefault(require("./DescribePasswordsResult"));
-exports.DescribePasswordsResult = DescribePasswordsResult_1.default;
 var CreatePasswordResult_1 = tslib_1.__importDefault(require("./CreatePasswordResult"));
 exports.CreatePasswordResult = CreatePasswordResult_1.default;
 var GetPasswordResult_1 = tslib_1.__importDefault(require("./GetPasswordResult"));
