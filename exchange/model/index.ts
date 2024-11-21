@@ -21,6 +21,7 @@ import IncrementalRateModelMaster from "./IncrementalRateModelMaster"
 import CurrentRateMaster from "./CurrentRateMaster"
 import Await from "./Await"
 import LogCost from "./LogCost"
+import LogRate from "./LogRate"
 import AcquireAction from "./AcquireAction"
 import ConsumeAction from "./ConsumeAction"
 import VerifyAction from "./VerifyAction"
@@ -39,6 +40,7 @@ export {
     CurrentRateMaster,
     Await,
     LogCost,
+    LogRate,
     AcquireAction,
     ConsumeAction,
     VerifyAction,

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TransactionSetting = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.VerifyAction = exports.ConsumeAction = exports.AcquireAction = exports.LogCost = exports.Await = exports.CurrentRateMaster = exports.IncrementalRateModelMaster = exports.IncrementalRateModel = exports.RateModelMaster = exports.RateModel = exports.Namespace = void 0;
+exports.TransactionSetting = exports.LogSetting = exports.ScriptSetting = exports.GitHubCheckoutSetting = exports.Config = exports.VerifyAction = exports.ConsumeAction = exports.AcquireAction = exports.LogRate = exports.LogCost = exports.Await = exports.CurrentRateMaster = exports.IncrementalRateModelMaster = exports.IncrementalRateModel = exports.RateModelMaster = exports.RateModel = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -33,6 +33,8 @@ var Await_1 = tslib_1.__importDefault(require("./Await"));
 exports.Await = Await_1.default;
 var LogCost_1 = tslib_1.__importDefault(require("./LogCost"));
 exports.LogCost = LogCost_1.default;
+var LogRate_1 = tslib_1.__importDefault(require("./LogRate"));
+exports.LogRate = LogRate_1.default;
 var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
 exports.AcquireAction = AcquireAction_1.default;
 var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
