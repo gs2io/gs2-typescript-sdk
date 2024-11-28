@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var WalletDetail_1 = tslib_1.__importDefault(require("./WalletDetail"));
+var Gs2Money = tslib_1.__importStar(require("../../money/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:money:{namespaceName}:user:{userId}:wallet:{slot}";
 var Wallet = /** @class */ (function () {
     function Wallet() {
@@ -239,8 +239,8 @@ var Wallet = /** @class */ (function () {
             .withFree(data["free"])
             .withDetail(data.detail ?
             data.detail.map(function (item) {
-                return WalletDetail_1.default.fromDict(item);
-            }) : [])
+                return Gs2Money.WalletDetail.fromDict(item);
+            }) : null)
             .withShareFree(data["shareFree"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -256,7 +256,7 @@ var Wallet = /** @class */ (function () {
             "detail": this.getDetail() ?
                 this.getDetail().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "shareFree": this.getShareFree(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

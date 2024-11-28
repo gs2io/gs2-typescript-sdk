@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
-var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2Chat = tslib_1.__importStar(require("../../chat/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:chat:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -261,13 +259,13 @@ var Namespace = /** @class */ (function () {
             .withDescription(data["description"])
             .withAllowCreateRoom(data["allowCreateRoom"])
             .withMessageLifeTimeDays(data["messageLifeTimeDays"])
-            .withPostMessageScript(ScriptSetting_1.default.fromDict(data["postMessageScript"]))
-            .withCreateRoomScript(ScriptSetting_1.default.fromDict(data["createRoomScript"]))
-            .withDeleteRoomScript(ScriptSetting_1.default.fromDict(data["deleteRoomScript"]))
-            .withSubscribeRoomScript(ScriptSetting_1.default.fromDict(data["subscribeRoomScript"]))
-            .withUnsubscribeRoomScript(ScriptSetting_1.default.fromDict(data["unsubscribeRoomScript"]))
-            .withPostNotification(NotificationSetting_1.default.fromDict(data["postNotification"]))
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withPostMessageScript(Gs2Chat.ScriptSetting.fromDict(data["postMessageScript"]))
+            .withCreateRoomScript(Gs2Chat.ScriptSetting.fromDict(data["createRoomScript"]))
+            .withDeleteRoomScript(Gs2Chat.ScriptSetting.fromDict(data["deleteRoomScript"]))
+            .withSubscribeRoomScript(Gs2Chat.ScriptSetting.fromDict(data["subscribeRoomScript"]))
+            .withUnsubscribeRoomScript(Gs2Chat.ScriptSetting.fromDict(data["unsubscribeRoomScript"]))
+            .withPostNotification(Gs2Chat.NotificationSetting.fromDict(data["postNotification"]))
+            .withLogSetting(Gs2Chat.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

@@ -113,7 +113,7 @@ var CreatePropertyFormModelMasterRequest = /** @class */ (function () {
             .withSlots(data.slots ?
             data.slots.map(function (item) {
                 return Gs2Formation.SlotModel.fromDict(item);
-            }) : []);
+            }) : null);
     };
     CreatePropertyFormModelMasterRequest.prototype.toDict = function () {
         return {
@@ -124,7 +124,7 @@ var CreatePropertyFormModelMasterRequest = /** @class */ (function () {
             "slots": this.getSlots() ?
                 this.getSlots().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return CreatePropertyFormModelMasterRequest;

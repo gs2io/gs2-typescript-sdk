@@ -55,7 +55,7 @@ export default class DescribeCategoryModelMastersResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Idle.CategoryModelMaster.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeCategoryModelMastersResult implements IResult {
                 this.getItems()!.map((item: Gs2Idle.CategoryModelMaster) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

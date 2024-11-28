@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
+var Gs2Quest = tslib_1.__importStar(require("../../quest/model"));
 var Contents = /** @class */ (function () {
     function Contents() {
         this.metadata = null;
@@ -64,8 +64,8 @@ var Contents = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withCompleteAcquireActions(data.completeAcquireActions ?
             data.completeAcquireActions.map(function (item) {
-                return AcquireAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2Quest.AcquireAction.fromDict(item);
+            }) : null)
             .withWeight(data["weight"]);
     };
     Contents.prototype.toDict = function () {
@@ -74,7 +74,7 @@ var Contents = /** @class */ (function () {
             "completeAcquireActions": this.getCompleteAcquireActions() ?
                 this.getCompleteAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "weight": this.getWeight(),
         };
     };

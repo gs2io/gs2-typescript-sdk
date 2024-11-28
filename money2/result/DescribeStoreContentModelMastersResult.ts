@@ -55,7 +55,7 @@ export default class DescribeStoreContentModelMastersResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Money2.StoreContentModelMaster.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeStoreContentModelMastersResult implements IResult {
                 this.getItems()!.map((item: Gs2Money2.StoreContentModelMaster) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

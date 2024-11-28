@@ -50,7 +50,7 @@ var IncreaseCounterByUserIdResult = /** @class */ (function () {
             .withChangedCompletes(data.changedCompletes ?
             data.changedCompletes.map(function (item) {
                 return Gs2Mission.Complete.fromDict(item);
-            }) : []);
+            }) : null);
     };
     IncreaseCounterByUserIdResult.prototype.toDict = function () {
         var _a;
@@ -59,7 +59,7 @@ var IncreaseCounterByUserIdResult = /** @class */ (function () {
             "changedCompletes": this.getChangedCompletes() ?
                 this.getChangedCompletes().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return IncreaseCounterByUserIdResult;

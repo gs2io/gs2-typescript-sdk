@@ -171,17 +171,17 @@ export default class UpdateRateModelMasterRequest implements IRequest {
                 data.acquireActions.map((item: {[key: string]: any}) => {
                     return Gs2Exchange.AcquireAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withVerifyActions(data.verifyActions ?
                 data.verifyActions.map((item: {[key: string]: any}) => {
                     return Gs2Exchange.VerifyAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withConsumeActions(data.consumeActions ?
                 data.consumeActions.map((item: {[key: string]: any}) => {
                     return Gs2Exchange.ConsumeAction.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -196,17 +196,17 @@ export default class UpdateRateModelMasterRequest implements IRequest {
                 this.getAcquireActions()!.map((item: Gs2Exchange.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "verifyActions": this.getVerifyActions() ?
                 this.getVerifyActions()!.map((item: Gs2Exchange.VerifyAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions()!.map((item: Gs2Exchange.ConsumeAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

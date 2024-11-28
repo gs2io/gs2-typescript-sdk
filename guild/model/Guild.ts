@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Guild from '../../guild/model'
 import RoleModel from './RoleModel';
 import Member from './Member';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:guild:{namespaceName}:guild:{guildModelName}:{guildName}";
@@ -30,10 +32,10 @@ export default class Guild implements IModel {
     private attribute4: number|null = null;
     private attribute5: number|null = null;
     private joinPolicy: string|null = null;
-    private customRoles: RoleModel[]|null = null;
+    private customRoles: Gs2Guild.RoleModel[]|null = null;
     private guildMemberDefaultRole: string|null = null;
     private currentMaximumMemberCount: number|null = null;
-    private members: Member[]|null = null;
+    private members: Gs2Guild.Member[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -251,14 +253,14 @@ export default class Guild implements IModel {
         this.joinPolicy = joinPolicy;
         return this;
     }
-    public getCustomRoles(): RoleModel[]|null {
+    public getCustomRoles(): Gs2Guild.RoleModel[]|null {
         return this.customRoles;
     }
-    public setCustomRoles(customRoles: RoleModel[]|null) {
+    public setCustomRoles(customRoles: Gs2Guild.RoleModel[]|null) {
         this.customRoles = customRoles;
         return this;
     }
-    public withCustomRoles(customRoles: RoleModel[]|null): this {
+    public withCustomRoles(customRoles: Gs2Guild.RoleModel[]|null): this {
         this.customRoles = customRoles;
         return this;
     }
@@ -284,14 +286,14 @@ export default class Guild implements IModel {
         this.currentMaximumMemberCount = currentMaximumMemberCount;
         return this;
     }
-    public getMembers(): Member[]|null {
+    public getMembers(): Gs2Guild.Member[]|null {
         return this.members;
     }
-    public setMembers(members: Member[]|null) {
+    public setMembers(members: Gs2Guild.Member[]|null) {
         this.members = members;
         return this;
     }
-    public withMembers(members: Member[]|null): this {
+    public withMembers(members: Gs2Guild.Member[]|null): this {
         this.members = members;
         return this;
     }
@@ -346,16 +348,16 @@ export default class Guild implements IModel {
             .withJoinPolicy(data["joinPolicy"])
             .withCustomRoles(data.customRoles ?
                 data.customRoles.map((item: {[key: string]: any}) => {
-                    return RoleModel.fromDict(item);
+                    return Gs2Guild.RoleModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withGuildMemberDefaultRole(data["guildMemberDefaultRole"])
             .withCurrentMaximumMemberCount(data["currentMaximumMemberCount"])
             .withMembers(data.members ?
                 data.members.map((item: {[key: string]: any}) => {
-                    return Member.fromDict(item);
+                    return Gs2Guild.Member.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -374,17 +376,17 @@ export default class Guild implements IModel {
             "attribute5": this.getAttribute5(),
             "joinPolicy": this.getJoinPolicy(),
             "customRoles": this.getCustomRoles() ?
-                this.getCustomRoles()!.map((item: RoleModel) => {
+                this.getCustomRoles()!.map((item: Gs2Guild.RoleModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "guildMemberDefaultRole": this.getGuildMemberDefaultRole(),
             "currentMaximumMemberCount": this.getCurrentMaximumMemberCount(),
             "members": this.getMembers() ?
-                this.getMembers()!.map((item: Member) => {
+                this.getMembers()!.map((item: Gs2Guild.Member) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

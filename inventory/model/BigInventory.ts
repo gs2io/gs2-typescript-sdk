@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Inventory from '../../inventory/model'
 import BigItem from './BigItem';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:user:{userId}:big:inventory:{inventoryName}";
 
@@ -22,7 +24,7 @@ export default class BigInventory implements IModel {
     private inventoryId: string|null = null;
     private inventoryName: string|null = null;
     private userId: string|null = null;
-    private bigItems: BigItem[]|null = null;
+    private bigItems: Gs2Inventory.BigItem[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
 
@@ -162,14 +164,14 @@ export default class BigInventory implements IModel {
         this.userId = userId;
         return this;
     }
-    public getBigItems(): BigItem[]|null {
+    public getBigItems(): Gs2Inventory.BigItem[]|null {
         return this.bigItems;
     }
-    public setBigItems(bigItems: BigItem[]|null) {
+    public setBigItems(bigItems: Gs2Inventory.BigItem[]|null) {
         this.bigItems = bigItems;
         return this;
     }
-    public withBigItems(bigItems: BigItem[]|null): this {
+    public withBigItems(bigItems: Gs2Inventory.BigItem[]|null): this {
         this.bigItems = bigItems;
         return this;
     }
@@ -206,9 +208,9 @@ export default class BigInventory implements IModel {
             .withUserId(data["userId"])
             .withBigItems(data.bigItems ?
                 data.bigItems.map((item: {[key: string]: any}) => {
-                    return BigItem.fromDict(item);
+                    return Gs2Inventory.BigItem.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     }
@@ -219,10 +221,10 @@ export default class BigInventory implements IModel {
             "inventoryName": this.getInventoryName(),
             "userId": this.getUserId(),
             "bigItems": this.getBigItems() ?
-                this.getBigItems()!.map((item: BigItem) => {
+                this.getBigItems()!.map((item: Gs2Inventory.BigItem) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

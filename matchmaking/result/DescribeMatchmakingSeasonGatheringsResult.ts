@@ -55,7 +55,7 @@ export default class DescribeMatchmakingSeasonGatheringsResult implements IResul
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Matchmaking.SeasonGathering.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeMatchmakingSeasonGatheringsResult implements IResul
                 this.getItems()!.map((item: Gs2Matchmaking.SeasonGathering) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

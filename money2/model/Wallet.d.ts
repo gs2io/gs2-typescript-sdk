@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import WalletSummary from './WalletSummary';
-import DepositTransaction from './DepositTransaction';
+import * as Gs2Money2 from '../../money2/model';
 export default class Wallet implements IModel {
     private walletId;
     private userId;
@@ -27,12 +26,12 @@ export default class Wallet implements IModel {
     getSlot(): number | null;
     setSlot(slot: number | null): this;
     withSlot(slot: number | null): this;
-    getSummary(): WalletSummary | null;
-    setSummary(summary: WalletSummary | null): this;
-    withSummary(summary: WalletSummary | null): this;
-    getDepositTransactions(): DepositTransaction[] | null;
-    setDepositTransactions(depositTransactions: DepositTransaction[] | null): this;
-    withDepositTransactions(depositTransactions: DepositTransaction[] | null): this;
+    getSummary(): Gs2Money2.WalletSummary | null;
+    setSummary(summary: Gs2Money2.WalletSummary | null): this;
+    withSummary(summary: Gs2Money2.WalletSummary | null): this;
+    getDepositTransactions(): Gs2Money2.DepositTransaction[] | null;
+    setDepositTransactions(depositTransactions: Gs2Money2.DepositTransaction[] | null): this;
+    withDepositTransactions(depositTransactions: Gs2Money2.DepositTransaction[] | null): this;
     getSharedFreeCurrency(): boolean | null;
     setSharedFreeCurrency(sharedFreeCurrency: boolean | null): this;
     withSharedFreeCurrency(sharedFreeCurrency: boolean | null): this;

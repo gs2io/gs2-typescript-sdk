@@ -55,7 +55,7 @@ export default class DescribeCompletedQuestListsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Quest.CompletedQuestList.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeCompletedQuestListsResult implements IResult {
                 this.getItems()!.map((item: Gs2Quest.CompletedQuestList) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

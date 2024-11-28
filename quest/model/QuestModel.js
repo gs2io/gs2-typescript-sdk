@@ -16,10 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
-var Contents_1 = tslib_1.__importDefault(require("./Contents"));
-var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
-var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
+var Gs2Quest = tslib_1.__importStar(require("../../quest/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:quest:{namespaceName}:group:{questGroupName}:quest:{questName}";
 var QuestModel = /** @class */ (function () {
     function QuestModel() {
@@ -240,29 +237,29 @@ var QuestModel = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withContents(data.contents ?
             data.contents.map(function (item) {
-                return Contents_1.default.fromDict(item);
-            }) : [])
+                return Gs2Quest.Contents.fromDict(item);
+            }) : null)
             .withChallengePeriodEventId(data["challengePeriodEventId"])
             .withFirstCompleteAcquireActions(data.firstCompleteAcquireActions ?
             data.firstCompleteAcquireActions.map(function (item) {
-                return AcquireAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2Quest.AcquireAction.fromDict(item);
+            }) : null)
             .withVerifyActions(data.verifyActions ?
             data.verifyActions.map(function (item) {
-                return VerifyAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2Quest.VerifyAction.fromDict(item);
+            }) : null)
             .withConsumeActions(data.consumeActions ?
             data.consumeActions.map(function (item) {
-                return ConsumeAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2Quest.ConsumeAction.fromDict(item);
+            }) : null)
             .withFailedAcquireActions(data.failedAcquireActions ?
             data.failedAcquireActions.map(function (item) {
-                return AcquireAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2Quest.AcquireAction.fromDict(item);
+            }) : null)
             .withPremiseQuestNames(data.premiseQuestNames ?
             data.premiseQuestNames.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     QuestModel.prototype.toDict = function () {
         return {
@@ -272,28 +269,28 @@ var QuestModel = /** @class */ (function () {
             "contents": this.getContents() ?
                 this.getContents().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "firstCompleteAcquireActions": this.getFirstCompleteAcquireActions() ?
                 this.getFirstCompleteAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "verifyActions": this.getVerifyActions() ?
                 this.getVerifyActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "failedAcquireActions": this.getFailedAcquireActions() ?
                 this.getFailedAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "premiseQuestNames": this.getPremiseQuestNames() ?
                 this.getPremiseQuestNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return QuestModel;

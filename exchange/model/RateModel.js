@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
-var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
-var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
+var Gs2Exchange = tslib_1.__importStar(require("../../exchange/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:exchange:{namespaceName}:model:{rateName}";
 var RateModel = /** @class */ (function () {
     function RateModel() {
@@ -195,18 +193,18 @@ var RateModel = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withVerifyActions(data.verifyActions ?
             data.verifyActions.map(function (item) {
-                return VerifyAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2Exchange.VerifyAction.fromDict(item);
+            }) : null)
             .withConsumeActions(data.consumeActions ?
             data.consumeActions.map(function (item) {
-                return ConsumeAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2Exchange.ConsumeAction.fromDict(item);
+            }) : null)
             .withTimingType(data["timingType"])
             .withLockTime(data["lockTime"])
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
-                return AcquireAction_1.default.fromDict(item);
-            }) : []);
+                return Gs2Exchange.AcquireAction.fromDict(item);
+            }) : null);
     };
     RateModel.prototype.toDict = function () {
         return {
@@ -216,17 +214,17 @@ var RateModel = /** @class */ (function () {
             "verifyActions": this.getVerifyActions() ?
                 this.getVerifyActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "timingType": this.getTimingType(),
             "lockTime": this.getLockTime(),
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return RateModel;

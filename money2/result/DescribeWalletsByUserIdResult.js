@@ -49,7 +49,7 @@ var DescribeWalletsByUserIdResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Money2.Wallet.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeWalletsByUserIdResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeWalletsByUserIdResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

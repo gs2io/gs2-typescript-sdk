@@ -137,7 +137,7 @@ var UpdateSeasonModelMasterRequest = /** @class */ (function () {
             .withTiers(data.tiers ?
             data.tiers.map(function (item) {
                 return Gs2SeasonRating.TierModel.fromDict(item);
-            }) : [])
+            }) : null)
             .withExperienceModelId(data["experienceModelId"])
             .withChallengePeriodEventId(data["challengePeriodEventId"]);
     };
@@ -150,7 +150,7 @@ var UpdateSeasonModelMasterRequest = /** @class */ (function () {
             "tiers": this.getTiers() ?
                 this.getTiers().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "experienceModelId": this.getExperienceModelId(),
             "challengePeriodEventId": this.getChallengePeriodEventId(),
         };

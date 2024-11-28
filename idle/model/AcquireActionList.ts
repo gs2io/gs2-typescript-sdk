@@ -15,18 +15,20 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Idle from '../../idle/model'
 import AcquireAction from './AcquireAction';
 
 export default class AcquireActionList implements IModel {
-    private acquireActions: AcquireAction[]|null = null;
-    public getAcquireActions(): AcquireAction[]|null {
+    private acquireActions: Gs2Idle.AcquireAction[]|null = null;
+    public getAcquireActions(): Gs2Idle.AcquireAction[]|null {
         return this.acquireActions;
     }
-    public setAcquireActions(acquireActions: AcquireAction[]|null) {
+    public setAcquireActions(acquireActions: Gs2Idle.AcquireAction[]|null) {
         this.acquireActions = acquireActions;
         return this;
     }
-    public withAcquireActions(acquireActions: AcquireAction[]|null): this {
+    public withAcquireActions(acquireActions: Gs2Idle.AcquireAction[]|null): this {
         this.acquireActions = acquireActions;
         return this;
     }
@@ -38,18 +40,18 @@ export default class AcquireActionList implements IModel {
         return new AcquireActionList()
             .withAcquireActions(data.acquireActions ?
                 data.acquireActions.map((item: {[key: string]: any}) => {
-                    return AcquireAction.fromDict(item);
+                    return Gs2Idle.AcquireAction.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "acquireActions": this.getAcquireActions() ?
-                this.getAcquireActions()!.map((item: AcquireAction) => {
+                this.getAcquireActions()!.map((item: Gs2Idle.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

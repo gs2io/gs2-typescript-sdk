@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Deploy from '../../deploy/model'
 import OutputField from './OutputField';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:deploy:{stackName}:resource:{resourceName}";
 
@@ -27,7 +29,7 @@ export default class Resource implements IModel {
     private rollbackContext: string|null = null;
     private rollbackRequest: string|null = null;
     private rollbackAfter: string[]|null = null;
-    private outputFields: OutputField[]|null = null;
+    private outputFields: Gs2Deploy.OutputField[]|null = null;
     private workId: string|null = null;
     private createdAt: number|null = null;
 
@@ -199,14 +201,14 @@ export default class Resource implements IModel {
         this.rollbackAfter = rollbackAfter;
         return this;
     }
-    public getOutputFields(): OutputField[]|null {
+    public getOutputFields(): Gs2Deploy.OutputField[]|null {
         return this.outputFields;
     }
-    public setOutputFields(outputFields: OutputField[]|null) {
+    public setOutputFields(outputFields: Gs2Deploy.OutputField[]|null) {
         this.outputFields = outputFields;
         return this;
     }
-    public withOutputFields(outputFields: OutputField[]|null): this {
+    public withOutputFields(outputFields: Gs2Deploy.OutputField[]|null): this {
         this.outputFields = outputFields;
         return this;
     }
@@ -249,12 +251,12 @@ export default class Resource implements IModel {
                 data.rollbackAfter.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withOutputFields(data.outputFields ?
                 data.outputFields.map((item: {[key: string]: any}) => {
-                    return OutputField.fromDict(item);
+                    return Gs2Deploy.OutputField.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withWorkId(data["workId"])
             .withCreatedAt(data["createdAt"]);
     }
@@ -272,12 +274,12 @@ export default class Resource implements IModel {
                 this.getRollbackAfter()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "outputFields": this.getOutputFields() ?
-                this.getOutputFields()!.map((item: OutputField) => {
+                this.getOutputFields()!.map((item: Gs2Deploy.OutputField) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "workId": this.getWorkId(),
             "createdAt": this.getCreatedAt(),
         };

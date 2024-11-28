@@ -210,7 +210,7 @@ export default class UpdateVersionModelMasterRequest implements IRequest {
                 data.scheduleVersions.map((item: {[key: string]: any}) => {
                     return Gs2Version.ScheduleVersion.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNeedSignature(data["needSignature"])
             .withSignatureKeyId(data["signatureKeyId"]);
     }
@@ -230,7 +230,7 @@ export default class UpdateVersionModelMasterRequest implements IRequest {
                 this.getScheduleVersions()!.map((item: Gs2Version.ScheduleVersion) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "needSignature": this.getNeedSignature(),
             "signatureKeyId": this.getSignatureKeyId(),
         };

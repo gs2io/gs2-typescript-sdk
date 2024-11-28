@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Matchmaking from '../../matchmaking/model'
+
 export default class AttributeRange implements IModel {
     private name: string|null = null;
     private min: number|null = null;

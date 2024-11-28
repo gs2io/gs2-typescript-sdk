@@ -227,7 +227,7 @@ var CreateGuildByUserIdRequest = /** @class */ (function () {
             .withCustomRoles(data.customRoles ?
             data.customRoles.map(function (item) {
                 return Gs2Guild.RoleModel.fromDict(item);
-            }) : [])
+            }) : null)
             .withGuildMemberDefaultRole(data["guildMemberDefaultRole"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
@@ -246,7 +246,7 @@ var CreateGuildByUserIdRequest = /** @class */ (function () {
             "customRoles": this.getCustomRoles() ?
                 this.getCustomRoles().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "guildMemberDefaultRole": this.getGuildMemberDefaultRole(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };

@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var SalesItem_1 = tslib_1.__importDefault(require("./SalesItem"));
+var Gs2Showcase = tslib_1.__importStar(require("../../showcase/model"));
 var SalesItemGroup = /** @class */ (function () {
     function SalesItemGroup() {
         this.name = null;
@@ -65,8 +65,8 @@ var SalesItemGroup = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withSalesItems(data.salesItems ?
             data.salesItems.map(function (item) {
-                return SalesItem_1.default.fromDict(item);
-            }) : []);
+                return Gs2Showcase.SalesItem.fromDict(item);
+            }) : null);
     };
     SalesItemGroup.prototype.toDict = function () {
         return {
@@ -75,7 +75,7 @@ var SalesItemGroup = /** @class */ (function () {
             "salesItems": this.getSalesItems() ?
                 this.getSalesItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return SalesItemGroup;

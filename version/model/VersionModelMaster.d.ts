@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import Version from './Version';
-import ScheduleVersion from './ScheduleVersion';
+import * as Gs2Version from '../../version/model';
 export default class VersionModelMaster implements IModel {
     private versionModelId;
     private name;
@@ -41,18 +40,18 @@ export default class VersionModelMaster implements IModel {
     getType(): string | null;
     setType(type: string | null): this;
     withType(type: string | null): this;
-    getCurrentVersion(): Version | null;
-    setCurrentVersion(currentVersion: Version | null): this;
-    withCurrentVersion(currentVersion: Version | null): this;
-    getWarningVersion(): Version | null;
-    setWarningVersion(warningVersion: Version | null): this;
-    withWarningVersion(warningVersion: Version | null): this;
-    getErrorVersion(): Version | null;
-    setErrorVersion(errorVersion: Version | null): this;
-    withErrorVersion(errorVersion: Version | null): this;
-    getScheduleVersions(): ScheduleVersion[] | null;
-    setScheduleVersions(scheduleVersions: ScheduleVersion[] | null): this;
-    withScheduleVersions(scheduleVersions: ScheduleVersion[] | null): this;
+    getCurrentVersion(): Gs2Version.Version | null;
+    setCurrentVersion(currentVersion: Gs2Version.Version | null): this;
+    withCurrentVersion(currentVersion: Gs2Version.Version | null): this;
+    getWarningVersion(): Gs2Version.Version | null;
+    setWarningVersion(warningVersion: Gs2Version.Version | null): this;
+    withWarningVersion(warningVersion: Gs2Version.Version | null): this;
+    getErrorVersion(): Gs2Version.Version | null;
+    setErrorVersion(errorVersion: Gs2Version.Version | null): this;
+    withErrorVersion(errorVersion: Gs2Version.Version | null): this;
+    getScheduleVersions(): Gs2Version.ScheduleVersion[] | null;
+    setScheduleVersions(scheduleVersions: Gs2Version.ScheduleVersion[] | null): this;
+    withScheduleVersions(scheduleVersions: Gs2Version.ScheduleVersion[] | null): this;
     getNeedSignature(): boolean | null;
     setNeedSignature(needSignature: boolean | null): this;
     withNeedSignature(needSignature: boolean | null): this;

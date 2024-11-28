@@ -121,7 +121,7 @@ export default class UpdatePrizeTableMasterRequest implements IRequest {
                 data.prizes.map((item: {[key: string]: any}) => {
                     return Gs2Lottery.Prize.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -134,7 +134,7 @@ export default class UpdatePrizeTableMasterRequest implements IRequest {
                 this.getPrizes()!.map((item: Gs2Lottery.Prize) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

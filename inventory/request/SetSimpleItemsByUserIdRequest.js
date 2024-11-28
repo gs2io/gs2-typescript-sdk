@@ -124,7 +124,7 @@ var SetSimpleItemsByUserIdRequest = /** @class */ (function () {
             .withCounts(data.counts ?
             data.counts.map(function (item) {
                 return Gs2Inventory.HeldCount.fromDict(item);
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SetSimpleItemsByUserIdRequest.prototype.toDict = function () {
@@ -135,7 +135,7 @@ var SetSimpleItemsByUserIdRequest = /** @class */ (function () {
             "counts": this.getCounts() ?
                 this.getCounts().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

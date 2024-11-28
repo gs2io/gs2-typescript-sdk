@@ -49,7 +49,7 @@ var DescribeClusterRankingScoresResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Ranking2.ClusterRankingScore.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeClusterRankingScoresResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeClusterRankingScoresResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

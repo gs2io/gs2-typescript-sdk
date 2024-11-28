@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Inventory from '../../inventory/model'
 import ItemModel from './ItemModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:model:{inventoryName}";
 
@@ -25,7 +27,7 @@ export default class InventoryModel implements IModel {
     private initialCapacity: number|null = null;
     private maxCapacity: number|null = null;
     private protectReferencedItem: boolean|null = null;
-    private itemModels: ItemModel[]|null = null;
+    private itemModels: Gs2Inventory.ItemModel[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -173,14 +175,14 @@ export default class InventoryModel implements IModel {
         this.protectReferencedItem = protectReferencedItem;
         return this;
     }
-    public getItemModels(): ItemModel[]|null {
+    public getItemModels(): Gs2Inventory.ItemModel[]|null {
         return this.itemModels;
     }
-    public setItemModels(itemModels: ItemModel[]|null) {
+    public setItemModels(itemModels: Gs2Inventory.ItemModel[]|null) {
         this.itemModels = itemModels;
         return this;
     }
-    public withItemModels(itemModels: ItemModel[]|null): this {
+    public withItemModels(itemModels: Gs2Inventory.ItemModel[]|null): this {
         this.itemModels = itemModels;
         return this;
     }
@@ -198,9 +200,9 @@ export default class InventoryModel implements IModel {
             .withProtectReferencedItem(data["protectReferencedItem"])
             .withItemModels(data.itemModels ?
                 data.itemModels.map((item: {[key: string]: any}) => {
-                    return ItemModel.fromDict(item);
+                    return Gs2Inventory.ItemModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -212,10 +214,10 @@ export default class InventoryModel implements IModel {
             "maxCapacity": this.getMaxCapacity(),
             "protectReferencedItem": this.getProtectReferencedItem(),
             "itemModels": this.getItemModels() ?
-                this.getItemModels()!.map((item: ItemModel) => {
+                this.getItemModels()!.map((item: Gs2Inventory.ItemModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

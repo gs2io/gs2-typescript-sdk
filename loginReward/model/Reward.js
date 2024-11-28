@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
+var Gs2LoginReward = tslib_1.__importStar(require("../../loginReward/model"));
 var Reward = /** @class */ (function () {
     function Reward() {
         this.acquireActions = null;
@@ -39,15 +39,15 @@ var Reward = /** @class */ (function () {
         return new Reward()
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
-                return AcquireAction_1.default.fromDict(item);
-            }) : []);
+                return Gs2LoginReward.AcquireAction.fromDict(item);
+            }) : null);
     };
     Reward.prototype.toDict = function () {
         return {
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return Reward;

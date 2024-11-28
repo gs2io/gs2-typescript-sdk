@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MissionTaskModel_1 = tslib_1.__importDefault(require("./MissionTaskModel"));
+var Gs2Mission = tslib_1.__importStar(require("../../mission/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}:group:{missionGroupName}";
 var MissionGroupModel = /** @class */ (function () {
     function MissionGroupModel() {
@@ -205,8 +205,8 @@ var MissionGroupModel = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withTasks(data.tasks ?
             data.tasks.map(function (item) {
-                return MissionTaskModel_1.default.fromDict(item);
-            }) : [])
+                return Gs2Mission.MissionTaskModel.fromDict(item);
+            }) : null)
             .withResetType(data["resetType"])
             .withResetDayOfMonth(data["resetDayOfMonth"])
             .withResetDayOfWeek(data["resetDayOfWeek"])
@@ -221,7 +221,7 @@ var MissionGroupModel = /** @class */ (function () {
             "tasks": this.getTasks() ?
                 this.getTasks().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "resetType": this.getResetType(),
             "resetDayOfMonth": this.getResetDayOfMonth(),
             "resetDayOfWeek": this.getResetDayOfWeek(),

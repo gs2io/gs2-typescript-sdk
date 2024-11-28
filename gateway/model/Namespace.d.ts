@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import LogSetting from './LogSetting';
+import * as Gs2Gateway from '../../gateway/model';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
@@ -26,9 +26,9 @@ export default class Namespace implements IModel {
     getFirebaseSecret(): string | null;
     setFirebaseSecret(firebaseSecret: string | null): this;
     withFirebaseSecret(firebaseSecret: string | null): this;
-    getLogSetting(): LogSetting | null;
-    setLogSetting(logSetting: LogSetting | null): this;
-    withLogSetting(logSetting: LogSetting | null): this;
+    getLogSetting(): Gs2Gateway.LogSetting | null;
+    setLogSetting(logSetting: Gs2Gateway.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2Gateway.LogSetting | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

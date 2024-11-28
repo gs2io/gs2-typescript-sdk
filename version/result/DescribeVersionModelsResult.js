@@ -37,14 +37,14 @@ var DescribeVersionModelsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Version.VersionModel.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeVersionModelsResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeVersionModelsResult;

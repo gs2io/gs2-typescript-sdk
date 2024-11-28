@@ -49,7 +49,7 @@ var DescribeCompletesResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Mission.Complete.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeCompletesResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeCompletesResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2JobQueue from '../../jobQueue/model'
 import JobResultBody from './JobResultBody';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:queue:{namespaceName}:user:{userId}:dead:{deadLetterJobName}";
 
@@ -24,7 +26,7 @@ export default class DeadLetterJob implements IModel {
     private userId: string|null = null;
     private scriptId: string|null = null;
     private args: string|null = null;
-    private result: JobResultBody[]|null = null;
+    private result: Gs2JobQueue.JobResultBody[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
 
@@ -186,14 +188,14 @@ export default class DeadLetterJob implements IModel {
         this.args = args;
         return this;
     }
-    public getResult(): JobResultBody[]|null {
+    public getResult(): Gs2JobQueue.JobResultBody[]|null {
         return this.result;
     }
-    public setResult(result: JobResultBody[]|null) {
+    public setResult(result: Gs2JobQueue.JobResultBody[]|null) {
         this.result = result;
         return this;
     }
-    public withResult(result: JobResultBody[]|null): this {
+    public withResult(result: Gs2JobQueue.JobResultBody[]|null): this {
         this.result = result;
         return this;
     }
@@ -232,9 +234,9 @@ export default class DeadLetterJob implements IModel {
             .withArgs(data["args"])
             .withResult(data.result ?
                 data.result.map((item: {[key: string]: any}) => {
-                    return JobResultBody.fromDict(item);
+                    return Gs2JobQueue.JobResultBody.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     }
@@ -247,10 +249,10 @@ export default class DeadLetterJob implements IModel {
             "scriptId": this.getScriptId(),
             "args": this.getArgs(),
             "result": this.getResult() ?
-                this.getResult()!.map((item: JobResultBody) => {
+                this.getResult()!.map((item: Gs2JobQueue.JobResultBody) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

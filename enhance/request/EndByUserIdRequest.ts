@@ -122,7 +122,7 @@ export default class EndByUserIdRequest implements IRequest {
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Enhance.Config.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -134,7 +134,7 @@ export default class EndByUserIdRequest implements IRequest {
                 this.getConfig()!.map((item: Gs2Enhance.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

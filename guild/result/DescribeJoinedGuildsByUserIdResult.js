@@ -49,7 +49,7 @@ var DescribeJoinedGuildsByUserIdResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Guild.JoinedGuild.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeJoinedGuildsByUserIdResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeJoinedGuildsByUserIdResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

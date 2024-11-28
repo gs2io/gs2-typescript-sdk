@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Guild from '../../guild/model'
 import RoleModel from './RoleModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:guild:{namespaceName}:model:{guildModelName}";
 
@@ -25,7 +27,7 @@ export default class GuildModel implements IModel {
     private defaultMaximumMemberCount: number|null = null;
     private maximumMemberCount: number|null = null;
     private inactivityPeriodDays: number|null = null;
-    private roles: RoleModel[]|null = null;
+    private roles: Gs2Guild.RoleModel[]|null = null;
     private guildMasterRole: string|null = null;
     private guildMemberDefaultRole: string|null = null;
     private rejoinCoolTimeMinutes: number|null = null;
@@ -178,14 +180,14 @@ export default class GuildModel implements IModel {
         this.inactivityPeriodDays = inactivityPeriodDays;
         return this;
     }
-    public getRoles(): RoleModel[]|null {
+    public getRoles(): Gs2Guild.RoleModel[]|null {
         return this.roles;
     }
-    public setRoles(roles: RoleModel[]|null) {
+    public setRoles(roles: Gs2Guild.RoleModel[]|null) {
         this.roles = roles;
         return this;
     }
-    public withRoles(roles: RoleModel[]|null): this {
+    public withRoles(roles: Gs2Guild.RoleModel[]|null): this {
         this.roles = roles;
         return this;
     }
@@ -258,9 +260,9 @@ export default class GuildModel implements IModel {
             .withInactivityPeriodDays(data["inactivityPeriodDays"])
             .withRoles(data.roles ?
                 data.roles.map((item: {[key: string]: any}) => {
-                    return RoleModel.fromDict(item);
+                    return Gs2Guild.RoleModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withGuildMasterRole(data["guildMasterRole"])
             .withGuildMemberDefaultRole(data["guildMemberDefaultRole"])
             .withRejoinCoolTimeMinutes(data["rejoinCoolTimeMinutes"])
@@ -277,10 +279,10 @@ export default class GuildModel implements IModel {
             "maximumMemberCount": this.getMaximumMemberCount(),
             "inactivityPeriodDays": this.getInactivityPeriodDays(),
             "roles": this.getRoles() ?
-                this.getRoles()!.map((item: RoleModel) => {
+                this.getRoles()!.map((item: Gs2Guild.RoleModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "guildMasterRole": this.getGuildMasterRole(),
             "guildMemberDefaultRole": this.getGuildMemberDefaultRole(),
             "rejoinCoolTimeMinutes": this.getRejoinCoolTimeMinutes(),

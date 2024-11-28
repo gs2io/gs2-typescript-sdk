@@ -206,7 +206,7 @@ var DistributorModelMaster = /** @class */ (function () {
             .withWhiteListTargetIds(data.whiteListTargetIds ?
             data.whiteListTargetIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -221,7 +221,7 @@ var DistributorModelMaster = /** @class */ (function () {
             "whiteListTargetIds": this.getWhiteListTargetIds() ?
                 this.getWhiteListTargetIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

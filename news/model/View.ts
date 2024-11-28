@@ -15,30 +15,32 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2News from '../../news/model'
 import Content from './Content';
 
 export default class View implements IModel {
-    private contents: Content[]|null = null;
-    private removeContents: Content[]|null = null;
-    public getContents(): Content[]|null {
+    private contents: Gs2News.Content[]|null = null;
+    private removeContents: Gs2News.Content[]|null = null;
+    public getContents(): Gs2News.Content[]|null {
         return this.contents;
     }
-    public setContents(contents: Content[]|null) {
+    public setContents(contents: Gs2News.Content[]|null) {
         this.contents = contents;
         return this;
     }
-    public withContents(contents: Content[]|null): this {
+    public withContents(contents: Gs2News.Content[]|null): this {
         this.contents = contents;
         return this;
     }
-    public getRemoveContents(): Content[]|null {
+    public getRemoveContents(): Gs2News.Content[]|null {
         return this.removeContents;
     }
-    public setRemoveContents(removeContents: Content[]|null) {
+    public setRemoveContents(removeContents: Gs2News.Content[]|null) {
         this.removeContents = removeContents;
         return this;
     }
-    public withRemoveContents(removeContents: Content[]|null): this {
+    public withRemoveContents(removeContents: Gs2News.Content[]|null): this {
         this.removeContents = removeContents;
         return this;
     }
@@ -50,28 +52,28 @@ export default class View implements IModel {
         return new View()
             .withContents(data.contents ?
                 data.contents.map((item: {[key: string]: any}) => {
-                    return Content.fromDict(item);
+                    return Gs2News.Content.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withRemoveContents(data.removeContents ?
                 data.removeContents.map((item: {[key: string]: any}) => {
-                    return Content.fromDict(item);
+                    return Gs2News.Content.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "contents": this.getContents() ?
-                this.getContents()!.map((item: Content) => {
+                this.getContents()!.map((item: Gs2News.Content) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "removeContents": this.getRemoveContents() ?
-                this.getRemoveContents()!.map((item: Content) => {
+                this.getRemoveContents()!.map((item: Gs2News.Content) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

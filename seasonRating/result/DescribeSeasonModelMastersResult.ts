@@ -55,7 +55,7 @@ export default class DescribeSeasonModelMastersResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2SeasonRating.SeasonModelMaster.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeSeasonModelMastersResult implements IResult {
                 this.getItems()!.map((item: Gs2SeasonRating.SeasonModelMaster) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

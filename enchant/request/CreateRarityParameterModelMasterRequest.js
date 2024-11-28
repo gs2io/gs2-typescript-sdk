@@ -138,11 +138,11 @@ var CreateRarityParameterModelMasterRequest = /** @class */ (function () {
             .withParameterCounts(data.parameterCounts ?
             data.parameterCounts.map(function (item) {
                 return Gs2Enchant.RarityParameterCountModel.fromDict(item);
-            }) : [])
+            }) : null)
             .withParameters(data.parameters ?
             data.parameters.map(function (item) {
                 return Gs2Enchant.RarityParameterValueModel.fromDict(item);
-            }) : []);
+            }) : null);
     };
     CreateRarityParameterModelMasterRequest.prototype.toDict = function () {
         return {
@@ -154,11 +154,11 @@ var CreateRarityParameterModelMasterRequest = /** @class */ (function () {
             "parameterCounts": this.getParameterCounts() ?
                 this.getParameterCounts().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "parameters": this.getParameters() ?
                 this.getParameters().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return CreateRarityParameterModelMasterRequest;

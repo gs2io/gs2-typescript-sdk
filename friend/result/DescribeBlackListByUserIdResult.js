@@ -47,7 +47,7 @@ var DescribeBlackListByUserIdResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeBlackListByUserIdResult.prototype.toDict = function () {
@@ -55,7 +55,7 @@ var DescribeBlackListByUserIdResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

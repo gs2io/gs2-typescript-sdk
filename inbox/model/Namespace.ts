@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Inbox from '../../inbox/model'
 import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import NotificationSetting from './NotificationSetting';
@@ -26,12 +28,12 @@ export default class Namespace implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private isAutomaticDeletingEnabled: boolean|null = null;
-    private transactionSetting: TransactionSetting|null = null;
-    private receiveMessageScript: ScriptSetting|null = null;
-    private readMessageScript: ScriptSetting|null = null;
-    private deleteMessageScript: ScriptSetting|null = null;
-    private receiveNotification: NotificationSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private transactionSetting: Gs2Inbox.TransactionSetting|null = null;
+    private receiveMessageScript: Gs2Inbox.ScriptSetting|null = null;
+    private readMessageScript: Gs2Inbox.ScriptSetting|null = null;
+    private deleteMessageScript: Gs2Inbox.ScriptSetting|null = null;
+    private receiveNotification: Gs2Inbox.NotificationSetting|null = null;
+    private logSetting: Gs2Inbox.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private queueNamespaceId: string|null = null;
@@ -141,69 +143,69 @@ export default class Namespace implements IModel {
         this.isAutomaticDeletingEnabled = isAutomaticDeletingEnabled;
         return this;
     }
-    public getTransactionSetting(): TransactionSetting|null {
+    public getTransactionSetting(): Gs2Inbox.TransactionSetting|null {
         return this.transactionSetting;
     }
-    public setTransactionSetting(transactionSetting: TransactionSetting|null) {
+    public setTransactionSetting(transactionSetting: Gs2Inbox.TransactionSetting|null) {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public withTransactionSetting(transactionSetting: TransactionSetting|null): this {
+    public withTransactionSetting(transactionSetting: Gs2Inbox.TransactionSetting|null): this {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public getReceiveMessageScript(): ScriptSetting|null {
+    public getReceiveMessageScript(): Gs2Inbox.ScriptSetting|null {
         return this.receiveMessageScript;
     }
-    public setReceiveMessageScript(receiveMessageScript: ScriptSetting|null) {
+    public setReceiveMessageScript(receiveMessageScript: Gs2Inbox.ScriptSetting|null) {
         this.receiveMessageScript = receiveMessageScript;
         return this;
     }
-    public withReceiveMessageScript(receiveMessageScript: ScriptSetting|null): this {
+    public withReceiveMessageScript(receiveMessageScript: Gs2Inbox.ScriptSetting|null): this {
         this.receiveMessageScript = receiveMessageScript;
         return this;
     }
-    public getReadMessageScript(): ScriptSetting|null {
+    public getReadMessageScript(): Gs2Inbox.ScriptSetting|null {
         return this.readMessageScript;
     }
-    public setReadMessageScript(readMessageScript: ScriptSetting|null) {
+    public setReadMessageScript(readMessageScript: Gs2Inbox.ScriptSetting|null) {
         this.readMessageScript = readMessageScript;
         return this;
     }
-    public withReadMessageScript(readMessageScript: ScriptSetting|null): this {
+    public withReadMessageScript(readMessageScript: Gs2Inbox.ScriptSetting|null): this {
         this.readMessageScript = readMessageScript;
         return this;
     }
-    public getDeleteMessageScript(): ScriptSetting|null {
+    public getDeleteMessageScript(): Gs2Inbox.ScriptSetting|null {
         return this.deleteMessageScript;
     }
-    public setDeleteMessageScript(deleteMessageScript: ScriptSetting|null) {
+    public setDeleteMessageScript(deleteMessageScript: Gs2Inbox.ScriptSetting|null) {
         this.deleteMessageScript = deleteMessageScript;
         return this;
     }
-    public withDeleteMessageScript(deleteMessageScript: ScriptSetting|null): this {
+    public withDeleteMessageScript(deleteMessageScript: Gs2Inbox.ScriptSetting|null): this {
         this.deleteMessageScript = deleteMessageScript;
         return this;
     }
-    public getReceiveNotification(): NotificationSetting|null {
+    public getReceiveNotification(): Gs2Inbox.NotificationSetting|null {
         return this.receiveNotification;
     }
-    public setReceiveNotification(receiveNotification: NotificationSetting|null) {
+    public setReceiveNotification(receiveNotification: Gs2Inbox.NotificationSetting|null) {
         this.receiveNotification = receiveNotification;
         return this;
     }
-    public withReceiveNotification(receiveNotification: NotificationSetting|null): this {
+    public withReceiveNotification(receiveNotification: Gs2Inbox.NotificationSetting|null): this {
         this.receiveNotification = receiveNotification;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Inbox.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Inbox.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Inbox.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -278,12 +280,12 @@ export default class Namespace implements IModel {
             .withName(data["name"])
             .withDescription(data["description"])
             .withIsAutomaticDeletingEnabled(data["isAutomaticDeletingEnabled"])
-            .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
-            .withReceiveMessageScript(ScriptSetting.fromDict(data["receiveMessageScript"]))
-            .withReadMessageScript(ScriptSetting.fromDict(data["readMessageScript"]))
-            .withDeleteMessageScript(ScriptSetting.fromDict(data["deleteMessageScript"]))
-            .withReceiveNotification(NotificationSetting.fromDict(data["receiveNotification"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withTransactionSetting(Gs2Inbox.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withReceiveMessageScript(Gs2Inbox.ScriptSetting.fromDict(data["receiveMessageScript"]))
+            .withReadMessageScript(Gs2Inbox.ScriptSetting.fromDict(data["readMessageScript"]))
+            .withDeleteMessageScript(Gs2Inbox.ScriptSetting.fromDict(data["deleteMessageScript"]))
+            .withReceiveNotification(Gs2Inbox.NotificationSetting.fromDict(data["receiveNotification"]))
+            .withLogSetting(Gs2Inbox.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withQueueNamespaceId(data["queueNamespaceId"])

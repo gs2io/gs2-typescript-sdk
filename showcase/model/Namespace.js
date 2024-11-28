@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
-var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2Showcase = tslib_1.__importStar(require("../../showcase/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:showcase:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -217,9 +215,9 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
-            .withBuyScript(ScriptSetting_1.default.fromDict(data["buyScript"]))
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withTransactionSetting(Gs2Showcase.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withBuyScript(Gs2Showcase.ScriptSetting.fromDict(data["buyScript"]))
+            .withLogSetting(Gs2Showcase.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withQueueNamespaceId(data["queueNamespaceId"])

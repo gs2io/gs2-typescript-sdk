@@ -206,7 +206,7 @@ var Room = /** @class */ (function () {
             .withNotificationUserIds(data.notificationUserIds ?
             data.notificationUserIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -221,7 +221,7 @@ var Room = /** @class */ (function () {
             "notificationUserIds": this.getNotificationUserIds() ?
                 this.getNotificationUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

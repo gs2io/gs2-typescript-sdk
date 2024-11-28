@@ -256,32 +256,32 @@ export default class SearchGuildsByUserIdRequest implements IRequest {
                 data.attributes1.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withAttributes2(data.attributes2 ?
                 data.attributes2.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withAttributes3(data.attributes3 ?
                 data.attributes3.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withAttributes4(data.attributes4 ?
                 data.attributes4.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withAttributes5(data.attributes5 ?
                 data.attributes5.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withJoinPolicies(data.joinPolicies ?
                 data.joinPolicies.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withIncludeFullMembersGuild(data["includeFullMembersGuild"])
             .withOrderBy(data["orderBy"])
             .withPageToken(data["pageToken"])
@@ -299,32 +299,32 @@ export default class SearchGuildsByUserIdRequest implements IRequest {
                 this.getAttributes1()!.map((item: number) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "attributes2": this.getAttributes2() ?
                 this.getAttributes2()!.map((item: number) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "attributes3": this.getAttributes3() ?
                 this.getAttributes3()!.map((item: number) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "attributes4": this.getAttributes4() ?
                 this.getAttributes4()!.map((item: number) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "attributes5": this.getAttributes5() ?
                 this.getAttributes5()!.map((item: number) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "joinPolicies": this.getJoinPolicies() ?
                 this.getJoinPolicies()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "includeFullMembersGuild": this.getIncludeFullMembersGuild(),
             "orderBy": this.getOrderBy(),
             "pageToken": this.getPageToken(),

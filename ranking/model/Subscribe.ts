@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Ranking from '../../ranking/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:ranking:{namespaceName}:user:{userId}:subscribe:category:{categoryName}";
 
 export default class Subscribe implements IModel {
@@ -219,12 +221,12 @@ export default class Subscribe implements IModel {
                 data.targetUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withSubscribedUserIds(data.subscribedUserIds ?
                 data.subscribedUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     }
@@ -238,12 +240,12 @@ export default class Subscribe implements IModel {
                 this.getTargetUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "subscribedUserIds": this.getSubscribedUserIds() ?
                 this.getSubscribedUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };

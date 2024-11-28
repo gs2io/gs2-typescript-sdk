@@ -49,7 +49,7 @@ var PredictionByUserIdResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Idle.AcquireAction.fromDict(item);
-            }) : [])
+            }) : null)
             .withStatus(Gs2Idle.Status.fromDict(data["status"]));
     };
     PredictionByUserIdResult.prototype.toDict = function () {
@@ -58,7 +58,7 @@ var PredictionByUserIdResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "status": (_a = this.getStatus()) === null || _a === void 0 ? void 0 : _a.toDict(),
         };
     };

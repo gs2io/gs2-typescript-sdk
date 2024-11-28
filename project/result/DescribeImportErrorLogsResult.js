@@ -49,7 +49,7 @@ var DescribeImportErrorLogsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Project.ImportErrorLog.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeImportErrorLogsResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeImportErrorLogsResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

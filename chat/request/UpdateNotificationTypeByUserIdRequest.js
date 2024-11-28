@@ -124,7 +124,7 @@ var UpdateNotificationTypeByUserIdRequest = /** @class */ (function () {
             .withNotificationTypes(data.notificationTypes ?
             data.notificationTypes.map(function (item) {
                 return Gs2Chat.NotificationType.fromDict(item);
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     UpdateNotificationTypeByUserIdRequest.prototype.toDict = function () {
@@ -135,7 +135,7 @@ var UpdateNotificationTypeByUserIdRequest = /** @class */ (function () {
             "notificationTypes": this.getNotificationTypes() ?
                 this.getNotificationTypes().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

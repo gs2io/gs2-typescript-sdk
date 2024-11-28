@@ -55,7 +55,7 @@ export default class DescribeWebSocketSessionsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Gateway.WebSocketSession.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeWebSocketSessionsResult implements IResult {
                 this.getItems()!.map((item: Gs2Gateway.WebSocketSession) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

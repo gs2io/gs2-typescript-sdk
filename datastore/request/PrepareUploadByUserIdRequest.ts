@@ -173,7 +173,7 @@ export default class PrepareUploadByUserIdRequest implements IRequest {
                 data.allowUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withUpdateIfExists(data["updateIfExists"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
@@ -189,7 +189,7 @@ export default class PrepareUploadByUserIdRequest implements IRequest {
                 this.getAllowUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "updateIfExists": this.getUpdateIfExists(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };

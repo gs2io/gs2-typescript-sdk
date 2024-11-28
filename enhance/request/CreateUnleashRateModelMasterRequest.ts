@@ -147,7 +147,7 @@ export default class CreateUnleashRateModelMasterRequest implements IRequest {
                 data.gradeEntries.map((item: {[key: string]: any}) => {
                     return Gs2Enhance.UnleashRateEntryModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -162,7 +162,7 @@ export default class CreateUnleashRateModelMasterRequest implements IRequest {
                 this.getGradeEntries()!.map((item: Gs2Enhance.UnleashRateEntryModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

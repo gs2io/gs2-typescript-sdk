@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2AdReward from '../../adReward/model'
+
 export default class AppLovinMax implements IModel {
     private allowAdUnitId: string|null = null;
     private eventKey: string|null = null;

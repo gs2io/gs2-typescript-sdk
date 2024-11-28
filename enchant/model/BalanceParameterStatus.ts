@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Enchant from '../../enchant/model'
 import BalanceParameterValue from './BalanceParameterValue';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:enchant:{namespaceName}:user:{userId}:balance:{parameterName}:{propertyId}";
 
@@ -23,7 +25,7 @@ export default class BalanceParameterStatus implements IModel {
     private userId: string|null = null;
     private parameterName: string|null = null;
     private propertyId: string|null = null;
-    private parameterValues: BalanceParameterValue[]|null = null;
+    private parameterValues: Gs2Enchant.BalanceParameterValue[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -200,14 +202,14 @@ export default class BalanceParameterStatus implements IModel {
         this.propertyId = propertyId;
         return this;
     }
-    public getParameterValues(): BalanceParameterValue[]|null {
+    public getParameterValues(): Gs2Enchant.BalanceParameterValue[]|null {
         return this.parameterValues;
     }
-    public setParameterValues(parameterValues: BalanceParameterValue[]|null) {
+    public setParameterValues(parameterValues: Gs2Enchant.BalanceParameterValue[]|null) {
         this.parameterValues = parameterValues;
         return this;
     }
-    public withParameterValues(parameterValues: BalanceParameterValue[]|null): this {
+    public withParameterValues(parameterValues: Gs2Enchant.BalanceParameterValue[]|null): this {
         this.parameterValues = parameterValues;
         return this;
     }
@@ -256,9 +258,9 @@ export default class BalanceParameterStatus implements IModel {
             .withPropertyId(data["propertyId"])
             .withParameterValues(data.parameterValues ?
                 data.parameterValues.map((item: {[key: string]: any}) => {
-                    return BalanceParameterValue.fromDict(item);
+                    return Gs2Enchant.BalanceParameterValue.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -271,10 +273,10 @@ export default class BalanceParameterStatus implements IModel {
             "parameterName": this.getParameterName(),
             "propertyId": this.getPropertyId(),
             "parameterValues": this.getParameterValues() ?
-                this.getParameterValues()!.map((item: BalanceParameterValue) => {
+                this.getParameterValues()!.map((item: Gs2Enchant.BalanceParameterValue) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

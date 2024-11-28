@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Log from '../../log/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:log:{namespaceName}";
 
 export default class Namespace implements IModel {

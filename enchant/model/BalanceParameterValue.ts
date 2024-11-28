@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Enchant from '../../enchant/model'
+
 export default class BalanceParameterValue implements IModel {
     private name: string|null = null;
     private value: number|null = null;

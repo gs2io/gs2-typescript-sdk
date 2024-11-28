@@ -55,7 +55,7 @@ export default class DescribeWalletsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Money.Wallet.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeWalletsResult implements IResult {
                 this.getItems()!.map((item: Gs2Money.Wallet) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

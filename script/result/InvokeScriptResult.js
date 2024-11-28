@@ -115,7 +115,7 @@ var InvokeScriptResult = /** @class */ (function () {
             .withOutput(data.output ?
             data.output.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     InvokeScriptResult.prototype.toDict = function () {
         var _a, _b;
@@ -129,7 +129,7 @@ var InvokeScriptResult = /** @class */ (function () {
             "output": this.getOutput() ?
                 this.getOutput().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return InvokeScriptResult;

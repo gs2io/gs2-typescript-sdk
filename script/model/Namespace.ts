@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Script from '../../script/model'
 import TransactionSetting from './TransactionSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:script:{namespaceName}";
@@ -23,8 +25,8 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
-    private transactionSetting: TransactionSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private transactionSetting: Gs2Script.TransactionSetting|null = null;
+    private logSetting: Gs2Script.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -121,25 +123,25 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
-    public getTransactionSetting(): TransactionSetting|null {
+    public getTransactionSetting(): Gs2Script.TransactionSetting|null {
         return this.transactionSetting;
     }
-    public setTransactionSetting(transactionSetting: TransactionSetting|null) {
+    public setTransactionSetting(transactionSetting: Gs2Script.TransactionSetting|null) {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public withTransactionSetting(transactionSetting: TransactionSetting|null): this {
+    public withTransactionSetting(transactionSetting: Gs2Script.TransactionSetting|null): this {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Script.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Script.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Script.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -185,8 +187,8 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withTransactionSetting(Gs2Script.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withLogSetting(Gs2Script.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

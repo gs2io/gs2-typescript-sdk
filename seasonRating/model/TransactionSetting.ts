@@ -16,9 +16,47 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2SeasonRating from '../../seasonRating/model'
+
 export default class TransactionSetting implements IModel {
+    private enableAtomicCommit: boolean|null = null;
+    private transactionUseDistributor: boolean|null = null;
+    private acquireActionUseJobQueue: boolean|null = null;
     private distributorNamespaceId: string|null = null;
     private queueNamespaceId: string|null = null;
+    public getEnableAtomicCommit(): boolean|null {
+        return this.enableAtomicCommit;
+    }
+    public setEnableAtomicCommit(enableAtomicCommit: boolean|null) {
+        this.enableAtomicCommit = enableAtomicCommit;
+        return this;
+    }
+    public withEnableAtomicCommit(enableAtomicCommit: boolean|null): this {
+        this.enableAtomicCommit = enableAtomicCommit;
+        return this;
+    }
+    public getTransactionUseDistributor(): boolean|null {
+        return this.transactionUseDistributor;
+    }
+    public setTransactionUseDistributor(transactionUseDistributor: boolean|null) {
+        this.transactionUseDistributor = transactionUseDistributor;
+        return this;
+    }
+    public withTransactionUseDistributor(transactionUseDistributor: boolean|null): this {
+        this.transactionUseDistributor = transactionUseDistributor;
+        return this;
+    }
+    public getAcquireActionUseJobQueue(): boolean|null {
+        return this.acquireActionUseJobQueue;
+    }
+    public setAcquireActionUseJobQueue(acquireActionUseJobQueue: boolean|null) {
+        this.acquireActionUseJobQueue = acquireActionUseJobQueue;
+        return this;
+    }
+    public withAcquireActionUseJobQueue(acquireActionUseJobQueue: boolean|null): this {
+        this.acquireActionUseJobQueue = acquireActionUseJobQueue;
+        return this;
+    }
     public getDistributorNamespaceId(): string|null {
         return this.distributorNamespaceId;
     }
@@ -47,12 +85,18 @@ export default class TransactionSetting implements IModel {
             return null;
         }
         return new TransactionSetting()
+            .withEnableAtomicCommit(data["enableAtomicCommit"])
+            .withTransactionUseDistributor(data["transactionUseDistributor"])
+            .withAcquireActionUseJobQueue(data["acquireActionUseJobQueue"])
             .withDistributorNamespaceId(data["distributorNamespaceId"])
             .withQueueNamespaceId(data["queueNamespaceId"]);
     }
 
     public toDict(): {[key: string]: any} {
         return {
+            "enableAtomicCommit": this.getEnableAtomicCommit(),
+            "transactionUseDistributor": this.getTransactionUseDistributor(),
+            "acquireActionUseJobQueue": this.getAcquireActionUseJobQueue(),
             "distributorNamespaceId": this.getDistributorNamespaceId(),
             "queueNamespaceId": this.getQueueNamespaceId(),
         };

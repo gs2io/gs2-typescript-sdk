@@ -55,7 +55,7 @@ export default class DescribeRecoverIntervalTableMastersResult implements IResul
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Stamina.RecoverIntervalTableMaster.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeRecoverIntervalTableMastersResult implements IResul
                 this.getItems()!.map((item: Gs2Stamina.RecoverIntervalTableMaster) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

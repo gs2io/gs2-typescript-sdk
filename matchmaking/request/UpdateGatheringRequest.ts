@@ -123,7 +123,7 @@ export default class UpdateGatheringRequest implements IRequest {
                 data.attributeRanges.map((item: {[key: string]: any}) => {
                     return Gs2Matchmaking.AttributeRange.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -135,7 +135,7 @@ export default class UpdateGatheringRequest implements IRequest {
                 this.getAttributeRanges()!.map((item: Gs2Matchmaking.AttributeRange) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

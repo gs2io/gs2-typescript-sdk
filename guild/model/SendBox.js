@@ -200,7 +200,7 @@ var SendBox = /** @class */ (function () {
             .withTargetGuildNames(data.targetGuildNames ?
             data.targetGuildNames.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -213,7 +213,7 @@ var SendBox = /** @class */ (function () {
             "targetGuildNames": this.getTargetGuildNames() ?
                 this.getTargetGuildNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

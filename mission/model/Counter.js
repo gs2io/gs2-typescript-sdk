@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ScopedValue_1 = tslib_1.__importDefault(require("./ScopedValue"));
+var Gs2Mission = tslib_1.__importStar(require("../../mission/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:counter:{counterName}";
 var Counter = /** @class */ (function () {
     function Counter() {
@@ -201,8 +201,8 @@ var Counter = /** @class */ (function () {
             .withName(data["name"])
             .withValues(data.values ?
             data.values.map(function (item) {
-                return ScopedValue_1.default.fromDict(item);
-            }) : [])
+                return Gs2Mission.ScopedValue.fromDict(item);
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -215,7 +215,7 @@ var Counter = /** @class */ (function () {
             "values": this.getValues() ?
                 this.getValues().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

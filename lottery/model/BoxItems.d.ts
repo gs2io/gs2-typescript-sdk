@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import BoxItem from './BoxItem';
+import * as Gs2Lottery from '../../lottery/model';
 export default class BoxItems implements IModel {
     private boxId;
     private prizeTableName;
@@ -21,9 +21,9 @@ export default class BoxItems implements IModel {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
-    getItems(): BoxItem[] | null;
-    setItems(items: BoxItem[] | null): this;
-    withItems(items: BoxItem[] | null): this;
+    getItems(): Gs2Lottery.BoxItem[] | null;
+    setItems(items: Gs2Lottery.BoxItem[] | null): this;
+    withItems(items: Gs2Lottery.BoxItem[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): BoxItems | null;

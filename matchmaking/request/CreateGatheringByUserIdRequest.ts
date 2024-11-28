@@ -183,17 +183,17 @@ export default class CreateGatheringByUserIdRequest implements IRequest {
                 data.attributeRanges.map((item: {[key: string]: any}) => {
                     return Gs2Matchmaking.AttributeRange.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCapacityOfRoles(data.capacityOfRoles ?
                 data.capacityOfRoles.map((item: {[key: string]: any}) => {
                     return Gs2Matchmaking.CapacityOfRole.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withAllowUserIds(data.allowUserIds ?
                 data.allowUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withExpiresAt(data["expiresAt"])
             .withExpiresAtTimeSpan(Gs2Matchmaking.TimeSpan.fromDict(data["expiresAtTimeSpan"]))
             .withTimeOffsetToken(data["timeOffsetToken"]);
@@ -208,17 +208,17 @@ export default class CreateGatheringByUserIdRequest implements IRequest {
                 this.getAttributeRanges()!.map((item: Gs2Matchmaking.AttributeRange) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "capacityOfRoles": this.getCapacityOfRoles() ?
                 this.getCapacityOfRoles()!.map((item: Gs2Matchmaking.CapacityOfRole) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "allowUserIds": this.getAllowUserIds() ?
                 this.getAllowUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "expiresAt": this.getExpiresAt(),
             "expiresAtTimeSpan": this.getExpiresAtTimeSpan()?.toDict(),
             "timeOffsetToken": this.getTimeOffsetToken(),

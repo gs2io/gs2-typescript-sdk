@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var BalanceParameterValue_1 = tslib_1.__importDefault(require("./BalanceParameterValue"));
+var Gs2Enchant = tslib_1.__importStar(require("../../enchant/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:enchant:{namespaceName}:user:{userId}:balance:{parameterName}:{propertyId}";
 var BalanceParameterStatus = /** @class */ (function () {
     function BalanceParameterStatus() {
@@ -236,8 +236,8 @@ var BalanceParameterStatus = /** @class */ (function () {
             .withPropertyId(data["propertyId"])
             .withParameterValues(data.parameterValues ?
             data.parameterValues.map(function (item) {
-                return BalanceParameterValue_1.default.fromDict(item);
-            }) : [])
+                return Gs2Enchant.BalanceParameterValue.fromDict(item);
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -251,7 +251,7 @@ var BalanceParameterStatus = /** @class */ (function () {
             "parameterValues": this.getParameterValues() ?
                 this.getParameterValues().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

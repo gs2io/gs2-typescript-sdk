@@ -37,14 +37,14 @@ var DescribeSubscribeRankingModelsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Ranking2.SubscribeRankingModel.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeSubscribeRankingModelsResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeSubscribeRankingModelsResult;

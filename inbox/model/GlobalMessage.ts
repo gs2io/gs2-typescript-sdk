@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Inbox from '../../inbox/model'
 import AcquireAction from './AcquireAction';
 import TimeSpan from './TimeSpan';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:inbox:{namespaceName}:globalMessage:{globalMessageName}";
@@ -23,8 +25,8 @@ export default class GlobalMessage implements IModel {
     private globalMessageId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;
-    private readAcquireActions: AcquireAction[]|null = null;
-    private expiresTimeSpan: TimeSpan|null = null;
+    private readAcquireActions: Gs2Inbox.AcquireAction[]|null = null;
+    private expiresTimeSpan: Gs2Inbox.TimeSpan|null = null;
     private expiresAt: number|null = null;
     private messageReceptionPeriodEventId: string|null = null;
 
@@ -141,25 +143,25 @@ export default class GlobalMessage implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getReadAcquireActions(): AcquireAction[]|null {
+    public getReadAcquireActions(): Gs2Inbox.AcquireAction[]|null {
         return this.readAcquireActions;
     }
-    public setReadAcquireActions(readAcquireActions: AcquireAction[]|null) {
+    public setReadAcquireActions(readAcquireActions: Gs2Inbox.AcquireAction[]|null) {
         this.readAcquireActions = readAcquireActions;
         return this;
     }
-    public withReadAcquireActions(readAcquireActions: AcquireAction[]|null): this {
+    public withReadAcquireActions(readAcquireActions: Gs2Inbox.AcquireAction[]|null): this {
         this.readAcquireActions = readAcquireActions;
         return this;
     }
-    public getExpiresTimeSpan(): TimeSpan|null {
+    public getExpiresTimeSpan(): Gs2Inbox.TimeSpan|null {
         return this.expiresTimeSpan;
     }
-    public setExpiresTimeSpan(expiresTimeSpan: TimeSpan|null) {
+    public setExpiresTimeSpan(expiresTimeSpan: Gs2Inbox.TimeSpan|null) {
         this.expiresTimeSpan = expiresTimeSpan;
         return this;
     }
-    public withExpiresTimeSpan(expiresTimeSpan: TimeSpan|null): this {
+    public withExpiresTimeSpan(expiresTimeSpan: Gs2Inbox.TimeSpan|null): this {
         this.expiresTimeSpan = expiresTimeSpan;
         return this;
     }
@@ -199,10 +201,10 @@ export default class GlobalMessage implements IModel {
             .withMetadata(data["metadata"])
             .withReadAcquireActions(data.readAcquireActions ?
                 data.readAcquireActions.map((item: {[key: string]: any}) => {
-                    return AcquireAction.fromDict(item);
+                    return Gs2Inbox.AcquireAction.fromDict(item);
                 }
-            ) : [])
-            .withExpiresTimeSpan(TimeSpan.fromDict(data["expiresTimeSpan"]))
+            ) : null)
+            .withExpiresTimeSpan(Gs2Inbox.TimeSpan.fromDict(data["expiresTimeSpan"]))
             .withExpiresAt(data["expiresAt"])
             .withMessageReceptionPeriodEventId(data["messageReceptionPeriodEventId"]);
     }
@@ -213,10 +215,10 @@ export default class GlobalMessage implements IModel {
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "readAcquireActions": this.getReadAcquireActions() ?
-                this.getReadAcquireActions()!.map((item: AcquireAction) => {
+                this.getReadAcquireActions()!.map((item: Gs2Inbox.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "expiresTimeSpan": this.getExpiresTimeSpan()?.toDict(),
             "expiresAt": this.getExpiresAt(),
             "messageReceptionPeriodEventId": this.getMessageReceptionPeriodEventId(),

@@ -112,7 +112,7 @@ var ResetRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2SkillTree.Config.fromDict(item);
-            }) : []);
+            }) : null);
     };
     ResetRequest.prototype.toDict = function () {
         return {
@@ -122,7 +122,7 @@ var ResetRequest = /** @class */ (function () {
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ResetRequest;

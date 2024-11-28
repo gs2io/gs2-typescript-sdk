@@ -55,7 +55,7 @@ export default class DescribeReceiveStatusesByUserIdResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2LoginReward.ReceiveStatus.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeReceiveStatusesByUserIdResult implements IResult {
                 this.getItems()!.map((item: Gs2LoginReward.ReceiveStatus) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

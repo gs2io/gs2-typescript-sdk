@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Guild from '../../guild/model'
 const grnFormat: string = "";
 
 export default class ReceiveMemberRequest implements IModel {

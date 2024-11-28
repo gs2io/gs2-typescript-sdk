@@ -206,7 +206,7 @@ var Room = /** @class */ (function () {
             .withWhiteListUserIds(data.whiteListUserIds ?
             data.whiteListUserIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -221,7 +221,7 @@ var Room = /** @class */ (function () {
             "whiteListUserIds": this.getWhiteListUserIds() ?
                 this.getWhiteListUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

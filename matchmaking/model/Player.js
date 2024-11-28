@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Attribute_1 = tslib_1.__importDefault(require("./Attribute"));
+var Gs2Matchmaking = tslib_1.__importStar(require("../../matchmaking/model"));
 var Player = /** @class */ (function () {
     function Player() {
         this.userId = null;
@@ -88,13 +88,13 @@ var Player = /** @class */ (function () {
             .withUserId(data["userId"])
             .withAttributes(data.attributes ?
             data.attributes.map(function (item) {
-                return Attribute_1.default.fromDict(item);
-            }) : [])
+                return Gs2Matchmaking.Attribute.fromDict(item);
+            }) : null)
             .withRoleName(data["roleName"])
             .withDenyUserIds(data.denyUserIds ?
             data.denyUserIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withCreatedAt(data["createdAt"]);
     };
     Player.prototype.toDict = function () {
@@ -103,12 +103,12 @@ var Player = /** @class */ (function () {
             "attributes": this.getAttributes() ?
                 this.getAttributes().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "roleName": this.getRoleName(),
             "denyUserIds": this.getDenyUserIds() ?
                 this.getDenyUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
         };
     };

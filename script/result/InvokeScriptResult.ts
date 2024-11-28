@@ -136,7 +136,7 @@ export default class InvokeScriptResult implements IResult {
                 data.output.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -151,7 +151,7 @@ export default class InvokeScriptResult implements IResult {
                 this.getOutput()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

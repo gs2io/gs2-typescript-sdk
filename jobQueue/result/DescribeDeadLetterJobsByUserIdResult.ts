@@ -55,7 +55,7 @@ export default class DescribeDeadLetterJobsByUserIdResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2JobQueue.DeadLetterJob.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeDeadLetterJobsByUserIdResult implements IResult {
                 this.getItems()!.map((item: Gs2JobQueue.DeadLetterJob) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

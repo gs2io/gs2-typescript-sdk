@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import RandomDisplayItemModel from './RandomDisplayItemModel';
+import * as Gs2Showcase from '../../showcase/model';
 export default class RandomShowcaseMaster implements IModel {
     private showcaseId;
     private name;
@@ -34,9 +34,9 @@ export default class RandomShowcaseMaster implements IModel {
     getMaximumNumberOfChoice(): number | null;
     setMaximumNumberOfChoice(maximumNumberOfChoice: number | null): this;
     withMaximumNumberOfChoice(maximumNumberOfChoice: number | null): this;
-    getDisplayItems(): RandomDisplayItemModel[] | null;
-    setDisplayItems(displayItems: RandomDisplayItemModel[] | null): this;
-    withDisplayItems(displayItems: RandomDisplayItemModel[] | null): this;
+    getDisplayItems(): Gs2Showcase.RandomDisplayItemModel[] | null;
+    setDisplayItems(displayItems: Gs2Showcase.RandomDisplayItemModel[] | null): this;
+    withDisplayItems(displayItems: Gs2Showcase.RandomDisplayItemModel[] | null): this;
     getBaseTimestamp(): number | null;
     setBaseTimestamp(baseTimestamp: number | null): this;
     withBaseTimestamp(baseTimestamp: number | null): this;

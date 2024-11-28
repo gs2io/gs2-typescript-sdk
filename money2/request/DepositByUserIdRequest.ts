@@ -135,7 +135,7 @@ export default class DepositByUserIdRequest implements IRequest {
                 data.depositTransactions.map((item: {[key: string]: any}) => {
                     return Gs2Money2.DepositTransaction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -148,7 +148,7 @@ export default class DepositByUserIdRequest implements IRequest {
                 this.getDepositTransactions()!.map((item: Gs2Money2.DepositTransaction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

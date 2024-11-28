@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Enchant from '../../enchant/model'
 import RarityParameterCountModel from './RarityParameterCountModel';
 import RarityParameterValueModel from './RarityParameterValueModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:enchant:{namespaceName}:model:rarity:{parameterName}";
@@ -24,8 +26,8 @@ export default class RarityParameterModel implements IModel {
     private name: string|null = null;
     private metadata: string|null = null;
     private maximumParameterCount: number|null = null;
-    private parameterCounts: RarityParameterCountModel[]|null = null;
-    private parameters: RarityParameterValueModel[]|null = null;
+    private parameterCounts: Gs2Enchant.RarityParameterCountModel[]|null = null;
+    private parameters: Gs2Enchant.RarityParameterValueModel[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -151,25 +153,25 @@ export default class RarityParameterModel implements IModel {
         this.maximumParameterCount = maximumParameterCount;
         return this;
     }
-    public getParameterCounts(): RarityParameterCountModel[]|null {
+    public getParameterCounts(): Gs2Enchant.RarityParameterCountModel[]|null {
         return this.parameterCounts;
     }
-    public setParameterCounts(parameterCounts: RarityParameterCountModel[]|null) {
+    public setParameterCounts(parameterCounts: Gs2Enchant.RarityParameterCountModel[]|null) {
         this.parameterCounts = parameterCounts;
         return this;
     }
-    public withParameterCounts(parameterCounts: RarityParameterCountModel[]|null): this {
+    public withParameterCounts(parameterCounts: Gs2Enchant.RarityParameterCountModel[]|null): this {
         this.parameterCounts = parameterCounts;
         return this;
     }
-    public getParameters(): RarityParameterValueModel[]|null {
+    public getParameters(): Gs2Enchant.RarityParameterValueModel[]|null {
         return this.parameters;
     }
-    public setParameters(parameters: RarityParameterValueModel[]|null) {
+    public setParameters(parameters: Gs2Enchant.RarityParameterValueModel[]|null) {
         this.parameters = parameters;
         return this;
     }
-    public withParameters(parameters: RarityParameterValueModel[]|null): this {
+    public withParameters(parameters: Gs2Enchant.RarityParameterValueModel[]|null): this {
         this.parameters = parameters;
         return this;
     }
@@ -185,14 +187,14 @@ export default class RarityParameterModel implements IModel {
             .withMaximumParameterCount(data["maximumParameterCount"])
             .withParameterCounts(data.parameterCounts ?
                 data.parameterCounts.map((item: {[key: string]: any}) => {
-                    return RarityParameterCountModel.fromDict(item);
+                    return Gs2Enchant.RarityParameterCountModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withParameters(data.parameters ?
                 data.parameters.map((item: {[key: string]: any}) => {
-                    return RarityParameterValueModel.fromDict(item);
+                    return Gs2Enchant.RarityParameterValueModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -202,15 +204,15 @@ export default class RarityParameterModel implements IModel {
             "metadata": this.getMetadata(),
             "maximumParameterCount": this.getMaximumParameterCount(),
             "parameterCounts": this.getParameterCounts() ?
-                this.getParameterCounts()!.map((item: RarityParameterCountModel) => {
+                this.getParameterCounts()!.map((item: Gs2Enchant.RarityParameterCountModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "parameters": this.getParameters() ?
-                this.getParameters()!.map((item: RarityParameterValueModel) => {
+                this.getParameters()!.map((item: Gs2Enchant.RarityParameterValueModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -40,7 +40,7 @@ export default class DescribeBalanceParameterModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Enchant.BalanceParameterModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeBalanceParameterModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2Enchant.BalanceParameterModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

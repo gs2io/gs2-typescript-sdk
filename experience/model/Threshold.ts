@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Experience from '../../experience/model'
+
 export default class Threshold implements IModel {
     private metadata: string|null = null;
     private values: number[]|null = null;
@@ -52,7 +54,7 @@ export default class Threshold implements IModel {
                 data.values.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -62,7 +64,7 @@ export default class Threshold implements IModel {
                 this.getValues()!.map((item: number) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

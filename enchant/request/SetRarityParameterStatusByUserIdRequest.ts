@@ -148,7 +148,7 @@ export default class SetRarityParameterStatusByUserIdRequest implements IRequest
                 data.parameterValues.map((item: {[key: string]: any}) => {
                     return Gs2Enchant.RarityParameterValue.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -162,7 +162,7 @@ export default class SetRarityParameterStatusByUserIdRequest implements IRequest
                 this.getParameterValues()!.map((item: Gs2Enchant.RarityParameterValue) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

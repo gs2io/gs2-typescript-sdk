@@ -121,7 +121,7 @@ export default class UpdateSalesItemGroupMasterRequest implements IRequest {
                 data.salesItemNames.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -134,7 +134,7 @@ export default class UpdateSalesItemGroupMasterRequest implements IRequest {
                 this.getSalesItemNames()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

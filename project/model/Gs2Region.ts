@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Project from '../../project/model'
+
 export default class Gs2Region implements IModel {
     private regionName: string|null = null;
     private status: string|null = null;

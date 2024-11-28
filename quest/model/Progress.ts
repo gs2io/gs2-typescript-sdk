@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Quest from '../../quest/model'
 import Reward from './Reward';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:quest:{namespaceName}:user:{userId}:progress";
 
@@ -24,8 +26,8 @@ export default class Progress implements IModel {
     private transactionId: string|null = null;
     private questModelId: string|null = null;
     private randomSeed: number|null = null;
-    private rewards: Reward[]|null = null;
-    private failedRewards: Reward[]|null = null;
+    private rewards: Gs2Quest.Reward[]|null = null;
+    private failedRewards: Gs2Quest.Reward[]|null = null;
     private metadata: string|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -166,25 +168,25 @@ export default class Progress implements IModel {
         this.randomSeed = randomSeed;
         return this;
     }
-    public getRewards(): Reward[]|null {
+    public getRewards(): Gs2Quest.Reward[]|null {
         return this.rewards;
     }
-    public setRewards(rewards: Reward[]|null) {
+    public setRewards(rewards: Gs2Quest.Reward[]|null) {
         this.rewards = rewards;
         return this;
     }
-    public withRewards(rewards: Reward[]|null): this {
+    public withRewards(rewards: Gs2Quest.Reward[]|null): this {
         this.rewards = rewards;
         return this;
     }
-    public getFailedRewards(): Reward[]|null {
+    public getFailedRewards(): Gs2Quest.Reward[]|null {
         return this.failedRewards;
     }
-    public setFailedRewards(failedRewards: Reward[]|null) {
+    public setFailedRewards(failedRewards: Gs2Quest.Reward[]|null) {
         this.failedRewards = failedRewards;
         return this;
     }
-    public withFailedRewards(failedRewards: Reward[]|null): this {
+    public withFailedRewards(failedRewards: Gs2Quest.Reward[]|null): this {
         this.failedRewards = failedRewards;
         return this;
     }
@@ -245,14 +247,14 @@ export default class Progress implements IModel {
             .withRandomSeed(data["randomSeed"])
             .withRewards(data.rewards ?
                 data.rewards.map((item: {[key: string]: any}) => {
-                    return Reward.fromDict(item);
+                    return Gs2Quest.Reward.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withFailedRewards(data.failedRewards ?
                 data.failedRewards.map((item: {[key: string]: any}) => {
-                    return Reward.fromDict(item);
+                    return Gs2Quest.Reward.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withMetadata(data["metadata"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -267,15 +269,15 @@ export default class Progress implements IModel {
             "questModelId": this.getQuestModelId(),
             "randomSeed": this.getRandomSeed(),
             "rewards": this.getRewards() ?
-                this.getRewards()!.map((item: Reward) => {
+                this.getRewards()!.map((item: Gs2Quest.Reward) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "failedRewards": this.getFailedRewards() ?
-                this.getFailedRewards()!.map((item: Reward) => {
+                this.getFailedRewards()!.map((item: Gs2Quest.Reward) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "metadata": this.getMetadata(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

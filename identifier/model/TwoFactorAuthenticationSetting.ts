@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Identifier from '../../identifier/model'
+
 export default class TwoFactorAuthenticationSetting implements IModel {
     private status: string|null = null;
     public getStatus(): string|null {

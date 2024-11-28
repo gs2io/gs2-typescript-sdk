@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var InGameLogTag_1 = tslib_1.__importDefault(require("./InGameLogTag"));
+var Gs2Log = tslib_1.__importStar(require("../../log/model"));
 var grnFormat = "";
 var InGameLog = /** @class */ (function () {
     function InGameLog() {
@@ -97,8 +97,8 @@ var InGameLog = /** @class */ (function () {
             .withUserId(data["userId"])
             .withTags(data.tags ?
             data.tags.map(function (item) {
-                return InGameLogTag_1.default.fromDict(item);
-            }) : [])
+                return Gs2Log.InGameLogTag.fromDict(item);
+            }) : null)
             .withPayload(data["payload"]);
     };
     InGameLog.prototype.toDict = function () {
@@ -109,7 +109,7 @@ var InGameLog = /** @class */ (function () {
             "tags": this.getTags() ?
                 this.getTags().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "payload": this.getPayload(),
         };
     };

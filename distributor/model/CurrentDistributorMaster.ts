@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Distributor from '../../distributor/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:distributor:{namespaceName}";
 
 export default class CurrentDistributorMaster implements IModel {

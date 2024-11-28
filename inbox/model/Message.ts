@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Inbox from '../../inbox/model'
 import AcquireAction from './AcquireAction';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:inbox:{namespaceName}:user:{userId}:message:{messageName}";
 
@@ -24,7 +26,7 @@ export default class Message implements IModel {
     private userId: string|null = null;
     private metadata: string|null = null;
     private isRead: boolean|null = null;
-    private readAcquireActions: AcquireAction[]|null = null;
+    private readAcquireActions: Gs2Inbox.AcquireAction[]|null = null;
     private receivedAt: number|null = null;
     private readAt: number|null = null;
     private expiresAt: number|null = null;
@@ -188,14 +190,14 @@ export default class Message implements IModel {
         this.isRead = isRead;
         return this;
     }
-    public getReadAcquireActions(): AcquireAction[]|null {
+    public getReadAcquireActions(): Gs2Inbox.AcquireAction[]|null {
         return this.readAcquireActions;
     }
-    public setReadAcquireActions(readAcquireActions: AcquireAction[]|null) {
+    public setReadAcquireActions(readAcquireActions: Gs2Inbox.AcquireAction[]|null) {
         this.readAcquireActions = readAcquireActions;
         return this;
     }
-    public withReadAcquireActions(readAcquireActions: AcquireAction[]|null): this {
+    public withReadAcquireActions(readAcquireActions: Gs2Inbox.AcquireAction[]|null): this {
         this.readAcquireActions = readAcquireActions;
         return this;
     }
@@ -256,9 +258,9 @@ export default class Message implements IModel {
             .withIsRead(data["isRead"])
             .withReadAcquireActions(data.readAcquireActions ?
                 data.readAcquireActions.map((item: {[key: string]: any}) => {
-                    return AcquireAction.fromDict(item);
+                    return Gs2Inbox.AcquireAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withReceivedAt(data["receivedAt"])
             .withReadAt(data["readAt"])
             .withExpiresAt(data["expiresAt"])
@@ -273,10 +275,10 @@ export default class Message implements IModel {
             "metadata": this.getMetadata(),
             "isRead": this.getIsRead(),
             "readAcquireActions": this.getReadAcquireActions() ?
-                this.getReadAcquireActions()!.map((item: AcquireAction) => {
+                this.getReadAcquireActions()!.map((item: Gs2Inbox.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "receivedAt": this.getReceivedAt(),
             "readAt": this.getReadAt(),
             "expiresAt": this.getExpiresAt(),

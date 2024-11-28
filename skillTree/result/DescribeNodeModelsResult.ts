@@ -40,7 +40,7 @@ export default class DescribeNodeModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2SkillTree.NodeModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeNodeModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2SkillTree.NodeModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

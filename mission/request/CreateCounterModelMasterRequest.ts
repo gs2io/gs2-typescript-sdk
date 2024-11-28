@@ -133,7 +133,7 @@ export default class CreateCounterModelMasterRequest implements IRequest {
                 data.scopes.map((item: {[key: string]: any}) => {
                     return Gs2Mission.CounterScopeModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withChallengePeriodEventId(data["challengePeriodEventId"]);
     }
 
@@ -147,7 +147,7 @@ export default class CreateCounterModelMasterRequest implements IRequest {
                 this.getScopes()!.map((item: Gs2Mission.CounterScopeModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "challengePeriodEventId": this.getChallengePeriodEventId(),
         };
     }

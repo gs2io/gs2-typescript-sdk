@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Experience from '../../experience/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:experience:{namespaceName}:threshold:{thresholdName}";
 
 export default class ThresholdMaster implements IModel {
@@ -209,7 +211,7 @@ export default class ThresholdMaster implements IModel {
                 data.values.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -225,7 +227,7 @@ export default class ThresholdMaster implements IModel {
                 this.getValues()!.map((item: number) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

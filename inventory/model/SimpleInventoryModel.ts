@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Inventory from '../../inventory/model'
 import SimpleItemModel from './SimpleItemModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:simple:model:{inventoryName}";
 
@@ -22,7 +24,7 @@ export default class SimpleInventoryModel implements IModel {
     private inventoryModelId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;
-    private simpleItemModels: SimpleItemModel[]|null = null;
+    private simpleItemModels: Gs2Inventory.SimpleItemModel[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -137,14 +139,14 @@ export default class SimpleInventoryModel implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getSimpleItemModels(): SimpleItemModel[]|null {
+    public getSimpleItemModels(): Gs2Inventory.SimpleItemModel[]|null {
         return this.simpleItemModels;
     }
-    public setSimpleItemModels(simpleItemModels: SimpleItemModel[]|null) {
+    public setSimpleItemModels(simpleItemModels: Gs2Inventory.SimpleItemModel[]|null) {
         this.simpleItemModels = simpleItemModels;
         return this;
     }
-    public withSimpleItemModels(simpleItemModels: SimpleItemModel[]|null): this {
+    public withSimpleItemModels(simpleItemModels: Gs2Inventory.SimpleItemModel[]|null): this {
         this.simpleItemModels = simpleItemModels;
         return this;
     }
@@ -159,9 +161,9 @@ export default class SimpleInventoryModel implements IModel {
             .withMetadata(data["metadata"])
             .withSimpleItemModels(data.simpleItemModels ?
                 data.simpleItemModels.map((item: {[key: string]: any}) => {
-                    return SimpleItemModel.fromDict(item);
+                    return Gs2Inventory.SimpleItemModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -170,10 +172,10 @@ export default class SimpleInventoryModel implements IModel {
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "simpleItemModels": this.getSimpleItemModels() ?
-                this.getSimpleItemModels()!.map((item: SimpleItemModel) => {
+                this.getSimpleItemModels()!.map((item: Gs2Inventory.SimpleItemModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

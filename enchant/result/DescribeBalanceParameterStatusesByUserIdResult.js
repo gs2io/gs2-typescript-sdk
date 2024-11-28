@@ -49,7 +49,7 @@ var DescribeBalanceParameterStatusesByUserIdResult = /** @class */ (function () 
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Enchant.BalanceParameterStatus.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeBalanceParameterStatusesByUserIdResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeBalanceParameterStatusesByUserIdResult = /** @class */ (function () 
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

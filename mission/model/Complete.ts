@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Mission from '../../mission/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:group:{missionGroupName}:complete";
 
 export default class Complete implements IModel {
@@ -243,12 +245,12 @@ export default class Complete implements IModel {
                 data.completedMissionTaskNames.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withReceivedMissionTaskNames(data.receivedMissionTaskNames ?
                 data.receivedMissionTaskNames.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withNextResetAt(data["nextResetAt"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -264,12 +266,12 @@ export default class Complete implements IModel {
                 this.getCompletedMissionTaskNames()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "receivedMissionTaskNames": this.getReceivedMissionTaskNames() ?
                 this.getReceivedMissionTaskNames()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "nextResetAt": this.getNextResetAt(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

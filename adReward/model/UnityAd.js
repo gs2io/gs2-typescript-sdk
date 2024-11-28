@@ -38,14 +38,14 @@ var UnityAd = /** @class */ (function () {
             .withKeys(data.keys ?
             data.keys.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     UnityAd.prototype.toDict = function () {
         return {
             "keys": this.getKeys() ?
                 this.getKeys().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return UnityAd;

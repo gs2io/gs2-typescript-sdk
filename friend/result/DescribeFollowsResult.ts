@@ -55,7 +55,7 @@ export default class DescribeFollowsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Friend.FollowUser.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeFollowsResult implements IResult {
                 this.getItems()!.map((item: Gs2Friend.FollowUser) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

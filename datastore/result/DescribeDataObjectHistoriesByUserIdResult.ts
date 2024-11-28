@@ -55,7 +55,7 @@ export default class DescribeDataObjectHistoriesByUserIdResult implements IResul
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Datastore.DataObjectHistory.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeDataObjectHistoriesByUserIdResult implements IResul
                 this.getItems()!.map((item: Gs2Datastore.DataObjectHistory) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

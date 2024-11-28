@@ -49,7 +49,7 @@ var DescribeMaxStaminaTableMastersResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Stamina.MaxStaminaTableMaster.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeMaxStaminaTableMastersResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeMaxStaminaTableMastersResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

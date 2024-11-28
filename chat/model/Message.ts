@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Chat from '../../chat/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:chat:{namespaceName}:room:{roomName}:message:{messageName}";
 
 export default class Message implements IModel {

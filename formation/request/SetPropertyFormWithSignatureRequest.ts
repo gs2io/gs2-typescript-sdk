@@ -148,7 +148,7 @@ export default class SetPropertyFormWithSignatureRequest implements IRequest {
                 data.slots.map((item: {[key: string]: any}) => {
                     return Gs2Formation.SlotWithSignature.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withKeyId(data["keyId"]);
     }
 
@@ -162,7 +162,7 @@ export default class SetPropertyFormWithSignatureRequest implements IRequest {
                 this.getSlots()!.map((item: Gs2Formation.SlotWithSignature) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "keyId": this.getKeyId(),
         };
     }

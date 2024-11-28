@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Ranking from '../../ranking/model'
+
 export default class FixedTiming implements IModel {
     private hour: number|null = null;
     private minute: number|null = null;

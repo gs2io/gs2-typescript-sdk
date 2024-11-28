@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import JobResultBody from './JobResultBody';
+import * as Gs2JobQueue from '../../jobQueue/model';
 export default class DeadLetterJob implements IModel {
     private deadLetterJobId;
     private name;
@@ -31,9 +31,9 @@ export default class DeadLetterJob implements IModel {
     getArgs(): string | null;
     setArgs(args: string | null): this;
     withArgs(args: string | null): this;
-    getResult(): JobResultBody[] | null;
-    setResult(result: JobResultBody[] | null): this;
-    withResult(result: JobResultBody[] | null): this;
+    getResult(): Gs2JobQueue.JobResultBody[] | null;
+    setResult(result: Gs2JobQueue.JobResultBody[] | null): this;
+    withResult(result: Gs2JobQueue.JobResultBody[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

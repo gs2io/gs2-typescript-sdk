@@ -147,7 +147,7 @@ export default class UpdateGlobalMessageMasterRequest implements IRequest {
                 data.readAcquireActions.map((item: {[key: string]: any}) => {
                     return Gs2Inbox.AcquireAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withExpiresTimeSpan(Gs2Inbox.TimeSpan.fromDict(data["expiresTimeSpan"]))
             .withExpiresAt(data["expiresAt"])
             .withMessageReceptionPeriodEventId(data["messageReceptionPeriodEventId"]);
@@ -162,7 +162,7 @@ export default class UpdateGlobalMessageMasterRequest implements IRequest {
                 this.getReadAcquireActions()!.map((item: Gs2Inbox.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "expiresTimeSpan": this.getExpiresTimeSpan()?.toDict(),
             "expiresAt": this.getExpiresAt(),
             "messageReceptionPeriodEventId": this.getMessageReceptionPeriodEventId(),

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2SerialKey from '../../serialKey/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:serialKey:{namespaceName}";
 
 export default class CurrentCampaignMaster implements IModel {

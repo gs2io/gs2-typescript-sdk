@@ -206,7 +206,7 @@ var RecoverValueTableMaster = /** @class */ (function () {
             .withValues(data.values ?
             data.values.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -221,7 +221,7 @@ var RecoverValueTableMaster = /** @class */ (function () {
             "values": this.getValues() ?
                 this.getValues().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

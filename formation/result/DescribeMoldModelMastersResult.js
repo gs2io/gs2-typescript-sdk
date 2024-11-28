@@ -49,7 +49,7 @@ var DescribeMoldModelMastersResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Formation.MoldModelMaster.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeMoldModelMastersResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeMoldModelMastersResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

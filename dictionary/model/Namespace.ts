@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Dictionary from '../../dictionary/model'
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:dictionary:{namespaceName}";
@@ -23,9 +25,9 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
-    private entryScript: ScriptSetting|null = null;
+    private entryScript: Gs2Dictionary.ScriptSetting|null = null;
     private duplicateEntryScript: string|null = null;
-    private logSetting: LogSetting|null = null;
+    private logSetting: Gs2Dictionary.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -122,14 +124,14 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
-    public getEntryScript(): ScriptSetting|null {
+    public getEntryScript(): Gs2Dictionary.ScriptSetting|null {
         return this.entryScript;
     }
-    public setEntryScript(entryScript: ScriptSetting|null) {
+    public setEntryScript(entryScript: Gs2Dictionary.ScriptSetting|null) {
         this.entryScript = entryScript;
         return this;
     }
-    public withEntryScript(entryScript: ScriptSetting|null): this {
+    public withEntryScript(entryScript: Gs2Dictionary.ScriptSetting|null): this {
         this.entryScript = entryScript;
         return this;
     }
@@ -144,14 +146,14 @@ export default class Namespace implements IModel {
         this.duplicateEntryScript = duplicateEntryScript;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Dictionary.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Dictionary.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Dictionary.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -197,9 +199,9 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withEntryScript(ScriptSetting.fromDict(data["entryScript"]))
+            .withEntryScript(Gs2Dictionary.ScriptSetting.fromDict(data["entryScript"]))
             .withDuplicateEntryScript(data["duplicateEntryScript"])
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withLogSetting(Gs2Dictionary.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

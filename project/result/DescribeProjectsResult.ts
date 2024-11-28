@@ -55,7 +55,7 @@ export default class DescribeProjectsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Project.Project.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeProjectsResult implements IResult {
                 this.getItems()!.map((item: Gs2Project.Project) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

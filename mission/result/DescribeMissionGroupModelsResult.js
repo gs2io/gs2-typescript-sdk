@@ -37,14 +37,14 @@ var DescribeMissionGroupModelsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Mission.MissionGroupModel.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeMissionGroupModelsResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeMissionGroupModelsResult;

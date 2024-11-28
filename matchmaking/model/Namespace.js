@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
-var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2Matchmaking = tslib_1.__importStar(require("../../matchmaking/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:matchmaking:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -379,12 +377,12 @@ var Namespace = /** @class */ (function () {
             .withEnableCollaborateSeasonRating(data["enableCollaborateSeasonRating"])
             .withCollaborateSeasonRatingNamespaceId(data["collaborateSeasonRatingNamespaceId"])
             .withCollaborateSeasonRatingTtl(data["collaborateSeasonRatingTtl"])
-            .withChangeRatingScript(ScriptSetting_1.default.fromDict(data["changeRatingScript"]))
-            .withJoinNotification(NotificationSetting_1.default.fromDict(data["joinNotification"]))
-            .withLeaveNotification(NotificationSetting_1.default.fromDict(data["leaveNotification"]))
-            .withCompleteNotification(NotificationSetting_1.default.fromDict(data["completeNotification"]))
-            .withChangeRatingNotification(NotificationSetting_1.default.fromDict(data["changeRatingNotification"]))
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withChangeRatingScript(Gs2Matchmaking.ScriptSetting.fromDict(data["changeRatingScript"]))
+            .withJoinNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["joinNotification"]))
+            .withLeaveNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["leaveNotification"]))
+            .withCompleteNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["completeNotification"]))
+            .withChangeRatingNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["changeRatingNotification"]))
+            .withLogSetting(Gs2Matchmaking.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

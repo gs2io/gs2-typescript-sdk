@@ -135,7 +135,7 @@ export default class SetCounterByUserIdRequest implements IRequest {
                 data.values.map((item: {[key: string]: any}) => {
                     return Gs2Mission.ScopedValue.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -148,7 +148,7 @@ export default class SetCounterByUserIdRequest implements IRequest {
                 this.getValues()!.map((item: Gs2Mission.ScopedValue) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

@@ -15,11 +15,13 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Script from '../../script/model'
 import RandomUsed from './RandomUsed';
 
 export default class RandomStatus implements IModel {
     private seed: number|null = null;
-    private used: RandomUsed[]|null = null;
+    private used: Gs2Script.RandomUsed[]|null = null;
     public getSeed(): number|null {
         return this.seed;
     }
@@ -31,14 +33,14 @@ export default class RandomStatus implements IModel {
         this.seed = seed;
         return this;
     }
-    public getUsed(): RandomUsed[]|null {
+    public getUsed(): Gs2Script.RandomUsed[]|null {
         return this.used;
     }
-    public setUsed(used: RandomUsed[]|null) {
+    public setUsed(used: Gs2Script.RandomUsed[]|null) {
         this.used = used;
         return this;
     }
-    public withUsed(used: RandomUsed[]|null): this {
+    public withUsed(used: Gs2Script.RandomUsed[]|null): this {
         this.used = used;
         return this;
     }
@@ -51,19 +53,19 @@ export default class RandomStatus implements IModel {
             .withSeed(data["seed"])
             .withUsed(data.used ?
                 data.used.map((item: {[key: string]: any}) => {
-                    return RandomUsed.fromDict(item);
+                    return Gs2Script.RandomUsed.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "seed": this.getSeed(),
             "used": this.getUsed() ?
-                this.getUsed()!.map((item: RandomUsed) => {
+                this.getUsed()!.map((item: Gs2Script.RandomUsed) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

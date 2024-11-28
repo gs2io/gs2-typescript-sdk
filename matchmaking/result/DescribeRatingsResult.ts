@@ -55,7 +55,7 @@ export default class DescribeRatingsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Matchmaking.Rating.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeRatingsResult implements IResult {
                 this.getItems()!.map((item: Gs2Matchmaking.Rating) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

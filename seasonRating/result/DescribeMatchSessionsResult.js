@@ -49,7 +49,7 @@ var DescribeMatchSessionsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2SeasonRating.MatchSession.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeMatchSessionsResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeMatchSessionsResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

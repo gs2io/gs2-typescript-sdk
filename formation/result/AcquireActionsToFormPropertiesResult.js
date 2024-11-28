@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Gs2Formation = tslib_1.__importStar(require("../model"));
+var Gs2Core = tslib_1.__importStar(require("../../core"));
 var AcquireActionsToFormPropertiesResult = /** @class */ (function () {
     function AcquireActionsToFormPropertiesResult() {
         this.item = null;
@@ -25,6 +26,9 @@ var AcquireActionsToFormPropertiesResult = /** @class */ (function () {
         this.stampSheet = null;
         this.stampSheetEncryptionKeyId = null;
         this.autoRunStampSheet = null;
+        this.atomicCommit = null;
+        this.transaction = null;
+        this.transactionResult = null;
     }
     AcquireActionsToFormPropertiesResult.prototype.getItem = function () {
         return this.item;
@@ -92,6 +96,39 @@ var AcquireActionsToFormPropertiesResult = /** @class */ (function () {
         this.autoRunStampSheet = autoRunStampSheet;
         return this;
     };
+    AcquireActionsToFormPropertiesResult.prototype.getAtomicCommit = function () {
+        return this.atomicCommit;
+    };
+    AcquireActionsToFormPropertiesResult.prototype.setAtomicCommit = function (atomicCommit) {
+        this.atomicCommit = atomicCommit;
+        return this;
+    };
+    AcquireActionsToFormPropertiesResult.prototype.withAtomicCommit = function (atomicCommit) {
+        this.atomicCommit = atomicCommit;
+        return this;
+    };
+    AcquireActionsToFormPropertiesResult.prototype.getTransaction = function () {
+        return this.transaction;
+    };
+    AcquireActionsToFormPropertiesResult.prototype.setTransaction = function (transaction) {
+        this.transaction = transaction;
+        return this;
+    };
+    AcquireActionsToFormPropertiesResult.prototype.withTransaction = function (transaction) {
+        this.transaction = transaction;
+        return this;
+    };
+    AcquireActionsToFormPropertiesResult.prototype.getTransactionResult = function () {
+        return this.transactionResult;
+    };
+    AcquireActionsToFormPropertiesResult.prototype.setTransactionResult = function (transactionResult) {
+        this.transactionResult = transactionResult;
+        return this;
+    };
+    AcquireActionsToFormPropertiesResult.prototype.withTransactionResult = function (transactionResult) {
+        this.transactionResult = transactionResult;
+        return this;
+    };
     AcquireActionsToFormPropertiesResult.fromDict = function (data) {
         return new AcquireActionsToFormPropertiesResult()
             .withItem(Gs2Formation.Form.fromDict(data["item"]))
@@ -99,10 +136,13 @@ var AcquireActionsToFormPropertiesResult = /** @class */ (function () {
             .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
             .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
-            .withAutoRunStampSheet(data["autoRunStampSheet"]);
+            .withAutoRunStampSheet(data["autoRunStampSheet"])
+            .withAtomicCommit(data["atomicCommit"])
+            .withTransaction(data["transaction"])
+            .withTransactionResult(Gs2Core.TransactionResult.fromDict(data["transactionResult"]));
     };
     AcquireActionsToFormPropertiesResult.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "mold": (_b = this.getMold()) === null || _b === void 0 ? void 0 : _b.toDict(),
@@ -110,6 +150,9 @@ var AcquireActionsToFormPropertiesResult = /** @class */ (function () {
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
             "autoRunStampSheet": this.getAutoRunStampSheet(),
+            "atomicCommit": this.getAtomicCommit(),
+            "transaction": this.getTransaction(),
+            "transactionResult": (_c = this.getTransactionResult()) === null || _c === void 0 ? void 0 : _c.toDict(),
         };
     };
     return AcquireActionsToFormPropertiesResult;

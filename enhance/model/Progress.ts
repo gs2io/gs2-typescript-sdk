@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Enhance from '../../enhance/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:enhance:{namespaceName}:user:{userId}:progress";
 
 export default class Progress implements IModel {

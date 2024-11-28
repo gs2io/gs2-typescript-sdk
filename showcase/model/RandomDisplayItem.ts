@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Showcase from '../../showcase/model'
 import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
@@ -23,9 +25,9 @@ export default class RandomDisplayItem implements IModel {
     private showcaseName: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;
-    private verifyActions: VerifyAction[]|null = null;
-    private consumeActions: ConsumeAction[]|null = null;
-    private acquireActions: AcquireAction[]|null = null;
+    private verifyActions: Gs2Showcase.VerifyAction[]|null = null;
+    private consumeActions: Gs2Showcase.ConsumeAction[]|null = null;
+    private acquireActions: Gs2Showcase.AcquireAction[]|null = null;
     private currentPurchaseCount: number|null = null;
     private maximumPurchaseCount: number|null = null;
     public getShowcaseName(): string|null {
@@ -61,36 +63,36 @@ export default class RandomDisplayItem implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getVerifyActions(): VerifyAction[]|null {
+    public getVerifyActions(): Gs2Showcase.VerifyAction[]|null {
         return this.verifyActions;
     }
-    public setVerifyActions(verifyActions: VerifyAction[]|null) {
+    public setVerifyActions(verifyActions: Gs2Showcase.VerifyAction[]|null) {
         this.verifyActions = verifyActions;
         return this;
     }
-    public withVerifyActions(verifyActions: VerifyAction[]|null): this {
+    public withVerifyActions(verifyActions: Gs2Showcase.VerifyAction[]|null): this {
         this.verifyActions = verifyActions;
         return this;
     }
-    public getConsumeActions(): ConsumeAction[]|null {
+    public getConsumeActions(): Gs2Showcase.ConsumeAction[]|null {
         return this.consumeActions;
     }
-    public setConsumeActions(consumeActions: ConsumeAction[]|null) {
+    public setConsumeActions(consumeActions: Gs2Showcase.ConsumeAction[]|null) {
         this.consumeActions = consumeActions;
         return this;
     }
-    public withConsumeActions(consumeActions: ConsumeAction[]|null): this {
+    public withConsumeActions(consumeActions: Gs2Showcase.ConsumeAction[]|null): this {
         this.consumeActions = consumeActions;
         return this;
     }
-    public getAcquireActions(): AcquireAction[]|null {
+    public getAcquireActions(): Gs2Showcase.AcquireAction[]|null {
         return this.acquireActions;
     }
-    public setAcquireActions(acquireActions: AcquireAction[]|null) {
+    public setAcquireActions(acquireActions: Gs2Showcase.AcquireAction[]|null) {
         this.acquireActions = acquireActions;
         return this;
     }
-    public withAcquireActions(acquireActions: AcquireAction[]|null): this {
+    public withAcquireActions(acquireActions: Gs2Showcase.AcquireAction[]|null): this {
         this.acquireActions = acquireActions;
         return this;
     }
@@ -127,19 +129,19 @@ export default class RandomDisplayItem implements IModel {
             .withMetadata(data["metadata"])
             .withVerifyActions(data.verifyActions ?
                 data.verifyActions.map((item: {[key: string]: any}) => {
-                    return VerifyAction.fromDict(item);
+                    return Gs2Showcase.VerifyAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withConsumeActions(data.consumeActions ?
                 data.consumeActions.map((item: {[key: string]: any}) => {
-                    return ConsumeAction.fromDict(item);
+                    return Gs2Showcase.ConsumeAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withAcquireActions(data.acquireActions ?
                 data.acquireActions.map((item: {[key: string]: any}) => {
-                    return AcquireAction.fromDict(item);
+                    return Gs2Showcase.AcquireAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCurrentPurchaseCount(data["currentPurchaseCount"])
             .withMaximumPurchaseCount(data["maximumPurchaseCount"]);
     }
@@ -150,20 +152,20 @@ export default class RandomDisplayItem implements IModel {
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "verifyActions": this.getVerifyActions() ?
-                this.getVerifyActions()!.map((item: VerifyAction) => {
+                this.getVerifyActions()!.map((item: Gs2Showcase.VerifyAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "consumeActions": this.getConsumeActions() ?
-                this.getConsumeActions()!.map((item: ConsumeAction) => {
+                this.getConsumeActions()!.map((item: Gs2Showcase.ConsumeAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "acquireActions": this.getAcquireActions() ?
-                this.getAcquireActions()!.map((item: AcquireAction) => {
+                this.getAcquireActions()!.map((item: Gs2Showcase.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "currentPurchaseCount": this.getCurrentPurchaseCount(),
             "maximumPurchaseCount": this.getMaximumPurchaseCount(),
         };

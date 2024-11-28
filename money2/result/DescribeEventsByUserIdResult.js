@@ -49,7 +49,7 @@ var DescribeEventsByUserIdResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Money2.Event.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeEventsByUserIdResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeEventsByUserIdResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

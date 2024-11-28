@@ -123,7 +123,7 @@ export default class ReceiveRequest implements IRequest {
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Idle.Config.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -135,7 +135,7 @@ export default class ReceiveRequest implements IRequest {
                 this.getConfig()!.map((item: Gs2Idle.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

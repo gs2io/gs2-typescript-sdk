@@ -122,7 +122,7 @@ export default class SendInGameLogRequest implements IRequest {
                 data.tags.map((item: {[key: string]: any}) => {
                     return Gs2Log.InGameLogTag.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withPayload(data["payload"]);
     }
 
@@ -134,7 +134,7 @@ export default class SendInGameLogRequest implements IRequest {
                 this.getTags()!.map((item: Gs2Log.InGameLogTag) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "payload": this.getPayload(),
         };
     }

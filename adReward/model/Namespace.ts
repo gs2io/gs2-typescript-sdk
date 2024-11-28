@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2AdReward from '../../adReward/model'
 import AdMob from './AdMob';
 import UnityAd from './UnityAd';
 import AppLovinMax from './AppLovinMax';
@@ -27,13 +29,13 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
-    private admob: AdMob|null = null;
-    private unityAd: UnityAd|null = null;
-    private appLovinMaxes: AppLovinMax[]|null = null;
-    private acquirePointScript: ScriptSetting|null = null;
-    private consumePointScript: ScriptSetting|null = null;
-    private changePointNotification: NotificationSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private admob: Gs2AdReward.AdMob|null = null;
+    private unityAd: Gs2AdReward.UnityAd|null = null;
+    private appLovinMaxes: Gs2AdReward.AppLovinMax[]|null = null;
+    private acquirePointScript: Gs2AdReward.ScriptSetting|null = null;
+    private consumePointScript: Gs2AdReward.ScriptSetting|null = null;
+    private changePointNotification: Gs2AdReward.NotificationSetting|null = null;
+    private logSetting: Gs2AdReward.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -130,80 +132,80 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
-    public getAdmob(): AdMob|null {
+    public getAdmob(): Gs2AdReward.AdMob|null {
         return this.admob;
     }
-    public setAdmob(admob: AdMob|null) {
+    public setAdmob(admob: Gs2AdReward.AdMob|null) {
         this.admob = admob;
         return this;
     }
-    public withAdmob(admob: AdMob|null): this {
+    public withAdmob(admob: Gs2AdReward.AdMob|null): this {
         this.admob = admob;
         return this;
     }
-    public getUnityAd(): UnityAd|null {
+    public getUnityAd(): Gs2AdReward.UnityAd|null {
         return this.unityAd;
     }
-    public setUnityAd(unityAd: UnityAd|null) {
+    public setUnityAd(unityAd: Gs2AdReward.UnityAd|null) {
         this.unityAd = unityAd;
         return this;
     }
-    public withUnityAd(unityAd: UnityAd|null): this {
+    public withUnityAd(unityAd: Gs2AdReward.UnityAd|null): this {
         this.unityAd = unityAd;
         return this;
     }
-    public getAppLovinMaxes(): AppLovinMax[]|null {
+    public getAppLovinMaxes(): Gs2AdReward.AppLovinMax[]|null {
         return this.appLovinMaxes;
     }
-    public setAppLovinMaxes(appLovinMaxes: AppLovinMax[]|null) {
+    public setAppLovinMaxes(appLovinMaxes: Gs2AdReward.AppLovinMax[]|null) {
         this.appLovinMaxes = appLovinMaxes;
         return this;
     }
-    public withAppLovinMaxes(appLovinMaxes: AppLovinMax[]|null): this {
+    public withAppLovinMaxes(appLovinMaxes: Gs2AdReward.AppLovinMax[]|null): this {
         this.appLovinMaxes = appLovinMaxes;
         return this;
     }
-    public getAcquirePointScript(): ScriptSetting|null {
+    public getAcquirePointScript(): Gs2AdReward.ScriptSetting|null {
         return this.acquirePointScript;
     }
-    public setAcquirePointScript(acquirePointScript: ScriptSetting|null) {
+    public setAcquirePointScript(acquirePointScript: Gs2AdReward.ScriptSetting|null) {
         this.acquirePointScript = acquirePointScript;
         return this;
     }
-    public withAcquirePointScript(acquirePointScript: ScriptSetting|null): this {
+    public withAcquirePointScript(acquirePointScript: Gs2AdReward.ScriptSetting|null): this {
         this.acquirePointScript = acquirePointScript;
         return this;
     }
-    public getConsumePointScript(): ScriptSetting|null {
+    public getConsumePointScript(): Gs2AdReward.ScriptSetting|null {
         return this.consumePointScript;
     }
-    public setConsumePointScript(consumePointScript: ScriptSetting|null) {
+    public setConsumePointScript(consumePointScript: Gs2AdReward.ScriptSetting|null) {
         this.consumePointScript = consumePointScript;
         return this;
     }
-    public withConsumePointScript(consumePointScript: ScriptSetting|null): this {
+    public withConsumePointScript(consumePointScript: Gs2AdReward.ScriptSetting|null): this {
         this.consumePointScript = consumePointScript;
         return this;
     }
-    public getChangePointNotification(): NotificationSetting|null {
+    public getChangePointNotification(): Gs2AdReward.NotificationSetting|null {
         return this.changePointNotification;
     }
-    public setChangePointNotification(changePointNotification: NotificationSetting|null) {
+    public setChangePointNotification(changePointNotification: Gs2AdReward.NotificationSetting|null) {
         this.changePointNotification = changePointNotification;
         return this;
     }
-    public withChangePointNotification(changePointNotification: NotificationSetting|null): this {
+    public withChangePointNotification(changePointNotification: Gs2AdReward.NotificationSetting|null): this {
         this.changePointNotification = changePointNotification;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2AdReward.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2AdReward.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2AdReward.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -249,17 +251,17 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withAdmob(AdMob.fromDict(data["admob"]))
-            .withUnityAd(UnityAd.fromDict(data["unityAd"]))
+            .withAdmob(Gs2AdReward.AdMob.fromDict(data["admob"]))
+            .withUnityAd(Gs2AdReward.UnityAd.fromDict(data["unityAd"]))
             .withAppLovinMaxes(data.appLovinMaxes ?
                 data.appLovinMaxes.map((item: {[key: string]: any}) => {
-                    return AppLovinMax.fromDict(item);
+                    return Gs2AdReward.AppLovinMax.fromDict(item);
                 }
-            ) : [])
-            .withAcquirePointScript(ScriptSetting.fromDict(data["acquirePointScript"]))
-            .withConsumePointScript(ScriptSetting.fromDict(data["consumePointScript"]))
-            .withChangePointNotification(NotificationSetting.fromDict(data["changePointNotification"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            ) : null)
+            .withAcquirePointScript(Gs2AdReward.ScriptSetting.fromDict(data["acquirePointScript"]))
+            .withConsumePointScript(Gs2AdReward.ScriptSetting.fromDict(data["consumePointScript"]))
+            .withChangePointNotification(Gs2AdReward.NotificationSetting.fromDict(data["changePointNotification"]))
+            .withLogSetting(Gs2AdReward.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -273,10 +275,10 @@ export default class Namespace implements IModel {
             "admob": this.getAdmob()?.toDict(),
             "unityAd": this.getUnityAd()?.toDict(),
             "appLovinMaxes": this.getAppLovinMaxes() ?
-                this.getAppLovinMaxes()!.map((item: AppLovinMax) => {
+                this.getAppLovinMaxes()!.map((item: Gs2AdReward.AppLovinMax) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "acquirePointScript": this.getAcquirePointScript()?.toDict(),
             "consumePointScript": this.getConsumePointScript()?.toDict(),
             "changePointNotification": this.getChangePointNotification()?.toDict(),

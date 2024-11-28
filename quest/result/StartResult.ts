@@ -15,12 +15,17 @@ permissions and limitations under the License.
  */
 
 import IResult from '../../core/interface/IResult';
+import * as Gs2Core from '../../core'
+import * as Gs2Quest from '../model'
 
 export default class StartResult implements IResult {
     private transactionId: string|null = null;
     private stampSheet: string|null = null;
     private stampSheetEncryptionKeyId: string|null = null;
     private autoRunStampSheet: boolean|null = null;
+    private atomicCommit: boolean|null = null;
+    private transaction: string|null = null;
+    private transactionResult: Gs2Core.TransactionResult|null = null;
 
     public getTransactionId(): string|null {
         return this.transactionId;
@@ -78,12 +83,57 @@ export default class StartResult implements IResult {
         return this;
     }
 
+    public getAtomicCommit(): boolean|null {
+        return this.atomicCommit;
+    }
+
+    public setAtomicCommit(atomicCommit: boolean|null) {
+        this.atomicCommit = atomicCommit;
+        return this;
+    }
+
+    public withAtomicCommit(atomicCommit: boolean|null): this {
+        this.atomicCommit = atomicCommit;
+        return this;
+    }
+
+    public getTransaction(): string|null {
+        return this.transaction;
+    }
+
+    public setTransaction(transaction: string|null) {
+        this.transaction = transaction;
+        return this;
+    }
+
+    public withTransaction(transaction: string|null): this {
+        this.transaction = transaction;
+        return this;
+    }
+
+    public getTransactionResult(): Gs2Core.TransactionResult|null {
+        return this.transactionResult;
+    }
+
+    public setTransactionResult(transactionResult: Gs2Core.TransactionResult|null) {
+        this.transactionResult = transactionResult;
+        return this;
+    }
+
+    public withTransactionResult(transactionResult: Gs2Core.TransactionResult|null): this {
+        this.transactionResult = transactionResult;
+        return this;
+    }
+
     public static fromDict(data: {[key: string]: any}): StartResult {
         return new StartResult()
             .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
             .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
-            .withAutoRunStampSheet(data["autoRunStampSheet"]);
+            .withAutoRunStampSheet(data["autoRunStampSheet"])
+            .withAtomicCommit(data["atomicCommit"])
+            .withTransaction(data["transaction"])
+            .withTransactionResult(Gs2Core.TransactionResult.fromDict(data["transactionResult"]));
     }
 
     public toDict(): {[key: string]: any} {
@@ -92,6 +142,9 @@ export default class StartResult implements IResult {
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
             "autoRunStampSheet": this.getAutoRunStampSheet(),
+            "atomicCommit": this.getAtomicCommit(),
+            "transaction": this.getTransaction(),
+            "transactionResult": this.getTransactionResult()?.toDict(),
         };
     }
 }

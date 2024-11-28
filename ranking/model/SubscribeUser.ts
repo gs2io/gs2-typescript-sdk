@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Ranking from '../../ranking/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:ranking:{namespaceName}:user:{userId}:subscribe:category:{categoryName}:{targetUserId}";
 
 export default class SubscribeUser implements IModel {

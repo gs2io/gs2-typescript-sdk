@@ -148,7 +148,7 @@ export default class CompleteByUserIdRequest implements IRequest {
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Mission.Config.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -162,7 +162,7 @@ export default class CompleteByUserIdRequest implements IRequest {
                 this.getConfig()!.map((item: Gs2Mission.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

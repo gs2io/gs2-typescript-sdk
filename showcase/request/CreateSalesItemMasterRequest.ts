@@ -145,17 +145,17 @@ export default class CreateSalesItemMasterRequest implements IRequest {
                 data.verifyActions.map((item: {[key: string]: any}) => {
                     return Gs2Showcase.VerifyAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withConsumeActions(data.consumeActions ?
                 data.consumeActions.map((item: {[key: string]: any}) => {
                     return Gs2Showcase.ConsumeAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withAcquireActions(data.acquireActions ?
                 data.acquireActions.map((item: {[key: string]: any}) => {
                     return Gs2Showcase.AcquireAction.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -168,17 +168,17 @@ export default class CreateSalesItemMasterRequest implements IRequest {
                 this.getVerifyActions()!.map((item: Gs2Showcase.VerifyAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions()!.map((item: Gs2Showcase.ConsumeAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions()!.map((item: Gs2Showcase.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

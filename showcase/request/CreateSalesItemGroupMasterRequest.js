@@ -111,7 +111,7 @@ var CreateSalesItemGroupMasterRequest = /** @class */ (function () {
             .withSalesItemNames(data.salesItemNames ?
             data.salesItemNames.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     CreateSalesItemGroupMasterRequest.prototype.toDict = function () {
         return {
@@ -122,7 +122,7 @@ var CreateSalesItemGroupMasterRequest = /** @class */ (function () {
             "salesItemNames": this.getSalesItemNames() ?
                 this.getSalesItemNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return CreateSalesItemGroupMasterRequest;

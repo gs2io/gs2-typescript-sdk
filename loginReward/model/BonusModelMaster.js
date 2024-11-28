@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Reward_1 = tslib_1.__importDefault(require("./Reward"));
-var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
-var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
+var Gs2LoginReward = tslib_1.__importStar(require("../../loginReward/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:loginReward:{namespaceName}:bonusModel:{bonusModelName}";
 var BonusModelMaster = /** @class */ (function () {
     function BonusModelMaster() {
@@ -284,17 +282,17 @@ var BonusModelMaster = /** @class */ (function () {
             .withRepeat(data["repeat"])
             .withRewards(data.rewards ?
             data.rewards.map(function (item) {
-                return Reward_1.default.fromDict(item);
-            }) : [])
+                return Gs2LoginReward.Reward.fromDict(item);
+            }) : null)
             .withMissedReceiveRelief(data["missedReceiveRelief"])
             .withMissedReceiveReliefVerifyActions(data.missedReceiveReliefVerifyActions ?
             data.missedReceiveReliefVerifyActions.map(function (item) {
-                return VerifyAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2LoginReward.VerifyAction.fromDict(item);
+            }) : null)
             .withMissedReceiveReliefConsumeActions(data.missedReceiveReliefConsumeActions ?
             data.missedReceiveReliefConsumeActions.map(function (item) {
-                return ConsumeAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2LoginReward.ConsumeAction.fromDict(item);
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -312,16 +310,16 @@ var BonusModelMaster = /** @class */ (function () {
             "rewards": this.getRewards() ?
                 this.getRewards().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "missedReceiveRelief": this.getMissedReceiveRelief(),
             "missedReceiveReliefVerifyActions": this.getMissedReceiveReliefVerifyActions() ?
                 this.getMissedReceiveReliefVerifyActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "missedReceiveReliefConsumeActions": this.getMissedReceiveReliefConsumeActions() ?
                 this.getMissedReceiveReliefConsumeActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

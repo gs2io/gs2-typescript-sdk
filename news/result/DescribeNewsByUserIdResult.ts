@@ -70,7 +70,7 @@ export default class DescribeNewsByUserIdResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2News.News.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withContentHash(data["contentHash"])
             .withTemplateHash(data["templateHash"]);
     }
@@ -81,7 +81,7 @@ export default class DescribeNewsByUserIdResult implements IResult {
                 this.getItems()!.map((item: Gs2News.News) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "contentHash": this.getContentHash(),
             "templateHash": this.getTemplateHash(),
         };

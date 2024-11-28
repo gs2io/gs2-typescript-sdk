@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import BalanceParameterValueModel from './BalanceParameterValueModel';
+import * as Gs2Enchant from '../../enchant/model';
 export default class BalanceParameterModel implements IModel {
     private balanceParameterModelId;
     private name;
@@ -28,9 +28,9 @@ export default class BalanceParameterModel implements IModel {
     getInitialValueStrategy(): string | null;
     setInitialValueStrategy(initialValueStrategy: string | null): this;
     withInitialValueStrategy(initialValueStrategy: string | null): this;
-    getParameters(): BalanceParameterValueModel[] | null;
-    setParameters(parameters: BalanceParameterValueModel[] | null): this;
-    withParameters(parameters: BalanceParameterValueModel[] | null): this;
+    getParameters(): Gs2Enchant.BalanceParameterValueModel[] | null;
+    setParameters(parameters: Gs2Enchant.BalanceParameterValueModel[] | null): this;
+    withParameters(parameters: Gs2Enchant.BalanceParameterValueModel[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): BalanceParameterModel | null;

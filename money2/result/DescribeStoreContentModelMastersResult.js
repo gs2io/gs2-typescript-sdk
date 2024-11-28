@@ -49,7 +49,7 @@ var DescribeStoreContentModelMastersResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Money2.StoreContentModelMaster.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeStoreContentModelMastersResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeStoreContentModelMastersResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

@@ -55,7 +55,7 @@ export default class DescribeNodeModelMastersResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2SkillTree.NodeModelMaster.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeNodeModelMastersResult implements IResult {
                 this.getItems()!.map((item: Gs2SkillTree.NodeModelMaster) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

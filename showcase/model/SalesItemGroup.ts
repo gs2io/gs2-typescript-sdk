@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Showcase from '../../showcase/model'
 import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
@@ -23,7 +25,7 @@ import SalesItem from './SalesItem';
 export default class SalesItemGroup implements IModel {
     private name: string|null = null;
     private metadata: string|null = null;
-    private salesItems: SalesItem[]|null = null;
+    private salesItems: Gs2Showcase.SalesItem[]|null = null;
     public getName(): string|null {
         return this.name;
     }
@@ -46,14 +48,14 @@ export default class SalesItemGroup implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getSalesItems(): SalesItem[]|null {
+    public getSalesItems(): Gs2Showcase.SalesItem[]|null {
         return this.salesItems;
     }
-    public setSalesItems(salesItems: SalesItem[]|null) {
+    public setSalesItems(salesItems: Gs2Showcase.SalesItem[]|null) {
         this.salesItems = salesItems;
         return this;
     }
-    public withSalesItems(salesItems: SalesItem[]|null): this {
+    public withSalesItems(salesItems: Gs2Showcase.SalesItem[]|null): this {
         this.salesItems = salesItems;
         return this;
     }
@@ -67,9 +69,9 @@ export default class SalesItemGroup implements IModel {
             .withMetadata(data["metadata"])
             .withSalesItems(data.salesItems ?
                 data.salesItems.map((item: {[key: string]: any}) => {
-                    return SalesItem.fromDict(item);
+                    return Gs2Showcase.SalesItem.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -77,10 +79,10 @@ export default class SalesItemGroup implements IModel {
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "salesItems": this.getSalesItems() ?
-                this.getSalesItems()!.map((item: SalesItem) => {
+                this.getSalesItems()!.map((item: Gs2Showcase.SalesItem) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -49,7 +49,7 @@ var DescribeCommonSecurityPoliciesResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Identifier.SecurityPolicy.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeCommonSecurityPoliciesResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeCommonSecurityPoliciesResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

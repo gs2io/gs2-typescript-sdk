@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Distributor from '../../distributor/model'
 import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
@@ -24,9 +26,9 @@ export default class StampSheetResult implements IModel {
     private stampSheetResultId: string|null = null;
     private userId: string|null = null;
     private transactionId: string|null = null;
-    private verifyTaskRequests: VerifyAction[]|null = null;
-    private taskRequests: ConsumeAction[]|null = null;
-    private sheetRequest: AcquireAction|null = null;
+    private verifyTaskRequests: Gs2Distributor.VerifyAction[]|null = null;
+    private taskRequests: Gs2Distributor.ConsumeAction[]|null = null;
+    private sheetRequest: Gs2Distributor.AcquireAction|null = null;
     private verifyTaskResultCodes: number[]|null = null;
     private verifyTaskResults: string[]|null = null;
     private taskResultCodes: number[]|null = null;
@@ -173,36 +175,36 @@ export default class StampSheetResult implements IModel {
         this.transactionId = transactionId;
         return this;
     }
-    public getVerifyTaskRequests(): VerifyAction[]|null {
+    public getVerifyTaskRequests(): Gs2Distributor.VerifyAction[]|null {
         return this.verifyTaskRequests;
     }
-    public setVerifyTaskRequests(verifyTaskRequests: VerifyAction[]|null) {
+    public setVerifyTaskRequests(verifyTaskRequests: Gs2Distributor.VerifyAction[]|null) {
         this.verifyTaskRequests = verifyTaskRequests;
         return this;
     }
-    public withVerifyTaskRequests(verifyTaskRequests: VerifyAction[]|null): this {
+    public withVerifyTaskRequests(verifyTaskRequests: Gs2Distributor.VerifyAction[]|null): this {
         this.verifyTaskRequests = verifyTaskRequests;
         return this;
     }
-    public getTaskRequests(): ConsumeAction[]|null {
+    public getTaskRequests(): Gs2Distributor.ConsumeAction[]|null {
         return this.taskRequests;
     }
-    public setTaskRequests(taskRequests: ConsumeAction[]|null) {
+    public setTaskRequests(taskRequests: Gs2Distributor.ConsumeAction[]|null) {
         this.taskRequests = taskRequests;
         return this;
     }
-    public withTaskRequests(taskRequests: ConsumeAction[]|null): this {
+    public withTaskRequests(taskRequests: Gs2Distributor.ConsumeAction[]|null): this {
         this.taskRequests = taskRequests;
         return this;
     }
-    public getSheetRequest(): AcquireAction|null {
+    public getSheetRequest(): Gs2Distributor.AcquireAction|null {
         return this.sheetRequest;
     }
-    public setSheetRequest(sheetRequest: AcquireAction|null) {
+    public setSheetRequest(sheetRequest: Gs2Distributor.AcquireAction|null) {
         this.sheetRequest = sheetRequest;
         return this;
     }
-    public withSheetRequest(sheetRequest: AcquireAction|null): this {
+    public withSheetRequest(sheetRequest: Gs2Distributor.AcquireAction|null): this {
         this.sheetRequest = sheetRequest;
         return this;
     }
@@ -316,35 +318,35 @@ export default class StampSheetResult implements IModel {
             .withTransactionId(data["transactionId"])
             .withVerifyTaskRequests(data.verifyTaskRequests ?
                 data.verifyTaskRequests.map((item: {[key: string]: any}) => {
-                    return VerifyAction.fromDict(item);
+                    return Gs2Distributor.VerifyAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTaskRequests(data.taskRequests ?
                 data.taskRequests.map((item: {[key: string]: any}) => {
-                    return ConsumeAction.fromDict(item);
+                    return Gs2Distributor.ConsumeAction.fromDict(item);
                 }
-            ) : [])
-            .withSheetRequest(AcquireAction.fromDict(data["sheetRequest"]))
+            ) : null)
+            .withSheetRequest(Gs2Distributor.AcquireAction.fromDict(data["sheetRequest"]))
             .withVerifyTaskResultCodes(data.verifyTaskResultCodes ?
                 data.verifyTaskResultCodes.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withVerifyTaskResults(data.verifyTaskResults ?
                 data.verifyTaskResults.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withTaskResultCodes(data.taskResultCodes ?
                 data.taskResultCodes.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withTaskResults(data.taskResults ?
                 data.taskResults.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withSheetResultCode(data["sheetResultCode"])
             .withSheetResult(data["sheetResult"])
             .withNextTransactionId(data["nextTransactionId"])
@@ -358,36 +360,36 @@ export default class StampSheetResult implements IModel {
             "userId": this.getUserId(),
             "transactionId": this.getTransactionId(),
             "verifyTaskRequests": this.getVerifyTaskRequests() ?
-                this.getVerifyTaskRequests()!.map((item: VerifyAction) => {
+                this.getVerifyTaskRequests()!.map((item: Gs2Distributor.VerifyAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "taskRequests": this.getTaskRequests() ?
-                this.getTaskRequests()!.map((item: ConsumeAction) => {
+                this.getTaskRequests()!.map((item: Gs2Distributor.ConsumeAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "sheetRequest": this.getSheetRequest()?.toDict(),
             "verifyTaskResultCodes": this.getVerifyTaskResultCodes() ?
                 this.getVerifyTaskResultCodes()!.map((item: number) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "verifyTaskResults": this.getVerifyTaskResults() ?
                 this.getVerifyTaskResults()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "taskResultCodes": this.getTaskResultCodes() ?
                 this.getTaskResultCodes()!.map((item: number) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "taskResults": this.getTaskResults() ?
                 this.getTaskResults()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "sheetResultCode": this.getSheetResultCode(),
             "sheetResult": this.getSheetResult(),
             "nextTransactionId": this.getNextTransactionId(),

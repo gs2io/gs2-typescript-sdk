@@ -56,7 +56,7 @@ export default class WithdrawResult implements IResult {
                 data.withdrawTransactions.map((item: {[key: string]: any}) => {
                     return Gs2Money2.DepositTransaction.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -66,7 +66,7 @@ export default class WithdrawResult implements IResult {
                 this.getWithdrawTransactions()!.map((item: Gs2Money2.DepositTransaction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

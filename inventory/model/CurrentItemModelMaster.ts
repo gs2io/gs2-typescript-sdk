@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Inventory from '../../inventory/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}";
 
 export default class CurrentItemModelMaster implements IModel {

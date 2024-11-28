@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Gs2Enhance = tslib_1.__importStar(require("../model"));
+var Gs2Core = tslib_1.__importStar(require("../../core"));
 var DirectEnhanceResult = /** @class */ (function () {
     function DirectEnhanceResult() {
         this.item = null;
@@ -24,6 +25,9 @@ var DirectEnhanceResult = /** @class */ (function () {
         this.stampSheet = null;
         this.stampSheetEncryptionKeyId = null;
         this.autoRunStampSheet = null;
+        this.atomicCommit = null;
+        this.transaction = null;
+        this.transactionResult = null;
         this.acquireExperience = null;
         this.bonusRate = null;
     }
@@ -82,6 +86,39 @@ var DirectEnhanceResult = /** @class */ (function () {
         this.autoRunStampSheet = autoRunStampSheet;
         return this;
     };
+    DirectEnhanceResult.prototype.getAtomicCommit = function () {
+        return this.atomicCommit;
+    };
+    DirectEnhanceResult.prototype.setAtomicCommit = function (atomicCommit) {
+        this.atomicCommit = atomicCommit;
+        return this;
+    };
+    DirectEnhanceResult.prototype.withAtomicCommit = function (atomicCommit) {
+        this.atomicCommit = atomicCommit;
+        return this;
+    };
+    DirectEnhanceResult.prototype.getTransaction = function () {
+        return this.transaction;
+    };
+    DirectEnhanceResult.prototype.setTransaction = function (transaction) {
+        this.transaction = transaction;
+        return this;
+    };
+    DirectEnhanceResult.prototype.withTransaction = function (transaction) {
+        this.transaction = transaction;
+        return this;
+    };
+    DirectEnhanceResult.prototype.getTransactionResult = function () {
+        return this.transactionResult;
+    };
+    DirectEnhanceResult.prototype.setTransactionResult = function (transactionResult) {
+        this.transactionResult = transactionResult;
+        return this;
+    };
+    DirectEnhanceResult.prototype.withTransactionResult = function (transactionResult) {
+        this.transactionResult = transactionResult;
+        return this;
+    };
     DirectEnhanceResult.prototype.getAcquireExperience = function () {
         return this.acquireExperience;
     };
@@ -111,17 +148,23 @@ var DirectEnhanceResult = /** @class */ (function () {
             .withStampSheet(data["stampSheet"])
             .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
             .withAutoRunStampSheet(data["autoRunStampSheet"])
+            .withAtomicCommit(data["atomicCommit"])
+            .withTransaction(data["transaction"])
+            .withTransactionResult(Gs2Core.TransactionResult.fromDict(data["transactionResult"]))
             .withAcquireExperience(data["acquireExperience"])
             .withBonusRate(data["bonusRate"]);
     };
     DirectEnhanceResult.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "transactionId": this.getTransactionId(),
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
             "autoRunStampSheet": this.getAutoRunStampSheet(),
+            "atomicCommit": this.getAtomicCommit(),
+            "transaction": this.getTransaction(),
+            "transactionResult": (_b = this.getTransactionResult()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "acquireExperience": this.getAcquireExperience(),
             "bonusRate": this.getBonusRate(),
         };

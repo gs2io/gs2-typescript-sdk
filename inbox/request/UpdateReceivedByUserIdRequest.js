@@ -109,7 +109,7 @@ var UpdateReceivedByUserIdRequest = /** @class */ (function () {
             .withReceivedGlobalMessageNames(data.receivedGlobalMessageNames ?
             data.receivedGlobalMessageNames.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     UpdateReceivedByUserIdRequest.prototype.toDict = function () {
@@ -119,7 +119,7 @@ var UpdateReceivedByUserIdRequest = /** @class */ (function () {
             "receivedGlobalMessageNames": this.getReceivedGlobalMessageNames() ?
                 this.getReceivedGlobalMessageNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

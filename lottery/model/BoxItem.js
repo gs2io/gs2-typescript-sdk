@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
+var Gs2Lottery = tslib_1.__importStar(require("../../lottery/model"));
 var BoxItem = /** @class */ (function () {
     function BoxItem() {
         this.prizeId = null;
@@ -76,8 +76,8 @@ var BoxItem = /** @class */ (function () {
             .withPrizeId(data["prizeId"])
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
-                return AcquireAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2Lottery.AcquireAction.fromDict(item);
+            }) : null)
             .withRemaining(data["remaining"])
             .withInitial(data["initial"]);
     };
@@ -87,7 +87,7 @@ var BoxItem = /** @class */ (function () {
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "remaining": this.getRemaining(),
             "initial": this.getInitial(),
         };

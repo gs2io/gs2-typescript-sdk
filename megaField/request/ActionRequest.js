@@ -138,7 +138,7 @@ var ActionRequest = /** @class */ (function () {
             .withScopes(data.scopes ?
             data.scopes.map(function (item) {
                 return Gs2MegaField.Scope.fromDict(item);
-            }) : []);
+            }) : null);
     };
     ActionRequest.prototype.toDict = function () {
         var _a;
@@ -151,7 +151,7 @@ var ActionRequest = /** @class */ (function () {
             "scopes": this.getScopes() ?
                 this.getScopes().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ActionRequest;

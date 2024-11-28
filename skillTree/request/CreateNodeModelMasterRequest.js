@@ -149,16 +149,16 @@ var CreateNodeModelMasterRequest = /** @class */ (function () {
             .withReleaseVerifyActions(data.releaseVerifyActions ?
             data.releaseVerifyActions.map(function (item) {
                 return Gs2SkillTree.VerifyAction.fromDict(item);
-            }) : [])
+            }) : null)
             .withReleaseConsumeActions(data.releaseConsumeActions ?
             data.releaseConsumeActions.map(function (item) {
                 return Gs2SkillTree.ConsumeAction.fromDict(item);
-            }) : [])
+            }) : null)
             .withRestrainReturnRate(data["restrainReturnRate"])
             .withPremiseNodeNames(data.premiseNodeNames ?
             data.premiseNodeNames.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     CreateNodeModelMasterRequest.prototype.toDict = function () {
         return {
@@ -169,16 +169,16 @@ var CreateNodeModelMasterRequest = /** @class */ (function () {
             "releaseVerifyActions": this.getReleaseVerifyActions() ?
                 this.getReleaseVerifyActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "releaseConsumeActions": this.getReleaseConsumeActions() ?
                 this.getReleaseConsumeActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "restrainReturnRate": this.getRestrainReturnRate(),
             "premiseNodeNames": this.getPremiseNodeNames() ?
                 this.getPremiseNodeNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return CreateNodeModelMasterRequest;

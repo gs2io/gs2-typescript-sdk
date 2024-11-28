@@ -55,7 +55,7 @@ export default class ConsumeSimpleItemsByStampTaskResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Inventory.SimpleItem.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNewContextStack(data["newContextStack"]);
     }
 
@@ -65,7 +65,7 @@ export default class ConsumeSimpleItemsByStampTaskResult implements IResult {
                 this.getItems()!.map((item: Gs2Inventory.SimpleItem) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "newContextStack": this.getNewContextStack(),
         };
     }

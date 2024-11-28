@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Content_1 = tslib_1.__importDefault(require("./Content"));
+var Gs2News = tslib_1.__importStar(require("../../news/model"));
 var View = /** @class */ (function () {
     function View() {
         this.contents = null;
@@ -51,23 +51,23 @@ var View = /** @class */ (function () {
         return new View()
             .withContents(data.contents ?
             data.contents.map(function (item) {
-                return Content_1.default.fromDict(item);
-            }) : [])
+                return Gs2News.Content.fromDict(item);
+            }) : null)
             .withRemoveContents(data.removeContents ?
             data.removeContents.map(function (item) {
-                return Content_1.default.fromDict(item);
-            }) : []);
+                return Gs2News.Content.fromDict(item);
+            }) : null);
     };
     View.prototype.toDict = function () {
         return {
             "contents": this.getContents() ?
                 this.getContents().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "removeContents": this.getRemoveContents() ?
                 this.getRemoveContents().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return View;

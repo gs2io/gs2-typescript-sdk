@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import CalculatedAt from './CalculatedAt';
-import LogSetting from './LogSetting';
+import * as Gs2Ranking from '../../ranking/model';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
@@ -24,12 +23,12 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
-    getLastCalculatedAts(): CalculatedAt[] | null;
-    setLastCalculatedAts(lastCalculatedAts: CalculatedAt[] | null): this;
-    withLastCalculatedAts(lastCalculatedAts: CalculatedAt[] | null): this;
-    getLogSetting(): LogSetting | null;
-    setLogSetting(logSetting: LogSetting | null): this;
-    withLogSetting(logSetting: LogSetting | null): this;
+    getLastCalculatedAts(): Gs2Ranking.CalculatedAt[] | null;
+    setLastCalculatedAts(lastCalculatedAts: Gs2Ranking.CalculatedAt[] | null): this;
+    withLastCalculatedAts(lastCalculatedAts: Gs2Ranking.CalculatedAt[] | null): this;
+    getLogSetting(): Gs2Ranking.LogSetting | null;
+    setLogSetting(logSetting: Gs2Ranking.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2Ranking.LogSetting | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

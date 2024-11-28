@@ -125,7 +125,7 @@ var UpdateShowcaseMasterRequest = /** @class */ (function () {
             .withDisplayItems(data.displayItems ?
             data.displayItems.map(function (item) {
                 return Gs2Showcase.DisplayItemMaster.fromDict(item);
-            }) : [])
+            }) : null)
             .withSalesPeriodEventId(data["salesPeriodEventId"]);
     };
     UpdateShowcaseMasterRequest.prototype.toDict = function () {
@@ -137,7 +137,7 @@ var UpdateShowcaseMasterRequest = /** @class */ (function () {
             "displayItems": this.getDisplayItems() ?
                 this.getDisplayItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "salesPeriodEventId": this.getSalesPeriodEventId(),
         };
     };

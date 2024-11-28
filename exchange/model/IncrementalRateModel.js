@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
-var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
+var Gs2Exchange = tslib_1.__importStar(require("../../exchange/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:exchange:{namespaceName}:incremental:model:{rateName}";
 var IncrementalRateModel = /** @class */ (function () {
     function IncrementalRateModel() {
@@ -228,7 +227,7 @@ var IncrementalRateModel = /** @class */ (function () {
             .withIncrementalRateModelId(data["incrementalRateModelId"])
             .withName(data["name"])
             .withMetadata(data["metadata"])
-            .withConsumeAction(ConsumeAction_1.default.fromDict(data["consumeAction"]))
+            .withConsumeAction(Gs2Exchange.ConsumeAction.fromDict(data["consumeAction"]))
             .withCalculateType(data["calculateType"])
             .withBaseValue(data["baseValue"])
             .withCoefficientValue(data["coefficientValue"])
@@ -237,8 +236,8 @@ var IncrementalRateModel = /** @class */ (function () {
             .withMaximumExchangeCount(data["maximumExchangeCount"])
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
-                return AcquireAction_1.default.fromDict(item);
-            }) : []);
+                return Gs2Exchange.AcquireAction.fromDict(item);
+            }) : null);
     };
     IncrementalRateModel.prototype.toDict = function () {
         var _a;
@@ -256,7 +255,7 @@ var IncrementalRateModel = /** @class */ (function () {
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return IncrementalRateModel;

@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var BonusRate_1 = tslib_1.__importDefault(require("./BonusRate"));
+var Gs2Enhance = tslib_1.__importStar(require("../../enhance/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:enhance:{namespaceName}:rateModelMaster:{rateName}";
 var RateModelMaster = /** @class */ (function () {
     function RateModelMaster() {
@@ -258,12 +258,12 @@ var RateModelMaster = /** @class */ (function () {
             .withAcquireExperienceHierarchy(data.acquireExperienceHierarchy ?
             data.acquireExperienceHierarchy.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withExperienceModelId(data["experienceModelId"])
             .withBonusRates(data.bonusRates ?
             data.bonusRates.map(function (item) {
-                return BonusRate_1.default.fromDict(item);
-            }) : [])
+                return Gs2Enhance.BonusRate.fromDict(item);
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -280,12 +280,12 @@ var RateModelMaster = /** @class */ (function () {
             "acquireExperienceHierarchy": this.getAcquireExperienceHierarchy() ?
                 this.getAcquireExperienceHierarchy().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "experienceModelId": this.getExperienceModelId(),
             "bonusRates": this.getBonusRates() ?
                 this.getBonusRates().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

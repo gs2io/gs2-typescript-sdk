@@ -138,7 +138,7 @@ var ReceiveClusterRankingReceivedRewardRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Ranking2.Config.fromDict(item);
-            }) : []);
+            }) : null);
     };
     ReceiveClusterRankingReceivedRewardRequest.prototype.toDict = function () {
         return {
@@ -150,7 +150,7 @@ var ReceiveClusterRankingReceivedRewardRequest = /** @class */ (function () {
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ReceiveClusterRankingReceivedRewardRequest;

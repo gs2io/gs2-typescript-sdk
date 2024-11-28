@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Position_1 = tslib_1.__importDefault(require("./Position"));
-var Vector_1 = tslib_1.__importDefault(require("./Vector"));
+var Gs2MegaField = tslib_1.__importStar(require("../../megaField/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:megaField:{namespaceName}:user:{userId}:spatial:{areaModelName}:{layerModelName}";
 var Spatial = /** @class */ (function () {
     function Spatial() {
@@ -247,8 +246,8 @@ var Spatial = /** @class */ (function () {
             .withUserId(data["userId"])
             .withAreaModelName(data["areaModelName"])
             .withLayerModelName(data["layerModelName"])
-            .withPosition(Position_1.default.fromDict(data["position"]))
-            .withVector(Vector_1.default.fromDict(data["vector"]))
+            .withPosition(Gs2MegaField.Position.fromDict(data["position"]))
+            .withVector(Gs2MegaField.Vector.fromDict(data["vector"]))
             .withR(data["r"])
             .withLastSyncAt(data["lastSyncAt"])
             .withCreatedAt(data["createdAt"]);

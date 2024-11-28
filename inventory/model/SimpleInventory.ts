@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Inventory from '../../inventory/model'
 import SimpleItem from './SimpleItem';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:user:{userId}:simple:inventory:{inventoryName}";
 
@@ -22,7 +24,7 @@ export default class SimpleInventory implements IModel {
     private inventoryId: string|null = null;
     private inventoryName: string|null = null;
     private userId: string|null = null;
-    private simpleItems: SimpleItem[]|null = null;
+    private simpleItems: Gs2Inventory.SimpleItem[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -163,14 +165,14 @@ export default class SimpleInventory implements IModel {
         this.userId = userId;
         return this;
     }
-    public getSimpleItems(): SimpleItem[]|null {
+    public getSimpleItems(): Gs2Inventory.SimpleItem[]|null {
         return this.simpleItems;
     }
-    public setSimpleItems(simpleItems: SimpleItem[]|null) {
+    public setSimpleItems(simpleItems: Gs2Inventory.SimpleItem[]|null) {
         this.simpleItems = simpleItems;
         return this;
     }
-    public withSimpleItems(simpleItems: SimpleItem[]|null): this {
+    public withSimpleItems(simpleItems: Gs2Inventory.SimpleItem[]|null): this {
         this.simpleItems = simpleItems;
         return this;
     }
@@ -218,9 +220,9 @@ export default class SimpleInventory implements IModel {
             .withUserId(data["userId"])
             .withSimpleItems(data.simpleItems ?
                 data.simpleItems.map((item: {[key: string]: any}) => {
-                    return SimpleItem.fromDict(item);
+                    return Gs2Inventory.SimpleItem.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -232,10 +234,10 @@ export default class SimpleInventory implements IModel {
             "inventoryName": this.getInventoryName(),
             "userId": this.getUserId(),
             "simpleItems": this.getSimpleItems() ?
-                this.getSimpleItems()!.map((item: SimpleItem) => {
+                this.getSimpleItems()!.map((item: Gs2Inventory.SimpleItem) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

@@ -49,7 +49,7 @@ var DescribeMissionGroupModelMastersResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Mission.MissionGroupModelMaster.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeMissionGroupModelMastersResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeMissionGroupModelMastersResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

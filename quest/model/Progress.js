@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Reward_1 = tslib_1.__importDefault(require("./Reward"));
+var Gs2Quest = tslib_1.__importStar(require("../../quest/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:quest:{namespaceName}:user:{userId}:progress";
 var Progress = /** @class */ (function () {
     function Progress() {
@@ -231,12 +231,12 @@ var Progress = /** @class */ (function () {
             .withRandomSeed(data["randomSeed"])
             .withRewards(data.rewards ?
             data.rewards.map(function (item) {
-                return Reward_1.default.fromDict(item);
-            }) : [])
+                return Gs2Quest.Reward.fromDict(item);
+            }) : null)
             .withFailedRewards(data.failedRewards ?
             data.failedRewards.map(function (item) {
-                return Reward_1.default.fromDict(item);
-            }) : [])
+                return Gs2Quest.Reward.fromDict(item);
+            }) : null)
             .withMetadata(data["metadata"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -252,11 +252,11 @@ var Progress = /** @class */ (function () {
             "rewards": this.getRewards() ?
                 this.getRewards().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "failedRewards": this.getFailedRewards() ?
                 this.getFailedRewards().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "metadata": this.getMetadata(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

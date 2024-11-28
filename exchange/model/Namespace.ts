@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Exchange from '../../exchange/model'
 import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
@@ -26,10 +28,10 @@ export default class Namespace implements IModel {
     private description: string|null = null;
     private enableDirectExchange: boolean|null = null;
     private enableAwaitExchange: boolean|null = null;
-    private transactionSetting: TransactionSetting|null = null;
-    private exchangeScript: ScriptSetting|null = null;
-    private incrementalExchangeScript: ScriptSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private transactionSetting: Gs2Exchange.TransactionSetting|null = null;
+    private exchangeScript: Gs2Exchange.ScriptSetting|null = null;
+    private incrementalExchangeScript: Gs2Exchange.ScriptSetting|null = null;
+    private logSetting: Gs2Exchange.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private queueNamespaceId: string|null = null;
@@ -150,47 +152,47 @@ export default class Namespace implements IModel {
         this.enableAwaitExchange = enableAwaitExchange;
         return this;
     }
-    public getTransactionSetting(): TransactionSetting|null {
+    public getTransactionSetting(): Gs2Exchange.TransactionSetting|null {
         return this.transactionSetting;
     }
-    public setTransactionSetting(transactionSetting: TransactionSetting|null) {
+    public setTransactionSetting(transactionSetting: Gs2Exchange.TransactionSetting|null) {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public withTransactionSetting(transactionSetting: TransactionSetting|null): this {
+    public withTransactionSetting(transactionSetting: Gs2Exchange.TransactionSetting|null): this {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public getExchangeScript(): ScriptSetting|null {
+    public getExchangeScript(): Gs2Exchange.ScriptSetting|null {
         return this.exchangeScript;
     }
-    public setExchangeScript(exchangeScript: ScriptSetting|null) {
+    public setExchangeScript(exchangeScript: Gs2Exchange.ScriptSetting|null) {
         this.exchangeScript = exchangeScript;
         return this;
     }
-    public withExchangeScript(exchangeScript: ScriptSetting|null): this {
+    public withExchangeScript(exchangeScript: Gs2Exchange.ScriptSetting|null): this {
         this.exchangeScript = exchangeScript;
         return this;
     }
-    public getIncrementalExchangeScript(): ScriptSetting|null {
+    public getIncrementalExchangeScript(): Gs2Exchange.ScriptSetting|null {
         return this.incrementalExchangeScript;
     }
-    public setIncrementalExchangeScript(incrementalExchangeScript: ScriptSetting|null) {
+    public setIncrementalExchangeScript(incrementalExchangeScript: Gs2Exchange.ScriptSetting|null) {
         this.incrementalExchangeScript = incrementalExchangeScript;
         return this;
     }
-    public withIncrementalExchangeScript(incrementalExchangeScript: ScriptSetting|null): this {
+    public withIncrementalExchangeScript(incrementalExchangeScript: Gs2Exchange.ScriptSetting|null): this {
         this.incrementalExchangeScript = incrementalExchangeScript;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Exchange.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Exchange.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Exchange.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -266,10 +268,10 @@ export default class Namespace implements IModel {
             .withDescription(data["description"])
             .withEnableDirectExchange(data["enableDirectExchange"])
             .withEnableAwaitExchange(data["enableAwaitExchange"])
-            .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
-            .withExchangeScript(ScriptSetting.fromDict(data["exchangeScript"]))
-            .withIncrementalExchangeScript(ScriptSetting.fromDict(data["incrementalExchangeScript"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withTransactionSetting(Gs2Exchange.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withExchangeScript(Gs2Exchange.ScriptSetting.fromDict(data["exchangeScript"]))
+            .withIncrementalExchangeScript(Gs2Exchange.ScriptSetting.fromDict(data["incrementalExchangeScript"]))
+            .withLogSetting(Gs2Exchange.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withQueueNamespaceId(data["queueNamespaceId"])

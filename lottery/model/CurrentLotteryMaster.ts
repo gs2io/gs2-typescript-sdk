@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Lottery from '../../lottery/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:lottery:{namespaceName}";
 
 export default class CurrentLotteryMaster implements IModel {

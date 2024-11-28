@@ -139,7 +139,7 @@ var CreateUnleashRateModelMasterRequest = /** @class */ (function () {
             .withGradeEntries(data.gradeEntries ?
             data.gradeEntries.map(function (item) {
                 return Gs2Enhance.UnleashRateEntryModel.fromDict(item);
-            }) : []);
+            }) : null);
     };
     CreateUnleashRateModelMasterRequest.prototype.toDict = function () {
         return {
@@ -152,7 +152,7 @@ var CreateUnleashRateModelMasterRequest = /** @class */ (function () {
             "gradeEntries": this.getGradeEntries() ?
                 this.getGradeEntries().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return CreateUnleashRateModelMasterRequest;

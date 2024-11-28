@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Idle from '../../idle/model'
 import AcquireAction from './AcquireAction';
 import AcquireActionList from './AcquireActionList';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:idle:{namespaceName}:model:{categoryName}";
@@ -25,7 +27,7 @@ export default class CategoryModel implements IModel {
     private metadata: string|null = null;
     private rewardIntervalMinutes: number|null = null;
     private defaultMaximumIdleMinutes: number|null = null;
-    private acquireActions: AcquireActionList[]|null = null;
+    private acquireActions: Gs2Idle.AcquireActionList[]|null = null;
     private idlePeriodScheduleId: string|null = null;
     private receivePeriodScheduleId: string|null = null;
 
@@ -164,14 +166,14 @@ export default class CategoryModel implements IModel {
         this.defaultMaximumIdleMinutes = defaultMaximumIdleMinutes;
         return this;
     }
-    public getAcquireActions(): AcquireActionList[]|null {
+    public getAcquireActions(): Gs2Idle.AcquireActionList[]|null {
         return this.acquireActions;
     }
-    public setAcquireActions(acquireActions: AcquireActionList[]|null) {
+    public setAcquireActions(acquireActions: Gs2Idle.AcquireActionList[]|null) {
         this.acquireActions = acquireActions;
         return this;
     }
-    public withAcquireActions(acquireActions: AcquireActionList[]|null): this {
+    public withAcquireActions(acquireActions: Gs2Idle.AcquireActionList[]|null): this {
         this.acquireActions = acquireActions;
         return this;
     }
@@ -210,9 +212,9 @@ export default class CategoryModel implements IModel {
             .withDefaultMaximumIdleMinutes(data["defaultMaximumIdleMinutes"])
             .withAcquireActions(data.acquireActions ?
                 data.acquireActions.map((item: {[key: string]: any}) => {
-                    return AcquireActionList.fromDict(item);
+                    return Gs2Idle.AcquireActionList.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withIdlePeriodScheduleId(data["idlePeriodScheduleId"])
             .withReceivePeriodScheduleId(data["receivePeriodScheduleId"]);
     }
@@ -225,10 +227,10 @@ export default class CategoryModel implements IModel {
             "rewardIntervalMinutes": this.getRewardIntervalMinutes(),
             "defaultMaximumIdleMinutes": this.getDefaultMaximumIdleMinutes(),
             "acquireActions": this.getAcquireActions() ?
-                this.getAcquireActions()!.map((item: AcquireActionList) => {
+                this.getAcquireActions()!.map((item: Gs2Idle.AcquireActionList) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "idlePeriodScheduleId": this.getIdlePeriodScheduleId(),
             "receivePeriodScheduleId": this.getReceivePeriodScheduleId(),
         };

@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import DisplayItemMaster from './DisplayItemMaster';
+import * as Gs2Showcase from '../../showcase/model';
 export default class ShowcaseMaster implements IModel {
     private showcaseId;
     private name;
@@ -31,9 +31,9 @@ export default class ShowcaseMaster implements IModel {
     getSalesPeriodEventId(): string | null;
     setSalesPeriodEventId(salesPeriodEventId: string | null): this;
     withSalesPeriodEventId(salesPeriodEventId: string | null): this;
-    getDisplayItems(): DisplayItemMaster[] | null;
-    setDisplayItems(displayItems: DisplayItemMaster[] | null): this;
-    withDisplayItems(displayItems: DisplayItemMaster[] | null): this;
+    getDisplayItems(): Gs2Showcase.DisplayItemMaster[] | null;
+    setDisplayItems(displayItems: Gs2Showcase.DisplayItemMaster[] | null): this;
+    withDisplayItems(displayItems: Gs2Showcase.DisplayItemMaster[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

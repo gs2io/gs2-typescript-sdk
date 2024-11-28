@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Chat from '../../chat/model'
 import ScriptSetting from './ScriptSetting';
 import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
@@ -26,13 +28,13 @@ export default class Namespace implements IModel {
     private description: string|null = null;
     private allowCreateRoom: boolean|null = null;
     private messageLifeTimeDays: number|null = null;
-    private postMessageScript: ScriptSetting|null = null;
-    private createRoomScript: ScriptSetting|null = null;
-    private deleteRoomScript: ScriptSetting|null = null;
-    private subscribeRoomScript: ScriptSetting|null = null;
-    private unsubscribeRoomScript: ScriptSetting|null = null;
-    private postNotification: NotificationSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private postMessageScript: Gs2Chat.ScriptSetting|null = null;
+    private createRoomScript: Gs2Chat.ScriptSetting|null = null;
+    private deleteRoomScript: Gs2Chat.ScriptSetting|null = null;
+    private subscribeRoomScript: Gs2Chat.ScriptSetting|null = null;
+    private unsubscribeRoomScript: Gs2Chat.ScriptSetting|null = null;
+    private postNotification: Gs2Chat.NotificationSetting|null = null;
+    private logSetting: Gs2Chat.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -151,80 +153,80 @@ export default class Namespace implements IModel {
         this.messageLifeTimeDays = messageLifeTimeDays;
         return this;
     }
-    public getPostMessageScript(): ScriptSetting|null {
+    public getPostMessageScript(): Gs2Chat.ScriptSetting|null {
         return this.postMessageScript;
     }
-    public setPostMessageScript(postMessageScript: ScriptSetting|null) {
+    public setPostMessageScript(postMessageScript: Gs2Chat.ScriptSetting|null) {
         this.postMessageScript = postMessageScript;
         return this;
     }
-    public withPostMessageScript(postMessageScript: ScriptSetting|null): this {
+    public withPostMessageScript(postMessageScript: Gs2Chat.ScriptSetting|null): this {
         this.postMessageScript = postMessageScript;
         return this;
     }
-    public getCreateRoomScript(): ScriptSetting|null {
+    public getCreateRoomScript(): Gs2Chat.ScriptSetting|null {
         return this.createRoomScript;
     }
-    public setCreateRoomScript(createRoomScript: ScriptSetting|null) {
+    public setCreateRoomScript(createRoomScript: Gs2Chat.ScriptSetting|null) {
         this.createRoomScript = createRoomScript;
         return this;
     }
-    public withCreateRoomScript(createRoomScript: ScriptSetting|null): this {
+    public withCreateRoomScript(createRoomScript: Gs2Chat.ScriptSetting|null): this {
         this.createRoomScript = createRoomScript;
         return this;
     }
-    public getDeleteRoomScript(): ScriptSetting|null {
+    public getDeleteRoomScript(): Gs2Chat.ScriptSetting|null {
         return this.deleteRoomScript;
     }
-    public setDeleteRoomScript(deleteRoomScript: ScriptSetting|null) {
+    public setDeleteRoomScript(deleteRoomScript: Gs2Chat.ScriptSetting|null) {
         this.deleteRoomScript = deleteRoomScript;
         return this;
     }
-    public withDeleteRoomScript(deleteRoomScript: ScriptSetting|null): this {
+    public withDeleteRoomScript(deleteRoomScript: Gs2Chat.ScriptSetting|null): this {
         this.deleteRoomScript = deleteRoomScript;
         return this;
     }
-    public getSubscribeRoomScript(): ScriptSetting|null {
+    public getSubscribeRoomScript(): Gs2Chat.ScriptSetting|null {
         return this.subscribeRoomScript;
     }
-    public setSubscribeRoomScript(subscribeRoomScript: ScriptSetting|null) {
+    public setSubscribeRoomScript(subscribeRoomScript: Gs2Chat.ScriptSetting|null) {
         this.subscribeRoomScript = subscribeRoomScript;
         return this;
     }
-    public withSubscribeRoomScript(subscribeRoomScript: ScriptSetting|null): this {
+    public withSubscribeRoomScript(subscribeRoomScript: Gs2Chat.ScriptSetting|null): this {
         this.subscribeRoomScript = subscribeRoomScript;
         return this;
     }
-    public getUnsubscribeRoomScript(): ScriptSetting|null {
+    public getUnsubscribeRoomScript(): Gs2Chat.ScriptSetting|null {
         return this.unsubscribeRoomScript;
     }
-    public setUnsubscribeRoomScript(unsubscribeRoomScript: ScriptSetting|null) {
+    public setUnsubscribeRoomScript(unsubscribeRoomScript: Gs2Chat.ScriptSetting|null) {
         this.unsubscribeRoomScript = unsubscribeRoomScript;
         return this;
     }
-    public withUnsubscribeRoomScript(unsubscribeRoomScript: ScriptSetting|null): this {
+    public withUnsubscribeRoomScript(unsubscribeRoomScript: Gs2Chat.ScriptSetting|null): this {
         this.unsubscribeRoomScript = unsubscribeRoomScript;
         return this;
     }
-    public getPostNotification(): NotificationSetting|null {
+    public getPostNotification(): Gs2Chat.NotificationSetting|null {
         return this.postNotification;
     }
-    public setPostNotification(postNotification: NotificationSetting|null) {
+    public setPostNotification(postNotification: Gs2Chat.NotificationSetting|null) {
         this.postNotification = postNotification;
         return this;
     }
-    public withPostNotification(postNotification: NotificationSetting|null): this {
+    public withPostNotification(postNotification: Gs2Chat.NotificationSetting|null): this {
         this.postNotification = postNotification;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Chat.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Chat.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Chat.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -272,13 +274,13 @@ export default class Namespace implements IModel {
             .withDescription(data["description"])
             .withAllowCreateRoom(data["allowCreateRoom"])
             .withMessageLifeTimeDays(data["messageLifeTimeDays"])
-            .withPostMessageScript(ScriptSetting.fromDict(data["postMessageScript"]))
-            .withCreateRoomScript(ScriptSetting.fromDict(data["createRoomScript"]))
-            .withDeleteRoomScript(ScriptSetting.fromDict(data["deleteRoomScript"]))
-            .withSubscribeRoomScript(ScriptSetting.fromDict(data["subscribeRoomScript"]))
-            .withUnsubscribeRoomScript(ScriptSetting.fromDict(data["unsubscribeRoomScript"]))
-            .withPostNotification(NotificationSetting.fromDict(data["postNotification"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withPostMessageScript(Gs2Chat.ScriptSetting.fromDict(data["postMessageScript"]))
+            .withCreateRoomScript(Gs2Chat.ScriptSetting.fromDict(data["createRoomScript"]))
+            .withDeleteRoomScript(Gs2Chat.ScriptSetting.fromDict(data["deleteRoomScript"]))
+            .withSubscribeRoomScript(Gs2Chat.ScriptSetting.fromDict(data["subscribeRoomScript"]))
+            .withUnsubscribeRoomScript(Gs2Chat.ScriptSetting.fromDict(data["unsubscribeRoomScript"]))
+            .withPostNotification(Gs2Chat.NotificationSetting.fromDict(data["postNotification"]))
+            .withLogSetting(Gs2Chat.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

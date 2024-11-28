@@ -55,7 +55,7 @@ export default class DescribeDailyTransactionHistoriesByCurrencyResult implement
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Money2.DailyTransactionHistory.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeDailyTransactionHistoriesByCurrencyResult implement
                 this.getItems()!.map((item: Gs2Money2.DailyTransactionHistory) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

@@ -55,7 +55,7 @@ export default class SearchGuildsByUserIdResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Guild.Guild.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class SearchGuildsByUserIdResult implements IResult {
                 this.getItems()!.map((item: Gs2Guild.Guild) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

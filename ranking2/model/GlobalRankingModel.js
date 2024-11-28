@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var RankingReward_1 = tslib_1.__importDefault(require("./RankingReward"));
+var Gs2Ranking2 = tslib_1.__importStar(require("../../ranking2/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:ranking2:{namespaceName}:global:{rankingName}";
 var GlobalRankingModel = /** @class */ (function () {
     function GlobalRankingModel() {
@@ -222,8 +222,8 @@ var GlobalRankingModel = /** @class */ (function () {
             .withEntryPeriodEventId(data["entryPeriodEventId"])
             .withRankingRewards(data.rankingRewards ?
             data.rankingRewards.map(function (item) {
-                return RankingReward_1.default.fromDict(item);
-            }) : [])
+                return Gs2Ranking2.RankingReward.fromDict(item);
+            }) : null)
             .withAccessPeriodEventId(data["accessPeriodEventId"]);
     };
     GlobalRankingModel.prototype.toDict = function () {
@@ -239,7 +239,7 @@ var GlobalRankingModel = /** @class */ (function () {
             "rankingRewards": this.getRankingRewards() ?
                 this.getRankingRewards().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "accessPeriodEventId": this.getAccessPeriodEventId(),
         };
     };

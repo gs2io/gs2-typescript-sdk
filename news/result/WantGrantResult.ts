@@ -70,7 +70,7 @@ export default class WantGrantResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2News.SetCookieRequestEntry.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withBrowserUrl(data["browserUrl"])
             .withZipUrl(data["zipUrl"]);
     }
@@ -81,7 +81,7 @@ export default class WantGrantResult implements IResult {
                 this.getItems()!.map((item: Gs2News.SetCookieRequestEntry) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "browserUrl": this.getBrowserUrl(),
             "zipUrl": this.getZipUrl(),
         };

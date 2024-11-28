@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
-var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2Friend = tslib_1.__importStar(require("../../friend/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:friend:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -331,21 +329,21 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withFollowScript(ScriptSetting_1.default.fromDict(data["followScript"]))
-            .withUnfollowScript(ScriptSetting_1.default.fromDict(data["unfollowScript"]))
-            .withSendRequestScript(ScriptSetting_1.default.fromDict(data["sendRequestScript"]))
-            .withCancelRequestScript(ScriptSetting_1.default.fromDict(data["cancelRequestScript"]))
-            .withAcceptRequestScript(ScriptSetting_1.default.fromDict(data["acceptRequestScript"]))
-            .withRejectRequestScript(ScriptSetting_1.default.fromDict(data["rejectRequestScript"]))
-            .withDeleteFriendScript(ScriptSetting_1.default.fromDict(data["deleteFriendScript"]))
-            .withUpdateProfileScript(ScriptSetting_1.default.fromDict(data["updateProfileScript"]))
-            .withFollowNotification(NotificationSetting_1.default.fromDict(data["followNotification"]))
-            .withReceiveRequestNotification(NotificationSetting_1.default.fromDict(data["receiveRequestNotification"]))
-            .withCancelRequestNotification(NotificationSetting_1.default.fromDict(data["cancelRequestNotification"]))
-            .withAcceptRequestNotification(NotificationSetting_1.default.fromDict(data["acceptRequestNotification"]))
-            .withRejectRequestNotification(NotificationSetting_1.default.fromDict(data["rejectRequestNotification"]))
-            .withDeleteFriendNotification(NotificationSetting_1.default.fromDict(data["deleteFriendNotification"]))
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withFollowScript(Gs2Friend.ScriptSetting.fromDict(data["followScript"]))
+            .withUnfollowScript(Gs2Friend.ScriptSetting.fromDict(data["unfollowScript"]))
+            .withSendRequestScript(Gs2Friend.ScriptSetting.fromDict(data["sendRequestScript"]))
+            .withCancelRequestScript(Gs2Friend.ScriptSetting.fromDict(data["cancelRequestScript"]))
+            .withAcceptRequestScript(Gs2Friend.ScriptSetting.fromDict(data["acceptRequestScript"]))
+            .withRejectRequestScript(Gs2Friend.ScriptSetting.fromDict(data["rejectRequestScript"]))
+            .withDeleteFriendScript(Gs2Friend.ScriptSetting.fromDict(data["deleteFriendScript"]))
+            .withUpdateProfileScript(Gs2Friend.ScriptSetting.fromDict(data["updateProfileScript"]))
+            .withFollowNotification(Gs2Friend.NotificationSetting.fromDict(data["followNotification"]))
+            .withReceiveRequestNotification(Gs2Friend.NotificationSetting.fromDict(data["receiveRequestNotification"]))
+            .withCancelRequestNotification(Gs2Friend.NotificationSetting.fromDict(data["cancelRequestNotification"]))
+            .withAcceptRequestNotification(Gs2Friend.NotificationSetting.fromDict(data["acceptRequestNotification"]))
+            .withRejectRequestNotification(Gs2Friend.NotificationSetting.fromDict(data["rejectRequestNotification"]))
+            .withDeleteFriendNotification(Gs2Friend.NotificationSetting.fromDict(data["deleteFriendNotification"]))
+            .withLogSetting(Gs2Friend.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

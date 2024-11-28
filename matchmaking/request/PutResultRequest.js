@@ -87,7 +87,7 @@ var PutResultRequest = /** @class */ (function () {
             .withGameResults(data.gameResults ?
             data.gameResults.map(function (item) {
                 return Gs2Matchmaking.GameResult.fromDict(item);
-            }) : []);
+            }) : null);
     };
     PutResultRequest.prototype.toDict = function () {
         return {
@@ -96,7 +96,7 @@ var PutResultRequest = /** @class */ (function () {
             "gameResults": this.getGameResults() ?
                 this.getGameResults().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return PutResultRequest;

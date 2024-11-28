@@ -124,7 +124,7 @@ var ReportByUserIdRequest = /** @class */ (function () {
             .withEvents(data.events ?
             data.events.map(function (item) {
                 return Gs2StateMachine.Event.fromDict(item);
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     ReportByUserIdRequest.prototype.toDict = function () {
@@ -135,7 +135,7 @@ var ReportByUserIdRequest = /** @class */ (function () {
             "events": this.getEvents() ?
                 this.getEvents().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

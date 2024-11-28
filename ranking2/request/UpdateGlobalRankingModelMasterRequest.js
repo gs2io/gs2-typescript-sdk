@@ -189,7 +189,7 @@ var UpdateGlobalRankingModelMasterRequest = /** @class */ (function () {
             .withRankingRewards(data.rankingRewards ?
             data.rankingRewards.map(function (item) {
                 return Gs2Ranking2.RankingReward.fromDict(item);
-            }) : [])
+            }) : null)
             .withEntryPeriodEventId(data["entryPeriodEventId"])
             .withAccessPeriodEventId(data["accessPeriodEventId"]);
     };
@@ -206,7 +206,7 @@ var UpdateGlobalRankingModelMasterRequest = /** @class */ (function () {
             "rankingRewards": this.getRankingRewards() ?
                 this.getRankingRewards().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "entryPeriodEventId": this.getEntryPeriodEventId(),
             "accessPeriodEventId": this.getAccessPeriodEventId(),
         };

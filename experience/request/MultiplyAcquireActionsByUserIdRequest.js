@@ -162,7 +162,7 @@ var MultiplyAcquireActionsByUserIdRequest = /** @class */ (function () {
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
                 return Gs2Experience.AcquireAction.fromDict(item);
-            }) : [])
+            }) : null)
             .withBaseRate(data["baseRate"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
@@ -176,7 +176,7 @@ var MultiplyAcquireActionsByUserIdRequest = /** @class */ (function () {
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "baseRate": this.getBaseRate(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };

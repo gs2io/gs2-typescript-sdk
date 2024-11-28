@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Identifier from '../../identifier/model'
 const grnFormat: string = "grn:gs2::{ownerId}:identifier:securityPolicy:{securityPolicyName}";
 
 export default class SecurityPolicy implements IModel {

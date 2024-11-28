@@ -148,7 +148,7 @@ export default class SetBalanceParameterStatusByUserIdRequest implements IReques
                 data.parameterValues.map((item: {[key: string]: any}) => {
                     return Gs2Enchant.BalanceParameterValue.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -162,7 +162,7 @@ export default class SetBalanceParameterStatusByUserIdRequest implements IReques
                 this.getParameterValues()!.map((item: Gs2Enchant.BalanceParameterValue) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

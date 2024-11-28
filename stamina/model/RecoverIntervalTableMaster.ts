@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Stamina from '../../stamina/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:stamina:{namespaceName}:recoverIntervalTable:{recoverIntervalTableName}";
 
 export default class RecoverIntervalTableMaster implements IModel {
@@ -222,7 +224,7 @@ export default class RecoverIntervalTableMaster implements IModel {
                 data.values.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -239,7 +241,7 @@ export default class RecoverIntervalTableMaster implements IModel {
                 this.getValues()!.map((item: number) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

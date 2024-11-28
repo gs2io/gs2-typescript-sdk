@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import ScopedValue from './ScopedValue';
+import * as Gs2Mission from '../../mission/model';
 export default class Counter implements IModel {
     private counterId;
     private userId;
@@ -24,9 +24,9 @@ export default class Counter implements IModel {
     getName(): string | null;
     setName(name: string | null): this;
     withName(name: string | null): this;
-    getValues(): ScopedValue[] | null;
-    setValues(values: ScopedValue[] | null): this;
-    withValues(values: ScopedValue[] | null): this;
+    getValues(): Gs2Mission.ScopedValue[] | null;
+    setValues(values: Gs2Mission.ScopedValue[] | null): this;
+    withValues(values: Gs2Mission.ScopedValue[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

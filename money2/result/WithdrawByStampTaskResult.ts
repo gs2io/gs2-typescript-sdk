@@ -71,7 +71,7 @@ export default class WithdrawByStampTaskResult implements IResult {
                 data.withdrawTransactions.map((item: {[key: string]: any}) => {
                     return Gs2Money2.DepositTransaction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNewContextStack(data["newContextStack"]);
     }
 
@@ -82,7 +82,7 @@ export default class WithdrawByStampTaskResult implements IResult {
                 this.getWithdrawTransactions()!.map((item: Gs2Money2.DepositTransaction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "newContextStack": this.getNewContextStack(),
         };
     }

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2SeasonRating from '../../seasonRating/model'
 import TierModel from './TierModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:seasonRating:{namespaceName}:model:{seasonName}";
 
@@ -23,7 +25,7 @@ export default class SeasonModelMaster implements IModel {
     private name: string|null = null;
     private metadata: string|null = null;
     private description: string|null = null;
-    private tiers: TierModel[]|null = null;
+    private tiers: Gs2SeasonRating.TierModel[]|null = null;
     private experienceModelId: string|null = null;
     private challengePeriodEventId: string|null = null;
     private createdAt: number|null = null;
@@ -154,14 +156,14 @@ export default class SeasonModelMaster implements IModel {
         this.description = description;
         return this;
     }
-    public getTiers(): TierModel[]|null {
+    public getTiers(): Gs2SeasonRating.TierModel[]|null {
         return this.tiers;
     }
-    public setTiers(tiers: TierModel[]|null) {
+    public setTiers(tiers: Gs2SeasonRating.TierModel[]|null) {
         this.tiers = tiers;
         return this;
     }
-    public withTiers(tiers: TierModel[]|null): this {
+    public withTiers(tiers: Gs2SeasonRating.TierModel[]|null): this {
         this.tiers = tiers;
         return this;
     }
@@ -232,9 +234,9 @@ export default class SeasonModelMaster implements IModel {
             .withDescription(data["description"])
             .withTiers(data.tiers ?
                 data.tiers.map((item: {[key: string]: any}) => {
-                    return TierModel.fromDict(item);
+                    return Gs2SeasonRating.TierModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withExperienceModelId(data["experienceModelId"])
             .withChallengePeriodEventId(data["challengePeriodEventId"])
             .withCreatedAt(data["createdAt"])
@@ -249,10 +251,10 @@ export default class SeasonModelMaster implements IModel {
             "metadata": this.getMetadata(),
             "description": this.getDescription(),
             "tiers": this.getTiers() ?
-                this.getTiers()!.map((item: TierModel) => {
+                this.getTiers()!.map((item: Gs2SeasonRating.TierModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "experienceModelId": this.getExperienceModelId(),
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "createdAt": this.getCreatedAt(),

@@ -135,7 +135,7 @@ var UpdateRoomRequest = /** @class */ (function () {
             .withWhiteListUserIds(data.whiteListUserIds ?
             data.whiteListUserIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withAccessToken(data["accessToken"]);
     };
     UpdateRoomRequest.prototype.toDict = function () {
@@ -147,7 +147,7 @@ var UpdateRoomRequest = /** @class */ (function () {
             "whiteListUserIds": this.getWhiteListUserIds() ?
                 this.getWhiteListUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "accessToken": this.getAccessToken(),
         };
     };

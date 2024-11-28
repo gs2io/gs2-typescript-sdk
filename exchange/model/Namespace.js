@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
-var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2Exchange = tslib_1.__importStar(require("../../exchange/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:exchange:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -255,10 +253,10 @@ var Namespace = /** @class */ (function () {
             .withDescription(data["description"])
             .withEnableDirectExchange(data["enableDirectExchange"])
             .withEnableAwaitExchange(data["enableAwaitExchange"])
-            .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
-            .withExchangeScript(ScriptSetting_1.default.fromDict(data["exchangeScript"]))
-            .withIncrementalExchangeScript(ScriptSetting_1.default.fromDict(data["incrementalExchangeScript"]))
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withTransactionSetting(Gs2Exchange.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withExchangeScript(Gs2Exchange.ScriptSetting.fromDict(data["exchangeScript"]))
+            .withIncrementalExchangeScript(Gs2Exchange.ScriptSetting.fromDict(data["incrementalExchangeScript"]))
+            .withLogSetting(Gs2Exchange.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withQueueNamespaceId(data["queueNamespaceId"])

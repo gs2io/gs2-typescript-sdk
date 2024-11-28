@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2LoginReward from '../../loginReward/model'
 import AcquireAction from './AcquireAction';
 import Reward from './Reward';
 import VerifyAction from './VerifyAction';
@@ -30,10 +32,10 @@ export default class BonusModelMaster implements IModel {
     private periodEventId: string|null = null;
     private resetHour: number|null = null;
     private repeat: string|null = null;
-    private rewards: Reward[]|null = null;
+    private rewards: Gs2LoginReward.Reward[]|null = null;
     private missedReceiveRelief: string|null = null;
-    private missedReceiveReliefVerifyActions: VerifyAction[]|null = null;
-    private missedReceiveReliefConsumeActions: ConsumeAction[]|null = null;
+    private missedReceiveReliefVerifyActions: Gs2LoginReward.VerifyAction[]|null = null;
+    private missedReceiveReliefConsumeActions: Gs2LoginReward.ConsumeAction[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -206,14 +208,14 @@ export default class BonusModelMaster implements IModel {
         this.repeat = repeat;
         return this;
     }
-    public getRewards(): Reward[]|null {
+    public getRewards(): Gs2LoginReward.Reward[]|null {
         return this.rewards;
     }
-    public setRewards(rewards: Reward[]|null) {
+    public setRewards(rewards: Gs2LoginReward.Reward[]|null) {
         this.rewards = rewards;
         return this;
     }
-    public withRewards(rewards: Reward[]|null): this {
+    public withRewards(rewards: Gs2LoginReward.Reward[]|null): this {
         this.rewards = rewards;
         return this;
     }
@@ -228,25 +230,25 @@ export default class BonusModelMaster implements IModel {
         this.missedReceiveRelief = missedReceiveRelief;
         return this;
     }
-    public getMissedReceiveReliefVerifyActions(): VerifyAction[]|null {
+    public getMissedReceiveReliefVerifyActions(): Gs2LoginReward.VerifyAction[]|null {
         return this.missedReceiveReliefVerifyActions;
     }
-    public setMissedReceiveReliefVerifyActions(missedReceiveReliefVerifyActions: VerifyAction[]|null) {
+    public setMissedReceiveReliefVerifyActions(missedReceiveReliefVerifyActions: Gs2LoginReward.VerifyAction[]|null) {
         this.missedReceiveReliefVerifyActions = missedReceiveReliefVerifyActions;
         return this;
     }
-    public withMissedReceiveReliefVerifyActions(missedReceiveReliefVerifyActions: VerifyAction[]|null): this {
+    public withMissedReceiveReliefVerifyActions(missedReceiveReliefVerifyActions: Gs2LoginReward.VerifyAction[]|null): this {
         this.missedReceiveReliefVerifyActions = missedReceiveReliefVerifyActions;
         return this;
     }
-    public getMissedReceiveReliefConsumeActions(): ConsumeAction[]|null {
+    public getMissedReceiveReliefConsumeActions(): Gs2LoginReward.ConsumeAction[]|null {
         return this.missedReceiveReliefConsumeActions;
     }
-    public setMissedReceiveReliefConsumeActions(missedReceiveReliefConsumeActions: ConsumeAction[]|null) {
+    public setMissedReceiveReliefConsumeActions(missedReceiveReliefConsumeActions: Gs2LoginReward.ConsumeAction[]|null) {
         this.missedReceiveReliefConsumeActions = missedReceiveReliefConsumeActions;
         return this;
     }
-    public withMissedReceiveReliefConsumeActions(missedReceiveReliefConsumeActions: ConsumeAction[]|null): this {
+    public withMissedReceiveReliefConsumeActions(missedReceiveReliefConsumeActions: Gs2LoginReward.ConsumeAction[]|null): this {
         this.missedReceiveReliefConsumeActions = missedReceiveReliefConsumeActions;
         return this;
     }
@@ -299,20 +301,20 @@ export default class BonusModelMaster implements IModel {
             .withRepeat(data["repeat"])
             .withRewards(data.rewards ?
                 data.rewards.map((item: {[key: string]: any}) => {
-                    return Reward.fromDict(item);
+                    return Gs2LoginReward.Reward.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withMissedReceiveRelief(data["missedReceiveRelief"])
             .withMissedReceiveReliefVerifyActions(data.missedReceiveReliefVerifyActions ?
                 data.missedReceiveReliefVerifyActions.map((item: {[key: string]: any}) => {
-                    return VerifyAction.fromDict(item);
+                    return Gs2LoginReward.VerifyAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withMissedReceiveReliefConsumeActions(data.missedReceiveReliefConsumeActions ?
                 data.missedReceiveReliefConsumeActions.map((item: {[key: string]: any}) => {
-                    return ConsumeAction.fromDict(item);
+                    return Gs2LoginReward.ConsumeAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -329,21 +331,21 @@ export default class BonusModelMaster implements IModel {
             "resetHour": this.getResetHour(),
             "repeat": this.getRepeat(),
             "rewards": this.getRewards() ?
-                this.getRewards()!.map((item: Reward) => {
+                this.getRewards()!.map((item: Gs2LoginReward.Reward) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "missedReceiveRelief": this.getMissedReceiveRelief(),
             "missedReceiveReliefVerifyActions": this.getMissedReceiveReliefVerifyActions() ?
-                this.getMissedReceiveReliefVerifyActions()!.map((item: VerifyAction) => {
+                this.getMissedReceiveReliefVerifyActions()!.map((item: Gs2LoginReward.VerifyAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "missedReceiveReliefConsumeActions": this.getMissedReceiveReliefConsumeActions() ?
-                this.getMissedReceiveReliefConsumeActions()!.map((item: ConsumeAction) => {
+                this.getMissedReceiveReliefConsumeActions()!.map((item: Gs2LoginReward.ConsumeAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

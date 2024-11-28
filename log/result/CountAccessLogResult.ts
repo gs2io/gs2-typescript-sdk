@@ -85,7 +85,7 @@ export default class CountAccessLogResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Log.AccessLogCount.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"])
             .withTotalCount(data["totalCount"])
             .withScanSize(data["scanSize"]);
@@ -97,7 +97,7 @@ export default class CountAccessLogResult implements IResult {
                 this.getItems()!.map((item: Gs2Log.AccessLogCount) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
             "totalCount": this.getTotalCount(),
             "scanSize": this.getScanSize(),

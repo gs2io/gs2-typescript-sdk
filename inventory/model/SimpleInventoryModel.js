@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var SimpleItemModel_1 = tslib_1.__importDefault(require("./SimpleItemModel"));
+var Gs2Inventory = tslib_1.__importStar(require("../../inventory/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:simple:model:{inventoryName}";
 var SimpleInventoryModel = /** @class */ (function () {
     function SimpleInventoryModel() {
@@ -145,8 +145,8 @@ var SimpleInventoryModel = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withSimpleItemModels(data.simpleItemModels ?
             data.simpleItemModels.map(function (item) {
-                return SimpleItemModel_1.default.fromDict(item);
-            }) : []);
+                return Gs2Inventory.SimpleItemModel.fromDict(item);
+            }) : null);
     };
     SimpleInventoryModel.prototype.toDict = function () {
         return {
@@ -156,7 +156,7 @@ var SimpleInventoryModel = /** @class */ (function () {
             "simpleItemModels": this.getSimpleItemModels() ?
                 this.getSimpleItemModels().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return SimpleInventoryModel;

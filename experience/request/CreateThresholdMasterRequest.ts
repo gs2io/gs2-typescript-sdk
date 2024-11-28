@@ -121,7 +121,7 @@ export default class CreateThresholdMasterRequest implements IRequest {
                 data.values.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -134,7 +134,7 @@ export default class CreateThresholdMasterRequest implements IRequest {
                 this.getValues()!.map((item: number) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

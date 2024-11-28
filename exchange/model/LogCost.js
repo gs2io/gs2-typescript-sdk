@@ -63,11 +63,11 @@ var LogCost = /** @class */ (function () {
             .withAdds(data.adds ?
             data.adds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withSubs(data.subs ?
             data.subs.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     LogCost.prototype.toDict = function () {
         return {
@@ -75,11 +75,11 @@ var LogCost = /** @class */ (function () {
             "adds": this.getAdds() ?
                 this.getAdds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "subs": this.getSubs() ?
                 this.getSubs().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return LogCost;

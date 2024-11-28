@@ -150,7 +150,7 @@ var DrawWithRandomSeedByUserIdRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Lottery.Config.fromDict(item);
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DrawWithRandomSeedByUserIdRequest.prototype.toDict = function () {
@@ -163,7 +163,7 @@ var DrawWithRandomSeedByUserIdRequest = /** @class */ (function () {
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

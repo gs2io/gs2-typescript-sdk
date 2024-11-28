@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Gateway from '../../gateway/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:gateway:{namespaceName}:user:{userId}:firebase:token";
 
 export default class FirebaseToken implements IModel {

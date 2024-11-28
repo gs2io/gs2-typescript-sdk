@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var RoleModel_1 = tslib_1.__importDefault(require("./RoleModel"));
-var Member_1 = tslib_1.__importDefault(require("./Member"));
+var Gs2Guild = tslib_1.__importStar(require("../../guild/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:guild:{namespaceName}:guild:{guildModelName}:{guildName}";
 var Guild = /** @class */ (function () {
     function Guild() {
@@ -329,14 +328,14 @@ var Guild = /** @class */ (function () {
             .withJoinPolicy(data["joinPolicy"])
             .withCustomRoles(data.customRoles ?
             data.customRoles.map(function (item) {
-                return RoleModel_1.default.fromDict(item);
-            }) : [])
+                return Gs2Guild.RoleModel.fromDict(item);
+            }) : null)
             .withGuildMemberDefaultRole(data["guildMemberDefaultRole"])
             .withCurrentMaximumMemberCount(data["currentMaximumMemberCount"])
             .withMembers(data.members ?
             data.members.map(function (item) {
-                return Member_1.default.fromDict(item);
-            }) : [])
+                return Gs2Guild.Member.fromDict(item);
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -356,13 +355,13 @@ var Guild = /** @class */ (function () {
             "customRoles": this.getCustomRoles() ?
                 this.getCustomRoles().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "guildMemberDefaultRole": this.getGuildMemberDefaultRole(),
             "currentMaximumMemberCount": this.getCurrentMaximumMemberCount(),
             "members": this.getMembers() ?
                 this.getMembers().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

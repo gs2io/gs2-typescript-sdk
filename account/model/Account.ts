@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Account from '../../account/model'
 import BanStatus from './BanStatus';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:account:{namespaceName}:account:{userId}";
 
@@ -23,7 +25,7 @@ export default class Account implements IModel {
     private userId: string|null = null;
     private password: string|null = null;
     private timeOffset: number|null = null;
-    private banStatuses: BanStatus[]|null = null;
+    private banStatuses: Gs2Account.BanStatus[]|null = null;
     private banned: boolean|null = null;
     private lastAuthenticatedAt: number|null = null;
     private createdAt: number|null = null;
@@ -153,14 +155,14 @@ export default class Account implements IModel {
         this.timeOffset = timeOffset;
         return this;
     }
-    public getBanStatuses(): BanStatus[]|null {
+    public getBanStatuses(): Gs2Account.BanStatus[]|null {
         return this.banStatuses;
     }
-    public setBanStatuses(banStatuses: BanStatus[]|null) {
+    public setBanStatuses(banStatuses: Gs2Account.BanStatus[]|null) {
         this.banStatuses = banStatuses;
         return this;
     }
-    public withBanStatuses(banStatuses: BanStatus[]|null): this {
+    public withBanStatuses(banStatuses: Gs2Account.BanStatus[]|null): this {
         this.banStatuses = banStatuses;
         return this;
     }
@@ -220,9 +222,9 @@ export default class Account implements IModel {
             .withTimeOffset(data["timeOffset"])
             .withBanStatuses(data.banStatuses ?
                 data.banStatuses.map((item: {[key: string]: any}) => {
-                    return BanStatus.fromDict(item);
+                    return Gs2Account.BanStatus.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withBanned(data["banned"])
             .withLastAuthenticatedAt(data["lastAuthenticatedAt"])
             .withCreatedAt(data["createdAt"])
@@ -236,10 +238,10 @@ export default class Account implements IModel {
             "password": this.getPassword(),
             "timeOffset": this.getTimeOffset(),
             "banStatuses": this.getBanStatuses() ?
-                this.getBanStatuses()!.map((item: BanStatus) => {
+                this.getBanStatuses()!.map((item: Gs2Account.BanStatus) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "banned": this.getBanned(),
             "lastAuthenticatedAt": this.getLastAuthenticatedAt(),
             "createdAt": this.getCreatedAt(),

@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var BigItem_1 = tslib_1.__importDefault(require("./BigItem"));
+var Gs2Inventory = tslib_1.__importStar(require("../../inventory/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:user:{userId}:big:inventory:{inventoryName}";
 var BigInventory = /** @class */ (function () {
     function BigInventory() {
@@ -189,8 +189,8 @@ var BigInventory = /** @class */ (function () {
             .withUserId(data["userId"])
             .withBigItems(data.bigItems ?
             data.bigItems.map(function (item) {
-                return BigItem_1.default.fromDict(item);
-            }) : [])
+                return Gs2Inventory.BigItem.fromDict(item);
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     };
@@ -202,7 +202,7 @@ var BigInventory = /** @class */ (function () {
             "bigItems": this.getBigItems() ?
                 this.getBigItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

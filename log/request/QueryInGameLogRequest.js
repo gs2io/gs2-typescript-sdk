@@ -171,7 +171,7 @@ var QueryInGameLogRequest = /** @class */ (function () {
             .withTags(data.tags ?
             data.tags.map(function (item) {
                 return Gs2Log.InGameLogTag.fromDict(item);
-            }) : [])
+            }) : null)
             .withBegin(data["begin"])
             .withEnd(data["end"])
             .withLongTerm(data["longTerm"])
@@ -186,7 +186,7 @@ var QueryInGameLogRequest = /** @class */ (function () {
             "tags": this.getTags() ?
                 this.getTags().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "begin": this.getBegin(),
             "end": this.getEnd(),
             "longTerm": this.getLongTerm(),

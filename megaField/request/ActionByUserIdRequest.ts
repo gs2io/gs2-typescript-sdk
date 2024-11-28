@@ -161,7 +161,7 @@ export default class ActionByUserIdRequest implements IRequest {
                 data.scopes.map((item: {[key: string]: any}) => {
                     return Gs2MegaField.Scope.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -176,7 +176,7 @@ export default class ActionByUserIdRequest implements IRequest {
                 this.getScopes()!.map((item: Gs2MegaField.Scope) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

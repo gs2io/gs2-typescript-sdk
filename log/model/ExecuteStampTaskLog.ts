@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Log from '../../log/model'
+
 export default class ExecuteStampTaskLog implements IModel {
     private timestamp: number|null = null;
     private taskId: string|null = null;

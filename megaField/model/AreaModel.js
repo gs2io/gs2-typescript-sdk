@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var LayerModel_1 = tslib_1.__importDefault(require("./LayerModel"));
+var Gs2MegaField = tslib_1.__importStar(require("../../megaField/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:megaField:{namespaceName}:model:area:{areaModelName}";
 var AreaModel = /** @class */ (function () {
     function AreaModel() {
@@ -145,8 +145,8 @@ var AreaModel = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withLayerModels(data.layerModels ?
             data.layerModels.map(function (item) {
-                return LayerModel_1.default.fromDict(item);
-            }) : []);
+                return Gs2MegaField.LayerModel.fromDict(item);
+            }) : null);
     };
     AreaModel.prototype.toDict = function () {
         return {
@@ -156,7 +156,7 @@ var AreaModel = /** @class */ (function () {
             "layerModels": this.getLayerModels() ?
                 this.getLayerModels().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return AreaModel;

@@ -161,7 +161,7 @@ export default class MultiplyAcquireActionsByUserIdRequest implements IRequest {
                 data.acquireActions.map((item: {[key: string]: any}) => {
                     return Gs2Grade.AcquireAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -176,7 +176,7 @@ export default class MultiplyAcquireActionsByUserIdRequest implements IRequest {
                 this.getAcquireActions()!.map((item: Gs2Grade.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

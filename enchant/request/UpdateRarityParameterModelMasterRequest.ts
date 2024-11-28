@@ -146,12 +146,12 @@ export default class UpdateRarityParameterModelMasterRequest implements IRequest
                 data.parameterCounts.map((item: {[key: string]: any}) => {
                     return Gs2Enchant.RarityParameterCountModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withParameters(data.parameters ?
                 data.parameters.map((item: {[key: string]: any}) => {
                     return Gs2Enchant.RarityParameterValueModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -165,12 +165,12 @@ export default class UpdateRarityParameterModelMasterRequest implements IRequest
                 this.getParameterCounts()!.map((item: Gs2Enchant.RarityParameterCountModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "parameters": this.getParameters() ?
                 this.getParameters()!.map((item: Gs2Enchant.RarityParameterValueModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

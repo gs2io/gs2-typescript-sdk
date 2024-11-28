@@ -55,7 +55,7 @@ export default class DescribeInsightsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Log.Insight.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeInsightsResult implements IResult {
                 this.getItems()!.map((item: Gs2Log.Insight) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

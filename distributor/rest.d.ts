@@ -43,4 +43,7 @@ export default class Gs2DistributorRestClient extends AbstractGs2RestClient {
     orExpressionByStampTask(request: Request.OrExpressionByStampTaskRequest): Promise<Result.OrExpressionByStampTaskResult>;
     getStampSheetResult(request: Request.GetStampSheetResultRequest): Promise<Result.GetStampSheetResultResult>;
     getStampSheetResultByUserId(request: Request.GetStampSheetResultByUserIdRequest): Promise<Result.GetStampSheetResultByUserIdResult>;
+    runTransaction(request: Request.RunTransactionRequest): Promise<Result.RunTransactionResult>;
+    getTransactionResult(request: Request.GetTransactionResultRequest): Promise<Result.GetTransactionResultResult>;
+    getTransactionResultByUserId(request: Request.GetTransactionResultByUserIdRequest): Promise<Result.GetTransactionResultByUserIdResult>;
 }

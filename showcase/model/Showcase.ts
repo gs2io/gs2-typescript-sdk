@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Showcase from '../../showcase/model'
 import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
@@ -28,7 +30,7 @@ export default class Showcase implements IModel {
     private name: string|null = null;
     private metadata: string|null = null;
     private salesPeriodEventId: string|null = null;
-    private displayItems: DisplayItem[]|null = null;
+    private displayItems: Gs2Showcase.DisplayItem[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -154,14 +156,14 @@ export default class Showcase implements IModel {
         this.salesPeriodEventId = salesPeriodEventId;
         return this;
     }
-    public getDisplayItems(): DisplayItem[]|null {
+    public getDisplayItems(): Gs2Showcase.DisplayItem[]|null {
         return this.displayItems;
     }
-    public setDisplayItems(displayItems: DisplayItem[]|null) {
+    public setDisplayItems(displayItems: Gs2Showcase.DisplayItem[]|null) {
         this.displayItems = displayItems;
         return this;
     }
-    public withDisplayItems(displayItems: DisplayItem[]|null): this {
+    public withDisplayItems(displayItems: Gs2Showcase.DisplayItem[]|null): this {
         this.displayItems = displayItems;
         return this;
     }
@@ -177,9 +179,9 @@ export default class Showcase implements IModel {
             .withSalesPeriodEventId(data["salesPeriodEventId"])
             .withDisplayItems(data.displayItems ?
                 data.displayItems.map((item: {[key: string]: any}) => {
-                    return DisplayItem.fromDict(item);
+                    return Gs2Showcase.DisplayItem.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -189,10 +191,10 @@ export default class Showcase implements IModel {
             "metadata": this.getMetadata(),
             "salesPeriodEventId": this.getSalesPeriodEventId(),
             "displayItems": this.getDisplayItems() ?
-                this.getDisplayItems()!.map((item: DisplayItem) => {
+                this.getDisplayItems()!.map((item: Gs2Showcase.DisplayItem) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

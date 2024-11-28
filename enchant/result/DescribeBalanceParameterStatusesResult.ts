@@ -55,7 +55,7 @@ export default class DescribeBalanceParameterStatusesResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Enchant.BalanceParameterStatus.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeBalanceParameterStatusesResult implements IResult {
                 this.getItems()!.map((item: Gs2Enchant.BalanceParameterStatus) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

@@ -224,11 +224,11 @@ var Complete = /** @class */ (function () {
             .withCompletedMissionTaskNames(data.completedMissionTaskNames ?
             data.completedMissionTaskNames.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withReceivedMissionTaskNames(data.receivedMissionTaskNames ?
             data.receivedMissionTaskNames.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withNextResetAt(data["nextResetAt"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -242,11 +242,11 @@ var Complete = /** @class */ (function () {
             "completedMissionTaskNames": this.getCompletedMissionTaskNames() ?
                 this.getCompletedMissionTaskNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "receivedMissionTaskNames": this.getReceivedMissionTaskNames() ?
                 this.getReceivedMissionTaskNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "nextResetAt": this.getNextResetAt(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

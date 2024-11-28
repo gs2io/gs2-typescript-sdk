@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import ScriptSetting from './ScriptSetting';
-import LogSetting from './LogSetting';
+import * as Gs2Buff from '../../buff/model';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
@@ -24,12 +23,12 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
-    getApplyBuffScript(): ScriptSetting | null;
-    setApplyBuffScript(applyBuffScript: ScriptSetting | null): this;
-    withApplyBuffScript(applyBuffScript: ScriptSetting | null): this;
-    getLogSetting(): LogSetting | null;
-    setLogSetting(logSetting: LogSetting | null): this;
-    withLogSetting(logSetting: LogSetting | null): this;
+    getApplyBuffScript(): Gs2Buff.ScriptSetting | null;
+    setApplyBuffScript(applyBuffScript: Gs2Buff.ScriptSetting | null): this;
+    withApplyBuffScript(applyBuffScript: Gs2Buff.ScriptSetting | null): this;
+    getLogSetting(): Gs2Buff.LogSetting | null;
+    setLogSetting(logSetting: Gs2Buff.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2Buff.LogSetting | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import BigItemModel from './BigItemModel';
+import * as Gs2Inventory from '../../inventory/model';
 export default class BigInventoryModel implements IModel {
     private inventoryModelId;
     private name;
@@ -20,9 +20,9 @@ export default class BigInventoryModel implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
-    getBigItemModels(): BigItemModel[] | null;
-    setBigItemModels(bigItemModels: BigItemModel[] | null): this;
-    withBigItemModels(bigItemModels: BigItemModel[] | null): this;
+    getBigItemModels(): Gs2Inventory.BigItemModel[] | null;
+    setBigItemModels(bigItemModels: Gs2Inventory.BigItemModel[] | null): this;
+    withBigItemModels(bigItemModels: Gs2Inventory.BigItemModel[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): BigInventoryModel | null;

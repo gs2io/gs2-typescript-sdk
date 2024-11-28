@@ -171,7 +171,7 @@ export default class UpdateCategoryModelMasterRequest implements IRequest {
                 data.acquireActions.map((item: {[key: string]: any}) => {
                     return Gs2Idle.AcquireActionList.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withIdlePeriodScheduleId(data["idlePeriodScheduleId"])
             .withReceivePeriodScheduleId(data["receivePeriodScheduleId"]);
     }
@@ -188,7 +188,7 @@ export default class UpdateCategoryModelMasterRequest implements IRequest {
                 this.getAcquireActions()!.map((item: Gs2Idle.AcquireActionList) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "idlePeriodScheduleId": this.getIdlePeriodScheduleId(),
             "receivePeriodScheduleId": this.getReceivePeriodScheduleId(),
         };

@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Money2 from '../../money2/model'
+
 export default class DepositTransaction implements IModel {
     private price: number|null = null;
     private currency: string|null = null;

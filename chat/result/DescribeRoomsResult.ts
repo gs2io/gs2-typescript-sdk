@@ -55,7 +55,7 @@ export default class DescribeRoomsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Chat.Room.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeRoomsResult implements IResult {
                 this.getItems()!.map((item: Gs2Chat.Room) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

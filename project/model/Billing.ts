@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Project from '../../project/model'
 const grnFormat: string = "grn:gs2:::gs2:account:{accountName}:project:{projectName}:billing:{year}:{month}";
 
 export default class Billing implements IModel {

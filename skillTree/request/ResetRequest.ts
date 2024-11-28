@@ -123,7 +123,7 @@ export default class ResetRequest implements IRequest {
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2SkillTree.Config.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -135,7 +135,7 @@ export default class ResetRequest implements IRequest {
                 this.getConfig()!.map((item: Gs2SkillTree.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2StateMachine from '../../stateMachine/model'
 import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
@@ -25,12 +27,12 @@ export default class Namespace implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private supportSpeculativeExecution: string|null = null;
-    private transactionSetting: TransactionSetting|null = null;
-    private startScript: ScriptSetting|null = null;
-    private passScript: ScriptSetting|null = null;
-    private errorScript: ScriptSetting|null = null;
+    private transactionSetting: Gs2StateMachine.TransactionSetting|null = null;
+    private startScript: Gs2StateMachine.ScriptSetting|null = null;
+    private passScript: Gs2StateMachine.ScriptSetting|null = null;
+    private errorScript: Gs2StateMachine.ScriptSetting|null = null;
     private lowestStateMachineVersion: number|null = null;
-    private logSetting: LogSetting|null = null;
+    private logSetting: Gs2StateMachine.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -138,47 +140,47 @@ export default class Namespace implements IModel {
         this.supportSpeculativeExecution = supportSpeculativeExecution;
         return this;
     }
-    public getTransactionSetting(): TransactionSetting|null {
+    public getTransactionSetting(): Gs2StateMachine.TransactionSetting|null {
         return this.transactionSetting;
     }
-    public setTransactionSetting(transactionSetting: TransactionSetting|null) {
+    public setTransactionSetting(transactionSetting: Gs2StateMachine.TransactionSetting|null) {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public withTransactionSetting(transactionSetting: TransactionSetting|null): this {
+    public withTransactionSetting(transactionSetting: Gs2StateMachine.TransactionSetting|null): this {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public getStartScript(): ScriptSetting|null {
+    public getStartScript(): Gs2StateMachine.ScriptSetting|null {
         return this.startScript;
     }
-    public setStartScript(startScript: ScriptSetting|null) {
+    public setStartScript(startScript: Gs2StateMachine.ScriptSetting|null) {
         this.startScript = startScript;
         return this;
     }
-    public withStartScript(startScript: ScriptSetting|null): this {
+    public withStartScript(startScript: Gs2StateMachine.ScriptSetting|null): this {
         this.startScript = startScript;
         return this;
     }
-    public getPassScript(): ScriptSetting|null {
+    public getPassScript(): Gs2StateMachine.ScriptSetting|null {
         return this.passScript;
     }
-    public setPassScript(passScript: ScriptSetting|null) {
+    public setPassScript(passScript: Gs2StateMachine.ScriptSetting|null) {
         this.passScript = passScript;
         return this;
     }
-    public withPassScript(passScript: ScriptSetting|null): this {
+    public withPassScript(passScript: Gs2StateMachine.ScriptSetting|null): this {
         this.passScript = passScript;
         return this;
     }
-    public getErrorScript(): ScriptSetting|null {
+    public getErrorScript(): Gs2StateMachine.ScriptSetting|null {
         return this.errorScript;
     }
-    public setErrorScript(errorScript: ScriptSetting|null) {
+    public setErrorScript(errorScript: Gs2StateMachine.ScriptSetting|null) {
         this.errorScript = errorScript;
         return this;
     }
-    public withErrorScript(errorScript: ScriptSetting|null): this {
+    public withErrorScript(errorScript: Gs2StateMachine.ScriptSetting|null): this {
         this.errorScript = errorScript;
         return this;
     }
@@ -193,14 +195,14 @@ export default class Namespace implements IModel {
         this.lowestStateMachineVersion = lowestStateMachineVersion;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2StateMachine.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2StateMachine.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2StateMachine.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -247,12 +249,12 @@ export default class Namespace implements IModel {
             .withName(data["name"])
             .withDescription(data["description"])
             .withSupportSpeculativeExecution(data["supportSpeculativeExecution"])
-            .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
-            .withStartScript(ScriptSetting.fromDict(data["startScript"]))
-            .withPassScript(ScriptSetting.fromDict(data["passScript"]))
-            .withErrorScript(ScriptSetting.fromDict(data["errorScript"]))
+            .withTransactionSetting(Gs2StateMachine.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withStartScript(Gs2StateMachine.ScriptSetting.fromDict(data["startScript"]))
+            .withPassScript(Gs2StateMachine.ScriptSetting.fromDict(data["passScript"]))
+            .withErrorScript(Gs2StateMachine.ScriptSetting.fromDict(data["errorScript"]))
             .withLowestStateMachineVersion(data["lowestStateMachineVersion"])
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withLogSetting(Gs2StateMachine.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

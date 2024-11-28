@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2MegaField from '../../megaField/model'
 import LayerModel from './LayerModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:megaField:{namespaceName}:model:area:{areaModelName}";
 
@@ -22,7 +24,7 @@ export default class AreaModel implements IModel {
     private areaModelId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;
-    private layerModels: LayerModel[]|null = null;
+    private layerModels: Gs2MegaField.LayerModel[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -137,14 +139,14 @@ export default class AreaModel implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getLayerModels(): LayerModel[]|null {
+    public getLayerModels(): Gs2MegaField.LayerModel[]|null {
         return this.layerModels;
     }
-    public setLayerModels(layerModels: LayerModel[]|null) {
+    public setLayerModels(layerModels: Gs2MegaField.LayerModel[]|null) {
         this.layerModels = layerModels;
         return this;
     }
-    public withLayerModels(layerModels: LayerModel[]|null): this {
+    public withLayerModels(layerModels: Gs2MegaField.LayerModel[]|null): this {
         this.layerModels = layerModels;
         return this;
     }
@@ -159,9 +161,9 @@ export default class AreaModel implements IModel {
             .withMetadata(data["metadata"])
             .withLayerModels(data.layerModels ?
                 data.layerModels.map((item: {[key: string]: any}) => {
-                    return LayerModel.fromDict(item);
+                    return Gs2MegaField.LayerModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -170,10 +172,10 @@ export default class AreaModel implements IModel {
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "layerModels": this.getLayerModels() ?
-                this.getLayerModels()!.map((item: LayerModel) => {
+                this.getLayerModels()!.map((item: Gs2MegaField.LayerModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

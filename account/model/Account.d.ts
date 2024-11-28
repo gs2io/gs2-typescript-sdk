@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import BanStatus from './BanStatus';
+import * as Gs2Account from '../../account/model';
 export default class Account implements IModel {
     private accountId;
     private userId;
@@ -28,9 +28,9 @@ export default class Account implements IModel {
     getTimeOffset(): number | null;
     setTimeOffset(timeOffset: number | null): this;
     withTimeOffset(timeOffset: number | null): this;
-    getBanStatuses(): BanStatus[] | null;
-    setBanStatuses(banStatuses: BanStatus[] | null): this;
-    withBanStatuses(banStatuses: BanStatus[] | null): this;
+    getBanStatuses(): Gs2Account.BanStatus[] | null;
+    setBanStatuses(banStatuses: Gs2Account.BanStatus[] | null): this;
+    withBanStatuses(banStatuses: Gs2Account.BanStatus[] | null): this;
     getBanned(): boolean | null;
     setBanned(banned: boolean | null): this;
     withBanned(banned: boolean | null): this;

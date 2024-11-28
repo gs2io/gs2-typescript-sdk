@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Stamina from '../../stamina/model'
 import MaxStaminaTable from './MaxStaminaTable';
 import RecoverIntervalTable from './RecoverIntervalTable';
 import RecoverValueTable from './RecoverValueTable';
@@ -29,9 +31,9 @@ export default class StaminaModel implements IModel {
     private initialCapacity: number|null = null;
     private isOverflow: boolean|null = null;
     private maxCapacity: number|null = null;
-    private maxStaminaTable: MaxStaminaTable|null = null;
-    private recoverIntervalTable: RecoverIntervalTable|null = null;
-    private recoverValueTable: RecoverValueTable|null = null;
+    private maxStaminaTable: Gs2Stamina.MaxStaminaTable|null = null;
+    private recoverIntervalTable: Gs2Stamina.RecoverIntervalTable|null = null;
+    private recoverValueTable: Gs2Stamina.RecoverValueTable|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -201,36 +203,36 @@ export default class StaminaModel implements IModel {
         this.maxCapacity = maxCapacity;
         return this;
     }
-    public getMaxStaminaTable(): MaxStaminaTable|null {
+    public getMaxStaminaTable(): Gs2Stamina.MaxStaminaTable|null {
         return this.maxStaminaTable;
     }
-    public setMaxStaminaTable(maxStaminaTable: MaxStaminaTable|null) {
+    public setMaxStaminaTable(maxStaminaTable: Gs2Stamina.MaxStaminaTable|null) {
         this.maxStaminaTable = maxStaminaTable;
         return this;
     }
-    public withMaxStaminaTable(maxStaminaTable: MaxStaminaTable|null): this {
+    public withMaxStaminaTable(maxStaminaTable: Gs2Stamina.MaxStaminaTable|null): this {
         this.maxStaminaTable = maxStaminaTable;
         return this;
     }
-    public getRecoverIntervalTable(): RecoverIntervalTable|null {
+    public getRecoverIntervalTable(): Gs2Stamina.RecoverIntervalTable|null {
         return this.recoverIntervalTable;
     }
-    public setRecoverIntervalTable(recoverIntervalTable: RecoverIntervalTable|null) {
+    public setRecoverIntervalTable(recoverIntervalTable: Gs2Stamina.RecoverIntervalTable|null) {
         this.recoverIntervalTable = recoverIntervalTable;
         return this;
     }
-    public withRecoverIntervalTable(recoverIntervalTable: RecoverIntervalTable|null): this {
+    public withRecoverIntervalTable(recoverIntervalTable: Gs2Stamina.RecoverIntervalTable|null): this {
         this.recoverIntervalTable = recoverIntervalTable;
         return this;
     }
-    public getRecoverValueTable(): RecoverValueTable|null {
+    public getRecoverValueTable(): Gs2Stamina.RecoverValueTable|null {
         return this.recoverValueTable;
     }
-    public setRecoverValueTable(recoverValueTable: RecoverValueTable|null) {
+    public setRecoverValueTable(recoverValueTable: Gs2Stamina.RecoverValueTable|null) {
         this.recoverValueTable = recoverValueTable;
         return this;
     }
-    public withRecoverValueTable(recoverValueTable: RecoverValueTable|null): this {
+    public withRecoverValueTable(recoverValueTable: Gs2Stamina.RecoverValueTable|null): this {
         this.recoverValueTable = recoverValueTable;
         return this;
     }
@@ -248,9 +250,9 @@ export default class StaminaModel implements IModel {
             .withInitialCapacity(data["initialCapacity"])
             .withIsOverflow(data["isOverflow"])
             .withMaxCapacity(data["maxCapacity"])
-            .withMaxStaminaTable(MaxStaminaTable.fromDict(data["maxStaminaTable"]))
-            .withRecoverIntervalTable(RecoverIntervalTable.fromDict(data["recoverIntervalTable"]))
-            .withRecoverValueTable(RecoverValueTable.fromDict(data["recoverValueTable"]));
+            .withMaxStaminaTable(Gs2Stamina.MaxStaminaTable.fromDict(data["maxStaminaTable"]))
+            .withRecoverIntervalTable(Gs2Stamina.RecoverIntervalTable.fromDict(data["recoverIntervalTable"]))
+            .withRecoverValueTable(Gs2Stamina.RecoverValueTable.fromDict(data["recoverValueTable"]));
     }
 
     public toDict(): {[key: string]: any} {

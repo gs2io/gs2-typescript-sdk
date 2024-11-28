@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
+var Gs2Ranking2 = tslib_1.__importStar(require("../../ranking2/model"));
 var RankingReward = /** @class */ (function () {
     function RankingReward() {
         this.thresholdRank = null;
@@ -65,8 +65,8 @@ var RankingReward = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
-                return AcquireAction_1.default.fromDict(item);
-            }) : []);
+                return Gs2Ranking2.AcquireAction.fromDict(item);
+            }) : null);
     };
     RankingReward.prototype.toDict = function () {
         return {
@@ -75,7 +75,7 @@ var RankingReward = /** @class */ (function () {
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return RankingReward;

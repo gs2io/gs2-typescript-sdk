@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Lottery from '../../lottery/model'
 import AcquireAction from './AcquireAction';
 import BoxItem from './BoxItem';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:lottery:{namespaceName}:user:{userId}:box:items:{prizeTableName}";
@@ -23,7 +25,7 @@ export default class BoxItems implements IModel {
     private boxId: string|null = null;
     private prizeTableName: string|null = null;
     private userId: string|null = null;
-    private items: BoxItem[]|null = null;
+    private items: Gs2Lottery.BoxItem[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -161,14 +163,14 @@ export default class BoxItems implements IModel {
         this.userId = userId;
         return this;
     }
-    public getItems(): BoxItem[]|null {
+    public getItems(): Gs2Lottery.BoxItem[]|null {
         return this.items;
     }
-    public setItems(items: BoxItem[]|null) {
+    public setItems(items: Gs2Lottery.BoxItem[]|null) {
         this.items = items;
         return this;
     }
-    public withItems(items: BoxItem[]|null): this {
+    public withItems(items: Gs2Lottery.BoxItem[]|null): this {
         this.items = items;
         return this;
     }
@@ -183,9 +185,9 @@ export default class BoxItems implements IModel {
             .withUserId(data["userId"])
             .withItems(data.items ?
                 data.items.map((item: {[key: string]: any}) => {
-                    return BoxItem.fromDict(item);
+                    return Gs2Lottery.BoxItem.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -194,10 +196,10 @@ export default class BoxItems implements IModel {
             "prizeTableName": this.getPrizeTableName(),
             "userId": this.getUserId(),
             "items": this.getItems() ?
-                this.getItems()!.map((item: BoxItem) => {
+                this.getItems()!.map((item: Gs2Lottery.BoxItem) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

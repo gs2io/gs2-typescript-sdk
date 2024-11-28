@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import OutputField from './OutputField';
+import * as Gs2Deploy from '../../deploy/model';
 export default class Resource implements IModel {
     private resourceId;
     private type;
@@ -42,9 +42,9 @@ export default class Resource implements IModel {
     getRollbackAfter(): string[] | null;
     setRollbackAfter(rollbackAfter: string[] | null): this;
     withRollbackAfter(rollbackAfter: string[] | null): this;
-    getOutputFields(): OutputField[] | null;
-    setOutputFields(outputFields: OutputField[] | null): this;
-    withOutputFields(outputFields: OutputField[] | null): this;
+    getOutputFields(): Gs2Deploy.OutputField[] | null;
+    setOutputFields(outputFields: Gs2Deploy.OutputField[] | null): this;
+    withOutputFields(outputFields: Gs2Deploy.OutputField[] | null): this;
     getWorkId(): string | null;
     setWorkId(workId: string | null): this;
     withWorkId(workId: string | null): this;

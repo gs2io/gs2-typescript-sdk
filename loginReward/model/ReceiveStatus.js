@@ -212,7 +212,7 @@ var ReceiveStatus = /** @class */ (function () {
             .withReceivedSteps(data.receivedSteps ?
             data.receivedSteps.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withLastReceivedAt(data["lastReceivedAt"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -226,7 +226,7 @@ var ReceiveStatus = /** @class */ (function () {
             "receivedSteps": this.getReceivedSteps() ?
                 this.getReceivedSteps().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "lastReceivedAt": this.getLastReceivedAt(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

@@ -135,7 +135,7 @@ export default class ConsumeSimpleItemsByUserIdRequest implements IRequest {
                 data.consumeCounts.map((item: {[key: string]: any}) => {
                     return Gs2Inventory.ConsumeCount.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -148,7 +148,7 @@ export default class ConsumeSimpleItemsByUserIdRequest implements IRequest {
                 this.getConsumeCounts()!.map((item: Gs2Inventory.ConsumeCount) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

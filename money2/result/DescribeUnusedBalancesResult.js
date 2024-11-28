@@ -49,7 +49,7 @@ var DescribeUnusedBalancesResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Money2.UnusedBalance.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeUnusedBalancesResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeUnusedBalancesResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

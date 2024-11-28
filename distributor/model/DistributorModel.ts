@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Distributor from '../../distributor/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:distributor:{namespaceName}:model:{distributorName}";
 
 export default class DistributorModel implements IModel {
@@ -173,7 +175,7 @@ export default class DistributorModel implements IModel {
                 data.whiteListTargetIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -186,7 +188,7 @@ export default class DistributorModel implements IModel {
                 this.getWhiteListTargetIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

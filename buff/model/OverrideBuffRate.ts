@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Buff from '../../buff/model'
+
 export default class OverrideBuffRate implements IModel {
     private name: string|null = null;
     private rate: number|null = null;

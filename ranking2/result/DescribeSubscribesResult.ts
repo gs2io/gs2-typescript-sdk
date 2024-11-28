@@ -55,7 +55,7 @@ export default class DescribeSubscribesResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Ranking2.SubscribeUser.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeSubscribesResult implements IResult {
                 this.getItems()!.map((item: Gs2Ranking2.SubscribeUser) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

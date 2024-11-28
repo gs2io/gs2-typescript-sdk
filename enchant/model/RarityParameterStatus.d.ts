@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import RarityParameterValue from './RarityParameterValue';
+import * as Gs2Enchant from '../../enchant/model';
 export default class RarityParameterStatus implements IModel {
     private rarityParameterStatusId;
     private userId;
@@ -29,9 +29,9 @@ export default class RarityParameterStatus implements IModel {
     getPropertyId(): string | null;
     setPropertyId(propertyId: string | null): this;
     withPropertyId(propertyId: string | null): this;
-    getParameterValues(): RarityParameterValue[] | null;
-    setParameterValues(parameterValues: RarityParameterValue[] | null): this;
-    withParameterValues(parameterValues: RarityParameterValue[] | null): this;
+    getParameterValues(): Gs2Enchant.RarityParameterValue[] | null;
+    setParameterValues(parameterValues: Gs2Enchant.RarityParameterValue[] | null): this;
+    withParameterValues(parameterValues: Gs2Enchant.RarityParameterValue[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

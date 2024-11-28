@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Mission from '../../mission/model'
 import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import NotificationSetting from './NotificationSetting';
@@ -25,12 +27,12 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
-    private transactionSetting: TransactionSetting|null = null;
-    private missionCompleteScript: ScriptSetting|null = null;
-    private counterIncrementScript: ScriptSetting|null = null;
-    private receiveRewardsScript: ScriptSetting|null = null;
-    private completeNotification: NotificationSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private transactionSetting: Gs2Mission.TransactionSetting|null = null;
+    private missionCompleteScript: Gs2Mission.ScriptSetting|null = null;
+    private counterIncrementScript: Gs2Mission.ScriptSetting|null = null;
+    private receiveRewardsScript: Gs2Mission.ScriptSetting|null = null;
+    private completeNotification: Gs2Mission.NotificationSetting|null = null;
+    private logSetting: Gs2Mission.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private queueNamespaceId: string|null = null;
@@ -129,69 +131,69 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
-    public getTransactionSetting(): TransactionSetting|null {
+    public getTransactionSetting(): Gs2Mission.TransactionSetting|null {
         return this.transactionSetting;
     }
-    public setTransactionSetting(transactionSetting: TransactionSetting|null) {
+    public setTransactionSetting(transactionSetting: Gs2Mission.TransactionSetting|null) {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public withTransactionSetting(transactionSetting: TransactionSetting|null): this {
+    public withTransactionSetting(transactionSetting: Gs2Mission.TransactionSetting|null): this {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public getMissionCompleteScript(): ScriptSetting|null {
+    public getMissionCompleteScript(): Gs2Mission.ScriptSetting|null {
         return this.missionCompleteScript;
     }
-    public setMissionCompleteScript(missionCompleteScript: ScriptSetting|null) {
+    public setMissionCompleteScript(missionCompleteScript: Gs2Mission.ScriptSetting|null) {
         this.missionCompleteScript = missionCompleteScript;
         return this;
     }
-    public withMissionCompleteScript(missionCompleteScript: ScriptSetting|null): this {
+    public withMissionCompleteScript(missionCompleteScript: Gs2Mission.ScriptSetting|null): this {
         this.missionCompleteScript = missionCompleteScript;
         return this;
     }
-    public getCounterIncrementScript(): ScriptSetting|null {
+    public getCounterIncrementScript(): Gs2Mission.ScriptSetting|null {
         return this.counterIncrementScript;
     }
-    public setCounterIncrementScript(counterIncrementScript: ScriptSetting|null) {
+    public setCounterIncrementScript(counterIncrementScript: Gs2Mission.ScriptSetting|null) {
         this.counterIncrementScript = counterIncrementScript;
         return this;
     }
-    public withCounterIncrementScript(counterIncrementScript: ScriptSetting|null): this {
+    public withCounterIncrementScript(counterIncrementScript: Gs2Mission.ScriptSetting|null): this {
         this.counterIncrementScript = counterIncrementScript;
         return this;
     }
-    public getReceiveRewardsScript(): ScriptSetting|null {
+    public getReceiveRewardsScript(): Gs2Mission.ScriptSetting|null {
         return this.receiveRewardsScript;
     }
-    public setReceiveRewardsScript(receiveRewardsScript: ScriptSetting|null) {
+    public setReceiveRewardsScript(receiveRewardsScript: Gs2Mission.ScriptSetting|null) {
         this.receiveRewardsScript = receiveRewardsScript;
         return this;
     }
-    public withReceiveRewardsScript(receiveRewardsScript: ScriptSetting|null): this {
+    public withReceiveRewardsScript(receiveRewardsScript: Gs2Mission.ScriptSetting|null): this {
         this.receiveRewardsScript = receiveRewardsScript;
         return this;
     }
-    public getCompleteNotification(): NotificationSetting|null {
+    public getCompleteNotification(): Gs2Mission.NotificationSetting|null {
         return this.completeNotification;
     }
-    public setCompleteNotification(completeNotification: NotificationSetting|null) {
+    public setCompleteNotification(completeNotification: Gs2Mission.NotificationSetting|null) {
         this.completeNotification = completeNotification;
         return this;
     }
-    public withCompleteNotification(completeNotification: NotificationSetting|null): this {
+    public withCompleteNotification(completeNotification: Gs2Mission.NotificationSetting|null): this {
         this.completeNotification = completeNotification;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Mission.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Mission.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Mission.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -265,12 +267,12 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
-            .withMissionCompleteScript(ScriptSetting.fromDict(data["missionCompleteScript"]))
-            .withCounterIncrementScript(ScriptSetting.fromDict(data["counterIncrementScript"]))
-            .withReceiveRewardsScript(ScriptSetting.fromDict(data["receiveRewardsScript"]))
-            .withCompleteNotification(NotificationSetting.fromDict(data["completeNotification"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withTransactionSetting(Gs2Mission.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withMissionCompleteScript(Gs2Mission.ScriptSetting.fromDict(data["missionCompleteScript"]))
+            .withCounterIncrementScript(Gs2Mission.ScriptSetting.fromDict(data["counterIncrementScript"]))
+            .withReceiveRewardsScript(Gs2Mission.ScriptSetting.fromDict(data["receiveRewardsScript"]))
+            .withCompleteNotification(Gs2Mission.NotificationSetting.fromDict(data["completeNotification"]))
+            .withLogSetting(Gs2Mission.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withQueueNamespaceId(data["queueNamespaceId"])

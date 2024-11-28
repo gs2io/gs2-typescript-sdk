@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Mission from '../../mission/model'
 import TargetCounterModel from './TargetCounterModel';
 import VerifyAction from './VerifyAction';
 import AcquireAction from './AcquireAction';
@@ -26,9 +28,9 @@ export default class MissionTaskModelMaster implements IModel {
     private metadata: string|null = null;
     private description: string|null = null;
     private verifyCompleteType: string|null = null;
-    private targetCounter: TargetCounterModel|null = null;
-    private verifyCompleteConsumeActions: VerifyAction[]|null = null;
-    private completeAcquireActions: AcquireAction[]|null = null;
+    private targetCounter: Gs2Mission.TargetCounterModel|null = null;
+    private verifyCompleteConsumeActions: Gs2Mission.VerifyAction[]|null = null;
+    private completeAcquireActions: Gs2Mission.AcquireAction[]|null = null;
     private challengePeriodEventId: string|null = null;
     private premiseMissionTaskName: string|null = null;
     private createdAt: number|null = null;
@@ -196,36 +198,36 @@ export default class MissionTaskModelMaster implements IModel {
         this.verifyCompleteType = verifyCompleteType;
         return this;
     }
-    public getTargetCounter(): TargetCounterModel|null {
+    public getTargetCounter(): Gs2Mission.TargetCounterModel|null {
         return this.targetCounter;
     }
-    public setTargetCounter(targetCounter: TargetCounterModel|null) {
+    public setTargetCounter(targetCounter: Gs2Mission.TargetCounterModel|null) {
         this.targetCounter = targetCounter;
         return this;
     }
-    public withTargetCounter(targetCounter: TargetCounterModel|null): this {
+    public withTargetCounter(targetCounter: Gs2Mission.TargetCounterModel|null): this {
         this.targetCounter = targetCounter;
         return this;
     }
-    public getVerifyCompleteConsumeActions(): VerifyAction[]|null {
+    public getVerifyCompleteConsumeActions(): Gs2Mission.VerifyAction[]|null {
         return this.verifyCompleteConsumeActions;
     }
-    public setVerifyCompleteConsumeActions(verifyCompleteConsumeActions: VerifyAction[]|null) {
+    public setVerifyCompleteConsumeActions(verifyCompleteConsumeActions: Gs2Mission.VerifyAction[]|null) {
         this.verifyCompleteConsumeActions = verifyCompleteConsumeActions;
         return this;
     }
-    public withVerifyCompleteConsumeActions(verifyCompleteConsumeActions: VerifyAction[]|null): this {
+    public withVerifyCompleteConsumeActions(verifyCompleteConsumeActions: Gs2Mission.VerifyAction[]|null): this {
         this.verifyCompleteConsumeActions = verifyCompleteConsumeActions;
         return this;
     }
-    public getCompleteAcquireActions(): AcquireAction[]|null {
+    public getCompleteAcquireActions(): Gs2Mission.AcquireAction[]|null {
         return this.completeAcquireActions;
     }
-    public setCompleteAcquireActions(completeAcquireActions: AcquireAction[]|null) {
+    public setCompleteAcquireActions(completeAcquireActions: Gs2Mission.AcquireAction[]|null) {
         this.completeAcquireActions = completeAcquireActions;
         return this;
     }
-    public withCompleteAcquireActions(completeAcquireActions: AcquireAction[]|null): this {
+    public withCompleteAcquireActions(completeAcquireActions: Gs2Mission.AcquireAction[]|null): this {
         this.completeAcquireActions = completeAcquireActions;
         return this;
     }
@@ -337,17 +339,17 @@ export default class MissionTaskModelMaster implements IModel {
             .withMetadata(data["metadata"])
             .withDescription(data["description"])
             .withVerifyCompleteType(data["verifyCompleteType"])
-            .withTargetCounter(TargetCounterModel.fromDict(data["targetCounter"]))
+            .withTargetCounter(Gs2Mission.TargetCounterModel.fromDict(data["targetCounter"]))
             .withVerifyCompleteConsumeActions(data.verifyCompleteConsumeActions ?
                 data.verifyCompleteConsumeActions.map((item: {[key: string]: any}) => {
-                    return VerifyAction.fromDict(item);
+                    return Gs2Mission.VerifyAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCompleteAcquireActions(data.completeAcquireActions ?
                 data.completeAcquireActions.map((item: {[key: string]: any}) => {
-                    return AcquireAction.fromDict(item);
+                    return Gs2Mission.AcquireAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withChallengePeriodEventId(data["challengePeriodEventId"])
             .withPremiseMissionTaskName(data["premiseMissionTaskName"])
             .withCreatedAt(data["createdAt"])
@@ -367,15 +369,15 @@ export default class MissionTaskModelMaster implements IModel {
             "verifyCompleteType": this.getVerifyCompleteType(),
             "targetCounter": this.getTargetCounter()?.toDict(),
             "verifyCompleteConsumeActions": this.getVerifyCompleteConsumeActions() ?
-                this.getVerifyCompleteConsumeActions()!.map((item: VerifyAction) => {
+                this.getVerifyCompleteConsumeActions()!.map((item: Gs2Mission.VerifyAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "completeAcquireActions": this.getCompleteAcquireActions() ?
-                this.getCompleteAcquireActions()!.map((item: AcquireAction) => {
+                this.getCompleteAcquireActions()!.map((item: Gs2Mission.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "premiseMissionTaskName": this.getPremiseMissionTaskName(),
             "createdAt": this.getCreatedAt(),

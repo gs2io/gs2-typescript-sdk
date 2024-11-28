@@ -135,7 +135,7 @@ export default class ResetByUserIdRequest implements IRequest {
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2SkillTree.Config.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -148,7 +148,7 @@ export default class ResetByUserIdRequest implements IRequest {
                 this.getConfig()!.map((item: Gs2SkillTree.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

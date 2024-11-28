@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Money2 from '../../money2/model'
 import WalletSummary from './WalletSummary';
 import DepositTransaction from './DepositTransaction';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:money2:{namespaceName}:user:{userId}:wallet:{slot}";
@@ -23,8 +25,8 @@ export default class Wallet implements IModel {
     private walletId: string|null = null;
     private userId: string|null = null;
     private slot: number|null = null;
-    private summary: WalletSummary|null = null;
-    private depositTransactions: DepositTransaction[]|null = null;
+    private summary: Gs2Money2.WalletSummary|null = null;
+    private depositTransactions: Gs2Money2.DepositTransaction[]|null = null;
     private sharedFreeCurrency: boolean|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -166,25 +168,25 @@ export default class Wallet implements IModel {
         this.slot = slot;
         return this;
     }
-    public getSummary(): WalletSummary|null {
+    public getSummary(): Gs2Money2.WalletSummary|null {
         return this.summary;
     }
-    public setSummary(summary: WalletSummary|null) {
+    public setSummary(summary: Gs2Money2.WalletSummary|null) {
         this.summary = summary;
         return this;
     }
-    public withSummary(summary: WalletSummary|null): this {
+    public withSummary(summary: Gs2Money2.WalletSummary|null): this {
         this.summary = summary;
         return this;
     }
-    public getDepositTransactions(): DepositTransaction[]|null {
+    public getDepositTransactions(): Gs2Money2.DepositTransaction[]|null {
         return this.depositTransactions;
     }
-    public setDepositTransactions(depositTransactions: DepositTransaction[]|null) {
+    public setDepositTransactions(depositTransactions: Gs2Money2.DepositTransaction[]|null) {
         this.depositTransactions = depositTransactions;
         return this;
     }
-    public withDepositTransactions(depositTransactions: DepositTransaction[]|null): this {
+    public withDepositTransactions(depositTransactions: Gs2Money2.DepositTransaction[]|null): this {
         this.depositTransactions = depositTransactions;
         return this;
     }
@@ -241,12 +243,12 @@ export default class Wallet implements IModel {
             .withWalletId(data["walletId"])
             .withUserId(data["userId"])
             .withSlot(data["slot"])
-            .withSummary(WalletSummary.fromDict(data["summary"]))
+            .withSummary(Gs2Money2.WalletSummary.fromDict(data["summary"]))
             .withDepositTransactions(data.depositTransactions ?
                 data.depositTransactions.map((item: {[key: string]: any}) => {
-                    return DepositTransaction.fromDict(item);
+                    return Gs2Money2.DepositTransaction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withSharedFreeCurrency(data["sharedFreeCurrency"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -260,10 +262,10 @@ export default class Wallet implements IModel {
             "slot": this.getSlot(),
             "summary": this.getSummary()?.toDict(),
             "depositTransactions": this.getDepositTransactions() ?
-                this.getDepositTransactions()!.map((item: DepositTransaction) => {
+                this.getDepositTransactions()!.map((item: Gs2Money2.DepositTransaction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "sharedFreeCurrency": this.getSharedFreeCurrency(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

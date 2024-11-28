@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import MissionTaskModel from './MissionTaskModel';
+import * as Gs2Mission from '../../mission/model';
 export default class MissionGroupModel implements IModel {
     private missionGroupId;
     private name;
@@ -25,9 +25,9 @@ export default class MissionGroupModel implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
-    getTasks(): MissionTaskModel[] | null;
-    setTasks(tasks: MissionTaskModel[] | null): this;
-    withTasks(tasks: MissionTaskModel[] | null): this;
+    getTasks(): Gs2Mission.MissionTaskModel[] | null;
+    setTasks(tasks: Gs2Mission.MissionTaskModel[] | null): this;
+    withTasks(tasks: Gs2Mission.MissionTaskModel[] | null): this;
     getResetType(): string | null;
     setResetType(resetType: string | null): this;
     withResetType(resetType: string | null): this;

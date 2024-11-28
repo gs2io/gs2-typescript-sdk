@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2AdReward from '../../adReward/model'
+
 export default class UnityAd implements IModel {
     private keys: string[]|null = null;
     public getKeys(): string[]|null {
@@ -39,7 +41,7 @@ export default class UnityAd implements IModel {
                 data.keys.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -48,7 +50,7 @@ export default class UnityAd implements IModel {
                 this.getKeys()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

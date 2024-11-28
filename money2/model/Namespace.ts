@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Money2 from '../../money2/model'
 import AppleAppStoreSetting from './AppleAppStoreSetting';
 import GooglePlaySetting from './GooglePlaySetting';
 import FakeSetting from './FakeSetting';
@@ -29,10 +31,10 @@ export default class Namespace implements IModel {
     private description: string|null = null;
     private currencyUsagePriority: string|null = null;
     private sharedFreeCurrency: boolean|null = null;
-    private platformSetting: PlatformSetting|null = null;
-    private depositBalanceScript: ScriptSetting|null = null;
-    private withdrawBalanceScript: ScriptSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private platformSetting: Gs2Money2.PlatformSetting|null = null;
+    private depositBalanceScript: Gs2Money2.ScriptSetting|null = null;
+    private withdrawBalanceScript: Gs2Money2.ScriptSetting|null = null;
+    private logSetting: Gs2Money2.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -151,47 +153,47 @@ export default class Namespace implements IModel {
         this.sharedFreeCurrency = sharedFreeCurrency;
         return this;
     }
-    public getPlatformSetting(): PlatformSetting|null {
+    public getPlatformSetting(): Gs2Money2.PlatformSetting|null {
         return this.platformSetting;
     }
-    public setPlatformSetting(platformSetting: PlatformSetting|null) {
+    public setPlatformSetting(platformSetting: Gs2Money2.PlatformSetting|null) {
         this.platformSetting = platformSetting;
         return this;
     }
-    public withPlatformSetting(platformSetting: PlatformSetting|null): this {
+    public withPlatformSetting(platformSetting: Gs2Money2.PlatformSetting|null): this {
         this.platformSetting = platformSetting;
         return this;
     }
-    public getDepositBalanceScript(): ScriptSetting|null {
+    public getDepositBalanceScript(): Gs2Money2.ScriptSetting|null {
         return this.depositBalanceScript;
     }
-    public setDepositBalanceScript(depositBalanceScript: ScriptSetting|null) {
+    public setDepositBalanceScript(depositBalanceScript: Gs2Money2.ScriptSetting|null) {
         this.depositBalanceScript = depositBalanceScript;
         return this;
     }
-    public withDepositBalanceScript(depositBalanceScript: ScriptSetting|null): this {
+    public withDepositBalanceScript(depositBalanceScript: Gs2Money2.ScriptSetting|null): this {
         this.depositBalanceScript = depositBalanceScript;
         return this;
     }
-    public getWithdrawBalanceScript(): ScriptSetting|null {
+    public getWithdrawBalanceScript(): Gs2Money2.ScriptSetting|null {
         return this.withdrawBalanceScript;
     }
-    public setWithdrawBalanceScript(withdrawBalanceScript: ScriptSetting|null) {
+    public setWithdrawBalanceScript(withdrawBalanceScript: Gs2Money2.ScriptSetting|null) {
         this.withdrawBalanceScript = withdrawBalanceScript;
         return this;
     }
-    public withWithdrawBalanceScript(withdrawBalanceScript: ScriptSetting|null): this {
+    public withWithdrawBalanceScript(withdrawBalanceScript: Gs2Money2.ScriptSetting|null): this {
         this.withdrawBalanceScript = withdrawBalanceScript;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Money2.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Money2.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Money2.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -239,10 +241,10 @@ export default class Namespace implements IModel {
             .withDescription(data["description"])
             .withCurrencyUsagePriority(data["currencyUsagePriority"])
             .withSharedFreeCurrency(data["sharedFreeCurrency"])
-            .withPlatformSetting(PlatformSetting.fromDict(data["platformSetting"]))
-            .withDepositBalanceScript(ScriptSetting.fromDict(data["depositBalanceScript"]))
-            .withWithdrawBalanceScript(ScriptSetting.fromDict(data["withdrawBalanceScript"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withPlatformSetting(Gs2Money2.PlatformSetting.fromDict(data["platformSetting"]))
+            .withDepositBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["depositBalanceScript"]))
+            .withWithdrawBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["withdrawBalanceScript"]))
+            .withLogSetting(Gs2Money2.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

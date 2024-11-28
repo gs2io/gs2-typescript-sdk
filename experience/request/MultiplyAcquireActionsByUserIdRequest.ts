@@ -173,7 +173,7 @@ export default class MultiplyAcquireActionsByUserIdRequest implements IRequest {
                 data.acquireActions.map((item: {[key: string]: any}) => {
                     return Gs2Experience.AcquireAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withBaseRate(data["baseRate"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
@@ -189,7 +189,7 @@ export default class MultiplyAcquireActionsByUserIdRequest implements IRequest {
                 this.getAcquireActions()!.map((item: Gs2Experience.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "baseRate": this.getBaseRate(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };

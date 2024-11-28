@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Showcase from '../../showcase/model'
 import DisplayItemMaster from './DisplayItemMaster';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:showcase:{namespaceName}:showcase:{showcaseName}";
 
@@ -24,7 +26,7 @@ export default class ShowcaseMaster implements IModel {
     private description: string|null = null;
     private metadata: string|null = null;
     private salesPeriodEventId: string|null = null;
-    private displayItems: DisplayItemMaster[]|null = null;
+    private displayItems: Gs2Showcase.DisplayItemMaster[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -164,14 +166,14 @@ export default class ShowcaseMaster implements IModel {
         this.salesPeriodEventId = salesPeriodEventId;
         return this;
     }
-    public getDisplayItems(): DisplayItemMaster[]|null {
+    public getDisplayItems(): Gs2Showcase.DisplayItemMaster[]|null {
         return this.displayItems;
     }
-    public setDisplayItems(displayItems: DisplayItemMaster[]|null) {
+    public setDisplayItems(displayItems: Gs2Showcase.DisplayItemMaster[]|null) {
         this.displayItems = displayItems;
         return this;
     }
-    public withDisplayItems(displayItems: DisplayItemMaster[]|null): this {
+    public withDisplayItems(displayItems: Gs2Showcase.DisplayItemMaster[]|null): this {
         this.displayItems = displayItems;
         return this;
     }
@@ -221,9 +223,9 @@ export default class ShowcaseMaster implements IModel {
             .withSalesPeriodEventId(data["salesPeriodEventId"])
             .withDisplayItems(data.displayItems ?
                 data.displayItems.map((item: {[key: string]: any}) => {
-                    return DisplayItemMaster.fromDict(item);
+                    return Gs2Showcase.DisplayItemMaster.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -237,10 +239,10 @@ export default class ShowcaseMaster implements IModel {
             "metadata": this.getMetadata(),
             "salesPeriodEventId": this.getSalesPeriodEventId(),
             "displayItems": this.getDisplayItems() ?
-                this.getDisplayItems()!.map((item: DisplayItemMaster) => {
+                this.getDisplayItems()!.map((item: Gs2Showcase.DisplayItemMaster) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

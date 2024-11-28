@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Exchange from '../../exchange/model'
+
 export default class LogRate implements IModel {
     private base: number|null = null;
     private logs: number[]|null = null;
@@ -52,7 +54,7 @@ export default class LogRate implements IModel {
                 data.logs.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -62,7 +64,7 @@ export default class LogRate implements IModel {
                 this.getLogs()!.map((item: number) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

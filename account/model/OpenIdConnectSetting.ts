@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Account from '../../account/model'
+
 export default class OpenIdConnectSetting implements IModel {
     private configurationPath: string|null = null;
     private clientId: string|null = null;

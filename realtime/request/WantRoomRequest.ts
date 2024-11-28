@@ -95,7 +95,7 @@ export default class WantRoomRequest implements IRequest {
                 data.notificationUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -106,7 +106,7 @@ export default class WantRoomRequest implements IRequest {
                 this.getNotificationUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -148,12 +148,12 @@ export default class UnleashRequest implements IRequest {
                 data.materials.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withConfig(data.config ?
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Enhance.Config.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -166,12 +166,12 @@ export default class UnleashRequest implements IRequest {
                 this.getMaterials()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "config": this.getConfig() ?
                 this.getConfig()!.map((item: Gs2Enhance.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

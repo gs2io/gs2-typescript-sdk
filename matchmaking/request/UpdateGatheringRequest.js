@@ -112,7 +112,7 @@ var UpdateGatheringRequest = /** @class */ (function () {
             .withAttributeRanges(data.attributeRanges ?
             data.attributeRanges.map(function (item) {
                 return Gs2Matchmaking.AttributeRange.fromDict(item);
-            }) : []);
+            }) : null);
     };
     UpdateGatheringRequest.prototype.toDict = function () {
         return {
@@ -122,7 +122,7 @@ var UpdateGatheringRequest = /** @class */ (function () {
             "attributeRanges": this.getAttributeRanges() ?
                 this.getAttributeRanges().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return UpdateGatheringRequest;

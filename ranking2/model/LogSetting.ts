@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Ranking2 from '../../ranking2/model'
+
 export default class LogSetting implements IModel {
     private loggingNamespaceId: string|null = null;
     public getLoggingNamespaceId(): string|null {

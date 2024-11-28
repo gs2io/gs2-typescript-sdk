@@ -162,7 +162,7 @@ var CreateRandomShowcaseMasterRequest = /** @class */ (function () {
             .withDisplayItems(data.displayItems ?
             data.displayItems.map(function (item) {
                 return Gs2Showcase.RandomDisplayItemModel.fromDict(item);
-            }) : [])
+            }) : null)
             .withBaseTimestamp(data["baseTimestamp"])
             .withResetIntervalHours(data["resetIntervalHours"])
             .withSalesPeriodEventId(data["salesPeriodEventId"]);
@@ -177,7 +177,7 @@ var CreateRandomShowcaseMasterRequest = /** @class */ (function () {
             "displayItems": this.getDisplayItems() ?
                 this.getDisplayItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "baseTimestamp": this.getBaseTimestamp(),
             "resetIntervalHours": this.getResetIntervalHours(),
             "salesPeriodEventId": this.getSalesPeriodEventId(),

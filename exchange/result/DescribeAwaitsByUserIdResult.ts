@@ -55,7 +55,7 @@ export default class DescribeAwaitsByUserIdResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Exchange.Await.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeAwaitsByUserIdResult implements IResult {
                 this.getItems()!.map((item: Gs2Exchange.Await) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

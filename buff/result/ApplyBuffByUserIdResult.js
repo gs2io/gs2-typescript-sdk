@@ -49,7 +49,7 @@ var ApplyBuffByUserIdResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Buff.BuffEntryModel.fromDict(item);
-            }) : [])
+            }) : null)
             .withNewContextStack(data["newContextStack"]);
     };
     ApplyBuffByUserIdResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var ApplyBuffByUserIdResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "newContextStack": this.getNewContextStack(),
         };
     };

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Matchmaking from '../../matchmaking/model'
 import AttributeRange from './AttributeRange';
 import Attribute from './Attribute';
 import Player from './Player';
@@ -24,8 +26,8 @@ const grnFormat: string = "grn:gs2:{region}:{ownerId}:matchmaking:{namespaceName
 export default class Gathering implements IModel {
     private gatheringId: string|null = null;
     private name: string|null = null;
-    private attributeRanges: AttributeRange[]|null = null;
-    private capacityOfRoles: CapacityOfRole[]|null = null;
+    private attributeRanges: Gs2Matchmaking.AttributeRange[]|null = null;
+    private capacityOfRoles: Gs2Matchmaking.CapacityOfRole[]|null = null;
     private allowUserIds: string[]|null = null;
     private metadata: string|null = null;
     private expiresAt: number|null = null;
@@ -135,25 +137,25 @@ export default class Gathering implements IModel {
         this.name = name;
         return this;
     }
-    public getAttributeRanges(): AttributeRange[]|null {
+    public getAttributeRanges(): Gs2Matchmaking.AttributeRange[]|null {
         return this.attributeRanges;
     }
-    public setAttributeRanges(attributeRanges: AttributeRange[]|null) {
+    public setAttributeRanges(attributeRanges: Gs2Matchmaking.AttributeRange[]|null) {
         this.attributeRanges = attributeRanges;
         return this;
     }
-    public withAttributeRanges(attributeRanges: AttributeRange[]|null): this {
+    public withAttributeRanges(attributeRanges: Gs2Matchmaking.AttributeRange[]|null): this {
         this.attributeRanges = attributeRanges;
         return this;
     }
-    public getCapacityOfRoles(): CapacityOfRole[]|null {
+    public getCapacityOfRoles(): Gs2Matchmaking.CapacityOfRole[]|null {
         return this.capacityOfRoles;
     }
-    public setCapacityOfRoles(capacityOfRoles: CapacityOfRole[]|null) {
+    public setCapacityOfRoles(capacityOfRoles: Gs2Matchmaking.CapacityOfRole[]|null) {
         this.capacityOfRoles = capacityOfRoles;
         return this;
     }
-    public withCapacityOfRoles(capacityOfRoles: CapacityOfRole[]|null): this {
+    public withCapacityOfRoles(capacityOfRoles: Gs2Matchmaking.CapacityOfRole[]|null): this {
         this.capacityOfRoles = capacityOfRoles;
         return this;
     }
@@ -233,19 +235,19 @@ export default class Gathering implements IModel {
             .withName(data["name"])
             .withAttributeRanges(data.attributeRanges ?
                 data.attributeRanges.map((item: {[key: string]: any}) => {
-                    return AttributeRange.fromDict(item);
+                    return Gs2Matchmaking.AttributeRange.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCapacityOfRoles(data.capacityOfRoles ?
                 data.capacityOfRoles.map((item: {[key: string]: any}) => {
-                    return CapacityOfRole.fromDict(item);
+                    return Gs2Matchmaking.CapacityOfRole.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withAllowUserIds(data.allowUserIds ?
                 data.allowUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withMetadata(data["metadata"])
             .withExpiresAt(data["expiresAt"])
             .withCreatedAt(data["createdAt"])
@@ -258,20 +260,20 @@ export default class Gathering implements IModel {
             "gatheringId": this.getGatheringId(),
             "name": this.getName(),
             "attributeRanges": this.getAttributeRanges() ?
-                this.getAttributeRanges()!.map((item: AttributeRange) => {
+                this.getAttributeRanges()!.map((item: Gs2Matchmaking.AttributeRange) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "capacityOfRoles": this.getCapacityOfRoles() ?
-                this.getCapacityOfRoles()!.map((item: CapacityOfRole) => {
+                this.getCapacityOfRoles()!.map((item: Gs2Matchmaking.CapacityOfRole) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "allowUserIds": this.getAllowUserIds() ?
                 this.getAllowUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "metadata": this.getMetadata(),
             "expiresAt": this.getExpiresAt(),
             "createdAt": this.getCreatedAt(),

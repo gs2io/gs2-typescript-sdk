@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import DisplayItem from './DisplayItem';
+import * as Gs2Showcase from '../../showcase/model';
 export default class Showcase implements IModel {
     private showcaseId;
     private name;
@@ -24,9 +24,9 @@ export default class Showcase implements IModel {
     getSalesPeriodEventId(): string | null;
     setSalesPeriodEventId(salesPeriodEventId: string | null): this;
     withSalesPeriodEventId(salesPeriodEventId: string | null): this;
-    getDisplayItems(): DisplayItem[] | null;
-    setDisplayItems(displayItems: DisplayItem[] | null): this;
-    withDisplayItems(displayItems: DisplayItem[] | null): this;
+    getDisplayItems(): Gs2Showcase.DisplayItem[] | null;
+    setDisplayItems(displayItems: Gs2Showcase.DisplayItem[] | null): this;
+    withDisplayItems(displayItems: Gs2Showcase.DisplayItem[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): Showcase | null;

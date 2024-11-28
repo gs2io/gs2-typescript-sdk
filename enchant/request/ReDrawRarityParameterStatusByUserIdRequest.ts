@@ -148,7 +148,7 @@ export default class ReDrawRarityParameterStatusByUserIdRequest implements IRequ
                 data.fixedParameterNames.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -162,7 +162,7 @@ export default class ReDrawRarityParameterStatusByUserIdRequest implements IRequ
                 this.getFixedParameterNames()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

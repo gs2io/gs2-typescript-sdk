@@ -40,7 +40,7 @@ export default class DescribeTakeOverTypeModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Account.TakeOverTypeModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeTakeOverTypeModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2Account.TakeOverTypeModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

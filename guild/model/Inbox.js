@@ -187,7 +187,7 @@ var Inbox = /** @class */ (function () {
             .withFromUserIds(data.fromUserIds ?
             data.fromUserIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -199,7 +199,7 @@ var Inbox = /** @class */ (function () {
             "fromUserIds": this.getFromUserIds() ?
                 this.getFromUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

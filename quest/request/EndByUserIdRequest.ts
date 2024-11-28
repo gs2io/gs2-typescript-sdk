@@ -146,13 +146,13 @@ export default class EndByUserIdRequest implements IRequest {
                 data.rewards.map((item: {[key: string]: any}) => {
                     return Gs2Quest.Reward.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withIsComplete(data["isComplete"])
             .withConfig(data.config ?
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Quest.Config.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -164,13 +164,13 @@ export default class EndByUserIdRequest implements IRequest {
                 this.getRewards()!.map((item: Gs2Quest.Reward) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "isComplete": this.getIsComplete(),
             "config": this.getConfig() ?
                 this.getConfig()!.map((item: Gs2Quest.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

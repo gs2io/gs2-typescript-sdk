@@ -55,7 +55,7 @@ export default class DeleteEntriesByStampTaskResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Dictionary.Entry.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNewContextStack(data["newContextStack"]);
     }
 
@@ -65,7 +65,7 @@ export default class DeleteEntriesByStampTaskResult implements IResult {
                 this.getItems()!.map((item: Gs2Dictionary.Entry) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "newContextStack": this.getNewContextStack(),
         };
     }

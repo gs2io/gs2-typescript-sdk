@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
-var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
-var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
+var Gs2SkillTree = tslib_1.__importStar(require("../../skillTree/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:skillTree:{namespaceName}:model:{nodeModelName}";
 var NodeModel = /** @class */ (function () {
     function NodeModel() {
@@ -195,21 +193,21 @@ var NodeModel = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withReleaseVerifyActions(data.releaseVerifyActions ?
             data.releaseVerifyActions.map(function (item) {
-                return VerifyAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2SkillTree.VerifyAction.fromDict(item);
+            }) : null)
             .withReleaseConsumeActions(data.releaseConsumeActions ?
             data.releaseConsumeActions.map(function (item) {
-                return ConsumeAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2SkillTree.ConsumeAction.fromDict(item);
+            }) : null)
             .withReturnAcquireActions(data.returnAcquireActions ?
             data.returnAcquireActions.map(function (item) {
-                return AcquireAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2SkillTree.AcquireAction.fromDict(item);
+            }) : null)
             .withRestrainReturnRate(data["restrainReturnRate"])
             .withPremiseNodeNames(data.premiseNodeNames ?
             data.premiseNodeNames.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     NodeModel.prototype.toDict = function () {
         return {
@@ -219,20 +217,20 @@ var NodeModel = /** @class */ (function () {
             "releaseVerifyActions": this.getReleaseVerifyActions() ?
                 this.getReleaseVerifyActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "releaseConsumeActions": this.getReleaseConsumeActions() ?
                 this.getReleaseConsumeActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "returnAcquireActions": this.getReturnAcquireActions() ?
                 this.getReturnAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "restrainReturnRate": this.getRestrainReturnRate(),
             "premiseNodeNames": this.getPremiseNodeNames() ?
                 this.getPremiseNodeNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return NodeModel;

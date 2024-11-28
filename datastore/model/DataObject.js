@@ -249,7 +249,7 @@ var DataObject = /** @class */ (function () {
             .withAllowUserIds(data.allowUserIds ?
             data.allowUserIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withStatus(data["status"])
             .withGeneration(data["generation"])
             .withPreviousGeneration(data["previousGeneration"])
@@ -266,7 +266,7 @@ var DataObject = /** @class */ (function () {
             "allowUserIds": this.getAllowUserIds() ?
                 this.getAllowUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "status": this.getStatus(),
             "generation": this.getGeneration(),
             "previousGeneration": this.getPreviousGeneration(),

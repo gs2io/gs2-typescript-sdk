@@ -38,14 +38,14 @@ var AdMob = /** @class */ (function () {
             .withAllowAdUnitIds(data.allowAdUnitIds ?
             data.allowAdUnitIds.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     AdMob.prototype.toDict = function () {
         return {
             "allowAdUnitIds": this.getAllowAdUnitIds() ?
                 this.getAllowAdUnitIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return AdMob;

@@ -109,7 +109,7 @@ var AddEntriesByUserIdRequest = /** @class */ (function () {
             .withEntryModelNames(data.entryModelNames ?
             data.entryModelNames.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     AddEntriesByUserIdRequest.prototype.toDict = function () {
@@ -119,7 +119,7 @@ var AddEntriesByUserIdRequest = /** @class */ (function () {
             "entryModelNames": this.getEntryModelNames() ?
                 this.getEntryModelNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

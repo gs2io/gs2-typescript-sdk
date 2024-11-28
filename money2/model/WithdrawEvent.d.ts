@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import DepositTransaction from './DepositTransaction';
-import WalletSummary from './WalletSummary';
+import * as Gs2Money2 from '../../money2/model';
 export default class WithdrawEvent implements IModel {
     private slot;
     private withdrawDetails;
@@ -8,12 +7,12 @@ export default class WithdrawEvent implements IModel {
     getSlot(): number | null;
     setSlot(slot: number | null): this;
     withSlot(slot: number | null): this;
-    getWithdrawDetails(): DepositTransaction[] | null;
-    setWithdrawDetails(withdrawDetails: DepositTransaction[] | null): this;
-    withWithdrawDetails(withdrawDetails: DepositTransaction[] | null): this;
-    getStatus(): WalletSummary | null;
-    setStatus(status: WalletSummary | null): this;
-    withStatus(status: WalletSummary | null): this;
+    getWithdrawDetails(): Gs2Money2.DepositTransaction[] | null;
+    setWithdrawDetails(withdrawDetails: Gs2Money2.DepositTransaction[] | null): this;
+    withWithdrawDetails(withdrawDetails: Gs2Money2.DepositTransaction[] | null): this;
+    getStatus(): Gs2Money2.WalletSummary | null;
+    setStatus(status: Gs2Money2.WalletSummary | null): this;
+    withStatus(status: Gs2Money2.WalletSummary | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): WithdrawEvent | null;

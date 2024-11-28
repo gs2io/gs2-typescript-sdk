@@ -73,7 +73,7 @@ var CountExecuteStampSheetLogResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Log.ExecuteStampSheetLogCount.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"])
             .withTotalCount(data["totalCount"])
             .withScanSize(data["scanSize"]);
@@ -83,7 +83,7 @@ var CountExecuteStampSheetLogResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
             "totalCount": this.getTotalCount(),
             "scanSize": this.getScanSize(),

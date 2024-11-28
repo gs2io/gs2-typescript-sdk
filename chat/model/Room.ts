@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Chat from '../../chat/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:chat:{namespaceName}:room:{roomName}";
 
 export default class Room implements IModel {
@@ -222,7 +224,7 @@ export default class Room implements IModel {
                 data.whiteListUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -239,7 +241,7 @@ export default class Room implements IModel {
                 this.getWhiteListUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

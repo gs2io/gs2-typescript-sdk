@@ -137,15 +137,15 @@ var CreateSalesItemMasterRequest = /** @class */ (function () {
             .withVerifyActions(data.verifyActions ?
             data.verifyActions.map(function (item) {
                 return Gs2Showcase.VerifyAction.fromDict(item);
-            }) : [])
+            }) : null)
             .withConsumeActions(data.consumeActions ?
             data.consumeActions.map(function (item) {
                 return Gs2Showcase.ConsumeAction.fromDict(item);
-            }) : [])
+            }) : null)
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
                 return Gs2Showcase.AcquireAction.fromDict(item);
-            }) : []);
+            }) : null);
     };
     CreateSalesItemMasterRequest.prototype.toDict = function () {
         return {
@@ -156,15 +156,15 @@ var CreateSalesItemMasterRequest = /** @class */ (function () {
             "verifyActions": this.getVerifyActions() ?
                 this.getVerifyActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return CreateSalesItemMasterRequest;

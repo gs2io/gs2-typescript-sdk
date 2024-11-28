@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2LoginReward from '../../loginReward/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:loginReward:{namespaceName}";
 
 export default class CurrentBonusMaster implements IModel {

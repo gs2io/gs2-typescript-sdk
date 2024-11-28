@@ -149,7 +149,7 @@ export default class CreateRoomRequest implements IRequest {
                 data.whiteListUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -163,7 +163,7 @@ export default class CreateRoomRequest implements IRequest {
                 this.getWhiteListUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

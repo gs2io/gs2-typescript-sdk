@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Version_1 = tslib_1.__importDefault(require("./Version"));
-var ScheduleVersion_1 = tslib_1.__importDefault(require("./ScheduleVersion"));
+var Gs2Version = tslib_1.__importStar(require("../../version/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:version:{namespaceName}:model:version:{versionName}";
 var VersionModel = /** @class */ (function () {
     function VersionModel() {
@@ -230,13 +229,13 @@ var VersionModel = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withScope(data["scope"])
             .withType(data["type"])
-            .withCurrentVersion(Version_1.default.fromDict(data["currentVersion"]))
-            .withWarningVersion(Version_1.default.fromDict(data["warningVersion"]))
-            .withErrorVersion(Version_1.default.fromDict(data["errorVersion"]))
+            .withCurrentVersion(Gs2Version.Version.fromDict(data["currentVersion"]))
+            .withWarningVersion(Gs2Version.Version.fromDict(data["warningVersion"]))
+            .withErrorVersion(Gs2Version.Version.fromDict(data["errorVersion"]))
             .withScheduleVersions(data.scheduleVersions ?
             data.scheduleVersions.map(function (item) {
-                return ScheduleVersion_1.default.fromDict(item);
-            }) : [])
+                return Gs2Version.ScheduleVersion.fromDict(item);
+            }) : null)
             .withNeedSignature(data["needSignature"])
             .withSignatureKeyId(data["signatureKeyId"]);
     };
@@ -254,7 +253,7 @@ var VersionModel = /** @class */ (function () {
             "scheduleVersions": this.getScheduleVersions() ?
                 this.getScheduleVersions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "needSignature": this.getNeedSignature(),
             "signatureKeyId": this.getSignatureKeyId(),
         };

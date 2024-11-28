@@ -172,15 +172,15 @@ var CreateGatheringByUserIdRequest = /** @class */ (function () {
             .withAttributeRanges(data.attributeRanges ?
             data.attributeRanges.map(function (item) {
                 return Gs2Matchmaking.AttributeRange.fromDict(item);
-            }) : [])
+            }) : null)
             .withCapacityOfRoles(data.capacityOfRoles ?
             data.capacityOfRoles.map(function (item) {
                 return Gs2Matchmaking.CapacityOfRole.fromDict(item);
-            }) : [])
+            }) : null)
             .withAllowUserIds(data.allowUserIds ?
             data.allowUserIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withExpiresAt(data["expiresAt"])
             .withExpiresAtTimeSpan(Gs2Matchmaking.TimeSpan.fromDict(data["expiresAtTimeSpan"]))
             .withTimeOffsetToken(data["timeOffsetToken"]);
@@ -194,15 +194,15 @@ var CreateGatheringByUserIdRequest = /** @class */ (function () {
             "attributeRanges": this.getAttributeRanges() ?
                 this.getAttributeRanges().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "capacityOfRoles": this.getCapacityOfRoles() ?
                 this.getCapacityOfRoles().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "allowUserIds": this.getAllowUserIds() ?
                 this.getAllowUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "expiresAt": this.getExpiresAt(),
             "expiresAtTimeSpan": (_b = this.getExpiresAtTimeSpan()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "timeOffsetToken": this.getTimeOffsetToken(),

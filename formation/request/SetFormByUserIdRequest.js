@@ -137,7 +137,7 @@ var SetFormByUserIdRequest = /** @class */ (function () {
             .withSlots(data.slots ?
             data.slots.map(function (item) {
                 return Gs2Formation.Slot.fromDict(item);
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SetFormByUserIdRequest.prototype.toDict = function () {
@@ -149,7 +149,7 @@ var SetFormByUserIdRequest = /** @class */ (function () {
             "slots": this.getSlots() ?
                 this.getSlots().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var CounterScopeModel_1 = tslib_1.__importDefault(require("./CounterScopeModel"));
+var Gs2Mission = tslib_1.__importStar(require("../../mission/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}:counter:{counterName}";
 var CounterModelMaster = /** @class */ (function () {
     function CounterModelMaster() {
@@ -206,8 +206,8 @@ var CounterModelMaster = /** @class */ (function () {
             .withDescription(data["description"])
             .withScopes(data.scopes ?
             data.scopes.map(function (item) {
-                return CounterScopeModel_1.default.fromDict(item);
-            }) : [])
+                return Gs2Mission.CounterScopeModel.fromDict(item);
+            }) : null)
             .withChallengePeriodEventId(data["challengePeriodEventId"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -222,7 +222,7 @@ var CounterModelMaster = /** @class */ (function () {
             "scopes": this.getScopes() ?
                 this.getScopes().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

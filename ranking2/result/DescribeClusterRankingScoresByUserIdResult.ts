@@ -55,7 +55,7 @@ export default class DescribeClusterRankingScoresByUserIdResult implements IResu
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Ranking2.ClusterRankingScore.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeClusterRankingScoresByUserIdResult implements IResu
                 this.getItems()!.map((item: Gs2Ranking2.ClusterRankingScore) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

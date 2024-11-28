@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var DefaultGradeModel_1 = tslib_1.__importDefault(require("./DefaultGradeModel"));
-var GradeEntryModel_1 = tslib_1.__importDefault(require("./GradeEntryModel"));
-var AcquireActionRate_1 = tslib_1.__importDefault(require("./AcquireActionRate"));
+var Gs2Grade = tslib_1.__importStar(require("../../grade/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:grade:{namespaceName}:model:{gradeName}";
 var GradeModelMaster = /** @class */ (function () {
     function GradeModelMaster() {
@@ -232,17 +230,17 @@ var GradeModelMaster = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withDefaultGrades(data.defaultGrades ?
             data.defaultGrades.map(function (item) {
-                return DefaultGradeModel_1.default.fromDict(item);
-            }) : [])
+                return Gs2Grade.DefaultGradeModel.fromDict(item);
+            }) : null)
             .withExperienceModelId(data["experienceModelId"])
             .withGradeEntries(data.gradeEntries ?
             data.gradeEntries.map(function (item) {
-                return GradeEntryModel_1.default.fromDict(item);
-            }) : [])
+                return Gs2Grade.GradeEntryModel.fromDict(item);
+            }) : null)
             .withAcquireActionRates(data.acquireActionRates ?
             data.acquireActionRates.map(function (item) {
-                return AcquireActionRate_1.default.fromDict(item);
-            }) : [])
+                return Gs2Grade.AcquireActionRate.fromDict(item);
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -256,16 +254,16 @@ var GradeModelMaster = /** @class */ (function () {
             "defaultGrades": this.getDefaultGrades() ?
                 this.getDefaultGrades().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "experienceModelId": this.getExperienceModelId(),
             "gradeEntries": this.getGradeEntries() ?
                 this.getGradeEntries().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "acquireActionRates": this.getAcquireActionRates() ?
                 this.getAcquireActionRates().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

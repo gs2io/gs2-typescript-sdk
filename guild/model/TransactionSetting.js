@@ -18,6 +18,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var TransactionSetting = /** @class */ (function () {
     function TransactionSetting() {
         this.enableAutoRun = null;
+        this.enableAtomicCommit = null;
+        this.transactionUseDistributor = null;
+        this.acquireActionUseJobQueue = null;
         this.distributorNamespaceId = null;
         this.keyId = null;
         this.queueNamespaceId = null;
@@ -31,6 +34,39 @@ var TransactionSetting = /** @class */ (function () {
     };
     TransactionSetting.prototype.withEnableAutoRun = function (enableAutoRun) {
         this.enableAutoRun = enableAutoRun;
+        return this;
+    };
+    TransactionSetting.prototype.getEnableAtomicCommit = function () {
+        return this.enableAtomicCommit;
+    };
+    TransactionSetting.prototype.setEnableAtomicCommit = function (enableAtomicCommit) {
+        this.enableAtomicCommit = enableAtomicCommit;
+        return this;
+    };
+    TransactionSetting.prototype.withEnableAtomicCommit = function (enableAtomicCommit) {
+        this.enableAtomicCommit = enableAtomicCommit;
+        return this;
+    };
+    TransactionSetting.prototype.getTransactionUseDistributor = function () {
+        return this.transactionUseDistributor;
+    };
+    TransactionSetting.prototype.setTransactionUseDistributor = function (transactionUseDistributor) {
+        this.transactionUseDistributor = transactionUseDistributor;
+        return this;
+    };
+    TransactionSetting.prototype.withTransactionUseDistributor = function (transactionUseDistributor) {
+        this.transactionUseDistributor = transactionUseDistributor;
+        return this;
+    };
+    TransactionSetting.prototype.getAcquireActionUseJobQueue = function () {
+        return this.acquireActionUseJobQueue;
+    };
+    TransactionSetting.prototype.setAcquireActionUseJobQueue = function (acquireActionUseJobQueue) {
+        this.acquireActionUseJobQueue = acquireActionUseJobQueue;
+        return this;
+    };
+    TransactionSetting.prototype.withAcquireActionUseJobQueue = function (acquireActionUseJobQueue) {
+        this.acquireActionUseJobQueue = acquireActionUseJobQueue;
         return this;
     };
     TransactionSetting.prototype.getDistributorNamespaceId = function () {
@@ -75,6 +111,9 @@ var TransactionSetting = /** @class */ (function () {
         }
         return new TransactionSetting()
             .withEnableAutoRun(data["enableAutoRun"])
+            .withEnableAtomicCommit(data["enableAtomicCommit"])
+            .withTransactionUseDistributor(data["transactionUseDistributor"])
+            .withAcquireActionUseJobQueue(data["acquireActionUseJobQueue"])
             .withDistributorNamespaceId(data["distributorNamespaceId"])
             .withKeyId(data["keyId"])
             .withQueueNamespaceId(data["queueNamespaceId"]);
@@ -82,6 +121,9 @@ var TransactionSetting = /** @class */ (function () {
     TransactionSetting.prototype.toDict = function () {
         return {
             "enableAutoRun": this.getEnableAutoRun(),
+            "enableAtomicCommit": this.getEnableAtomicCommit(),
+            "transactionUseDistributor": this.getTransactionUseDistributor(),
+            "acquireActionUseJobQueue": this.getAcquireActionUseJobQueue(),
             "distributorNamespaceId": this.getDistributorNamespaceId(),
             "keyId": this.getKeyId(),
             "queueNamespaceId": this.getQueueNamespaceId(),

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Formation from '../../formation/model'
 import SlotModel from './SlotModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:model:mold:{moldModelName}:form";
 
@@ -22,7 +24,7 @@ export default class FormModel implements IModel {
     private formModelId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;
-    private slots: SlotModel[]|null = null;
+    private slots: Gs2Formation.SlotModel[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -137,14 +139,14 @@ export default class FormModel implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getSlots(): SlotModel[]|null {
+    public getSlots(): Gs2Formation.SlotModel[]|null {
         return this.slots;
     }
-    public setSlots(slots: SlotModel[]|null) {
+    public setSlots(slots: Gs2Formation.SlotModel[]|null) {
         this.slots = slots;
         return this;
     }
-    public withSlots(slots: SlotModel[]|null): this {
+    public withSlots(slots: Gs2Formation.SlotModel[]|null): this {
         this.slots = slots;
         return this;
     }
@@ -159,9 +161,9 @@ export default class FormModel implements IModel {
             .withMetadata(data["metadata"])
             .withSlots(data.slots ?
                 data.slots.map((item: {[key: string]: any}) => {
-                    return SlotModel.fromDict(item);
+                    return Gs2Formation.SlotModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -170,10 +172,10 @@ export default class FormModel implements IModel {
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "slots": this.getSlots() ?
-                this.getSlots()!.map((item: SlotModel) => {
+                this.getSlots()!.map((item: Gs2Formation.SlotModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

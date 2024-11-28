@@ -233,11 +233,11 @@ var CreateMissionTaskModelMasterRequest = /** @class */ (function () {
             .withVerifyCompleteConsumeActions(data.verifyCompleteConsumeActions ?
             data.verifyCompleteConsumeActions.map(function (item) {
                 return Gs2Mission.VerifyAction.fromDict(item);
-            }) : [])
+            }) : null)
             .withCompleteAcquireActions(data.completeAcquireActions ?
             data.completeAcquireActions.map(function (item) {
                 return Gs2Mission.AcquireAction.fromDict(item);
-            }) : [])
+            }) : null)
             .withChallengePeriodEventId(data["challengePeriodEventId"])
             .withPremiseMissionTaskName(data["premiseMissionTaskName"])
             .withCounterName(data["counterName"])
@@ -257,11 +257,11 @@ var CreateMissionTaskModelMasterRequest = /** @class */ (function () {
             "verifyCompleteConsumeActions": this.getVerifyCompleteConsumeActions() ?
                 this.getVerifyCompleteConsumeActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "completeAcquireActions": this.getCompleteAcquireActions() ?
                 this.getCompleteAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "premiseMissionTaskName": this.getPremiseMissionTaskName(),
             "counterName": this.getCounterName(),

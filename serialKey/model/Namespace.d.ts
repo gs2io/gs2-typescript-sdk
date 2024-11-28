@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import LogSetting from './LogSetting';
+import * as Gs2SerialKey from '../../serialKey/model';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
@@ -22,9 +22,9 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
-    getLogSetting(): LogSetting | null;
-    setLogSetting(logSetting: LogSetting | null): this;
-    withLogSetting(logSetting: LogSetting | null): this;
+    getLogSetting(): Gs2SerialKey.LogSetting | null;
+    setLogSetting(logSetting: Gs2SerialKey.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2SerialKey.LogSetting | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

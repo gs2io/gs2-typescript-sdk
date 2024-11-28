@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Quest from '../../quest/model'
 import AcquireAction from './AcquireAction';
 import Contents from './Contents';
 import VerifyAction from './VerifyAction';
@@ -26,7 +28,7 @@ export default class QuestGroupModel implements IModel {
     private questGroupModelId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;
-    private quests: QuestModel[]|null = null;
+    private quests: Gs2Quest.QuestModel[]|null = null;
     private challengePeriodEventId: string|null = null;
 
     public static getRegion(grn: string): string|null {
@@ -142,14 +144,14 @@ export default class QuestGroupModel implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getQuests(): QuestModel[]|null {
+    public getQuests(): Gs2Quest.QuestModel[]|null {
         return this.quests;
     }
-    public setQuests(quests: QuestModel[]|null) {
+    public setQuests(quests: Gs2Quest.QuestModel[]|null) {
         this.quests = quests;
         return this;
     }
-    public withQuests(quests: QuestModel[]|null): this {
+    public withQuests(quests: Gs2Quest.QuestModel[]|null): this {
         this.quests = quests;
         return this;
     }
@@ -175,9 +177,9 @@ export default class QuestGroupModel implements IModel {
             .withMetadata(data["metadata"])
             .withQuests(data.quests ?
                 data.quests.map((item: {[key: string]: any}) => {
-                    return QuestModel.fromDict(item);
+                    return Gs2Quest.QuestModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withChallengePeriodEventId(data["challengePeriodEventId"]);
     }
 
@@ -187,10 +189,10 @@ export default class QuestGroupModel implements IModel {
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "quests": this.getQuests() ?
-                this.getQuests()!.map((item: QuestModel) => {
+                this.getQuests()!.map((item: Gs2Quest.QuestModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "challengePeriodEventId": this.getChallengePeriodEventId(),
         };
     }

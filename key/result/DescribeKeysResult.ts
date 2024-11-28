@@ -55,7 +55,7 @@ export default class DescribeKeysResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Key.Key.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeKeysResult implements IResult {
                 this.getItems()!.map((item: Gs2Key.Key) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

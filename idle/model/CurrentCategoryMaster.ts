@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Idle from '../../idle/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:idle:{namespaceName}";
 
 export default class CurrentCategoryMaster implements IModel {

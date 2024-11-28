@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2AdReward from '../../adReward/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:adReward:{namespaceName}:user:{userId}:point";
 
 export default class Point implements IModel {

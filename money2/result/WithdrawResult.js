@@ -50,7 +50,7 @@ var WithdrawResult = /** @class */ (function () {
             .withWithdrawTransactions(data.withdrawTransactions ?
             data.withdrawTransactions.map(function (item) {
                 return Gs2Money2.DepositTransaction.fromDict(item);
-            }) : []);
+            }) : null);
     };
     WithdrawResult.prototype.toDict = function () {
         var _a;
@@ -59,7 +59,7 @@ var WithdrawResult = /** @class */ (function () {
             "withdrawTransactions": this.getWithdrawTransactions() ?
                 this.getWithdrawTransactions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return WithdrawResult;

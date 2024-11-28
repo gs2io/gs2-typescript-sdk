@@ -49,7 +49,7 @@ var DescribeSubscribeRankingsByUserIdResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Ranking2.SubscribeRankingData.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeSubscribeRankingsByUserIdResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeSubscribeRankingsByUserIdResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

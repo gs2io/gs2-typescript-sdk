@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import AcquireActionRate from './AcquireActionRate';
+import * as Gs2Experience from '../../experience/model';
 export default class ExperienceModelMaster implements IModel {
     private experienceModelId;
     private name;
@@ -43,9 +43,9 @@ export default class ExperienceModelMaster implements IModel {
     getRankThresholdName(): string | null;
     setRankThresholdName(rankThresholdName: string | null): this;
     withRankThresholdName(rankThresholdName: string | null): this;
-    getAcquireActionRates(): AcquireActionRate[] | null;
-    setAcquireActionRates(acquireActionRates: AcquireActionRate[] | null): this;
-    withAcquireActionRates(acquireActionRates: AcquireActionRate[] | null): this;
+    getAcquireActionRates(): Gs2Experience.AcquireActionRate[] | null;
+    setAcquireActionRates(acquireActionRates: Gs2Experience.AcquireActionRate[] | null): this;
+    withAcquireActionRates(acquireActionRates: Gs2Experience.AcquireActionRate[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

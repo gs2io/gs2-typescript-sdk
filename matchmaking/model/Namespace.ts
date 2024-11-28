@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Matchmaking from '../../matchmaking/model'
 import ScriptSetting from './ScriptSetting';
 import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
@@ -36,12 +38,12 @@ export default class Namespace implements IModel {
     private enableCollaborateSeasonRating: string|null = null;
     private collaborateSeasonRatingNamespaceId: string|null = null;
     private collaborateSeasonRatingTtl: number|null = null;
-    private changeRatingScript: ScriptSetting|null = null;
-    private joinNotification: NotificationSetting|null = null;
-    private leaveNotification: NotificationSetting|null = null;
-    private completeNotification: NotificationSetting|null = null;
-    private changeRatingNotification: NotificationSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private changeRatingScript: Gs2Matchmaking.ScriptSetting|null = null;
+    private joinNotification: Gs2Matchmaking.NotificationSetting|null = null;
+    private leaveNotification: Gs2Matchmaking.NotificationSetting|null = null;
+    private completeNotification: Gs2Matchmaking.NotificationSetting|null = null;
+    private changeRatingNotification: Gs2Matchmaking.NotificationSetting|null = null;
+    private logSetting: Gs2Matchmaking.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -270,69 +272,69 @@ export default class Namespace implements IModel {
         this.collaborateSeasonRatingTtl = collaborateSeasonRatingTtl;
         return this;
     }
-    public getChangeRatingScript(): ScriptSetting|null {
+    public getChangeRatingScript(): Gs2Matchmaking.ScriptSetting|null {
         return this.changeRatingScript;
     }
-    public setChangeRatingScript(changeRatingScript: ScriptSetting|null) {
+    public setChangeRatingScript(changeRatingScript: Gs2Matchmaking.ScriptSetting|null) {
         this.changeRatingScript = changeRatingScript;
         return this;
     }
-    public withChangeRatingScript(changeRatingScript: ScriptSetting|null): this {
+    public withChangeRatingScript(changeRatingScript: Gs2Matchmaking.ScriptSetting|null): this {
         this.changeRatingScript = changeRatingScript;
         return this;
     }
-    public getJoinNotification(): NotificationSetting|null {
+    public getJoinNotification(): Gs2Matchmaking.NotificationSetting|null {
         return this.joinNotification;
     }
-    public setJoinNotification(joinNotification: NotificationSetting|null) {
+    public setJoinNotification(joinNotification: Gs2Matchmaking.NotificationSetting|null) {
         this.joinNotification = joinNotification;
         return this;
     }
-    public withJoinNotification(joinNotification: NotificationSetting|null): this {
+    public withJoinNotification(joinNotification: Gs2Matchmaking.NotificationSetting|null): this {
         this.joinNotification = joinNotification;
         return this;
     }
-    public getLeaveNotification(): NotificationSetting|null {
+    public getLeaveNotification(): Gs2Matchmaking.NotificationSetting|null {
         return this.leaveNotification;
     }
-    public setLeaveNotification(leaveNotification: NotificationSetting|null) {
+    public setLeaveNotification(leaveNotification: Gs2Matchmaking.NotificationSetting|null) {
         this.leaveNotification = leaveNotification;
         return this;
     }
-    public withLeaveNotification(leaveNotification: NotificationSetting|null): this {
+    public withLeaveNotification(leaveNotification: Gs2Matchmaking.NotificationSetting|null): this {
         this.leaveNotification = leaveNotification;
         return this;
     }
-    public getCompleteNotification(): NotificationSetting|null {
+    public getCompleteNotification(): Gs2Matchmaking.NotificationSetting|null {
         return this.completeNotification;
     }
-    public setCompleteNotification(completeNotification: NotificationSetting|null) {
+    public setCompleteNotification(completeNotification: Gs2Matchmaking.NotificationSetting|null) {
         this.completeNotification = completeNotification;
         return this;
     }
-    public withCompleteNotification(completeNotification: NotificationSetting|null): this {
+    public withCompleteNotification(completeNotification: Gs2Matchmaking.NotificationSetting|null): this {
         this.completeNotification = completeNotification;
         return this;
     }
-    public getChangeRatingNotification(): NotificationSetting|null {
+    public getChangeRatingNotification(): Gs2Matchmaking.NotificationSetting|null {
         return this.changeRatingNotification;
     }
-    public setChangeRatingNotification(changeRatingNotification: NotificationSetting|null) {
+    public setChangeRatingNotification(changeRatingNotification: Gs2Matchmaking.NotificationSetting|null) {
         this.changeRatingNotification = changeRatingNotification;
         return this;
     }
-    public withChangeRatingNotification(changeRatingNotification: NotificationSetting|null): this {
+    public withChangeRatingNotification(changeRatingNotification: Gs2Matchmaking.NotificationSetting|null): this {
         this.changeRatingNotification = changeRatingNotification;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Matchmaking.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Matchmaking.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Matchmaking.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -390,12 +392,12 @@ export default class Namespace implements IModel {
             .withEnableCollaborateSeasonRating(data["enableCollaborateSeasonRating"])
             .withCollaborateSeasonRatingNamespaceId(data["collaborateSeasonRatingNamespaceId"])
             .withCollaborateSeasonRatingTtl(data["collaborateSeasonRatingTtl"])
-            .withChangeRatingScript(ScriptSetting.fromDict(data["changeRatingScript"]))
-            .withJoinNotification(NotificationSetting.fromDict(data["joinNotification"]))
-            .withLeaveNotification(NotificationSetting.fromDict(data["leaveNotification"]))
-            .withCompleteNotification(NotificationSetting.fromDict(data["completeNotification"]))
-            .withChangeRatingNotification(NotificationSetting.fromDict(data["changeRatingNotification"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withChangeRatingScript(Gs2Matchmaking.ScriptSetting.fromDict(data["changeRatingScript"]))
+            .withJoinNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["joinNotification"]))
+            .withLeaveNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["leaveNotification"]))
+            .withCompleteNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["completeNotification"]))
+            .withChangeRatingNotification(Gs2Matchmaking.NotificationSetting.fromDict(data["changeRatingNotification"]))
+            .withLogSetting(Gs2Matchmaking.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

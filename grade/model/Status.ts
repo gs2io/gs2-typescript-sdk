@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Grade from '../../grade/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:grade:{namespaceName}:user:{userId}:gradeModel:{gradeName}:property:{propertyId}";
 
 export default class Status implements IModel {

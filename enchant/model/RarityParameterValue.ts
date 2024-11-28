@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Enchant from '../../enchant/model'
+
 export default class RarityParameterValue implements IModel {
     private name: string|null = null;
     private resourceName: string|null = null;

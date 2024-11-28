@@ -37,14 +37,14 @@ var AcquireSimpleItemsByUserIdResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Inventory.SimpleItem.fromDict(item);
-            }) : []);
+            }) : null);
     };
     AcquireSimpleItemsByUserIdResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return AcquireSimpleItemsByUserIdResult;

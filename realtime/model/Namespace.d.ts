@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import NotificationSetting from './NotificationSetting';
-import LogSetting from './LogSetting';
+import * as Gs2Realtime from '../../realtime/model';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
@@ -32,12 +31,12 @@ export default class Namespace implements IModel {
     getServerSpec(): string | null;
     setServerSpec(serverSpec: string | null): this;
     withServerSpec(serverSpec: string | null): this;
-    getCreateNotification(): NotificationSetting | null;
-    setCreateNotification(createNotification: NotificationSetting | null): this;
-    withCreateNotification(createNotification: NotificationSetting | null): this;
-    getLogSetting(): LogSetting | null;
-    setLogSetting(logSetting: LogSetting | null): this;
-    withLogSetting(logSetting: LogSetting | null): this;
+    getCreateNotification(): Gs2Realtime.NotificationSetting | null;
+    setCreateNotification(createNotification: Gs2Realtime.NotificationSetting | null): this;
+    withCreateNotification(createNotification: Gs2Realtime.NotificationSetting | null): this;
+    getLogSetting(): Gs2Realtime.LogSetting | null;
+    setLogSetting(logSetting: Gs2Realtime.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2Realtime.LogSetting | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

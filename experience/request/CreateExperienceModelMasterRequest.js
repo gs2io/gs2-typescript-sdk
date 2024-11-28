@@ -165,7 +165,7 @@ var CreateExperienceModelMasterRequest = /** @class */ (function () {
             .withAcquireActionRates(data.acquireActionRates ?
             data.acquireActionRates.map(function (item) {
                 return Gs2Experience.AcquireActionRate.fromDict(item);
-            }) : []);
+            }) : null);
     };
     CreateExperienceModelMasterRequest.prototype.toDict = function () {
         return {
@@ -180,7 +180,7 @@ var CreateExperienceModelMasterRequest = /** @class */ (function () {
             "acquireActionRates": this.getAcquireActionRates() ?
                 this.getAcquireActionRates().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return CreateExperienceModelMasterRequest;

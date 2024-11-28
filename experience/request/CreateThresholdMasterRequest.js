@@ -111,7 +111,7 @@ var CreateThresholdMasterRequest = /** @class */ (function () {
             .withValues(data.values ?
             data.values.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     CreateThresholdMasterRequest.prototype.toDict = function () {
         return {
@@ -122,7 +122,7 @@ var CreateThresholdMasterRequest = /** @class */ (function () {
             "values": this.getValues() ?
                 this.getValues().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return CreateThresholdMasterRequest;

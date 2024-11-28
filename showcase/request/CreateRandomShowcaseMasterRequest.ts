@@ -170,7 +170,7 @@ export default class CreateRandomShowcaseMasterRequest implements IRequest {
                 data.displayItems.map((item: {[key: string]: any}) => {
                     return Gs2Showcase.RandomDisplayItemModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withBaseTimestamp(data["baseTimestamp"])
             .withResetIntervalHours(data["resetIntervalHours"])
             .withSalesPeriodEventId(data["salesPeriodEventId"]);
@@ -187,7 +187,7 @@ export default class CreateRandomShowcaseMasterRequest implements IRequest {
                 this.getDisplayItems()!.map((item: Gs2Showcase.RandomDisplayItemModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "baseTimestamp": this.getBaseTimestamp(),
             "resetIntervalHours": this.getResetIntervalHours(),
             "salesPeriodEventId": this.getSalesPeriodEventId(),

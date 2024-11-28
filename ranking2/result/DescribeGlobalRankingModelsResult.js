@@ -37,14 +37,14 @@ var DescribeGlobalRankingModelsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Ranking2.GlobalRankingModel.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeGlobalRankingModelsResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeGlobalRankingModelsResult;

@@ -260,7 +260,7 @@ var SeasonGathering = /** @class */ (function () {
             .withParticipants(data.participants ?
             data.participants.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     };
@@ -274,7 +274,7 @@ var SeasonGathering = /** @class */ (function () {
             "participants": this.getParticipants() ?
                 this.getParticipants().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };

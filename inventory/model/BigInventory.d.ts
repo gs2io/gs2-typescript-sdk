@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import BigItem from './BigItem';
+import * as Gs2Inventory from '../../inventory/model';
 export default class BigInventory implements IModel {
     private inventoryId;
     private inventoryName;
@@ -23,9 +23,9 @@ export default class BigInventory implements IModel {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
-    getBigItems(): BigItem[] | null;
-    setBigItems(bigItems: BigItem[] | null): this;
-    withBigItems(bigItems: BigItem[] | null): this;
+    getBigItems(): Gs2Inventory.BigItem[] | null;
+    setBigItems(bigItems: Gs2Inventory.BigItem[] | null): this;
+    withBigItems(bigItems: Gs2Inventory.BigItem[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Version from '../../version/model'
+
 export default class Version implements IModel {
     private major: number|null = null;
     private minor: number|null = null;

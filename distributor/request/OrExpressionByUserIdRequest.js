@@ -111,7 +111,7 @@ var OrExpressionByUserIdRequest = /** @class */ (function () {
             .withActions(data.actions ?
             data.actions.map(function (item) {
                 return Gs2Distributor.VerifyAction.fromDict(item);
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     OrExpressionByUserIdRequest.prototype.toDict = function () {
@@ -121,7 +121,7 @@ var OrExpressionByUserIdRequest = /** @class */ (function () {
             "actions": this.getActions() ?
                 this.getActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

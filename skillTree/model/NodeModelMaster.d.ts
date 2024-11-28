@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import VerifyAction from './VerifyAction';
-import ConsumeAction from './ConsumeAction';
+import * as Gs2SkillTree from '../../skillTree/model';
 export default class NodeModelMaster implements IModel {
     private nodeModelId;
     private name;
@@ -31,12 +30,12 @@ export default class NodeModelMaster implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
-    getReleaseVerifyActions(): VerifyAction[] | null;
-    setReleaseVerifyActions(releaseVerifyActions: VerifyAction[] | null): this;
-    withReleaseVerifyActions(releaseVerifyActions: VerifyAction[] | null): this;
-    getReleaseConsumeActions(): ConsumeAction[] | null;
-    setReleaseConsumeActions(releaseConsumeActions: ConsumeAction[] | null): this;
-    withReleaseConsumeActions(releaseConsumeActions: ConsumeAction[] | null): this;
+    getReleaseVerifyActions(): Gs2SkillTree.VerifyAction[] | null;
+    setReleaseVerifyActions(releaseVerifyActions: Gs2SkillTree.VerifyAction[] | null): this;
+    withReleaseVerifyActions(releaseVerifyActions: Gs2SkillTree.VerifyAction[] | null): this;
+    getReleaseConsumeActions(): Gs2SkillTree.ConsumeAction[] | null;
+    setReleaseConsumeActions(releaseConsumeActions: Gs2SkillTree.ConsumeAction[] | null): this;
+    withReleaseConsumeActions(releaseConsumeActions: Gs2SkillTree.ConsumeAction[] | null): this;
     getRestrainReturnRate(): number | null;
     setRestrainReturnRate(restrainReturnRate: number | null): this;
     withRestrainReturnRate(restrainReturnRate: number | null): this;

@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
-var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
-var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
+var Gs2Distributor = tslib_1.__importStar(require("../../distributor/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:distributor:{namespaceName}:user:{userId}:stampSheet:result:{transactionId}";
 var StampSheetResult = /** @class */ (function () {
     function StampSheetResult() {
@@ -299,29 +297,29 @@ var StampSheetResult = /** @class */ (function () {
             .withTransactionId(data["transactionId"])
             .withVerifyTaskRequests(data.verifyTaskRequests ?
             data.verifyTaskRequests.map(function (item) {
-                return VerifyAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2Distributor.VerifyAction.fromDict(item);
+            }) : null)
             .withTaskRequests(data.taskRequests ?
             data.taskRequests.map(function (item) {
-                return ConsumeAction_1.default.fromDict(item);
-            }) : [])
-            .withSheetRequest(AcquireAction_1.default.fromDict(data["sheetRequest"]))
+                return Gs2Distributor.ConsumeAction.fromDict(item);
+            }) : null)
+            .withSheetRequest(Gs2Distributor.AcquireAction.fromDict(data["sheetRequest"]))
             .withVerifyTaskResultCodes(data.verifyTaskResultCodes ?
             data.verifyTaskResultCodes.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withVerifyTaskResults(data.verifyTaskResults ?
             data.verifyTaskResults.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withTaskResultCodes(data.taskResultCodes ?
             data.taskResultCodes.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withTaskResults(data.taskResults ?
             data.taskResults.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withSheetResultCode(data["sheetResultCode"])
             .withSheetResult(data["sheetResult"])
             .withNextTransactionId(data["nextTransactionId"])
@@ -337,28 +335,28 @@ var StampSheetResult = /** @class */ (function () {
             "verifyTaskRequests": this.getVerifyTaskRequests() ?
                 this.getVerifyTaskRequests().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "taskRequests": this.getTaskRequests() ?
                 this.getTaskRequests().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "sheetRequest": (_a = this.getSheetRequest()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "verifyTaskResultCodes": this.getVerifyTaskResultCodes() ?
                 this.getVerifyTaskResultCodes().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "verifyTaskResults": this.getVerifyTaskResults() ?
                 this.getVerifyTaskResults().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "taskResultCodes": this.getTaskResultCodes() ?
                 this.getTaskResultCodes().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "taskResults": this.getTaskResults() ?
                 this.getTaskResults().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "sheetResultCode": this.getSheetResultCode(),
             "sheetResult": this.getSheetResult(),
             "nextTransactionId": this.getNextTransactionId(),

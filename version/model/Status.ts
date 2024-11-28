@@ -15,32 +15,34 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Version from '../../version/model'
 import Version from './Version';
 import ScheduleVersion from './ScheduleVersion';
 import VersionModel from './VersionModel';
 
 export default class Status implements IModel {
-    private versionModel: VersionModel|null = null;
-    private currentVersion: Version|null = null;
-    public getVersionModel(): VersionModel|null {
+    private versionModel: Gs2Version.VersionModel|null = null;
+    private currentVersion: Gs2Version.Version|null = null;
+    public getVersionModel(): Gs2Version.VersionModel|null {
         return this.versionModel;
     }
-    public setVersionModel(versionModel: VersionModel|null) {
+    public setVersionModel(versionModel: Gs2Version.VersionModel|null) {
         this.versionModel = versionModel;
         return this;
     }
-    public withVersionModel(versionModel: VersionModel|null): this {
+    public withVersionModel(versionModel: Gs2Version.VersionModel|null): this {
         this.versionModel = versionModel;
         return this;
     }
-    public getCurrentVersion(): Version|null {
+    public getCurrentVersion(): Gs2Version.Version|null {
         return this.currentVersion;
     }
-    public setCurrentVersion(currentVersion: Version|null) {
+    public setCurrentVersion(currentVersion: Gs2Version.Version|null) {
         this.currentVersion = currentVersion;
         return this;
     }
-    public withCurrentVersion(currentVersion: Version|null): this {
+    public withCurrentVersion(currentVersion: Gs2Version.Version|null): this {
         this.currentVersion = currentVersion;
         return this;
     }
@@ -50,8 +52,8 @@ export default class Status implements IModel {
             return null;
         }
         return new Status()
-            .withVersionModel(VersionModel.fromDict(data["versionModel"]))
-            .withCurrentVersion(Version.fromDict(data["currentVersion"]));
+            .withVersionModel(Gs2Version.VersionModel.fromDict(data["versionModel"]))
+            .withCurrentVersion(Gs2Version.Version.fromDict(data["currentVersion"]));
     }
 
     public toDict(): {[key: string]: any} {

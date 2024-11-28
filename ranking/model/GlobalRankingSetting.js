@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var FixedTiming_1 = tslib_1.__importDefault(require("./FixedTiming"));
-var Scope_1 = tslib_1.__importDefault(require("./Scope"));
+var Gs2Ranking = tslib_1.__importStar(require("../../ranking/model"));
 var GlobalRankingSetting = /** @class */ (function () {
     function GlobalRankingSetting() {
         this.uniqueByUserId = null;
@@ -100,15 +99,15 @@ var GlobalRankingSetting = /** @class */ (function () {
         return new GlobalRankingSetting()
             .withUniqueByUserId(data["uniqueByUserId"])
             .withCalculateIntervalMinutes(data["calculateIntervalMinutes"])
-            .withCalculateFixedTiming(FixedTiming_1.default.fromDict(data["calculateFixedTiming"]))
+            .withCalculateFixedTiming(Gs2Ranking.FixedTiming.fromDict(data["calculateFixedTiming"]))
             .withAdditionalScopes(data.additionalScopes ?
             data.additionalScopes.map(function (item) {
-                return Scope_1.default.fromDict(item);
-            }) : [])
+                return Gs2Ranking.Scope.fromDict(item);
+            }) : null)
             .withIgnoreUserIds(data.ignoreUserIds ?
             data.ignoreUserIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withGeneration(data["generation"]);
     };
     GlobalRankingSetting.prototype.toDict = function () {
@@ -120,11 +119,11 @@ var GlobalRankingSetting = /** @class */ (function () {
             "additionalScopes": this.getAdditionalScopes() ?
                 this.getAdditionalScopes().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "ignoreUserIds": this.getIgnoreUserIds() ?
                 this.getIgnoreUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "generation": this.getGeneration(),
         };
     };

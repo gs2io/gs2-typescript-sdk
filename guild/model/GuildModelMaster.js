@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var RoleModel_1 = tslib_1.__importDefault(require("./RoleModel"));
+var Gs2Guild = tslib_1.__importStar(require("../../guild/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:guild:{namespaceName}:model:{guildModelName}";
 var GuildModelMaster = /** @class */ (function () {
     function GuildModelMaster() {
@@ -293,8 +293,8 @@ var GuildModelMaster = /** @class */ (function () {
             .withInactivityPeriodDays(data["inactivityPeriodDays"])
             .withRoles(data.roles ?
             data.roles.map(function (item) {
-                return RoleModel_1.default.fromDict(item);
-            }) : [])
+                return Gs2Guild.RoleModel.fromDict(item);
+            }) : null)
             .withGuildMasterRole(data["guildMasterRole"])
             .withGuildMemberDefaultRole(data["guildMemberDefaultRole"])
             .withRejoinCoolTimeMinutes(data["rejoinCoolTimeMinutes"])
@@ -316,7 +316,7 @@ var GuildModelMaster = /** @class */ (function () {
             "roles": this.getRoles() ?
                 this.getRoles().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "guildMasterRole": this.getGuildMasterRole(),
             "guildMemberDefaultRole": this.getGuildMemberDefaultRole(),
             "rejoinCoolTimeMinutes": this.getRejoinCoolTimeMinutes(),

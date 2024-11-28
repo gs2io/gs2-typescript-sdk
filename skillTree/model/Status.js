@@ -200,7 +200,7 @@ var Status = /** @class */ (function () {
             .withReleasedNodeNames(data.releasedNodeNames ?
             data.releasedNodeNames.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -213,7 +213,7 @@ var Status = /** @class */ (function () {
             "releasedNodeNames": this.getReleasedNodeNames() ?
                 this.getReleasedNodeNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

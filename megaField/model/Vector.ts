@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2MegaField from '../../megaField/model'
+
 export default class Vector implements IModel {
     private x: number|null = null;
     private y: number|null = null;

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Enchant from '../../enchant/model'
 import RarityParameterValue from './RarityParameterValue';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:enchant:{namespaceName}:user:{userId}:rarity:{parameterName}:{propertyId}";
 
@@ -23,7 +25,7 @@ export default class RarityParameterStatus implements IModel {
     private userId: string|null = null;
     private parameterName: string|null = null;
     private propertyId: string|null = null;
-    private parameterValues: RarityParameterValue[]|null = null;
+    private parameterValues: Gs2Enchant.RarityParameterValue[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -200,14 +202,14 @@ export default class RarityParameterStatus implements IModel {
         this.propertyId = propertyId;
         return this;
     }
-    public getParameterValues(): RarityParameterValue[]|null {
+    public getParameterValues(): Gs2Enchant.RarityParameterValue[]|null {
         return this.parameterValues;
     }
-    public setParameterValues(parameterValues: RarityParameterValue[]|null) {
+    public setParameterValues(parameterValues: Gs2Enchant.RarityParameterValue[]|null) {
         this.parameterValues = parameterValues;
         return this;
     }
-    public withParameterValues(parameterValues: RarityParameterValue[]|null): this {
+    public withParameterValues(parameterValues: Gs2Enchant.RarityParameterValue[]|null): this {
         this.parameterValues = parameterValues;
         return this;
     }
@@ -256,9 +258,9 @@ export default class RarityParameterStatus implements IModel {
             .withPropertyId(data["propertyId"])
             .withParameterValues(data.parameterValues ?
                 data.parameterValues.map((item: {[key: string]: any}) => {
-                    return RarityParameterValue.fromDict(item);
+                    return Gs2Enchant.RarityParameterValue.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -271,10 +273,10 @@ export default class RarityParameterStatus implements IModel {
             "parameterName": this.getParameterName(),
             "propertyId": this.getPropertyId(),
             "parameterValues": this.getParameterValues() ?
-                this.getParameterValues()!.map((item: RarityParameterValue) => {
+                this.getParameterValues()!.map((item: Gs2Enchant.RarityParameterValue) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

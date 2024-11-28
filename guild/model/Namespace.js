@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
-var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2Guild = tslib_1.__importStar(require("../../guild/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:guild:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -295,18 +293,18 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withChangeNotification(NotificationSetting_1.default.fromDict(data["changeNotification"]))
-            .withJoinNotification(NotificationSetting_1.default.fromDict(data["joinNotification"]))
-            .withLeaveNotification(NotificationSetting_1.default.fromDict(data["leaveNotification"]))
-            .withChangeMemberNotification(NotificationSetting_1.default.fromDict(data["changeMemberNotification"]))
-            .withReceiveRequestNotification(NotificationSetting_1.default.fromDict(data["receiveRequestNotification"]))
-            .withRemoveRequestNotification(NotificationSetting_1.default.fromDict(data["removeRequestNotification"]))
-            .withCreateGuildScript(ScriptSetting_1.default.fromDict(data["createGuildScript"]))
-            .withUpdateGuildScript(ScriptSetting_1.default.fromDict(data["updateGuildScript"]))
-            .withJoinGuildScript(ScriptSetting_1.default.fromDict(data["joinGuildScript"]))
-            .withLeaveGuildScript(ScriptSetting_1.default.fromDict(data["leaveGuildScript"]))
-            .withChangeRoleScript(ScriptSetting_1.default.fromDict(data["changeRoleScript"]))
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withChangeNotification(Gs2Guild.NotificationSetting.fromDict(data["changeNotification"]))
+            .withJoinNotification(Gs2Guild.NotificationSetting.fromDict(data["joinNotification"]))
+            .withLeaveNotification(Gs2Guild.NotificationSetting.fromDict(data["leaveNotification"]))
+            .withChangeMemberNotification(Gs2Guild.NotificationSetting.fromDict(data["changeMemberNotification"]))
+            .withReceiveRequestNotification(Gs2Guild.NotificationSetting.fromDict(data["receiveRequestNotification"]))
+            .withRemoveRequestNotification(Gs2Guild.NotificationSetting.fromDict(data["removeRequestNotification"]))
+            .withCreateGuildScript(Gs2Guild.ScriptSetting.fromDict(data["createGuildScript"]))
+            .withUpdateGuildScript(Gs2Guild.ScriptSetting.fromDict(data["updateGuildScript"]))
+            .withJoinGuildScript(Gs2Guild.ScriptSetting.fromDict(data["joinGuildScript"]))
+            .withLeaveGuildScript(Gs2Guild.ScriptSetting.fromDict(data["leaveGuildScript"]))
+            .withChangeRoleScript(Gs2Guild.ScriptSetting.fromDict(data["changeRoleScript"]))
+            .withLogSetting(Gs2Guild.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

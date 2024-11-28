@@ -120,7 +120,7 @@ export default class VoteRequest implements IRequest {
                 data.gameResults.map((item: {[key: string]: any}) => {
                     return Gs2Matchmaking.GameResult.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withKeyId(data["keyId"]);
     }
 
@@ -133,7 +133,7 @@ export default class VoteRequest implements IRequest {
                 this.getGameResults()!.map((item: Gs2Matchmaking.GameResult) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "keyId": this.getKeyId(),
         };
     }

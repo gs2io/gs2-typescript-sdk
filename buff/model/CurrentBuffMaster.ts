@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Buff from '../../buff/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:buff:{namespaceName}";
 
 export default class CurrentBuffMaster implements IModel {

@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2Inventory = tslib_1.__importStar(require("../../inventory/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -246,14 +245,14 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withAcquireScript(ScriptSetting_1.default.fromDict(data["acquireScript"]))
-            .withOverflowScript(ScriptSetting_1.default.fromDict(data["overflowScript"]))
-            .withConsumeScript(ScriptSetting_1.default.fromDict(data["consumeScript"]))
-            .withSimpleItemAcquireScript(ScriptSetting_1.default.fromDict(data["simpleItemAcquireScript"]))
-            .withSimpleItemConsumeScript(ScriptSetting_1.default.fromDict(data["simpleItemConsumeScript"]))
-            .withBigItemAcquireScript(ScriptSetting_1.default.fromDict(data["bigItemAcquireScript"]))
-            .withBigItemConsumeScript(ScriptSetting_1.default.fromDict(data["bigItemConsumeScript"]))
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withAcquireScript(Gs2Inventory.ScriptSetting.fromDict(data["acquireScript"]))
+            .withOverflowScript(Gs2Inventory.ScriptSetting.fromDict(data["overflowScript"]))
+            .withConsumeScript(Gs2Inventory.ScriptSetting.fromDict(data["consumeScript"]))
+            .withSimpleItemAcquireScript(Gs2Inventory.ScriptSetting.fromDict(data["simpleItemAcquireScript"]))
+            .withSimpleItemConsumeScript(Gs2Inventory.ScriptSetting.fromDict(data["simpleItemConsumeScript"]))
+            .withBigItemAcquireScript(Gs2Inventory.ScriptSetting.fromDict(data["bigItemAcquireScript"]))
+            .withBigItemConsumeScript(Gs2Inventory.ScriptSetting.fromDict(data["bigItemConsumeScript"]))
+            .withLogSetting(Gs2Inventory.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

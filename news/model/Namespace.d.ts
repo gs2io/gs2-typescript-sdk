@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import LogSetting from './LogSetting';
+import * as Gs2News from '../../news/model';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
@@ -26,9 +26,9 @@ export default class Namespace implements IModel {
     getVersion(): string | null;
     setVersion(version: string | null): this;
     withVersion(version: string | null): this;
-    getLogSetting(): LogSetting | null;
-    setLogSetting(logSetting: LogSetting | null): this;
-    withLogSetting(logSetting: LogSetting | null): this;
+    getLogSetting(): Gs2News.LogSetting | null;
+    setLogSetting(logSetting: Gs2News.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2News.LogSetting | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

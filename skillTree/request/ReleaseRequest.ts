@@ -135,12 +135,12 @@ export default class ReleaseRequest implements IRequest {
                 data.nodeModelNames.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withConfig(data.config ?
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2SkillTree.Config.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -152,12 +152,12 @@ export default class ReleaseRequest implements IRequest {
                 this.getNodeModelNames()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "config": this.getConfig() ?
                 this.getConfig()!.map((item: Gs2SkillTree.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

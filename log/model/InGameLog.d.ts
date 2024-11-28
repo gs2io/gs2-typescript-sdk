@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import InGameLogTag from './InGameLogTag';
+import * as Gs2Log from '../../log/model';
 export default class InGameLog implements IModel {
     private timestamp;
     private requestId;
@@ -17,9 +17,9 @@ export default class InGameLog implements IModel {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
-    getTags(): InGameLogTag[] | null;
-    setTags(tags: InGameLogTag[] | null): this;
-    withTags(tags: InGameLogTag[] | null): this;
+    getTags(): Gs2Log.InGameLogTag[] | null;
+    setTags(tags: Gs2Log.InGameLogTag[] | null): this;
+    withTags(tags: Gs2Log.InGameLogTag[] | null): this;
     getPayload(): string | null;
     setPayload(payload: string | null): this;
     withPayload(payload: string | null): this;

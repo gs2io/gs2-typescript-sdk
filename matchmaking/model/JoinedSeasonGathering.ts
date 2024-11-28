@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Matchmaking from '../../matchmaking/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:matchmaking:{namespaceName}:season:{seasonName}:{season}:user:{userId}:joinedGathering";
 
 export default class JoinedSeasonGathering implements IModel {

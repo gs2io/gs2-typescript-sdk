@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AppleAppStoreSetting_1 = tslib_1.__importDefault(require("./AppleAppStoreSetting"));
-var GooglePlaySetting_1 = tslib_1.__importDefault(require("./GooglePlaySetting"));
-var FakeSetting_1 = tslib_1.__importDefault(require("./FakeSetting"));
+var Gs2Money2 = tslib_1.__importStar(require("../../money2/model"));
 var PlatformSetting = /** @class */ (function () {
     function PlatformSetting() {
         this.appleAppStore = null;
@@ -63,9 +61,9 @@ var PlatformSetting = /** @class */ (function () {
             return null;
         }
         return new PlatformSetting()
-            .withAppleAppStore(AppleAppStoreSetting_1.default.fromDict(data["appleAppStore"]))
-            .withGooglePlay(GooglePlaySetting_1.default.fromDict(data["googlePlay"]))
-            .withFake(FakeSetting_1.default.fromDict(data["fake"]));
+            .withAppleAppStore(Gs2Money2.AppleAppStoreSetting.fromDict(data["appleAppStore"]))
+            .withGooglePlay(Gs2Money2.GooglePlaySetting.fromDict(data["googlePlay"]))
+            .withFake(Gs2Money2.FakeSetting.fromDict(data["fake"]));
     };
     PlatformSetting.prototype.toDict = function () {
         var _a, _b, _c;

@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Gs2Formation = tslib_1.__importStar(require("../model"));
+var Gs2Core = tslib_1.__importStar(require("../../core"));
 var AcquireActionToFormPropertiesByStampSheetResult = /** @class */ (function () {
     function AcquireActionToFormPropertiesByStampSheetResult() {
         this.item = null;
@@ -25,6 +26,9 @@ var AcquireActionToFormPropertiesByStampSheetResult = /** @class */ (function ()
         this.stampSheet = null;
         this.stampSheetEncryptionKeyId = null;
         this.autoRunStampSheet = null;
+        this.atomicCommit = null;
+        this.transaction = null;
+        this.transactionResult = null;
     }
     AcquireActionToFormPropertiesByStampSheetResult.prototype.getItem = function () {
         return this.item;
@@ -92,6 +96,39 @@ var AcquireActionToFormPropertiesByStampSheetResult = /** @class */ (function ()
         this.autoRunStampSheet = autoRunStampSheet;
         return this;
     };
+    AcquireActionToFormPropertiesByStampSheetResult.prototype.getAtomicCommit = function () {
+        return this.atomicCommit;
+    };
+    AcquireActionToFormPropertiesByStampSheetResult.prototype.setAtomicCommit = function (atomicCommit) {
+        this.atomicCommit = atomicCommit;
+        return this;
+    };
+    AcquireActionToFormPropertiesByStampSheetResult.prototype.withAtomicCommit = function (atomicCommit) {
+        this.atomicCommit = atomicCommit;
+        return this;
+    };
+    AcquireActionToFormPropertiesByStampSheetResult.prototype.getTransaction = function () {
+        return this.transaction;
+    };
+    AcquireActionToFormPropertiesByStampSheetResult.prototype.setTransaction = function (transaction) {
+        this.transaction = transaction;
+        return this;
+    };
+    AcquireActionToFormPropertiesByStampSheetResult.prototype.withTransaction = function (transaction) {
+        this.transaction = transaction;
+        return this;
+    };
+    AcquireActionToFormPropertiesByStampSheetResult.prototype.getTransactionResult = function () {
+        return this.transactionResult;
+    };
+    AcquireActionToFormPropertiesByStampSheetResult.prototype.setTransactionResult = function (transactionResult) {
+        this.transactionResult = transactionResult;
+        return this;
+    };
+    AcquireActionToFormPropertiesByStampSheetResult.prototype.withTransactionResult = function (transactionResult) {
+        this.transactionResult = transactionResult;
+        return this;
+    };
     AcquireActionToFormPropertiesByStampSheetResult.fromDict = function (data) {
         return new AcquireActionToFormPropertiesByStampSheetResult()
             .withItem(Gs2Formation.Form.fromDict(data["item"]))
@@ -99,10 +136,13 @@ var AcquireActionToFormPropertiesByStampSheetResult = /** @class */ (function ()
             .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
             .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
-            .withAutoRunStampSheet(data["autoRunStampSheet"]);
+            .withAutoRunStampSheet(data["autoRunStampSheet"])
+            .withAtomicCommit(data["atomicCommit"])
+            .withTransaction(data["transaction"])
+            .withTransactionResult(Gs2Core.TransactionResult.fromDict(data["transactionResult"]));
     };
     AcquireActionToFormPropertiesByStampSheetResult.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "mold": (_b = this.getMold()) === null || _b === void 0 ? void 0 : _b.toDict(),
@@ -110,6 +150,9 @@ var AcquireActionToFormPropertiesByStampSheetResult = /** @class */ (function ()
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
             "autoRunStampSheet": this.getAutoRunStampSheet(),
+            "atomicCommit": this.getAtomicCommit(),
+            "transaction": this.getTransaction(),
+            "transactionResult": (_c = this.getTransactionResult()) === null || _c === void 0 ? void 0 : _c.toDict(),
         };
     };
     return AcquireActionToFormPropertiesByStampSheetResult;

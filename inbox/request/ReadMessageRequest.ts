@@ -123,7 +123,7 @@ export default class ReadMessageRequest implements IRequest {
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Inbox.Config.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -135,7 +135,7 @@ export default class ReadMessageRequest implements IRequest {
                 this.getConfig()!.map((item: Gs2Inbox.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

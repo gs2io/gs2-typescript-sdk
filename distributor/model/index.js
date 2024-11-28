@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NotificationSetting = exports.LogSetting = exports.DistributeResource = exports.GitHubCheckoutSetting = exports.Config = exports.VerifyAction = exports.ConsumeAction = exports.AcquireAction = exports.StampSheetResult = exports.CurrentDistributorMaster = exports.DistributorModel = exports.DistributorModelMaster = exports.Namespace = void 0;
+exports.NotificationSetting = exports.LogSetting = exports.DistributeResource = exports.GitHubCheckoutSetting = exports.Config = exports.VerifyActionResult = exports.ConsumeActionResult = exports.AcquireActionResult = exports.TransactionResult = exports.VerifyAction = exports.ConsumeAction = exports.AcquireAction = exports.StampSheetResult = exports.CurrentDistributorMaster = exports.DistributorModel = exports.DistributorModelMaster = exports.Namespace = void 0;
 var tslib_1 = require("tslib");
 /*
 Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
@@ -33,6 +33,14 @@ var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
 exports.ConsumeAction = ConsumeAction_1.default;
 var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
 exports.VerifyAction = VerifyAction_1.default;
+var TransactionResult_1 = tslib_1.__importDefault(require("./TransactionResult"));
+exports.TransactionResult = TransactionResult_1.default;
+var AcquireActionResult_1 = tslib_1.__importDefault(require("./AcquireActionResult"));
+exports.AcquireActionResult = AcquireActionResult_1.default;
+var ConsumeActionResult_1 = tslib_1.__importDefault(require("./ConsumeActionResult"));
+exports.ConsumeActionResult = ConsumeActionResult_1.default;
+var VerifyActionResult_1 = tslib_1.__importDefault(require("./VerifyActionResult"));
+exports.VerifyActionResult = VerifyActionResult_1.default;
 var Config_1 = tslib_1.__importDefault(require("./Config"));
 exports.Config = Config_1.default;
 var GitHubCheckoutSetting_1 = tslib_1.__importDefault(require("./GitHubCheckoutSetting"));

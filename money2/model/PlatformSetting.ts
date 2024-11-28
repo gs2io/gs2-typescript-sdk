@@ -15,44 +15,46 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Money2 from '../../money2/model'
 import AppleAppStoreSetting from './AppleAppStoreSetting';
 import GooglePlaySetting from './GooglePlaySetting';
 import FakeSetting from './FakeSetting';
 
 export default class PlatformSetting implements IModel {
-    private appleAppStore: AppleAppStoreSetting|null = null;
-    private googlePlay: GooglePlaySetting|null = null;
-    private fake: FakeSetting|null = null;
-    public getAppleAppStore(): AppleAppStoreSetting|null {
+    private appleAppStore: Gs2Money2.AppleAppStoreSetting|null = null;
+    private googlePlay: Gs2Money2.GooglePlaySetting|null = null;
+    private fake: Gs2Money2.FakeSetting|null = null;
+    public getAppleAppStore(): Gs2Money2.AppleAppStoreSetting|null {
         return this.appleAppStore;
     }
-    public setAppleAppStore(appleAppStore: AppleAppStoreSetting|null) {
+    public setAppleAppStore(appleAppStore: Gs2Money2.AppleAppStoreSetting|null) {
         this.appleAppStore = appleAppStore;
         return this;
     }
-    public withAppleAppStore(appleAppStore: AppleAppStoreSetting|null): this {
+    public withAppleAppStore(appleAppStore: Gs2Money2.AppleAppStoreSetting|null): this {
         this.appleAppStore = appleAppStore;
         return this;
     }
-    public getGooglePlay(): GooglePlaySetting|null {
+    public getGooglePlay(): Gs2Money2.GooglePlaySetting|null {
         return this.googlePlay;
     }
-    public setGooglePlay(googlePlay: GooglePlaySetting|null) {
+    public setGooglePlay(googlePlay: Gs2Money2.GooglePlaySetting|null) {
         this.googlePlay = googlePlay;
         return this;
     }
-    public withGooglePlay(googlePlay: GooglePlaySetting|null): this {
+    public withGooglePlay(googlePlay: Gs2Money2.GooglePlaySetting|null): this {
         this.googlePlay = googlePlay;
         return this;
     }
-    public getFake(): FakeSetting|null {
+    public getFake(): Gs2Money2.FakeSetting|null {
         return this.fake;
     }
-    public setFake(fake: FakeSetting|null) {
+    public setFake(fake: Gs2Money2.FakeSetting|null) {
         this.fake = fake;
         return this;
     }
-    public withFake(fake: FakeSetting|null): this {
+    public withFake(fake: Gs2Money2.FakeSetting|null): this {
         this.fake = fake;
         return this;
     }
@@ -62,9 +64,9 @@ export default class PlatformSetting implements IModel {
             return null;
         }
         return new PlatformSetting()
-            .withAppleAppStore(AppleAppStoreSetting.fromDict(data["appleAppStore"]))
-            .withGooglePlay(GooglePlaySetting.fromDict(data["googlePlay"]))
-            .withFake(FakeSetting.fromDict(data["fake"]));
+            .withAppleAppStore(Gs2Money2.AppleAppStoreSetting.fromDict(data["appleAppStore"]))
+            .withGooglePlay(Gs2Money2.GooglePlaySetting.fromDict(data["googlePlay"]))
+            .withFake(Gs2Money2.FakeSetting.fromDict(data["fake"]));
     }
 
     public toDict(): {[key: string]: any} {

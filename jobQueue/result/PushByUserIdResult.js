@@ -49,7 +49,7 @@ var PushByUserIdResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2JobQueue.Job.fromDict(item);
-            }) : [])
+            }) : null)
             .withAutoRun(data["autoRun"]);
     };
     PushByUserIdResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var PushByUserIdResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "autoRun": this.getAutoRun(),
         };
     };

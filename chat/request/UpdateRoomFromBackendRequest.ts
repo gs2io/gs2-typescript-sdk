@@ -160,7 +160,7 @@ export default class UpdateRoomFromBackendRequest implements IRequest {
                 data.whiteListUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withUserId(data["userId"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
@@ -175,7 +175,7 @@ export default class UpdateRoomFromBackendRequest implements IRequest {
                 this.getWhiteListUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "userId": this.getUserId(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };

@@ -137,7 +137,7 @@ var SetRarityParameterStatusByUserIdRequest = /** @class */ (function () {
             .withParameterValues(data.parameterValues ?
             data.parameterValues.map(function (item) {
                 return Gs2Enchant.RarityParameterValue.fromDict(item);
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SetRarityParameterStatusByUserIdRequest.prototype.toDict = function () {
@@ -149,7 +149,7 @@ var SetRarityParameterStatusByUserIdRequest = /** @class */ (function () {
             "parameterValues": this.getParameterValues() ?
                 this.getParameterValues().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

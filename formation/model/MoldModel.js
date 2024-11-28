@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var FormModel_1 = tslib_1.__importDefault(require("./FormModel"));
+var Gs2Formation = tslib_1.__importStar(require("../../formation/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:model:mold:{moldModelName}";
 var MoldModel = /** @class */ (function () {
     function MoldModel() {
@@ -169,7 +169,7 @@ var MoldModel = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withInitialMaxCapacity(data["initialMaxCapacity"])
             .withMaxCapacity(data["maxCapacity"])
-            .withFormModel(FormModel_1.default.fromDict(data["formModel"]));
+            .withFormModel(Gs2Formation.FormModel.fromDict(data["formModel"]));
     };
     MoldModel.prototype.toDict = function () {
         var _a;

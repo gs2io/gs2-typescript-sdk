@@ -220,7 +220,7 @@ export default class UpdateGuildModelMasterRequest implements IRequest {
                 data.roles.map((item: {[key: string]: any}) => {
                     return Gs2Guild.RoleModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withGuildMasterRole(data["guildMasterRole"])
             .withGuildMemberDefaultRole(data["guildMemberDefaultRole"])
             .withRejoinCoolTimeMinutes(data["rejoinCoolTimeMinutes"])
@@ -241,7 +241,7 @@ export default class UpdateGuildModelMasterRequest implements IRequest {
                 this.getRoles()!.map((item: Gs2Guild.RoleModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "guildMasterRole": this.getGuildMasterRole(),
             "guildMemberDefaultRole": this.getGuildMemberDefaultRole(),
             "rejoinCoolTimeMinutes": this.getRejoinCoolTimeMinutes(),

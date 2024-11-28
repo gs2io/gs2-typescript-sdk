@@ -37,14 +37,14 @@ var DescribeMessagesResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Chat.Message.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeMessagesResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeMessagesResult;

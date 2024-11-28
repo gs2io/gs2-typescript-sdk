@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import Reward from './Reward';
+import * as Gs2Quest from '../../quest/model';
 export default class Progress implements IModel {
     private progressId;
     private userId;
@@ -33,12 +33,12 @@ export default class Progress implements IModel {
     getRandomSeed(): number | null;
     setRandomSeed(randomSeed: number | null): this;
     withRandomSeed(randomSeed: number | null): this;
-    getRewards(): Reward[] | null;
-    setRewards(rewards: Reward[] | null): this;
-    withRewards(rewards: Reward[] | null): this;
-    getFailedRewards(): Reward[] | null;
-    setFailedRewards(failedRewards: Reward[] | null): this;
-    withFailedRewards(failedRewards: Reward[] | null): this;
+    getRewards(): Gs2Quest.Reward[] | null;
+    setRewards(rewards: Gs2Quest.Reward[] | null): this;
+    withRewards(rewards: Gs2Quest.Reward[] | null): this;
+    getFailedRewards(): Gs2Quest.Reward[] | null;
+    setFailedRewards(failedRewards: Gs2Quest.Reward[] | null): this;
+    withFailedRewards(failedRewards: Gs2Quest.Reward[] | null): this;
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;

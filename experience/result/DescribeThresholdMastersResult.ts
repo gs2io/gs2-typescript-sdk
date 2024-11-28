@@ -55,7 +55,7 @@ export default class DescribeThresholdMastersResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Experience.ThresholdMaster.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeThresholdMastersResult implements IResult {
                 this.getItems()!.map((item: Gs2Experience.ThresholdMaster) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Formation from '../../formation/model'
+
 export default class SlotWithSignature implements IModel {
     private name: string|null = null;
     private propertyType: string|null = null;

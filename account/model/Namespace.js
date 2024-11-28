@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2Account = tslib_1.__importStar(require("../../account/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:account:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -236,11 +235,11 @@ var Namespace = /** @class */ (function () {
             .withDescription(data["description"])
             .withChangePasswordIfTakeOver(data["changePasswordIfTakeOver"])
             .withDifferentUserIdForLoginAndDataRetention(data["differentUserIdForLoginAndDataRetention"])
-            .withCreateAccountScript(ScriptSetting_1.default.fromDict(data["createAccountScript"]))
-            .withAuthenticationScript(ScriptSetting_1.default.fromDict(data["authenticationScript"]))
-            .withCreateTakeOverScript(ScriptSetting_1.default.fromDict(data["createTakeOverScript"]))
-            .withDoTakeOverScript(ScriptSetting_1.default.fromDict(data["doTakeOverScript"]))
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withCreateAccountScript(Gs2Account.ScriptSetting.fromDict(data["createAccountScript"]))
+            .withAuthenticationScript(Gs2Account.ScriptSetting.fromDict(data["authenticationScript"]))
+            .withCreateTakeOverScript(Gs2Account.ScriptSetting.fromDict(data["createTakeOverScript"]))
+            .withDoTakeOverScript(Gs2Account.ScriptSetting.fromDict(data["doTakeOverScript"]))
+            .withLogSetting(Gs2Account.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

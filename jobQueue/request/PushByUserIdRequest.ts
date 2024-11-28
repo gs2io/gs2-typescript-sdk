@@ -122,7 +122,7 @@ export default class PushByUserIdRequest implements IRequest {
                 data.jobs.map((item: {[key: string]: any}) => {
                     return Gs2JobQueue.JobEntry.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -134,7 +134,7 @@ export default class PushByUserIdRequest implements IRequest {
                 this.getJobs()!.map((item: Gs2JobQueue.JobEntry) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

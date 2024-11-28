@@ -149,7 +149,7 @@ export default class ActionRequest implements IRequest {
                 data.scopes.map((item: {[key: string]: any}) => {
                     return Gs2MegaField.Scope.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -163,7 +163,7 @@ export default class ActionRequest implements IRequest {
                 this.getScopes()!.map((item: Gs2MegaField.Scope) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

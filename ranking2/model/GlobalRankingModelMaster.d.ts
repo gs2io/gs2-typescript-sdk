@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import RankingReward from './RankingReward';
+import * as Gs2Ranking2 from '../../ranking2/model';
 export default class GlobalRankingModelMaster implements IModel {
     private globalRankingModelId;
     private name;
@@ -48,9 +48,9 @@ export default class GlobalRankingModelMaster implements IModel {
     getEntryPeriodEventId(): string | null;
     setEntryPeriodEventId(entryPeriodEventId: string | null): this;
     withEntryPeriodEventId(entryPeriodEventId: string | null): this;
-    getRankingRewards(): RankingReward[] | null;
-    setRankingRewards(rankingRewards: RankingReward[] | null): this;
-    withRankingRewards(rankingRewards: RankingReward[] | null): this;
+    getRankingRewards(): Gs2Ranking2.RankingReward[] | null;
+    setRankingRewards(rankingRewards: Gs2Ranking2.RankingReward[] | null): this;
+    withRankingRewards(rankingRewards: Gs2Ranking2.RankingReward[] | null): this;
     getAccessPeriodEventId(): string | null;
     setAccessPeriodEventId(accessPeriodEventId: string | null): this;
     withAccessPeriodEventId(accessPeriodEventId: string | null): this;

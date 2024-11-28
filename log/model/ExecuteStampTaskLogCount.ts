@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Log from '../../log/model'
+
 export default class ExecuteStampTaskLogCount implements IModel {
     private service: string|null = null;
     private method: string|null = null;

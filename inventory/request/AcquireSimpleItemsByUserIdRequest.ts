@@ -135,7 +135,7 @@ export default class AcquireSimpleItemsByUserIdRequest implements IRequest {
                 data.acquireCounts.map((item: {[key: string]: any}) => {
                     return Gs2Inventory.AcquireCount.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -148,7 +148,7 @@ export default class AcquireSimpleItemsByUserIdRequest implements IRequest {
                 this.getAcquireCounts()!.map((item: Gs2Inventory.AcquireCount) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

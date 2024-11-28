@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2MegaField from '../../megaField/model'
 import Position from './Position';
 import Vector from './Vector';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:megaField:{namespaceName}:user:{userId}:spatial:{areaModelName}:{layerModelName}";
@@ -24,8 +26,8 @@ export default class Spatial implements IModel {
     private userId: string|null = null;
     private areaModelName: string|null = null;
     private layerModelName: string|null = null;
-    private position: Position|null = null;
-    private vector: Vector|null = null;
+    private position: Gs2MegaField.Position|null = null;
+    private vector: Gs2MegaField.Vector|null = null;
     private r: number|null = null;
     private lastSyncAt: number|null = null;
     private createdAt: number|null = null;
@@ -202,25 +204,25 @@ export default class Spatial implements IModel {
         this.layerModelName = layerModelName;
         return this;
     }
-    public getPosition(): Position|null {
+    public getPosition(): Gs2MegaField.Position|null {
         return this.position;
     }
-    public setPosition(position: Position|null) {
+    public setPosition(position: Gs2MegaField.Position|null) {
         this.position = position;
         return this;
     }
-    public withPosition(position: Position|null): this {
+    public withPosition(position: Gs2MegaField.Position|null): this {
         this.position = position;
         return this;
     }
-    public getVector(): Vector|null {
+    public getVector(): Gs2MegaField.Vector|null {
         return this.vector;
     }
-    public setVector(vector: Vector|null) {
+    public setVector(vector: Gs2MegaField.Vector|null) {
         this.vector = vector;
         return this;
     }
-    public withVector(vector: Vector|null): this {
+    public withVector(vector: Gs2MegaField.Vector|null): this {
         this.vector = vector;
         return this;
     }
@@ -267,8 +269,8 @@ export default class Spatial implements IModel {
             .withUserId(data["userId"])
             .withAreaModelName(data["areaModelName"])
             .withLayerModelName(data["layerModelName"])
-            .withPosition(Position.fromDict(data["position"]))
-            .withVector(Vector.fromDict(data["vector"]))
+            .withPosition(Gs2MegaField.Position.fromDict(data["position"]))
+            .withVector(Gs2MegaField.Vector.fromDict(data["vector"]))
             .withR(data["r"])
             .withLastSyncAt(data["lastSyncAt"])
             .withCreatedAt(data["createdAt"]);

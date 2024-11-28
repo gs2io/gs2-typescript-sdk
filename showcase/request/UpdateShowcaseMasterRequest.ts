@@ -133,7 +133,7 @@ export default class UpdateShowcaseMasterRequest implements IRequest {
                 data.displayItems.map((item: {[key: string]: any}) => {
                     return Gs2Showcase.DisplayItemMaster.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withSalesPeriodEventId(data["salesPeriodEventId"]);
     }
 
@@ -147,7 +147,7 @@ export default class UpdateShowcaseMasterRequest implements IRequest {
                 this.getDisplayItems()!.map((item: Gs2Showcase.DisplayItemMaster) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "salesPeriodEventId": this.getSalesPeriodEventId(),
         };
     }

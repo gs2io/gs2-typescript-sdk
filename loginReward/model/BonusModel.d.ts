@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import Reward from './Reward';
-import VerifyAction from './VerifyAction';
-import ConsumeAction from './ConsumeAction';
+import * as Gs2LoginReward from '../../loginReward/model';
 export default class BonusModel implements IModel {
     private bonusModelId;
     private name;
@@ -41,18 +39,18 @@ export default class BonusModel implements IModel {
     getRepeat(): string | null;
     setRepeat(repeat: string | null): this;
     withRepeat(repeat: string | null): this;
-    getRewards(): Reward[] | null;
-    setRewards(rewards: Reward[] | null): this;
-    withRewards(rewards: Reward[] | null): this;
+    getRewards(): Gs2LoginReward.Reward[] | null;
+    setRewards(rewards: Gs2LoginReward.Reward[] | null): this;
+    withRewards(rewards: Gs2LoginReward.Reward[] | null): this;
     getMissedReceiveRelief(): string | null;
     setMissedReceiveRelief(missedReceiveRelief: string | null): this;
     withMissedReceiveRelief(missedReceiveRelief: string | null): this;
-    getMissedReceiveReliefVerifyActions(): VerifyAction[] | null;
-    setMissedReceiveReliefVerifyActions(missedReceiveReliefVerifyActions: VerifyAction[] | null): this;
-    withMissedReceiveReliefVerifyActions(missedReceiveReliefVerifyActions: VerifyAction[] | null): this;
-    getMissedReceiveReliefConsumeActions(): ConsumeAction[] | null;
-    setMissedReceiveReliefConsumeActions(missedReceiveReliefConsumeActions: ConsumeAction[] | null): this;
-    withMissedReceiveReliefConsumeActions(missedReceiveReliefConsumeActions: ConsumeAction[] | null): this;
+    getMissedReceiveReliefVerifyActions(): Gs2LoginReward.VerifyAction[] | null;
+    setMissedReceiveReliefVerifyActions(missedReceiveReliefVerifyActions: Gs2LoginReward.VerifyAction[] | null): this;
+    withMissedReceiveReliefVerifyActions(missedReceiveReliefVerifyActions: Gs2LoginReward.VerifyAction[] | null): this;
+    getMissedReceiveReliefConsumeActions(): Gs2LoginReward.ConsumeAction[] | null;
+    setMissedReceiveReliefConsumeActions(missedReceiveReliefConsumeActions: Gs2LoginReward.ConsumeAction[] | null): this;
+    withMissedReceiveReliefConsumeActions(missedReceiveReliefConsumeActions: Gs2LoginReward.ConsumeAction[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): BonusModel | null;

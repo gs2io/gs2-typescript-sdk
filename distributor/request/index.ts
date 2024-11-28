@@ -52,6 +52,9 @@ import AndExpressionByStampTaskRequest from "./AndExpressionByStampTaskRequest"
 import OrExpressionByStampTaskRequest from "./OrExpressionByStampTaskRequest"
 import GetStampSheetResultRequest from "./GetStampSheetResultRequest"
 import GetStampSheetResultByUserIdRequest from "./GetStampSheetResultByUserIdRequest"
+import RunTransactionRequest from "./RunTransactionRequest"
+import GetTransactionResultRequest from "./GetTransactionResultRequest"
+import GetTransactionResultByUserIdRequest from "./GetTransactionResultByUserIdRequest"
 
 export {
     DescribeNamespacesRequest,
@@ -93,4 +96,7 @@ export {
     OrExpressionByStampTaskRequest,
     GetStampSheetResultRequest,
     GetStampSheetResultByUserIdRequest,
+    RunTransactionRequest,
+    GetTransactionResultRequest,
+    GetTransactionResultByUserIdRequest,
 };

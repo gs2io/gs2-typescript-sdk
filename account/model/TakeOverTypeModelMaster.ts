@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Account from '../../account/model'
 import OpenIdConnectSetting from './OpenIdConnectSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:account:{namespaceName}:model:takeOver:{type}";
 
@@ -23,7 +25,7 @@ export default class TakeOverTypeModelMaster implements IModel {
     private type: number|null = null;
     private description: string|null = null;
     private metadata: string|null = null;
-    private openIdConnectSetting: OpenIdConnectSetting|null = null;
+    private openIdConnectSetting: Gs2Account.OpenIdConnectSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -152,14 +154,14 @@ export default class TakeOverTypeModelMaster implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getOpenIdConnectSetting(): OpenIdConnectSetting|null {
+    public getOpenIdConnectSetting(): Gs2Account.OpenIdConnectSetting|null {
         return this.openIdConnectSetting;
     }
-    public setOpenIdConnectSetting(openIdConnectSetting: OpenIdConnectSetting|null) {
+    public setOpenIdConnectSetting(openIdConnectSetting: Gs2Account.OpenIdConnectSetting|null) {
         this.openIdConnectSetting = openIdConnectSetting;
         return this;
     }
-    public withOpenIdConnectSetting(openIdConnectSetting: OpenIdConnectSetting|null): this {
+    public withOpenIdConnectSetting(openIdConnectSetting: Gs2Account.OpenIdConnectSetting|null): this {
         this.openIdConnectSetting = openIdConnectSetting;
         return this;
     }
@@ -206,7 +208,7 @@ export default class TakeOverTypeModelMaster implements IModel {
             .withType(data["type"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
-            .withOpenIdConnectSetting(OpenIdConnectSetting.fromDict(data["openIdConnectSetting"]))
+            .withOpenIdConnectSetting(Gs2Account.OpenIdConnectSetting.fromDict(data["openIdConnectSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

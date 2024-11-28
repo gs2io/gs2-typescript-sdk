@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import BalanceParameterValue from './BalanceParameterValue';
+import * as Gs2Enchant from '../../enchant/model';
 export default class BalanceParameterStatus implements IModel {
     private balanceParameterStatusId;
     private userId;
@@ -29,9 +29,9 @@ export default class BalanceParameterStatus implements IModel {
     getPropertyId(): string | null;
     setPropertyId(propertyId: string | null): this;
     withPropertyId(propertyId: string | null): this;
-    getParameterValues(): BalanceParameterValue[] | null;
-    setParameterValues(parameterValues: BalanceParameterValue[] | null): this;
-    withParameterValues(parameterValues: BalanceParameterValue[] | null): this;
+    getParameterValues(): Gs2Enchant.BalanceParameterValue[] | null;
+    setParameterValues(parameterValues: Gs2Enchant.BalanceParameterValue[] | null): this;
+    withParameterValues(parameterValues: Gs2Enchant.BalanceParameterValue[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

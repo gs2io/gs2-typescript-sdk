@@ -40,7 +40,7 @@ export default class DescribeDistributorModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Distributor.DistributorModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeDistributorModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2Distributor.DistributorModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

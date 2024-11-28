@@ -149,7 +149,7 @@ var CreateProgressByUserIdRequest = /** @class */ (function () {
             .withMaterials(data.materials ?
             data.materials.map(function (item) {
                 return Gs2Enhance.Material.fromDict(item);
-            }) : [])
+            }) : null)
             .withForce(data["force"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
@@ -162,7 +162,7 @@ var CreateProgressByUserIdRequest = /** @class */ (function () {
             "materials": this.getMaterials() ?
                 this.getMaterials().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "force": this.getForce(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };

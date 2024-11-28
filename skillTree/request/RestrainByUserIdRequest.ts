@@ -147,12 +147,12 @@ export default class RestrainByUserIdRequest implements IRequest {
                 data.nodeModelNames.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withConfig(data.config ?
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2SkillTree.Config.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -165,12 +165,12 @@ export default class RestrainByUserIdRequest implements IRequest {
                 this.getNodeModelNames()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "config": this.getConfig() ?
                 this.getConfig()!.map((item: Gs2SkillTree.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

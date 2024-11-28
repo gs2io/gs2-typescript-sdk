@@ -40,7 +40,7 @@ export default class DescribeMoldModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Formation.MoldModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeMoldModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2Formation.MoldModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -16,10 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
-var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
-var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2Mission = tslib_1.__importStar(require("../../mission/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -254,12 +251,12 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
-            .withMissionCompleteScript(ScriptSetting_1.default.fromDict(data["missionCompleteScript"]))
-            .withCounterIncrementScript(ScriptSetting_1.default.fromDict(data["counterIncrementScript"]))
-            .withReceiveRewardsScript(ScriptSetting_1.default.fromDict(data["receiveRewardsScript"]))
-            .withCompleteNotification(NotificationSetting_1.default.fromDict(data["completeNotification"]))
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withTransactionSetting(Gs2Mission.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withMissionCompleteScript(Gs2Mission.ScriptSetting.fromDict(data["missionCompleteScript"]))
+            .withCounterIncrementScript(Gs2Mission.ScriptSetting.fromDict(data["counterIncrementScript"]))
+            .withReceiveRewardsScript(Gs2Mission.ScriptSetting.fromDict(data["receiveRewardsScript"]))
+            .withCompleteNotification(Gs2Mission.NotificationSetting.fromDict(data["completeNotification"]))
+            .withLogSetting(Gs2Mission.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withQueueNamespaceId(data["queueNamespaceId"])

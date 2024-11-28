@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Auth from '../../auth/model'
+
 export default class AccessToken implements IModel {
     private token: string|null = null;
     private userId: string|null = null;

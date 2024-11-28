@@ -123,7 +123,7 @@ export default class BatchUpdateMemberRoleRequest implements IRequest {
                 data.members.map((item: {[key: string]: any}) => {
                     return Gs2Guild.Member.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -135,7 +135,7 @@ export default class BatchUpdateMemberRoleRequest implements IRequest {
                 this.getMembers()!.map((item: Gs2Guild.Member) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

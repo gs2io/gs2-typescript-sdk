@@ -112,7 +112,7 @@ var ReportRequest = /** @class */ (function () {
             .withEvents(data.events ?
             data.events.map(function (item) {
                 return Gs2StateMachine.Event.fromDict(item);
-            }) : []);
+            }) : null);
     };
     ReportRequest.prototype.toDict = function () {
         return {
@@ -122,7 +122,7 @@ var ReportRequest = /** @class */ (function () {
             "events": this.getEvents() ?
                 this.getEvents().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ReportRequest;

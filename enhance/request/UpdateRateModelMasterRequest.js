@@ -176,12 +176,12 @@ var UpdateRateModelMasterRequest = /** @class */ (function () {
             .withAcquireExperienceHierarchy(data.acquireExperienceHierarchy ?
             data.acquireExperienceHierarchy.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withExperienceModelId(data["experienceModelId"])
             .withBonusRates(data.bonusRates ?
             data.bonusRates.map(function (item) {
                 return Gs2Enhance.BonusRate.fromDict(item);
-            }) : []);
+            }) : null);
     };
     UpdateRateModelMasterRequest.prototype.toDict = function () {
         return {
@@ -195,12 +195,12 @@ var UpdateRateModelMasterRequest = /** @class */ (function () {
             "acquireExperienceHierarchy": this.getAcquireExperienceHierarchy() ?
                 this.getAcquireExperienceHierarchy().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "experienceModelId": this.getExperienceModelId(),
             "bonusRates": this.getBonusRates() ?
                 this.getBonusRates().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return UpdateRateModelMasterRequest;

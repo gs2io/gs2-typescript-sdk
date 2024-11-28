@@ -37,14 +37,14 @@ var DescribeSeasonModelsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2SeasonRating.SeasonModel.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeSeasonModelsResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeSeasonModelsResult;

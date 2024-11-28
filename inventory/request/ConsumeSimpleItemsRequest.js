@@ -112,7 +112,7 @@ var ConsumeSimpleItemsRequest = /** @class */ (function () {
             .withConsumeCounts(data.consumeCounts ?
             data.consumeCounts.map(function (item) {
                 return Gs2Inventory.ConsumeCount.fromDict(item);
-            }) : []);
+            }) : null);
     };
     ConsumeSimpleItemsRequest.prototype.toDict = function () {
         return {
@@ -122,7 +122,7 @@ var ConsumeSimpleItemsRequest = /** @class */ (function () {
             "consumeCounts": this.getConsumeCounts() ?
                 this.getConsumeCounts().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ConsumeSimpleItemsRequest;

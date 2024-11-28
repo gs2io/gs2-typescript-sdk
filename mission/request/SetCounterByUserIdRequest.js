@@ -124,7 +124,7 @@ var SetCounterByUserIdRequest = /** @class */ (function () {
             .withValues(data.values ?
             data.values.map(function (item) {
                 return Gs2Mission.ScopedValue.fromDict(item);
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SetCounterByUserIdRequest.prototype.toDict = function () {
@@ -135,7 +135,7 @@ var SetCounterByUserIdRequest = /** @class */ (function () {
             "values": this.getValues() ?
                 this.getValues().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

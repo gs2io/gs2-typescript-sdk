@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import RandomStatus from './RandomStatus';
-import StackEntry from './StackEntry';
-import Variable from './Variable';
+import * as Gs2StateMachine from '../../stateMachine/model';
 export default class Status implements IModel {
     private statusId;
     private userId;
@@ -42,15 +40,15 @@ export default class Status implements IModel {
     getStateMachineDefinition(): string | null;
     setStateMachineDefinition(stateMachineDefinition: string | null): this;
     withStateMachineDefinition(stateMachineDefinition: string | null): this;
-    getRandomStatus(): RandomStatus | null;
-    setRandomStatus(randomStatus: RandomStatus | null): this;
-    withRandomStatus(randomStatus: RandomStatus | null): this;
-    getStacks(): StackEntry[] | null;
-    setStacks(stacks: StackEntry[] | null): this;
-    withStacks(stacks: StackEntry[] | null): this;
-    getVariables(): Variable[] | null;
-    setVariables(variables: Variable[] | null): this;
-    withVariables(variables: Variable[] | null): this;
+    getRandomStatus(): Gs2StateMachine.RandomStatus | null;
+    setRandomStatus(randomStatus: Gs2StateMachine.RandomStatus | null): this;
+    withRandomStatus(randomStatus: Gs2StateMachine.RandomStatus | null): this;
+    getStacks(): Gs2StateMachine.StackEntry[] | null;
+    setStacks(stacks: Gs2StateMachine.StackEntry[] | null): this;
+    withStacks(stacks: Gs2StateMachine.StackEntry[] | null): this;
+    getVariables(): Gs2StateMachine.Variable[] | null;
+    setVariables(variables: Gs2StateMachine.Variable[] | null): this;
+    withVariables(variables: Gs2StateMachine.Variable[] | null): this;
     getStatus(): string | null;
     setStatus(status: string | null): this;
     withStatus(status: string | null): this;

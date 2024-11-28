@@ -106,12 +106,12 @@ export default class VoteMultipleRequest implements IRequest {
                 data.signedBallots.map((item: {[key: string]: any}) => {
                     return Gs2Matchmaking.SignedBallot.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withGameResults(data.gameResults ?
                 data.gameResults.map((item: {[key: string]: any}) => {
                     return Gs2Matchmaking.GameResult.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withKeyId(data["keyId"]);
     }
 
@@ -122,12 +122,12 @@ export default class VoteMultipleRequest implements IRequest {
                 this.getSignedBallots()!.map((item: Gs2Matchmaking.SignedBallot) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "gameResults": this.getGameResults() ?
                 this.getGameResults()!.map((item: Gs2Matchmaking.GameResult) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "keyId": this.getKeyId(),
         };
     }

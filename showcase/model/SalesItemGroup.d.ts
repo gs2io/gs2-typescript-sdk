@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import SalesItem from './SalesItem';
+import * as Gs2Showcase from '../../showcase/model';
 export default class SalesItemGroup implements IModel {
     private name;
     private metadata;
@@ -10,9 +10,9 @@ export default class SalesItemGroup implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
-    getSalesItems(): SalesItem[] | null;
-    setSalesItems(salesItems: SalesItem[] | null): this;
-    withSalesItems(salesItems: SalesItem[] | null): this;
+    getSalesItems(): Gs2Showcase.SalesItem[] | null;
+    setSalesItems(salesItems: Gs2Showcase.SalesItem[] | null): this;
+    withSalesItems(salesItems: Gs2Showcase.SalesItem[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): SalesItemGroup | null;

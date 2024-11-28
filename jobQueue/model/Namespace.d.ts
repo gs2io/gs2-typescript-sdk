@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import NotificationSetting from './NotificationSetting';
-import LogSetting from './LogSetting';
+import * as Gs2JobQueue from '../../jobQueue/model';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
@@ -29,15 +28,15 @@ export default class Namespace implements IModel {
     getEnableAutoRun(): boolean | null;
     setEnableAutoRun(enableAutoRun: boolean | null): this;
     withEnableAutoRun(enableAutoRun: boolean | null): this;
-    getRunNotification(): NotificationSetting | null;
-    setRunNotification(runNotification: NotificationSetting | null): this;
-    withRunNotification(runNotification: NotificationSetting | null): this;
-    getPushNotification(): NotificationSetting | null;
-    setPushNotification(pushNotification: NotificationSetting | null): this;
-    withPushNotification(pushNotification: NotificationSetting | null): this;
-    getLogSetting(): LogSetting | null;
-    setLogSetting(logSetting: LogSetting | null): this;
-    withLogSetting(logSetting: LogSetting | null): this;
+    getRunNotification(): Gs2JobQueue.NotificationSetting | null;
+    setRunNotification(runNotification: Gs2JobQueue.NotificationSetting | null): this;
+    withRunNotification(runNotification: Gs2JobQueue.NotificationSetting | null): this;
+    getPushNotification(): Gs2JobQueue.NotificationSetting | null;
+    setPushNotification(pushNotification: Gs2JobQueue.NotificationSetting | null): this;
+    withPushNotification(pushNotification: Gs2JobQueue.NotificationSetting | null): this;
+    getLogSetting(): Gs2JobQueue.LogSetting | null;
+    setLogSetting(logSetting: Gs2JobQueue.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2JobQueue.LogSetting | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

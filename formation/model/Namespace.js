@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
-var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2Formation = tslib_1.__importStar(require("../../formation/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -211,11 +209,11 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
-            .withUpdateMoldScript(ScriptSetting_1.default.fromDict(data["updateMoldScript"]))
-            .withUpdateFormScript(ScriptSetting_1.default.fromDict(data["updateFormScript"]))
-            .withUpdatePropertyFormScript(ScriptSetting_1.default.fromDict(data["updatePropertyFormScript"]))
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withTransactionSetting(Gs2Formation.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withUpdateMoldScript(Gs2Formation.ScriptSetting.fromDict(data["updateMoldScript"]))
+            .withUpdateFormScript(Gs2Formation.ScriptSetting.fromDict(data["updateFormScript"]))
+            .withUpdatePropertyFormScript(Gs2Formation.ScriptSetting.fromDict(data["updatePropertyFormScript"]))
+            .withLogSetting(Gs2Formation.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

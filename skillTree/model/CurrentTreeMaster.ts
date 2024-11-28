@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2SkillTree from '../../skillTree/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:skillTree:{namespaceName}";
 
 export default class CurrentTreeMaster implements IModel {

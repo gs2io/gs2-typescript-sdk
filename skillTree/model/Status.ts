@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2SkillTree from '../../skillTree/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:skillTree:{namespaceName}:user:{userId}:status:{propertyId}";
 
 export default class Status implements IModel {
@@ -219,7 +221,7 @@ export default class Status implements IModel {
                 data.releasedNodeNames.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -234,7 +236,7 @@ export default class Status implements IModel {
                 this.getReleasedNodeNames()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

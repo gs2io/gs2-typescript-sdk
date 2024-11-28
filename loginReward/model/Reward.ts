@@ -15,18 +15,20 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2LoginReward from '../../loginReward/model'
 import AcquireAction from './AcquireAction';
 
 export default class Reward implements IModel {
-    private acquireActions: AcquireAction[]|null = null;
-    public getAcquireActions(): AcquireAction[]|null {
+    private acquireActions: Gs2LoginReward.AcquireAction[]|null = null;
+    public getAcquireActions(): Gs2LoginReward.AcquireAction[]|null {
         return this.acquireActions;
     }
-    public setAcquireActions(acquireActions: AcquireAction[]|null) {
+    public setAcquireActions(acquireActions: Gs2LoginReward.AcquireAction[]|null) {
         this.acquireActions = acquireActions;
         return this;
     }
-    public withAcquireActions(acquireActions: AcquireAction[]|null): this {
+    public withAcquireActions(acquireActions: Gs2LoginReward.AcquireAction[]|null): this {
         this.acquireActions = acquireActions;
         return this;
     }
@@ -38,18 +40,18 @@ export default class Reward implements IModel {
         return new Reward()
             .withAcquireActions(data.acquireActions ?
                 data.acquireActions.map((item: {[key: string]: any}) => {
-                    return AcquireAction.fromDict(item);
+                    return Gs2LoginReward.AcquireAction.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "acquireActions": this.getAcquireActions() ?
-                this.getAcquireActions()!.map((item: AcquireAction) => {
+                this.getAcquireActions()!.map((item: Gs2LoginReward.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

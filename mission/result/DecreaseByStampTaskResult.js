@@ -62,7 +62,7 @@ var DecreaseByStampTaskResult = /** @class */ (function () {
             .withChangedCompletes(data.changedCompletes ?
             data.changedCompletes.map(function (item) {
                 return Gs2Mission.Complete.fromDict(item);
-            }) : [])
+            }) : null)
             .withNewContextStack(data["newContextStack"]);
     };
     DecreaseByStampTaskResult.prototype.toDict = function () {
@@ -72,7 +72,7 @@ var DecreaseByStampTaskResult = /** @class */ (function () {
             "changedCompletes": this.getChangedCompletes() ?
                 this.getChangedCompletes().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "newContextStack": this.getNewContextStack(),
         };
     };

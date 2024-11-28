@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import DefaultGradeModel from './DefaultGradeModel';
-import GradeEntryModel from './GradeEntryModel';
-import AcquireActionRate from './AcquireActionRate';
+import * as Gs2Grade from '../../grade/model';
 export default class GradeModel implements IModel {
     private gradeModelId;
     private name;
@@ -25,18 +23,18 @@ export default class GradeModel implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
-    getDefaultGrades(): DefaultGradeModel[] | null;
-    setDefaultGrades(defaultGrades: DefaultGradeModel[] | null): this;
-    withDefaultGrades(defaultGrades: DefaultGradeModel[] | null): this;
+    getDefaultGrades(): Gs2Grade.DefaultGradeModel[] | null;
+    setDefaultGrades(defaultGrades: Gs2Grade.DefaultGradeModel[] | null): this;
+    withDefaultGrades(defaultGrades: Gs2Grade.DefaultGradeModel[] | null): this;
     getExperienceModelId(): string | null;
     setExperienceModelId(experienceModelId: string | null): this;
     withExperienceModelId(experienceModelId: string | null): this;
-    getGradeEntries(): GradeEntryModel[] | null;
-    setGradeEntries(gradeEntries: GradeEntryModel[] | null): this;
-    withGradeEntries(gradeEntries: GradeEntryModel[] | null): this;
-    getAcquireActionRates(): AcquireActionRate[] | null;
-    setAcquireActionRates(acquireActionRates: AcquireActionRate[] | null): this;
-    withAcquireActionRates(acquireActionRates: AcquireActionRate[] | null): this;
+    getGradeEntries(): Gs2Grade.GradeEntryModel[] | null;
+    setGradeEntries(gradeEntries: Gs2Grade.GradeEntryModel[] | null): this;
+    withGradeEntries(gradeEntries: Gs2Grade.GradeEntryModel[] | null): this;
+    getAcquireActionRates(): Gs2Grade.AcquireActionRate[] | null;
+    setAcquireActionRates(acquireActionRates: Gs2Grade.AcquireActionRate[] | null): this;
+    withAcquireActionRates(acquireActionRates: Gs2Grade.AcquireActionRate[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): GradeModel | null;

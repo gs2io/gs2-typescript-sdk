@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2SkillTree from '../../skillTree/model'
 import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:skillTree:{namespaceName}:model:{nodeModelName}";
@@ -24,8 +26,8 @@ export default class NodeModelMaster implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private metadata: string|null = null;
-    private releaseVerifyActions: VerifyAction[]|null = null;
-    private releaseConsumeActions: ConsumeAction[]|null = null;
+    private releaseVerifyActions: Gs2SkillTree.VerifyAction[]|null = null;
+    private releaseConsumeActions: Gs2SkillTree.ConsumeAction[]|null = null;
     private restrainReturnRate: number|null = null;
     private premiseNodeNames: string[]|null = null;
     private createdAt: number|null = null;
@@ -156,25 +158,25 @@ export default class NodeModelMaster implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getReleaseVerifyActions(): VerifyAction[]|null {
+    public getReleaseVerifyActions(): Gs2SkillTree.VerifyAction[]|null {
         return this.releaseVerifyActions;
     }
-    public setReleaseVerifyActions(releaseVerifyActions: VerifyAction[]|null) {
+    public setReleaseVerifyActions(releaseVerifyActions: Gs2SkillTree.VerifyAction[]|null) {
         this.releaseVerifyActions = releaseVerifyActions;
         return this;
     }
-    public withReleaseVerifyActions(releaseVerifyActions: VerifyAction[]|null): this {
+    public withReleaseVerifyActions(releaseVerifyActions: Gs2SkillTree.VerifyAction[]|null): this {
         this.releaseVerifyActions = releaseVerifyActions;
         return this;
     }
-    public getReleaseConsumeActions(): ConsumeAction[]|null {
+    public getReleaseConsumeActions(): Gs2SkillTree.ConsumeAction[]|null {
         return this.releaseConsumeActions;
     }
-    public setReleaseConsumeActions(releaseConsumeActions: ConsumeAction[]|null) {
+    public setReleaseConsumeActions(releaseConsumeActions: Gs2SkillTree.ConsumeAction[]|null) {
         this.releaseConsumeActions = releaseConsumeActions;
         return this;
     }
-    public withReleaseConsumeActions(releaseConsumeActions: ConsumeAction[]|null): this {
+    public withReleaseConsumeActions(releaseConsumeActions: Gs2SkillTree.ConsumeAction[]|null): this {
         this.releaseConsumeActions = releaseConsumeActions;
         return this;
     }
@@ -245,20 +247,20 @@ export default class NodeModelMaster implements IModel {
             .withMetadata(data["metadata"])
             .withReleaseVerifyActions(data.releaseVerifyActions ?
                 data.releaseVerifyActions.map((item: {[key: string]: any}) => {
-                    return VerifyAction.fromDict(item);
+                    return Gs2SkillTree.VerifyAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withReleaseConsumeActions(data.releaseConsumeActions ?
                 data.releaseConsumeActions.map((item: {[key: string]: any}) => {
-                    return ConsumeAction.fromDict(item);
+                    return Gs2SkillTree.ConsumeAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withRestrainReturnRate(data["restrainReturnRate"])
             .withPremiseNodeNames(data.premiseNodeNames ?
                 data.premiseNodeNames.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -271,21 +273,21 @@ export default class NodeModelMaster implements IModel {
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
             "releaseVerifyActions": this.getReleaseVerifyActions() ?
-                this.getReleaseVerifyActions()!.map((item: VerifyAction) => {
+                this.getReleaseVerifyActions()!.map((item: Gs2SkillTree.VerifyAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "releaseConsumeActions": this.getReleaseConsumeActions() ?
-                this.getReleaseConsumeActions()!.map((item: ConsumeAction) => {
+                this.getReleaseConsumeActions()!.map((item: Gs2SkillTree.ConsumeAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "restrainReturnRate": this.getRestrainReturnRate(),
             "premiseNodeNames": this.getPremiseNodeNames() ?
                 this.getPremiseNodeNames()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Quest from '../../quest/model'
+
 export default class Config implements IModel {
     private key: string|null = null;
     private value: string|null = null;

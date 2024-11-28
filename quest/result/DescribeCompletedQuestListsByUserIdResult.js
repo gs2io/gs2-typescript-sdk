@@ -49,7 +49,7 @@ var DescribeCompletedQuestListsByUserIdResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Quest.CompletedQuestList.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeCompletedQuestListsByUserIdResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeCompletedQuestListsByUserIdResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

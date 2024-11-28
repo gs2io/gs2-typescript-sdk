@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Formation from '../../formation/model'
 import Slot from './Slot';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:user:{userId}:propertyForm:{propertyFormModelName}:{propertyId}";
 
@@ -23,7 +25,7 @@ export default class PropertyForm implements IModel {
     private userId: string|null = null;
     private name: string|null = null;
     private propertyId: string|null = null;
-    private slots: Slot[]|null = null;
+    private slots: Gs2Formation.Slot[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -200,14 +202,14 @@ export default class PropertyForm implements IModel {
         this.propertyId = propertyId;
         return this;
     }
-    public getSlots(): Slot[]|null {
+    public getSlots(): Gs2Formation.Slot[]|null {
         return this.slots;
     }
-    public setSlots(slots: Slot[]|null) {
+    public setSlots(slots: Gs2Formation.Slot[]|null) {
         this.slots = slots;
         return this;
     }
-    public withSlots(slots: Slot[]|null): this {
+    public withSlots(slots: Gs2Formation.Slot[]|null): this {
         this.slots = slots;
         return this;
     }
@@ -256,9 +258,9 @@ export default class PropertyForm implements IModel {
             .withPropertyId(data["propertyId"])
             .withSlots(data.slots ?
                 data.slots.map((item: {[key: string]: any}) => {
-                    return Slot.fromDict(item);
+                    return Gs2Formation.Slot.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -271,10 +273,10 @@ export default class PropertyForm implements IModel {
             "name": this.getName(),
             "propertyId": this.getPropertyId(),
             "slots": this.getSlots() ?
-                this.getSlots()!.map((item: Slot) => {
+                this.getSlots()!.map((item: Gs2Formation.Slot) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

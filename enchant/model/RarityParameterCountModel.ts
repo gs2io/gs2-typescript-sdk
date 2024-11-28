@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Enchant from '../../enchant/model'
+
 export default class RarityParameterCountModel implements IModel {
     private count: number|null = null;
     private weight: number|null = null;

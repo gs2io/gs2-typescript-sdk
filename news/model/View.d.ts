@@ -1,14 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import Content from './Content';
+import * as Gs2News from '../../news/model';
 export default class View implements IModel {
     private contents;
     private removeContents;
-    getContents(): Content[] | null;
-    setContents(contents: Content[] | null): this;
-    withContents(contents: Content[] | null): this;
-    getRemoveContents(): Content[] | null;
-    setRemoveContents(removeContents: Content[] | null): this;
-    withRemoveContents(removeContents: Content[] | null): this;
+    getContents(): Gs2News.Content[] | null;
+    setContents(contents: Gs2News.Content[] | null): this;
+    withContents(contents: Gs2News.Content[] | null): this;
+    getRemoveContents(): Gs2News.Content[] | null;
+    setRemoveContents(removeContents: Gs2News.Content[] | null): this;
+    withRemoveContents(removeContents: Gs2News.Content[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): View | null;

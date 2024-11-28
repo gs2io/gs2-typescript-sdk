@@ -86,7 +86,7 @@ var SetTransactionDefaultConfigRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Distributor.Config.fromDict(item);
-            }) : []);
+            }) : null);
     };
     SetTransactionDefaultConfigRequest.prototype.toDict = function () {
         return {
@@ -94,7 +94,7 @@ var SetTransactionDefaultConfigRequest = /** @class */ (function () {
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return SetTransactionDefaultConfigRequest;

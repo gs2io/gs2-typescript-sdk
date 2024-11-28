@@ -62,11 +62,11 @@ var CheckVersionByUserIdResult = /** @class */ (function () {
             .withWarnings(data.warnings ?
             data.warnings.map(function (item) {
                 return Gs2Version.Status.fromDict(item);
-            }) : [])
+            }) : null)
             .withErrors(data.errors ?
             data.errors.map(function (item) {
                 return Gs2Version.Status.fromDict(item);
-            }) : []);
+            }) : null);
     };
     CheckVersionByUserIdResult.prototype.toDict = function () {
         return {
@@ -74,11 +74,11 @@ var CheckVersionByUserIdResult = /** @class */ (function () {
             "warnings": this.getWarnings() ?
                 this.getWarnings().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "errors": this.getErrors() ?
                 this.getErrors().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return CheckVersionByUserIdResult;

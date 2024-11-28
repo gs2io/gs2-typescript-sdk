@@ -161,7 +161,7 @@ export default class BuyByUserIdRequest implements IRequest {
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Showcase.Config.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -176,7 +176,7 @@ export default class BuyByUserIdRequest implements IRequest {
                 this.getConfig()!.map((item: Gs2Showcase.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

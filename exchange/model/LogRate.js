@@ -51,7 +51,7 @@ var LogRate = /** @class */ (function () {
             .withLogs(data.logs ?
             data.logs.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     LogRate.prototype.toDict = function () {
         return {
@@ -59,7 +59,7 @@ var LogRate = /** @class */ (function () {
             "logs": this.getLogs() ?
                 this.getLogs().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return LogRate;

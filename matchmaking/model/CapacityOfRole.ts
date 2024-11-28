@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Matchmaking from '../../matchmaking/model'
 import Attribute from './Attribute';
 import Player from './Player';
 
@@ -22,7 +24,7 @@ export default class CapacityOfRole implements IModel {
     private roleName: string|null = null;
     private roleAliases: string[]|null = null;
     private capacity: number|null = null;
-    private participants: Player[]|null = null;
+    private participants: Gs2Matchmaking.Player[]|null = null;
     public getRoleName(): string|null {
         return this.roleName;
     }
@@ -56,14 +58,14 @@ export default class CapacityOfRole implements IModel {
         this.capacity = capacity;
         return this;
     }
-    public getParticipants(): Player[]|null {
+    public getParticipants(): Gs2Matchmaking.Player[]|null {
         return this.participants;
     }
-    public setParticipants(participants: Player[]|null) {
+    public setParticipants(participants: Gs2Matchmaking.Player[]|null) {
         this.participants = participants;
         return this;
     }
-    public withParticipants(participants: Player[]|null): this {
+    public withParticipants(participants: Gs2Matchmaking.Player[]|null): this {
         this.participants = participants;
         return this;
     }
@@ -78,13 +80,13 @@ export default class CapacityOfRole implements IModel {
                 data.roleAliases.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withCapacity(data["capacity"])
             .withParticipants(data.participants ?
                 data.participants.map((item: {[key: string]: any}) => {
-                    return Player.fromDict(item);
+                    return Gs2Matchmaking.Player.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -94,13 +96,13 @@ export default class CapacityOfRole implements IModel {
                 this.getRoleAliases()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "capacity": this.getCapacity(),
             "participants": this.getParticipants() ?
-                this.getParticipants()!.map((item: Player) => {
+                this.getParticipants()!.map((item: Gs2Matchmaking.Player) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

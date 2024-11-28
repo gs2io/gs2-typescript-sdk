@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Schedule from '../../schedule/model'
+
 export default class RepeatSetting implements IModel {
     private repeatType: string|null = null;
     private beginDayOfMonth: number|null = null;

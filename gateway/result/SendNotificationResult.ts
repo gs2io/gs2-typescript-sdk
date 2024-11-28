@@ -55,7 +55,7 @@ export default class SendNotificationResult implements IResult {
                 data.sendConnectionIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -65,7 +65,7 @@ export default class SendNotificationResult implements IResult {
                 this.getSendConnectionIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

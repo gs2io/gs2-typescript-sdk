@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Project from '../../project/model'
 import Gs2Region from './Gs2Region';
 const grnFormat: string = "grn:gs2:::gs2:account:{accountName}:project:{projectName}";
 
@@ -24,7 +26,7 @@ export default class Project implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private plan: string|null = null;
-    private regions: Gs2Region[]|null = null;
+    private regions: Gs2Project.Gs2Region[]|null = null;
     private billingMethodName: string|null = null;
     private enableEventBridge: string|null = null;
     private currency: string|null = null;
@@ -128,14 +130,14 @@ export default class Project implements IModel {
         this.plan = plan;
         return this;
     }
-    public getRegions(): Gs2Region[]|null {
+    public getRegions(): Gs2Project.Gs2Region[]|null {
         return this.regions;
     }
-    public setRegions(regions: Gs2Region[]|null) {
+    public setRegions(regions: Gs2Project.Gs2Region[]|null) {
         this.regions = regions;
         return this;
     }
-    public withRegions(regions: Gs2Region[]|null): this {
+    public withRegions(regions: Gs2Project.Gs2Region[]|null): this {
         this.regions = regions;
         return this;
     }
@@ -229,9 +231,9 @@ export default class Project implements IModel {
             .withPlan(data["plan"])
             .withRegions(data.regions ?
                 data.regions.map((item: {[key: string]: any}) => {
-                    return Gs2Region.fromDict(item);
+                    return Gs2Project.Gs2Region.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withBillingMethodName(data["billingMethodName"])
             .withEnableEventBridge(data["enableEventBridge"])
             .withCurrency(data["currency"])
@@ -249,10 +251,10 @@ export default class Project implements IModel {
             "description": this.getDescription(),
             "plan": this.getPlan(),
             "regions": this.getRegions() ?
-                this.getRegions()!.map((item: Gs2Region) => {
+                this.getRegions()!.map((item: Gs2Project.Gs2Region) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "billingMethodName": this.getBillingMethodName(),
             "enableEventBridge": this.getEnableEventBridge(),
             "currency": this.getCurrency(),

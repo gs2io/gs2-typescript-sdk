@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Inventory from '../../inventory/model'
+
 export default class AcquireCount implements IModel {
     private itemName: string|null = null;
     private count: number|null = null;

@@ -39,7 +39,7 @@ export default class DescribeAttachedGuardsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -48,7 +48,7 @@ export default class DescribeAttachedGuardsResult implements IResult {
                 this.getItems()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

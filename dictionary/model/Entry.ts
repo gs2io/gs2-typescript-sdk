@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Dictionary from '../../dictionary/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:dictionary:{namespaceName}:user:{userId}:entry:{entryModelName}";
 
 export default class Entry implements IModel {

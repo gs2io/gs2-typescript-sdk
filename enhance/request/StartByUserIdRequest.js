@@ -160,13 +160,13 @@ var StartByUserIdRequest = /** @class */ (function () {
             .withMaterials(data.materials ?
             data.materials.map(function (item) {
                 return Gs2Enhance.Material.fromDict(item);
-            }) : [])
+            }) : null)
             .withUserId(data["userId"])
             .withForce(data["force"])
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Enhance.Config.fromDict(item);
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     StartByUserIdRequest.prototype.toDict = function () {
@@ -177,13 +177,13 @@ var StartByUserIdRequest = /** @class */ (function () {
             "materials": this.getMaterials() ?
                 this.getMaterials().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "userId": this.getUserId(),
             "force": this.getForce(),
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

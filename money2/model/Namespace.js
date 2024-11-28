@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var PlatformSetting_1 = tslib_1.__importDefault(require("./PlatformSetting"));
-var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2Money2 = tslib_1.__importStar(require("../../money2/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:money2:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -225,10 +223,10 @@ var Namespace = /** @class */ (function () {
             .withDescription(data["description"])
             .withCurrencyUsagePriority(data["currencyUsagePriority"])
             .withSharedFreeCurrency(data["sharedFreeCurrency"])
-            .withPlatformSetting(PlatformSetting_1.default.fromDict(data["platformSetting"]))
-            .withDepositBalanceScript(ScriptSetting_1.default.fromDict(data["depositBalanceScript"]))
-            .withWithdrawBalanceScript(ScriptSetting_1.default.fromDict(data["withdrawBalanceScript"]))
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withPlatformSetting(Gs2Money2.PlatformSetting.fromDict(data["platformSetting"]))
+            .withDepositBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["depositBalanceScript"]))
+            .withWithdrawBalanceScript(Gs2Money2.ScriptSetting.fromDict(data["withdrawBalanceScript"]))
+            .withLogSetting(Gs2Money2.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

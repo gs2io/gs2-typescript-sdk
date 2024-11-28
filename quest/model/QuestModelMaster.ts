@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Quest from '../../quest/model'
 import AcquireAction from './AcquireAction';
 import Contents from './Contents';
 import VerifyAction from './VerifyAction';
@@ -27,12 +29,12 @@ export default class QuestModelMaster implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private metadata: string|null = null;
-    private contents: Contents[]|null = null;
+    private contents: Gs2Quest.Contents[]|null = null;
     private challengePeriodEventId: string|null = null;
-    private firstCompleteAcquireActions: AcquireAction[]|null = null;
-    private verifyActions: VerifyAction[]|null = null;
-    private consumeActions: ConsumeAction[]|null = null;
-    private failedAcquireActions: AcquireAction[]|null = null;
+    private firstCompleteAcquireActions: Gs2Quest.AcquireAction[]|null = null;
+    private verifyActions: Gs2Quest.VerifyAction[]|null = null;
+    private consumeActions: Gs2Quest.ConsumeAction[]|null = null;
+    private failedAcquireActions: Gs2Quest.AcquireAction[]|null = null;
     private premiseQuestNames: string[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -196,14 +198,14 @@ export default class QuestModelMaster implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getContents(): Contents[]|null {
+    public getContents(): Gs2Quest.Contents[]|null {
         return this.contents;
     }
-    public setContents(contents: Contents[]|null) {
+    public setContents(contents: Gs2Quest.Contents[]|null) {
         this.contents = contents;
         return this;
     }
-    public withContents(contents: Contents[]|null): this {
+    public withContents(contents: Gs2Quest.Contents[]|null): this {
         this.contents = contents;
         return this;
     }
@@ -218,47 +220,47 @@ export default class QuestModelMaster implements IModel {
         this.challengePeriodEventId = challengePeriodEventId;
         return this;
     }
-    public getFirstCompleteAcquireActions(): AcquireAction[]|null {
+    public getFirstCompleteAcquireActions(): Gs2Quest.AcquireAction[]|null {
         return this.firstCompleteAcquireActions;
     }
-    public setFirstCompleteAcquireActions(firstCompleteAcquireActions: AcquireAction[]|null) {
+    public setFirstCompleteAcquireActions(firstCompleteAcquireActions: Gs2Quest.AcquireAction[]|null) {
         this.firstCompleteAcquireActions = firstCompleteAcquireActions;
         return this;
     }
-    public withFirstCompleteAcquireActions(firstCompleteAcquireActions: AcquireAction[]|null): this {
+    public withFirstCompleteAcquireActions(firstCompleteAcquireActions: Gs2Quest.AcquireAction[]|null): this {
         this.firstCompleteAcquireActions = firstCompleteAcquireActions;
         return this;
     }
-    public getVerifyActions(): VerifyAction[]|null {
+    public getVerifyActions(): Gs2Quest.VerifyAction[]|null {
         return this.verifyActions;
     }
-    public setVerifyActions(verifyActions: VerifyAction[]|null) {
+    public setVerifyActions(verifyActions: Gs2Quest.VerifyAction[]|null) {
         this.verifyActions = verifyActions;
         return this;
     }
-    public withVerifyActions(verifyActions: VerifyAction[]|null): this {
+    public withVerifyActions(verifyActions: Gs2Quest.VerifyAction[]|null): this {
         this.verifyActions = verifyActions;
         return this;
     }
-    public getConsumeActions(): ConsumeAction[]|null {
+    public getConsumeActions(): Gs2Quest.ConsumeAction[]|null {
         return this.consumeActions;
     }
-    public setConsumeActions(consumeActions: ConsumeAction[]|null) {
+    public setConsumeActions(consumeActions: Gs2Quest.ConsumeAction[]|null) {
         this.consumeActions = consumeActions;
         return this;
     }
-    public withConsumeActions(consumeActions: ConsumeAction[]|null): this {
+    public withConsumeActions(consumeActions: Gs2Quest.ConsumeAction[]|null): this {
         this.consumeActions = consumeActions;
         return this;
     }
-    public getFailedAcquireActions(): AcquireAction[]|null {
+    public getFailedAcquireActions(): Gs2Quest.AcquireAction[]|null {
         return this.failedAcquireActions;
     }
-    public setFailedAcquireActions(failedAcquireActions: AcquireAction[]|null) {
+    public setFailedAcquireActions(failedAcquireActions: Gs2Quest.AcquireAction[]|null) {
         this.failedAcquireActions = failedAcquireActions;
         return this;
     }
-    public withFailedAcquireActions(failedAcquireActions: AcquireAction[]|null): this {
+    public withFailedAcquireActions(failedAcquireActions: Gs2Quest.AcquireAction[]|null): this {
         this.failedAcquireActions = failedAcquireActions;
         return this;
     }
@@ -319,35 +321,35 @@ export default class QuestModelMaster implements IModel {
             .withMetadata(data["metadata"])
             .withContents(data.contents ?
                 data.contents.map((item: {[key: string]: any}) => {
-                    return Contents.fromDict(item);
+                    return Gs2Quest.Contents.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withChallengePeriodEventId(data["challengePeriodEventId"])
             .withFirstCompleteAcquireActions(data.firstCompleteAcquireActions ?
                 data.firstCompleteAcquireActions.map((item: {[key: string]: any}) => {
-                    return AcquireAction.fromDict(item);
+                    return Gs2Quest.AcquireAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withVerifyActions(data.verifyActions ?
                 data.verifyActions.map((item: {[key: string]: any}) => {
-                    return VerifyAction.fromDict(item);
+                    return Gs2Quest.VerifyAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withConsumeActions(data.consumeActions ?
                 data.consumeActions.map((item: {[key: string]: any}) => {
-                    return ConsumeAction.fromDict(item);
+                    return Gs2Quest.ConsumeAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withFailedAcquireActions(data.failedAcquireActions ?
                 data.failedAcquireActions.map((item: {[key: string]: any}) => {
-                    return AcquireAction.fromDict(item);
+                    return Gs2Quest.AcquireAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withPremiseQuestNames(data.premiseQuestNames ?
                 data.premiseQuestNames.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -361,36 +363,36 @@ export default class QuestModelMaster implements IModel {
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
             "contents": this.getContents() ?
-                this.getContents()!.map((item: Contents) => {
+                this.getContents()!.map((item: Gs2Quest.Contents) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "firstCompleteAcquireActions": this.getFirstCompleteAcquireActions() ?
-                this.getFirstCompleteAcquireActions()!.map((item: AcquireAction) => {
+                this.getFirstCompleteAcquireActions()!.map((item: Gs2Quest.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "verifyActions": this.getVerifyActions() ?
-                this.getVerifyActions()!.map((item: VerifyAction) => {
+                this.getVerifyActions()!.map((item: Gs2Quest.VerifyAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "consumeActions": this.getConsumeActions() ?
-                this.getConsumeActions()!.map((item: ConsumeAction) => {
+                this.getConsumeActions()!.map((item: Gs2Quest.ConsumeAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "failedAcquireActions": this.getFailedAcquireActions() ?
-                this.getFailedAcquireActions()!.map((item: AcquireAction) => {
+                this.getFailedAcquireActions()!.map((item: Gs2Quest.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "premiseQuestNames": this.getPremiseQuestNames() ?
                 this.getPremiseQuestNames()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

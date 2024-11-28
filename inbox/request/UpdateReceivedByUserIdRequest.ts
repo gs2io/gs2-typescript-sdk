@@ -122,7 +122,7 @@ export default class UpdateReceivedByUserIdRequest implements IRequest {
                 data.receivedGlobalMessageNames.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -134,7 +134,7 @@ export default class UpdateReceivedByUserIdRequest implements IRequest {
                 this.getReceivedGlobalMessageNames()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

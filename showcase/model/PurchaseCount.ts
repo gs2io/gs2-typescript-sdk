@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Showcase from '../../showcase/model'
+
 export default class PurchaseCount implements IModel {
     private name: string|null = null;
     private count: number|null = null;

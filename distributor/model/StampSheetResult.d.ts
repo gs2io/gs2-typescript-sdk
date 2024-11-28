@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import VerifyAction from './VerifyAction';
-import ConsumeAction from './ConsumeAction';
-import AcquireAction from './AcquireAction';
+import * as Gs2Distributor from '../../distributor/model';
 export default class StampSheetResult implements IModel {
     private stampSheetResultId;
     private userId;
@@ -34,15 +32,15 @@ export default class StampSheetResult implements IModel {
     getTransactionId(): string | null;
     setTransactionId(transactionId: string | null): this;
     withTransactionId(transactionId: string | null): this;
-    getVerifyTaskRequests(): VerifyAction[] | null;
-    setVerifyTaskRequests(verifyTaskRequests: VerifyAction[] | null): this;
-    withVerifyTaskRequests(verifyTaskRequests: VerifyAction[] | null): this;
-    getTaskRequests(): ConsumeAction[] | null;
-    setTaskRequests(taskRequests: ConsumeAction[] | null): this;
-    withTaskRequests(taskRequests: ConsumeAction[] | null): this;
-    getSheetRequest(): AcquireAction | null;
-    setSheetRequest(sheetRequest: AcquireAction | null): this;
-    withSheetRequest(sheetRequest: AcquireAction | null): this;
+    getVerifyTaskRequests(): Gs2Distributor.VerifyAction[] | null;
+    setVerifyTaskRequests(verifyTaskRequests: Gs2Distributor.VerifyAction[] | null): this;
+    withVerifyTaskRequests(verifyTaskRequests: Gs2Distributor.VerifyAction[] | null): this;
+    getTaskRequests(): Gs2Distributor.ConsumeAction[] | null;
+    setTaskRequests(taskRequests: Gs2Distributor.ConsumeAction[] | null): this;
+    withTaskRequests(taskRequests: Gs2Distributor.ConsumeAction[] | null): this;
+    getSheetRequest(): Gs2Distributor.AcquireAction | null;
+    setSheetRequest(sheetRequest: Gs2Distributor.AcquireAction | null): this;
+    withSheetRequest(sheetRequest: Gs2Distributor.AcquireAction | null): this;
     getVerifyTaskResultCodes(): number[] | null;
     setVerifyTaskResultCodes(verifyTaskResultCodes: number[] | null): this;
     withVerifyTaskResultCodes(verifyTaskResultCodes: number[] | null): this;

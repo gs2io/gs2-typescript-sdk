@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Formation from '../../formation/model'
 import SlotModel from './SlotModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:model:propertyForm:{propertyFormModelName}";
 
@@ -23,7 +25,7 @@ export default class PropertyFormModelMaster implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private metadata: string|null = null;
-    private slots: SlotModel[]|null = null;
+    private slots: Gs2Formation.SlotModel[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -152,14 +154,14 @@ export default class PropertyFormModelMaster implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getSlots(): SlotModel[]|null {
+    public getSlots(): Gs2Formation.SlotModel[]|null {
         return this.slots;
     }
-    public setSlots(slots: SlotModel[]|null) {
+    public setSlots(slots: Gs2Formation.SlotModel[]|null) {
         this.slots = slots;
         return this;
     }
-    public withSlots(slots: SlotModel[]|null): this {
+    public withSlots(slots: Gs2Formation.SlotModel[]|null): this {
         this.slots = slots;
         return this;
     }
@@ -208,9 +210,9 @@ export default class PropertyFormModelMaster implements IModel {
             .withMetadata(data["metadata"])
             .withSlots(data.slots ?
                 data.slots.map((item: {[key: string]: any}) => {
-                    return SlotModel.fromDict(item);
+                    return Gs2Formation.SlotModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -223,10 +225,10 @@ export default class PropertyFormModelMaster implements IModel {
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
             "slots": this.getSlots() ?
-                this.getSlots()!.map((item: SlotModel) => {
+                this.getSlots()!.map((item: Gs2Formation.SlotModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

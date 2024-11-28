@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import LayerModel from './LayerModel';
+import * as Gs2MegaField from '../../megaField/model';
 export default class AreaModel implements IModel {
     private areaModelId;
     private name;
@@ -20,9 +20,9 @@ export default class AreaModel implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
-    getLayerModels(): LayerModel[] | null;
-    setLayerModels(layerModels: LayerModel[] | null): this;
-    withLayerModels(layerModels: LayerModel[] | null): this;
+    getLayerModels(): Gs2MegaField.LayerModel[] | null;
+    setLayerModels(layerModels: Gs2MegaField.LayerModel[] | null): this;
+    withLayerModels(layerModels: Gs2MegaField.LayerModel[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): AreaModel | null;

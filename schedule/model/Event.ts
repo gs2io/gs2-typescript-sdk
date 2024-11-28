@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Schedule from '../../schedule/model'
 import RepeatSetting from './RepeatSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:schedule:{namespaceName}:event:{eventName}";
 
@@ -26,7 +28,7 @@ export default class Event implements IModel {
     private absoluteBegin: number|null = null;
     private absoluteEnd: number|null = null;
     private relativeTriggerName: string|null = null;
-    private repeatSetting: RepeatSetting|null = null;
+    private repeatSetting: Gs2Schedule.RepeatSetting|null = null;
     private repeatType: string|null = null;
     private repeatBeginDayOfMonth: number|null = null;
     private repeatEndDayOfMonth: number|null = null;
@@ -192,14 +194,14 @@ export default class Event implements IModel {
         this.relativeTriggerName = relativeTriggerName;
         return this;
     }
-    public getRepeatSetting(): RepeatSetting|null {
+    public getRepeatSetting(): Gs2Schedule.RepeatSetting|null {
         return this.repeatSetting;
     }
-    public setRepeatSetting(repeatSetting: RepeatSetting|null) {
+    public setRepeatSetting(repeatSetting: Gs2Schedule.RepeatSetting|null) {
         this.repeatSetting = repeatSetting;
         return this;
     }
-    public withRepeatSetting(repeatSetting: RepeatSetting|null): this {
+    public withRepeatSetting(repeatSetting: Gs2Schedule.RepeatSetting|null): this {
         this.repeatSetting = repeatSetting;
         return this;
     }
@@ -314,7 +316,7 @@ export default class Event implements IModel {
             .withAbsoluteBegin(data["absoluteBegin"])
             .withAbsoluteEnd(data["absoluteEnd"])
             .withRelativeTriggerName(data["relativeTriggerName"])
-            .withRepeatSetting(RepeatSetting.fromDict(data["repeatSetting"]))
+            .withRepeatSetting(Gs2Schedule.RepeatSetting.fromDict(data["repeatSetting"]))
             .withRepeatType(data["repeatType"])
             .withRepeatBeginDayOfMonth(data["repeatBeginDayOfMonth"])
             .withRepeatEndDayOfMonth(data["repeatEndDayOfMonth"])

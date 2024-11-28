@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
+var Gs2Mission = tslib_1.__importStar(require("../../mission/model"));
 var CounterScopeModel = /** @class */ (function () {
     function CounterScopeModel() {
         this.scopeType = null;
@@ -115,7 +115,7 @@ var CounterScopeModel = /** @class */ (function () {
             .withResetDayOfWeek(data["resetDayOfWeek"])
             .withResetHour(data["resetHour"])
             .withConditionName(data["conditionName"])
-            .withCondition(VerifyAction_1.default.fromDict(data["condition"]));
+            .withCondition(Gs2Mission.VerifyAction.fromDict(data["condition"]));
     };
     CounterScopeModel.prototype.toDict = function () {
         var _a;

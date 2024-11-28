@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var DisplayItemMaster_1 = tslib_1.__importDefault(require("./DisplayItemMaster"));
+var Gs2Showcase = tslib_1.__importStar(require("../../showcase/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:showcase:{namespaceName}:showcase:{showcaseName}";
 var ShowcaseMaster = /** @class */ (function () {
     function ShowcaseMaster() {
@@ -207,8 +207,8 @@ var ShowcaseMaster = /** @class */ (function () {
             .withSalesPeriodEventId(data["salesPeriodEventId"])
             .withDisplayItems(data.displayItems ?
             data.displayItems.map(function (item) {
-                return DisplayItemMaster_1.default.fromDict(item);
-            }) : [])
+                return Gs2Showcase.DisplayItemMaster.fromDict(item);
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -223,7 +223,7 @@ var ShowcaseMaster = /** @class */ (function () {
             "displayItems": this.getDisplayItems() ?
                 this.getDisplayItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

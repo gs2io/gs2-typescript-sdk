@@ -139,7 +139,7 @@ var UpdateBalanceParameterModelMasterRequest = /** @class */ (function () {
             .withParameters(data.parameters ?
             data.parameters.map(function (item) {
                 return Gs2Enchant.BalanceParameterValueModel.fromDict(item);
-            }) : []);
+            }) : null);
     };
     UpdateBalanceParameterModelMasterRequest.prototype.toDict = function () {
         return {
@@ -152,7 +152,7 @@ var UpdateBalanceParameterModelMasterRequest = /** @class */ (function () {
             "parameters": this.getParameters() ?
                 this.getParameters().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return UpdateBalanceParameterModelMasterRequest;

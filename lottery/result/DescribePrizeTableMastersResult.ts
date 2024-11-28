@@ -55,7 +55,7 @@ export default class DescribePrizeTableMastersResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Lottery.PrizeTableMaster.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribePrizeTableMastersResult implements IResult {
                 this.getItems()!.map((item: Gs2Lottery.PrizeTableMaster) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

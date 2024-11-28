@@ -147,12 +147,12 @@ export default class BatchCompleteByUserIdRequest implements IRequest {
                 data.missionTaskNames.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withConfig(data.config ?
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Mission.Config.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -165,12 +165,12 @@ export default class BatchCompleteByUserIdRequest implements IRequest {
                 this.getMissionTaskNames()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "config": this.getConfig() ?
                 this.getConfig()!.map((item: Gs2Mission.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

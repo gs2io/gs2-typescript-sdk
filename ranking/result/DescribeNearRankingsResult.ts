@@ -40,7 +40,7 @@ export default class DescribeNearRankingsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Ranking.Ranking.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeNearRankingsResult implements IResult {
                 this.getItems()!.map((item: Gs2Ranking.Ranking) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

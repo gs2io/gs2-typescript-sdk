@@ -297,7 +297,7 @@ var ItemSet = /** @class */ (function () {
             .withReferenceOf(data.referenceOf ?
             data.referenceOf.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withSortValue(data["sortValue"])
             .withExpiresAt(data["expiresAt"])
             .withCreatedAt(data["createdAt"])
@@ -314,7 +314,7 @@ var ItemSet = /** @class */ (function () {
             "referenceOf": this.getReferenceOf() ?
                 this.getReferenceOf().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "sortValue": this.getSortValue(),
             "expiresAt": this.getExpiresAt(),
             "createdAt": this.getCreatedAt(),

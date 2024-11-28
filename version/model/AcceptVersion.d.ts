@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import Version from './Version';
+import * as Gs2Version from '../../version/model';
 export default class AcceptVersion implements IModel {
     private acceptVersionId;
     private versionName;
@@ -24,9 +24,9 @@ export default class AcceptVersion implements IModel {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
-    getVersion(): Version | null;
-    setVersion(version: Version | null): this;
-    withVersion(version: Version | null): this;
+    getVersion(): Gs2Version.Version | null;
+    setVersion(version: Gs2Version.Version | null): this;
+    withVersion(version: Gs2Version.Version | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

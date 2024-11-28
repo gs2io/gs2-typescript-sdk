@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Matchmaking from '../../matchmaking/model'
 import Ballot from './Ballot';
 import GameResult from './GameResult';
 import WrittenBallot from './WrittenBallot';
@@ -24,7 +26,7 @@ export default class Vote implements IModel {
     private voteId: string|null = null;
     private ratingName: string|null = null;
     private gatheringName: string|null = null;
-    private writtenBallots: WrittenBallot[]|null = null;
+    private writtenBallots: Gs2Matchmaking.WrittenBallot[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
 
@@ -164,14 +166,14 @@ export default class Vote implements IModel {
         this.gatheringName = gatheringName;
         return this;
     }
-    public getWrittenBallots(): WrittenBallot[]|null {
+    public getWrittenBallots(): Gs2Matchmaking.WrittenBallot[]|null {
         return this.writtenBallots;
     }
-    public setWrittenBallots(writtenBallots: WrittenBallot[]|null) {
+    public setWrittenBallots(writtenBallots: Gs2Matchmaking.WrittenBallot[]|null) {
         this.writtenBallots = writtenBallots;
         return this;
     }
-    public withWrittenBallots(writtenBallots: WrittenBallot[]|null): this {
+    public withWrittenBallots(writtenBallots: Gs2Matchmaking.WrittenBallot[]|null): this {
         this.writtenBallots = writtenBallots;
         return this;
     }
@@ -208,9 +210,9 @@ export default class Vote implements IModel {
             .withGatheringName(data["gatheringName"])
             .withWrittenBallots(data.writtenBallots ?
                 data.writtenBallots.map((item: {[key: string]: any}) => {
-                    return WrittenBallot.fromDict(item);
+                    return Gs2Matchmaking.WrittenBallot.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     }
@@ -221,10 +223,10 @@ export default class Vote implements IModel {
             "ratingName": this.getRatingName(),
             "gatheringName": this.getGatheringName(),
             "writtenBallots": this.getWrittenBallots() ?
-                this.getWrittenBallots()!.map((item: WrittenBallot) => {
+                this.getWrittenBallots()!.map((item: Gs2Matchmaking.WrittenBallot) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

@@ -125,7 +125,7 @@ var CompleteRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Mission.Config.fromDict(item);
-            }) : []);
+            }) : null);
     };
     CompleteRequest.prototype.toDict = function () {
         return {
@@ -136,7 +136,7 @@ var CompleteRequest = /** @class */ (function () {
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return CompleteRequest;

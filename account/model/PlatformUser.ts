@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Account from '../../account/model'
+
 export default class PlatformUser implements IModel {
     private type: number|null = null;
     private userIdentifier: string|null = null;

@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2StateMachine from '../../stateMachine/model'
+
 export default class StackEntry implements IModel {
     private stateMachineName: string|null = null;
     private taskName: string|null = null;

@@ -25,6 +25,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.description = null;
         this.assumeUserId = null;
         this.autoRunStampSheetNotification = null;
+        this.autoRunTransactionNotification = null;
         this.logSetting = null;
     }
     UpdateNamespaceRequest.prototype.getRequestId = function () {
@@ -93,6 +94,17 @@ var UpdateNamespaceRequest = /** @class */ (function () {
         this.autoRunStampSheetNotification = autoRunStampSheetNotification;
         return this;
     };
+    UpdateNamespaceRequest.prototype.getAutoRunTransactionNotification = function () {
+        return this.autoRunTransactionNotification;
+    };
+    UpdateNamespaceRequest.prototype.setAutoRunTransactionNotification = function (autoRunTransactionNotification) {
+        this.autoRunTransactionNotification = autoRunTransactionNotification;
+        return this;
+    };
+    UpdateNamespaceRequest.prototype.withAutoRunTransactionNotification = function (autoRunTransactionNotification) {
+        this.autoRunTransactionNotification = autoRunTransactionNotification;
+        return this;
+    };
     UpdateNamespaceRequest.prototype.getLogSetting = function () {
         return this.logSetting;
     };
@@ -110,16 +122,18 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withDescription(data["description"])
             .withAssumeUserId(data["assumeUserId"])
             .withAutoRunStampSheetNotification(Gs2Distributor.NotificationSetting.fromDict(data["autoRunStampSheetNotification"]))
+            .withAutoRunTransactionNotification(Gs2Distributor.NotificationSetting.fromDict(data["autoRunTransactionNotification"]))
             .withLogSetting(Gs2Distributor.LogSetting.fromDict(data["logSetting"]));
     };
     UpdateNamespaceRequest.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "namespaceName": this.getNamespaceName(),
             "description": this.getDescription(),
             "assumeUserId": this.getAssumeUserId(),
             "autoRunStampSheetNotification": (_a = this.getAutoRunStampSheetNotification()) === null || _a === void 0 ? void 0 : _a.toDict(),
-            "logSetting": (_b = this.getLogSetting()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "autoRunTransactionNotification": (_b = this.getAutoRunTransactionNotification()) === null || _b === void 0 ? void 0 : _b.toDict(),
+            "logSetting": (_c = this.getLogSetting()) === null || _c === void 0 ? void 0 : _c.toDict(),
         };
     };
     return UpdateNamespaceRequest;

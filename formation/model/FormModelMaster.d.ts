@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import SlotModel from './SlotModel';
+import * as Gs2Formation from '../../formation/model';
 export default class FormModelMaster implements IModel {
     private formModelId;
     private name;
@@ -27,9 +27,9 @@ export default class FormModelMaster implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
-    getSlots(): SlotModel[] | null;
-    setSlots(slots: SlotModel[] | null): this;
-    withSlots(slots: SlotModel[] | null): this;
+    getSlots(): Gs2Formation.SlotModel[] | null;
+    setSlots(slots: Gs2Formation.SlotModel[] | null): this;
+    withSlots(slots: Gs2Formation.SlotModel[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

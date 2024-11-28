@@ -163,15 +163,15 @@ var UpdateRateModelMasterRequest = /** @class */ (function () {
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
                 return Gs2Exchange.AcquireAction.fromDict(item);
-            }) : [])
+            }) : null)
             .withVerifyActions(data.verifyActions ?
             data.verifyActions.map(function (item) {
                 return Gs2Exchange.VerifyAction.fromDict(item);
-            }) : [])
+            }) : null)
             .withConsumeActions(data.consumeActions ?
             data.consumeActions.map(function (item) {
                 return Gs2Exchange.ConsumeAction.fromDict(item);
-            }) : []);
+            }) : null);
     };
     UpdateRateModelMasterRequest.prototype.toDict = function () {
         return {
@@ -184,15 +184,15 @@ var UpdateRateModelMasterRequest = /** @class */ (function () {
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "verifyActions": this.getVerifyActions() ?
                 this.getVerifyActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return UpdateRateModelMasterRequest;

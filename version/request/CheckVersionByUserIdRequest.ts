@@ -122,7 +122,7 @@ export default class CheckVersionByUserIdRequest implements IRequest {
                 data.targetVersions.map((item: {[key: string]: any}) => {
                     return Gs2Version.TargetVersion.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -134,7 +134,7 @@ export default class CheckVersionByUserIdRequest implements IRequest {
                 this.getTargetVersions()!.map((item: Gs2Version.TargetVersion) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

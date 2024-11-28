@@ -122,7 +122,7 @@ var BatchReceiveByUserIdRequest = /** @class */ (function () {
             .withMissionTaskNames(data.missionTaskNames ?
             data.missionTaskNames.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     BatchReceiveByUserIdRequest.prototype.toDict = function () {
@@ -133,7 +133,7 @@ var BatchReceiveByUserIdRequest = /** @class */ (function () {
             "missionTaskNames": this.getMissionTaskNames() ?
                 this.getMissionTaskNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

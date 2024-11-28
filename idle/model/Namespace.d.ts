@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import TransactionSetting from './TransactionSetting';
-import ScriptSetting from './ScriptSetting';
-import LogSetting from './LogSetting';
+import * as Gs2Idle from '../../idle/model';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
@@ -27,18 +25,18 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
-    getTransactionSetting(): TransactionSetting | null;
-    setTransactionSetting(transactionSetting: TransactionSetting | null): this;
-    withTransactionSetting(transactionSetting: TransactionSetting | null): this;
-    getReceiveScript(): ScriptSetting | null;
-    setReceiveScript(receiveScript: ScriptSetting | null): this;
-    withReceiveScript(receiveScript: ScriptSetting | null): this;
+    getTransactionSetting(): Gs2Idle.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Idle.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Idle.TransactionSetting | null): this;
+    getReceiveScript(): Gs2Idle.ScriptSetting | null;
+    setReceiveScript(receiveScript: Gs2Idle.ScriptSetting | null): this;
+    withReceiveScript(receiveScript: Gs2Idle.ScriptSetting | null): this;
     getOverrideAcquireActionsScriptId(): string | null;
     setOverrideAcquireActionsScriptId(overrideAcquireActionsScriptId: string | null): this;
     withOverrideAcquireActionsScriptId(overrideAcquireActionsScriptId: string | null): this;
-    getLogSetting(): LogSetting | null;
-    setLogSetting(logSetting: LogSetting | null): this;
-    withLogSetting(logSetting: LogSetting | null): this;
+    getLogSetting(): Gs2Idle.LogSetting | null;
+    setLogSetting(logSetting: Gs2Idle.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2Idle.LogSetting | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

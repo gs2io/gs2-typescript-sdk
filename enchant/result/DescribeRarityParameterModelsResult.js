@@ -37,14 +37,14 @@ var DescribeRarityParameterModelsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Enchant.RarityParameterModel.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeRarityParameterModelsResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeRarityParameterModelsResult;

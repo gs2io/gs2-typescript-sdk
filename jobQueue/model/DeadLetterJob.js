@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var JobResultBody_1 = tslib_1.__importDefault(require("./JobResultBody"));
+var Gs2JobQueue = tslib_1.__importStar(require("../../jobQueue/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:queue:{namespaceName}:user:{userId}:dead:{deadLetterJobName}";
 var DeadLetterJob = /** @class */ (function () {
     function DeadLetterJob() {
@@ -215,8 +215,8 @@ var DeadLetterJob = /** @class */ (function () {
             .withArgs(data["args"])
             .withResult(data.result ?
             data.result.map(function (item) {
-                return JobResultBody_1.default.fromDict(item);
-            }) : [])
+                return Gs2JobQueue.JobResultBody.fromDict(item);
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);
     };
@@ -230,7 +230,7 @@ var DeadLetterJob = /** @class */ (function () {
             "result": this.getResult() ?
                 this.getResult().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
         };

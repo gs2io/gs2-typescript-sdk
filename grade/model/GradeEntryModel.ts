@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Grade from '../../grade/model'
+
 export default class GradeEntryModel implements IModel {
     private metadata: string|null = null;
     private rankCapValue: number|null = null;

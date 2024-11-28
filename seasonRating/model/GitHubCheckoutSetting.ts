@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2SeasonRating from '../../seasonRating/model'
+
 export default class GitHubCheckoutSetting implements IModel {
     private apiKeyId: string|null = null;
     private repositoryName: string|null = null;

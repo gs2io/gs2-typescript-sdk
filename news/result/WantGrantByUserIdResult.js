@@ -61,7 +61,7 @@ var WantGrantByUserIdResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2News.SetCookieRequestEntry.fromDict(item);
-            }) : [])
+            }) : null)
             .withBrowserUrl(data["browserUrl"])
             .withZipUrl(data["zipUrl"]);
     };
@@ -70,7 +70,7 @@ var WantGrantByUserIdResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "browserUrl": this.getBrowserUrl(),
             "zipUrl": this.getZipUrl(),
         };

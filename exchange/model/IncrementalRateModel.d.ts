@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import ConsumeAction from './ConsumeAction';
-import AcquireAction from './AcquireAction';
+import * as Gs2Exchange from '../../exchange/model';
 export default class IncrementalRateModel implements IModel {
     private incrementalRateModelId;
     private name;
@@ -28,9 +27,9 @@ export default class IncrementalRateModel implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
-    getConsumeAction(): ConsumeAction | null;
-    setConsumeAction(consumeAction: ConsumeAction | null): this;
-    withConsumeAction(consumeAction: ConsumeAction | null): this;
+    getConsumeAction(): Gs2Exchange.ConsumeAction | null;
+    setConsumeAction(consumeAction: Gs2Exchange.ConsumeAction | null): this;
+    withConsumeAction(consumeAction: Gs2Exchange.ConsumeAction | null): this;
     getCalculateType(): string | null;
     setCalculateType(calculateType: string | null): this;
     withCalculateType(calculateType: string | null): this;
@@ -49,9 +48,9 @@ export default class IncrementalRateModel implements IModel {
     getMaximumExchangeCount(): number | null;
     setMaximumExchangeCount(maximumExchangeCount: number | null): this;
     withMaximumExchangeCount(maximumExchangeCount: number | null): this;
-    getAcquireActions(): AcquireAction[] | null;
-    setAcquireActions(acquireActions: AcquireAction[] | null): this;
-    withAcquireActions(acquireActions: AcquireAction[] | null): this;
+    getAcquireActions(): Gs2Exchange.AcquireAction[] | null;
+    setAcquireActions(acquireActions: Gs2Exchange.AcquireAction[] | null): this;
+    withAcquireActions(acquireActions: Gs2Exchange.AcquireAction[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): IncrementalRateModel | null;

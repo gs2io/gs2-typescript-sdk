@@ -137,7 +137,7 @@ var ReceiveGlobalRankingReceivedRewardByUserIdRequest = /** @class */ (function 
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Ranking2.Config.fromDict(item);
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     ReceiveGlobalRankingReceivedRewardByUserIdRequest.prototype.toDict = function () {
@@ -149,7 +149,7 @@ var ReceiveGlobalRankingReceivedRewardByUserIdRequest = /** @class */ (function 
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

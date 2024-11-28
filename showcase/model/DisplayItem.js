@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var SalesItem_1 = tslib_1.__importDefault(require("./SalesItem"));
-var SalesItemGroup_1 = tslib_1.__importDefault(require("./SalesItemGroup"));
+var Gs2Showcase = tslib_1.__importStar(require("../../showcase/model"));
 var grnFormat = "";
 var DisplayItem = /** @class */ (function () {
     function DisplayItem() {
@@ -95,8 +94,8 @@ var DisplayItem = /** @class */ (function () {
         return new DisplayItem()
             .withDisplayItemId(data["displayItemId"])
             .withType(data["type"])
-            .withSalesItem(SalesItem_1.default.fromDict(data["salesItem"]))
-            .withSalesItemGroup(SalesItemGroup_1.default.fromDict(data["salesItemGroup"]))
+            .withSalesItem(Gs2Showcase.SalesItem.fromDict(data["salesItem"]))
+            .withSalesItemGroup(Gs2Showcase.SalesItemGroup.fromDict(data["salesItemGroup"]))
             .withSalesPeriodEventId(data["salesPeriodEventId"]);
     };
     DisplayItem.prototype.toDict = function () {

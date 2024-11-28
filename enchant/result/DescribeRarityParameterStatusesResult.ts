@@ -55,7 +55,7 @@ export default class DescribeRarityParameterStatusesResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Enchant.RarityParameterStatus.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeRarityParameterStatusesResult implements IResult {
                 this.getItems()!.map((item: Gs2Enchant.RarityParameterStatus) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

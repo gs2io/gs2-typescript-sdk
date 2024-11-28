@@ -40,7 +40,7 @@ export default class DescribeGradeModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Grade.GradeModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeGradeModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2Grade.GradeModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Showcase from '../../showcase/model'
+
 export default class ConsumeAction implements IModel {
     private action: string|null = null;
     private request: string|null = null;

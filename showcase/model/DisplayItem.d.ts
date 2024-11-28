@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import SalesItem from './SalesItem';
-import SalesItemGroup from './SalesItemGroup';
+import * as Gs2Showcase from '../../showcase/model';
 export default class DisplayItem implements IModel {
     private displayItemId;
     private type;
@@ -15,12 +14,12 @@ export default class DisplayItem implements IModel {
     getType(): string | null;
     setType(type: string | null): this;
     withType(type: string | null): this;
-    getSalesItem(): SalesItem | null;
-    setSalesItem(salesItem: SalesItem | null): this;
-    withSalesItem(salesItem: SalesItem | null): this;
-    getSalesItemGroup(): SalesItemGroup | null;
-    setSalesItemGroup(salesItemGroup: SalesItemGroup | null): this;
-    withSalesItemGroup(salesItemGroup: SalesItemGroup | null): this;
+    getSalesItem(): Gs2Showcase.SalesItem | null;
+    setSalesItem(salesItem: Gs2Showcase.SalesItem | null): this;
+    withSalesItem(salesItem: Gs2Showcase.SalesItem | null): this;
+    getSalesItemGroup(): Gs2Showcase.SalesItemGroup | null;
+    setSalesItemGroup(salesItemGroup: Gs2Showcase.SalesItemGroup | null): this;
+    withSalesItemGroup(salesItemGroup: Gs2Showcase.SalesItemGroup | null): this;
     getSalesPeriodEventId(): string | null;
     setSalesPeriodEventId(salesPeriodEventId: string | null): this;
     withSalesPeriodEventId(salesPeriodEventId: string | null): this;

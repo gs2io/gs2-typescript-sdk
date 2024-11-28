@@ -157,18 +157,18 @@ export default class UpdateGradeModelMasterRequest implements IRequest {
                 data.defaultGrades.map((item: {[key: string]: any}) => {
                     return Gs2Grade.DefaultGradeModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withExperienceModelId(data["experienceModelId"])
             .withGradeEntries(data.gradeEntries ?
                 data.gradeEntries.map((item: {[key: string]: any}) => {
                     return Gs2Grade.GradeEntryModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withAcquireActionRates(data.acquireActionRates ?
                 data.acquireActionRates.map((item: {[key: string]: any}) => {
                     return Gs2Grade.AcquireActionRate.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -181,18 +181,18 @@ export default class UpdateGradeModelMasterRequest implements IRequest {
                 this.getDefaultGrades()!.map((item: Gs2Grade.DefaultGradeModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "experienceModelId": this.getExperienceModelId(),
             "gradeEntries": this.getGradeEntries() ?
                 this.getGradeEntries()!.map((item: Gs2Grade.GradeEntryModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "acquireActionRates": this.getAcquireActionRates() ?
                 this.getAcquireActionRates()!.map((item: Gs2Grade.AcquireActionRate) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

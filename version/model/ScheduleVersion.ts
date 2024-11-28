@@ -15,43 +15,45 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Version from '../../version/model'
 import Version from './Version';
 
 export default class ScheduleVersion implements IModel {
-    private currentVersion: Version|null = null;
-    private warningVersion: Version|null = null;
-    private errorVersion: Version|null = null;
+    private currentVersion: Gs2Version.Version|null = null;
+    private warningVersion: Gs2Version.Version|null = null;
+    private errorVersion: Gs2Version.Version|null = null;
     private scheduleEventId: string|null = null;
-    public getCurrentVersion(): Version|null {
+    public getCurrentVersion(): Gs2Version.Version|null {
         return this.currentVersion;
     }
-    public setCurrentVersion(currentVersion: Version|null) {
+    public setCurrentVersion(currentVersion: Gs2Version.Version|null) {
         this.currentVersion = currentVersion;
         return this;
     }
-    public withCurrentVersion(currentVersion: Version|null): this {
+    public withCurrentVersion(currentVersion: Gs2Version.Version|null): this {
         this.currentVersion = currentVersion;
         return this;
     }
-    public getWarningVersion(): Version|null {
+    public getWarningVersion(): Gs2Version.Version|null {
         return this.warningVersion;
     }
-    public setWarningVersion(warningVersion: Version|null) {
+    public setWarningVersion(warningVersion: Gs2Version.Version|null) {
         this.warningVersion = warningVersion;
         return this;
     }
-    public withWarningVersion(warningVersion: Version|null): this {
+    public withWarningVersion(warningVersion: Gs2Version.Version|null): this {
         this.warningVersion = warningVersion;
         return this;
     }
-    public getErrorVersion(): Version|null {
+    public getErrorVersion(): Gs2Version.Version|null {
         return this.errorVersion;
     }
-    public setErrorVersion(errorVersion: Version|null) {
+    public setErrorVersion(errorVersion: Gs2Version.Version|null) {
         this.errorVersion = errorVersion;
         return this;
     }
-    public withErrorVersion(errorVersion: Version|null): this {
+    public withErrorVersion(errorVersion: Gs2Version.Version|null): this {
         this.errorVersion = errorVersion;
         return this;
     }
@@ -72,9 +74,9 @@ export default class ScheduleVersion implements IModel {
             return null;
         }
         return new ScheduleVersion()
-            .withCurrentVersion(Version.fromDict(data["currentVersion"]))
-            .withWarningVersion(Version.fromDict(data["warningVersion"]))
-            .withErrorVersion(Version.fromDict(data["errorVersion"]))
+            .withCurrentVersion(Gs2Version.Version.fromDict(data["currentVersion"]))
+            .withWarningVersion(Gs2Version.Version.fromDict(data["warningVersion"]))
+            .withErrorVersion(Gs2Version.Version.fromDict(data["errorVersion"]))
             .withScheduleEventId(data["scheduleEventId"]);
     }
 

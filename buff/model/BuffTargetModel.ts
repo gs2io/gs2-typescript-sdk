@@ -15,12 +15,14 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Buff from '../../buff/model'
 import BuffTargetGrn from './BuffTargetGrn';
 
 export default class BuffTargetModel implements IModel {
     private targetModelName: string|null = null;
     private targetFieldName: string|null = null;
-    private conditionGrns: BuffTargetGrn[]|null = null;
+    private conditionGrns: Gs2Buff.BuffTargetGrn[]|null = null;
     private rate: number|null = null;
     public getTargetModelName(): string|null {
         return this.targetModelName;
@@ -44,14 +46,14 @@ export default class BuffTargetModel implements IModel {
         this.targetFieldName = targetFieldName;
         return this;
     }
-    public getConditionGrns(): BuffTargetGrn[]|null {
+    public getConditionGrns(): Gs2Buff.BuffTargetGrn[]|null {
         return this.conditionGrns;
     }
-    public setConditionGrns(conditionGrns: BuffTargetGrn[]|null) {
+    public setConditionGrns(conditionGrns: Gs2Buff.BuffTargetGrn[]|null) {
         this.conditionGrns = conditionGrns;
         return this;
     }
-    public withConditionGrns(conditionGrns: BuffTargetGrn[]|null): this {
+    public withConditionGrns(conditionGrns: Gs2Buff.BuffTargetGrn[]|null): this {
         this.conditionGrns = conditionGrns;
         return this;
     }
@@ -76,9 +78,9 @@ export default class BuffTargetModel implements IModel {
             .withTargetFieldName(data["targetFieldName"])
             .withConditionGrns(data.conditionGrns ?
                 data.conditionGrns.map((item: {[key: string]: any}) => {
-                    return BuffTargetGrn.fromDict(item);
+                    return Gs2Buff.BuffTargetGrn.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withRate(data["rate"]);
     }
 
@@ -87,10 +89,10 @@ export default class BuffTargetModel implements IModel {
             "targetModelName": this.getTargetModelName(),
             "targetFieldName": this.getTargetFieldName(),
             "conditionGrns": this.getConditionGrns() ?
-                this.getConditionGrns()!.map((item: BuffTargetGrn) => {
+                this.getConditionGrns()!.map((item: Gs2Buff.BuffTargetGrn) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "rate": this.getRate(),
         };
     }

@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import BonusRate from './BonusRate';
+import * as Gs2Enhance from '../../enhance/model';
 export default class RateModelMaster implements IModel {
     private rateModelId;
     private name;
@@ -47,9 +47,9 @@ export default class RateModelMaster implements IModel {
     getExperienceModelId(): string | null;
     setExperienceModelId(experienceModelId: string | null): this;
     withExperienceModelId(experienceModelId: string | null): this;
-    getBonusRates(): BonusRate[] | null;
-    setBonusRates(bonusRates: BonusRate[] | null): this;
-    withBonusRates(bonusRates: BonusRate[] | null): this;
+    getBonusRates(): Gs2Enhance.BonusRate[] | null;
+    setBonusRates(bonusRates: Gs2Enhance.BonusRate[] | null): this;
+    withBonusRates(bonusRates: Gs2Enhance.BonusRate[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

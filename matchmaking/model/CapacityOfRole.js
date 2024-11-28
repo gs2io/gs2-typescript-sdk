@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Player_1 = tslib_1.__importDefault(require("./Player"));
+var Gs2Matchmaking = tslib_1.__importStar(require("../../matchmaking/model"));
 var CapacityOfRole = /** @class */ (function () {
     function CapacityOfRole() {
         this.roleName = null;
@@ -77,12 +77,12 @@ var CapacityOfRole = /** @class */ (function () {
             .withRoleAliases(data.roleAliases ?
             data.roleAliases.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withCapacity(data["capacity"])
             .withParticipants(data.participants ?
             data.participants.map(function (item) {
-                return Player_1.default.fromDict(item);
-            }) : []);
+                return Gs2Matchmaking.Player.fromDict(item);
+            }) : null);
     };
     CapacityOfRole.prototype.toDict = function () {
         return {
@@ -90,12 +90,12 @@ var CapacityOfRole = /** @class */ (function () {
             "roleAliases": this.getRoleAliases() ?
                 this.getRoleAliases().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "capacity": this.getCapacity(),
             "participants": this.getParticipants() ?
                 this.getParticipants().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return CapacityOfRole;

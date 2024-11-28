@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2StateMachine from '../../stateMachine/model'
 import RandomUsed from './RandomUsed';
 import RandomStatus from './RandomStatus';
 import StackEntry from './StackEntry';
@@ -28,9 +30,9 @@ export default class Status implements IModel {
     private stateMachineVersion: number|null = null;
     private enableSpeculativeExecution: string|null = null;
     private stateMachineDefinition: string|null = null;
-    private randomStatus: RandomStatus|null = null;
-    private stacks: StackEntry[]|null = null;
-    private variables: Variable[]|null = null;
+    private randomStatus: Gs2StateMachine.RandomStatus|null = null;
+    private stacks: Gs2StateMachine.StackEntry[]|null = null;
+    private variables: Gs2StateMachine.Variable[]|null = null;
     private status: string|null = null;
     private lastError: string|null = null;
     private transitionCount: number|null = null;
@@ -206,36 +208,36 @@ export default class Status implements IModel {
         this.stateMachineDefinition = stateMachineDefinition;
         return this;
     }
-    public getRandomStatus(): RandomStatus|null {
+    public getRandomStatus(): Gs2StateMachine.RandomStatus|null {
         return this.randomStatus;
     }
-    public setRandomStatus(randomStatus: RandomStatus|null) {
+    public setRandomStatus(randomStatus: Gs2StateMachine.RandomStatus|null) {
         this.randomStatus = randomStatus;
         return this;
     }
-    public withRandomStatus(randomStatus: RandomStatus|null): this {
+    public withRandomStatus(randomStatus: Gs2StateMachine.RandomStatus|null): this {
         this.randomStatus = randomStatus;
         return this;
     }
-    public getStacks(): StackEntry[]|null {
+    public getStacks(): Gs2StateMachine.StackEntry[]|null {
         return this.stacks;
     }
-    public setStacks(stacks: StackEntry[]|null) {
+    public setStacks(stacks: Gs2StateMachine.StackEntry[]|null) {
         this.stacks = stacks;
         return this;
     }
-    public withStacks(stacks: StackEntry[]|null): this {
+    public withStacks(stacks: Gs2StateMachine.StackEntry[]|null): this {
         this.stacks = stacks;
         return this;
     }
-    public getVariables(): Variable[]|null {
+    public getVariables(): Gs2StateMachine.Variable[]|null {
         return this.variables;
     }
-    public setVariables(variables: Variable[]|null) {
+    public setVariables(variables: Gs2StateMachine.Variable[]|null) {
         this.variables = variables;
         return this;
     }
-    public withVariables(variables: Variable[]|null): this {
+    public withVariables(variables: Gs2StateMachine.Variable[]|null): this {
         this.variables = variables;
         return this;
     }
@@ -306,17 +308,17 @@ export default class Status implements IModel {
             .withStateMachineVersion(data["stateMachineVersion"])
             .withEnableSpeculativeExecution(data["enableSpeculativeExecution"])
             .withStateMachineDefinition(data["stateMachineDefinition"])
-            .withRandomStatus(RandomStatus.fromDict(data["randomStatus"]))
+            .withRandomStatus(Gs2StateMachine.RandomStatus.fromDict(data["randomStatus"]))
             .withStacks(data.stacks ?
                 data.stacks.map((item: {[key: string]: any}) => {
-                    return StackEntry.fromDict(item);
+                    return Gs2StateMachine.StackEntry.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withVariables(data.variables ?
                 data.variables.map((item: {[key: string]: any}) => {
-                    return Variable.fromDict(item);
+                    return Gs2StateMachine.Variable.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withStatus(data["status"])
             .withLastError(data["lastError"])
             .withTransitionCount(data["transitionCount"])
@@ -334,15 +336,15 @@ export default class Status implements IModel {
             "stateMachineDefinition": this.getStateMachineDefinition(),
             "randomStatus": this.getRandomStatus()?.toDict(),
             "stacks": this.getStacks() ?
-                this.getStacks()!.map((item: StackEntry) => {
+                this.getStacks()!.map((item: Gs2StateMachine.StackEntry) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "variables": this.getVariables() ?
-                this.getVariables()!.map((item: Variable) => {
+                this.getVariables()!.map((item: Gs2StateMachine.Variable) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "status": this.getStatus(),
             "lastError": this.getLastError(),
             "transitionCount": this.getTransitionCount(),

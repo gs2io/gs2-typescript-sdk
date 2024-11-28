@@ -55,7 +55,7 @@ export default class DescribeDumpProgressesResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Project.DumpProgress.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeDumpProgressesResult implements IResult {
                 this.getItems()!.map((item: Gs2Project.DumpProgress) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

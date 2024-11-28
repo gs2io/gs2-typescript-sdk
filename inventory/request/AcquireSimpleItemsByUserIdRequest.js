@@ -124,7 +124,7 @@ var AcquireSimpleItemsByUserIdRequest = /** @class */ (function () {
             .withAcquireCounts(data.acquireCounts ?
             data.acquireCounts.map(function (item) {
                 return Gs2Inventory.AcquireCount.fromDict(item);
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     AcquireSimpleItemsByUserIdRequest.prototype.toDict = function () {
@@ -135,7 +135,7 @@ var AcquireSimpleItemsByUserIdRequest = /** @class */ (function () {
             "acquireCounts": this.getAcquireCounts() ?
                 this.getAcquireCounts().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

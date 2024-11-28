@@ -161,7 +161,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             .withAppLovinMaxes(data.appLovinMaxes ?
             data.appLovinMaxes.map(function (item) {
                 return Gs2AdReward.AppLovinMax.fromDict(item);
-            }) : [])
+            }) : null)
             .withAcquirePointScript(Gs2AdReward.ScriptSetting.fromDict(data["acquirePointScript"]))
             .withConsumePointScript(Gs2AdReward.ScriptSetting.fromDict(data["consumePointScript"]))
             .withChangePointNotification(Gs2AdReward.NotificationSetting.fromDict(data["changePointNotification"]))
@@ -177,7 +177,7 @@ var UpdateNamespaceRequest = /** @class */ (function () {
             "appLovinMaxes": this.getAppLovinMaxes() ?
                 this.getAppLovinMaxes().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "acquirePointScript": (_c = this.getAcquirePointScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "consumePointScript": (_d = this.getConsumePointScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "changePointNotification": (_e = this.getChangePointNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),

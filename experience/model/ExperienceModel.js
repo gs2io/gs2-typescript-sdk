@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Threshold_1 = tslib_1.__importDefault(require("./Threshold"));
-var AcquireActionRate_1 = tslib_1.__importDefault(require("./AcquireActionRate"));
+var Gs2Experience = tslib_1.__importStar(require("../../experience/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:experience:{namespaceName}:model:{experienceName}";
 var ExperienceModel = /** @class */ (function () {
     function ExperienceModel() {
@@ -195,11 +194,11 @@ var ExperienceModel = /** @class */ (function () {
             .withDefaultExperience(data["defaultExperience"])
             .withDefaultRankCap(data["defaultRankCap"])
             .withMaxRankCap(data["maxRankCap"])
-            .withRankThreshold(Threshold_1.default.fromDict(data["rankThreshold"]))
+            .withRankThreshold(Gs2Experience.Threshold.fromDict(data["rankThreshold"]))
             .withAcquireActionRates(data.acquireActionRates ?
             data.acquireActionRates.map(function (item) {
-                return AcquireActionRate_1.default.fromDict(item);
-            }) : []);
+                return Gs2Experience.AcquireActionRate.fromDict(item);
+            }) : null);
     };
     ExperienceModel.prototype.toDict = function () {
         var _a;
@@ -214,7 +213,7 @@ var ExperienceModel = /** @class */ (function () {
             "acquireActionRates": this.getAcquireActionRates() ?
                 this.getAcquireActionRates().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ExperienceModel;

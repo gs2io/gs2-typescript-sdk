@@ -112,7 +112,7 @@ var VoteRequest = /** @class */ (function () {
             .withGameResults(data.gameResults ?
             data.gameResults.map(function (item) {
                 return Gs2SeasonRating.GameResult.fromDict(item);
-            }) : [])
+            }) : null)
             .withKeyId(data["keyId"]);
     };
     VoteRequest.prototype.toDict = function () {
@@ -123,7 +123,7 @@ var VoteRequest = /** @class */ (function () {
             "gameResults": this.getGameResults() ?
                 this.getGameResults().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "keyId": this.getKeyId(),
         };
     };

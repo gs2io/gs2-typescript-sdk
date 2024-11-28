@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Ranking from '../../ranking/model'
 import CalculatedAt from './CalculatedAt';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:ranking:{namespaceName}";
@@ -23,8 +25,8 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
-    private lastCalculatedAts: CalculatedAt[]|null = null;
-    private logSetting: LogSetting|null = null;
+    private lastCalculatedAts: Gs2Ranking.CalculatedAt[]|null = null;
+    private logSetting: Gs2Ranking.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -121,25 +123,25 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
-    public getLastCalculatedAts(): CalculatedAt[]|null {
+    public getLastCalculatedAts(): Gs2Ranking.CalculatedAt[]|null {
         return this.lastCalculatedAts;
     }
-    public setLastCalculatedAts(lastCalculatedAts: CalculatedAt[]|null) {
+    public setLastCalculatedAts(lastCalculatedAts: Gs2Ranking.CalculatedAt[]|null) {
         this.lastCalculatedAts = lastCalculatedAts;
         return this;
     }
-    public withLastCalculatedAts(lastCalculatedAts: CalculatedAt[]|null): this {
+    public withLastCalculatedAts(lastCalculatedAts: Gs2Ranking.CalculatedAt[]|null): this {
         this.lastCalculatedAts = lastCalculatedAts;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Ranking.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Ranking.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Ranking.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -187,10 +189,10 @@ export default class Namespace implements IModel {
             .withDescription(data["description"])
             .withLastCalculatedAts(data.lastCalculatedAts ?
                 data.lastCalculatedAts.map((item: {[key: string]: any}) => {
-                    return CalculatedAt.fromDict(item);
+                    return Gs2Ranking.CalculatedAt.fromDict(item);
                 }
-            ) : [])
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            ) : null)
+            .withLogSetting(Gs2Ranking.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -202,10 +204,10 @@ export default class Namespace implements IModel {
             "name": this.getName(),
             "description": this.getDescription(),
             "lastCalculatedAts": this.getLastCalculatedAts() ?
-                this.getLastCalculatedAts()!.map((item: CalculatedAt) => {
+                this.getLastCalculatedAts()!.map((item: Gs2Ranking.CalculatedAt) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

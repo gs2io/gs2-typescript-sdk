@@ -55,7 +55,7 @@ export default class DescribeStaminaModelMastersResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Stamina.StaminaModelMaster.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeStaminaModelMastersResult implements IResult {
                 this.getItems()!.map((item: Gs2Stamina.StaminaModelMaster) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

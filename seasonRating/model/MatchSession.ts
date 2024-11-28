@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2SeasonRating from '../../seasonRating/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:seasonRating:{namespaceName}:session:{sessionName}";
 
 export default class MatchSession implements IModel {

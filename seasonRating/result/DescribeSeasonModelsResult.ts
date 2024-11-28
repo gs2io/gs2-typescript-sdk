@@ -40,7 +40,7 @@ export default class DescribeSeasonModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2SeasonRating.SeasonModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeSeasonModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2SeasonRating.SeasonModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

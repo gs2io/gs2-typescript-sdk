@@ -145,7 +145,7 @@ export default class UpdateSeasonModelMasterRequest implements IRequest {
                 data.tiers.map((item: {[key: string]: any}) => {
                     return Gs2SeasonRating.TierModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withExperienceModelId(data["experienceModelId"])
             .withChallengePeriodEventId(data["challengePeriodEventId"]);
     }
@@ -160,7 +160,7 @@ export default class UpdateSeasonModelMasterRequest implements IRequest {
                 this.getTiers()!.map((item: Gs2SeasonRating.TierModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "experienceModelId": this.getExperienceModelId(),
             "challengePeriodEventId": this.getChallengePeriodEventId(),
         };

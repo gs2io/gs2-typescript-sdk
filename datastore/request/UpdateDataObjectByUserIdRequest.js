@@ -135,7 +135,7 @@ var UpdateDataObjectByUserIdRequest = /** @class */ (function () {
             .withAllowUserIds(data.allowUserIds ?
             data.allowUserIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     UpdateDataObjectByUserIdRequest.prototype.toDict = function () {
@@ -147,7 +147,7 @@ var UpdateDataObjectByUserIdRequest = /** @class */ (function () {
             "allowUserIds": this.getAllowUserIds() ?
                 this.getAllowUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

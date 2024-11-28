@@ -136,7 +136,7 @@ var CreateRoomRequest = /** @class */ (function () {
             .withWhiteListUserIds(data.whiteListUserIds ?
             data.whiteListUserIds.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     CreateRoomRequest.prototype.toDict = function () {
         return {
@@ -148,7 +148,7 @@ var CreateRoomRequest = /** @class */ (function () {
             "whiteListUserIds": this.getWhiteListUserIds() ?
                 this.getWhiteListUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return CreateRoomRequest;

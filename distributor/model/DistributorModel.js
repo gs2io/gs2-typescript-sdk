@@ -157,7 +157,7 @@ var DistributorModel = /** @class */ (function () {
             .withWhiteListTargetIds(data.whiteListTargetIds ?
             data.whiteListTargetIds.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     DistributorModel.prototype.toDict = function () {
         return {
@@ -168,7 +168,7 @@ var DistributorModel = /** @class */ (function () {
             "whiteListTargetIds": this.getWhiteListTargetIds() ?
                 this.getWhiteListTargetIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return DistributorModel;

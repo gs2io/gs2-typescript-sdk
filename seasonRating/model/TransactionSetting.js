@@ -17,9 +17,45 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var TransactionSetting = /** @class */ (function () {
     function TransactionSetting() {
+        this.enableAtomicCommit = null;
+        this.transactionUseDistributor = null;
+        this.acquireActionUseJobQueue = null;
         this.distributorNamespaceId = null;
         this.queueNamespaceId = null;
     }
+    TransactionSetting.prototype.getEnableAtomicCommit = function () {
+        return this.enableAtomicCommit;
+    };
+    TransactionSetting.prototype.setEnableAtomicCommit = function (enableAtomicCommit) {
+        this.enableAtomicCommit = enableAtomicCommit;
+        return this;
+    };
+    TransactionSetting.prototype.withEnableAtomicCommit = function (enableAtomicCommit) {
+        this.enableAtomicCommit = enableAtomicCommit;
+        return this;
+    };
+    TransactionSetting.prototype.getTransactionUseDistributor = function () {
+        return this.transactionUseDistributor;
+    };
+    TransactionSetting.prototype.setTransactionUseDistributor = function (transactionUseDistributor) {
+        this.transactionUseDistributor = transactionUseDistributor;
+        return this;
+    };
+    TransactionSetting.prototype.withTransactionUseDistributor = function (transactionUseDistributor) {
+        this.transactionUseDistributor = transactionUseDistributor;
+        return this;
+    };
+    TransactionSetting.prototype.getAcquireActionUseJobQueue = function () {
+        return this.acquireActionUseJobQueue;
+    };
+    TransactionSetting.prototype.setAcquireActionUseJobQueue = function (acquireActionUseJobQueue) {
+        this.acquireActionUseJobQueue = acquireActionUseJobQueue;
+        return this;
+    };
+    TransactionSetting.prototype.withAcquireActionUseJobQueue = function (acquireActionUseJobQueue) {
+        this.acquireActionUseJobQueue = acquireActionUseJobQueue;
+        return this;
+    };
     TransactionSetting.prototype.getDistributorNamespaceId = function () {
         return this.distributorNamespaceId;
     };
@@ -47,11 +83,17 @@ var TransactionSetting = /** @class */ (function () {
             return null;
         }
         return new TransactionSetting()
+            .withEnableAtomicCommit(data["enableAtomicCommit"])
+            .withTransactionUseDistributor(data["transactionUseDistributor"])
+            .withAcquireActionUseJobQueue(data["acquireActionUseJobQueue"])
             .withDistributorNamespaceId(data["distributorNamespaceId"])
             .withQueueNamespaceId(data["queueNamespaceId"]);
     };
     TransactionSetting.prototype.toDict = function () {
         return {
+            "enableAtomicCommit": this.getEnableAtomicCommit(),
+            "transactionUseDistributor": this.getTransactionUseDistributor(),
+            "acquireActionUseJobQueue": this.getAcquireActionUseJobQueue(),
             "distributorNamespaceId": this.getDistributorNamespaceId(),
             "queueNamespaceId": this.getQueueNamespaceId(),
         };

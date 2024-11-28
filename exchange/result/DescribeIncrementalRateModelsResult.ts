@@ -40,7 +40,7 @@ export default class DescribeIncrementalRateModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Exchange.IncrementalRateModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeIncrementalRateModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2Exchange.IncrementalRateModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

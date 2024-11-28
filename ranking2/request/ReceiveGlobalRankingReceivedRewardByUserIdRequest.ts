@@ -148,7 +148,7 @@ export default class ReceiveGlobalRankingReceivedRewardByUserIdRequest implement
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Ranking2.Config.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -162,7 +162,7 @@ export default class ReceiveGlobalRankingReceivedRewardByUserIdRequest implement
                 this.getConfig()!.map((item: Gs2Ranking2.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

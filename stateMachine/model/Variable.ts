@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2StateMachine from '../../stateMachine/model'
+
 export default class Variable implements IModel {
     private stateMachineName: string|null = null;
     private value: string|null = null;

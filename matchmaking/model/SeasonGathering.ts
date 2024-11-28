@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Matchmaking from '../../matchmaking/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:matchmaking:{namespaceName}:season:{seasonName}:{season}:{tier}:gathering:{seasonGatheringName}";
 
 export default class SeasonGathering implements IModel {
@@ -285,7 +287,7 @@ export default class SeasonGathering implements IModel {
                 data.participants.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     }
@@ -301,7 +303,7 @@ export default class SeasonGathering implements IModel {
                 this.getParticipants()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };

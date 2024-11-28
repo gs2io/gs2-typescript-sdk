@@ -37,14 +37,14 @@ var DescribeQuestGroupModelsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Quest.QuestGroupModel.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeQuestGroupModelsResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeQuestGroupModelsResult;

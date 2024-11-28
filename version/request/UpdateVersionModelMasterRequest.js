@@ -202,7 +202,7 @@ var UpdateVersionModelMasterRequest = /** @class */ (function () {
             .withScheduleVersions(data.scheduleVersions ?
             data.scheduleVersions.map(function (item) {
                 return Gs2Version.ScheduleVersion.fromDict(item);
-            }) : [])
+            }) : null)
             .withNeedSignature(data["needSignature"])
             .withSignatureKeyId(data["signatureKeyId"]);
     };
@@ -221,7 +221,7 @@ var UpdateVersionModelMasterRequest = /** @class */ (function () {
             "scheduleVersions": this.getScheduleVersions() ?
                 this.getScheduleVersions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "needSignature": this.getNeedSignature(),
             "signatureKeyId": this.getSignatureKeyId(),
         };

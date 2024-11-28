@@ -129,7 +129,7 @@ var IssueStampSheetLog = /** @class */ (function () {
             .withTasks(data.tasks ?
             data.tasks.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     IssueStampSheetLog.prototype.toDict = function () {
         return {
@@ -143,7 +143,7 @@ var IssueStampSheetLog = /** @class */ (function () {
             "tasks": this.getTasks() ?
                 this.getTasks().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return IssueStampSheetLog;

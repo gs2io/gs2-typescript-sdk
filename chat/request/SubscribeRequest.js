@@ -112,7 +112,7 @@ var SubscribeRequest = /** @class */ (function () {
             .withNotificationTypes(data.notificationTypes ?
             data.notificationTypes.map(function (item) {
                 return Gs2Chat.NotificationType.fromDict(item);
-            }) : []);
+            }) : null);
     };
     SubscribeRequest.prototype.toDict = function () {
         return {
@@ -122,7 +122,7 @@ var SubscribeRequest = /** @class */ (function () {
             "notificationTypes": this.getNotificationTypes() ?
                 this.getNotificationTypes().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return SubscribeRequest;

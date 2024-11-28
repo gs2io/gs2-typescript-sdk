@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Inbox from '../../inbox/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:inbox:{namespaceName}:user:{userId}";
 
 export default class Received implements IModel {
@@ -183,7 +185,7 @@ export default class Received implements IModel {
                 data.receivedGlobalMessageNames.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -197,7 +199,7 @@ export default class Received implements IModel {
                 this.getReceivedGlobalMessageNames()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

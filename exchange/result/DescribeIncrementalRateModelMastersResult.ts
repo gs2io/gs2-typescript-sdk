@@ -55,7 +55,7 @@ export default class DescribeIncrementalRateModelMastersResult implements IResul
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Exchange.IncrementalRateModelMaster.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeIncrementalRateModelMastersResult implements IResul
                 this.getItems()!.map((item: Gs2Exchange.IncrementalRateModelMaster) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

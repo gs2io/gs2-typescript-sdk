@@ -137,7 +137,7 @@ var SetBalanceParameterStatusByUserIdRequest = /** @class */ (function () {
             .withParameterValues(data.parameterValues ?
             data.parameterValues.map(function (item) {
                 return Gs2Enchant.BalanceParameterValue.fromDict(item);
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SetBalanceParameterStatusByUserIdRequest.prototype.toDict = function () {
@@ -149,7 +149,7 @@ var SetBalanceParameterStatusByUserIdRequest = /** @class */ (function () {
             "parameterValues": this.getParameterValues() ?
                 this.getParameterValues().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

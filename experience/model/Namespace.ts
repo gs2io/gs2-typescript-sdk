@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Experience from '../../experience/model'
 import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
@@ -24,13 +26,13 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
-    private transactionSetting: TransactionSetting|null = null;
+    private transactionSetting: Gs2Experience.TransactionSetting|null = null;
     private rankCapScriptId: string|null = null;
-    private changeExperienceScript: ScriptSetting|null = null;
-    private changeRankScript: ScriptSetting|null = null;
-    private changeRankCapScript: ScriptSetting|null = null;
+    private changeExperienceScript: Gs2Experience.ScriptSetting|null = null;
+    private changeRankScript: Gs2Experience.ScriptSetting|null = null;
+    private changeRankCapScript: Gs2Experience.ScriptSetting|null = null;
     private overflowExperienceScript: string|null = null;
-    private logSetting: LogSetting|null = null;
+    private logSetting: Gs2Experience.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -127,14 +129,14 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
-    public getTransactionSetting(): TransactionSetting|null {
+    public getTransactionSetting(): Gs2Experience.TransactionSetting|null {
         return this.transactionSetting;
     }
-    public setTransactionSetting(transactionSetting: TransactionSetting|null) {
+    public setTransactionSetting(transactionSetting: Gs2Experience.TransactionSetting|null) {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public withTransactionSetting(transactionSetting: TransactionSetting|null): this {
+    public withTransactionSetting(transactionSetting: Gs2Experience.TransactionSetting|null): this {
         this.transactionSetting = transactionSetting;
         return this;
     }
@@ -149,36 +151,36 @@ export default class Namespace implements IModel {
         this.rankCapScriptId = rankCapScriptId;
         return this;
     }
-    public getChangeExperienceScript(): ScriptSetting|null {
+    public getChangeExperienceScript(): Gs2Experience.ScriptSetting|null {
         return this.changeExperienceScript;
     }
-    public setChangeExperienceScript(changeExperienceScript: ScriptSetting|null) {
+    public setChangeExperienceScript(changeExperienceScript: Gs2Experience.ScriptSetting|null) {
         this.changeExperienceScript = changeExperienceScript;
         return this;
     }
-    public withChangeExperienceScript(changeExperienceScript: ScriptSetting|null): this {
+    public withChangeExperienceScript(changeExperienceScript: Gs2Experience.ScriptSetting|null): this {
         this.changeExperienceScript = changeExperienceScript;
         return this;
     }
-    public getChangeRankScript(): ScriptSetting|null {
+    public getChangeRankScript(): Gs2Experience.ScriptSetting|null {
         return this.changeRankScript;
     }
-    public setChangeRankScript(changeRankScript: ScriptSetting|null) {
+    public setChangeRankScript(changeRankScript: Gs2Experience.ScriptSetting|null) {
         this.changeRankScript = changeRankScript;
         return this;
     }
-    public withChangeRankScript(changeRankScript: ScriptSetting|null): this {
+    public withChangeRankScript(changeRankScript: Gs2Experience.ScriptSetting|null): this {
         this.changeRankScript = changeRankScript;
         return this;
     }
-    public getChangeRankCapScript(): ScriptSetting|null {
+    public getChangeRankCapScript(): Gs2Experience.ScriptSetting|null {
         return this.changeRankCapScript;
     }
-    public setChangeRankCapScript(changeRankCapScript: ScriptSetting|null) {
+    public setChangeRankCapScript(changeRankCapScript: Gs2Experience.ScriptSetting|null) {
         this.changeRankCapScript = changeRankCapScript;
         return this;
     }
-    public withChangeRankCapScript(changeRankCapScript: ScriptSetting|null): this {
+    public withChangeRankCapScript(changeRankCapScript: Gs2Experience.ScriptSetting|null): this {
         this.changeRankCapScript = changeRankCapScript;
         return this;
     }
@@ -193,14 +195,14 @@ export default class Namespace implements IModel {
         this.overflowExperienceScript = overflowExperienceScript;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Experience.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Experience.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Experience.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -246,13 +248,13 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
+            .withTransactionSetting(Gs2Experience.TransactionSetting.fromDict(data["transactionSetting"]))
             .withRankCapScriptId(data["rankCapScriptId"])
-            .withChangeExperienceScript(ScriptSetting.fromDict(data["changeExperienceScript"]))
-            .withChangeRankScript(ScriptSetting.fromDict(data["changeRankScript"]))
-            .withChangeRankCapScript(ScriptSetting.fromDict(data["changeRankCapScript"]))
+            .withChangeExperienceScript(Gs2Experience.ScriptSetting.fromDict(data["changeExperienceScript"]))
+            .withChangeRankScript(Gs2Experience.ScriptSetting.fromDict(data["changeRankScript"]))
+            .withChangeRankCapScript(Gs2Experience.ScriptSetting.fromDict(data["changeRankCapScript"]))
             .withOverflowExperienceScript(data["overflowExperienceScript"])
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withLogSetting(Gs2Experience.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

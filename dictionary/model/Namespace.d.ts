@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import ScriptSetting from './ScriptSetting';
-import LogSetting from './LogSetting';
+import * as Gs2Dictionary from '../../dictionary/model';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
@@ -25,15 +24,15 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
-    getEntryScript(): ScriptSetting | null;
-    setEntryScript(entryScript: ScriptSetting | null): this;
-    withEntryScript(entryScript: ScriptSetting | null): this;
+    getEntryScript(): Gs2Dictionary.ScriptSetting | null;
+    setEntryScript(entryScript: Gs2Dictionary.ScriptSetting | null): this;
+    withEntryScript(entryScript: Gs2Dictionary.ScriptSetting | null): this;
     getDuplicateEntryScript(): string | null;
     setDuplicateEntryScript(duplicateEntryScript: string | null): this;
     withDuplicateEntryScript(duplicateEntryScript: string | null): this;
-    getLogSetting(): LogSetting | null;
-    setLogSetting(logSetting: LogSetting | null): this;
-    withLogSetting(logSetting: LogSetting | null): this;
+    getLogSetting(): Gs2Dictionary.LogSetting | null;
+    setLogSetting(logSetting: Gs2Dictionary.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2Dictionary.LogSetting | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

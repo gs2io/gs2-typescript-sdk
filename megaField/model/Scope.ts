@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2MegaField from '../../megaField/model'
+
 export default class Scope implements IModel {
     private layerName: string|null = null;
     private r: number|null = null;

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Experience from '../../experience/model'
 import Threshold from './Threshold';
 import AcquireActionRate from './AcquireActionRate';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:experience:{namespaceName}:model:{experienceName}";
@@ -26,8 +28,8 @@ export default class ExperienceModel implements IModel {
     private defaultExperience: number|null = null;
     private defaultRankCap: number|null = null;
     private maxRankCap: number|null = null;
-    private rankThreshold: Threshold|null = null;
-    private acquireActionRates: AcquireActionRate[]|null = null;
+    private rankThreshold: Gs2Experience.Threshold|null = null;
+    private acquireActionRates: Gs2Experience.AcquireActionRate[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -175,25 +177,25 @@ export default class ExperienceModel implements IModel {
         this.maxRankCap = maxRankCap;
         return this;
     }
-    public getRankThreshold(): Threshold|null {
+    public getRankThreshold(): Gs2Experience.Threshold|null {
         return this.rankThreshold;
     }
-    public setRankThreshold(rankThreshold: Threshold|null) {
+    public setRankThreshold(rankThreshold: Gs2Experience.Threshold|null) {
         this.rankThreshold = rankThreshold;
         return this;
     }
-    public withRankThreshold(rankThreshold: Threshold|null): this {
+    public withRankThreshold(rankThreshold: Gs2Experience.Threshold|null): this {
         this.rankThreshold = rankThreshold;
         return this;
     }
-    public getAcquireActionRates(): AcquireActionRate[]|null {
+    public getAcquireActionRates(): Gs2Experience.AcquireActionRate[]|null {
         return this.acquireActionRates;
     }
-    public setAcquireActionRates(acquireActionRates: AcquireActionRate[]|null) {
+    public setAcquireActionRates(acquireActionRates: Gs2Experience.AcquireActionRate[]|null) {
         this.acquireActionRates = acquireActionRates;
         return this;
     }
-    public withAcquireActionRates(acquireActionRates: AcquireActionRate[]|null): this {
+    public withAcquireActionRates(acquireActionRates: Gs2Experience.AcquireActionRate[]|null): this {
         this.acquireActionRates = acquireActionRates;
         return this;
     }
@@ -209,12 +211,12 @@ export default class ExperienceModel implements IModel {
             .withDefaultExperience(data["defaultExperience"])
             .withDefaultRankCap(data["defaultRankCap"])
             .withMaxRankCap(data["maxRankCap"])
-            .withRankThreshold(Threshold.fromDict(data["rankThreshold"]))
+            .withRankThreshold(Gs2Experience.Threshold.fromDict(data["rankThreshold"]))
             .withAcquireActionRates(data.acquireActionRates ?
                 data.acquireActionRates.map((item: {[key: string]: any}) => {
-                    return AcquireActionRate.fromDict(item);
+                    return Gs2Experience.AcquireActionRate.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -227,10 +229,10 @@ export default class ExperienceModel implements IModel {
             "maxRankCap": this.getMaxRankCap(),
             "rankThreshold": this.getRankThreshold()?.toDict(),
             "acquireActionRates": this.getAcquireActionRates() ?
-                this.getAcquireActionRates()!.map((item: AcquireActionRate) => {
+                this.getAcquireActionRates()!.map((item: Gs2Experience.AcquireActionRate) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

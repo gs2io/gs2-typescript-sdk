@@ -40,7 +40,7 @@ export default class DescribeRatingModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Matchmaking.RatingModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeRatingModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2Matchmaking.RatingModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

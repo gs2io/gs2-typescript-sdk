@@ -37,14 +37,14 @@ var ReceiveGlobalMessageByUserIdResult = /** @class */ (function () {
             .withItem(data.item ?
             data.item.map(function (item) {
                 return Gs2Inbox.Message.fromDict(item);
-            }) : []);
+            }) : null);
     };
     ReceiveGlobalMessageByUserIdResult.prototype.toDict = function () {
         return {
             "item": this.getItem() ?
                 this.getItem().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ReceiveGlobalMessageByUserIdResult;

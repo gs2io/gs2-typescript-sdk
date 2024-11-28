@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
+var Gs2Inbox = tslib_1.__importStar(require("../../inbox/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:inbox:{namespaceName}:user:{userId}:message:{messageName}";
 var Message = /** @class */ (function () {
     function Message() {
@@ -239,8 +239,8 @@ var Message = /** @class */ (function () {
             .withIsRead(data["isRead"])
             .withReadAcquireActions(data.readAcquireActions ?
             data.readAcquireActions.map(function (item) {
-                return AcquireAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2Inbox.AcquireAction.fromDict(item);
+            }) : null)
             .withReceivedAt(data["receivedAt"])
             .withReadAt(data["readAt"])
             .withExpiresAt(data["expiresAt"])
@@ -256,7 +256,7 @@ var Message = /** @class */ (function () {
             "readAcquireActions": this.getReadAcquireActions() ?
                 this.getReadAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "receivedAt": this.getReceivedAt(),
             "readAt": this.getReadAt(),
             "expiresAt": this.getExpiresAt(),

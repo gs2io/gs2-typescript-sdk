@@ -55,7 +55,7 @@ export default class DescribeUnleashRateModelMastersResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Enhance.UnleashRateModelMaster.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeUnleashRateModelMastersResult implements IResult {
                 this.getItems()!.map((item: Gs2Enhance.UnleashRateModelMaster) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

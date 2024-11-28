@@ -206,33 +206,33 @@ export default class UpdateQuestModelMasterRequest implements IRequest {
                 data.contents.map((item: {[key: string]: any}) => {
                     return Gs2Quest.Contents.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withChallengePeriodEventId(data["challengePeriodEventId"])
             .withFirstCompleteAcquireActions(data.firstCompleteAcquireActions ?
                 data.firstCompleteAcquireActions.map((item: {[key: string]: any}) => {
                     return Gs2Quest.AcquireAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withVerifyActions(data.verifyActions ?
                 data.verifyActions.map((item: {[key: string]: any}) => {
                     return Gs2Quest.VerifyAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withConsumeActions(data.consumeActions ?
                 data.consumeActions.map((item: {[key: string]: any}) => {
                     return Gs2Quest.ConsumeAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withFailedAcquireActions(data.failedAcquireActions ?
                 data.failedAcquireActions.map((item: {[key: string]: any}) => {
                     return Gs2Quest.AcquireAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withPremiseQuestNames(data.premiseQuestNames ?
                 data.premiseQuestNames.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -246,33 +246,33 @@ export default class UpdateQuestModelMasterRequest implements IRequest {
                 this.getContents()!.map((item: Gs2Quest.Contents) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "firstCompleteAcquireActions": this.getFirstCompleteAcquireActions() ?
                 this.getFirstCompleteAcquireActions()!.map((item: Gs2Quest.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "verifyActions": this.getVerifyActions() ?
                 this.getVerifyActions()!.map((item: Gs2Quest.VerifyAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions()!.map((item: Gs2Quest.ConsumeAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "failedAcquireActions": this.getFailedAcquireActions() ?
                 this.getFailedAcquireActions()!.map((item: Gs2Quest.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "premiseQuestNames": this.getPremiseQuestNames() ?
                 this.getPremiseQuestNames()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

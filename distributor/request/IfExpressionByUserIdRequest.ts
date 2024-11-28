@@ -159,12 +159,12 @@ export default class IfExpressionByUserIdRequest implements IRequest {
                 data.trueActions.map((item: {[key: string]: any}) => {
                     return Gs2Distributor.ConsumeAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withFalseActions(data.falseActions ?
                 data.falseActions.map((item: {[key: string]: any}) => {
                     return Gs2Distributor.ConsumeAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withMultiplyValueSpecifyingQuantity(data["multiplyValueSpecifyingQuantity"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
@@ -178,12 +178,12 @@ export default class IfExpressionByUserIdRequest implements IRequest {
                 this.getTrueActions()!.map((item: Gs2Distributor.ConsumeAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "falseActions": this.getFalseActions() ?
                 this.getFalseActions()!.map((item: Gs2Distributor.ConsumeAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "multiplyValueSpecifyingQuantity": this.getMultiplyValueSpecifyingQuantity(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };

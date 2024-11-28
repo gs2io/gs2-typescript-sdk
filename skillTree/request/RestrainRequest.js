@@ -124,11 +124,11 @@ var RestrainRequest = /** @class */ (function () {
             .withNodeModelNames(data.nodeModelNames ?
             data.nodeModelNames.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2SkillTree.Config.fromDict(item);
-            }) : []);
+            }) : null);
     };
     RestrainRequest.prototype.toDict = function () {
         return {
@@ -138,11 +138,11 @@ var RestrainRequest = /** @class */ (function () {
             "nodeModelNames": this.getNodeModelNames() ?
                 this.getNodeModelNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return RestrainRequest;

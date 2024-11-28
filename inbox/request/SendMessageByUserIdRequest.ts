@@ -159,7 +159,7 @@ export default class SendMessageByUserIdRequest implements IRequest {
                 data.readAcquireActions.map((item: {[key: string]: any}) => {
                     return Gs2Inbox.AcquireAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withExpiresAt(data["expiresAt"])
             .withExpiresTimeSpan(Gs2Inbox.TimeSpan.fromDict(data["expiresTimeSpan"]))
             .withTimeOffsetToken(data["timeOffsetToken"]);
@@ -174,7 +174,7 @@ export default class SendMessageByUserIdRequest implements IRequest {
                 this.getReadAcquireActions()!.map((item: Gs2Inbox.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "expiresAt": this.getExpiresAt(),
             "expiresTimeSpan": this.getExpiresTimeSpan()?.toDict(),
             "timeOffsetToken": this.getTimeOffsetToken(),

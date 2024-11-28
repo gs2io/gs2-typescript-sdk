@@ -167,7 +167,7 @@ var Received = /** @class */ (function () {
             .withReceivedGlobalMessageNames(data.receivedGlobalMessageNames ?
             data.receivedGlobalMessageNames.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -179,7 +179,7 @@ var Received = /** @class */ (function () {
             "receivedGlobalMessageNames": this.getReceivedGlobalMessageNames() ?
                 this.getReceivedGlobalMessageNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

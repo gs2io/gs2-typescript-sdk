@@ -55,7 +55,7 @@ export default class DescribeFriendsByUserIdResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Friend.FriendUser.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeFriendsByUserIdResult implements IResult {
                 this.getItems()!.map((item: Gs2Friend.FriendUser) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

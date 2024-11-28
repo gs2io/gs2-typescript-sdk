@@ -40,7 +40,7 @@ export default class DescribeSubscribesByCategoryNameAndUserIdResult implements 
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Ranking.SubscribeUser.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeSubscribesByCategoryNameAndUserIdResult implements 
                 this.getItems()!.map((item: Gs2Ranking.SubscribeUser) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

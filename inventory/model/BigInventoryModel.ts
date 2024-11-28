@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Inventory from '../../inventory/model'
 import BigItemModel from './BigItemModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:big:model:{inventoryName}";
 
@@ -22,7 +24,7 @@ export default class BigInventoryModel implements IModel {
     private inventoryModelId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;
-    private bigItemModels: BigItemModel[]|null = null;
+    private bigItemModels: Gs2Inventory.BigItemModel[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -137,14 +139,14 @@ export default class BigInventoryModel implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getBigItemModels(): BigItemModel[]|null {
+    public getBigItemModels(): Gs2Inventory.BigItemModel[]|null {
         return this.bigItemModels;
     }
-    public setBigItemModels(bigItemModels: BigItemModel[]|null) {
+    public setBigItemModels(bigItemModels: Gs2Inventory.BigItemModel[]|null) {
         this.bigItemModels = bigItemModels;
         return this;
     }
-    public withBigItemModels(bigItemModels: BigItemModel[]|null): this {
+    public withBigItemModels(bigItemModels: Gs2Inventory.BigItemModel[]|null): this {
         this.bigItemModels = bigItemModels;
         return this;
     }
@@ -159,9 +161,9 @@ export default class BigInventoryModel implements IModel {
             .withMetadata(data["metadata"])
             .withBigItemModels(data.bigItemModels ?
                 data.bigItemModels.map((item: {[key: string]: any}) => {
-                    return BigItemModel.fromDict(item);
+                    return Gs2Inventory.BigItemModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -170,10 +172,10 @@ export default class BigInventoryModel implements IModel {
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "bigItemModels": this.getBigItemModels() ?
-                this.getBigItemModels()!.map((item: BigItemModel) => {
+                this.getBigItemModels()!.map((item: Gs2Inventory.BigItemModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

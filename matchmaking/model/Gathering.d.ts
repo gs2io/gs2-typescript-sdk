@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import AttributeRange from './AttributeRange';
-import CapacityOfRole from './CapacityOfRole';
+import * as Gs2Matchmaking from '../../matchmaking/model';
 export default class Gathering implements IModel {
     private gatheringId;
     private name;
@@ -24,12 +23,12 @@ export default class Gathering implements IModel {
     getName(): string | null;
     setName(name: string | null): this;
     withName(name: string | null): this;
-    getAttributeRanges(): AttributeRange[] | null;
-    setAttributeRanges(attributeRanges: AttributeRange[] | null): this;
-    withAttributeRanges(attributeRanges: AttributeRange[] | null): this;
-    getCapacityOfRoles(): CapacityOfRole[] | null;
-    setCapacityOfRoles(capacityOfRoles: CapacityOfRole[] | null): this;
-    withCapacityOfRoles(capacityOfRoles: CapacityOfRole[] | null): this;
+    getAttributeRanges(): Gs2Matchmaking.AttributeRange[] | null;
+    setAttributeRanges(attributeRanges: Gs2Matchmaking.AttributeRange[] | null): this;
+    withAttributeRanges(attributeRanges: Gs2Matchmaking.AttributeRange[] | null): this;
+    getCapacityOfRoles(): Gs2Matchmaking.CapacityOfRole[] | null;
+    setCapacityOfRoles(capacityOfRoles: Gs2Matchmaking.CapacityOfRole[] | null): this;
+    withCapacityOfRoles(capacityOfRoles: Gs2Matchmaking.CapacityOfRole[] | null): this;
     getAllowUserIds(): string[] | null;
     setAllowUserIds(allowUserIds: string[] | null): this;
     withAllowUserIds(allowUserIds: string[] | null): this;

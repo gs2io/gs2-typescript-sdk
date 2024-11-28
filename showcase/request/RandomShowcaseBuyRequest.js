@@ -138,7 +138,7 @@ var RandomShowcaseBuyRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Showcase.Config.fromDict(item);
-            }) : []);
+            }) : null);
     };
     RandomShowcaseBuyRequest.prototype.toDict = function () {
         return {
@@ -150,7 +150,7 @@ var RandomShowcaseBuyRequest = /** @class */ (function () {
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return RandomShowcaseBuyRequest;

@@ -95,19 +95,19 @@ var RunStampSheetExpressWithoutNamespaceResult = /** @class */ (function () {
             .withVerifyTaskResultCodes(data.verifyTaskResultCodes ?
             data.verifyTaskResultCodes.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withVerifyTaskResults(data.verifyTaskResults ?
             data.verifyTaskResults.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withTaskResultCodes(data.taskResultCodes ?
             data.taskResultCodes.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withTaskResults(data.taskResults ?
             data.taskResults.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withSheetResultCode(data["sheetResultCode"])
             .withSheetResult(data["sheetResult"]);
     };
@@ -116,19 +116,19 @@ var RunStampSheetExpressWithoutNamespaceResult = /** @class */ (function () {
             "verifyTaskResultCodes": this.getVerifyTaskResultCodes() ?
                 this.getVerifyTaskResultCodes().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "verifyTaskResults": this.getVerifyTaskResults() ?
                 this.getVerifyTaskResults().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "taskResultCodes": this.getTaskResultCodes() ?
                 this.getTaskResultCodes().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "taskResults": this.getTaskResults() ?
                 this.getTaskResults().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "sheetResultCode": this.getSheetResultCode(),
             "sheetResult": this.getSheetResult(),
         };

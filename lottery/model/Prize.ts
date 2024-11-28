@@ -15,12 +15,14 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Lottery from '../../lottery/model'
 import AcquireAction from './AcquireAction';
 
 export default class Prize implements IModel {
     private prizeId: string|null = null;
     private type: string|null = null;
-    private acquireActions: AcquireAction[]|null = null;
+    private acquireActions: Gs2Lottery.AcquireAction[]|null = null;
     private drawnLimit: number|null = null;
     private limitFailOverPrizeId: string|null = null;
     private prizeTableName: string|null = null;
@@ -47,14 +49,14 @@ export default class Prize implements IModel {
         this.type = type;
         return this;
     }
-    public getAcquireActions(): AcquireAction[]|null {
+    public getAcquireActions(): Gs2Lottery.AcquireAction[]|null {
         return this.acquireActions;
     }
-    public setAcquireActions(acquireActions: AcquireAction[]|null) {
+    public setAcquireActions(acquireActions: Gs2Lottery.AcquireAction[]|null) {
         this.acquireActions = acquireActions;
         return this;
     }
-    public withAcquireActions(acquireActions: AcquireAction[]|null): this {
+    public withAcquireActions(acquireActions: Gs2Lottery.AcquireAction[]|null): this {
         this.acquireActions = acquireActions;
         return this;
     }
@@ -112,9 +114,9 @@ export default class Prize implements IModel {
             .withType(data["type"])
             .withAcquireActions(data.acquireActions ?
                 data.acquireActions.map((item: {[key: string]: any}) => {
-                    return AcquireAction.fromDict(item);
+                    return Gs2Lottery.AcquireAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withDrawnLimit(data["drawnLimit"])
             .withLimitFailOverPrizeId(data["limitFailOverPrizeId"])
             .withPrizeTableName(data["prizeTableName"])
@@ -126,10 +128,10 @@ export default class Prize implements IModel {
             "prizeId": this.getPrizeId(),
             "type": this.getType(),
             "acquireActions": this.getAcquireActions() ?
-                this.getAcquireActions()!.map((item: AcquireAction) => {
+                this.getAcquireActions()!.map((item: Gs2Lottery.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "drawnLimit": this.getDrawnLimit(),
             "limitFailOverPrizeId": this.getLimitFailOverPrizeId(),
             "prizeTableName": this.getPrizeTableName(),

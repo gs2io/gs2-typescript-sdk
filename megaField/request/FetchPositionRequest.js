@@ -123,7 +123,7 @@ var FetchPositionRequest = /** @class */ (function () {
             .withUserIds(data.userIds ?
             data.userIds.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     FetchPositionRequest.prototype.toDict = function () {
         return {
@@ -134,7 +134,7 @@ var FetchPositionRequest = /** @class */ (function () {
             "userIds": this.getUserIds() ?
                 this.getUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return FetchPositionRequest;

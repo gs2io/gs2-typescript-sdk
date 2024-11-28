@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2StateMachine from '../../stateMachine/model'
+
 export default class EmitEvent implements IModel {
     private event: string|null = null;
     private parameters: string|null = null;

@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2AdReward from '../../adReward/model'
+
 export default class AdMob implements IModel {
     private allowAdUnitIds: string[]|null = null;
     public getAllowAdUnitIds(): string[]|null {
@@ -39,7 +41,7 @@ export default class AdMob implements IModel {
                 data.allowAdUnitIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -48,7 +50,7 @@ export default class AdMob implements IModel {
                 this.getAllowAdUnitIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

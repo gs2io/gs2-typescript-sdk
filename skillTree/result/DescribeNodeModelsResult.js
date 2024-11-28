@@ -37,14 +37,14 @@ var DescribeNodeModelsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2SkillTree.NodeModel.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeNodeModelsResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeNodeModelsResult;

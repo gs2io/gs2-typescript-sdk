@@ -97,7 +97,7 @@ var DeleteEntriesRequest = /** @class */ (function () {
             .withEntryModelNames(data.entryModelNames ?
             data.entryModelNames.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     DeleteEntriesRequest.prototype.toDict = function () {
         return {
@@ -106,7 +106,7 @@ var DeleteEntriesRequest = /** @class */ (function () {
             "entryModelNames": this.getEntryModelNames() ?
                 this.getEntryModelNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return DeleteEntriesRequest;

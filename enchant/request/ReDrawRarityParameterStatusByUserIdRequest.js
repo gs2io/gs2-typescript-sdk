@@ -135,7 +135,7 @@ var ReDrawRarityParameterStatusByUserIdRequest = /** @class */ (function () {
             .withFixedParameterNames(data.fixedParameterNames ?
             data.fixedParameterNames.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     ReDrawRarityParameterStatusByUserIdRequest.prototype.toDict = function () {
@@ -147,7 +147,7 @@ var ReDrawRarityParameterStatusByUserIdRequest = /** @class */ (function () {
             "fixedParameterNames": this.getFixedParameterNames() ?
                 this.getFixedParameterNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Grade from '../../grade/model'
 import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
@@ -24,9 +26,9 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
-    private transactionSetting: TransactionSetting|null = null;
-    private changeGradeScript: ScriptSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private transactionSetting: Gs2Grade.TransactionSetting|null = null;
+    private changeGradeScript: Gs2Grade.ScriptSetting|null = null;
+    private logSetting: Gs2Grade.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -123,36 +125,36 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
-    public getTransactionSetting(): TransactionSetting|null {
+    public getTransactionSetting(): Gs2Grade.TransactionSetting|null {
         return this.transactionSetting;
     }
-    public setTransactionSetting(transactionSetting: TransactionSetting|null) {
+    public setTransactionSetting(transactionSetting: Gs2Grade.TransactionSetting|null) {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public withTransactionSetting(transactionSetting: TransactionSetting|null): this {
+    public withTransactionSetting(transactionSetting: Gs2Grade.TransactionSetting|null): this {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public getChangeGradeScript(): ScriptSetting|null {
+    public getChangeGradeScript(): Gs2Grade.ScriptSetting|null {
         return this.changeGradeScript;
     }
-    public setChangeGradeScript(changeGradeScript: ScriptSetting|null) {
+    public setChangeGradeScript(changeGradeScript: Gs2Grade.ScriptSetting|null) {
         this.changeGradeScript = changeGradeScript;
         return this;
     }
-    public withChangeGradeScript(changeGradeScript: ScriptSetting|null): this {
+    public withChangeGradeScript(changeGradeScript: Gs2Grade.ScriptSetting|null): this {
         this.changeGradeScript = changeGradeScript;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Grade.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Grade.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Grade.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -198,9 +200,9 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
-            .withChangeGradeScript(ScriptSetting.fromDict(data["changeGradeScript"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withTransactionSetting(Gs2Grade.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withChangeGradeScript(Gs2Grade.ScriptSetting.fromDict(data["changeGradeScript"]))
+            .withLogSetting(Gs2Grade.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

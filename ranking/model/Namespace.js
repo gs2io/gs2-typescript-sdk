@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var CalculatedAt_1 = tslib_1.__importDefault(require("./CalculatedAt"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2Ranking = tslib_1.__importStar(require("../../ranking/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:ranking:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -176,9 +175,9 @@ var Namespace = /** @class */ (function () {
             .withDescription(data["description"])
             .withLastCalculatedAts(data.lastCalculatedAts ?
             data.lastCalculatedAts.map(function (item) {
-                return CalculatedAt_1.default.fromDict(item);
-            }) : [])
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+                return Gs2Ranking.CalculatedAt.fromDict(item);
+            }) : null)
+            .withLogSetting(Gs2Ranking.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -192,7 +191,7 @@ var Namespace = /** @class */ (function () {
             "lastCalculatedAts": this.getLastCalculatedAts() ?
                 this.getLastCalculatedAts().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "logSetting": (_a = this.getLogSetting()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

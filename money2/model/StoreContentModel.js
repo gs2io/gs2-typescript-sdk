@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AppleAppStoreContent_1 = tslib_1.__importDefault(require("./AppleAppStoreContent"));
-var GooglePlayContent_1 = tslib_1.__importDefault(require("./GooglePlayContent"));
+var Gs2Money2 = tslib_1.__importStar(require("../../money2/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:money2:{namespaceName}:model:content:{contentName}";
 var StoreContentModel = /** @class */ (function () {
     function StoreContentModel() {
@@ -156,8 +155,8 @@ var StoreContentModel = /** @class */ (function () {
             .withStoreContentModelId(data["storeContentModelId"])
             .withName(data["name"])
             .withMetadata(data["metadata"])
-            .withAppleAppStore(AppleAppStoreContent_1.default.fromDict(data["appleAppStore"]))
-            .withGooglePlay(GooglePlayContent_1.default.fromDict(data["googlePlay"]));
+            .withAppleAppStore(Gs2Money2.AppleAppStoreContent.fromDict(data["appleAppStore"]))
+            .withGooglePlay(Gs2Money2.GooglePlayContent.fromDict(data["googlePlay"]));
     };
     StoreContentModel.prototype.toDict = function () {
         var _a, _b;

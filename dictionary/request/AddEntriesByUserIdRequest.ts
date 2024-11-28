@@ -122,7 +122,7 @@ export default class AddEntriesByUserIdRequest implements IRequest {
                 data.entryModelNames.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -134,7 +134,7 @@ export default class AddEntriesByUserIdRequest implements IRequest {
                 this.getEntryModelNames()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

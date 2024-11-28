@@ -200,7 +200,7 @@ var CompletedQuestList = /** @class */ (function () {
             .withCompleteQuestNames(data.completeQuestNames ?
             data.completeQuestNames.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -213,7 +213,7 @@ var CompletedQuestList = /** @class */ (function () {
             "completeQuestNames": this.getCompleteQuestNames() ?
                 this.getCompleteQuestNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

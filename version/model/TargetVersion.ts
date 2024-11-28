@@ -15,13 +15,15 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Version from '../../version/model'
 import Version from './Version';
 
 export default class TargetVersion implements IModel {
     private versionName: string|null = null;
     private body: string|null = null;
     private signature: string|null = null;
-    private version: Version|null = null;
+    private version: Gs2Version.Version|null = null;
     public getVersionName(): string|null {
         return this.versionName;
     }
@@ -55,14 +57,14 @@ export default class TargetVersion implements IModel {
         this.signature = signature;
         return this;
     }
-    public getVersion(): Version|null {
+    public getVersion(): Gs2Version.Version|null {
         return this.version;
     }
-    public setVersion(version: Version|null) {
+    public setVersion(version: Gs2Version.Version|null) {
         this.version = version;
         return this;
     }
-    public withVersion(version: Version|null): this {
+    public withVersion(version: Gs2Version.Version|null): this {
         this.version = version;
         return this;
     }
@@ -75,7 +77,7 @@ export default class TargetVersion implements IModel {
             .withVersionName(data["versionName"])
             .withBody(data["body"])
             .withSignature(data["signature"])
-            .withVersion(Version.fromDict(data["version"]));
+            .withVersion(Gs2Version.Version.fromDict(data["version"]));
     }
 
     public toDict(): {[key: string]: any} {

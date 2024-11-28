@@ -147,7 +147,7 @@ export default class UpdateBalanceParameterModelMasterRequest implements IReques
                 data.parameters.map((item: {[key: string]: any}) => {
                     return Gs2Enchant.BalanceParameterValueModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -162,7 +162,7 @@ export default class UpdateBalanceParameterModelMasterRequest implements IReques
                 this.getParameters()!.map((item: Gs2Enchant.BalanceParameterValueModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

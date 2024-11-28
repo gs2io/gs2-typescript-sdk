@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2Realtime = tslib_1.__importStar(require("../../realtime/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:realtime:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -200,8 +199,8 @@ var Namespace = /** @class */ (function () {
             .withDescription(data["description"])
             .withServerType(data["serverType"])
             .withServerSpec(data["serverSpec"])
-            .withCreateNotification(NotificationSetting_1.default.fromDict(data["createNotification"]))
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withCreateNotification(Gs2Realtime.NotificationSetting.fromDict(data["createNotification"]))
+            .withLogSetting(Gs2Realtime.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

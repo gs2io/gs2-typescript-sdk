@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var OpenIdConnectSetting_1 = tslib_1.__importDefault(require("./OpenIdConnectSetting"));
+var Gs2Account = tslib_1.__importStar(require("../../account/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:account:{namespaceName}:model:takeOver:{type}";
 var TakeOverTypeModel = /** @class */ (function () {
     function TakeOverTypeModel() {
@@ -143,7 +143,7 @@ var TakeOverTypeModel = /** @class */ (function () {
             .withTakeOverTypeModelId(data["takeOverTypeModelId"])
             .withType(data["type"])
             .withMetadata(data["metadata"])
-            .withOpenIdConnectSetting(OpenIdConnectSetting_1.default.fromDict(data["openIdConnectSetting"]));
+            .withOpenIdConnectSetting(Gs2Account.OpenIdConnectSetting.fromDict(data["openIdConnectSetting"]));
     };
     TakeOverTypeModel.prototype.toDict = function () {
         var _a;

@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Ranking from '../../ranking/model'
+
 export default class Ranking implements IModel {
     private rank: number|null = null;
     private index: number|null = null;

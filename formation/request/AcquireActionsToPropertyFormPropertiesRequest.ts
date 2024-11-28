@@ -161,7 +161,7 @@ export default class AcquireActionsToPropertyFormPropertiesRequest implements IR
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Formation.Config.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -176,7 +176,7 @@ export default class AcquireActionsToPropertyFormPropertiesRequest implements IR
                 this.getConfig()!.map((item: Gs2Formation.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

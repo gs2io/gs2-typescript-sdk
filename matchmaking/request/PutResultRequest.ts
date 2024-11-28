@@ -95,7 +95,7 @@ export default class PutResultRequest implements IRequest {
                 data.gameResults.map((item: {[key: string]: any}) => {
                     return Gs2Matchmaking.GameResult.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -106,7 +106,7 @@ export default class PutResultRequest implements IRequest {
                 this.getGameResults()!.map((item: Gs2Matchmaking.GameResult) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Ranking2 from '../../ranking2/model'
 import AcquireAction from './AcquireAction';
 import RankingReward from './RankingReward';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:ranking2:{namespaceName}:global:{rankingName}";
@@ -28,7 +30,7 @@ export default class GlobalRankingModel implements IModel {
     private sum: boolean|null = null;
     private orderDirection: string|null = null;
     private entryPeriodEventId: string|null = null;
-    private rankingRewards: RankingReward[]|null = null;
+    private rankingRewards: Gs2Ranking2.RankingReward[]|null = null;
     private accessPeriodEventId: string|null = null;
 
     public static getRegion(grn: string): string|null {
@@ -199,14 +201,14 @@ export default class GlobalRankingModel implements IModel {
         this.entryPeriodEventId = entryPeriodEventId;
         return this;
     }
-    public getRankingRewards(): RankingReward[]|null {
+    public getRankingRewards(): Gs2Ranking2.RankingReward[]|null {
         return this.rankingRewards;
     }
-    public setRankingRewards(rankingRewards: RankingReward[]|null) {
+    public setRankingRewards(rankingRewards: Gs2Ranking2.RankingReward[]|null) {
         this.rankingRewards = rankingRewards;
         return this;
     }
-    public withRankingRewards(rankingRewards: RankingReward[]|null): this {
+    public withRankingRewards(rankingRewards: Gs2Ranking2.RankingReward[]|null): this {
         this.rankingRewards = rankingRewards;
         return this;
     }
@@ -237,9 +239,9 @@ export default class GlobalRankingModel implements IModel {
             .withEntryPeriodEventId(data["entryPeriodEventId"])
             .withRankingRewards(data.rankingRewards ?
                 data.rankingRewards.map((item: {[key: string]: any}) => {
-                    return RankingReward.fromDict(item);
+                    return Gs2Ranking2.RankingReward.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withAccessPeriodEventId(data["accessPeriodEventId"]);
     }
 
@@ -254,10 +256,10 @@ export default class GlobalRankingModel implements IModel {
             "orderDirection": this.getOrderDirection(),
             "entryPeriodEventId": this.getEntryPeriodEventId(),
             "rankingRewards": this.getRankingRewards() ?
-                this.getRankingRewards()!.map((item: RankingReward) => {
+                this.getRankingRewards()!.map((item: Gs2Ranking2.RankingReward) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "accessPeriodEventId": this.getAccessPeriodEventId(),
         };
     }

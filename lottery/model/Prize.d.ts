@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import AcquireAction from './AcquireAction';
+import * as Gs2Lottery from '../../lottery/model';
 export default class Prize implements IModel {
     private prizeId;
     private type;
@@ -14,9 +14,9 @@ export default class Prize implements IModel {
     getType(): string | null;
     setType(type: string | null): this;
     withType(type: string | null): this;
-    getAcquireActions(): AcquireAction[] | null;
-    setAcquireActions(acquireActions: AcquireAction[] | null): this;
-    withAcquireActions(acquireActions: AcquireAction[] | null): this;
+    getAcquireActions(): Gs2Lottery.AcquireAction[] | null;
+    setAcquireActions(acquireActions: Gs2Lottery.AcquireAction[] | null): this;
+    withAcquireActions(acquireActions: Gs2Lottery.AcquireAction[] | null): this;
     getDrawnLimit(): number | null;
     setDrawnLimit(drawnLimit: number | null): this;
     withDrawnLimit(drawnLimit: number | null): this;

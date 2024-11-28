@@ -157,18 +157,18 @@ export default class UpdateNodeModelMasterRequest implements IRequest {
                 data.releaseVerifyActions.map((item: {[key: string]: any}) => {
                     return Gs2SkillTree.VerifyAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withReleaseConsumeActions(data.releaseConsumeActions ?
                 data.releaseConsumeActions.map((item: {[key: string]: any}) => {
                     return Gs2SkillTree.ConsumeAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withRestrainReturnRate(data["restrainReturnRate"])
             .withPremiseNodeNames(data.premiseNodeNames ?
                 data.premiseNodeNames.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -181,18 +181,18 @@ export default class UpdateNodeModelMasterRequest implements IRequest {
                 this.getReleaseVerifyActions()!.map((item: Gs2SkillTree.VerifyAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "releaseConsumeActions": this.getReleaseConsumeActions() ?
                 this.getReleaseConsumeActions()!.map((item: Gs2SkillTree.ConsumeAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "restrainReturnRate": this.getRestrainReturnRate(),
             "premiseNodeNames": this.getPremiseNodeNames() ?
                 this.getPremiseNodeNames()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

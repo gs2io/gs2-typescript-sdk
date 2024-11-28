@@ -55,7 +55,7 @@ export default class ApplyBuffByUserIdResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Buff.BuffEntryModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNewContextStack(data["newContextStack"]);
     }
 
@@ -65,7 +65,7 @@ export default class ApplyBuffByUserIdResult implements IResult {
                 this.getItems()!.map((item: Gs2Buff.BuffEntryModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "newContextStack": this.getNewContextStack(),
         };
     }

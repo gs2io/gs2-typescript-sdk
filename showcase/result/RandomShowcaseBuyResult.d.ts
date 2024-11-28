@@ -1,11 +1,15 @@
 import IResult from '../../core/interface/IResult';
 import * as Gs2Showcase from '../model';
+import * as Gs2Core from '../../core';
 export default class RandomShowcaseBuyResult implements IResult {
     private item;
     private transactionId;
     private stampSheet;
     private stampSheetEncryptionKeyId;
     private autoRunStampSheet;
+    private atomicCommit;
+    private transaction;
+    private transactionResult;
     getItem(): Gs2Showcase.RandomDisplayItem | null;
     setItem(item: Gs2Showcase.RandomDisplayItem | null): this;
     withItem(item: Gs2Showcase.RandomDisplayItem | null): this;
@@ -21,6 +25,15 @@ export default class RandomShowcaseBuyResult implements IResult {
     getAutoRunStampSheet(): boolean | null;
     setAutoRunStampSheet(autoRunStampSheet: boolean | null): this;
     withAutoRunStampSheet(autoRunStampSheet: boolean | null): this;
+    getAtomicCommit(): boolean | null;
+    setAtomicCommit(atomicCommit: boolean | null): this;
+    withAtomicCommit(atomicCommit: boolean | null): this;
+    getTransaction(): string | null;
+    setTransaction(transaction: string | null): this;
+    withTransaction(transaction: string | null): this;
+    getTransactionResult(): Gs2Core.TransactionResult | null;
+    setTransactionResult(transactionResult: Gs2Core.TransactionResult | null): this;
+    withTransactionResult(transactionResult: Gs2Core.TransactionResult | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): RandomShowcaseBuyResult;

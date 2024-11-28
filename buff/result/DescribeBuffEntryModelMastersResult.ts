@@ -55,7 +55,7 @@ export default class DescribeBuffEntryModelMastersResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Buff.BuffEntryModelMaster.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeBuffEntryModelMastersResult implements IResult {
                 this.getItems()!.map((item: Gs2Buff.BuffEntryModelMaster) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

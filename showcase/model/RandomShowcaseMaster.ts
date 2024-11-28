@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Showcase from '../../showcase/model'
 import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
@@ -27,7 +29,7 @@ export default class RandomShowcaseMaster implements IModel {
     private description: string|null = null;
     private metadata: string|null = null;
     private maximumNumberOfChoice: number|null = null;
-    private displayItems: RandomDisplayItemModel[]|null = null;
+    private displayItems: Gs2Showcase.RandomDisplayItemModel[]|null = null;
     private baseTimestamp: number|null = null;
     private resetIntervalHours: number|null = null;
     private salesPeriodEventId: string|null = null;
@@ -170,14 +172,14 @@ export default class RandomShowcaseMaster implements IModel {
         this.maximumNumberOfChoice = maximumNumberOfChoice;
         return this;
     }
-    public getDisplayItems(): RandomDisplayItemModel[]|null {
+    public getDisplayItems(): Gs2Showcase.RandomDisplayItemModel[]|null {
         return this.displayItems;
     }
-    public setDisplayItems(displayItems: RandomDisplayItemModel[]|null) {
+    public setDisplayItems(displayItems: Gs2Showcase.RandomDisplayItemModel[]|null) {
         this.displayItems = displayItems;
         return this;
     }
-    public withDisplayItems(displayItems: RandomDisplayItemModel[]|null): this {
+    public withDisplayItems(displayItems: Gs2Showcase.RandomDisplayItemModel[]|null): this {
         this.displayItems = displayItems;
         return this;
     }
@@ -260,9 +262,9 @@ export default class RandomShowcaseMaster implements IModel {
             .withMaximumNumberOfChoice(data["maximumNumberOfChoice"])
             .withDisplayItems(data.displayItems ?
                 data.displayItems.map((item: {[key: string]: any}) => {
-                    return RandomDisplayItemModel.fromDict(item);
+                    return Gs2Showcase.RandomDisplayItemModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withBaseTimestamp(data["baseTimestamp"])
             .withResetIntervalHours(data["resetIntervalHours"])
             .withSalesPeriodEventId(data["salesPeriodEventId"])
@@ -279,10 +281,10 @@ export default class RandomShowcaseMaster implements IModel {
             "metadata": this.getMetadata(),
             "maximumNumberOfChoice": this.getMaximumNumberOfChoice(),
             "displayItems": this.getDisplayItems() ?
-                this.getDisplayItems()!.map((item: RandomDisplayItemModel) => {
+                this.getDisplayItems()!.map((item: Gs2Showcase.RandomDisplayItemModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "baseTimestamp": this.getBaseTimestamp(),
             "resetIntervalHours": this.getResetIntervalHours(),
             "salesPeriodEventId": this.getSalesPeriodEventId(),

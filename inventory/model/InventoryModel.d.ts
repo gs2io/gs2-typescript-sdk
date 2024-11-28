@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import ItemModel from './ItemModel';
+import * as Gs2Inventory from '../../inventory/model';
 export default class InventoryModel implements IModel {
     private inventoryModelId;
     private name;
@@ -32,9 +32,9 @@ export default class InventoryModel implements IModel {
     getProtectReferencedItem(): boolean | null;
     setProtectReferencedItem(protectReferencedItem: boolean | null): this;
     withProtectReferencedItem(protectReferencedItem: boolean | null): this;
-    getItemModels(): ItemModel[] | null;
-    setItemModels(itemModels: ItemModel[] | null): this;
-    withItemModels(itemModels: ItemModel[] | null): this;
+    getItemModels(): Gs2Inventory.ItemModel[] | null;
+    setItemModels(itemModels: Gs2Inventory.ItemModel[] | null): this;
+    withItemModels(itemModels: Gs2Inventory.ItemModel[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): InventoryModel | null;

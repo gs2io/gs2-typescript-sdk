@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Account from '../../account/model'
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:account:{namespaceName}";
@@ -25,11 +27,11 @@ export default class Namespace implements IModel {
     private description: string|null = null;
     private changePasswordIfTakeOver: boolean|null = null;
     private differentUserIdForLoginAndDataRetention: boolean|null = null;
-    private createAccountScript: ScriptSetting|null = null;
-    private authenticationScript: ScriptSetting|null = null;
-    private createTakeOverScript: ScriptSetting|null = null;
-    private doTakeOverScript: ScriptSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private createAccountScript: Gs2Account.ScriptSetting|null = null;
+    private authenticationScript: Gs2Account.ScriptSetting|null = null;
+    private createTakeOverScript: Gs2Account.ScriptSetting|null = null;
+    private doTakeOverScript: Gs2Account.ScriptSetting|null = null;
+    private logSetting: Gs2Account.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -148,58 +150,58 @@ export default class Namespace implements IModel {
         this.differentUserIdForLoginAndDataRetention = differentUserIdForLoginAndDataRetention;
         return this;
     }
-    public getCreateAccountScript(): ScriptSetting|null {
+    public getCreateAccountScript(): Gs2Account.ScriptSetting|null {
         return this.createAccountScript;
     }
-    public setCreateAccountScript(createAccountScript: ScriptSetting|null) {
+    public setCreateAccountScript(createAccountScript: Gs2Account.ScriptSetting|null) {
         this.createAccountScript = createAccountScript;
         return this;
     }
-    public withCreateAccountScript(createAccountScript: ScriptSetting|null): this {
+    public withCreateAccountScript(createAccountScript: Gs2Account.ScriptSetting|null): this {
         this.createAccountScript = createAccountScript;
         return this;
     }
-    public getAuthenticationScript(): ScriptSetting|null {
+    public getAuthenticationScript(): Gs2Account.ScriptSetting|null {
         return this.authenticationScript;
     }
-    public setAuthenticationScript(authenticationScript: ScriptSetting|null) {
+    public setAuthenticationScript(authenticationScript: Gs2Account.ScriptSetting|null) {
         this.authenticationScript = authenticationScript;
         return this;
     }
-    public withAuthenticationScript(authenticationScript: ScriptSetting|null): this {
+    public withAuthenticationScript(authenticationScript: Gs2Account.ScriptSetting|null): this {
         this.authenticationScript = authenticationScript;
         return this;
     }
-    public getCreateTakeOverScript(): ScriptSetting|null {
+    public getCreateTakeOverScript(): Gs2Account.ScriptSetting|null {
         return this.createTakeOverScript;
     }
-    public setCreateTakeOverScript(createTakeOverScript: ScriptSetting|null) {
+    public setCreateTakeOverScript(createTakeOverScript: Gs2Account.ScriptSetting|null) {
         this.createTakeOverScript = createTakeOverScript;
         return this;
     }
-    public withCreateTakeOverScript(createTakeOverScript: ScriptSetting|null): this {
+    public withCreateTakeOverScript(createTakeOverScript: Gs2Account.ScriptSetting|null): this {
         this.createTakeOverScript = createTakeOverScript;
         return this;
     }
-    public getDoTakeOverScript(): ScriptSetting|null {
+    public getDoTakeOverScript(): Gs2Account.ScriptSetting|null {
         return this.doTakeOverScript;
     }
-    public setDoTakeOverScript(doTakeOverScript: ScriptSetting|null) {
+    public setDoTakeOverScript(doTakeOverScript: Gs2Account.ScriptSetting|null) {
         this.doTakeOverScript = doTakeOverScript;
         return this;
     }
-    public withDoTakeOverScript(doTakeOverScript: ScriptSetting|null): this {
+    public withDoTakeOverScript(doTakeOverScript: Gs2Account.ScriptSetting|null): this {
         this.doTakeOverScript = doTakeOverScript;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Account.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Account.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Account.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -247,11 +249,11 @@ export default class Namespace implements IModel {
             .withDescription(data["description"])
             .withChangePasswordIfTakeOver(data["changePasswordIfTakeOver"])
             .withDifferentUserIdForLoginAndDataRetention(data["differentUserIdForLoginAndDataRetention"])
-            .withCreateAccountScript(ScriptSetting.fromDict(data["createAccountScript"]))
-            .withAuthenticationScript(ScriptSetting.fromDict(data["authenticationScript"]))
-            .withCreateTakeOverScript(ScriptSetting.fromDict(data["createTakeOverScript"]))
-            .withDoTakeOverScript(ScriptSetting.fromDict(data["doTakeOverScript"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withCreateAccountScript(Gs2Account.ScriptSetting.fromDict(data["createAccountScript"]))
+            .withAuthenticationScript(Gs2Account.ScriptSetting.fromDict(data["authenticationScript"]))
+            .withCreateTakeOverScript(Gs2Account.ScriptSetting.fromDict(data["createTakeOverScript"]))
+            .withDoTakeOverScript(Gs2Account.ScriptSetting.fromDict(data["doTakeOverScript"]))
+            .withLogSetting(Gs2Account.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

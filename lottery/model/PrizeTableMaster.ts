@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Lottery from '../../lottery/model'
 import AcquireAction from './AcquireAction';
 import Prize from './Prize';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:lottery:{namespaceName}:table:{prizeTableName}";
@@ -24,7 +26,7 @@ export default class PrizeTableMaster implements IModel {
     private name: string|null = null;
     private metadata: string|null = null;
     private description: string|null = null;
-    private prizes: Prize[]|null = null;
+    private prizes: Gs2Lottery.Prize[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -153,14 +155,14 @@ export default class PrizeTableMaster implements IModel {
         this.description = description;
         return this;
     }
-    public getPrizes(): Prize[]|null {
+    public getPrizes(): Gs2Lottery.Prize[]|null {
         return this.prizes;
     }
-    public setPrizes(prizes: Prize[]|null) {
+    public setPrizes(prizes: Gs2Lottery.Prize[]|null) {
         this.prizes = prizes;
         return this;
     }
-    public withPrizes(prizes: Prize[]|null): this {
+    public withPrizes(prizes: Gs2Lottery.Prize[]|null): this {
         this.prizes = prizes;
         return this;
     }
@@ -209,9 +211,9 @@ export default class PrizeTableMaster implements IModel {
             .withDescription(data["description"])
             .withPrizes(data.prizes ?
                 data.prizes.map((item: {[key: string]: any}) => {
-                    return Prize.fromDict(item);
+                    return Gs2Lottery.Prize.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -224,10 +226,10 @@ export default class PrizeTableMaster implements IModel {
             "metadata": this.getMetadata(),
             "description": this.getDescription(),
             "prizes": this.getPrizes() ?
-                this.getPrizes()!.map((item: Prize) => {
+                this.getPrizes()!.map((item: Gs2Lottery.Prize) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

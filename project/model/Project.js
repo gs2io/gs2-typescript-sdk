@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Gs2Region_1 = tslib_1.__importDefault(require("./Gs2Region"));
+var Gs2Project = tslib_1.__importStar(require("../../project/model"));
 var grnFormat = "grn:gs2:::gs2:account:{accountName}:project:{projectName}";
 var Project = /** @class */ (function () {
     function Project() {
@@ -221,8 +221,8 @@ var Project = /** @class */ (function () {
             .withPlan(data["plan"])
             .withRegions(data.regions ?
             data.regions.map(function (item) {
-                return Gs2Region_1.default.fromDict(item);
-            }) : [])
+                return Gs2Project.Gs2Region.fromDict(item);
+            }) : null)
             .withBillingMethodName(data["billingMethodName"])
             .withEnableEventBridge(data["enableEventBridge"])
             .withCurrency(data["currency"])
@@ -241,7 +241,7 @@ var Project = /** @class */ (function () {
             "regions": this.getRegions() ?
                 this.getRegions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "billingMethodName": this.getBillingMethodName(),
             "enableEventBridge": this.getEnableEventBridge(),
             "currency": this.getCurrency(),

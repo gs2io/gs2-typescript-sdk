@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import UnleashRateEntryModel from './UnleashRateEntryModel';
+import * as Gs2Enhance from '../../enhance/model';
 export default class UnleashRateModelMaster implements IModel {
     private unleashRateModelId;
     private name;
@@ -35,9 +35,9 @@ export default class UnleashRateModelMaster implements IModel {
     getGradeModelId(): string | null;
     setGradeModelId(gradeModelId: string | null): this;
     withGradeModelId(gradeModelId: string | null): this;
-    getGradeEntries(): UnleashRateEntryModel[] | null;
-    setGradeEntries(gradeEntries: UnleashRateEntryModel[] | null): this;
-    withGradeEntries(gradeEntries: UnleashRateEntryModel[] | null): this;
+    getGradeEntries(): Gs2Enhance.UnleashRateEntryModel[] | null;
+    setGradeEntries(gradeEntries: Gs2Enhance.UnleashRateEntryModel[] | null): this;
+    withGradeEntries(gradeEntries: Gs2Enhance.UnleashRateEntryModel[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Money2 from '../../money2/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:money2:{namespaceName}:transaction:history:daily:{year}:{month}:{day}:currency:{currency}";
 
 export default class DailyTransactionHistory implements IModel {

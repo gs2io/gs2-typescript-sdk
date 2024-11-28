@@ -124,7 +124,7 @@ var DepositByUserIdRequest = /** @class */ (function () {
             .withDepositTransactions(data.depositTransactions ?
             data.depositTransactions.map(function (item) {
                 return Gs2Money2.DepositTransaction.fromDict(item);
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     DepositByUserIdRequest.prototype.toDict = function () {
@@ -135,7 +135,7 @@ var DepositByUserIdRequest = /** @class */ (function () {
             "depositTransactions": this.getDepositTransactions() ?
                 this.getDepositTransactions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

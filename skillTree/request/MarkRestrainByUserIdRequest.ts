@@ -135,7 +135,7 @@ export default class MarkRestrainByUserIdRequest implements IRequest {
                 data.nodeModelNames.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -148,7 +148,7 @@ export default class MarkRestrainByUserIdRequest implements IRequest {
                 this.getNodeModelNames()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

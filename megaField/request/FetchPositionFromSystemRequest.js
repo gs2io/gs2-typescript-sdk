@@ -110,7 +110,7 @@ var FetchPositionFromSystemRequest = /** @class */ (function () {
             .withUserIds(data.userIds ?
             data.userIds.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     FetchPositionFromSystemRequest.prototype.toDict = function () {
         return {
@@ -120,7 +120,7 @@ var FetchPositionFromSystemRequest = /** @class */ (function () {
             "userIds": this.getUserIds() ?
                 this.getUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return FetchPositionFromSystemRequest;

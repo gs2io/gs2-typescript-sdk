@@ -51,7 +51,7 @@ var Threshold = /** @class */ (function () {
             .withValues(data.values ?
             data.values.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     Threshold.prototype.toDict = function () {
         return {
@@ -59,7 +59,7 @@ var Threshold = /** @class */ (function () {
             "values": this.getValues() ?
                 this.getValues().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return Threshold;

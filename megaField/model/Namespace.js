@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2MegaField = tslib_1.__importStar(require("../../megaField/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:megaField:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -161,7 +161,7 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withLogSetting(Gs2MegaField.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

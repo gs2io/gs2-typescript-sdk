@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Experience from '../../experience/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:experience:{namespaceName}";
 
 export default class CurrentExperienceMaster implements IModel {

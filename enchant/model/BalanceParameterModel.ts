@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Enchant from '../../enchant/model'
 import BalanceParameterValueModel from './BalanceParameterValueModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:enchant:{namespaceName}:model:balance:{parameterName}";
 
@@ -24,7 +26,7 @@ export default class BalanceParameterModel implements IModel {
     private metadata: string|null = null;
     private totalValue: number|null = null;
     private initialValueStrategy: string|null = null;
-    private parameters: BalanceParameterValueModel[]|null = null;
+    private parameters: Gs2Enchant.BalanceParameterValueModel[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -161,14 +163,14 @@ export default class BalanceParameterModel implements IModel {
         this.initialValueStrategy = initialValueStrategy;
         return this;
     }
-    public getParameters(): BalanceParameterValueModel[]|null {
+    public getParameters(): Gs2Enchant.BalanceParameterValueModel[]|null {
         return this.parameters;
     }
-    public setParameters(parameters: BalanceParameterValueModel[]|null) {
+    public setParameters(parameters: Gs2Enchant.BalanceParameterValueModel[]|null) {
         this.parameters = parameters;
         return this;
     }
-    public withParameters(parameters: BalanceParameterValueModel[]|null): this {
+    public withParameters(parameters: Gs2Enchant.BalanceParameterValueModel[]|null): this {
         this.parameters = parameters;
         return this;
     }
@@ -185,9 +187,9 @@ export default class BalanceParameterModel implements IModel {
             .withInitialValueStrategy(data["initialValueStrategy"])
             .withParameters(data.parameters ?
                 data.parameters.map((item: {[key: string]: any}) => {
-                    return BalanceParameterValueModel.fromDict(item);
+                    return Gs2Enchant.BalanceParameterValueModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -198,10 +200,10 @@ export default class BalanceParameterModel implements IModel {
             "totalValue": this.getTotalValue(),
             "initialValueStrategy": this.getInitialValueStrategy(),
             "parameters": this.getParameters() ?
-                this.getParameters()!.map((item: BalanceParameterValueModel) => {
+                this.getParameters()!.map((item: Gs2Enchant.BalanceParameterValueModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

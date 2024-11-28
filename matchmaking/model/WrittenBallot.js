@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Ballot_1 = tslib_1.__importDefault(require("./Ballot"));
-var GameResult_1 = tslib_1.__importDefault(require("./GameResult"));
+var Gs2Matchmaking = tslib_1.__importStar(require("../../matchmaking/model"));
 var WrittenBallot = /** @class */ (function () {
     function WrittenBallot() {
         this.ballot = null;
@@ -50,11 +49,11 @@ var WrittenBallot = /** @class */ (function () {
             return null;
         }
         return new WrittenBallot()
-            .withBallot(Ballot_1.default.fromDict(data["ballot"]))
+            .withBallot(Gs2Matchmaking.Ballot.fromDict(data["ballot"]))
             .withGameResults(data.gameResults ?
             data.gameResults.map(function (item) {
-                return GameResult_1.default.fromDict(item);
-            }) : []);
+                return Gs2Matchmaking.GameResult.fromDict(item);
+            }) : null);
     };
     WrittenBallot.prototype.toDict = function () {
         var _a;
@@ -63,7 +62,7 @@ var WrittenBallot = /** @class */ (function () {
             "gameResults": this.getGameResults() ?
                 this.getGameResults().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return WrittenBallot;

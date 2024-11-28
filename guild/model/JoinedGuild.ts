@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Guild from '../../guild/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:guild:{namespaceName}:user:{userId}:guild:{guildModelName}:{guildName}";
 
 export default class JoinedGuild implements IModel {

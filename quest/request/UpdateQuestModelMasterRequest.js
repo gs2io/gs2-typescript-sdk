@@ -198,28 +198,28 @@ var UpdateQuestModelMasterRequest = /** @class */ (function () {
             .withContents(data.contents ?
             data.contents.map(function (item) {
                 return Gs2Quest.Contents.fromDict(item);
-            }) : [])
+            }) : null)
             .withChallengePeriodEventId(data["challengePeriodEventId"])
             .withFirstCompleteAcquireActions(data.firstCompleteAcquireActions ?
             data.firstCompleteAcquireActions.map(function (item) {
                 return Gs2Quest.AcquireAction.fromDict(item);
-            }) : [])
+            }) : null)
             .withVerifyActions(data.verifyActions ?
             data.verifyActions.map(function (item) {
                 return Gs2Quest.VerifyAction.fromDict(item);
-            }) : [])
+            }) : null)
             .withConsumeActions(data.consumeActions ?
             data.consumeActions.map(function (item) {
                 return Gs2Quest.ConsumeAction.fromDict(item);
-            }) : [])
+            }) : null)
             .withFailedAcquireActions(data.failedAcquireActions ?
             data.failedAcquireActions.map(function (item) {
                 return Gs2Quest.AcquireAction.fromDict(item);
-            }) : [])
+            }) : null)
             .withPremiseQuestNames(data.premiseQuestNames ?
             data.premiseQuestNames.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     UpdateQuestModelMasterRequest.prototype.toDict = function () {
         return {
@@ -231,28 +231,28 @@ var UpdateQuestModelMasterRequest = /** @class */ (function () {
             "contents": this.getContents() ?
                 this.getContents().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "firstCompleteAcquireActions": this.getFirstCompleteAcquireActions() ?
                 this.getFirstCompleteAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "verifyActions": this.getVerifyActions() ?
                 this.getVerifyActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "failedAcquireActions": this.getFailedAcquireActions() ?
                 this.getFailedAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "premiseQuestNames": this.getPremiseQuestNames() ?
                 this.getPremiseQuestNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return UpdateQuestModelMasterRequest;

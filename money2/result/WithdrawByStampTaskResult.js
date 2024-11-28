@@ -62,7 +62,7 @@ var WithdrawByStampTaskResult = /** @class */ (function () {
             .withWithdrawTransactions(data.withdrawTransactions ?
             data.withdrawTransactions.map(function (item) {
                 return Gs2Money2.DepositTransaction.fromDict(item);
-            }) : [])
+            }) : null)
             .withNewContextStack(data["newContextStack"]);
     };
     WithdrawByStampTaskResult.prototype.toDict = function () {
@@ -72,7 +72,7 @@ var WithdrawByStampTaskResult = /** @class */ (function () {
             "withdrawTransactions": this.getWithdrawTransactions() ?
                 this.getWithdrawTransactions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "newContextStack": this.getNewContextStack(),
         };
     };

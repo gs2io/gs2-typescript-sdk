@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
-var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2Quest = tslib_1.__importStar(require("../../quest/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:quest:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -241,11 +239,11 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
-            .withStartQuestScript(ScriptSetting_1.default.fromDict(data["startQuestScript"]))
-            .withCompleteQuestScript(ScriptSetting_1.default.fromDict(data["completeQuestScript"]))
-            .withFailedQuestScript(ScriptSetting_1.default.fromDict(data["failedQuestScript"]))
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withTransactionSetting(Gs2Quest.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withStartQuestScript(Gs2Quest.ScriptSetting.fromDict(data["startQuestScript"]))
+            .withCompleteQuestScript(Gs2Quest.ScriptSetting.fromDict(data["completeQuestScript"]))
+            .withFailedQuestScript(Gs2Quest.ScriptSetting.fromDict(data["failedQuestScript"]))
+            .withLogSetting(Gs2Quest.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withQueueNamespaceId(data["queueNamespaceId"])

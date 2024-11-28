@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import QuestModel from './QuestModel';
+import * as Gs2Quest from '../../quest/model';
 export default class QuestGroupModel implements IModel {
     private questGroupModelId;
     private name;
@@ -21,9 +21,9 @@ export default class QuestGroupModel implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
-    getQuests(): QuestModel[] | null;
-    setQuests(quests: QuestModel[] | null): this;
-    withQuests(quests: QuestModel[] | null): this;
+    getQuests(): Gs2Quest.QuestModel[] | null;
+    setQuests(quests: Gs2Quest.QuestModel[] | null): this;
+    withQuests(quests: Gs2Quest.QuestModel[] | null): this;
     getChallengePeriodEventId(): string | null;
     setChallengePeriodEventId(challengePeriodEventId: string | null): this;
     withChallengePeriodEventId(challengePeriodEventId: string | null): this;

@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import SlotModel from './SlotModel';
+import * as Gs2Formation from '../../formation/model';
 export default class PropertyFormModel implements IModel {
     private propertyFormModelId;
     private name;
@@ -20,9 +20,9 @@ export default class PropertyFormModel implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
-    getSlots(): SlotModel[] | null;
-    setSlots(slots: SlotModel[] | null): this;
-    withSlots(slots: SlotModel[] | null): this;
+    getSlots(): Gs2Formation.SlotModel[] | null;
+    setSlots(slots: Gs2Formation.SlotModel[] | null): this;
+    withSlots(slots: Gs2Formation.SlotModel[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): PropertyFormModel | null;

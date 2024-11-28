@@ -37,14 +37,14 @@ var DescribeBigItemModelsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Inventory.BigItemModel.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeBigItemModelsResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeBigItemModelsResult;

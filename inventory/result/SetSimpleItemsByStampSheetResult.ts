@@ -40,7 +40,7 @@ export default class SetSimpleItemsByStampSheetResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Inventory.SimpleItem.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class SetSimpleItemsByStampSheetResult implements IResult {
                 this.getItems()!.map((item: Gs2Inventory.SimpleItem) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import CounterScopeModel from './CounterScopeModel';
+import * as Gs2Mission from '../../mission/model';
 export default class CounterModel implements IModel {
     private counterId;
     private name;
@@ -21,9 +21,9 @@ export default class CounterModel implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
-    getScopes(): CounterScopeModel[] | null;
-    setScopes(scopes: CounterScopeModel[] | null): this;
-    withScopes(scopes: CounterScopeModel[] | null): this;
+    getScopes(): Gs2Mission.CounterScopeModel[] | null;
+    setScopes(scopes: Gs2Mission.CounterScopeModel[] | null): this;
+    withScopes(scopes: Gs2Mission.CounterScopeModel[] | null): this;
     getChallengePeriodEventId(): string | null;
     setChallengePeriodEventId(challengePeriodEventId: string | null): this;
     withChallengePeriodEventId(challengePeriodEventId: string | null): this;

@@ -15,11 +15,13 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Quest from '../../quest/model'
 import AcquireAction from './AcquireAction';
 
 export default class Contents implements IModel {
     private metadata: string|null = null;
-    private completeAcquireActions: AcquireAction[]|null = null;
+    private completeAcquireActions: Gs2Quest.AcquireAction[]|null = null;
     private weight: number|null = null;
     public getMetadata(): string|null {
         return this.metadata;
@@ -32,14 +34,14 @@ export default class Contents implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getCompleteAcquireActions(): AcquireAction[]|null {
+    public getCompleteAcquireActions(): Gs2Quest.AcquireAction[]|null {
         return this.completeAcquireActions;
     }
-    public setCompleteAcquireActions(completeAcquireActions: AcquireAction[]|null) {
+    public setCompleteAcquireActions(completeAcquireActions: Gs2Quest.AcquireAction[]|null) {
         this.completeAcquireActions = completeAcquireActions;
         return this;
     }
-    public withCompleteAcquireActions(completeAcquireActions: AcquireAction[]|null): this {
+    public withCompleteAcquireActions(completeAcquireActions: Gs2Quest.AcquireAction[]|null): this {
         this.completeAcquireActions = completeAcquireActions;
         return this;
     }
@@ -63,9 +65,9 @@ export default class Contents implements IModel {
             .withMetadata(data["metadata"])
             .withCompleteAcquireActions(data.completeAcquireActions ?
                 data.completeAcquireActions.map((item: {[key: string]: any}) => {
-                    return AcquireAction.fromDict(item);
+                    return Gs2Quest.AcquireAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withWeight(data["weight"]);
     }
 
@@ -73,10 +75,10 @@ export default class Contents implements IModel {
         return {
             "metadata": this.getMetadata(),
             "completeAcquireActions": this.getCompleteAcquireActions() ?
-                this.getCompleteAcquireActions()!.map((item: AcquireAction) => {
+                this.getCompleteAcquireActions()!.map((item: Gs2Quest.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "weight": this.getWeight(),
         };
     }

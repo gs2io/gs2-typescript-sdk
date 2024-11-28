@@ -16,8 +16,13 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Exchange from '../../exchange/model'
+
 export default class TransactionSetting implements IModel {
     private enableAutoRun: boolean|null = null;
+    private enableAtomicCommit: boolean|null = null;
+    private transactionUseDistributor: boolean|null = null;
+    private acquireActionUseJobQueue: boolean|null = null;
     private distributorNamespaceId: string|null = null;
     private keyId: string|null = null;
     private queueNamespaceId: string|null = null;
@@ -32,6 +37,39 @@ export default class TransactionSetting implements IModel {
         this.enableAutoRun = enableAutoRun;
         return this;
     }
+    public getEnableAtomicCommit(): boolean|null {
+        return this.enableAtomicCommit;
+    }
+    public setEnableAtomicCommit(enableAtomicCommit: boolean|null) {
+        this.enableAtomicCommit = enableAtomicCommit;
+        return this;
+    }
+    public withEnableAtomicCommit(enableAtomicCommit: boolean|null): this {
+        this.enableAtomicCommit = enableAtomicCommit;
+        return this;
+    }
+    public getTransactionUseDistributor(): boolean|null {
+        return this.transactionUseDistributor;
+    }
+    public setTransactionUseDistributor(transactionUseDistributor: boolean|null) {
+        this.transactionUseDistributor = transactionUseDistributor;
+        return this;
+    }
+    public withTransactionUseDistributor(transactionUseDistributor: boolean|null): this {
+        this.transactionUseDistributor = transactionUseDistributor;
+        return this;
+    }
+    public getAcquireActionUseJobQueue(): boolean|null {
+        return this.acquireActionUseJobQueue;
+    }
+    public setAcquireActionUseJobQueue(acquireActionUseJobQueue: boolean|null) {
+        this.acquireActionUseJobQueue = acquireActionUseJobQueue;
+        return this;
+    }
+    public withAcquireActionUseJobQueue(acquireActionUseJobQueue: boolean|null): this {
+        this.acquireActionUseJobQueue = acquireActionUseJobQueue;
+        return this;
+    }
     public getDistributorNamespaceId(): string|null {
         return this.distributorNamespaceId;
     }
@@ -43,13 +81,16 @@ export default class TransactionSetting implements IModel {
         this.distributorNamespaceId = distributorNamespaceId;
         return this;
     }
+    /** @deprecated */
     public getKeyId(): string|null {
         return this.keyId;
     }
+    /** @deprecated */
     public setKeyId(keyId: string|null) {
         this.keyId = keyId;
         return this;
     }
+    /** @deprecated */
     public withKeyId(keyId: string|null): this {
         this.keyId = keyId;
         return this;
@@ -72,6 +113,9 @@ export default class TransactionSetting implements IModel {
         }
         return new TransactionSetting()
             .withEnableAutoRun(data["enableAutoRun"])
+            .withEnableAtomicCommit(data["enableAtomicCommit"])
+            .withTransactionUseDistributor(data["transactionUseDistributor"])
+            .withAcquireActionUseJobQueue(data["acquireActionUseJobQueue"])
             .withDistributorNamespaceId(data["distributorNamespaceId"])
             .withKeyId(data["keyId"])
             .withQueueNamespaceId(data["queueNamespaceId"]);
@@ -80,6 +124,9 @@ export default class TransactionSetting implements IModel {
     public toDict(): {[key: string]: any} {
         return {
             "enableAutoRun": this.getEnableAutoRun(),
+            "enableAtomicCommit": this.getEnableAtomicCommit(),
+            "transactionUseDistributor": this.getTransactionUseDistributor(),
+            "acquireActionUseJobQueue": this.getAcquireActionUseJobQueue(),
             "distributorNamespaceId": this.getDistributorNamespaceId(),
             "keyId": this.getKeyId(),
             "queueNamespaceId": this.getQueueNamespaceId(),

@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import Player from './Player';
+import * as Gs2Matchmaking from '../../matchmaking/model';
 export default class CapacityOfRole implements IModel {
     private roleName;
     private roleAliases;
@@ -14,9 +14,9 @@ export default class CapacityOfRole implements IModel {
     getCapacity(): number | null;
     setCapacity(capacity: number | null): this;
     withCapacity(capacity: number | null): this;
-    getParticipants(): Player[] | null;
-    setParticipants(participants: Player[] | null): this;
-    withParticipants(participants: Player[] | null): this;
+    getParticipants(): Gs2Matchmaking.Player[] | null;
+    setParticipants(participants: Gs2Matchmaking.Player[] | null): this;
+    withParticipants(participants: Gs2Matchmaking.Player[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CapacityOfRole | null;

@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import RoleModel from './RoleModel';
+import * as Gs2Guild from '../../guild/model';
 export default class GuildModelMaster implements IModel {
     private guildModelId;
     private name;
@@ -44,9 +44,9 @@ export default class GuildModelMaster implements IModel {
     getInactivityPeriodDays(): number | null;
     setInactivityPeriodDays(inactivityPeriodDays: number | null): this;
     withInactivityPeriodDays(inactivityPeriodDays: number | null): this;
-    getRoles(): RoleModel[] | null;
-    setRoles(roles: RoleModel[] | null): this;
-    withRoles(roles: RoleModel[] | null): this;
+    getRoles(): Gs2Guild.RoleModel[] | null;
+    setRoles(roles: Gs2Guild.RoleModel[] | null): this;
+    withRoles(roles: Gs2Guild.RoleModel[] | null): this;
     getGuildMasterRole(): string | null;
     setGuildMasterRole(guildMasterRole: string | null): this;
     withGuildMasterRole(guildMasterRole: string | null): this;

@@ -15,13 +15,15 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Money2 from '../../money2/model'
 import DepositTransaction from './DepositTransaction';
 import WalletSummary from './WalletSummary';
 
 export default class WithdrawEvent implements IModel {
     private slot: number|null = null;
-    private withdrawDetails: DepositTransaction[]|null = null;
-    private status: WalletSummary|null = null;
+    private withdrawDetails: Gs2Money2.DepositTransaction[]|null = null;
+    private status: Gs2Money2.WalletSummary|null = null;
     public getSlot(): number|null {
         return this.slot;
     }
@@ -33,25 +35,25 @@ export default class WithdrawEvent implements IModel {
         this.slot = slot;
         return this;
     }
-    public getWithdrawDetails(): DepositTransaction[]|null {
+    public getWithdrawDetails(): Gs2Money2.DepositTransaction[]|null {
         return this.withdrawDetails;
     }
-    public setWithdrawDetails(withdrawDetails: DepositTransaction[]|null) {
+    public setWithdrawDetails(withdrawDetails: Gs2Money2.DepositTransaction[]|null) {
         this.withdrawDetails = withdrawDetails;
         return this;
     }
-    public withWithdrawDetails(withdrawDetails: DepositTransaction[]|null): this {
+    public withWithdrawDetails(withdrawDetails: Gs2Money2.DepositTransaction[]|null): this {
         this.withdrawDetails = withdrawDetails;
         return this;
     }
-    public getStatus(): WalletSummary|null {
+    public getStatus(): Gs2Money2.WalletSummary|null {
         return this.status;
     }
-    public setStatus(status: WalletSummary|null) {
+    public setStatus(status: Gs2Money2.WalletSummary|null) {
         this.status = status;
         return this;
     }
-    public withStatus(status: WalletSummary|null): this {
+    public withStatus(status: Gs2Money2.WalletSummary|null): this {
         this.status = status;
         return this;
     }
@@ -64,20 +66,20 @@ export default class WithdrawEvent implements IModel {
             .withSlot(data["slot"])
             .withWithdrawDetails(data.withdrawDetails ?
                 data.withdrawDetails.map((item: {[key: string]: any}) => {
-                    return DepositTransaction.fromDict(item);
+                    return Gs2Money2.DepositTransaction.fromDict(item);
                 }
-            ) : [])
-            .withStatus(WalletSummary.fromDict(data["status"]));
+            ) : null)
+            .withStatus(Gs2Money2.WalletSummary.fromDict(data["status"]));
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "slot": this.getSlot(),
             "withdrawDetails": this.getWithdrawDetails() ?
-                this.getWithdrawDetails()!.map((item: DepositTransaction) => {
+                this.getWithdrawDetails()!.map((item: Gs2Money2.DepositTransaction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "status": this.getStatus()?.toDict(),
         };
     }

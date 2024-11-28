@@ -109,7 +109,7 @@ export default class SetTransactionDefaultConfigByUserIdRequest implements IRequ
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Distributor.Config.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -120,7 +120,7 @@ export default class SetTransactionDefaultConfigByUserIdRequest implements IRequ
                 this.getConfig()!.map((item: Gs2Distributor.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

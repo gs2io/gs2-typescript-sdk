@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Money from '../../money/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:money:{namespaceName}:user:{userId}:receipt:{transactionId}";
 
 export default class Receipt implements IModel {

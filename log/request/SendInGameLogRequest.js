@@ -111,7 +111,7 @@ var SendInGameLogRequest = /** @class */ (function () {
             .withTags(data.tags ?
             data.tags.map(function (item) {
                 return Gs2Log.InGameLogTag.fromDict(item);
-            }) : [])
+            }) : null)
             .withPayload(data["payload"]);
     };
     SendInGameLogRequest.prototype.toDict = function () {
@@ -121,7 +121,7 @@ var SendInGameLogRequest = /** @class */ (function () {
             "tags": this.getTags() ?
                 this.getTags().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "payload": this.getPayload(),
         };
     };

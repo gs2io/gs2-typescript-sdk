@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var QuestModel_1 = tslib_1.__importDefault(require("./QuestModel"));
+var Gs2Quest = tslib_1.__importStar(require("../../quest/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:quest:{namespaceName}:group:{questGroupName}";
 var QuestGroupModel = /** @class */ (function () {
     function QuestGroupModel() {
@@ -157,8 +157,8 @@ var QuestGroupModel = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withQuests(data.quests ?
             data.quests.map(function (item) {
-                return QuestModel_1.default.fromDict(item);
-            }) : [])
+                return Gs2Quest.QuestModel.fromDict(item);
+            }) : null)
             .withChallengePeriodEventId(data["challengePeriodEventId"]);
     };
     QuestGroupModel.prototype.toDict = function () {
@@ -169,7 +169,7 @@ var QuestGroupModel = /** @class */ (function () {
             "quests": this.getQuests() ?
                 this.getQuests().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "challengePeriodEventId": this.getChallengePeriodEventId(),
         };
     };

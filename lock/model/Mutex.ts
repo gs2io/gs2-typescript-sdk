@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Lock from '../../lock/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:lock:{namespaceName}:user:{userId}:property:{propertyId}";
 
 export default class Mutex implements IModel {

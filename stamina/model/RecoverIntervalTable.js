@@ -77,7 +77,7 @@ var RecoverIntervalTable = /** @class */ (function () {
             .withValues(data.values ?
             data.values.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     RecoverIntervalTable.prototype.toDict = function () {
         return {
@@ -87,7 +87,7 @@ var RecoverIntervalTable = /** @class */ (function () {
             "values": this.getValues() ?
                 this.getValues().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return RecoverIntervalTable;

@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Enhance from '../../enhance/model'
+
 export default class BonusRate implements IModel {
     private rate: number|null = null;
     private weight: number|null = null;

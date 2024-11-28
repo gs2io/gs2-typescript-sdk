@@ -135,7 +135,7 @@ export default class BatchReceiveByUserIdRequest implements IRequest {
                 data.missionTaskNames.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -148,7 +148,7 @@ export default class BatchReceiveByUserIdRequest implements IRequest {
                 this.getMissionTaskNames()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

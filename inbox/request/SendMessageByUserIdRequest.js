@@ -148,7 +148,7 @@ var SendMessageByUserIdRequest = /** @class */ (function () {
             .withReadAcquireActions(data.readAcquireActions ?
             data.readAcquireActions.map(function (item) {
                 return Gs2Inbox.AcquireAction.fromDict(item);
-            }) : [])
+            }) : null)
             .withExpiresAt(data["expiresAt"])
             .withExpiresTimeSpan(Gs2Inbox.TimeSpan.fromDict(data["expiresTimeSpan"]))
             .withTimeOffsetToken(data["timeOffsetToken"]);
@@ -162,7 +162,7 @@ var SendMessageByUserIdRequest = /** @class */ (function () {
             "readAcquireActions": this.getReadAcquireActions() ?
                 this.getReadAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "expiresAt": this.getExpiresAt(),
             "expiresTimeSpan": (_a = this.getExpiresTimeSpan()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "timeOffsetToken": this.getTimeOffsetToken(),

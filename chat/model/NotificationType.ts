@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Chat from '../../chat/model'
+
 export default class NotificationType implements IModel {
     private category: number|null = null;
     private enableTransferMobilePushNotification: boolean|null = null;

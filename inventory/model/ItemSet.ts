@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Inventory from '../../inventory/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}:user:{userId}:inventory:{inventoryName}:item:{itemName}:itemSet:{itemSetName}";
 
 export default class ItemSet implements IModel {
@@ -322,7 +324,7 @@ export default class ItemSet implements IModel {
                 data.referenceOf.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withSortValue(data["sortValue"])
             .withExpiresAt(data["expiresAt"])
             .withCreatedAt(data["createdAt"])
@@ -341,7 +343,7 @@ export default class ItemSet implements IModel {
                 this.getReferenceOf()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "sortValue": this.getSortValue(),
             "expiresAt": this.getExpiresAt(),
             "createdAt": this.getCreatedAt(),

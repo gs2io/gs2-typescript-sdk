@@ -40,7 +40,7 @@ export default class DescribeClusterRankingModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Ranking2.ClusterRankingModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeClusterRankingModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2Ranking2.ClusterRankingModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

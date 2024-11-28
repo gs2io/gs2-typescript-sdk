@@ -55,7 +55,7 @@ export default class DescribeJoinedSeasonGatheringsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Matchmaking.JoinedSeasonGathering.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeJoinedSeasonGatheringsResult implements IResult {
                 this.getItems()!.map((item: Gs2Matchmaking.JoinedSeasonGathering) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

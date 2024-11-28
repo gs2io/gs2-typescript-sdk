@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import Version from './Version';
+import * as Gs2Version from '../../version/model';
 export default class TargetVersion implements IModel {
     private versionName;
     private body;
@@ -14,9 +14,9 @@ export default class TargetVersion implements IModel {
     getSignature(): string | null;
     setSignature(signature: string | null): this;
     withSignature(signature: string | null): this;
-    getVersion(): Version | null;
-    setVersion(version: Version | null): this;
-    withVersion(version: Version | null): this;
+    getVersion(): Gs2Version.Version | null;
+    setVersion(version: Gs2Version.Version | null): this;
+    withVersion(version: Gs2Version.Version | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): TargetVersion | null;

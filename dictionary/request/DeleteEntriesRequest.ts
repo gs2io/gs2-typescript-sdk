@@ -110,7 +110,7 @@ export default class DeleteEntriesRequest implements IRequest {
                 data.entryModelNames.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -121,7 +121,7 @@ export default class DeleteEntriesRequest implements IRequest {
                 this.getEntryModelNames()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

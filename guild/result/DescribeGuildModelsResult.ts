@@ -40,7 +40,7 @@ export default class DescribeGuildModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Guild.GuildModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeGuildModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2Guild.GuildModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

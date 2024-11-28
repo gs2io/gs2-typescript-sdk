@@ -55,7 +55,7 @@ export default class DescribeClusterRankingReceivedRewardsByUserIdResult impleme
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Ranking2.ClusterRankingReceivedReward.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeClusterRankingReceivedRewardsByUserIdResult impleme
                 this.getItems()!.map((item: Gs2Ranking2.ClusterRankingReceivedReward) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

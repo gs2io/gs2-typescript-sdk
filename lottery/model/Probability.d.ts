@@ -1,11 +1,11 @@
 import IModel from '../../core/interface/IModel';
-import DrawnPrize from './DrawnPrize';
+import * as Gs2Lottery from '../../lottery/model';
 export default class Probability implements IModel {
     private prize;
     private rate;
-    getPrize(): DrawnPrize | null;
-    setPrize(prize: DrawnPrize | null): this;
-    withPrize(prize: DrawnPrize | null): this;
+    getPrize(): Gs2Lottery.DrawnPrize | null;
+    setPrize(prize: Gs2Lottery.DrawnPrize | null): this;
+    withPrize(prize: Gs2Lottery.DrawnPrize | null): this;
     getRate(): number | null;
     setRate(rate: number | null): this;
     withRate(rate: number | null): this;

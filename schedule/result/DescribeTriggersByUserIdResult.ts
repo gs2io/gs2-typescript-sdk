@@ -55,7 +55,7 @@ export default class DescribeTriggersByUserIdResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Schedule.Trigger.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeTriggersByUserIdResult implements IResult {
                 this.getItems()!.map((item: Gs2Schedule.Trigger) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

@@ -124,7 +124,7 @@ var UpdateGatheringByUserIdRequest = /** @class */ (function () {
             .withAttributeRanges(data.attributeRanges ?
             data.attributeRanges.map(function (item) {
                 return Gs2Matchmaking.AttributeRange.fromDict(item);
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     UpdateGatheringByUserIdRequest.prototype.toDict = function () {
@@ -135,7 +135,7 @@ var UpdateGatheringByUserIdRequest = /** @class */ (function () {
             "attributeRanges": this.getAttributeRanges() ?
                 this.getAttributeRanges().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

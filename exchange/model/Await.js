@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Config_1 = tslib_1.__importDefault(require("./Config"));
+var Gs2Exchange = tslib_1.__importStar(require("../../exchange/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:exchange:{namespaceName}:user:{userId}:await:{awaitName}";
 var Await = /** @class */ (function () {
     function Await() {
@@ -240,8 +240,8 @@ var Await = /** @class */ (function () {
             .withSkipSeconds(data["skipSeconds"])
             .withConfig(data.config ?
             data.config.map(function (item) {
-                return Config_1.default.fromDict(item);
-            }) : [])
+                return Gs2Exchange.Config.fromDict(item);
+            }) : null)
             .withAcquirableAt(data["acquirableAt"])
             .withExchangedAt(data["exchangedAt"])
             .withRevision(data["revision"]);
@@ -257,7 +257,7 @@ var Await = /** @class */ (function () {
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "acquirableAt": this.getAcquirableAt(),
             "exchangedAt": this.getExchangedAt(),
             "revision": this.getRevision(),

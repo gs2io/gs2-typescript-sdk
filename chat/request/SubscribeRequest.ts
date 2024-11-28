@@ -123,7 +123,7 @@ export default class SubscribeRequest implements IRequest {
                 data.notificationTypes.map((item: {[key: string]: any}) => {
                     return Gs2Chat.NotificationType.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -135,7 +135,7 @@ export default class SubscribeRequest implements IRequest {
                 this.getNotificationTypes()!.map((item: Gs2Chat.NotificationType) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

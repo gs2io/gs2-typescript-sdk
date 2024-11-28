@@ -55,7 +55,7 @@ export default class DescribeFormsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Formation.Form.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeFormsResult implements IResult {
                 this.getItems()!.map((item: Gs2Formation.Form) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

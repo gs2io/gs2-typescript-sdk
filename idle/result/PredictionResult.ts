@@ -55,7 +55,7 @@ export default class PredictionResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Idle.AcquireAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withStatus(Gs2Idle.Status.fromDict(data["status"]));
     }
 
@@ -65,7 +65,7 @@ export default class PredictionResult implements IResult {
                 this.getItems()!.map((item: Gs2Idle.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "status": this.getStatus()?.toDict(),
         };
     }

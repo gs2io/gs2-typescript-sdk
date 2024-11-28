@@ -55,7 +55,7 @@ export default class DescribeIssueJobsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2SerialKey.IssueJob.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeIssueJobsResult implements IResult {
                 this.getItems()!.map((item: Gs2SerialKey.IssueJob) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

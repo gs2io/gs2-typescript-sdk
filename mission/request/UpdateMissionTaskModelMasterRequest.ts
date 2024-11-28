@@ -241,12 +241,12 @@ export default class UpdateMissionTaskModelMasterRequest implements IRequest {
                 data.verifyCompleteConsumeActions.map((item: {[key: string]: any}) => {
                     return Gs2Mission.VerifyAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCompleteAcquireActions(data.completeAcquireActions ?
                 data.completeAcquireActions.map((item: {[key: string]: any}) => {
                     return Gs2Mission.AcquireAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withChallengePeriodEventId(data["challengePeriodEventId"])
             .withPremiseMissionTaskName(data["premiseMissionTaskName"])
             .withCounterName(data["counterName"])
@@ -267,12 +267,12 @@ export default class UpdateMissionTaskModelMasterRequest implements IRequest {
                 this.getVerifyCompleteConsumeActions()!.map((item: Gs2Mission.VerifyAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "completeAcquireActions": this.getCompleteAcquireActions() ?
                 this.getCompleteAcquireActions()!.map((item: Gs2Mission.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "premiseMissionTaskName": this.getPremiseMissionTaskName(),
             "counterName": this.getCounterName(),

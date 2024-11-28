@@ -100,7 +100,7 @@ export default class GetItemWithSignatureByUserIdResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Inventory.ItemSet.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withItemModel(Gs2Inventory.ItemModel.fromDict(data["itemModel"]))
             .withInventory(Gs2Inventory.Inventory.fromDict(data["inventory"]))
             .withBody(data["body"])
@@ -113,7 +113,7 @@ export default class GetItemWithSignatureByUserIdResult implements IResult {
                 this.getItems()!.map((item: Gs2Inventory.ItemSet) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "itemModel": this.getItemModel()?.toDict(),
             "inventory": this.getInventory()?.toDict(),
             "body": this.getBody(),

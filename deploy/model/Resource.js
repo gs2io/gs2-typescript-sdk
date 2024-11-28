@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var OutputField_1 = tslib_1.__importDefault(require("./OutputField"));
+var Gs2Deploy = tslib_1.__importStar(require("../../deploy/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:deploy:{stackName}:resource:{resourceName}";
 var Resource = /** @class */ (function () {
     function Resource() {
@@ -234,11 +234,11 @@ var Resource = /** @class */ (function () {
             .withRollbackAfter(data.rollbackAfter ?
             data.rollbackAfter.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withOutputFields(data.outputFields ?
             data.outputFields.map(function (item) {
-                return OutputField_1.default.fromDict(item);
-            }) : [])
+                return Gs2Deploy.OutputField.fromDict(item);
+            }) : null)
             .withWorkId(data["workId"])
             .withCreatedAt(data["createdAt"]);
     };
@@ -254,11 +254,11 @@ var Resource = /** @class */ (function () {
             "rollbackAfter": this.getRollbackAfter() ?
                 this.getRollbackAfter().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "outputFields": this.getOutputFields() ?
                 this.getOutputFields().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "workId": this.getWorkId(),
             "createdAt": this.getCreatedAt(),
         };

@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import TierModel from './TierModel';
+import * as Gs2SeasonRating from '../../seasonRating/model';
 export default class SeasonModelMaster implements IModel {
     private seasonModelId;
     private name;
@@ -29,9 +29,9 @@ export default class SeasonModelMaster implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
-    getTiers(): TierModel[] | null;
-    setTiers(tiers: TierModel[] | null): this;
-    withTiers(tiers: TierModel[] | null): this;
+    getTiers(): Gs2SeasonRating.TierModel[] | null;
+    setTiers(tiers: Gs2SeasonRating.TierModel[] | null): this;
+    withTiers(tiers: Gs2SeasonRating.TierModel[] | null): this;
     getExperienceModelId(): string | null;
     setExperienceModelId(experienceModelId: string | null): this;
     withExperienceModelId(experienceModelId: string | null): this;

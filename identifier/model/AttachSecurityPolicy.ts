@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Identifier from '../../identifier/model'
 const grnFormat: string = "grn:gs2::{ownerId}:identifier:user:{userName}";
 
 export default class AttachSecurityPolicy implements IModel {
@@ -118,7 +120,7 @@ export default class AttachSecurityPolicy implements IModel {
                 data.securityPolicyIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withAttachedAt(data["attachedAt"])
             .withRevision(data["revision"]);
     }
@@ -130,7 +132,7 @@ export default class AttachSecurityPolicy implements IModel {
                 this.getSecurityPolicyIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "attachedAt": this.getAttachedAt(),
             "revision": this.getRevision(),
         };

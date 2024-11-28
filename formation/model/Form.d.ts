@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import Slot from './Slot';
+import * as Gs2Formation from '../../formation/model';
 export default class Form implements IModel {
     private formId;
     private name;
@@ -25,9 +25,9 @@ export default class Form implements IModel {
     getIndex(): number | null;
     setIndex(index: number | null): this;
     withIndex(index: number | null): this;
-    getSlots(): Slot[] | null;
-    setSlots(slots: Slot[] | null): this;
-    withSlots(slots: Slot[] | null): this;
+    getSlots(): Gs2Formation.Slot[] | null;
+    setSlots(slots: Gs2Formation.Slot[] | null): this;
+    withSlots(slots: Gs2Formation.Slot[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

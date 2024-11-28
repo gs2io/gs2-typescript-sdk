@@ -55,7 +55,7 @@ export default class DescribeGlobalMessageMastersResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Inbox.GlobalMessageMaster.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeGlobalMessageMastersResult implements IResult {
                 this.getItems()!.map((item: Gs2Inbox.GlobalMessageMaster) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

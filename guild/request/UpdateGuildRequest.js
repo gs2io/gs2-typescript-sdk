@@ -215,7 +215,7 @@ var UpdateGuildRequest = /** @class */ (function () {
             .withCustomRoles(data.customRoles ?
             data.customRoles.map(function (item) {
                 return Gs2Guild.RoleModel.fromDict(item);
-            }) : [])
+            }) : null)
             .withGuildMemberDefaultRole(data["guildMemberDefaultRole"]);
     };
     UpdateGuildRequest.prototype.toDict = function () {
@@ -233,7 +233,7 @@ var UpdateGuildRequest = /** @class */ (function () {
             "customRoles": this.getCustomRoles() ?
                 this.getCustomRoles().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "guildMemberDefaultRole": this.getGuildMemberDefaultRole(),
         };
     };

@@ -76,11 +76,11 @@ var AcquireActionRate = /** @class */ (function () {
             .withRates(data.rates ?
             data.rates.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withBigRates(data.bigRates ?
             data.bigRates.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     AcquireActionRate.prototype.toDict = function () {
         return {
@@ -89,11 +89,11 @@ var AcquireActionRate = /** @class */ (function () {
             "rates": this.getRates() ?
                 this.getRates().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "bigRates": this.getBigRates() ?
                 this.getBigRates().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return AcquireActionRate;

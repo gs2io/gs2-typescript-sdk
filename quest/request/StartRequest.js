@@ -138,7 +138,7 @@ var StartRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Quest.Config.fromDict(item);
-            }) : []);
+            }) : null);
     };
     StartRequest.prototype.toDict = function () {
         return {
@@ -150,7 +150,7 @@ var StartRequest = /** @class */ (function () {
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return StartRequest;

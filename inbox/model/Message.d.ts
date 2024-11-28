@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import AcquireAction from './AcquireAction';
+import * as Gs2Inbox from '../../inbox/model';
 export default class Message implements IModel {
     private messageId;
     private name;
@@ -33,9 +33,9 @@ export default class Message implements IModel {
     getIsRead(): boolean | null;
     setIsRead(isRead: boolean | null): this;
     withIsRead(isRead: boolean | null): this;
-    getReadAcquireActions(): AcquireAction[] | null;
-    setReadAcquireActions(readAcquireActions: AcquireAction[] | null): this;
-    withReadAcquireActions(readAcquireActions: AcquireAction[] | null): this;
+    getReadAcquireActions(): Gs2Inbox.AcquireAction[] | null;
+    setReadAcquireActions(readAcquireActions: Gs2Inbox.AcquireAction[] | null): this;
+    withReadAcquireActions(readAcquireActions: Gs2Inbox.AcquireAction[] | null): this;
     getReceivedAt(): number | null;
     setReceivedAt(receivedAt: number | null): this;
     withReceivedAt(receivedAt: number | null): this;

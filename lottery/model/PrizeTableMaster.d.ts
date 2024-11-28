@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import Prize from './Prize';
+import * as Gs2Lottery from '../../lottery/model';
 export default class PrizeTableMaster implements IModel {
     private prizeTableId;
     private name;
@@ -27,9 +27,9 @@ export default class PrizeTableMaster implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
-    getPrizes(): Prize[] | null;
-    setPrizes(prizes: Prize[] | null): this;
-    withPrizes(prizes: Prize[] | null): this;
+    getPrizes(): Gs2Lottery.Prize[] | null;
+    setPrizes(prizes: Gs2Lottery.Prize[] | null): this;
+    withPrizes(prizes: Gs2Lottery.Prize[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

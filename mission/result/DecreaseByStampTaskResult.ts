@@ -71,7 +71,7 @@ export default class DecreaseByStampTaskResult implements IResult {
                 data.changedCompletes.map((item: {[key: string]: any}) => {
                     return Gs2Mission.Complete.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNewContextStack(data["newContextStack"]);
     }
 
@@ -82,7 +82,7 @@ export default class DecreaseByStampTaskResult implements IResult {
                 this.getChangedCompletes()!.map((item: Gs2Mission.Complete) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "newContextStack": this.getNewContextStack(),
         };
     }

@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Money2 from '../../money2/model'
+
 export default class Receipt implements IModel {
     private store: string|null = null;
     private transactionID: string|null = null;

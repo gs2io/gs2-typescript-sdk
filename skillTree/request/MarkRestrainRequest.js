@@ -110,7 +110,7 @@ var MarkRestrainRequest = /** @class */ (function () {
             .withNodeModelNames(data.nodeModelNames ?
             data.nodeModelNames.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     MarkRestrainRequest.prototype.toDict = function () {
         return {
@@ -120,7 +120,7 @@ var MarkRestrainRequest = /** @class */ (function () {
             "nodeModelNames": this.getNodeModelNames() ?
                 this.getNodeModelNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return MarkRestrainRequest;

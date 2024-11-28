@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var TargetCounterModel_1 = tslib_1.__importDefault(require("./TargetCounterModel"));
-var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
-var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
+var Gs2Mission = tslib_1.__importStar(require("../../mission/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}:group:{missionGroupName}:missionTaskModel:{missionTaskName}";
 var MissionTaskModel = /** @class */ (function () {
     function MissionTaskModel() {
@@ -271,15 +269,15 @@ var MissionTaskModel = /** @class */ (function () {
             .withName(data["name"])
             .withMetadata(data["metadata"])
             .withVerifyCompleteType(data["verifyCompleteType"])
-            .withTargetCounter(TargetCounterModel_1.default.fromDict(data["targetCounter"]))
+            .withTargetCounter(Gs2Mission.TargetCounterModel.fromDict(data["targetCounter"]))
             .withVerifyCompleteConsumeActions(data.verifyCompleteConsumeActions ?
             data.verifyCompleteConsumeActions.map(function (item) {
-                return VerifyAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2Mission.VerifyAction.fromDict(item);
+            }) : null)
             .withCompleteAcquireActions(data.completeAcquireActions ?
             data.completeAcquireActions.map(function (item) {
-                return AcquireAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2Mission.AcquireAction.fromDict(item);
+            }) : null)
             .withChallengePeriodEventId(data["challengePeriodEventId"])
             .withPremiseMissionTaskName(data["premiseMissionTaskName"])
             .withCounterName(data["counterName"])
@@ -297,11 +295,11 @@ var MissionTaskModel = /** @class */ (function () {
             "verifyCompleteConsumeActions": this.getVerifyCompleteConsumeActions() ?
                 this.getVerifyCompleteConsumeActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "completeAcquireActions": this.getCompleteAcquireActions() ?
                 this.getCompleteAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "premiseMissionTaskName": this.getPremiseMissionTaskName(),
             "counterName": this.getCounterName(),

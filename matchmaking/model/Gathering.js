@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AttributeRange_1 = tslib_1.__importDefault(require("./AttributeRange"));
-var CapacityOfRole_1 = tslib_1.__importDefault(require("./CapacityOfRole"));
+var Gs2Matchmaking = tslib_1.__importStar(require("../../matchmaking/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:matchmaking:{namespaceName}:gathering:{gatheringName}";
 var Gathering = /** @class */ (function () {
     function Gathering() {
@@ -217,16 +216,16 @@ var Gathering = /** @class */ (function () {
             .withName(data["name"])
             .withAttributeRanges(data.attributeRanges ?
             data.attributeRanges.map(function (item) {
-                return AttributeRange_1.default.fromDict(item);
-            }) : [])
+                return Gs2Matchmaking.AttributeRange.fromDict(item);
+            }) : null)
             .withCapacityOfRoles(data.capacityOfRoles ?
             data.capacityOfRoles.map(function (item) {
-                return CapacityOfRole_1.default.fromDict(item);
-            }) : [])
+                return Gs2Matchmaking.CapacityOfRole.fromDict(item);
+            }) : null)
             .withAllowUserIds(data.allowUserIds ?
             data.allowUserIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withMetadata(data["metadata"])
             .withExpiresAt(data["expiresAt"])
             .withCreatedAt(data["createdAt"])
@@ -240,15 +239,15 @@ var Gathering = /** @class */ (function () {
             "attributeRanges": this.getAttributeRanges() ?
                 this.getAttributeRanges().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "capacityOfRoles": this.getCapacityOfRoles() ?
                 this.getCapacityOfRoles().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "allowUserIds": this.getAllowUserIds() ?
                 this.getAllowUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "metadata": this.getMetadata(),
             "expiresAt": this.getExpiresAt(),
             "createdAt": this.getCreatedAt(),

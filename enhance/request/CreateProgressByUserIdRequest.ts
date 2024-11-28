@@ -160,7 +160,7 @@ export default class CreateProgressByUserIdRequest implements IRequest {
                 data.materials.map((item: {[key: string]: any}) => {
                     return Gs2Enhance.Material.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withForce(data["force"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
@@ -175,7 +175,7 @@ export default class CreateProgressByUserIdRequest implements IRequest {
                 this.getMaterials()!.map((item: Gs2Enhance.Material) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "force": this.getForce(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };

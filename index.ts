@@ -18,7 +18,7 @@ import * as account from './account';
 import * as adReward from './adReward';
 import * as auth from './auth';
 import * as buff from './buff';
-import core from './core';
+import * as core from './core';
 import * as chat from './chat';
 import * as datastore from './datastore';;
 import * as deploy from './deploy';

@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var TierModel_1 = tslib_1.__importDefault(require("./TierModel"));
+var Gs2SeasonRating = tslib_1.__importStar(require("../../seasonRating/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:seasonRating:{namespaceName}:model:{seasonName}";
 var SeasonModelMaster = /** @class */ (function () {
     function SeasonModelMaster() {
@@ -218,8 +218,8 @@ var SeasonModelMaster = /** @class */ (function () {
             .withDescription(data["description"])
             .withTiers(data.tiers ?
             data.tiers.map(function (item) {
-                return TierModel_1.default.fromDict(item);
-            }) : [])
+                return Gs2SeasonRating.TierModel.fromDict(item);
+            }) : null)
             .withExperienceModelId(data["experienceModelId"])
             .withChallengePeriodEventId(data["challengePeriodEventId"])
             .withCreatedAt(data["createdAt"])
@@ -235,7 +235,7 @@ var SeasonModelMaster = /** @class */ (function () {
             "tiers": this.getTiers() ?
                 this.getTiers().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "experienceModelId": this.getExperienceModelId(),
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "createdAt": this.getCreatedAt(),

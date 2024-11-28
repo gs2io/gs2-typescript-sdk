@@ -98,11 +98,11 @@ var VoteMultipleRequest = /** @class */ (function () {
             .withSignedBallots(data.signedBallots ?
             data.signedBallots.map(function (item) {
                 return Gs2SeasonRating.SignedBallot.fromDict(item);
-            }) : [])
+            }) : null)
             .withGameResults(data.gameResults ?
             data.gameResults.map(function (item) {
                 return Gs2SeasonRating.GameResult.fromDict(item);
-            }) : [])
+            }) : null)
             .withKeyId(data["keyId"]);
     };
     VoteMultipleRequest.prototype.toDict = function () {
@@ -111,11 +111,11 @@ var VoteMultipleRequest = /** @class */ (function () {
             "signedBallots": this.getSignedBallots() ?
                 this.getSignedBallots().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "gameResults": this.getGameResults() ?
                 this.getGameResults().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "keyId": this.getKeyId(),
         };
     };

@@ -111,7 +111,7 @@ var PushByUserIdRequest = /** @class */ (function () {
             .withJobs(data.jobs ?
             data.jobs.map(function (item) {
                 return Gs2JobQueue.JobEntry.fromDict(item);
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     PushByUserIdRequest.prototype.toDict = function () {
@@ -121,7 +121,7 @@ var PushByUserIdRequest = /** @class */ (function () {
             "jobs": this.getJobs() ?
                 this.getJobs().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

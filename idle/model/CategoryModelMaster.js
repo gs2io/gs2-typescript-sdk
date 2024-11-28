@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AcquireActionList_1 = tslib_1.__importDefault(require("./AcquireActionList"));
+var Gs2Idle = tslib_1.__importStar(require("../../idle/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:idle:{namespaceName}:model:{categoryName}";
 var CategoryModelMaster = /** @class */ (function () {
     function CategoryModelMaster() {
@@ -244,8 +244,8 @@ var CategoryModelMaster = /** @class */ (function () {
             .withDefaultMaximumIdleMinutes(data["defaultMaximumIdleMinutes"])
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
-                return AcquireActionList_1.default.fromDict(item);
-            }) : [])
+                return Gs2Idle.AcquireActionList.fromDict(item);
+            }) : null)
             .withIdlePeriodScheduleId(data["idlePeriodScheduleId"])
             .withReceivePeriodScheduleId(data["receivePeriodScheduleId"])
             .withCreatedAt(data["createdAt"])
@@ -263,7 +263,7 @@ var CategoryModelMaster = /** @class */ (function () {
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "idlePeriodScheduleId": this.getIdlePeriodScheduleId(),
             "receivePeriodScheduleId": this.getReceivePeriodScheduleId(),
             "createdAt": this.getCreatedAt(),

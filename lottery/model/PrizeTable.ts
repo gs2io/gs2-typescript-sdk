@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Lottery from '../../lottery/model'
 import AcquireAction from './AcquireAction';
 import Prize from './Prize';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:lottery:{namespaceName}:table:{prizeTableName}";
@@ -23,7 +25,7 @@ export default class PrizeTable implements IModel {
     private prizeTableId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;
-    private prizes: Prize[]|null = null;
+    private prizes: Gs2Lottery.Prize[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -138,14 +140,14 @@ export default class PrizeTable implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getPrizes(): Prize[]|null {
+    public getPrizes(): Gs2Lottery.Prize[]|null {
         return this.prizes;
     }
-    public setPrizes(prizes: Prize[]|null) {
+    public setPrizes(prizes: Gs2Lottery.Prize[]|null) {
         this.prizes = prizes;
         return this;
     }
-    public withPrizes(prizes: Prize[]|null): this {
+    public withPrizes(prizes: Gs2Lottery.Prize[]|null): this {
         this.prizes = prizes;
         return this;
     }
@@ -160,9 +162,9 @@ export default class PrizeTable implements IModel {
             .withMetadata(data["metadata"])
             .withPrizes(data.prizes ?
                 data.prizes.map((item: {[key: string]: any}) => {
-                    return Prize.fromDict(item);
+                    return Gs2Lottery.Prize.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -171,10 +173,10 @@ export default class PrizeTable implements IModel {
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "prizes": this.getPrizes() ?
-                this.getPrizes()!.map((item: Prize) => {
+                this.getPrizes()!.map((item: Gs2Lottery.Prize) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Version from '../../version/model'
 import Version from './Version';
 import ScheduleVersion from './ScheduleVersion';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:version:{namespaceName}:model:version:{versionName}";
@@ -25,10 +27,10 @@ export default class VersionModel implements IModel {
     private metadata: string|null = null;
     private scope: string|null = null;
     private type: string|null = null;
-    private currentVersion: Version|null = null;
-    private warningVersion: Version|null = null;
-    private errorVersion: Version|null = null;
-    private scheduleVersions: ScheduleVersion[]|null = null;
+    private currentVersion: Gs2Version.Version|null = null;
+    private warningVersion: Gs2Version.Version|null = null;
+    private errorVersion: Gs2Version.Version|null = null;
+    private scheduleVersions: Gs2Version.ScheduleVersion[]|null = null;
     private needSignature: boolean|null = null;
     private signatureKeyId: string|null = null;
 
@@ -167,47 +169,47 @@ export default class VersionModel implements IModel {
         this.type = type;
         return this;
     }
-    public getCurrentVersion(): Version|null {
+    public getCurrentVersion(): Gs2Version.Version|null {
         return this.currentVersion;
     }
-    public setCurrentVersion(currentVersion: Version|null) {
+    public setCurrentVersion(currentVersion: Gs2Version.Version|null) {
         this.currentVersion = currentVersion;
         return this;
     }
-    public withCurrentVersion(currentVersion: Version|null): this {
+    public withCurrentVersion(currentVersion: Gs2Version.Version|null): this {
         this.currentVersion = currentVersion;
         return this;
     }
-    public getWarningVersion(): Version|null {
+    public getWarningVersion(): Gs2Version.Version|null {
         return this.warningVersion;
     }
-    public setWarningVersion(warningVersion: Version|null) {
+    public setWarningVersion(warningVersion: Gs2Version.Version|null) {
         this.warningVersion = warningVersion;
         return this;
     }
-    public withWarningVersion(warningVersion: Version|null): this {
+    public withWarningVersion(warningVersion: Gs2Version.Version|null): this {
         this.warningVersion = warningVersion;
         return this;
     }
-    public getErrorVersion(): Version|null {
+    public getErrorVersion(): Gs2Version.Version|null {
         return this.errorVersion;
     }
-    public setErrorVersion(errorVersion: Version|null) {
+    public setErrorVersion(errorVersion: Gs2Version.Version|null) {
         this.errorVersion = errorVersion;
         return this;
     }
-    public withErrorVersion(errorVersion: Version|null): this {
+    public withErrorVersion(errorVersion: Gs2Version.Version|null): this {
         this.errorVersion = errorVersion;
         return this;
     }
-    public getScheduleVersions(): ScheduleVersion[]|null {
+    public getScheduleVersions(): Gs2Version.ScheduleVersion[]|null {
         return this.scheduleVersions;
     }
-    public setScheduleVersions(scheduleVersions: ScheduleVersion[]|null) {
+    public setScheduleVersions(scheduleVersions: Gs2Version.ScheduleVersion[]|null) {
         this.scheduleVersions = scheduleVersions;
         return this;
     }
-    public withScheduleVersions(scheduleVersions: ScheduleVersion[]|null): this {
+    public withScheduleVersions(scheduleVersions: Gs2Version.ScheduleVersion[]|null): this {
         this.scheduleVersions = scheduleVersions;
         return this;
     }
@@ -244,14 +246,14 @@ export default class VersionModel implements IModel {
             .withMetadata(data["metadata"])
             .withScope(data["scope"])
             .withType(data["type"])
-            .withCurrentVersion(Version.fromDict(data["currentVersion"]))
-            .withWarningVersion(Version.fromDict(data["warningVersion"]))
-            .withErrorVersion(Version.fromDict(data["errorVersion"]))
+            .withCurrentVersion(Gs2Version.Version.fromDict(data["currentVersion"]))
+            .withWarningVersion(Gs2Version.Version.fromDict(data["warningVersion"]))
+            .withErrorVersion(Gs2Version.Version.fromDict(data["errorVersion"]))
             .withScheduleVersions(data.scheduleVersions ?
                 data.scheduleVersions.map((item: {[key: string]: any}) => {
-                    return ScheduleVersion.fromDict(item);
+                    return Gs2Version.ScheduleVersion.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNeedSignature(data["needSignature"])
             .withSignatureKeyId(data["signatureKeyId"]);
     }
@@ -267,10 +269,10 @@ export default class VersionModel implements IModel {
             "warningVersion": this.getWarningVersion()?.toDict(),
             "errorVersion": this.getErrorVersion()?.toDict(),
             "scheduleVersions": this.getScheduleVersions() ?
-                this.getScheduleVersions()!.map((item: ScheduleVersion) => {
+                this.getScheduleVersions()!.map((item: Gs2Version.ScheduleVersion) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "needSignature": this.getNeedSignature(),
             "signatureKeyId": this.getSignatureKeyId(),
         };

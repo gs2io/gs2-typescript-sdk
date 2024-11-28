@@ -148,7 +148,7 @@ var CreateRoomFromBackendRequest = /** @class */ (function () {
             .withWhiteListUserIds(data.whiteListUserIds ?
             data.whiteListUserIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     CreateRoomFromBackendRequest.prototype.toDict = function () {
@@ -161,7 +161,7 @@ var CreateRoomFromBackendRequest = /** @class */ (function () {
             "whiteListUserIds": this.getWhiteListUserIds() ?
                 this.getWhiteListUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

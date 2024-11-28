@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Distributor from '../../distributor/model'
 import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:distributor:{namespaceName}";
@@ -24,8 +26,9 @@ export default class Namespace implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private assumeUserId: string|null = null;
-    private autoRunStampSheetNotification: NotificationSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private autoRunStampSheetNotification: Gs2Distributor.NotificationSetting|null = null;
+    private autoRunTransactionNotification: Gs2Distributor.NotificationSetting|null = null;
+    private logSetting: Gs2Distributor.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -133,25 +136,36 @@ export default class Namespace implements IModel {
         this.assumeUserId = assumeUserId;
         return this;
     }
-    public getAutoRunStampSheetNotification(): NotificationSetting|null {
+    public getAutoRunStampSheetNotification(): Gs2Distributor.NotificationSetting|null {
         return this.autoRunStampSheetNotification;
     }
-    public setAutoRunStampSheetNotification(autoRunStampSheetNotification: NotificationSetting|null) {
+    public setAutoRunStampSheetNotification(autoRunStampSheetNotification: Gs2Distributor.NotificationSetting|null) {
         this.autoRunStampSheetNotification = autoRunStampSheetNotification;
         return this;
     }
-    public withAutoRunStampSheetNotification(autoRunStampSheetNotification: NotificationSetting|null): this {
+    public withAutoRunStampSheetNotification(autoRunStampSheetNotification: Gs2Distributor.NotificationSetting|null): this {
         this.autoRunStampSheetNotification = autoRunStampSheetNotification;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getAutoRunTransactionNotification(): Gs2Distributor.NotificationSetting|null {
+        return this.autoRunTransactionNotification;
+    }
+    public setAutoRunTransactionNotification(autoRunTransactionNotification: Gs2Distributor.NotificationSetting|null) {
+        this.autoRunTransactionNotification = autoRunTransactionNotification;
+        return this;
+    }
+    public withAutoRunTransactionNotification(autoRunTransactionNotification: Gs2Distributor.NotificationSetting|null): this {
+        this.autoRunTransactionNotification = autoRunTransactionNotification;
+        return this;
+    }
+    public getLogSetting(): Gs2Distributor.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Distributor.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Distributor.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -198,8 +212,9 @@ export default class Namespace implements IModel {
             .withName(data["name"])
             .withDescription(data["description"])
             .withAssumeUserId(data["assumeUserId"])
-            .withAutoRunStampSheetNotification(NotificationSetting.fromDict(data["autoRunStampSheetNotification"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withAutoRunStampSheetNotification(Gs2Distributor.NotificationSetting.fromDict(data["autoRunStampSheetNotification"]))
+            .withAutoRunTransactionNotification(Gs2Distributor.NotificationSetting.fromDict(data["autoRunTransactionNotification"]))
+            .withLogSetting(Gs2Distributor.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -212,6 +227,7 @@ export default class Namespace implements IModel {
             "description": this.getDescription(),
             "assumeUserId": this.getAssumeUserId(),
             "autoRunStampSheetNotification": this.getAutoRunStampSheetNotification()?.toDict(),
+            "autoRunTransactionNotification": this.getAutoRunTransactionNotification()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

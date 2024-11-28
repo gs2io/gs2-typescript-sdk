@@ -197,7 +197,7 @@ export default class CreateGlobalRankingModelMasterRequest implements IRequest {
                 data.rankingRewards.map((item: {[key: string]: any}) => {
                     return Gs2Ranking2.RankingReward.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withEntryPeriodEventId(data["entryPeriodEventId"])
             .withAccessPeriodEventId(data["accessPeriodEventId"]);
     }
@@ -216,7 +216,7 @@ export default class CreateGlobalRankingModelMasterRequest implements IRequest {
                 this.getRankingRewards()!.map((item: Gs2Ranking2.RankingReward) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "entryPeriodEventId": this.getEntryPeriodEventId(),
             "accessPeriodEventId": this.getAccessPeriodEventId(),
         };

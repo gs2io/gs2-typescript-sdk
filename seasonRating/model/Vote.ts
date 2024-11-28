@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2SeasonRating from '../../seasonRating/model'
 import Ballot from './Ballot';
 import GameResult from './GameResult';
 import WrittenBallot from './WrittenBallot';
@@ -24,7 +26,7 @@ export default class Vote implements IModel {
     private voteId: string|null = null;
     private seasonName: string|null = null;
     private sessionName: string|null = null;
-    private writtenBallots: WrittenBallot[]|null = null;
+    private writtenBallots: Gs2SeasonRating.WrittenBallot[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -165,14 +167,14 @@ export default class Vote implements IModel {
         this.sessionName = sessionName;
         return this;
     }
-    public getWrittenBallots(): WrittenBallot[]|null {
+    public getWrittenBallots(): Gs2SeasonRating.WrittenBallot[]|null {
         return this.writtenBallots;
     }
-    public setWrittenBallots(writtenBallots: WrittenBallot[]|null) {
+    public setWrittenBallots(writtenBallots: Gs2SeasonRating.WrittenBallot[]|null) {
         this.writtenBallots = writtenBallots;
         return this;
     }
-    public withWrittenBallots(writtenBallots: WrittenBallot[]|null): this {
+    public withWrittenBallots(writtenBallots: Gs2SeasonRating.WrittenBallot[]|null): this {
         this.writtenBallots = writtenBallots;
         return this;
     }
@@ -220,9 +222,9 @@ export default class Vote implements IModel {
             .withSessionName(data["sessionName"])
             .withWrittenBallots(data.writtenBallots ?
                 data.writtenBallots.map((item: {[key: string]: any}) => {
-                    return WrittenBallot.fromDict(item);
+                    return Gs2SeasonRating.WrittenBallot.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -234,10 +236,10 @@ export default class Vote implements IModel {
             "seasonName": this.getSeasonName(),
             "sessionName": this.getSessionName(),
             "writtenBallots": this.getWrittenBallots() ?
-                this.getWrittenBallots()!.map((item: WrittenBallot) => {
+                this.getWrittenBallots()!.map((item: Gs2SeasonRating.WrittenBallot) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

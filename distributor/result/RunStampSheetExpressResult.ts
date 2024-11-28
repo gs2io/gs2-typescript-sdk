@@ -114,22 +114,22 @@ export default class RunStampSheetExpressResult implements IResult {
                 data.verifyTaskResultCodes.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withVerifyTaskResults(data.verifyTaskResults ?
                 data.verifyTaskResults.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withTaskResultCodes(data.taskResultCodes ?
                 data.taskResultCodes.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withTaskResults(data.taskResults ?
                 data.taskResults.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withSheetResultCode(data["sheetResultCode"])
             .withSheetResult(data["sheetResult"]);
     }
@@ -140,22 +140,22 @@ export default class RunStampSheetExpressResult implements IResult {
                 this.getVerifyTaskResultCodes()!.map((item: number) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "verifyTaskResults": this.getVerifyTaskResults() ?
                 this.getVerifyTaskResults()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "taskResultCodes": this.getTaskResultCodes() ?
                 this.getTaskResultCodes()!.map((item: number) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "taskResults": this.getTaskResults() ?
                 this.getTaskResults()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "sheetResultCode": this.getSheetResultCode(),
             "sheetResult": this.getSheetResult(),
         };

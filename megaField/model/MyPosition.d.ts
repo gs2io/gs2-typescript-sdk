@@ -1,16 +1,15 @@
 import IModel from '../../core/interface/IModel';
-import Position from './Position';
-import Vector from './Vector';
+import * as Gs2MegaField from '../../megaField/model';
 export default class MyPosition implements IModel {
     private position;
     private vector;
     private r;
-    getPosition(): Position | null;
-    setPosition(position: Position | null): this;
-    withPosition(position: Position | null): this;
-    getVector(): Vector | null;
-    setVector(vector: Vector | null): this;
-    withVector(vector: Vector | null): this;
+    getPosition(): Gs2MegaField.Position | null;
+    setPosition(position: Gs2MegaField.Position | null): this;
+    withPosition(position: Gs2MegaField.Position | null): this;
+    getVector(): Gs2MegaField.Vector | null;
+    setVector(vector: Gs2MegaField.Vector | null): this;
+    withVector(vector: Gs2MegaField.Vector | null): this;
     getR(): number | null;
     setR(r: number | null): this;
     withR(r: number | null): this;

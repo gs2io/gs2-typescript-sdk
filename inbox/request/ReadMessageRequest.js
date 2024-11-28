@@ -112,7 +112,7 @@ var ReadMessageRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Inbox.Config.fromDict(item);
-            }) : []);
+            }) : null);
     };
     ReadMessageRequest.prototype.toDict = function () {
         return {
@@ -122,7 +122,7 @@ var ReadMessageRequest = /** @class */ (function () {
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ReadMessageRequest;

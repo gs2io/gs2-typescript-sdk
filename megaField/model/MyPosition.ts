@@ -15,32 +15,34 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2MegaField from '../../megaField/model'
 import Position from './Position';
 import Vector from './Vector';
 
 export default class MyPosition implements IModel {
-    private position: Position|null = null;
-    private vector: Vector|null = null;
+    private position: Gs2MegaField.Position|null = null;
+    private vector: Gs2MegaField.Vector|null = null;
     private r: number|null = null;
-    public getPosition(): Position|null {
+    public getPosition(): Gs2MegaField.Position|null {
         return this.position;
     }
-    public setPosition(position: Position|null) {
+    public setPosition(position: Gs2MegaField.Position|null) {
         this.position = position;
         return this;
     }
-    public withPosition(position: Position|null): this {
+    public withPosition(position: Gs2MegaField.Position|null): this {
         this.position = position;
         return this;
     }
-    public getVector(): Vector|null {
+    public getVector(): Gs2MegaField.Vector|null {
         return this.vector;
     }
-    public setVector(vector: Vector|null) {
+    public setVector(vector: Gs2MegaField.Vector|null) {
         this.vector = vector;
         return this;
     }
-    public withVector(vector: Vector|null): this {
+    public withVector(vector: Gs2MegaField.Vector|null): this {
         this.vector = vector;
         return this;
     }
@@ -61,8 +63,8 @@ export default class MyPosition implements IModel {
             return null;
         }
         return new MyPosition()
-            .withPosition(Position.fromDict(data["position"]))
-            .withVector(Vector.fromDict(data["vector"]))
+            .withPosition(Gs2MegaField.Position.fromDict(data["position"]))
+            .withVector(Gs2MegaField.Vector.fromDict(data["vector"]))
             .withR(data["r"]);
     }
 

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Mission from '../../mission/model'
 import VerifyAction from './VerifyAction';
 import CounterScopeModel from './CounterScopeModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}:counter:{counterName}";
@@ -24,7 +26,7 @@ export default class CounterModelMaster implements IModel {
     private name: string|null = null;
     private metadata: string|null = null;
     private description: string|null = null;
-    private scopes: CounterScopeModel[]|null = null;
+    private scopes: Gs2Mission.CounterScopeModel[]|null = null;
     private challengePeriodEventId: string|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -154,14 +156,14 @@ export default class CounterModelMaster implements IModel {
         this.description = description;
         return this;
     }
-    public getScopes(): CounterScopeModel[]|null {
+    public getScopes(): Gs2Mission.CounterScopeModel[]|null {
         return this.scopes;
     }
-    public setScopes(scopes: CounterScopeModel[]|null) {
+    public setScopes(scopes: Gs2Mission.CounterScopeModel[]|null) {
         this.scopes = scopes;
         return this;
     }
-    public withScopes(scopes: CounterScopeModel[]|null): this {
+    public withScopes(scopes: Gs2Mission.CounterScopeModel[]|null): this {
         this.scopes = scopes;
         return this;
     }
@@ -221,9 +223,9 @@ export default class CounterModelMaster implements IModel {
             .withDescription(data["description"])
             .withScopes(data.scopes ?
                 data.scopes.map((item: {[key: string]: any}) => {
-                    return CounterScopeModel.fromDict(item);
+                    return Gs2Mission.CounterScopeModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withChallengePeriodEventId(data["challengePeriodEventId"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -237,10 +239,10 @@ export default class CounterModelMaster implements IModel {
             "metadata": this.getMetadata(),
             "description": this.getDescription(),
             "scopes": this.getScopes() ?
-                this.getScopes()!.map((item: CounterScopeModel) => {
+                this.getScopes()!.map((item: Gs2Mission.CounterScopeModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "challengePeriodEventId": this.getChallengePeriodEventId(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Grade from '../../grade/model'
+
 export default class DefaultGradeModel implements IModel {
     private propertyIdRegex: string|null = null;
     private defaultGradeValue: number|null = null;

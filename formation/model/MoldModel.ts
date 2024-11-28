@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Formation from '../../formation/model'
 import SlotModel from './SlotModel';
 import FormModel from './FormModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:model:mold:{moldModelName}";
@@ -25,7 +27,7 @@ export default class MoldModel implements IModel {
     private metadata: string|null = null;
     private initialMaxCapacity: number|null = null;
     private maxCapacity: number|null = null;
-    private formModel: FormModel|null = null;
+    private formModel: Gs2Formation.FormModel|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -162,14 +164,14 @@ export default class MoldModel implements IModel {
         this.maxCapacity = maxCapacity;
         return this;
     }
-    public getFormModel(): FormModel|null {
+    public getFormModel(): Gs2Formation.FormModel|null {
         return this.formModel;
     }
-    public setFormModel(formModel: FormModel|null) {
+    public setFormModel(formModel: Gs2Formation.FormModel|null) {
         this.formModel = formModel;
         return this;
     }
-    public withFormModel(formModel: FormModel|null): this {
+    public withFormModel(formModel: Gs2Formation.FormModel|null): this {
         this.formModel = formModel;
         return this;
     }
@@ -184,7 +186,7 @@ export default class MoldModel implements IModel {
             .withMetadata(data["metadata"])
             .withInitialMaxCapacity(data["initialMaxCapacity"])
             .withMaxCapacity(data["maxCapacity"])
-            .withFormModel(FormModel.fromDict(data["formModel"]));
+            .withFormModel(Gs2Formation.FormModel.fromDict(data["formModel"]));
     }
 
     public toDict(): {[key: string]: any} {

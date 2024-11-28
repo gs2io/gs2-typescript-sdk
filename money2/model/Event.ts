@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Money2 from '../../money2/model'
 import AppleAppStoreVerifyReceiptEvent from './AppleAppStoreVerifyReceiptEvent';
 import GooglePlayVerifyReceiptEvent from './GooglePlayVerifyReceiptEvent';
 import VerifyReceiptEvent from './VerifyReceiptEvent';
@@ -29,9 +31,9 @@ export default class Event implements IModel {
     private transactionId: string|null = null;
     private userId: string|null = null;
     private eventType: string|null = null;
-    private verifyReceiptEvent: VerifyReceiptEvent|null = null;
-    private depositEvent: DepositEvent|null = null;
-    private withdrawEvent: WithdrawEvent|null = null;
+    private verifyReceiptEvent: Gs2Money2.VerifyReceiptEvent|null = null;
+    private depositEvent: Gs2Money2.DepositEvent|null = null;
+    private withdrawEvent: Gs2Money2.WithdrawEvent|null = null;
     private createdAt: number|null = null;
     private revision: number|null = null;
 
@@ -159,36 +161,36 @@ export default class Event implements IModel {
         this.eventType = eventType;
         return this;
     }
-    public getVerifyReceiptEvent(): VerifyReceiptEvent|null {
+    public getVerifyReceiptEvent(): Gs2Money2.VerifyReceiptEvent|null {
         return this.verifyReceiptEvent;
     }
-    public setVerifyReceiptEvent(verifyReceiptEvent: VerifyReceiptEvent|null) {
+    public setVerifyReceiptEvent(verifyReceiptEvent: Gs2Money2.VerifyReceiptEvent|null) {
         this.verifyReceiptEvent = verifyReceiptEvent;
         return this;
     }
-    public withVerifyReceiptEvent(verifyReceiptEvent: VerifyReceiptEvent|null): this {
+    public withVerifyReceiptEvent(verifyReceiptEvent: Gs2Money2.VerifyReceiptEvent|null): this {
         this.verifyReceiptEvent = verifyReceiptEvent;
         return this;
     }
-    public getDepositEvent(): DepositEvent|null {
+    public getDepositEvent(): Gs2Money2.DepositEvent|null {
         return this.depositEvent;
     }
-    public setDepositEvent(depositEvent: DepositEvent|null) {
+    public setDepositEvent(depositEvent: Gs2Money2.DepositEvent|null) {
         this.depositEvent = depositEvent;
         return this;
     }
-    public withDepositEvent(depositEvent: DepositEvent|null): this {
+    public withDepositEvent(depositEvent: Gs2Money2.DepositEvent|null): this {
         this.depositEvent = depositEvent;
         return this;
     }
-    public getWithdrawEvent(): WithdrawEvent|null {
+    public getWithdrawEvent(): Gs2Money2.WithdrawEvent|null {
         return this.withdrawEvent;
     }
-    public setWithdrawEvent(withdrawEvent: WithdrawEvent|null) {
+    public setWithdrawEvent(withdrawEvent: Gs2Money2.WithdrawEvent|null) {
         this.withdrawEvent = withdrawEvent;
         return this;
     }
-    public withWithdrawEvent(withdrawEvent: WithdrawEvent|null): this {
+    public withWithdrawEvent(withdrawEvent: Gs2Money2.WithdrawEvent|null): this {
         this.withdrawEvent = withdrawEvent;
         return this;
     }
@@ -224,9 +226,9 @@ export default class Event implements IModel {
             .withTransactionId(data["transactionId"])
             .withUserId(data["userId"])
             .withEventType(data["eventType"])
-            .withVerifyReceiptEvent(VerifyReceiptEvent.fromDict(data["verifyReceiptEvent"]))
-            .withDepositEvent(DepositEvent.fromDict(data["depositEvent"]))
-            .withWithdrawEvent(WithdrawEvent.fromDict(data["withdrawEvent"]))
+            .withVerifyReceiptEvent(Gs2Money2.VerifyReceiptEvent.fromDict(data["verifyReceiptEvent"]))
+            .withDepositEvent(Gs2Money2.DepositEvent.fromDict(data["depositEvent"]))
+            .withWithdrawEvent(Gs2Money2.WithdrawEvent.fromDict(data["withdrawEvent"]))
             .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     }

@@ -161,7 +161,7 @@ export default class PrepareUploadRequest implements IRequest {
                 data.allowUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withUpdateIfExists(data["updateIfExists"]);
     }
 
@@ -176,7 +176,7 @@ export default class PrepareUploadRequest implements IRequest {
                 this.getAllowUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "updateIfExists": this.getUpdateIfExists(),
         };
     }

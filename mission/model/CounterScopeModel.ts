@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Mission from '../../mission/model'
 import VerifyAction from './VerifyAction';
 
 export default class CounterScopeModel implements IModel {
@@ -24,7 +26,7 @@ export default class CounterScopeModel implements IModel {
     private resetDayOfWeek: string|null = null;
     private resetHour: number|null = null;
     private conditionName: string|null = null;
-    private condition: VerifyAction|null = null;
+    private condition: Gs2Mission.VerifyAction|null = null;
     public getScopeType(): string|null {
         return this.scopeType;
     }
@@ -91,14 +93,14 @@ export default class CounterScopeModel implements IModel {
         this.conditionName = conditionName;
         return this;
     }
-    public getCondition(): VerifyAction|null {
+    public getCondition(): Gs2Mission.VerifyAction|null {
         return this.condition;
     }
-    public setCondition(condition: VerifyAction|null) {
+    public setCondition(condition: Gs2Mission.VerifyAction|null) {
         this.condition = condition;
         return this;
     }
-    public withCondition(condition: VerifyAction|null): this {
+    public withCondition(condition: Gs2Mission.VerifyAction|null): this {
         this.condition = condition;
         return this;
     }
@@ -114,7 +116,7 @@ export default class CounterScopeModel implements IModel {
             .withResetDayOfWeek(data["resetDayOfWeek"])
             .withResetHour(data["resetHour"])
             .withConditionName(data["conditionName"])
-            .withCondition(VerifyAction.fromDict(data["condition"]));
+            .withCondition(Gs2Mission.VerifyAction.fromDict(data["condition"]));
     }
 
     public toDict(): {[key: string]: any} {

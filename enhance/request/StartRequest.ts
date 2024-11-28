@@ -159,14 +159,14 @@ export default class StartRequest implements IRequest {
                 data.materials.map((item: {[key: string]: any}) => {
                     return Gs2Enhance.Material.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withAccessToken(data["accessToken"])
             .withForce(data["force"])
             .withConfig(data.config ?
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Enhance.Config.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -178,14 +178,14 @@ export default class StartRequest implements IRequest {
                 this.getMaterials()!.map((item: Gs2Enhance.Material) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "accessToken": this.getAccessToken(),
             "force": this.getForce(),
             "config": this.getConfig() ?
                 this.getConfig()!.map((item: Gs2Enhance.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

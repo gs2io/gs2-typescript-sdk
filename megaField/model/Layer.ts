@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2MegaField from '../../megaField/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:megaField:{namespaceName}:layer:{areaModelName}:{layerModelName}";
 
 export default class Layer implements IModel {

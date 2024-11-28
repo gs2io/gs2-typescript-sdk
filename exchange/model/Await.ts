@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Exchange from '../../exchange/model'
 import Config from './Config';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:exchange:{namespaceName}:user:{userId}:await:{awaitName}";
 
@@ -25,7 +27,7 @@ export default class Await implements IModel {
     private name: string|null = null;
     private count: number|null = null;
     private skipSeconds: number|null = null;
-    private config: Config[]|null = null;
+    private config: Gs2Exchange.Config[]|null = null;
     private acquirableAt: number|null = null;
     private exchangedAt: number|null = null;
     private revision: number|null = null;
@@ -199,14 +201,14 @@ export default class Await implements IModel {
         this.skipSeconds = skipSeconds;
         return this;
     }
-    public getConfig(): Config[]|null {
+    public getConfig(): Gs2Exchange.Config[]|null {
         return this.config;
     }
-    public setConfig(config: Config[]|null) {
+    public setConfig(config: Gs2Exchange.Config[]|null) {
         this.config = config;
         return this;
     }
-    public withConfig(config: Config[]|null): this {
+    public withConfig(config: Gs2Exchange.Config[]|null): this {
         this.config = config;
         return this;
     }
@@ -257,9 +259,9 @@ export default class Await implements IModel {
             .withSkipSeconds(data["skipSeconds"])
             .withConfig(data.config ?
                 data.config.map((item: {[key: string]: any}) => {
-                    return Config.fromDict(item);
+                    return Gs2Exchange.Config.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withAcquirableAt(data["acquirableAt"])
             .withExchangedAt(data["exchangedAt"])
             .withRevision(data["revision"]);
@@ -274,10 +276,10 @@ export default class Await implements IModel {
             "count": this.getCount(),
             "skipSeconds": this.getSkipSeconds(),
             "config": this.getConfig() ?
-                this.getConfig()!.map((item: Config) => {
+                this.getConfig()!.map((item: Gs2Exchange.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "acquirableAt": this.getAcquirableAt(),
             "exchangedAt": this.getExchangedAt(),
             "revision": this.getRevision(),

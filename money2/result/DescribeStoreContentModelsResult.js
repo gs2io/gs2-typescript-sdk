@@ -37,14 +37,14 @@ var DescribeStoreContentModelsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Money2.StoreContentModel.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeStoreContentModelsResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeStoreContentModelsResult;

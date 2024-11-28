@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Formation from '../../formation/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:user:{userId}:mold:{moldModelName}";
 
 export default class Mold implements IModel {

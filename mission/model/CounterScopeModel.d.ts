@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import VerifyAction from './VerifyAction';
+import * as Gs2Mission from '../../mission/model';
 export default class CounterScopeModel implements IModel {
     private scopeType;
     private resetType;
@@ -26,9 +26,9 @@ export default class CounterScopeModel implements IModel {
     getConditionName(): string | null;
     setConditionName(conditionName: string | null): this;
     withConditionName(conditionName: string | null): this;
-    getCondition(): VerifyAction | null;
-    setCondition(condition: VerifyAction | null): this;
-    withCondition(condition: VerifyAction | null): this;
+    getCondition(): Gs2Mission.VerifyAction | null;
+    setCondition(condition: Gs2Mission.VerifyAction | null): this;
+    withCondition(condition: Gs2Mission.VerifyAction | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): CounterScopeModel | null;

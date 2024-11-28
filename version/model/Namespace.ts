@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Version from '../../version/model'
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:version:{namespaceName}";
@@ -24,9 +26,9 @@ export default class Namespace implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private assumeUserId: string|null = null;
-    private acceptVersionScript: ScriptSetting|null = null;
+    private acceptVersionScript: Gs2Version.ScriptSetting|null = null;
     private checkVersionTriggerScriptId: string|null = null;
-    private logSetting: LogSetting|null = null;
+    private logSetting: Gs2Version.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -134,14 +136,14 @@ export default class Namespace implements IModel {
         this.assumeUserId = assumeUserId;
         return this;
     }
-    public getAcceptVersionScript(): ScriptSetting|null {
+    public getAcceptVersionScript(): Gs2Version.ScriptSetting|null {
         return this.acceptVersionScript;
     }
-    public setAcceptVersionScript(acceptVersionScript: ScriptSetting|null) {
+    public setAcceptVersionScript(acceptVersionScript: Gs2Version.ScriptSetting|null) {
         this.acceptVersionScript = acceptVersionScript;
         return this;
     }
-    public withAcceptVersionScript(acceptVersionScript: ScriptSetting|null): this {
+    public withAcceptVersionScript(acceptVersionScript: Gs2Version.ScriptSetting|null): this {
         this.acceptVersionScript = acceptVersionScript;
         return this;
     }
@@ -156,14 +158,14 @@ export default class Namespace implements IModel {
         this.checkVersionTriggerScriptId = checkVersionTriggerScriptId;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Version.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Version.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Version.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -210,9 +212,9 @@ export default class Namespace implements IModel {
             .withName(data["name"])
             .withDescription(data["description"])
             .withAssumeUserId(data["assumeUserId"])
-            .withAcceptVersionScript(ScriptSetting.fromDict(data["acceptVersionScript"]))
+            .withAcceptVersionScript(Gs2Version.ScriptSetting.fromDict(data["acceptVersionScript"]))
             .withCheckVersionTriggerScriptId(data["checkVersionTriggerScriptId"])
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withLogSetting(Gs2Version.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

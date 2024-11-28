@@ -50,7 +50,7 @@ var DecreaseCounterResult = /** @class */ (function () {
             .withChangedCompletes(data.changedCompletes ?
             data.changedCompletes.map(function (item) {
                 return Gs2Mission.Complete.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DecreaseCounterResult.prototype.toDict = function () {
         var _a;
@@ -59,7 +59,7 @@ var DecreaseCounterResult = /** @class */ (function () {
             "changedCompletes": this.getChangedCompletes() ?
                 this.getChangedCompletes().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DecreaseCounterResult;

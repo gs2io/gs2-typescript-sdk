@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Enhance from '../../enhance/model'
 import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
@@ -24,9 +26,9 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
-    private transactionSetting: TransactionSetting|null = null;
-    private enhanceScript: ScriptSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private transactionSetting: Gs2Enhance.TransactionSetting|null = null;
+    private enhanceScript: Gs2Enhance.ScriptSetting|null = null;
+    private logSetting: Gs2Enhance.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private enableDirectEnhance: boolean|null = null;
@@ -126,36 +128,36 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
-    public getTransactionSetting(): TransactionSetting|null {
+    public getTransactionSetting(): Gs2Enhance.TransactionSetting|null {
         return this.transactionSetting;
     }
-    public setTransactionSetting(transactionSetting: TransactionSetting|null) {
+    public setTransactionSetting(transactionSetting: Gs2Enhance.TransactionSetting|null) {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public withTransactionSetting(transactionSetting: TransactionSetting|null): this {
+    public withTransactionSetting(transactionSetting: Gs2Enhance.TransactionSetting|null): this {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public getEnhanceScript(): ScriptSetting|null {
+    public getEnhanceScript(): Gs2Enhance.ScriptSetting|null {
         return this.enhanceScript;
     }
-    public setEnhanceScript(enhanceScript: ScriptSetting|null) {
+    public setEnhanceScript(enhanceScript: Gs2Enhance.ScriptSetting|null) {
         this.enhanceScript = enhanceScript;
         return this;
     }
-    public withEnhanceScript(enhanceScript: ScriptSetting|null): this {
+    public withEnhanceScript(enhanceScript: Gs2Enhance.ScriptSetting|null): this {
         this.enhanceScript = enhanceScript;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Enhance.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Enhance.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Enhance.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -243,9 +245,9 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
-            .withEnhanceScript(ScriptSetting.fromDict(data["enhanceScript"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withTransactionSetting(Gs2Enhance.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withEnhanceScript(Gs2Enhance.ScriptSetting.fromDict(data["enhanceScript"]))
+            .withLogSetting(Gs2Enhance.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withEnableDirectEnhance(data["enableDirectEnhance"])

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2StateMachine from '../../stateMachine/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:stateMachine:{namespaceName}:master:stateMachine:{version}";
 
 export default class StateMachineMaster implements IModel {

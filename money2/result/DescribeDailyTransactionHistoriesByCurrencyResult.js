@@ -49,7 +49,7 @@ var DescribeDailyTransactionHistoriesByCurrencyResult = /** @class */ (function 
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Money2.DailyTransactionHistory.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeDailyTransactionHistoriesByCurrencyResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeDailyTransactionHistoriesByCurrencyResult = /** @class */ (function 
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

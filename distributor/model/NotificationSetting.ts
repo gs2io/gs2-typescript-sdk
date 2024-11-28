@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Distributor from '../../distributor/model'
+
 export default class NotificationSetting implements IModel {
     private gatewayNamespaceId: string|null = null;
     private enableTransferMobileNotification: boolean|null = null;

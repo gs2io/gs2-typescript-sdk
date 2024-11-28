@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var TwoFactorAuthenticationSetting_1 = tslib_1.__importDefault(require("./TwoFactorAuthenticationSetting"));
+var Gs2Project = tslib_1.__importStar(require("../../project/model"));
 var grnFormat = "grn:gs2:::gs2:account:{accountName}";
 var Account = /** @class */ (function () {
     function Account() {
@@ -170,7 +170,7 @@ var Account = /** @class */ (function () {
             .withFullName(data["fullName"])
             .withCompanyName(data["companyName"])
             .withEnableTwoFactorAuthentication(data["enableTwoFactorAuthentication"])
-            .withTwoFactorAuthenticationSetting(TwoFactorAuthenticationSetting_1.default.fromDict(data["twoFactorAuthenticationSetting"]))
+            .withTwoFactorAuthenticationSetting(Gs2Project.TwoFactorAuthenticationSetting.fromDict(data["twoFactorAuthenticationSetting"]))
             .withStatus(data["status"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);

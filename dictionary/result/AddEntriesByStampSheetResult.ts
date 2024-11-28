@@ -40,7 +40,7 @@ export default class AddEntriesByStampSheetResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Dictionary.Entry.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class AddEntriesByStampSheetResult implements IResult {
                 this.getItems()!.map((item: Gs2Dictionary.Entry) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

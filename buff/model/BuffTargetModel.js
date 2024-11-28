@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var BuffTargetGrn_1 = tslib_1.__importDefault(require("./BuffTargetGrn"));
+var Gs2Buff = tslib_1.__importStar(require("../../buff/model"));
 var BuffTargetModel = /** @class */ (function () {
     function BuffTargetModel() {
         this.targetModelName = null;
@@ -77,8 +77,8 @@ var BuffTargetModel = /** @class */ (function () {
             .withTargetFieldName(data["targetFieldName"])
             .withConditionGrns(data.conditionGrns ?
             data.conditionGrns.map(function (item) {
-                return BuffTargetGrn_1.default.fromDict(item);
-            }) : [])
+                return Gs2Buff.BuffTargetGrn.fromDict(item);
+            }) : null)
             .withRate(data["rate"]);
     };
     BuffTargetModel.prototype.toDict = function () {
@@ -88,7 +88,7 @@ var BuffTargetModel = /** @class */ (function () {
             "conditionGrns": this.getConditionGrns() ?
                 this.getConditionGrns().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "rate": this.getRate(),
         };
     };

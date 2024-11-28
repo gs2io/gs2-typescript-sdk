@@ -161,7 +161,7 @@ export default class StartByUserIdRequest implements IRequest {
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Quest.Config.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -176,7 +176,7 @@ export default class StartByUserIdRequest implements IRequest {
                 this.getConfig()!.map((item: Gs2Quest.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

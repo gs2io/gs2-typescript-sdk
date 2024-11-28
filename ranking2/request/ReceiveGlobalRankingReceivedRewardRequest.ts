@@ -136,7 +136,7 @@ export default class ReceiveGlobalRankingReceivedRewardRequest implements IReque
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Ranking2.Config.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -149,7 +149,7 @@ export default class ReceiveGlobalRankingReceivedRewardRequest implements IReque
                 this.getConfig()!.map((item: Gs2Ranking2.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

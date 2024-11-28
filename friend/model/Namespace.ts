@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Friend from '../../friend/model'
 import ScriptSetting from './ScriptSetting';
 import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
@@ -24,21 +26,21 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
-    private followScript: ScriptSetting|null = null;
-    private unfollowScript: ScriptSetting|null = null;
-    private sendRequestScript: ScriptSetting|null = null;
-    private cancelRequestScript: ScriptSetting|null = null;
-    private acceptRequestScript: ScriptSetting|null = null;
-    private rejectRequestScript: ScriptSetting|null = null;
-    private deleteFriendScript: ScriptSetting|null = null;
-    private updateProfileScript: ScriptSetting|null = null;
-    private followNotification: NotificationSetting|null = null;
-    private receiveRequestNotification: NotificationSetting|null = null;
-    private cancelRequestNotification: NotificationSetting|null = null;
-    private acceptRequestNotification: NotificationSetting|null = null;
-    private rejectRequestNotification: NotificationSetting|null = null;
-    private deleteFriendNotification: NotificationSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private followScript: Gs2Friend.ScriptSetting|null = null;
+    private unfollowScript: Gs2Friend.ScriptSetting|null = null;
+    private sendRequestScript: Gs2Friend.ScriptSetting|null = null;
+    private cancelRequestScript: Gs2Friend.ScriptSetting|null = null;
+    private acceptRequestScript: Gs2Friend.ScriptSetting|null = null;
+    private rejectRequestScript: Gs2Friend.ScriptSetting|null = null;
+    private deleteFriendScript: Gs2Friend.ScriptSetting|null = null;
+    private updateProfileScript: Gs2Friend.ScriptSetting|null = null;
+    private followNotification: Gs2Friend.NotificationSetting|null = null;
+    private receiveRequestNotification: Gs2Friend.NotificationSetting|null = null;
+    private cancelRequestNotification: Gs2Friend.NotificationSetting|null = null;
+    private acceptRequestNotification: Gs2Friend.NotificationSetting|null = null;
+    private rejectRequestNotification: Gs2Friend.NotificationSetting|null = null;
+    private deleteFriendNotification: Gs2Friend.NotificationSetting|null = null;
+    private logSetting: Gs2Friend.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -135,168 +137,168 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
-    public getFollowScript(): ScriptSetting|null {
+    public getFollowScript(): Gs2Friend.ScriptSetting|null {
         return this.followScript;
     }
-    public setFollowScript(followScript: ScriptSetting|null) {
+    public setFollowScript(followScript: Gs2Friend.ScriptSetting|null) {
         this.followScript = followScript;
         return this;
     }
-    public withFollowScript(followScript: ScriptSetting|null): this {
+    public withFollowScript(followScript: Gs2Friend.ScriptSetting|null): this {
         this.followScript = followScript;
         return this;
     }
-    public getUnfollowScript(): ScriptSetting|null {
+    public getUnfollowScript(): Gs2Friend.ScriptSetting|null {
         return this.unfollowScript;
     }
-    public setUnfollowScript(unfollowScript: ScriptSetting|null) {
+    public setUnfollowScript(unfollowScript: Gs2Friend.ScriptSetting|null) {
         this.unfollowScript = unfollowScript;
         return this;
     }
-    public withUnfollowScript(unfollowScript: ScriptSetting|null): this {
+    public withUnfollowScript(unfollowScript: Gs2Friend.ScriptSetting|null): this {
         this.unfollowScript = unfollowScript;
         return this;
     }
-    public getSendRequestScript(): ScriptSetting|null {
+    public getSendRequestScript(): Gs2Friend.ScriptSetting|null {
         return this.sendRequestScript;
     }
-    public setSendRequestScript(sendRequestScript: ScriptSetting|null) {
+    public setSendRequestScript(sendRequestScript: Gs2Friend.ScriptSetting|null) {
         this.sendRequestScript = sendRequestScript;
         return this;
     }
-    public withSendRequestScript(sendRequestScript: ScriptSetting|null): this {
+    public withSendRequestScript(sendRequestScript: Gs2Friend.ScriptSetting|null): this {
         this.sendRequestScript = sendRequestScript;
         return this;
     }
-    public getCancelRequestScript(): ScriptSetting|null {
+    public getCancelRequestScript(): Gs2Friend.ScriptSetting|null {
         return this.cancelRequestScript;
     }
-    public setCancelRequestScript(cancelRequestScript: ScriptSetting|null) {
+    public setCancelRequestScript(cancelRequestScript: Gs2Friend.ScriptSetting|null) {
         this.cancelRequestScript = cancelRequestScript;
         return this;
     }
-    public withCancelRequestScript(cancelRequestScript: ScriptSetting|null): this {
+    public withCancelRequestScript(cancelRequestScript: Gs2Friend.ScriptSetting|null): this {
         this.cancelRequestScript = cancelRequestScript;
         return this;
     }
-    public getAcceptRequestScript(): ScriptSetting|null {
+    public getAcceptRequestScript(): Gs2Friend.ScriptSetting|null {
         return this.acceptRequestScript;
     }
-    public setAcceptRequestScript(acceptRequestScript: ScriptSetting|null) {
+    public setAcceptRequestScript(acceptRequestScript: Gs2Friend.ScriptSetting|null) {
         this.acceptRequestScript = acceptRequestScript;
         return this;
     }
-    public withAcceptRequestScript(acceptRequestScript: ScriptSetting|null): this {
+    public withAcceptRequestScript(acceptRequestScript: Gs2Friend.ScriptSetting|null): this {
         this.acceptRequestScript = acceptRequestScript;
         return this;
     }
-    public getRejectRequestScript(): ScriptSetting|null {
+    public getRejectRequestScript(): Gs2Friend.ScriptSetting|null {
         return this.rejectRequestScript;
     }
-    public setRejectRequestScript(rejectRequestScript: ScriptSetting|null) {
+    public setRejectRequestScript(rejectRequestScript: Gs2Friend.ScriptSetting|null) {
         this.rejectRequestScript = rejectRequestScript;
         return this;
     }
-    public withRejectRequestScript(rejectRequestScript: ScriptSetting|null): this {
+    public withRejectRequestScript(rejectRequestScript: Gs2Friend.ScriptSetting|null): this {
         this.rejectRequestScript = rejectRequestScript;
         return this;
     }
-    public getDeleteFriendScript(): ScriptSetting|null {
+    public getDeleteFriendScript(): Gs2Friend.ScriptSetting|null {
         return this.deleteFriendScript;
     }
-    public setDeleteFriendScript(deleteFriendScript: ScriptSetting|null) {
+    public setDeleteFriendScript(deleteFriendScript: Gs2Friend.ScriptSetting|null) {
         this.deleteFriendScript = deleteFriendScript;
         return this;
     }
-    public withDeleteFriendScript(deleteFriendScript: ScriptSetting|null): this {
+    public withDeleteFriendScript(deleteFriendScript: Gs2Friend.ScriptSetting|null): this {
         this.deleteFriendScript = deleteFriendScript;
         return this;
     }
-    public getUpdateProfileScript(): ScriptSetting|null {
+    public getUpdateProfileScript(): Gs2Friend.ScriptSetting|null {
         return this.updateProfileScript;
     }
-    public setUpdateProfileScript(updateProfileScript: ScriptSetting|null) {
+    public setUpdateProfileScript(updateProfileScript: Gs2Friend.ScriptSetting|null) {
         this.updateProfileScript = updateProfileScript;
         return this;
     }
-    public withUpdateProfileScript(updateProfileScript: ScriptSetting|null): this {
+    public withUpdateProfileScript(updateProfileScript: Gs2Friend.ScriptSetting|null): this {
         this.updateProfileScript = updateProfileScript;
         return this;
     }
-    public getFollowNotification(): NotificationSetting|null {
+    public getFollowNotification(): Gs2Friend.NotificationSetting|null {
         return this.followNotification;
     }
-    public setFollowNotification(followNotification: NotificationSetting|null) {
+    public setFollowNotification(followNotification: Gs2Friend.NotificationSetting|null) {
         this.followNotification = followNotification;
         return this;
     }
-    public withFollowNotification(followNotification: NotificationSetting|null): this {
+    public withFollowNotification(followNotification: Gs2Friend.NotificationSetting|null): this {
         this.followNotification = followNotification;
         return this;
     }
-    public getReceiveRequestNotification(): NotificationSetting|null {
+    public getReceiveRequestNotification(): Gs2Friend.NotificationSetting|null {
         return this.receiveRequestNotification;
     }
-    public setReceiveRequestNotification(receiveRequestNotification: NotificationSetting|null) {
+    public setReceiveRequestNotification(receiveRequestNotification: Gs2Friend.NotificationSetting|null) {
         this.receiveRequestNotification = receiveRequestNotification;
         return this;
     }
-    public withReceiveRequestNotification(receiveRequestNotification: NotificationSetting|null): this {
+    public withReceiveRequestNotification(receiveRequestNotification: Gs2Friend.NotificationSetting|null): this {
         this.receiveRequestNotification = receiveRequestNotification;
         return this;
     }
-    public getCancelRequestNotification(): NotificationSetting|null {
+    public getCancelRequestNotification(): Gs2Friend.NotificationSetting|null {
         return this.cancelRequestNotification;
     }
-    public setCancelRequestNotification(cancelRequestNotification: NotificationSetting|null) {
+    public setCancelRequestNotification(cancelRequestNotification: Gs2Friend.NotificationSetting|null) {
         this.cancelRequestNotification = cancelRequestNotification;
         return this;
     }
-    public withCancelRequestNotification(cancelRequestNotification: NotificationSetting|null): this {
+    public withCancelRequestNotification(cancelRequestNotification: Gs2Friend.NotificationSetting|null): this {
         this.cancelRequestNotification = cancelRequestNotification;
         return this;
     }
-    public getAcceptRequestNotification(): NotificationSetting|null {
+    public getAcceptRequestNotification(): Gs2Friend.NotificationSetting|null {
         return this.acceptRequestNotification;
     }
-    public setAcceptRequestNotification(acceptRequestNotification: NotificationSetting|null) {
+    public setAcceptRequestNotification(acceptRequestNotification: Gs2Friend.NotificationSetting|null) {
         this.acceptRequestNotification = acceptRequestNotification;
         return this;
     }
-    public withAcceptRequestNotification(acceptRequestNotification: NotificationSetting|null): this {
+    public withAcceptRequestNotification(acceptRequestNotification: Gs2Friend.NotificationSetting|null): this {
         this.acceptRequestNotification = acceptRequestNotification;
         return this;
     }
-    public getRejectRequestNotification(): NotificationSetting|null {
+    public getRejectRequestNotification(): Gs2Friend.NotificationSetting|null {
         return this.rejectRequestNotification;
     }
-    public setRejectRequestNotification(rejectRequestNotification: NotificationSetting|null) {
+    public setRejectRequestNotification(rejectRequestNotification: Gs2Friend.NotificationSetting|null) {
         this.rejectRequestNotification = rejectRequestNotification;
         return this;
     }
-    public withRejectRequestNotification(rejectRequestNotification: NotificationSetting|null): this {
+    public withRejectRequestNotification(rejectRequestNotification: Gs2Friend.NotificationSetting|null): this {
         this.rejectRequestNotification = rejectRequestNotification;
         return this;
     }
-    public getDeleteFriendNotification(): NotificationSetting|null {
+    public getDeleteFriendNotification(): Gs2Friend.NotificationSetting|null {
         return this.deleteFriendNotification;
     }
-    public setDeleteFriendNotification(deleteFriendNotification: NotificationSetting|null) {
+    public setDeleteFriendNotification(deleteFriendNotification: Gs2Friend.NotificationSetting|null) {
         this.deleteFriendNotification = deleteFriendNotification;
         return this;
     }
-    public withDeleteFriendNotification(deleteFriendNotification: NotificationSetting|null): this {
+    public withDeleteFriendNotification(deleteFriendNotification: Gs2Friend.NotificationSetting|null): this {
         this.deleteFriendNotification = deleteFriendNotification;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Friend.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Friend.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Friend.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -342,21 +344,21 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withFollowScript(ScriptSetting.fromDict(data["followScript"]))
-            .withUnfollowScript(ScriptSetting.fromDict(data["unfollowScript"]))
-            .withSendRequestScript(ScriptSetting.fromDict(data["sendRequestScript"]))
-            .withCancelRequestScript(ScriptSetting.fromDict(data["cancelRequestScript"]))
-            .withAcceptRequestScript(ScriptSetting.fromDict(data["acceptRequestScript"]))
-            .withRejectRequestScript(ScriptSetting.fromDict(data["rejectRequestScript"]))
-            .withDeleteFriendScript(ScriptSetting.fromDict(data["deleteFriendScript"]))
-            .withUpdateProfileScript(ScriptSetting.fromDict(data["updateProfileScript"]))
-            .withFollowNotification(NotificationSetting.fromDict(data["followNotification"]))
-            .withReceiveRequestNotification(NotificationSetting.fromDict(data["receiveRequestNotification"]))
-            .withCancelRequestNotification(NotificationSetting.fromDict(data["cancelRequestNotification"]))
-            .withAcceptRequestNotification(NotificationSetting.fromDict(data["acceptRequestNotification"]))
-            .withRejectRequestNotification(NotificationSetting.fromDict(data["rejectRequestNotification"]))
-            .withDeleteFriendNotification(NotificationSetting.fromDict(data["deleteFriendNotification"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withFollowScript(Gs2Friend.ScriptSetting.fromDict(data["followScript"]))
+            .withUnfollowScript(Gs2Friend.ScriptSetting.fromDict(data["unfollowScript"]))
+            .withSendRequestScript(Gs2Friend.ScriptSetting.fromDict(data["sendRequestScript"]))
+            .withCancelRequestScript(Gs2Friend.ScriptSetting.fromDict(data["cancelRequestScript"]))
+            .withAcceptRequestScript(Gs2Friend.ScriptSetting.fromDict(data["acceptRequestScript"]))
+            .withRejectRequestScript(Gs2Friend.ScriptSetting.fromDict(data["rejectRequestScript"]))
+            .withDeleteFriendScript(Gs2Friend.ScriptSetting.fromDict(data["deleteFriendScript"]))
+            .withUpdateProfileScript(Gs2Friend.ScriptSetting.fromDict(data["updateProfileScript"]))
+            .withFollowNotification(Gs2Friend.NotificationSetting.fromDict(data["followNotification"]))
+            .withReceiveRequestNotification(Gs2Friend.NotificationSetting.fromDict(data["receiveRequestNotification"]))
+            .withCancelRequestNotification(Gs2Friend.NotificationSetting.fromDict(data["cancelRequestNotification"]))
+            .withAcceptRequestNotification(Gs2Friend.NotificationSetting.fromDict(data["acceptRequestNotification"]))
+            .withRejectRequestNotification(Gs2Friend.NotificationSetting.fromDict(data["rejectRequestNotification"]))
+            .withDeleteFriendNotification(Gs2Friend.NotificationSetting.fromDict(data["deleteFriendNotification"]))
+            .withLogSetting(Gs2Friend.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

@@ -49,7 +49,7 @@ var DescribeGlobalMessageMastersResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Inbox.GlobalMessageMaster.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeGlobalMessageMastersResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeGlobalMessageMastersResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

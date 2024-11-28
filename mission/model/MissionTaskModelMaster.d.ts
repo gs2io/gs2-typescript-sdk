@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import TargetCounterModel from './TargetCounterModel';
-import VerifyAction from './VerifyAction';
-import AcquireAction from './AcquireAction';
+import * as Gs2Mission from '../../mission/model';
 export default class MissionTaskModelMaster implements IModel {
     private missionTaskId;
     private name;
@@ -41,15 +39,15 @@ export default class MissionTaskModelMaster implements IModel {
     getVerifyCompleteType(): string | null;
     setVerifyCompleteType(verifyCompleteType: string | null): this;
     withVerifyCompleteType(verifyCompleteType: string | null): this;
-    getTargetCounter(): TargetCounterModel | null;
-    setTargetCounter(targetCounter: TargetCounterModel | null): this;
-    withTargetCounter(targetCounter: TargetCounterModel | null): this;
-    getVerifyCompleteConsumeActions(): VerifyAction[] | null;
-    setVerifyCompleteConsumeActions(verifyCompleteConsumeActions: VerifyAction[] | null): this;
-    withVerifyCompleteConsumeActions(verifyCompleteConsumeActions: VerifyAction[] | null): this;
-    getCompleteAcquireActions(): AcquireAction[] | null;
-    setCompleteAcquireActions(completeAcquireActions: AcquireAction[] | null): this;
-    withCompleteAcquireActions(completeAcquireActions: AcquireAction[] | null): this;
+    getTargetCounter(): Gs2Mission.TargetCounterModel | null;
+    setTargetCounter(targetCounter: Gs2Mission.TargetCounterModel | null): this;
+    withTargetCounter(targetCounter: Gs2Mission.TargetCounterModel | null): this;
+    getVerifyCompleteConsumeActions(): Gs2Mission.VerifyAction[] | null;
+    setVerifyCompleteConsumeActions(verifyCompleteConsumeActions: Gs2Mission.VerifyAction[] | null): this;
+    withVerifyCompleteConsumeActions(verifyCompleteConsumeActions: Gs2Mission.VerifyAction[] | null): this;
+    getCompleteAcquireActions(): Gs2Mission.AcquireAction[] | null;
+    setCompleteAcquireActions(completeAcquireActions: Gs2Mission.AcquireAction[] | null): this;
+    withCompleteAcquireActions(completeAcquireActions: Gs2Mission.AcquireAction[] | null): this;
     getChallengePeriodEventId(): string | null;
     setChallengePeriodEventId(challengePeriodEventId: string | null): this;
     withChallengePeriodEventId(challengePeriodEventId: string | null): this;

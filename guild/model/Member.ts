@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Guild from '../../guild/model'
+
 export default class Member implements IModel {
     private userId: string|null = null;
     private roleName: string|null = null;

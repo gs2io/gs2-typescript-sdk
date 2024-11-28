@@ -37,14 +37,14 @@ var DescribeBuffEntryModelsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Buff.BuffEntryModel.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeBuffEntryModelsResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeBuffEntryModelsResult;

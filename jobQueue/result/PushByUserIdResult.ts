@@ -55,7 +55,7 @@ export default class PushByUserIdResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2JobQueue.Job.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withAutoRun(data["autoRun"]);
     }
 
@@ -65,7 +65,7 @@ export default class PushByUserIdResult implements IResult {
                 this.getItems()!.map((item: Gs2JobQueue.Job) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "autoRun": this.getAutoRun(),
         };
     }

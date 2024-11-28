@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Ranking from '../../ranking/model'
 import FixedTiming from './FixedTiming';
 import Scope from './Scope';
 import GlobalRankingSetting from './GlobalRankingSetting';
@@ -30,14 +32,14 @@ export default class CategoryModelMaster implements IModel {
     private sum: boolean|null = null;
     private orderDirection: string|null = null;
     private scope: string|null = null;
-    private globalRankingSetting: GlobalRankingSetting|null = null;
+    private globalRankingSetting: Gs2Ranking.GlobalRankingSetting|null = null;
     private entryPeriodEventId: string|null = null;
     private accessPeriodEventId: string|null = null;
     private uniqueByUserId: boolean|null = null;
     private calculateFixedTimingHour: number|null = null;
     private calculateFixedTimingMinute: number|null = null;
     private calculateIntervalMinutes: number|null = null;
-    private additionalScopes: Scope[]|null = null;
+    private additionalScopes: Gs2Ranking.Scope[]|null = null;
     private ignoreUserIds: string[]|null = null;
     private generation: string|null = null;
     private createdAt: number|null = null;
@@ -223,14 +225,14 @@ export default class CategoryModelMaster implements IModel {
         this.scope = scope;
         return this;
     }
-    public getGlobalRankingSetting(): GlobalRankingSetting|null {
+    public getGlobalRankingSetting(): Gs2Ranking.GlobalRankingSetting|null {
         return this.globalRankingSetting;
     }
-    public setGlobalRankingSetting(globalRankingSetting: GlobalRankingSetting|null) {
+    public setGlobalRankingSetting(globalRankingSetting: Gs2Ranking.GlobalRankingSetting|null) {
         this.globalRankingSetting = globalRankingSetting;
         return this;
     }
-    public withGlobalRankingSetting(globalRankingSetting: GlobalRankingSetting|null): this {
+    public withGlobalRankingSetting(globalRankingSetting: Gs2Ranking.GlobalRankingSetting|null): this {
         this.globalRankingSetting = globalRankingSetting;
         return this;
     }
@@ -313,16 +315,16 @@ export default class CategoryModelMaster implements IModel {
         return this;
     }
     /** @deprecated */
-    public getAdditionalScopes(): Scope[]|null {
+    public getAdditionalScopes(): Gs2Ranking.Scope[]|null {
         return this.additionalScopes;
     }
     /** @deprecated */
-    public setAdditionalScopes(additionalScopes: Scope[]|null) {
+    public setAdditionalScopes(additionalScopes: Gs2Ranking.Scope[]|null) {
         this.additionalScopes = additionalScopes;
         return this;
     }
     /** @deprecated */
-    public withAdditionalScopes(additionalScopes: Scope[]|null): this {
+    public withAdditionalScopes(additionalScopes: Gs2Ranking.Scope[]|null): this {
         this.additionalScopes = additionalScopes;
         return this;
     }
@@ -402,7 +404,7 @@ export default class CategoryModelMaster implements IModel {
             .withSum(data["sum"])
             .withOrderDirection(data["orderDirection"])
             .withScope(data["scope"])
-            .withGlobalRankingSetting(GlobalRankingSetting.fromDict(data["globalRankingSetting"]))
+            .withGlobalRankingSetting(Gs2Ranking.GlobalRankingSetting.fromDict(data["globalRankingSetting"]))
             .withEntryPeriodEventId(data["entryPeriodEventId"])
             .withAccessPeriodEventId(data["accessPeriodEventId"])
             .withUniqueByUserId(data["uniqueByUserId"])
@@ -411,14 +413,14 @@ export default class CategoryModelMaster implements IModel {
             .withCalculateIntervalMinutes(data["calculateIntervalMinutes"])
             .withAdditionalScopes(data.additionalScopes ?
                 data.additionalScopes.map((item: {[key: string]: any}) => {
-                    return Scope.fromDict(item);
+                    return Gs2Ranking.Scope.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withIgnoreUserIds(data.ignoreUserIds ?
                 data.ignoreUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withGeneration(data["generation"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -444,15 +446,15 @@ export default class CategoryModelMaster implements IModel {
             "calculateFixedTimingMinute": this.getCalculateFixedTimingMinute(),
             "calculateIntervalMinutes": this.getCalculateIntervalMinutes(),
             "additionalScopes": this.getAdditionalScopes() ?
-                this.getAdditionalScopes()!.map((item: Scope) => {
+                this.getAdditionalScopes()!.map((item: Gs2Ranking.Scope) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "ignoreUserIds": this.getIgnoreUserIds() ?
                 this.getIgnoreUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "generation": this.getGeneration(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

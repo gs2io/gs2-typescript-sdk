@@ -123,7 +123,7 @@ var SendInGameLogByUserIdRequest = /** @class */ (function () {
             .withTags(data.tags ?
             data.tags.map(function (item) {
                 return Gs2Log.InGameLogTag.fromDict(item);
-            }) : [])
+            }) : null)
             .withPayload(data["payload"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
@@ -134,7 +134,7 @@ var SendInGameLogByUserIdRequest = /** @class */ (function () {
             "tags": this.getTags() ?
                 this.getTags().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "payload": this.getPayload(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };

@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import UnleashRateEntryModel from './UnleashRateEntryModel';
+import * as Gs2Enhance from '../../enhance/model';
 export default class UnleashRateModel implements IModel {
     private unleashRateModelId;
     private name;
@@ -32,9 +32,9 @@ export default class UnleashRateModel implements IModel {
     getGradeModelId(): string | null;
     setGradeModelId(gradeModelId: string | null): this;
     withGradeModelId(gradeModelId: string | null): this;
-    getGradeEntries(): UnleashRateEntryModel[] | null;
-    setGradeEntries(gradeEntries: UnleashRateEntryModel[] | null): this;
-    withGradeEntries(gradeEntries: UnleashRateEntryModel[] | null): this;
+    getGradeEntries(): Gs2Enhance.UnleashRateEntryModel[] | null;
+    setGradeEntries(gradeEntries: Gs2Enhance.UnleashRateEntryModel[] | null): this;
+    withGradeEntries(gradeEntries: Gs2Enhance.UnleashRateEntryModel[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): UnleashRateModel | null;

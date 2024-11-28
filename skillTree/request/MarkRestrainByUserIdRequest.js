@@ -122,7 +122,7 @@ var MarkRestrainByUserIdRequest = /** @class */ (function () {
             .withNodeModelNames(data.nodeModelNames ?
             data.nodeModelNames.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     MarkRestrainByUserIdRequest.prototype.toDict = function () {
@@ -133,7 +133,7 @@ var MarkRestrainByUserIdRequest = /** @class */ (function () {
             "nodeModelNames": this.getNodeModelNames() ?
                 this.getNodeModelNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

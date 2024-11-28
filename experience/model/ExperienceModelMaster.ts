@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Experience from '../../experience/model'
 import AcquireActionRate from './AcquireActionRate';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:experience:{namespaceName}:model:{experienceName}";
 
@@ -27,7 +29,7 @@ export default class ExperienceModelMaster implements IModel {
     private defaultRankCap: number|null = null;
     private maxRankCap: number|null = null;
     private rankThresholdName: string|null = null;
-    private acquireActionRates: AcquireActionRate[]|null = null;
+    private acquireActionRates: Gs2Experience.AcquireActionRate[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -200,14 +202,14 @@ export default class ExperienceModelMaster implements IModel {
         this.rankThresholdName = rankThresholdName;
         return this;
     }
-    public getAcquireActionRates(): AcquireActionRate[]|null {
+    public getAcquireActionRates(): Gs2Experience.AcquireActionRate[]|null {
         return this.acquireActionRates;
     }
-    public setAcquireActionRates(acquireActionRates: AcquireActionRate[]|null) {
+    public setAcquireActionRates(acquireActionRates: Gs2Experience.AcquireActionRate[]|null) {
         this.acquireActionRates = acquireActionRates;
         return this;
     }
-    public withAcquireActionRates(acquireActionRates: AcquireActionRate[]|null): this {
+    public withAcquireActionRates(acquireActionRates: Gs2Experience.AcquireActionRate[]|null): this {
         this.acquireActionRates = acquireActionRates;
         return this;
     }
@@ -260,9 +262,9 @@ export default class ExperienceModelMaster implements IModel {
             .withRankThresholdName(data["rankThresholdName"])
             .withAcquireActionRates(data.acquireActionRates ?
                 data.acquireActionRates.map((item: {[key: string]: any}) => {
-                    return AcquireActionRate.fromDict(item);
+                    return Gs2Experience.AcquireActionRate.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -279,10 +281,10 @@ export default class ExperienceModelMaster implements IModel {
             "maxRankCap": this.getMaxRankCap(),
             "rankThresholdName": this.getRankThresholdName(),
             "acquireActionRates": this.getAcquireActionRates() ?
-                this.getAcquireActionRates()!.map((item: AcquireActionRate) => {
+                this.getAcquireActionRates()!.map((item: Gs2Experience.AcquireActionRate) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import RoleModel from './RoleModel';
-import Member from './Member';
+import * as Gs2Guild from '../../guild/model';
 export default class Guild implements IModel {
     private guildId;
     private guildModelName;
@@ -56,18 +55,18 @@ export default class Guild implements IModel {
     getJoinPolicy(): string | null;
     setJoinPolicy(joinPolicy: string | null): this;
     withJoinPolicy(joinPolicy: string | null): this;
-    getCustomRoles(): RoleModel[] | null;
-    setCustomRoles(customRoles: RoleModel[] | null): this;
-    withCustomRoles(customRoles: RoleModel[] | null): this;
+    getCustomRoles(): Gs2Guild.RoleModel[] | null;
+    setCustomRoles(customRoles: Gs2Guild.RoleModel[] | null): this;
+    withCustomRoles(customRoles: Gs2Guild.RoleModel[] | null): this;
     getGuildMemberDefaultRole(): string | null;
     setGuildMemberDefaultRole(guildMemberDefaultRole: string | null): this;
     withGuildMemberDefaultRole(guildMemberDefaultRole: string | null): this;
     getCurrentMaximumMemberCount(): number | null;
     setCurrentMaximumMemberCount(currentMaximumMemberCount: number | null): this;
     withCurrentMaximumMemberCount(currentMaximumMemberCount: number | null): this;
-    getMembers(): Member[] | null;
-    setMembers(members: Member[] | null): this;
-    withMembers(members: Member[] | null): this;
+    getMembers(): Gs2Guild.Member[] | null;
+    setMembers(members: Gs2Guild.Member[] | null): this;
+    withMembers(members: Gs2Guild.Member[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

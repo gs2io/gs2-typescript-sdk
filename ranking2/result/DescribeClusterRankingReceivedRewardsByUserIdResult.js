@@ -49,7 +49,7 @@ var DescribeClusterRankingReceivedRewardsByUserIdResult = /** @class */ (functio
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Ranking2.ClusterRankingReceivedReward.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeClusterRankingReceivedRewardsByUserIdResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeClusterRankingReceivedRewardsByUserIdResult = /** @class */ (functio
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

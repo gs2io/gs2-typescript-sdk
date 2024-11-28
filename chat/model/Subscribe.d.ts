@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import NotificationType from './NotificationType';
+import * as Gs2Chat from '../../chat/model';
 export default class Subscribe implements IModel {
     private subscribeId;
     private userId;
@@ -23,9 +23,9 @@ export default class Subscribe implements IModel {
     getRoomName(): string | null;
     setRoomName(roomName: string | null): this;
     withRoomName(roomName: string | null): this;
-    getNotificationTypes(): NotificationType[] | null;
-    setNotificationTypes(notificationTypes: NotificationType[] | null): this;
-    withNotificationTypes(notificationTypes: NotificationType[] | null): this;
+    getNotificationTypes(): Gs2Chat.NotificationType[] | null;
+    setNotificationTypes(notificationTypes: Gs2Chat.NotificationType[] | null): this;
+    withNotificationTypes(notificationTypes: Gs2Chat.NotificationType[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

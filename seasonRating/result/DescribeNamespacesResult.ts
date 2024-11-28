@@ -55,7 +55,7 @@ export default class DescribeNamespacesResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2SeasonRating.Namespace.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeNamespacesResult implements IResult {
                 this.getItems()!.map((item: Gs2SeasonRating.Namespace) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

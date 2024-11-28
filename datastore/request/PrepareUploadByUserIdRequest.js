@@ -160,7 +160,7 @@ var PrepareUploadByUserIdRequest = /** @class */ (function () {
             .withAllowUserIds(data.allowUserIds ?
             data.allowUserIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withUpdateIfExists(data["updateIfExists"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
@@ -174,7 +174,7 @@ var PrepareUploadByUserIdRequest = /** @class */ (function () {
             "allowUserIds": this.getAllowUserIds() ?
                 this.getAllowUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "updateIfExists": this.getUpdateIfExists(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };

@@ -124,7 +124,7 @@ var CreateRecoverValueTableMasterRequest = /** @class */ (function () {
             .withValues(data.values ?
             data.values.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     CreateRecoverValueTableMasterRequest.prototype.toDict = function () {
         return {
@@ -136,7 +136,7 @@ var CreateRecoverValueTableMasterRequest = /** @class */ (function () {
             "values": this.getValues() ?
                 this.getValues().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return CreateRecoverValueTableMasterRequest;

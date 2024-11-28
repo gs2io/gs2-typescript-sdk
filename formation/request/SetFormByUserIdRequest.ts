@@ -148,7 +148,7 @@ export default class SetFormByUserIdRequest implements IRequest {
                 data.slots.map((item: {[key: string]: any}) => {
                     return Gs2Formation.Slot.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -162,7 +162,7 @@ export default class SetFormByUserIdRequest implements IRequest {
                 this.getSlots()!.map((item: Gs2Formation.Slot) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

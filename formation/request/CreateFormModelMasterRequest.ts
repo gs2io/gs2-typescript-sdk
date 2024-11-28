@@ -121,7 +121,7 @@ export default class CreateFormModelMasterRequest implements IRequest {
                 data.slots.map((item: {[key: string]: any}) => {
                     return Gs2Formation.SlotModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -134,7 +134,7 @@ export default class CreateFormModelMasterRequest implements IRequest {
                 this.getSlots()!.map((item: Gs2Formation.SlotModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

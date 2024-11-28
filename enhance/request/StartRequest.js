@@ -148,13 +148,13 @@ var StartRequest = /** @class */ (function () {
             .withMaterials(data.materials ?
             data.materials.map(function (item) {
                 return Gs2Enhance.Material.fromDict(item);
-            }) : [])
+            }) : null)
             .withAccessToken(data["accessToken"])
             .withForce(data["force"])
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Enhance.Config.fromDict(item);
-            }) : []);
+            }) : null);
     };
     StartRequest.prototype.toDict = function () {
         return {
@@ -164,13 +164,13 @@ var StartRequest = /** @class */ (function () {
             "materials": this.getMaterials() ?
                 this.getMaterials().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "accessToken": this.getAccessToken(),
             "force": this.getForce(),
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return StartRequest;

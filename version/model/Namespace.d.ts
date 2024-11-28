@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import ScriptSetting from './ScriptSetting';
-import LogSetting from './LogSetting';
+import * as Gs2Version from '../../version/model';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
@@ -29,15 +28,15 @@ export default class Namespace implements IModel {
     getAssumeUserId(): string | null;
     setAssumeUserId(assumeUserId: string | null): this;
     withAssumeUserId(assumeUserId: string | null): this;
-    getAcceptVersionScript(): ScriptSetting | null;
-    setAcceptVersionScript(acceptVersionScript: ScriptSetting | null): this;
-    withAcceptVersionScript(acceptVersionScript: ScriptSetting | null): this;
+    getAcceptVersionScript(): Gs2Version.ScriptSetting | null;
+    setAcceptVersionScript(acceptVersionScript: Gs2Version.ScriptSetting | null): this;
+    withAcceptVersionScript(acceptVersionScript: Gs2Version.ScriptSetting | null): this;
     getCheckVersionTriggerScriptId(): string | null;
     setCheckVersionTriggerScriptId(checkVersionTriggerScriptId: string | null): this;
     withCheckVersionTriggerScriptId(checkVersionTriggerScriptId: string | null): this;
-    getLogSetting(): LogSetting | null;
-    setLogSetting(logSetting: LogSetting | null): this;
-    withLogSetting(logSetting: LogSetting | null): this;
+    getLogSetting(): Gs2Version.LogSetting | null;
+    setLogSetting(logSetting: Gs2Version.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2Version.LogSetting | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

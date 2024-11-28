@@ -201,16 +201,16 @@ var UpdateBonusModelMasterRequest = /** @class */ (function () {
             .withRewards(data.rewards ?
             data.rewards.map(function (item) {
                 return Gs2LoginReward.Reward.fromDict(item);
-            }) : [])
+            }) : null)
             .withMissedReceiveRelief(data["missedReceiveRelief"])
             .withMissedReceiveReliefVerifyActions(data.missedReceiveReliefVerifyActions ?
             data.missedReceiveReliefVerifyActions.map(function (item) {
                 return Gs2LoginReward.VerifyAction.fromDict(item);
-            }) : [])
+            }) : null)
             .withMissedReceiveReliefConsumeActions(data.missedReceiveReliefConsumeActions ?
             data.missedReceiveReliefConsumeActions.map(function (item) {
                 return Gs2LoginReward.ConsumeAction.fromDict(item);
-            }) : []);
+            }) : null);
     };
     UpdateBonusModelMasterRequest.prototype.toDict = function () {
         return {
@@ -225,16 +225,16 @@ var UpdateBonusModelMasterRequest = /** @class */ (function () {
             "rewards": this.getRewards() ?
                 this.getRewards().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "missedReceiveRelief": this.getMissedReceiveRelief(),
             "missedReceiveReliefVerifyActions": this.getMissedReceiveReliefVerifyActions() ?
                 this.getMissedReceiveReliefVerifyActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "missedReceiveReliefConsumeActions": this.getMissedReceiveReliefConsumeActions() ?
                 this.getMissedReceiveReliefConsumeActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return UpdateBonusModelMasterRequest;

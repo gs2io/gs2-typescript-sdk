@@ -86,7 +86,7 @@ export default class AuthenticationResult implements IResult {
                 data.banStatuses.map((item: {[key: string]: any}) => {
                     return Gs2Account.BanStatus.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withBody(data["body"])
             .withSignature(data["signature"]);
     }
@@ -98,7 +98,7 @@ export default class AuthenticationResult implements IResult {
                 this.getBanStatuses()!.map((item: Gs2Account.BanStatus) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "body": this.getBody(),
             "signature": this.getSignature(),
         };

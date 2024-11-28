@@ -40,7 +40,7 @@ export default class DescribeCounterModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Mission.CounterModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeCounterModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2Mission.CounterModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

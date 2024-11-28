@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import TransactionSetting from './TransactionSetting';
-import ScriptSetting from './ScriptSetting';
-import LogSetting from './LogSetting';
+import * as Gs2Enhance from '../../enhance/model';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
@@ -29,15 +27,15 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
-    getTransactionSetting(): TransactionSetting | null;
-    setTransactionSetting(transactionSetting: TransactionSetting | null): this;
-    withTransactionSetting(transactionSetting: TransactionSetting | null): this;
-    getEnhanceScript(): ScriptSetting | null;
-    setEnhanceScript(enhanceScript: ScriptSetting | null): this;
-    withEnhanceScript(enhanceScript: ScriptSetting | null): this;
-    getLogSetting(): LogSetting | null;
-    setLogSetting(logSetting: LogSetting | null): this;
-    withLogSetting(logSetting: LogSetting | null): this;
+    getTransactionSetting(): Gs2Enhance.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Enhance.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Enhance.TransactionSetting | null): this;
+    getEnhanceScript(): Gs2Enhance.ScriptSetting | null;
+    setEnhanceScript(enhanceScript: Gs2Enhance.ScriptSetting | null): this;
+    withEnhanceScript(enhanceScript: Gs2Enhance.ScriptSetting | null): this;
+    getLogSetting(): Gs2Enhance.LogSetting | null;
+    setLogSetting(logSetting: Gs2Enhance.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2Enhance.LogSetting | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

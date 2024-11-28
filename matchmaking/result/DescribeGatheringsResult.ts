@@ -55,7 +55,7 @@ export default class DescribeGatheringsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Matchmaking.Gathering.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeGatheringsResult implements IResult {
                 this.getItems()!.map((item: Gs2Matchmaking.Gathering) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

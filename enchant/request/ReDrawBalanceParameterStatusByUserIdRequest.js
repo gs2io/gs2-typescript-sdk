@@ -135,7 +135,7 @@ var ReDrawBalanceParameterStatusByUserIdRequest = /** @class */ (function () {
             .withFixedParameterNames(data.fixedParameterNames ?
             data.fixedParameterNames.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     ReDrawBalanceParameterStatusByUserIdRequest.prototype.toDict = function () {
@@ -147,7 +147,7 @@ var ReDrawBalanceParameterStatusByUserIdRequest = /** @class */ (function () {
             "fixedParameterNames": this.getFixedParameterNames() ?
                 this.getFixedParameterNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

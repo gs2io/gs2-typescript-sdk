@@ -49,7 +49,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DistributorRestClient.prototype.createNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region);
@@ -63,7 +63,8 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             'description': (_c = request.getDescription()) !== null && _c !== void 0 ? _c : null,
             'assumeUserId': (_d = request.getAssumeUserId()) !== null && _d !== void 0 ? _d : null,
             'autoRunStampSheetNotification': (_f = (_e = request.getAutoRunStampSheetNotification()) === null || _e === void 0 ? void 0 : _e.toDict()) !== null && _f !== void 0 ? _f : null,
-            'logSetting': (_h = (_g = request.getLogSetting()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'autoRunTransactionNotification': (_h = (_g = request.getAutoRunTransactionNotification()) === null || _g === void 0 ? void 0 : _g.toDict()) !== null && _h !== void 0 ? _h : null,
+            'logSetting': (_k = (_j = request.getLogSetting()) === null || _j === void 0 ? void 0 : _j.toDict()) !== null && _k !== void 0 ? _k : null,
         };
         return axios_1.default.post(url, body, {
             headers: headers,
@@ -123,7 +124,7 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
         });
     };
     Gs2DistributorRestClient.prototype.updateNamespace = function (request) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}')
             .replace('{service}', 'distributor')
             .replace('{region}', this.session.region)
@@ -137,7 +138,8 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             'description': (_d = request.getDescription()) !== null && _d !== void 0 ? _d : null,
             'assumeUserId': (_e = request.getAssumeUserId()) !== null && _e !== void 0 ? _e : null,
             'autoRunStampSheetNotification': (_g = (_f = request.getAutoRunStampSheetNotification()) === null || _f === void 0 ? void 0 : _f.toDict()) !== null && _g !== void 0 ? _g : null,
-            'logSetting': (_j = (_h = request.getLogSetting()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'autoRunTransactionNotification': (_j = (_h = request.getAutoRunTransactionNotification()) === null || _h === void 0 ? void 0 : _h.toDict()) !== null && _j !== void 0 ? _j : null,
+            'logSetting': (_l = (_k = request.getLogSetting()) === null || _k === void 0 ? void 0 : _k.toDict()) !== null && _l !== void 0 ? _l : null,
         };
         return axios_1.default.put(url, body, {
             headers: headers,
@@ -1102,6 +1104,94 @@ var Gs2DistributorRestClient = /** @class */ (function (_super) {
             headers: headers,
         }).then(function (response) {
             return Result.GetStampSheetResultByUserIdResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2DistributorRestClient.prototype.runTransaction = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/system/{ownerId}/{namespaceName}/user/{userId}/transaction/run')
+            .replace('{service}', 'distributor')
+            .replace('{region}', this.session.region)
+            .replace('{ownerId}', String((_a = request.getOwnerId()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getOwnerId()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{namespaceName}', String((_c = request.getNamespaceName()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getNamespaceName()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{userId}', String((_e = request.getUserId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getUserId()) !== null && _f !== void 0 ? _f : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getDuplicationAvoider()) {
+            headers['X-GS2-DUPLICATION-AVOIDER'] = (_g = request.getDuplicationAvoider()) !== null && _g !== void 0 ? _g : null;
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_h = request.getTimeOffsetToken()) !== null && _h !== void 0 ? _h : null;
+        }
+        var body = {
+            'contextStack': (_j = request.getContextStack()) !== null && _j !== void 0 ? _j : null,
+            'transaction': (_k = request.getTransaction()) !== null && _k !== void 0 ? _k : null,
+        };
+        return axios_1.default.post(url, body, {
+            headers: headers,
+        }).then(function (response) {
+            return Result.RunTransactionResult.fromDict(response.data);
+        }).catch(function (error) {
+            if (error.response) {
+                throw JSON.parse(error.response.data.message);
+            }
+            else {
+                throw [];
+            }
+        });
+    };
+    Gs2DistributorRestClient.prototype.getTransactionResult = function (request) {
+        var _a, _b, _c, _d, _e, _f;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/me/transaction/{transactionId}/result')
+            .replace('{service}', 'distributor')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{transactionId}', String((_c = request.getTransactionId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getTransactionId()) !== null && _d !== void 0 ? _d : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getAccessToken()) {
+            headers['X-GS2-ACCESS-TOKEN'] = (_e = request.getAccessToken()) !== null && _e !== void 0 ? _e : null;
+        }
+        var params = {
+            'contextStack': (_f = request.getContextStack()) !== null && _f !== void 0 ? _f : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetTransactionResultResult.fromDict(response.data);
+        }).catch(function (error) {
+            throw JSON.parse(error.response.data.message);
+        });
+    };
+    Gs2DistributorRestClient.prototype.getTransactionResultByUserId = function (request) {
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var url = (model_1.Gs2Constant.ENDPOINT_HOST + '/{namespaceName}/user/{userId}/transaction/{transactionId}/result')
+            .replace('{service}', 'distributor')
+            .replace('{region}', this.session.region)
+            .replace('{namespaceName}', String((_a = request.getNamespaceName()) !== null && _a !== void 0 ? _a : 'null') === "" ? "null" : String((_b = request.getNamespaceName()) !== null && _b !== void 0 ? _b : 'null'))
+            .replace('{userId}', String((_c = request.getUserId()) !== null && _c !== void 0 ? _c : 'null') === "" ? "null" : String((_d = request.getUserId()) !== null && _d !== void 0 ? _d : 'null'))
+            .replace('{transactionId}', String((_e = request.getTransactionId()) !== null && _e !== void 0 ? _e : 'null') === "" ? "null" : String((_f = request.getTransactionId()) !== null && _f !== void 0 ? _f : 'null'));
+        var headers = this.createAuthorizedHeaders();
+        if (request.getRequestId()) {
+            headers['X-GS2-REQUEST-ID'] = request.getRequestId();
+        }
+        if (request.getTimeOffsetToken()) {
+            headers['X-GS2-TIME-OFFSET-TOKEN'] = (_g = request.getTimeOffsetToken()) !== null && _g !== void 0 ? _g : null;
+        }
+        var params = {
+            'contextStack': (_h = request.getContextStack()) !== null && _h !== void 0 ? _h : null,
+        };
+        return axios_1.default.get(url, {
+            params: params,
+            headers: headers,
+        }).then(function (response) {
+            return Result.GetTransactionResultByUserIdResult.fromDict(response.data);
         }).catch(function (error) {
             throw JSON.parse(error.response.data.message);
         });

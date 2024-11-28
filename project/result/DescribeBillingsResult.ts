@@ -40,7 +40,7 @@ export default class DescribeBillingsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Project.Billing.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeBillingsResult implements IResult {
                 this.getItems()!.map((item: Gs2Project.Billing) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import Config from './Config';
+import * as Gs2Exchange from '../../exchange/model';
 export default class Await implements IModel {
     private awaitId;
     private userId;
@@ -36,9 +36,9 @@ export default class Await implements IModel {
     getSkipSeconds(): number | null;
     setSkipSeconds(skipSeconds: number | null): this;
     withSkipSeconds(skipSeconds: number | null): this;
-    getConfig(): Config[] | null;
-    setConfig(config: Config[] | null): this;
-    withConfig(config: Config[] | null): this;
+    getConfig(): Gs2Exchange.Config[] | null;
+    setConfig(config: Gs2Exchange.Config[] | null): this;
+    withConfig(config: Gs2Exchange.Config[] | null): this;
     getAcquirableAt(): number | null;
     setAcquirableAt(acquirableAt: number | null): this;
     withAcquirableAt(acquirableAt: number | null): this;

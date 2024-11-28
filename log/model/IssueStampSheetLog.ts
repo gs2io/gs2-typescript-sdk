@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Log from '../../log/model'
+
 export default class IssueStampSheetLog implements IModel {
     private timestamp: number|null = null;
     private transactionId: string|null = null;
@@ -130,7 +132,7 @@ export default class IssueStampSheetLog implements IModel {
                 data.tasks.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -146,7 +148,7 @@ export default class IssueStampSheetLog implements IModel {
                 this.getTasks()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

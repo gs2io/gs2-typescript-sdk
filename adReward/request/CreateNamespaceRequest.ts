@@ -168,7 +168,7 @@ export default class CreateNamespaceRequest implements IRequest {
                 data.appLovinMaxes.map((item: {[key: string]: any}) => {
                     return Gs2AdReward.AppLovinMax.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withDescription(data["description"])
             .withAcquirePointScript(Gs2AdReward.ScriptSetting.fromDict(data["acquirePointScript"]))
             .withConsumePointScript(Gs2AdReward.ScriptSetting.fromDict(data["consumePointScript"]))
@@ -185,7 +185,7 @@ export default class CreateNamespaceRequest implements IRequest {
                 this.getAppLovinMaxes()!.map((item: Gs2AdReward.AppLovinMax) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "description": this.getDescription(),
             "acquirePointScript": this.getAcquirePointScript()?.toDict(),
             "consumePointScript": this.getConsumePointScript()?.toDict(),

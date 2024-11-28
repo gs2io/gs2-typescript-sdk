@@ -125,7 +125,7 @@ var IncrementalExchangeRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Exchange.Config.fromDict(item);
-            }) : []);
+            }) : null);
     };
     IncrementalExchangeRequest.prototype.toDict = function () {
         return {
@@ -136,7 +136,7 @@ var IncrementalExchangeRequest = /** @class */ (function () {
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return IncrementalExchangeRequest;

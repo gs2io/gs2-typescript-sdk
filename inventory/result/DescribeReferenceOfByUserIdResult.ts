@@ -85,7 +85,7 @@ export default class DescribeReferenceOfByUserIdResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withItemSet(Gs2Inventory.ItemSet.fromDict(data["itemSet"]))
             .withItemModel(Gs2Inventory.ItemModel.fromDict(data["itemModel"]))
             .withInventory(Gs2Inventory.Inventory.fromDict(data["inventory"]));
@@ -97,7 +97,7 @@ export default class DescribeReferenceOfByUserIdResult implements IResult {
                 this.getItems()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "itemSet": this.getItemSet()?.toDict(),
             "itemModel": this.getItemModel()?.toDict(),
             "inventory": this.getInventory()?.toDict(),

@@ -137,7 +137,7 @@ var SetPropertyFormWithSignatureRequest = /** @class */ (function () {
             .withSlots(data.slots ?
             data.slots.map(function (item) {
                 return Gs2Formation.SlotWithSignature.fromDict(item);
-            }) : [])
+            }) : null)
             .withKeyId(data["keyId"]);
     };
     SetPropertyFormWithSignatureRequest.prototype.toDict = function () {
@@ -149,7 +149,7 @@ var SetPropertyFormWithSignatureRequest = /** @class */ (function () {
             "slots": this.getSlots() ?
                 this.getSlots().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "keyId": this.getKeyId(),
         };
     };

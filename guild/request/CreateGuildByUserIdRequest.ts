@@ -238,7 +238,7 @@ export default class CreateGuildByUserIdRequest implements IRequest {
                 data.customRoles.map((item: {[key: string]: any}) => {
                     return Gs2Guild.RoleModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withGuildMemberDefaultRole(data["guildMemberDefaultRole"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
@@ -259,7 +259,7 @@ export default class CreateGuildByUserIdRequest implements IRequest {
                 this.getCustomRoles()!.map((item: Gs2Guild.RoleModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "guildMemberDefaultRole": this.getGuildMemberDefaultRole(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };

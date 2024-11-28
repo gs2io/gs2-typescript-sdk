@@ -71,12 +71,12 @@ export default class CheckVersionByUserIdResult implements IResult {
                 data.warnings.map((item: {[key: string]: any}) => {
                     return Gs2Version.Status.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withErrors(data.errors ?
                 data.errors.map((item: {[key: string]: any}) => {
                     return Gs2Version.Status.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -86,12 +86,12 @@ export default class CheckVersionByUserIdResult implements IResult {
                 this.getWarnings()!.map((item: Gs2Version.Status) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "errors": this.getErrors() ?
                 this.getErrors()!.map((item: Gs2Version.Status) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Gs2LoginReward = tslib_1.__importStar(require("../model"));
+var Gs2Core = tslib_1.__importStar(require("../../core"));
 var ReceiveByUserIdResult = /** @class */ (function () {
     function ReceiveByUserIdResult() {
         this.item = null;
@@ -25,6 +26,9 @@ var ReceiveByUserIdResult = /** @class */ (function () {
         this.stampSheet = null;
         this.stampSheetEncryptionKeyId = null;
         this.autoRunStampSheet = null;
+        this.atomicCommit = null;
+        this.transaction = null;
+        this.transactionResult = null;
     }
     ReceiveByUserIdResult.prototype.getItem = function () {
         return this.item;
@@ -92,6 +96,39 @@ var ReceiveByUserIdResult = /** @class */ (function () {
         this.autoRunStampSheet = autoRunStampSheet;
         return this;
     };
+    ReceiveByUserIdResult.prototype.getAtomicCommit = function () {
+        return this.atomicCommit;
+    };
+    ReceiveByUserIdResult.prototype.setAtomicCommit = function (atomicCommit) {
+        this.atomicCommit = atomicCommit;
+        return this;
+    };
+    ReceiveByUserIdResult.prototype.withAtomicCommit = function (atomicCommit) {
+        this.atomicCommit = atomicCommit;
+        return this;
+    };
+    ReceiveByUserIdResult.prototype.getTransaction = function () {
+        return this.transaction;
+    };
+    ReceiveByUserIdResult.prototype.setTransaction = function (transaction) {
+        this.transaction = transaction;
+        return this;
+    };
+    ReceiveByUserIdResult.prototype.withTransaction = function (transaction) {
+        this.transaction = transaction;
+        return this;
+    };
+    ReceiveByUserIdResult.prototype.getTransactionResult = function () {
+        return this.transactionResult;
+    };
+    ReceiveByUserIdResult.prototype.setTransactionResult = function (transactionResult) {
+        this.transactionResult = transactionResult;
+        return this;
+    };
+    ReceiveByUserIdResult.prototype.withTransactionResult = function (transactionResult) {
+        this.transactionResult = transactionResult;
+        return this;
+    };
     ReceiveByUserIdResult.fromDict = function (data) {
         return new ReceiveByUserIdResult()
             .withItem(Gs2LoginReward.ReceiveStatus.fromDict(data["item"]))
@@ -99,10 +136,13 @@ var ReceiveByUserIdResult = /** @class */ (function () {
             .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
             .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
-            .withAutoRunStampSheet(data["autoRunStampSheet"]);
+            .withAutoRunStampSheet(data["autoRunStampSheet"])
+            .withAtomicCommit(data["atomicCommit"])
+            .withTransaction(data["transaction"])
+            .withTransactionResult(Gs2Core.TransactionResult.fromDict(data["transactionResult"]));
     };
     ReceiveByUserIdResult.prototype.toDict = function () {
-        var _a, _b;
+        var _a, _b, _c;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "bonusModel": (_b = this.getBonusModel()) === null || _b === void 0 ? void 0 : _b.toDict(),
@@ -110,6 +150,9 @@ var ReceiveByUserIdResult = /** @class */ (function () {
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
             "autoRunStampSheet": this.getAutoRunStampSheet(),
+            "atomicCommit": this.getAtomicCommit(),
+            "transaction": this.getTransaction(),
+            "transactionResult": (_c = this.getTransactionResult()) === null || _c === void 0 ? void 0 : _c.toDict(),
         };
     };
     return ReceiveByUserIdResult;

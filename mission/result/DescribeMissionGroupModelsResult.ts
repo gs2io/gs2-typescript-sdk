@@ -40,7 +40,7 @@ export default class DescribeMissionGroupModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Mission.MissionGroupModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeMissionGroupModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2Mission.MissionGroupModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

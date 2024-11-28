@@ -124,11 +124,11 @@ var BatchCompleteRequest = /** @class */ (function () {
             .withMissionTaskNames(data.missionTaskNames ?
             data.missionTaskNames.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Mission.Config.fromDict(item);
-            }) : []);
+            }) : null);
     };
     BatchCompleteRequest.prototype.toDict = function () {
         return {
@@ -138,11 +138,11 @@ var BatchCompleteRequest = /** @class */ (function () {
             "missionTaskNames": this.getMissionTaskNames() ?
                 this.getMissionTaskNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return BatchCompleteRequest;

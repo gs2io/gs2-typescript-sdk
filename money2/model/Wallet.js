@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var WalletSummary_1 = tslib_1.__importDefault(require("./WalletSummary"));
-var DepositTransaction_1 = tslib_1.__importDefault(require("./DepositTransaction"));
+var Gs2Money2 = tslib_1.__importStar(require("../../money2/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:money2:{namespaceName}:user:{userId}:wallet:{slot}";
 var Wallet = /** @class */ (function () {
     function Wallet() {
@@ -224,11 +223,11 @@ var Wallet = /** @class */ (function () {
             .withWalletId(data["walletId"])
             .withUserId(data["userId"])
             .withSlot(data["slot"])
-            .withSummary(WalletSummary_1.default.fromDict(data["summary"]))
+            .withSummary(Gs2Money2.WalletSummary.fromDict(data["summary"]))
             .withDepositTransactions(data.depositTransactions ?
             data.depositTransactions.map(function (item) {
-                return DepositTransaction_1.default.fromDict(item);
-            }) : [])
+                return Gs2Money2.DepositTransaction.fromDict(item);
+            }) : null)
             .withSharedFreeCurrency(data["sharedFreeCurrency"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -244,7 +243,7 @@ var Wallet = /** @class */ (function () {
             "depositTransactions": this.getDepositTransactions() ?
                 this.getDepositTransactions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "sharedFreeCurrency": this.getSharedFreeCurrency(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

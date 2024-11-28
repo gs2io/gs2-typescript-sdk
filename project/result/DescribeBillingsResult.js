@@ -37,14 +37,14 @@ var DescribeBillingsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Project.Billing.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeBillingsResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeBillingsResult;

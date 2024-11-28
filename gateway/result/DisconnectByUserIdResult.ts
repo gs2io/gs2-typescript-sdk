@@ -40,7 +40,7 @@ export default class DisconnectByUserIdResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Gateway.WebSocketSession.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DisconnectByUserIdResult implements IResult {
                 this.getItems()!.map((item: Gs2Gateway.WebSocketSession) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Datastore from '../../datastore/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:datastore:{namespaceName}:user:{userId}:data:{dataObjectName}";
 
 export default class DataObject implements IModel {
@@ -268,7 +270,7 @@ export default class DataObject implements IModel {
                 data.allowUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withStatus(data["status"])
             .withGeneration(data["generation"])
             .withPreviousGeneration(data["previousGeneration"])
@@ -287,7 +289,7 @@ export default class DataObject implements IModel {
                 this.getAllowUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "status": this.getStatus(),
             "generation": this.getGeneration(),
             "previousGeneration": this.getPreviousGeneration(),

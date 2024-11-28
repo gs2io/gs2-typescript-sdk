@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Friend from '../../friend/model'
 const grnFormat: string = "";
 
 export default class FriendRequest implements IModel {

@@ -212,7 +212,7 @@ export default class CreateIncrementalRateModelMasterRequest implements IRequest
                 data.acquireActions.map((item: {[key: string]: any}) => {
                     return Gs2Exchange.AcquireAction.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -232,7 +232,7 @@ export default class CreateIncrementalRateModelMasterRequest implements IRequest
                 this.getAcquireActions()!.map((item: Gs2Exchange.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

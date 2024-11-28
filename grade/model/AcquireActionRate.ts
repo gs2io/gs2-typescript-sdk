@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Grade from '../../grade/model'
+
 export default class AcquireActionRate implements IModel {
     private name: string|null = null;
     private mode: string|null = null;
@@ -77,12 +79,12 @@ export default class AcquireActionRate implements IModel {
                 data.rates.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withBigRates(data.bigRates ?
                 data.bigRates.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -93,12 +95,12 @@ export default class AcquireActionRate implements IModel {
                 this.getRates()!.map((item: number) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "bigRates": this.getBigRates() ?
                 this.getBigRates()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Deploy from '../../deploy/model'
+
 export default class ChangeSet implements IModel {
     private resourceName: string|null = null;
     private resourceType: string|null = null;

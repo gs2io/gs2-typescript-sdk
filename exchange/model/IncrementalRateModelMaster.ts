@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Exchange from '../../exchange/model'
 import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:exchange:{namespaceName}:incremental:model:{rateName}";
@@ -24,14 +26,14 @@ export default class IncrementalRateModelMaster implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private metadata: string|null = null;
-    private consumeAction: ConsumeAction|null = null;
+    private consumeAction: Gs2Exchange.ConsumeAction|null = null;
     private calculateType: string|null = null;
     private baseValue: number|null = null;
     private coefficientValue: number|null = null;
     private calculateScriptId: string|null = null;
     private exchangeCountId: string|null = null;
     private maximumExchangeCount: number|null = null;
-    private acquireActions: AcquireAction[]|null = null;
+    private acquireActions: Gs2Exchange.AcquireAction[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -160,14 +162,14 @@ export default class IncrementalRateModelMaster implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getConsumeAction(): ConsumeAction|null {
+    public getConsumeAction(): Gs2Exchange.ConsumeAction|null {
         return this.consumeAction;
     }
-    public setConsumeAction(consumeAction: ConsumeAction|null) {
+    public setConsumeAction(consumeAction: Gs2Exchange.ConsumeAction|null) {
         this.consumeAction = consumeAction;
         return this;
     }
-    public withConsumeAction(consumeAction: ConsumeAction|null): this {
+    public withConsumeAction(consumeAction: Gs2Exchange.ConsumeAction|null): this {
         this.consumeAction = consumeAction;
         return this;
     }
@@ -237,14 +239,14 @@ export default class IncrementalRateModelMaster implements IModel {
         this.maximumExchangeCount = maximumExchangeCount;
         return this;
     }
-    public getAcquireActions(): AcquireAction[]|null {
+    public getAcquireActions(): Gs2Exchange.AcquireAction[]|null {
         return this.acquireActions;
     }
-    public setAcquireActions(acquireActions: AcquireAction[]|null) {
+    public setAcquireActions(acquireActions: Gs2Exchange.AcquireAction[]|null) {
         this.acquireActions = acquireActions;
         return this;
     }
-    public withAcquireActions(acquireActions: AcquireAction[]|null): this {
+    public withAcquireActions(acquireActions: Gs2Exchange.AcquireAction[]|null): this {
         this.acquireActions = acquireActions;
         return this;
     }
@@ -291,7 +293,7 @@ export default class IncrementalRateModelMaster implements IModel {
             .withName(data["name"])
             .withDescription(data["description"])
             .withMetadata(data["metadata"])
-            .withConsumeAction(ConsumeAction.fromDict(data["consumeAction"]))
+            .withConsumeAction(Gs2Exchange.ConsumeAction.fromDict(data["consumeAction"]))
             .withCalculateType(data["calculateType"])
             .withBaseValue(data["baseValue"])
             .withCoefficientValue(data["coefficientValue"])
@@ -300,9 +302,9 @@ export default class IncrementalRateModelMaster implements IModel {
             .withMaximumExchangeCount(data["maximumExchangeCount"])
             .withAcquireActions(data.acquireActions ?
                 data.acquireActions.map((item: {[key: string]: any}) => {
-                    return AcquireAction.fromDict(item);
+                    return Gs2Exchange.AcquireAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -322,10 +324,10 @@ export default class IncrementalRateModelMaster implements IModel {
             "exchangeCountId": this.getExchangeCountId(),
             "maximumExchangeCount": this.getMaximumExchangeCount(),
             "acquireActions": this.getAcquireActions() ?
-                this.getAcquireActions()!.map((item: AcquireAction) => {
+                this.getAcquireActions()!.map((item: Gs2Exchange.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

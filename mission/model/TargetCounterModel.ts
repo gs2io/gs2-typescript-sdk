@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Mission from '../../mission/model'
+
 export default class TargetCounterModel implements IModel {
     private counterName: string|null = null;
     private scopeType: string|null = null;

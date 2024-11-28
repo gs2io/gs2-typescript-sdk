@@ -209,18 +209,18 @@ export default class CreateBonusModelMasterRequest implements IRequest {
                 data.rewards.map((item: {[key: string]: any}) => {
                     return Gs2LoginReward.Reward.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withMissedReceiveRelief(data["missedReceiveRelief"])
             .withMissedReceiveReliefVerifyActions(data.missedReceiveReliefVerifyActions ?
                 data.missedReceiveReliefVerifyActions.map((item: {[key: string]: any}) => {
                     return Gs2LoginReward.VerifyAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withMissedReceiveReliefConsumeActions(data.missedReceiveReliefConsumeActions ?
                 data.missedReceiveReliefConsumeActions.map((item: {[key: string]: any}) => {
                     return Gs2LoginReward.ConsumeAction.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -237,18 +237,18 @@ export default class CreateBonusModelMasterRequest implements IRequest {
                 this.getRewards()!.map((item: Gs2LoginReward.Reward) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "missedReceiveRelief": this.getMissedReceiveRelief(),
             "missedReceiveReliefVerifyActions": this.getMissedReceiveReliefVerifyActions() ?
                 this.getMissedReceiveReliefVerifyActions()!.map((item: Gs2LoginReward.VerifyAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "missedReceiveReliefConsumeActions": this.getMissedReceiveReliefConsumeActions() ?
                 this.getMissedReceiveReliefConsumeActions()!.map((item: Gs2LoginReward.ConsumeAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

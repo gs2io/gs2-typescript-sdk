@@ -149,7 +149,7 @@ export default class BuyRequest implements IRequest {
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Showcase.Config.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -163,7 +163,7 @@ export default class BuyRequest implements IRequest {
                 this.getConfig()!.map((item: Gs2Showcase.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

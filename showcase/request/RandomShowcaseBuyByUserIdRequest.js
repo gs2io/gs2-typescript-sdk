@@ -150,7 +150,7 @@ var RandomShowcaseBuyByUserIdRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Showcase.Config.fromDict(item);
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     RandomShowcaseBuyByUserIdRequest.prototype.toDict = function () {
@@ -163,7 +163,7 @@ var RandomShowcaseBuyByUserIdRequest = /** @class */ (function () {
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

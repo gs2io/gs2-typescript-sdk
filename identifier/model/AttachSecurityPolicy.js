@@ -108,7 +108,7 @@ var AttachSecurityPolicy = /** @class */ (function () {
             .withSecurityPolicyIds(data.securityPolicyIds ?
             data.securityPolicyIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withAttachedAt(data["attachedAt"])
             .withRevision(data["revision"]);
     };
@@ -118,7 +118,7 @@ var AttachSecurityPolicy = /** @class */ (function () {
             "securityPolicyIds": this.getSecurityPolicyIds() ?
                 this.getSecurityPolicyIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "attachedAt": this.getAttachedAt(),
             "revision": this.getRevision(),
         };

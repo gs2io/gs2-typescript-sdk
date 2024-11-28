@@ -40,7 +40,7 @@ export default class DescribeGlobalRankingModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Ranking2.GlobalRankingModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeGlobalRankingModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2Ranking2.GlobalRankingModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -1,12 +1,12 @@
 import IModel from '../../core/interface/IModel';
-import NotificationSetting from './NotificationSetting';
-import LogSetting from './LogSetting';
+import * as Gs2Distributor from '../../distributor/model';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
     private description;
     private assumeUserId;
     private autoRunStampSheetNotification;
+    private autoRunTransactionNotification;
     private logSetting;
     private createdAt;
     private updatedAt;
@@ -28,12 +28,15 @@ export default class Namespace implements IModel {
     getAssumeUserId(): string | null;
     setAssumeUserId(assumeUserId: string | null): this;
     withAssumeUserId(assumeUserId: string | null): this;
-    getAutoRunStampSheetNotification(): NotificationSetting | null;
-    setAutoRunStampSheetNotification(autoRunStampSheetNotification: NotificationSetting | null): this;
-    withAutoRunStampSheetNotification(autoRunStampSheetNotification: NotificationSetting | null): this;
-    getLogSetting(): LogSetting | null;
-    setLogSetting(logSetting: LogSetting | null): this;
-    withLogSetting(logSetting: LogSetting | null): this;
+    getAutoRunStampSheetNotification(): Gs2Distributor.NotificationSetting | null;
+    setAutoRunStampSheetNotification(autoRunStampSheetNotification: Gs2Distributor.NotificationSetting | null): this;
+    withAutoRunStampSheetNotification(autoRunStampSheetNotification: Gs2Distributor.NotificationSetting | null): this;
+    getAutoRunTransactionNotification(): Gs2Distributor.NotificationSetting | null;
+    setAutoRunTransactionNotification(autoRunTransactionNotification: Gs2Distributor.NotificationSetting | null): this;
+    withAutoRunTransactionNotification(autoRunTransactionNotification: Gs2Distributor.NotificationSetting | null): this;
+    getLogSetting(): Gs2Distributor.LogSetting | null;
+    setLogSetting(logSetting: Gs2Distributor.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2Distributor.LogSetting | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import WalletDetail from './WalletDetail';
+import * as Gs2Money from '../../money/model';
 export default class Wallet implements IModel {
     private walletId;
     private userId;
@@ -33,9 +33,9 @@ export default class Wallet implements IModel {
     getFree(): number | null;
     setFree(free: number | null): this;
     withFree(free: number | null): this;
-    getDetail(): WalletDetail[] | null;
-    setDetail(detail: WalletDetail[] | null): this;
-    withDetail(detail: WalletDetail[] | null): this;
+    getDetail(): Gs2Money.WalletDetail[] | null;
+    setDetail(detail: Gs2Money.WalletDetail[] | null): this;
+    withDetail(detail: Gs2Money.WalletDetail[] | null): this;
     getShareFree(): boolean | null;
     setShareFree(shareFree: boolean | null): this;
     withShareFree(shareFree: boolean | null): this;

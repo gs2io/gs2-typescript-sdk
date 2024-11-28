@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Limit from '../../limit/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:limit:{namespaceName}:user:{userId}:limit:{limitName}:counter:{counterName}";
 
 export default class Counter implements IModel {

@@ -97,7 +97,7 @@ export default class SetTransactionDefaultConfigRequest implements IRequest {
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Distributor.Config.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -107,7 +107,7 @@ export default class SetTransactionDefaultConfigRequest implements IRequest {
                 this.getConfig()!.map((item: Gs2Distributor.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

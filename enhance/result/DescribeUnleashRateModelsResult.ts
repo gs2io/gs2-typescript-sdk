@@ -40,7 +40,7 @@ export default class DescribeUnleashRateModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Enhance.UnleashRateModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeUnleashRateModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2Enhance.UnleashRateModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

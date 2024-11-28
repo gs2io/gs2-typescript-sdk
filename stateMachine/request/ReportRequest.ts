@@ -123,7 +123,7 @@ export default class ReportRequest implements IRequest {
                 data.events.map((item: {[key: string]: any}) => {
                     return Gs2StateMachine.Event.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -135,7 +135,7 @@ export default class ReportRequest implements IRequest {
                 this.getEvents()!.map((item: Gs2StateMachine.Event) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

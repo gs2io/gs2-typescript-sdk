@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2Lottery = tslib_1.__importStar(require("../../lottery/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:lottery:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -228,10 +227,10 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
+            .withTransactionSetting(Gs2Lottery.TransactionSetting.fromDict(data["transactionSetting"]))
             .withLotteryTriggerScriptId(data["lotteryTriggerScriptId"])
             .withChoicePrizeTableScriptId(data["choicePrizeTableScriptId"])
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withLogSetting(Gs2Lottery.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withQueueNamespaceId(data["queueNamespaceId"])

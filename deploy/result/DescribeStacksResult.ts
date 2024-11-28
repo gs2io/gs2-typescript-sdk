@@ -55,7 +55,7 @@ export default class DescribeStacksResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Deploy.Stack.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeStacksResult implements IResult {
                 this.getItems()!.map((item: Gs2Deploy.Stack) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

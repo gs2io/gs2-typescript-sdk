@@ -123,7 +123,7 @@ export default class ConsumeSimpleItemsRequest implements IRequest {
                 data.consumeCounts.map((item: {[key: string]: any}) => {
                     return Gs2Inventory.ConsumeCount.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -135,7 +135,7 @@ export default class ConsumeSimpleItemsRequest implements IRequest {
                 this.getConsumeCounts()!.map((item: Gs2Inventory.ConsumeCount) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

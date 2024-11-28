@@ -49,7 +49,7 @@ var DescribeSalesItemGroupMastersResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Showcase.SalesItemGroupMaster.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeSalesItemGroupMastersResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeSalesItemGroupMastersResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

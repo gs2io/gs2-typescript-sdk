@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import SimpleItemModel from './SimpleItemModel';
+import * as Gs2Inventory from '../../inventory/model';
 export default class SimpleInventoryModel implements IModel {
     private inventoryModelId;
     private name;
@@ -20,9 +20,9 @@ export default class SimpleInventoryModel implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
-    getSimpleItemModels(): SimpleItemModel[] | null;
-    setSimpleItemModels(simpleItemModels: SimpleItemModel[] | null): this;
-    withSimpleItemModels(simpleItemModels: SimpleItemModel[] | null): this;
+    getSimpleItemModels(): Gs2Inventory.SimpleItemModel[] | null;
+    setSimpleItemModels(simpleItemModels: Gs2Inventory.SimpleItemModel[] | null): this;
+    withSimpleItemModels(simpleItemModels: Gs2Inventory.SimpleItemModel[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): SimpleInventoryModel | null;

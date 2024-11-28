@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var VerifyReceiptEvent_1 = tslib_1.__importDefault(require("./VerifyReceiptEvent"));
-var DepositEvent_1 = tslib_1.__importDefault(require("./DepositEvent"));
-var WithdrawEvent_1 = tslib_1.__importDefault(require("./WithdrawEvent"));
+var Gs2Money2 = tslib_1.__importStar(require("../../money2/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:money2:{namespaceName}:event:{transactionId}";
 var Event = /** @class */ (function () {
     function Event() {
@@ -206,9 +204,9 @@ var Event = /** @class */ (function () {
             .withTransactionId(data["transactionId"])
             .withUserId(data["userId"])
             .withEventType(data["eventType"])
-            .withVerifyReceiptEvent(VerifyReceiptEvent_1.default.fromDict(data["verifyReceiptEvent"]))
-            .withDepositEvent(DepositEvent_1.default.fromDict(data["depositEvent"]))
-            .withWithdrawEvent(WithdrawEvent_1.default.fromDict(data["withdrawEvent"]))
+            .withVerifyReceiptEvent(Gs2Money2.VerifyReceiptEvent.fromDict(data["verifyReceiptEvent"]))
+            .withDepositEvent(Gs2Money2.DepositEvent.fromDict(data["depositEvent"]))
+            .withWithdrawEvent(Gs2Money2.WithdrawEvent.fromDict(data["withdrawEvent"]))
             .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     };

@@ -123,12 +123,12 @@ var EndRequest = /** @class */ (function () {
             .withRewards(data.rewards ?
             data.rewards.map(function (item) {
                 return Gs2Quest.Reward.fromDict(item);
-            }) : [])
+            }) : null)
             .withIsComplete(data["isComplete"])
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Quest.Config.fromDict(item);
-            }) : []);
+            }) : null);
     };
     EndRequest.prototype.toDict = function () {
         return {
@@ -137,12 +137,12 @@ var EndRequest = /** @class */ (function () {
             "rewards": this.getRewards() ?
                 this.getRewards().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "isComplete": this.getIsComplete(),
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return EndRequest;

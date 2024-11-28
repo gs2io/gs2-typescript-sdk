@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import VerifyAction from './VerifyAction';
-import ConsumeAction from './ConsumeAction';
-import AcquireAction from './AcquireAction';
+import * as Gs2Script from '../../script/model';
 export default class Transaction implements IModel {
     private transactionId;
     private verifyActions;
@@ -10,15 +8,15 @@ export default class Transaction implements IModel {
     getTransactionId(): string | null;
     setTransactionId(transactionId: string | null): this;
     withTransactionId(transactionId: string | null): this;
-    getVerifyActions(): VerifyAction[] | null;
-    setVerifyActions(verifyActions: VerifyAction[] | null): this;
-    withVerifyActions(verifyActions: VerifyAction[] | null): this;
-    getConsumeActions(): ConsumeAction[] | null;
-    setConsumeActions(consumeActions: ConsumeAction[] | null): this;
-    withConsumeActions(consumeActions: ConsumeAction[] | null): this;
-    getAcquireActions(): AcquireAction[] | null;
-    setAcquireActions(acquireActions: AcquireAction[] | null): this;
-    withAcquireActions(acquireActions: AcquireAction[] | null): this;
+    getVerifyActions(): Gs2Script.VerifyAction[] | null;
+    setVerifyActions(verifyActions: Gs2Script.VerifyAction[] | null): this;
+    withVerifyActions(verifyActions: Gs2Script.VerifyAction[] | null): this;
+    getConsumeActions(): Gs2Script.ConsumeAction[] | null;
+    setConsumeActions(consumeActions: Gs2Script.ConsumeAction[] | null): this;
+    withConsumeActions(consumeActions: Gs2Script.ConsumeAction[] | null): this;
+    getAcquireActions(): Gs2Script.AcquireAction[] | null;
+    setAcquireActions(acquireActions: Gs2Script.AcquireAction[] | null): this;
+    withAcquireActions(acquireActions: Gs2Script.AcquireAction[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): Transaction | null;

@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AppleAppStoreVerifyReceiptEvent_1 = tslib_1.__importDefault(require("./AppleAppStoreVerifyReceiptEvent"));
-var GooglePlayVerifyReceiptEvent_1 = tslib_1.__importDefault(require("./GooglePlayVerifyReceiptEvent"));
+var Gs2Money2 = tslib_1.__importStar(require("../../money2/model"));
 var VerifyReceiptEvent = /** @class */ (function () {
     function VerifyReceiptEvent() {
         this.contentName = null;
@@ -76,8 +75,8 @@ var VerifyReceiptEvent = /** @class */ (function () {
         return new VerifyReceiptEvent()
             .withContentName(data["contentName"])
             .withPlatform(data["platform"])
-            .withAppleAppStoreVerifyReceiptEvent(AppleAppStoreVerifyReceiptEvent_1.default.fromDict(data["appleAppStoreVerifyReceiptEvent"]))
-            .withGooglePlayVerifyReceiptEvent(GooglePlayVerifyReceiptEvent_1.default.fromDict(data["googlePlayVerifyReceiptEvent"]));
+            .withAppleAppStoreVerifyReceiptEvent(Gs2Money2.AppleAppStoreVerifyReceiptEvent.fromDict(data["appleAppStoreVerifyReceiptEvent"]))
+            .withGooglePlayVerifyReceiptEvent(Gs2Money2.GooglePlayVerifyReceiptEvent.fromDict(data["googlePlayVerifyReceiptEvent"]));
     };
     VerifyReceiptEvent.prototype.toDict = function () {
         var _a, _b;

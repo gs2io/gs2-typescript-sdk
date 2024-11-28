@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Identifier from '../../identifier/model'
+
 export default class ProjectToken implements IModel {
     private token: string|null = null;
     public getToken(): string|null {

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Exchange from '../../exchange/model'
 import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
@@ -24,11 +26,11 @@ export default class RateModel implements IModel {
     private rateModelId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;
-    private verifyActions: VerifyAction[]|null = null;
-    private consumeActions: ConsumeAction[]|null = null;
+    private verifyActions: Gs2Exchange.VerifyAction[]|null = null;
+    private consumeActions: Gs2Exchange.ConsumeAction[]|null = null;
     private timingType: string|null = null;
     private lockTime: number|null = null;
-    private acquireActions: AcquireAction[]|null = null;
+    private acquireActions: Gs2Exchange.AcquireAction[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -143,25 +145,25 @@ export default class RateModel implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getVerifyActions(): VerifyAction[]|null {
+    public getVerifyActions(): Gs2Exchange.VerifyAction[]|null {
         return this.verifyActions;
     }
-    public setVerifyActions(verifyActions: VerifyAction[]|null) {
+    public setVerifyActions(verifyActions: Gs2Exchange.VerifyAction[]|null) {
         this.verifyActions = verifyActions;
         return this;
     }
-    public withVerifyActions(verifyActions: VerifyAction[]|null): this {
+    public withVerifyActions(verifyActions: Gs2Exchange.VerifyAction[]|null): this {
         this.verifyActions = verifyActions;
         return this;
     }
-    public getConsumeActions(): ConsumeAction[]|null {
+    public getConsumeActions(): Gs2Exchange.ConsumeAction[]|null {
         return this.consumeActions;
     }
-    public setConsumeActions(consumeActions: ConsumeAction[]|null) {
+    public setConsumeActions(consumeActions: Gs2Exchange.ConsumeAction[]|null) {
         this.consumeActions = consumeActions;
         return this;
     }
-    public withConsumeActions(consumeActions: ConsumeAction[]|null): this {
+    public withConsumeActions(consumeActions: Gs2Exchange.ConsumeAction[]|null): this {
         this.consumeActions = consumeActions;
         return this;
     }
@@ -187,14 +189,14 @@ export default class RateModel implements IModel {
         this.lockTime = lockTime;
         return this;
     }
-    public getAcquireActions(): AcquireAction[]|null {
+    public getAcquireActions(): Gs2Exchange.AcquireAction[]|null {
         return this.acquireActions;
     }
-    public setAcquireActions(acquireActions: AcquireAction[]|null) {
+    public setAcquireActions(acquireActions: Gs2Exchange.AcquireAction[]|null) {
         this.acquireActions = acquireActions;
         return this;
     }
-    public withAcquireActions(acquireActions: AcquireAction[]|null): this {
+    public withAcquireActions(acquireActions: Gs2Exchange.AcquireAction[]|null): this {
         this.acquireActions = acquireActions;
         return this;
     }
@@ -209,21 +211,21 @@ export default class RateModel implements IModel {
             .withMetadata(data["metadata"])
             .withVerifyActions(data.verifyActions ?
                 data.verifyActions.map((item: {[key: string]: any}) => {
-                    return VerifyAction.fromDict(item);
+                    return Gs2Exchange.VerifyAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withConsumeActions(data.consumeActions ?
                 data.consumeActions.map((item: {[key: string]: any}) => {
-                    return ConsumeAction.fromDict(item);
+                    return Gs2Exchange.ConsumeAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimingType(data["timingType"])
             .withLockTime(data["lockTime"])
             .withAcquireActions(data.acquireActions ?
                 data.acquireActions.map((item: {[key: string]: any}) => {
-                    return AcquireAction.fromDict(item);
+                    return Gs2Exchange.AcquireAction.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -232,22 +234,22 @@ export default class RateModel implements IModel {
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "verifyActions": this.getVerifyActions() ?
-                this.getVerifyActions()!.map((item: VerifyAction) => {
+                this.getVerifyActions()!.map((item: Gs2Exchange.VerifyAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "consumeActions": this.getConsumeActions() ?
-                this.getConsumeActions()!.map((item: ConsumeAction) => {
+                this.getConsumeActions()!.map((item: Gs2Exchange.ConsumeAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timingType": this.getTimingType(),
             "lockTime": this.getLockTime(),
             "acquireActions": this.getAcquireActions() ?
-                this.getAcquireActions()!.map((item: AcquireAction) => {
+                this.getAcquireActions()!.map((item: Gs2Exchange.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

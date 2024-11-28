@@ -123,7 +123,7 @@ var UpdateDataObjectRequest = /** @class */ (function () {
             .withAllowUserIds(data.allowUserIds ?
             data.allowUserIds.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     UpdateDataObjectRequest.prototype.toDict = function () {
         return {
@@ -134,7 +134,7 @@ var UpdateDataObjectRequest = /** @class */ (function () {
             "allowUserIds": this.getAllowUserIds() ?
                 this.getAllowUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return UpdateDataObjectRequest;

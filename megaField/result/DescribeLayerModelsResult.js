@@ -37,14 +37,14 @@ var DescribeLayerModelsResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2MegaField.LayerModel.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DescribeLayerModelsResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DescribeLayerModelsResult;

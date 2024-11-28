@@ -40,7 +40,7 @@ export default class DescribeRateModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Exchange.RateModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeRateModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2Exchange.RateModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

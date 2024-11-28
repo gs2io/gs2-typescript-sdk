@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Chat from '../../chat/model'
 import NotificationType from './NotificationType';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:chat:{namespaceName}:user:{userId}:subscribe:{roomName}";
 
@@ -22,7 +24,7 @@ export default class Subscribe implements IModel {
     private subscribeId: string|null = null;
     private userId: string|null = null;
     private roomName: string|null = null;
-    private notificationTypes: NotificationType[]|null = null;
+    private notificationTypes: Gs2Chat.NotificationType[]|null = null;
     private createdAt: number|null = null;
     private revision: number|null = null;
 
@@ -162,14 +164,14 @@ export default class Subscribe implements IModel {
         this.roomName = roomName;
         return this;
     }
-    public getNotificationTypes(): NotificationType[]|null {
+    public getNotificationTypes(): Gs2Chat.NotificationType[]|null {
         return this.notificationTypes;
     }
-    public setNotificationTypes(notificationTypes: NotificationType[]|null) {
+    public setNotificationTypes(notificationTypes: Gs2Chat.NotificationType[]|null) {
         this.notificationTypes = notificationTypes;
         return this;
     }
-    public withNotificationTypes(notificationTypes: NotificationType[]|null): this {
+    public withNotificationTypes(notificationTypes: Gs2Chat.NotificationType[]|null): this {
         this.notificationTypes = notificationTypes;
         return this;
     }
@@ -206,9 +208,9 @@ export default class Subscribe implements IModel {
             .withRoomName(data["roomName"])
             .withNotificationTypes(data.notificationTypes ?
                 data.notificationTypes.map((item: {[key: string]: any}) => {
-                    return NotificationType.fromDict(item);
+                    return Gs2Chat.NotificationType.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     }
@@ -219,10 +221,10 @@ export default class Subscribe implements IModel {
             "userId": this.getUserId(),
             "roomName": this.getRoomName(),
             "notificationTypes": this.getNotificationTypes() ?
-                this.getNotificationTypes()!.map((item: NotificationType) => {
+                this.getNotificationTypes()!.map((item: Gs2Chat.NotificationType) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };

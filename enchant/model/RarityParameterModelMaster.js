@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var RarityParameterCountModel_1 = tslib_1.__importDefault(require("./RarityParameterCountModel"));
-var RarityParameterValueModel_1 = tslib_1.__importDefault(require("./RarityParameterValueModel"));
+var Gs2Enchant = tslib_1.__importStar(require("../../enchant/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:enchant:{namespaceName}:model:rarity:{parameterName}";
 var RarityParameterModelMaster = /** @class */ (function () {
     function RarityParameterModelMaster() {
@@ -220,12 +219,12 @@ var RarityParameterModelMaster = /** @class */ (function () {
             .withMaximumParameterCount(data["maximumParameterCount"])
             .withParameterCounts(data.parameterCounts ?
             data.parameterCounts.map(function (item) {
-                return RarityParameterCountModel_1.default.fromDict(item);
-            }) : [])
+                return Gs2Enchant.RarityParameterCountModel.fromDict(item);
+            }) : null)
             .withParameters(data.parameters ?
             data.parameters.map(function (item) {
-                return RarityParameterValueModel_1.default.fromDict(item);
-            }) : [])
+                return Gs2Enchant.RarityParameterValueModel.fromDict(item);
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -240,11 +239,11 @@ var RarityParameterModelMaster = /** @class */ (function () {
             "parameterCounts": this.getParameterCounts() ?
                 this.getParameterCounts().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "parameters": this.getParameters() ?
                 this.getParameters().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

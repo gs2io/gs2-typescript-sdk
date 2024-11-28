@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Showcase from '../../showcase/model'
+
 export default class DisplayItemMaster implements IModel {
     private displayItemId: string|null = null;
     private type: string|null = null;

@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2News from '../../news/model'
+
 export default class News implements IModel {
     private section: string|null = null;
     private content: string|null = null;

@@ -135,7 +135,7 @@ export default class SetSimpleItemsByUserIdRequest implements IRequest {
                 data.counts.map((item: {[key: string]: any}) => {
                     return Gs2Inventory.HeldCount.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -148,7 +148,7 @@ export default class SetSimpleItemsByUserIdRequest implements IRequest {
                 this.getCounts()!.map((item: Gs2Inventory.HeldCount) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

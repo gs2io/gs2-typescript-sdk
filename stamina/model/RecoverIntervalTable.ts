@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Stamina from '../../stamina/model'
+
 export default class RecoverIntervalTable implements IModel {
     private name: string|null = null;
     private metadata: string|null = null;
@@ -78,7 +80,7 @@ export default class RecoverIntervalTable implements IModel {
                 data.values.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -90,7 +92,7 @@ export default class RecoverIntervalTable implements IModel {
                 this.getValues()!.map((item: number) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

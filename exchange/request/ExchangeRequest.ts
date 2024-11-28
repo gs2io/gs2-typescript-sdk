@@ -136,7 +136,7 @@ export default class ExchangeRequest implements IRequest {
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Exchange.Config.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -149,7 +149,7 @@ export default class ExchangeRequest implements IRequest {
                 this.getConfig()!.map((item: Gs2Exchange.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

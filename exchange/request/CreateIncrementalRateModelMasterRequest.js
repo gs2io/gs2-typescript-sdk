@@ -204,7 +204,7 @@ var CreateIncrementalRateModelMasterRequest = /** @class */ (function () {
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
                 return Gs2Exchange.AcquireAction.fromDict(item);
-            }) : []);
+            }) : null);
     };
     CreateIncrementalRateModelMasterRequest.prototype.toDict = function () {
         var _a;
@@ -223,7 +223,7 @@ var CreateIncrementalRateModelMasterRequest = /** @class */ (function () {
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return CreateIncrementalRateModelMasterRequest;

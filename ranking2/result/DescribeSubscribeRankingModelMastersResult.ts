@@ -55,7 +55,7 @@ export default class DescribeSubscribeRankingModelMastersResult implements IResu
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Ranking2.SubscribeRankingModelMaster.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeSubscribeRankingModelMastersResult implements IResu
                 this.getItems()!.map((item: Gs2Ranking2.SubscribeRankingModelMaster) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

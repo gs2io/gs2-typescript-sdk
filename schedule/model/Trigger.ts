@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Schedule from '../../schedule/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:schedule:{namespaceName}:user:{userId}:trigger:{triggerName}";
 
 export default class Trigger implements IModel {

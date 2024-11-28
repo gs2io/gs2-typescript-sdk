@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Money2 from '../../money2/model'
+
 export default class GooglePlaySetting implements IModel {
     private packageName: string|null = null;
     private publicKey: string|null = null;

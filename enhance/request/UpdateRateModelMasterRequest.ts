@@ -184,13 +184,13 @@ export default class UpdateRateModelMasterRequest implements IRequest {
                 data.acquireExperienceHierarchy.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withExperienceModelId(data["experienceModelId"])
             .withBonusRates(data.bonusRates ?
                 data.bonusRates.map((item: {[key: string]: any}) => {
                     return Gs2Enhance.BonusRate.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -206,13 +206,13 @@ export default class UpdateRateModelMasterRequest implements IRequest {
                 this.getAcquireExperienceHierarchy()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "experienceModelId": this.getExperienceModelId(),
             "bonusRates": this.getBonusRates() ?
                 this.getBonusRates()!.map((item: Gs2Enhance.BonusRate) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

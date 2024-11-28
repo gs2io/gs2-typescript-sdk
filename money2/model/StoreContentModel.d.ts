@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import AppleAppStoreContent from './AppleAppStoreContent';
-import GooglePlayContent from './GooglePlayContent';
+import * as Gs2Money2 from '../../money2/model';
 export default class StoreContentModel implements IModel {
     private storeContentModelId;
     private name;
@@ -22,12 +21,12 @@ export default class StoreContentModel implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
-    getAppleAppStore(): AppleAppStoreContent | null;
-    setAppleAppStore(appleAppStore: AppleAppStoreContent | null): this;
-    withAppleAppStore(appleAppStore: AppleAppStoreContent | null): this;
-    getGooglePlay(): GooglePlayContent | null;
-    setGooglePlay(googlePlay: GooglePlayContent | null): this;
-    withGooglePlay(googlePlay: GooglePlayContent | null): this;
+    getAppleAppStore(): Gs2Money2.AppleAppStoreContent | null;
+    setAppleAppStore(appleAppStore: Gs2Money2.AppleAppStoreContent | null): this;
+    withAppleAppStore(appleAppStore: Gs2Money2.AppleAppStoreContent | null): this;
+    getGooglePlay(): Gs2Money2.GooglePlayContent | null;
+    setGooglePlay(googlePlay: Gs2Money2.GooglePlayContent | null): this;
+    withGooglePlay(googlePlay: Gs2Money2.GooglePlayContent | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): StoreContentModel | null;

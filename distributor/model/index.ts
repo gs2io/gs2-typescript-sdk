@@ -21,6 +21,10 @@ import StampSheetResult from "./StampSheetResult"
 import AcquireAction from "./AcquireAction"
 import ConsumeAction from "./ConsumeAction"
 import VerifyAction from "./VerifyAction"
+import TransactionResult from "./TransactionResult"
+import AcquireActionResult from "./AcquireActionResult"
+import ConsumeActionResult from "./ConsumeActionResult"
+import VerifyActionResult from "./VerifyActionResult"
 import Config from "./Config"
 import GitHubCheckoutSetting from "./GitHubCheckoutSetting"
 import DistributeResource from "./DistributeResource"
@@ -36,6 +40,10 @@ export {
     AcquireAction,
     ConsumeAction,
     VerifyAction,
+    TransactionResult,
+    AcquireActionResult,
+    ConsumeActionResult,
+    VerifyActionResult,
     Config,
     GitHubCheckoutSetting,
     DistributeResource,

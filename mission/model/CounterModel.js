@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var CounterScopeModel_1 = tslib_1.__importDefault(require("./CounterScopeModel"));
+var Gs2Mission = tslib_1.__importStar(require("../../mission/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}:counter:{counterName}";
 var CounterModel = /** @class */ (function () {
     function CounterModel() {
@@ -157,8 +157,8 @@ var CounterModel = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withScopes(data.scopes ?
             data.scopes.map(function (item) {
-                return CounterScopeModel_1.default.fromDict(item);
-            }) : [])
+                return Gs2Mission.CounterScopeModel.fromDict(item);
+            }) : null)
             .withChallengePeriodEventId(data["challengePeriodEventId"]);
     };
     CounterModel.prototype.toDict = function () {
@@ -169,7 +169,7 @@ var CounterModel = /** @class */ (function () {
             "scopes": this.getScopes() ?
                 this.getScopes().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "challengePeriodEventId": this.getChallengePeriodEventId(),
         };
     };

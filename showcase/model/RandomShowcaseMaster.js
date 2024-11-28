@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var RandomDisplayItemModel_1 = tslib_1.__importDefault(require("./RandomDisplayItemModel"));
+var Gs2Showcase = tslib_1.__importStar(require("../../showcase/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:showcase:{namespaceName}:random:showcase:{showcaseName}";
 var RandomShowcaseMaster = /** @class */ (function () {
     function RandomShowcaseMaster() {
@@ -243,8 +243,8 @@ var RandomShowcaseMaster = /** @class */ (function () {
             .withMaximumNumberOfChoice(data["maximumNumberOfChoice"])
             .withDisplayItems(data.displayItems ?
             data.displayItems.map(function (item) {
-                return RandomDisplayItemModel_1.default.fromDict(item);
-            }) : [])
+                return Gs2Showcase.RandomDisplayItemModel.fromDict(item);
+            }) : null)
             .withBaseTimestamp(data["baseTimestamp"])
             .withResetIntervalHours(data["resetIntervalHours"])
             .withSalesPeriodEventId(data["salesPeriodEventId"])
@@ -262,7 +262,7 @@ var RandomShowcaseMaster = /** @class */ (function () {
             "displayItems": this.getDisplayItems() ?
                 this.getDisplayItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "baseTimestamp": this.getBaseTimestamp(),
             "resetIntervalHours": this.getResetIntervalHours(),
             "salesPeriodEventId": this.getSalesPeriodEventId(),

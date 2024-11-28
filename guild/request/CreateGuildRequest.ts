@@ -226,7 +226,7 @@ export default class CreateGuildRequest implements IRequest {
                 data.customRoles.map((item: {[key: string]: any}) => {
                     return Gs2Guild.RoleModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withGuildMemberDefaultRole(data["guildMemberDefaultRole"]);
     }
 
@@ -246,7 +246,7 @@ export default class CreateGuildRequest implements IRequest {
                 this.getCustomRoles()!.map((item: Gs2Guild.RoleModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "guildMemberDefaultRole": this.getGuildMemberDefaultRole(),
         };
     }

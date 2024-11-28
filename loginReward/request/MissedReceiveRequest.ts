@@ -136,7 +136,7 @@ export default class MissedReceiveRequest implements IRequest {
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2LoginReward.Config.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -149,7 +149,7 @@ export default class MissedReceiveRequest implements IRequest {
                 this.getConfig()!.map((item: Gs2LoginReward.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

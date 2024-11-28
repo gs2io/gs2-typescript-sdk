@@ -182,7 +182,7 @@ export default class QueryInGameLogRequest implements IRequest {
                 data.tags.map((item: {[key: string]: any}) => {
                     return Gs2Log.InGameLogTag.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withBegin(data["begin"])
             .withEnd(data["end"])
             .withLongTerm(data["longTerm"])
@@ -199,7 +199,7 @@ export default class QueryInGameLogRequest implements IRequest {
                 this.getTags()!.map((item: Gs2Log.InGameLogTag) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "begin": this.getBegin(),
             "end": this.getEnd(),
             "longTerm": this.getLongTerm(),

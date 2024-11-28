@@ -99,7 +99,7 @@ var EndRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Enhance.Config.fromDict(item);
-            }) : []);
+            }) : null);
     };
     EndRequest.prototype.toDict = function () {
         return {
@@ -108,7 +108,7 @@ var EndRequest = /** @class */ (function () {
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return EndRequest;

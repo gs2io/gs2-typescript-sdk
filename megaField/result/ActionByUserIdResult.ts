@@ -40,7 +40,7 @@ export default class ActionByUserIdResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2MegaField.Spatial.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class ActionByUserIdResult implements IResult {
                 this.getItems()!.map((item: Gs2MegaField.Spatial) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

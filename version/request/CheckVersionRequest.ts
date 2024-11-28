@@ -110,7 +110,7 @@ export default class CheckVersionRequest implements IRequest {
                 data.targetVersions.map((item: {[key: string]: any}) => {
                     return Gs2Version.TargetVersion.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -121,7 +121,7 @@ export default class CheckVersionRequest implements IRequest {
                 this.getTargetVersions()!.map((item: Gs2Version.TargetVersion) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

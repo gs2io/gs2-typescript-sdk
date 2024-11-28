@@ -74,7 +74,7 @@ var AuthenticationResult = /** @class */ (function () {
             .withBanStatuses(data.banStatuses ?
             data.banStatuses.map(function (item) {
                 return Gs2Account.BanStatus.fromDict(item);
-            }) : [])
+            }) : null)
             .withBody(data["body"])
             .withSignature(data["signature"]);
     };
@@ -85,7 +85,7 @@ var AuthenticationResult = /** @class */ (function () {
             "banStatuses": this.getBanStatuses() ?
                 this.getBanStatuses().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "body": this.getBody(),
             "signature": this.getSignature(),
         };

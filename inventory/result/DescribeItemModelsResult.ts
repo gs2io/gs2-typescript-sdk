@@ -40,7 +40,7 @@ export default class DescribeItemModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Inventory.ItemModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeItemModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2Inventory.ItemModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

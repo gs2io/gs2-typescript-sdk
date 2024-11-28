@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var RandomStatus_1 = tslib_1.__importDefault(require("./RandomStatus"));
-var StackEntry_1 = tslib_1.__importDefault(require("./StackEntry"));
-var Variable_1 = tslib_1.__importDefault(require("./Variable"));
+var Gs2StateMachine = tslib_1.__importStar(require("../../stateMachine/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:stateMachine:{namespaceName}:user:{userId}:status:{statusName}";
 var Status = /** @class */ (function () {
     function Status() {
@@ -288,15 +286,15 @@ var Status = /** @class */ (function () {
             .withStateMachineVersion(data["stateMachineVersion"])
             .withEnableSpeculativeExecution(data["enableSpeculativeExecution"])
             .withStateMachineDefinition(data["stateMachineDefinition"])
-            .withRandomStatus(RandomStatus_1.default.fromDict(data["randomStatus"]))
+            .withRandomStatus(Gs2StateMachine.RandomStatus.fromDict(data["randomStatus"]))
             .withStacks(data.stacks ?
             data.stacks.map(function (item) {
-                return StackEntry_1.default.fromDict(item);
-            }) : [])
+                return Gs2StateMachine.StackEntry.fromDict(item);
+            }) : null)
             .withVariables(data.variables ?
             data.variables.map(function (item) {
-                return Variable_1.default.fromDict(item);
-            }) : [])
+                return Gs2StateMachine.Variable.fromDict(item);
+            }) : null)
             .withStatus(data["status"])
             .withLastError(data["lastError"])
             .withTransitionCount(data["transitionCount"])
@@ -316,11 +314,11 @@ var Status = /** @class */ (function () {
             "stacks": this.getStacks() ?
                 this.getStacks().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "variables": this.getVariables() ?
                 this.getVariables().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "status": this.getStatus(),
             "lastError": this.getLastError(),
             "transitionCount": this.getTransitionCount(),

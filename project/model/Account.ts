@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Project from '../../project/model'
 import TwoFactorAuthenticationSetting from './TwoFactorAuthenticationSetting';
 const grnFormat: string = "grn:gs2:::gs2:account:{accountName}";
 
@@ -25,7 +27,7 @@ export default class Account implements IModel {
     private fullName: string|null = null;
     private companyName: string|null = null;
     private enableTwoFactorAuthentication: string|null = null;
-    private twoFactorAuthenticationSetting: TwoFactorAuthenticationSetting|null = null;
+    private twoFactorAuthenticationSetting: Gs2Project.TwoFactorAuthenticationSetting|null = null;
     private status: string|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -119,14 +121,14 @@ export default class Account implements IModel {
         this.enableTwoFactorAuthentication = enableTwoFactorAuthentication;
         return this;
     }
-    public getTwoFactorAuthenticationSetting(): TwoFactorAuthenticationSetting|null {
+    public getTwoFactorAuthenticationSetting(): Gs2Project.TwoFactorAuthenticationSetting|null {
         return this.twoFactorAuthenticationSetting;
     }
-    public setTwoFactorAuthenticationSetting(twoFactorAuthenticationSetting: TwoFactorAuthenticationSetting|null) {
+    public setTwoFactorAuthenticationSetting(twoFactorAuthenticationSetting: Gs2Project.TwoFactorAuthenticationSetting|null) {
         this.twoFactorAuthenticationSetting = twoFactorAuthenticationSetting;
         return this;
     }
-    public withTwoFactorAuthenticationSetting(twoFactorAuthenticationSetting: TwoFactorAuthenticationSetting|null): this {
+    public withTwoFactorAuthenticationSetting(twoFactorAuthenticationSetting: Gs2Project.TwoFactorAuthenticationSetting|null): this {
         this.twoFactorAuthenticationSetting = twoFactorAuthenticationSetting;
         return this;
     }
@@ -175,7 +177,7 @@ export default class Account implements IModel {
             .withFullName(data["fullName"])
             .withCompanyName(data["companyName"])
             .withEnableTwoFactorAuthentication(data["enableTwoFactorAuthentication"])
-            .withTwoFactorAuthenticationSetting(TwoFactorAuthenticationSetting.fromDict(data["twoFactorAuthenticationSetting"]))
+            .withTwoFactorAuthenticationSetting(Gs2Project.TwoFactorAuthenticationSetting.fromDict(data["twoFactorAuthenticationSetting"]))
             .withStatus(data["status"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"]);

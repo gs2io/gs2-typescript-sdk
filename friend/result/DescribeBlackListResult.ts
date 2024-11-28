@@ -54,7 +54,7 @@ export default class DescribeBlackListResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -64,7 +64,7 @@ export default class DescribeBlackListResult implements IResult {
                 this.getItems()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Money2 from '../../money2/model'
 import AppleAppStoreContent from './AppleAppStoreContent';
 import GooglePlayContent from './GooglePlayContent';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:money2:{namespaceName}:model:content:{contentName}";
@@ -23,8 +25,8 @@ export default class StoreContentModel implements IModel {
     private storeContentModelId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;
-    private appleAppStore: AppleAppStoreContent|null = null;
-    private googlePlay: GooglePlayContent|null = null;
+    private appleAppStore: Gs2Money2.AppleAppStoreContent|null = null;
+    private googlePlay: Gs2Money2.GooglePlayContent|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -139,25 +141,25 @@ export default class StoreContentModel implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getAppleAppStore(): AppleAppStoreContent|null {
+    public getAppleAppStore(): Gs2Money2.AppleAppStoreContent|null {
         return this.appleAppStore;
     }
-    public setAppleAppStore(appleAppStore: AppleAppStoreContent|null) {
+    public setAppleAppStore(appleAppStore: Gs2Money2.AppleAppStoreContent|null) {
         this.appleAppStore = appleAppStore;
         return this;
     }
-    public withAppleAppStore(appleAppStore: AppleAppStoreContent|null): this {
+    public withAppleAppStore(appleAppStore: Gs2Money2.AppleAppStoreContent|null): this {
         this.appleAppStore = appleAppStore;
         return this;
     }
-    public getGooglePlay(): GooglePlayContent|null {
+    public getGooglePlay(): Gs2Money2.GooglePlayContent|null {
         return this.googlePlay;
     }
-    public setGooglePlay(googlePlay: GooglePlayContent|null) {
+    public setGooglePlay(googlePlay: Gs2Money2.GooglePlayContent|null) {
         this.googlePlay = googlePlay;
         return this;
     }
-    public withGooglePlay(googlePlay: GooglePlayContent|null): this {
+    public withGooglePlay(googlePlay: Gs2Money2.GooglePlayContent|null): this {
         this.googlePlay = googlePlay;
         return this;
     }
@@ -170,8 +172,8 @@ export default class StoreContentModel implements IModel {
             .withStoreContentModelId(data["storeContentModelId"])
             .withName(data["name"])
             .withMetadata(data["metadata"])
-            .withAppleAppStore(AppleAppStoreContent.fromDict(data["appleAppStore"]))
-            .withGooglePlay(GooglePlayContent.fromDict(data["googlePlay"]));
+            .withAppleAppStore(Gs2Money2.AppleAppStoreContent.fromDict(data["appleAppStore"]))
+            .withGooglePlay(Gs2Money2.GooglePlayContent.fromDict(data["googlePlay"]));
     }
 
     public toDict(): {[key: string]: any} {

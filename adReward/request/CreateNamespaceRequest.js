@@ -160,7 +160,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
             .withAppLovinMaxes(data.appLovinMaxes ?
             data.appLovinMaxes.map(function (item) {
                 return Gs2AdReward.AppLovinMax.fromDict(item);
-            }) : [])
+            }) : null)
             .withDescription(data["description"])
             .withAcquirePointScript(Gs2AdReward.ScriptSetting.fromDict(data["acquirePointScript"]))
             .withConsumePointScript(Gs2AdReward.ScriptSetting.fromDict(data["consumePointScript"]))
@@ -176,7 +176,7 @@ var CreateNamespaceRequest = /** @class */ (function () {
             "appLovinMaxes": this.getAppLovinMaxes() ?
                 this.getAppLovinMaxes().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "description": this.getDescription(),
             "acquirePointScript": (_c = this.getAcquirePointScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "consumePointScript": (_d = this.getConsumePointScript()) === null || _d === void 0 ? void 0 : _d.toDict(),

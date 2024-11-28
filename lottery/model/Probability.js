@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var DrawnPrize_1 = tslib_1.__importDefault(require("./DrawnPrize"));
+var Gs2Lottery = tslib_1.__importStar(require("../../lottery/model"));
 var Probability = /** @class */ (function () {
     function Probability() {
         this.prize = null;
@@ -49,7 +49,7 @@ var Probability = /** @class */ (function () {
             return null;
         }
         return new Probability()
-            .withPrize(DrawnPrize_1.default.fromDict(data["prize"]))
+            .withPrize(Gs2Lottery.DrawnPrize.fromDict(data["prize"]))
             .withRate(data["rate"]);
     };
     Probability.prototype.toDict = function () {

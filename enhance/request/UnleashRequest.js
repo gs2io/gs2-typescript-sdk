@@ -137,11 +137,11 @@ var UnleashRequest = /** @class */ (function () {
             .withMaterials(data.materials ?
             data.materials.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Enhance.Config.fromDict(item);
-            }) : []);
+            }) : null);
     };
     UnleashRequest.prototype.toDict = function () {
         return {
@@ -152,11 +152,11 @@ var UnleashRequest = /** @class */ (function () {
             "materials": this.getMaterials() ?
                 this.getMaterials().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return UnleashRequest;

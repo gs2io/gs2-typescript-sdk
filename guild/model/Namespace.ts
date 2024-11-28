@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Guild from '../../guild/model'
 import NotificationSetting from './NotificationSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
@@ -24,18 +26,18 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
-    private changeNotification: NotificationSetting|null = null;
-    private joinNotification: NotificationSetting|null = null;
-    private leaveNotification: NotificationSetting|null = null;
-    private changeMemberNotification: NotificationSetting|null = null;
-    private receiveRequestNotification: NotificationSetting|null = null;
-    private removeRequestNotification: NotificationSetting|null = null;
-    private createGuildScript: ScriptSetting|null = null;
-    private updateGuildScript: ScriptSetting|null = null;
-    private joinGuildScript: ScriptSetting|null = null;
-    private leaveGuildScript: ScriptSetting|null = null;
-    private changeRoleScript: ScriptSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private changeNotification: Gs2Guild.NotificationSetting|null = null;
+    private joinNotification: Gs2Guild.NotificationSetting|null = null;
+    private leaveNotification: Gs2Guild.NotificationSetting|null = null;
+    private changeMemberNotification: Gs2Guild.NotificationSetting|null = null;
+    private receiveRequestNotification: Gs2Guild.NotificationSetting|null = null;
+    private removeRequestNotification: Gs2Guild.NotificationSetting|null = null;
+    private createGuildScript: Gs2Guild.ScriptSetting|null = null;
+    private updateGuildScript: Gs2Guild.ScriptSetting|null = null;
+    private joinGuildScript: Gs2Guild.ScriptSetting|null = null;
+    private leaveGuildScript: Gs2Guild.ScriptSetting|null = null;
+    private changeRoleScript: Gs2Guild.ScriptSetting|null = null;
+    private logSetting: Gs2Guild.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -132,135 +134,135 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
-    public getChangeNotification(): NotificationSetting|null {
+    public getChangeNotification(): Gs2Guild.NotificationSetting|null {
         return this.changeNotification;
     }
-    public setChangeNotification(changeNotification: NotificationSetting|null) {
+    public setChangeNotification(changeNotification: Gs2Guild.NotificationSetting|null) {
         this.changeNotification = changeNotification;
         return this;
     }
-    public withChangeNotification(changeNotification: NotificationSetting|null): this {
+    public withChangeNotification(changeNotification: Gs2Guild.NotificationSetting|null): this {
         this.changeNotification = changeNotification;
         return this;
     }
-    public getJoinNotification(): NotificationSetting|null {
+    public getJoinNotification(): Gs2Guild.NotificationSetting|null {
         return this.joinNotification;
     }
-    public setJoinNotification(joinNotification: NotificationSetting|null) {
+    public setJoinNotification(joinNotification: Gs2Guild.NotificationSetting|null) {
         this.joinNotification = joinNotification;
         return this;
     }
-    public withJoinNotification(joinNotification: NotificationSetting|null): this {
+    public withJoinNotification(joinNotification: Gs2Guild.NotificationSetting|null): this {
         this.joinNotification = joinNotification;
         return this;
     }
-    public getLeaveNotification(): NotificationSetting|null {
+    public getLeaveNotification(): Gs2Guild.NotificationSetting|null {
         return this.leaveNotification;
     }
-    public setLeaveNotification(leaveNotification: NotificationSetting|null) {
+    public setLeaveNotification(leaveNotification: Gs2Guild.NotificationSetting|null) {
         this.leaveNotification = leaveNotification;
         return this;
     }
-    public withLeaveNotification(leaveNotification: NotificationSetting|null): this {
+    public withLeaveNotification(leaveNotification: Gs2Guild.NotificationSetting|null): this {
         this.leaveNotification = leaveNotification;
         return this;
     }
-    public getChangeMemberNotification(): NotificationSetting|null {
+    public getChangeMemberNotification(): Gs2Guild.NotificationSetting|null {
         return this.changeMemberNotification;
     }
-    public setChangeMemberNotification(changeMemberNotification: NotificationSetting|null) {
+    public setChangeMemberNotification(changeMemberNotification: Gs2Guild.NotificationSetting|null) {
         this.changeMemberNotification = changeMemberNotification;
         return this;
     }
-    public withChangeMemberNotification(changeMemberNotification: NotificationSetting|null): this {
+    public withChangeMemberNotification(changeMemberNotification: Gs2Guild.NotificationSetting|null): this {
         this.changeMemberNotification = changeMemberNotification;
         return this;
     }
-    public getReceiveRequestNotification(): NotificationSetting|null {
+    public getReceiveRequestNotification(): Gs2Guild.NotificationSetting|null {
         return this.receiveRequestNotification;
     }
-    public setReceiveRequestNotification(receiveRequestNotification: NotificationSetting|null) {
+    public setReceiveRequestNotification(receiveRequestNotification: Gs2Guild.NotificationSetting|null) {
         this.receiveRequestNotification = receiveRequestNotification;
         return this;
     }
-    public withReceiveRequestNotification(receiveRequestNotification: NotificationSetting|null): this {
+    public withReceiveRequestNotification(receiveRequestNotification: Gs2Guild.NotificationSetting|null): this {
         this.receiveRequestNotification = receiveRequestNotification;
         return this;
     }
-    public getRemoveRequestNotification(): NotificationSetting|null {
+    public getRemoveRequestNotification(): Gs2Guild.NotificationSetting|null {
         return this.removeRequestNotification;
     }
-    public setRemoveRequestNotification(removeRequestNotification: NotificationSetting|null) {
+    public setRemoveRequestNotification(removeRequestNotification: Gs2Guild.NotificationSetting|null) {
         this.removeRequestNotification = removeRequestNotification;
         return this;
     }
-    public withRemoveRequestNotification(removeRequestNotification: NotificationSetting|null): this {
+    public withRemoveRequestNotification(removeRequestNotification: Gs2Guild.NotificationSetting|null): this {
         this.removeRequestNotification = removeRequestNotification;
         return this;
     }
-    public getCreateGuildScript(): ScriptSetting|null {
+    public getCreateGuildScript(): Gs2Guild.ScriptSetting|null {
         return this.createGuildScript;
     }
-    public setCreateGuildScript(createGuildScript: ScriptSetting|null) {
+    public setCreateGuildScript(createGuildScript: Gs2Guild.ScriptSetting|null) {
         this.createGuildScript = createGuildScript;
         return this;
     }
-    public withCreateGuildScript(createGuildScript: ScriptSetting|null): this {
+    public withCreateGuildScript(createGuildScript: Gs2Guild.ScriptSetting|null): this {
         this.createGuildScript = createGuildScript;
         return this;
     }
-    public getUpdateGuildScript(): ScriptSetting|null {
+    public getUpdateGuildScript(): Gs2Guild.ScriptSetting|null {
         return this.updateGuildScript;
     }
-    public setUpdateGuildScript(updateGuildScript: ScriptSetting|null) {
+    public setUpdateGuildScript(updateGuildScript: Gs2Guild.ScriptSetting|null) {
         this.updateGuildScript = updateGuildScript;
         return this;
     }
-    public withUpdateGuildScript(updateGuildScript: ScriptSetting|null): this {
+    public withUpdateGuildScript(updateGuildScript: Gs2Guild.ScriptSetting|null): this {
         this.updateGuildScript = updateGuildScript;
         return this;
     }
-    public getJoinGuildScript(): ScriptSetting|null {
+    public getJoinGuildScript(): Gs2Guild.ScriptSetting|null {
         return this.joinGuildScript;
     }
-    public setJoinGuildScript(joinGuildScript: ScriptSetting|null) {
+    public setJoinGuildScript(joinGuildScript: Gs2Guild.ScriptSetting|null) {
         this.joinGuildScript = joinGuildScript;
         return this;
     }
-    public withJoinGuildScript(joinGuildScript: ScriptSetting|null): this {
+    public withJoinGuildScript(joinGuildScript: Gs2Guild.ScriptSetting|null): this {
         this.joinGuildScript = joinGuildScript;
         return this;
     }
-    public getLeaveGuildScript(): ScriptSetting|null {
+    public getLeaveGuildScript(): Gs2Guild.ScriptSetting|null {
         return this.leaveGuildScript;
     }
-    public setLeaveGuildScript(leaveGuildScript: ScriptSetting|null) {
+    public setLeaveGuildScript(leaveGuildScript: Gs2Guild.ScriptSetting|null) {
         this.leaveGuildScript = leaveGuildScript;
         return this;
     }
-    public withLeaveGuildScript(leaveGuildScript: ScriptSetting|null): this {
+    public withLeaveGuildScript(leaveGuildScript: Gs2Guild.ScriptSetting|null): this {
         this.leaveGuildScript = leaveGuildScript;
         return this;
     }
-    public getChangeRoleScript(): ScriptSetting|null {
+    public getChangeRoleScript(): Gs2Guild.ScriptSetting|null {
         return this.changeRoleScript;
     }
-    public setChangeRoleScript(changeRoleScript: ScriptSetting|null) {
+    public setChangeRoleScript(changeRoleScript: Gs2Guild.ScriptSetting|null) {
         this.changeRoleScript = changeRoleScript;
         return this;
     }
-    public withChangeRoleScript(changeRoleScript: ScriptSetting|null): this {
+    public withChangeRoleScript(changeRoleScript: Gs2Guild.ScriptSetting|null): this {
         this.changeRoleScript = changeRoleScript;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Guild.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Guild.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Guild.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -306,18 +308,18 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withChangeNotification(NotificationSetting.fromDict(data["changeNotification"]))
-            .withJoinNotification(NotificationSetting.fromDict(data["joinNotification"]))
-            .withLeaveNotification(NotificationSetting.fromDict(data["leaveNotification"]))
-            .withChangeMemberNotification(NotificationSetting.fromDict(data["changeMemberNotification"]))
-            .withReceiveRequestNotification(NotificationSetting.fromDict(data["receiveRequestNotification"]))
-            .withRemoveRequestNotification(NotificationSetting.fromDict(data["removeRequestNotification"]))
-            .withCreateGuildScript(ScriptSetting.fromDict(data["createGuildScript"]))
-            .withUpdateGuildScript(ScriptSetting.fromDict(data["updateGuildScript"]))
-            .withJoinGuildScript(ScriptSetting.fromDict(data["joinGuildScript"]))
-            .withLeaveGuildScript(ScriptSetting.fromDict(data["leaveGuildScript"]))
-            .withChangeRoleScript(ScriptSetting.fromDict(data["changeRoleScript"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withChangeNotification(Gs2Guild.NotificationSetting.fromDict(data["changeNotification"]))
+            .withJoinNotification(Gs2Guild.NotificationSetting.fromDict(data["joinNotification"]))
+            .withLeaveNotification(Gs2Guild.NotificationSetting.fromDict(data["leaveNotification"]))
+            .withChangeMemberNotification(Gs2Guild.NotificationSetting.fromDict(data["changeMemberNotification"]))
+            .withReceiveRequestNotification(Gs2Guild.NotificationSetting.fromDict(data["receiveRequestNotification"]))
+            .withRemoveRequestNotification(Gs2Guild.NotificationSetting.fromDict(data["removeRequestNotification"]))
+            .withCreateGuildScript(Gs2Guild.ScriptSetting.fromDict(data["createGuildScript"]))
+            .withUpdateGuildScript(Gs2Guild.ScriptSetting.fromDict(data["updateGuildScript"]))
+            .withJoinGuildScript(Gs2Guild.ScriptSetting.fromDict(data["joinGuildScript"]))
+            .withLeaveGuildScript(Gs2Guild.ScriptSetting.fromDict(data["leaveGuildScript"]))
+            .withChangeRoleScript(Gs2Guild.ScriptSetting.fromDict(data["changeRoleScript"]))
+            .withLogSetting(Gs2Guild.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

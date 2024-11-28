@@ -167,7 +167,7 @@ var Follow = /** @class */ (function () {
             .withTargetUserIds(data.targetUserIds ?
             data.targetUserIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -179,7 +179,7 @@ var Follow = /** @class */ (function () {
             "targetUserIds": this.getTargetUserIds() ?
                 this.getTargetUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

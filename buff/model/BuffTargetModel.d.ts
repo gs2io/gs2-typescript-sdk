@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import BuffTargetGrn from './BuffTargetGrn';
+import * as Gs2Buff from '../../buff/model';
 export default class BuffTargetModel implements IModel {
     private targetModelName;
     private targetFieldName;
@@ -11,9 +11,9 @@ export default class BuffTargetModel implements IModel {
     getTargetFieldName(): string | null;
     setTargetFieldName(targetFieldName: string | null): this;
     withTargetFieldName(targetFieldName: string | null): this;
-    getConditionGrns(): BuffTargetGrn[] | null;
-    setConditionGrns(conditionGrns: BuffTargetGrn[] | null): this;
-    withConditionGrns(conditionGrns: BuffTargetGrn[] | null): this;
+    getConditionGrns(): Gs2Buff.BuffTargetGrn[] | null;
+    setConditionGrns(conditionGrns: Gs2Buff.BuffTargetGrn[] | null): this;
+    withConditionGrns(conditionGrns: Gs2Buff.BuffTargetGrn[] | null): this;
     getRate(): number | null;
     setRate(rate: number | null): this;
     withRate(rate: number | null): this;

@@ -55,7 +55,7 @@ export default class DescribeAreaModelMastersResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2MegaField.AreaModelMaster.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeAreaModelMastersResult implements IResult {
                 this.getItems()!.map((item: Gs2MegaField.AreaModelMaster) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

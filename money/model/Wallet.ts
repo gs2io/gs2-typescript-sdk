@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Money from '../../money/model'
 import WalletDetail from './WalletDetail';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:money:{namespaceName}:user:{userId}:wallet:{slot}";
 
@@ -24,7 +26,7 @@ export default class Wallet implements IModel {
     private slot: number|null = null;
     private paid: number|null = null;
     private free: number|null = null;
-    private detail: WalletDetail[]|null = null;
+    private detail: Gs2Money.WalletDetail[]|null = null;
     private shareFree: boolean|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
@@ -188,14 +190,14 @@ export default class Wallet implements IModel {
         this.free = free;
         return this;
     }
-    public getDetail(): WalletDetail[]|null {
+    public getDetail(): Gs2Money.WalletDetail[]|null {
         return this.detail;
     }
-    public setDetail(detail: WalletDetail[]|null) {
+    public setDetail(detail: Gs2Money.WalletDetail[]|null) {
         this.detail = detail;
         return this;
     }
-    public withDetail(detail: WalletDetail[]|null): this {
+    public withDetail(detail: Gs2Money.WalletDetail[]|null): this {
         this.detail = detail;
         return this;
     }
@@ -256,9 +258,9 @@ export default class Wallet implements IModel {
             .withFree(data["free"])
             .withDetail(data.detail ?
                 data.detail.map((item: {[key: string]: any}) => {
-                    return WalletDetail.fromDict(item);
+                    return Gs2Money.WalletDetail.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withShareFree(data["shareFree"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -273,10 +275,10 @@ export default class Wallet implements IModel {
             "paid": this.getPaid(),
             "free": this.getFree(),
             "detail": this.getDetail() ?
-                this.getDetail()!.map((item: WalletDetail) => {
+                this.getDetail()!.map((item: Gs2Money.WalletDetail) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "shareFree": this.getShareFree(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

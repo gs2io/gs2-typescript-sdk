@@ -40,7 +40,7 @@ export default class DescribeGlobalMessagesResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Inbox.GlobalMessage.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeGlobalMessagesResult implements IResult {
                 this.getItems()!.map((item: Gs2Inbox.GlobalMessage) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

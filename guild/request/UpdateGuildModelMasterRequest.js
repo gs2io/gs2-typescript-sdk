@@ -212,7 +212,7 @@ var UpdateGuildModelMasterRequest = /** @class */ (function () {
             .withRoles(data.roles ?
             data.roles.map(function (item) {
                 return Gs2Guild.RoleModel.fromDict(item);
-            }) : [])
+            }) : null)
             .withGuildMasterRole(data["guildMasterRole"])
             .withGuildMemberDefaultRole(data["guildMemberDefaultRole"])
             .withRejoinCoolTimeMinutes(data["rejoinCoolTimeMinutes"])
@@ -231,7 +231,7 @@ var UpdateGuildModelMasterRequest = /** @class */ (function () {
             "roles": this.getRoles() ?
                 this.getRoles().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "guildMasterRole": this.getGuildMasterRole(),
             "guildMemberDefaultRole": this.getGuildMemberDefaultRole(),
             "rejoinCoolTimeMinutes": this.getRejoinCoolTimeMinutes(),

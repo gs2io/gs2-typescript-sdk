@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ChangeStateEvent_1 = tslib_1.__importDefault(require("./ChangeStateEvent"));
-var EmitEvent_1 = tslib_1.__importDefault(require("./EmitEvent"));
+var Gs2StateMachine = tslib_1.__importStar(require("../../stateMachine/model"));
 var Event = /** @class */ (function () {
     function Event() {
         this.eventType = null;
@@ -63,8 +62,8 @@ var Event = /** @class */ (function () {
         }
         return new Event()
             .withEventType(data["eventType"])
-            .withChangeStateEvent(ChangeStateEvent_1.default.fromDict(data["changeStateEvent"]))
-            .withEmitEvent(EmitEvent_1.default.fromDict(data["emitEvent"]));
+            .withChangeStateEvent(Gs2StateMachine.ChangeStateEvent.fromDict(data["changeStateEvent"]))
+            .withEmitEvent(Gs2StateMachine.EmitEvent.fromDict(data["emitEvent"]));
     };
     Event.prototype.toDict = function () {
         var _a, _b;

@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var NotificationType_1 = tslib_1.__importDefault(require("./NotificationType"));
+var Gs2Chat = tslib_1.__importStar(require("../../chat/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:chat:{namespaceName}:user:{userId}:subscribe:{roomName}";
 var Subscribe = /** @class */ (function () {
     function Subscribe() {
@@ -189,8 +189,8 @@ var Subscribe = /** @class */ (function () {
             .withRoomName(data["roomName"])
             .withNotificationTypes(data.notificationTypes ?
             data.notificationTypes.map(function (item) {
-                return NotificationType_1.default.fromDict(item);
-            }) : [])
+                return Gs2Chat.NotificationType.fromDict(item);
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     };
@@ -202,7 +202,7 @@ var Subscribe = /** @class */ (function () {
             "notificationTypes": this.getNotificationTypes() ?
                 this.getNotificationTypes().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };

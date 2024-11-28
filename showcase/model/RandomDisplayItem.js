@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var VerifyAction_1 = tslib_1.__importDefault(require("./VerifyAction"));
-var ConsumeAction_1 = tslib_1.__importDefault(require("./ConsumeAction"));
-var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
+var Gs2Showcase = tslib_1.__importStar(require("../../showcase/model"));
 var RandomDisplayItem = /** @class */ (function () {
     function RandomDisplayItem() {
         this.showcaseName = null;
@@ -128,16 +126,16 @@ var RandomDisplayItem = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withVerifyActions(data.verifyActions ?
             data.verifyActions.map(function (item) {
-                return VerifyAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2Showcase.VerifyAction.fromDict(item);
+            }) : null)
             .withConsumeActions(data.consumeActions ?
             data.consumeActions.map(function (item) {
-                return ConsumeAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2Showcase.ConsumeAction.fromDict(item);
+            }) : null)
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
-                return AcquireAction_1.default.fromDict(item);
-            }) : [])
+                return Gs2Showcase.AcquireAction.fromDict(item);
+            }) : null)
             .withCurrentPurchaseCount(data["currentPurchaseCount"])
             .withMaximumPurchaseCount(data["maximumPurchaseCount"]);
     };
@@ -149,15 +147,15 @@ var RandomDisplayItem = /** @class */ (function () {
             "verifyActions": this.getVerifyActions() ?
                 this.getVerifyActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "consumeActions": this.getConsumeActions() ?
                 this.getConsumeActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "currentPurchaseCount": this.getCurrentPurchaseCount(),
             "maximumPurchaseCount": this.getMaximumPurchaseCount(),
         };

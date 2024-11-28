@@ -40,7 +40,7 @@ export default class GetHasSecurityPolicyResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Identifier.SecurityPolicy.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class GetHasSecurityPolicyResult implements IResult {
                 this.getItems()!.map((item: Gs2Identifier.SecurityPolicy) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

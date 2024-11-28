@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import Scope from './Scope';
-import GlobalRankingSetting from './GlobalRankingSetting';
+import * as Gs2Ranking from '../../ranking/model';
 export default class CategoryModel implements IModel {
     private categoryModelId;
     private name;
@@ -50,9 +49,9 @@ export default class CategoryModel implements IModel {
     getScope(): string | null;
     setScope(scope: string | null): this;
     withScope(scope: string | null): this;
-    getGlobalRankingSetting(): GlobalRankingSetting | null;
-    setGlobalRankingSetting(globalRankingSetting: GlobalRankingSetting | null): this;
-    withGlobalRankingSetting(globalRankingSetting: GlobalRankingSetting | null): this;
+    getGlobalRankingSetting(): Gs2Ranking.GlobalRankingSetting | null;
+    setGlobalRankingSetting(globalRankingSetting: Gs2Ranking.GlobalRankingSetting | null): this;
+    withGlobalRankingSetting(globalRankingSetting: Gs2Ranking.GlobalRankingSetting | null): this;
     getEntryPeriodEventId(): string | null;
     setEntryPeriodEventId(entryPeriodEventId: string | null): this;
     withEntryPeriodEventId(entryPeriodEventId: string | null): this;
@@ -84,11 +83,11 @@ export default class CategoryModel implements IModel {
     /** @deprecated */
     withCalculateIntervalMinutes(calculateIntervalMinutes: number | null): this;
     /** @deprecated */
-    getAdditionalScopes(): Scope[] | null;
+    getAdditionalScopes(): Gs2Ranking.Scope[] | null;
     /** @deprecated */
-    setAdditionalScopes(additionalScopes: Scope[] | null): this;
+    setAdditionalScopes(additionalScopes: Gs2Ranking.Scope[] | null): this;
     /** @deprecated */
-    withAdditionalScopes(additionalScopes: Scope[] | null): this;
+    withAdditionalScopes(additionalScopes: Gs2Ranking.Scope[] | null): this;
     /** @deprecated */
     getIgnoreUserIds(): string[] | null;
     /** @deprecated */

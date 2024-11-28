@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import RepeatSetting from './RepeatSetting';
+import * as Gs2Schedule from '../../schedule/model';
 export default class EventMaster implements IModel {
     private eventId;
     private name;
@@ -50,9 +50,9 @@ export default class EventMaster implements IModel {
     getRelativeTriggerName(): string | null;
     setRelativeTriggerName(relativeTriggerName: string | null): this;
     withRelativeTriggerName(relativeTriggerName: string | null): this;
-    getRepeatSetting(): RepeatSetting | null;
-    setRepeatSetting(repeatSetting: RepeatSetting | null): this;
-    withRepeatSetting(repeatSetting: RepeatSetting | null): this;
+    getRepeatSetting(): Gs2Schedule.RepeatSetting | null;
+    setRepeatSetting(repeatSetting: Gs2Schedule.RepeatSetting | null): this;
+    withRepeatSetting(repeatSetting: Gs2Schedule.RepeatSetting | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

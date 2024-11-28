@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var RepeatSetting_1 = tslib_1.__importDefault(require("./RepeatSetting"));
+var Gs2Schedule = tslib_1.__importStar(require("../../schedule/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:schedule:{namespaceName}:event:{eventName}";
 var EventMaster = /** @class */ (function () {
     function EventMaster() {
@@ -349,7 +349,7 @@ var EventMaster = /** @class */ (function () {
             .withAbsoluteBegin(data["absoluteBegin"])
             .withAbsoluteEnd(data["absoluteEnd"])
             .withRelativeTriggerName(data["relativeTriggerName"])
-            .withRepeatSetting(RepeatSetting_1.default.fromDict(data["repeatSetting"]))
+            .withRepeatSetting(Gs2Schedule.RepeatSetting.fromDict(data["repeatSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"])

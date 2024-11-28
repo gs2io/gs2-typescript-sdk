@@ -48,7 +48,7 @@ var SendNotificationResult = /** @class */ (function () {
             .withSendConnectionIds(data.sendConnectionIds ?
             data.sendConnectionIds.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     SendNotificationResult.prototype.toDict = function () {
         return {
@@ -56,7 +56,7 @@ var SendNotificationResult = /** @class */ (function () {
             "sendConnectionIds": this.getSendConnectionIds() ?
                 this.getSendConnectionIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return SendNotificationResult;

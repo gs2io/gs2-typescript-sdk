@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import FormModel from './FormModel';
+import * as Gs2Formation from '../../formation/model';
 export default class MoldModel implements IModel {
     private moldModelId;
     private name;
@@ -28,9 +28,9 @@ export default class MoldModel implements IModel {
     getMaxCapacity(): number | null;
     setMaxCapacity(maxCapacity: number | null): this;
     withMaxCapacity(maxCapacity: number | null): this;
-    getFormModel(): FormModel | null;
-    setFormModel(formModel: FormModel | null): this;
-    withFormModel(formModel: FormModel | null): this;
+    getFormModel(): Gs2Formation.FormModel | null;
+    setFormModel(formModel: Gs2Formation.FormModel | null): this;
+    withFormModel(formModel: Gs2Formation.FormModel | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): MoldModel | null;

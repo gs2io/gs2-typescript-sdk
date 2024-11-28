@@ -124,7 +124,7 @@ var UpdateDistributorModelMasterRequest = /** @class */ (function () {
             .withWhiteListTargetIds(data.whiteListTargetIds ?
             data.whiteListTargetIds.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     UpdateDistributorModelMasterRequest.prototype.toDict = function () {
         return {
@@ -136,7 +136,7 @@ var UpdateDistributorModelMasterRequest = /** @class */ (function () {
             "whiteListTargetIds": this.getWhiteListTargetIds() ?
                 this.getWhiteListTargetIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return UpdateDistributorModelMasterRequest;

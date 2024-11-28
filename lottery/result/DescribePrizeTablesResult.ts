@@ -40,7 +40,7 @@ export default class DescribePrizeTablesResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Lottery.PrizeTable.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribePrizeTablesResult implements IResult {
                 this.getItems()!.map((item: Gs2Lottery.PrizeTable) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

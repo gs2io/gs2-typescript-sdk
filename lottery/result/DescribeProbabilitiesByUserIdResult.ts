@@ -40,7 +40,7 @@ export default class DescribeProbabilitiesByUserIdResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Lottery.Probability.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeProbabilitiesByUserIdResult implements IResult {
                 this.getItems()!.map((item: Gs2Lottery.Probability) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

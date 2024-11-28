@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import Version from './Version';
-import VersionModel from './VersionModel';
+import * as Gs2Version from '../../version/model';
 export default class Status implements IModel {
     private versionModel;
     private currentVersion;
-    getVersionModel(): VersionModel | null;
-    setVersionModel(versionModel: VersionModel | null): this;
-    withVersionModel(versionModel: VersionModel | null): this;
-    getCurrentVersion(): Version | null;
-    setCurrentVersion(currentVersion: Version | null): this;
-    withCurrentVersion(currentVersion: Version | null): this;
+    getVersionModel(): Gs2Version.VersionModel | null;
+    setVersionModel(versionModel: Gs2Version.VersionModel | null): this;
+    withVersionModel(versionModel: Gs2Version.VersionModel | null): this;
+    getCurrentVersion(): Gs2Version.Version | null;
+    setCurrentVersion(currentVersion: Gs2Version.Version | null): this;
+    withCurrentVersion(currentVersion: Gs2Version.Version | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): Status | null;

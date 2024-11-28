@@ -115,7 +115,7 @@ var InvokeByStampSheetResult = /** @class */ (function () {
             .withOutput(data.output ?
             data.output.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     InvokeByStampSheetResult.prototype.toDict = function () {
         var _a, _b;
@@ -129,7 +129,7 @@ var InvokeByStampSheetResult = /** @class */ (function () {
             "output": this.getOutput() ?
                 this.getOutput().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return InvokeByStampSheetResult;

@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import Threshold from './Threshold';
-import AcquireActionRate from './AcquireActionRate';
+import * as Gs2Experience from '../../experience/model';
 export default class ExperienceModel implements IModel {
     private experienceModelId;
     private name;
@@ -34,12 +33,12 @@ export default class ExperienceModel implements IModel {
     getMaxRankCap(): number | null;
     setMaxRankCap(maxRankCap: number | null): this;
     withMaxRankCap(maxRankCap: number | null): this;
-    getRankThreshold(): Threshold | null;
-    setRankThreshold(rankThreshold: Threshold | null): this;
-    withRankThreshold(rankThreshold: Threshold | null): this;
-    getAcquireActionRates(): AcquireActionRate[] | null;
-    setAcquireActionRates(acquireActionRates: AcquireActionRate[] | null): this;
-    withAcquireActionRates(acquireActionRates: AcquireActionRate[] | null): this;
+    getRankThreshold(): Gs2Experience.Threshold | null;
+    setRankThreshold(rankThreshold: Gs2Experience.Threshold | null): this;
+    withRankThreshold(rankThreshold: Gs2Experience.Threshold | null): this;
+    getAcquireActionRates(): Gs2Experience.AcquireActionRate[] | null;
+    setAcquireActionRates(acquireActionRates: Gs2Experience.AcquireActionRate[] | null): this;
+    withAcquireActionRates(acquireActionRates: Gs2Experience.AcquireActionRate[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): ExperienceModel | null;

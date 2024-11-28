@@ -113,7 +113,7 @@ var CreatePrizeTableMasterRequest = /** @class */ (function () {
             .withPrizes(data.prizes ?
             data.prizes.map(function (item) {
                 return Gs2Lottery.Prize.fromDict(item);
-            }) : []);
+            }) : null);
     };
     CreatePrizeTableMasterRequest.prototype.toDict = function () {
         return {
@@ -124,7 +124,7 @@ var CreatePrizeTableMasterRequest = /** @class */ (function () {
             "prizes": this.getPrizes() ?
                 this.getPrizes().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return CreatePrizeTableMasterRequest;

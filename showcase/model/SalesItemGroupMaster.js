@@ -193,7 +193,7 @@ var SalesItemGroupMaster = /** @class */ (function () {
             .withSalesItemNames(data.salesItemNames ?
             data.salesItemNames.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -207,7 +207,7 @@ var SalesItemGroupMaster = /** @class */ (function () {
             "salesItemNames": this.getSalesItemNames() ?
                 this.getSalesItemNames().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

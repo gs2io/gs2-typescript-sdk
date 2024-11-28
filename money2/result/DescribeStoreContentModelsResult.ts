@@ -40,7 +40,7 @@ export default class DescribeStoreContentModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Money2.StoreContentModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeStoreContentModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2Money2.StoreContentModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

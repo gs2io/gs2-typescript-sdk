@@ -40,7 +40,7 @@ export default class DescribeVersionModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Version.VersionModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeVersionModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2Version.VersionModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

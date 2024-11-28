@@ -40,7 +40,7 @@ export default class ForceReDrawByUserIdByStampSheetResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Showcase.RandomDisplayItem.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class ForceReDrawByUserIdByStampSheetResult implements IResult {
                 this.getItems()!.map((item: Gs2Showcase.RandomDisplayItem) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

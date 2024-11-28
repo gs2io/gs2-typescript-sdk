@@ -55,7 +55,7 @@ export default class DescribeSimpleInventoryModelMastersResult implements IResul
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Inventory.SimpleInventoryModelMaster.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeSimpleInventoryModelMastersResult implements IResul
                 this.getItems()!.map((item: Gs2Inventory.SimpleInventoryModelMaster) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

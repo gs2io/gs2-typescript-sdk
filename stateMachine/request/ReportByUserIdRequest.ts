@@ -135,7 +135,7 @@ export default class ReportByUserIdRequest implements IRequest {
                 data.events.map((item: {[key: string]: any}) => {
                     return Gs2StateMachine.Event.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -148,7 +148,7 @@ export default class ReportByUserIdRequest implements IRequest {
                 this.getEvents()!.map((item: Gs2StateMachine.Event) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

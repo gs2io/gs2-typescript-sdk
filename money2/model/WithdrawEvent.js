@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var DepositTransaction_1 = tslib_1.__importDefault(require("./DepositTransaction"));
-var WalletSummary_1 = tslib_1.__importDefault(require("./WalletSummary"));
+var Gs2Money2 = tslib_1.__importStar(require("../../money2/model"));
 var WithdrawEvent = /** @class */ (function () {
     function WithdrawEvent() {
         this.slot = null;
@@ -65,9 +64,9 @@ var WithdrawEvent = /** @class */ (function () {
             .withSlot(data["slot"])
             .withWithdrawDetails(data.withdrawDetails ?
             data.withdrawDetails.map(function (item) {
-                return DepositTransaction_1.default.fromDict(item);
-            }) : [])
-            .withStatus(WalletSummary_1.default.fromDict(data["status"]));
+                return Gs2Money2.DepositTransaction.fromDict(item);
+            }) : null)
+            .withStatus(Gs2Money2.WalletSummary.fromDict(data["status"]));
     };
     WithdrawEvent.prototype.toDict = function () {
         var _a;
@@ -76,7 +75,7 @@ var WithdrawEvent = /** @class */ (function () {
             "withdrawDetails": this.getWithdrawDetails() ?
                 this.getWithdrawDetails().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "status": (_a = this.getStatus()) === null || _a === void 0 ? void 0 : _a.toDict(),
         };
     };

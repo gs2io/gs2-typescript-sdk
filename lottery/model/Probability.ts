@@ -15,20 +15,22 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Lottery from '../../lottery/model'
 import AcquireAction from './AcquireAction';
 import DrawnPrize from './DrawnPrize';
 
 export default class Probability implements IModel {
-    private prize: DrawnPrize|null = null;
+    private prize: Gs2Lottery.DrawnPrize|null = null;
     private rate: number|null = null;
-    public getPrize(): DrawnPrize|null {
+    public getPrize(): Gs2Lottery.DrawnPrize|null {
         return this.prize;
     }
-    public setPrize(prize: DrawnPrize|null) {
+    public setPrize(prize: Gs2Lottery.DrawnPrize|null) {
         this.prize = prize;
         return this;
     }
-    public withPrize(prize: DrawnPrize|null): this {
+    public withPrize(prize: Gs2Lottery.DrawnPrize|null): this {
         this.prize = prize;
         return this;
     }
@@ -49,7 +51,7 @@ export default class Probability implements IModel {
             return null;
         }
         return new Probability()
-            .withPrize(DrawnPrize.fromDict(data["prize"]))
+            .withPrize(Gs2Lottery.DrawnPrize.fromDict(data["prize"]))
             .withRate(data["rate"]);
     }
 

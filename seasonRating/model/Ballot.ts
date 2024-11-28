@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2SeasonRating from '../../seasonRating/model'
+
 export default class Ballot implements IModel {
     private userId: string|null = null;
     private seasonName: string|null = null;

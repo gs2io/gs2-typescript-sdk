@@ -147,7 +147,7 @@ var UpdateRoomFromBackendRequest = /** @class */ (function () {
             .withWhiteListUserIds(data.whiteListUserIds ?
             data.whiteListUserIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withUserId(data["userId"])
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
@@ -160,7 +160,7 @@ var UpdateRoomFromBackendRequest = /** @class */ (function () {
             "whiteListUserIds": this.getWhiteListUserIds() ?
                 this.getWhiteListUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "userId": this.getUserId(),
             "timeOffsetToken": this.getTimeOffsetToken(),
         };

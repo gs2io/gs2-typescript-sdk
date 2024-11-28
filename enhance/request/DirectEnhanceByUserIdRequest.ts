@@ -160,12 +160,12 @@ export default class DirectEnhanceByUserIdRequest implements IRequest {
                 data.materials.map((item: {[key: string]: any}) => {
                     return Gs2Enhance.Material.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withConfig(data.config ?
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Enhance.Config.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -179,12 +179,12 @@ export default class DirectEnhanceByUserIdRequest implements IRequest {
                 this.getMaterials()!.map((item: Gs2Enhance.Material) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "config": this.getConfig() ?
                 this.getConfig()!.map((item: Gs2Enhance.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

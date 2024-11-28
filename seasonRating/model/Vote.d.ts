@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import WrittenBallot from './WrittenBallot';
+import * as Gs2SeasonRating from '../../seasonRating/model';
 export default class Vote implements IModel {
     private voteId;
     private seasonName;
@@ -24,9 +24,9 @@ export default class Vote implements IModel {
     getSessionName(): string | null;
     setSessionName(sessionName: string | null): this;
     withSessionName(sessionName: string | null): this;
-    getWrittenBallots(): WrittenBallot[] | null;
-    setWrittenBallots(writtenBallots: WrittenBallot[] | null): this;
-    withWrittenBallots(writtenBallots: WrittenBallot[] | null): this;
+    getWrittenBallots(): Gs2SeasonRating.WrittenBallot[] | null;
+    setWrittenBallots(writtenBallots: Gs2SeasonRating.WrittenBallot[] | null): this;
+    withWrittenBallots(writtenBallots: Gs2SeasonRating.WrittenBallot[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

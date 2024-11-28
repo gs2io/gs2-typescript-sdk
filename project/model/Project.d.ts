@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import Gs2Region from './Gs2Region';
+import * as Gs2Project from '../../project/model';
 export default class Project implements IModel {
     private projectId;
     private accountName;
@@ -33,9 +33,9 @@ export default class Project implements IModel {
     getPlan(): string | null;
     setPlan(plan: string | null): this;
     withPlan(plan: string | null): this;
-    getRegions(): Gs2Region[] | null;
-    setRegions(regions: Gs2Region[] | null): this;
-    withRegions(regions: Gs2Region[] | null): this;
+    getRegions(): Gs2Project.Gs2Region[] | null;
+    setRegions(regions: Gs2Project.Gs2Region[] | null): this;
+    withRegions(regions: Gs2Project.Gs2Region[] | null): this;
     getBillingMethodName(): string | null;
     setBillingMethodName(billingMethodName: string | null): this;
     withBillingMethodName(billingMethodName: string | null): this;

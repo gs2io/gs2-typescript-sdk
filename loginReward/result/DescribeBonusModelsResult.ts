@@ -40,7 +40,7 @@ export default class DescribeBonusModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2LoginReward.BonusModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeBonusModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2LoginReward.BonusModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

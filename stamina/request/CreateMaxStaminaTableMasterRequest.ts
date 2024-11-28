@@ -134,7 +134,7 @@ export default class CreateMaxStaminaTableMasterRequest implements IRequest {
                 data.values.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -148,7 +148,7 @@ export default class CreateMaxStaminaTableMasterRequest implements IRequest {
                 this.getValues()!.map((item: number) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import TransactionSetting from './TransactionSetting';
-import ScriptSetting from './ScriptSetting';
-import LogSetting from './LogSetting';
+import * as Gs2Grade from '../../grade/model';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
@@ -26,15 +24,15 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
-    getTransactionSetting(): TransactionSetting | null;
-    setTransactionSetting(transactionSetting: TransactionSetting | null): this;
-    withTransactionSetting(transactionSetting: TransactionSetting | null): this;
-    getChangeGradeScript(): ScriptSetting | null;
-    setChangeGradeScript(changeGradeScript: ScriptSetting | null): this;
-    withChangeGradeScript(changeGradeScript: ScriptSetting | null): this;
-    getLogSetting(): LogSetting | null;
-    setLogSetting(logSetting: LogSetting | null): this;
-    withLogSetting(logSetting: LogSetting | null): this;
+    getTransactionSetting(): Gs2Grade.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2Grade.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2Grade.TransactionSetting | null): this;
+    getChangeGradeScript(): Gs2Grade.ScriptSetting | null;
+    setChangeGradeScript(changeGradeScript: Gs2Grade.ScriptSetting | null): this;
+    withChangeGradeScript(changeGradeScript: Gs2Grade.ScriptSetting | null): this;
+    getLogSetting(): Gs2Grade.LogSetting | null;
+    setLogSetting(logSetting: Gs2Grade.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2Grade.LogSetting | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

@@ -173,7 +173,7 @@ export default class CreateExperienceModelMasterRequest implements IRequest {
                 data.acquireActionRates.map((item: {[key: string]: any}) => {
                     return Gs2Experience.AcquireActionRate.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -190,7 +190,7 @@ export default class CreateExperienceModelMasterRequest implements IRequest {
                 this.getAcquireActionRates()!.map((item: Gs2Experience.AcquireActionRate) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -17,6 +17,7 @@ permissions and limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var Gs2Showcase = tslib_1.__importStar(require("../model"));
+var Gs2Core = tslib_1.__importStar(require("../../core"));
 var BuyByUserIdResult = /** @class */ (function () {
     function BuyByUserIdResult() {
         this.item = null;
@@ -24,6 +25,9 @@ var BuyByUserIdResult = /** @class */ (function () {
         this.stampSheet = null;
         this.stampSheetEncryptionKeyId = null;
         this.autoRunStampSheet = null;
+        this.atomicCommit = null;
+        this.transaction = null;
+        this.transactionResult = null;
     }
     BuyByUserIdResult.prototype.getItem = function () {
         return this.item;
@@ -80,22 +84,61 @@ var BuyByUserIdResult = /** @class */ (function () {
         this.autoRunStampSheet = autoRunStampSheet;
         return this;
     };
+    BuyByUserIdResult.prototype.getAtomicCommit = function () {
+        return this.atomicCommit;
+    };
+    BuyByUserIdResult.prototype.setAtomicCommit = function (atomicCommit) {
+        this.atomicCommit = atomicCommit;
+        return this;
+    };
+    BuyByUserIdResult.prototype.withAtomicCommit = function (atomicCommit) {
+        this.atomicCommit = atomicCommit;
+        return this;
+    };
+    BuyByUserIdResult.prototype.getTransaction = function () {
+        return this.transaction;
+    };
+    BuyByUserIdResult.prototype.setTransaction = function (transaction) {
+        this.transaction = transaction;
+        return this;
+    };
+    BuyByUserIdResult.prototype.withTransaction = function (transaction) {
+        this.transaction = transaction;
+        return this;
+    };
+    BuyByUserIdResult.prototype.getTransactionResult = function () {
+        return this.transactionResult;
+    };
+    BuyByUserIdResult.prototype.setTransactionResult = function (transactionResult) {
+        this.transactionResult = transactionResult;
+        return this;
+    };
+    BuyByUserIdResult.prototype.withTransactionResult = function (transactionResult) {
+        this.transactionResult = transactionResult;
+        return this;
+    };
     BuyByUserIdResult.fromDict = function (data) {
         return new BuyByUserIdResult()
             .withItem(Gs2Showcase.SalesItem.fromDict(data["item"]))
             .withTransactionId(data["transactionId"])
             .withStampSheet(data["stampSheet"])
             .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
-            .withAutoRunStampSheet(data["autoRunStampSheet"]);
+            .withAutoRunStampSheet(data["autoRunStampSheet"])
+            .withAtomicCommit(data["atomicCommit"])
+            .withTransaction(data["transaction"])
+            .withTransactionResult(Gs2Core.TransactionResult.fromDict(data["transactionResult"]));
     };
     BuyByUserIdResult.prototype.toDict = function () {
-        var _a;
+        var _a, _b;
         return {
             "item": (_a = this.getItem()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "transactionId": this.getTransactionId(),
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
             "autoRunStampSheet": this.getAutoRunStampSheet(),
+            "atomicCommit": this.getAtomicCommit(),
+            "transaction": this.getTransaction(),
+            "transactionResult": (_b = this.getTransactionResult()) === null || _b === void 0 ? void 0 : _b.toDict(),
         };
     };
     return BuyByUserIdResult;

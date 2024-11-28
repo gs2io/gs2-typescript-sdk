@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Schedule from '../../schedule/model'
+
 export default class RepeatSchedule implements IModel {
     private repeatCount: number|null = null;
     private currentRepeatStartAt: number|null = null;

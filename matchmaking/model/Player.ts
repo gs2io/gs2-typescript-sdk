@@ -15,11 +15,13 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Matchmaking from '../../matchmaking/model'
 import Attribute from './Attribute';
 
 export default class Player implements IModel {
     private userId: string|null = null;
-    private attributes: Attribute[]|null = null;
+    private attributes: Gs2Matchmaking.Attribute[]|null = null;
     private roleName: string|null = null;
     private denyUserIds: string[]|null = null;
     private createdAt: number|null = null;
@@ -34,14 +36,14 @@ export default class Player implements IModel {
         this.userId = userId;
         return this;
     }
-    public getAttributes(): Attribute[]|null {
+    public getAttributes(): Gs2Matchmaking.Attribute[]|null {
         return this.attributes;
     }
-    public setAttributes(attributes: Attribute[]|null) {
+    public setAttributes(attributes: Gs2Matchmaking.Attribute[]|null) {
         this.attributes = attributes;
         return this;
     }
-    public withAttributes(attributes: Attribute[]|null): this {
+    public withAttributes(attributes: Gs2Matchmaking.Attribute[]|null): this {
         this.attributes = attributes;
         return this;
     }
@@ -87,15 +89,15 @@ export default class Player implements IModel {
             .withUserId(data["userId"])
             .withAttributes(data.attributes ?
                 data.attributes.map((item: {[key: string]: any}) => {
-                    return Attribute.fromDict(item);
+                    return Gs2Matchmaking.Attribute.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withRoleName(data["roleName"])
             .withDenyUserIds(data.denyUserIds ?
                 data.denyUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"]);
     }
 
@@ -103,16 +105,16 @@ export default class Player implements IModel {
         return {
             "userId": this.getUserId(),
             "attributes": this.getAttributes() ?
-                this.getAttributes()!.map((item: Attribute) => {
+                this.getAttributes()!.map((item: Gs2Matchmaking.Attribute) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "roleName": this.getRoleName(),
             "denyUserIds": this.getDenyUserIds() ?
                 this.getDenyUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
         };
     }

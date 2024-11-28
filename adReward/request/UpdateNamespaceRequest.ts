@@ -169,7 +169,7 @@ export default class UpdateNamespaceRequest implements IRequest {
                 data.appLovinMaxes.map((item: {[key: string]: any}) => {
                     return Gs2AdReward.AppLovinMax.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withAcquirePointScript(Gs2AdReward.ScriptSetting.fromDict(data["acquirePointScript"]))
             .withConsumePointScript(Gs2AdReward.ScriptSetting.fromDict(data["consumePointScript"]))
             .withChangePointNotification(Gs2AdReward.NotificationSetting.fromDict(data["changePointNotification"]))
@@ -186,7 +186,7 @@ export default class UpdateNamespaceRequest implements IRequest {
                 this.getAppLovinMaxes()!.map((item: Gs2AdReward.AppLovinMax) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "acquirePointScript": this.getAcquirePointScript()?.toDict(),
             "consumePointScript": this.getConsumePointScript()?.toDict(),
             "changePointNotification": this.getChangePointNotification()?.toDict(),

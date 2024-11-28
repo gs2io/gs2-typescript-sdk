@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import BuffTargetModel from './BuffTargetModel';
-import BuffTargetAction from './BuffTargetAction';
+import * as Gs2Buff from '../../buff/model';
 export default class BuffEntryModelMaster implements IModel {
     private buffEntryModelId;
     private name;
@@ -39,12 +38,12 @@ export default class BuffEntryModelMaster implements IModel {
     getTargetType(): string | null;
     setTargetType(targetType: string | null): this;
     withTargetType(targetType: string | null): this;
-    getTargetModel(): BuffTargetModel | null;
-    setTargetModel(targetModel: BuffTargetModel | null): this;
-    withTargetModel(targetModel: BuffTargetModel | null): this;
-    getTargetAction(): BuffTargetAction | null;
-    setTargetAction(targetAction: BuffTargetAction | null): this;
-    withTargetAction(targetAction: BuffTargetAction | null): this;
+    getTargetModel(): Gs2Buff.BuffTargetModel | null;
+    setTargetModel(targetModel: Gs2Buff.BuffTargetModel | null): this;
+    withTargetModel(targetModel: Gs2Buff.BuffTargetModel | null): this;
+    getTargetAction(): Gs2Buff.BuffTargetAction | null;
+    setTargetAction(targetAction: Gs2Buff.BuffTargetAction | null): this;
+    withTargetAction(targetAction: Gs2Buff.BuffTargetAction | null): this;
     getPriority(): number | null;
     setPriority(priority: number | null): this;
     withPriority(priority: number | null): this;

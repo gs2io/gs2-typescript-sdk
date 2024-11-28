@@ -40,7 +40,7 @@ export default class DescribeEventsByUserIdResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Schedule.Event.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeEventsByUserIdResult implements IResult {
                 this.getItems()!.map((item: Gs2Schedule.Event) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

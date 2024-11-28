@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Account from '../../account/model'
 import OpenIdConnectSetting from './OpenIdConnectSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:account:{namespaceName}:model:takeOver:{type}";
 
@@ -22,7 +24,7 @@ export default class TakeOverTypeModel implements IModel {
     private takeOverTypeModelId: string|null = null;
     private type: number|null = null;
     private metadata: string|null = null;
-    private openIdConnectSetting: OpenIdConnectSetting|null = null;
+    private openIdConnectSetting: Gs2Account.OpenIdConnectSetting|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -137,14 +139,14 @@ export default class TakeOverTypeModel implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getOpenIdConnectSetting(): OpenIdConnectSetting|null {
+    public getOpenIdConnectSetting(): Gs2Account.OpenIdConnectSetting|null {
         return this.openIdConnectSetting;
     }
-    public setOpenIdConnectSetting(openIdConnectSetting: OpenIdConnectSetting|null) {
+    public setOpenIdConnectSetting(openIdConnectSetting: Gs2Account.OpenIdConnectSetting|null) {
         this.openIdConnectSetting = openIdConnectSetting;
         return this;
     }
-    public withOpenIdConnectSetting(openIdConnectSetting: OpenIdConnectSetting|null): this {
+    public withOpenIdConnectSetting(openIdConnectSetting: Gs2Account.OpenIdConnectSetting|null): this {
         this.openIdConnectSetting = openIdConnectSetting;
         return this;
     }
@@ -157,7 +159,7 @@ export default class TakeOverTypeModel implements IModel {
             .withTakeOverTypeModelId(data["takeOverTypeModelId"])
             .withType(data["type"])
             .withMetadata(data["metadata"])
-            .withOpenIdConnectSetting(OpenIdConnectSetting.fromDict(data["openIdConnectSetting"]));
+            .withOpenIdConnectSetting(Gs2Account.OpenIdConnectSetting.fromDict(data["openIdConnectSetting"]));
     }
 
     public toDict(): {[key: string]: any} {

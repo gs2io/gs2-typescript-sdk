@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Exchange from '../../exchange/model'
+
 export default class LogCost implements IModel {
     private base: number|null = null;
     private adds: number[]|null = null;
@@ -64,12 +66,12 @@ export default class LogCost implements IModel {
                 data.adds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withSubs(data.subs ?
                 data.subs.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -79,12 +81,12 @@ export default class LogCost implements IModel {
                 this.getAdds()!.map((item: number) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "subs": this.getSubs() ?
                 this.getSubs()!.map((item: number) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

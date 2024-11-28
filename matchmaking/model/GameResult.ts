@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Matchmaking from '../../matchmaking/model'
+
 export default class GameResult implements IModel {
     private rank: number|null = null;
     private userId: string|null = null;

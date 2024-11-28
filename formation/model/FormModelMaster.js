@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var SlotModel_1 = tslib_1.__importDefault(require("./SlotModel"));
+var Gs2Formation = tslib_1.__importStar(require("../../formation/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:formation:{namespaceName}:model:form:{formModelName}";
 var FormModelMaster = /** @class */ (function () {
     function FormModelMaster() {
@@ -194,8 +194,8 @@ var FormModelMaster = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withSlots(data.slots ?
             data.slots.map(function (item) {
-                return SlotModel_1.default.fromDict(item);
-            }) : [])
+                return Gs2Formation.SlotModel.fromDict(item);
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -209,7 +209,7 @@ var FormModelMaster = /** @class */ (function () {
             "slots": this.getSlots() ?
                 this.getSlots().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

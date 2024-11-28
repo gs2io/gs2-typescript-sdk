@@ -55,7 +55,7 @@ export default class DescribeItemSetsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Inventory.ItemSet.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeItemSetsResult implements IResult {
                 this.getItems()!.map((item: Gs2Inventory.ItemSet) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

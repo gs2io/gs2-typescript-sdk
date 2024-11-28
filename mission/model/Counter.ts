@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Mission from '../../mission/model'
 import ScopedValue from './ScopedValue';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}:user:{userId}:counter:{counterName}";
 
@@ -22,7 +24,7 @@ export default class Counter implements IModel {
     private counterId: string|null = null;
     private userId: string|null = null;
     private name: string|null = null;
-    private values: ScopedValue[]|null = null;
+    private values: Gs2Mission.ScopedValue[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -163,14 +165,14 @@ export default class Counter implements IModel {
         this.name = name;
         return this;
     }
-    public getValues(): ScopedValue[]|null {
+    public getValues(): Gs2Mission.ScopedValue[]|null {
         return this.values;
     }
-    public setValues(values: ScopedValue[]|null) {
+    public setValues(values: Gs2Mission.ScopedValue[]|null) {
         this.values = values;
         return this;
     }
-    public withValues(values: ScopedValue[]|null): this {
+    public withValues(values: Gs2Mission.ScopedValue[]|null): this {
         this.values = values;
         return this;
     }
@@ -218,9 +220,9 @@ export default class Counter implements IModel {
             .withName(data["name"])
             .withValues(data.values ?
                 data.values.map((item: {[key: string]: any}) => {
-                    return ScopedValue.fromDict(item);
+                    return Gs2Mission.ScopedValue.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -232,10 +234,10 @@ export default class Counter implements IModel {
             "userId": this.getUserId(),
             "name": this.getName(),
             "values": this.getValues() ?
-                this.getValues()!.map((item: ScopedValue) => {
+                this.getValues()!.map((item: Gs2Mission.ScopedValue) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

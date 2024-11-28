@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Stamina from '../../stamina/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:stamina:{namespaceName}";
 
 export default class CurrentStaminaMaster implements IModel {

@@ -122,7 +122,7 @@ export default class OrExpressionByUserIdRequest implements IRequest {
                 data.actions.map((item: {[key: string]: any}) => {
                     return Gs2Distributor.VerifyAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -134,7 +134,7 @@ export default class OrExpressionByUserIdRequest implements IRequest {
                 this.getActions()!.map((item: Gs2Distributor.VerifyAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

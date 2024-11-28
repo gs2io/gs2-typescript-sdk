@@ -111,7 +111,7 @@ var CheckVersionByUserIdRequest = /** @class */ (function () {
             .withTargetVersions(data.targetVersions ?
             data.targetVersions.map(function (item) {
                 return Gs2Version.TargetVersion.fromDict(item);
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     CheckVersionByUserIdRequest.prototype.toDict = function () {
@@ -121,7 +121,7 @@ var CheckVersionByUserIdRequest = /** @class */ (function () {
             "targetVersions": this.getTargetVersions() ?
                 this.getTargetVersions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

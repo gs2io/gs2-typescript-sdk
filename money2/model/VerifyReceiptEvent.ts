@@ -15,14 +15,16 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Money2 from '../../money2/model'
 import AppleAppStoreVerifyReceiptEvent from './AppleAppStoreVerifyReceiptEvent';
 import GooglePlayVerifyReceiptEvent from './GooglePlayVerifyReceiptEvent';
 
 export default class VerifyReceiptEvent implements IModel {
     private contentName: string|null = null;
     private platform: string|null = null;
-    private appleAppStoreVerifyReceiptEvent: AppleAppStoreVerifyReceiptEvent|null = null;
-    private googlePlayVerifyReceiptEvent: GooglePlayVerifyReceiptEvent|null = null;
+    private appleAppStoreVerifyReceiptEvent: Gs2Money2.AppleAppStoreVerifyReceiptEvent|null = null;
+    private googlePlayVerifyReceiptEvent: Gs2Money2.GooglePlayVerifyReceiptEvent|null = null;
     public getContentName(): string|null {
         return this.contentName;
     }
@@ -45,25 +47,25 @@ export default class VerifyReceiptEvent implements IModel {
         this.platform = platform;
         return this;
     }
-    public getAppleAppStoreVerifyReceiptEvent(): AppleAppStoreVerifyReceiptEvent|null {
+    public getAppleAppStoreVerifyReceiptEvent(): Gs2Money2.AppleAppStoreVerifyReceiptEvent|null {
         return this.appleAppStoreVerifyReceiptEvent;
     }
-    public setAppleAppStoreVerifyReceiptEvent(appleAppStoreVerifyReceiptEvent: AppleAppStoreVerifyReceiptEvent|null) {
+    public setAppleAppStoreVerifyReceiptEvent(appleAppStoreVerifyReceiptEvent: Gs2Money2.AppleAppStoreVerifyReceiptEvent|null) {
         this.appleAppStoreVerifyReceiptEvent = appleAppStoreVerifyReceiptEvent;
         return this;
     }
-    public withAppleAppStoreVerifyReceiptEvent(appleAppStoreVerifyReceiptEvent: AppleAppStoreVerifyReceiptEvent|null): this {
+    public withAppleAppStoreVerifyReceiptEvent(appleAppStoreVerifyReceiptEvent: Gs2Money2.AppleAppStoreVerifyReceiptEvent|null): this {
         this.appleAppStoreVerifyReceiptEvent = appleAppStoreVerifyReceiptEvent;
         return this;
     }
-    public getGooglePlayVerifyReceiptEvent(): GooglePlayVerifyReceiptEvent|null {
+    public getGooglePlayVerifyReceiptEvent(): Gs2Money2.GooglePlayVerifyReceiptEvent|null {
         return this.googlePlayVerifyReceiptEvent;
     }
-    public setGooglePlayVerifyReceiptEvent(googlePlayVerifyReceiptEvent: GooglePlayVerifyReceiptEvent|null) {
+    public setGooglePlayVerifyReceiptEvent(googlePlayVerifyReceiptEvent: Gs2Money2.GooglePlayVerifyReceiptEvent|null) {
         this.googlePlayVerifyReceiptEvent = googlePlayVerifyReceiptEvent;
         return this;
     }
-    public withGooglePlayVerifyReceiptEvent(googlePlayVerifyReceiptEvent: GooglePlayVerifyReceiptEvent|null): this {
+    public withGooglePlayVerifyReceiptEvent(googlePlayVerifyReceiptEvent: Gs2Money2.GooglePlayVerifyReceiptEvent|null): this {
         this.googlePlayVerifyReceiptEvent = googlePlayVerifyReceiptEvent;
         return this;
     }
@@ -75,8 +77,8 @@ export default class VerifyReceiptEvent implements IModel {
         return new VerifyReceiptEvent()
             .withContentName(data["contentName"])
             .withPlatform(data["platform"])
-            .withAppleAppStoreVerifyReceiptEvent(AppleAppStoreVerifyReceiptEvent.fromDict(data["appleAppStoreVerifyReceiptEvent"]))
-            .withGooglePlayVerifyReceiptEvent(GooglePlayVerifyReceiptEvent.fromDict(data["googlePlayVerifyReceiptEvent"]));
+            .withAppleAppStoreVerifyReceiptEvent(Gs2Money2.AppleAppStoreVerifyReceiptEvent.fromDict(data["appleAppStoreVerifyReceiptEvent"]))
+            .withGooglePlayVerifyReceiptEvent(Gs2Money2.GooglePlayVerifyReceiptEvent.fromDict(data["googlePlayVerifyReceiptEvent"]));
     }
 
     public toDict(): {[key: string]: any} {

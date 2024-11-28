@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var RandomUsed_1 = tslib_1.__importDefault(require("./RandomUsed"));
+var Gs2Script = tslib_1.__importStar(require("../../script/model"));
 var RandomStatus = /** @class */ (function () {
     function RandomStatus() {
         this.seed = null;
@@ -52,8 +52,8 @@ var RandomStatus = /** @class */ (function () {
             .withSeed(data["seed"])
             .withUsed(data.used ?
             data.used.map(function (item) {
-                return RandomUsed_1.default.fromDict(item);
-            }) : []);
+                return Gs2Script.RandomUsed.fromDict(item);
+            }) : null);
     };
     RandomStatus.prototype.toDict = function () {
         return {
@@ -61,7 +61,7 @@ var RandomStatus = /** @class */ (function () {
             "used": this.getUsed() ?
                 this.getUsed().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return RandomStatus;

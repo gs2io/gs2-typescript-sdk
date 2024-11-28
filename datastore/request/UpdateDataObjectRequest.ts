@@ -136,7 +136,7 @@ export default class UpdateDataObjectRequest implements IRequest {
                 data.allowUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -149,7 +149,7 @@ export default class UpdateDataObjectRequest implements IRequest {
                 this.getAllowUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

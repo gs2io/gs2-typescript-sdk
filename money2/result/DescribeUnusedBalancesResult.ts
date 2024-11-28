@@ -55,7 +55,7 @@ export default class DescribeUnusedBalancesResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Money2.UnusedBalance.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeUnusedBalancesResult implements IResult {
                 this.getItems()!.map((item: Gs2Money2.UnusedBalance) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

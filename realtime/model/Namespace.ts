@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Realtime from '../../realtime/model'
 import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:realtime:{namespaceName}";
@@ -25,8 +27,8 @@ export default class Namespace implements IModel {
     private description: string|null = null;
     private serverType: string|null = null;
     private serverSpec: string|null = null;
-    private createNotification: NotificationSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private createNotification: Gs2Realtime.NotificationSetting|null = null;
+    private logSetting: Gs2Realtime.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -145,25 +147,25 @@ export default class Namespace implements IModel {
         this.serverSpec = serverSpec;
         return this;
     }
-    public getCreateNotification(): NotificationSetting|null {
+    public getCreateNotification(): Gs2Realtime.NotificationSetting|null {
         return this.createNotification;
     }
-    public setCreateNotification(createNotification: NotificationSetting|null) {
+    public setCreateNotification(createNotification: Gs2Realtime.NotificationSetting|null) {
         this.createNotification = createNotification;
         return this;
     }
-    public withCreateNotification(createNotification: NotificationSetting|null): this {
+    public withCreateNotification(createNotification: Gs2Realtime.NotificationSetting|null): this {
         this.createNotification = createNotification;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Realtime.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Realtime.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Realtime.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -211,8 +213,8 @@ export default class Namespace implements IModel {
             .withDescription(data["description"])
             .withServerType(data["serverType"])
             .withServerSpec(data["serverSpec"])
-            .withCreateNotification(NotificationSetting.fromDict(data["createNotification"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withCreateNotification(Gs2Realtime.NotificationSetting.fromDict(data["createNotification"]))
+            .withLogSetting(Gs2Realtime.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

@@ -85,7 +85,7 @@ var WantRoomRequest = /** @class */ (function () {
             .withNotificationUserIds(data.notificationUserIds ?
             data.notificationUserIds.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     WantRoomRequest.prototype.toDict = function () {
         return {
@@ -94,7 +94,7 @@ var WantRoomRequest = /** @class */ (function () {
             "notificationUserIds": this.getNotificationUserIds() ?
                 this.getNotificationUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return WantRoomRequest;

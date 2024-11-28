@@ -148,7 +148,7 @@ export default class UpdateRoomRequest implements IRequest {
                 data.whiteListUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withAccessToken(data["accessToken"]);
     }
 
@@ -162,7 +162,7 @@ export default class UpdateRoomRequest implements IRequest {
                 this.getWhiteListUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "accessToken": this.getAccessToken(),
         };
     }

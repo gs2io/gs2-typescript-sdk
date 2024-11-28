@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Key from '../../key/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:key:{namespaceName}:key:{keyName}";
 
 export default class Key implements IModel {

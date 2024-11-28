@@ -314,11 +314,11 @@ var UpdateCategoryModelMasterRequest = /** @class */ (function () {
             .withAdditionalScopes(data.additionalScopes ?
             data.additionalScopes.map(function (item) {
                 return Gs2Ranking.Scope.fromDict(item);
-            }) : [])
+            }) : null)
             .withIgnoreUserIds(data.ignoreUserIds ?
             data.ignoreUserIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withGeneration(data["generation"]);
     };
     UpdateCategoryModelMasterRequest.prototype.toDict = function () {
@@ -343,11 +343,11 @@ var UpdateCategoryModelMasterRequest = /** @class */ (function () {
             "additionalScopes": this.getAdditionalScopes() ?
                 this.getAdditionalScopes().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "ignoreUserIds": this.getIgnoreUserIds() ?
                 this.getIgnoreUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "generation": this.getGeneration(),
         };
     };

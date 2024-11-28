@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var MaxStaminaTable_1 = tslib_1.__importDefault(require("./MaxStaminaTable"));
-var RecoverIntervalTable_1 = tslib_1.__importDefault(require("./RecoverIntervalTable"));
-var RecoverValueTable_1 = tslib_1.__importDefault(require("./RecoverValueTable"));
+var Gs2Stamina = tslib_1.__importStar(require("../../stamina/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:stamina:{namespaceName}:model:{staminaName}";
 var StaminaModel = /** @class */ (function () {
     function StaminaModel() {
@@ -234,9 +232,9 @@ var StaminaModel = /** @class */ (function () {
             .withInitialCapacity(data["initialCapacity"])
             .withIsOverflow(data["isOverflow"])
             .withMaxCapacity(data["maxCapacity"])
-            .withMaxStaminaTable(MaxStaminaTable_1.default.fromDict(data["maxStaminaTable"]))
-            .withRecoverIntervalTable(RecoverIntervalTable_1.default.fromDict(data["recoverIntervalTable"]))
-            .withRecoverValueTable(RecoverValueTable_1.default.fromDict(data["recoverValueTable"]));
+            .withMaxStaminaTable(Gs2Stamina.MaxStaminaTable.fromDict(data["maxStaminaTable"]))
+            .withRecoverIntervalTable(Gs2Stamina.RecoverIntervalTable.fromDict(data["recoverIntervalTable"]))
+            .withRecoverValueTable(Gs2Stamina.RecoverValueTable.fromDict(data["recoverValueTable"]));
     };
     StaminaModel.prototype.toDict = function () {
         var _a, _b, _c;

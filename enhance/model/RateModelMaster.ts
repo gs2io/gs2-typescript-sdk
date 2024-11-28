@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Enhance from '../../enhance/model'
 import BonusRate from './BonusRate';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:enhance:{namespaceName}:rateModelMaster:{rateName}";
 
@@ -28,7 +30,7 @@ export default class RateModelMaster implements IModel {
     private materialInventoryModelId: string|null = null;
     private acquireExperienceHierarchy: string[]|null = null;
     private experienceModelId: string|null = null;
-    private bonusRates: BonusRate[]|null = null;
+    private bonusRates: Gs2Enhance.BonusRate[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -212,14 +214,14 @@ export default class RateModelMaster implements IModel {
         this.experienceModelId = experienceModelId;
         return this;
     }
-    public getBonusRates(): BonusRate[]|null {
+    public getBonusRates(): Gs2Enhance.BonusRate[]|null {
         return this.bonusRates;
     }
-    public setBonusRates(bonusRates: BonusRate[]|null) {
+    public setBonusRates(bonusRates: Gs2Enhance.BonusRate[]|null) {
         this.bonusRates = bonusRates;
         return this;
     }
-    public withBonusRates(bonusRates: BonusRate[]|null): this {
+    public withBonusRates(bonusRates: Gs2Enhance.BonusRate[]|null): this {
         this.bonusRates = bonusRates;
         return this;
     }
@@ -273,13 +275,13 @@ export default class RateModelMaster implements IModel {
                 data.acquireExperienceHierarchy.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withExperienceModelId(data["experienceModelId"])
             .withBonusRates(data.bonusRates ?
                 data.bonusRates.map((item: {[key: string]: any}) => {
-                    return BonusRate.fromDict(item);
+                    return Gs2Enhance.BonusRate.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -298,13 +300,13 @@ export default class RateModelMaster implements IModel {
                 this.getAcquireExperienceHierarchy()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "experienceModelId": this.getExperienceModelId(),
             "bonusRates": this.getBonusRates() ?
-                this.getBonusRates()!.map((item: BonusRate) => {
+                this.getBonusRates()!.map((item: Gs2Enhance.BonusRate) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

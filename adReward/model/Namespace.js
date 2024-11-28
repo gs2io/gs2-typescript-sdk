@@ -16,12 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AdMob_1 = tslib_1.__importDefault(require("./AdMob"));
-var UnityAd_1 = tslib_1.__importDefault(require("./UnityAd"));
-var AppLovinMax_1 = tslib_1.__importDefault(require("./AppLovinMax"));
-var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
-var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2AdReward = tslib_1.__importStar(require("../../adReward/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:adReward:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -238,16 +233,16 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withAdmob(AdMob_1.default.fromDict(data["admob"]))
-            .withUnityAd(UnityAd_1.default.fromDict(data["unityAd"]))
+            .withAdmob(Gs2AdReward.AdMob.fromDict(data["admob"]))
+            .withUnityAd(Gs2AdReward.UnityAd.fromDict(data["unityAd"]))
             .withAppLovinMaxes(data.appLovinMaxes ?
             data.appLovinMaxes.map(function (item) {
-                return AppLovinMax_1.default.fromDict(item);
-            }) : [])
-            .withAcquirePointScript(ScriptSetting_1.default.fromDict(data["acquirePointScript"]))
-            .withConsumePointScript(ScriptSetting_1.default.fromDict(data["consumePointScript"]))
-            .withChangePointNotification(NotificationSetting_1.default.fromDict(data["changePointNotification"]))
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+                return Gs2AdReward.AppLovinMax.fromDict(item);
+            }) : null)
+            .withAcquirePointScript(Gs2AdReward.ScriptSetting.fromDict(data["acquirePointScript"]))
+            .withConsumePointScript(Gs2AdReward.ScriptSetting.fromDict(data["consumePointScript"]))
+            .withChangePointNotification(Gs2AdReward.NotificationSetting.fromDict(data["changePointNotification"]))
+            .withLogSetting(Gs2AdReward.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -263,7 +258,7 @@ var Namespace = /** @class */ (function () {
             "appLovinMaxes": this.getAppLovinMaxes() ?
                 this.getAppLovinMaxes().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "acquirePointScript": (_c = this.getAcquirePointScript()) === null || _c === void 0 ? void 0 : _c.toDict(),
             "consumePointScript": (_d = this.getConsumePointScript()) === null || _d === void 0 ? void 0 : _d.toDict(),
             "changePointNotification": (_e = this.getChangePointNotification()) === null || _e === void 0 ? void 0 : _e.toDict(),

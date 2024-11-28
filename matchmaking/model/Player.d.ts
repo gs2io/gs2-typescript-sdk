@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import Attribute from './Attribute';
+import * as Gs2Matchmaking from '../../matchmaking/model';
 export default class Player implements IModel {
     private userId;
     private attributes;
@@ -9,9 +9,9 @@ export default class Player implements IModel {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
-    getAttributes(): Attribute[] | null;
-    setAttributes(attributes: Attribute[] | null): this;
-    withAttributes(attributes: Attribute[] | null): this;
+    getAttributes(): Gs2Matchmaking.Attribute[] | null;
+    setAttributes(attributes: Gs2Matchmaking.Attribute[] | null): this;
+    withAttributes(attributes: Gs2Matchmaking.Attribute[] | null): this;
     getRoleName(): string | null;
     setRoleName(roleName: string | null): this;
     withRoleName(roleName: string | null): this;

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Grade from '../../grade/model'
 import DefaultGradeModel from './DefaultGradeModel';
 import GradeEntryModel from './GradeEntryModel';
 import AcquireActionRate from './AcquireActionRate';
@@ -25,10 +27,10 @@ export default class GradeModelMaster implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private metadata: string|null = null;
-    private defaultGrades: DefaultGradeModel[]|null = null;
+    private defaultGrades: Gs2Grade.DefaultGradeModel[]|null = null;
     private experienceModelId: string|null = null;
-    private gradeEntries: GradeEntryModel[]|null = null;
-    private acquireActionRates: AcquireActionRate[]|null = null;
+    private gradeEntries: Gs2Grade.GradeEntryModel[]|null = null;
+    private acquireActionRates: Gs2Grade.AcquireActionRate[]|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -157,14 +159,14 @@ export default class GradeModelMaster implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getDefaultGrades(): DefaultGradeModel[]|null {
+    public getDefaultGrades(): Gs2Grade.DefaultGradeModel[]|null {
         return this.defaultGrades;
     }
-    public setDefaultGrades(defaultGrades: DefaultGradeModel[]|null) {
+    public setDefaultGrades(defaultGrades: Gs2Grade.DefaultGradeModel[]|null) {
         this.defaultGrades = defaultGrades;
         return this;
     }
-    public withDefaultGrades(defaultGrades: DefaultGradeModel[]|null): this {
+    public withDefaultGrades(defaultGrades: Gs2Grade.DefaultGradeModel[]|null): this {
         this.defaultGrades = defaultGrades;
         return this;
     }
@@ -179,25 +181,25 @@ export default class GradeModelMaster implements IModel {
         this.experienceModelId = experienceModelId;
         return this;
     }
-    public getGradeEntries(): GradeEntryModel[]|null {
+    public getGradeEntries(): Gs2Grade.GradeEntryModel[]|null {
         return this.gradeEntries;
     }
-    public setGradeEntries(gradeEntries: GradeEntryModel[]|null) {
+    public setGradeEntries(gradeEntries: Gs2Grade.GradeEntryModel[]|null) {
         this.gradeEntries = gradeEntries;
         return this;
     }
-    public withGradeEntries(gradeEntries: GradeEntryModel[]|null): this {
+    public withGradeEntries(gradeEntries: Gs2Grade.GradeEntryModel[]|null): this {
         this.gradeEntries = gradeEntries;
         return this;
     }
-    public getAcquireActionRates(): AcquireActionRate[]|null {
+    public getAcquireActionRates(): Gs2Grade.AcquireActionRate[]|null {
         return this.acquireActionRates;
     }
-    public setAcquireActionRates(acquireActionRates: AcquireActionRate[]|null) {
+    public setAcquireActionRates(acquireActionRates: Gs2Grade.AcquireActionRate[]|null) {
         this.acquireActionRates = acquireActionRates;
         return this;
     }
-    public withAcquireActionRates(acquireActionRates: AcquireActionRate[]|null): this {
+    public withAcquireActionRates(acquireActionRates: Gs2Grade.AcquireActionRate[]|null): this {
         this.acquireActionRates = acquireActionRates;
         return this;
     }
@@ -246,20 +248,20 @@ export default class GradeModelMaster implements IModel {
             .withMetadata(data["metadata"])
             .withDefaultGrades(data.defaultGrades ?
                 data.defaultGrades.map((item: {[key: string]: any}) => {
-                    return DefaultGradeModel.fromDict(item);
+                    return Gs2Grade.DefaultGradeModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withExperienceModelId(data["experienceModelId"])
             .withGradeEntries(data.gradeEntries ?
                 data.gradeEntries.map((item: {[key: string]: any}) => {
-                    return GradeEntryModel.fromDict(item);
+                    return Gs2Grade.GradeEntryModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withAcquireActionRates(data.acquireActionRates ?
                 data.acquireActionRates.map((item: {[key: string]: any}) => {
-                    return AcquireActionRate.fromDict(item);
+                    return Gs2Grade.AcquireActionRate.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -272,21 +274,21 @@ export default class GradeModelMaster implements IModel {
             "description": this.getDescription(),
             "metadata": this.getMetadata(),
             "defaultGrades": this.getDefaultGrades() ?
-                this.getDefaultGrades()!.map((item: DefaultGradeModel) => {
+                this.getDefaultGrades()!.map((item: Gs2Grade.DefaultGradeModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "experienceModelId": this.getExperienceModelId(),
             "gradeEntries": this.getGradeEntries() ?
-                this.getGradeEntries()!.map((item: GradeEntryModel) => {
+                this.getGradeEntries()!.map((item: Gs2Grade.GradeEntryModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "acquireActionRates": this.getAcquireActionRates() ?
-                this.getAcquireActionRates()!.map((item: AcquireActionRate) => {
+                this.getAcquireActionRates()!.map((item: Gs2Grade.AcquireActionRate) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

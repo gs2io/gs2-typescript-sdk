@@ -163,7 +163,7 @@ var UpdateCategoryModelMasterRequest = /** @class */ (function () {
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
                 return Gs2Idle.AcquireActionList.fromDict(item);
-            }) : [])
+            }) : null)
             .withIdlePeriodScheduleId(data["idlePeriodScheduleId"])
             .withReceivePeriodScheduleId(data["receivePeriodScheduleId"]);
     };
@@ -178,7 +178,7 @@ var UpdateCategoryModelMasterRequest = /** @class */ (function () {
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "idlePeriodScheduleId": this.getIdlePeriodScheduleId(),
             "receivePeriodScheduleId": this.getReceivePeriodScheduleId(),
         };

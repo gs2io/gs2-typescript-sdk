@@ -55,7 +55,7 @@ export default class DescribeGlobalRankingScoresByUserIdResult implements IResul
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Ranking2.GlobalRankingScore.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeGlobalRankingScoresByUserIdResult implements IResul
                 this.getItems()!.map((item: Gs2Ranking2.GlobalRankingScore) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

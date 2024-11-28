@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Scope_1 = tslib_1.__importDefault(require("./Scope"));
-var GlobalRankingSetting_1 = tslib_1.__importDefault(require("./GlobalRankingSetting"));
+var Gs2Ranking = tslib_1.__importStar(require("../../ranking/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:ranking:{namespaceName}:categoryModelMaster:{categoryName}";
 var CategoryModelMaster = /** @class */ (function () {
     function CategoryModelMaster() {
@@ -387,7 +386,7 @@ var CategoryModelMaster = /** @class */ (function () {
             .withSum(data["sum"])
             .withOrderDirection(data["orderDirection"])
             .withScope(data["scope"])
-            .withGlobalRankingSetting(GlobalRankingSetting_1.default.fromDict(data["globalRankingSetting"]))
+            .withGlobalRankingSetting(Gs2Ranking.GlobalRankingSetting.fromDict(data["globalRankingSetting"]))
             .withEntryPeriodEventId(data["entryPeriodEventId"])
             .withAccessPeriodEventId(data["accessPeriodEventId"])
             .withUniqueByUserId(data["uniqueByUserId"])
@@ -396,12 +395,12 @@ var CategoryModelMaster = /** @class */ (function () {
             .withCalculateIntervalMinutes(data["calculateIntervalMinutes"])
             .withAdditionalScopes(data.additionalScopes ?
             data.additionalScopes.map(function (item) {
-                return Scope_1.default.fromDict(item);
-            }) : [])
+                return Gs2Ranking.Scope.fromDict(item);
+            }) : null)
             .withIgnoreUserIds(data.ignoreUserIds ?
             data.ignoreUserIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withGeneration(data["generation"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -429,11 +428,11 @@ var CategoryModelMaster = /** @class */ (function () {
             "additionalScopes": this.getAdditionalScopes() ?
                 this.getAdditionalScopes().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "ignoreUserIds": this.getIgnoreUserIds() ?
                 this.getIgnoreUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "generation": this.getGeneration(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

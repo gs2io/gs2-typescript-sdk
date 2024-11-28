@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import TwoFactorAuthenticationSetting from './TwoFactorAuthenticationSetting';
+import * as Gs2Identifier from '../../identifier/model';
 export default class Password implements IModel {
     private passwordId;
     private userId;
@@ -24,9 +24,9 @@ export default class Password implements IModel {
     getEnableTwoFactorAuthentication(): string | null;
     setEnableTwoFactorAuthentication(enableTwoFactorAuthentication: string | null): this;
     withEnableTwoFactorAuthentication(enableTwoFactorAuthentication: string | null): this;
-    getTwoFactorAuthenticationSetting(): TwoFactorAuthenticationSetting | null;
-    setTwoFactorAuthenticationSetting(twoFactorAuthenticationSetting: TwoFactorAuthenticationSetting | null): this;
-    withTwoFactorAuthenticationSetting(twoFactorAuthenticationSetting: TwoFactorAuthenticationSetting | null): this;
+    getTwoFactorAuthenticationSetting(): Gs2Identifier.TwoFactorAuthenticationSetting | null;
+    setTwoFactorAuthenticationSetting(twoFactorAuthenticationSetting: Gs2Identifier.TwoFactorAuthenticationSetting | null): this;
+    withTwoFactorAuthenticationSetting(twoFactorAuthenticationSetting: Gs2Identifier.TwoFactorAuthenticationSetting | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

@@ -98,7 +98,7 @@ var SetTransactionDefaultConfigByUserIdRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Distributor.Config.fromDict(item);
-            }) : [])
+            }) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     };
     SetTransactionDefaultConfigByUserIdRequest.prototype.toDict = function () {
@@ -107,7 +107,7 @@ var SetTransactionDefaultConfigByUserIdRequest = /** @class */ (function () {
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     };

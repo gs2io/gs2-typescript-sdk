@@ -37,14 +37,14 @@ var AttachSecurityPolicyResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Identifier.SecurityPolicy.fromDict(item);
-            }) : []);
+            }) : null);
     };
     AttachSecurityPolicyResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return AttachSecurityPolicyResult;

@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Matchmaking from '../../matchmaking/model'
+
 export default class NotificationSetting implements IModel {
     private gatewayNamespaceId: string|null = null;
     private enableTransferMobileNotification: boolean|null = null;

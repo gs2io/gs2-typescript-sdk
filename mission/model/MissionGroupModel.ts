@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Mission from '../../mission/model'
 import TargetCounterModel from './TargetCounterModel';
 import VerifyAction from './VerifyAction';
 import AcquireAction from './AcquireAction';
@@ -25,7 +27,7 @@ export default class MissionGroupModel implements IModel {
     private missionGroupId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;
-    private tasks: MissionTaskModel[]|null = null;
+    private tasks: Gs2Mission.MissionTaskModel[]|null = null;
     private resetType: string|null = null;
     private resetDayOfMonth: number|null = null;
     private resetDayOfWeek: string|null = null;
@@ -145,14 +147,14 @@ export default class MissionGroupModel implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getTasks(): MissionTaskModel[]|null {
+    public getTasks(): Gs2Mission.MissionTaskModel[]|null {
         return this.tasks;
     }
-    public setTasks(tasks: MissionTaskModel[]|null) {
+    public setTasks(tasks: Gs2Mission.MissionTaskModel[]|null) {
         this.tasks = tasks;
         return this;
     }
-    public withTasks(tasks: MissionTaskModel[]|null): this {
+    public withTasks(tasks: Gs2Mission.MissionTaskModel[]|null): this {
         this.tasks = tasks;
         return this;
     }
@@ -222,9 +224,9 @@ export default class MissionGroupModel implements IModel {
             .withMetadata(data["metadata"])
             .withTasks(data.tasks ?
                 data.tasks.map((item: {[key: string]: any}) => {
-                    return MissionTaskModel.fromDict(item);
+                    return Gs2Mission.MissionTaskModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withResetType(data["resetType"])
             .withResetDayOfMonth(data["resetDayOfMonth"])
             .withResetDayOfWeek(data["resetDayOfWeek"])
@@ -238,10 +240,10 @@ export default class MissionGroupModel implements IModel {
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "tasks": this.getTasks() ?
-                this.getTasks()!.map((item: MissionTaskModel) => {
+                this.getTasks()!.map((item: Gs2Mission.MissionTaskModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "resetType": this.getResetType(),
             "resetDayOfMonth": this.getResetDayOfMonth(),
             "resetDayOfWeek": this.getResetDayOfWeek(),

@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Enhance from '../../enhance/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:enhance:{namespaceName}";
 
 export default class CurrentRateMaster implements IModel {

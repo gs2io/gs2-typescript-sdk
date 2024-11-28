@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Inventory from '../../inventory/model'
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:inventory:{namespaceName}";
@@ -23,14 +25,14 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
-    private acquireScript: ScriptSetting|null = null;
-    private overflowScript: ScriptSetting|null = null;
-    private consumeScript: ScriptSetting|null = null;
-    private simpleItemAcquireScript: ScriptSetting|null = null;
-    private simpleItemConsumeScript: ScriptSetting|null = null;
-    private bigItemAcquireScript: ScriptSetting|null = null;
-    private bigItemConsumeScript: ScriptSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private acquireScript: Gs2Inventory.ScriptSetting|null = null;
+    private overflowScript: Gs2Inventory.ScriptSetting|null = null;
+    private consumeScript: Gs2Inventory.ScriptSetting|null = null;
+    private simpleItemAcquireScript: Gs2Inventory.ScriptSetting|null = null;
+    private simpleItemConsumeScript: Gs2Inventory.ScriptSetting|null = null;
+    private bigItemAcquireScript: Gs2Inventory.ScriptSetting|null = null;
+    private bigItemConsumeScript: Gs2Inventory.ScriptSetting|null = null;
+    private logSetting: Gs2Inventory.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -127,91 +129,91 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
-    public getAcquireScript(): ScriptSetting|null {
+    public getAcquireScript(): Gs2Inventory.ScriptSetting|null {
         return this.acquireScript;
     }
-    public setAcquireScript(acquireScript: ScriptSetting|null) {
+    public setAcquireScript(acquireScript: Gs2Inventory.ScriptSetting|null) {
         this.acquireScript = acquireScript;
         return this;
     }
-    public withAcquireScript(acquireScript: ScriptSetting|null): this {
+    public withAcquireScript(acquireScript: Gs2Inventory.ScriptSetting|null): this {
         this.acquireScript = acquireScript;
         return this;
     }
-    public getOverflowScript(): ScriptSetting|null {
+    public getOverflowScript(): Gs2Inventory.ScriptSetting|null {
         return this.overflowScript;
     }
-    public setOverflowScript(overflowScript: ScriptSetting|null) {
+    public setOverflowScript(overflowScript: Gs2Inventory.ScriptSetting|null) {
         this.overflowScript = overflowScript;
         return this;
     }
-    public withOverflowScript(overflowScript: ScriptSetting|null): this {
+    public withOverflowScript(overflowScript: Gs2Inventory.ScriptSetting|null): this {
         this.overflowScript = overflowScript;
         return this;
     }
-    public getConsumeScript(): ScriptSetting|null {
+    public getConsumeScript(): Gs2Inventory.ScriptSetting|null {
         return this.consumeScript;
     }
-    public setConsumeScript(consumeScript: ScriptSetting|null) {
+    public setConsumeScript(consumeScript: Gs2Inventory.ScriptSetting|null) {
         this.consumeScript = consumeScript;
         return this;
     }
-    public withConsumeScript(consumeScript: ScriptSetting|null): this {
+    public withConsumeScript(consumeScript: Gs2Inventory.ScriptSetting|null): this {
         this.consumeScript = consumeScript;
         return this;
     }
-    public getSimpleItemAcquireScript(): ScriptSetting|null {
+    public getSimpleItemAcquireScript(): Gs2Inventory.ScriptSetting|null {
         return this.simpleItemAcquireScript;
     }
-    public setSimpleItemAcquireScript(simpleItemAcquireScript: ScriptSetting|null) {
+    public setSimpleItemAcquireScript(simpleItemAcquireScript: Gs2Inventory.ScriptSetting|null) {
         this.simpleItemAcquireScript = simpleItemAcquireScript;
         return this;
     }
-    public withSimpleItemAcquireScript(simpleItemAcquireScript: ScriptSetting|null): this {
+    public withSimpleItemAcquireScript(simpleItemAcquireScript: Gs2Inventory.ScriptSetting|null): this {
         this.simpleItemAcquireScript = simpleItemAcquireScript;
         return this;
     }
-    public getSimpleItemConsumeScript(): ScriptSetting|null {
+    public getSimpleItemConsumeScript(): Gs2Inventory.ScriptSetting|null {
         return this.simpleItemConsumeScript;
     }
-    public setSimpleItemConsumeScript(simpleItemConsumeScript: ScriptSetting|null) {
+    public setSimpleItemConsumeScript(simpleItemConsumeScript: Gs2Inventory.ScriptSetting|null) {
         this.simpleItemConsumeScript = simpleItemConsumeScript;
         return this;
     }
-    public withSimpleItemConsumeScript(simpleItemConsumeScript: ScriptSetting|null): this {
+    public withSimpleItemConsumeScript(simpleItemConsumeScript: Gs2Inventory.ScriptSetting|null): this {
         this.simpleItemConsumeScript = simpleItemConsumeScript;
         return this;
     }
-    public getBigItemAcquireScript(): ScriptSetting|null {
+    public getBigItemAcquireScript(): Gs2Inventory.ScriptSetting|null {
         return this.bigItemAcquireScript;
     }
-    public setBigItemAcquireScript(bigItemAcquireScript: ScriptSetting|null) {
+    public setBigItemAcquireScript(bigItemAcquireScript: Gs2Inventory.ScriptSetting|null) {
         this.bigItemAcquireScript = bigItemAcquireScript;
         return this;
     }
-    public withBigItemAcquireScript(bigItemAcquireScript: ScriptSetting|null): this {
+    public withBigItemAcquireScript(bigItemAcquireScript: Gs2Inventory.ScriptSetting|null): this {
         this.bigItemAcquireScript = bigItemAcquireScript;
         return this;
     }
-    public getBigItemConsumeScript(): ScriptSetting|null {
+    public getBigItemConsumeScript(): Gs2Inventory.ScriptSetting|null {
         return this.bigItemConsumeScript;
     }
-    public setBigItemConsumeScript(bigItemConsumeScript: ScriptSetting|null) {
+    public setBigItemConsumeScript(bigItemConsumeScript: Gs2Inventory.ScriptSetting|null) {
         this.bigItemConsumeScript = bigItemConsumeScript;
         return this;
     }
-    public withBigItemConsumeScript(bigItemConsumeScript: ScriptSetting|null): this {
+    public withBigItemConsumeScript(bigItemConsumeScript: Gs2Inventory.ScriptSetting|null): this {
         this.bigItemConsumeScript = bigItemConsumeScript;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Inventory.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Inventory.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Inventory.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -257,14 +259,14 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withAcquireScript(ScriptSetting.fromDict(data["acquireScript"]))
-            .withOverflowScript(ScriptSetting.fromDict(data["overflowScript"]))
-            .withConsumeScript(ScriptSetting.fromDict(data["consumeScript"]))
-            .withSimpleItemAcquireScript(ScriptSetting.fromDict(data["simpleItemAcquireScript"]))
-            .withSimpleItemConsumeScript(ScriptSetting.fromDict(data["simpleItemConsumeScript"]))
-            .withBigItemAcquireScript(ScriptSetting.fromDict(data["bigItemAcquireScript"]))
-            .withBigItemConsumeScript(ScriptSetting.fromDict(data["bigItemConsumeScript"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withAcquireScript(Gs2Inventory.ScriptSetting.fromDict(data["acquireScript"]))
+            .withOverflowScript(Gs2Inventory.ScriptSetting.fromDict(data["overflowScript"]))
+            .withConsumeScript(Gs2Inventory.ScriptSetting.fromDict(data["consumeScript"]))
+            .withSimpleItemAcquireScript(Gs2Inventory.ScriptSetting.fromDict(data["simpleItemAcquireScript"]))
+            .withSimpleItemConsumeScript(Gs2Inventory.ScriptSetting.fromDict(data["simpleItemConsumeScript"]))
+            .withBigItemAcquireScript(Gs2Inventory.ScriptSetting.fromDict(data["bigItemAcquireScript"]))
+            .withBigItemConsumeScript(Gs2Inventory.ScriptSetting.fromDict(data["bigItemConsumeScript"]))
+            .withLogSetting(Gs2Inventory.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

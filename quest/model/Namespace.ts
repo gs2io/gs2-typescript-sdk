@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Quest from '../../quest/model'
 import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
@@ -24,11 +26,11 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
-    private transactionSetting: TransactionSetting|null = null;
-    private startQuestScript: ScriptSetting|null = null;
-    private completeQuestScript: ScriptSetting|null = null;
-    private failedQuestScript: ScriptSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private transactionSetting: Gs2Quest.TransactionSetting|null = null;
+    private startQuestScript: Gs2Quest.ScriptSetting|null = null;
+    private completeQuestScript: Gs2Quest.ScriptSetting|null = null;
+    private failedQuestScript: Gs2Quest.ScriptSetting|null = null;
+    private logSetting: Gs2Quest.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private queueNamespaceId: string|null = null;
@@ -127,58 +129,58 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
-    public getTransactionSetting(): TransactionSetting|null {
+    public getTransactionSetting(): Gs2Quest.TransactionSetting|null {
         return this.transactionSetting;
     }
-    public setTransactionSetting(transactionSetting: TransactionSetting|null) {
+    public setTransactionSetting(transactionSetting: Gs2Quest.TransactionSetting|null) {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public withTransactionSetting(transactionSetting: TransactionSetting|null): this {
+    public withTransactionSetting(transactionSetting: Gs2Quest.TransactionSetting|null): this {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public getStartQuestScript(): ScriptSetting|null {
+    public getStartQuestScript(): Gs2Quest.ScriptSetting|null {
         return this.startQuestScript;
     }
-    public setStartQuestScript(startQuestScript: ScriptSetting|null) {
+    public setStartQuestScript(startQuestScript: Gs2Quest.ScriptSetting|null) {
         this.startQuestScript = startQuestScript;
         return this;
     }
-    public withStartQuestScript(startQuestScript: ScriptSetting|null): this {
+    public withStartQuestScript(startQuestScript: Gs2Quest.ScriptSetting|null): this {
         this.startQuestScript = startQuestScript;
         return this;
     }
-    public getCompleteQuestScript(): ScriptSetting|null {
+    public getCompleteQuestScript(): Gs2Quest.ScriptSetting|null {
         return this.completeQuestScript;
     }
-    public setCompleteQuestScript(completeQuestScript: ScriptSetting|null) {
+    public setCompleteQuestScript(completeQuestScript: Gs2Quest.ScriptSetting|null) {
         this.completeQuestScript = completeQuestScript;
         return this;
     }
-    public withCompleteQuestScript(completeQuestScript: ScriptSetting|null): this {
+    public withCompleteQuestScript(completeQuestScript: Gs2Quest.ScriptSetting|null): this {
         this.completeQuestScript = completeQuestScript;
         return this;
     }
-    public getFailedQuestScript(): ScriptSetting|null {
+    public getFailedQuestScript(): Gs2Quest.ScriptSetting|null {
         return this.failedQuestScript;
     }
-    public setFailedQuestScript(failedQuestScript: ScriptSetting|null) {
+    public setFailedQuestScript(failedQuestScript: Gs2Quest.ScriptSetting|null) {
         this.failedQuestScript = failedQuestScript;
         return this;
     }
-    public withFailedQuestScript(failedQuestScript: ScriptSetting|null): this {
+    public withFailedQuestScript(failedQuestScript: Gs2Quest.ScriptSetting|null): this {
         this.failedQuestScript = failedQuestScript;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Quest.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Quest.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Quest.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -252,11 +254,11 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
-            .withStartQuestScript(ScriptSetting.fromDict(data["startQuestScript"]))
-            .withCompleteQuestScript(ScriptSetting.fromDict(data["completeQuestScript"]))
-            .withFailedQuestScript(ScriptSetting.fromDict(data["failedQuestScript"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withTransactionSetting(Gs2Quest.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withStartQuestScript(Gs2Quest.ScriptSetting.fromDict(data["startQuestScript"]))
+            .withCompleteQuestScript(Gs2Quest.ScriptSetting.fromDict(data["completeQuestScript"]))
+            .withFailedQuestScript(Gs2Quest.ScriptSetting.fromDict(data["failedQuestScript"]))
+            .withLogSetting(Gs2Quest.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withQueueNamespaceId(data["queueNamespaceId"])

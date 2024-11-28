@@ -136,7 +136,7 @@ export default class CompleteRequest implements IRequest {
                 data.config.map((item: {[key: string]: any}) => {
                     return Gs2Mission.Config.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -149,7 +149,7 @@ export default class CompleteRequest implements IRequest {
                 this.getConfig()!.map((item: Gs2Mission.Config) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

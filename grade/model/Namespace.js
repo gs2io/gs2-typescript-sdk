@@ -16,9 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
-var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2Grade = tslib_1.__importStar(require("../../grade/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:grade:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -187,9 +185,9 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
-            .withChangeGradeScript(ScriptSetting_1.default.fromDict(data["changeGradeScript"]))
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withTransactionSetting(Gs2Grade.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withChangeGradeScript(Gs2Grade.ScriptSetting.fromDict(data["changeGradeScript"]))
+            .withLogSetting(Gs2Grade.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

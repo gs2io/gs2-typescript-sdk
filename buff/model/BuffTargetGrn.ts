@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Buff from '../../buff/model'
+
 export default class BuffTargetGrn implements IModel {
     private targetModelName: string|null = null;
     private targetGrn: string|null = null;

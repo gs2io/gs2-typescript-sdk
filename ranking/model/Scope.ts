@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Ranking from '../../ranking/model'
+
 export default class Scope implements IModel {
     private name: string|null = null;
     private targetDays: number|null = null;

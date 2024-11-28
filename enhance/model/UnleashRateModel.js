@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var UnleashRateEntryModel_1 = tslib_1.__importDefault(require("./UnleashRateEntryModel"));
+var Gs2Enhance = tslib_1.__importStar(require("../../enhance/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:enhance:{namespaceName}:unleashRateModel:{rateName}";
 var UnleashRateModel = /** @class */ (function () {
     function UnleashRateModel() {
@@ -184,8 +184,8 @@ var UnleashRateModel = /** @class */ (function () {
             .withGradeModelId(data["gradeModelId"])
             .withGradeEntries(data.gradeEntries ?
             data.gradeEntries.map(function (item) {
-                return UnleashRateEntryModel_1.default.fromDict(item);
-            }) : []);
+                return Gs2Enhance.UnleashRateEntryModel.fromDict(item);
+            }) : null);
     };
     UnleashRateModel.prototype.toDict = function () {
         return {
@@ -198,7 +198,7 @@ var UnleashRateModel = /** @class */ (function () {
             "gradeEntries": this.getGradeEntries() ?
                 this.getGradeEntries().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return UnleashRateModel;

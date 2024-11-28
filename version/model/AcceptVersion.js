@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var Version_1 = tslib_1.__importDefault(require("./Version"));
+var Gs2Version = tslib_1.__importStar(require("../../version/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:version:{namespaceName}:user:{userId}:version:{versionName}:accept";
 var AcceptVersion = /** @class */ (function () {
     function AcceptVersion() {
@@ -199,7 +199,7 @@ var AcceptVersion = /** @class */ (function () {
             .withAcceptVersionId(data["acceptVersionId"])
             .withVersionName(data["versionName"])
             .withUserId(data["userId"])
-            .withVersion(Version_1.default.fromDict(data["version"]))
+            .withVersion(Gs2Version.Version.fromDict(data["version"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

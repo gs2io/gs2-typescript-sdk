@@ -200,11 +200,11 @@ var Subscribe = /** @class */ (function () {
             .withTargetUserIds(data.targetUserIds ?
             data.targetUserIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withSubscribedUserIds(data.subscribedUserIds ?
             data.subscribedUserIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withCreatedAt(data["createdAt"])
             .withRevision(data["revision"]);
     };
@@ -216,11 +216,11 @@ var Subscribe = /** @class */ (function () {
             "targetUserIds": this.getTargetUserIds() ?
                 this.getTargetUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "subscribedUserIds": this.getSubscribedUserIds() ?
                 this.getSubscribedUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "createdAt": this.getCreatedAt(),
             "revision": this.getRevision(),
         };

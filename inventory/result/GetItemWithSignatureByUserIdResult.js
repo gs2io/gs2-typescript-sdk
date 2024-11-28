@@ -85,7 +85,7 @@ var GetItemWithSignatureByUserIdResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Inventory.ItemSet.fromDict(item);
-            }) : [])
+            }) : null)
             .withItemModel(Gs2Inventory.ItemModel.fromDict(data["itemModel"]))
             .withInventory(Gs2Inventory.Inventory.fromDict(data["inventory"]))
             .withBody(data["body"])
@@ -97,7 +97,7 @@ var GetItemWithSignatureByUserIdResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "itemModel": (_a = this.getItemModel()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "inventory": (_b = this.getInventory()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "body": this.getBody(),

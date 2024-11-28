@@ -15,12 +15,14 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Ranking2 from '../../ranking2/model'
 import AcquireAction from './AcquireAction';
 
 export default class RankingReward implements IModel {
     private thresholdRank: number|null = null;
     private metadata: string|null = null;
-    private acquireActions: AcquireAction[]|null = null;
+    private acquireActions: Gs2Ranking2.AcquireAction[]|null = null;
     public getThresholdRank(): number|null {
         return this.thresholdRank;
     }
@@ -43,14 +45,14 @@ export default class RankingReward implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getAcquireActions(): AcquireAction[]|null {
+    public getAcquireActions(): Gs2Ranking2.AcquireAction[]|null {
         return this.acquireActions;
     }
-    public setAcquireActions(acquireActions: AcquireAction[]|null) {
+    public setAcquireActions(acquireActions: Gs2Ranking2.AcquireAction[]|null) {
         this.acquireActions = acquireActions;
         return this;
     }
-    public withAcquireActions(acquireActions: AcquireAction[]|null): this {
+    public withAcquireActions(acquireActions: Gs2Ranking2.AcquireAction[]|null): this {
         this.acquireActions = acquireActions;
         return this;
     }
@@ -64,9 +66,9 @@ export default class RankingReward implements IModel {
             .withMetadata(data["metadata"])
             .withAcquireActions(data.acquireActions ?
                 data.acquireActions.map((item: {[key: string]: any}) => {
-                    return AcquireAction.fromDict(item);
+                    return Gs2Ranking2.AcquireAction.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -74,10 +76,10 @@ export default class RankingReward implements IModel {
             "thresholdRank": this.getThresholdRank(),
             "metadata": this.getMetadata(),
             "acquireActions": this.getAcquireActions() ?
-                this.getAcquireActions()!.map((item: AcquireAction) => {
+                this.getAcquireActions()!.map((item: Gs2Ranking2.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

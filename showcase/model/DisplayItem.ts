@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Showcase from '../../showcase/model'
 import VerifyAction from './VerifyAction';
 import ConsumeAction from './ConsumeAction';
 import AcquireAction from './AcquireAction';
@@ -25,8 +27,8 @@ const grnFormat: string = "";
 export default class DisplayItem implements IModel {
     private displayItemId: string|null = null;
     private type: string|null = null;
-    private salesItem: SalesItem|null = null;
-    private salesItemGroup: SalesItemGroup|null = null;
+    private salesItem: Gs2Showcase.SalesItem|null = null;
+    private salesItemGroup: Gs2Showcase.SalesItemGroup|null = null;
     private salesPeriodEventId: string|null = null;
 
     public static isValid(grn: string): boolean {
@@ -59,25 +61,25 @@ export default class DisplayItem implements IModel {
         this.type = type;
         return this;
     }
-    public getSalesItem(): SalesItem|null {
+    public getSalesItem(): Gs2Showcase.SalesItem|null {
         return this.salesItem;
     }
-    public setSalesItem(salesItem: SalesItem|null) {
+    public setSalesItem(salesItem: Gs2Showcase.SalesItem|null) {
         this.salesItem = salesItem;
         return this;
     }
-    public withSalesItem(salesItem: SalesItem|null): this {
+    public withSalesItem(salesItem: Gs2Showcase.SalesItem|null): this {
         this.salesItem = salesItem;
         return this;
     }
-    public getSalesItemGroup(): SalesItemGroup|null {
+    public getSalesItemGroup(): Gs2Showcase.SalesItemGroup|null {
         return this.salesItemGroup;
     }
-    public setSalesItemGroup(salesItemGroup: SalesItemGroup|null) {
+    public setSalesItemGroup(salesItemGroup: Gs2Showcase.SalesItemGroup|null) {
         this.salesItemGroup = salesItemGroup;
         return this;
     }
-    public withSalesItemGroup(salesItemGroup: SalesItemGroup|null): this {
+    public withSalesItemGroup(salesItemGroup: Gs2Showcase.SalesItemGroup|null): this {
         this.salesItemGroup = salesItemGroup;
         return this;
     }
@@ -100,8 +102,8 @@ export default class DisplayItem implements IModel {
         return new DisplayItem()
             .withDisplayItemId(data["displayItemId"])
             .withType(data["type"])
-            .withSalesItem(SalesItem.fromDict(data["salesItem"]))
-            .withSalesItemGroup(SalesItemGroup.fromDict(data["salesItemGroup"]))
+            .withSalesItem(Gs2Showcase.SalesItem.fromDict(data["salesItem"]))
+            .withSalesItemGroup(Gs2Showcase.SalesItemGroup.fromDict(data["salesItemGroup"]))
             .withSalesPeriodEventId(data["salesPeriodEventId"]);
     }
 

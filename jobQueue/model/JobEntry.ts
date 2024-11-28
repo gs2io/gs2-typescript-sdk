@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2JobQueue from '../../jobQueue/model'
+
 export default class JobEntry implements IModel {
     private scriptId: string|null = null;
     private args: string|null = null;

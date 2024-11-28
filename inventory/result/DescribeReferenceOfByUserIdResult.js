@@ -73,7 +73,7 @@ var DescribeReferenceOfByUserIdResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withItemSet(Gs2Inventory.ItemSet.fromDict(data["itemSet"]))
             .withItemModel(Gs2Inventory.ItemModel.fromDict(data["itemModel"]))
             .withInventory(Gs2Inventory.Inventory.fromDict(data["inventory"]));
@@ -84,7 +84,7 @@ var DescribeReferenceOfByUserIdResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "itemSet": (_a = this.getItemSet()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "itemModel": (_b = this.getItemModel()) === null || _b === void 0 ? void 0 : _b.toDict(),
             "inventory": (_c = this.getInventory()) === null || _c === void 0 ? void 0 : _c.toDict(),

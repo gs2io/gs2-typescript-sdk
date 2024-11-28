@@ -55,7 +55,7 @@ export default class DescribeBalanceParameterModelMastersResult implements IResu
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Enchant.BalanceParameterModelMaster.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeBalanceParameterModelMastersResult implements IResu
                 this.getItems()!.map((item: Gs2Enchant.BalanceParameterModelMaster) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import TransactionSetting from './TransactionSetting';
-import ScriptSetting from './ScriptSetting';
-import LogSetting from './LogSetting';
+import * as Gs2LoginReward from '../../loginReward/model';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
@@ -26,15 +24,15 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
-    getTransactionSetting(): TransactionSetting | null;
-    setTransactionSetting(transactionSetting: TransactionSetting | null): this;
-    withTransactionSetting(transactionSetting: TransactionSetting | null): this;
-    getReceiveScript(): ScriptSetting | null;
-    setReceiveScript(receiveScript: ScriptSetting | null): this;
-    withReceiveScript(receiveScript: ScriptSetting | null): this;
-    getLogSetting(): LogSetting | null;
-    setLogSetting(logSetting: LogSetting | null): this;
-    withLogSetting(logSetting: LogSetting | null): this;
+    getTransactionSetting(): Gs2LoginReward.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2LoginReward.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2LoginReward.TransactionSetting | null): this;
+    getReceiveScript(): Gs2LoginReward.ScriptSetting | null;
+    setReceiveScript(receiveScript: Gs2LoginReward.ScriptSetting | null): this;
+    withReceiveScript(receiveScript: Gs2LoginReward.ScriptSetting | null): this;
+    getLogSetting(): Gs2LoginReward.LogSetting | null;
+    setLogSetting(logSetting: Gs2LoginReward.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2LoginReward.LogSetting | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

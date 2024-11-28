@@ -125,7 +125,7 @@ var CreateCounterModelMasterRequest = /** @class */ (function () {
             .withScopes(data.scopes ?
             data.scopes.map(function (item) {
                 return Gs2Mission.CounterScopeModel.fromDict(item);
-            }) : [])
+            }) : null)
             .withChallengePeriodEventId(data["challengePeriodEventId"]);
     };
     CreateCounterModelMasterRequest.prototype.toDict = function () {
@@ -137,7 +137,7 @@ var CreateCounterModelMasterRequest = /** @class */ (function () {
             "scopes": this.getScopes() ?
                 this.getScopes().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "challengePeriodEventId": this.getChallengePeriodEventId(),
         };
     };

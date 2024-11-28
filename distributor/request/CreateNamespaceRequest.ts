@@ -26,6 +26,7 @@ export default class CreateNamespaceRequest implements IRequest {
     private description: string|null = null;
     private assumeUserId: string|null = null;
     private autoRunStampSheetNotification: Gs2Distributor.NotificationSetting|null = null;
+    private autoRunTransactionNotification: Gs2Distributor.NotificationSetting|null = null;
     private logSetting: Gs2Distributor.LogSetting|null = null;
 
     public getRequestId(): string|null {
@@ -99,6 +100,17 @@ export default class CreateNamespaceRequest implements IRequest {
         this.autoRunStampSheetNotification = autoRunStampSheetNotification;
         return this;
     }
+    public getAutoRunTransactionNotification(): Gs2Distributor.NotificationSetting|null {
+        return this.autoRunTransactionNotification;
+    }
+    public setAutoRunTransactionNotification(autoRunTransactionNotification: Gs2Distributor.NotificationSetting|null) {
+        this.autoRunTransactionNotification = autoRunTransactionNotification;
+        return this;
+    }
+    public withAutoRunTransactionNotification(autoRunTransactionNotification: Gs2Distributor.NotificationSetting|null): this {
+        this.autoRunTransactionNotification = autoRunTransactionNotification;
+        return this;
+    }
     public getLogSetting(): Gs2Distributor.LogSetting|null {
         return this.logSetting;
     }
@@ -117,6 +129,7 @@ export default class CreateNamespaceRequest implements IRequest {
             .withDescription(data["description"])
             .withAssumeUserId(data["assumeUserId"])
             .withAutoRunStampSheetNotification(Gs2Distributor.NotificationSetting.fromDict(data["autoRunStampSheetNotification"]))
+            .withAutoRunTransactionNotification(Gs2Distributor.NotificationSetting.fromDict(data["autoRunTransactionNotification"]))
             .withLogSetting(Gs2Distributor.LogSetting.fromDict(data["logSetting"]));
     }
 
@@ -126,6 +139,7 @@ export default class CreateNamespaceRequest implements IRequest {
             "description": this.getDescription(),
             "assumeUserId": this.getAssumeUserId(),
             "autoRunStampSheetNotification": this.getAutoRunStampSheetNotification()?.toDict(),
+            "autoRunTransactionNotification": this.getAutoRunTransactionNotification()?.toDict(),
             "logSetting": this.getLogSetting()?.toDict(),
         };
     }

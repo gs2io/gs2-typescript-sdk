@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
+var Gs2Lottery = tslib_1.__importStar(require("../../lottery/model"));
 var DrawnPrize = /** @class */ (function () {
     function DrawnPrize() {
         this.prizeId = null;
@@ -52,8 +52,8 @@ var DrawnPrize = /** @class */ (function () {
             .withPrizeId(data["prizeId"])
             .withAcquireActions(data.acquireActions ?
             data.acquireActions.map(function (item) {
-                return AcquireAction_1.default.fromDict(item);
-            }) : []);
+                return Gs2Lottery.AcquireAction.fromDict(item);
+            }) : null);
     };
     DrawnPrize.prototype.toDict = function () {
         return {
@@ -61,7 +61,7 @@ var DrawnPrize = /** @class */ (function () {
             "acquireActions": this.getAcquireActions() ?
                 this.getAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DrawnPrize;

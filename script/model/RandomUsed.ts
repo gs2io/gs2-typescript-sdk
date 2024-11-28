@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Script from '../../script/model'
+
 export default class RandomUsed implements IModel {
     private category: number|null = null;
     private used: number|null = null;

@@ -55,7 +55,7 @@ export default class DescribeMissionGroupModelMastersResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Mission.MissionGroupModelMaster.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeMissionGroupModelMastersResult implements IResult {
                 this.getItems()!.map((item: Gs2Mission.MissionGroupModelMaster) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

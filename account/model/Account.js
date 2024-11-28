@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var BanStatus_1 = tslib_1.__importDefault(require("./BanStatus"));
+var Gs2Account = tslib_1.__importStar(require("../../account/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:account:{namespaceName}:account:{userId}";
 var Account = /** @class */ (function () {
     function Account() {
@@ -206,8 +206,8 @@ var Account = /** @class */ (function () {
             .withTimeOffset(data["timeOffset"])
             .withBanStatuses(data.banStatuses ?
             data.banStatuses.map(function (item) {
-                return BanStatus_1.default.fromDict(item);
-            }) : [])
+                return Gs2Account.BanStatus.fromDict(item);
+            }) : null)
             .withBanned(data["banned"])
             .withLastAuthenticatedAt(data["lastAuthenticatedAt"])
             .withCreatedAt(data["createdAt"])
@@ -222,7 +222,7 @@ var Account = /** @class */ (function () {
             "banStatuses": this.getBanStatuses() ?
                 this.getBanStatuses().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "banned": this.getBanned(),
             "lastAuthenticatedAt": this.getLastAuthenticatedAt(),
             "createdAt": this.getCreatedAt(),

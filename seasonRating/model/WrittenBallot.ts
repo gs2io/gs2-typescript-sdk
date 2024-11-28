@@ -15,31 +15,33 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2SeasonRating from '../../seasonRating/model'
 import Ballot from './Ballot';
 import GameResult from './GameResult';
 
 export default class WrittenBallot implements IModel {
-    private ballot: Ballot|null = null;
-    private gameResults: GameResult[]|null = null;
-    public getBallot(): Ballot|null {
+    private ballot: Gs2SeasonRating.Ballot|null = null;
+    private gameResults: Gs2SeasonRating.GameResult[]|null = null;
+    public getBallot(): Gs2SeasonRating.Ballot|null {
         return this.ballot;
     }
-    public setBallot(ballot: Ballot|null) {
+    public setBallot(ballot: Gs2SeasonRating.Ballot|null) {
         this.ballot = ballot;
         return this;
     }
-    public withBallot(ballot: Ballot|null): this {
+    public withBallot(ballot: Gs2SeasonRating.Ballot|null): this {
         this.ballot = ballot;
         return this;
     }
-    public getGameResults(): GameResult[]|null {
+    public getGameResults(): Gs2SeasonRating.GameResult[]|null {
         return this.gameResults;
     }
-    public setGameResults(gameResults: GameResult[]|null) {
+    public setGameResults(gameResults: Gs2SeasonRating.GameResult[]|null) {
         this.gameResults = gameResults;
         return this;
     }
-    public withGameResults(gameResults: GameResult[]|null): this {
+    public withGameResults(gameResults: Gs2SeasonRating.GameResult[]|null): this {
         this.gameResults = gameResults;
         return this;
     }
@@ -49,22 +51,22 @@ export default class WrittenBallot implements IModel {
             return null;
         }
         return new WrittenBallot()
-            .withBallot(Ballot.fromDict(data["ballot"]))
+            .withBallot(Gs2SeasonRating.Ballot.fromDict(data["ballot"]))
             .withGameResults(data.gameResults ?
                 data.gameResults.map((item: {[key: string]: any}) => {
-                    return GameResult.fromDict(item);
+                    return Gs2SeasonRating.GameResult.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
         return {
             "ballot": this.getBallot()?.toDict(),
             "gameResults": this.getGameResults() ?
-                this.getGameResults()!.map((item: GameResult) => {
+                this.getGameResults()!.map((item: Gs2SeasonRating.GameResult) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

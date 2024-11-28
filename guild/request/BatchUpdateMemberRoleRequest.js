@@ -112,7 +112,7 @@ var BatchUpdateMemberRoleRequest = /** @class */ (function () {
             .withMembers(data.members ?
             data.members.map(function (item) {
                 return Gs2Guild.Member.fromDict(item);
-            }) : []);
+            }) : null);
     };
     BatchUpdateMemberRoleRequest.prototype.toDict = function () {
         return {
@@ -122,7 +122,7 @@ var BatchUpdateMemberRoleRequest = /** @class */ (function () {
             "members": this.getMembers() ?
                 this.getMembers().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return BatchUpdateMemberRoleRequest;

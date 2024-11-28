@@ -322,12 +322,12 @@ export default class CreateCategoryModelMasterRequest implements IRequest {
                 data.additionalScopes.map((item: {[key: string]: any}) => {
                     return Gs2Ranking.Scope.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withIgnoreUserIds(data.ignoreUserIds ?
                 data.ignoreUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withGeneration(data["generation"]);
     }
 
@@ -353,12 +353,12 @@ export default class CreateCategoryModelMasterRequest implements IRequest {
                 this.getAdditionalScopes()!.map((item: Gs2Ranking.Scope) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "ignoreUserIds": this.getIgnoreUserIds() ?
                 this.getIgnoreUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "generation": this.getGeneration(),
         };
     }

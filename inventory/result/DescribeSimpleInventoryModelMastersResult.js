@@ -49,7 +49,7 @@ var DescribeSimpleInventoryModelMastersResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Inventory.SimpleInventoryModelMaster.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeSimpleInventoryModelMastersResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeSimpleInventoryModelMastersResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

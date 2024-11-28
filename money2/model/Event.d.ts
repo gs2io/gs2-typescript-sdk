@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import VerifyReceiptEvent from './VerifyReceiptEvent';
-import DepositEvent from './DepositEvent';
-import WithdrawEvent from './WithdrawEvent';
+import * as Gs2Money2 from '../../money2/model';
 export default class Event implements IModel {
     private eventId;
     private transactionId;
@@ -30,15 +28,15 @@ export default class Event implements IModel {
     getEventType(): string | null;
     setEventType(eventType: string | null): this;
     withEventType(eventType: string | null): this;
-    getVerifyReceiptEvent(): VerifyReceiptEvent | null;
-    setVerifyReceiptEvent(verifyReceiptEvent: VerifyReceiptEvent | null): this;
-    withVerifyReceiptEvent(verifyReceiptEvent: VerifyReceiptEvent | null): this;
-    getDepositEvent(): DepositEvent | null;
-    setDepositEvent(depositEvent: DepositEvent | null): this;
-    withDepositEvent(depositEvent: DepositEvent | null): this;
-    getWithdrawEvent(): WithdrawEvent | null;
-    setWithdrawEvent(withdrawEvent: WithdrawEvent | null): this;
-    withWithdrawEvent(withdrawEvent: WithdrawEvent | null): this;
+    getVerifyReceiptEvent(): Gs2Money2.VerifyReceiptEvent | null;
+    setVerifyReceiptEvent(verifyReceiptEvent: Gs2Money2.VerifyReceiptEvent | null): this;
+    withVerifyReceiptEvent(verifyReceiptEvent: Gs2Money2.VerifyReceiptEvent | null): this;
+    getDepositEvent(): Gs2Money2.DepositEvent | null;
+    setDepositEvent(depositEvent: Gs2Money2.DepositEvent | null): this;
+    withDepositEvent(depositEvent: Gs2Money2.DepositEvent | null): this;
+    getWithdrawEvent(): Gs2Money2.WithdrawEvent | null;
+    setWithdrawEvent(withdrawEvent: Gs2Money2.WithdrawEvent | null): this;
+    withWithdrawEvent(withdrawEvent: Gs2Money2.WithdrawEvent | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

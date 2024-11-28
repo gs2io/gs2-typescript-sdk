@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Account from '../../account/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:account:{namespaceName}:platformId:{type}:{userIdentifier}";
 
 export default class PlatformId implements IModel {

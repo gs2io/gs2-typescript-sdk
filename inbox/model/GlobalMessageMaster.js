@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var AcquireAction_1 = tslib_1.__importDefault(require("./AcquireAction"));
-var TimeSpan_1 = tslib_1.__importDefault(require("./TimeSpan"));
+var Gs2Inbox = tslib_1.__importStar(require("../../inbox/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:inbox:{namespaceName}:master:globalMessage:{globalMessageName}";
 var GlobalMessageMaster = /** @class */ (function () {
     function GlobalMessageMaster() {
@@ -209,9 +208,9 @@ var GlobalMessageMaster = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withReadAcquireActions(data.readAcquireActions ?
             data.readAcquireActions.map(function (item) {
-                return AcquireAction_1.default.fromDict(item);
-            }) : [])
-            .withExpiresTimeSpan(TimeSpan_1.default.fromDict(data["expiresTimeSpan"]))
+                return Gs2Inbox.AcquireAction.fromDict(item);
+            }) : null)
+            .withExpiresTimeSpan(Gs2Inbox.TimeSpan.fromDict(data["expiresTimeSpan"]))
             .withExpiresAt(data["expiresAt"])
             .withMessageReceptionPeriodEventId(data["messageReceptionPeriodEventId"])
             .withCreatedAt(data["createdAt"])
@@ -226,7 +225,7 @@ var GlobalMessageMaster = /** @class */ (function () {
             "readAcquireActions": this.getReadAcquireActions() ?
                 this.getReadAcquireActions().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "expiresTimeSpan": (_a = this.getExpiresTimeSpan()) === null || _a === void 0 ? void 0 : _a.toDict(),
             "expiresAt": this.getExpiresAt(),
             "messageReceptionPeriodEventId": this.getMessageReceptionPeriodEventId(),

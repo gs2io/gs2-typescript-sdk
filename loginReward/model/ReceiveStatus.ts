@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2LoginReward from '../../loginReward/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:loginReward:{namespaceName}:user:{userId}:status:{bonusModelName}";
 
 export default class ReceiveStatus implements IModel {
@@ -231,7 +233,7 @@ export default class ReceiveStatus implements IModel {
                 data.receivedSteps.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withLastReceivedAt(data["lastReceivedAt"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -247,7 +249,7 @@ export default class ReceiveStatus implements IModel {
                 this.getReceivedSteps()!.map((item: boolean) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "lastReceivedAt": this.getLastReceivedAt(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

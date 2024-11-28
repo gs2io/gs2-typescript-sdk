@@ -15,13 +15,15 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2StateMachine from '../../stateMachine/model'
 import ChangeStateEvent from './ChangeStateEvent';
 import EmitEvent from './EmitEvent';
 
 export default class Event implements IModel {
     private eventType: string|null = null;
-    private changeStateEvent: ChangeStateEvent|null = null;
-    private emitEvent: EmitEvent|null = null;
+    private changeStateEvent: Gs2StateMachine.ChangeStateEvent|null = null;
+    private emitEvent: Gs2StateMachine.EmitEvent|null = null;
     public getEventType(): string|null {
         return this.eventType;
     }
@@ -33,25 +35,25 @@ export default class Event implements IModel {
         this.eventType = eventType;
         return this;
     }
-    public getChangeStateEvent(): ChangeStateEvent|null {
+    public getChangeStateEvent(): Gs2StateMachine.ChangeStateEvent|null {
         return this.changeStateEvent;
     }
-    public setChangeStateEvent(changeStateEvent: ChangeStateEvent|null) {
+    public setChangeStateEvent(changeStateEvent: Gs2StateMachine.ChangeStateEvent|null) {
         this.changeStateEvent = changeStateEvent;
         return this;
     }
-    public withChangeStateEvent(changeStateEvent: ChangeStateEvent|null): this {
+    public withChangeStateEvent(changeStateEvent: Gs2StateMachine.ChangeStateEvent|null): this {
         this.changeStateEvent = changeStateEvent;
         return this;
     }
-    public getEmitEvent(): EmitEvent|null {
+    public getEmitEvent(): Gs2StateMachine.EmitEvent|null {
         return this.emitEvent;
     }
-    public setEmitEvent(emitEvent: EmitEvent|null) {
+    public setEmitEvent(emitEvent: Gs2StateMachine.EmitEvent|null) {
         this.emitEvent = emitEvent;
         return this;
     }
-    public withEmitEvent(emitEvent: EmitEvent|null): this {
+    public withEmitEvent(emitEvent: Gs2StateMachine.EmitEvent|null): this {
         this.emitEvent = emitEvent;
         return this;
     }
@@ -62,8 +64,8 @@ export default class Event implements IModel {
         }
         return new Event()
             .withEventType(data["eventType"])
-            .withChangeStateEvent(ChangeStateEvent.fromDict(data["changeStateEvent"]))
-            .withEmitEvent(EmitEvent.fromDict(data["emitEvent"]));
+            .withChangeStateEvent(Gs2StateMachine.ChangeStateEvent.fromDict(data["changeStateEvent"]))
+            .withEmitEvent(Gs2StateMachine.EmitEvent.fromDict(data["emitEvent"]));
     }
 
     public toDict(): {[key: string]: any} {

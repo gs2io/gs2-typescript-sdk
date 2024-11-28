@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2JobQueue from '../../jobQueue/model'
 import NotificationSetting from './NotificationSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:queue:{namespaceName}";
@@ -24,9 +26,9 @@ export default class Namespace implements IModel {
     private name: string|null = null;
     private description: string|null = null;
     private enableAutoRun: boolean|null = null;
-    private runNotification: NotificationSetting|null = null;
-    private pushNotification: NotificationSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private runNotification: Gs2JobQueue.NotificationSetting|null = null;
+    private pushNotification: Gs2JobQueue.NotificationSetting|null = null;
+    private logSetting: Gs2JobQueue.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -134,36 +136,36 @@ export default class Namespace implements IModel {
         this.enableAutoRun = enableAutoRun;
         return this;
     }
-    public getRunNotification(): NotificationSetting|null {
+    public getRunNotification(): Gs2JobQueue.NotificationSetting|null {
         return this.runNotification;
     }
-    public setRunNotification(runNotification: NotificationSetting|null) {
+    public setRunNotification(runNotification: Gs2JobQueue.NotificationSetting|null) {
         this.runNotification = runNotification;
         return this;
     }
-    public withRunNotification(runNotification: NotificationSetting|null): this {
+    public withRunNotification(runNotification: Gs2JobQueue.NotificationSetting|null): this {
         this.runNotification = runNotification;
         return this;
     }
-    public getPushNotification(): NotificationSetting|null {
+    public getPushNotification(): Gs2JobQueue.NotificationSetting|null {
         return this.pushNotification;
     }
-    public setPushNotification(pushNotification: NotificationSetting|null) {
+    public setPushNotification(pushNotification: Gs2JobQueue.NotificationSetting|null) {
         this.pushNotification = pushNotification;
         return this;
     }
-    public withPushNotification(pushNotification: NotificationSetting|null): this {
+    public withPushNotification(pushNotification: Gs2JobQueue.NotificationSetting|null): this {
         this.pushNotification = pushNotification;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2JobQueue.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2JobQueue.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2JobQueue.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -210,9 +212,9 @@ export default class Namespace implements IModel {
             .withName(data["name"])
             .withDescription(data["description"])
             .withEnableAutoRun(data["enableAutoRun"])
-            .withRunNotification(NotificationSetting.fromDict(data["runNotification"]))
-            .withPushNotification(NotificationSetting.fromDict(data["pushNotification"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withRunNotification(Gs2JobQueue.NotificationSetting.fromDict(data["runNotification"]))
+            .withPushNotification(Gs2JobQueue.NotificationSetting.fromDict(data["pushNotification"]))
+            .withLogSetting(Gs2JobQueue.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

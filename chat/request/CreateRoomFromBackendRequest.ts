@@ -161,7 +161,7 @@ export default class CreateRoomFromBackendRequest implements IRequest {
                 data.whiteListUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -176,7 +176,7 @@ export default class CreateRoomFromBackendRequest implements IRequest {
                 this.getWhiteListUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

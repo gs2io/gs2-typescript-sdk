@@ -243,27 +243,27 @@ var SearchGuildsByUserIdRequest = /** @class */ (function () {
             .withAttributes1(data.attributes1 ?
             data.attributes1.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withAttributes2(data.attributes2 ?
             data.attributes2.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withAttributes3(data.attributes3 ?
             data.attributes3.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withAttributes4(data.attributes4 ?
             data.attributes4.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withAttributes5(data.attributes5 ?
             data.attributes5.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withJoinPolicies(data.joinPolicies ?
             data.joinPolicies.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withIncludeFullMembersGuild(data["includeFullMembersGuild"])
             .withOrderBy(data["orderBy"])
             .withPageToken(data["pageToken"])
@@ -279,27 +279,27 @@ var SearchGuildsByUserIdRequest = /** @class */ (function () {
             "attributes1": this.getAttributes1() ?
                 this.getAttributes1().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "attributes2": this.getAttributes2() ?
                 this.getAttributes2().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "attributes3": this.getAttributes3() ?
                 this.getAttributes3().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "attributes4": this.getAttributes4() ?
                 this.getAttributes4().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "attributes5": this.getAttributes5() ?
                 this.getAttributes5().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "joinPolicies": this.getJoinPolicies() ?
                 this.getJoinPolicies().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "includeFullMembersGuild": this.getIncludeFullMembersGuild(),
             "orderBy": this.getOrderBy(),
             "pageToken": this.getPageToken(),

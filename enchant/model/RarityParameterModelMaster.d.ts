@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import RarityParameterCountModel from './RarityParameterCountModel';
-import RarityParameterValueModel from './RarityParameterValueModel';
+import * as Gs2Enchant from '../../enchant/model';
 export default class RarityParameterModelMaster implements IModel {
     private rarityParameterModelId;
     private name;
@@ -33,12 +32,12 @@ export default class RarityParameterModelMaster implements IModel {
     getMaximumParameterCount(): number | null;
     setMaximumParameterCount(maximumParameterCount: number | null): this;
     withMaximumParameterCount(maximumParameterCount: number | null): this;
-    getParameterCounts(): RarityParameterCountModel[] | null;
-    setParameterCounts(parameterCounts: RarityParameterCountModel[] | null): this;
-    withParameterCounts(parameterCounts: RarityParameterCountModel[] | null): this;
-    getParameters(): RarityParameterValueModel[] | null;
-    setParameters(parameters: RarityParameterValueModel[] | null): this;
-    withParameters(parameters: RarityParameterValueModel[] | null): this;
+    getParameterCounts(): Gs2Enchant.RarityParameterCountModel[] | null;
+    setParameterCounts(parameterCounts: Gs2Enchant.RarityParameterCountModel[] | null): this;
+    withParameterCounts(parameterCounts: Gs2Enchant.RarityParameterCountModel[] | null): this;
+    getParameters(): Gs2Enchant.RarityParameterValueModel[] | null;
+    setParameters(parameters: Gs2Enchant.RarityParameterValueModel[] | null): this;
+    withParameters(parameters: Gs2Enchant.RarityParameterValueModel[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

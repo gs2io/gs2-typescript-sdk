@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Version from '../../version/model'
 import Version from './Version';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:version:{namespaceName}:user:{userId}:version:{versionName}:accept";
 
@@ -22,7 +24,7 @@ export default class AcceptVersion implements IModel {
     private acceptVersionId: string|null = null;
     private versionName: string|null = null;
     private userId: string|null = null;
-    private version: Version|null = null;
+    private version: Gs2Version.Version|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -163,14 +165,14 @@ export default class AcceptVersion implements IModel {
         this.userId = userId;
         return this;
     }
-    public getVersion(): Version|null {
+    public getVersion(): Gs2Version.Version|null {
         return this.version;
     }
-    public setVersion(version: Version|null) {
+    public setVersion(version: Gs2Version.Version|null) {
         this.version = version;
         return this;
     }
-    public withVersion(version: Version|null): this {
+    public withVersion(version: Gs2Version.Version|null): this {
         this.version = version;
         return this;
     }
@@ -216,7 +218,7 @@ export default class AcceptVersion implements IModel {
             .withAcceptVersionId(data["acceptVersionId"])
             .withVersionName(data["versionName"])
             .withUserId(data["userId"])
-            .withVersion(Version.fromDict(data["version"]))
+            .withVersion(Gs2Version.Version.fromDict(data["version"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

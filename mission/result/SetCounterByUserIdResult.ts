@@ -72,7 +72,7 @@ export default class SetCounterByUserIdResult implements IResult {
                 data.changedCompletes.map((item: {[key: string]: any}) => {
                     return Gs2Mission.Complete.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -83,7 +83,7 @@ export default class SetCounterByUserIdResult implements IResult {
                 this.getChangedCompletes()!.map((item: Gs2Mission.Complete) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

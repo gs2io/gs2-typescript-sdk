@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2News = tslib_1.__importStar(require("../../news/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:news:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -174,7 +174,7 @@ var Namespace = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withVersion(data["version"])
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withLogSetting(Gs2News.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

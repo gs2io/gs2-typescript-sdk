@@ -16,6 +16,7 @@ permissions and limitations under the License.
 
 import IResult from '../../core/interface/IResult';
 import * as Gs2Enhance from '../model'
+import * as Gs2Core from '../../core'
 
 export default class DirectEnhanceResult implements IResult {
     private item: Gs2Enhance.RateModel|null = null;
@@ -23,6 +24,9 @@ export default class DirectEnhanceResult implements IResult {
     private stampSheet: string|null = null;
     private stampSheetEncryptionKeyId: string|null = null;
     private autoRunStampSheet: boolean|null = null;
+    private atomicCommit: boolean|null = null;
+    private transaction: string|null = null;
+    private transactionResult: Gs2Core.TransactionResult|null = null;
     private acquireExperience: number|null = null;
     private bonusRate: number|null = null;
 
@@ -96,6 +100,48 @@ export default class DirectEnhanceResult implements IResult {
         return this;
     }
 
+    public getAtomicCommit(): boolean|null {
+        return this.atomicCommit;
+    }
+
+    public setAtomicCommit(atomicCommit: boolean|null) {
+        this.atomicCommit = atomicCommit;
+        return this;
+    }
+
+    public withAtomicCommit(atomicCommit: boolean|null): this {
+        this.atomicCommit = atomicCommit;
+        return this;
+    }
+
+    public getTransaction(): string|null {
+        return this.transaction;
+    }
+
+    public setTransaction(transaction: string|null) {
+        this.transaction = transaction;
+        return this;
+    }
+
+    public withTransaction(transaction: string|null): this {
+        this.transaction = transaction;
+        return this;
+    }
+
+    public getTransactionResult(): Gs2Core.TransactionResult|null {
+        return this.transactionResult;
+    }
+
+    public setTransactionResult(transactionResult: Gs2Core.TransactionResult|null) {
+        this.transactionResult = transactionResult;
+        return this;
+    }
+
+    public withTransactionResult(transactionResult: Gs2Core.TransactionResult|null): this {
+        this.transactionResult = transactionResult;
+        return this;
+    }
+
     public getAcquireExperience(): number|null {
         return this.acquireExperience;
     }
@@ -131,6 +177,9 @@ export default class DirectEnhanceResult implements IResult {
             .withStampSheet(data["stampSheet"])
             .withStampSheetEncryptionKeyId(data["stampSheetEncryptionKeyId"])
             .withAutoRunStampSheet(data["autoRunStampSheet"])
+            .withAtomicCommit(data["atomicCommit"])
+            .withTransaction(data["transaction"])
+            .withTransactionResult(Gs2Core.TransactionResult.fromDict(data["transactionResult"]))
             .withAcquireExperience(data["acquireExperience"])
             .withBonusRate(data["bonusRate"]);
     }
@@ -142,6 +191,9 @@ export default class DirectEnhanceResult implements IResult {
             "stampSheet": this.getStampSheet(),
             "stampSheetEncryptionKeyId": this.getStampSheetEncryptionKeyId(),
             "autoRunStampSheet": this.getAutoRunStampSheet(),
+            "atomicCommit": this.getAtomicCommit(),
+            "transaction": this.getTransaction(),
+            "transactionResult": this.getTransactionResult()?.toDict(),
             "acquireExperience": this.getAcquireExperience(),
             "bonusRate": this.getBonusRate(),
         };

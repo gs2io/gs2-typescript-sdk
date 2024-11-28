@@ -15,11 +15,13 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Lottery from '../../lottery/model'
 import AcquireAction from './AcquireAction';
 
 export default class BoxItem implements IModel {
     private prizeId: string|null = null;
-    private acquireActions: AcquireAction[]|null = null;
+    private acquireActions: Gs2Lottery.AcquireAction[]|null = null;
     private remaining: number|null = null;
     private initial: number|null = null;
     public getPrizeId(): string|null {
@@ -33,14 +35,14 @@ export default class BoxItem implements IModel {
         this.prizeId = prizeId;
         return this;
     }
-    public getAcquireActions(): AcquireAction[]|null {
+    public getAcquireActions(): Gs2Lottery.AcquireAction[]|null {
         return this.acquireActions;
     }
-    public setAcquireActions(acquireActions: AcquireAction[]|null) {
+    public setAcquireActions(acquireActions: Gs2Lottery.AcquireAction[]|null) {
         this.acquireActions = acquireActions;
         return this;
     }
-    public withAcquireActions(acquireActions: AcquireAction[]|null): this {
+    public withAcquireActions(acquireActions: Gs2Lottery.AcquireAction[]|null): this {
         this.acquireActions = acquireActions;
         return this;
     }
@@ -75,9 +77,9 @@ export default class BoxItem implements IModel {
             .withPrizeId(data["prizeId"])
             .withAcquireActions(data.acquireActions ?
                 data.acquireActions.map((item: {[key: string]: any}) => {
-                    return AcquireAction.fromDict(item);
+                    return Gs2Lottery.AcquireAction.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withRemaining(data["remaining"])
             .withInitial(data["initial"]);
     }
@@ -86,10 +88,10 @@ export default class BoxItem implements IModel {
         return {
             "prizeId": this.getPrizeId(),
             "acquireActions": this.getAcquireActions() ?
-                this.getAcquireActions()!.map((item: AcquireAction) => {
+                this.getAcquireActions()!.map((item: Gs2Lottery.AcquireAction) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "remaining": this.getRemaining(),
             "initial": this.getInitial(),
         };

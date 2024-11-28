@@ -16,10 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var TransactionSetting_1 = tslib_1.__importDefault(require("./TransactionSetting"));
-var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
-var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2Inbox = tslib_1.__importStar(require("../../inbox/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:inbox:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -267,12 +264,12 @@ var Namespace = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withIsAutomaticDeletingEnabled(data["isAutomaticDeletingEnabled"])
-            .withTransactionSetting(TransactionSetting_1.default.fromDict(data["transactionSetting"]))
-            .withReceiveMessageScript(ScriptSetting_1.default.fromDict(data["receiveMessageScript"]))
-            .withReadMessageScript(ScriptSetting_1.default.fromDict(data["readMessageScript"]))
-            .withDeleteMessageScript(ScriptSetting_1.default.fromDict(data["deleteMessageScript"]))
-            .withReceiveNotification(NotificationSetting_1.default.fromDict(data["receiveNotification"]))
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withTransactionSetting(Gs2Inbox.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withReceiveMessageScript(Gs2Inbox.ScriptSetting.fromDict(data["receiveMessageScript"]))
+            .withReadMessageScript(Gs2Inbox.ScriptSetting.fromDict(data["readMessageScript"]))
+            .withDeleteMessageScript(Gs2Inbox.ScriptSetting.fromDict(data["deleteMessageScript"]))
+            .withReceiveNotification(Gs2Inbox.NotificationSetting.fromDict(data["receiveNotification"]))
+            .withLogSetting(Gs2Inbox.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withQueueNamespaceId(data["queueNamespaceId"])

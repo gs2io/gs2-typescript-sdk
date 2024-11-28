@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Realtime from '../../realtime/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:realtime:{namespaceName}:room:{roomName}";
 
 export default class Room implements IModel {
@@ -222,7 +224,7 @@ export default class Room implements IModel {
                 data.notificationUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);
@@ -239,7 +241,7 @@ export default class Room implements IModel {
                 this.getNotificationUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),
             "revision": this.getRevision(),

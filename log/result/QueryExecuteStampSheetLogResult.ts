@@ -85,7 +85,7 @@ export default class QueryExecuteStampSheetLogResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Log.ExecuteStampSheetLog.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"])
             .withTotalCount(data["totalCount"])
             .withScanSize(data["scanSize"]);
@@ -97,7 +97,7 @@ export default class QueryExecuteStampSheetLogResult implements IResult {
                 this.getItems()!.map((item: Gs2Log.ExecuteStampSheetLog) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
             "totalCount": this.getTotalCount(),
             "scanSize": this.getScanSize(),

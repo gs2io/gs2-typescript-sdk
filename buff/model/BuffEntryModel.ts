@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Buff from '../../buff/model'
 import BuffTargetGrn from './BuffTargetGrn';
 import BuffTargetModel from './BuffTargetModel';
 import BuffTargetAction from './BuffTargetAction';
@@ -26,8 +28,8 @@ export default class BuffEntryModel implements IModel {
     private metadata: string|null = null;
     private expression: string|null = null;
     private targetType: string|null = null;
-    private targetModel: BuffTargetModel|null = null;
-    private targetAction: BuffTargetAction|null = null;
+    private targetModel: Gs2Buff.BuffTargetModel|null = null;
+    private targetAction: Gs2Buff.BuffTargetAction|null = null;
     private priority: number|null = null;
     private applyPeriodScheduleEventId: string|null = null;
 
@@ -166,25 +168,25 @@ export default class BuffEntryModel implements IModel {
         this.targetType = targetType;
         return this;
     }
-    public getTargetModel(): BuffTargetModel|null {
+    public getTargetModel(): Gs2Buff.BuffTargetModel|null {
         return this.targetModel;
     }
-    public setTargetModel(targetModel: BuffTargetModel|null) {
+    public setTargetModel(targetModel: Gs2Buff.BuffTargetModel|null) {
         this.targetModel = targetModel;
         return this;
     }
-    public withTargetModel(targetModel: BuffTargetModel|null): this {
+    public withTargetModel(targetModel: Gs2Buff.BuffTargetModel|null): this {
         this.targetModel = targetModel;
         return this;
     }
-    public getTargetAction(): BuffTargetAction|null {
+    public getTargetAction(): Gs2Buff.BuffTargetAction|null {
         return this.targetAction;
     }
-    public setTargetAction(targetAction: BuffTargetAction|null) {
+    public setTargetAction(targetAction: Gs2Buff.BuffTargetAction|null) {
         this.targetAction = targetAction;
         return this;
     }
-    public withTargetAction(targetAction: BuffTargetAction|null): this {
+    public withTargetAction(targetAction: Gs2Buff.BuffTargetAction|null): this {
         this.targetAction = targetAction;
         return this;
     }
@@ -221,8 +223,8 @@ export default class BuffEntryModel implements IModel {
             .withMetadata(data["metadata"])
             .withExpression(data["expression"])
             .withTargetType(data["targetType"])
-            .withTargetModel(BuffTargetModel.fromDict(data["targetModel"]))
-            .withTargetAction(BuffTargetAction.fromDict(data["targetAction"]))
+            .withTargetModel(Gs2Buff.BuffTargetModel.fromDict(data["targetModel"]))
+            .withTargetAction(Gs2Buff.BuffTargetAction.fromDict(data["targetAction"]))
             .withPriority(data["priority"])
             .withApplyPeriodScheduleEventId(data["applyPeriodScheduleEventId"]);
     }

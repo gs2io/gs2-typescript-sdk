@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var ScriptSetting_1 = tslib_1.__importDefault(require("./ScriptSetting"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2Dictionary = tslib_1.__importStar(require("../../dictionary/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:dictionary:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -186,9 +185,9 @@ var Namespace = /** @class */ (function () {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withEntryScript(ScriptSetting_1.default.fromDict(data["entryScript"]))
+            .withEntryScript(Gs2Dictionary.ScriptSetting.fromDict(data["entryScript"]))
             .withDuplicateEntryScript(data["duplicateEntryScript"])
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withLogSetting(Gs2Dictionary.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

@@ -125,7 +125,7 @@ var ReceiveGlobalRankingReceivedRewardRequest = /** @class */ (function () {
             .withConfig(data.config ?
             data.config.map(function (item) {
                 return Gs2Ranking2.Config.fromDict(item);
-            }) : []);
+            }) : null);
     };
     ReceiveGlobalRankingReceivedRewardRequest.prototype.toDict = function () {
         return {
@@ -136,7 +136,7 @@ var ReceiveGlobalRankingReceivedRewardRequest = /** @class */ (function () {
             "config": this.getConfig() ?
                 this.getConfig().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ReceiveGlobalRankingReceivedRewardRequest;

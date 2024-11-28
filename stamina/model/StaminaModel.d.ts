@@ -1,7 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import MaxStaminaTable from './MaxStaminaTable';
-import RecoverIntervalTable from './RecoverIntervalTable';
-import RecoverValueTable from './RecoverValueTable';
+import * as Gs2Stamina from '../../stamina/model';
 export default class StaminaModel implements IModel {
     private staminaModelId;
     private name;
@@ -44,15 +42,15 @@ export default class StaminaModel implements IModel {
     getMaxCapacity(): number | null;
     setMaxCapacity(maxCapacity: number | null): this;
     withMaxCapacity(maxCapacity: number | null): this;
-    getMaxStaminaTable(): MaxStaminaTable | null;
-    setMaxStaminaTable(maxStaminaTable: MaxStaminaTable | null): this;
-    withMaxStaminaTable(maxStaminaTable: MaxStaminaTable | null): this;
-    getRecoverIntervalTable(): RecoverIntervalTable | null;
-    setRecoverIntervalTable(recoverIntervalTable: RecoverIntervalTable | null): this;
-    withRecoverIntervalTable(recoverIntervalTable: RecoverIntervalTable | null): this;
-    getRecoverValueTable(): RecoverValueTable | null;
-    setRecoverValueTable(recoverValueTable: RecoverValueTable | null): this;
-    withRecoverValueTable(recoverValueTable: RecoverValueTable | null): this;
+    getMaxStaminaTable(): Gs2Stamina.MaxStaminaTable | null;
+    setMaxStaminaTable(maxStaminaTable: Gs2Stamina.MaxStaminaTable | null): this;
+    withMaxStaminaTable(maxStaminaTable: Gs2Stamina.MaxStaminaTable | null): this;
+    getRecoverIntervalTable(): Gs2Stamina.RecoverIntervalTable | null;
+    setRecoverIntervalTable(recoverIntervalTable: Gs2Stamina.RecoverIntervalTable | null): this;
+    withRecoverIntervalTable(recoverIntervalTable: Gs2Stamina.RecoverIntervalTable | null): this;
+    getRecoverValueTable(): Gs2Stamina.RecoverValueTable | null;
+    setRecoverValueTable(recoverValueTable: Gs2Stamina.RecoverValueTable | null): this;
+    withRecoverValueTable(recoverValueTable: Gs2Stamina.RecoverValueTable | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): StaminaModel | null;

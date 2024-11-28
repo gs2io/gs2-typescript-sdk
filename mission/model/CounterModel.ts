@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Mission from '../../mission/model'
 import VerifyAction from './VerifyAction';
 import CounterScopeModel from './CounterScopeModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:mission:{namespaceName}:counter:{counterName}";
@@ -23,7 +25,7 @@ export default class CounterModel implements IModel {
     private counterId: string|null = null;
     private name: string|null = null;
     private metadata: string|null = null;
-    private scopes: CounterScopeModel[]|null = null;
+    private scopes: Gs2Mission.CounterScopeModel[]|null = null;
     private challengePeriodEventId: string|null = null;
 
     public static getRegion(grn: string): string|null {
@@ -139,14 +141,14 @@ export default class CounterModel implements IModel {
         this.metadata = metadata;
         return this;
     }
-    public getScopes(): CounterScopeModel[]|null {
+    public getScopes(): Gs2Mission.CounterScopeModel[]|null {
         return this.scopes;
     }
-    public setScopes(scopes: CounterScopeModel[]|null) {
+    public setScopes(scopes: Gs2Mission.CounterScopeModel[]|null) {
         this.scopes = scopes;
         return this;
     }
-    public withScopes(scopes: CounterScopeModel[]|null): this {
+    public withScopes(scopes: Gs2Mission.CounterScopeModel[]|null): this {
         this.scopes = scopes;
         return this;
     }
@@ -172,9 +174,9 @@ export default class CounterModel implements IModel {
             .withMetadata(data["metadata"])
             .withScopes(data.scopes ?
                 data.scopes.map((item: {[key: string]: any}) => {
-                    return CounterScopeModel.fromDict(item);
+                    return Gs2Mission.CounterScopeModel.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withChallengePeriodEventId(data["challengePeriodEventId"]);
     }
 
@@ -184,10 +186,10 @@ export default class CounterModel implements IModel {
             "name": this.getName(),
             "metadata": this.getMetadata(),
             "scopes": this.getScopes() ?
-                this.getScopes()!.map((item: CounterScopeModel) => {
+                this.getScopes()!.map((item: Gs2Mission.CounterScopeModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "challengePeriodEventId": this.getChallengePeriodEventId(),
         };
     }

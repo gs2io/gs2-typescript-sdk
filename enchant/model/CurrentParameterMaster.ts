@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Enchant from '../../enchant/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:enchant:{namespaceName}";
 
 export default class CurrentParameterMaster implements IModel {

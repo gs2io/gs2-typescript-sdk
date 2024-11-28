@@ -37,14 +37,14 @@ var ForceReDrawByUserIdResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Showcase.RandomDisplayItem.fromDict(item);
-            }) : []);
+            }) : null);
     };
     ForceReDrawByUserIdResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return ForceReDrawByUserIdResult;

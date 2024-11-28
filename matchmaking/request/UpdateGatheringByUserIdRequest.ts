@@ -135,7 +135,7 @@ export default class UpdateGatheringByUserIdRequest implements IRequest {
                 data.attributeRanges.map((item: {[key: string]: any}) => {
                     return Gs2Matchmaking.AttributeRange.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -148,7 +148,7 @@ export default class UpdateGatheringByUserIdRequest implements IRequest {
                 this.getAttributeRanges()!.map((item: Gs2Matchmaking.AttributeRange) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

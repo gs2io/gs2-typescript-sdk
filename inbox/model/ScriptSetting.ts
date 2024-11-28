@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 import IModel from '../../core/interface/IModel';
 
+import * as Gs2Inbox from '../../inbox/model'
+
 export default class ScriptSetting implements IModel {
     private triggerScriptId: string|null = null;
     private doneTriggerTargetType: string|null = null;

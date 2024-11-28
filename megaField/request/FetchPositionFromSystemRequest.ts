@@ -123,7 +123,7 @@ export default class FetchPositionFromSystemRequest implements IRequest {
                 data.userIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -135,7 +135,7 @@ export default class FetchPositionFromSystemRequest implements IRequest {
                 this.getUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

@@ -15,14 +15,16 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Ranking from '../../ranking/model'
 import FixedTiming from './FixedTiming';
 import Scope from './Scope';
 
 export default class GlobalRankingSetting implements IModel {
     private uniqueByUserId: boolean|null = null;
     private calculateIntervalMinutes: number|null = null;
-    private calculateFixedTiming: FixedTiming|null = null;
-    private additionalScopes: Scope[]|null = null;
+    private calculateFixedTiming: Gs2Ranking.FixedTiming|null = null;
+    private additionalScopes: Gs2Ranking.Scope[]|null = null;
     private ignoreUserIds: string[]|null = null;
     private generation: string|null = null;
     public getUniqueByUserId(): boolean|null {
@@ -47,25 +49,25 @@ export default class GlobalRankingSetting implements IModel {
         this.calculateIntervalMinutes = calculateIntervalMinutes;
         return this;
     }
-    public getCalculateFixedTiming(): FixedTiming|null {
+    public getCalculateFixedTiming(): Gs2Ranking.FixedTiming|null {
         return this.calculateFixedTiming;
     }
-    public setCalculateFixedTiming(calculateFixedTiming: FixedTiming|null) {
+    public setCalculateFixedTiming(calculateFixedTiming: Gs2Ranking.FixedTiming|null) {
         this.calculateFixedTiming = calculateFixedTiming;
         return this;
     }
-    public withCalculateFixedTiming(calculateFixedTiming: FixedTiming|null): this {
+    public withCalculateFixedTiming(calculateFixedTiming: Gs2Ranking.FixedTiming|null): this {
         this.calculateFixedTiming = calculateFixedTiming;
         return this;
     }
-    public getAdditionalScopes(): Scope[]|null {
+    public getAdditionalScopes(): Gs2Ranking.Scope[]|null {
         return this.additionalScopes;
     }
-    public setAdditionalScopes(additionalScopes: Scope[]|null) {
+    public setAdditionalScopes(additionalScopes: Gs2Ranking.Scope[]|null) {
         this.additionalScopes = additionalScopes;
         return this;
     }
-    public withAdditionalScopes(additionalScopes: Scope[]|null): this {
+    public withAdditionalScopes(additionalScopes: Gs2Ranking.Scope[]|null): this {
         this.additionalScopes = additionalScopes;
         return this;
     }
@@ -99,17 +101,17 @@ export default class GlobalRankingSetting implements IModel {
         return new GlobalRankingSetting()
             .withUniqueByUserId(data["uniqueByUserId"])
             .withCalculateIntervalMinutes(data["calculateIntervalMinutes"])
-            .withCalculateFixedTiming(FixedTiming.fromDict(data["calculateFixedTiming"]))
+            .withCalculateFixedTiming(Gs2Ranking.FixedTiming.fromDict(data["calculateFixedTiming"]))
             .withAdditionalScopes(data.additionalScopes ?
                 data.additionalScopes.map((item: {[key: string]: any}) => {
-                    return Scope.fromDict(item);
+                    return Gs2Ranking.Scope.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withIgnoreUserIds(data.ignoreUserIds ?
                 data.ignoreUserIds.map((item: {[key: string]: any}) => {
                     return item;
                 }
-            ) : [])
+            ) : null)
             .withGeneration(data["generation"]);
     }
 
@@ -119,15 +121,15 @@ export default class GlobalRankingSetting implements IModel {
             "calculateIntervalMinutes": this.getCalculateIntervalMinutes(),
             "calculateFixedTiming": this.getCalculateFixedTiming()?.toDict(),
             "additionalScopes": this.getAdditionalScopes() ?
-                this.getAdditionalScopes()!.map((item: Scope) => {
+                this.getAdditionalScopes()!.map((item: Gs2Ranking.Scope) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "ignoreUserIds": this.getIgnoreUserIds() ?
                 this.getIgnoreUserIds()!.map((item: string) => {
                     return item;
                 }
-            ) : [],
+            ) : null,
             "generation": this.getGeneration(),
         };
     }

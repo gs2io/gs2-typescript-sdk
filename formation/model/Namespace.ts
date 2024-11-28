@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Formation from '../../formation/model'
 import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
@@ -24,11 +26,11 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
-    private transactionSetting: TransactionSetting|null = null;
-    private updateMoldScript: ScriptSetting|null = null;
-    private updateFormScript: ScriptSetting|null = null;
-    private updatePropertyFormScript: ScriptSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private transactionSetting: Gs2Formation.TransactionSetting|null = null;
+    private updateMoldScript: Gs2Formation.ScriptSetting|null = null;
+    private updateFormScript: Gs2Formation.ScriptSetting|null = null;
+    private updatePropertyFormScript: Gs2Formation.ScriptSetting|null = null;
+    private logSetting: Gs2Formation.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -125,58 +127,58 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
-    public getTransactionSetting(): TransactionSetting|null {
+    public getTransactionSetting(): Gs2Formation.TransactionSetting|null {
         return this.transactionSetting;
     }
-    public setTransactionSetting(transactionSetting: TransactionSetting|null) {
+    public setTransactionSetting(transactionSetting: Gs2Formation.TransactionSetting|null) {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public withTransactionSetting(transactionSetting: TransactionSetting|null): this {
+    public withTransactionSetting(transactionSetting: Gs2Formation.TransactionSetting|null): this {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public getUpdateMoldScript(): ScriptSetting|null {
+    public getUpdateMoldScript(): Gs2Formation.ScriptSetting|null {
         return this.updateMoldScript;
     }
-    public setUpdateMoldScript(updateMoldScript: ScriptSetting|null) {
+    public setUpdateMoldScript(updateMoldScript: Gs2Formation.ScriptSetting|null) {
         this.updateMoldScript = updateMoldScript;
         return this;
     }
-    public withUpdateMoldScript(updateMoldScript: ScriptSetting|null): this {
+    public withUpdateMoldScript(updateMoldScript: Gs2Formation.ScriptSetting|null): this {
         this.updateMoldScript = updateMoldScript;
         return this;
     }
-    public getUpdateFormScript(): ScriptSetting|null {
+    public getUpdateFormScript(): Gs2Formation.ScriptSetting|null {
         return this.updateFormScript;
     }
-    public setUpdateFormScript(updateFormScript: ScriptSetting|null) {
+    public setUpdateFormScript(updateFormScript: Gs2Formation.ScriptSetting|null) {
         this.updateFormScript = updateFormScript;
         return this;
     }
-    public withUpdateFormScript(updateFormScript: ScriptSetting|null): this {
+    public withUpdateFormScript(updateFormScript: Gs2Formation.ScriptSetting|null): this {
         this.updateFormScript = updateFormScript;
         return this;
     }
-    public getUpdatePropertyFormScript(): ScriptSetting|null {
+    public getUpdatePropertyFormScript(): Gs2Formation.ScriptSetting|null {
         return this.updatePropertyFormScript;
     }
-    public setUpdatePropertyFormScript(updatePropertyFormScript: ScriptSetting|null) {
+    public setUpdatePropertyFormScript(updatePropertyFormScript: Gs2Formation.ScriptSetting|null) {
         this.updatePropertyFormScript = updatePropertyFormScript;
         return this;
     }
-    public withUpdatePropertyFormScript(updatePropertyFormScript: ScriptSetting|null): this {
+    public withUpdatePropertyFormScript(updatePropertyFormScript: Gs2Formation.ScriptSetting|null): this {
         this.updatePropertyFormScript = updatePropertyFormScript;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Formation.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Formation.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Formation.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -222,11 +224,11 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
-            .withUpdateMoldScript(ScriptSetting.fromDict(data["updateMoldScript"]))
-            .withUpdateFormScript(ScriptSetting.fromDict(data["updateFormScript"]))
-            .withUpdatePropertyFormScript(ScriptSetting.fromDict(data["updatePropertyFormScript"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withTransactionSetting(Gs2Formation.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withUpdateMoldScript(Gs2Formation.ScriptSetting.fromDict(data["updateMoldScript"]))
+            .withUpdateFormScript(Gs2Formation.ScriptSetting.fromDict(data["updateFormScript"]))
+            .withUpdatePropertyFormScript(Gs2Formation.ScriptSetting.fromDict(data["updatePropertyFormScript"]))
+            .withLogSetting(Gs2Formation.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

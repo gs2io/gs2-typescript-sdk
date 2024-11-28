@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import OpenIdConnectSetting from './OpenIdConnectSetting';
+import * as Gs2Account from '../../account/model';
 export default class TakeOverTypeModel implements IModel {
     private takeOverTypeModelId;
     private type;
@@ -20,9 +20,9 @@ export default class TakeOverTypeModel implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
-    getOpenIdConnectSetting(): OpenIdConnectSetting | null;
-    setOpenIdConnectSetting(openIdConnectSetting: OpenIdConnectSetting | null): this;
-    withOpenIdConnectSetting(openIdConnectSetting: OpenIdConnectSetting | null): this;
+    getOpenIdConnectSetting(): Gs2Account.OpenIdConnectSetting | null;
+    setOpenIdConnectSetting(openIdConnectSetting: Gs2Account.OpenIdConnectSetting | null): this;
+    withOpenIdConnectSetting(openIdConnectSetting: Gs2Account.OpenIdConnectSetting | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): TakeOverTypeModel | null;

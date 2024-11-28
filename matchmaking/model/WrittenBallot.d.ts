@@ -1,15 +1,14 @@
 import IModel from '../../core/interface/IModel';
-import Ballot from './Ballot';
-import GameResult from './GameResult';
+import * as Gs2Matchmaking from '../../matchmaking/model';
 export default class WrittenBallot implements IModel {
     private ballot;
     private gameResults;
-    getBallot(): Ballot | null;
-    setBallot(ballot: Ballot | null): this;
-    withBallot(ballot: Ballot | null): this;
-    getGameResults(): GameResult[] | null;
-    setGameResults(gameResults: GameResult[] | null): this;
-    withGameResults(gameResults: GameResult[] | null): this;
+    getBallot(): Gs2Matchmaking.Ballot | null;
+    setBallot(ballot: Gs2Matchmaking.Ballot | null): this;
+    withBallot(ballot: Gs2Matchmaking.Ballot | null): this;
+    getGameResults(): Gs2Matchmaking.GameResult[] | null;
+    setGameResults(gameResults: Gs2Matchmaking.GameResult[] | null): this;
+    withGameResults(gameResults: Gs2Matchmaking.GameResult[] | null): this;
     static fromDict(data: {
         [key: string]: any;
     }): WrittenBallot | null;

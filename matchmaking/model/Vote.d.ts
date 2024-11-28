@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import WrittenBallot from './WrittenBallot';
+import * as Gs2Matchmaking from '../../matchmaking/model';
 export default class Vote implements IModel {
     private voteId;
     private ratingName;
@@ -23,9 +23,9 @@ export default class Vote implements IModel {
     getGatheringName(): string | null;
     setGatheringName(gatheringName: string | null): this;
     withGatheringName(gatheringName: string | null): this;
-    getWrittenBallots(): WrittenBallot[] | null;
-    setWrittenBallots(writtenBallots: WrittenBallot[] | null): this;
-    withWrittenBallots(writtenBallots: WrittenBallot[] | null): this;
+    getWrittenBallots(): Gs2Matchmaking.WrittenBallot[] | null;
+    setWrittenBallots(writtenBallots: Gs2Matchmaking.WrittenBallot[] | null): this;
+    withWrittenBallots(writtenBallots: Gs2Matchmaking.WrittenBallot[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

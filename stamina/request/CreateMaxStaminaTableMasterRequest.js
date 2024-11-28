@@ -124,7 +124,7 @@ var CreateMaxStaminaTableMasterRequest = /** @class */ (function () {
             .withValues(data.values ?
             data.values.map(function (item) {
                 return item;
-            }) : []);
+            }) : null);
     };
     CreateMaxStaminaTableMasterRequest.prototype.toDict = function () {
         return {
@@ -136,7 +136,7 @@ var CreateMaxStaminaTableMasterRequest = /** @class */ (function () {
             "values": this.getValues() ?
                 this.getValues().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
         };
     };
     return CreateMaxStaminaTableMasterRequest;

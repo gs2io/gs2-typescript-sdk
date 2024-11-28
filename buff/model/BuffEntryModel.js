@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var BuffTargetModel_1 = tslib_1.__importDefault(require("./BuffTargetModel"));
-var BuffTargetAction_1 = tslib_1.__importDefault(require("./BuffTargetAction"));
+var Gs2Buff = tslib_1.__importStar(require("../../buff/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:buff:{namespaceName}:model:{buffEntryName}";
 var BuffEntryModel = /** @class */ (function () {
     function BuffEntryModel() {
@@ -206,8 +205,8 @@ var BuffEntryModel = /** @class */ (function () {
             .withMetadata(data["metadata"])
             .withExpression(data["expression"])
             .withTargetType(data["targetType"])
-            .withTargetModel(BuffTargetModel_1.default.fromDict(data["targetModel"]))
-            .withTargetAction(BuffTargetAction_1.default.fromDict(data["targetAction"]))
+            .withTargetModel(Gs2Buff.BuffTargetModel.fromDict(data["targetModel"]))
+            .withTargetAction(Gs2Buff.BuffTargetAction.fromDict(data["targetAction"]))
             .withPriority(data["priority"])
             .withApplyPeriodScheduleEventId(data["applyPeriodScheduleEventId"]);
     };

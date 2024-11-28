@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import TransactionSetting from './TransactionSetting';
-import LogSetting from './LogSetting';
+import * as Gs2SeasonRating from '../../seasonRating/model';
 export default class Namespace implements IModel {
     private namespaceId;
     private name;
@@ -24,12 +23,12 @@ export default class Namespace implements IModel {
     getDescription(): string | null;
     setDescription(description: string | null): this;
     withDescription(description: string | null): this;
-    getTransactionSetting(): TransactionSetting | null;
-    setTransactionSetting(transactionSetting: TransactionSetting | null): this;
-    withTransactionSetting(transactionSetting: TransactionSetting | null): this;
-    getLogSetting(): LogSetting | null;
-    setLogSetting(logSetting: LogSetting | null): this;
-    withLogSetting(logSetting: LogSetting | null): this;
+    getTransactionSetting(): Gs2SeasonRating.TransactionSetting | null;
+    setTransactionSetting(transactionSetting: Gs2SeasonRating.TransactionSetting | null): this;
+    withTransactionSetting(transactionSetting: Gs2SeasonRating.TransactionSetting | null): this;
+    getLogSetting(): Gs2SeasonRating.LogSetting | null;
+    setLogSetting(logSetting: Gs2SeasonRating.LogSetting | null): this;
+    withLogSetting(logSetting: Gs2SeasonRating.LogSetting | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

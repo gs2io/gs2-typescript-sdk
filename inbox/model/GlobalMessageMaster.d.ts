@@ -1,6 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import AcquireAction from './AcquireAction';
-import TimeSpan from './TimeSpan';
+import * as Gs2Inbox from '../../inbox/model';
 export default class GlobalMessageMaster implements IModel {
     private globalMessageId;
     private name;
@@ -26,12 +25,12 @@ export default class GlobalMessageMaster implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
-    getReadAcquireActions(): AcquireAction[] | null;
-    setReadAcquireActions(readAcquireActions: AcquireAction[] | null): this;
-    withReadAcquireActions(readAcquireActions: AcquireAction[] | null): this;
-    getExpiresTimeSpan(): TimeSpan | null;
-    setExpiresTimeSpan(expiresTimeSpan: TimeSpan | null): this;
-    withExpiresTimeSpan(expiresTimeSpan: TimeSpan | null): this;
+    getReadAcquireActions(): Gs2Inbox.AcquireAction[] | null;
+    setReadAcquireActions(readAcquireActions: Gs2Inbox.AcquireAction[] | null): this;
+    withReadAcquireActions(readAcquireActions: Gs2Inbox.AcquireAction[] | null): this;
+    getExpiresTimeSpan(): Gs2Inbox.TimeSpan | null;
+    setExpiresTimeSpan(expiresTimeSpan: Gs2Inbox.TimeSpan | null): this;
+    withExpiresTimeSpan(expiresTimeSpan: Gs2Inbox.TimeSpan | null): this;
     /** @deprecated */
     getExpiresAt(): number | null;
     /** @deprecated */

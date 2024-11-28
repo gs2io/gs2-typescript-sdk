@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import AcquireAction from './AcquireAction';
+import * as Gs2Quest from '../../quest/model';
 export default class Contents implements IModel {
     private metadata;
     private completeAcquireActions;
@@ -7,9 +7,9 @@ export default class Contents implements IModel {
     getMetadata(): string | null;
     setMetadata(metadata: string | null): this;
     withMetadata(metadata: string | null): this;
-    getCompleteAcquireActions(): AcquireAction[] | null;
-    setCompleteAcquireActions(completeAcquireActions: AcquireAction[] | null): this;
-    withCompleteAcquireActions(completeAcquireActions: AcquireAction[] | null): this;
+    getCompleteAcquireActions(): Gs2Quest.AcquireAction[] | null;
+    setCompleteAcquireActions(completeAcquireActions: Gs2Quest.AcquireAction[] | null): this;
+    withCompleteAcquireActions(completeAcquireActions: Gs2Quest.AcquireAction[] | null): this;
     getWeight(): number | null;
     setWeight(weight: number | null): this;
     withWeight(weight: number | null): this;

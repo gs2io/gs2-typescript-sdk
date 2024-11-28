@@ -49,7 +49,7 @@ var DescribeRecoverIntervalTableMastersResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Stamina.RecoverIntervalTableMaster.fromDict(item);
-            }) : [])
+            }) : null)
             .withNextPageToken(data["nextPageToken"]);
     };
     DescribeRecoverIntervalTableMastersResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DescribeRecoverIntervalTableMastersResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     };

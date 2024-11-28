@@ -148,7 +148,7 @@ var PrepareUploadRequest = /** @class */ (function () {
             .withAllowUserIds(data.allowUserIds ?
             data.allowUserIds.map(function (item) {
                 return item;
-            }) : [])
+            }) : null)
             .withUpdateIfExists(data["updateIfExists"]);
     };
     PrepareUploadRequest.prototype.toDict = function () {
@@ -161,7 +161,7 @@ var PrepareUploadRequest = /** @class */ (function () {
             "allowUserIds": this.getAllowUserIds() ?
                 this.getAllowUserIds().map(function (item) {
                     return item;
-                }) : [],
+                }) : null,
             "updateIfExists": this.getUpdateIfExists(),
         };
     };

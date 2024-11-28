@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Showcase from '../../showcase/model'
 import TransactionSetting from './TransactionSetting';
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
@@ -24,9 +26,9 @@ export default class Namespace implements IModel {
     private namespaceId: string|null = null;
     private name: string|null = null;
     private description: string|null = null;
-    private transactionSetting: TransactionSetting|null = null;
-    private buyScript: ScriptSetting|null = null;
-    private logSetting: LogSetting|null = null;
+    private transactionSetting: Gs2Showcase.TransactionSetting|null = null;
+    private buyScript: Gs2Showcase.ScriptSetting|null = null;
+    private logSetting: Gs2Showcase.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private queueNamespaceId: string|null = null;
@@ -125,36 +127,36 @@ export default class Namespace implements IModel {
         this.description = description;
         return this;
     }
-    public getTransactionSetting(): TransactionSetting|null {
+    public getTransactionSetting(): Gs2Showcase.TransactionSetting|null {
         return this.transactionSetting;
     }
-    public setTransactionSetting(transactionSetting: TransactionSetting|null) {
+    public setTransactionSetting(transactionSetting: Gs2Showcase.TransactionSetting|null) {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public withTransactionSetting(transactionSetting: TransactionSetting|null): this {
+    public withTransactionSetting(transactionSetting: Gs2Showcase.TransactionSetting|null): this {
         this.transactionSetting = transactionSetting;
         return this;
     }
-    public getBuyScript(): ScriptSetting|null {
+    public getBuyScript(): Gs2Showcase.ScriptSetting|null {
         return this.buyScript;
     }
-    public setBuyScript(buyScript: ScriptSetting|null) {
+    public setBuyScript(buyScript: Gs2Showcase.ScriptSetting|null) {
         this.buyScript = buyScript;
         return this;
     }
-    public withBuyScript(buyScript: ScriptSetting|null): this {
+    public withBuyScript(buyScript: Gs2Showcase.ScriptSetting|null): this {
         this.buyScript = buyScript;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Showcase.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Showcase.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Showcase.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -228,9 +230,9 @@ export default class Namespace implements IModel {
             .withNamespaceId(data["namespaceId"])
             .withName(data["name"])
             .withDescription(data["description"])
-            .withTransactionSetting(TransactionSetting.fromDict(data["transactionSetting"]))
-            .withBuyScript(ScriptSetting.fromDict(data["buyScript"]))
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withTransactionSetting(Gs2Showcase.TransactionSetting.fromDict(data["transactionSetting"]))
+            .withBuyScript(Gs2Showcase.ScriptSetting.fromDict(data["buyScript"]))
+            .withLogSetting(Gs2Showcase.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withQueueNamespaceId(data["queueNamespaceId"])

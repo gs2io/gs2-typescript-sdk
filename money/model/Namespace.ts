@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Money from '../../money/model'
 import ScriptSetting from './ScriptSetting';
 import LogSetting from './LogSetting';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:money:{namespaceName}";
@@ -29,11 +31,11 @@ export default class Namespace implements IModel {
     private appleKey: string|null = null;
     private googleKey: string|null = null;
     private enableFakeReceipt: boolean|null = null;
-    private createWalletScript: ScriptSetting|null = null;
-    private depositScript: ScriptSetting|null = null;
-    private withdrawScript: ScriptSetting|null = null;
+    private createWalletScript: Gs2Money.ScriptSetting|null = null;
+    private depositScript: Gs2Money.ScriptSetting|null = null;
+    private withdrawScript: Gs2Money.ScriptSetting|null = null;
     private balance: number|null = null;
-    private logSetting: LogSetting|null = null;
+    private logSetting: Gs2Money.LogSetting|null = null;
     private createdAt: number|null = null;
     private updatedAt: number|null = null;
     private revision: number|null = null;
@@ -196,36 +198,36 @@ export default class Namespace implements IModel {
         this.enableFakeReceipt = enableFakeReceipt;
         return this;
     }
-    public getCreateWalletScript(): ScriptSetting|null {
+    public getCreateWalletScript(): Gs2Money.ScriptSetting|null {
         return this.createWalletScript;
     }
-    public setCreateWalletScript(createWalletScript: ScriptSetting|null) {
+    public setCreateWalletScript(createWalletScript: Gs2Money.ScriptSetting|null) {
         this.createWalletScript = createWalletScript;
         return this;
     }
-    public withCreateWalletScript(createWalletScript: ScriptSetting|null): this {
+    public withCreateWalletScript(createWalletScript: Gs2Money.ScriptSetting|null): this {
         this.createWalletScript = createWalletScript;
         return this;
     }
-    public getDepositScript(): ScriptSetting|null {
+    public getDepositScript(): Gs2Money.ScriptSetting|null {
         return this.depositScript;
     }
-    public setDepositScript(depositScript: ScriptSetting|null) {
+    public setDepositScript(depositScript: Gs2Money.ScriptSetting|null) {
         this.depositScript = depositScript;
         return this;
     }
-    public withDepositScript(depositScript: ScriptSetting|null): this {
+    public withDepositScript(depositScript: Gs2Money.ScriptSetting|null): this {
         this.depositScript = depositScript;
         return this;
     }
-    public getWithdrawScript(): ScriptSetting|null {
+    public getWithdrawScript(): Gs2Money.ScriptSetting|null {
         return this.withdrawScript;
     }
-    public setWithdrawScript(withdrawScript: ScriptSetting|null) {
+    public setWithdrawScript(withdrawScript: Gs2Money.ScriptSetting|null) {
         this.withdrawScript = withdrawScript;
         return this;
     }
-    public withWithdrawScript(withdrawScript: ScriptSetting|null): this {
+    public withWithdrawScript(withdrawScript: Gs2Money.ScriptSetting|null): this {
         this.withdrawScript = withdrawScript;
         return this;
     }
@@ -240,14 +242,14 @@ export default class Namespace implements IModel {
         this.balance = balance;
         return this;
     }
-    public getLogSetting(): LogSetting|null {
+    public getLogSetting(): Gs2Money.LogSetting|null {
         return this.logSetting;
     }
-    public setLogSetting(logSetting: LogSetting|null) {
+    public setLogSetting(logSetting: Gs2Money.LogSetting|null) {
         this.logSetting = logSetting;
         return this;
     }
-    public withLogSetting(logSetting: LogSetting|null): this {
+    public withLogSetting(logSetting: Gs2Money.LogSetting|null): this {
         this.logSetting = logSetting;
         return this;
     }
@@ -299,11 +301,11 @@ export default class Namespace implements IModel {
             .withAppleKey(data["appleKey"])
             .withGoogleKey(data["googleKey"])
             .withEnableFakeReceipt(data["enableFakeReceipt"])
-            .withCreateWalletScript(ScriptSetting.fromDict(data["createWalletScript"]))
-            .withDepositScript(ScriptSetting.fromDict(data["depositScript"]))
-            .withWithdrawScript(ScriptSetting.fromDict(data["withdrawScript"]))
+            .withCreateWalletScript(Gs2Money.ScriptSetting.fromDict(data["createWalletScript"]))
+            .withDepositScript(Gs2Money.ScriptSetting.fromDict(data["depositScript"]))
+            .withWithdrawScript(Gs2Money.ScriptSetting.fromDict(data["withdrawScript"]))
             .withBalance(data["balance"])
-            .withLogSetting(LogSetting.fromDict(data["logSetting"]))
+            .withLogSetting(Gs2Money.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

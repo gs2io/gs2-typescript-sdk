@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import SimpleItem from './SimpleItem';
+import * as Gs2Inventory from '../../inventory/model';
 export default class SimpleInventory implements IModel {
     private inventoryId;
     private inventoryName;
@@ -24,9 +24,9 @@ export default class SimpleInventory implements IModel {
     getUserId(): string | null;
     setUserId(userId: string | null): this;
     withUserId(userId: string | null): this;
-    getSimpleItems(): SimpleItem[] | null;
-    setSimpleItems(simpleItems: SimpleItem[] | null): this;
-    withSimpleItems(simpleItems: SimpleItem[] | null): this;
+    getSimpleItems(): Gs2Inventory.SimpleItem[] | null;
+    setSimpleItems(simpleItems: Gs2Inventory.SimpleItem[] | null): this;
+    withSimpleItems(simpleItems: Gs2Inventory.SimpleItem[] | null): this;
     getCreatedAt(): number | null;
     setCreatedAt(createdAt: number | null): this;
     withCreatedAt(createdAt: number | null): this;

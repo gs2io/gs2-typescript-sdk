@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Enhance from '../../enhance/model'
 import UnleashRateEntryModel from './UnleashRateEntryModel';
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:enhance:{namespaceName}:unleashRateModel:{rateName}";
 
@@ -25,7 +27,7 @@ export default class UnleashRateModel implements IModel {
     private metadata: string|null = null;
     private targetInventoryModelId: string|null = null;
     private gradeModelId: string|null = null;
-    private gradeEntries: UnleashRateEntryModel[]|null = null;
+    private gradeEntries: Gs2Enhance.UnleashRateEntryModel[]|null = null;
 
     public static getRegion(grn: string): string|null {
         const match = grn.match(grnFormat
@@ -173,14 +175,14 @@ export default class UnleashRateModel implements IModel {
         this.gradeModelId = gradeModelId;
         return this;
     }
-    public getGradeEntries(): UnleashRateEntryModel[]|null {
+    public getGradeEntries(): Gs2Enhance.UnleashRateEntryModel[]|null {
         return this.gradeEntries;
     }
-    public setGradeEntries(gradeEntries: UnleashRateEntryModel[]|null) {
+    public setGradeEntries(gradeEntries: Gs2Enhance.UnleashRateEntryModel[]|null) {
         this.gradeEntries = gradeEntries;
         return this;
     }
-    public withGradeEntries(gradeEntries: UnleashRateEntryModel[]|null): this {
+    public withGradeEntries(gradeEntries: Gs2Enhance.UnleashRateEntryModel[]|null): this {
         this.gradeEntries = gradeEntries;
         return this;
     }
@@ -198,9 +200,9 @@ export default class UnleashRateModel implements IModel {
             .withGradeModelId(data["gradeModelId"])
             .withGradeEntries(data.gradeEntries ?
                 data.gradeEntries.map((item: {[key: string]: any}) => {
-                    return UnleashRateEntryModel.fromDict(item);
+                    return Gs2Enhance.UnleashRateEntryModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -212,10 +214,10 @@ export default class UnleashRateModel implements IModel {
             "targetInventoryModelId": this.getTargetInventoryModelId(),
             "gradeModelId": this.getGradeModelId(),
             "gradeEntries": this.getGradeEntries() ?
-                this.getGradeEntries()!.map((item: UnleashRateEntryModel) => {
+                this.getGradeEntries()!.map((item: Gs2Enhance.UnleashRateEntryModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

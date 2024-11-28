@@ -55,7 +55,7 @@ export default class DescribeScriptsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Script.Script.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withNextPageToken(data["nextPageToken"]);
     }
 
@@ -65,7 +65,7 @@ export default class DescribeScriptsResult implements IResult {
                 this.getItems()!.map((item: Gs2Script.Script) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "nextPageToken": this.getNextPageToken(),
         };
     }

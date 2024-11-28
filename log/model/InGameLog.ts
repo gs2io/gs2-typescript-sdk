@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Log from '../../log/model'
 import InGameLogTag from './InGameLogTag';
 const grnFormat: string = "";
 
@@ -22,7 +24,7 @@ export default class InGameLog implements IModel {
     private timestamp: number|null = null;
     private requestId: string|null = null;
     private userId: string|null = null;
-    private tags: InGameLogTag[]|null = null;
+    private tags: Gs2Log.InGameLogTag[]|null = null;
     private payload: string|null = null;
 
     public static isValid(grn: string): boolean {
@@ -66,14 +68,14 @@ export default class InGameLog implements IModel {
         this.userId = userId;
         return this;
     }
-    public getTags(): InGameLogTag[]|null {
+    public getTags(): Gs2Log.InGameLogTag[]|null {
         return this.tags;
     }
-    public setTags(tags: InGameLogTag[]|null) {
+    public setTags(tags: Gs2Log.InGameLogTag[]|null) {
         this.tags = tags;
         return this;
     }
-    public withTags(tags: InGameLogTag[]|null): this {
+    public withTags(tags: Gs2Log.InGameLogTag[]|null): this {
         this.tags = tags;
         return this;
     }
@@ -99,9 +101,9 @@ export default class InGameLog implements IModel {
             .withUserId(data["userId"])
             .withTags(data.tags ?
                 data.tags.map((item: {[key: string]: any}) => {
-                    return InGameLogTag.fromDict(item);
+                    return Gs2Log.InGameLogTag.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withPayload(data["payload"]);
     }
 
@@ -111,10 +113,10 @@ export default class InGameLog implements IModel {
             "requestId": this.getRequestId(),
             "userId": this.getUserId(),
             "tags": this.getTags() ?
-                this.getTags()!.map((item: InGameLogTag) => {
+                this.getTags()!.map((item: Gs2Log.InGameLogTag) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "payload": this.getPayload(),
         };
     }

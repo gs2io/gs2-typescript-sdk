@@ -37,14 +37,14 @@ var DisconnectByUserIdResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Gateway.WebSocketSession.fromDict(item);
-            }) : []);
+            }) : null);
     };
     DisconnectByUserIdResult.prototype.toDict = function () {
         return {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
         };
     };
     return DisconnectByUserIdResult;

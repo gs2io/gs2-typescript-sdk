@@ -15,6 +15,8 @@ permissions and limitations under the License.
  */
 
 import IModel from '../../core/interface/IModel';
+
+import * as Gs2Deploy from '../../deploy/model'
 const grnFormat: string = "grn:gs2:{region}:{ownerId}:deploy:{stackName}:output:{outputName}";
 
 export default class Output implements IModel {

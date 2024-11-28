@@ -16,7 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var RankingReward_1 = tslib_1.__importDefault(require("./RankingReward"));
+var Gs2Ranking2 = tslib_1.__importStar(require("../../ranking2/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:ranking2:{namespaceName}:master:model:global:{rankingName}";
 var GlobalRankingModelMaster = /** @class */ (function () {
     function GlobalRankingModelMaster() {
@@ -271,8 +271,8 @@ var GlobalRankingModelMaster = /** @class */ (function () {
             .withEntryPeriodEventId(data["entryPeriodEventId"])
             .withRankingRewards(data.rankingRewards ?
             data.rankingRewards.map(function (item) {
-                return RankingReward_1.default.fromDict(item);
-            }) : [])
+                return Gs2Ranking2.RankingReward.fromDict(item);
+            }) : null)
             .withAccessPeriodEventId(data["accessPeriodEventId"])
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
@@ -292,7 +292,7 @@ var GlobalRankingModelMaster = /** @class */ (function () {
             "rankingRewards": this.getRankingRewards() ?
                 this.getRankingRewards().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "accessPeriodEventId": this.getAccessPeriodEventId(),
             "createdAt": this.getCreatedAt(),
             "updatedAt": this.getUpdatedAt(),

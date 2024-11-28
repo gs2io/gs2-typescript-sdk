@@ -40,7 +40,7 @@ export default class DescribeSeasonModelsResult implements IResult {
                 data.items.map((item: {[key: string]: any}) => {
                     return Gs2Matchmaking.SeasonModel.fromDict(item);
                 }
-            ) : []);
+            ) : null);
     }
 
     public toDict(): {[key: string]: any} {
@@ -49,7 +49,7 @@ export default class DescribeSeasonModelsResult implements IResult {
                 this.getItems()!.map((item: Gs2Matchmaking.SeasonModel) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
         };
     }
 }

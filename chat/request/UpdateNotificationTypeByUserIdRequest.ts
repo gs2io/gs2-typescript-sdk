@@ -135,7 +135,7 @@ export default class UpdateNotificationTypeByUserIdRequest implements IRequest {
                 data.notificationTypes.map((item: {[key: string]: any}) => {
                     return Gs2Chat.NotificationType.fromDict(item);
                 }
-            ) : [])
+            ) : null)
             .withTimeOffsetToken(data["timeOffsetToken"]);
     }
 
@@ -148,7 +148,7 @@ export default class UpdateNotificationTypeByUserIdRequest implements IRequest {
                 this.getNotificationTypes()!.map((item: Gs2Chat.NotificationType) => {
                     return item.toDict();
                 }
-            ) : [],
+            ) : null,
             "timeOffsetToken": this.getTimeOffsetToken(),
         };
     }

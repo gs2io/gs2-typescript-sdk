@@ -16,8 +16,7 @@ permissions and limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var NotificationSetting_1 = tslib_1.__importDefault(require("./NotificationSetting"));
-var LogSetting_1 = tslib_1.__importDefault(require("./LogSetting"));
+var Gs2JobQueue = tslib_1.__importStar(require("../../jobQueue/model"));
 var grnFormat = "grn:gs2:{region}:{ownerId}:queue:{namespaceName}";
 var Namespace = /** @class */ (function () {
     function Namespace() {
@@ -199,9 +198,9 @@ var Namespace = /** @class */ (function () {
             .withName(data["name"])
             .withDescription(data["description"])
             .withEnableAutoRun(data["enableAutoRun"])
-            .withRunNotification(NotificationSetting_1.default.fromDict(data["runNotification"]))
-            .withPushNotification(NotificationSetting_1.default.fromDict(data["pushNotification"]))
-            .withLogSetting(LogSetting_1.default.fromDict(data["logSetting"]))
+            .withRunNotification(Gs2JobQueue.NotificationSetting.fromDict(data["runNotification"]))
+            .withPushNotification(Gs2JobQueue.NotificationSetting.fromDict(data["pushNotification"]))
+            .withLogSetting(Gs2JobQueue.LogSetting.fromDict(data["logSetting"]))
             .withCreatedAt(data["createdAt"])
             .withUpdatedAt(data["updatedAt"])
             .withRevision(data["revision"]);

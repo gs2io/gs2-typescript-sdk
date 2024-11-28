@@ -1,5 +1,5 @@
 import IModel from '../../core/interface/IModel';
-import AcquireActionList from './AcquireActionList';
+import * as Gs2Idle from '../../idle/model';
 export default class CategoryModelMaster implements IModel {
     private categoryModelId;
     private name;
@@ -37,9 +37,9 @@ export default class CategoryModelMaster implements IModel {
     getDefaultMaximumIdleMinutes(): number | null;
     setDefaultMaximumIdleMinutes(defaultMaximumIdleMinutes: number | null): this;
     withDefaultMaximumIdleMinutes(defaultMaximumIdleMinutes: number | null): this;
-    getAcquireActions(): AcquireActionList[] | null;
-    setAcquireActions(acquireActions: AcquireActionList[] | null): this;
-    withAcquireActions(acquireActions: AcquireActionList[] | null): this;
+    getAcquireActions(): Gs2Idle.AcquireActionList[] | null;
+    setAcquireActions(acquireActions: Gs2Idle.AcquireActionList[] | null): this;
+    withAcquireActions(acquireActions: Gs2Idle.AcquireActionList[] | null): this;
     getIdlePeriodScheduleId(): string | null;
     setIdlePeriodScheduleId(idlePeriodScheduleId: string | null): this;
     withIdlePeriodScheduleId(idlePeriodScheduleId: string | null): this;

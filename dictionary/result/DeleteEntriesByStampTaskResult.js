@@ -49,7 +49,7 @@ var DeleteEntriesByStampTaskResult = /** @class */ (function () {
             .withItems(data.items ?
             data.items.map(function (item) {
                 return Gs2Dictionary.Entry.fromDict(item);
-            }) : [])
+            }) : null)
             .withNewContextStack(data["newContextStack"]);
     };
     DeleteEntriesByStampTaskResult.prototype.toDict = function () {
@@ -57,7 +57,7 @@ var DeleteEntriesByStampTaskResult = /** @class */ (function () {
             "items": this.getItems() ?
                 this.getItems().map(function (item) {
                     return item.toDict();
-                }) : [],
+                }) : null,
             "newContextStack": this.getNewContextStack(),
         };
     };
